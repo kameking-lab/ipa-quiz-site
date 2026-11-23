@@ -1,0 +1,134 @@
+[
+  {
+    "id": "au-2025a-pm1-q1",
+    "exam": "au",
+    "session": "pm1",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "オープンAPI",
+      "監査手続",
+      "変更管理"
+    ],
+    "difficulty": 5,
+    "question": "問1　オープンAPI態勢の監査\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                備考\n  設問１   リテール業務部がオープンAPI 運用報告書を参照すること\n 設問２ (ⅰ）仕様変更の都度，電代業者のアプリの改修が必要になること\n    (ⅱ）① ・仕様変更後のオープンAPI のテスト環境を提供すること       順不同\n        ② ・仕様変更前のオープンAPI を一定期間並行稼働させること\n  設問３   オープンAPI 運用報告書を閲覧し，API サーバの負荷と接続遮断との関係を\n        分析した。\n  設問４  アクセスを許可するIB サービスの範囲の広さによってチェックリストの確\n        認項目を決定する。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n  設問１   リテール業務部がオープンAPI 運用報告書を参照すること\n 設問２ (ⅰ）仕様変更の都度，電代業者のアプリの改修が必要になること\n    (ⅱ）① ・仕様変更後のオープンAPI のテスト環境を提供すること       順不同\n        ② ・仕様変更前のオープンAPI を一定期間並行稼働させること\n  設問３   オープンAPI 運用報告書を閲覧し，API サーバの負荷と接続遮断との関係を\n        分析した。\n  設問４  アクセスを許可するIB サービスの範囲の広さによってチェックリストの確\n        認項目を決定する。\n```",
+    "explanation": "監査では、APIの公開範囲、仕様変更、サーバ負荷ごとにリスクとコントロールを対応付けます。運用部門が報告書を見ることに加え、サービスを主管する部門が状況を把握する仕組みも確認します。仕様変更時は接続先事業者が改修できるテスト環境や移行期間が必要です。接続遮断については運用報告書で負荷との関係を分析し、アクセスを認める業務の範囲に応じて確認項目を決めると、具体的な監査手続になります。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-2.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-3.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-4.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-5.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 2025年秋 午後I 問1 本文・図表・設問 原本2ページ",
+      "システム監査技術者 2025年秋 午後I 問1 本文・図表・設問 原本3ページ",
+      "システム監査技術者 2025年秋 午後I 問1 本文・図表・設問 原本4ページ",
+      "システム監査技術者 2025年秋 午後I 問1 本文・図表・設問 原本5ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 システム監査技術者試験 午後I」問1。"
+  },
+  {
+    "id": "au-2025a-pm1-q2",
+    "exam": "au",
+    "session": "pm1",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "IaaS",
+      "権限管理",
+      "監査ログ"
+    ],
+    "difficulty": 5,
+    "question": "問2　クラウドサービスを利用したシステムの監査\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１  ① ・S 氏及びM 社の担当者2 名以外にシステム管理者権限が付与されていな\n        いこと\n                                           順不同\n       ② ・M 社の担当者2 名のアカウントに多要素認証が必須で設定されているこ\n        と\n  設問２  脆弱性の緊急度を考慮せずに定期保守に合わせて対処していること\n  設問３  システム管理者権限で操作ログを変更又は削除できないこと\n  設問４    M 社との定例会において変更管理台帳をレビューし，設定漏れがないことを確\n      かめること\n  設問５                                             けん       システム管理者がS 氏1 名のため業務に対する牽 制が働かないこと",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１  ① ・S 氏及びM 社の担当者2 名以外にシステム管理者権限が付与されていな\n        いこと\n                                           順不同\n       ② ・M 社の担当者2 名のアカウントに多要素認証が必須で設定されているこ\n        と\n  設問２  脆弱性の緊急度を考慮せずに定期保守に合わせて対処していること\n  設問３  システム管理者権限で操作ログを変更又は削除できないこと\n  設問４    M 社との定例会において変更管理台帳をレビューし，設定漏れがないことを確\n      かめること\n  設問５                                             けん       システム管理者がS 氏1 名のため業務に対する牽 制が働かないこと\n```",
+    "explanation": "クラウドを利用していても、利用者側が行う権限設定や変更管理の確認は必要です。管理者権限を付与された人を限定し、委託先担当者にも多要素認証を必須にしているかを確認します。ログは取得の有無だけでなく、管理者自身が変更・削除できないかが論点です。脆弱性への対処を定期保守だけに合わせる運用や、一人の管理者に牽制が働かない状況を区別し、それぞれに合う監査証拠と改善点を考えます。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-6.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-7.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-8.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-9.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 2025年秋 午後I 問2 本文・図表・設問 原本6ページ",
+      "システム監査技術者 2025年秋 午後I 問2 本文・図表・設問 原本7ページ",
+      "システム監査技術者 2025年秋 午後I 問2 本文・図表・設問 原本8ページ",
+      "システム監査技術者 2025年秋 午後I 問2 本文・図表・設問 原本9ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/answer-q2-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 システム監査技術者試験 午後I」問2。"
+  },
+  {
+    "id": "au-2025a-pm1-q3",
+    "exam": "au",
+    "session": "pm1",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "IT投資",
+      "投資対効果",
+      "委託管理"
+    ],
+    "difficulty": 5,
+    "question": "問3　IT投資計画の監査\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１    EC パッケージのバージョンアップ及びカスタマイズ部分の改修費用が含まれて\n      いること\n  設問２  開発導入投資額の見積り資料を査閲し，基幹システムの改修に係る投資額が考\n      慮されているか確かめる。\n  設問３    R 社の情報セキュリティ対策の責任範囲が明確になっていること\n  設問４  営業本部にインタビューし，試算結果の妥当性を確認していることを確かめ\n      る。\n  設問５  本番稼働した2 年後以降についても投資対効果の評価を行うこと",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１    EC パッケージのバージョンアップ及びカスタマイズ部分の改修費用が含まれて\n      いること\n  設問２  開発導入投資額の見積り資料を査閲し，基幹システムの改修に係る投資額が考\n      慮されているか確かめる。\n  設問３    R 社の情報セキュリティ対策の責任範囲が明確になっていること\n  設問４  営業本部にインタビューし，試算結果の妥当性を確認していることを確かめ\n      る。\n  設問５  本番稼働した2 年後以降についても投資対効果の評価を行うこと\n```",
+    "explanation": "投資額の確認では、導入費だけでなく将来のバージョンアップやカスタマイズ部分の改修、連携する基幹システムの変更も含まれているかを調べます。外部サービスの利用では、情報セキュリティ対策の責任分担を明確にします。売上などの効果の試算は営業部門への確認で前提の妥当性を確かめ、稼働後も複数年にわたって評価します。計画時の見積り資料と稼働後の実績の両方を監査対象にすることが要点です。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-10.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-11.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-12.webp",
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/question-13.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 2025年秋 午後I 問3 本文・図表・設問 原本10ページ",
+      "システム監査技術者 2025年秋 午後I 問3 本文・図表・設問 原本11ページ",
+      "システム監査技術者 2025年秋 午後I 問3 本文・図表・設問 原本12ページ",
+      "システム監査技術者 2025年秋 午後I 問3 本文・図表・設問 原本13ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/au/2025-autumn-pm1/answer-q3-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問3 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_au_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 システム監査技術者試験 午後I」問3。"
+  }
+]

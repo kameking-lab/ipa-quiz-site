@@ -1,69 +1,154 @@
-import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ReviewClient } from "@/app/review/ReviewClient";
-import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
+import { DueReview } from "@/app/review/DueReview";
+import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
-import { writeLastQuestion } from "@/lib/storage/last-question";
+import { toggleBookmark } from "@/lib/storage/bookmarks";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { POST } from "@/app/api/review/due/route";
 import { IP_QUESTIONS } from "@/data/questions/ip";
-import type { ChoiceKey } from "@/lib/questions/types";
+import { calculatePace, createPacePlan } from "@/lib/study-plan/pace";
+import { paceAttempts } from "@/lib/study-plan/client";
 
-beforeEach(() => { cleanup(); localStorage.clear(); });
-afterEach(() => { vi.unstubAllGlobals(); cleanup(); });
-function useRealReadApi() {
-  const fetchMock = vi.fn(async (_url: string, init?: RequestInit) => POST(new Request("http://localhost/api/review/due", init)));
-  vi.stubGlobal("fetch", fetchMock);
-  return fetchMock;
-}
-const q = IP_QUESTIONS.find((q) => q.id === "ip-2009a-am-q1")!;
-describe("existing answer history → real review lookup", () => {
-  it("offers the question just answered incorrectly, without rewriting history or stars", async () => {
-    const fetchMock = useRealReadApi();
-    const history = createHistoryStore(); history.toggleStar(q.id);
-    const { unmount } = render(<QuestionAnswerCard questionId={q.id} choices={q.choices!} answerKey={q.answer as ChoiceKey} exam={q.exam} year={q.year} season={q.season} session={q.session} qNumber={q.qNumber} />);
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 ア/ }));
-    const before = localStorage.getItem(LS_KEYS.history);
-    expect(history.getAllEntries()[0]).toMatchObject({ id: q.id, correct: false });
-    unmount(); render(<ReviewClient />);
-    await screen.findByText(q.question);
-    expect(screen.queryByText("復習キューはまだ空です")).not.toBeInTheDocument();
-    const payload = JSON.parse(fetchMock.mock.calls[0]![1]!.body as string);
-    expect(payload.historyIds).toEqual([q.id]);
-    expect(localStorage.getItem(LS_KEYS.history)).toBe(before);
-    expect(history.getStarredIds()).toEqual([q.id]);
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
+const q = IP_QUESTIONS.find(q => q.id === "ip-2009a-am-q1")!;
+const old = { id: q.id, selected: "ア", correct: false, at: Date.now() - 1000 };
+const items = [{ key: "ip", name: "ITパスポート", href: "/ip" }];
+const next = vi.fn();
+beforeEach(() => {
+  localStorage.clear();
+  next.mockClear();
+  vi.stubGlobal("fetch", vi.fn(async (url: string) => url.endsWith("/catalog/ip") ? Response.json({ questions: [q] }) : new Response(null, { status: 204 })));
+});
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+
+describe("weak list uses the common assessed history", () => {
+  it("lists one parent for regional due questions and requests the selected region", async () => {
+    const regions = ["chori-ehime", "chori-nara"];
+    const questions = regions.map(exam => ({ ...q, id: exam + "-q1", exam }));
+    const fetchDue = vi.fn(async (_url: RequestInfo | URL, init?: RequestInit) => {
+      const { exam } = JSON.parse(String(init?.body));
+      return Response.json({ questions: questions.filter(item => !exam || exam === item.exam), seenCount: 2, nextReviewDate: null });
+    });
+    vi.stubGlobal("fetch", fetchDue);
+    render(<DueReview initialExam="" />);
+    const parent = await screen.findByRole("combobox", { name: "復習する資格" });
+    const group = within(parent).getByRole<HTMLOptionElement>("option", { name: "調理師試験（都道府県別 2）" });
+    expect(within(parent).getAllByRole("option")).toHaveLength(2);
+    fireEvent.change(parent, { target: { value: group.value } });
+    expect(screen.queryByText("復習問題を読み込み中…")).toBeNull();
+    fireEvent.change(screen.getByRole("combobox", { name: "地域" }), { target: { value: regions[1] } });
+    await screen.findByRole("radio", { name: /^選択肢 ア/ });
+    expect(fetchDue).toHaveBeenCalledWith("/api/review/due", expect.objectContaining({ body: expect.stringContaining('"exam":"chori-nara"') }));
   });
-  it("distinguishes a future scheduled question from a first-time empty queue", async () => {
-    useRealReadApi(); createHistoryStore().record({ id: q.id, selected: "ウ", correct: true, at: Date.now() });
-    writeLastQuestion({ exam: "ip", year: 2009, season: "autumn", session: "am", qNumber: 1, answeredAt: Date.now() });
-    localStorage.setItem("ipa-quiz:review:v1", JSON.stringify({ [q.id]: { questionId: q.id, level: 1, correctStreak: 1, nextReviewAt: "2099-01-01" } }));
-    render(<ReviewClient />);
-    await screen.findByText("今日の復習は完了です");
-    expect(screen.getByText(/次回復習予定:/)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "ITパスポートの問題を解く" })).toHaveAttribute("href", "/ip");
-    expect(screen.queryByText("復習キューはまだ空です")).not.toBeInTheDocument();
+
+  it("keeps the due-review grant path, records on grading, and reschedules only on advance", async () => {
+    const history = createHistoryStore();
+    history.record(old);
+    const legacy = { [q.id]: { nextReviewAt: "2020-01-01", level: 1, correctStreak: 1 } };
+    localStorage.setItem(LS_KEYS.reviewSchedule, JSON.stringify(legacy));
+    vi.mocked(fetch).mockImplementation(async url => String(url) === "/api/review/due"
+      ? Response.json({ questions: [q], seenCount: 1, nextReviewDate: null }) : new Response(null, { status: 204 }));
+    render(<DueReview initialExam="ip" />);
+    const key = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+    fireEvent.click(await screen.findByRole("radio", { name: new RegExp("^選択肢 " + key) }));
+    expect(history.getAllEntries()).toMatchObject([old, { id: q.id, correct: true }]);
+    expect(history.getWrongIds()).not.toContain(q.id);
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!)).toEqual(legacy);
+    expect(fetch).toHaveBeenCalledWith("/api/review/due", expect.objectContaining({ method: "POST" }));
+    fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!)[q.id]).toMatchObject({ level: 2, correctStreak: 2 });
+    expect(history.getAllEntries()).toHaveLength(2);
   });
-  it("can read intact history even if the separate review schedule is malformed", async () => {
-    useRealReadApi(); createHistoryStore().record({ id: q.id, selected: "ア", correct: false, at: Date.now() });
-    localStorage.setItem("ipa-quiz:review:v1", "invalid-json");
-    render(<ReviewClient />); await screen.findByText(q.question);
-    expect(localStorage.getItem("ipa-quiz:review:v1")).toBe("invalid-json");
+  it("corrects the newest recorded grade without pressing next and updates the track", async () => {
+    const history = createHistoryStore();
+    history.record(old);
+    const list = render(<ReviewClient examFromQuery="ip" items={items} />);
+    await screen.findByRole("link", { name: "苦手1問をまとめて解く" });
+    expect(fetch).toHaveBeenCalledWith("/api/study-plan/catalog/ip", expect.anything());
+    list.unmount();
+    const practice = render(<QuizPlayer quiet question={q} exam="ip" mode="year" index={0} total={2} onNext={next} />);
+    const key = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+    const correct = screen.getByRole("radio", { name: new RegExp("^選択肢 " + key) });
+    fireEvent.click(correct);
+    fireEvent.click(correct);
+    expect(history.getAllEntries()).toMatchObject([old, { id: q.id, selected: key, correct: true }]);
+    expect(next).not.toHaveBeenCalled();
+    const plan = createPacePlan({ id: "p", exam: "ip", sessionId: null, startDate: "2026-11-17", examDate: null }, [q], "2026-11-17T00:00:00Z");
+    expect(calculatePace(plan, [q], paceAttempts(), "2026-11-17").mastered).toBe(1);
+    practice.unmount();
+    render(<ReviewClient examFromQuery="ip" items={items} />);
+    expect(await screen.findByText("苦手リストは空です")).toBeVisible();
   });
-  it("does not pretend a failed lookup is zero history", async () => {
-    vi.stubGlobal("fetch", vi.fn(async () => new Response("", { status: 503 })));
-    render(<ReviewClient />); await screen.findByRole("alert");
-    expect(screen.queryByText("復習キューはまだ空です")).not.toBeInTheDocument();
+
+  it("ignores old due dates and keeps a manual mark after a correct answer", async () => {
+    const history = createHistoryStore();
+    history.record(old);
+    history.record({ ...old, correct: true, at: Date.now() });
+    history.toggleStar(q.id);
+    const legacy = JSON.stringify({ [q.id]: { nextReviewAt: "2099-01-01" } });
+    localStorage.setItem(LS_KEYS.reviewSchedule, legacy);
+    render(<ReviewClient examFromQuery="ip" items={items} />);
+    await screen.findByText("苦手の印");
+    expect(screen.queryByText("前回不正解")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "苦手の印を外す" }));
+    expect(await screen.findByText("苦手リストは空です")).toBeVisible();
+    expect(localStorage.getItem(LS_KEYS.reviewSchedule)).toBe(legacy);
+    expect(history.getAllEntries()).toHaveLength(2);
   });
-  it("a genuinely new user gets qualification selection, without being assigned AP", async () => {
-    useRealReadApi(); render(<ReviewClient />);
-    await screen.findByText("復習キューはまだ空です");
-    expect(screen.getByRole("link", { name: "問題を解き始める" })).toHaveAttribute("href", "/#choose-qualification");
+
+  it("shows both reasons in one row and keeps the row after the mark is removed", async () => {
+    const history = createHistoryStore();
+    history.record(old);
+    history.toggleStar(q.id);
+    localStorage.setItem(LS_KEYS.reviewSchedule, "invalid-json");
+    render(<ReviewClient examFromQuery="ip" items={items} />);
+    const row = await screen.findByRole("listitem");
+    expect(within(row).getByText("前回不正解")).toBeVisible();
+    expect(within(row).getByText("苦手の印")).toBeVisible();
+    fireEvent.click(within(row).getByRole("button", { name: "苦手の印を外す" }));
+    expect(screen.getAllByRole("listitem")).toHaveLength(1);
+    expect(within(row).queryByText("苦手の印")).not.toBeInTheDocument();
+    expect(localStorage.getItem(LS_KEYS.reviewSchedule)).toBe("invalid-json");
   });
-  it("deduplicates repeated answers through the store API, preserving the original entries", async () => {
-    const fetchMock = useRealReadApi(); const history = createHistoryStore();
-    history.record({ id: q.id, selected: "ア", correct: false, at: 1 }); history.record({ id: q.id, selected: "ウ", correct: true, at: 2 });
-    render(<ReviewClient />); await waitFor(() => expect(fetchMock).toHaveBeenCalled());
-    const payload = JSON.parse(fetchMock.mock.calls[0]![1]!.body as string);
-    expect(payload.historyIds).toEqual([q.id]); expect(history.getAllEntries()).toHaveLength(2);
+
+  it("keeps a tag-only bookmark out of the list and marks local to this device", async () => {
+    toggleBookmark(q);
+    const first = render(<ReviewClient examFromQuery="ip" items={items} />);
+    await screen.findByText("苦手リストは空です");
+    act(() => { createHistoryStore().toggleStar(q.id); });
+    expect(await screen.findByText("苦手の印")).toBeVisible();
+    first.unmount();
+    localStorage.removeItem(LS_KEYS.history);
+    render(<ReviewClient examFromQuery="ip" items={items} />);
+    expect(await screen.findByText("苦手リストは空です")).toBeVisible();
+  });
+
+  it("shows a retry for failed requests and a real empty list after success", async () => {
+    vi.mocked(fetch).mockResolvedValueOnce(new Response(null, { status: 503 }));
+    render(<ReviewClient examFromQuery="ip" items={items} />);
+    expect(await screen.findByRole("alert")).toHaveTextContent("問題を読み込めませんでした");
+    expect(screen.queryByText("苦手リストは空です")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "再読み込み" }));
+    expect(await screen.findByText("苦手リストは空です")).toBeVisible();
+  });
+
+  it("offers qualification selection without fetching an arbitrary exam", () => {
+    render(<ReviewClient items={items} />);
+    expect(screen.getByRole("combobox", { name: "資格" })).toHaveValue("");
+    expect(fetch).not.toHaveBeenCalled();
+  });
+
+  it("does not change the latest recorded grade with history switched off", async () => {
+    const history = createHistoryStore();
+    history.record(old);
+    localStorage.setItem(LS_KEYS.settings, JSON.stringify({ recordHistory: false }));
+    const view = render(<QuizPlayer quiet question={q} exam="ip" mode="year" index={0} total={2} onNext={next} />);
+    const key = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+    await act(async () => fireEvent.click(screen.getByRole("radio", { name: new RegExp("^選択肢 " + key) })));
+    expect(history.getAllEntries()).toEqual([old]);
+    view.unmount();
+    render(<ReviewClient examFromQuery="ip" items={items} />);
+    expect(await screen.findByText("前回不正解")).toBeVisible();
   });
 });

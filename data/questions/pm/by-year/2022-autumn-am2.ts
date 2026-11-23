@@ -24,6 +24,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018によれば、プロジェクトマネジメントの実行プロセス群で作業中に変更の必要性が生じることがあります。この「変更要求」は、管理プロセス群に含まれる変更管理プロセスにおいて評価、承認、あるいは却下されるため、実行と管理のプロセス群が相互作用します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "プロジェクト憲章は、プロジェクトの存在を正式に承認する文書です。プロジェクトマネージャを任命し、その責任と権限を明確にするとともに、プロジェクトのビジネスニーズ、目標、期待される結果などを上位レベルで記述します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "WBS (Work Breakdown Structure) は、プロジェクトのスコープを階層的に分解した構造であり、プロジェクトの作業範囲を詳細に定義します。JIS Q 21500:2018において、WBSはスコープの管理プロセス群において、スコープの基準として利用される主要なインプットの一つとされています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "RACIチャートは、プロジェクトにおける各タスクに対する役割と責任を明確にするツールです。Responsible (実行責任)、Accountable (説明責任)、Consulted (相談対応)、Informed (情報提供) の四つの頭文字から構成されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "タックマンモデルの「動乱期 (Storming)」は、チームメンバー間で意見の相違や対立が生じる段階です。メンバーの異なる考え方や価値観が明確になり、それぞれの意見を主張し合うことが特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 21500:2018における「資源の管理」の目的は、プロジェクトの要求事項を満たすために必要な資源を特定し、調達し、プロジェクト活動に適切に割り当て、活用することです。これには、人的資源だけでなく、資材、設備なども含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CPI=0.9はコストが予算を超過していることを示し、SPI=1.1はスケジュールに余裕があることを示します。TCPI=1.2は、残作業を完成時総予算内で終えるためには、計画よりも1.2倍のコスト効率が必要であることを意味します。したがって、コスト超過の危険性があるため、残作業のコスト効率を上げる対策か、コンティンジェンシー予備費の使用を検討することが適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "WBS (Work Breakdown Structure) の主な目的は、プロジェクトの総作業を階層的に詳細化し、管理可能な小さな単位（ワークパッケージ）に細分化することです。これにより、プロジェクトのスコープを明確にし、作業の見積もり、スケジューリング、監視を容易にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +223,14 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
       "エ": "作業Fを最も遅く開始できるのは11日目である。"
     },
     "answer": "ウ",
-    "explanation": "ウの解説:\n作業Eの総余裕時間（Float）とは、その作業の開始を遅らせても、プロジェクト全体の完了に影響を与えない期間のことです。総余裕時間は、最も遅い完了日（LF）から最も早い完了日（EF）を引くか、または最も遅い開始日（LS）から最も早い開始日（ES）を引くことで計算されます（LS - ES = LF - EF）。この計算結果が30日であるため、選択肢ウは適切です。\n\nアは不適切です。作業Cの最も早い開始日（ES）は、先行作業が完了する最も早い時期（EF）に依存しますが、提示された情報だけでは6日目とは断定できません。\nイは不適切です。クリティカルパスとは、プロジェクト完了までの所要期間を決定する一連の作業経路であり、その経路上の作業は総余裕時間がゼロになります。作業Dがクリティカルパス上にあるかどうかは、各作業の先行・後続関係と所要日数から計算されるクリティカルパスを特定しないと判断できません。\nエは不適切です。作業Fの最も遅い開始日（LS）は、後続作業の最も遅い開始日（LS）から、作業Fの所要日数を引いて計算されます。この計算結果が11日目とは、提示された情報のみからは確認できません。",
+    "explanation": "CとEはA・Bの双方を待つので、最早開始は11日目です。そこから40日のC→GがHの開始を51日目に決めます。Eは10日かかるので、Hを遅らせない最遅開始は41日目です。最早開始の11日目との差が30日で、これがEの総余裕時間です。",
+    "choiceExplanations": {
+      "ア": "Aの終了だけならCを6日目に始められますが、Cはダミー作業の先行に当たるBの終了も待つので、最早開始は11日目です。",
+      "イ": "作業Dは30日ですが、同じ合流点に向かうC→Gは20＋20＝40日です。DよりC→Gの経路が全体の所要日数を決めます。",
+      "ウ": "Eは11日目に開始でき、Hの開始はC→Gの完了後の51日目です。Eは10日かかるので、41日目まで開始を遅らせられ、余裕は30日です。",
+      "エ": "11日目はBの完了直後で、Fを最も早く始められる日です。Hを51日目に始めるには、10日かかるFを41日目までに始めます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +254,14 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
       "エ": "開発規模の増加に伴い開発生産性が増加する曲線（上に凸）"
     },
     "answer": "エ",
-    "explanation": "この問題は、COCOMOモデルにおける開発工数と開発規模の関係から、開発生産性の変化を分析するものです。\n\nまず、開発生産性は「開発規模 / 開発工数」で定義されます。問題文のCOCOMOの式「開発工数 = 3.0 × (開発規模) ^ 1.12」をこの定義に代入すると、開発生産性は「開発規模 / (3.0 × (開発規模) ^ 1.12)」となります。これを整理すると、「(1 / 3.0) × (開発規模) ^ (1 - 1.12)」すなわち「(1 / 3.0) × (開発規模) ^ -0.12」となります。指数が負であるため、開発規模が増加するにつれて開発生産性は減少することがわかります。しかし、選択肢には「減少する曲線（上に凸）」や「減少する曲線（下に凸）」といった、曲線の形状に関する記述があります。\n\nここで、開発生産性の式「(1 / 3.0) × (開発規模) ^ -0.12」に着目します。指数が負の値（-0.12）であり、その絶対値（0.12）が1より小さい場合、開発規模の増加に対する生産性の減少率は徐々に緩やかになります。これは、グラフで表すと上に凸の曲線となります。したがって、開発規模の増加に伴い開発生産性が減少する曲線（上に凸）が正しい関係を表します。\n\n選択肢アは、開発規模の増加に伴い開発生産性が減少する曲線（上に凸）と述べており、これが正解です。\n\n選択肢イは、開発生産性が増加すると述べていますが、これは計算結果と矛盾します。\n選択肢ウは、開発生産性が減少することは正しいものの、曲線が下に凸になると誤っています。下に凸の曲線は、増加率が徐々に大きくなる傾向を示します。\n選択肢エは、開発生産性が増加すると述べており、これも計算結果と矛盾します。",
+    "explanation": "開発規模をSとすると、開発生産性はS÷（3.0×S^1.12）＝（1÷3.0）×S^−0.12です。規模が増すと生産性は下がり、同じ規模の増分に対する低下幅は次第に小さくなるので、グラフはエです。ウは右に行くほど下り方が急になります。 IPA原本のエは、規模が増えるほど生産性が下がり、傾きが緩やかになるグラフです。",
+    "choiceExplanations": {
+      "ア": "規模が増えるほど生産性が上がるグラフです。式では工数の指数1.12が1より大きく、規模を工数で割ると指数は－0.12になります。",
+      "イ": "規模が大きいほど生産性が急に上がるグラフです。工数は規模以上の割合で増えるので、工数当たりの開発規模は下がります。",
+      "ウ": "規模が大きいほど生産性が急に下がるグラフです。式の指数－0.12では、生産性は減少しながら傾きが緩やかになります。",
+      "エ": "規模をSとすると生産性はS÷（3.0×S^1.12）＝（1÷3.0）×S^−0.12となり、Sが大きいほど低下しながら傾きが緩やかになります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -263,7 +285,14 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
       "エ": "1 / ((1/X + 1/Y + 1/Z) / 3)"
     },
     "answer": "エ",
-    "explanation": "工程別の生産性X、Y、Zステップ/人月が与えられた場合、全体の生産性を求めるには、各工程における1ステップあたりの所要工数（1/X, 1/Y, 1/Z 人月/ステップ）の平均を求め、その逆数を取ります。これは、工程の平均生産性が調和平均で計算されることに相当します。",
+    "explanation": "同じ規模Sステップを設計・製造・試験の三工程で処理すると、総工数はS/X＋S/Y＋S/Z人月です。成果物はSステップなので、Sを総工数で割ると1÷（1/X＋1/Y＋1/Z）ステップ/人月になります。IPA原本ではウが1/X＋1",
+    "choiceExplanations": {
+      "ア": "X、Y、Zを足すと、三つの工程が同じ1人月で並行して成果を生むかのような値になります。全工程でかかる工数を先に合計します。",
+      "イ": "算術平均は工程ごとの工数が同じ場合の平均です。同じ開発規模を各工程で扱う場合は、工程ごとに必要な工数が生産性によって異なります。",
+      "ウ": "原本のウは1/X＋1/Y＋1/Zです。これは1ステップ当たりの総工数であり、生産性にするにはこの値の逆数を取ります。",
+      "エ": "原本のエは1÷（1/X＋1/Y＋1/Z）です。1ステップを三つの工程で処理する工数を合計し、1ステップをその工数で割ります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +317,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "各案の期待金額価値を計算します。新規システムの場合、期待収入は180億円×0.7 + 50億円×0.3 = 141億円、投資額は100億円なので期待金額価値は41億円。既存システム改修の場合、期待収入は120億円×0.7 + 40億円×0.3 = 96億円、投資額は50億円なので期待金額価値は46億円となります。よって、期待金額価値が高いのは既存システムの改修案で46億円です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +342,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "品質評価指標は「指摘件数/kステップ」で計算します。基準値5.0件/kステップの0.9倍～1.1倍の範囲（4.5～5.5件/kステップ）が問題なしとされます。機能Aは4.33件/kステップ、機能Cは4.00件/kステップとなり、いずれも範囲を下回るため品質に問題があると判定されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +367,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS X 25010:2013における信頼性の品質副特性の一つである回復性（Recoverability）は、中断や故障が発生した際に、影響を受けたデータを回復し、システムを希望する状態に復元する能力を指します。選択肢ウがこの説明に最も合致しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +392,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "「アジャイルソフトウェア開発宣言」では、四つの価値原則を提示しており、その一つに「包括的なドキュメントよりも動くソフトウェア」があります。これは、ドキュメントの作成も重要としつつも、実際に機能するソフトウェアを提供することに、より大きな価値を置くという考え方です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +417,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "XP (Extreme Programming) は、アジャイル開発手法の一つで、特定のプラクティス（実践手法）を推奨しています。ペアプログラミングは、二人のプログラマが協力して一つのコードを同時に開発する手法であり、XPの主要なプラクティスの一つとして知られています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +442,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ユースケース駆動開発は、システムが提供する機能（ユースケース）を中心に開発を進めるアプローチです。この開発手法では、ひとまとまりの要件（ユースケース）を単位として、設計からテストまでを一貫して実施するため、要件ごとの開発状況を容易に把握できるという利点があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +467,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "各システム化案の投資額と利益増加額を算出し、投資利益率を計算します。案A: 投資額50、利益75、利益率1.5。案B: 投資額50、利益50、利益率1.0。案C: 投資額40、利益35、利益率0.875。案D: 投資額40、利益70、利益率1.75。最も投資利益率が高いのは案Dです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +492,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ウォームスタンバイは、バックアップシステムが常に稼働しているか、すぐに起動できる状態で待機し、データも定期的に同期されている状態を指します。緊急時にはバックアップシステムを起動し、必要に応じてデータを最新状態に同期する処理を行った後にサービスを復旧します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +517,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "A社とB社は定額契約を結んでおり、開発スコープは明確で変更もないため、B社の人的リソース不足による遅延と追加費用はB社の負担となります。B社とC社は実費償還契約ですが、C社の設備に問題はなく、遅延はB社の責任であるため、B社がその費用を負担することになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +542,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "RoHS指令 (Restriction of Hazardous Substances Directive) は、欧州連合が制定した電気・電子機器における特定有害物質の使用制限に関する指令です。鉛や水銀などの特定の有害物質が、電気・電子機器に使用されることを制限しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +567,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SDGs (Sustainable Development Goals) は、2015年の国連サミットで採択された国際目標です。2030年を期限とし、貧困、飢餓、教育、気候変動など、持続可能な世界を目指す17の目標と169のターゲットで構成されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +592,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CRL（証明書失効リスト）は、有効期限内であるにもかかわらず、秘密鍵の漏洩などにより失効したデジタル証明書のシリアル番号と失効日時を記載したリストです。したがって、有効なデジタル証明書が失効した場合に、その情報を参照できるようにするために利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +617,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リバースプロキシを使ったシングルサインオンでは、リバースプロキシが利用者からのリクエストを一元的に受け取り、認証処理を行います。この認証処理において、パスワード認証だけでなく、よりセキュリティの高いデジタル証明書（クライアント証明書）による認証を導入することも可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +642,7 @@ export const PM_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "サイバーセキュリティ演習において、レッドチームは模擬攻撃者の役割を担います。彼らは現実の脅威シナリオに基づき、対象組織のシステムやネットワークに対して実際に攻撃を仕掛け、防御側の能力を評価します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_pm_am2_qs.pdf",
     "license": "IPA-public"

@@ -1,0 +1,234 @@
+{
+  "lane": "pc-3",
+  "date": "2026-11-18",
+  "branch": "cx/kako-pa3-20261118",
+  "allocation": "zero-based index % 14 == 2（pa-3・pb-3と同じ）",
+  "previousProgressPath": "research/replenish/pb-3.json",
+  "mergedBranchCount": 37,
+  "newQualificationCount": 1,
+  "addedQuestionCount": 100,
+  "choiceExplanationCount": 300,
+  "entries": [
+    {
+      "index": 72,
+      "order": 73,
+      "candidateId": "javada-112b79b9a18a",
+      "name": "かわらぶき(かわらぶき作業)1級（学科）",
+      "examCode": "kawarabuki1",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "ブランチに収録済み（未公開）",
+      "addedQuestionCount": 100,
+      "choiceExplanationCount": 300,
+      "officialFigureCount": 7,
+      "questionPaths": [
+        "data/questions/kawarabuki1/2024-late.json",
+        "data/questions/kawarabuki1/2025-late.json"
+      ],
+      "sourcePaths": [
+        "data/questions/kawarabuki1/2024-sources.json",
+        "data/questions/kawarabuki1/2025-sources.json"
+      ],
+      "officialIndexUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C6%E5%B9%B4%E5%BA%A6&v2=%E5%BE%8C%E6%9C%9F&v3=B43&v4=%E3%81%8B%E3%82%8F%E3%82%89%E3%81%B6%E3%81%8D%EF%BC%88%E3%81%8B%E3%82%8F%E3%82%89%E3%81%B6%E3%81%8D%E4%BD%9C%E6%A5%AD%EF%BC%89",
+      "notes": "両年度ともA群真偽法25問・B群多肢択一法25問。公式問題・公式正答を保持。画像転記とWindows日本語OCRを照合し、差分を原本拡大画像で確認。公式正答は画像とpdfplumber表抽出で100件一致。",
+      "duplicateChecks": {
+        "production": "トップHTTP200にかわらぶきの資格名・資格コードなし。tools/pc-3/production-check.jsonに記録。",
+        "branches": "指定37ブランチをgit mergeし全てAlready up to date。全ローカル履歴に同資格の収録・着手なし。前回pb-3の原本取得を引き継いだ。",
+        "ledger": "実行フォルダと本ブランチのledgerに同候補の着手・収録記録なし。"
+      }
+    }
+  ],
+  "remainingEntries": [
+    {
+      "index": 86,
+      "order": 87,
+      "candidateId": "javada-b442b8272d8d",
+      "name": "コンクリート圧送施工(コンクリート圧送工事作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "公式原本4点取得済み・本文転記未着手",
+      "addedQuestionCount": 0,
+      "notes": "両年度とも2級コンクリート圧送施工・A群25問とB群25問。2025年度問題9ページ、2024年度8ページはいずれも画像PDFで文字層なし。表紙・正解表の画像確認まで完了。",
+      "sourceEvidencePath": "C:/Users/kanet/20260522/codex-run-20261110/tools/pc-3/next-candidate-sources.json",
+      "duplicateChecks": {
+        "production": "トップHTTP200。圧送・concrete-assouの掲載なし。",
+        "branches": "全指定ブランチを取込済み。全ローカル履歴のコミット名と現在の登録にコンクリート圧送の収録・着手なし。",
+        "ledger": "作業ブランチと実行フォルダの共有台帳に同候補の記録なし。"
+      }
+    },
+    {
+      "index": 100,
+      "order": 101,
+      "candidateId": "bridal-1",
+      "name": "ブライダルコーディネート技能検定1級（学科）",
+      "targetYears": [
+        2025
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 114,
+      "order": 115,
+      "candidateId": "javada-dac00be35e88",
+      "name": "寝具製作(寝具製作作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 128,
+      "order": 129,
+      "candidateId": "kitsuke-2",
+      "name": "着付け技能検定2級（学科）",
+      "targetYears": [
+        2026,
+        2025
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 142,
+      "order": 143,
+      "candidateId": "javada-04481ed6bab1",
+      "name": "金型製作(プレス金型製作作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 156,
+      "order": 157,
+      "candidateId": "javada-aa43a2dff1e2",
+      "name": "鍛造(プレス型鍛造作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 170,
+      "order": 171,
+      "candidateId": "javada-2febd507e380",
+      "name": "仕上げ(治工具仕上げ作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 184,
+      "order": 185,
+      "candidateId": "javada-1cb6fd8cd2b3",
+      "name": "塗装(木工塗装作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 198,
+      "order": 199,
+      "candidateId": "javada-ae3a7a92dfa6",
+      "name": "工場板金(打出し板金作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 212,
+      "order": 213,
+      "candidateId": "javada-3870385b7d36",
+      "name": "機械加工(マシニングセンタ作業)3級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 226,
+      "order": 227,
+      "candidateId": "javada-1e061f9541f8",
+      "name": "機械加工(数値制御旋盤作業)3級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 240,
+      "order": 241,
+      "candidateId": "javada-a9c0a8523b00",
+      "name": "菓子製造(和菓子製造作業)1級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 254,
+      "order": 255,
+      "candidateId": "javada-a045da7bd719",
+      "name": "鉄道車両製造・整備(鉄道車両現図作業)1級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 268,
+      "order": 269,
+      "candidateId": "javada-4d166297349c",
+      "name": "防水施工(シーリング防水工事作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    },
+    {
+      "index": 282,
+      "order": 283,
+      "candidateId": "javada-f10d3ecc2ab3",
+      "name": "電気機器組立て(配電盤・制御盤組立て作業)2級（学科）",
+      "targetYears": [
+        2025,
+        2024
+      ],
+      "status": "今回未着手",
+      "addedQuestionCount": 0
+    }
+  ],
+  "nextCandidateIndex": 86,
+  "nextCandidateId": "javada-b442b8272d8d",
+  "nextCandidateEvidence": "C:/Users/kanet/20260522/codex-run-20261110/tools/pc-3/next-candidate-sources.json"
+}

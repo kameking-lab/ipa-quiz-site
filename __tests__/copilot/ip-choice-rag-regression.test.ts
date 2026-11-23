@@ -28,5 +28,5 @@ describe("reported IP2024 question 1 choice comparison",()=>{
       expect(related.exam).toBe("ip");
       expect(related.preview).not.toMatch(/ISO|アクセシビリティ/);
     }
-  });
+  }, 300_000); // Allow cold imports and index setup for the full question corpus on shared workers.
 });

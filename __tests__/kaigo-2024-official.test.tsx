@@ -33,12 +33,12 @@ const data = JSON.parse(readFileSync(path.join(root, "data/questions/kaigo/2024-
 const choices = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("第37回介護福祉士国家試験の公式照合", () => {
-  it("第37回と第38回を各125問、計2回分収録する", () => {
-    expect(EXAM_CONFIGS.kaigo.yearRange).toEqual({ start: 2024, end: 2025 });
+  it("第37回と第38回を各125問収録し、第36回を加えて計3回分とする", () => {
+    expect(EXAM_CONFIGS.kaigo.yearRange).toEqual({ start: 2023, end: 2025 });
     expect(KAIGO_2024_QUESTIONS.map((q) => q.qNumber)).toEqual(Array.from({ length: 125 }, (_, i) => i + 1));
     expect(KAIGO_2025_QUESTIONS).toHaveLength(125);
-    expect(KAIGO_QUESTIONS).toHaveLength(250);
-    expect(new Set(KAIGO_QUESTIONS.map((q) => q.id)).size).toBe(250);
+    expect(KAIGO_QUESTIONS).toHaveLength(375);
+    expect(new Set(KAIGO_QUESTIONS.map((q) => q.id)).size).toBe(375);
   });
 
   it("公式合格基準・正答一覧の125問と照合し、全肢解説と独立性を保つ", () => {

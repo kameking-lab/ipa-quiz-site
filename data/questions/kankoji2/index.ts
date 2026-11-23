@@ -1,6 +1,7 @@
 import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
 import source2025 from "./2025-late.json";
 import source2026 from "./2026-early.json";
+import source2026Late from "./2026-late.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -18,6 +19,8 @@ type Kankoji2SourceItem = {
   explanation: string;
   choiceExplanations: string[];
   imageUrl?: string;
+  imageAltText?: string;
+  isCalculation?: boolean;
   officialReferenceUrls?: string[];
 };
 
@@ -27,6 +30,7 @@ type Kankoji2Source = {
   edition: string;
   questionUrl: string;
   answerUrl: string;
+  lastUpdated?: string;
   questions: Kankoji2SourceItem[];
 };
 
@@ -67,17 +71,20 @@ function toQuestions(source: Kankoji2Source): Question[] {
       explanationCoverage: "full",
       hasImage: Boolean(item.imageUrl),
       imageUrls: item.imageUrl ? [item.imageUrl] : undefined,
+      ...(item.imageAltText ? { imageAltTexts: [item.imageAltText] } : {}),
+      ...(item.isCalculation ? { isCalculation: true } : {}),
       sourcePdfUrl: source.questionUrl,
       sourceAnswerUrl: source.answerUrl,
       sourceAttribution: `出典：一般財団法人全国建設研修センター ${source.edition} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
       officialReferenceUrls: item.officialReferenceUrls ?? [],
       license: "JCTC-authorized-reuse",
-      lastUpdated: "2026-09-26",
+      lastUpdated: source.lastUpdated ?? "2026-09-26",
     };
   });
 }
 
-/** 令和8年度前期・令和7年度後期の第一次検定とも全52問を公開。 */
+/** 令和8年度後期・前期、令和7年度後期の第一次検定を各全52問収録。 */
+export const KANKOJI2_2026_LATE_QUESTIONS = toQuestions(source2026Late as Kankoji2Source);
 export const KANKOJI2_2026_QUESTIONS = toQuestions(source2026 as Kankoji2Source);
 export const KANKOJI2_2025_QUESTIONS = toQuestions(source2025 as Kankoji2Source);
-export const KANKOJI2_QUESTIONS: Question[] = [...KANKOJI2_2026_QUESTIONS, ...KANKOJI2_2025_QUESTIONS];
+export const KANKOJI2_QUESTIONS: Question[] = [...KANKOJI2_2026_LATE_QUESTIONS, ...KANKOJI2_2026_QUESTIONS, ...KANKOJI2_2025_QUESTIONS];

@@ -1,3 +1,4 @@
+import { trackDailyFunnel } from "@/lib/analytics/daily-funnel-client";
 import type { Question } from "@/lib/questions/types";
 import type { PracticeAccess } from "./practice-contract";
 import { nativeClient, NATIVE_HEADER } from "@/mobile/shared/contracts";
@@ -65,6 +66,8 @@ async function performRequest(id: string, shuffle: boolean, signal?: AbortSignal
     if (signal?.aborted) throw aborted();
   }
   const { response, payload, access } = result;
+  if ((access?.kind === "guest" || access?.kind === "trial") && access.remaining === 0 &&
+      (response.ok || payload.error === "daily_limit")) void trackDailyFunnel("free_limit_reached");
   if (!response.ok) {
     throw new PracticeRequestError(typeof payload.error === "string" ? payload.error : "billing_unavailable", access);
   }

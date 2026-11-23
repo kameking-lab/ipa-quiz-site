@@ -1,0 +1,108 @@
+{
+  "lane": "qj-12",
+  "branch": "cx/kako-5y12-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-qf12-ledger.json",
+  "entries": [
+    {
+      "jobId": "PLAN5-278",
+      "index": 277,
+      "exam": "gyosei",
+      "officialYear": 2021,
+      "session": "gakka",
+      "status": "completed",
+      "officialPublicQuestionCount": 55,
+      "addedNewQuestions": 55,
+      "addedMultipleChoiceQuestions": 49,
+      "addedClozeOriginals": 3,
+      "addedDescriptiveOriginals": 3,
+      "notInPublicQuestionPdf": [1, 7, 58, 59, 60],
+      "manifest": "data/questions/gyosei/2021-sources.json"
+    },
+    {
+      "jobId": "PLAN5-292",
+      "index": 291,
+      "exam": "denken3",
+      "officialYear": 2022,
+      "season": "second",
+      "session": "denryoku",
+      "status": "completed",
+      "officialQuestionCount": 17,
+      "officialAnswerFieldCount": 20,
+      "addedNewQuestions": 17,
+      "choiceExplanationCount": 100,
+      "sourcePageCount": 17,
+      "manifest": "data/questions/denken3/2022-lower-power-sources.json"
+    },
+    {
+      "jobId": "PLAN5-306",
+      "index": 305,
+      "exam": "denko1",
+      "officialYear": 2025,
+      "season": "first",
+      "session": "gakka",
+      "status": "official-sources-verified",
+      "officialQuestionCount": 50,
+      "planExtractedCount": 3,
+      "addedNewQuestions": 0,
+      "officialPdfUrl": "https://www.shiken.or.jp/construction/upload/20250401_co_first_q01.pdf",
+      "officialAnswerUrl": "https://www.shiken.or.jp/construction/upload/20250401_co_first_a01.pdf"
+    },
+    {
+      "jobId": "PLAN5-320",
+      "index": 319,
+      "exam": "kenchikushi1",
+      "officialYear": 2022,
+      "session": "gakka-1_2",
+      "status": "official-sources-verified",
+      "officialQuestionCount": 40,
+      "addedNewQuestions": 0,
+      "officialPdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gakka1_2.pdf",
+      "officialAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gokakukijun.pdf"
+    },
+    {
+      "jobId": "PLAN5-362",
+      "index": 361,
+      "exam": "denken2",
+      "officialYear": 2021,
+      "session": "kikai",
+      "status": "skipped-helper-completed",
+      "existingBranch": "cx/kako-5yh12-20261118",
+      "existingCommit": "f8002c53b",
+      "officialQuestionCount": 8
+    },
+    {
+      "jobId": "PLAN5-376",
+      "index": 375,
+      "exam": "denken1",
+      "officialYear": 2022,
+      "session": "houki",
+      "status": "skipped-existing-branch",
+      "existingBranch": "cx/kako-5yh3-20261118",
+      "existingCommit": "be5af41ba",
+      "officialQuestionCount": 6
+    },
+    {
+      "jobId": "PLAN5-390",
+      "index": 389,
+      "exam": "mokuzo-kenchikushi",
+      "officialYear": 2021,
+      "session": "gakka-3_4",
+      "status": "skipped-helper-completed",
+      "existingBranch": "cx/kako-5yh12-20261118",
+      "existingCommit": "ef05d415e",
+      "officialQuestionCount": 50
+    },
+    {
+      "jobId": "PLAN5-404",
+      "index": 403,
+      "exam": "denki2",
+      "officialYear": 2022,
+      "session": "gakka",
+      "status": "skipped-helper-completed",
+      "existingBranch": "cx/kako-5yh12-20261118",
+      "existingCommit": "86a53fd88",
+      "officialQuestionCount": 64
+    }
+  ]
+}

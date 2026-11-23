@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "メモリマップドI/Oへのアクセスは、コンパイラの最適化によって予期せぬ動作を引き起こす可能性がある。`volatile`キーワードは、変数へのアクセスが最適化されないことをコンパイラに指示し、I/Oレジスタへの確実なアクセスを保証する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和2年度秋期 午前II 問2）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "外部割込みは、プロセッサ外部のデバイスからの信号によって発生する割込みである。DMAコントローラがデータ転送を完了した際のプロセッサへの通知は、外部から処理の完了を知らせる典型的な外部割込みの要因となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "スヌープキャッシュは、マルチコアシステムで各コアが持つキャッシュ間でデータの一貫性（コヒーレンシ）を保つための手法である。共有バス上のデータ転送を各キャッシュコントローラが監視（スヌープ）し、自身が持つキャッシュブロックの状態を更新することでコヒーレンシを維持する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "実効メモリアクセス時間は、(キャッシュアクセス時間 × ヒット率) + (主記憶アクセス時間 × ミス率) で計算される。キャッシュアクセス時間が主記憶の1/30でヒット率95%の場合、(1/30 × 0.95) + (1 × 0.05) = 0.0316 + 0.05 = 0.0816 となり、約0.08倍となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "可用性の中の継続性は、システムがサービスを中断せずに提供し続ける能力を指す。システムの稼働時間に基づく稼働率や、障害発生時の目標復旧時間は、この継続性の直接的な指標であり、要求項目として適切である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "リアルタイムOSにおいて、カーネルは通常、システムコールや割込み処理を通じてアプリケーションタスクから呼び出される。このとき、カーネルは呼び出し元のアプリケーションタスクのコンテキストで実行され、処理完了後に元のタスクにスムーズに戻ることができる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -183,7 +190,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     "category": "ハードウェア設計",
     "topicTags": [],
     "difficulty": 3,
-    "question": "ページング方式の仮想記憶において,あるプロセスが仮想アドレス空間全体に対応したページテーブルをもつ場合,ページテーブルに必要な領域の大きさを 2 バイ トで表すとすると、xを表す式はどれか。ここで、仮想アドレス空間の大きさは24バイト,ページサイズは2バイト,ページテーブルの各エントリの大きさは25バイ トとし、その他の情報については考慮しないものとする。",
+    "question": "ページング方式の仮想記憶において、あるプロセスが仮想アドレス空間全体に対応したページテーブルをもつ場合、ページテーブルに必要な領域の大きさを2^xバイトで表すとすると、xを表す式はどれか。ここで、仮想アドレス空間の大きさは2^Lバイト、ページサイズは2^Nバイト、ページテーブルの各エントリの大きさは2^Eバイトとし、その他の情報については考慮しないものとする。",
     "choices": {
       "ア": "L+N+E",
       "イ": "L+N-E",
@@ -191,7 +198,14 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
       "エ": "L-N-E"
     },
     "answer": "ウ",
-    "explanation": "ページテーブルに必要な領域の大きさは、通常「仮想アドレス空間の大きさ ÷ ページサイズ × 1エントリの大きさ」で求められる。しかし、選択肢ウのL-N+Eという式は一般的なページテーブルサイズの計算式とは異なるため、L, N, Eが何らかの特殊な意味を持つ変数であるか、問題文の前提が不足していると考えられる。",
+    "explanation": "仮想アドレス空間全体をページで区切ると、ページ数は2^L÷2^N＝2^(L−N)です。ページごとに2^Eバイトのエントリが1件必要なので、ページテーブルは2^(L−N)×2^E＝2^(L−N＋E)バイトです。したがって、指数xはL−N＋Eとなります。",
+    "choiceExplanations": {
+      "ア": "誤りです。ページの個数を求めるときは、仮想アドレス空間の大きさをページサイズで割ります。したがって、指数Nは足さずに引きます。",
+      "イ": "誤りです。ページサイズで割り、各ページのエントリサイズは掛けます。この式では逆にNを足してEを引いてしまっているので、ページテーブルの容量になりません。",
+      "ウ": "正しいです。ページ数は2^L÷2^N＝2^(L−N)です。ページごとに2^Eバイトのエントリが1件必要なので、全体は2^(L−N＋E)バイトです。",
+      "エ": "誤りです。L−Nはページ個数の指数ですが、エントリが大きいほどページテーブルも大きくなります。エントリサイズの指数Eは足します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和2年度秋期 午前II 問9）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "EnOceanは、物理的な力や光、温度差などの環境エネルギーを電気エネルギーに変換（エナジーハーベスティング）して動作する無線通信技術である。これにより、電池や配線が不要なセンサーやスイッチを実現し、微弱な電力で機能する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和2年度秋期 午前II 問11）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和2年度秋期 午前II 問12）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "LiDAR (Light Detection and Ranging) は、レーザ光をパルス状に照射し、その反射光が戻るまでの時間を測定することで対象物までの距離を計測する。これにより、周囲の環境の3D点群データを高精度に取得し、自動運転における障害物検知やマッピングに利用される。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "サブネットマスク255.255.255.0は、ホスト部が8ビットであることを示す。ホストに割り当て可能なアドレス数は、ホスト部のビット数をnとしたときに`2^n - 2`で計算されるため、`2^8 - 2 = 256 - 2 = 254`となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "サイドチャネル攻撃は、暗号処理中に発生する物理量（消費電力、処理時間、電磁波など）のわずかな変化を分析することで、デバイス内部の秘密情報（暗号鍵など）を推測する攻撃手法である。対象の物理デバイスから得られる物理量を用いる点が特徴である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "公開鍵暗号方式では、各ユーザが公開鍵と秘密鍵のペアを一つずつ持つ。n人のユーザが相互に通信する場合でも、各ユーザが必要とする鍵は自身のペアのみであり、合計で`n × 2`個の異なる鍵が必要となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "楕円曲線暗号は、楕円曲線上の離散対数問題の困難性を利用した公開鍵暗号方式である。高いセキュリティを維持しつつ短い鍵長で済む特徴があり、TLSなど様々なセキュリティプロトコルやディジタル署名に利用されている。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "シーケンス図は、UMLにおける振る舞い図の一つで、オブジェクト間の相互作用を時間軸に沿って記述する。メッセージの送受信順序や各オブジェクトのライフラインを示すことで、処理の流れやタイミングを明確に表現する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JTAGは、集積回路のテストやデバッグに用いられる国際標準規格である。JTAGインターフェースを通じて、外部のデバッガからマイコン内部のレジスタやメモリへのアクセス、プログラムの実行制御など、デバッグ支援機能を操作できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ハードウェアとソフトウェアのコデザイン（協調設計）とは、組込みシステム開発において、ハードウェアとソフトウェアの設計・検証を初期段階から並行して進める手法である。シミュレーションなどを活用し、両者の最適な分担とインターフェースを早期に検討することで、開発効率と品質向上を図る。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "モジュールの結合度は、モジュール間の依存関係の強さを示し、低いほどモジュールは独立している。単一のデータ項目を引数として受け渡す「データ結合」は、最も結合度が低いとされており、モジュール間の独立性が高く保たれる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "探索的テストは、テスト設計と実行を同時に行い、テスターがシステムの学習、テストケースの設計、実行、結果分析、そしてさらなるテスト設計を継続的に繰り返す技法である。経験や推測に基づき、重要と思われる領域に焦点を当ててテストを深掘りしていく。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ドメインエンジニアリングは、特定の応用分野（ドメイン）における業務知識、再利用可能なソフトウェア部品、開発ツールなどを体系的に整備し、それらを活用してソフトウェア開発の効率と品質を向上させる手法である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AR (Augmented Reality) グラスは、現実世界にコンピュータが生成したデジタル情報を重ね合わせて表示し、現実の風景を「拡張」して見せる技術である。これにより、ユーザーは現実の環境を見ながら、そこに付加された情報を同時に認識できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const ES_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "LoRaWANは、低消費電力広域無線(LPWA)の一種であり、ISMバンド（日本国内では920MHz帯）の特定小電力無線として運用されるため、個別の無線局免許が不要です。また、その技術仕様はLoRa Allianceによって公開されており、オープンなエコシステムで利用が可能です。これに対し、LTE Cat.M1やNB-IoTは携帯電話網を利用するため、無線局の免許が不要という条件に合致しません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_es_am2_qs.pdf",
     "license": "IPA-public"

@@ -8,13 +8,10 @@ import {
   BarChart3,
   ExternalLink,
   Globe,
-  Heart,
   LineChart,
   Megaphone,
-  MessageSquare,
   Search,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -39,7 +36,6 @@ import {
   ImpressionsTrendChart,
   ReferrerBreakdownChart,
 } from "./StatsCharts";
-import { StatsShareButtons } from "./ShareButtons";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 
 const STATS_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -144,7 +140,6 @@ export default async function StatsPage() {
       <header className="mb-8">
         <div className="mb-3 flex flex-wrap items-center gap-1.5">
           <Badge variant="primary">
-            <Sparkles className="mr-1 h-3 w-3" />
             公開統計
           </Badge>
           <Badge variant="success">教育貢献プロジェクト</Badge>
@@ -172,7 +167,7 @@ export default async function StatsPage() {
               </>
             ) : (
               <div className="text-2xl font-semibold text-muted-foreground sm:text-3xl">
-                Search Console 連携準備中
+                検索データを取得できませんでした
               </div>
             )}
           </div>
@@ -184,13 +179,10 @@ export default async function StatsPage() {
               </>
             ) : (
               <>
-                Google Search Console との連携が完了次第、月間表示回数を本ページに自動表示します。
+                検索データは現在表示できません。
               </>
             )}
           </p>
-          <div className="mt-5">
-            <StatsShareButtons impressions={impressions} />
-          </div>
         </div>
       </header>
 
@@ -200,7 +192,7 @@ export default async function StatsPage() {
           <MetricCard label="ホーム掲載の公開問題" value={publishedTotal.toLocaleString("ja-JP")} sub="全公開資格・区分の合計" />
           <MetricCard label="ホーム掲載の資格・区分" value={publishedQualifications.toLocaleString("ja-JP")} sub="ホームと同じ対象範囲" />
         </div>
-        <p className="mb-3 text-xs leading-relaxed text-muted-foreground">以下は共通問題レジストリの登録件数です。解説準備中を含み、安全系などの別レジストリや専用の記述教材は含みません。原問・回答欄の単位は資格で異なるため、ホームの公開問題合計とは一致しません。人数や検索インデックス数を表すものではありません。</p>
+        <p className="mb-3 text-xs leading-relaxed text-muted-foreground">以下は共通問題レジストリの登録件数です。解説準備中を含み、安全系などの別レジストリや専用の記述教材は含みません。原問・回答欄の単位は資格で異なるため、ホームの公開問題合計とは一致しません。</p>
         <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <MetricCard label="共通レジストリ登録件数" value={counts.total.toLocaleString("ja-JP")} sub="問題 + 午後 + 論文" />
           <MetricCard label="共通の問題データ" value={counts.morning.toLocaleString("ja-JP")} sub="四択・数値・並べ替え・記述等" />
@@ -336,44 +328,6 @@ export default async function StatsPage() {
         </Section>
       ) : null}
 
-      {/* Section 6: Support / Engagement */}
-      <Section
-        icon={<Heart className="h-3.5 w-3.5" />}
-        title="応援してください"
-        subtitle="個人ボランティア運営のため、シェアやフィードバックが何よりの支えになります"
-      >
-        <Card>
-          <CardContent className="grid gap-3 p-5 sm:grid-cols-2">
-            <SupportLink
-              icon={<MessageSquare className="h-4 w-4" />}
-              title="フィードバックを送る"
-              body="バグ報告・機能要望・誤答指摘などお気軽に。"
-              href="/contact"
-            />
-            <SupportLink
-              icon={<XLogo className="h-4 w-4" />}
-              title="@kakomon_ai_jp をフォロー"
-              body="新機能アップデートやキャンペーンを告知しています。"
-              href="https://x.com/intent/follow?screen_name=kakomon_ai_jp"
-              external
-            />
-            <SupportLink
-              icon={<XLogo className="h-4 w-4" />}
-              title="X でシェア"
-              body="#過去問AI #kakomon_ai のタグでシェアしていただけると嬉しいです。"
-              href="https://x.com/intent/tweet?text=%23%E9%81%8E%E5%8E%BB%E5%95%8FAI%20%23kakomon_ai%20%E7%84%A1%E6%96%99%E3%81%A7%20IPA%20%E9%81%8E%E5%8E%BB%E5%95%8F%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%B5%E3%82%A4%E3%83%88&url=https%3A%2F%2Fwww.kakomon-ai.jp%2F"
-              external
-            />
-            <SupportLink
-              icon={<ExternalLink className="h-4 w-4" />}
-              title="運営方針について"
-              body="月次の透明性レポートを /transparency で公開しています。"
-              href="/transparency"
-            />
-          </CardContent>
-        </Card>
-      </Section>
-
       {/* Section 7: Policy */}
       <Section
         icon={<ShieldCheck className="h-3.5 w-3.5" />}
@@ -448,57 +402,11 @@ function MetricCard({ label, value, sub }: { label: string; value: string; sub?:
   );
 }
 
-function SupportLink({
-  icon,
-  title,
-  body,
-  href,
-  external,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  body: string;
-  href: string;
-  external?: boolean;
-}) {
-  const className =
-    "block rounded-2xl border border-border bg-card p-4 transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md";
-  const content = (
-    <>
-      <div className="mb-2 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
-        {icon}
-      </div>
-      <div className="text-sm font-semibold">{title}</div>
-      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{body}</p>
-    </>
-  );
-  if (external) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-        {content}
-      </a>
-    );
-  }
-  return (
-    <Link href={href} className={className}>
-      {content}
-    </Link>
-  );
-}
-
 function PolicyRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1 sm:grid-cols-[140px_1fr]">
       <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{label}</div>
       <div className="text-sm">{value}</div>
     </div>
-  );
-}
-
-function XLogo({ className }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path d="M18.244 2H21.5l-7.5 8.566L23 22h-6.844l-5.355-6.998L4.7 22H1.443l8.02-9.156L1 2h7.02l4.842 6.402L18.244 2zm-1.2 18h1.86L7.06 4H5.1l11.944 16z" />
-    </svg>
   );
 }

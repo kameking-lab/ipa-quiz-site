@@ -4,7 +4,8 @@ import BlogArticlePage from "@/app/blog/[slug]/page";
 import { getBlogPractice } from "@/lib/blog/practice";
 
 afterEach(() => vi.unstubAllEnvs());
-const slug = "it-shikaku-rirekisho-kakikata";
+// A teaching article with a selected exercise; reference articles omit it.
+const slug = "db-sql-taisaku";
 
 it("keeps the inline blog practice on public web deployments", async () => {
   vi.stubEnv("WEB_STRICT_CONTENT_GATE", "false");

@@ -13,12 +13,14 @@ vi.mock("@/lib/ai/provider", async importOriginal => ({
 }));
 vi.mock("@/lib/ai/normal-use-server", () => ({ checkAiNormalUse: async () => ({ ok: true }) }));
 vi.mock("@/lib/monitoring/sentry", () => ({ captureException: vi.fn() }));
-vi.mock("@/lib/questions/load", () => ({
-  getQuestionById: () => ({
-    id: "ap-2023h-am-q1", exam: "ap", session: "am", year: 2023, season: "spring",
-    qNumber: 1, type: "multiple-choice", category: "テクノロジ", topicTags: [],
-    difficulty: 1, question: "問題文", choices: { ア: "選択肢" }, answer: "ア",
-    explanation: "解説", hasImage: false, sourcePdfUrl: "https://example.com/paper.pdf", license: "IPA-public",
+vi.mock("@/lib/copilot/source", () => ({
+  getCopilotSource: () => ({
+    getQuestion: () => ({
+      id: "ap-2023h-am-q1", exam: "ap", session: "am", year: 2023, season: "spring",
+      qNumber: 1, type: "multiple-choice", category: "テクノロジ", topicTags: [],
+      difficulty: 1, question: "問題文", choices: { ア: "選択肢" }, answer: "ア",
+      explanation: "解説", hasImage: false, sourcePdfUrl: "https://example.com/paper.pdf", license: "IPA-public",
+    }),
   }),
 }));
 vi.mock("@/lib/copilot/rag-pipeline", () => ({
@@ -52,6 +54,8 @@ beforeEach(() => {
   vi.stubEnv("KV_REST_API_URL", "https://kv.example.invalid");
   vi.stubEnv("KV_REST_API_TOKEN", "private-kv-token");
   vi.stubEnv("COPILOT_RAG_ENABLED", "false");
+  vi.stubEnv("AI_QUOTA_ROLLOUT", "false");
+  vi.stubEnv("WEB_STRICT_CONTENT_GATE", "false");
   vi.stubEnv("MOBILE_IAP_ENABLED", "false");
   streamChat.mockReset().mockImplementation(async function* (input: StreamChatParams) {
     yield "private-response-text";
@@ -94,7 +98,7 @@ function installKv(settle: () => Promise<Response>) {
 function serverTimingOf(call: unknown[] | undefined): { serverTiming?: string } {
   const meta = call?.[1] as { serverTiming?: unknown } | undefined;
   if (meta?.serverTiming === undefined) return {};
-  expect(meta.serverTiming).toMatch(/^pre;dur=\d+, rag;dur=\d+$/);
+  expect(meta.serverTiming).toMatch(/^pre;dur=\d+\.\d, source;dur=\d+\.\d, rag;dur=\d+\.\d, prompt;dur=\d+\.\d, app;dur=\d+\.\d$/);
   return { serverTiming: meta.serverTiming as string };
 }
 

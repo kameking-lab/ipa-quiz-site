@@ -1,0 +1,77 @@
+{
+    "lane":  "yb-10",
+    "jobs":  [
+                 {
+                     "jobId":  "PLAN5-416",
+                     "index":  415,
+                     "status":  "completed",
+                     "exam":  "fp1",
+                     "year":  2025,
+                     "season":  "september",
+                     "session":  "gakka-oyo",
+                     "examDate":  "2025-09-14",
+                     "lawReferenceDate":  "2025-04-01",
+                     "questionCount":  15,
+                     "answerFieldCount":  62,
+                     "sharedCaseCount":  5,
+                     "questionIds":  [
+                                         "fp1-2025-september-applied-q51",
+                                         "fp1-2025-september-applied-q52",
+                                         "fp1-2025-september-applied-q53",
+                                         "fp1-2025-september-applied-q54",
+                                         "fp1-2025-september-applied-q55",
+                                         "fp1-2025-september-applied-q56",
+                                         "fp1-2025-september-applied-q57",
+                                         "fp1-2025-september-applied-q58",
+                                         "fp1-2025-september-applied-q59",
+                                         "fp1-2025-september-applied-q60",
+                                         "fp1-2025-september-applied-q61",
+                                         "fp1-2025-september-applied-q62",
+                                         "fp1-2025-september-applied-q63",
+                                         "fp1-2025-september-applied-q64",
+                                         "fp1-2025-september-applied-q65"
+                                     ],
+                     "sourceIndexUrl":  "https://products.kinzai.or.jp/exam-fp/model-answers/",
+                     "questionUrl":  "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_oyo_202509.pdf",
+                     "answerUrl":  "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_202509.pdf",
+                     "questionPdfSha256":  "76bac73e4f1cb96119be077ce9c11043aa6054e1c4520261e8265fa31aea88d2",
+                     "answerPdfSha256":  "af664ffb214de515289355b5c21dd82c89ee59fa13a2a0ed03eee34c2385aee6",
+                     "dataFile":  "data/questions/fp1/applied-2025-september.json",
+                     "figures":  [
+                                     "public/questions/fp1/2025-september-case4.webp",
+                                     "public/questions/fp1/2025-september-case5.webp"
+                                 ],
+                     "remaining":  0
+                 },
+                 {
+                     "jobId":  "PLAN5-430",
+                     "index":  429,
+                     "status":  "awaiting-official-answer",
+                     "exam":  "hoikushi",
+                     "year":  2026,
+                     "season":  "late",
+                     "session":  "shakaiteki-yougo",
+                     "storedQuestionCount":  10,
+                     "dataFile":  "data/qualification-staging/hoikushi-2026-late/questions.json",
+                     "sourceIndexUrl":  "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+                     "officialAnswerScheduledAt":  "2026-11-30T10:00:00+09:00"
+                 },
+                 {
+                     "jobId":  "PLAN5-402",
+                     "index":  401,
+                     "status":  "source-verified",
+                     "exam":  "denki2",
+                     "year":  2023,
+                     "season":  "late",
+                     "session":  "gakka",
+                     "examDate":  "2023-11-12",
+                     "questionUrl":  "https://www.fcip-shiken.jp/pdf/r05_2dg_mondai.pdf",
+                     "answerUrl":  "https://www.fcip-shiken.jp/pdf/r05_2dg_mondai.pdf",
+                     "answerPdfPage":  26,
+                     "officialPdfSha256":  "01ee49db2cb26c7598fc65acc18af9ded38f72c071a226be786ded0beff9d73b",
+                     "publishedQuestionCount":  64,
+                     "planQuestionCount":  16,
+                     "remaining":  64
+                 }
+             ]
+}

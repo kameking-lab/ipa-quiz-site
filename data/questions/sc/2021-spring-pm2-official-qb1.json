@@ -1,0 +1,118 @@
+[
+  {
+    "id": "sc-2021h-pm2-q1",
+    "exam": "sc",
+    "session": "pm2",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "インシデント対応",
+    "topicTags": [
+      "CSIRT",
+      "脆弱性管理",
+      "アクセス制御"
+    ],
+    "difficulty": 5,
+    "question": "問1　インシデント対応体制の整備\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  (1) 外部から入手した利用者ID とパスワードの組みのリストを使ってログインを\n       試行する攻撃\n         (2) 他のサービスで利用したパスワードとは別のものを設定すること\n         (3) ・IP アドレスから分かる地理的位置について，過去のログインのものとの違い\n        を確認する。\n         ・Web ブラウザのCookie を利用し，過去にログインした端末かを判定する。\n         (4)  a タイムゾーン\n         (5)  b  9\n  設問２  マルウェアに感染したUSB メモリを介して管理用PC に侵入し，さらに店舗管\n       理サーバへ侵入する。\n 設問３  (1)  c オ\n         (2)  d イ\n                                          順不同\n              e カ\n              f ウ\n 設問４  (1) 5\n         (2) 脆弱性M を悪用しても一般利用者権限での操作であるが，“/etc/shadow”ファ\n       イルの閲覧には管理者権限が必要であるから\n         (3) 攻撃の接続元IP アドレスを“/etc/hosts.allow”ファイルに追加する。\n         (4) 24\n         (5) FW2 において，インターネットからのインバウンド通信はN 社とV 社からの\n       通信だけを許可する。\n  設問５  ・複数の脆弱性が同時に悪用される可能性の観点\n       ・対応を見送った脆弱性の影響の観点",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  (1) 外部から入手した利用者ID とパスワードの組みのリストを使ってログインを\n       試行する攻撃\n         (2) 他のサービスで利用したパスワードとは別のものを設定すること\n         (3) ・IP アドレスから分かる地理的位置について，過去のログインのものとの違い\n        を確認する。\n         ・Web ブラウザのCookie を利用し，過去にログインした端末かを判定する。\n         (4)  a タイムゾーン\n         (5)  b  9\n  設問２  マルウェアに感染したUSB メモリを介して管理用PC に侵入し，さらに店舗管\n       理サーバへ侵入する。\n 設問３  (1)  c オ\n         (2)  d イ\n                                          順不同\n              e カ\n              f ウ\n 設問４  (1) 5\n         (2) 脆弱性M を悪用しても一般利用者権限での操作であるが，“/etc/shadow”ファ\n       イルの閲覧には管理者権限が必要であるから\n         (3) 攻撃の接続元IP アドレスを“/etc/hosts.allow”ファイルに追加する。\n         (4) 24\n         (5) FW2 において，インターネットからのインバウンド通信はN 社とV 社からの\n       通信だけを許可する。\n  設問５  ・複数の脆弱性が同時に悪用される可能性の観点\n       ・対応を見送った脆弱性の影響の観点\n```",
+    "explanation": "設問1のリスト型攻撃は、外部から得た利用者IDとパスワードの組を試す攻撃である。他のサービスと異なるパスワードを設定する対策に加えて、接続元の地理的位置やCookieで過去のログインとの違いを調べる。ログを突き合わせる前にタイムゾーンを合わせる点にも注意する。\n\n店舗のサーバが直接インターネットに公開されていなくても、USBメモリと管理用PCを経由した侵入経路は残る。設問4では、脆弱性Mの悪用で得られる一般利用者権限と、/etc/shadowの閲覧に必要な管理者権限を区別する。/etc/hosts.allowへの接続元追加とFW2での接続元制限は、それぞれ制御する場所が異なる。個別の脆弱性だけを評価すると、複数の脆弱性の組合せや、対応を見送った脆弱性の影響を見落とすので、設問5ではこの二つの観点を加える。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-2.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-3.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-4.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-5.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-6.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-7.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-8.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-9.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-10.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-11.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-12.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-13.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本2ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本3ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本4ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本5ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本6ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本7ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本8ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本9ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本10ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本11ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本12ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問1 本文・図表・設問 原本13ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2021年度 春期 情報処理安全確保支援士試験 午後II」問1。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "sc-2021h-pm2-q2",
+    "exam": "sc",
+    "session": "pm2",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "クラウドセキュリティ",
+    "topicTags": [
+      "DHCP",
+      "TLSクライアント認証",
+      "端末管理"
+    ],
+    "difficulty": 5,
+    "question": "問2　クラウドサービス利用とセキュリティ統制\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  (1) オ\n         (2) 多くの個人所有機器をC 社内LAN に接続することによって，IP アドレスが枯\n       渇するという問題が引き起こされた。\n         (3) 稼働させたまま行う方法L2SW にミラーポートを設定し，そのポートにLAN\n                    モニタを接続してDHCP OFFER の数を確認する。\n        停止させて行う方法   DHCP によるIP アドレスの配布がないことを確認す\n                  る。\n  設問２  企画部の部員がアクセスできるチャットエリアで共有されている情報\n 設問３  (1)  a  C-PC\n              b  AP\n         (2)  c エ\n 設問４  (1) ・インターネットを使って情報収集する業務\n       ・事業部や企画部の顧客への提案や企画の立案\n         (2) 2\n         (3) 1\n         (4) 記号 ウ\n       方法  TLS クライアント認証による検証\n 設問５  (1) ・ISAE3402/SSAE16\n          ・ISMS 認証\n         (2)  d  4\n 設問６  (1) 秘密鍵を書き出しできないように設定する。\n         (2) 管理者が，P ソフトを，一般利用者権限では変更できないように設定する。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  (1) オ\n         (2) 多くの個人所有機器をC 社内LAN に接続することによって，IP アドレスが枯\n       渇するという問題が引き起こされた。\n         (3) 稼働させたまま行う方法L2SW にミラーポートを設定し，そのポートにLAN\n                    モニタを接続してDHCP OFFER の数を確認する。\n        停止させて行う方法   DHCP によるIP アドレスの配布がないことを確認す\n                  る。\n  設問２  企画部の部員がアクセスできるチャットエリアで共有されている情報\n 設問３  (1)  a  C-PC\n              b  AP\n         (2)  c エ\n 設問４  (1) ・インターネットを使って情報収集する業務\n       ・事業部や企画部の顧客への提案や企画の立案\n         (2) 2\n         (3) 1\n         (4) 記号 ウ\n       方法  TLS クライアント認証による検証\n 設問５  (1) ・ISAE3402/SSAE16\n          ・ISMS 認証\n         (2)  d  4\n 設問６  (1) 秘密鍵を書き出しできないように設定する。\n         (2) 管理者が，P ソフトを，一般利用者権限では変更できないように設定する。\n```",
+    "explanation": "個人所有機器の接続増加とIPアドレスの枯渇を結び付ける。DHCPの状況を調べる際は、稼働中の通信をミラーポートから観測する方法と、サーバを停止してアドレスの配布がないことを確かめる方法を区別する。チャットサービスでは、企画部の部員が実際にアクセスできるエリアの共有情報が保護対象になる。\n\nクラウドを安全に利用するための判断では、業務の利用目的と端末の確認方法を対応させる。TLSクライアント認証で端末を検証する構成では、秘密鍵を書き出せない設定にして、証明書・鍵を別端末へ持ち出される経路を抑える。さらに、端末側のPソフトを一般利用者権限では変更できないようにする。サービス提供者の統制を確認する資料と、利用者側の端末や設定を守る対策は役割が異なる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-14.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-15.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-16.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-17.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-18.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-19.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-20.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-21.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-22.webp",
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/question-23.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本14ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本15ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本16ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本17ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本18ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本19ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本20ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本21ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本22ページ",
+      "情報処理安全確保支援士 2021年春 午後II 問2 本文・図表・設問 原本23ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2021-spring-pm2/answer-q2-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sc_pm2_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2021年度 春期 情報処理安全確保支援士試験 午後II」問2。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  }
+]

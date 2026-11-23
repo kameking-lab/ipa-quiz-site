@@ -33,7 +33,8 @@ async function followBrowseJourney(page: Page, c: QualificationCase): Promise<vo
   await page.goto(`/${c.exam}`);
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-  await page.locator(`a[href='/${c.exam}/${c.yearSeason}']`).click();
+  // During hydration the year tab can briefly hold two copies of the same link; either navigates.
+  await page.locator(`a[href='/${c.exam}/${c.yearSeason}']`).first().click();
   await expect(page).toHaveURL(new RegExp(`/${c.exam}/${c.yearSeason}$`));
 
   await page.locator(`a[href*="question=${c.questionId}&"]`).click();
@@ -67,8 +68,7 @@ for (const c of cases) {
     const explanations = page.getByRole("region", { name: "選択肢ごとの解説" });
     await expect(explanations).toBeVisible();
     await expect(explanations.locator("dd")).toHaveCount(c.choiceCount);
-    const officialAnswer = page.getByRole("link", { name: "公式解答PDF", exact: true });
-    await expect(officialAnswer).toHaveAttribute("href", c.answerUrl);
+    await expect(page.getByRole("group", { name: "出典", exact: true }).locator(`a[href="${c.answerUrl}"]`)).toBeVisible();
 
     await page.goBack();
     await expect(page).toHaveURL(new RegExp(`/${c.exam}/${c.yearSeason}$`));
@@ -78,8 +78,9 @@ for (const c of cases) {
 
     const reader = await page.goto(c.readerPath);
     expect(reader?.status()).toBe(200);
-    await expect(page.getByRole("group", { name: "AI生成の解説に関する詳細" })).toBeVisible();
-    await expect(page.getByRole("link", { name: /^公式正答PDF/ }).first()).toHaveAttribute("href", c.answerUrl);
+    const source = page.getByRole("group", { name: "出典", exact: true });
+    await expect(source.locator(`a[href="${c.answerUrl}"]`)).toBeVisible();
+    await expect(source).toContainText("日本FP協会");
   });
 }
 
@@ -108,13 +109,15 @@ test("denko2 publishes five full sittings with wrong-choice explanations and ret
   await page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio").first().click();
   const explanations = page.getByRole("region", { name: "不正解の解説" });
   await expect(explanations).toBeVisible();
-  await expect(explanations.getByRole("region", { name: "選択肢ごとの解説" }).locator("dd")).toHaveCount(4);
+  await expect(explanations.getByRole("heading", { name: "あなたが選んだ「ア」が違う理由" })).toBeVisible();
+  await expect(explanations.getByRole("region", { name: "選択肢ごとの解説" }).locator("dd")).toHaveCount(3);
   await page.goBack();
   await expect(page).toHaveURL(/\/denko2\/2024-first$/);
   await expect(page.locator('a[href*="question=denko2-2024-first-gakka-q1&"]')).toBeVisible();
   await page.goBack();
   await expect(page).toHaveURL(/\/denko2$/);
-  await expect(page.getByRole("region", { name: "進捗", exact: true })).toContainText(/1\s*\/\s*250 問/);
+  await page.goto("/me");
+  await expect(page.getByRole("link", { name: /間違えた問題/ })).toHaveAttribute("href", "/quiz?mode=review&reviewKind=wrong&exam=denko2");
 });
 
 test("denko2 complete 2026 sitting publishes question 10 and all-choice explanations", async ({ page }) => {
@@ -136,7 +139,6 @@ test("denko2 complete 2026 sitting publishes question 10 and all-choice explanat
   const explanations = page.getByRole("region", { name: "解説", exact: true });
   await expect(explanations.getByRole("heading", { name: "各選択肢の解説" })).toBeVisible();
   await expect(explanations.locator("dd")).toHaveCount(4);
-  await expect(page.getByRole("link", { name: /^公式正答PDF/ }).first()).toHaveAttribute("href", "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf");
 });
 
 test("FP2 negative questions explain why a selected true statement is not the answer", async ({ page }) => {
@@ -144,12 +146,11 @@ test("FP2 negative questions explain why a selected true statement is not the an
   await page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio").first().click();
   await expect(page.getByText("適切な記述なので、本問の正解ではありません。", { exact: false })).toBeVisible();
   await expect(page.getByText("不適切な記述で、本問の正解です。妻は自身の健康保険", { exact: false })).toBeVisible();
-  const sources = page.getByRole("navigation", { name: "問題・正答と参照資料" });
-  await expect(sources.getByRole("link")).toHaveCount(3);
-  for (const link of await sources.getByRole("link").all()) {
-    await expect(link).toHaveAttribute("href", /^https:\/\/www\.mhlw\.go\.jp\//);
-  }
-  await expect(page.getByRole("link", { name: /^公式問題PDF/ }).first()).toHaveAttribute("href", "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf");
+  const sources = page.getByRole("group", { name: "出典", exact: true });
+  await expect(sources.getByRole("link", { name: "公式問題PDF", exact: true })).toHaveAttribute("href", "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf");
+  const references = FP2_2026_MAY_QUESTIONS.find((question) => question.qNumber === 2)?.officialReferenceUrls;
+  expect(references).toHaveLength(3);
+  expect(references?.every((url) => /^https:\/\/www\.mhlw\.go\.jp\//.test(url))).toBe(true);
 });
 
 test("FP2 uses the common quiz player with its law reference date and each-choice explanations", async ({ page }) => {

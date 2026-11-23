@@ -12,7 +12,7 @@ const listener = (event: Event) => states.push((event as CustomEvent<PresenceVie
 const response = (payload: unknown = measuredPresence(data, Date.now()), status = 200, retryAfter?: string) => ({
   ok: status === 200, status, headers: new Headers(retryAfter ? { "Retry-After": retryAfter } : {}), json: async () => payload,
 });
-const view = (exam: string | null = "fe", viewer = false) => <>{exam && <div data-study-presence-exam={exam} />}{viewer && <div data-study-presence-viewer />}<StudyPresence /></>;
+const view = (exam: string | null = null, viewer = true) => <>{exam && <div data-study-presence-exam={exam} />}{viewer && <div data-study-presence-viewer />}<StudyPresence /></>;
 const advance = (ms: number) => act(() => vi.advanceTimersByTimeAsync(ms));
 const activity = async () => { await act(async () => { window.dispatchEvent(new Event("pointerdown")); }); await advance(1); };
 async function activeFor(ms: number) {
@@ -41,22 +41,16 @@ it("emits validated measured metadata and leaves the old two-minute counter neut
     expect(old.mock.calls.every(([event]) => event.detail === null)).toBe(true);
   } finally { window.removeEventListener(PRESENCE_EVENT, old); }
 });
-it("only polls an explicit viewer or a visible problem, never unrelated global pages", async () => {
-  const mounted = render(view(null)); await advance(1); await activeFor(300_000); expect(fetchMock).not.toHaveBeenCalled();
+it("does not send presence or allocate an ID when someone opens and scrolls a problem", async () => {
+  const mounted = render(view("fe", false)); await advance(1); await activeFor(300_000); expect(fetchMock).not.toHaveBeenCalled();
+  mounted.rerender(view("ap", false)); await activity();
+  expect(fetchMock).not.toHaveBeenCalled();
+  expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)).toBeNull();
   mounted.rerender(view(null, true)); await advance(1);
-  expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: "GET", body: undefined });
+  expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: "GET" });
+  expect(fetchMock.mock.calls[0][1].body).toBeUndefined();
   expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)).toBeNull();
   await activeFor(PRESENCE_REFRESH_MS); expect(fetchMock).toHaveBeenCalledTimes(2);
-});
-it("sends the displayed qualification hourly and reuses the daily browser ID", async () => {
-  const mounted = render(view()); await advance(1);
-  const first = JSON.parse(fetchMock.mock.calls[0][1].body);
-  expect(Object.keys(first).sort()).toEqual(["exam", "idleMs", "visitorId"]); expect(first.exam).toBe("fe");
-  await activeFor(PRESENCE_REFRESH_MS - 2); expect(fetchMock).toHaveBeenCalledOnce();
-  mounted.rerender(view("ap")); await advance(1);
-  const second = JSON.parse(fetchMock.mock.calls[1][1].body);
-  expect(second.exam).toBe("ap"); expect(second.visitorId).toBe(first.visitorId);
-  mounted.rerender(view(null)); await activeFor(180_000); expect(fetchMock).toHaveBeenCalledTimes(2);
 });
 it("stops exactly at two minutes idle independently of the five-minute observation window", async () => {
   render(view()); await advance(120_000);
@@ -111,27 +105,6 @@ it("preserves legitimate measured zero", async () => {
   fetchMock.mockImplementation(async () => response(measuredPresence({ count: 0, exams: [] }, Date.now())));
   render(view(null, true)); await advance(1);
   expect(states.at(-1)).toMatchObject({ mode: "measured", snapshot: { count: 0, total: 0, exams: [] } });
-});
-it("retains daily ID rotation retry state until a genuine measurement acknowledges storage", async () => {
-  const old = "00000000-0000-4000-8000-000000000099";
-  localStorage.setItem(LS_KEYS.studyPresenceVisitor, "2000-01-01|" + old);
-  fetchMock.mockRejectedValueOnce(new Error("offline")); render(view()); await advance(1);
-  expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)?.split("|")[2]).toBe(old);
-  await activeFor(PRESENCE_REFRESH_MS);
-  expect(JSON.parse(fetchMock.mock.calls[1][1].body).previousVisitorId).toBe(old);
-  expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)?.split("|")).toHaveLength(2);
-});
-it("rechecks qualification after waiting for a browser lock", async () => {
-  let send: (() => Promise<unknown>) | undefined; let finish: ((value: unknown) => void) | undefined;
-  Object.defineProperty(navigator, "locks", { configurable: true, value: { request: (_key: string, _options: unknown, task: () => Promise<unknown>) => new Promise(resolve => { send = task; finish = resolve; }) } });
-  const mounted = render(view()); await advance(1); mounted.rerender(view("ap"));
-  await act(async () => { finish?.(await send?.()); });
-  expect(JSON.parse(fetchMock.mock.calls[0][1].body).exam).toBe("ap");
-});
-it("does not mint a second browser ID without cross-tab locks", async () => {
-  Object.defineProperty(navigator, "locks", { configurable: true, value: undefined });
-  render(view()); await advance(1);
-  expect(fetchMock.mock.calls[0][1].method).toBe("GET"); expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)).toBeNull();
 });
 it("aborts in-flight requests on hidden tabs and ignores late success", async () => {
   let finish: ((value: ReturnType<typeof response>) => void) | undefined;

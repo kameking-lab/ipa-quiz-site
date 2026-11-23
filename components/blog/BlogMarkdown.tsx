@@ -5,6 +5,8 @@ import type { Element, RootContent } from "hast";
 
 // Match only the existing site-authored article notice; quotations retain their style.
 const articleNotices = new Set([
+  "試験要項の最新情報は必ず IPA 公式ページ で確認してください。",
+  "免除の正式な条件・申請手続き・最新情報は必ず IPA 公式ページ で確認してください。",
   "本記事は 過去問AI が独自にまとめた学習ガイドです。試験要項の最新情報は必ず IPA 公式ページ で確認してください。",
   "本記事は 過去問AI が独自にまとめた学習ガイドです。免除の正式な条件・申請手続き・最新情報は必ず IPA 公式ページ で確認してください。",
 ]);
@@ -33,8 +35,7 @@ export function BlogMarkdown({
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          // ページ全体の <h1> はページ側に存在するため、Markdown 内の見出しは
-          // 1 段下げて出力（h1→h2, h2→h3 …）。重複 <h1> を回避するため。
+          // The page owns the title. Body sections keep their native hierarchy.
           h1: ({ ...p }) => (
             <h2
               className="mt-10 mb-3 border-l-4 border-sky-500 pl-3 text-xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-2xl"
@@ -42,19 +43,19 @@ export function BlogMarkdown({
             />
           ),
           h2: ({ ...p }) => (
-            <h3
+            <h2
               className="mt-8 mb-2 text-lg font-semibold text-zinc-900 dark:text-zinc-50"
               {...p}
             />
           ),
           h3: ({ ...p }) => (
-            <h4
+            <h3
               className="mt-6 mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-50"
               {...p}
             />
           ),
           h4: ({ ...p }) => (
-            <h5
+            <h4
               className="mt-4 mb-1.5 text-sm font-semibold text-zinc-900 dark:text-zinc-50"
               {...p}
             />
@@ -132,7 +133,7 @@ export function BlogMarkdown({
           ),
         }}
       >
-        {children}
+        {children.replace(/^\s*# [^\r\n]+\r?\n/, "")}
       </ReactMarkdown>
     </div>
   );

@@ -1,6 +1,5 @@
-import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS, beforeNurseSourceLineBreak } from "../fixtures/kangoshi-before-completion";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import pm4 from "@/docs/evidence/nurse-pm4-followup-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -14,7 +13,7 @@ describe("four additional primary-verified nursing PM originals", () => {
   it("preserves every earlier 433 object and adds only four separately verified originals", () => {
     expect(proof.baseCommit).toBe("09c9cbded397176332eba2f3dbc175d6d29b9008");
     expect(proof.previous433ObjectHashes).toHaveLength(433);
-    for (const old of proof.previous433ObjectHashes) expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
+    for (const old of proof.previous433ObjectHashes) expect(nurseObjectHash(beforeNurseSourceLineBreak(byId.get(old.id))), old.id).toBe(old.sha256);
     expect(KANGOSHI_QUESTIONS).toHaveLength(pm4.totalOriginals + 3);
     expect(new Set(KANGOSHI_QUESTIONS.map(question => question.id)).size).toBe(pm4.totalOriginals + 3);
     expect(KANGOSHI_QUESTIONS.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(pm4.totalChoices + 12);
@@ -47,12 +46,4 @@ describe("four additional primary-verified nursing PM originals", () => {
     for (const id of proof.keptUnregistered) if (!go9.addedIds.includes(id)) expect(byId.has(id), id).toBe(false);
   });
 
-  it("shows the new partial collection and the official exclusion caveat on the exam home", () => {
-    const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前235問と午後229問");
-    expect(home).toContain("計464原問");
-    expect(home).toContain("全1918肢");
-    expect(home).toContain("第115回は午前117問・午後115問、第114回は午前118問・午後114問");
-    expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
-  });
 });

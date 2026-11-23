@@ -1,0 +1,476 @@
+[
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q01",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "問1　次の2進数を10進数に変換しなさい。① (1011 1011)₂、② (1110 1010)₂。\n問2　次の10進数を16進数に変換しなさい。③ (139)₁₀、④ (94.25)₁₀。\n問3　次の16進数を2進数に変換しなさい。⑤ (C3)₁₆、⑥ (4D.A)₁₆。\n問4　次の演算を行い、2進数で答えなさい。⑦ (101011)₂−(10101)₂。\n問5　次の演算を行い、16進数で答えなさい。⑧ (2E)₁₆＋(C3)₁₆。\n問6　(1) ビット列の最下位ビットをLSBといい、最上位ビットを⑨という。 (2) 4ビットの2進数は⑩通りの数値を表現できる。",
+    "answer": "① 187、② 234、③ 8B、④ 5E.4、⑤ 1100 0011、⑥ 100 1101.101、⑦ 1 0110、⑧ F1、⑨ MSB、⑩ 16 または 2⁴",
+    "explanation": "①は128＋32＋16＋8＋2＋1、②は128＋64＋32＋8＋2。③は139＝8×16＋11。④は整数部94＝5×16＋14、小数部0.25＝4/16。⑤はC→1100、3→0011。⑥は4→0100、D→1101、A→1010と置き換え、不要な先頭と末尾の0を省く。⑦は43−21＝22を2進数に戻す。⑧は下位のE＋3＝11₁₆で上位に1が繰り上がり、上位は2＋C＋1＝F。⑨はMost Significant Bitの略で、⑩は各ビットの2通りを4回掛けて16。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問1",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=35",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "officialAnswerExample": true,
+    "modelAnswer": "① 187、② 234、③ 8B、④ 5E.4、⑤ 1100 0011、⑥ 100 1101.101、⑦ 1 0110、⑧ F1、⑨ MSB、⑩ 16 または 2⁴",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q02",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "入力A、Bと出力Xのタイムチャート①〜③に対応する論理回路を、添付の解答群から選びなさい。",
+    "answer": "① イ、② オ、③ ウ",
+    "explanation": "①はいずれかが1の間すべて1なのでOR（イ）。②では両方が1の区間が0なので排他的OR（オ）。③は両方が1のときだけ0で、ANDに否定を付けたNAND（ウ）。AND（ア）は両方1のときだけ1、NOR（エ）は両方0のときだけ1なので、どの図の波形にも合わない。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=36",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問2 問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q02.webp"
+    ],
+    "imageAltTexts": [
+      "入力A・Bと出力Xの3組の波形と、解答群の5種類の論理ゲート"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① イ、② オ、③ ウ",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q03",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "回路①・②の論理式を、図の解答群から選びなさい。",
+    "answer": "① ウ、② カ",
+    "explanation": "①の最初のNANDは両入力がAなので¬Aを返す。BとANDを取って反転すると¬(¬A∧B)＝A∨¬B（ウ）。②のNANDとNORの出力のANDでは、両入力が0のときだけ1となるため¬A∧¬B（カ）。アはAだけを否定したOR、エは両方を否定したORで、いずれも①の式と異なる。イとオはどちらか片方の入力だけが1のときに1になるANDで、②の両方0という条件を満たさない。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=36",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問2 問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q03.webp"
+    ],
+    "imageAltTexts": [
+      "多段の論理ゲートからなる回路①・②と、否定線を含む6つの論理式"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① ウ、② カ",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q04",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図のDフリップフロップ回路について、出力Q₁〜Q₃のタイムチャートを完成させなさい。",
+    "answer": "CKの各上昇直後（左から5回）\nQ₁：1 1 0 0 0\nQ₂：0 1 1 0 0\nQ₃：0 0 1 1 0",
+    "explanation": "各段はCKの立上り直前の入力を取り込む。Q₁にはD、Q₂には更新前のQ₁、Q₃には更新前のQ₂が入る。Dは初めの2回だけ1なので、同じ2クロック幅のパルスが段ごとに1クロックずつ遅れて現れる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問1",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問3 問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q04.webp"
+    ],
+    "imageAltTexts": [
+      "直列のDフリップフロップ3段と、入力Dおよび立上り5回を示した未完成のタイムチャート"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "CKの各上昇直後（左から5回）\nQ₁：1 1 0 0 0\nQ₂：0 1 1 0 0\nQ₃：0 0 1 1 0",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。",
+    "answerImageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q04-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "公式標準解答 2級・共通＋BASIC/Cの選択 大問3 問1 のタイムチャート"
+    ]
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q05",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の回路の名称を解答群から選びなさい。",
+    "answer": "イ",
+    "explanation": "3段のDフリップフロップは共通のCKで動作し、各段のQ出力を次の段のD入力に接続している。クロックの立上りごとに入力のビット列が1段ずつ後ろへ進むため、シフトレジスタである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問2",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問3 問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q05.webp"
+    ],
+    "imageAltTexts": [
+      "前段のQを次段のDへつないだDフリップフロップ3段の回路図"
+    ],
+    "choices": {
+      "ア": "アップカウンタ",
+      "イ": "シフトレジスタ",
+      "ウ": "デコーダ",
+      "エ": "エンコーダ",
+      "オ": "ダウンカウンタ",
+      "カ": "クロック"
+    },
+    "choiceExplanations": {
+      "ア": "クロックのたびに保持値を増やす回路だが、この図は外部のDを取り込む。",
+      "イ": "共通クロックで前段の値を1段ずつ後ろへ送る結線になっている。",
+      "ウ": "入力のビットの組を特定の出力線へ変換する組合せ回路で、値を時系列で保持しない。",
+      "エ": "選ばれた入力線などを符号に変換する回路で、段間の時間遅延を作る用途ではない。",
+      "オ": "クロックのたびに保持値を減らす回路だが、この図には段間のデクリメント処理がない。",
+      "カ": "CKはこの回路を動かすタイミング信号で、Dを順送りする回路全体の名称ではない。"
+    },
+    "explanationCoverage": "full",
+    "officialAnswerNumber": "イ"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q06",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "モデム、リピータ、ハブ、ルータ、ゲートウェイの説明を、公式解答群から選びなさい。",
+    "answer": "① ア、② オ、③ イ、④ エ、⑤ ウ",
+    "explanation": "①モデムは伝送路に合わせて変調・復調を行う。②リピータは信号を中継し、伝送距離を延ばす。③ハブは複数のLANケーブルを集める。④ルータは宛先に応じて経路を選ぶ。⑤ゲートウェイは異なる通信方式の接続・変換に用いる。カの拡張装置はネットワークインタフェースで、機器をLANにつなぐ側の装置。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問4。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q06.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択 大問4 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① ア、② オ、③ イ、④ エ、⑤ ウ",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q07",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "OSの構成図に入る語句①〜⑤を、公式解答群から選びなさい。",
+    "answer": "① オ、② ア、③ イ、④ ウ、⑤ エ",
+    "explanation": "ジョブやメモリを管理する左のまとまりは①制御プログラム。アセンブラ・コンパイラと同じ②言語処理プログラムには、命令を逐次解釈する③インタプリタが入る。連係編集やファイル保守を行う④サービスプログラムの一例は⑤システム生成プログラム。基本ソフトウェアはOSなどを含めた広い名称で、図の各下位分類を表す名称ではない。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問5。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q07.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択 大問5 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① オ、② ア、③ イ、④ ウ、⑤ エ",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q08",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "旅行代金PRICEと旅行までの日数DAYSからキャンセル料金PAYを求める流れ図の①〜③を、公式解答群から選びなさい。",
+    "answer": "① カ、② ウ、③ イ",
+    "explanation": "最初の50%の枝は当日の場合だけなので①DAYS＝0。ここでDAYS≠0とすると、ほかの日がすべて50%になる。当日を除外した後にDAYS＜3の枝へ入る日数は1日か2日なので③PRICE×0.4。0.6は40%の補数でキャンセル料ではない。残る3日以上のうち20日までを②DAYS＜21で分け、21日ちょうどは無料側へ進める。DAYS≦21では21日が課金側に入る。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問6。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q08.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択 大問6 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① カ、② ウ、③ イ",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q09",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "同じ入力処理を関数DATINにまとめたとき、流れ図の①〜③を公式解答群から選びなさい。",
+    "answer": "① ウ、② カ、③ ア",
+    "explanation": "元の図と同じ計算にするため、非零のX、Yを読み込んだ後は①Z←X×Yを実行し、②Zを出力する。割り算やPの出力に置き換えると元の結果が変わる。関数内では入力を変数Pに入れているので、③P＝0のときだけ入力へ戻る。A＝0は書換え前の変数名のままであり、関数内で判定する値ではない。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択 大問7。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q09.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択 大問7 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① ウ、② カ、③ ア",
+    "scoringCriteria": "記入した解答を欄ごとに標準解答と照合する。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q10",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "JIS Full BASICの二次方程式のプログラムを完成させなさい。係数a、b、cは整数、a≠0とし、①〜⑤に適するものを答える。",
+    "answer": "① -4 * A * C\n② -B\n③ ELSEIF\n④ X1\n⑤ ELSE",
+    "explanation": "①−4*A*CをB*Bに加えて判別式を作る。D＞0では②−BにSQR(D)を加減して2解を求める。③ELSEIFでD＝0を分け、すでに計算した重解④X1を表示する。それ以外のD＜0は⑤ELSEで受け、実数解無しを出力する。",
+    "hasImage": true,
+    "officialQuestionLabel": "JIS Full BASIC 大問8",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択（JIS Full BASIC） 大問8。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q10.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択（JIS Full BASIC） 大問8 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① -4 * A * C\n② -B\n③ ELSEIF\n④ X1\n⑤ ELSE",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q11",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "JIS Full BASICでフィボナッチ数列の第1項から第10項を配列に格納し表示する。①〜⑤に適するものを答えなさい。",
+    "answer": "① FIBO(2)\n② I - 1\n③ I - 2\n④ 1\n⑤ FIBO(I)",
+    "explanation": "第1項はFIBO(1)に設定済みなので、①FIBO(2)にも1を入れる。I＝3からは②I−1番と③I−2番の値を足す。加算なので②と③の順は公式も不問。表示は先頭の④1から繰り返し、⑤FIBO(I)でその回の項を取り出す。",
+    "hasImage": true,
+    "officialQuestionLabel": "JIS Full BASIC 大問9",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択（JIS Full BASIC） 大問9。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q11.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択（JIS Full BASIC） 大問9 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① FIBO(2)\n② I - 1\n③ I - 2\n④ 1\n⑤ FIBO(I)",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q12",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 12,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "C言語の二次方程式のプログラムを完成させなさい。係数a、b、cは整数、a≠0とし、①〜⑤に適するものを答える。",
+    "answer": "① -4 * a * c\n② -b\n③ else if\n④ x1\n⑤ else",
+    "explanation": "①−4*a*cをb*bに続けて判別式dを求める。d＞0では②−bを共通項とし、sqrt(d)の加算・減算で2解を得る。③else ifでd==0を判定し、計算済みの重解④x1を表示する。dが負なら⑤elseの枝に入り、実数解無しを表示する。",
+    "hasImage": true,
+    "officialQuestionLabel": "C言語 大問8",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択（C言語） 大問8。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q12.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択（C言語） 大問8 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① -4 * a * c\n② -b\n③ else if\n④ x1\n⑤ else",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-level2-q13",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 13,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "C言語でフィボナッチ数列の第1項から第10項を配列に格納し表示する。①〜⑤に適するものを答えなさい。",
+    "answer": "① fibo[1]\n② i - 1\n③ i - 2\n④ 0\n⑤ fibo[i]",
+    "explanation": "fibo[0]が第1項なので、第2項には①fibo[1]を使う。第3項以降の各fibo[i]は、②i−1と③i−2を添字とする直前2要素の和。公式は②③の順を不問としている。表示のループは④0で始め、その回の添字を使って⑤fibo[i]を出す。",
+    "hasImage": true,
+    "officialQuestionLabel": "C言語 大問9",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=44",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=59",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 2級・共通＋BASIC/Cの選択（C言語） 大問9。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-level2-q13.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 2級・共通＋BASIC/Cの選択（C言語） 大問9 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① fibo[1]\n② i - 1\n③ i - 2\n④ 0\n⑤ fibo[i]",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  }
+]

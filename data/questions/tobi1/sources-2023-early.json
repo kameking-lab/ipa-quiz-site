@@ -1,0 +1,708 @@
+{
+  "qualification": "とび（とび作業）1級｜2023年度前期｜学科",
+  "year": 2023,
+  "season": "early",
+  "questionCount": 50,
+  "checkedAt": "2026-11-12T21:49:41.958599+09:00",
+  "officialSources": [
+    {
+      "file": "questions.pdf",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-1-B59-%E3%81%A8%E3%81%B3%EF%BC%88%E3%81%A8%E3%81%B3%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "sha256": "9ef7a887de01f76b6a2ab484244723b3e05c48c7ff544aaa3765f6886d6d7b33",
+      "size": 147730,
+      "pages": 9
+    },
+    {
+      "file": "answers.pdf",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-1-B59-%E3%81%A8%E3%81%B3%EF%BC%88%E3%81%A8%E3%81%B3%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "sha256": "8ac50a6c29caa26be4051f07d75629499cedd327c564427b1049acebb08319a6",
+      "size": 22375,
+      "pages": 1
+    }
+  ],
+  "officialAnswers": {
+    "A": [
+      "○",
+      "×",
+      "○",
+      "○",
+      "×",
+      "×",
+      "×",
+      "○",
+      "×",
+      "○",
+      "×",
+      "○",
+      "×",
+      "○",
+      "×",
+      "×",
+      "○",
+      "×",
+      "○",
+      "○",
+      "×",
+      "○",
+      "○",
+      "×",
+      "○"
+    ],
+    "B": [
+      "ニ",
+      "イ",
+      "イ",
+      "ロ",
+      "ハ",
+      "ニ",
+      "イ",
+      "イ",
+      "ハ",
+      "ニ",
+      "ハ",
+      "ロ",
+      "ハ",
+      "ハ",
+      "ロ",
+      "イ",
+      "ロ",
+      "ニ",
+      "イ",
+      "ニ",
+      "ニ",
+      "ハ",
+      "ハ",
+      "ニ",
+      "ロ"
+    ]
+  },
+  "transcriptionMethod": "公式問題PDFの全設問ページ画像から本文・選択肢を転記し、全問目視照合。改行、空白、全角英数字を整形し、ふりがなを省略。必要な原図を切り出し。",
+  "answerVerification": "公式正答表の全問を画像で確認し、PDFテキストの記号を座標順で独立抽出。officialAnswerNumberと採点キーの全件照合。",
+  "numbering": "原本の群と番号をofficialQuestionLabel・IDに保持。1級のqNumberはA群1〜25、B群26〜50。3級は1〜30。",
+  "choiceMapping": {
+    "trueFalse": {
+      "ア": "○",
+      "イ": "×"
+    },
+    "multipleChoice": {
+      "ア": "イ",
+      "イ": "ロ",
+      "ウ": "ハ",
+      "エ": "ニ"
+    }
+  },
+  "figures": [
+    {
+      "url": "/images/questions/tobi1/2023-early-a11.webp",
+      "sha256": "b35553bcd43d78e6576b81ee4b11acd513683c094d83df7f76aff6a97298c9de",
+      "originalQuestion": "A群 11",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        84,
+        579,
+        215,
+        708
+      ]
+    },
+    {
+      "url": "/images/questions/tobi1/2023-early-a15.webp",
+      "sha256": "646fdf367cb21d2e39fdf304b251267692c8e855ecfb9f6fa50d00f3b944a306",
+      "originalQuestion": "A群 15",
+      "pdfPage": 3,
+      "cropPdfPoints": [
+        212,
+        227,
+        330,
+        253
+      ]
+    },
+    {
+      "url": "/images/questions/tobi1/2023-early-a16.webp",
+      "sha256": "788543cc9beb2d75adce4f46567d5c8ce6a9014f7eee6fdfb79e98074ad98168",
+      "originalQuestion": "A群 16",
+      "pdfPage": 3,
+      "cropPdfPoints": [
+        131,
+        329,
+        421,
+        508
+      ]
+    },
+    {
+      "url": "/images/questions/tobi1/2023-early-b13.webp",
+      "sha256": "fd7e97204bd2ea8f7fc511390a855f4c1096bc496b8d12af3fd175c9da4cf957",
+      "originalQuestion": "B群 13",
+      "pdfPage": 7,
+      "cropPdfPoints": [
+        226,
+        217,
+        452,
+        414
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "tobi1-2023-early-gakka-a-001",
+      "group": "A",
+      "originalNumber": 1,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-002",
+      "group": "A",
+      "originalNumber": 2,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-003",
+      "group": "A",
+      "originalNumber": 3,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-004",
+      "group": "A",
+      "originalNumber": 4,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-005",
+      "group": "A",
+      "originalNumber": 5,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-006",
+      "group": "A",
+      "originalNumber": 6,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-007",
+      "group": "A",
+      "originalNumber": 7,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-008",
+      "group": "A",
+      "originalNumber": 8,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-009",
+      "group": "A",
+      "originalNumber": 9,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-010",
+      "group": "A",
+      "originalNumber": 10,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-011",
+      "group": "A",
+      "originalNumber": 11,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-012",
+      "group": "A",
+      "originalNumber": 12,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-013",
+      "group": "A",
+      "originalNumber": 13,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-014",
+      "group": "A",
+      "originalNumber": 14,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-015",
+      "group": "A",
+      "originalNumber": 15,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-016",
+      "group": "A",
+      "originalNumber": 16,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-017",
+      "group": "A",
+      "originalNumber": 17,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-018",
+      "group": "A",
+      "originalNumber": 18,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-019",
+      "group": "A",
+      "originalNumber": 19,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-020",
+      "group": "A",
+      "originalNumber": 20,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-021",
+      "group": "A",
+      "originalNumber": 21,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-022",
+      "group": "A",
+      "originalNumber": 22,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-023",
+      "group": "A",
+      "originalNumber": 23,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-024",
+      "group": "A",
+      "originalNumber": 24,
+      "pdfPage": 4,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-a-025",
+      "group": "A",
+      "originalNumber": 25,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-001",
+      "group": "B",
+      "originalNumber": 1,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-002",
+      "group": "B",
+      "originalNumber": 2,
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-003",
+      "group": "B",
+      "originalNumber": 3,
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-004",
+      "group": "B",
+      "originalNumber": 4,
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-005",
+      "group": "B",
+      "originalNumber": 5,
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-006",
+      "group": "B",
+      "originalNumber": 6,
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-007",
+      "group": "B",
+      "originalNumber": 7,
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-008",
+      "group": "B",
+      "originalNumber": 8,
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-009",
+      "group": "B",
+      "originalNumber": 9,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-010",
+      "group": "B",
+      "originalNumber": 10,
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-011",
+      "group": "B",
+      "originalNumber": 11,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-012",
+      "group": "B",
+      "originalNumber": 12,
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-013",
+      "group": "B",
+      "originalNumber": 13,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-014",
+      "group": "B",
+      "originalNumber": 14,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-015",
+      "group": "B",
+      "originalNumber": 15,
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-016",
+      "group": "B",
+      "originalNumber": 16,
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-017",
+      "group": "B",
+      "originalNumber": 17,
+      "pdfPage": 8,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-018",
+      "group": "B",
+      "originalNumber": 18,
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-019",
+      "group": "B",
+      "originalNumber": 19,
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-020",
+      "group": "B",
+      "originalNumber": 20,
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-021",
+      "group": "B",
+      "originalNumber": 21,
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-022",
+      "group": "B",
+      "originalNumber": 22,
+      "pdfPage": 8,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-023",
+      "group": "B",
+      "originalNumber": 23,
+      "pdfPage": 9,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-024",
+      "group": "B",
+      "originalNumber": 24,
+      "pdfPage": 9,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "tobi1-2023-early-gakka-b-025",
+      "group": "B",
+      "originalNumber": 25,
+      "pdfPage": 9,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    }
+  ],
+  "reusedManuscripts": [
+    {
+      "id": "tobi1-2025-early-gakka-a-020",
+      "commit": "7383a7d2d1640249d06600d7972870c970b0f4fd",
+      "fields": [
+        "question",
+        "choices",
+        "explanation",
+        "choiceExplanations"
+      ]
+    }
+  ]
+}

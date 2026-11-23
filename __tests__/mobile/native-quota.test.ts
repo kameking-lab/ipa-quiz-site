@@ -25,6 +25,19 @@ it("gates native starts even with sales off, across every qualification, and cou
   for(let i=0;i<10;i++)expect((await POST(req(`${["ap","ip","fp3","denken3"][i%4]}-${i}`))).status).toBe(200);
   expect((await POST(req("nw-11"))).status).toBe(429);expect((await POST(req("ap-0"))).status).toBe(200);expect(m.ids.size).toBe(10);
 });
+it("holds practice grants during an App Store renewal check and retries as paid", async () => {
+  vi.stubEnv("AI_QUOTA_ROLLOUT", "true");
+  m.user = "u";
+  m.rc.mockRejectedValueOnce(new BillingError("membership_check_pending", 503))
+    .mockResolvedValue({ expiresAt: new Date(Date.now() + 60_000) });
+  const pending = await POST(req("ap-renewal"));
+  expect(pending.status).toBe(503);
+  expect(await pending.json()).toMatchObject({
+    error: "membership_check_pending", access: { kind: "unavailable", remaining: null },
+  });
+  expect((await (await POST(req("ap-renewal"))).json()).access).toMatchObject({ kind: "pass", remaining: null });
+  expect(m.ids.size).toBe(0);
+});
 it("shares one ordinary quota with library questions and takes bonus only after the normal account limit",async()=>{
   m.user="u";for(let i=0;i<9;i++)await POST(req("ip-"+i));expect((await POST(req("library-q1",{"X-Kakomon-Paper":"test"}))).status).toBe(200);
   expect((await POST(req("fp3-11"))).status).toBe(429);vi.stubEnv("FEEDBACK_UNLOCK_ENABLED","true");m.bonus.mockResolvedValue({remaining:9,newlyUsed:true});

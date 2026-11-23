@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ABC分析は、在庫品目を重要度に応じてA、B、Cのランクに分類する手法です。重要性（在庫コストや需要変動など）に応じて在庫管理の優先順位や発注方式を決定する際に有効であり、商品単位での発注方式決定に適しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITILのサービスストラテジ（戦略）フェーズは、ITサービスプロバイダがどのようなサービスを提供するかといった戦略を定義します。サービスポートフォリオ管理と財務管理は、サービス投資の価値を評価し、予算を管理することで、提供するサービス全体の戦略的な方向性を決定する重要なプロセスです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "対話型処理は利用者の操作にリアルタイムに応答する必要があるため、高い応答性が求められます。優先度を高く設定することで、CPUリソースが優先的に割り当てられ、利用者の待ち時間を減らし応答性能を向上させることが期待できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールソフトは、システムの一部に障害が発生しても、機能を縮退させて全体の運転を継続する設計思想です。これにより、システムが完全に停止することを防ぎ、最小限のサービス提供を維持することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "RAID0（ストライピング）は、データを複数のディスクに分散して書き込むことで、並列処理による高速化を実現します。冗長性がないため、いずれか1台のディスクが故障するとデータが失われるため、信頼性の向上は目的としません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "リリース管理は新しいサービスや変更を本番環境に導入するプロセスであり、その際に既知の不具合や制約事項が存在する場合がります。これらの情報がインシデント管理に伝達されていれば、インシデント発生時の原因特定の助けとなり、迅速な解決につながります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ウォームスタートは、システム停止時の状態をある程度引き継ぎ、比較的短時間でシステムを再開する方法です。これにより、処理中のジョブの一部を継続できるため、復旧にかかる時間や労力を削減できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "キャパシティ管理は、ITサービスが合意された性能要件を満たし続けるために、ITインフラストラクチャのリソースを適切に計画・監視・最適化するプロセスです。ディスク使用率は、ディスクリソースの現在の使用状況を示す重要な指標であり、将来の需要予測やパフォーマンスボトルネックの特定に役立ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "サービスレベル管理 (SLM) は、ITサービスの品質とサービスレベルを定義し、合意し、監視し、レビューし、改善するプロセスです。その中心的な活動は、顧客とサービスレベル合意書 (SLA) を締結し、サービスの目標値や責任範囲を明確にすることです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000のサービス継続及び可用性の管理は、災害や障害発生時にITサービスの継続性を確保し、可用性目標を達成することを目的としています。RTO（目標復旧時間）やRPO（目標復旧時点）などのサービス継続に関する要求事項を明確にすることは、その計画の基盤となる活動です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "管理用アカウントの共用は、責任の所在が不明確になり、セキュリティリスクを高めるため避けるべきです。個々の管理者専用アカウントを使用することで、監査追跡が可能となりセキュリティが向上します。管理情報は、公開することで透明性を確保できるが、機密性の高い情報もあるため、セキュリティレベルを考慮した上で公開範囲を決定することが重要です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "入力漏れとは、本来入力すべき項目が入力されていない状態を指します。伝票様式で定められた必須項目の数と、実際に入力された項目の数を比較することで、入力漏れを効率的に検出できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "アレスタ（避雷器）は、雷サージなどの異常電圧が印加された際に、これを大地に放流し、機器へのダメージを防ぐ保護装置です。通信回線や電源線に設置され、機器の故障やデータ破損を防止する役割を果たすものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "外観上の独立性は、第三者が客観的に見て、監査人が公正な判断を下せる状況にあると認識される状態を指します。過去の業務の自己監査や、監査対象との人間関係などは、客観性を損なう可能性があり、外観上の独立性を確保するために考慮すべき事項です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "受入れテストは、開発されたシステムが委託元の要求仕様を満たしているかを最終的に確認するプロセスであり、委託元（顧客）が主体となって実施すべきです。委託元が自らの目でテストを行うことで、納品物の品質と要求適合性を保証し、リスクを低減できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "クリティカルチェーン法は、プロジェクトの遅延リスクを管理するために、各タスクに割り当てられた安全余裕時間を集約し、プロジェクトの最後と、クリティカルチェーンとそれ以外のパスの合流点にバッファを設けます。これにより、個々のタスクの遅延がプロジェクト全体に波及するのを防ぎ、プロジェクトの完了期日を遵守することを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -407,7 +423,14 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
       "エ": "プランドバリュー(PV), アーンドバリュー(EV), 実コスト(AC) のグラフ"
     },
     "answer": "ウ",
-    "explanation": "ウが正解である理由は、EVMにおいてプロジェクトのコスト超過および納期遅延がないと予測される状態を正確に把握できるからです。EVMでは、アーンドバリュー(EV)は実績の進捗度合いを金額で表し、プランドバリュー(PV)は計画通りの進捗度合いを金額で表します。実コスト(AC)は、実際にかかった費用です。コストが超過せず、納期にも遅れないということは、EVとPVがほぼ等しく、かつACがEV以下である状態が継続していることを意味します。この関係性を把握するには、EVを横軸、PVとACを縦軸にプロットするのが最も直感的で、状態変化を捉えやすいからです。\n\nアは、実コスト(AC)を横軸にしているため、計画や実績との比較がしにくく、コスト超過や納期遅延の予測には不向きです。イは、実コスト(AC)とプランドバリュー(PV)を横軸にしているため、アーンドバリュー(EV)との関係性が把握しにくく、プロジェクトの進捗状況を正確に評価できません。エは、プランドバリュー(PV)を横軸にし、アーンドバリュー(EV)と実コスト(AC)を縦軸にしていますが、これは実績の進捗度合いであるEVが計画のPVに対してどうなっているかの比較が重要であるため、PVとEVの関係性が分かりにくくなります。",
+    "explanation": "現在時点の出来高EVを計画価値PV、実コストACと比べます。EVがPV以上なら進捗は計画どおりか先行し、EVがAC以上なら出来高に対する費用は予算内です。図でEVが両方を上回るのはウで、生産性が今後も同じという条件では、納期と予算の両方を守れると予想できます。",
+    "choiceExplanations": {
+      "ア": "誤りです。EVがPVを上回るので作業は計画より進んでいますが、ACはEVより大きく、出来高に見合う予算以上のコストを使っています。",
+      "イ": "誤りです。EVがPVより小さいので進捗が遅れています。またACがEVより大きいため、終えた作業に見合う予算より実際の支出が多い状態です。",
+      "ウ": "正しいです。現在のEVがPVを上回るので計画より進み、EVがACを上回るのでコスト効率も良好です。生産性が続くなら納期と予算の両方を守れると予想できます。",
+      "エ": "誤りです。ACがEVを下回るのでコスト効率は良好ですが、EVはPVより小さく、予定した作業量に届いていません。納期条件を満たすとは見込めません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "定性的リスク分析は、識別されたリスクに対して、発生確率と影響度を非数値的（例：高、中、低）に評価し、その優先順位付けを行う手法です。これにより、どのリスクに優先的に対応すべきかを判断するための情報を提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スーパスカラプロセッサは、複数の命令実行ユニット（パイプライン）を内蔵し、並列に複数の命令を同時に実行することで、処理速度を向上させます。これにより、1クロックサイクルあたりの命令処理数（IPC）が増加し、全体のスループットが向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ハミング符号は、誤り検出訂正符号の一種であり、特に1ビットの誤り訂正と2ビットの誤り検出が可能です。ECCメモリでは、このハミング符号の原理を応用して、メモリ上のデータエラーを検出し、自動的に訂正することでシステムの信頼性を高めています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "フォールバックは、システムの一部に障害が発生した場合、その部分を切り離すか機能を縮退させることで、残りの部分で処理を継続できるようにする設計です。これにより、システム全体の停止を避け、限定的ではあるがサービスを提供し続けることを可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "次数がnの関係Rはn個の属性を持ちます。射影とは、これらの属性から任意の部分集合を選び出し、新たな関係を作成する操作です。n個の要素からなる集合の部分集合の総数は、各要素について「選ぶ」か「選ばない」かの2通りの選択肢があるため、2のn乗（2ⁿ）となります。この中には属性を一つも選ばない空集合の射影（φ）も含まれるため、正解はエです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "NAPT (Network Address Port Translation) は、IPアドレスとポート番号を同時に変換する技術です。これにより、LAN内の複数の端末（プライベートIPアドレス）が、それぞれ異なるポート番号を使用することで、単一のグローバルIPアドレスを共有し、インターネットにアクセスできます。NAPTは、プライベートIPアドレスとグローバルIPアドレスの対応関係をポート番号とともに管理し、通信の識別と振り分けを行います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ステガノグラフィは、秘密のメッセージを画像、音声、動画などの別のデータの中に巧妙に埋め込む技術です。この技術の目的は、メッセージの内容を隠すだけでなく、メッセージそのものが存在していることを第三者に気付かせないようにすることにあります。したがって、画像データなどにメッセージを埋め込み、メッセージの存在そのものを隠す、というアの記述がステガノグラフィの機能に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const SM_QUESTIONS_2011_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "請負契約においては、受託者が自身の労働者を指揮命令し、業務の遂行方法や労働条件を決定します。発注者が受託者の労働者の休暇取得ルールなど、個々の労働条件に直接指示を出すことは、実質的に発注者が労働者に指揮命令しているとみなされ、請負契約の範囲を逸脱します。このような行為は、労働者派遣（偽装請負）と判断される要因となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2011h-7_2/2011h-7a_sm_am2_qs.pdf",
     "license": "IPA-public"

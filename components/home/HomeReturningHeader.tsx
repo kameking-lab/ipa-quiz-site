@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Flame, Sparkles, Target } from "lucide-react";
+import { ArrowRight, BookOpen, Flame, Target } from "lucide-react";
 import { readUserContext, recordHomepageVisit } from "@/lib/storage/user-context";
 import { readLastQuestion, type LastQuestionState } from "@/lib/storage/last-question";
 import { readOnboardingState } from "@/lib/onboarding/state";
@@ -249,7 +249,6 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
       {recommendations.length > 0 && (
         <div className="mt-4">
           <h3 className="mb-2 flex items-center gap-1.5 text-sm font-semibold text-foreground">
-            <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
             今日のおすすめ 5 問
           </h3>
           <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">

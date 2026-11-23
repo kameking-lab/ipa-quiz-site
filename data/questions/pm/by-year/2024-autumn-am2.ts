@@ -24,6 +24,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "プロジェクトマネジメント計画書は、プロジェクトをどのように実行し、監視、管理、終結させるかを定める包括的な文書です。これは、プロジェクトのベースライン（スコープ、スケジュール、コスト）を含み、プロジェクトの目標達成に向けた指針となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "RACIチャートは、責任分担マトリックスの一つで、特定の作業や意思決定において、誰がResponsible（実行責任）、Accountable（説明責任）、Consulted（相談対応）、Informed（情報提供）の役割を担うかを明確にします。これにより、役割と責任の重複や漏れを防ぎ、プロジェクトの効率的な運営を支援します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 21500:2018におけるプロセス「プロジェクト組織の定義」の目的は、プロジェクトを完遂するために必要な役割、責任、権限を明確にし、これらについてプロジェクトに関わる全ての当事者から合意（コミットメント）を得ることです。これにより、組織内でプロジェクトの役割分担が明確になり、スムーズな連携が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,13 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "残作業効率指数 (TCPI) は、残りの作業を完了するために必要なコスト効率を示す指標であり、完成時総予算 (BAC) どおりに完了させるためには、TCPI = (BAC - EV) / (BAC - AC) の式で求められます。ここで、BACは完成時総予算、EVは現在までの出来高、ACは現在までの実績コストです。問題文では、プロジェクトの半分が経過した時点での状況であり、BACどおりに完了させるために必要なTCPIを求めています。図表がないため具体的なBAC、EV、ACの値は不明ですが、選択肢から逆算し、TCPIが1.1となる状況を想定すると、残りの作業を実績コストの1.1倍の効率で進める必要があることがわかります。これは、現状では計画よりもコストがかかっているが、残りの作業で効率を改善すればBAC達成が可能であることを示唆しています。\n\nアの0.6は、残りの作業を非常に低いコスト効率で達成できることを意味し、現状で計画遅延やコスト超過がある場合にあり得ない値です。イの0.9は、残りの作業を計画よりも低コストで完了できることを示唆しており、現状で計画通りかそれ以上に進んでいる場合に考えられますが、BAC達成のための指標としては不十分です。エの1.3は、残りの作業を大幅に非効率に進める必要があることを意味し、現状で計画を大幅に上回るコストがかかっている場合に考えられますが、TCPIの標準的な解釈とは異なります。",
+    "choiceExplanations": {
+      "ア": "0.6に近い値は、実績コスト40を残作業の予算価値66で割ると出ます。TCPIの分母は使用済みのコストでなく、残予算60です。",
+      "イ": "0.9はこれまでのコスト効率34÷40＝0.85を丸めた値です。残作業の効率を求めるには、残作業の予算価値と残予算を使います。",
+      "ウ": "残作業の予算価値は100－34＝66、残予算は100－40＝60です。残予算1当たりに必要な価値は66÷60＝1.1です。",
+      "エ": "残予算として100－50＝50を使うと66÷50が約1.3になります。50は計画価値PVで、実際に使った金額はACの40です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +129,14 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
       "エ": "21"
     },
     "answer": "エ",
-    "explanation": "エが正解となるのは、プロジェクトの最短終了日を決定するクリティカルパスの計算に基づきます。クリティカルパスとは、プロジェクト全体の所要日数に影響を与える一連の作業経路であり、この経路上の作業は遅延が許されません。作業Hが開始できるのは、それ以前に完了すべき先行作業の期間が経過した後です。問題文では、図表を参照せずに作業Hの開始可能時期を問うているため、先行作業の完了日を累積した結果、最も遅い完了日となる経路を辿る必要があります。選択肢エの21日という数字は、先行作業の期間を考慮した上で、作業Hが開始できる最も遅いタイミングを示唆しています。\n\nアの12日では、先行作業の完了を待たずに作業Hを開始することになり、クリティカルパス上の制約を無視している可能性があります。イの14日も同様に、先行作業の完了時期と整合しない、あるいはクリティカルパス以外の経路での遅延を考慮していないため不適切です。ウの18日も、先行作業の累積期間やクリティカルパスの計算結果として、作業Hの開始時期としては早すぎることが考えられます。これらの選択肢は、プロジェクト全体の最短終了日を保証するクリティカルパスの概念から外れているため、誤りとなります。",
+    "explanation": "最長の経路はA→D→Gで、8＋10＋12＝30日です。Hの最早開始は、Cの12日と、ダミー作業につながるA→Dの18日、B→Eの14日の最大値で18日目です。HとIには5＋4＝9日かかるため、全体を30日で終えるには、Hを遅くとも30－9＝21日目に開始します。",
+    "choiceExplanations": {
+      "ア": "12日は作業Cの完了時刻です。HはCだけでなく、ダミー作業を介してDとEの両方の完了も待つ必要があります。",
+      "イ": "14日はB→Eの所要日数です。同じ合流点には18日かかるA→Dも到着するため、14日目に合流点を通過できません。",
+      "ウ": "18日目はCおよびダミー作業の両方が終わり、Hを最も早く開始できる時刻です。Hの経路にはさらに3日の余裕があります。",
+      "エ": "全体の最短日数はA→D→Gの30日です。Hを開始してからHとIで9日かかるので、その開始は30－9＝21日目までです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +160,14 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
       "エ": "21"
     },
     "answer": "イ",
-    "explanation": "この開発プロジェクトの最少所要日数は、PDM（プレシデンスダイアグラム法）における各アクティビティの依存関係と所要日数から、プロジェクト全体のクリティカルパス（最も長い経路）を特定することで算出されます。クリティカルパスとは、プロジェクトの開始から終了までの経路のうち、一つでも遅延が生じるとプロジェクト全体の完了が遅延する経路のことです。\n\n正解のイ（19日）となる根拠は、各アクティビティの所要日数と依存関係を考慮した結果、プロジェクト全体の完了に最も時間を要する経路の合計日数が19日となるためです。\n\nア（18日）は、プロジェクト全体のクリティカルパスの所要日数よりも短いため不適切です。クリティカルパスの日数よりも短い経路では、その経路が遅延してもプロジェクト全体の完了時期に影響を与えません。ウ（20日）およびエ（21日）は、正しくクリティカルパスを特定した場合に算出される日数よりも長いため、最少所要日数としては不適切となります。これらの選択肢は、クリティカルパス以外の経路の日数と混同したり、依存関係の解釈を誤ったりした場合に導き出される可能性があります。",
+    "explanation": "開始時点を0日とします。AとBの試験はそれぞれ最も早くて5日目、9日目に始まります。A・C・Dを隙間なく実施して18日で終える場合、試験は5〜8日、10〜13日、15〜18日で、その間にBの試験3日間を置けません。A・Cを8日目・13日目に終え、Bを4日目に開始して13〜16日に試験し、Dを14日目に開始して16〜19日に試験すれば、19日で全作業が終わります。",
+    "choiceExplanations": {
+      "ア": "18日は設備の競合を無視してA・C・Dを連続実施した場合の日数です。Bの試験3日間を、ほかの試験と重ならず18日以内に配置できません。",
+      "イ": "Aを0〜8日、Cを8〜13日、Bを4〜16日、Dを14〜19日とすれば、最後の3日間の試験は互いに重なりません。",
+      "ウ": "Bを最初から実施すると試験が9〜12日となり、Cを10〜15日、Dを15〜20日にずらせます。Bの試験をCとDの間に置けば1日縮まります。",
+      "エ": "Bの試験をDの後に回すとDの終了18日目からさらに3日かかります。Bの試験をCとDの間に配置すれば19日で終わります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +192,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "アジャイル型開発プロジェクトの管理に用いるベロシティとは、開発チームが一定期間（通常は1スプリント）内に完了し、顧客に受け入れられた成果物の量を測定する指標です。この指標は、将来のスプリントでどれくらいの作業量を完了できるかを予測するために使用され、計画策定の精度向上に役立ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +217,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "EVMにおいてCPI（コスト効率指標）が1.0を下回るということは、実績コストが予算（出来高）を超過している状態を意味します。この場合、コスト超過の原因を詳細に分析し、コスト効率を向上させるための具体的な対策を立案・実施することが重要です。同時に、改善策の効果を監視し、継続的にCPIの値を追跡する必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +242,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "生産性（kステップ/人月）は、開発規模（kステップ）を開発工数（人月）で割ることで算出されます。与えられた式E=5.2L^0.98にL=10を代入すると、開発工数Eは約49.66人月と計算されます。したがって、生産性はおよそ10kステップ / 49.66人月 = 0.201 kステップ/人月となり、選択肢の中ではアが最も適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +266,14 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
       "エ": "3/(1/X+1/Y+1/Z)"
     },
     "answer": "エ",
-    "explanation": "工程別の生産性X, Y, Zが与えられている場合、全体の生産性（平均的な生産性）は、各工程が全体のスループットに与える影響を考慮して、調和平均で計算されるのが適切です。したがって、全体の生産性を表す式は3 / (1/X + 1/Y + 1/Z) となります。",
+    "explanation": "同じ規模Sステップを設計・製造・試験の三工程で処理すると、総工数はS/X＋S/Y＋S/Z人月です。成果物はSステップなので、Sを総工数で割ると1÷（1/X＋1/Y＋1/Z）ステップ/人月になります。IPA原本ではウが1/X＋1/Y＋1/Z、エがその逆数です。",
+    "choiceExplanations": {
+      "ア": "X、Y、Zを足すと、三つの工程が同じ1人月で並行して成果を生むかのような値になります。全工程でかかる工数を先に合計します。",
+      "イ": "算術平均は工程ごとの工数が同じ場合の平均です。同じ開発規模を各工程で扱う場合は、工程ごとに必要な工数が生産性によって異なります。",
+      "ウ": "原本のウは1/X＋1/Y＋1/Zです。これは1ステップ当たりの総工数であり、生産性にするにはこの値の逆数を取ります。",
+      "エ": "原本のエは1÷（1/X＋1/Y＋1/Z）です。1ステップを三つの工程で処理する工数を合計し、1ステップをその工数で割ります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +298,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018のプロセス「リスクへの対応」では、特定されたリスクに対して、プロジェクトの目標への脅威を軽減または機会を増大させるための具体的な行動を計画し、実行します。これには、リスク回避、転嫁、軽減、受容などの戦略に従い、プロジェクトの予算やスケジュールに資源と活動を投入することが含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +322,14 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
       "エ": "500"
     },
     "answer": "イ",
-    "explanation": "イの470千円が正解です。\n\nこの問題は、プロジェクトチームの開発要員投入計画に基づき、PCをレンタルで調達する際の最低費用を問うています。問題文と選択肢から、特定の調達条件を満たす場合に、複数の費用パターンの中から最も低いものを選択する必要があることが推測されます。具体的な計算方法や条件は図表に依存するため、ここでは図表を参照せずに選択肢の妥当性を検証します。\n\nまず、正解であるイの470千円となる根拠について、具体的な数値や計算式が示されていないため、ここでは「調達条件を満たすための最低限の費用が470千円である」という前提で説明します。これは、複数の見積もりや条件を比較検討した結果、この金額が最も経済的であると判断されたことを意味します。\n\n他の選択肢が誤りである理由を分析します。アの350千円は、調達条件のいずれかを満たさない、あるいはより高額なオプションが含まれるために、最低金額として成立しないと考えられます。ウの480千円は、470千円よりも高額であり、最低金額という条件に合致しません。エの500千円も同様に、470千円よりも高額であるため、最低金額として不適切です。\n\nこの問題は、プロジェクトのコスト管理における調達戦略の一部を問うものであり、TCO（Total Cost of Ownership：総所有コスト）の概念を理解していると、より深い洞察が得られます。TCOとは、単なる購入価格だけでなく、運用、保守、廃棄まで含めた製品やサービスの総コストのことです。",
+    "explanation": "PCの使用開始月の前月にはセットアップ、使用終了月の翌月には消去が必要です。各月に借りる台数の下限は、前月・当月・翌月の必要台数の最大値です。月ごとの下限は1月から順に2、4、7、7、11、11、11、11、11、11、4、4台です。8月に余る2台も9月まで借り続ければこの下限を達成でき、94台月×5千円＝470千円です。",
+    "choiceExplanations": {
+      "ア": "350千円は、2〜11月に必要な70台月だけに月額5千円を掛けた値です。契約には作業前のセットアップと作業後のデータ消去も含めます。",
+      "イ": "月の契約台数を順に2、4、7、7、11、11、11、11、11、11、4、4台とすると94台月になり、94×5＝470千円です。",
+      "ウ": "480千円は96台月に相当します。とくに8月の余剰2台は9月にまた使うので、返却や追加手配をせず借り続けられます。",
+      "エ": "500千円は100台月に相当します。共通仕様のPCは担当が変わっても貸し直す必要がなく、前後の作業を含めて94台月で足ります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +354,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "GoF（Gang of Four）のデザインパターンは、オブジェクト指向開発において繰り返し現れる一般的な問題に対する再利用可能な解決策を体系化したものです。これらは「生成（Creational）」「構造（Structural）」「振る舞い（Behavioral）」の三つの主要なカテゴリに分類され、ソフトウェアの設計品質と保守性の向上に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +379,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "移行リハーサルの目的は、本番移行時のリスクを特定し、手順や体制の妥当性を確認することです。移行作業中に問題が発生した場合でも、その場で対応し、原因を究明した上で、本番環境では同様の問題が発生しないことを確認できれば、リハーサルの目的は達成されたと判断できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +404,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CMMIモデルV2.0における成熟度レベル4は、「定量的管理された」状態を指します。このレベルでは、組織は定量的な実績目標を設定し、データに基づいてプロセスを管理し、調整することで内外の利害関係者のニーズを満たすようにします。これにより、プロセスの予測可能性と品質が向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +429,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "アジャイル開発におけるユーザーストーリーの品質指標「INVEST」において、「S: Small（小さい）」の観点は、ユーザーストーリーが作業期間に対して適切な大きさであるべきことを示します。これにより、スプリント内で完了できる単位となり、見積もりや計画が容易になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +454,13 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "「アジャイルソフトウェア開発宣言」では、特定の価値観の対比を述べており、「契約交渉よりも顧客との協調」を重視しています。顧客との協調の目的は、顧客のビジネス価値（競争力や満足度）を最大化することであるため、契約交渉に価値を認めつつも、顧客の競争力と満足度向上に重きを置くという記述は、宣言の精神に合致しています。",
+    "choiceExplanations": {
+      "ア": "計画に従うことと対になる価値は、状況が変わったときに対応することです。自己組織化は宣言に付随する原則の一つに現れます。",
+      "イ": "契約交渉と対になるのは、顧客と協力しながら開発を進めることです。競争力や満足度の向上は、その協力と同じ意味ではありません。",
+      "ウ": "宣言では、プロセスやツールよりも、開発に携わる人とその対話に重きを置きます。プラクティス一般を優先するという対比ではありません。",
+      "エ": "ドキュメントにも価値はありますが、開発の成果や進捗を確かめられる動くソフトウェアに、より価値を置く組合せです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +485,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020は、サービスマネジメントシステム（SMS）を確立、実施、維持、継続的に改善するための組織に対する要求事項を規定する国際規格です。これにより、組織は効果的なサービス提供とマネジメントを実現し、顧客や他の利害関係者の要求を満たすことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +510,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "データベースのフルバックアップ間隔を2倍にした場合、復旧時に適用すべきログ情報（トランザクションログなど）の量が約2倍に増加します。その結果、復旧時に行うログ情報反映の平均処理時間も約2倍になると考えられます。バックアップ頻度を減らすことで、復旧時間は増加するリスクがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +535,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "実費償還契約（コストプラス契約）は、ベンダーが委託業務の遂行に要した全ての費用を顧客が支払う契約形式です。これに加えて、ベンダーの役務や技術に対する報酬（利益）が支払われます。この契約は、要件が不明確なプロジェクトや、初期段階での見積もりが困難な場合に採用されることが多いです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +560,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "経済産業省が公表した「AI・データの利用に関する契約ガイドライン」は、AI技術の発展と普及に伴い、関連する契約プラクティスが未確立であるという課題認識に基づいて作成されました。契約実務の不確実性が、AI関連の法的問題発生の一因となっていることを指摘しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +585,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "アーヴィング・ジャニスが指摘した集団思考の兆候の一つである「心の警備（Mindguards）」とは、集団のメンバーが、異議を唱える可能性のある情報や、集団の合意に反する意見がリーダーや他のメンバーに届かないように阻止しようとすることです。これにより、集団内の意思決定の多様性が失われます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +610,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SAML（Security Assertion Markup Language）は、異なるセキュリティドメイン間でユーザーの認証情報や認可情報を安全に交換するためのXMLベースの標準プロトコルです。主に、シングルサインオン（SSO）機能を実現するために広く利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +635,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JPCERTコーディネーションセンターの「CSIRTガイド」におけるインシデントマネジメントの業務のうち、インシデントハンドリングは、インシデントの発生から解決までの一連の対応プロセスを指します。トリアージは、このハンドリングプロセスの「検出及び分析」フェーズの一部であり、インシデントの緊急度や重要度を判断し、対応の優先順位を決定する重要な活動です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +660,7 @@ export const PM_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "公開された実証コード（PoC）を用いた攻撃は、Webサーバで使用されるソフトウェアの既知の脆弱性を悪用することが一般的です。そのため、当該ソフトウェアの脆弱性情報を確認し、修正プログラムを適用するか、ワークアラウンドを実施することが、攻撃による侵害を未然に防ぐ最も直接的かつ効果的な対策となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_pm_am2_qs.pdf",
     "license": "IPA-public"

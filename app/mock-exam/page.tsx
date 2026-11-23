@@ -12,7 +12,7 @@ interface SearchParams {
 }
 
 const DESCRIPTION =
-  "IPA 情報処理技術者試験の本番形式で実力チェック。AP・FE・SC など全 13 区分対応、合格判定・分野別弱点分析・スコア履歴グラフ付き。登録不要・完全無料で今すぐ体験。";
+  "IPA全13区分の収録問題で実力チェック。制限時間付きの模試で、正答率・苦手分野・スコア履歴を確認できます。";
 
 export async function generateMetadata({
   searchParams,

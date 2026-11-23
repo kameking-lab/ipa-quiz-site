@@ -1,0 +1,202 @@
+[
+  {
+    "id": "sa-2019a-pm1-q1",
+    "exam": "sa",
+    "session": "pm1",
+    "year": 2019,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "サービス設計",
+    "topicTags": [
+      "サービスデザイン思考による開発アプローチ"
+    ],
+    "difficulty": 4,
+    "question": "問1 サービスデザイン思考による開発アプローチ",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１    a マーケティング部\n      理由 体組成計の購入者情報及びアンケート情報を管理しているから\n 設問２  利用者側の視点から新サービスで必要とされる具体的な機能を考え出すため\n設問３(1) 利用者に継続的にコミュニティ活動を行ってもらうこと\n       (2)  b 活動量\n       (3) 利用者によっては，一部のデータは共有したくないから\n設問４(1) B-4\n       (2)  c 利用者の健康づくり\n       (3) 段階的に新サービスの機能を拡充させることにしたから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１    a マーケティング部\n      理由 体組成計の購入者情報及びアンケート情報を管理しているから\n 設問２  利用者側の視点から新サービスで必要とされる具体的な機能を考え出すため\n設問３(1) 利用者に継続的にコミュニティ活動を行ってもらうこと\n       (2)  b 活動量\n       (3) 利用者によっては，一部のデータは共有したくないから\n設問４(1) B-4\n       (2)  c 利用者の健康づくり\n       (3) 段階的に新サービスの機能を拡充させることにしたから\n```",
+    "explanation": "ペルソナの利用場面を、顧客体験のどこで課題が発生するかと対応付ける。新たな機能を抽出した根拠を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/page-02.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-03.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-04.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-05.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-06.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 午後I 問1の本文・設問（公式問題冊子 2ページ）",
+      "システムアーキテクト 午後I 問1の本文・設問（公式問題冊子 3ページ）",
+      "システムアーキテクト 午後I 問1の本文・設問（公式問題冊子 4ページ）",
+      "システムアーキテクト 午後I 問1の本文・設問（公式問題冊子 5ページ）",
+      "システムアーキテクト 午後I 問1の本文・設問（公式問題冊子 6ページ）",
+      "システムアーキテクト 午後I 問1の本文・設問（公式問題冊子 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 午後I 問1の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2019年度秋期 システムアーキテクト 午後I 問1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "sa-2019a-pm1-q2",
+    "exam": "sa",
+    "session": "pm1",
+    "year": 2019,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "業務システム設計",
+    "topicTags": [
+      "容器管理システムの開発"
+    ],
+    "difficulty": 4,
+    "question": "問2 容器管理システムの開発",
+    "answer": "設問                解答例・解答の要点                備考\n設問１(1) 未使用，合格\n        (2) 容器種コード，容器一個当たり標準充填量\n設問２(1) 一致するケース RF タグの一括読込みで読込み漏れが発生したとき\n       不一致になる\n              容器返却書の容器返却数と実際の容器の数が違っているとき\n        ケース\n        (2) 書込みロックを外して，容器情報領域をクリアする処理\n設問３(1) 受注伝票番号，製品コード\n        (2)  a 出荷実績を計上する\n        (3)  b 出荷\n             c 充填日から製品使用可能日数後の日付",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１(1) 未使用，合格\n        (2) 容器種コード，容器一個当たり標準充填量\n設問２(1) 一致するケース RF タグの一括読込みで読込み漏れが発生したとき\n       不一致になる\n              容器返却書の容器返却数と実際の容器の数が違っているとき\n        ケース\n        (2) 書込みロックを外して，容器情報領域をクリアする処理\n設問３(1) 受注伝票番号，製品コード\n        (2)  a 出荷実績を計上する\n        (3)  b 出荷\n             c 充填日から製品使用可能日数後の日付\n```",
+    "explanation": "容器がどの場所で読み取られ、どの状態へ移るかを追う。個々の容器の状態と商品在庫の情報を分けて整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/page-08.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-09.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-10.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-11.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-12.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-13.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 午後I 問2の本文・設問（公式問題冊子 8ページ）",
+      "システムアーキテクト 午後I 問2の本文・設問（公式問題冊子 9ページ）",
+      "システムアーキテクト 午後I 問2の本文・設問（公式問題冊子 10ページ）",
+      "システムアーキテクト 午後I 問2の本文・設問（公式問題冊子 11ページ）",
+      "システムアーキテクト 午後I 問2の本文・設問（公式問題冊子 12ページ）",
+      "システムアーキテクト 午後I 問2の本文・設問（公式問題冊子 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 午後I 問2の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2019年度秋期 システムアーキテクト 午後I 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "sa-2019a-pm1-q3",
+    "exam": "sa",
+    "session": "pm1",
+    "year": 2019,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "業務要件定義",
+    "topicTags": [
+      "レンタル契約システムの再構築"
+    ],
+    "difficulty": 4,
+    "question": "問3 レンタル契約システムの再構築",
+    "answer": "設問                解答例・解答の要点                備考\n設問１(1) ① ・出荷までに校正が完了する機器\n      ② ・レンタル終了予定日が校正有効期限を超えない機器\n        (2) ① ・決裁が下りていること\n      ② ・レンタル開始希望日まで15 日以内であること\n設問２(1) 付属品が欠けている機器\n        (2) 機器の状態を顧客と合意する必要があるから\n 設問３  ① ・レンタル期間が6 か月以上であること\n      ② ・3 か月後がレンタル期間満了月であること\n 設問４  延長しない場合は毎月15 日までに営業担当者が必要な処理をするから\n 設問５  機能 自動引当機能\n      利用する目的購入した機器を対象の受注情報に引当すること",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１(1) ① ・出荷までに校正が完了する機器\n      ② ・レンタル終了予定日が校正有効期限を超えない機器\n        (2) ① ・決裁が下りていること\n      ② ・レンタル開始希望日まで15 日以内であること\n設問２(1) 付属品が欠けている機器\n        (2) 機器の状態を顧客と合意する必要があるから\n 設問３  ① ・レンタル期間が6 か月以上であること\n      ② ・3 か月後がレンタル期間満了月であること\n 設問４  延長しない場合は毎月15 日までに営業担当者が必要な処理をするから\n 設問５  機能 自動引当機能\n      利用する目的購入した機器を対象の受注情報に引当すること\n```",
+    "explanation": "現行業務の情報と新しい機能の対応を整理する。受注の引当て対象は、出荷条件とほかの条件を個別に確認して絞る。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/page-14.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-15.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-16.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-17.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-18.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 午後I 問3の本文・設問（公式問題冊子 14ページ）",
+      "システムアーキテクト 午後I 問3の本文・設問（公式問題冊子 15ページ）",
+      "システムアーキテクト 午後I 問3の本文・設問（公式問題冊子 16ページ）",
+      "システムアーキテクト 午後I 問3の本文・設問（公式問題冊子 17ページ）",
+      "システムアーキテクト 午後I 問3の本文・設問（公式問題冊子 18ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/answer-q03-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 午後I 問3の公式解答例（2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2019年度秋期 システムアーキテクト 午後I 問3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "sa-2019a-pm1-q4",
+    "exam": "sa",
+    "session": "pm1",
+    "year": 2019,
+    "season": "autumn",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "システムアーキテクチャ",
+    "topicTags": [
+      "IoT、AIを活用する自動倉庫システムの開発"
+    ],
+    "difficulty": 4,
+    "question": "問4 IoT、AIを活用する自動倉庫システムの開発",
+    "answer": "設問                解答例・解答の要点                備考\n設問１(1) ピッキングを確実にしたいから\n        (2) 商品の収納にフローラックを用いたこと\n設問２(1) マーカとフローラックを対応させた情報\n        (2) 配送先ごとの個別商品情報\n設問３(1)  a 動画撮影\n             b 配送箱からのはみ出し\n        (2) H ロボットの充電を最適なスケジューリングで行うため\n        (3) H ロボットの位置情報\n        (4) 多くのH ロボットのデータを用いてピッキングの問題点を改善するため",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１(1) ピッキングを確実にしたいから\n        (2) 商品の収納にフローラックを用いたこと\n設問２(1) マーカとフローラックを対応させた情報\n        (2) 配送先ごとの個別商品情報\n設問３(1)  a 動画撮影\n             b 配送箱からのはみ出し\n        (2) H ロボットの充電を最適なスケジューリングで行うため\n        (3) H ロボットの位置情報\n        (4) 多くのH ロボットのデータを用いてピッキングの問題点を改善するため\n```",
+    "explanation": "冷凍商品のピッキングでは、商品の識別情報と配送先ごとの箱の対応を追う。機器を追加した前後で、制御部が管理する情報を比べる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/page-19.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-20.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-21.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-22.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-23.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-24.webp",
+      "/questions/ipa/sa/2019-autumn-pm1/page-25.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 午後I 問4の本文・設問（公式問題冊子 19ページ）",
+      "システムアーキテクト 午後I 問4の本文・設問（公式問題冊子 20ページ）",
+      "システムアーキテクト 午後I 問4の本文・設問（公式問題冊子 21ページ）",
+      "システムアーキテクト 午後I 問4の本文・設問（公式問題冊子 22ページ）",
+      "システムアーキテクト 午後I 問4の本文・設問（公式問題冊子 23ページ）",
+      "システムアーキテクト 午後I 問4の本文・設問（公式問題冊子 24ページ）",
+      "システムアーキテクト 午後I 問4の本文・設問（公式問題冊子 25ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2019-autumn-pm1/answer-q04-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 午後I 問4の公式解答例（2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_qs.pdf#page=19",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2019年度秋期 システムアーキテクト 午後I 問4",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

@@ -1,0 +1,174 @@
+/* Sky and orb (-3), weather (-2), event decorations (-1), then hero content. */
+.p3-home-scene::before { z-index: -3; }
+
+.p3-weather {
+  --weather-wash: #818f9d33;
+  --weather-cloud-light: #eff3f3e0;
+  --weather-cloud-base: #b7c3cdd6;
+  --weather-orb-offset: 8px;
+  --weather-rain: #3b546eb8;
+  --weather-snow: #fff;
+  --weather-snow-edge: #526d8b70;
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--weather-wash), transparent 78%);
+}
+
+:is(.dark, [data-home-scene="night"]) .p3-weather {
+  --weather-wash: #6f7c8729;
+  --weather-cloud-light: #53647be0;
+  --weather-cloud-base: #3a465cde;
+  --weather-rain: #a7c0db9e;
+  --weather-snow-edge: #c9e2f980;
+}
+
+[data-home-scene="night"] .p3-weather { --weather-orb-offset: 24px; }
+
+.dark .p3-home-scene:has(> .p3-weather) { --p3-scene-muted: #edf4ef; }
+
+.p3-weather[data-home-weather="rain"] {
+  --weather-wash: #6d80963a;
+  --weather-cloud-light: #a2aab4ed;
+  --weather-cloud-base: #8a95a3dd;
+}
+
+:is(.dark, [data-home-scene="night"]) .p3-weather[data-home-weather="rain"] {
+  --weather-wash: #41557559;
+  --weather-cloud-light: #555f6eed;
+  --weather-cloud-base: #38414eed;
+}
+
+.p3-weather-cloud,
+.p3-weather[data-home-weather="cloudy"]::before {
+  position: absolute;
+  height: 30px;
+  width: clamp(70px, 27%, 140px);
+  background:
+    radial-gradient(ellipse 24% 44% at 42% 48%, var(--weather-cloud-light) 91%, transparent 100%),
+    radial-gradient(ellipse 22% 41% at 64% 52%, var(--weather-cloud-light) 90%, transparent 100%),
+    radial-gradient(ellipse 49% 31% at 50% 69%, var(--weather-cloud-base) 94%, transparent 100%);
+}
+
+.p3-weather-cloud-left { top: 22%; left: 3%; transform: scale(.85); opacity: .68; }
+.p3-weather-cloud-middle { top: 12%; right: 33%; transform: scale(.72); opacity: .75; }
+.p3-weather-cloud-right { top: calc(var(--p3-orb-top, var(--p3-sun-top, 18px)) + var(--weather-orb-offset)); right: 3%; }
+
+:where(html:not([data-home-event-layout])) .p3-weather[data-home-weather="rain"] .p3-weather-cloud-left {
+  opacity: .35;
+}
+
+.p3-weather[data-home-weather="cloudy"] .p3-weather-cloud {
+  height: 34px;
+  width: clamp(78px, 30%, 154px);
+}
+
+.p3-weather[data-home-weather="cloudy"]::before {
+  top: 37%;
+  right: 19%;
+  transform: scale(.7);
+  opacity: .7;
+  content: "";
+}
+
+.p3-weather-fall-mask,
+.p3-weather-fall {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.p3-weather-fall-mask {
+  --weather-mask: linear-gradient(transparent 8%, #000 23%, #000 41%, #0006 58%, transparent 72%);
+  -webkit-mask-image: var(--weather-mask);
+  mask-image: var(--weather-mask);
+}
+
+.p3-weather-fall {
+  /* Keep the strongest precipitation in the open sky beside the hero text. */
+  --weather-mask: linear-gradient(90deg, #0002 58%, #000b 90%);
+  -webkit-mask-image: var(--weather-mask);
+  mask-image: var(--weather-mask);
+}
+
+[data-home-event-layout] .p3-weather-fall {
+  /* The event panels shield the text, leaving more room for visible weather. */
+  --weather-mask: linear-gradient(90deg, #000a, #0007 30%, #000a 82%);
+}
+
+/* Shield the introductory text and track labels on days without event panels. */
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) {
+  --weather-text-ground: color-mix(in srgb, var(--p3-sky) 84%, transparent);
+}
+
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) > [data-event-panel="intro"] {
+  position: relative;
+  display: flow-root;
+  isolation: isolate;
+}
+
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) > [data-event-panel="intro"]::before {
+  position: absolute;
+  z-index: -1;
+  inset: -4px -6px;
+  border-radius: 10px;
+  background: var(--weather-text-ground);
+  content: "";
+}
+
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) .p3-event-tick-panel {
+  display: block;
+  fill: var(--weather-text-ground);
+}
+
+.p3-weather-fall::before {
+  position: absolute;
+  inset: -66px -80px;
+  content: "";
+  animation: p3-weather-fall var(--weather-duration) linear infinite paused;
+}
+
+[data-home-weather="rain"] .p3-weather-fall::before {
+  --weather-duration: 1.1s;
+  --weather-drift: -10px;
+  --weather-skew: -10deg;
+  background-image:
+    radial-gradient(ellipse 1.7px 11px at 6px 16px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.5px 9px at 17px 42px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.8px 13px at 29px 32px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.5px 10px at 40px 13px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.7px 12px at 51px 41px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.5px 9px at 61px 24px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.6px 11px at 70px 39px, var(--weather-rain) 58%, transparent 100%);
+  background-size: 72px 56px;
+}
+
+[data-home-weather="snow"] .p3-weather-fall::before {
+  --weather-duration: 6s;
+  --weather-drift: 72px;
+  --weather-skew: 0deg;
+  background-image:
+    radial-gradient(circle 3.5px at 8px 18px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 2.8px at 16px 42px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 3.7px at 29px 30px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 2.7px at 39px 9px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 3.2px at 50px 48px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 3.5px at 60px 20px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 2.9px at 68px 35px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent);
+  background-size: 72px 56px;
+}
+
+[data-weather-moving] .p3-weather-fall::before { animation-play-state: running; }
+
+@keyframes p3-weather-fall {
+  from { transform: skewX(var(--weather-skew)); }
+  to { transform: translate(var(--weather-drift), 56px) skewX(var(--weather-skew)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p3-weather-fall::before { animation: none; transform: skewX(var(--weather-skew)); }
+}

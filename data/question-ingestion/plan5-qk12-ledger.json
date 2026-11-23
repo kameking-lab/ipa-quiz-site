@@ -1,0 +1,55 @@
+{
+  "lane": "qk-12",
+  "branch": "cx/kako-5y12-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-qj12-ledger.json",
+  "entries": [
+    {
+      "jobId": "PLAN5-306",
+      "index": 305,
+      "exam": "denko1",
+      "officialYear": 2025,
+      "season": "first",
+      "session": "gakka",
+      "status": "completed",
+      "officialQuestionCount": 50,
+      "addedNewQuestions": 50,
+      "choiceExplanationCount": 200,
+      "assetCount": 40,
+      "dataset": "data/questions/denko1/reviewed/20250401-q01-50.json",
+      "officialPdfUrl": "https://www.shiken.or.jp/construction/upload/20250401_co_first_q01.pdf",
+      "officialAnswerUrl": "https://www.shiken.or.jp/construction/upload/20250401_co_first_a01.pdf"
+    },
+    {
+      "jobId": "PLAN5-320",
+      "index": 319,
+      "exam": "kenchikushi1",
+      "officialYear": 2022,
+      "season": "annual",
+      "session": "gakka-1_2",
+      "status": "completed",
+      "officialQuestionCount": 40,
+      "addedNewQuestions": 40,
+      "addedBySession": {
+        "keikaku": 20,
+        "kankyo-setsubi": 20
+      },
+      "choiceExplanationCount": 160,
+      "assetCount": 7,
+      "dataset": "data/questions/kenchikushi1/2022-gakka-i-ii.json",
+      "officialPdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gakka1_2.pdf",
+      "officialAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gokakukijun.pdf"
+    },
+    {
+      "jobId": "PLAN5-334",
+      "index": 333,
+      "exam": "kenchikushi2",
+      "officialYear": 2024,
+      "session": "gakka-3_4",
+      "status": "skipped-helper-completed",
+      "existingBranch": "cx/kako-5yh12-20261118",
+      "existingCommit": "40bbadd9a",
+      "officialQuestionCount": 50
+    }
+  ]
+}

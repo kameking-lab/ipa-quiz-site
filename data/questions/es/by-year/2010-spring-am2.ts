@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問1）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "パイプライン処理では、最初の命令が完了するまでにその命令の全ステージ数分のサイクルがかかります。その後は、理想的には1サイクルごとに1命令が完了するため、残りの命令数-1サイクルが追加されます。したがって、20命令を実行するには、(5サイクル) + (20-1サイクル) = 24サイクルが必要となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DMA（Direct Memory Access）は、CPUを介さずに、専用の制御回路（DMAコントローラ）が主記憶と入出力装置の間で直接データ転送を行う方式です。これにより、CPUの負荷を軽減し、データ転送の効率を高めることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問4）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,13 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "シミュレーションによる性能評価は、システムが複雑で解析的に定式化が困難な場合や、モデルが非線形性を持つ場合でも、時間経過に沿ってシステムの状態を追跡することで数値的な解を求めることができます。そのため、解析的に解を求めることが難しいモデルに対して有効な手段となります。",
+    "choiceExplanations": {
+      "ア": "誤りです。シミュレーションは、時間の経過や多数の試行を逐次計算することがあります。解析的な方法より計算量が少なくなるとは限りません。",
+      "イ": "誤りです。乱数を使う方法では、有限回の試行に伴う標本誤差があります。乱数を使ったこと自体で解析解より高い精度が得られるわけではありません。",
+      "ウ": "正しいです。式から解を直接求められないモデルでも、状態の変化を計算機で再現し、結果を集計して性能指標を数値として見積もれます。",
+      "エ": "誤りです。解析解のある例を使ってシミュレーションの結果を検証することはできます。試験で問う特徴は、解析解が得られない場合にも性能を評価できる点です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アムダールの法則によれば、システム全体の処理時間を1とすると、性能改善後のシステム全体の処理時間は、改善されない部分の処理時間(1-R)と、改善された部分の処理時間Rを性能比Aで割ったR/Aの合計となります。したがって、改善後の性能比は、改善前の時間1を改善後の処理時間((1-R) + R/A)で割った1 / ((1-R) + R/A)で表されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "オーバレイ方式は、主記憶の容量が不足する場合に、プログラムを複数のセグメントに分割し、実行時に必要なセグメントだけを主記憶に読み込みます。そして、不要になったセグメントが占めていた領域に、次に必要となるセグメントを上書きすることで、限られた主記憶を効率的に利用し、物理メモリよりも大きなプログラムを実行可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "仮想記憶は、補助記憶装置の一部を主記憶のように利用することで、実際の主記憶容量よりも広い記憶空間が利用可能であるかのように見せる機能です。これにより、プログラマは物理メモリのサイズを意識することなく、より大規模なプログラムを開発・実行できるようになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "NFS（Network File System）は、主にUNIX系OSで利用される分散ファイルシステムであり、ネットワーク上に存在する他のコンピュータのファイルを、あたかも自コンピュータのローカルファイルであるかのように透過的に操作することを可能にします。これにより、ファイル共有やデータの一元管理が容易になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "動的リンキングは、プログラムの実行中に、必要になった共有ライブラリモジュールやシステムライブラリモジュールを主記憶にロードし、実行中のプログラムと結合させる機能です。これにより、ディスク容量や主記憶の節約、およびライブラリの更新が容易になる利点があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "GPL（GNU General Public License）で公開されたOSSは、ソフトウェアを改変し、その改変後のソフトウェアを外部に再配布する場合に、改変後のソースコードもGPLに基づいて公開する義務が発生します。単にソフトウェアを入手、インストール、または動作させるだけでは、この公開義務は発生しません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,13 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問12）",
+    "choiceExplanations": {
+      "ア": "誤りです。実線Aは同じ積分時間でBより振れ幅が小さいので、Aの入力電圧の方が低いと分かります。逆積分時間も出力値もBより小さくなります。",
+      "イ": "誤りです。Aの逆積分時間が短いのは合っていますが、図では実線Aの振れ幅が小さく、入力電圧は低い方です。出力値は逆積分時間に比例します。",
+      "ウ": "誤りです。AはBより入力電圧が低くディジタル出力値も小さいものの、0Vに戻るのは破線Bより先です。逆積分時間は長くならず、短くなります。",
+      "エ": "正しいです。Aは一定時間の積分で生じる振れ幅がBより小さく、入力電圧は低くなります。同じ傾きで0Vへ戻る時間が短いので、出力値も小さくなります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +336,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問13）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +361,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問14）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +386,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問15）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +411,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問16）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +436,13 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問17）",
+    "choiceExplanations": {
+      "ア": "誤りです。XがLowの間はNANDの直接入力がLowなので、出力YはHighです。立上り時に現れる短いパルスは、HighではなくLow側です。",
+      "イ": "正しいです。Xの立上りで直接入力がHighになり、RC側もしばらくHighに留まります。この短時間だけNANDの両入力がHighなので、YがLowになります。",
+      "ウ": "誤りです。図のウは幅の広いHighパルスですが、Yの通常レベルはHighです。Xが立ち上がってからRC側がLowになるまでの短いLowパルスが現れます。",
+      "エ": "誤りです。図のエではXが立ち下がってもしばらくYがLowです。NANDの直接入力は立下りで直ちにLowになるので、その時点のYはHighです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +467,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "イーサネットのMACアドレス（Media Access Control Address）は、ネットワーク上でデータリンク層における一意な識別子として使用される物理アドレスです。IEEE 802の規格によって48ビット（6オクテット）と定められており、通常は16進数で表記されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +492,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "共通鍵暗号方式では、通信相手ごとに共通の秘密鍵を共有する必要があるため、通信相手が増えるとその数に比例して管理すべき鍵の数が増加し、鍵管理の負担が大きくなります。これは、公開鍵暗号方式と比較した場合の共通鍵暗号方式の課題の一つです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +517,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "論理データモデルの作成においては、トップダウンアプローチとボトムアップアプローチのどちらを用いる場合でも、最終的に得られるデータモデルはデータの一貫性と整合性を保つために正規化されている必要があります。また、業務上必要なすべての属性を含んでいなければなりません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +542,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "モジュールの独立性を高めるには、モジュール間の結合度を弱くする必要があります。モジュール間の情報の受渡し方法で最も結合度が弱いのは「データ結合」であり、これは必要なデータ項目だけを引数として明示的に渡し、それ以外の共有を避ける方式です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +567,13 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問22）",
+    "choiceExplanations": {
+      "ア": "誤りです。求める機能を整理するだけでは、図のaが出力するパッケージ化した設計になりません。構造化仕様書を受けて実装に向けた構成を設計します。",
+      "イ": "正しいです。構造化仕様書とシステム構成データを受け、パッケージ化した設計やテスト計画をシステム開発へ渡す工程が、図の構造化設計です。",
+      "ウ": "誤りです。個々のプログラムの詳細を決める前に、図のaでは構造化分析の結果をシステムとして実装できる構成にまとめます。",
+      "エ": "誤りです。プロトタイピングは試作品で要件などを確かめる手法です。図のaから渡される成果物はパッケージ化した設計とテスト計画です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +598,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 2010年度春期 午前II 問23）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +623,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "実験計画法を利用したテストデータ作成方法では、直交表という数学的なツールを用いることで、多数の入力因子の組み合わせの中から、テストの網羅性を保ちつつテストケース数を大幅に削減し、効率的にテストデータを作成することが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +648,7 @@ export const ES_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SOA（Service Oriented Architecture：サービス指向アーキテクチャ）は、システムが提供する業務機能のそれぞれを「サービス」として定義し、それらのサービスを連携・組み合わせることで、柔軟かつ再利用性の高いシステムを構築するという考え方です。これにより、ビジネスの変化に迅速に対応できるシステムを構築できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_es_am2_qs.pdf",
     "license": "IPA-public"

@@ -1,0 +1,167 @@
+{
+  "productHead": "af67a4ecbbc3caeca8e725ad9e1ff4f0d25f811b",
+  "commands": {
+    "typecheck": {
+      "command": [
+        "corepack",
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "seconds": 147.79
+    },
+    "test": {
+      "command": [
+        "corepack",
+        "pnpm",
+        "test",
+        "--maxWorkers=2",
+        "--reporter=default",
+        "--reporter=json",
+        "--outputFile=C:/Users/kanet/20260522/codex-run-20261110/tools/kr-2-rv/test.json"
+      ],
+      "exitCode": 0,
+      "seconds": 1071.99
+    },
+    "validate": {
+      "command": [
+        "corepack",
+        "pnpm",
+        "validate:questions"
+      ],
+      "exitCode": 0,
+      "seconds": 7.04
+    },
+    "build": {
+      "command": [
+        "corepack",
+        "pnpm",
+        "build"
+      ],
+      "exitCode": 0,
+      "seconds": 200.76
+    },
+    "browser": {
+      "command": "node capture.cjs against local next start on 127.0.0.1:4313",
+      "exitCode": 0,
+      "seconds": 7.13
+    }
+  },
+  "tests": {
+    "passedFiles": 1077,
+    "skippedFiles": 1,
+    "passedTests": 10481,
+    "failedTests": 0,
+    "skippedTests": 10
+  },
+  "builtRoutes": {
+    "redirects": [
+      {
+        "source": "/haidenban-kumitate3/:path*",
+        "destination": "/haiden-seigyo3/:path*",
+        "statusCode": 308
+      },
+      {
+        "source": "/q/haidenban-kumitate3/:path*",
+        "destination": "/q/haiden-seigyo3/:path*",
+        "statusCode": 308
+      },
+      {
+        "source": "/haikan-plant1/:path*",
+        "destination": "/plant-haikan1/:path*",
+        "statusCode": 308
+      },
+      {
+        "source": "/q/haikan-plant1/:path*",
+        "destination": "/q/plant-haikan1/:path*",
+        "statusCode": 308
+      },
+      {
+        "source": "/haikan-plant2/:path*",
+        "destination": "/plant-haikan2/:path*",
+        "statusCode": 308
+      },
+      {
+        "source": "/q/haikan-plant2/:path*",
+        "destination": "/q/plant-haikan2/:path*",
+        "statusCode": 308
+      }
+    ],
+    "builtHomeVerified": true,
+    "newQualificationHomeLinks": {
+      "diecast2": 1,
+      "tetsudo-sharyo2": 1
+    },
+    "heldQualificationHomeLinks": 0,
+    "homeAnchorCount": 434
+  },
+  "screenshots": {
+    "01-home-iphone.png": [
+      390,
+      844
+    ],
+    "02-signed-in-account-entry-iphone.png": [
+      390,
+      844
+    ],
+    "03-account-iphone.png": [
+      390,
+      844
+    ],
+    "04-signout-confirmation-iphone.png": [
+      390,
+      844
+    ],
+    "05-signed-out-menu-iphone.png": [
+      390,
+      844
+    ]
+  },
+  "cleanup": {
+    "nextRemoved": true,
+    "copilotIndexRemoved": true,
+    "browserTempRemoved": true
+  },
+  "sourceTips": [
+    {
+      "ref": "cx/kako-home-20261113",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/reizoko-api-20261113",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/qnew5-kako-20261112",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/qnew6-kako-20261112",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/replenish-release-20261112",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/qnew2-kako-20261112",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/kako-ctr-20261112",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/k4-20261110",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/k5-20261110",
+      "unchanged": true
+    },
+    {
+      "ref": "cx/x-kako-20261110",
+      "unchanged": true
+    }
+  ]
+}

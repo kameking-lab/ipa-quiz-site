@@ -1,0 +1,55 @@
+[
+  {
+    "id": "sc-2019a-pm2-q2",
+    "exam": "sc",
+    "session": "pm2",
+    "year": 2019,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "工場の情報セキュリティ対策",
+    "topicTags": [
+      "工場の情報セキュリティ対策"
+    ],
+    "difficulty": 3,
+    "question": "問2　工場の情報セキュリティ対策。原本の設問に答えよ。",
+    "answer": "**設問1**\n(1) User-Agent ヘッダフィールドの値が A 社で利用している Web ブラウザを示す値であるケース  \n(2) a エ  \n(3) b ア  \n(4) c サイト U\n\n**設問2**\n(1) d カ、e キ、f オ  \n(2) 活動 1：1、活動 2：7、活動 3：3\n\n**設問3**\ng 電波を傍受、h MAC アドレス\n\n**設問4**\n(1) 攻撃者の操作指示が FA 端末に伝えられない。  \n(2) i イ、j ウ、k ア  \n(3) USB メモリをマルウェア対策ソフトでスキャンする。\n\n**設問5**\n(1) 事務 LAN 用（い）、センサ NET 用（か）  \n(2) 事務 LAN とセンサ NET は F-NET と分離されており，AP に不正接続しても FA 端末を攻撃できないから\n\n**設問6**\n(1) イ  \n(2) ① 当該脆弱性に対応したパッチを適用する。  \n② 脆弱性をもつソフトウェアの利用を停止する。\n\n**設問7**\n(1) 図 4：工場 LAN エ、標準 PC エ、FA 端末 ア  \n図 5：事務 LAN エ、F-NET ア、センサ NET ア、標準 PC エ、FA 端末 ア  \n(2) ① 各部門が定めた管理・維持のための措置  \n② リスクアセスメントの結果",
+    "explanation": "事故対応では通信記録の条件から調査対象を絞ります。対策案では、工場の設備を動かす端末と事務端末の通信経路を原本の図でたどり、ネットワーク分離後も必要な通信が維持されるかを確認します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/sc-2019a-pm2-q2/question-p14.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p15.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p16.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p17.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p18.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p19.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p20.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p21.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p22.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p23.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p24.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p25.webp",
+      "/questions/plan7/sc-2019a-pm2-q2/question-p26.webp"
+    ],
+    "imageAltTexts": [
+      "問2の原本（問題冊子 14ページ）",
+      "問2の原本（問題冊子 15ページ）",
+      "問2の原本（問題冊子 16ページ）",
+      "問2の原本（問題冊子 17ページ）",
+      "問2の原本（問題冊子 18ページ）",
+      "問2の原本（問題冊子 19ページ）",
+      "問2の原本（問題冊子 20ページ）",
+      "問2の原本（問題冊子 21ページ）",
+      "問2の原本（問題冊子 22ページ）",
+      "問2の原本（問題冊子 23ページ）",
+      "問2の原本（問題冊子 24ページ）",
+      "問2の原本（問題冊子 25ページ）",
+      "問2の原本（問題冊子 26ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sc_pm2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sc_pm2_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  }
+]

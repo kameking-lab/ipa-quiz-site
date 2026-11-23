@@ -21,6 +21,7 @@ export function QuestionSourcePresentation({
   phase: "before" | "after";
 }) {
   const original = question.originalContent;
+  const originalChoices = Object.entries(original?.choices ?? {});
   const source = question.sourcePresentation;
   const notice = question.questionNotice;
   const sections = question.explanationSections ?? [];
@@ -57,21 +58,20 @@ export function QuestionSourcePresentation({
               </table>
             </div>
           ))}
-          <details className="rounded-lg border border-border p-3">
-            <summary className="cursor-pointer font-semibold">原問本文（全文）</summary>
-            <div className="mt-2"><QuestionBody text={original.body} /></div>
-          </details>
-          {original.choices && Object.keys(original.choices).length > 0 && (
+          {(original.body || originalChoices.length > 0) && (
             <details className="rounded-lg border border-border p-3">
-              <summary className="cursor-pointer font-semibold">原問の選択肢（全文）</summary>
-              <dl className="mt-2 space-y-2">
-                {Object.entries(original.choices).map(([key, value]) => (
-                  <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
-                    <dt className="font-semibold">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
-                    <dd><QuestionBody text={value} /></dd>
-                  </div>
-                ))}
-              </dl>
+              <summary className="cursor-pointer font-semibold">原問を見る</summary>
+              {original.body && <div className="mt-2"><QuestionBody text={original.body} /></div>}
+              {originalChoices.length > 0 && (
+                <dl aria-label="原問の選択肢" className="mt-3 space-y-2">
+                  {originalChoices.map(([key, value]) => (
+                    <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
+                      <dt className="font-semibold">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
+                      <dd><QuestionBody text={value} /></dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
             </details>
           )}
           {original.postOptionNote && (
@@ -99,8 +99,6 @@ export function QuestionSourcePresentation({
           <p>加工内容: {source.processedParts.join("、")}</p>
           <p>解説は当サイトが独自に作成したもので、原作成者・政府機関が作成したものではありません。</p>
           <div className="flex flex-wrap gap-3">
-            {safeHttpsUrl(question.sourcePdfUrl) && <a href={safeHttpsUrl(question.sourcePdfUrl)} target="_blank" rel="noopener noreferrer" className="underline">問題PDF</a>}
-            {safeHttpsUrl(question.sourceAnswerUrl) && <a href={safeHttpsUrl(question.sourceAnswerUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式正答PDF</a>}
             {safeHttpsUrl(source.termsUrl) && <a href={safeHttpsUrl(source.termsUrl)} target="_blank" rel="noopener noreferrer" className="underline">利用条件</a>}
             {safeHttpsUrl(source.licenseUrl) && <a href={safeHttpsUrl(source.licenseUrl)} target="_blank" rel="noopener noreferrer" className="underline">公共データ利用規約（PDL）</a>}
           </div>

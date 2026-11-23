@@ -14,7 +14,7 @@ import { extractFaq } from "@/lib/blog/faq";
 // (1) 高度試験/論述/評価ランクの記事として登録され、
 // (2) 核心事実（午後II論文は評価ランクA/B/C/D・Aのみ合格・IPA公式の評価の視点・
 //     多段階選抜で午後IIに至る前に足切り）を述べ、
-// (3) 旗艦 /essay へ「参考評価」明記で funnel し（誇大回避）、
+// (3) /essay の練習問題へ案内し、終了したAI採点を宣伝せず、
 // (4) 既存の高度論述/合格基準記事から inbound を受け orphan 化せず、
 // (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
 
@@ -50,11 +50,10 @@ describe("高度試験 論文評価ランク記事の事実性と funnel", () =>
     expect(body).toContain("公表していない");
   });
 
-  it("旗艦 /essay へ funnel しつつ「参考評価」「採点基準は非公開」を明記する（誇大回避）", () => {
+  it("練習問題を案内し、終了したAI採点を宣伝しない", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("](/essay");
-    expect(body).toContain("参考評価");
-    expect(body).toContain("採点基準は非公開");
+    expect(body).toContain("[論述の練習問題](/essay)");
+    expect(body).not.toMatch(/AI\s*採点|参考評価/);
   });
 
   it("既存の高度論述/合格基準記事から inbound リンクがあり orphan 化しない", () => {

@@ -1,7 +1,10 @@
-export const AI_FEATURES = ["copilot", "exam-library", "generate-question", "scoring", "essay-grade"] as const;
-export type AiFeature = typeof AI_FEATURES[number];
+import { AI_DAILY_RESET_OFFSET_MINUTES, AI_FREE_QUESTIONS_PER_DAY } from "@/lib/constants/ai-quota";
 
-/** Approved 2026-10-31 business values. Runtime activation remains independently gated. */
+export const AI_FEATURES = ["copilot", "exam-library", "essay-grade"] as const;
+export type AiFeature = typeof AI_FEATURES[number];
+export const AI_POLICY_VERSION = "ai-20261122-free3-anon-paid-normal";
+
+/** Approved quota. Activation requires the matching normal-use policy. */
 export interface AiAccessPolicy {
   rolloutEnabled: boolean;
   version: string | null;
@@ -11,20 +14,20 @@ export interface AiAccessPolicy {
   anonymousEnabled: boolean | null;
   dailyNewGenerationLimit: number | null;
   dailyResetUtcOffsetMinutes: number | null;
-  countingRule: "provider-attempt" | null;
+  countingRule: "completed-answer" | null;
   paidNormalUseEnabled: boolean | null;
 }
 
-export const DRAFT_AI_ACCESS_POLICY: Readonly<AiAccessPolicy> = {
+export const AI_ACCESS_POLICY: Readonly<AiAccessPolicy> = {
   rolloutEnabled: false,
-  version: "ai-20261031-free3-paid-normal",
-  effectiveAt: Date.parse("2026-10-31T23:22:02Z"),
+  version: AI_POLICY_VERSION,
+  effectiveAt: Date.parse("2026-11-22T00:00:00+09:00"),
   freeFeatures: AI_FEATURES,
   paidFeatures: AI_FEATURES,
-  anonymousEnabled: false,
-  dailyNewGenerationLimit: 3,
-  dailyResetUtcOffsetMinutes: 540,
-  countingRule: "provider-attempt",
+  anonymousEnabled: true,
+  dailyNewGenerationLimit: AI_FREE_QUESTIONS_PER_DAY,
+  dailyResetUtcOffsetMinutes: AI_DAILY_RESET_OFFSET_MINUTES,
+  countingRule: "completed-answer",
   paidNormalUseEnabled: true,
 };
 
@@ -38,9 +41,8 @@ export function aiPolicyReady(policy: AiAccessPolicy, now: number): boolean {
     && /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,63}$/.test(policy.version)
     && Number.isFinite(now) && policy.effectiveAt !== null && Number.isFinite(policy.effectiveAt)
     && now >= policy.effectiveAt && validFeatures(policy.freeFeatures) && validFeatures(policy.paidFeatures)
-    // Anonymous identity/transfer is deliberately unsupported by this local candidate.
-    && policy.anonymousEnabled === false && typeof policy.paidNormalUseEnabled === "boolean"
-    && policy.countingRule === "provider-attempt"
+    && typeof policy.anonymousEnabled === "boolean" && typeof policy.paidNormalUseEnabled === "boolean"
+    && policy.countingRule === "completed-answer"
     && policy.dailyResetUtcOffsetMinutes !== null && Number.isInteger(policy.dailyResetUtcOffsetMinutes)
     && policy.dailyResetUtcOffsetMinutes >= -720 && policy.dailyResetUtcOffsetMinutes <= 840
     && policy.dailyNewGenerationLimit !== null && Number.isSafeInteger(policy.dailyNewGenerationLimit)

@@ -265,6 +265,17 @@ test("verification rejects a stale build number and runtime ID from cap sync", (
   rejects(cwd, /runtime Bundle ID mismatch/);
 });
 
+test("generated project registers the RevenueCat plugin and verification rejects its absence", (t) => {
+  const generated = JSON.parse(readFileSync(join(mobile, "ios/App/App/capacitor.config.json"), "utf8"));
+  assert.ok(generated.packageClassList.includes("PurchasesPlugin"), "cap sync must list PurchasesPlugin");
+  assert.match(readFileSync(join(mobile, "ios/App/Podfile"), "utf8"), /pod 'RevenuecatPurchasesCapacitor'/);
+  const cwd = fixture(t);
+  const file = join(cwd, "ios/App/App/capacitor.config.json");
+  const config = JSON.parse(readFileSync(file, "utf8"));
+  writeFileSync(file, JSON.stringify({ ...config, packageClassList: config.packageClassList.filter((name) => name !== "PurchasesPlugin") }));
+  rejects(cwd, /RevenueCat plugin missing from packageClassList/);
+});
+
 test("verification rejects a literal Info.plist Bundle ID", (t) => {
   const cwd = fixture(t);
   ruby(cwd, `path = 'ios/App/App/Info.plist'; p = Xcodeproj::Plist.read_from_path(path); p['CFBundleIdentifier'] = 'jp.kakomonai.app'; Xcodeproj::Plist.write_to_path(p, path)`);

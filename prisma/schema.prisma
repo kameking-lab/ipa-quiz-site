@@ -54,6 +54,7 @@ model User {
   bookmarks     Bookmark[]
   customTags    CustomTag[]
   studyPlans    StudyPlan[]
+  petProfile    PetProfile?
 
   @@index([plan])
 }
@@ -231,4 +232,21 @@ model StudyPlan {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, updatedAt])
+}
+
+// ---------------------------------------------------------------------------
+// Chihuahua (pet) cloud save. CLAUDE.md §10 schema addition approved by the
+// owner 2026-11-08. One row per member: the profile document (all
+// qualifications, names included) as validated JSON plus merge metadata.
+// `version` is the optimistic-concurrency counter; writes are compare-and-set.
+// ---------------------------------------------------------------------------
+
+model PetProfile {
+  userId    String   @id
+  document  Json
+  version   Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

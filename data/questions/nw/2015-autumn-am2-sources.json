@@ -1,0 +1,199 @@
+{
+  "exam": "nw",
+  "year": 2015,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2015h27.html",
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "ウウウウエイイイエアアエイイイウイイイイイウウウウ",
+  "verification": "公式問題冊子の全問題ページを画像で確認し転記。別の公式解答PDFをpdftotextで抽出し全25件照合。本文・選択肢のハッシュと原本ページを記録。 問24の選択肢図を原本から切出し。問14の選択肢表，問23の数式はテキスト化。",
+  "duplicateCheck": "共有台帳2026-11-11のNW 2015行はspring am1のみ。指定先行ブランチ取り込み後，git log --all -- data/questions/nw/by-year/2015-autumn-am2.tsに履歴なし。",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_nw_am2_qs.pdf",
+      "sha256": "197b3654299e4aee98f9d8fb11fc0e4c8efef8077294d236cb96c600384c2ff3"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gxj0-att/2015h27a_nw_am2_ans.pdf",
+      "sha256": "b780523726b42ad542146c05f8fd19a3e1809c3c0098911190d9691c035a1a6e"
+    }
+  },
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "31f3bc7630d3ea07b051e3f2e2308776ffa5b8fc8327b4035237d3e905b7b46f"
+    },
+    {
+      "qNumber": 2,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "f28f422cbee74c4d0409dec549c0cd8dd3f02de2de96e3b929e5f10c58c535f0"
+    },
+    {
+      "qNumber": 3,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "af51b4ae270f69a778f6beffa862bf4f9a680bb70f98873708357c68d8fac9e2"
+    },
+    {
+      "qNumber": 4,
+      "answer": "ウ",
+      "printedPage": 4,
+      "normalizedTextSha256": "4fa416b4854c2a6485f3ab81a345b7a12f61ca2efabbb4b11c27db7bb2bc83bf"
+    },
+    {
+      "qNumber": 5,
+      "answer": "エ",
+      "printedPage": 4,
+      "normalizedTextSha256": "7948515a69bc84c509f04784231d923bb691ba27c6d046c491c2552bf084b6cd"
+    },
+    {
+      "qNumber": 6,
+      "answer": "イ",
+      "printedPage": 4,
+      "normalizedTextSha256": "6245706dd7ee49399f8de957596fedf51462e68ebfa07c1d03bfd666112904d6"
+    },
+    {
+      "qNumber": 7,
+      "answer": "イ",
+      "printedPage": 5,
+      "normalizedTextSha256": "47044525d6bed34b3ab2d3abc191508cad179ab32c2b419d1422a179a4bfcd35"
+    },
+    {
+      "qNumber": 8,
+      "answer": "イ",
+      "printedPage": 5,
+      "normalizedTextSha256": "ba837b27faf0dc41fb6c33773bbdeba0a87ba54bc02d23190d6b982acd31e574"
+    },
+    {
+      "qNumber": 9,
+      "answer": "エ",
+      "printedPage": 5,
+      "normalizedTextSha256": "37c99b874f7d27f5c31e8e23055c87183da2611ed683345403fd03d9afd229c9"
+    },
+    {
+      "qNumber": 10,
+      "answer": "ア",
+      "printedPage": 6,
+      "normalizedTextSha256": "0814771a60a854c3589cf3f5a3b029948c9e66869f1e56b1f00319d7ee72e838"
+    },
+    {
+      "qNumber": 11,
+      "answer": "ア",
+      "printedPage": 6,
+      "normalizedTextSha256": "74695271824929d7755c3540a38932f5458d113f470999aa36f6b27dd5009227"
+    },
+    {
+      "qNumber": 12,
+      "answer": "エ",
+      "printedPage": 6,
+      "normalizedTextSha256": "b0846462577e55f6895e6b7a9bd04e3c40b47d48f0f86a58f1b104a3dc44c107"
+    },
+    {
+      "qNumber": 13,
+      "answer": "イ",
+      "printedPage": 6,
+      "normalizedTextSha256": "202212d01152b5fde6022de48221b548d212e5df0b98501fc6d43ec6473ad8cd"
+    },
+    {
+      "qNumber": 14,
+      "answer": "イ",
+      "printedPage": 7,
+      "normalizedTextSha256": "e4190fb57277ba29fe2f5f14c1a16db9db05ffe902441da2d7c2dd99b3d633c2"
+    },
+    {
+      "qNumber": 15,
+      "answer": "イ",
+      "printedPage": 7,
+      "normalizedTextSha256": "f6f5b52e252ddc612e3e2a28a4da50e2bcd536584e11586d84802e87438207ee"
+    },
+    {
+      "qNumber": 16,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "d1f4ecee6545a218bbfd59a09de83c07697ac85655d69a8d411aea115b270dda"
+    },
+    {
+      "qNumber": 17,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "e6866b8759d7779256bacfcb60ebcbc0fff0886074cb021beef5c93687d3a06c"
+    },
+    {
+      "qNumber": 18,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "96d0cfea0866eb106396a6961f53cbd2354dabb9f819f2a4b2fadb9d11873a43"
+    },
+    {
+      "qNumber": 19,
+      "answer": "イ",
+      "printedPage": 9,
+      "normalizedTextSha256": "754cd133f5c8dba7b876294072f5df6858667bec3a0a87c26a4cccbb614091e7"
+    },
+    {
+      "qNumber": 20,
+      "answer": "イ",
+      "printedPage": 9,
+      "normalizedTextSha256": "9767492864278f258ef3b269d7939eed8cd2c329f9b02b759796c9808a66ba83"
+    },
+    {
+      "qNumber": 21,
+      "answer": "イ",
+      "printedPage": 10,
+      "normalizedTextSha256": "233f8142b128c7a72288cc31df523997bacd25eeee613e6bd867351561c34f7a"
+    },
+    {
+      "qNumber": 22,
+      "answer": "ウ",
+      "printedPage": 10,
+      "normalizedTextSha256": "9c0723610577e26aee7923388ad4d1456de18a31143799389a4d127f384daa4d"
+    },
+    {
+      "qNumber": 23,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "9caf63065f892b57dd86316cf5da59c96fb6953ca039ce2c1eee30da5351068a"
+    },
+    {
+      "qNumber": 24,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "b5f898947352d32db4e2a1d5c4bb758244845ce4f2f7d029ad1b22df88941383",
+      "figure": {
+        "path": "/images/questions/nw/2015-autumn-am2-q24.png",
+        "alt": "選択肢ア～エの関係図。画像と拡大・縮小，社員と氏名・生年月日，自動車と乗用車・トラック，電話機と受話器・プッシュボタン。",
+        "pdfPage": 11,
+        "clipPoints": [
+          71.875,
+          431.25,
+          459.375,
+          643.75
+        ],
+        "sha256": "433401b57329f580dc19966a8c2386bc19b3be9ec191410396d20abf2aa75e2b"
+      }
+    },
+    {
+      "qNumber": 25,
+      "answer": "ウ",
+      "printedPage": 12,
+      "normalizedTextSha256": "6b25bcdad359c7237cab231066809984a1176a0e86bc61977d339f45ad89462f"
+    }
+  ],
+  "explanationReferences": [
+    {
+      "qNumber": 9,
+      "url": "https://www.rfc-editor.org/rfc/rfc8504.html#section-13.1",
+      "note": "IPsecサポートはSHOULDである旨を注記。公式本文と公式正答エを保持。"
+    },
+    {
+      "qNumber": 11,
+      "url": "https://www.rfc-editor.org/rfc/rfc9114.html#section-3.1",
+      "note": "HTTP/3とUDPの関係を注記。公式本文と公式正答アを保持。"
+    }
+  ]
+}

@@ -263,7 +263,7 @@ def check_created_simulator(udid):
         raise RuntimeError("Created simulator is unavailable before boot: " + json.dumps(created))
 
 
-def capture_device(device, app, output):
+def capture_device(device, app, output, routes=CAPTURE_ROUTES):
     STATE.update(device=device["slug"], screen="startup", operation="setup", waiting_for=None, simulator=None)
     udid, images = None, []
     try:
@@ -277,7 +277,7 @@ def capture_device(device, app, output):
         run("xcrun", "simctl", "ui", udid, "appearance", "light")
         run("xcrun", "simctl", "status_bar", udid, "override", "--time", "9:41", "--dataNetwork", "wifi", "--wifiMode", "active", "--wifiBars", "3", "--cellularMode", "active", "--cellularBars", "4", "--batteryState", "charged", "--batteryLevel", "100")
         run("xcrun", "simctl", "install", udid, str(app))
-        for name, route in CAPTURE_ROUTES.items():
+        for name, route in routes.items():
             png, verification = launch_screen(udid, name, route, device)
             operation("convert verified screenshot " + name)
             dest = output / f"{name}-{device['slug']}.jpg"
@@ -301,23 +301,33 @@ def capture_device(device, app, output):
 def main():
     if platform.system() != "Darwin":
         raise RuntimeError("Capture requires macOS + Xcode")
-    if sys.argv[1:] == ["--check-simulators"]:
+    arguments = sys.argv[1:]
+    if len(set(arguments)) != len(arguments) or set(arguments) - {"--check-simulators", "--smoke"}:
+        raise ValueError("Usage: asc_capture.py [--check-simulators] [--smoke]")
+    smoke = "--smoke" in arguments
+    devices = CONFIG["devices"][:1] if smoke else CONFIG["devices"]
+    if "--check-simulators" in arguments:
         inventory = simulator_inventory()
-        for device in CONFIG["devices"]:
+        for device in devices:
             selected_simulator(device, inventory)
         return
-    if sys.argv[1:]:
-        raise ValueError("Usage: asc_capture.py [--check-simulators]")
     app = ROOT / "build/asc-simulator/Build/Products/Debug-iphonesimulator/App.app"
     if not app.is_dir():
         raise RuntimeError("Build the Debug simulator .app first using asc_capture.sh")
+    if smoke:
+        output = ROOT / "build/asc/smoke"
+        output.mkdir(parents=True, exist_ok=True)
+        routes = {name: route for name, route in CAPTURE_ROUTES.items() if route == "reminder"}
+        capture_device(devices[0], app, output, routes)
+        log("Verified simulator startup and captured the bundled reminder screen.")
+        return
     output = ROOT / "fastlane/screenshots/ja"
     output.mkdir(parents=True, exist_ok=True)
     if list(output.glob("*.jpg")) or list(output.glob("*.png")):
         raise RuntimeError("Screenshot destination must be empty; archive/remove previous captures explicitly")
     (ROOT / "build/asc").mkdir(parents=True, exist_ok=True)
     manifest = {"git_commit": run("git", "rev-parse", "HEAD"), "authentication": "anonymous", "capture_engine": "simctl + gated native readiness", "capture_plan": "quota-free alternative: qualification, review and actual empty dashboard; no quiz/explanation frames", "quota_grants": 0, "fifth_screen": "ASC1 approved reminder alternative", "images": []}
-    for device in CONFIG["devices"]:
+    for device in devices:
         manifest["images"].extend(capture_device(device, app, output))
     (output.parent / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     log("Captured 10 actual simulator screenshots (quota-free alternative).")

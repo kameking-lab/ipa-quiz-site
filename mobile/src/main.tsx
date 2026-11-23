@@ -14,8 +14,15 @@ import { downloads, type DownloadIndex } from "./downloads";
 import { hydrateImages } from "./images";
 import { persistStudy, restoreStudy, studyOwner } from "./portable-storage";
 import { isOnline, observeConnection, observeReminderTap, setReminder } from "./platform";
+import { observeStudyReminderTap, refreshStudyReminders } from "./study-reminders";
 import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
+import { applyDeviceTheme } from "./theme";
+import { homeSceneForHour, installHomeScene } from "@/lib/home/home-scene";
+import { initHomeEventLayout } from "@/lib/home/home-event-layout";
+import { HomeEventArt, useHomeEvent } from "@/components/home/HomeEventArt";
+import { HOME_WEATHER_ENDPOINT } from "@/lib/home/weather";
+import { HomeWeather } from "@/components/home/HomeWeather";
 import { installLocalApi } from "./local-api";
 import { App as NativeApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
@@ -31,13 +38,14 @@ const MaterialReader=lazy(()=>import("./MaterialReader"));
 const EXAMS=catalog.exams as CatalogEntry[];
 /** Shown first so the most common qualifications need no search. */
 const POPULAR=["ip","fe","sg","ap","takken","fp3","denken3","denko2"];
-const ONLINE_MENU:Array<[string,string]>=[["/modes/year","年度別"],["/modes/topic","分野別"],["/mock-exam","模試"],["/quiz?mode=unanswered","未回答"],["/review","復習"],["/bookmarks","ブックマーク"],["/account/dashboard","学習履歴・統計"],["/quiz?mode=random&exam=ap","AIコパイロット"],["/essay","記述・論述採点"],["/settings","設定・同期"]];
+const ONLINE_MENU:Array<[string,string]>=[["/modes/year","年度別"],["/modes/topic","分野別"],["/mock-exam","模試"],["/quiz?mode=unanswered","未回答"],["/review","復習"],["/bookmarks","ブックマーク"],["/account/dashboard","学習履歴・統計"],["/quiz?mode=random&exam=ap","AIコパイロット"],["/essay","論文対策"],["/settings","設定・同期"]];
 const log=(step:string)=>(error:unknown)=>console.error(`[kakomon] ${step} failed`,error);
 const onlineHref=(e:CatalogEntry)=>e.href??(e.code.startsWith("library.")?`/e-learning/exams/${e.code.slice(8)}`:`/quiz?exam=${e.code}&mode=random`);
 const primaryButton="inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 text-base font-semibold text-primary-foreground disabled:opacity-50";
 const secondaryButton="inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-background px-4 text-sm font-medium disabled:opacity-50";
 const field="min-h-11 w-full rounded-xl border border-border bg-background px-3";
 function App({ offlineFallback = false }: { offlineFallback?: boolean }) {
+  const event = useHomeEvent();
   const [saved,setSaved]=useState<DownloadIndex>({}),[notice,setNotice]=useState(offlineFallback?"オフラインです。保存した問題と通知はここで使えます。":"");
   const [online,setOnline]=useState(typeof navigator==="undefined"?true:navigator.onLine),[busy,setBusy]=useState(false);
   const [mode,setMode]=useState<QuizMode>("random"),[year,setYear]=useState(""),[category,setCategory]=useState(""),[session,setSession]=useState("");
@@ -73,6 +81,7 @@ function App({ offlineFallback = false }: { offlineFallback?: boolean }) {
     if(Capacitor.isNativePlatform()) {
       void observeLogin(ORIGIN,e=>setNotice(String(e))).then(keep).catch(log("login listener"));
       void NativeApp.addListener("appStateChange",s=>{
+        if(s.isActive)void refreshStudyReminders().catch(log("study reminders"));
         if(!readyRef.current)return;
         if(!s.isActive)void persistLeaving(ownerRef.current).catch(log("persist study"));
         else void refreshDeviceRights().then(()=>{if(reading.current)return downloads.authorize();}).catch(e=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e));});
@@ -167,7 +176,14 @@ function App({ offlineFallback = false }: { offlineFallback?: boolean }) {
     </main></>;
   }
   return <>{header}{status}<main className="native-main space-y-6" data-mobile-ready={ready}>
-    <section className="space-y-2 pt-2"><h1 className="text-[1.75rem] font-bold leading-snug tracking-tight">全資格の過去問を、いつでも。</h1><p className="text-muted-foreground">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。有料会員は回数無制限です。</p></section>
+    <section className="native-home-hero p3-landscape p3-home-scene">
+      {online && <HomeWeather endpoint={ORIGIN + HOME_WEATHER_ENDPOINT} />}
+      <HomeEventArt event={event} assetBase="." />
+      <div className="p3-event-panel" data-event-panel="intro">
+        <h1 className="text-[1.75rem] font-bold leading-snug tracking-tight">全資格の過去問を、いつでも。</h1>
+        <p className="p3-scene-muted mt-2">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。有料会員は回数無制限です。</p>
+      </div>
+    </section>
     <section aria-labelledby="pick-title" className="space-y-3">
       <h2 id="pick-title" className="text-lg font-bold">資格を選んで始める</h2>
       <input type="search" aria-label="資格名で探す" className={field} placeholder="資格名で探す（例：宅建、ITパスポート）" value={query} onChange={e=>setQuery(e.target.value)}/>
@@ -215,10 +231,11 @@ function recentHandoffFailed(): boolean {
   try { return Date.now() - Number(sessionStorage.getItem(HANDOFF_KEY) ?? 0) < 60_000; } catch { return false; }
 }
 async function shouldOpenWebHome(): Promise<boolean> {
-  if (!Capacitor.isNativePlatform() || new URLSearchParams(location.search).has("local") || recentHandoffFailed()) return false;
+  const captureLocal = (window as Window & { __ascCaptureLocal?: boolean }).__ascCaptureLocal === true;
+  if (captureLocal || !Capacitor.isNativePlatform() || new URLSearchParams(location.search).has("local") || recentHandoffFailed()) return false;
   try { return await isOnline(); } catch { return typeof navigator !== "undefined" && navigator.onLine; }
 }
-async function openWebHome() {
+async function openWebHome(destination: () => string) {
   try { sessionStorage.setItem(HANDOFF_KEY, String(Date.now())); } catch { /* best effort */ }
   // Carry this device's study history to the web origin first, but never wait long.
   const handOff = (async () => {
@@ -228,10 +245,20 @@ async function openWebHome() {
     await persistStudyAfterPets(owner);
   })().catch(log("study hand-off"));
   await Promise.race([handOff, new Promise(resolve => setTimeout(resolve, 3000))]);
-  location.replace(ORIGIN + "/");
+  location.replace(ORIGIN + destination());
 }
 async function start() {
   document.documentElement.classList.add("native-app");
+  applyDeviceTheme();
+  installHomeScene(homeSceneForHour);
+  initHomeEventLayout();
+  // A notification can launch the bundled document before the online UI exists.
+  let booting = true;
+  let destination = "/";
+  void observeStudyReminderTap(path => {
+    if (booting) destination = path;
+    else location.replace(ORIGIN + path);
+  }).catch(log("study reminder tap"));
   // Install native ad-host blocking before any UI/deep-link can leave the shell.
   // Never rejects: on failure ads simply stay disabled.
   await step("privacy preparation",prepareTrackingPrivacy);
@@ -244,7 +271,12 @@ async function start() {
   await step("pet support",installNativePetSupport);
   // index.html's boot splash (Chihuahua on the launch-screen colour) stays up
   // until the web home replaces the page; the offline shell renders over it.
-  if (await shouldOpenWebHome()) { await openWebHome(); return; }
+  if (await shouldOpenWebHome() || destination !== "/") {
+    await openWebHome(() => { booting = false; return destination; });
+    return;
+  }
+  booting = false;
+  void refreshStudyReminders().catch(log("study reminders"));
   const root = createRoot(document.getElementById("root")!);
   root.render(<StartupBoundary><App offlineFallback={recentHandoffFailed()}/></StartupBoundary>);
 }

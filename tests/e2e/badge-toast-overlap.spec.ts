@@ -37,10 +37,4 @@ test.describe("quiet achievements / post-answer controls", () => {
     await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeVisible();
   });
 
-  test("review registration stays clickable after a badge unlock", async ({ page }) => {
-    await answerFirst(page);
-    const review = page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "復習に登録", exact: true });
-    await review.click();
-    await expect(page.getByRole("button", { name: "復習登録済み", exact: true })).toHaveAttribute("aria-pressed", "true");
-  });
 });

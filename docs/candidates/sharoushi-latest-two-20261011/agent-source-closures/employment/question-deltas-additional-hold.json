@@ -1,0 +1,142 @@
+[
+  {
+    "canonicalId": "sharoushi-2026-annual-koyou-q1",
+    "id": "sharoushi-2026-annual-koyou-q1",
+    "savedId": "sharoushi-2026-koyou-q01",
+    "lawAsOf": "2026-04-10",
+    "officialAnswer": "D",
+    "status": "HOLD_E_DATED_ADMINISTRATIVE_PRIMARY",
+    "correctedSavedDraft": {
+      "id": "sharoushi-2026-koyou-q01",
+      "answer": "D",
+      "explanation": "正答はD。国家公務員退職手当法上のみなし職員となっていない非常勤職員は、他の被保険者要件を満たす間は雇用保険の適用を受け、みなし職員となった時から適用除外となる。行政執行法人の該当職員は承認不要の適用除外、市町村等は適用除外を申請する承認制度であり、総務大臣認可の特定地方独立行政法人の承認主体は厚生労働大臣である。E肢の出向元の資格存続は現行要領では確認できたが、基準日版の行政一次資料は未取得のため、この問の完成候補への昇格は保留する。",
+      "choiceExplanations": {
+        "A": "誤り。行政執行法人の事業に雇用される者のうち設問の対象者は、雇用保険法6条6号及び施行規則4条1項1号により適用除外となり、厚生労働大臣の承認を要しない。常時勤務する職員でもなく退職手当法上のみなし職員でもない者は、同号の除外対象から外れる。",
+        "B": "誤り。施行規則4条1項3号の都道府県労働局長の承認は、市町村等の長が雇用保険法を適用しないことを申請し、適用除外の承認を受ける仕組みである。雇用保険の適用を受けて被保険者となるための承認ではない。",
+        "C": "誤り。設立に当たり総務大臣の認可を受けた特定地方独立行政法人は、施行規則4条1項2号の都道府県等の区分に当たる。法人の長が雇用保険法を適用しないことについて申請し、承認を受ける相手は厚生労働大臣であり、都道府県知事ではない。",
+        "D": "正しい。常時勤務する職員以外で、国家公務員退職手当法2条2項によるみなし職員となっていない者は、施行規則4条1項1号による適用除外の対象から外れる。労働者として他の要件を満たせば被保険者となり、みなし職員として退職手当法の適用を受けるに至ると、同号による適用除外となる。",
+        "E": "誤り。出向元との雇用関係を継続したまま地方公務員の身分を併有しても、出向元の雇用関係に係る被保険者資格が当然に否定されるわけではない。"
+      },
+      "reviewFlags": [
+        "E肢の地方公務員への在籍出向時の被保険者資格存続を確認できる2026-04-10以前の版の行政一次資料。現行R8.8は確認用のみに保存。"
+      ],
+      "limitedReviewNeeded": [
+        "E肢の基準日版行政一次資料"
+      ]
+    },
+    "evidenceByChoice": {
+      "A": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-act-asof20260410.json:6(6)",
+          "employment-rule-asof20260410.json:4(1)(1)",
+          "national-retirement-act-asof20260410.json:2"
+        ],
+        "reason": "規則4条1項1号に承認要件なし。"
+      },
+      "B": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-rule-asof20260410.json:4(1)(3),4(2)"
+        ],
+        "reason": "保険適用を受けるための承認という原問の向きが逆。申請日からの除外と不承認時の遡及適用も全文を保存。"
+      },
+      "C": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-rule-asof20260410.json:4(1)(2)"
+        ],
+        "reason": "総務大臣認可法人は都道府県等に区分され、厚生労働大臣の承認。旧稿の承認不要断定を修正。"
+      },
+      "D": {
+        "status": "SOURCE_CONFIRMED_LOCAL",
+        "sources": [
+          "employment-act-asof20260410.json:6(6)",
+          "employment-rule-asof20260410.json:4(1)(1)",
+          "national-retirement-act-asof20260410.json:2(2)"
+        ],
+        "reason": "規則の適用除外対象から外れるみなし前の者と、みなし後の対象者を条文で確認。みなし職員となる具体的月数等を追加していない。"
+      },
+      "E": {
+        "status": "HOLD_DATED_ADMINISTRATIVE_PRIMARY",
+        "sources": [
+          "manual-coverage-R8.8-corrob-only:p32/20352イ(イ)d(b)"
+        ],
+        "reason": "現行R8.8頁は資格存続と原問に直接一致するが、基準日版の行政一次資料が未取得。遡及採用せず旧稿を保持。"
+      }
+    },
+    "remainingPrimaryGaps": [
+      "E肢の地方公務員への在籍出向時の被保険者資格存続を確認できる2026-04-10以前の版の行政一次資料。現行R8.8は確認用のみに保存。"
+    ],
+    "independentFinalReviewRequired": true,
+    "runtimeChanged": false,
+    "publicationGo": false,
+    "originalQuestionSha256": "d9ae34d67537a39ae1a5269e096748368131be568ad477677c3fb44d67034ec9",
+    "sourcePacketSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
+    "savedDraftSha256": "987528d3dd27eca406f36261e74a0889d5357883bb8b17f03e728010ce7cc2cb",
+    "sourceEvidenceFile": "source-evidence-additional.json",
+    "primarySourceReferences": [
+      {
+        "key": "employment-act-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\employment-act-asof20260410.json",
+        "sha256": "a11df64bcbe27e4c871f7b38c57b05ccc2117cb6457be783205c4271e6091703",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116?asof=2026-04-10",
+        "lawAsOf": "2026-04-10",
+        "revisionId": "349AC0000000116_20251001_506AC0000000026",
+        "enforcementDate": "2025-10-01"
+      },
+      {
+        "key": "employment-rule-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "reports\\claude-capacity-20261010\\sharoushi-koyou20-public\\primary\\employment-rule-asof20260410.json",
+        "sha256": "09eb8c67fe866991efa450d8f9b6ff9a8616cf2047c47ca50aaf15fc5e718721",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+        "lawAsOf": "2026-04-10",
+        "revisionId": "350M50002000003_20260408_508M60000100077",
+        "enforcementDate": "2026-04-08"
+      },
+      {
+        "key": "national-retirement-act-asof20260410.json",
+        "kind": "dated-egov-main-provision",
+        "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\national-retirement-act-asof20260410.json",
+        "sha256": "e96b5746585f96cff53296d66286faead05975d9f3fe8b14ec17c8afe56c15c6",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/328AC1000000182?asof=2026-04-10",
+        "lawAsOf": "2026-04-10",
+        "revisionId": "328AC1000000182_20251001_506AC1000000080",
+        "enforcementDate": "2025-10-01"
+      },
+      {
+        "key": "manual-coverage-R8.8-corrob-only",
+        "kind": "official-later-manual-not-cutoff-evidence",
+        "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\employment-primary\\mhlw-current-coverage.pdf",
+        "sha256": "8874a1e3aa14615edebcef77ff93f81f5451a42b11172c665d50e45fa839996b",
+        "url": "https://www.mhlw.go.jp/content/001730889.pdf",
+        "version": "R8.8（2026年8月）",
+        "physicalPage": 32,
+        "printedPage": 32,
+        "section": "20352イ(イ)d(b)",
+        "excludedFromCutoffProof": true,
+        "reason": "地方公務員への在籍出向・兼業許可・元の雇用関係存続時に元の資格を存続させるとの文言が原問Eと一致するが、R8.8版のため2026-04-10へ遡及採用しない。"
+      }
+    ],
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116?asof=2026-04-10",
+      "https://laws.e-gov.go.jp/api/2/law_data/350M50002000003?asof=2026-04-10",
+      "https://laws.e-gov.go.jp/api/2/law_data/328AC1000000182?asof=2026-04-10",
+      "https://www.mhlw.go.jp/content/001730889.pdf"
+    ],
+    "localChangedChoices": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "preservedChoiceWithHold": "E",
+    "integrationEligible": false,
+    "savedDraftCorrections": [
+      "旧解説Cの「適用除外は当然に生じる」は誤り。施行規則4条1項2号による厚生労働大臣の承認制へ修正。",
+      "旧解説全体の「A・B・Cは適用除外が承認により決まる点が誤り」もB/Cについて不正確。承認の方向又は主体の誤りへ修正。"
+    ]
+  }
+]

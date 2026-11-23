@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink, BookOpen, Sparkles } from "lucide-react";
+import { ArrowLeft, ExternalLink, BookOpen } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -84,7 +84,7 @@ export async function generateMetadata({
   const label = EXAM_LABELS[code];
   const title = `【${label}】おすすめ問題集`;
   const ogTitle = `${title} | 過去問AI`;
-  const description = `${label}試験の定番問題集・参考書をAIが厳選。教科書・過去問・午後対策・論文事例まで段階別に紹介し、過去問AIと組み合わせた最短学習ルートを提案します。`;
+  const description = `${label}試験の定番問題集・参考書を紹介。教科書・過去問・午後対策・論文事例まで段階別に紹介し、過去問AIと組み合わせた最短学習ルートを提案します。`;
   const ogParams = new URLSearchParams({
     type: "books",
     title: `${label} おすすめ問題集`,
@@ -121,8 +121,6 @@ export default async function RecommendedBooksExamPage({
   const books = RECOMMENDED_BOOKS[code] ?? [];
   const label = examLabel(code);
   const intro = EXAM_INTROS[code];
-  // 論述区分(ST/SA/PM/SM/AU)は論文事例集の読者＝旗艦「午後AI採点」の対象。
-  // 書籍購入後の自然な次の一歩としてAI論述添削へ導く（参考評価・誇大回避）。
   const isEssayExam = (ESSAY_EXAM_CODES as string[]).includes(code);
   const isDescriptiveAfternoonExam = DESCRIPTIVE_AFTERNOON_EXAMS.includes(code);
   const absUrl = `${SITE_BASE_URL}/recommended-books/${exam}`;
@@ -242,7 +240,6 @@ export default async function RecommendedBooksExamPage({
         <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{intro}</p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="outline">{books.length}冊掲載</Badge>
-          <Badge variant="outline">AI推薦</Badge>
           <Badge variant="success">過去問AIと併用推奨</Badge>
         </div>
       </header>
@@ -314,7 +311,6 @@ export default async function RecommendedBooksExamPage({
         className="mb-10 rounded-2xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-900/50 dark:bg-sky-950/30"
       >
         <div className="mb-2 flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-sky-600 dark:text-sky-300" />
           <h2 className="text-lg font-bold text-sky-900 dark:text-sky-100">
             この書籍と過去問AIを組み合わせるおすすめ学習プラン
           </h2>
@@ -356,14 +352,14 @@ export default async function RecommendedBooksExamPage({
         </div>
         {isEssayExam && (
           <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
-            論文事例集で「書き方の型」を身につけたら、
+            論文事例集で学んだ書き方を、
             <Link
               href="/essay"
               className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
             >
-              AIに午後論文を添削してもらう
+              論述の練習問題
             </Link>
-            と、自分の答案の弱点を具体的に把握できます（AI採点は参考評価です）。
+            で確認できます。
           </p>
         )}
         {code === "fe" && (

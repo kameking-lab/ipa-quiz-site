@@ -45,12 +45,13 @@ describe("maritime1 accepted local registration", () => {
 
   it("connects all accepted originals to the local registry and route loader", async () => {
     expect(getQualificationByExamCode("maritime1")?.status).toBe("live");
-    expect(QUESTIONS_BY_EXAM.maritime1).toHaveLength(190);
-    expect(await getQuestionsForExam("maritime1")).toHaveLength(190);
+    const loaded = await getQuestionsForExam("maritime1");
+    expect(loaded.filter(q => q.year === 2026)).toEqual(MARITIME1_QUESTIONS);
+    expect(QUESTIONS_BY_EXAM.maritime1).toEqual(loaded);
   });
 
   it("accepts the hoki API session and searches exactly its 40 official originals", async () => {
-    const response = await GET(new Request("http://local/api/search/questions?exam=maritime1&session=hoki&limit=1"));
+    const response = await GET(new Request("http://local/api/search/questions?exam=maritime1&year=2026&session=hoki&limit=1"));
     expect(response.status).toBe(200);
     const body = await response.json();
     expect(body.total).toBe(40);

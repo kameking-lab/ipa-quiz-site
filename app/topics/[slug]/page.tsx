@@ -36,8 +36,12 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function resolveTopic(slug: string) {
+  // Next supplies decoded params. A literal percent sign in a topic is part of
+  // its canonical slug and must not be treated as a second URL escape.
+  const exact = findTopicBySlug(slug);
+  if (exact) return exact;
   const decoded = decodeRouteSegment(slug);
-  return decoded === undefined ? undefined : findTopicBySlug(decoded);
+  return decoded === undefined || decoded === slug ? undefined : findTopicBySlug(decoded);
 }
 
 export async function generateMetadata({

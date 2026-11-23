@@ -4,6 +4,7 @@ export interface AnswerFigure { src: string; alt: string; width: number; height:
 export interface LearningAssets { version: 1; files: string[]; answerFigures: AnswerFigure[] }
 const answerFigures: Record<string, AnswerFigure[]> = registry;
 const ORIGIN = "https://www.kakomon-ai.jp";
+const CITATION_FIELDS = new Set(["officialReferenceUrls", "sourceArchiveUrl", "sourceAnswerArchiveUrl"]);
 
 /** The display registry is part of the content contract, including before first viewing. */
 export function answerFiguresFor(question: {id: string; learningAssets?: LearningAssets}): readonly AnswerFigure[] {
@@ -18,6 +19,8 @@ export function learningAssetUrls(value: unknown): string[] {
     if (typeof v === "string") {
       // Inline image bytes travel with the content JSON and need no HTTP cache.
       if (v.startsWith("data:image/")) return;
+      // Printed Windows drive paths have no web asset to cache.
+      if (/^[a-z]:[\\/¥￥]/i.test(v)) return;
       const candidates = [v, ...Array.from(v.matchAll(/(?:https?:\/\/[^\s"'<>()[\]]+|\/[\w./%-]+)\.(?:png|jpe?g|webp|gif|svg)(?:\?[^\s"'<>()[\]]*)?/gi), m=>m[0])];
       for (const raw of candidates) {
         let u: URL; try { u = new URL(raw, ORIGIN); } catch { continue; }
@@ -30,9 +33,8 @@ export function learningAssetUrls(value: unknown): string[] {
     else if (v && typeof v === "object") {
       const q = v as {id?: unknown; learningAssets?: LearningAssets};
       if (typeof q.id === "string" && !q.learningAssets) visit(answerFigures[q.id] ?? []);
-      // Reference links are citations, not image renderer inputs. A citation
-      // may point to an external JPG without granting permission to cache it.
-      for (const [key, item] of Object.entries(v)) if (key !== "officialReferenceUrls") visit(item);
+      // Citation links can point to scans. The renderer's figures are inventoried separately.
+      for (const [key, item] of Object.entries(v)) if (!CITATION_FIELDS.has(key)) visit(item);
     }
   };
   visit(value);

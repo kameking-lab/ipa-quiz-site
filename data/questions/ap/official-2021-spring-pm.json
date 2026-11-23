@@ -1,0 +1,519 @@
+[
+  {
+    "id": "ap-2021h-pm-q1",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "セキュリティ",
+    "topicTags": [
+      "DNS",
+      "DNSキャッシュポイズニング"
+    ],
+    "difficulty": 4,
+    "question": "問1 DNSのセキュリティ対策に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問１\n                       出題趣旨\n  DNS は，インターネット基盤を支える重要システムであり，各組織が運用するDNS サーバもサイバー攻撃の\n標的とされることが多い。\n 本問では，自社ドメインを管理する権威DNS サーバに対して行われたサイバー攻撃の事例を題材として，具\n体的な技術的対策に関する知識を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  ウ，エ\n 設問２(1)  a ア\n         (2) 顧客がR 社の偽サイトに誘導されたから\n         (3) エ\n 設問３(1) エ\n         (2)  b ア\n         (3) ア\n         (4)  c  DNS キャッシュポイズニング",
+    "modelAnswer": "",
+    "scoringCriteria": "設問1の二つの記号、設問2のaと二つの小問、設問3の全小問を照合する。顧客がアクセスした先とDNSサーバの役割を区別する。",
+    "explanation": "権威DNSサーバへの侵害と、キャッシュDNSサーバが誤った応答を保持する攻撃を区別して読む。顧客が偽サイトへ誘導された事実は、正規Webサーバへのアクセスが減る理由にもつながる。復旧ではWebサーバだけを確認するのではなく、名前解決で参照される情報を追う必要がある。設問3は対策の対象を権威DNS・キャッシュDNS・Webサーバに分け、表の設定がどの攻撃を防ぐかを照合する。空欄cはDNSキャッシュポイズニングであり、正規のレコード自体の書換えとの違いを整理しておく。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p04.webp",
+      "/images/questions/ap/2021-spring-pm/question-p05.webp",
+      "/images/questions/ap/2021-spring-pm/question-p06.webp",
+      "/images/questions/ap/2021-spring-pm/question-p07.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問1：公式問題冊子4ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問1：公式問題冊子5ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問1：公式問題冊子6ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問1：公式問題冊子7ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q1-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問1"
+  },
+  {
+    "id": "ap-2021h-pm-q2",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "システム戦略",
+    "topicTags": [
+      "バリューチェーン",
+      "情報システム戦略"
+    ],
+    "difficulty": 4,
+    "question": "問2 情報システム戦略の策定に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問２\n                       出題趣旨\n 昨今，企業経営にとって，経営戦略に沿った情報システム戦略の策定が益々重要になってきている。\n 本問では，機械部品メーカの情報システム戦略の策定を題材として，経営戦略に沿った情報システム戦略策\n定手順の基本的な理解を，バリューチェーン分析やDX レポートの理解と併せて問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a イ\n              b キ\n 設問２(1)  c 顧客の工場の近くに自社の工場があるので，配送時間が短くて済む。\n         (2)  d 販売・マーケティング\n 設問３(1)  e 運用・保守に掛かる労力\n              f  AI などの最新のディジタル技術の早期習得\n         (2)  g イ\n         (3) 活動 製造\n       理由  ERP の標準機能への置換えで各工場の競争優位性を失うリスクがある\n          から\n         (4) 3",
+    "modelAnswer": "",
+    "scoringCriteria": "a〜g、製造という活動と置換えのリスク、成熟段階の数値を確認する。理由はC社の工場配置・競争優位性と結び付ける。",
+    "explanation": "バリューチェーンの各活動を、C社の強みと情報システムの改善方針に対応付ける。工場を顧客の近くへ配置する強みは配送時間の短縮につながり、営業担当者の情報共有は販売・マーケティングの活動に対応する。システムを標準機能へ置き換える判断では、保守の負担だけでなく競争優位性への影響も評価する。設問3では、工場ごとの製造上の強みまで失わないかを検討することが要点になる。現状の制約、目指す事業上の効果、システムの方針を順につなぎ、技術の導入自体を目的にしない。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p08.webp",
+      "/images/questions/ap/2021-spring-pm/question-p09.webp",
+      "/images/questions/ap/2021-spring-pm/question-p10.webp",
+      "/images/questions/ap/2021-spring-pm/question-p11.webp",
+      "/images/questions/ap/2021-spring-pm/question-p12.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問2：公式問題冊子8ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問2：公式問題冊子9ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問2：公式問題冊子10ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問2：公式問題冊子11ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問2：公式問題冊子12ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q2-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問2"
+  },
+  {
+    "id": "ap-2021h-pm-q3",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "アルゴリズムとプログラミング",
+    "topicTags": [
+      "k-means",
+      "クラスタリング"
+    ],
+    "difficulty": 4,
+    "question": "問3 クラスタ分析に用いるk-means法に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問３\n                       出題趣旨\n 近年，機械学習を利用したデータ分析が多く利用されている。\n  本問では，データの分類に利用されるクラスタリングを行う手法の一つであるk-means 法を題材として，ク\nラスタリングのアルゴリズムの理解と，そのアルゴリズムの実装について問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) ア （1.5，3）\n         (2) P2，P3，P7\n  設問２  イ  t を1 からK まで1 ずつ増やす\n       ウ  flag ← 0\n       エ  flag が0 と等しい\n       オ  cluster[s] ← min_index（grav_length）\n 設問３(1) カ ア\n         (2) キ Ts／Sum",
+    "modelAnswer": "",
+    "scoringCriteria": "重心座標、移動する点P2・P3・P7、繰返し範囲、flagの初期化・終了条件、配列への代入を確認する。添字と代入先を原本のコードに合わせる。",
+    "explanation": "k-means法は、各点を最も近い重心のクラスタへ割り当て、そのクラスタの点から重心を更新する処理を繰り返す。設問1では図の点をクラスタ別に集計し、座標の平均を求める。設問2の外側の繰返しでは全クラスタを走査する必要があり、割当てに変化があったかをflagで管理する。各反復の初めにflagを0へ戻すことと、flagが0のままなら収束と判断することを対で確認する。設問3の初期化の改良では、距離に対応する重みを総和で割ったTs／Sumが確率の計算に使われる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p14.webp",
+      "/images/questions/ap/2021-spring-pm/question-p15.webp",
+      "/images/questions/ap/2021-spring-pm/question-p16.webp",
+      "/images/questions/ap/2021-spring-pm/question-p17.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問3：公式問題冊子14ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問3：公式問題冊子15ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問3：公式問題冊子16ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問3：公式問題冊子17ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q3-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問3：2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問3",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問3"
+  },
+  {
+    "id": "ap-2021h-pm-q4",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "コンピュータシステム",
+    "topicTags": [
+      "IoT",
+      "LPWA",
+      "MQTTS"
+    ],
+    "difficulty": 4,
+    "question": "問4 IoT技術を活用した駐車場管理システムに関する次の記述を読んで，設問に答えよ。",
+    "answer": "問４\n                       出題趣旨\n  近年，IoT 技術やクラウドサービスを活用した様々なアプリケーションソフトウェアが開発されるようになっ\nてきており，特にLPWA 通信サービスの利用が普及し始めている。\n 本問では，駐車場管理システムへの機能追加を題材として，LPWA 通信サービスなどのIoT 技術やクラウド\nサービスを用いたシステム構築に関する理解と応用力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a ア\n              b イ\n 設問２(1) 266.7\n         (2) プランC\n 設問３(1) オ\n         (2) 21.9\n 設問４(1)  c 月間の最大データ通信量\n         (2) MQTTS",
+    "modelAnswer": "",
+    "scoringCriteria": "a・bの記号、266.7、プランC、費用の21.9と単位を照合する。月間の最大データ通信量とMQTTSを、それぞれの設問の条件に対応付ける。",
+    "explanation": "駐車場の端末からクラウドまで、どの通信手段を組み合わせるかを要件から判断する。必要な通信速度は送るデータ量をビットに換算し、制限時間で割って求める。通信プランは平均的な利用量だけでなく、月間の最大データ通信量を満たすかで比較する。設問3の費用比較では、問題文で指定された機器台数、契約単位、利用期間をそろえて計算する。MQTTとMQTTSの区別では、名称が似ていることよりも通信の保護が要求されるかを確認する。数値解答では小数第2位を四捨五入する指定も確認する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p18.webp",
+      "/images/questions/ap/2021-spring-pm/question-p19.webp",
+      "/images/questions/ap/2021-spring-pm/question-p20.webp",
+      "/images/questions/ap/2021-spring-pm/question-p21.webp",
+      "/images/questions/ap/2021-spring-pm/question-p22.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問4：公式問題冊子18ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問4：公式問題冊子19ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問4：公式問題冊子20ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問4：公式問題冊子21ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問4：公式問題冊子22ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q4-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問4：2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問4",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問4"
+  },
+  {
+    "id": "ap-2021h-pm-q5",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "WebSocket",
+      "HTTP",
+      "DNSラウンドロビン"
+    ],
+    "difficulty": 4,
+    "question": "問5 チャット機能の開発に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問５\n                       出題趣旨\n 昨今，顧客からの問合せ対応を行うコールセンタでは，電話などの音声による問合せ対応に加え，Web やチ\nャットによる問合せ対応が普及しつつある。\n 本問では，旅行販売システムへのチャット機能の追加を題材として，HTTP 及びWebSocket に関する基本的\nな理解と応用能力について問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a   10.10.0.10\n              b   192.168.0.3\n              c   10.1.1.2\n         (2) ア，ケ\n         (3) プロキシサーバはGET メソッドの内容が見えないから\n 設問２(1) イ\n         (2) 同じポートを利用するから\n 設問３(1) DNS ラウンドロビン方式\n         (2)  d  AP サーバ#1，AP サーバ#2",
+    "modelAnswer": "",
+    "scoringCriteria": "a〜cのIPアドレス、FWの二つの記号、プロキシで見える範囲、WebSocketのポート、dの二つのAPサーバ名を確認する。",
+    "explanation": "PCからAPサーバまでの経路を追い、DNSで得るIPアドレス、ルータのインタフェース、FWでの変換を分けて確認する。プロキシ経由の暗号化通信では、プロキシサーバからGETメソッドの内容が見えないことが設定判断の理由となる。WebSocketではHTTPを用いて通信を確立した後に双方向のやり取りを行い、同じポートを利用できる点を押さえる。設問3はDNSラウンドロビンによる振分けと、既にPCが通信を始めたAPサーバとの関係を問う。サーバ名を図の接続関係に沿って確定させる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p24.webp",
+      "/images/questions/ap/2021-spring-pm/question-p25.webp",
+      "/images/questions/ap/2021-spring-pm/question-p26.webp",
+      "/images/questions/ap/2021-spring-pm/question-p27.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問5：公式問題冊子24ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問5：公式問題冊子25ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問5：公式問題冊子26ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問5：公式問題冊子27ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q5-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問5：3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問5",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問5"
+  },
+  {
+    "id": "ap-2021h-pm-q6",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "SQL",
+      "データウェアハウス",
+      "スタースキーマ"
+    ],
+    "difficulty": 4,
+    "question": "問6 経営分析システムのためのデータベース設計に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問６\n                       出題趣旨\n  昨今のディジタル革新の取組によって，SoI（Systems of Insight）のシステム領域で取り扱うデータの量・種\n類の増加や質の多様化が進んでおり，データ資源を適切に管理するデータエンジニアの重要性が増している。\n  本問では，MaaS 事業者の経営分析システム構築を題材として，SoI においてデータエンジニアに求められる\nデータベース設計及びデータ操作に必要な知識の基本的な理解並びにデータモデリングの能力について問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  システム稼働後2 年間は，過去5 年間分の平均車両稼働率の目標比を表示でき\n      ない。\n 設問２(1)  a ウ\n         (2)  b 年月日\n\n              c 年代\n                                          順不同\n              d 貸出実績件数\n              e ←\n 設問３(1)  f  INNER JOIN 貸出実績 J ON R.貸出予約コード =\n              g  GROUP BY R.貸出予定年月日, R.駐車場ID, R.車種ID, R.会員ID\n         (2) 日次\n  設問４  年月，駐車場ID，車種ID，会員ID",
+    "modelAnswer": "",
+    "scoringCriteria": "a〜eのスキーマ・項目・矢印、SQLの結合条件とGROUP BY、更新間隔の日次、月次集計の四つのキーを照合する。SQLの空欄とその後ろの既存部分を連結して確認する。",
+    "explanation": "分析対象の粒度と保存されている期間を先に整理する。過去5年分を必要とする分析は、元データの保持期間と稼働後に蓄積できる期間を照合して、いつ表示可能になるかを判断する。貸出実績の集計では、貸出予約と実績を予約コードで内部結合し、貸出予定年月日・駐車場ID・車種ID・会員IDでグループ化する。日次のデータから月次へ集約するときは、年月日を年月へ変え、他の分析軸を維持する。表の矢印は外部キーの参照方向を示すため、単に二つの表を結ぶだけでなく向きも確認する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p28.webp",
+      "/images/questions/ap/2021-spring-pm/question-p29.webp",
+      "/images/questions/ap/2021-spring-pm/question-p30.webp",
+      "/images/questions/ap/2021-spring-pm/question-p31.webp",
+      "/images/questions/ap/2021-spring-pm/question-p32.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問6：公式問題冊子28ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問6：公式問題冊子29ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問6：公式問題冊子30ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問6：公式問題冊子31ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問6：公式問題冊子32ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q6-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問6：3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問6",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問6"
+  },
+  {
+    "id": "ap-2021h-pm-q7",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "コンピュータシステム",
+    "topicTags": [
+      "組込みシステム",
+      "バッファ",
+      "自動音量調節"
+    ],
+    "difficulty": 4,
+    "question": "問7 ディジタル補聴器の設計に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問７\n                       出題趣旨\n 補聴器は，ディジタル化が進み，入力された音を複数の周波数帯域に分割し，周波数帯域ごとに音量設定が\n可能な製品が販売されている。周波数帯域に分割するフィルタには論理演算だけで実現できるディジタルフィ\nルタが使われている。また，各種設定をスマートフォンから行うことができる製品もある。\n 本問では，ディジタル補聴器を題材として，使用するバッファのサイズ，音声が入力されてから出力される\nまでの遅延時間の計算，処理能力と消費電力を考慮した最適な動作クロック周波数の決定，及び自動音量調節\nのアルゴリズムについての設計・実装に関する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  384\n         (2)  b   8.0\n 設問２(1)  c  Tf\n              d  Ts\n                                          順不同\n              e  Ta\n         (2) 3\n 設問３(1) ア  dv ＞ 0  and  v ≧ vt\n       イ  vt\n       ウ  0\n         (2) 現在の音量が目標値に近く，変化量が0 となり音量を変更する必要がない場合",
+    "modelAnswer": "",
+    "scoringCriteria": "バッファ384、遅延8.0と各単位、Tf・Ts・Taの対応、クロックの記号を照合する。AVCの比較演算子と代入値をフローチャートに沿って確認する。",
+    "explanation": "音声データの1フレームに必要な記憶量と、入力から出力までの遅延を分けて計算する。バッファサイズはフレームに入るサンプル数と1サンプルのデータ量から求め、遅延時間にはフレームを蓄積する待ち時間と処理時間を対応付ける。動作クロックの選定では、信号処理・合成・AVCの各時間を周期内に収める必要がある。AVCの分岐は現在の音量と目標値の大小だけでなく、変化量dvも見る。変化量が0になる場面では音量を変更せず、目標値付近で不要な調整を行わない。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p34.webp",
+      "/images/questions/ap/2021-spring-pm/question-p35.webp",
+      "/images/questions/ap/2021-spring-pm/question-p36.webp",
+      "/images/questions/ap/2021-spring-pm/question-p37.webp",
+      "/images/questions/ap/2021-spring-pm/question-p38.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問7：公式問題冊子34ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問7：公式問題冊子35ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問7：公式問題冊子36ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問7：公式問題冊子37ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問7：公式問題冊子38ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q7-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問7：4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問7",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問7"
+  },
+  {
+    "id": "ap-2021h-pm-q8",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "開発技術",
+    "topicTags": [
+      "ノンブロッキングI/O",
+      "イベント駆動",
+      "リアクタ"
+    ],
+    "difficulty": 4,
+    "question": "問8 クーポン券発行システムの設計に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問８\n                       出題趣旨\n 昨今，多数のクライアントに対して効率的にサービスを提供できるノンブロッキングI/O 型のWeb サーバソ\nフトウェアが普及しつつある。\n 本問では，ファミリーレストランチェーンのクーポン券を発行するシステムを題材として，ノンブロッキン\n グI/O 型のWeb サーバソフトウェアに関する基本的な理解と，ノンブロッキングI/O 型のWeb サーバソフトウ\nェアで動作するアプリケーションの設計能力について問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  99.77\n         (2)  b コンテキスト\n 設問２(1) ア\n         (2) 可読性が下がるから\n 設問３(1)  c  2\n                                    a 群                               b 群        同じ群中の組合\n              d  3                         3，5               せとする。\n              e  4，5                              4\n              f  6\n         (2) 4，6，7，5",
+    "modelAnswer": "",
+    "scoringCriteria": "99.77、コンテキスト、可読性の理由を確認する。c〜fは公式表の許容される同一群の組合せと照合し、完了順4，6，7，5を図の時間関係で確認する。",
+    "explanation": "ノンブロッキングI/Oでは、処理の開始順と完了順が一致するとは限らない。まず、I/O完了を待つ区間とCPUで計算する区間を分けて、ハンドラがどのイベントで動くかを追う。設問2は非同期処理に伴うコードの可読性への影響を問う。設問3の空欄は、イベントの通知先と処理の依存関係を図で確かめ、公式解答例で示された同一群中の組合せを確認する。処理4〜7の終了順は番号順に決めず、開始条件と処理時間に基づいて求める。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p40.webp",
+      "/images/questions/ap/2021-spring-pm/question-p41.webp",
+      "/images/questions/ap/2021-spring-pm/question-p42.webp",
+      "/images/questions/ap/2021-spring-pm/question-p43.webp",
+      "/images/questions/ap/2021-spring-pm/question-p44.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問8：公式問題冊子40ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問8：公式問題冊子41ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問8：公式問題冊子42ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問8：公式問題冊子43ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問8：公式問題冊子44ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q8-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問8：4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問8",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問8"
+  },
+  {
+    "id": "ap-2021h-pm-q9",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "コスト見積り",
+      "ファンクションポイント",
+      "多段階契約"
+    ],
+    "difficulty": 4,
+    "question": "問9 プロジェクトのコスト見積りに関する次の記述を読んで，設問に答えよ。",
+    "answer": "問９\n                       出題趣旨\n 昨今，情報システムの開発において，工程ごとに契約を締結する多段階契約が増えてきている。応用情報処\n理技術者にとって，各工程での契約形態の違いを理解して，プロジェクトの規模やコストの見積りを適切なタ\nイミングで適切に実施できる能力を身に付けることは，益々重要となってきている。\n 本問では，多段階契約を採用した大手機械メーカのシステム子会社のコスト見積りを題材として，契約形態\nについての基本的な理解，並びに類推法，ボトムアップ法，及びファンクションポイント法の見積り手法の考\nえ方や手順の基本的な理解について問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a エ\n              b ク\n              f キ\n 設問２(1) 請負契約は仕事の完成に対して報酬が支払われるから\n         (2) 複数の手法を併用して見積りの精度を高めるため\n  設問３  本プロジェクト類似の複数のシステム開発プロジェクトと比較していること\n 設問４(1)  c  115\n         (2)  d 規模\n         (3)  e  55",
+    "modelAnswer": "",
+    "scoringCriteria": "a・b・fの記号、契約と併用の理由、類推法の評価根拠を確認する。cの115、dの規模、eの55を、表の評価単位と対応させる。",
+    "explanation": "どの工程でどの情報が確定しているかを踏まえ、見積り手法を選ぶ。類推法では似たプロジェクトを複数比較することが妥当性の判断に関係し、ボトムアップ法では作業単位の積上げを確認する。設問2は、この事例の請負契約で仕事の完成に対して報酬が支払われることと、複数の手法を併用して精度を高めることをそれぞれ問う。ファンクションポイント法は、表に示された機能種別・複雑さに応じた値を集計し、規模とコストの関係を用いる。表のデータ項目数などを単純に合計する計算との違いを整理する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p46.webp",
+      "/images/questions/ap/2021-spring-pm/question-p47.webp",
+      "/images/questions/ap/2021-spring-pm/question-p48.webp",
+      "/images/questions/ap/2021-spring-pm/question-p49.webp",
+      "/images/questions/ap/2021-spring-pm/question-p50.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問9：公式問題冊子46ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問9：公式問題冊子47ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問9：公式問題冊子48ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問9：公式問題冊子49ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問9：公式問題冊子50ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q9-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問9：5ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問9",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問9"
+  },
+  {
+    "id": "ap-2021h-pm-q10",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "SaaS",
+      "SLA",
+      "サービスデスク"
+    ],
+    "difficulty": 4,
+    "question": "問10 SaaSを使った営業支援サービスに関する次の記述を読んで，設問に答えよ。",
+    "answer": "問10\n                       出題趣旨\n 昨今，企業における労働時間の削減を実現するために，オフィスだけでなく，自宅や外出先からも仕事がで\nきる環境の整備が進んでいる。\n  本問では，SaaS を用いた営業支援サービス及びサービスデスクサービスの設計を題材として，SLA の策定や\n評価に関する基本的な理解，及び合意した目標値の達成に向けた施策の理解について問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) ウ\n         (2)  a  210\n 設問２(1)  b エ\n         (2) ・A 社のアドオン開発のインシデントなのか否か\n        ・A 社が保守するソフトウェアのインシデントかどうか\n 設問３(1)  c  FAQ\n         (2)  d サービス提供時間帯\n 設問４(1)  e リリースノート\n         (2)  f 対応手順書の修正が必要かどうか",
+    "modelAnswer": "",
+    "scoringCriteria": "サービスマネジメントの記号と210の数値、二つの切分け観点、FAQ、サービス提供時間帯、リリースノート、対応手順書の修正判断を照合する。",
+    "explanation": "SaaS提供者の責任と、A社が開発・保守する部分の責任を切り分けてサービスを設計する。サービスデスクの問合せでは、SaaS側の障害か、A社のアドオン開発や保守対象ソフトウェアに関する事象かを識別することが必要になる。FAQの整備は、利用者が自分で解決できる内容を取り出す施策であり、サービスの提供時間帯との整合も確認する。アップグレードに際してはリリースノートを確認し、既存の対応手順書を直す必要があるか判断する。稼働時間などの数値は、契約上の対象時間と問題の表の集計範囲を合わせて計算する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p52.webp",
+      "/images/questions/ap/2021-spring-pm/question-p53.webp",
+      "/images/questions/ap/2021-spring-pm/question-p54.webp",
+      "/images/questions/ap/2021-spring-pm/question-p55.webp",
+      "/images/questions/ap/2021-spring-pm/question-p56.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問10：公式問題冊子52ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問10：公式問題冊子53ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問10：公式問題冊子54ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問10：公式問題冊子55ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問10：公式問題冊子56ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q10-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問10：5ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問10",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問10"
+  },
+  {
+    "id": "ap-2021h-pm-q11",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2021,
+    "season": "spring",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "マネジメント",
+    "topicTags": [
+      "システム監査",
+      "アクセス管理",
+      "職務分掌"
+    ],
+    "difficulty": 4,
+    "question": "問11 新会計システムのシステム監査に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問11\n                       出題趣旨\n アプリケーションシステムは，システムに組み込まれた機能や利用するユーザの環境によって依拠すべきコ\nントロールが異なり，同一ではない。したがって，システム監査を効果的に実施するためには，システムの機\n能の違い，ユーザ環境による運用の違いを適切に理解し，これに対応するコントロールを識別し，監査手続を\n実施する必要がある。\n 本問では，新会計システムを題材として，監査で検証すべきコントロール及び監査手続を検討できるかにつ\nいて問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a 利用者マスタ承認権限\n              b ロールマスタ\n              c 月次締め処理\n  設問２     d アップロード入力\n  設問３     e 担当チーム長が入力と承認\n  設問４     f エ\n   設問５   自動インタフェースを拡大させるから\n   設問６   入力者が承認できない",
+    "modelAnswer": "",
+    "scoringCriteria": "a〜fをマスタ・処理・入力経路・担当者の実態に対応付ける。設問5の自動インタフェース拡大の理由と、設問6の入力者が承認できない統制を確認する。",
+    "explanation": "監査手続は、システムが自動で実施する統制と、担当者の運用に依存する統制を分けて検討する。利用者マスタやロールマスタの管理では、入力と承認を誰が実施できるかを確認する。CSVのアップロードでは、手入力と同じ統制が自動的に働くと決め付けず、入力経路の違いを追う。担当チーム長が入力と承認を兼ねる事象についても、システムに組み込まれた入力者が承認できない制御の有無を照合する。自動インタフェースの拡大がどの監査対象に影響するかを、本文の事実と対応付けて答える。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/ap/2021-spring-pm/question-p58.webp",
+      "/images/questions/ap/2021-spring-pm/question-p59.webp",
+      "/images/questions/ap/2021-spring-pm/question-p60.webp",
+      "/images/questions/ap/2021-spring-pm/question-p61.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2021年春 午後 問11：公式問題冊子58ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問11：公式問題冊子59ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問11：公式問題冊子60ページ（本文・図表・設問）",
+      "応用情報技術者 2021年春 午後 問11：公式問題冊子61ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/ap/2021-spring-pm/answer-q11-p06.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問11：6ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2021年度春期 応用情報技術者 午後 問11",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問11"
+  }
+]

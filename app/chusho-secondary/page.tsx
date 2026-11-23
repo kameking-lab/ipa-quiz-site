@@ -14,7 +14,7 @@ export default function ChushoSecondaryPage() {
     <TsuginoWelcome href={chushoQuestionPath(CHUSHO_SECONDARY_CASES[0].year, CHUSHO_SECONDARY_CASES[0].case, CHUSHO_SECONDARY_CASES[0].questions[0].number)} qualification="中小企業診断士 二次試験" />
     <Link href="/qualifications" className="text-sm font-semibold text-primary hover:underline">← 資格一覧</Link>
     <h1 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">中小企業診断士 二次試験</h1>
-    <p className="mt-4 leading-8 text-muted-foreground">2025・2024年度の全8事例、{CHUSHO_SECONDARY_ORIGINAL_COUNT}原問・{CHUSHO_SECONDARY_SOLUTION_COUNT}独自解答例を収録。与件を読み、字数を確認しながら書き、解答例と根拠を比較できます。事例Ⅳは計算過程・単位・端数処理も確認します。</p>
+    <p className="mt-4 leading-8 text-muted-foreground">2023〜2025年度の全12事例、{CHUSHO_SECONDARY_ORIGINAL_COUNT}原問・{CHUSHO_SECONDARY_SOLUTION_COUNT}独自解答例を収録。与件を読み、字数を確認しながら書き、解答例と根拠を比較できます。事例Ⅳは計算過程・単位・端数処理も確認します。</p>
     <p className="mt-4 rounded-xl border border-border bg-muted/30 p-4 text-sm leading-7">{INDEPENDENT_EXAMPLE_NOTICE}</p>
     {[2025, 2024].map(year => <section key={year} className="mt-9" aria-labelledby={`year-${year}`}>
       <h2 id={`year-${year}`} className="text-2xl font-bold">{year}年度（令和{year - 2018}年度）</h2>

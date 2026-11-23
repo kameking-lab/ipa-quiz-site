@@ -1,0 +1,2735 @@
+[
+  {
+    "id": "yakuzaishi-2022-annual-theory-q91",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 91,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "分子軌道"
+    ],
+    "difficulty": 3,
+    "question": "分子軌道法に基づく基底状態の分子の電子配置に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "電子は特定の原子に属さず、分子全体に広がっている。",
+      "イ": "電子は一つの軌道に何個でも入ることができる。",
+      "ウ": "一つの軌道に同じ向きのスピンをもつ電子が複数入ることができる。",
+      "エ": "電子はエネルギーの高い軌道から優先的に入ることがある。",
+      "オ": "結合次数は、（結合性軌道の電子数-反結合性軌道の電子数）/2 で与えられる。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "分子軌道法では、電子は分子全体の軌道を占める。結合性電子と反結合性電子の寄与は逆向きで、その差を2で割ると結合次数になる。",
+    "choiceExplanations": {
+      "ア": "分子軌道は分子全体に広がり得る。",
+      "イ": "各軌道には最大2個までしか入れない。",
+      "ウ": "同じ軌道を占める2電子のスピンは逆向きになる。",
+      "エ": "基底状態では低エネルギーの軌道から占める。",
+      "オ": "結合性電子2個で結合次数に1を加え、反結合性電子2個で1を引く。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問91",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q92",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 92,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "放射壊変"
+    ],
+    "difficulty": 3,
+    "question": "放射線及び放射壊変に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "放射壊変には0 次反応速度式に従う過程と、1 次反応速度式に従う過程の2 通りがある。",
+      "イ": "放射能のSI 組立単位はベクレル（Bq）であり、その定義は1 秒あたりに壊変する原子核数である。",
+      "ウ": "β⁻壊変では、生成する電子とニュートリノにエネルギーが分配されるため、電子のもつエネルギーは連続的な分布を示す。",
+      "エ": "X 線とγ線は電磁波であり、波長で区別されている。",
+      "オ": "γ転移により放射されるγ線のエネルギーは、壊変する原子核種によらず一定である。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "放射能は時間あたりの壊変数を表す。β⁻壊変では電子と反電子ニュートリノなどにエネルギーが分かれるので、電子だけを測ると連続分布になる。",
+    "choiceExplanations": {
+      "ア": "単一核種の壊変速度は未壊変核数に比例する。",
+      "イ": "1 Bqは毎秒1壊変に相当する。",
+      "ウ": "電子へのエネルギー配分が壊変ごとに異なる。",
+      "エ": "X線とγ線の区別は発生過程による。波長域は重なり得る。",
+      "オ": "γ線のエネルギーは核の準位差で決まり、核種や遷移によって異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問92",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q93",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 93,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "熱力学"
+    ],
+    "difficulty": 3,
+    "question": "状態関数と経路関数に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "熱と仕事は経路関数である。",
+      "イ": "温度は示量性の状態関数である。",
+      "ウ": "エンタルピーは示強性の状態関数である。",
+      "エ": "熱力学第一法則より、内部エネルギーは経路関数であることがわかる。",
+      "オ": "状態関数の変化量は、可逆過程でも不可逆過程でも等しい。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "状態関数の差は始状態と終状態で決まる。熱と仕事は同じ二状態間でも経路次第で値が変わり、両者のエネルギー収支から内部エネルギーの変化を求める。",
+    "choiceExplanations": {
+      "ア": "熱と仕事は経路に依存する。",
+      "イ": "温度は系の大きさに比例しない示強性変数である。",
+      "ウ": "エンタルピーは物質量に比例する示量性変数である。",
+      "エ": "内部エネルギーは状態関数である。",
+      "オ": "同じ始状態・終状態なら、どちらの経路でも状態関数の差は等しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問93",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q94",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 94,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "膜電位"
+    ],
+    "difficulty": 3,
+    "question": "生体膜の膜電位は、膜の両側におけるイオン濃度の不均衡によって生じる。そのイオン濃度の不均衡は、生体膜が水や小さいイオンは通すが、大きなイオンは通さない半透膜の性質をもつことで生じる。\n図のように、半透膜の内相にタンパク質P⁵⁻（-5 の電荷をもち5 Na⁺ が対イオンとなっている）の0.01 mol/L 水溶液を置き、外相には濃度が0.1 mol/L のNaCl水溶液を置いておく。平衡状態に達したとき、半透膜の外相と内相のNa⁺ とCl⁻の濃度には次式が成立している。\n\n［Na⁺］外相・［Cl⁻］外相=［Na⁺］内相・［Cl⁻］内相\n平衡に達したときの半透膜の内相と外相のNa⁺ の濃度の差に最も近い値はどれか。1つ選べ。ただし、浸透圧差に基づく物質の移動は考慮しないものとする。",
+    "choices": {
+      "ア": "0.01 mol/L",
+      "イ": "0.03 mol/L",
+      "ウ": "0.05 mol/L",
+      "エ": "0.07 mol/L",
+      "オ": "0.09 mol/L"
+    },
+    "answer": "イ",
+    "explanation": "内相では電気的中性から [Na⁺]−[Cl⁻]＝0.050 mol/L となる。外相の濃度0.10 mol/Lを平衡式に入れると、内相のNa⁺は約0.128 mol/L、その差は約0.028 mol/Lとなる。",
+    "choiceExplanations": {
+      "ア": "固定負電荷と平衡式から得る差は0.01 mol/Lより大きい。",
+      "イ": "約0.028 mol/Lに最も近い。",
+      "ウ": "0.05 mol/Lは内相のNa⁺とCl⁻の濃度差である。",
+      "エ": "内外のNa⁺濃度差は0.07 mol/Lより小さい。",
+      "オ": "内外のNa⁺濃度差は0.09 mol/Lより小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q94-ions.webp"
+    ],
+    "imageAltTexts": [
+      "半透膜を隔てた外相と内相におけるNa⁺、Cl⁻、タンパク質の初期状態と平衡状態。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問94",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q95",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 95,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "反応速度"
+    ],
+    "difficulty": 3,
+    "question": "ア～ウのグラフは、反応次数の異なる化学反応の経時変化を表したものである。これらのグラフに関する記述のうち、正しいのはどれか。2つ選べ。ただし、\n［Ａ］は反応物Ａの濃度（懸濁液の場合は、その時点の、Ａの全量を体積で割った値）、t は時間を表す。",
+    "choices": {
+      "ア": "傾きから反応速度定数を求められるのはアとウであるが、イでは求められない。",
+      "イ": "MRI 信号の減衰はアのグラフと同じ変化を示す。",
+      "ウ": "半減期がその時点での濃度によって変化しない反応は、イのグラフを示す。",
+      "エ": "懸濁液中の加水分解反応で、反応速度よりも溶解速度が速い場合は、ウのグラフを示す。",
+      "オ": "ア～ウの反応速度定数の次元は同じである。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "アは一次、イは二次、ウは零次の積分速度式に対応する。一次過程では対数を取ると直線になり、飽和した懸濁液では溶解分の濃度が保たれる間、全残存量が直線的に減る。",
+    "choiceExplanations": {
+      "ア": "イの1/[A]と時間の直線の傾きも、速度定数に対応する。",
+      "イ": "指数関数的なMRI信号減衰を対数で表すと、アのような直線になる。",
+      "ウ": "濃度によらず半減期が一定になるのは一次反応のアである。",
+      "エ": "固相から速やかに補充されると溶液中濃度が一定に保たれ、全量は零次で減少する。",
+      "オ": "零次・一次・二次では、速度式の濃度の次数に応じて速度定数の単位が異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q95-rates.webp"
+    ],
+    "imageAltTexts": [
+      "アはln[A]、イは1/[A]、ウは[A]を縦軸、いずれも時間tを横軸に取ったグラフ。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問95",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q96",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 96,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "分配係数"
+    ],
+    "difficulty": 3,
+    "question": "分配係数は、薬物の脂溶性の指標として用いられる。ある1 価の弱酸HA\n（pKa 5.3）がpH 5.0 の緩衝液中に溶解している。この緩衝液200 mL に水と混ざり合わない有機溶媒100 mL を加えてHA を1 回抽出したところ、抽出率は75％であった。この弱酸HA の分配係数KD（有機溶媒中の分子形の濃度/ 緩衝液中の分子形の濃度）に最も近い値はどれか。1つ選べ。ただし、温度は一定で、混合により有機溶媒と緩衝液の体積に変化はなく、イオン形（解離形）は有機層に移行しないものとする。また、10⁰·³ = 2 とする。",
+    "choices": {
+      "ア": "4.0",
+      "イ": "5.0",
+      "ウ": "6.0",
+      "エ": "7.0",
+      "オ": "9.0"
+    },
+    "answer": "オ",
+    "explanation": "水層の解離形と分子形の比は10^(5.0−5.3)＝0.5。抽出率75%より有機層の物質量は水層の3倍で、水層には分子形の1.5倍の総量がある。体積比2も掛けると、分子形の分配係数は9になる。",
+    "choiceExplanations": {
+      "ア": "濃度比と体積比を反映した結果は4.0より大きい。",
+      "イ": "水層に残る解離形も含めて物質収支を取る必要があり、5.0にはならない。",
+      "ウ": "6.0は両形を合わせた水層濃度を分母とする見かけの分配比である。",
+      "エ": "計算値は7.0より大きい。",
+      "オ": "3×1.5×2＝9.0となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=6",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問96",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q97",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 97,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "日本薬局方"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方に記載されているハロゲン化物の定性反応Ａ～Ｄに関する記述のうち、正しいのはどれか。2つ選べ。\n定性反応\nＡ　本品の溶液に ［ア］試液を加えるとき、淡黄色の沈殿を生じる。沈殿を分取し、この一部に希硝酸を加えても溶けない。また、他の一部にアンモニア水（28）を加えて振り混ぜた後、分離した液に希硝酸を加えて酸性にすると【下線部イ】白濁する。\nＢ　本品の溶液に ［ア］試液を加えるとき、【下線部ウ】沈殿を生じる。この一部に希硝酸を、また、他の一部にアンモニア水（28）を追加してもいずれも沈殿は溶けない。\nＣ　本品の溶液に ［ア］試液を加えるとき、白色の沈殿を生じる。沈殿を分取し、この一部に希硝酸を加えても溶けない。また、他の一部に【下線部エ】過量のアンモニア試液を加えるとき、溶ける。\nＤ　本品の溶液に塩素試液を加えるとき、黄褐色を呈する。これを二分し、この一部にクロロホルムを追加して振り混ぜるとき、クロロホルム層は黄褐色～赤褐色を呈する。また、他の一部にフェノールを追加するとき、【下線部オ】白色の沈殿を生じる。",
+    "choices": {
+      "ア": "ア に入る化合物は、塩化銀である。",
+      "イ": "下線部イの白濁は臭化銀の生成による。",
+      "ウ": "下線部ウの沈殿は黒紫色を呈する。",
+      "エ": "下線部エでは銀イオンが水酸化物イオンと錯イオンを形成する。",
+      "オ": "下線部オの白色の沈殿は2,4,6-トリブロモフェノールである。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "Aは臭化物、Bはヨウ化物、Cは塩化物、Dは臭化物の反応を示す。硝酸銀による沈殿の色とアンモニアへの溶け方を手掛かりに判定する。",
+    "choiceExplanations": {
+      "ア": "加えるのは硝酸銀試液である。",
+      "イ": "酸性に戻すとアンミン錯体が解離し、臭化銀が再び析出する。",
+      "ウ": "この沈殿はヨウ化銀で、黒紫色ではなく黄色系を呈する。",
+      "エ": "銀イオンと錯体を作る配位子はアンモニアである。",
+      "オ": "遊離した臭素がフェノールを臭素化し、白色の2,4,6-トリブロモフェノールを生じる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=7",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問97",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000066530.html"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q98",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 98,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "キレート滴定"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方塩化カルシウム水和物（CaCl₂・2H₂O：147.01）の定量法に関する記述のうち、正しいのはどれか。2つ選べ。\n本品約0.4 g を精密に量り、水に溶かし、正確に200 mL とする。この液20 mLを正確に量り、水40 mL 及び8 mol/L ［ア］ 2 mL を加え、更にNN 指示薬\n0.1 g を加えた後、直ちに【下線部イ】0.02 mol/L エチレンジアミン四酢酸二水素二ナトリウム液で滴定する。ただし、滴定の終点は液の赤紫色が青色に変わるときとする。\n\n0.02 mol/L エチレンジアミン四酢酸二水素二ナトリウム液1 mL\n= ［ウ］ mg CaCl₂・2H₂O",
+    "choices": {
+      "ア": "ア に入れるべき溶液は、「アンモニア・塩化アンモニウム緩衝液」である。",
+      "イ": "下線部イの溶液は遮光のガラス瓶に保存する。",
+      "ウ": "ウ に入れるべき数値は、2.220 である。",
+      "エ": "Ca²⁺ とエチレンジアミン四酢酸との反応で生じたキレートの錯生成定数は、\nCa²⁺ とNN 指示薬との反応で生じたキレートの錯生成定数より大きい。",
+      "オ": "本定量法では、試料溶液中にMg²⁺ が共存していても、塩化カルシウム水和物を定量することができる。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "EDTAとCa²⁺は1対1で結合する。強アルカリ性でMg²⁺の影響を抑え、EDTAが指示薬からCa²⁺を奪うと終点の色に変わる。",
+    "choiceExplanations": {
+      "ア": "試験のアには水酸化カリウム液を用いる。",
+      "イ": "滴定液の保存容器は気密のポリエチレン容器である。",
+      "ウ": "0.02 mmol×147.01 mg/mmol＝2.9402 mgとなる。",
+      "エ": "EDTAのCa²⁺錯体の方が安定なので、指示薬が遊離する。",
+      "オ": "強アルカリ性でMg²⁺を水酸化物として沈殿させ、その妨害を抑える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=8",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問98",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000066530.html"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q99",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 99,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "液体クロマトグラフィー"
+    ],
+    "difficulty": 3,
+    "question": "固定相としてオクタデシルシリル（ODS）化シリカゲル、移動相としてアセトニトリルと水の混合液を用いて、ベンゼン、トルエン及びエチルベンゼンの分離を液体クロマトグラフィーにより行った。この分離に関する記述のうち、正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "エチルベンゼン、トルエン、ベンゼンの順で溶出する。",
+      "イ": "理論段高さの値が小さいカラムに変更することにより、各成分間の分離度が向上する。",
+      "ウ": "移動相の流速と各成分間の分離係数は比例する。",
+      "エ": "移動相中のアセトニトリルの割合を大きくすることにより、各成分間の分離度が向上する。",
+      "オ": "固定相にシリカゲル、移動相にn-ヘキサン－アセトン混液を用いても、溶出順は変わらない。"
+    },
+    "answer": "イ",
+    "explanation": "ODSは疎水性の固定相で、この条件では疎水性の高い化合物ほど長く保持される。理論段高さが小さいほど、同じ長さのカラムの理論段数が増え、ピークの分離が良くなる。",
+    "choiceExplanations": {
+      "ア": "通常はベンゼン、トルエン、エチルベンゼンの順で溶出する。",
+      "イ": "カラム効率が上がり、条件が同じなら分離度が改善する。",
+      "ウ": "分離係数は保持の比で決まり、流速に比例しない。",
+      "エ": "逆相で有機溶媒を増やすと保持が弱くなり、分離度の向上は保証されない。",
+      "オ": "シリカゲルでの順相分離では保持の仕組みが変わるため、同じ順序とは限らない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=9",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問99",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q100",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 100,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "物理",
+      "電気泳動"
+    ],
+    "difficulty": 3,
+    "question": "キャピラリー電気泳動は、微量の試料の分析に極めて有用であり、臨床検査における血清タンパク質の分析にも用いられている。溶融シリカ毛細管を用いたキャピラリー電気泳動に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "pH 7 の緩衝液を用いると、電気浸透流は陰極から陽極の方向に向かう。",
+      "イ": "キャピラリーゾーン電気泳動ではpH 7 の緩衝液を用いると、陽イオン性物質と中性物質は同時に泳動される。",
+      "ウ": "キャピラリーゲル電気泳動でタンパク質を分離すると、分子サイズの大きい順に検出される。",
+      "エ": "キャピラリー等電点電気泳動では、緩衝液に両性電解質（ポリアミノカルボン酸など）を溶解して分離を行う。",
+      "オ": "ミセル動電クロマトグラフィーでは、中性物質の相互分離が可能である。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "溶融シリカ表面が負に帯電すると、電気浸透流は通常陰極へ向かう。等電点電気泳動ではpH勾配を、ミセル動電クロマトグラフィーではミセルへの分配の差を利用する。",
+    "choiceExplanations": {
+      "ア": "中性付近では電気浸透流は陽極側から陰極側へ向かう。",
+      "イ": "陽イオンには電気浸透流に加えて陰極方向の電気泳動が働く。",
+      "ウ": "サイズでふるい分ける条件では、小さい分子の方が先に検出される。",
+      "エ": "両性電解質によりpH勾配を形成し、等電点の違いで分離する。",
+      "オ": "ミセルに対する親和性が異なれば、中性物質も相互に分離できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=9",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問100",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q101",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 101,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "Fischer投影"
+    ],
+    "difficulty": 3,
+    "question": "D-リボースの構造を正しく表しているFischer 投影式はどれか。1つ選べ。",
+    "choices": {
+      "ア": "Fischer投影式 1",
+      "イ": "Fischer投影式 2",
+      "ウ": "Fischer投影式 3",
+      "エ": "Fischer投影式 4",
+      "オ": "Fischer投影式 5"
+    },
+    "answer": "ア",
+    "explanation": "Fischer投影式はCHOを上、CH₂OHを下に置いて読む。D-リボースでは上からC2、C3、C4のOHがすべて右になる。",
+    "choiceExplanations": {
+      "ア": "3つのOHがすべて右で一致する。",
+      "イ": "C2のOHが左にある。",
+      "ウ": "C3のOHが左にある。",
+      "エ": "3つのOHがすべて左にある。",
+      "オ": "C2とC4のOHが左にある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q101-ribose.webp"
+    ],
+    "imageAltTexts": [
+      "問題文に示されたD-リボースの立体構造。"
+    ],
+    "choiceImageUrls": {
+      "ア": "/questions/yakuzaishi/107-day1-2-qf4/q101-choice-1.webp",
+      "イ": "/questions/yakuzaishi/107-day1-2-qf4/q101-choice-2.webp",
+      "ウ": "/questions/yakuzaishi/107-day1-2-qf4/q101-choice-3.webp",
+      "エ": "/questions/yakuzaishi/107-day1-2-qf4/q101-choice-4.webp",
+      "オ": "/questions/yakuzaishi/107-day1-2-qf4/q101-choice-5.webp"
+    },
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=10",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問101",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q102",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 102,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "配座異性"
+    ],
+    "difficulty": 3,
+    "question": "1,2-ジメチルシクロヘキサンの構造Ａに関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "Ａはシス体である。",
+      "イ": "Ａのエナンチオマーはアである。",
+      "ウ": "Ａのいす形配座が環反転した配座異性体はイである。",
+      "エ": "Ａのメチル基は、両方ともエクアトリアル位に結合している。",
+      "オ": "Ａはメチル基同士に働く1,3-ジアキシアル相互作用により不安定化されている。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "Aの隣接したメチル基は、どちらもエクアトリアルで、互いに反対側を向く。環反転しても上下の向きは保たれ、両方がアキシアルのイになる。",
+    "choiceExplanations": {
+      "ア": "Aはトランス体である。",
+      "イ": "鏡像なら置換炭素の立体配置が両方とも反転する。図のアはAの鏡像に当たらない。",
+      "ウ": "イでは二つのメチル基がアキシアルになり、環反転の関係にある。",
+      "エ": "両メチル基とも環の外周に向いたエクアトリアル位にある。",
+      "オ": "Aにはアキシアルのメチル基がない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q102-conformers.webp"
+    ],
+    "imageAltTexts": [
+      "1,2-ジメチルシクロヘキサンの構造Aと、二つのいす形配座ア・イ。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=10",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問102",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q103",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 103,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "立体化学"
+    ],
+    "difficulty": 3,
+    "question": "主生成物としてメソ体を与えるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "反応式 1",
+      "イ": "反応式 2",
+      "ウ": "反応式 3",
+      "エ": "反応式 4",
+      "オ": "反応式 5"
+    },
+    "answer": "イ",
+    "explanation": "トランス-2-ブテンへの臭素のアンチ付加では、二つの立体中心が逆の配置をとる。分子内に対称面ができ、メソ体になる。",
+    "choiceExplanations": {
+      "ア": "ブロモヒドリンの隣り合う置換基がBrとOHで異なり、対称にならない。",
+      "イ": "トランス-2-ブテンのアンチ付加でメソ型のジブロモ体を生じる。",
+      "ウ": "同じアルケンへのシン付加では、鏡像関係にあるジオールを生じる。",
+      "エ": "主に生じる2-ブロモブタンの立体中心は一つだけである。",
+      "オ": "アルコールが生じるが、対称面を持つメソ体にはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "choiceImageUrls": {
+      "ア": "/questions/yakuzaishi/107-day1-2-qf4/q103-choice-1.webp",
+      "イ": "/questions/yakuzaishi/107-day1-2-qf4/q103-choice-2.webp",
+      "ウ": "/questions/yakuzaishi/107-day1-2-qf4/q103-choice-3.webp",
+      "エ": "/questions/yakuzaishi/107-day1-2-qf4/q103-choice-4.webp",
+      "オ": "/questions/yakuzaishi/107-day1-2-qf4/q103-choice-5.webp"
+    },
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=11",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問103",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q104",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 104,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "求電子置換"
+    ],
+    "difficulty": 3,
+    "question": "次の反応のうち、主生成物の構造を正しく示しているのはどれか。1つ選べ。\nただし、各反応はそれぞれ適切な溶媒を用いて行い、反応終了後、適切な後処理を施したものとする。",
+    "choices": {
+      "ア": "反応式 1",
+      "イ": "反応式 2",
+      "ウ": "反応式 3",
+      "エ": "反応式 4",
+      "オ": "反応式 5"
+    },
+    "answer": "オ",
+    "explanation": "臭素のようなハロゲンはベンゼン環の反応性を下げる一方で、求電子置換ではオルト位・パラ位へ配向させる。ブロモベンゼンのスルホン化を示した5が該当する。",
+    "choiceExplanations": {
+      "ア": "アセトアミド基はオルト・パラ配向性で、図はメタ置換を示す。",
+      "イ": "メチル基はオルト・パラ配向性で、図はメタ置換を示す。",
+      "ウ": "アセチル基はメタ配向性で、図のオルト・パラ体が主生成物とはならない。",
+      "エ": "ヒドロキシ基のオルト位が優先されるため、図のメタ位置への置換は適切でない。",
+      "オ": "臭素のオルト・パラ配向性と図の生成物が一致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "choiceImageUrls": {
+      "ア": "/questions/yakuzaishi/107-day1-2-qf4/q104-choice-1.webp",
+      "イ": "/questions/yakuzaishi/107-day1-2-qf4/q104-choice-2.webp",
+      "ウ": "/questions/yakuzaishi/107-day1-2-qf4/q104-choice-3.webp",
+      "エ": "/questions/yakuzaishi/107-day1-2-qf4/q104-choice-4.webp",
+      "オ": "/questions/yakuzaishi/107-day1-2-qf4/q104-choice-5.webp"
+    },
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=12",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問104",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q105",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 105,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "日本薬局方"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方に収載されている次の確認試験に関する記述のうち、誤っているのはどれか。1つ選べ。\n\n「本品1 mL にヨウ素試液2 mL 及びＡ試液2 mL を加えて振り混ぜるとき、淡黄色の沈殿を生じる。」",
+    "choices": {
+      "ア": "ヨウ素は求電子剤として働く。",
+      "イ": "イソプロパノールはこの確認試験で陽性となる。",
+      "ウ": "化合物の構造に含まれるホルミル基の検出に用いられる。",
+      "エ": "Ａは水酸化ナトリウムである。",
+      "オ": "淡黄色の沈殿はヨードホルムである。"
+    },
+    "answer": "ウ",
+    "explanation": "試験はヨードホルム反応で、メチルケトンやそれに酸化される化合物を検出する。ホルミル基一般を調べる試験ではない。",
+    "choiceExplanations": {
+      "ア": "塩基性で生成するエノラートのヨウ素化に、ヨウ素が求電子剤として働く。",
+      "イ": "酸化によりアセトンが生成するため、陽性を示す。",
+      "ウ": "ホルミル基に共通する検出反応ではない。",
+      "エ": "反応には水酸化ナトリウムによる塩基性条件を用いる。",
+      "オ": "淡黄色の沈殿はヨードホルム（CHI₃）である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=13",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問105",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000066530.html"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q106",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 106,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "プロテアソーム"
+    ],
+    "difficulty": 3,
+    "question": "ボルテゾミブは、プロテアソームのβ₅サブユニットのN 末端トレオニン残基と結合し複合体を形成することにより、プロテアソームの働きを阻害する。以下の記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "アで示した複素環はピリミジン環である。",
+      "イ": "イで示した不斉中心の立体配置はS 配置である。",
+      "ウ": "ウで示したホウ素はルイス酸として働く。",
+      "エ": "エで示したホウ素の形式電荷は+1 である。",
+      "オ": "エで示したホウ素はsp³ 混成である。"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ホウ素の空軌道がトレオニン側から電子対を受け取り、四配位の複合体が形成される。四配位ホウ素は四面体形でsp³混成に対応する。",
+    "choiceExplanations": {
+      "ア": "アは窒素二つが向かい合うピラジン環である。",
+      "イ": "図のイの置換基に優先順位を付けるとR配置になる。",
+      "ウ": "ウのホウ素は電子対受容体として働く。",
+      "エ": "四つの結合を持つエのホウ素の形式電荷は−1である。",
+      "オ": "エのホウ素は四配位で、sp³混成となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q106-complex.webp"
+    ],
+    "imageAltTexts": [
+      "ボルテゾミブとβ₅サブユニットの反応。複素環、立体中心と反応前後のホウ素をア〜エで示す。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=13",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問106",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q107",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 107,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "抗悪性腫瘍薬"
+    ],
+    "difficulty": 3,
+    "question": "次の抗悪性腫瘍薬のうち、DNA の塩基部分をアルキル化するのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "抗悪性腫瘍薬の構造 1",
+      "イ": "抗悪性腫瘍薬の構造 2",
+      "ウ": "抗悪性腫瘍薬の構造 3",
+      "エ": "抗悪性腫瘍薬の構造 4",
+      "オ": "抗悪性腫瘍薬の構造 5"
+    },
+    "answer": "イ",
+    "explanation": "アジリジン環を持つマイトマイシンCは、活性化された後にDNA塩基に結合する。図ではマイトマイシンCの骨格に当たる2を選ぶ。",
+    "choiceExplanations": {
+      "ア": "図1のキナーゼ阻害薬型の骨格は、この設問のDNAアルキル化薬に該当しない。",
+      "イ": "マイトマイシンCの構造であり、DNAのアルキル化と架橋に関わる。",
+      "ウ": "タモキシフェン型の構造で、エストロゲン受容体に作用する。",
+      "エ": "テガフールの構造で、5-FUのプロドラッグである。",
+      "オ": "リュープロレリン型のペプチドで、GnRH受容体に作用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "choiceImageUrls": {
+      "ア": "/questions/yakuzaishi/107-day1-2-qf4/q107-choice-1.webp",
+      "イ": "/questions/yakuzaishi/107-day1-2-qf4/q107-choice-2.webp",
+      "ウ": "/questions/yakuzaishi/107-day1-2-qf4/q107-choice-3.webp",
+      "エ": "/questions/yakuzaishi/107-day1-2-qf4/q107-choice-4.webp",
+      "オ": "/questions/yakuzaishi/107-day1-2-qf4/q107-choice-5.webp"
+    },
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=14",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問107",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q108",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 108,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "生薬"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方収載センナに関する記述のうち、誤っているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "マメ科植物Cassia angustifolia Vahl またはCassia acutifolia Delile の小葉を基原とする生薬である。",
+      "イ": "確認試験としてマグネシウム－塩酸反応が用いられる。",
+      "ウ": "純度試験として残留農薬（総BHC 及び総DDT）の量が規定されている。",
+      "エ": "瀉下作用を示す活性本体は、腸内細菌により生成したアントロン類である。",
+      "オ": "妊婦や妊娠している可能性のある女性に使用する場合には流早産の危険性があるため注意を要する。"
+    },
+    "answer": "イ",
+    "explanation": "センナの瀉下作用は、センノシドが腸内細菌により変換されて生じるアントロン類による。確認試験と純度試験の目的を区別すると、誤りはマグネシウム－塩酸反応である。",
+    "choiceExplanations": {
+      "ア": "日本薬局方のセンナは、設問に示される基原植物の小葉である。",
+      "イ": "マグネシウム－塩酸反応はこの生薬の確認試験として挙げられていない。",
+      "ウ": "日本薬局方の純度試験には総BHC・総DDTの規定がある。",
+      "エ": "腸内細菌の作用で活性を持つアントロン類が生じる。",
+      "オ": "設問の注意事項は妊娠中または妊娠の可能性がある場合の使用に関するもの。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=15",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問108",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000066530.html"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q109",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 109,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "抗凝固薬"
+    ],
+    "difficulty": 3,
+    "question": "天然物由来成分の化学構造を基に開発された、血液凝固抑制作用を有するクマリン誘導体はどれか。1つ選べ。",
+    "choices": {
+      "ア": "化合物の構造 1",
+      "イ": "化合物の構造 2",
+      "ウ": "化合物の構造 3",
+      "エ": "化合物の構造 4",
+      "オ": "化合物の構造 5"
+    },
+    "answer": "エ",
+    "explanation": "抗凝固薬ワルファリンは4-ヒドロキシクマリン誘導体である。縮合環のラクトン部分と、側鎖・カリウム塩の形を合わせて選ぶ。",
+    "choiceExplanations": {
+      "ア": "この縮合環はワルファリンの骨格とは異なる。",
+      "イ": "酸とアミドを含む構造で、4-ヒドロキシクマリン誘導体に該当しない。",
+      "ウ": "フラボノイド型の骨格で、該当する抗凝固薬ではない。",
+      "エ": "4-ヒドロキシクマリン骨格を持つワルファリンカリウムである。",
+      "オ": "図は二量体型の配糖体で、ワルファリンではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "choiceImageUrls": {
+      "ア": "/questions/yakuzaishi/107-day1-2-qf4/q109-choice-1.webp",
+      "イ": "/questions/yakuzaishi/107-day1-2-qf4/q109-choice-2.webp",
+      "ウ": "/questions/yakuzaishi/107-day1-2-qf4/q109-choice-3.webp",
+      "エ": "/questions/yakuzaishi/107-day1-2-qf4/q109-choice-4.webp",
+      "オ": "/questions/yakuzaishi/107-day1-2-qf4/q109-choice-5.webp"
+    },
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=16",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問109",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q110",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 110,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "洞房結節"
+    ],
+    "difficulty": 3,
+    "question": "図は、洞房結節細胞の自発性活動電位に対する自律神経の影響を示したものである。以下の記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "点線から実線への変化は、主にノルアドレナリンのアドレナリンβ₁受容体刺激によるものである。",
+      "イ": "点線から実線への変化は、主にアセチルコリンのアセチルコリンM₂受容体刺激によるものである。",
+      "ウ": "点線から実線への変化は、心拍数の減少を表している。",
+      "エ": "閾値からの急速な脱分極（第0 相）は、主に細胞内へのCa²⁺ 流入によるものである。",
+      "オ": "閾値からの急速な脱分極（第0 相）は、主に細胞外へのNa⁺ 流出によるものである。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "実線では閾値に到達するまでが早くなり、次の活動電位までの時間が短い。交感神経によるβ₁受容体刺激でこの変化が起き、洞房結節の第0相は主にCa²⁺流入で生じる。",
+    "choiceExplanations": {
+      "ア": "交感神経のノルアドレナリンによるβ₁受容体刺激に対応する。",
+      "イ": "M₂受容体刺激は洞房結節の自発発火の頻度を下げる。",
+      "ウ": "発火間隔が短くなり、心拍数は増える。",
+      "エ": "洞房結節の第0相に主に関わるのはCa²⁺の流入である。",
+      "オ": "Na⁺が細胞外へ流出することが急速な脱分極の主因ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q110-action-potential.webp"
+    ],
+    "imageAltTexts": [
+      "自律神経の影響を受ける前と受けた後の洞房結節細胞の活動電位。点線が変化前、実線が変化後。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=17",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問110",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q111",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 111,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "血圧調節"
+    ],
+    "difficulty": 3,
+    "question": "図は、アンジオテンシンⅡの生成経路とアンジオテンシンⅡによる血圧調節の概要を示したものである。この図の内容に関する記述のうち、正しいのはどれか。\n1つ選べ。",
+    "choices": {
+      "ア": "アンジオテンシノーゲンを分泌する組織1 は、心臓である。",
+      "イ": "アンジオテンシノーゲンを限定分解する酵素Ａは、腎臓の糸球体を流れる血液量が上昇した時に分泌量が増加する。",
+      "ウ": "アンジオテンシンⅠを限定分解する酵素Ｂは、肺の毛細血管などに多く存在する。",
+      "エ": "アンジオテンシンⅡが作用する組織2 は、副腎皮質網状層である。",
+      "オ": "ホルモンＣは、腎臓の遠位尿細管でのNa⁺ の再吸収を抑える。"
+    },
+    "answer": "ウ",
+    "explanation": "組織1は主に肝臓、酵素Aはレニン、酵素Bはアンジオテンシン変換酵素（ACE）に対応する。アンジオテンシンⅡは副腎皮質からのアルドステロン分泌を促す。",
+    "choiceExplanations": {
+      "ア": "アンジオテンシノーゲンは主に肝臓から分泌される。",
+      "イ": "レニンの分泌を促すのは、腎灌流圧の低下などである。",
+      "ウ": "ACEは肺毛細血管などの血管内皮に存在する。",
+      "エ": "アルドステロンを分泌するのは副腎皮質の球状層である。",
+      "オ": "アルドステロンは遠位ネフロンでNa⁺再吸収を促す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q111-blood-pressure.webp"
+    ],
+    "imageAltTexts": [
+      "組織1と組織2、酵素Aと酵素B、ホルモンCを示すアンジオテンシンⅡ生成と血圧調節の模式図。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問111",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q112",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 112,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "血小板凝集"
+    ],
+    "difficulty": 3,
+    "question": "血小板に関わる分子についての記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "セロトニンは、血管の損傷部位で活性化された血小板から放出される。",
+      "イ": "セロトニンは、血小板のホスホジエステラーゼを活性化して、血小板凝集を抑制する。",
+      "ウ": "アデノシン二リン酸（ADP）は、血小板内のイノシトール三リン酸（IP₃）量を増加させ、血小板凝集を促進する。",
+      "エ": "トロンボキサンA₂は、血小板内のCa²⁺ 濃度を上昇させ、血小板凝集を促進する。",
+      "オ": "プロスタグランジンI₂は、血小板内のサイクリックAMP（cAMP）量を減少させ、血小板凝集を促進する。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "損傷部位で活性化した血小板はセロトニンを放出し、トロンボキサンA₂は細胞内Ca²⁺を増やして凝集を促す。公式正答は1・4。ADP刺激で血小板のIP₃が増加したことを示す研究もある。",
+    "choiceExplanations": {
+      "ア": "セロトニンは活性化に伴い濃染顆粒から放出される。",
+      "イ": "この設問にある、ホスホジエステラーゼを介した凝集抑制という説明は当てはまらない。",
+      "ウ": "ADPは凝集を促す。IP₃増加も報告されているが、公式正答に3は含まれない。",
+      "エ": "トロンボキサンA₂受容体への刺激は細胞内Ca²⁺上昇を介して凝集を促す。",
+      "オ": "プロスタグランジンI₂はcAMPを増加させ、血小板凝集を抑制する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問112",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://pubmed.ncbi.nlm.nih.gov/9809874/"
+    ],
+    "choiceFactTruth": {
+      "ウ": true
+    }
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q113",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 113,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "糖新生"
+    ],
+    "difficulty": 3,
+    "question": "糖新生に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "乳酸、脂肪酸、ロイシン、グルタミン酸などからグルコースを生合成する代謝経路である。",
+      "イ": "主に骨格筋で起こる反応である。",
+      "ウ": "律速酵素であるホスホエノールピルビン酸カルボキシキナーゼ（PEPCK）\nは、ピルビン酸からホスホエノールピルビン酸を生成する。",
+      "エ": "糖新生の中間体であるホスホエノールピルビン酸の生成には、GTP が必要である。",
+      "オ": "グルカゴン刺激により、PEPCK 遺伝子の発現が亢進する。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "糖新生は主に肝臓や腎臓で進み、PEPCKはオキサロ酢酸をホスホエノールピルビン酸にする際にGTPを用いる。グルカゴンは糖新生系の発現を促す。",
+    "choiceExplanations": {
+      "ア": "乳酸や一部のアミノ酸は基質になるが、ロイシンや偶数鎖脂肪酸は正味のグルコースを生じない。",
+      "イ": "糖新生の主な臓器は肝臓で、腎臓でも行われる。",
+      "ウ": "PEPCKの基質はオキサロ酢酸で、ピルビン酸はその前段階で変換される。",
+      "エ": "オキサロ酢酸からの生成反応でGTPが消費される。",
+      "オ": "グルカゴン刺激で肝臓のPEPCK遺伝子発現が亢進する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問113",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q114",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 114,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "ウエスタンブロット"
+    ],
+    "difficulty": 3,
+    "question": "薬物Ａに感受性のある培養細胞を用いて、その細胞内の代謝調節タンパク質Ｂについて調べることにした。\n操作の流れを図1 に示す。培地に薬物Ａを添加して細胞を1 時間培養した後、培地を除去してから細胞を回収した。細胞を破砕し、低速度の遠心操作で核画分を分離回収した。さらに高速度の遠心操作で、核を除いた細胞の膜画分を分離回収した。また、対照として、培地に薬物Ａを添加しなかった細胞についても同様の操作を行った。\nドデシル硫酸ナトリウムを用いたポリアクリルアミド電気泳動（SDS-PAGE）\nにて、核画分及び膜画分中のタンパク質を分離し、タンパク質Ｂに対するポリクローナル抗体を用いてウエスタンブロットを行った。SDS-PAGE は、還元剤（2-メルカプトエタノール）を添加した条件と添加しない条件の2 通りの方法で行ったところ、図2 に示す結果を得た。\n以上の実験とその結果から推測される記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "タンパク質Ｂは、核膜に局在するタンパク質である。",
+      "イ": "タンパク質Ｂは、分子間ジスルフィド結合を持つ。",
+      "ウ": "タンパク質Ｂから生じた約30 kDa のタンパク質は、核内に移行する。",
+      "エ": "タンパク質Ｂは、薬物Ａで刺激された細胞内で3 つに切断される。",
+      "オ": "タンパク質Ｂの分子量は、約50 kDa である。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "薬物Aなしでは膜画分に大きなバンドがあり、還元すると複数のバンドに分かれる。薬物Aを加えると核画分に約30 kDaのバンドが現れ、切断によって生じた部分の核移行を示す。",
+    "choiceExplanations": {
+      "ア": "対照のバンドは核画分より膜画分で検出され、核膜局在を示していない。",
+      "イ": "還元によって大きなバンドが分かれることは、分子間ジスルフィド結合を支持する。",
+      "ウ": "薬物A添加後の核画分の約30 kDaのバンドが根拠になる。",
+      "エ": "還元で見える別のバンドの一部は対照にもあり、刺激による三分割は示せない。",
+      "オ": "約50 kDaのバンドだけを未処理のタンパク質B全体とみなすことはできない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q114-fractions.webp",
+      "/questions/yakuzaishi/107-day1-2-qf4/q114-blot.webp"
+    ],
+    "imageAltTexts": [
+      "図1。薬物A添加後の細胞から、核画分と膜画分を分ける手順。",
+      "図2。還元剤の有無、薬物Aの有無、核・膜の各画分で比較したウエスタンブロットの結果。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問114",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q115",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 115,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "テロメア"
+    ],
+    "difficulty": 3,
+    "question": "テロメアに関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "テロメアは、染色体の末端に存在し、特定のDNA 塩基配列の繰り返し構造を含む。",
+      "イ": "テロメアを開始点としてDNA が複製される。",
+      "ウ": "生殖細胞系列の分裂時には、テロメアは短縮する。",
+      "エ": "多くのがん細胞で、テロメアを伸長させるテロメラーゼが発現している。",
+      "オ": "テロメア伸長の鋳型として、tRNA が利用される。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "テロメアは染色体末端の反復配列を含む領域である。テロメラーゼは自ら持つRNAを鋳型に反復配列を付け足し、多くのがん細胞で末端を維持する。",
+    "choiceExplanations": {
+      "ア": "染色体の末端に反復配列がある。",
+      "イ": "DNA複製は染色体内の複製起点から始まる。",
+      "ウ": "生殖細胞系列ではテロメラーゼ活性があり、分裂による一律の短縮は前提にできない。",
+      "エ": "多くのがん細胞ではテロメラーゼの発現により増殖時も末端が維持される。",
+      "オ": "鋳型はテロメラーゼを構成するRNAである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問115",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q116",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 116,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "遺伝子多型"
+    ],
+    "difficulty": 3,
+    "question": "図は、単量体で作用する酵素のヒト遺伝子構造を示したものである。5 つのエキソンを順に数字で表し、矢印Ａ、Ｂは、頻度が高い2 種類の遺伝子多型Ａ、Ｂのそれぞれの位置を示す。多型Ａはプロモーター領域に、多型Ｂは翻訳領域に存在する。この遺伝子は常染色体上に存在し、多型Ａのヘテロ接合体では、野生型ホモ接合体と比べて、この酵素の活性がほぼ半分になる。多型Ｂのヘテロ接合体では、酵素活性が野生型ホモ接合体の約3/4 になる。\nこの多型に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "多型Ａは、この酵素のmRNA 量に影響する。",
+      "イ": "多型Ｂは、サイレント変異である。",
+      "ウ": "多型Ａヘテロ接合体と多型Ｂヘテロ接合体の夫婦からは、多型Ａと多型Ｂを両方もつ子が生まれる可能性がある。",
+      "エ": "多型Ｂの遺伝子産物のアミノ酸配列は、野生型と同一である。",
+      "オ": "多型Ｂは、逆転写酵素を用い、第2 エクソン内の配列に対するRT-PCR で判定できる。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "Aは翻訳領域の外にあり、Aを持つアレルで転写が低下すると全体の活性がおよそ半分になる。Bは翻訳領域内にあり、両親がそれぞれの多型を持つ場合は子が両方を受け継ぎ得る。",
+    "choiceExplanations": {
+      "ア": "プロモーターの変化と活性低下は、転写量の低下と整合する。",
+      "イ": "活性を低下させる多型を、この情報からサイレント変異とは判断できない。",
+      "ウ": "Aを持つアレルとBを持つアレルを両親からそれぞれ受け取ることがある。",
+      "エ": "Bの位置と活性の変化から、野生型と同じアミノ酸配列とは判断できない。",
+      "オ": "Bは図の第1エキソンにあり、第2エキソン内だけを増幅してもBの配列は分からない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q116-gene.webp"
+    ],
+    "imageAltTexts": [
+      "エキソン1〜5と、プロモーター上のA・翻訳領域上のBの位置を示す図。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問116",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q117",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 117,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "免疫組織"
+    ],
+    "difficulty": 3,
+    "question": "ヒトの免疫系の組織と細胞に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "骨髄では、造血幹細胞が分裂している。",
+      "イ": "胸腺では、B 細胞が正の選択と負の選択を受け、形質細胞へと分化する。",
+      "ウ": "リンパ節では、高内皮細静脈から移行したT 細胞が、樹状細胞に対して抗原提示をする。",
+      "エ": "肝臓では、老化した赤血球が除去される一方で、血液中の抗原に対する免疫応答が行われる。",
+      "オ": "小腸のパイエル板では、上皮層のM 細胞を介して取り込まれた抗原に対する免疫応答が行われる。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "骨髄で造血幹細胞が分裂し、小腸ではM細胞がパイエル板に向けて抗原を運ぶ。胸腺で選択を受ける細胞と、リンパ節で抗原を提示する細胞も区別する。",
+    "choiceExplanations": {
+      "ア": "骨髄は造血幹細胞が自己複製し、血球系の細胞を産生する場である。",
+      "イ": "胸腺で正と負の選択を受けるのはT細胞である。",
+      "ウ": "樹状細胞からT細胞へ抗原が提示される。",
+      "エ": "血液由来の抗原への免疫応答と老化赤血球の除去を結び付けて問う場合、代表的な二次リンパ器官は脾臓である。公式正答に4は含まれない。",
+      "オ": "M細胞が小腸内腔の抗原を取り込み、パイエル板での免疫応答につながる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問117",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q118",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 118,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "免疫グロブリン"
+    ],
+    "difficulty": 3,
+    "question": "図は、ヒト免疫グロブリンG（IgG）の構造を模式的に示したものである。領域Ａ～領域Ｅで示したIgG の部分構造に関する記述のうち、正しいのはどれか。\n2つ選べ。",
+    "choices": {
+      "ア": "領域Ａは、個体ごとに決められた一定のアミノ酸配列を示す。",
+      "イ": "領域Ｂで、N-結合型の糖鎖修飾がなされている。",
+      "ウ": "領域Ｃでは、2 本のH 鎖がシステイン残基間で共有結合している。",
+      "エ": "領域Ｄは、マクロファージの細胞膜上の受容体に結合する。",
+      "オ": "領域Ｅにより、IgG のサブクラスが決定される。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "IgGのヒンジ部ではH鎖同士がジスルフィド結合を作る。Fcに相当する領域Dはマクロファージなどに発現するFc受容体と結合する。",
+    "choiceExplanations": {
+      "ア": "Aは抗原認識に関わる可変領域で、同一個体の中にも多様な配列がある。",
+      "イ": "IgGの代表的なN結合型糖鎖はFc側のCH2領域に付く。",
+      "ウ": "CのH鎖間の共有結合はシステイン残基間のジスルフィド結合である。",
+      "エ": "Fc領域はマクロファージ表面のFc受容体に認識される。",
+      "オ": "IgGのサブクラスを決めるのはH鎖の定常領域の違いである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q118-igg.webp"
+    ],
+    "imageAltTexts": [
+      "ヒトIgGのH鎖、L鎖と、領域A〜Eの位置を示した模式図。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問118",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q119",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 119,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "生物",
+      "細菌の細胞構造"
+    ],
+    "difficulty": 3,
+    "question": "細菌の細胞表面構造に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "グラム陽性細菌には、タイコ酸やリポタイコ酸が結合した厚いペプチドグリカン層が、細胞膜の内側に存在する。",
+      "イ": "グラム陰性細菌には、細胞膜（内膜）の外側に薄いペプチドグリカン層があり、さらにその外側には内毒素であるリポ多糖を含む外膜が存在する。",
+      "ウ": "淋菌などナイセリア属菌には、ミコール酸と呼ばれる長鎖脂肪酸を多量に含んだ厚い脂質層が存在する。",
+      "エ": "マイコプラズマには、ペプチドグリカンや細胞膜が存在しない。",
+      "オ": "肺炎球菌には、多糖を主成分とする莢膜が存在する。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "グラム陰性菌では内膜と外膜の間に薄いペプチドグリカン層があり、外膜にはリポ多糖がある。莢膜を持つ菌では、その構成成分として多糖がよくみられる。",
+    "choiceExplanations": {
+      "ア": "厚いペプチドグリカン層は細胞膜の外側にある。",
+      "イ": "薄いペプチドグリカン層と、リポ多糖を含む外膜がある。",
+      "ウ": "ミコール酸に富む表層は抗酸菌の特徴である。",
+      "エ": "マイコプラズマには細胞壁がないが、細胞膜はある。",
+      "オ": "肺炎球菌の莢膜は主に多糖から構成される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=24",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問119",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q120",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 120,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "人口統計"
+    ],
+    "difficulty": 3,
+    "question": "下表は、2020 年10 月1 日現在の年齢区分別人口割合を示したものである。この表に基づく人口指標に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "老年化指数は250 を超えている。",
+      "イ": "老年人口指数は50 を超えている。",
+      "ウ": "年少人口指数は20 を超えている。",
+      "エ": "従属人口指数は80 を超えている。",
+      "オ": "老年人口割合は25％を超えている。"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "表の65歳以上は14%＋15%＝29%。年少人口指数は12÷59×100≒20.3、老年人口割合は29%なので、3と5が該当する。",
+    "choiceExplanations": {
+      "ア": "老年化指数は29÷12×100≒242で、250以下である。",
+      "イ": "老年人口指数は29÷59×100≒49.2である。",
+      "ウ": "年少人口を生産年齢人口で割ると約20.3になる。",
+      "エ": "従属人口指数は(12＋29)÷59×100≒69.5である。",
+      "オ": "老年人口割合は65歳以上の合計で29%である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q120-age-table.webp"
+    ],
+    "imageAltTexts": [
+      "人口割合。15歳未満12%、15〜64歳59%、65〜74歳14%、75歳以上15%。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=25",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問120",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q121",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 121,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "疫学"
+    ],
+    "difficulty": 3,
+    "question": "疫学調査の結果に基づいて因果関係を判定する際の基準に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "関連の一致性とは、対象とする要因と疾病に関して、調査の時期、場所、対象集団などを変えても同様の結果が得られることである。",
+      "イ": "関連の強固性とは、疫学以外の実験的な研究で得られた知見や理論と疫学調査の結果が矛盾しないことである。",
+      "ウ": "関連の特異性とは、要因の曝露があると相対危険度やオッズ比が統計学的に有意に高くなることである。",
+      "エ": "関連の時間性とは、疾病の発生以前に要因の曝露があることである。",
+      "オ": "関連の整合性とは、要因の曝露があれば必ず疾病の発生があり、曝露がなければ疾病の発生がないことである。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "一致性は別の研究条件でも関連が再現するか、時間性は曝露が疾病に先行するかをみる。関連の強さや、ほかの知見との矛盾の有無とは区別する。",
+    "choiceExplanations": {
+      "ア": "時期や対象集団を変えても関連が再現することは一致性を支持する。",
+      "イ": "既存の知見や理論と矛盾しないのは整合性である。",
+      "ウ": "相対危険度やオッズ比の大きさは強固性の判断に関わる。",
+      "エ": "疾病が起こる前に曝露があることが時間性の条件である。",
+      "オ": "一つの要因と特定の疾病の結び付きの記述であり、整合性の定義と異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=25",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問121",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q122",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 122,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "検疫"
+    ],
+    "difficulty": 3,
+    "question": "検疫に関する記述のうち、誤っているのはどれか。1つ選べ。\n\n\n＊感染症法：感染症の予防及び感染症の患者に対する医療に関する法律",
+    "choices": {
+      "ア": "検疫法は、国内に常在しない感染症の病原体が船舶又は航空機を介して国内に侵入することの防止を目的としている。",
+      "イ": "検疫感染症の患者は、入国停止、隔離、停留あるいは消毒等の措置がとられる。",
+      "ウ": "新興感染症は、すべて検疫感染症に含まれる。",
+      "エ": "検疫感染症には、感染症法＊に定める一類感染症が含まれる。",
+      "オ": "検疫感染症には、感染症法＊に定める新型インフルエンザ等感染症が含まれる。"
+    },
+    "answer": "ウ",
+    "explanation": "検疫法は、船舶や航空機を通じた一定の感染症の国内侵入を防ぐための法律である。対象は同法と政令で定められ、新興感染症が自動的に全て含まれるわけではない。",
+    "choiceExplanations": {
+      "ア": "船舶・航空機を介した病原体の侵入防止が目的に含まれる。",
+      "イ": "検疫法は対象に応じ、隔離・停留・消毒等の措置を定めている。",
+      "ウ": "新興感染症全体を一括して検疫感染症とする規定はない。",
+      "エ": "感染症法の一類感染症は検疫感染症に含まれる。",
+      "オ": "新型インフルエンザ等感染症は検疫感染症に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=26",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問122",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=79035000&dataType=0&pageNo=1"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q123",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 123,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "性感染症"
+    ],
+    "difficulty": 3,
+    "question": "性感染症に関する記述のうち、誤っているのはどれか。1つ選べ。\n\n\n＊感染症法：感染症の予防及び感染症の患者に対する医療に関する法律",
+    "choices": {
+      "ア": "コンドームの使用や不特定多数との性交渉を避けることによって、感染リスクを低減することができる。",
+      "イ": "梅毒は、感染症法＊で五類感染症に分類され、全数把握が必要である。",
+      "ウ": "我が国における後天性免疫不全症候群の患者数は、異性間よりも同性間の性的接触によるものが多い。",
+      "エ": "尖圭コンジローマは、ヒト単純ヘルペスウイルスを原因とする。",
+      "オ": "性器クラミジア感染症は、母子感染により発症することがある。"
+    },
+    "answer": "エ",
+    "explanation": "尖圭コンジローマの主な原因はヒトパピローマウイルス（HPV）である。単純ヘルペスウイルスによる性器ヘルペスとは、原因ウイルスが異なる。",
+    "choiceExplanations": {
+      "ア": "コンドームの使用などは性感染症にさらされる危険を減らす。",
+      "イ": "梅毒は感染症法上、全数把握の対象となる五類感染症である。",
+      "ウ": "本問の出題当時の集計では、同性間の性的接触として報告された例が異性間を上回った。",
+      "エ": "尖圭コンジローマはHPVが原因である。",
+      "オ": "性器クラミジアは分娩時に児に感染することがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=26",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問123",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://api-net.jfap.or.jp/status/japan/data/2020/nenpo/bunseki.pdf"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q124",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 124,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "死亡統計"
+    ],
+    "difficulty": 3,
+    "question": "図は、我が国のリスク要因別の関連死亡者数を示したものである。リスク要因\nａ～ｃの組合せとして、正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "ａ：運動不足／ｂ：高血圧／ｃ：喫煙",
+      "イ": "ａ：喫煙／ｂ：運動不足／ｃ：高血圧",
+      "ウ": "ａ：喫煙／ｂ：高血圧／ｃ：運動不足",
+      "エ": "ａ：高血圧／ｂ：喫煙／ｃ：運動不足",
+      "オ": "ａ：高血圧／ｂ：運動不足／ｃ：喫煙"
+    },
+    "answer": "ウ",
+    "explanation": "原図は喫煙、高血圧、運動不足の順に関連死亡者数が大きい。aは悪性新生物と呼吸器系疾患の部分が目立ち、bは循環器疾患の部分が大きい。",
+    "choiceExplanations": {
+      "ア": "aが運動不足なので、原図の順位と合わない。",
+      "イ": "aは一致するが、bとcが逆である。",
+      "ウ": "aが喫煙、bが高血圧、cが運動不足で原図に一致する。",
+      "エ": "aとbが逆で、原図の疾患別の内訳とも合わない。",
+      "オ": "aとcが異なり、bも高血圧に対応しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q124-risk-factors.webp"
+    ],
+    "imageAltTexts": [
+      "リスク要因別の関連死亡者数を疾患別に分けた横棒グラフ。a〜cを空欄で表示。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=27",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問124",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q125",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 125,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "死亡統計"
+    ],
+    "difficulty": 3,
+    "question": "図は、1950 年代から2010 年代における心疾患及び脳血管疾患の死亡率の年次推移を示したものである。疾患ア～エは、心不全、虚血性心疾患、脳梗塞、脳内出血のいずれかである。次の記述のうち、誤っているのはどれか。1つ選べ。\n\n（注）1994 年及び1995 年の大きな変化は、死亡診断書の注意書きの周知あるいは国際ルール（ICD-10）適用の影響による。\n国民衛生の動向2020/2021 より引用",
+    "choices": {
+      "ア": "疾患アによる死亡率には、狭心症や心筋梗塞による死亡が含まれる。",
+      "イ": "1995 年以降の疾患イの死亡率の上昇には、老年人口の割合の増加が関係している。",
+      "ウ": "疾患ウは、脳内出血である。",
+      "エ": "1960 年以降、疾患エの死亡率が低下した原因として、食塩摂取量の低下やタンパク質摂取量の増加がある。",
+      "オ": "寒冷刺激は、疾患エのリスクファクターとなる。"
+    },
+    "answer": "ウ",
+    "explanation": "右図は脳血管疾患で、1950年代を高い水準から下がるエが脳内出血、いったん上がったウが脳梗塞に当たる。したがってウを脳内出血とする記述が誤りである。",
+    "choiceExplanations": {
+      "ア": "アは虚血性心疾患で、狭心症や心筋梗塞を含む。",
+      "イ": "イは心不全で、粗死亡率の上昇には人口の高齢化が関わる。",
+      "ウ": "ウは脳梗塞で、脳内出血はエである。",
+      "エ": "エの低下の背景には食生活の改善と高血圧の減少がある。",
+      "オ": "寒冷で血圧が上がると、脳内出血のリスクが高まる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q125-mortality.webp"
+    ],
+    "imageAltTexts": [
+      "心疾患のア・イと脳血管疾患のウ・エによる人口10万人当たり死亡率の推移。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=28",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問125",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q126",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 126,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "職業性疾病"
+    ],
+    "difficulty": 3,
+    "question": "職業性疾病と有害要因に関する記述のうち、誤っているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "精神障害やメンタルヘルス不調は、強い不安やストレスを感じる心理社会的要因により発症する。",
+      "イ": "レイノー病は、電離放射線の曝露による物理的要因により発症する。",
+      "ウ": "けい肺や石綿肺は、粉じんの曝露による化学的要因により発症する。",
+      "エ": "細菌感染症やウイルス感染症は、病原体との接触による生物的要因により発症する。",
+      "オ": "頸肩腕症候群は、VDT（visual display terminal）作業による作業態様要因により発症する。"
+    },
+    "answer": "イ",
+    "explanation": "職業性のレイノー現象では、振動工具による末梢循環への影響が代表的である。電離放射線との組合せが誤りに当たる。",
+    "choiceExplanations": {
+      "ア": "職場の心理社会的ストレスはメンタルヘルス不調に関わり得る。",
+      "イ": "職業性のレイノー現象の代表的な要因は振動である。",
+      "ウ": "けい肺は鉱物性粉じん、石綿肺は石綿への曝露と関係する。",
+      "エ": "細菌やウイルスへの曝露は生物的有害要因である。",
+      "オ": "長時間同じ姿勢で行う画面作業は、頸・肩・腕への負担を増やす。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=29",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問126",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q127",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 127,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "食物繊維"
+    ],
+    "difficulty": 3,
+    "question": "食物繊維に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "水溶性のものと不溶性のものがある。",
+      "イ": "ヒトの消化酵素で消化されず、腸内細菌によっても分解されない。",
+      "ウ": "セルロースとリグニンは、どちらも多糖である。",
+      "エ": "天然の食物繊維は植物性食品由来であり、動物性食品由来のものはない。",
+      "オ": "「日本人の食事摂取基準（2020 年版）」において、食物繊維には目標量が設定されている。"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "食物繊維には水溶性と不溶性がある。ヒトの消化酵素で分解されにくくても、腸内細菌による発酵を受けるものがある。",
+    "choiceExplanations": {
+      "ア": "水への溶けやすさにより水溶性と不溶性に分けられる。",
+      "イ": "水溶性食物繊維などには腸内細菌が利用するものがある。",
+      "ウ": "リグニンは芳香族性の高分子で、セルロースのような多糖とは異なる。",
+      "エ": "甲殻類などに含まれるキチンのように動物由来の例もある。",
+      "オ": "設問が指定した2020年版では摂取の目標量が設定されている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=29",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問127",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/stf/newpage_08517.html"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q128",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 128,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "油脂の酸化"
+    ],
+    "difficulty": 3,
+    "question": "未使用のコーン油とオリーブ油について、油脂の変質に対する温度の影響を調べる実験を行った。実験では、60 ℃の一定温度で7 週間保存し、1 週間ごとに過酸化物価（meq/kg）と酸価（mg/g）の測定を行った。結果は以下のグラフに示すとおりである。なお、実験に用いたコーン油とオリーブ油の実験開始前（開封直後）におけるヨウ素価（g/100 g）は、コーン油が124、オリーブ油が75 であった。コーン油はリノール酸を、オリーブ油はオレイン酸を最も多く含む。コーン油とオリーブ油の変質試験に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "測定値Ａは過酸化物価、測定値Ｂは酸価である。",
+      "イ": "コーン油は、オリーブ油よりも開封直後のヨウ素価が大きいことから、飽和脂肪酸を多く含むことがわかる。",
+      "ウ": "コーン油は、オリーブ油よりも早い時期に測定値Ａの値が上昇していることから、オリーブ油よりも酸化しやすいことがわかる。",
+      "エ": "コーン油とオリーブ油は、いずれも測定値Ｂが4 週目から上昇していることから、酸化のされやすさは同じであることがわかる。",
+      "オ": "未使用のコーン油とオリーブ油を低温・暗所で保存した場合では、測定値Ａと測定値Ｂの値の上昇の程度は、この実験結果よりも増加すると予想される。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "測定値Aの棒は過酸化物価、測定値Bの線は酸価を示す。リノール酸を多く含むコーン油ではAが早く上がり、この実験条件では酸化しやすい。",
+    "choiceExplanations": {
+      "ア": "酸化初期に増える過酸化物を示すのがA、遊離脂肪酸を反映するのがBである。",
+      "イ": "ヨウ素価が大きいほど二重結合の多い脂肪酸を含むことを示す。",
+      "ウ": "同条件で過酸化物価の上昇が早く、コーン油の酸化が早く進んだと読める。",
+      "エ": "酸価だけでは酸化のしやすさは判断できず、Aの推移も異なる。",
+      "オ": "低温・暗所は変質を抑える方向に働くので、上昇が大きくなるとは考えにくい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q128-oil.webp"
+    ],
+    "imageAltTexts": [
+      "コーン油とオリーブ油について、保存期間ごとの測定値AとBを示した二軸のグラフ。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=30",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問128",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q129",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 129,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "食品成分"
+    ],
+    "difficulty": 3,
+    "question": "食品成分の変化に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "メイラード反応とは、還元糖とアミノ酸が酵素的に反応し、シッフ塩基及び\nα-カルボニル化合物を形成する反応である。",
+      "イ": "チラミンは、アミノ酸脱炭酸酵素によりチロシンから生成され血圧上昇作用を示す。",
+      "ウ": "魚の腐敗臭の原因となるトリメチルアミンは、トリメチルアミンN -オキシドが酸化されることにより生じる。",
+      "エ": "トリプトファンは、脱アミノ反応及び脱炭酸反応によって腐敗臭を有する硫化水素を生じる。",
+      "オ": "糖質が微生物により分解されて、アルコールや有機酸などの有用な化合物が生成することを発酵という。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "チロシンからのチラミン生成は脱炭酸反応である。微生物が糖質から有用なアルコールや有機酸などを作る変化は発酵に当たる。",
+    "choiceExplanations": {
+      "ア": "メイラード反応は還元糖とアミノ基の非酵素的反応である。",
+      "イ": "チロシンの脱炭酸によってチラミンが生じ、血圧上昇作用を示す。",
+      "ウ": "トリメチルアミンN-オキシドは還元されてトリメチルアミンになる。",
+      "エ": "硫化水素はシステインなどの含硫化合物に由来し、トリプトファン自体は硫黄を含まない。",
+      "オ": "糖質の分解により有用な産物を生じる場合は発酵と呼ぶ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=31",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問129",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q130",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 130,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "加熱生成物"
+    ],
+    "difficulty": 3,
+    "question": "食品の加熱により、アミノ酸が関与する反応で生じる発がん物質はどれか。\n2つ選べ。",
+    "choices": {
+      "ア": "化合物の構造 1",
+      "イ": "化合物の構造 2",
+      "ウ": "化合物の構造 3",
+      "エ": "化合物の構造 4",
+      "オ": "化合物の構造 5"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "加熱した肉などではアミノ酸が関与する反応でヘテロサイクリックアミンが生じる。アクリルアミドは、食品中のアスパラギンなどが関与する加熱反応で生成する。",
+    "choiceExplanations": {
+      "ア": "図1の環状化合物は、設問の食品加熱による生成物に当たらない。",
+      "イ": "図2は窒素を含む縮合環とアミノ基を持つヘテロサイクリックアミンである。",
+      "ウ": "図3は糖が結合した構造で、指定された加熱生成物に当たらない。",
+      "エ": "図4は末端二重結合とアミドを持つアクリルアミドである。",
+      "オ": "図5はイミダゾール環を持つヒスタミンで、主に微生物がヒスチジンを脱炭酸して生じる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "choiceImageUrls": {
+      "ア": "/questions/yakuzaishi/107-day1-2-qf4/q130-choice-1.webp",
+      "イ": "/questions/yakuzaishi/107-day1-2-qf4/q130-choice-2.webp",
+      "ウ": "/questions/yakuzaishi/107-day1-2-qf4/q130-choice-3.webp",
+      "エ": "/questions/yakuzaishi/107-day1-2-qf4/q130-choice-4.webp",
+      "オ": "/questions/yakuzaishi/107-day1-2-qf4/q130-choice-5.webp"
+    },
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=32",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問130",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q131",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 131,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "活性酸素"
+    ],
+    "difficulty": 3,
+    "question": "活性酸素に対する生体内の防御因子に関する記述のうち、正しいのはどれか。\n2つ選べ。",
+    "choices": {
+      "ア": "スーパーオキシドジスムターゼ（SOD）は、スーパーオキシドアニオンを水に変換する。",
+      "イ": "銅（Cu）と亜鉛（Zn）を含むCu/Zn-SOD は、ミトコンドリアに局在する。",
+      "ウ": "カタラーゼは、過酸化水素を酸素と水に変換する酵素で、活性中心にヘム鉄をもつ。",
+      "エ": "グルタチオンペルオキシダーゼは、グルタチオン存在下で過酸化水素を水に還元する反応を触媒する。",
+      "オ": "グルタチオンレダクターゼは、スーパーオキシドアニオンを過酸化水素と酸素に変換する。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "カタラーゼとグルタチオンペルオキシダーゼは、どちらも過酸化水素を処理する。SODは一段階手前でスーパーオキシドに作用し、グルタチオンレダクターゼは還元型グルタチオンを再生する。",
+    "choiceExplanations": {
+      "ア": "SODの反応生成物は過酸化水素と酸素である。",
+      "イ": "ミトコンドリアの代表的なSODはMn-SODであり、Cu/Zn-SODは主に細胞質に分布する。",
+      "ウ": "カタラーゼはヘムを持ち、過酸化水素を水と酸素に分解する。",
+      "エ": "グルタチオンを還元力として用い、過酸化水素を水にする。",
+      "オ": "この酵素はNADPHを用いて酸化型グルタチオンを還元する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=33",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問131",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q132",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 132,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "農薬"
+    ],
+    "difficulty": 3,
+    "question": "農薬に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "フェニトロチオンは、シトクロムP₄₅₀ による酸化的脱硫反応により代謝的活性化を受けてアセチルコリンエステラーゼを阻害する。",
+      "イ": "メソミルは、アセチルコリンエステラーゼの活性中心を可逆的にカルバモイル化する。",
+      "ウ": "パラコートは、神経の電位依存性Na⁺ チャネルに作用する。",
+      "エ": "アセタミプリドは、1 電子還元されてラジカルを生成し、スーパーオキシドアニオンを生じる。",
+      "オ": "フェノトリンは、ニコチン性アセチルコリン受容体に結合し、神経を興奮させる。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "フェニトロチオンは有機リン系、メソミルはカーバメート系で、ともにアセチルコリンエステラーゼに作用する。残りの3肢は別の農薬の主作用を取り違えている。",
+    "choiceExplanations": {
+      "ア": "酸化的脱硫を経た代謝物がアセチルコリンエステラーゼを阻害する。",
+      "イ": "酵素の活性中心がカルバモイル化され、阻害が生じる。",
+      "ウ": "パラコートの作用は酸化還元に伴う活性酸素生成に関わる。",
+      "エ": "アセタミプリドはネオニコチノイド系で、昆虫のニコチン性アセチルコリン受容体に作用する。",
+      "オ": "フェノトリンはピレスロイド系で、神経の電位依存性Na⁺チャネルに作用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=33",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問132",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q133",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 133,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "化学",
+      "NMR"
+    ],
+    "difficulty": 3,
+    "question": "自宅の寝室で倒れている男性が救急搬送された。簡易検査の結果をもとに、直ちに対応する解毒薬が投与された。一方、寝室にはコップの中に大量の錠剤が沈んだ飲料水が残されていた。\n\n錠剤の成分が何かを調べるため、コップの中に残された薬剤に適切な処理をしたのち、¹H NMR スペクトル（CDCl₃ 溶媒中）を測定した。得られたスペクトルをデータベースと照合したところ、図に示したチャートとシグナル及び積分値が一致した。錠剤の成分として推定される医薬品Ａの構造はどれか。1つ選べ。ただし、図はTMS を基準（0 ppm）とし、シグナルを積分曲線と共に示したもので、×は重溶媒中に微量に含まれるCHCl₃ のシグナルである。",
+    "choices": {
+      "ア": "医薬品の構造 1",
+      "イ": "医薬品の構造 2",
+      "ウ": "医薬品の構造 3",
+      "エ": "医薬品の構造 4",
+      "オ": "医薬品の構造 5"
+    },
+    "answer": "ア",
+    "explanation": "NMR図にはメチル基、非等価な二つのメチレン水素、芳香族水素に対応するシグナルがある。芳香族水素の積分と二つの塩素置換を合わせると、図1のトリアゾラムの構造と一致する。",
+    "choiceExplanations": {
+      "ア": "二つの塩素置換を持つトリアゾラムで、芳香族領域とメチル・メチレンの各シグナルに対応する。",
+      "イ": "図1に比べフェニル環の塩素が一つ少なく、芳香族水素の数が異なる。",
+      "ウ": "図3はアミドのカルボニルを持ち、芳香族水素の数が合わない。",
+      "エ": "図4はヒドロキシ基を持ち、図に対応するメチル基が見当たらない。",
+      "オ": "図5には環内の酸素があり、図に対応するメチル基を持たない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q133-nmr.webp"
+    ],
+    "imageAltTexts": [
+      "医薬品Aの¹H NMRスペクトルと積分曲線。×は重溶媒由来のシグナル。"
+    ],
+    "choiceImageUrls": {
+      "ア": "/questions/yakuzaishi/107-day1-2-qf4/q133-choice-1.webp",
+      "イ": "/questions/yakuzaishi/107-day1-2-qf4/q133-choice-2.webp",
+      "ウ": "/questions/yakuzaishi/107-day1-2-qf4/q133-choice-3.webp",
+      "エ": "/questions/yakuzaishi/107-day1-2-qf4/q133-choice-4.webp",
+      "オ": "/questions/yakuzaishi/107-day1-2-qf4/q133-choice-5.webp"
+    },
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問133",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q134",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 134,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "向精神薬"
+    ],
+    "difficulty": 3,
+    "question": "自宅の寝室で倒れている男性が救急搬送された。簡易検査の結果をもとに、直ちに対応する解毒薬が投与された。一方、寝室にはコップの中に大量の錠剤が沈んだ飲料水が残されていた。\n\n問133（物理・化学・生物）\n錠剤の成分が何かを調べるため、コップの中に残された薬剤に適切な処理をしたのち、¹H NMR スペクトル（CDCl₃ 溶媒中）を測定した。得られたスペクトルをデータベースと照合したところ、図に示したチャートとシグナル及び積分値が一致した。錠剤の成分として推定される医薬品Ａの構造はどれか。1つ選べ。ただし、図はTMS を基準（0 ppm）とし、シグナルを積分曲線と共に示したもので、×は重溶媒中に微量に含まれるCHCl₃ のシグナルである。\n\n法令上、この医薬品Ａが該当するのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "麻薬",
+      "イ": "向精神薬",
+      "ウ": "覚醒剤",
+      "エ": "指定薬物",
+      "オ": "要指導医薬品"
+    },
+    "answer": "イ",
+    "explanation": "共通症例の医薬品Aは問133で同定するトリアゾラムである。試験実施時点では麻薬及び向精神薬取締法の第三種向精神薬に該当する。",
+    "choiceExplanations": {
+      "ア": "トリアゾラムの規制区分は向精神薬である。",
+      "イ": "トリアゾラムは第三種向精神薬に指定されている。",
+      "ウ": "覚醒剤取締法上の覚醒剤に該当しない。",
+      "エ": "この医薬品の規制上の区分は指定薬物ではない。",
+      "オ": "処方に基づき用いられる医療用医薬品で、要指導医薬品ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q133-nmr.webp",
+      "/questions/yakuzaishi/107-day1-2-qf4/q133-numbered-structures.webp"
+    ],
+    "imageAltTexts": [
+      "医薬品Aの¹H NMRスペクトルと積分曲線。×は重溶媒由来のシグナル。",
+      "問133の選択肢1〜5に対応する医薬品の構造式。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=35",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問134",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00tb8052&dataType=1"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q135",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 135,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "中毒"
+    ],
+    "difficulty": 3,
+    "question": "自宅の寝室で倒れている男性が救急搬送された。簡易検査の結果をもとに、直ちに対応する解毒薬が投与された。一方、寝室にはコップの中に大量の錠剤が沈んだ飲料水が残されていた。\n\n問133（物理・化学・生物）\n錠剤の成分が何かを調べるため、コップの中に残された薬剤に適切な処理をしたのち、¹H NMR スペクトル（CDCl₃ 溶媒中）を測定した。得られたスペクトルをデータベースと照合したところ、図に示したチャートとシグナル及び積分値が一致した。錠剤の成分として推定される医薬品Ａの構造はどれか。1つ選べ。ただし、図はTMS を基準（0 ppm）とし、シグナルを積分曲線と共に示したもので、×は重溶媒中に微量に含まれるCHCl₃ のシグナルである。\n\nこの患者に投与された解毒薬として、適切なのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "ネオスチグミン",
+      "イ": "ナロキソン",
+      "ウ": "フルマゼニル",
+      "エ": "ヨウ化プラリドキシム",
+      "オ": "ジメルカプロール"
+    },
+    "answer": "ウ",
+    "explanation": "共通症例の医薬品Aはベンゾジアゼピン系のトリアゾラムである。設問で問われる受容体拮抗薬はフルマゼニルである。",
+    "choiceExplanations": {
+      "ア": "アセチルコリンエステラーゼ阻害薬で、ベンゾジアゼピン受容体の拮抗薬ではない。",
+      "イ": "オピオイド受容体の拮抗薬である。",
+      "ウ": "ベンゾジアゼピン受容体の拮抗薬である。",
+      "エ": "有機リンによって阻害されたコリンエステラーゼの再賦活に用いられる。",
+      "オ": "ヒ素などに対する金属キレート薬である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q133-nmr.webp",
+      "/questions/yakuzaishi/107-day1-2-qf4/q133-numbered-structures.webp"
+    ],
+    "imageAltTexts": [
+      "医薬品Aの¹H NMRスペクトルと積分曲線。×は重溶媒由来のシグナル。",
+      "問133の選択肢1〜5に対応する医薬品の構造式。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=35",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問135",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/670242_1124007F1178_1_06"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q136",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 136,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "濃度・用量評価"
+    ],
+    "difficulty": 3,
+    "question": "ある食品汚染物質の耐容一日摂取量（TDI）は、下図に示した動物試験の結果から得られた無毒性量（NOAEL）に、不確実係数100 を適用して定められている。この食品汚染物質のTDI（μg/kg 体重/日）として、適切な値はどれか。1つ選べ。\n\n＊は、それぞれの対照群（投与量0 μg/kg 体重/日）と比較して、統計的に有意な影響であることを示している。",
+    "choices": {
+      "ア": "1",
+      "イ": "3",
+      "ウ": "5",
+      "エ": "6",
+      "オ": "10"
+    },
+    "answer": "ア",
+    "explanation": "対照群と有意差のない最大投与量を各試験で調べ、最も低いNOAELを選ぶ。マウスの100 μg/kg体重/日を不確実係数100で割ると、TDIは1 μg/kg体重/日になる。",
+    "choiceExplanations": {
+      "ア": "マウスのNOAEL 100を100で割った値である。",
+      "イ": "ラットの300を使うと3になるが、マウスの無毒性量の方が低い。",
+      "ウ": "500はマウスで有害影響に有意差がついた投与量である。",
+      "エ": "最も低い無毒性量からの計算結果である1より大きい。",
+      "オ": "1000を使った値であり、無毒性量のうち最小値を採っていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/107-day1-2-qf4/q136-noael.webp"
+    ],
+    "imageAltTexts": [
+      "マウス、ラット、ウサギの各試験の用量別の有害な影響の発生率。有意差がある棒にはアスタリスクを付す。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=36",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問136",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q137",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 137,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "遺伝毒性"
+    ],
+    "difficulty": 3,
+    "question": "In vitro 遺伝毒性試験に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "不定期DNA 合成（UDS）試験は、哺乳類細胞を用いて化学物質による突然変異を評価する方法である。",
+      "イ": "マウスリンフォーマTK 試験は、哺乳類細胞を用いて化学物質による生殖細胞遺伝毒性を評価する方法である。",
+      "ウ": "Ames 試験は、細菌を用いて化学物質による復帰突然変異を評価する方法である。",
+      "エ": "コメットアッセイは、哺乳類細胞を用いて化学物質によるDNA 鎖の切断を評価する方法である。",
+      "オ": "小核試験は、細菌を用いて化学物質の染色体異常誘発性を評価する方法である。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "Ames試験の指標は細菌の復帰突然変異、コメットアッセイの指標は細胞のDNA鎖損傷である。突然変異、DNA修復、染色体異常のそれぞれを検出する試験を区別する。",
+    "choiceExplanations": {
+      "ア": "UDS試験は損傷に伴う修復DNA合成を指標とする。",
+      "イ": "マウスリンフォーマTK試験は培養細胞の遺伝子突然変異を検出する。",
+      "ウ": "Ames試験は細菌の復帰突然変異を指標にする。",
+      "エ": "コメットアッセイはDNA断片の移動像から鎖切断などを評価する。",
+      "オ": "小核試験は主に哺乳類細胞で染色体断片や染色体の分配異常を検出する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=37",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問137",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q138",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 138,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "放射性核種"
+    ],
+    "difficulty": 3,
+    "question": "天然及び人工放射性核種に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "食品から摂取される天然放射性核種の中で、最も量が多いのは ⁴⁰K である。",
+      "イ": "⁴⁰K は、α線を放出して崩壊する。",
+      "ウ": "体内に取り込まれた人工放射性核種 ¹³⁷Cs は、生体内で筋肉（全身）に集積する。",
+      "エ": "物理学的半減期が28.8 年である ⁹⁰Sr の生物学的半減期を50 年とすると、実効半減期は31.2 年となる。",
+      "オ": "²²⁶Ra などの天然放射性核種から放出されるα線は、β⁻線及びγ線と比較して、体内被曝による生体損傷が小さい。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "食品に含まれる天然核種としてカリウム40があり、体内のセシウム137はカリウムに似た分布をとり筋肉などの軟組織に分布する。実効半減期は物理学的半減期と生物学的半減期の両方で決まる。",
+    "choiceExplanations": {
+      "ア": "天然のカリウムに含まれるカリウム40は、食品から摂取される代表的な天然放射性核種である。",
+      "イ": "主な壊変様式はβ⁻壊変と電子捕獲である。",
+      "ウ": "セシウム137は筋肉を含む全身の軟組織に分布する。",
+      "エ": "1/T＝1/28.8＋1/50から、実効半減期は約18.3年である。",
+      "オ": "α線は飛程が短い一方で電離密度が高く、体内に取り込まれた場合の局所損傷は大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=37",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問138",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q139",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 139,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "浄水処理"
+    ],
+    "difficulty": 3,
+    "question": "上水道における浄水処理に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "凝集沈殿とろ過処理の間に行う塩素処理を前塩素処理という。",
+      "イ": "水中のアンモニウムイオンは、塩素消費量増加の原因となる。",
+      "ウ": "不連続点塩素処理の目的は、トリハロメタンの生成を抑制することである。",
+      "エ": "オゾンによる高度浄水処理では、臭気物質などが酸化分解により除去される。",
+      "オ": "水中のアルカリ分と硫酸アルミニウムが反応して、水酸化アルミニウムゲルが生成し、沈降性のフロックが形成される。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "オゾン処理は臭気物質の酸化に、硫酸アルミニウムは凝集沈殿に用いられる。公式正答は4・5。国土交通省の資料では、水中のアンモニウム態窒素が塩素消費量を増大させると説明している。",
+    "choiceExplanations": {
+      "ア": "凝集沈殿とろ過の間に注入するのは中間塩素処理である。",
+      "イ": "アンモニア性窒素との反応で塩素は消費されるが、公式正答に2は含まれない。",
+      "ウ": "不連続点塩素処理では、アンモニア等の影響を処理し遊離残留塩素を得る。",
+      "エ": "オゾンは臭気原因物質などを酸化分解する。",
+      "オ": "生成した水酸化アルミニウムは粒子を取り込み、沈降しやすいフロックを作る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=37",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問139",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.hkd.mlit.go.jp/sp/kasen_keikaku/kluhh40000001l57.html"
+    ],
+    "choiceFactTruth": {
+      "イ": true
+    }
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q140",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 140,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "大気汚染"
+    ],
+    "difficulty": 3,
+    "question": "大気中の窒素酸化物に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "大気中の窒素酸化物は水分と反応して、酸性雨の原因となる。",
+      "イ": "サーマルNOx は、化石燃料中の窒素化合物の燃焼に由来する。",
+      "ウ": "大気中の窒素酸化物は、非メタン炭化水素と反応して、光化学オキシダントの原因となる。",
+      "エ": "大気中へ排出される窒素酸化物は、大気汚染防止法により施設単位の排出基準に基づく規制（K 値規制）が行われている。",
+      "オ": "2010 年度以降における二酸化窒素の大気環境基準の達成率は、一般環境大気測定局（一般局）、自動車排出ガス測定局（自排局）のいずれにおいても約80％で推移している。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "窒素酸化物は大気中の反応を経て酸性雨の原因になる。日射の下では、非メタン炭化水素などとともに光化学オキシダントの生成に関わる。",
+    "choiceExplanations": {
+      "ア": "窒素酸化物に由来する硝酸が酸性雨に寄与する。",
+      "イ": "サーマルNOxは高温で空気中の窒素が酸化されて生じる。燃料中の窒素はフューエルNOxに関わる。",
+      "ウ": "日射による光化学反応でオゾンなどが生じる。",
+      "エ": "K値規制の対象は硫黄酸化物である。",
+      "オ": "出題当時の環境省の測定結果で、一般局・自排局ともに達成率は約80%ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=38",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問140",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.env.go.jp/air/osen/jokyo_r1_1/post_80.html",
+      "https://www.env.go.jp/air/osen/law/t-kise-1.html"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q141",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 141,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "衛生",
+      "室内環境"
+    ],
+    "difficulty": 3,
+    "question": "室内環境と健康に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "ヒョウダニの死骸や排泄物は、気管支ぜん息や鼻炎などのアレルギー性疾患の原因となる。",
+      "イ": "暖房器具の不完全燃焼で生成する一酸化炭素は、一酸化窒素よりもヘモグロビンに対する親和性が高い。",
+      "ウ": "レジオネラ属菌が混入したエアロゾルを吸入すると、日和見感染症として肺炎を引き起こすことがある。",
+      "エ": "総揮発性有機化合物（TVOC）の暫定目標値は、室内空気汚染物質の毒性を基に定められている。",
+      "オ": "化学物質の室内濃度指針値は、それぞれの化学物質がシックハウス症候群を引き起こす閾値に不確実係数を適用して定められている。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ヒョウダニ由来物質は室内のアレルゲンになり、レジオネラ属菌を含むエアロゾルの吸入は肺炎につながることがある。室内環境の指針値とTVOC暫定目標値は根拠が異なる。",
+    "choiceExplanations": {
+      "ア": "死骸や排泄物に含まれる成分がアレルゲンとなる。",
+      "イ": "一酸化炭素はヘモグロビンに強く結合するが、一酸化窒素より親和性が高いという比較は誤りである。",
+      "ウ": "レジオネラ属菌による肺炎の感染経路として、汚染されたエアロゾルの吸入がある。",
+      "エ": "TVOC暫定目標値は、室内濃度の実態から暫定的に示された値である。",
+      "オ": "個別物質の評価では毒性データを用い、全てがシックハウス症候群の発症閾値から決まるわけではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=38",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問141",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q142",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 142,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "薬剤師法"
+    ],
+    "difficulty": 3,
+    "question": "薬剤師法に規定されている薬剤師の業務に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "調剤に従事する薬剤師は、調剤の求めがあった場合には、正当な理由がなければ、調剤を断ってはならない。",
+      "イ": "処方箋中の疑わしい点について、処方医と連絡がとれない場合には、照会せずに調剤することができる。",
+      "ウ": "薬局以外の場所では、いかなる場合も、販売又は授与の目的で調剤することはできない。",
+      "エ": "医師などの処方箋によらなければ、販売又は授与の目的で調剤することはできない。",
+      "オ": "調剤に従事する薬剤師は、薬剤師免許を携帯しなければ調剤できない。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "薬剤師法は正当な理由のない調剤拒否を禁じ、販売・授与目的の調剤を処方箋に基づくものとしている。処方箋に疑わしい点があるときは、照会して確認してから調剤する。",
+    "choiceExplanations": {
+      "ア": "薬剤師法第21条の調剤の求めに応じる義務に対応する。",
+      "イ": "第24条により、疑わしい点は処方箋を交付した医師等に照会し、確認後に調剤する。",
+      "ウ": "第22条には院内の調剤所などに関する例外がある。",
+      "エ": "第23条は、医師、歯科医師または獣医師の処方箋による調剤を定めている。",
+      "オ": "薬剤師免許の携帯を調剤の要件とする規定はない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=39",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問142",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/335AC0000000146?occasion_date=20220219"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q143",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 143,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "臨床試験"
+    ],
+    "difficulty": 3,
+    "question": "医薬品の開発における臨床試験に関する記述のうち、正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "第Ⅰ相試験の主な目的は、用法・用量を決定することである。",
+      "イ": "前期第Ⅱ相試験の主な目的は、薬物動態試験の実施である。",
+      "ウ": "後期第Ⅱ相試験の主な目的は、臨床薬理試験の実施である。",
+      "エ": "第Ⅲ相試験の主な目的は、検証的試験の実施である。",
+      "オ": "第Ⅳ相試験の主な目的は、効能・効果を追加することである。"
+    },
+    "answer": "エ",
+    "explanation": "第Ⅲ相では、有効性と安全性についてそれ以前に得た仮説を、対象患者で検証する。初期の安全性・薬物動態の確認や、製造販売後の評価とは目的が異なる。",
+    "choiceExplanations": {
+      "ア": "第Ⅰ相では安全性、忍容性、薬物動態などを初期に評価する。",
+      "イ": "前期第Ⅱ相では対象患者で効果や安全性を探索する。",
+      "ウ": "後期第Ⅱ相では候補の用法・用量などを絞り込む。",
+      "エ": "第Ⅲ相の主目的は、先行試験の知見を踏まえ有効性と安全性を検証することである。",
+      "オ": "第Ⅳ相では市販後の使用を踏まえて評価を深める。効能追加に限定されない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=39",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問143",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.pmda.go.jp/int-activities/int-harmony/ich/0030.html"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q144",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 144,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "医薬品リスク管理計画"
+    ],
+    "difficulty": 3,
+    "question": "医薬品リスク管理計画に関する説明のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "GCP 省令に基づき、医薬品の製造販売後のリスクとベネフィットを評価する。",
+      "イ": "安全性検討事項として、重要なリスクを特定し、それに対して安全性監視計画とリスク最小化計画を策定・実施する。",
+      "ウ": "安全性検討事項には、特定されたリスクに加え、潜在的なものや不足情報も含まれる。",
+      "エ": "安全性監視計画には、添付文書の作成や改訂が含まれる。",
+      "オ": "リスク最小化計画には、副作用・感染症報告制度に基づく副作用評価が含まれる。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "RMPは、安全性検討事項ごとに、情報を集める安全性監視活動と、リスクを減らすための対策を計画する。重要な不足情報も検討事項に含まれる。",
+    "choiceExplanations": {
+      "ア": "GCPは主に治験の実施基準で、この計画の枠組みと区別する。",
+      "イ": "特定した安全性の課題に対して、監視活動と最小化活動を計画する。",
+      "ウ": "安全性検討事項は重要な特定されたリスク、潜在的リスク、不足情報を含む。",
+      "エ": "添付文書の整備はリスク最小化活動に当たる。",
+      "オ": "副作用報告を収集し評価することは安全性監視活動に当たる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=40",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問144",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.pmda.go.jp/files/000231955.pdf"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q145",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 145,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "医療機器"
+    ],
+    "difficulty": 3,
+    "question": "次の分類のうち、コンタクトレンズが該当するのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "高度管理医療機器",
+      "イ": "管理医療機器",
+      "ウ": "一般医療機器",
+      "エ": "再生医療等製品",
+      "オ": "医薬部外品"
+    },
+    "answer": "ア",
+    "explanation": "コンタクトレンズは眼に直接装着する製品であり、法令上は高度管理医療機器に分類される。 販売業者は営業所ごとに、販売を実地に管理する者を置く。",
+    "choiceExplanations": {
+      "ア": "厚生労働省の販売時の取扱い通知でも高度管理医療機器として扱われる。",
+      "イ": "管理医療機器の区分には該当しない。",
+      "ウ": "一般医療機器の区分には該当しない。",
+      "エ": "細胞加工製品などを対象とする再生医療等製品には当たらない。",
+      "オ": "医薬部外品ではなく医療機器の区分で扱われる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=40",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問145",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00tb8834&dataType=1"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q146",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 146,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "覚醒剤取締法"
+    ],
+    "difficulty": 3,
+    "question": "医薬品である覚醒剤原料について、薬局における法令に基づく取扱いとして、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "かぎをかけて薬品庫に保管する。",
+      "イ": "麻薬と一緒に保管できる。",
+      "ウ": "薬局で調剤するためには、覚醒剤施用機関としての指定を受ける必要がある。",
+      "エ": "処方箋に基づき調剤し、患者に譲渡することができる。",
+      "オ": "使用期限が切れた調剤前のものを廃棄した場合、30 日以内に都道府県知事に届け出る。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "医薬品である覚醒剤原料は、薬局で施錠して保管し、処方箋によって調剤したものは患者に譲り渡せる。廃棄の手続は調剤済みかどうかで異なる。",
+    "choiceExplanations": {
+      "ア": "かぎをかけた場所で保管する。",
+      "イ": "医薬品である覚醒剤原料は、麻薬とは別に区分して保管する。",
+      "ウ": "処方箋による調剤に、薬局が覚醒剤施用機関の指定を受けることは要件ではない。",
+      "エ": "処方箋により調剤した医薬品である覚醒剤原料は患者に譲渡できる。",
+      "オ": "調剤前の在庫の廃棄は、調剤済みの薬剤に適用される事後届出と異なり、事前届出と職員の立会いを要する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=40",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問146",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00tc4796&dataType=1&pageNo=1"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q147",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 147,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "個人情報保護法"
+    ],
+    "difficulty": 3,
+    "question": "個人情報の保護に関する法律（個人情報保護法）に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "個人情報の取り扱いが5,000 件未満の薬局は、個人情報取扱事業者に該当しない。",
+      "イ": "健康保険法に基づく保険者番号及び被保険者等記号・番号は、個人情報に該当しない。",
+      "ウ": "「匿名加工情報」とは、本人の人種、信条、社会的身分、病歴等の特に配慮を要する個人情報をいう。",
+      "エ": "個人情報取扱事業者は、偽りその他不正の手段により個人情報を取得してはならない。",
+      "オ": "個人情報取扱事業者は、原則、あらかじめ本人の同意を得ないで、個人データを第三者に提供してはならない。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "出題当時の個人情報保護法でも、不正な手段での取得は禁止されている。個人データの第三者提供は、法定の例外を除いて本人の事前同意が原則である。",
+    "choiceExplanations": {
+      "ア": "取扱件数が5000件以下であることだけで適用対象外にはならない。",
+      "イ": "個人に割り当てる被保険者等の記号・番号などは、法令上の個人識別符号に当たる場合がある。",
+      "ウ": "病歴など特に配慮が必要な情報は要配慮個人情報に該当する。",
+      "エ": "偽りその他の不正な手段による取得は禁止されている。",
+      "オ": "第三者に提供するには、法令で定める例外を除き、あらかじめ本人の同意を得る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=41",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問147",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/415AC0000000057?occasion_date=20220219"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q148",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 148,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "医療法"
+    ],
+    "difficulty": 3,
+    "question": "医療法に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "診療所は、専任薬剤師を置かなければならない。",
+      "イ": "病院は、20 人以上の患者を入院させるための施設を有する。",
+      "ウ": "地域医療支援病院の承認要件には、救急医療を提供する能力が含まれる。",
+      "エ": "特定機能病院の承認要件には、特定臨床研究に関する計画を立案し、実施する能力が含まれる。",
+      "オ": "臨床研究中核病院の承認要件には、高度の医療を提供する能力が含まれる。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "医療法では20人以上を入院させられる施設を持つものを病院とし、地域医療支援病院の承認要件には救急医療を提供する能力が含まれる。特定機能病院と臨床研究中核病院の承認要件は区別する。",
+    "choiceExplanations": {
+      "ア": "全ての診療所に専任薬剤師の配置を義務付ける規定はない。",
+      "イ": "病院の入院施設の基準は20人以上である。",
+      "ウ": "救急医療を提供できることは地域医療支援病院の承認要件の一つである。",
+      "エ": "特定臨床研究の計画立案・実施は臨床研究中核病院の要件である。",
+      "オ": "高度の医療を提供する能力は特定機能病院の要件である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=41",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問148",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/323AC0000000205?occasion_date=20220219"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q149",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 149,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "介護保険"
+    ],
+    "difficulty": 3,
+    "question": "介護保険制度に関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "高齢者の介護を社会全体で支え合う仕組みとして導入された。",
+      "イ": "財源は税金と40 歳以上の国民が負担する保険料である。",
+      "ウ": "薬剤師は、実務経験無しで、介護支援専門員の資格を取得できる。",
+      "エ": "ケアプランは、かかりつけの医師が作成する。",
+      "オ": "介護サービスを受けるために支給される金額は、年齢によって限度額が決まっている。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "介護保険は、高齢者の介護を社会全体で支える制度で、財源は公費と保険料で賄う。保険料の負担は40歳以上からで、サービスの給付限度は主に要介護度に応じる。",
+    "choiceExplanations": {
+      "ア": "介護を社会全体で支える制度として設けられた。",
+      "イ": "公費と40歳以上の被保険者の保険料を財源とする。",
+      "ウ": "薬剤師等の免許に加え、一定の実務経験などの要件がある。",
+      "エ": "居宅サービス計画の作成は介護支援専門員が担う。",
+      "オ": "給付の支給限度基準額は要介護度などに応じて定まる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=42",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問149",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/409AC0000000123?occasion_date=20220219"
+    ],
+    "lawReferenceDate": "2022-02-19"
+  },
+  {
+    "id": "yakuzaishi-2022-annual-theory-q150",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 150,
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "法規",
+      "医療経済"
+    ],
+    "difficulty": 3,
+    "question": "新規感染症予防のために新しいワクチンが開発された。臨床試験ではワクチン接種群では2 万人のうち10 人が発症、プラセボ接種群では2 万人のうち200 人が発症し、ワクチンの有効率は95％であった。この新しいワクチンの接種費用は1人当たり1 万円で、その他の費用は考慮しない場合、このワクチンの増分費用効果比（1 人の発症を防ぐための費用）として、最も近い値はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1 万円/人",
+      "イ": "10 万円/人",
+      "ウ": "20 万円/人",
+      "エ": "100 万円/人",
+      "オ": "200 万円/人"
+    },
+    "answer": "エ",
+    "explanation": "両群で人数が同じなので、予防できた発症は200−10＝190人と読める。2万人を接種する費用は2億円で、190人で割ると1人の発症予防あたり約105万円となる。",
+    "choiceExplanations": {
+      "ア": "1万円は接種1人の費用であり、発症1人を防ぐための費用とは異なる。",
+      "イ": "両群の発症率の差は0.95ポイントなので、10万円では届かない。",
+      "ウ": "20万円より大きく、約105万円となる。",
+      "エ": "2億円÷190人≒105万円/人で、最も近い。",
+      "オ": "200万円は算出した約105万円を大きく上回る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/000915526.pdf#page=42",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/000917940.pdf#page=1",
+    "sourceAttribution": "厚生労働省「第107回薬剤師国家試験」1日目② 一般問題（薬学理論問題）問150",
+    "license": "MHLW-attributed",
+    "lastUpdated": "2026-11-18",
+    "isCalculation": true
+  }
+]

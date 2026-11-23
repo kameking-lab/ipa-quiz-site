@@ -11,7 +11,8 @@ describe("KHK descriptive self assessment", () => {
     const question = KHK_KAGAKU_QUESTIONS.find((q) => q.year === 2025 && q.session === "khk-az" && q.qNumber === 1)!;
     render(<DescriptiveAnswerCard question={question} defaultOpen />);
     expect(screen.getByRole("status")).toHaveTextContent("自己採点 0 / 15 点");
-    expect(screen.getByRole("link", { name: "高圧ガス保安協会の公式問題PDF" })).toHaveAttribute("href", question.sourcePdfUrl);
+    expect(screen.getByRole("link", { name: "公式問題PDF" })).toHaveAttribute("href", question.sourcePdfUrl);
+    expect(screen.getByRole("group", { name: "出典" })).toHaveTextContent("高圧ガス保安協会");
     expect(screen.queryByText(/法務省/)).toBeNull();
     const checkboxes = screen.getAllByRole("checkbox");
     fireEvent.click(checkboxes[0]);

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "lane": "rs-7",
+  "group": 4,
+  "checkedOn": "2026-11-17",
+  "planSource": "C:/Users/kanet/20260522/codex-run-20261110/tools/rs-3/PLAN3.md",
+  "assignmentBasis": "未着手候補から4・8・12・16・20番目。マンション管理士と公認会計士は除外。",
+  "assigned": ["shihoshoshi", "chosashi", "gas-kou", "keiryoshi-nodo", "kanri-eiyoshi"],
+  "rows": [
+    {
+      "key": "chosashi|2023|autumn",
+      "qualificationCode": "chosashi",
+      "qualification": "土地家屋調査士",
+      "year": 2023,
+      "sitting": "autumn",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-restock-g4-20261117",
+      "questionCount": 11,
+      "plannedQuestionCount": 33,
+      "remainingQuestionCount": 22,
+      "sessionCounts": { "am": 11 },
+      "typeCounts": { "multiple-choice": 10, "descriptive": 1 },
+      "remainingSessionCounts": { "pm": 22 },
+      "questionIds": [
+        "chosashi-2023-am-q1",
+        "chosashi-2023-am-q2",
+        "chosashi-2023-am-q3",
+        "chosashi-2023-am-q4",
+        "chosashi-2023-am-q5",
+        "chosashi-2023-am-q6",
+        "chosashi-2023-am-q7",
+        "chosashi-2023-am-q8",
+        "chosashi-2023-am-q9",
+        "chosashi-2023-am-q10",
+        "chosashi-2023-am-q11"
+      ],
+      "paths": [
+        "data/questions/chosashi/2023-am.json",
+        "data/questions/chosashi/2023-sources.json"
+      ],
+      "officialSourceUrls": [
+        "https://www.moj.go.jp/MINJI/minji05_00568.html",
+        "https://www.moj.go.jp/content/001408935.pdf",
+        "https://www.moj.go.jp/content/001406404.pdf",
+        "https://www.moj.go.jp/content/001408930.pdf",
+        "https://www.moj.go.jp/content/001408937.pdf"
+      ],
+      "verification": {
+        "officialAnswerChanges": 0,
+        "multipleChoiceAnswersMatched": 10,
+        "choiceExplanations": 50,
+        "workedAnswerSubquestions": 6,
+        "originalFigureCrops": 5,
+        "independentAnswerDrawings": 1,
+        "duplicateQuestionIds": 0,
+        "existingQuestionCountUnchanged": 66
+      },
+      "notes": [
+        "本番反映は未実施。push・PR・mainマージ・デプロイなし。",
+        "記述の解答・作図は独自解答例。法務省の公式解答ではない旨を明記。",
+        "午前は11/11完了。午後は0/22で未着手。"
+      ]
+    }
+  ],
+  "skipped": [
+    { "qualificationCode": "shihoshoshi", "reason": "第2班が2024年度午前に着手済み。bff65f96eで確認。" },
+    { "qualificationCode": "gas-kou", "year": 2024, "reason": "公式問題・正答の旧URLが404。本文作成なし。" },
+    { "qualificationCode": "keiryoshi-nodo", "year": 2024, "reason": "リポジトリ内に既存原稿あり。2023年度の公式一覧ページは403。" },
+    { "qualificationCode": "kanri-eiyoshi", "year": 2025, "reason": "公式正答は取得したが、旧午前問題URLが404。本文作成なし。" }
+  ]
+}

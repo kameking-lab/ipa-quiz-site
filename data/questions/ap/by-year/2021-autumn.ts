@@ -242,7 +242,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問10）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "アは長方形の外形で、接点が片側に一列だけあります。表裏のどちらでも挿せるUSB Type-Cは、上下対称に作られています。",
+      "イ": "イは角を大きく丸めた上下対称の外形で、接点が向かい合わせの二列にあります。表裏を返しても挿せるUSB Type-Cのプラグです。",
+      "ウ": "ウは外形に段差があり、接点も一列です。上下を区別する形なので、上下を返しても取り付けられるUSB Type-Cの構造とは異なります。",
+      "エ": "エには片側だけに切欠きや接点があり、上下が対称ではありません。USB Type-Cは、どちらの向きでも挿せるよう上下対称です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q11",
@@ -266,7 +273,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はアです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問11）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "平均シーク10ミリ秒、半回転の待ち時間5ミリ秒、データ転送0.1ミリ秒です。三つを足すと15.1ミリ秒になります。",
+      "イ": "16.0ミリ秒は、5ミリ秒待った後の転送に1ミリ秒を見込んだ値です。1,000バイトは10Mバイト/秒なら0.1ミリ秒で転送できます。",
+      "ウ": "20.1ミリ秒では回転待ちを一回転の10ミリ秒として数えています。平均値を求めるので、回転待ちは半回転の5ミリ秒です。",
+      "エ": "21.0ミリ秒は回転待ちを一回転とし、転送を1ミリ秒とした値です。表から計算すると、平均の回転待ちは5、転送は0.1ミリ秒です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q12",
@@ -530,7 +544,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はアです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問22）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "両方が1のときだけ桁上がりが生じるのでXはANDです。和の1桁目は入力の片方だけが1のときに1なので、YはXORです。",
+      "イ": "下段のXORは和の1桁目として正しいです。一方、上段のORでは片方が1でもXが1となり、桁上がりがないときに桁が上がります。",
+      "ウ": "上段のORでは片方だけが1でも桁上がりになり、下段のANDでは1＋1で和の1桁目が1になります。二進数の加算とは合いません。",
+      "エ": "上段のANDは桁上がりとして正しいです。下段のORは1＋1でもYを1にしますが、二進数の1＋1は10なのでYは0です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q23",
@@ -554,7 +575,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問23）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "16進数の08との論理積では、ビット3は元が0なら0のままで、LED1を必ず点灯できません。LED2のビット6も強制的に0になります。",
+      "イ": "16進数の08はビット3だけが1です。現在値との論理和を取れば、LED1のビットを1にしながら、LED2のビット6を保持できます。",
+      "ウ": "16進数の48との論理積ではビット3と6の元の値を残します。LED1が消灯中でビット3が0なら、操作後も0で点灯しません。",
+      "エ": "16進数の48はビット3だけでなくビット6も1です。論理和ではLED2が消灯中でもビット6が1になり、状態を変えてしまいます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q24",
@@ -626,7 +654,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はエです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問26）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "IDで結合すれば、同じIDの行の項目を横に組み合わせます。結果Xは項目を増やさず、RとSに含まれる行を縦に集めています。",
+      "イ": "RからSを引くと、共通する0001の行が消えます。Xには共通行もSにだけある0002の行も含まれるため、差ではありません。",
+      "ウ": "直積はRの各行とSの各行を全て組み合わせ、3×2＝6行にします。Xは元と同じ列を持ち、重複を除いた四行になっています。",
+      "エ": "同じ列を持つRとSの行を集め、共通する0001の行を一つにまとめます。IDが同じ0002の二行はAの値が違うので両方残ります。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q27",
@@ -674,7 +709,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問28）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "原本の表では、受注日、商品コード、数量などは各欄に一つずつ入ります。複数の商品は明細ごとに別の行にあるので、第1正規形です。",
+      "イ": "各欄が単一の値なので第1正規形です。複数の明細がある受注で、受注日や得意先コードは明細のキー全体でなく受注番号だけで決まります。",
+      "ウ": "第2正規形は、非キー項目が複合キーの一部だけで決まることを許しません。この表では受注日や得意先コードが受注番号だけで決まります。",
+      "エ": "第3正規形の前に第2正規形を満たす必要があります。受注日が受注明細を識別するキーの一部だけで決まるため、第2正規形ではありません。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q29",
@@ -1154,7 +1196,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問48）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "図のアは、細線の三角形など、形状と線種の組合せごとにクラスを作ります。線種を増やすたびに各形状のクラスも必要になります。",
+      "イ": "図のイは太線と形状を別系統にしていますが、太線側にも三角形と四角形を持ちます。太線以外を増やすと形状のクラスが重複します。",
+      "ウ": "図形は三角形と四角形、線種は太線と細線として別々に継承させます。図形から線種を参照するので、両者を独立して追加できます。",
+      "エ": "図のエでは太線の三角形と太線の四角形が残り、形状と線種の組合せごとにクラスが必要です。両者を独立に追加できません。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q49",
@@ -1178,7 +1227,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はアです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問49）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "時間の経過につれて残作業量を記録する図です。実線で残量の実績、破線で予定を表し、作業の完了に向けた進み具合を比較できます。",
+      "イ": "図のイは発生不具合数の増減を示しています。バーンダウンで追う量は不具合の発生件数ではなく、未完了の作業量です。",
+      "ウ": "図のウは見つかったバグを累積しており、実績の線が増えます。バーンダウンは完了した分を除いた残作業量を追います。",
+      "エ": "図のエは要員数の変更を段階的に示しています。作業の消化に応じて減る残作業量を表示していないため、バーンダウンとは異なります。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q50",
@@ -1250,7 +1306,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問52）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "図のアにはAからFへの依存を示す矢印がありません。Fの前に終えるべき作業にはDだけでなくAも含まれています。",
+      "イ": "Aの終点からFの始点にダミー作業を入れています。FはDの完了とAの完了の両方を待ち、他の直接の依存関係も元の図と一致します。",
+      "ウ": "図のウにはAからHの始点へのダミー作業が余分にあります。HはFを待ち、FはAを待つので、直接その制約を描く必要はありません。",
+      "エ": "図のエではAの終点からHの始点へつなぎます。これではHはAを待ちますが、Fの開始がAの完了より先になり得ます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q53",
@@ -1490,7 +1553,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問62）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "CSFは成功に必要な要因で、図では在庫の削減や誤出荷の削減を挙げたbです。cではそれらの達成度を数値で測ります。",
+      "イ": "物流コストを10％削減するという最終目標を定めるのがKGIの設定で、図ではaです。cは改善の途中で確認する指標です。",
+      "ウ": "在庫日数7日以内や誤出荷率3％以内は、改善の進み具合を測る具体的な指標です。こうした重要業績評価指標をKPIと呼びます。",
+      "エ": "MBOは目標を設定し、その達成状況を評価する管理の仕組みです。cはそのような仕組みの導入ではなく、業務の測定指標の設定です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q63",
@@ -1538,7 +1608,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問64）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "610万円は年間の通勤費とオフィス等の削減分だけを使い、費用を全て引いた結果です。離職防止による採用費250万円の削減も加えます。",
+      "イ": "五年間の削減は通勤費500、オフィス等600、採用費250の合計1,350万円です。導入と運用の費用490万円を引くと860万円です。",
+      "ウ": "950万円は年ごとの運用費400万円だけを引いた値です。PCの購入80万円とツールの初期費用10万円も引く必要があります。",
+      "エ": "1,260万円は削減総額から初期費用90万円だけを引いた値です。ツールと回線に五年間で掛かる運用費400万円も引きます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q65",
@@ -1634,7 +1711,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問68）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "ビールの倍増は1,500万円の2倍より高い3,300万円です。一方、ビールと清涼飲料水を一緒に作るEは、別々に作るより安くなります。",
+      "イ": "両製品とも、単独で数量を倍にするとコストは2倍を超えます。一方、同じ数量を単独生産した場合の費用より併産費用が小さくなります。",
+      "ウ": "併産費用が下がるシナジー効果はありますが、ビールと清涼飲料水の単独生産ではいずれも倍増して単価が上がり、規模の効果はありません。",
+      "エ": "規模の効果がない点は合っていますが、例えばAとCを別々に実施すると2,000万円です。同じ数量を併産するEは1,900万円で済みます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q69",
@@ -1802,7 +1886,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はアです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問75）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "株式Aは最悪でも10円値上がりします。各株式の最小値である10円、5円、5円、－10円を比べると、Aが最も大きくなります。",
+      "イ": "株式Bは経済成長が中のとき、値上がり幅が5円にとどまります。最悪の場合の10円を確保できるAより低くなります。",
+      "ウ": "株式Cは経済成長が高い場合に30円上がりますが、低い場合は5円です。マクシミン原理で比較するのは最大値でなく最小値です。",
+      "エ": "株式Dは高成長なら40円上がりますが、低成長なら10円値下がりします。最悪の場合を重視すると、最小値が正のAに劣ります。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q76",
@@ -1826,7 +1917,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問76）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "Yだけを作る場合は、部品Bを1台当たり2個使うので30台までです。XとYを組み合わせれば部品Aも使い切り、利益を増やせます。",
+      "イ": "Xだけなら部品Aの制約で40台まで作れます。ただし、Xを30台、Yを15台作る組合せも二つの部品の上限を満たし、利益が上回ります。",
+      "ウ": "Xをx台、Yをy台とすると、二つの制約を足して4(x＋y)≦180です。Xを30台、Yを15台作れば両制約を満たし、上限45台に達します。",
+      "エ": "部品Aの上限だけならYを60台作れますが、その場合、部品Bが120個必要です。実際に使えるBは60個であり、その生産計画は実行できません。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q77",
@@ -1850,7 +1948,14 @@ export const AP_QUESTIONS_2021_AUTUMN: Question[] = [
     "explanation": "正解はアです。（出典: IPA 応用情報技術者試験 令和3年度秋期 午前 問77）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "A社の限界利益率は50％、B社は20％です。売上が同じ額だけ増えた場合、変動費を引いて残る利益の増加分はA社の方が大きくなります。",
+      "イ": "A社の限界利益率は(1,000－500)÷1,000＝50％です。B社の20％より高く、A社の方が売上の増分を利益に反映しやすくなります。",
+      "ウ": "損益分岐点売上高は固定費÷限界利益率です。A社は400÷0.5＝800億円、B社は100÷0.2＝500億円で、A社は高い方です。",
+      "エ": "A社は限界利益率が高いので、売上高が減った場合に利益が減る幅も大きくなります。固定費が高く、損益分岐点にも早く達します。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2021a-am-q78",

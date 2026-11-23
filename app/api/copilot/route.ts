@@ -5,12 +5,13 @@ import { z } from "zod";
 import { getProvider } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
-import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
+import { checkAiNormalUse, checkFreeAiServiceUse } from "@/lib/ai/normal-use-server";
+import { copilotRateLimitResponse } from "@/lib/copilot/rate-limit-response";
 import type { Question } from "@/lib/questions/types";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
-import { getCopilotSource, warmCopilotIndexSoon, type CopilotSource } from "@/lib/copilot/source";
+import { getCopilotSource, type CopilotSource } from "@/lib/copilot/source";
 import { captureException } from "@/lib/monitoring/sentry";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
@@ -18,7 +19,7 @@ import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, confirmFreeAnswer, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -56,7 +57,7 @@ export async function POST(req: Request) {
 }
 
 async function handlePost(req: Request, track: (context: AiUsageContext) => void) {
-  const startedAt = Date.now();
+  const startedAt = performance.now();
   let payload: z.infer<typeof BodySchema>;
   try {
     payload = BodySchema.parse(await req.json());
@@ -69,6 +70,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   // 問題文・選択肢・正答・標準解説はクライアント入力を信頼しない。
   // 本番はビルド時に書き出した問題ファイルから引く（全問題データを読み込まない）。
+  const sourceStartedAt = performance.now();
   let source: CopilotSource;
   let question: Question | undefined;
   try {
@@ -81,6 +83,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       { status: 503, headers: { "X-Error-Type": "server_error" } },
     );
   }
+  const sourceMs = performance.now() - sourceStartedAt;
   if (!question) {
     return NextResponse.json(
       { error: "unknown_question", message: "問題が見つかりません。ページを更新してください。" },
@@ -108,32 +111,20 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
-  // 冷えたサーバでは索引の読み込みを、下の利用枠・レート制限の確認（KV 往復）と重ねる。
-  if (ragEnabled()) warmCopilotIndexSoon();
-
-  const usage = await prepareAiUsage("copilot");
+  const usage = await prepareAiUsage(req, "copilot");
   track(usage);
   if (usage.response) return usage.response;
 
-  const ipRl = await checkAiNormalUse(req, "copilot", usage, {
+  const ipDenial = copilotRateLimitResponse(await checkAiNormalUse(req, "copilot", usage, {
     requireKv: Boolean(process.env.GEMINI_API_KEY),
-  });
-  if (!ipRl.ok) {
-    if (ipRl.reason === "unavailable") {
-      return NextResponse.json(
-        { error: "rate_limit_unavailable", message: "AIサービスは一時的に利用できません。少し待ってから再試行してください。" },
-        { status: 503, headers: { ...usage.headers, "X-Error-Type": "server_error", "Retry-After": "60" } },
-      );
-    }
-    return NextResponse.json(
-      { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, scope: ipRl.scope, resetAt: ipRl.resetAt },
-      { status: 429, headers: { ...usage.headers, "X-Error-Type": "rate_limited" } },
-    );
-  }
+  }), usage.headers);
+  if (ipDenial) return ipDenial;
 
   const quickAction = payload.quickAction as QuickActionId | undefined;
 
-  const ragStartedAt = Date.now();
+  // Cold RAG loads on demand after admission. It yields while restoring the
+  // search index so concurrent KV requests can finish during the cold load.
+  const ragStartedAt = performance.now();
   const rag = await runCopilotRAGPipeline({
     question,
     messages: payload.messages,
@@ -142,8 +133,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     questionContextIncluded: true,
     source,
   });
-  // 最初の文字までの内訳（利用枠・レート制限の確認 / 検索）。秒単位の遅れを切り分けるため。
-  const serverTiming = `pre;dur=${ragStartedAt - startedAt}, rag;dur=${Date.now() - ragStartedAt}`;
+  const promptStartedAt = performance.now();
 
   const { system, userMessages } = assembleCopilotPrompt({
     question,
@@ -157,6 +147,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     ragContextBlock: rag.ragContextBlock,
   });
 
+  const promptMs = performance.now() - promptStartedAt;
   let provider: LLMProvider;
   try {
     provider = process.env.GEMINI_API_KEY
@@ -185,6 +176,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       : payload.responseLength === "medium"
         ? 1200
         : 1800;
+  const usageDenial = await consumeAiUsage(usage, provider.name,
+    ["copilot", question.id, selectedChoice, quickAction, payload.messages, payload.responseLength, payload.learnerProfile]);
+  if (usageDenial) return usageDenial;
 
   const budget = textBudget(tierForModel(model), system, userMessages, maxTokens);
   let reservation: Awaited<ReturnType<typeof checkMonthlyCostCap>>["reservation"];
@@ -192,7 +186,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     const cap = await checkMonthlyCostCap(provider.name, budget);
     reservation = cap.reservation;
     if (!cap.allowed) {
-    if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
+      if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
       return NextResponse.json(
         {
           error: cap.reason ?? "cost_capped",
@@ -207,13 +201,26 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   const isRealProvider = provider.name !== "mock";
 
-  const usageDenial = await consumeAiUsage(usage, provider.name);
-  if (usageDenial) {
-    if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
-    return usageDenial;
+  if (usage.access.kind === "free" && provider.name !== "mock") {
+    const serviceDenial = copilotRateLimitResponse(await checkFreeAiServiceUse(usage), usage.headers);
+    if (serviceDenial) {
+      if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
+      return serviceDenial;
+    }
   }
 
+  // app includes all handler work before provider streaming, including pre, rag and prompt.
+  const serverTiming = [
+    ["pre", ragStartedAt - startedAt],
+    ["source", sourceMs],
+    ["rag", promptStartedAt - ragStartedAt],
+    ["prompt", promptMs],
+    ["app", performance.now() - startedAt],
+  ].map(([name, duration]) => `${name};dur=${Number(duration).toFixed(1)}`).join(", ");
+  usage.streaming = true;
   const stream = createCopilotResponseStream({
+    requireCompleteAnswer: !usage.legacy,
+    confirmBeforeDelivery: confirmFreeAnswer(usage),
     provider,
     system,
     userMessages,
@@ -226,28 +233,28 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     onComplete: isRealProvider
       ? // await して返す。ストリームは計上完了まで close されない（fire-and-forget
         // だとレスポンス完了で関数が凍結され、KV 書き込みが失われうる）。
-        async (outputChars, usage) => {
+        async (outputChars, completion, answered) => {
           console.info("[copilot] completed", {
             questionId: payload.question.id, model, serverTiming,
-            finishReason: usage?.finishReason,
-            promptTokens: usage?.promptTokens,
-            outputTokens: usage?.outputTokens,
-            thoughtsTokens: usage?.thoughtsTokens,
-            totalTokens: usage?.totalTokens,
+            finishReason: completion?.finishReason,
+            promptTokens: completion?.promptTokens,
+            outputTokens: completion?.outputTokens,
+            thoughtsTokens: completion?.thoughtsTokens,
+            totalTokens: completion?.totalTokens,
           });
-          const costStatus = await recordAiCost({
+          const [, costStatus] = await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
             tier: tierForModel(model),
-            inputTokens: usage?.promptTokens ?? budget.inputTokens,
+            inputTokens: completion?.promptTokens ?? budget.inputTokens,
             // Stream interruption may hide usageMetadata, including billable
             // thinking tokens. Reserve the whole generation budget in that case.
-            outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
-              ? Math.max(0, usage.totalTokens - usage.promptTokens)
-              : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
-                ? usage.outputTokens + usage.thoughtsTokens
-                : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
+            outputTokens: completion?.totalTokens !== undefined && completion.promptTokens !== undefined
+              ? Math.max(0, completion.totalTokens - completion.promptTokens)
+              : completion?.outputTokens !== undefined && completion.thoughtsTokens !== undefined
+                ? completion.outputTokens + completion.thoughtsTokens
+                : Math.max(maxTokens, (completion?.outputTokens ?? 0) + (completion?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
             label: "copilot",
             reservation,
-          });
+          })]);
           console.info("[copilot] cost", {
             questionId: payload.question.id, model, status: costStatus,
           });

@@ -1,0 +1,280 @@
+{
+  "id": "sharoushi-2025-annual-gakka-q7",
+  "status": "READY_FOR_PARENT_INTEGRATION",
+  "completedQuestionDelta": 1,
+  "publishedQuestionDelta": 0,
+  "officialAnswer": "D",
+  "siteAnswer": "エ",
+  "lawReferenceDate": "2025-04-11",
+  "inputQuestionPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\payload\\questions.json",
+  "inputManifestPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\payload\\manifest.json",
+  "savedOriginalSha256": "f2a2c231a1d791b4b06d8295cdcc7b5c0593baf19f591b0052caaede4f44073f",
+  "completedQuestionSha256": "0667a1ae554025bed740b561e1fd65460f946840c8fd0b72e9ffd6dc8980960f",
+  "choices": {
+    "ア": {
+      "status": "CLOSED",
+      "isCorrectStatement": true,
+      "sources": [
+        "rouki-law-asof20250411",
+        "rouki-rule-asof20250411",
+        "rules-circulation-20231012"
+      ],
+      "location": "法106条1項、則52条の2、令5.10.12通達本文6頁第3の1",
+      "reason": "備付け場所等の提示と必要時の容易な確認について、2023年公式通達の明文で確認。2012年労契法周知解釈から推論のみで閉じていない。"
+    },
+    "イ": {
+      "status": "CLOSED",
+      "isCorrectStatement": true,
+      "sources": [
+        "courts-42o740-detail",
+        "courts-42o740-fulltext"
+      ],
+      "location": "詳細の事件識別情報、判決全文1頁理由",
+      "reason": "合理的理由、妥当な方法・程度、画一的実施、明示の根拠、特段事情がない限り受忍義務を全文で確認。原本は匿名化されているため通称の事件名を解説から削除。"
+    },
+    "ウ": {
+      "status": "CLOSED",
+      "isCorrectStatement": true,
+      "sources": [
+        "rouki-law-asof20250411",
+        "shift-20220107-hokkaido"
+      ],
+      "location": "法89条1号、令4.1.7資料本文3頁2(2)イ",
+      "reason": "「個別の労働契約による」「シフトによる」のみは不可、基本時刻・休日を定めて具体部分を契約・シフトに委ねることは可とする明文を確認。2026年改正版は根拠に含めない。"
+    },
+    "エ": {
+      "status": "CLOSED",
+      "isCorrectStatement": false,
+      "sources": [
+        "rouki-law-asof20250411",
+        "rouki-rule-asof20250411",
+        "stamp-revision-notice"
+      ],
+      "location": "法90条2項、則49条2項、令2.12.22通達冒頭・第2の2(2)ア",
+      "reason": "基準日の49条2項は氏名記載のみ。改正通達は就業規則意見書を記名のみの対象と明示し、令3.4.1施行も確認。"
+    },
+    "オ": {
+      "status": "CLOSED",
+      "isCorrectStatement": true,
+      "sources": [
+        "rouki-law-asof20250411",
+        "mhlw-sanctions-model-chapter"
+      ],
+      "location": "法91条、公式モデルPDF2頁第63条解説2",
+      "reason": "不就労時間分の減額は91条の制裁に当たらず、超過分は制裁とする説明を厚労省モデルで確認。1988年旧通達原本を取得したという扱いにはしない。"
+    }
+  },
+  "sources": {
+    "rouki-law-asof20250411": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2025-04-11",
+      "retrievedAt": "2026-10-11T01:54:20.692822+00:00",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2025-04-11",
+      "sha256": "92e9cd6f0335f2f3df48a1fae6bd446d2b5429434f9733797532be17102c64bf",
+      "contentType": "application/json",
+      "size": 416077,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\rouki-law-asof20250411.html",
+      "title": "労働基準法",
+      "version": "asof=2025-04-11",
+      "location": "89条1号・90条・91条・106条1項",
+      "visualQA": {
+        "status": "text-or-structured-data-checked",
+        "files": []
+      },
+      "lawRevisionInfo": {
+        "law_revision_id": "322AC0000000049_20250401_506AC0000000042",
+        "law_type": "Act",
+        "law_title": "労働基準法",
+        "law_title_kana": "ろうどうきじゅんほう",
+        "abbrev": "労基法",
+        "category": "労働",
+        "updated": "2024-07-22T15:23:37+09:00",
+        "amendment_promulgate_date": "2024-05-31",
+        "amendment_enforcement_date": "2025-04-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "506AC0000000042",
+        "amendment_law_title": "育児休業、介護休業等育児又は家族介護を行う労働者の福祉に関する法律及び次世代育成支援対策推進法の一部を改正する法律",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和六年法律第四十二号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "rouki-rule-asof20250411": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2025-04-11",
+      "retrievedAt": "2026-10-11T01:54:19.666835+00:00",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2025-04-11",
+      "sha256": "cd1bf6aaa89f97bc336248e9f754e5c8f812212af23999397314263537fa50be",
+      "contentType": "application/json",
+      "size": 741633,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\rouki-rule-asof20250411.html",
+      "title": "労働基準法施行規則",
+      "version": "asof=2025-04-11",
+      "location": "49条2項・52条の2",
+      "visualQA": {
+        "status": "text-or-structured-data-checked",
+        "files": []
+      },
+      "lawRevisionInfo": {
+        "law_revision_id": "322M40000100023_20250101_506M60000100045",
+        "law_type": "MinisterialOrdinance",
+        "law_title": "労働基準法施行規則",
+        "law_title_kana": "ろうどうきじゅんほうしこうきそく",
+        "abbrev": "労基法施行規則",
+        "category": "労働",
+        "updated": "2024-07-23T04:22:39+09:00",
+        "amendment_promulgate_date": "2024-03-18",
+        "amendment_enforcement_date": "2025-01-01",
+        "amendment_enforcement_comment": null,
+        "amendment_scheduled_enforcement_date": null,
+        "amendment_law_id": "506M60000100045",
+        "amendment_law_title": "じん肺法施行規則等の一部を改正する省令",
+        "amendment_law_title_kana": null,
+        "amendment_law_num": "令和六年厚生労働省令第四十五号",
+        "amendment_type": "3",
+        "repeal_status": "None",
+        "repeal_date": null,
+        "remain_in_force": false,
+        "mission": "New",
+        "current_revision_status": "PreviousEnforced"
+      }
+    },
+    "rules-circulation-20231012": {
+      "url": "https://www.mhlw.go.jp/content/11200000/001156120.pdf",
+      "retrievedAt": "2026-10-11T02:04:53.082997+00:00",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/11200000/001156120.pdf",
+      "sha256": "daad88fef34bc15ff0020a24c380423dad6f0679708bdd9ed7bbc7d284000490",
+      "contentType": "application/pdf",
+      "size": 490171,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\rules-circulation-20231012.pdf",
+      "title": "労働基準法施行規則等の施行等について（無期転換ルール・労働契約関係の明確化等）",
+      "version": "令和5年10月12日 基発1012第2号",
+      "location": "本文6頁 第3 1 就業規則の周知",
+      "visualQA": {
+        "status": "passed",
+        "files": [
+          "rules-circulation-page1.png",
+          "rules-circulation-page6.png"
+        ]
+      }
+    },
+    "courts-42o740-detail": {
+      "url": "https://www.courts.go.jp/hanrei/54095/detail2/index.html",
+      "retrievedAt": "2026-10-11T01:58:09.791717+00:00",
+      "status": 200,
+      "finalUrl": "https://www.courts.go.jp/hanrei/54095/detail2/index.html",
+      "sha256": "d317b260268a1018668c66a50bd8ffd4ae154309a733c6a075d9b92bbf5c3fe2",
+      "contentType": "text/html",
+      "size": 56265,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\courts-42o740-detail.html",
+      "title": "最高裁判所判例検索 詳細",
+      "version": "昭和42(オ)740／昭和43年8月2日／第二小法廷",
+      "location": "事件番号・裁判年月日・裁判要旨",
+      "visualQA": {
+        "status": "text-or-structured-data-checked",
+        "files": []
+      }
+    },
+    "courts-42o740-fulltext": {
+      "url": "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-54095.pdf",
+      "retrievedAt": "2026-10-11T01:59:59.891168+00:00",
+      "status": 200,
+      "finalUrl": "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-54095.pdf",
+      "sha256": "e521be2b74ee0a9cee1c86f286ccf0192780600b788e31a20eef06ce532291a4",
+      "contentType": "application/pdf",
+      "size": 10440,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\courts-42o740-fulltext.pdf",
+      "title": "最高裁第二小法廷判決全文",
+      "version": "昭和43年8月2日 昭和42(オ)740",
+      "location": "本文1頁 理由 所持品検査の要件・受忍義務",
+      "visualQA": {
+        "status": "passed",
+        "files": [
+          "courts-42o740-page1.png"
+        ]
+      }
+    },
+    "shift-20220107-hokkaido": {
+      "url": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/content/contents/001109719.pdf",
+      "retrievedAt": "2026-10-11T02:02:13.878224+00:00",
+      "status": 200,
+      "finalUrl": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/content/contents/001109719.pdf",
+      "sha256": "31d3ebbd8718f7e1ce6e03ff8f554d450999ab97bccfe6b4278e6d94b43a7b54",
+      "contentType": "application/pdf",
+      "size": 223930,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\shift-20220107-hokkaido.pdf",
+      "title": "いわゆる「シフト制」により就業する労働者の適切な雇用管理を行うための留意事項",
+      "version": "令和4年1月7日（本文1頁明記、2026年改正版を使用していない）",
+      "location": "本文3頁 2(2)イ 就業規則に規定すべき事項",
+      "visualQA": {
+        "status": "passed",
+        "files": [
+          "shift-20220107-page3.png"
+        ]
+      }
+    },
+    "stamp-revision-notice": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc5508&dataType=1&pageNo=1",
+      "retrievedAt": "2026-10-11T01:58:06.808728+00:00",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc5508&dataType=1&pageNo=1",
+      "sha256": "c51b435baf07d444d475bb3ba78fb631fddc7185e1c40c6b4e3f26b090263d35",
+      "contentType": "text/html;charset=UTF-8",
+      "size": 79552,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\stamp-revision-notice.html",
+      "title": "労働基準法施行規則等の一部を改正する省令の公布等について",
+      "version": "令和2年12月22日 基発1222第4号／令和2年厚生労働省令203号／令和3年4月1日施行",
+      "location": "冒頭公布・施行／第2 2(2)ア 就業規則の意見書",
+      "visualQA": {
+        "status": "text-or-structured-data-checked",
+        "files": []
+      }
+    },
+    "mhlw-sanctions-model-chapter": {
+      "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11200000-Roudoukijunkyoku/0000118978.pdf",
+      "retrievedAt": "2026-10-11T01:54:54.796011+00:00",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11200000-Roudoukijunkyoku/0000118978.pdf",
+      "sha256": "89635888b15d0099b1bc2fffbc8c22fe8943b6c24a17a9a4fd370b767dc1989a",
+      "contentType": "application/pdf",
+      "size": 207157,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\labor-followup\\mhlw-sanctions-model-chapter.pdf",
+      "title": "モデル就業規則 第11章 表彰及び制裁",
+      "version": "厚労省公開PDF、ファイル作成・更新メタデータ2018-01-31（本文に版年月の明記なし）",
+      "location": "PDF2頁 第63条 懲戒の種類 解説2",
+      "visualQA": {
+        "status": "passed",
+        "files": [
+          "mhlw-sanctions-page2.png"
+        ]
+      }
+    }
+  },
+  "qaFiles": [
+    "OFFICIAL-LITERAL-QA.json",
+    "DATED-LAW-EXCERPTS.json",
+    "FINAL-PDF-EXCERPTS.json",
+    "CIRCULATION-NOTICE-EXCERPTS.json",
+    "LOCAL-DIFF.json",
+    "PRIOR-FAILURE-CHECK.json"
+  ],
+  "remaining": [],
+  "excludedSources": [
+    {
+      "key": "shift-fukuoka-pdf",
+      "reason": "2021年の労働局広報資料でありシフト留意事項原本ではないため除外。"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/newpage_22954.html",
+      "reason": "現在の本文リンクは2026年6月改正版。2025年基準日の根拠には使わない。"
+    }
+  ],
+  "scope": "保存稿のみ局所補正。元payload、repo、runtime、lock、既存PR、公開状態は未変更。"
+}

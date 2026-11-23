@@ -1,0 +1,128 @@
+{
+  "lane": "qc-4",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "auditedRefCount": 94,
+  "jobs": [
+    {
+      "jobId": "PLAN5-116",
+      "lane": "qc-4",
+      "branch": "cx/kako-5y4-20261118",
+      "status": "completed",
+      "exam": "kangoshi",
+      "officialExamYear": 2025,
+      "storedYear": 2024,
+      "season": "annual",
+      "session": "pm",
+      "expectedOriginalCount": 120,
+      "existingOriginalCount": 114,
+      "importedCount": 5,
+      "newCount": 1,
+      "addedCount": 6,
+      "dataPath": "data/questions/kangoshi/2024-pm-plan5-qc4.json",
+      "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf",
+      "answerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05c_01.pdf",
+          "sha256": "3c55c7bc2b88612a57afa2b5c1a58dc7dd36b00ca7693d56c7cc44c706ce5adb",
+          "pages": 60
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-05seitou.pdf",
+          "sha256": "706f6fe6ab34e9849755874132ad98ac55a32d9b83fa7e37c8e58c7ad07921db",
+          "pages": 2
+        }
+      ],
+      "questions": [
+        {
+          "id": "kangoshi-2024-annual-pm-q38",
+          "qNumber": 38,
+          "questionPage": 17,
+          "answerPage": 1,
+          "officialAnswerNumber": "1",
+          "origin": "branch-import",
+          "sourceCommit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "sourcePath": "data/questions/kangoshi/primary-followup-20261011.json",
+          "sourceBlobSha256": "d4460aca48439eee57d62406874e9e048e209d3685743ac05e3e333e36d843e8",
+          "sourceRecordSha256": "a25254447c60fe8bcac625ece4447e3037f9b9d032a41b0ab2c50e581d18fb88",
+          "sourceAdjustments": [],
+          "recordSha256": "a25254447c60fe8bcac625ece4447e3037f9b9d032a41b0ab2c50e581d18fb88"
+        },
+        {
+          "id": "kangoshi-2024-annual-pm-q60",
+          "qNumber": 60,
+          "questionPage": 24,
+          "answerPage": 1,
+          "officialAnswerNumber": "2",
+          "origin": "branch-import",
+          "sourceCommit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "sourcePath": "data/questions/kangoshi/followup-20261011.json",
+          "sourceBlobSha256": "bc52b25ff2f75af40d6e55471a4e5c08f319ccde73844b55f5f8151e45d4c3a7",
+          "sourceRecordSha256": "ee8b26b08d3c866f455880393463b3d43f058ecb100aa153a1b9ad12260b08b1",
+          "sourceAdjustments": [],
+          "recordSha256": "ee8b26b08d3c866f455880393463b3d43f058ecb100aa153a1b9ad12260b08b1"
+        },
+        {
+          "id": "kangoshi-2024-annual-pm-q62",
+          "qNumber": 62,
+          "questionPage": 24,
+          "answerPage": 1,
+          "officialAnswerNumber": "3",
+          "origin": "branch-import",
+          "sourceCommit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "sourcePath": "data/questions/kangoshi/followup-20261011.json",
+          "sourceBlobSha256": "bc52b25ff2f75af40d6e55471a4e5c08f319ccde73844b55f5f8151e45d4c3a7",
+          "sourceRecordSha256": "8899f87306a49f6a762ee052459e83c4452c28ef2fd96fb552f89022565b9eaf",
+          "sourceAdjustments": [],
+          "recordSha256": "8899f87306a49f6a762ee052459e83c4452c28ef2fd96fb552f89022565b9eaf"
+        },
+        {
+          "id": "kangoshi-2024-annual-pm-q70",
+          "qNumber": 70,
+          "questionPage": 27,
+          "answerPage": 1,
+          "officialAnswerNumber": "3",
+          "origin": "new",
+          "note": "Official key 3 and original options retained; added a short note on the April 2024 amendment, without altering the accepted answer.",
+          "officialReferenceUrls": [
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-03_04_05.html",
+            "https://www.mhlw.go.jp/content/12200000/001319927.pdf#page=3",
+            "https://www.mhlw.go.jp/web/t_doc?dataId=80128000&dataType=0&pageNo=1",
+            "https://www.mhlw.go.jp/web/t_doc?dataId=00tb9817&dataType=1&pageNo=1"
+          ]
+        },
+        {
+          "id": "kangoshi-2024-annual-pm-q89",
+          "qNumber": 89,
+          "questionPage": 34,
+          "answerPage": 2,
+          "officialAnswerNumber": "24",
+          "origin": "branch-import",
+          "sourceCommit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "sourcePath": "data/questions/kangoshi/followup-20261011.json",
+          "sourceBlobSha256": "bc52b25ff2f75af40d6e55471a4e5c08f319ccde73844b55f5f8151e45d4c3a7",
+          "sourceRecordSha256": "5c5cb1ab92bcc9fa1c6cdc09fe87d591636af1ff1a28b22a70f35bf3fd1f162a",
+          "sourceAdjustments": [],
+          "recordSha256": "5c5cb1ab92bcc9fa1c6cdc09fe87d591636af1ff1a28b22a70f35bf3fd1f162a"
+        },
+        {
+          "id": "kangoshi-2024-annual-pm-q113",
+          "qNumber": 113,
+          "questionPage": 50,
+          "answerPage": 2,
+          "officialAnswerNumber": "1",
+          "origin": "branch-import",
+          "sourceCommit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "sourcePath": "data/questions/kangoshi/primary-followup-20261011.json",
+          "sourceBlobSha256": "d4460aca48439eee57d62406874e9e048e209d3685743ac05e3e333e36d843e8",
+          "sourceRecordSha256": "2318fd9d77724037342b1ca0e406353e43c1eee66e1dde72518ca2b50fe598bf",
+          "sourceAdjustments": [
+            "Corrected the answer PDF page fragment to the visually verified official answer row; stem, choices, answer and explanation unchanged."
+          ],
+          "recordSha256": "6350c325209cd5c4af884506de3487ca750a0dabef0debf43ce12d2a2db5fbf5"
+        }
+      ]
+    }
+  ]
+}

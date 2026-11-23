@@ -9,10 +9,10 @@ for (const { name, session, number, blanks = 5 } of [
   test(`denken1 ${name} card opens its ${blanks} selected blanks`, async ({ page }) => {
     await page.goto("/denken1");
     await expect(page.getByRole("heading", { name: "電験一種 一次試験の過去問" })).toBeVisible();
-    await expect(page.getByText("2025・2026年度の理論・電力・機械36原問・204回答欄", { exact: false })).toBeVisible();
-    await expect(page.getByText("掲載する固有の原問は計39件", { exact: false })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "2025・2026年度の原問を年・科目から選ぶ" })).toBeVisible();
-    await expect(page.getByText("両年度の全問と二次試験は未収録", { exact: false })).toBeVisible();
+    const native = page.getByRole("region", { name: "一次試験の原問を年度・科目から選ぶ" });
+    await expect(native.getByText(/\d+原問・\d+回答欄を公式の原本画像とともに収録/)).toBeVisible();
+    await expect(native.getByRole("link", { name: /2025年度 理論/ })).toBeVisible();
+    await expect(native.getByRole("link", { name: /2026年度 理論/ })).toBeVisible();
     await page.getByRole("link", { name: new RegExp(`${name}.*令和8年度・${blanks}空欄`) }).click();
     await expect(page).toHaveURL(new RegExp(`/quiz\\?[^#]*exam=denken1[^#]*session=${session}`), { timeout: 15_000 });
     await expect(page.getByText(`問${number}(1)`, { exact: false }).first()).toBeVisible({ timeout: 15_000 });

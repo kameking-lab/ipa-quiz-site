@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { DENKEN3_LAUNCH_QUESTIONS as questions } from "@/data/questions/denken3";
 import manifest from "@/scripts/denken3-source-manifest.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
@@ -16,7 +16,6 @@ type SourceRow = {
 };
 
 const kana = ["ア", "イ", "ウ", "エ", "オ"] as const;
-const questions = DENKEN3_QUESTIONS;
 const base = join(process.cwd(), "data", "questions", "denken3");
 const reviewed = new Map<string, SourceRow>();
 const key = (date: string, subject: string, number: number, part: string | null) =>

@@ -8,6 +8,12 @@ vi.mock("@/lib/posthog", () => ({ posthogCapture: vi.fn() }));
 const question = { id: "ap-blog-test", exam: "ap", year: 2025, season: "spring", session: "am", qNumber: 1, type: "multiple-choice", category: "基礎理論", choices: { ア: "誤答", イ: "正答" }, answer: "イ", explanation: "根拠の説明です。", question: "問題本文", sourcePdfUrl: "https://www.ipa.go.jp/test.pdf" } as Question;
 beforeEach(() => localStorage.clear());
 afterEach(cleanup);
+it("記事の演習後に同じ試験回の保存版を表示する", () => {
+  const sourceArchiveUrl = `https://web.archive.org/web/20250102030405/${question.sourcePdfUrl}`;
+  render(<BlogPractice question={{ ...question, sourceArchiveUrl }} reason="学習を体験" continueHref="/quiz?exam=ap" slug="test" explanation={null} />);
+  fireEvent.click(screen.getByRole("radio", { name: /正答/ }));
+  expect(screen.getByRole("link", { name: "公式PDF（保存版）" })).toHaveAttribute("href", sourceArchiveUrl);
+});
 it("grades once, shows explanation and continuation, and respects the history setting", () => {
   render(<BlogPractice question={question} reason="学習を体験" continueHref="/quiz?exam=ap&session=am" slug="test" explanation={<p>根拠の説明です。</p>} />);
   expect(screen.queryByText("根拠の説明です。")).not.toBeInTheDocument();

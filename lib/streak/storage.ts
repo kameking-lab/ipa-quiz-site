@@ -9,6 +9,7 @@ import {
 } from "./core";
 
 const STREAK_LS_KEY = "ipa-quiz:streak:v1";
+export const STREAK_100_DAY_EVENT = "study-streak:100-day";
 
 function read(): StreakState {
   if (typeof window === "undefined") return EMPTY_STREAK;

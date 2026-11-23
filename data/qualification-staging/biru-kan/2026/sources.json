@@ -1,0 +1,542 @@
+{
+  "exam": "biru-kan",
+  "year": 2026,
+  "round": 56,
+  "checkedAt": "2026-11-12",
+  "officialIndexUrl": "https://www.jahmec.or.jp/kokka/",
+  "documents": [
+    {
+      "kind": "questions-am",
+      "url": "https://www.jahmec.or.jp/kokka/shiken_pdf/2026/2026shiken_am.pdf",
+      "sha256": "61938c1b4fe34060a2564d4342f6c7aea154471e70b9dd8acdba34e2befe8384",
+      "bytes": 2083530,
+      "pages": 31
+    },
+    {
+      "kind": "official-answers",
+      "url": "https://www.jahmec.or.jp/kokka/shiken_pdf/2026/2026kizyun_seitou.pdf",
+      "sha256": "35c59c2742819e369e07f6250693a8cbbef224511aabf2c9740238c99ac23ead",
+      "bytes": 114745,
+      "pages": 1
+    },
+    {
+      "kind": "questions-pm",
+      "url": "https://www.jahmec.or.jp/kokka/shiken_pdf/2026/2026shiken_pm.pdf",
+      "sha256": "705ef6ceb43be03afc2aa2d4d0e28eb35a9d10e97b38346ddb55607ceb4db1a1",
+      "bytes": 2064872,
+      "pages": 30
+    }
+  ],
+  "duplicateCheck": {
+    "ledgerKey": "biru-kan|2026|annual",
+    "ledgerStatus": "未着手",
+    "originMainCommit": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "originMainYears": [
+      2024,
+      2025
+    ],
+    "matchingOpenPrCount": 0,
+    "target2026BranchCount": 0
+  },
+  "supplementaryReferences": [
+    {
+      "url": "https://inchem.org/documents/iarc/vol80/80.html",
+      "httpStatus": 200,
+      "retrievedUrl": "https://inchem.org/documents/iarc/vol80/80.html",
+      "sha256": "1018acd6ba04ee71816d2ecd5b5220a60189f9167640f9a5938d9a4dff3f6dae",
+      "questionNumbers": [
+        37
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://web2.gsi.go.jp/buturisokuchi/menu01_index.html",
+      "httpStatus": 200,
+      "retrievedUrl": "https://web2.gsi.go.jp/buturisokuchi/menu01_index.html",
+      "sha256": "1cf31fbae84b9ddb9efbdbb4872877b02524b682ccd932fcebae5d5357afd24c",
+      "questionNumbers": [
+        37
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.data.jma.go.jp/ghg/kanshi/ghgp/co_trend.html",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.data.jma.go.jp/ghg/kanshi/ghgp/co_trend.html",
+      "sha256": "24e50292fdd82ed40f7e100d1d683cb583afb5102a9cfef8b18b377ef518edde",
+      "questionNumbers": [
+        32
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.env.go.jp/air/kijun/taiki2.html",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.env.go.jp/air/kijun/taiki2.html",
+      "sha256": "4f59787dab6d7d22bf56241134c72fa7627256ce8a517adf219de29dbb82ffc0",
+      "questionNumbers": [
+        17
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei10/",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei10/",
+      "sha256": "8b54af83411851db08e83ece1f5eb06cdf5d4a858b845653ff33bee34a17955e",
+      "questionNumbers": [
+        6,
+        8,
+        9,
+        10,
+        54
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/measles/",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/measles/",
+      "sha256": "10d73c98b54e24cc51edce2e108140faae4688a71cfc1357f2758c7fc1b73727",
+      "questionNumbers": [
+        42
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta5392&dataType=1&pageNo=1",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta5392&dataType=1&pageNo=1",
+      "sha256": "71e5af65c1bc6d1dc893c8e1ee503a2b19ec621c178068effa5348089fd71298",
+      "questionNumbers": [
+        11
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc4773&dataType=1",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc4773&dataType=1",
+      "sha256": "8d54bad98373b929f12c72c755ea028d7147f7d624057d1c746b486a8b2b809d",
+      "questionNumbers": [
+        19,
+        31
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74089000&dataType=0&pageNo=1",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=74089000&dataType=0&pageNo=1",
+      "sha256": "bf38a2e0857b4dd0432640dcf4cef43fb1d1475944a39ddae42a772ca0253380",
+      "questionNumbers": [
+        18
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=79071000",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=79071000",
+      "sha256": "cbc3e85b2a8294e4a89633f765a1fe8c0d23aa26615e6444855266152c06a94b",
+      "questionNumbers": [
+        6
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=79073000",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=79073000",
+      "sha256": "c90c78230da97fa9cb9c2c17869fd66684b3d82db7bb8882e90d267fa5e214bd",
+      "questionNumbers": [
+        12
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.wbgt.env.go.jp/doc_observation.php",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.wbgt.env.go.jp/doc_observation.php",
+      "sha256": "0944c6c6a17b7d630f61f30d6db7c73b191092e5798e7389bcec88fb49e8c041",
+      "questionNumbers": [
+        23
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/321CONSTITUTION",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/321CONSTITUTION",
+      "sha256": "56a52c1ae41aa7656440e3ebad7e8380e541e4604e27052fb4e86db78762fc9f",
+      "questionNumbers": [
+        1
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "日本国憲法"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/333AC0000000056",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/333AC0000000056",
+      "sha256": "91942fb178e9a103c1151756a2011011d53881dd5c4a0ccd7c1400ffbaa76f90",
+      "questionNumbers": [
+        13
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "学校保健安全法"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/333AC0000000079",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/333AC0000000079",
+      "sha256": "8bd05ae688800f98000c99e29db517419201743bba553e166b877ece0fe617e3",
+      "questionNumbers": [
+        14
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "下水道法"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/323AC0000000137",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/323AC0000000137",
+      "sha256": "be4d953eeb1ba73bd0ce79151e93d7e57433835f5341bdcd00eba6317cf505a0",
+      "questionNumbers": [
+        15
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "興行場法"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/345AC0000000137",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/345AC0000000137",
+      "sha256": "7b137de34bbb9162a4f87418fcc1dc46235acc034ff8c087739ee7c1e0baaf14",
+      "questionNumbers": [
+        16
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "廃棄物の処理及び清掃に関する法律"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201",
+      "sha256": "3736d5f68d015ba0ce84fae648bcc48b7d3562557d5ef16f45bc78649b4e2707",
+      "questionNumbers": [
+        20
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "建築基準法"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/410AC0000000114",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/410AC0000000114",
+      "sha256": "ae5f0d0641e2d6f77d654f909563a521891fb3ca4fc7abe40f8e5456cdfc2be4",
+      "questionNumbers": [
+        43
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "感染症の予防及び感染症の患者に対する医療に関する法律"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta5315&dataType=1",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00ta5315&dataType=1",
+      "sha256": "efe78e3982fefc172744be6e8af3b4a6729e9e64bdf2a5ec6dd4b61faed3e9ce",
+      "questionNumbers": [
+        3,
+        4,
+        5
+      ],
+      "checkedAt": "2026-11-12",
+      "scopeNote": "用途の定義と付属部分・面積算定の解釈を参照。制定時の数値基準は用いず、現行規模要件は施行令第1条を参照。"
+    },
+    {
+      "url": "https://www.city.sapporo.jp/shobo/yobo/jorei/documents/120-siryo07.pdf",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.city.sapporo.jp/shobo/yobo/jorei/documents/120-siryo07.pdf",
+      "sha256": "cfe098a20f10ba4f31802a3c82756f029e04405e87f1e7f879d4c7197cec68ef",
+      "questionNumbers": [
+        78
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://www.sibata.co.jp/item/489/",
+      "httpStatus": 200,
+      "retrievedUrl": "https://www.sibata.co.jp/item/489/",
+      "sha256": "c38108b8d99985f519e6099ca37283447b270a57ce1109f3a3ec7bec964ea9cc",
+      "questionNumbers": [
+        79
+      ],
+      "checkedAt": "2026-11-12"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/345CO0000000304",
+      "httpStatus": 200,
+      "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/345CO0000000304",
+      "sha256": "2d8f62cc0a05cc0cefdc3de5134bd1333d7d0a3c1de4e99213ef06a7c7d67de3",
+      "questionNumbers": [
+        3
+      ],
+      "checkedAt": "2026-11-12",
+      "documentTitle": "建築物における衛生的環境の確保に関する法律施行令"
+    }
+  ],
+  "afternoonDuplicateCheck": {
+    "checkedAt": "2026-11-12",
+    "ledgerKey": "biru-kan|2026|annual",
+    "ledgerStatus": "未着手",
+    "originMainCommit": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "originMainYears": [
+      2024,
+      2025
+    ],
+    "matchingOpenPrCount": 0,
+    "other2026AfternoonWorkCount": 0,
+    "previousStep": "q2-new-4 contains morning 1-90 only"
+  },
+  "afternoonSupplementaryReferences": [
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei10/",
+      "httpStatus": 200,
+      "sha256": "8b54af83411851db08e83ece1f5eb06cdf5d4a858b845653ff33bee34a17955e",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": []
+    },
+    {
+      "url": "https://www.env.go.jp/press/110498_00001.html",
+      "httpStatus": 200,
+      "sha256": "15a5e87474c683b77103eabc4d83e6edbfbbb79f1a886cbd34f7618b1d8b31f0",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        156
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb3778&dataType=1",
+      "httpStatus": 200,
+      "sha256": "1357e94303be84ad27768a7b9b801d16f7119254a381e4bdd58524311545b249",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        107,
+        109,
+        111,
+        112,
+        113,
+        117,
+        124,
+        135,
+        141,
+        161,
+        164,
+        179,
+        180
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei09/pdf/03c.pdf",
+      "httpStatus": 200,
+      "sha256": "46316a65cb8352e0b71cc26486625334b0e37fc020132773818ab7dce8b39b0d",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        119,
+        120,
+        121,
+        122,
+        123
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei09/pdf/03d.pdf",
+      "httpStatus": 200,
+      "sha256": "610e3aa889b5bae8cab823c679056bb46b614f1302c9d7e05a9daf86e30fd98a",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei09/pdf/03e.pdf",
+      "httpStatus": 200,
+      "sha256": "b6c62c9f3805042cb081d0499da713139713eef7b0b51b754a304dd2f2e25251",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        128,
+        131,
+        132,
+        133,
+        134,
+        135
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei09/pdf/03f.pdf",
+      "httpStatus": 200,
+      "sha256": "ff32544fba8d2fffdbaa98fc2c33441a4c733755a7ace28268ab961f98e2d223",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei09/pdf/03g.pdf",
+      "httpStatus": 200,
+      "sha256": "a645a9d96dc84d288a5912041b3a72ee30f953eb9c84603036e22be0bf92a543",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000201",
+      "httpStatus": 200,
+      "sha256": "3736d5f68d015ba0ce84fae648bcc48b7d3562557d5ef16f45bc78649b4e2707",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        103,
+        104
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/325CO0000000338",
+      "httpStatus": 200,
+      "sha256": "3b9f57ddc1825b84be63787d4e4ff5ade3c3af6a624b31c0aaaa6a09be133433",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        93,
+        99
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/332AC0000000106",
+      "httpStatus": 200,
+      "sha256": "cd6b975a1cf09c09fc4b0aab64f061945958818ccffbecd410abe371b8d5aa5c",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        97
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/415M60000100101",
+      "httpStatus": 200,
+      "sha256": "76b58ad256617a26c78d4cbfcafa61b1ae5049d4002ad5a0efee10e35e52955a",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        110
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/347M50002000033",
+      "httpStatus": 200,
+      "sha256": "55121bb61f6de8e708079e92fbb36bf92c4c23a42f889b9e574ff1a3ce2931a2",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        123
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/334CO0000000147",
+      "httpStatus": 200,
+      "sha256": "6212a07bb33cf20d1298aadfa5f70ccf16010d8cfa97b40ab34255879f72ec0e",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        127
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/358AC1000000043",
+      "httpStatus": 200,
+      "sha256": "4ca3783ea0798a62d3929b127a757c7e838c73a4a9db832c124b0a324bd25880",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        138
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/345AC0000000137",
+      "httpStatus": 200,
+      "sha256": "7b137de34bbb9162a4f87418fcc1dc46235acc034ff8c087739ee7c1e0baaf14",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        155,
+        158,
+        159,
+        160
+      ]
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/api/1/lawdata/346M50000100035",
+      "httpStatus": 200,
+      "sha256": "fd395b1de417cc3698d6977bfa2ef851f7207ec754c48df3feb15e57ced8d33a",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        158,
+        160
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/bunya/kenkou/seikatsu-eisei09/pdf/02a.pdf",
+      "httpStatus": 200,
+      "sha256": "4cf65edab3639bd78f143cabcd56356128fbfd028e17947e310bf136d9ff0598",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        117
+      ]
+    },
+    {
+      "url": "https://chubu.env.go.jp/recycle/post_1.html",
+      "httpStatus": 200,
+      "sha256": "08bb497e835ac23fa5facc5b6f7560c4886c1c0004012b4c797bb45918ffb0a6",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        165
+      ]
+    },
+    {
+      "url": "https://www.ibecs.or.jp/CASBEE/",
+      "httpStatus": 200,
+      "sha256": "b808ddf246bc031547d727c2aebeb95e62282b757e3fccdf2d8a9899d719bd7a",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        105
+      ]
+    },
+    {
+      "url": "https://www.city.yokohama.lg.jp/kurashi/machizukuri-kankyo/kasen-gesuido/gesuido/setsuzoku/haisui/youran.files/0042_20250911.pdf",
+      "httpStatus": 200,
+      "sha256": "dbc47bb45527540735f07533ab0cfeb974dda5f10afc00febb07c4b1d672eb17",
+      "checkedAt": "2026-11-12",
+      "questionNumbers": [
+        129
+      ]
+    }
+  ]
+}

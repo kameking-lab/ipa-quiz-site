@@ -86,11 +86,12 @@ describe("countByExam", () => {
 });
 
 describe("examMetaDescription", () => {
-  it("year mode advertises the year-first framing, count and free-access copy", () => {
+  it("year mode describes the year-first framing, count and published content", () => {
     const desc = examMetaDescription("ap", 1234, "year");
     expect(desc).toContain("年度別");
     expect(desc).toContain("1,234"); // toLocaleString("ja-JP") の桁区切り
-    expect(desc).toContain("会員登録不要");
+    expect(desc).toContain("問題・出典・学習用解説");
+    expect(desc).not.toContain("完全無料");
     expect(desc).toContain("応用情報技術者試験");
   });
 
@@ -98,13 +99,14 @@ describe("examMetaDescription", () => {
     const desc = examMetaDescription("ap", 1234, "topic");
     expect(desc).toContain("分野別");
     expect(desc).toContain("1,234");
-    expect(desc).toContain("会員登録不要");
+    expect(desc).toContain("問題・出典・学習用解説");
+    expect(desc).not.toContain("完全無料");
   });
 
   it("default mode uses the diverse per-exam copy and embeds the formatted count", () => {
     const year = examMetaDescription("ap", 1234, "year");
     const fallback = examMetaDescription("ap", 1234);
-    expect(fallback).toContain("1,234");
+    expect(fallback).toContain(getQuestionsByExamStrict("ap").length.toLocaleString("ja-JP"));
     expect(fallback.length).toBeGreaterThan(0);
     // diverse copy is distinct from the year/topic templated copy.
     expect(fallback).not.toBe(year);

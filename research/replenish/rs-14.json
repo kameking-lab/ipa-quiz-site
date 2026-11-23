@@ -1,0 +1,81 @@
+{
+  "lane": "rs-14",
+  "branch": "cx/kako-restock-g11-20261117",
+  "checkedAt": "2026-11-17",
+  "allocation": {
+    "basis": "PLAN3の既着手mankan・kaikeishiとrs-4〜13の実追加9資格を除外。未処理の割当候補は残す（先行班と同じ解釈）。",
+    "excluded": [
+      "fp1",
+      "takken",
+      "gyosei",
+      "chosashi",
+      "chusho-secondary",
+      "sharoushi",
+      "kenchikushi2",
+      "caremanager",
+      "kanteishi"
+    ],
+    "remainingInPriorityOrder": [
+      "denken1",
+      "benrishi",
+      "shihoshoshi",
+      "denken2",
+      "tsukanshi",
+      "gas-kou",
+      "zoen1",
+      "keiryoshi-nodo",
+      "kenchikushi1",
+      "rinsho-kensagishi",
+      "kanri-eiyoshi",
+      "kenchiku-setsubishi",
+      "mokuzo-kenchikushi"
+    ],
+    "assignedOddPositions": [
+      "denken1",
+      "shihoshoshi",
+      "tsukanshi",
+      "zoen1",
+      "kenchikushi1",
+      "kanri-eiyoshi",
+      "mokuzo-kenchikushi"
+    ]
+  },
+  "rows": [
+    {
+      "key": "denken1|2024|primary|theory",
+      "qualificationCode": "denken1",
+      "year": 2024,
+      "sitting": "primary",
+      "subject": "theory",
+      "status": "ブランチに有り（未公開）",
+      "questionCount": 7,
+      "answerFieldCount": 41,
+      "originalQuestionCount": 7,
+      "remainingSubjectQuestions": 0,
+      "questionIds": [
+        "denken1-2024-primary-theory-q01",
+        "denken1-2024-primary-theory-q02",
+        "denken1-2024-primary-theory-q03",
+        "denken1-2024-primary-theory-q04",
+        "denken1-2024-primary-theory-q05",
+        "denken1-2024-primary-theory-q06",
+        "denken1-2024-primary-theory-q07"
+      ],
+      "officialSourceUrls": [
+        "https://www.shiken.or.jp/chief/first/qa/",
+        "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q01.pdf",
+        "https://www.shiken.or.jp/chief/upload/20240818_ch_first_a01.pdf"
+      ],
+      "paths": [
+        "data/questions/denken1/native-2024-theory.json",
+        "data/questions/denken1/2024-theory-sources.json"
+      ],
+      "notes": [
+        "2024年度理論の全7原問。問6・7の選択条件を保持。",
+        "他の3科目・二次試験は未追加。",
+        "2025・2026年の既存原問と従来25空欄は変更なし。",
+        "共有台帳に2024の行なし。ローカル全参照の2024原稿パス履歴なし。リモート・本番は未確認。"
+      ]
+    }
+  ]
+}

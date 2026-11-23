@@ -6,20 +6,11 @@ import { Copy, Check, Share2 } from "lucide-react";
 interface Props {
   url: string;
   text: string;
-  hashtags?: string[];
   /**
-   * Compact mode renders an icon-only cluster (X / LINE / copy) suitable for a
-   * page header. Tap targets are 36px — above the WCAG 2.5.8 (AA) 24px floor.
+   * Compact mode renders an icon-only cluster (LINE / copy) suitable for a
+   * page header. Tap targets are 44px.
    */
   compact?: boolean;
-}
-
-function buildXUrl(url: string, text: string, hashtags?: string[]): string {
-  const params = new URLSearchParams();
-  params.set("text", text);
-  params.set("url", url);
-  if (hashtags && hashtags.length > 0) params.set("hashtags", hashtags.join(","));
-  return `https://x.com/intent/tweet?${params.toString()}`;
 }
 
 function buildLineUrl(url: string, text: string): string {
@@ -33,11 +24,12 @@ function buildFacebookUrl(url: string): string {
 /**
  * Single canonical share-buttons component (previously duplicated as
  * components/ShareButtons + components/seo/ShareButtons with divergent props and
- * platform coverage). Full mode: X / LINE / Facebook / copy / native share.
- * Compact mode: icon-only X / LINE / copy cluster for headers.
+ * platform coverage). Full mode: LINE / Facebook / copy / native share.
+ * Compact mode: icon-only LINE / copy cluster for headers.
  */
-export function ShareButtons({ url, text, hashtags, compact }: Props) {
+export function ShareButtons({ url, text, compact }: Props) {
   const [copied, setCopied] = React.useState(false);
+  const [copyError, setCopyError] = React.useState(false);
   // SSR and the first client render must have the same tree.
   const [canNativeShare, setCanNativeShare] = React.useState(false);
   React.useEffect(() => {
@@ -45,12 +37,14 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
   }, []);
 
   const copy = async () => {
+    setCopied(false);
+    setCopyError(false);
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
     } catch {
-      // ignore
+      setCopyError(true);
     }
   };
 
@@ -65,21 +59,10 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
 
   if (compact) {
     const iconBtn =
-      "inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-700 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+      "inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-700 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
     return (
-      <div role="group" aria-label="この問題を共有" className="relative flex items-center gap-1">
-        <a
-          href={buildXUrl(url, text, hashtags)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={iconBtn}
-          aria-label="X (Twitter) で共有"
-        >
-          <span aria-hidden="true" className="text-sm font-bold leading-none">
-            𝕏
-          </span>
-        </a>
+      <div role="group" aria-label="この問題を共有" className="relative flex max-w-full flex-wrap items-center gap-1">
         <a
           href={buildLineUrl(url, text)}
           target="_blank"
@@ -107,12 +90,12 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
           role="status"
           aria-live="polite"
           className={
-            copied
-              ? "pointer-events-none absolute -bottom-7 right-0 rounded-md bg-zinc-900 px-2 py-0.5 text-[11px] font-medium text-white shadow-md dark:bg-zinc-100 dark:text-zinc-900"
+            copied || copyError
+              ? "basis-full rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground"
               : "sr-only"
           }
         >
-          {copied ? "リンクをコピーしました" : ""}
+          {copyError ? "コピーできませんでした。もう一度お試しください。" : copied ? "リンクをコピーしました" : ""}
         </span>
       </div>
     );
@@ -120,16 +103,10 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
 
   const items: Array<{ key: string; href: string; label: string; bg: string }> = [
     {
-      key: "x",
-      href: buildXUrl(url, text, hashtags),
-      label: "X (Twitter)",
-      bg: "bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300",
-    },
-    {
       key: "line",
       href: buildLineUrl(url, text),
       label: "LINE",
-      bg: "bg-emerald-500 text-white hover:bg-emerald-600",
+      bg: "bg-emerald-700 text-white hover:bg-emerald-800",
     },
     {
       key: "fb",
@@ -147,7 +124,7 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
           href={it.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${it.bg}`}
+          className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition ${it.bg}`}
         >
           {it.label}
         </a>
@@ -155,7 +132,7 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
       <button
         type="button"
         onClick={copy}
-        className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
+        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
       >
         {copied ? (
           <>
@@ -173,7 +150,7 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
         <button
           type="button"
           onClick={nativeShare}
-          className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-1.5 text-xs font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
         >
           <Share2 className="h-3.5 w-3.5" />
           シェア…
@@ -181,8 +158,8 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
       )}
       {/* コピー成功はボタン文言が変わるだけでは SR に告知されない(WCAG 4.1.3)。
           compact モードと同様に polite live region で告知する。 */}
-      <span role="status" aria-live="polite" className="sr-only">
-        {copied ? "URL をコピーしました" : ""}
+      <span role="status" aria-live="polite" className={copyError ? "basis-full text-sm text-destructive" : "sr-only"}>
+        {copyError ? "コピーできませんでした。もう一度お試しください。" : copied ? "URL をコピーしました" : ""}
       </span>
     </div>
   );

@@ -1,0 +1,635 @@
+[
+  {
+    "id": "yakuzaishi-2026-annual-theory-q151",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 151,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下のグラフは、摘出回腸平滑筋を用いた受容体刺激薬Aによる収縮反応の濃度-反応曲線と、それに対する薬物X（10^-7 mol/L）あるいは薬物Y（10^-7 mol/L）の併用が及ぼす影響を示したものである。刺激薬Aは、一種類の受容体のみを刺激し、薬物Xと薬物Yに収縮作用はない。この結果に関する記述として、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "刺激薬Aの pD2 値は、約7である。",
+      "イ": "薬物Xの pA2 値は、7より小さいと推定できる。",
+      "ウ": "10^-5 mol/L の刺激薬Aによる収縮反応は、薬物X（10^-7 mol/L）の併用により約50％抑制される。",
+      "エ": "薬物Yは、刺激薬Aに対する非競合的拮抗薬である。",
+      "オ": "薬物Yの内活性は、0.5である。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "グラフでは、刺激薬A単独の曲線は50%反応が約10^-7 mol/Lで、最大反応は100%です。薬物X併用では最大反応は変わらず、曲線だけが右方へ平行移動しています。これは競合的拮抗の型です。薬物Y併用では最大反応が約50%に低下しています。これは非競合的拮抗の型です。したがって正解は1と4です。",
+    "choiceExplanations": {
+      "ア": "正しい。pD2は、最大反応の50%を生じる濃度（EC50）の負の対数です。Aの単独曲線では50%反応が約10^-7 mol/Lなので、pD2は約7です。",
+      "イ": "誤り。Xの併用で曲線は約10^-7から約10^-5.5付近へ右方移動し、用量比はおよそ数十倍です。pA2は、Xの濃度10^-7 mol/Lを(用量比−1)で割った値の負の対数で推定します。用量比が約30なら約8.5となり、7より大きいと推定されます。",
+      "ウ": "誤り。10^-5 mol/LのAは、単独では最大反応（100%）に近い反応を示します。X併用でも、その点の反応はグラフ上で約75%です。抑制は約50%ではなく、わずかです。",
+      "エ": "正しい。Yの併用で最大反応が約50%に低下し、Aの濃度を上げても100%に戻りません。これは非競合的拮抗薬の特徴です。",
+      "オ": "誤り。Yには収縮作用がないと条件に書かれているので、Yは作動薬としての作用（内活性）を持つ薬物として扱えません。最大反応が50%に下がっているのは、非競合的拮抗の結果です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問151（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q151-calculation-figure-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問151の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q171",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 171,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "静脈内投与された薬物の血液と脳の間の移行に関する記述として、正しいのはどれか。２つ選べ。ただし、血漿と脳組織間で薬物分布は平衡状態にあるものとする。",
+    "choices": {
+      "ア": "血漿中の非結合形薬物は、主として脳毛細血管内皮細胞の間隙を通過して移行する。",
+      "イ": "同じ分子量の低分子薬物では、脂溶性が高いほど単純拡散による透過性が高い。",
+      "ウ": "単純拡散のみで移行する中枢作用薬では、血漿中非結合形濃度と脳内非結合形濃度はほぼ等しい。",
+      "エ": "P-糖タンパク質の基質となる薬物では、血漿中非結合形濃度は脳内非結合形濃度より低い。",
+      "オ": "脳内へ能動輸送される薬物であっても、脳内非結合形濃度は血漿中非結合形濃度を超えない。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "血液脳関門では内皮細胞同士が密着結合で結ばれており、細胞間隙の通過はほとんど起こりません。脂溶性が高い薬物は細胞膜を単純拡散で透過しやすくなります。単純拡散のみで移行する薬物は、平衡状態では血漿中と脳内の非結合形濃度がほぼ等しくなります。したがって 2 と 3 が正しいです。",
+    "choiceExplanations": {
+      "ア": "誤り。脳毛細血管内皮細胞は密着結合で結ばれているため、細胞間隙経路はほとんどありません。薬物は主に細胞膜を透過するか、トランスポーターで移行します。",
+      "イ": "正しい。分子量が同じなら、脂溶性が高いほど膜透過性が高くなります。",
+      "ウ": "正しい。単純拡散のみなら濃度勾配に従い、平衡状態では非結合形濃度は等しくなります。",
+      "エ": "誤り。P-糖タンパク質は脳から血液側へ薬物を排出します。そのため脳内非結合形濃度が血漿中より低くなります。記述は逆です。",
+      "オ": "誤り。能動的な取り込みトランスポーターが働けば、脳内非結合形濃度が血漿中非結合形濃度を超えることがあります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問171（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q173",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 173,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体重 60 kg の患者にアミノグリコシド系抗菌薬ゲンタマイシンを静脈内投与したところ、以下の薬物動態パラメータが得られた。\n（薬物動態パラメータ）\n全身クリアランス（CLtot）75.0 mL/min、糸球体ろ過速度（GFR）62.5 mL/min、尿中未変化体排泄率（fe）0.92、血漿タンパク非結合率（fp）0.90\nその後、急性腎障害を発症したため、CLtot が 40.0 mL/min に、GFR が 27.8 mL/min に、fe が 0.85 に低下した。本患者におけるゲンタマイシンのクリアランスに関する記述として、正しいのはどれか。２つ選べ。ただし、急性腎障害の前後で fp は変化しないものとする。",
+    "choices": {
+      "ア": "腎障害前のゲンタマイシンの糸球体ろ過クリアランスは 62.5 mL/min である。",
+      "イ": "腎障害の有無によらず、ゲンタマイシンの腎排泄には尿細管分泌が関与する。",
+      "ウ": "腎障害の有無によらず、ゲンタマイシンは尿細管から再吸収されやすい。",
+      "エ": "ゲンタマイシンの腎クリアランスは腎障害によって変化しない。",
+      "オ": "ゲンタマイシンの腎外クリアランスは腎障害の前後でほぼ一定である。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "【腎障害前】腎クリアランス CLr = CLtot × fe = 75.0 × 0.92 = 69.0 mL/min。糸球体ろ過クリアランス = fp × GFR = 0.90 × 62.5 = 56.25 mL/min。CLr（69.0）はこれより大きく、尿細管分泌が関与します。腎外クリアランス = 75.0 − 69.0 = 6.0 mL/min。\n【腎障害後】CLr = 40.0 × 0.85 = 34.0 mL/min。糸球体ろ過クリアランス = 0.90 × 27.8 = 25.02 mL/min。CLr のほうが大きく、尿細管分泌が関与します。腎外クリアランス = 40.0 − 34.0 = 6.0 mL/min。\n以上から、2 と 5 が正しいです。",
+    "choiceExplanations": {
+      "ア": "誤り。糸球体ろ過クリアランスは非結合形のみがろ過されるので、fp × GFR = 0.90 × 62.5 = 56.25 mL/min です。62.5 mL/min は GFR そのものです。",
+      "イ": "正しい。障害前は CLr 69.0 > 56.25、障害後は 34.0 > 25.02 で、ろ過クリアランスを上回ります。尿細管分泌の関与が示されます。",
+      "ウ": "誤り。CLr がろ過クリアランスを上回っているので、再吸収が優位とはいえません。再吸収が優位なら CLr はろ過クリアランスより小さくなります。",
+      "エ": "誤り。腎クリアランスは 69.0 mL/min から 34.0 mL/min へ低下しています。",
+      "オ": "正しい。腎外クリアランスは障害前後ともに 6.0 mL/min で一定です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問173（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q174",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 174,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下表は、ある薬物 400 mg を患者に急速静脈内投与し、その4 時間後に定速静脈内投与を開始したときの血漿中薬物濃度を示す。このときの定速静脈内投与速度（mg/h）として最も近い値はどれか。１つ選べ。ただし、本薬物の体内動態は、線形 1-コンパートメントモデルに従い、ln 2 ＝ 0.693 とする。",
+    "choices": {
+      "ア": "15",
+      "イ": "20",
+      "ウ": "25",
+      "エ": "30",
+      "オ": "35"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "1) 急速静脈内投与後の濃度は 2 h で 10.0、4 h で 5.0 μg/mL と、2 時間で半減しています。したがって消失半減期 t1/2 = 2 h です。\n2) 消失速度定数 k = 0.693 / 2 = 0.3465 /h。\n3) 投与直後の濃度 C0 は、2 h の濃度 10.0 を半減期 2 h 分だけ遡って 20 μg/mL です（1 h の 14.2 とも整合します）。\n4) 分布容積 V = 400 mg / 20 μg/mL = 20 L。\n5) クリアランス CL = k × V = 0.3465 × 20 = 6.93 L/h。\n6) 定速投与開始後（6 h、10 h）も濃度は 5.0 μg/mL で一定なので、この 5.0 μg/mL が定常状態濃度です。定常状態では投与速度 = CL × Css なので、R = 6.93 L/h × 5.0 mg/L = 34.65 ≒ 35 mg/h。\n最も近い値は 35 で、答えは 5 です。",
+    "choiceExplanations": {
+      "ア": "誤り。15 mg/h では、CL × Css = 6.93 × 5.0 ≒ 34.65 mg/h を満たしません。",
+      "イ": "誤り。20 mg/h は必要速度 約 34.65 mg/h に足りません。",
+      "ウ": "誤り。25 mg/h は必要速度 約 34.65 mg/h に足りません。",
+      "エ": "誤り。30 mg/h は 34.65 mg/h より少なく、最も近い値は 35 mg/h です。",
+      "オ": "正しい。R = CL × Css = 6.93 × 5.0 ≒ 34.65 ≒ 35 mg/h です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問174（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q174-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問174の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q175",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 175,
+    "officialAnswerNumber": "3,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形 1-コンパートメントモデルに従う薬物において、A群に示すパラメータが2倍に変動したとき、B群のパラメータが2倍になる組合せはどれか。2つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "線形1-コンパートメントモデルでは、AUC＝F・D/CL、定速静注の定常状態濃度＝k0/CL、定常状態の50％到達時間＝消失半減期、反復経口投与の定常状態平均濃度＝F・D/(CL・τ)の関係が成り立つ。これらから、正解は3と5である。",
+    "choiceExplanations": {
+      "ア": "誤り。単回急速静注後のAUCはD/CLで表され、分布容積には依存しない。分布容積が2倍になってもAUCは変わらない（消失半減期が延びる）。",
+      "イ": "誤り。定常状態濃度はk0/CLなので、クリアランスが2倍になると濃度は1/2になる。",
+      "ウ": "正しい。定常状態濃度の50％に達するまでの時間は消失半減期そのものに等しい（1−e^(−kt)＝0.5より t＝ln2/k）。半減期が2倍になれば、この時間も2倍になる。",
+      "エ": "誤り。経口投与後のAUCはF・D/CLで、吸収速度定数には依存しない。ka が2倍になってもAUCは変わらない（最高血中濃度や到達時間が変わる）。",
+      "オ": "正しい。定常状態平均血中濃度はF・D/(CL・τ)で、吸収率Fに比例する。Fが2倍になれば2倍になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=20",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問175（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q175-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問175の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q176",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 176,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "体内からの薬物の消失がミカエリス・メンテン式に従うとき、経口投与後の定常状態における平均血中濃度が2 mg/Lとなる投与量と投与回数の組合せとして、最も適切なのはどれか。1つ選べ。ただし、この薬物のミカエリス定数は4 mg/L、最大消失速度は720 mg/day、バイオアベイラビリティは100％とする。",
+    "choices": {
+      "ア": "1回あたりの投与量360 mg / 1日1回",
+      "イ": "1回あたりの投与量300 mg / 1日2回",
+      "ウ": "1回あたりの投与量240 mg / 1日3回",
+      "エ": "1回あたりの投与量120 mg / 1日3回",
+      "オ": "1回あたりの投与量80 mg / 1日3回"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "定常状態では、投与速度R（mg/day）＝消失速度＝Vmax・Css/(Km+Css)。Css＝2 mg/L、Km＝4 mg/L、Vmax＝720 mg/dayを代入すると、R＝720×2/(4+2)＝1440/6＝240 mg/dayとなる（F＝1）。1日総投与量が240 mgとなる組合せを探すと、80 mg×3回＝240 mg/dayの5が該当する。",
+    "choiceExplanations": {
+      "ア": "誤り。360×1＝360 mg/dayで、必要な240 mg/dayを超える。",
+      "イ": "誤り。300×2＝600 mg/dayで、240 mg/dayを大きく超える。",
+      "ウ": "誤り。240×3＝720 mg/dayで、Vmaxに等しく定常状態に達せず濃度が上昇し続ける。",
+      "エ": "誤り。120×3＝360 mg/dayで、240 mg/dayを超える。",
+      "オ": "正しい。80×3＝240 mg/dayで、必要な投与速度と一致する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題）問176（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q178",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 178,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ある非電解質薬物25 mgを結晶又は非晶質固体分散体として、それぞれ一定温度の水1.0 Lに分散したところ、図に示す薬物濃度−時間曲線が得られた。この薬物の溶解に関する記述として、正しいのはどれか。2つ選べ。ただし、この薬物には結晶多形は存在しないものとする。",
+    "choices": {
+      "ア": "薬物結晶の飽和溶解度は約25 μg/mLである。",
+      "イ": "アでは、薬物はすべて溶解しており、液は澄明である。",
+      "ウ": "イでは、固相の薬物は一部非晶質として存在している。",
+      "エ": "イでは、液相の薬物は過飽和溶解している。",
+      "オ": "ウでは、薬物結晶が約5 mg存在している。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "結晶の曲線が平坦となる約6 μg/mLが結晶の飽和溶解度である。仕込み量25 mg/1.0 L＝25 μg/mLであり、アでは仕込み量すべてが溶解している。この濃度は結晶の飽和溶解度を超える過飽和状態である。イでは濃度が低下しており、過飽和の液相から結晶が析出している。ウでは濃度が約6 μg/mLに収束し、溶解は約6 mg、結晶として残るのは約19 mgとなる。",
+    "choiceExplanations": {
+      "ア": "誤り。薬物結晶の飽和溶解度は結晶曲線の平坦部から約6 μg/mLと読める。約25 μg/mLは仕込み量全量が溶解した濃度であり、これだけでは非晶質の飽和溶解度を確定できない。",
+      "イ": "正しい。アの約25 μg/mLは仕込み量25 mg/1.0 Lと一致し、薬物はすべて溶解している。",
+      "ウ": "誤り。アで仕込み量のすべてが溶解した後、イでは過飽和溶液から結晶が析出して濃度が下がっている。結晶多形がないという条件だけから非晶質の有無を判断するのではなく、全量溶解後の結晶化過程として読む。",
+      "エ": "正しい。イの濃度（約16 μg/mL）は結晶の飽和溶解度（約6 μg/mL）より高く、液相は過飽和状態である。",
+      "オ": "誤り。ウは約6 μg/mLなので溶解量は約6 mg、結晶として存在するのは25−6＝約19 mgである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問178（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q178-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問178の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q180",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 180,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、ある界面活性剤水溶液の濃度と表面張力及び難溶性薬物の可溶化量との関係を模式的に示したものである。この図に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "この界面活性剤は、負吸着を示す。",
+      "イ": "Aは可溶化量を、Bは表面張力を示している。",
+      "ウ": "濃度Xでは、界面活性剤は全てミセルとして存在している。",
+      "エ": "濃度Xよりも高い濃度では、溶液表面への界面活性剤の吸着量が一定となる。",
+      "オ": "濃度Yでは、疎水基を外側に、親水基を内側としたミセルが形成される。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "濃度Xは臨界ミセル濃度（CMC）に相当する。Aは濃度Xを超えると増加するので可溶化量、Bは濃度とともに低下しXを超えると一定になるので表面張力である。CMCを超えると表面吸着は飽和して一定となり、追加した界面活性剤はミセルを形成する。",
+    "choiceExplanations": {
+      "ア": "誤り。濃度とともに表面張力が低下しているので、界面活性剤は表面に濃縮する正吸着を示す。",
+      "イ": "正しい。Aは濃度Xを超えて増加するので可溶化量、Bは低下後に一定になるので表面張力を表す。",
+      "ウ": "誤り。濃度XはミセルがCMCで形成され始める濃度で、大部分は単分子として存在する。全てがミセルとなるわけではない。",
+      "エ": "正しい。CMC以上では表面への吸着が飽和して表面張力が一定となり、吸着量も一定となる。",
+      "オ": "誤り。水溶液中のミセルは、親水基を外側（水側）に、疎水基を内側に向けて形成される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問180（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q180-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問180の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q181",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 181,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "懸濁性医薬品に含まれる懸濁粒子の質量基準による積算粒度分布を測定したところ、図1が得られた。\nこの医薬品懸濁液を細長い容器に移し、均一分散した後に静置し、水面から一定の深さにおける懸濁粒子濃度(懸濁液10 mL中の粒子量 mg)を経時的に測定した(図2)。懸濁粒子濃度の経時的変化、すなわち懸濁粒子の沈降挙動を表したグラフとして、最も適当なのはどれか。1つ選べ。\nただし、懸濁粒子は凝集せず、ストークス式(1)に従って沈降するものとする。\nv = h/t = (ρ − ρ0)gd²/(18η) (1)\nv:沈降速度, h:沈降距離, t:沈降時間, ρ:粒子の密度, ρ0:分散媒の密度, g:重力加速度, d:粒子径, η:分散媒の粘度\nまた、懸濁粒子濃度は、最大径の粒子が測定面を通過し終わる沈降時間(TS=1時間)で、初期値12 mg/10 mLから減少し始め、時間の経過とともにグラフ中の黒点を通り、沈降時間TEでゼロになるものとする。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5",
+      "カ": "6"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "ストークス式より、一定の沈降距離hでは沈降時間tは粒子径dの2乗に反比例します(t ∝ 1/d²)。\n①最大径60 μmの粒子が測定面を通過し終わる時間がTS=1時間です。\n②最小径約15 μmの粒子が通過し終わる時間がTEです。TE = 1 × (60/15)² = 16時間。\n③中央値30 μmの粒子が通過し終わる時間は 1 × (60/30)² = 4時間です。この時点で残っているのは30 μm以下の粒子で、積算分布50%に当たります。したがって濃度は12 × 0.5 = 6 mg/10 mLです。\n以上から、黒点が(4時間, 6 mg/10 mL)でTEが16時間のグラフ5が最も適当です。",
+    "choiceExplanations": {
+      "ア": "TEが約4時間となっており、最小径粒子の沈降時間16時間に合いません。黒点の時間(2時間)も、30 μm粒子の4時間に合いません。",
+      "イ": "TEが約9時間で、計算値の16時間と一致しません。黒点の時間(2時間)も誤りです。",
+      "ウ": "黒点が(4時間, 8 mg/10 mL)で、50%に対応する6 mgになっていません。TEも12時間で、16時間と一致しません。",
+      "エ": "TEは16時間で合っていますが、黒点の濃度が8 mg/10 mLです。30 μm粒子が通過し終わる4時間では、濃度は6 mg/10 mLになるはずです。",
+      "オ": "黒点(4時間, 6 mg/10 mL)とTE=16時間が、いずれも計算結果と一致します。",
+      "カ": "TEは16時間で合っていますが、黒点の時間が8時間です。30 μm粒子が通過し終わるのは4時間です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=24",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問181（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q181-graph-original-1.png",
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q181-graph-original-2.png",
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q181-graph-original-3.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問181の原図1",
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問181の原図2",
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問181の原図3"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q182",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 182,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "次の組成・性状で示される経口液剤はどれか。1つ選べ。\n組成\n有効成分(1 mL中)日局ジゴキシン 0.05 mg\n添加物\n白糖、エタノール、パラオキシ安息香酸プロピル、パラオキシ安息香酸ブチル、バニリン、香料、緑色3号\n性状\nうすい青緑色〜青緑色澄明液",
+    "choices": {
+      "ア": "チンキ剤",
+      "イ": "ローション剤",
+      "ウ": "エリキシル剤",
+      "エ": "リニメント剤",
+      "オ": "シロップ剤"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "この製剤は、有効成分に加えて白糖(甘味)、エタノール、香料、着色剤を含み、澄明な経口液剤です。甘味と芳香のあるエタノール含有の澄明な経口液剤は、エリキシル剤に該当します。",
+    "choiceExplanations": {
+      "ア": "チンキ剤は、生薬などをエタノールまたはエタノールと水の混液で浸出した液剤です。この組成は成分を浸出したものではなく、白糖や香料などの矯味・着色を目的とした添加物を含むため当てはまりません。",
+      "イ": "ローション剤は、外用液剤で、皮膚に塗布して用います。本品は経口液剤なので誤りです。",
+      "ウ": "甘味(白糖)・芳香(バニリン、香料)とエタノールを含む澄明な経口液剤であり、エリキシル剤の特徴と一致します。",
+      "エ": "リニメント剤は、皮膚にすり込んで用いる外用液剤です。経口液剤ではないので誤りです。",
+      "オ": "シロップ剤は糖類や甘味剤を含む粘稠性のある経口液剤です。本品はエタノールを含み、澄明な液で、エリキシル剤の組成・性状に合致するため選べません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=27",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問182（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q183",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 183,
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "固形製剤の造粒に用いられる製剤機械ア〜オに関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "アは、粉砕、混合、造粒、乾燥操作を連続的に行うことができる。",
+      "イ": "イは、重質で粒度のそろった円柱状の造粒物が得られる。",
+      "ウ": "ウは、熱及び水に不安定な薬物の造粒に適している。",
+      "エ": "エは、液滴形状を反映した比較的小さな球形状あるいは丸みを帯びた造粒物が得られる。",
+      "オ": "オは、軽質で圧縮成形に適した不定形状の造粒物が得られる。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "図の構造から、アは流動層造粒機、イは撹拌造粒機、ウは乾式造粒機(ローラーコンパクター)、エはスプレードライヤー、オは押出し造粒機と判断できます。\nウは、水や熱を使わずに圧縮して造粒するため、熱・水に不安定な薬物に適します(3は正しい)。\nエは、噴霧した液滴を乾燥させるので、液滴形状を反映した小さな球形〜丸みを帯びた粒子が得られます(4は正しい)。",
+    "choiceExplanations": {
+      "ア": "アの流動層造粒機で連続的に行えるのは混合・造粒・乾燥です。粉砕は含まれないので誤りです。",
+      "イ": "イの撹拌造粒機で得られるのは、重質で球形に近い造粒物です。円柱状の造粒物が得られるのはオの押出し造粒です。",
+      "ウ": "ウの乾式造粒は、湿潤剤や加熱乾燥を必要としないため、熱・水に不安定な薬物に適しており、正しい記述です。",
+      "エ": "エのスプレードライヤーは、液滴を乾燥して小さな球形・丸みを帯びた粒子を得る装置で、正しい記述です。",
+      "オ": "オの押出し造粒では、押し出されて円柱状の重質な造粒物が得られます。軽質で不定形という特徴は当てはまりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=28",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問183（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q183-physical-formulation-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問183の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q184",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 184,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "固体薬物を水不溶性コーティング剤で被覆することで、薬物放出を制御した徐放性製剤が設計できる。この製剤を水に接触させると、膜を通じて製剤内部に水が浸入し、溶解した薬物は、膜中を拡散しながら外液中に放出される(図)。\nこのときの膜の単位面積あたりの薬物透過速度Jは、(1)の式で表される。\nJ = (1/S)・(dQ/dt) = D・K(Cin − Cout)/h (1)\nここで、Qは放出される薬物量、Sは薬物放出面積、Kは溶液と膜間の分配係数、Dは薬物の膜中拡散定数、Cinは薬物層中の溶解薬物濃度、Coutは放出液中の薬物濃度、hは膜厚である。\n本製剤に関する記述として、正しいのはどれか。2つ選べ。\nただし、放出試験中は、薬物層内には固体薬物が残存しており、CoutはCinと比較して十分低いものとする。",
+    "choices": {
+      "ア": "マトリックス型製剤である。",
+      "イ": "薬物は0次放出される。",
+      "ウ": "Cinは経時的に減少する。",
+      "エ": "薬物放出速度は放出制御膜の厚みに比例する。",
+      "オ": "球形粒子の場合では、Sは粒子半径の2乗に比例する。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "固体薬物が残存する間は薬物層の溶液が飽和に保たれ、Cinは一定です。またCout≪Cinなので、dQ/dt = S・D・K・Cin/h は一定となり、0次放出になります(2)。球の表面積は4πr²なので、Sは半径の2乗に比例します(5)。",
+    "choiceExplanations": {
+      "ア": "薬物層が放出制御膜で被覆されたリザーバー型(膜透過型)製剤です。薬物を基剤中に分散させたマトリックス型ではありません。",
+      "イ": "Cinが一定でCoutが無視できるため、放出速度dQ/dtは時間によらず一定です。0次放出であり正しい記述です。",
+      "ウ": "固体薬物が残存している間は、溶解した薬物が補われてCinは飽和濃度のまま一定です。減少しません。",
+      "エ": "式(1)のとおり、放出速度は膜厚hに反比例します。比例ではありません。",
+      "オ": "球の表面積はS=4πr²であり、Sは粒子半径の2乗に比例します。正しい記述です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=29",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」一般問題（薬学理論問題） 問184（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q184-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 一般問題（薬学理論問題） 問184の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-theory-q193",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 193,
+    "officialAnswerNumber": "1,5",
+    "type": "multiple-choice",
+    "category": "薬学理論問題",
+    "topicTags": [
+      "薬学理論問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "症状とその治療に用いられる漢方薬の組合せとして、正しいのはどれか。２つ選べ。",
+    "choices": {
+      "ア": "排尿困難／八味地黄丸",
+      "イ": "便秘／牛車腎気丸",
+      "ウ": "感冒／六君子湯",
+      "エ": "機能性ディスペプシア／麻黄湯",
+      "オ": "更年期障害／加味逍遙散"
+    },
+    "answer": [
+      "ア",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は1と5です。八味地黄丸は腎虚の状態にある高齢者の排尿困難、頻尿、夜間尿、下肢のしびれなどに用いられる漢方薬です。加味逍遙散は、更年期障害を含む女性の不定愁訴（のぼせ、精神不安、いらいらなど）に用いられる漢方薬です。",
+    "choiceExplanations": {
+      "ア": "正しい。八味地黄丸は、排尿困難、頻尿、残尿感といった泌尿器症状に用いられます。",
+      "イ": "誤り。牛車腎気丸は、八味地黄丸に牛膝と車前子を加えた処方で、下肢痛、しびれ、排尿困難、浮腫などに用いられます。便秘の治療薬ではありません。便秘には大黄を含む処方などが用いられます。",
+      "ウ": "誤り。六君子湯は、胃腸が弱く食欲不振や胃もたれのある人に用いる処方です。感冒（風邪）の治療薬ではありません。",
+      "エ": "誤り。麻黄湯は、悪寒、発熱、頭痛、関節痛があり自然に汗が出ない感冒の初期に用いられます。機能性ディスペプシアの治療薬ではありません。機能性ディスペプシアには六君子湯などが用いられます。",
+      "オ": "正しい。加味逍遙散は、更年期障害の不定愁訴（のぼせ、情緒不安、いらいらなど）に用いられます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677929.pdf#page=32",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=2",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」薬学理論問題 問193（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-theory-q193-finite-saved-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 薬学理論問題 問193の原表"
+    ]
+  }
+]

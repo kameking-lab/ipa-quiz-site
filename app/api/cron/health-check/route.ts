@@ -1,3 +1,4 @@
+import { readDailyMetrics } from "@/lib/admin/metrics/daily";
 import { NextResponse } from "next/server";
 
 import { expectedRouteStatuses } from "@/lib/seo/expected-routes";
@@ -54,6 +55,7 @@ async function notifySlack(message: string): Promise<void> {
   try {
     await fetch(url, {
       method: "POST",
+      signal: AbortSignal.timeout(5000),
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ text: message }),
     });
@@ -73,9 +75,13 @@ export async function GET(req: Request): Promise<NextResponse> {
   }
 
   const baseUrl = getBaseUrl();
-  const results = await Promise.all(
-    expectedRouteStatuses().map(({ path, expected }) => probe(baseUrl, path, expected)),
-  );
+  const [results, metrics] = await Promise.all([
+    Promise.all(expectedRouteStatuses().map(({ path, expected }) => probe(baseUrl, path, expected))),
+    readDailyMetrics(),
+  ]);
+  const line = JSON.stringify(metrics);
+  console.info("[daily-metrics]", line);
+  await notifySlack("[daily-metrics] " + line);
 
   const failures = results.filter((r) => !r.ok);
   const ok = failures.length === 0;

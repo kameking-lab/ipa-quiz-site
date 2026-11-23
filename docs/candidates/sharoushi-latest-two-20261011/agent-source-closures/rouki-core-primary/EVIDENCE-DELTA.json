@@ -1,0 +1,758 @@
+{
+  "generatedAt": "2026-10-11T02:14:56.852555+00:00",
+  "scope": "two saved questions only; no shared payload/runtime/lock/repository/PR edits",
+  "completedQuestionCount": 0,
+  "heldQuestionCount": 2,
+  "newlyClosedPropositions": [
+    "sharoushi-2025-annual-gakka-q1:ウ",
+    "sharoushi-2025-annual-gakka-q1:エ",
+    "sharoushi-2026-annual-gakka-q2:ア",
+    "sharoushi-2026-annual-gakka-q2:イ",
+    "sharoushi-2026-annual-gakka-q2:エ",
+    "sharoushi-2026-annual-gakka-q2:オ"
+  ],
+  "officialLiteralQA": [
+    {
+      "id": "sharoushi-2025-annual-gakka-q1",
+      "sourcePdfSha256": "ad490312ecf22ed40df60b364a4cc49b10e24a1f251190f255102d3a4f1520c1",
+      "normalization": "NFKC + whitespace; standalone printed page numbers and printer .indd footer omitted",
+      "scope": "exact subject block and question number, 70 ordered PDF headers checked",
+      "parts": {
+        "stem": {
+          "literalMatch": true,
+          "physicalPages": [
+            3
+          ]
+        },
+        "ア": {
+          "literalMatch": true,
+          "physicalPages": [
+            3,
+            13,
+            24,
+            35,
+            48,
+            60,
+            66
+          ]
+        },
+        "イ": {
+          "literalMatch": true,
+          "physicalPages": [
+            3,
+            13,
+            24,
+            35,
+            48,
+            60,
+            66
+          ]
+        },
+        "ウ": {
+          "literalMatch": true,
+          "physicalPages": [
+            3,
+            13,
+            24,
+            35,
+            48,
+            60,
+            66
+          ]
+        },
+        "エ": {
+          "literalMatch": true,
+          "physicalPages": [
+            4,
+            13,
+            24,
+            35,
+            48,
+            60,
+            66
+          ]
+        },
+        "オ": {
+          "literalMatch": true,
+          "physicalPages": [
+            4,
+            13,
+            24,
+            35,
+            48,
+            60,
+            66
+          ]
+        }
+      },
+      "allLiteralMatch": true,
+      "localQuestionPagesVisuallyInspected": [
+        3,
+        4
+      ],
+      "inspectionFiles": [
+        "2025-original-page3.png",
+        "2025-original-page4.png"
+      ]
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q2",
+      "sourcePdfSha256": "e3b8a2c31ec8802cc90710bfc406651e125e596d55aa66035265ab7495f26b42",
+      "normalization": "NFKC + whitespace; standalone printed page numbers and printer .indd footer omitted",
+      "scope": "exact subject block and question number, 70 ordered PDF headers checked",
+      "parts": {
+        "stem": {
+          "literalMatch": true,
+          "physicalPages": []
+        },
+        "ア": {
+          "literalMatch": true,
+          "physicalPages": [
+            4,
+            13,
+            30
+          ]
+        },
+        "イ": {
+          "literalMatch": true,
+          "physicalPages": [
+            4,
+            13
+          ]
+        },
+        "ウ": {
+          "literalMatch": true,
+          "physicalPages": [
+            4,
+            13
+          ]
+        },
+        "エ": {
+          "literalMatch": true,
+          "physicalPages": [
+            4,
+            13
+          ]
+        },
+        "オ": {
+          "literalMatch": true,
+          "physicalPages": [
+            4,
+            13
+          ]
+        }
+      },
+      "allLiteralMatch": true,
+      "localQuestionPagesVisuallyInspected": [
+        3,
+        4
+      ],
+      "inspectionFiles": [
+        "2026-original-page3.png",
+        "2026-original-page4.png"
+      ]
+    }
+  ],
+  "officialPdfHashQA": [
+    {
+      "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-questions.pdf",
+      "sha256": "ad490312ecf22ed40df60b364a4cc49b10e24a1f251190f255102d3a4f1520c1",
+      "matchedPinnedParentManifest": true
+    },
+    {
+      "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2025-answers.pdf",
+      "sha256": "33cbc50ea0af6754cb61a86cc92ecdcdb08b2e2d47126577bbb53dcebc7e7093",
+      "matchedPinnedParentManifest": true
+    },
+    {
+      "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2026-questions.pdf",
+      "sha256": "e3b8a2c31ec8802cc90710bfc406651e125e596d55aa66035265ab7495f26b42",
+      "matchedPinnedParentManifest": true
+    },
+    {
+      "file": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-public-sources\\2026-answers.pdf",
+      "sha256": "a8a3a3ec7cc577949f3b8dab54a46fa5f5f155962e5ca1f0dc6eafbf0ada5091",
+      "matchedPinnedParentManifest": true
+    }
+  ],
+  "officialAnswerQA": {
+    "parentTableFile": "payload/official-answer-tables.json",
+    "sourceFileSha256": "6517cf29285653814c09427deb2ec61b49c825ffa1f2758c07c5e0cd4207ae91",
+    "2025gakkaQ1": "D",
+    "2026gakkaQ2": "C",
+    "pixelVerification": "inherited from parent table QA; original question pages inspected locally"
+  },
+  "sources": {
+    "rouki-asof20250411.json": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2025-04-11",
+      "retrievedAt": "2026-10-11T01:57:59.565190+00:00",
+      "localFile": "rouki-asof20250411.json",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2025-04-11",
+      "contentType": "application/json",
+      "lastModified": null,
+      "sha256": "92e9cd6f0335f2f3df48a1fae6bd446d2b5429434f9733797532be17102c64bf",
+      "size": 416077,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\rouki-asof20250411.json",
+      "asof": "2025-04-11",
+      "lawRevision": "322AC0000000049_20250401_506AC0000000042",
+      "articleExcerpts": [
+        {
+          "num": "5",
+          "text": "（強制労働の禁止）第五条使用者は、暴行、脅迫、監禁その他精神又は身体の自由を不当に拘束する手段によつて、労働者の意思に反して労働を強制してはならない。"
+        },
+        {
+          "num": "6",
+          "text": "（中間搾取の排除）第六条何人も、法律に基いて許される場合の外、業として他人の就業に介入して利益を得てはならない。"
+        },
+        {
+          "num": "7",
+          "text": "（公民権行使の保障）第七条使用者は、労働者が労働時間中に、選挙権その他公民としての権利を行使し、又は公の職務を執行するために必要な時間を請求した場合においては、拒んではならない。但し、権利の行使又は公の職務の執行に妨げがない限り、請求された時刻を変更することができる。"
+        },
+        {
+          "num": "9",
+          "text": "（定義）第九条この法律で「労働者」とは、職業の種類を問わず、事業又は事務所（以下「事業」という。）に使用される者で、賃金を支払われる者をいう。"
+        },
+        {
+          "num": "11",
+          "text": "第十一条この法律で賃金とは、賃金、給料、手当、賞与その他名称の如何を問わず、労働の対償として使用者が労働者に支払うすべてのものをいう。"
+        }
+      ]
+    },
+    "rouki-asof20260410.json": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-04-10",
+      "retrievedAt": "2026-10-11T01:57:59.567710+00:00",
+      "localFile": "rouki-asof20260410.json",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-04-10",
+      "contentType": "application/json",
+      "lastModified": null,
+      "sha256": "7d261324b5af067c14d84d3e92d84265f013624f6daad9c5a2d1386736e5ad8f",
+      "size": 415997,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\rouki-asof20260410.json",
+      "asof": "2026-04-10",
+      "lawRevision": "322AC0000000049_20250601_504AC0000000068",
+      "articleExcerpts": [
+        {
+          "num": "5",
+          "text": "（強制労働の禁止）第五条使用者は、暴行、脅迫、監禁その他精神又は身体の自由を不当に拘束する手段によつて、労働者の意思に反して労働を強制してはならない。"
+        },
+        {
+          "num": "15",
+          "text": "（労働条件の明示）第十五条使用者は、労働契約の締結に際し、労働者に対して賃金、労働時間その他の労働条件を明示しなければならない。この場合において、賃金及び労働時間に関する事項その他の厚生労働省令で定める事項については、厚生労働省令で定める方法により明示しなければならない。前項の規定によつて明示された労働条件が事実と相違する場合においては、労働者は、即時に労働契約を解除することができる。前項の場合、就業のために住居を変更した労働者が、契約解除の日から十四日以内に帰郷する場合においては、使用者は、必要な旅費を負担しなければならない。"
+        },
+        {
+          "num": "16",
+          "text": "（賠償予定の禁止）第十六条使用者は、労働契約の不履行について違約金を定め、又は損害賠償額を予定する契約をしてはならない。"
+        },
+        {
+          "num": "17",
+          "text": "（前借金相殺の禁止）第十七条使用者は、前借金その他労働することを条件とする前貸の債権と賃金を相殺してはならない。"
+        },
+        {
+          "num": "19",
+          "text": "（解雇制限）第十九条使用者は、労働者が業務上負傷し、又は疾病にかかり療養のために休業する期間及びその後三十日間並びに産前産後の女性が第六十五条の規定によつて休業する期間及びその後三十日間は、解雇してはならない。ただし、使用者が、第八十一条の規定によつて打切補償を支払う場合又は天災事変その他やむを得ない事由のために事業の継続が不可能となつた場合においては、この限りでない。前項但書後段の場合においては、その事由について行政官庁の認定を受けなければならない。"
+        },
+        {
+          "num": "20",
+          "text": "（解雇の予告）第二十条使用者は、労働者を解雇しようとする場合においては、少くとも三十日前にその予告をしなければならない。三十日前に予告をしない使用者は、三十日分以上の平均賃金を支払わなければならない。但し、天災事変その他やむを得ない事由のために事業の継続が不可能となつた場合又は労働者の責に帰すべき事由に基いて解雇する場合においては、この限りでない。前項の予告の日数は、一日について平均賃金を支払つた場合においては、その日数を短縮することができる。前条第二項の規定は、第一項但書の場合にこれを準用する。"
+        }
+      ]
+    },
+    "civil-asof20260410.json": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2026-04-10",
+      "retrievedAt": "2026-10-11T01:57:59.570227+00:00",
+      "localFile": "civil-asof20260410.json",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2026-04-10",
+      "contentType": "application/json",
+      "lastModified": null,
+      "sha256": "45ad5e222659fbd3cfd77b2e96261681f91b607779f29c71f93b857d9c2d21bf",
+      "size": 1613983,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\civil-asof20260410.json",
+      "asof": "2026-04-10",
+      "lawRevision": "129AC0000000089_20260401_506AC0000000033",
+      "articleExcerpts": [
+        {
+          "num": "95",
+          "text": "（錯誤）第九十五条意思表示は、次に掲げる錯誤に基づくものであって、その錯誤が法律行為の目的及び取引上の社会通念に照らして重要なものであるときは、取り消すことができる。一意思表示に対応する意思を欠く錯誤二表意者が法律行為の基礎とした事情についてのその認識が真実に反する錯誤２前項第二号の規定による意思表示の取消しは、その事情が法律行為の基礎とされていることが表示されていたときに限り、することができる。３錯誤が表意者の重大な過失によるものであった場合には、次に掲げる場合を除き、第一項の規定による意思表示の取消しをすることができない。一相手方が表意者に錯誤があることを知り、又は重大な過失によって知らなかったとき。二相手方が表意者と同一の錯誤に陥っていたとき。４第一項の規定による意思表示の取消しは、善意でかつ過失がない第三者に対抗することができない。"
+        }
+      ]
+    },
+    "union-asof20250411.json": {
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000174?asof=2025-04-11",
+      "retrievedAt": "2026-10-11T01:58:00.064898+00:00",
+      "localFile": "union-asof20250411.json",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000174?asof=2025-04-11",
+      "contentType": "application/json",
+      "lastModified": null,
+      "sha256": "c823e89398e36a6dcfaecf9d2d2b7e30bf74bc1d88c2468428903268a4683c92",
+      "size": 247109,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\union-asof20250411.json",
+      "asof": "2025-04-11",
+      "lawRevision": "324AC0000000174_20230614_505AC0000000053",
+      "articleExcerpts": [
+        {
+          "num": "3",
+          "text": "（労働者）第三条この法律で「労働者」とは、職業の種類を問わず、賃金、給料その他これに準ずる収入によつて生活する者をいう。"
+        }
+      ]
+    },
+    "public-duty-notice.html": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb3991&dataType=1&pageNo=1",
+      "retrievedAt": "2026-10-11T01:58:00.139923+00:00",
+      "localFile": "public-duty-notice.html",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb3991&dataType=1&pageNo=1",
+      "contentType": "text/html;charset=UTF-8",
+      "lastModified": null,
+      "sha256": "dc94199a33023559f497ed5570f7e3f4a05c9386791be9bef89d7a3755c671e6",
+      "size": 5515,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\public-duty-notice.html",
+      "documentDate": "2005-09-30",
+      "documentNumber": "基発0930006号",
+      "location": "本文 第7条関係の公の職務の改正"
+    },
+    "union-unemployed-notice19480605.html": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5126&dataType=1&pageNo=1",
+      "retrievedAt": "2026-10-11T02:10:57.993053+00:00",
+      "localFile": "union-unemployed-notice19480605.html",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5126&dataType=1&pageNo=1",
+      "contentType": "text/html;charset=UTF-8",
+      "lastModified": null,
+      "sha256": "4227734516fd7e8969929281895d64da19ec6154443e8101438e52a35a5dbde2",
+      "size": 4763,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\union-unemployed-notice19480605.html",
+      "documentDate": "1948-06-05",
+      "documentNumber": "労発262号",
+      "location": "失業者と労働者"
+    },
+    "enforcement-19470913.html": {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb1896&dataType=1&pageNo=1",
+      "retrievedAt": "2026-10-11T01:59:20.689519+00:00",
+      "localFile": "enforcement-19470913.html",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb1896&dataType=1&pageNo=1",
+      "contentType": "text/html;charset=UTF-8",
+      "lastModified": null,
+      "sha256": "a4957470e316527ad7e754388f26d73ab86e1cddfb23d7e3155cbf125564f46e",
+      "size": 41373,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\enforcement-19470913.html",
+      "documentDate": "1947-09-13",
+      "documentNumber": "発基17号"
+    },
+    "hosoya-detail.html": {
+      "url": "https://www.courts.go.jp/hanrei/54823/detail2/index.html",
+      "retrievedAt": "2026-10-11T02:00:32.915842+00:00",
+      "localFile": "hosoya-detail.html",
+      "status": 200,
+      "finalUrl": "https://www.courts.go.jp/hanrei/54823/detail2/index.html",
+      "contentType": "text/html",
+      "lastModified": "Thu, 21 May 2026 11:24:41 GMT",
+      "sha256": "29d0d14dd89f6f35cd11bc5abd82de21aeed95111568c643b6005295347ff9c6",
+      "size": 55562,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\hosoya-detail.html"
+    },
+    "hosoya-19600311.pdf": {
+      "url": "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-54823.pdf",
+      "retrievedAt": "2026-10-11T02:01:22.092396+00:00",
+      "localFile": "hosoya-19600311.pdf",
+      "status": 200,
+      "finalUrl": "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-54823.pdf",
+      "contentType": "application/pdf",
+      "lastModified": "Tue, 09 Sep 2025 11:33:49 GMT",
+      "sha256": "55718ad1ccb87ab5f6e042059f6b06a7e59581e22ae2031560b4b36e60ee490f",
+      "size": 6379,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\hosoya-19600311.pdf",
+      "judgmentDate": "1960-03-11",
+      "caseNumber": "昭和30(オ)93",
+      "officialCaseTitle": "俸給等請求",
+      "court": "最高裁判所第二小法廷",
+      "physicalPage1Based": 1,
+      "location": "理由・上告理由第五点",
+      "extractedText": "hosoya-19600311-fitz.txt",
+      "visualInspection": "hosoya-19600311-page1.png",
+      "note": "裁判所公式名は俸給等請求。通称細谷服装事件は検索補助名。旧URLは再試行せず現行日付検索→詳細54823→assets PDFの公開経路で取得。"
+    },
+    "osaka-index20260401.html": {
+      "url": "https://www.pref.osaka.lg.jp/o110090/sogorodo/roudouqa/index.html",
+      "retrievedAt": "2026-10-11T02:08:41.990954+00:00",
+      "localFile": "osaka-index20260401.html",
+      "status": 200,
+      "finalUrl": "https://www.pref.osaka.lg.jp/o110090/sogorodo/roudouqa/index.html",
+      "contentType": "text/html",
+      "lastModified": "Fri, 09 Oct 2026 15:00:03 GMT",
+      "sha256": "c3e57375538f4c90a523e45c737556861053622ee7738189acdf6c403c1e30af",
+      "size": 40471,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\osaka-index20260401.html"
+    },
+    "osaka202603-contract-prohibitions.pdf": {
+      "url": "https://www.pref.osaka.lg.jp/documents/6136/002.pdf",
+      "retrievedAt": "2026-10-11T02:08:41.991960+00:00",
+      "localFile": "osaka202603-contract-prohibitions.pdf",
+      "status": 200,
+      "finalUrl": "https://www.pref.osaka.lg.jp/documents/6136/002.pdf",
+      "contentType": "application/pdf",
+      "lastModified": "Tue, 31 Mar 2026 15:46:55 GMT",
+      "sha256": "aa07fef03074c2ea831d18db614a3fcd797e9e0de7c11d8e8d87d8733e4a422e",
+      "size": 227847,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\osaka202603-contract-prohibitions.pdf",
+      "documentEdition": "令和8年3月更新",
+      "documentDate": "2026-03",
+      "physicalPages1Based": [
+        1,
+        2
+      ],
+      "location": "2 賠償予定の禁止（III-2-1）",
+      "visualInspection": "osaka202603-page1.png",
+      "scopeNote": "大阪府の公式解説。昭和22年発基17号の不法行為部分を直接原通達で確認したこととは区別。2026-04-10基準日前の版として採用。2025問1には基準日後の補助資料に限定。"
+    },
+    "mhlw-loan-offset-faq.html": {
+      "url": "https://www.startup-roudou.mhlw.go.jp/qa/zigyonushi/chingin/q12.html",
+      "retrievedAt": "2026-10-11T02:07:53.446402+00:00",
+      "localFile": "mhlw-loan-offset-faq.html",
+      "status": 200,
+      "finalUrl": "https://www.startup-roudou.mhlw.go.jp/qa/zigyonushi/chingin/q12.html",
+      "contentType": "text/html",
+      "lastModified": "Wed, 29 Jul 2026 01:44:21 GMT",
+      "sha256": "48425f2d69b4f373aee2eb4d1916ce9e914e4f8f93a9ecafaa37e917a1a1e24b",
+      "size": 18980,
+      "savedPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\sharoushi-completion\\rouki-core-primary\\mhlw-loan-offset-faq.html",
+      "evidenceRole": "context_only_not_closure",
+      "scopeNote": "(3)の自由意思による合意相殺は第24条の説明。第17条の労働者自身による相殺の直接根拠に転用しない。Last-Modifiedは基準日後。"
+    }
+  },
+  "questions": [
+    {
+      "id": "sharoushi-2025-annual-gakka-q1",
+      "officialAnswer": "D",
+      "lawReferenceDate": "2025-04-11",
+      "status": "HOLD_MATERIAL_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "ready": false,
+      "publicationReady": false,
+      "allChoicePrimaryVerified": false,
+      "closedPropositions": [
+        "ウ",
+        "エ"
+      ],
+      "propositions": {
+        "ア": {
+          "status": "HOLD_DATED_PRIMARY_INTERPRETATION_UNCONFIRMED",
+          "savedDraftTruthValue": true,
+          "sources": [
+            "rouki-asof20250411.json",
+            "enforcement-19470913.html"
+          ],
+          "locations": [
+            "労基法5条",
+            "発基17号 法5条関係"
+          ],
+          "finding": "不当な手段による強制労働の禁止は確認。現実の労働を不要とする細部は条文だけで確認済みとしない。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false,
+          "remaining": "昭和23年3月2日基発381号の該当原文又は2025-04-11以前の公式再録が未取得。大阪府2024版索引URLは404、2026版は歴史的通達の補助確認に限定。"
+        },
+        "イ": {
+          "status": "HOLD_DATED_PRIMARY_INTERPRETATION_UNCONFIRMED",
+          "savedDraftTruthValue": true,
+          "sources": [
+            "rouki-asof20250411.json",
+            "enforcement-19470913.html"
+          ],
+          "locations": [
+            "労基法6条",
+            "発基17号 法6条関係"
+          ],
+          "finding": "法律に基づき許される場合以外の業としての就業介入・利得禁止は確認。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false,
+          "remaining": "1回でも反復継続して利益を得る意思があれば業に当たるとする昭和23年3月2日基発381号の原文又は2025基準日前公式再録が未取得。"
+        },
+        "ウ": {
+          "status": "PRIMARY_CONFIRMED",
+          "savedDraftTruthValue": true,
+          "sources": [
+            "rouki-asof20250411.json",
+            "public-duty-notice.html"
+          ],
+          "locations": [
+            "労基法7条本文・ただし書",
+            "平成17年9月30日基発0930006号"
+          ],
+          "finding": "2005通知が公の職務に労働審判員・裁判員を追加。基準日版7条本文が必要時間の請求拒否を禁止し、ただし書が職務執行に妨げのない時刻変更を認める。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false
+        },
+        "エ": {
+          "status": "PRIMARY_CONFIRMED",
+          "savedDraftTruthValue": false,
+          "sources": [
+            "rouki-asof20250411.json",
+            "union-asof20250411.json",
+            "union-unemployed-notice19480605.html"
+          ],
+          "locations": [
+            "労基法9条",
+            "労組法3条",
+            "昭和23年6月5日労発262号【失業者と労働者】"
+          ],
+          "finding": "労基法9条は事業等に使用され賃金を支払われる者。設問の現に就業しているか問わず失業者も含むという定義は、労組法3条についての労発262号そのものの説明であり、労基法9条に当てはめた点が誤り。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false
+        },
+        "オ": {
+          "status": "HOLD_PRIMARY_INTERPRETATION_UNCONFIRMED",
+          "savedDraftTruthValue": true,
+          "sources": [
+            "rouki-asof20250411.json",
+            "enforcement-19470913.html"
+          ],
+          "locations": [
+            "労基法11条",
+            "発基17号 法11条関係"
+          ],
+          "finding": "法11条の労働の対償という定義と発基17号の福利厚生一般の取扱いを確認。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false,
+          "remaining": "労働者が自己を被保険者として任意契約した生命保険の保険料補助という個別例を賃金としない原通達・公式再録が未取得。事業主が契約し全額負担する例、労働保険料算定資料を同じ条件として類推しない。"
+        }
+      },
+      "remainingSourceGaps": [
+        {
+          "proposition": "ア",
+          "reason": "昭和23年3月2日基発381号の該当原文又は2025-04-11以前の公式再録が未取得。大阪府2024版索引URLは404、2026版は歴史的通達の補助確認に限定。"
+        },
+        {
+          "proposition": "イ",
+          "reason": "1回でも反復継続して利益を得る意思があれば業に当たるとする昭和23年3月2日基発381号の原文又は2025基準日前公式再録が未取得。"
+        },
+        {
+          "proposition": "オ",
+          "reason": "労働者が自己を被保険者として任意契約した生命保険の保険料補助という個別例を賃金としない原通達・公式再録が未取得。事業主が契約し全額負担する例、労働保険料算定資料を同じ条件として類推しない。"
+        }
+      ],
+      "correctedSavedDraft": {
+        "id": "sharoushi-2025-annual-gakka-q1",
+        "exam": "sharoushi",
+        "session": "gakka",
+        "year": 2025,
+        "season": "annual",
+        "qNumber": 1,
+        "subject": "労働基準法及び労働安全衛生法",
+        "officialAnswerNumber": "D",
+        "type": "multiple-choice",
+        "category": "労働基準法及び労働安全衛生法",
+        "topicTags": [
+          "労働基準法及び労働安全衛生法",
+          "第57回"
+        ],
+        "difficulty": 3,
+        "question": "労働基準法の総則（第1条～第12条）等に関する次の記述のうち、正しいものはいくつあるか。\nア　労働基準法第5条に定める「労働者の意思に反して労働を強制」するとは、不当なる手段を用いることによって、使用者が労働者の意識ある意思を抑圧し、その自由な発現を妨げて、労働すべく強要することをいい、必ずしも労働者が現実に労働することを必要としない。\nイ　労働基準法第6条に定める「何人も、法律に基いて許される場合の外、業として他人の就業に介入して利益を得てはならない。」の「業として利益を得る」とは、営利を目的として、同種の行為を反復継続することをいい、1回の行為であっても、反復継続して利益を得る意思があれば、これに当たる。\nウ　労働審判員や裁判員としての職務は労働基準法第7条にいう「公の職務」に該当するため、労働者が労働時間中に、これらの職務を執行するために必要な時間を請求した場合においては、使用者はこれを拒んではならないが、権利の行使又は公の職務の執行に妨げがない限り、請求された時刻を変更することができる。\nエ　労働基準法第9条に定める「労働者」とは、他人との間に使用従属の関係に立って労務に服し、報酬を受けて生活する者をいい、現に就業していると否とを問わないから、失業者をも含む。\nオ　労働者が自己を被保険者として生命保険会社等と任意に保険契約を締結したときに企業が保険料の補助を行う場合、その保険料補助金は、労働者の福利厚生のために使用者が負担するものであるから、労働基準法第11条に定める「賃金」とは認められない。",
+        "choices": {
+          "ア": "一つ",
+          "イ": "二つ",
+          "ウ": "三つ",
+          "エ": "四つ",
+          "オ": "五つ"
+        },
+        "answer": "エ",
+        "explanation": "正しい記述はア・イ・ウ・オの四つで、誤りはエだけです。正解はD（四つ）です。\n\n【ア：正しい】強制労働の禁止（第5条）は、不当な手段で労働者の意思を抑圧して労働を強要すること自体を禁止しています。労働者が実際に労働したかどうかは問いません。\n\n【イ：正しい】中間搾取の排除（第6条）の「業として利益を得る」とは、営利目的で同種の行為を反復継続することをいいます。1回だけの行為でも、反復継続して利益を得る意思があれば該当すると解されています。\n\n【ウ：正しい】行政解釈（平成17年9月30日基発第0930006号による解釈例規の改正）で、第7条の「公の職務」に労働審判員と裁判員が加えられています。使用者は必要な時間の請求を拒めません。ただし、権利の行使や公の職務の執行に妨げがなければ、請求された時刻を変更できます（第7条ただし書）。\n\n【エ：誤り】第9条は「労働者」を「職業の種類を問わず、事業又は事務所…に使用される者で、賃金を支払われる者」と定義しています。現に事業に使用されていることが前提なので、失業者は含みません。「現に就業していると否とを問わず失業者も含む」というのは、労働組合法第3条についての行政解釈（昭和23年6月5日労発第262号）です。両者を混同させるひっかけです。\n\n【オ：正しい】労働者が任意に締結した生命保険等の保険料を企業が補助する場合、その補助金は福利厚生のための使用者負担です。第11条の賃金とは認められないと解されています。",
+        "choiceExplanations": {
+          "ア": "誤り。誤っているのはエだけで、正しいものは四つあります。",
+          "イ": "誤り。正しいのはア・イ・ウ・オの四つです。二つではありません。",
+          "ウ": "誤り。三つとするには、ア・イ・ウ・オのどれかが誤りでなければなりません。しかし四つとも正しい記述です。",
+          "エ": "正解。ア（強制労働の意味）、イ（業として利益を得るの意味）、ウ（労働審判員・裁判員は公の職務）、オ（保険料補助金は賃金ではない）の四つが正しい記述です。",
+          "オ": "誤り。エは労働組合法上の労働者の説明を労働基準法第9条に当てはめているので誤りです。五つすべてが正しいことはありません。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePdfUrl": "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/08/%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6%E6%8A%9E%E4%B8%80%E5%BC%8F.pdf",
+        "sourceAnswerUrl": "https://www.sharosi-siken.or.jp/wp-content/uploads/2025/09/%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%99%BA%E5%8A%B4%E5%8B%99%E5%A3%AB%E8%A9%A6%E9%A8%93%E3%81%AE%E5%90%88%E6%A0%BC%E5%9F%BA%E6%BA%96%E5%8F%8A%E3%81%B3%E6%AD%A3%E7%AD%94%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_R7.pdf",
+        "sourceAttribution": "出典：全国社会保険労務士会連合会 試験センター 第57回 社会保険労務士試験 択一式 労働基準法及び労働安全衛生法 問1。解説は公式原典の確認を進めた保存原稿で、個別の未確認箇所を保持。",
+        "officialReferenceUrls": [
+          "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2025-04-11",
+          "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000174?asof=2025-04-11",
+          "https://www.mhlw.go.jp/web/t_doc?dataId=00tb3991&dataType=1&pageNo=1",
+          "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5126&dataType=1&pageNo=1"
+        ],
+        "license": "SHAROSI-attributed",
+        "needsReview": true,
+        "lawReferenceDate": "2025-04-11",
+        "lastUpdated": "2026-10-11"
+      },
+      "immutableOriginalSha256": "3d81515f12692cfa58385abe1fe211e2924c6eddedd31ba6e99eaaa27484e73e",
+      "countAnswerDerivation": "原問は個数選択。保存稿の判定・公式正答は保持するが、未確認肢を正答から逆算して確認済みにしない。"
+    },
+    {
+      "id": "sharoushi-2026-annual-gakka-q2",
+      "officialAnswer": "C",
+      "lawReferenceDate": "2026-04-10",
+      "status": "HOLD_MATERIAL_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+      "ready": false,
+      "publicationReady": false,
+      "allChoicePrimaryVerified": false,
+      "closedPropositions": [
+        "ア",
+        "イ",
+        "エ",
+        "オ"
+      ],
+      "propositions": {
+        "ア": {
+          "status": "PRIMARY_CONFIRMED",
+          "savedDraftTruthValue": true,
+          "sources": [
+            "rouki-asof20260410.json",
+            "civil-asof20260410.json"
+          ],
+          "locations": [
+            "労基法15条2項",
+            "民法95条1項〜4項"
+          ],
+          "finding": "民95条の取消しには重要な錯誤等の同条要件がある。労基法15条2項は同条1項により明示された労働条件と事実の相違により即時解除を認め、民95条の重要性等を付加要件としていない。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false
+        },
+        "イ": {
+          "status": "OFFICIAL_DATED_GUIDANCE_CONFIRMED",
+          "savedDraftTruthValue": false,
+          "sources": [
+            "rouki-asof20260410.json",
+            "enforcement-19470913.html",
+            "osaka202603-contract-prohibitions.pdf"
+          ],
+          "locations": [
+            "労基法16条",
+            "発基17号 法16条関係",
+            "大阪府・令和8年3月更新 III-2-1 2 賠償予定の禁止"
+          ],
+          "finding": "大阪府の基準日前公式解説が債務不履行又は不法行為による損害の予定を含めることを明記。1947原通達は金額予定と現実に生じた損害賠償請求の区別を直接確認。不法行為を除外する設問は誤り。",
+          "evidenceKind": "official_guidance_plus_statute",
+          "officialAnswerUsedForInference": false
+        },
+        "ウ": {
+          "status": "HOLD_PRIMARY_INTERPRETATION_UNCONFIRMED",
+          "savedDraftTruthValue": true,
+          "sources": [
+            "rouki-asof20260410.json",
+            "enforcement-19470913.html"
+          ],
+          "locations": [
+            "労基法17条",
+            "発基17号 法17条関係"
+          ],
+          "finding": "17条の禁止主体は使用者。発基17号は人的信用に基づく金融について賃金と相殺せず労働者の自由意思に基づく弁済によると説明するが、設問の労働者自身による相殺と使用者の賃金相殺を区別して原文で閉じるところまでは確認できていない。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false,
+          "remaining": "労働者が自己の意思で相殺すること自体は禁止されず、実質的に使用者強制なら例外にならないとする直接原通達又は基準日前公式再録が未取得。第24条の合意相殺判例、第5条だけを根拠に17条の禁止を解除しない。"
+        },
+        "エ": {
+          "status": "STATUTORY_APPLICATION_CONFIRMED_NOTICE_UNCONFIRMED",
+          "savedDraftTruthValue": false,
+          "sources": [
+            "rouki-asof20260410.json"
+          ],
+          "locations": [
+            "労基法19条1項、20条1項"
+          ],
+          "finding": "19条の保護要件は療養のための休業期間とその後30日。設問は完全治癒前でも元の職場で平常どおり稼働し、就業後30日を経過した事例。設問の事実上、療養のための休業が続いているとはいえず、その後30日の保護期間も経過しているため、19条違反とする記述は誤りと条文を具体的に適用できる。部分就業、断続的療養休業、別の解雇規制に一般化しない。",
+          "evidenceKind": "statutory_inference_from_question_facts",
+          "officialAnswerUsedForInference": false
+        },
+        "オ": {
+          "status": "PRIMARY_JUDGMENT_CONFIRMED",
+          "savedDraftTruthValue": true,
+          "sources": [
+            "rouki-asof20260410.json",
+            "hosoya-detail.html",
+            "hosoya-19600311.pdf"
+          ],
+          "locations": [
+            "労基法20条",
+            "最高裁第二小法廷 昭和35年3月11日 昭和30(オ)93 原判決PDF1頁・上告理由第五点"
+          ],
+          "finding": "裁判所原判決が、予告期間も予告手当もない通知は即時解雇の効力を生じず、即時解雇への固執がない場合は30日の経過又は予告手当支払のいずれかの時から効力が生じると明記。原問の条件と一致。",
+          "evidenceKind": "direct_primary",
+          "officialAnswerUsedForInference": false
+        }
+      },
+      "remainingSourceGaps": [
+        {
+          "proposition": "ウ",
+          "reason": "労働者が自己の意思で相殺すること自体は禁止されず、実質的に使用者強制なら例外にならないとする直接原通達又は基準日前公式再録が未取得。第24条の合意相殺判例、第5条だけを根拠に17条の禁止を解除しない。"
+        }
+      ],
+      "correctedSavedDraft": {
+        "id": "sharoushi-2026-annual-gakka-q2",
+        "exam": "sharoushi",
+        "session": "gakka",
+        "year": 2026,
+        "season": "annual",
+        "qNumber": 2,
+        "subject": "労働基準法及び労働安全衛生法",
+        "officialAnswerNumber": "C",
+        "type": "multiple-choice",
+        "category": "労働基準法及び労働安全衛生法",
+        "topicTags": [
+          "労働基準法及び労働安全衛生法",
+          "第58回"
+        ],
+        "difficulty": 3,
+        "question": "労働基準法に定める労働契約等に関する次の記述のうち、正しいものはいくつあるか。\nア　労働者は、民法第95条により、労働契約の締結に際し、「錯誤が法律行為の目的及び取引上の社会通念に照らして重要なものであるとき」は、当該契約を取り消すことができるが、労働基準法第15条によれば、そのような場合に該当しないときであっても、単に明示された労働条件と事実が相違することのみをもって即時に労働契約を解除することができる。\nイ　労働基準法第16条の禁止する損害賠償額の予定は、労働契約の不履行に伴う損害賠償に限られ、不法行為の場合における損害賠償は含まれないと解される。\nウ　労働基準法第17条は、使用者の側で行う前借金その他労働することを条件とする前貸しの債権と賃金の相殺を禁止しており、実質的にみて使用者の強制によるものと認められない限り、労働者が自己の意思によって相殺をすることは禁止されていない。\nエ　業務上負傷して療養していた労働者が、完全に治癒したのではないが、稼働し得る程度に回復したので出勤し、元の職場で平常通り稼働していたところ、使用者が就業後30日を経過してこの労働者を労働基準法第20条に定める解雇予告手当を支給して即時解雇することは、同法第19条に定める解雇制限に違反すると解される。\nオ　使用者が労働基準法第20条所定の予告期間をおかず、また予告手当の支払をしないで労働者に解雇の通知をした場合、その通知は、即時解雇としては効力を生じないが、使用者が即時解雇を固執する趣旨でない限り、通知後同条所定の30日の期間を経過するか、又は予告手当の支払をしたときに解雇の効力を生ずるものと解すべきであるとするのが、最高裁判所の判例である。",
+        "choices": {
+          "ア": "一つ",
+          "イ": "二つ",
+          "ウ": "三つ",
+          "エ": "四つ",
+          "オ": "五つ"
+        },
+        "answer": "ウ",
+        "explanation": "正しい記述はア・ウ・オの三つです。イとエは誤りです。したがって正解はC（三つ）です。\n\n【ア：正しい】労働基準法第15条第2項は「前項の規定によつて明示された労働条件が事実と相違する場合においては、労働者は、即時に労働契約を解除することができる」と定めています。民法第95条の錯誤取消しには重要な錯誤など同条の要件がありますが、第15条第2項の即時解除には民法第95条の要件は付加されていません。明示された労働条件と事実が違うことだけで、即時に解除できます。\n\n【イ：誤り】第16条は「労働契約の不履行について」違約金や損害賠償額の予定を禁止しています。大阪府の公式「労働相談ポイント解説」（令和8年3月更新）は、債務不履行だけでなく不法行為による損害も予定賠償の禁止対象に含むと説明しています。「不法行為は含まれない」とする点が誤りです。なお、実際に生じた損害の賠償を請求すること自体は禁止されていません。\n\n【ウ：正しい】第17条は、使用者が前借金等と賃金を「相殺してはならない」と定めています。解釈上、禁止されるのは使用者側からの相殺です。労働者が自分の意思で相殺することは、実質的に使用者の強制と認められない限り禁止されません。\n\n【エ：誤り】第19条第1項の解雇制限期間は「療養のために休業する期間及びその後三十日間」です。設問は、労働者が元の職場で平常どおり稼働し、就業後30日を経過した事例です。この事実では療養のための休業が続いているとはいえず、その後30日間も経過しているため、第19条の制限期間には当たりません。完全治癒の有無だけで制限期間を判断する設問が誤りです。これは条文を設問の事実に適用した説明であり、出勤すればどの事例でも療養休業が終わるとの一般化ではありません。\n\n【オ：正しい】細谷服装事件の最高裁判例（昭和35年3月11日）の趣旨どおりです。予告も予告手当もない解雇通知は、即時解雇としては無効です。ただし使用者が即時解雇に固執しない限り、通知後30日の経過または予告手当の支払の時点で解雇の効力が生じます。",
+        "choiceExplanations": {
+          "ア": "誤り。正しい記述はア・ウ・オの三つです。一つではありません。",
+          "イ": "誤り。二つとするには、ア・ウ・オのどれかが誤りでなければなりません。しかし三つとも正しい記述です。",
+          "ウ": "正解。正しいのはア（第15条第2項の即時解除）、ウ（労働者の自由意思による相殺は禁止されない）、オ（細谷服装事件判例）の三つです。",
+          "エ": "誤り。四つとするには、イかエのどちらかが正しくなければなりません。イは不法行為を除外する点、エは解雇制限期間の理解がそれぞれ誤りです。",
+          "オ": "誤り。イとエが誤りなので、五つすべてが正しいことはありません。"
+        },
+        "explanationCoverage": "full",
+        "hasImage": false,
+        "sourcePdfUrl": "https://www.sharosi-siken.or.jp/wp-content/uploads/2026/08/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E6%8A%9E%E4%B8%80%E5%BC%8F.pdf",
+        "sourceAnswerUrl": "https://www.sharosi-siken.or.jp/wp-content/uploads/2026/09/%E7%A4%BE%E4%BC%9A%E4%BF%9D%E9%99%BA%E5%8A%B4%E5%8B%99%E5%A3%AB%E8%A9%A6%E9%A8%93%E3%81%AE%E5%90%88%E6%A0%BC%E5%9F%BA%E6%BA%96%E5%8F%8A%E3%81%B3%E6%AD%A3%E7%AD%94%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6_2026.pdf",
+        "sourceAttribution": "出典：全国社会保険労務士会連合会 試験センター 第58回 社会保険労務士試験 択一式 労働基準法及び労働安全衛生法 問2。解説は公式原典の確認を進めた保存原稿で、個別の未確認箇所を保持。",
+        "officialReferenceUrls": [
+          "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2026-04-10",
+          "https://laws.e-gov.go.jp/api/2/law_data/129AC0000000089?asof=2026-04-10",
+          "https://www.pref.osaka.lg.jp/documents/6136/002.pdf",
+          "https://www.courts.go.jp/assets/hanrei/hanrei-pdf-54823.pdf"
+        ],
+        "license": "SHAROSI-attributed",
+        "needsReview": true,
+        "lawReferenceDate": "2026-04-10",
+        "lastUpdated": "2026-10-11"
+      },
+      "immutableOriginalSha256": "1e208f62bac700b5e949d105ac9aaf28ed233ad2322a058bb1660010ccc5232c",
+      "countAnswerDerivation": "原問は個数選択。保存稿の判定・公式正答は保持するが、未確認肢を正答から逆算して確認済みにしない。",
+      "directNoticeUnconfirmedButStatutoryApplicationAvailable": [
+        "エ"
+      ]
+    }
+  ],
+  "retrievalHistoryNotes": [
+    {
+      "url": "https://www.pref.osaka.lg.jp/documents/6136/00220_1.pdf",
+      "status": 404,
+      "receiptFile": "osaka202403-contract-prohibitions.pdf.receipt.json",
+      "oldUrlRetried": false,
+      "replacementDiscovery": "大阪府現行公開目次リンク33→002.pdf。2024旧版は未取得のまま保持。"
+    },
+    {
+      "action": "MHLW public notice search",
+      "approvalReviewOutcome": "timeout_before_execution",
+      "sameActionRetryCount": 1,
+      "retryOutcome": "executed normally; no denial bypass"
+    }
+  ]
+}

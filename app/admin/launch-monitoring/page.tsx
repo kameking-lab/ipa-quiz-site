@@ -10,7 +10,6 @@ import {
   Lock,
   Rocket,
   Search,
-  Send,
   Shield,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -73,12 +72,6 @@ const INTERNAL_DASHBOARDS: InternalLink[] = [
 ];
 
 const EXTERNAL_LINKS: ExternalLink[] = [
-  {
-    href: "https://twitter.com/kakomon_ai_jp",
-    title: "Twitter @kakomon_ai_jp",
-    description: "公式アカウントタイムライン。リツイート・引用 RT・リプライ監視。",
-    icon: <Send className="h-5 w-5 text-sky-400" />,
-  },
   {
     href: "https://search.google.com/search-console",
     title: "Google Search Console",
@@ -268,9 +261,6 @@ export default function AdminLaunchMonitoringPage() {
             </li>
             <li>
               <strong>フィードバック確認:</strong> Slack（#feedback）で未対応 5 件以下
-            </li>
-            <li>
-              <strong>Twitter 反応確認:</strong> @kakomon_ai_jp の RT・引用 RT・リプライ
             </li>
             <li>
               <strong>note PV 確認:</strong> note ダッシュボードで投稿 PV・スキ数

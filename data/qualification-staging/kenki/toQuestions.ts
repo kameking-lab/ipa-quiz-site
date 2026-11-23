@@ -5,6 +5,7 @@ export interface KenkiPaper {
   paper: string;
   questionUrl: string;
   answerUrl: string;
+  lastUpdated?: string;
   questions: {
     number: number;
     pdfPage: number;
@@ -45,7 +46,7 @@ export function toKenkiQuestions(source: KenkiPaper, exam: ExamCode, session: Se
       imageAltTexts: item.imageAlt ? [item.imageAlt] : undefined,
       sourcePdfUrl: `${source.questionUrl}#page=${item.pdfPage}`, sourceAnswerUrl: source.answerUrl,
       sourceAttribution: `出典：一般社団法人日本建設機械施工協会 令和${source.year - 2018}年度 ${exam === "kenki1" ? "1級" : "2級"}建設機械施工管理技術検定 ${paperTitle} No.${item.number}。ルビ・空白・改行を整理し、数字の選択肢をア〜エへ変換。解説は過去問AIの独自作成。`,
-      license: "JCM-authorized-reuse", lastUpdated: "2026-11-03",
+      license: "JCM-authorized-reuse", lastUpdated: source.lastUpdated ?? "2026-11-03",
     };
   });
 }

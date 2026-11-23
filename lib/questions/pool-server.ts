@@ -1,8 +1,9 @@
 import "server-only";
 
 import type { ExamCode, Question, QuizFilter } from "./types";
-import { getAllQuestionsLazy, getQuestionsForExam } from "./get-questions";
-import { isPracticeReadyQuestion } from "./filter";
+import { canonicalExamCode } from "./exam-aliases";
+import { getAllQuestionsLazy, getQuestionsForExam } from "@/lib/questions/get-questions";
+import { isPlanScorableQuestion, isPracticeReadyQuestion } from "./filter";
 import { selectExplicitPoolIds } from "./explicit-pool";
 
 
@@ -15,7 +16,7 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
   let pool: Question[];
   if (filter.examGroup && filter.examGroup.length > 0) {
     const chunks = await Promise.all(
-      filter.examGroup.map((e) => getQuestionsForExam(e)),
+      [...new Set(filter.examGroup.map(canonicalExamCode))].map((e) => getQuestionsForExam(e)),
     );
     pool = chunks.flat();
   } else if (filter.exam) {
@@ -38,7 +39,7 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
   }
   if (filter.calculationOnly) pool = pool.filter((q) => q.isCalculation === true);
 
-  pool = pool.filter(isPracticeReadyQuestion);
+  pool = pool.filter(filter.mode === "review" ? isPlanScorableQuestion : isPracticeReadyQuestion);
 
   if (filter.inOrder) {
     pool = [...pool].sort((a, b) => a.qNumber - b.qNumber);
@@ -58,8 +59,8 @@ export async function getPoolIds(filter: QuizFilter): Promise<string[]> {
  * review-only questions and duplicates never reach the client. A malformed
  * payload fails closed to an empty pool rather than falling back to all exams.
  */
-export async function getExplicitPoolIds(raw: unknown): Promise<string[]> {
-  const all = await getAllQuestionsLazy();
+export async function getExplicitPoolIds(raw: unknown, exam?: ExamCode): Promise<string[]> {
+  const all = exam ? await getQuestionsForExam(exam) : await getAllQuestionsLazy();
   return selectExplicitPoolIds(
     raw,
     all.filter(isPracticeReadyQuestion).map((question) => question.id),

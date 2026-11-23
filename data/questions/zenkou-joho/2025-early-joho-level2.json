@@ -1,0 +1,1214 @@
+[
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "2進数・10進数・16進数の基数変換、16進数の演算、2の補数、ビット列の用語について①〜⑩を答えなさい。",
+    "answer": "① 155\n② 13.25\n③ 7B\n④ F0\n⑤ 1001 1110\n⑥ 1010.11\n⑦ 1F0\n⑧ 1110 0111\n⑨ LSB\n⑩ 2⁸ または 256",
+    "explanation": "①②は2進数の各桁の重みを足し、③④は16で割った商と余りで表す。⑤⑥の16進数は各桁4ビットに変換する。⑦の16倍は16進数で1桁左シフトし、⑧は25の8ビット表現を反転して1を加える。最下位ビットはLSBで、8ビットは256状態を区別する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p37-01.webp"
+    ],
+    "imageAltTexts": [
+      "基数変換と、LSB・2の補数・バイトに関する原文。"
+    ],
+    "modelAnswer": "① 155\n② 13.25\n③ 7B\n④ F0\n⑤ 1001 1110\n⑥ 1010.11\n⑦ 1F0\n⑧ 1110 0111\n⑨ LSB\n⑩ 2⁸ または 256",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図①のタイムチャートには入力A、入力Bと出力Xの状態が示されている。Xの出力を示す論理回路を選びなさい。",
+    "answer": "ウ",
+    "explanation": "図①ではAとBがともに0の区間だけXが1になる。ORを反転したNORである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 ①",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問2 問1 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p38-02.webp"
+    ],
+    "imageAltTexts": [
+      "入力A・Bと出力Xに関する二組のタイムチャート。"
+    ],
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "ORゲート",
+      "イ": "ANDゲート",
+      "ウ": "NORゲート",
+      "エ": "NANDゲート",
+      "オ": "XORゲート"
+    },
+    "choiceExplanations": {
+      "ア": "AまたはBの少なくとも一方が1なら、Xを1にする。図①の出力に合うのはNORの論理回路になる。",
+      "イ": "AとBがともに1のときだけXを1にする。図①の出力に合うのはNORの論理回路になる。",
+      "ウ": "図①ではAとBがともに0の区間だけXが1になる。ORを反転したNORである。",
+      "エ": "AとBがともに1のときだけXを0にする。図①の出力に合うのはNORの論理回路になる。",
+      "オ": "AとBが異なるときだけXを1にする。図①の出力に合うのはNORの論理回路になる。"
+    },
+    "explanationCoverage": "full",
+    "choiceImageUrls": {
+      "ア": "/images/questions/zenkou-joho/74-joho-level2-p38-03.webp",
+      "イ": "/images/questions/zenkou-joho/74-joho-level2-p38-04.webp",
+      "ウ": "/images/questions/zenkou-joho/74-joho-level2-p38-05.webp",
+      "エ": "/images/questions/zenkou-joho/74-joho-level2-p38-06.webp",
+      "オ": "/images/questions/zenkou-joho/74-joho-level2-p38-07.webp"
+    }
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q02-03",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図②のタイムチャートには入力A、入力Bと出力Xの状態が示されている。Xの出力を示す論理回路を選びなさい。",
+    "answer": "オ",
+    "explanation": "図②ではAとBの一方だけが1になる区間でXが1になる。排他的論理和のXORである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 ②",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問2 問1 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p38-02.webp"
+    ],
+    "imageAltTexts": [
+      "入力A・Bと出力Xに関する二組のタイムチャート。"
+    ],
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "ORゲート",
+      "イ": "ANDゲート",
+      "ウ": "NORゲート",
+      "エ": "NANDゲート",
+      "オ": "XORゲート"
+    },
+    "choiceExplanations": {
+      "ア": "AまたはBの少なくとも一方が1なら、Xを1にする。図②の出力に合うのはXORの論理回路になる。",
+      "イ": "AとBがともに1のときだけXを1にする。図②の出力に合うのはXORの論理回路になる。",
+      "ウ": "AもBも0のときだけXを1にする。図②の出力に合うのはXORの論理回路になる。",
+      "エ": "AとBがともに1のときだけXを0にする。図②の出力に合うのはXORの論理回路になる。",
+      "オ": "図②ではAとBの一方だけが1になる区間でXが1になる。排他的論理和のXORである。"
+    },
+    "explanationCoverage": "full",
+    "choiceImageUrls": {
+      "ア": "/images/questions/zenkou-joho/74-joho-level2-p38-03.webp",
+      "イ": "/images/questions/zenkou-joho/74-joho-level2-p38-04.webp",
+      "ウ": "/images/questions/zenkou-joho/74-joho-level2-p38-05.webp",
+      "エ": "/images/questions/zenkou-joho/74-joho-level2-p38-06.webp",
+      "オ": "/images/questions/zenkou-joho/74-joho-level2-p38-07.webp"
+    }
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q02-04",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の論理回路の真理値表を完成させなさい。",
+    "answer": "① 0\n② 0\n③ 0\n④ 1\n⑤ 0\n⑥ 1\n⑦ 1\n⑧ 0",
+    "explanation": "Cは論理積なので両方1のときだけ1、Sは排他的論理和なので入力が異なるときだけ1。表はC列の①〜④とS列の⑤〜⑧の順に求める。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2(1)",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問2 問2(1)。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p38-08.webp"
+    ],
+    "imageAltTexts": [
+      "二つの入力をANDとXORに通しCとSを出す回路および真理値表。"
+    ],
+    "modelAnswer": "① 0\n② 0\n③ 0\n④ 1\n⑤ 0\n⑥ 1\n⑦ 1\n⑧ 0",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q02-05",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の論理回路の名称を選びなさい。",
+    "answer": "オ",
+    "explanation": "二つの入力ビットの加算結果をS、桁上がりをCに出力する半加算回路である。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2(2)",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問2 問2(2)。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p38-08.webp"
+    ],
+    "imageAltTexts": [
+      "二つの入力をANDとXORに通しCとSを出す回路および真理値表。"
+    ],
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "デコーダ回路",
+      "イ": "全加算回路",
+      "ウ": "不一致回路",
+      "エ": "エンコーダ回路",
+      "オ": "半加算回路",
+      "カ": "一致回路"
+    },
+    "choiceExplanations": {
+      "ア": "デコーダは符号を解読して対応する出力を選ぶ。図は和と桁上がりを求める。",
+      "イ": "全加算回路には下位からの桁上がり入力がある。図はAとBの2入力だけである。",
+      "ウ": "不一致回路はAとBが違うときの1を出す。図にはその出力Sに加え、桁上がりCもある。",
+      "エ": "エンコーダは入力の状態を符号で表す。図は1桁の加算を行う。",
+      "オ": "2入力を加算し、Cに桁上がり、Sに和の下位ビットを出す半加算回路である。",
+      "カ": "一致回路はAとBが同じときに1となるが、Sは異なるときに1になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q03-06",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の論理回路の動作を示すタイムチャートを完成させなさい。",
+    "answer": "図の左から6区間のXは、1、1、1、0、1、1。A、Bが同時に0の区間だけXが0。",
+    "explanation": "回路は X＝A＋¬A・B であり、分配・補元の法則を使うとA＋Bに等しい。AまたはBが1の区間でXを1にする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問1",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問3 問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p39-09.webp"
+    ],
+    "imageAltTexts": [
+      "大問3 問1の回路とタイムチャートの作図欄。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-answer61-10.webp"
+    ],
+    "answerImageAltTexts": [
+      "大問3 問1の公式タイムチャート。"
+    ],
+    "modelAnswer": "図の左から6区間のXは、1、1、1、0、1、1。A、Bが同時に0の区間だけXが0。",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q03-07",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図のTフリップフロップを用いた回路の動作を示すタイムチャートを完成させなさい。",
+    "answer": "各CK立上り直後のQ₃Q₂Q₁は、001、010、011、100、101。初期値は000。",
+    "explanation": "各段は立上りで反転する。前段の反転出力が次段へつながっているので、前段のQが1から0になると次段が反転し、桁が繰り上がる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問2",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問3 問2。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p39-11.webp"
+    ],
+    "imageAltTexts": [
+      "大問3 問2の回路とタイムチャートの作図欄。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-answer61-12.webp"
+    ],
+    "answerImageAltTexts": [
+      "大問3 問2の公式タイムチャート。"
+    ],
+    "modelAnswer": "各CK立上り直後のQ₃Q₂Q₁は、001、010、011、100、101。初期値は000。",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q04-08",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も適した装置名を選びなさい。\n\n① スクリーンなどに画像を大きく投影する。\n② 樹脂などを何層にも積み重ねながら立体物を作る。\n③ 画面に直接触れて操作することができる表示装置。\n④ ペンなどを使い、板状の装置に図形や座標を入力する。\n⑤ レーザーなどを用いて立体物の形状をデータ化する。\n\n①に当てはまるものを選びなさい。",
+    "answer": "キ",
+    "explanation": "画像をスクリーンに投影する機器はプロジェクタである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ①",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問4 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "キ",
+    "choices": {
+      "ア": "3Dプリンタ",
+      "イ": "マウス",
+      "ウ": "スピーカ",
+      "エ": "タッチスクリーン",
+      "オ": "3Dスキャナ",
+      "カ": "ディジタイザ",
+      "キ": "プロジェクタ",
+      "ク": "イメージスキャナ"
+    },
+    "choiceExplanations": {
+      "ア": "材料を積層し、立体物を製作する。この欄では、画像を投影する装置を選ぶ。",
+      "イ": "台の上で動かした方向や距離を入力する。この欄では、画像を投影する装置を選ぶ。",
+      "ウ": "電気信号を音として出力する。この欄では、画像を投影する装置を選ぶ。",
+      "エ": "画面に触れた位置を入力として読み取る。この欄では、画像を投影する装置を選ぶ。",
+      "オ": "立体物の表面の位置・形を読み取り、データにする。この欄では、画像を投影する装置を選ぶ。",
+      "カ": "板面上で指定した座標などをデータとして入力する。この欄では、画像を投影する装置を選ぶ。",
+      "キ": "画像をスクリーンに投影する機器はプロジェクタである。",
+      "ク": "紙などの平面にある画像を読み取る。この欄では、画像を投影する装置を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q04-09",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も適した装置名を選びなさい。\n\n① スクリーンなどに画像を大きく投影する。\n② 樹脂などを何層にも積み重ねながら立体物を作る。\n③ 画面に直接触れて操作することができる表示装置。\n④ ペンなどを使い、板状の装置に図形や座標を入力する。\n⑤ レーザーなどを用いて立体物の形状をデータ化する。\n\n②に当てはまるものを選びなさい。",
+    "answer": "ア",
+    "explanation": "材料を積層して三次元の物体を作る機器は3Dプリンタである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ②",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問4 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "3Dプリンタ",
+      "イ": "マウス",
+      "ウ": "スピーカ",
+      "エ": "タッチスクリーン",
+      "オ": "3Dスキャナ",
+      "カ": "ディジタイザ",
+      "キ": "プロジェクタ",
+      "ク": "イメージスキャナ"
+    },
+    "choiceExplanations": {
+      "ア": "材料を積層して三次元の物体を作る機器は3Dプリンタである。",
+      "イ": "台の上で動かした方向や距離を入力する。この欄では、立体物を積層して製作する装置を選ぶ。",
+      "ウ": "電気信号を音として出力する。この欄では、立体物を積層して製作する装置を選ぶ。",
+      "エ": "画面に触れた位置を入力として読み取る。この欄では、立体物を積層して製作する装置を選ぶ。",
+      "オ": "立体物の表面の位置・形を読み取り、データにする。この欄では、立体物を積層して製作する装置を選ぶ。",
+      "カ": "板面上で指定した座標などをデータとして入力する。この欄では、立体物を積層して製作する装置を選ぶ。",
+      "キ": "映像をスクリーンなどへ大きく投影する。この欄では、立体物を積層して製作する装置を選ぶ。",
+      "ク": "紙などの平面にある画像を読み取る。この欄では、立体物を積層して製作する装置を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q04-10",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も適した装置名を選びなさい。\n\n① スクリーンなどに画像を大きく投影する。\n② 樹脂などを何層にも積み重ねながら立体物を作る。\n③ 画面に直接触れて操作することができる表示装置。\n④ ペンなどを使い、板状の装置に図形や座標を入力する。\n⑤ レーザーなどを用いて立体物の形状をデータ化する。\n\n③に当てはまるものを選びなさい。",
+    "answer": "エ",
+    "explanation": "表示と接触位置の入力を兼ねる装置はタッチスクリーンである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ③",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問4 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "エ",
+    "choices": {
+      "ア": "3Dプリンタ",
+      "イ": "マウス",
+      "ウ": "スピーカ",
+      "エ": "タッチスクリーン",
+      "オ": "3Dスキャナ",
+      "カ": "ディジタイザ",
+      "キ": "プロジェクタ",
+      "ク": "イメージスキャナ"
+    },
+    "choiceExplanations": {
+      "ア": "材料を積層し、立体物を製作する。この欄では、画面を直接操作できる表示装置を選ぶ。",
+      "イ": "台の上で動かした方向や距離を入力する。この欄では、画面を直接操作できる表示装置を選ぶ。",
+      "ウ": "電気信号を音として出力する。この欄では、画面を直接操作できる表示装置を選ぶ。",
+      "エ": "表示と接触位置の入力を兼ねる装置はタッチスクリーンである。",
+      "オ": "立体物の表面の位置・形を読み取り、データにする。この欄では、画面を直接操作できる表示装置を選ぶ。",
+      "カ": "板面上で指定した座標などをデータとして入力する。この欄では、画面を直接操作できる表示装置を選ぶ。",
+      "キ": "映像をスクリーンなどへ大きく投影する。この欄では、画面を直接操作できる表示装置を選ぶ。",
+      "ク": "紙などの平面にある画像を読み取る。この欄では、画面を直接操作できる表示装置を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q04-11",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も適した装置名を選びなさい。\n\n① スクリーンなどに画像を大きく投影する。\n② 樹脂などを何層にも積み重ねながら立体物を作る。\n③ 画面に直接触れて操作することができる表示装置。\n④ ペンなどを使い、板状の装置に図形や座標を入力する。\n⑤ レーザーなどを用いて立体物の形状をデータ化する。\n\n④に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "板面でペンなどを用いて入力した座標を読み取る装置をディジタイザという。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ④",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問4 ④。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "3Dプリンタ",
+      "イ": "マウス",
+      "ウ": "スピーカ",
+      "エ": "タッチスクリーン",
+      "オ": "3Dスキャナ",
+      "カ": "ディジタイザ",
+      "キ": "プロジェクタ",
+      "ク": "イメージスキャナ"
+    },
+    "choiceExplanations": {
+      "ア": "材料を積層し、立体物を製作する。この欄では、板面の入力座標を読取る装置を選ぶ。",
+      "イ": "台の上で動かした方向や距離を入力する。この欄では、板面の入力座標を読取る装置を選ぶ。",
+      "ウ": "電気信号を音として出力する。この欄では、板面の入力座標を読取る装置を選ぶ。",
+      "エ": "画面に触れた位置を入力として読み取る。この欄では、板面の入力座標を読取る装置を選ぶ。",
+      "オ": "立体物の表面の位置・形を読み取り、データにする。この欄では、板面の入力座標を読取る装置を選ぶ。",
+      "カ": "板面でペンなどを用いて入力した座標を読み取る装置をディジタイザという。",
+      "キ": "映像をスクリーンなどへ大きく投影する。この欄では、板面の入力座標を読取る装置を選ぶ。",
+      "ク": "紙などの平面にある画像を読み取る。この欄では、板面の入力座標を読取る装置を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q04-12",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も適した装置名を選びなさい。\n\n① スクリーンなどに画像を大きく投影する。\n② 樹脂などを何層にも積み重ねながら立体物を作る。\n③ 画面に直接触れて操作することができる表示装置。\n④ ペンなどを使い、板状の装置に図形や座標を入力する。\n⑤ レーザーなどを用いて立体物の形状をデータ化する。\n\n⑤に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "実物から表面形状を計測し三次元データにするのは3Dスキャナである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ⑤",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問4 ⑤。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "3Dプリンタ",
+      "イ": "マウス",
+      "ウ": "スピーカ",
+      "エ": "タッチスクリーン",
+      "オ": "3Dスキャナ",
+      "カ": "ディジタイザ",
+      "キ": "プロジェクタ",
+      "ク": "イメージスキャナ"
+    },
+    "choiceExplanations": {
+      "ア": "材料を積層し、立体物を製作する。この欄では、立体物の形を計測する装置を選ぶ。",
+      "イ": "台の上で動かした方向や距離を入力する。この欄では、立体物の形を計測する装置を選ぶ。",
+      "ウ": "電気信号を音として出力する。この欄では、立体物の形を計測する装置を選ぶ。",
+      "エ": "画面に触れた位置を入力として読み取る。この欄では、立体物の形を計測する装置を選ぶ。",
+      "オ": "実物から表面形状を計測し三次元データにするのは3Dスキャナである。",
+      "カ": "板面上で指定した座標などをデータとして入力する。この欄では、立体物の形を計測する装置を選ぶ。",
+      "キ": "映像をスクリーンなどへ大きく投影する。この欄では、立体物の形を計測する装置を選ぶ。",
+      "ク": "紙などの平面にある画像を読み取る。この欄では、立体物の形を計測する装置を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q05-13",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も関連の深い語句を選びなさい。\n\n① ソースプログラムの命令文を一行ずつ翻訳して実行する。\n② ソースプログラムの命令文をまとめて機械語に翻訳する。\n③ プログラムの誤りを見つけて直す。\n④ プログラム本体とは別のファイルを参照して機能を用いる。\n⑤ ファイルのレコードを指定のキー順に並び替える。\n\n①に当てはまるものを選びなさい。",
+    "answer": "エ",
+    "explanation": "逐次的に翻訳・実行するソフトウェアはインタプリタである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ①",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問5 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "エ",
+    "choices": {
+      "ア": "連続編集プログラム",
+      "イ": "媒体変換プログラム",
+      "ウ": "言語変換プログラム",
+      "エ": "インタプリタ",
+      "オ": "ソート・マージプログラム",
+      "カ": "コンパイラ",
+      "キ": "ジェネレータ",
+      "ク": "デバッグ",
+      "ケ": "ライブラリ"
+    },
+    "choiceExplanations": {
+      "ア": "複数のプログラムの部品を結合し、実行時の参照などを解決する。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。",
+      "イ": "異なる記録媒体の間でデータを変換・移行する。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。",
+      "ウ": "言語の翻訳を行うソフトウェアの広い分類を指す。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。",
+      "エ": "逐次的に翻訳・実行するソフトウェアはインタプリタである。",
+      "オ": "指定したキーによる順序付けや整列済みファイルの併合を行う。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。",
+      "カ": "ソースの命令をまとめて目的コードなどへ翻訳する。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。",
+      "キ": "設定や仕様をもとにコードなどを生成する。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。",
+      "ク": "プログラムの誤りを特定し、修正する作業である。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。",
+      "ケ": "再利用できる機能を集め、プログラムから参照できるようにする。この欄では、命令を逐次翻訳して実行する仕組みを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q05-14",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も関連の深い語句を選びなさい。\n\n① ソースプログラムの命令文を一行ずつ翻訳して実行する。\n② ソースプログラムの命令文をまとめて機械語に翻訳する。\n③ プログラムの誤りを見つけて直す。\n④ プログラム本体とは別のファイルを参照して機能を用いる。\n⑤ ファイルのレコードを指定のキー順に並び替える。\n\n②に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "実行前に命令列をまとめて機械語などへ変換するのはコンパイラである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ②",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問5 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "連続編集プログラム",
+      "イ": "媒体変換プログラム",
+      "ウ": "言語変換プログラム",
+      "エ": "インタプリタ",
+      "オ": "ソート・マージプログラム",
+      "カ": "コンパイラ",
+      "キ": "ジェネレータ",
+      "ク": "デバッグ",
+      "ケ": "ライブラリ"
+    },
+    "choiceExplanations": {
+      "ア": "複数のプログラムの部品を結合し、実行時の参照などを解決する。この欄では、事前にまとめて翻訳する仕組みを選ぶ。",
+      "イ": "異なる記録媒体の間でデータを変換・移行する。この欄では、事前にまとめて翻訳する仕組みを選ぶ。",
+      "ウ": "言語の翻訳を行うソフトウェアの広い分類を指す。この欄では、事前にまとめて翻訳する仕組みを選ぶ。",
+      "エ": "命令を順次解釈しながら実行する。この欄では、事前にまとめて翻訳する仕組みを選ぶ。",
+      "オ": "指定したキーによる順序付けや整列済みファイルの併合を行う。この欄では、事前にまとめて翻訳する仕組みを選ぶ。",
+      "カ": "実行前に命令列をまとめて機械語などへ変換するのはコンパイラである。",
+      "キ": "設定や仕様をもとにコードなどを生成する。この欄では、事前にまとめて翻訳する仕組みを選ぶ。",
+      "ク": "プログラムの誤りを特定し、修正する作業である。この欄では、事前にまとめて翻訳する仕組みを選ぶ。",
+      "ケ": "再利用できる機能を集め、プログラムから参照できるようにする。この欄では、事前にまとめて翻訳する仕組みを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q05-15",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も関連の深い語句を選びなさい。\n\n① ソースプログラムの命令文を一行ずつ翻訳して実行する。\n② ソースプログラムの命令文をまとめて機械語に翻訳する。\n③ プログラムの誤りを見つけて直す。\n④ プログラム本体とは別のファイルを参照して機能を用いる。\n⑤ ファイルのレコードを指定のキー順に並び替える。\n\n③に当てはまるものを選びなさい。",
+    "answer": "ク",
+    "explanation": "バグの原因を見つけて取り除く作業をデバッグという。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ③",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問5 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ク",
+    "choices": {
+      "ア": "連続編集プログラム",
+      "イ": "媒体変換プログラム",
+      "ウ": "言語変換プログラム",
+      "エ": "インタプリタ",
+      "オ": "ソート・マージプログラム",
+      "カ": "コンパイラ",
+      "キ": "ジェネレータ",
+      "ク": "デバッグ",
+      "ケ": "ライブラリ"
+    },
+    "choiceExplanations": {
+      "ア": "複数のプログラムの部品を結合し、実行時の参照などを解決する。この欄では、誤りを見つけて修正する作業を選ぶ。",
+      "イ": "異なる記録媒体の間でデータを変換・移行する。この欄では、誤りを見つけて修正する作業を選ぶ。",
+      "ウ": "言語の翻訳を行うソフトウェアの広い分類を指す。この欄では、誤りを見つけて修正する作業を選ぶ。",
+      "エ": "命令を順次解釈しながら実行する。この欄では、誤りを見つけて修正する作業を選ぶ。",
+      "オ": "指定したキーによる順序付けや整列済みファイルの併合を行う。この欄では、誤りを見つけて修正する作業を選ぶ。",
+      "カ": "ソースの命令をまとめて目的コードなどへ翻訳する。この欄では、誤りを見つけて修正する作業を選ぶ。",
+      "キ": "設定や仕様をもとにコードなどを生成する。この欄では、誤りを見つけて修正する作業を選ぶ。",
+      "ク": "バグの原因を見つけて取り除く作業をデバッグという。",
+      "ケ": "再利用できる機能を集め、プログラムから参照できるようにする。この欄では、誤りを見つけて修正する作業を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q05-16",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も関連の深い語句を選びなさい。\n\n① ソースプログラムの命令文を一行ずつ翻訳して実行する。\n② ソースプログラムの命令文をまとめて機械語に翻訳する。\n③ プログラムの誤りを見つけて直す。\n④ プログラム本体とは別のファイルを参照して機能を用いる。\n⑤ ファイルのレコードを指定のキー順に並び替える。\n\n④に当てはまるものを選びなさい。",
+    "answer": "ケ",
+    "explanation": "プログラム本体とは別にまとめられ、参照して利用する機能の集まりがライブラリである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ④",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問5 ④。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ケ",
+    "choices": {
+      "ア": "連続編集プログラム",
+      "イ": "媒体変換プログラム",
+      "ウ": "言語変換プログラム",
+      "エ": "インタプリタ",
+      "オ": "ソート・マージプログラム",
+      "カ": "コンパイラ",
+      "キ": "ジェネレータ",
+      "ク": "デバッグ",
+      "ケ": "ライブラリ"
+    },
+    "choiceExplanations": {
+      "ア": "複数のプログラムの部品を結合し、実行時の参照などを解決する。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "イ": "異なる記録媒体の間でデータを変換・移行する。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "ウ": "言語の翻訳を行うソフトウェアの広い分類を指す。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "エ": "命令を順次解釈しながら実行する。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "オ": "指定したキーによる順序付けや整列済みファイルの併合を行う。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "カ": "ソースの命令をまとめて目的コードなどへ翻訳する。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "キ": "設定や仕様をもとにコードなどを生成する。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "ク": "プログラムの誤りを特定し、修正する作業である。この欄では、別のファイルから再利用する機能の集まりを選ぶ。",
+      "ケ": "プログラム本体とは別にまとめられ、参照して利用する機能の集まりがライブラリである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q05-17",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の文章に最も関連の深い語句を選びなさい。\n\n① ソースプログラムの命令文を一行ずつ翻訳して実行する。\n② ソースプログラムの命令文をまとめて機械語に翻訳する。\n③ プログラムの誤りを見つけて直す。\n④ プログラム本体とは別のファイルを参照して機能を用いる。\n⑤ ファイルのレコードを指定のキー順に並び替える。\n\n⑤に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "レコードを指定キーで整列する機能はソート・マージプログラムに含まれる。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ⑤",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問5 ⑤。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "連続編集プログラム",
+      "イ": "媒体変換プログラム",
+      "ウ": "言語変換プログラム",
+      "エ": "インタプリタ",
+      "オ": "ソート・マージプログラム",
+      "カ": "コンパイラ",
+      "キ": "ジェネレータ",
+      "ク": "デバッグ",
+      "ケ": "ライブラリ"
+    },
+    "choiceExplanations": {
+      "ア": "複数のプログラムの部品を結合し、実行時の参照などを解決する。この欄では、キー順に記録を整列する仕組みを選ぶ。",
+      "イ": "異なる記録媒体の間でデータを変換・移行する。この欄では、キー順に記録を整列する仕組みを選ぶ。",
+      "ウ": "言語の翻訳を行うソフトウェアの広い分類を指す。この欄では、キー順に記録を整列する仕組みを選ぶ。",
+      "エ": "命令を順次解釈しながら実行する。この欄では、キー順に記録を整列する仕組みを選ぶ。",
+      "オ": "レコードを指定キーで整列する機能はソート・マージプログラムに含まれる。",
+      "カ": "ソースの命令をまとめて目的コードなどへ翻訳する。この欄では、キー順に記録を整列する仕組みを選ぶ。",
+      "キ": "設定や仕様をもとにコードなどを生成する。この欄では、キー順に記録を整列する仕組みを選ぶ。",
+      "ク": "プログラムの誤りを特定し、修正する作業である。この欄では、キー順に記録を整列する仕組みを選ぶ。",
+      "ケ": "再利用できる機能を集め、プログラムから参照できるようにする。この欄では、キー順に記録を整列する仕組みを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q06-18",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の料金表に従い、定形外郵便の各重さに対する最低料金を出力する。重さは250g以内とする。\n\n①に当てはまるものを選びなさい。",
+    "answer": "イ",
+    "explanation": "最初のYesは140円の区分に入るので50g以下を選ぶ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ①",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問6 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p41-13.webp"
+    ],
+    "imageAltTexts": [
+      "郵便物の重さを3回の条件分岐で分類する流れ図と、設問の料金表。"
+    ],
+    "officialAnswerNumber": "イ",
+    "choices": {
+      "ア": "WEIGHT ≧ 51",
+      "イ": "WEIGHT ≦ 50",
+      "ウ": "WEIGHT ≧ 101",
+      "エ": "WEIGHT ≦ 100",
+      "オ": "WEIGHT ≧ 151",
+      "カ": "WEIGHT ≦ 150"
+    },
+    "choiceExplanations": {
+      "ア": "重さが51以上の条件である。この欄では、50g以下の判定を選ぶ。",
+      "イ": "最初のYesは140円の区分に入るので50g以下を選ぶ。",
+      "ウ": "重さが101以上の条件である。この欄では、50g以下の判定を選ぶ。",
+      "エ": "重さが100以下の条件である。この欄では、50g以下の判定を選ぶ。",
+      "オ": "重さが151以上の条件である。この欄では、50g以下の判定を選ぶ。",
+      "カ": "重さが150以下の条件である。この欄では、50g以下の判定を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q06-19",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の料金表に従い、定形外郵便の各重さに対する最低料金を出力する。重さは250g以内とする。\n\n②に当てはまるものを選びなさい。",
+    "answer": "エ",
+    "explanation": "最初の条件が偽で180円となるのは100g以下のときである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ②",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問6 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p41-13.webp"
+    ],
+    "imageAltTexts": [
+      "郵便物の重さを3回の条件分岐で分類する流れ図と、設問の料金表。"
+    ],
+    "officialAnswerNumber": "エ",
+    "choices": {
+      "ア": "WEIGHT ≧ 51",
+      "イ": "WEIGHT ≦ 50",
+      "ウ": "WEIGHT ≧ 101",
+      "エ": "WEIGHT ≦ 100",
+      "オ": "WEIGHT ≧ 151",
+      "カ": "WEIGHT ≦ 150"
+    },
+    "choiceExplanations": {
+      "ア": "重さが51以上の条件である。この欄では、100g以下の判定を選ぶ。",
+      "イ": "重さが50以下の条件である。この欄では、100g以下の判定を選ぶ。",
+      "ウ": "重さが101以上の条件である。この欄では、100g以下の判定を選ぶ。",
+      "エ": "最初の条件が偽で180円となるのは100g以下のときである。",
+      "オ": "重さが151以上の条件である。この欄では、100g以下の判定を選ぶ。",
+      "カ": "重さが150以下の条件である。この欄では、100g以下の判定を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q06-20",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の料金表に従い、定形外郵便の各重さに対する最低料金を出力する。重さは250g以内とする。\n\n③に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "100g以下の区分に入らず、270円になるのは150g以下のときである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ③",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問6 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p41-13.webp"
+    ],
+    "imageAltTexts": [
+      "郵便物の重さを3回の条件分岐で分類する流れ図と、設問の料金表。"
+    ],
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "WEIGHT ≧ 51",
+      "イ": "WEIGHT ≦ 50",
+      "ウ": "WEIGHT ≧ 101",
+      "エ": "WEIGHT ≦ 100",
+      "オ": "WEIGHT ≧ 151",
+      "カ": "WEIGHT ≦ 150"
+    },
+    "choiceExplanations": {
+      "ア": "重さが51以上の条件である。この欄では、150g以下の判定を選ぶ。",
+      "イ": "重さが50以下の条件である。この欄では、150g以下の判定を選ぶ。",
+      "ウ": "重さが101以上の条件である。この欄では、150g以下の判定を選ぶ。",
+      "エ": "重さが100以下の条件である。この欄では、150g以下の判定を選ぶ。",
+      "オ": "重さが151以上の条件である。この欄では、150g以下の判定を選ぶ。",
+      "カ": "100g以下の区分に入らず、270円になるのは150g以下のときである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q07-21",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "出力結果のように「＊」を出力する。出力結果と解答群の△はスペースを表す。\n\n①に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "各行で先行する空白を行番号と同じ個数だけ出すので、内側ループの終値はIである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ①",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問7 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p42-14.webp"
+    ],
+    "imageAltTexts": [
+      "行が進むごとに先頭の空白が増え、アスタリスクは毎行5個の出力例と流れ図。"
+    ],
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "5",
+      "イ": "6",
+      "ウ": "I",
+      "エ": "J",
+      "オ": "“△”を出力",
+      "カ": "“＊”を出力"
+    },
+    "choiceExplanations": {
+      "ア": "各行に出力するアスタリスクの固定個数である。この欄では、現在の行番号を選ぶ。",
+      "イ": "外側の反復で出力する行数である。この欄では、現在の行番号を選ぶ。",
+      "ウ": "各行で先行する空白を行番号と同じ個数だけ出すので、内側ループの終値はIである。",
+      "エ": "内側のループの制御変数である。この欄では、現在の行番号を選ぶ。",
+      "オ": "設問で△は空白1個を表す。この欄では、現在の行番号を選ぶ。",
+      "カ": "アスタリスクを1個表示する。この欄では、現在の行番号を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q07-22",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "出力結果のように「＊」を出力する。出力結果と解答群の△はスペースを表す。\n\n②に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "最初の内側ループは行頭の空白を並べるので、△に相当する空白を出す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ②",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問7 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p42-14.webp"
+    ],
+    "imageAltTexts": [
+      "行が進むごとに先頭の空白が増え、アスタリスクは毎行5個の出力例と流れ図。"
+    ],
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "5",
+      "イ": "6",
+      "ウ": "I",
+      "エ": "J",
+      "オ": "“△”を出力",
+      "カ": "“＊”を出力"
+    },
+    "choiceExplanations": {
+      "ア": "各行に出力するアスタリスクの固定個数である。この欄では、空白1個の出力を選ぶ。",
+      "イ": "外側の反復で出力する行数である。この欄では、空白1個の出力を選ぶ。",
+      "ウ": "外側の行番号で、行ごとに増える。この欄では、空白1個の出力を選ぶ。",
+      "エ": "内側のループの制御変数である。この欄では、空白1個の出力を選ぶ。",
+      "オ": "最初の内側ループは行頭の空白を並べるので、△に相当する空白を出す。",
+      "カ": "アスタリスクを1個表示する。この欄では、空白1個の出力を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q07-23",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "出力結果のように「＊」を出力する。出力結果と解答群の△はスペースを表す。\n\n③に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "次の内側ループは毎行5回繰り返すので、ここでアスタリスクを出す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ③",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問7 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p42-14.webp"
+    ],
+    "imageAltTexts": [
+      "行が進むごとに先頭の空白が増え、アスタリスクは毎行5個の出力例と流れ図。"
+    ],
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "5",
+      "イ": "6",
+      "ウ": "I",
+      "エ": "J",
+      "オ": "“△”を出力",
+      "カ": "“＊”を出力"
+    },
+    "choiceExplanations": {
+      "ア": "各行に出力するアスタリスクの固定個数である。この欄では、アスタリスク1個の出力を選ぶ。",
+      "イ": "外側の反復で出力する行数である。この欄では、アスタリスク1個の出力を選ぶ。",
+      "ウ": "外側の行番号で、行ごとに増える。この欄では、アスタリスク1個の出力を選ぶ。",
+      "エ": "内側のループの制御変数である。この欄では、アスタリスク1個の出力を選ぶ。",
+      "オ": "設問で△は空白1個を表す。この欄では、アスタリスク1個の出力を選ぶ。",
+      "カ": "次の内側ループは毎行5回繰り返すので、ここでアスタリスクを出す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q08-24",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 24,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "入力された値と同じ値が配列に何個あるのかを出力し、一つもなければその旨を表示する。プログラムの①〜⑤に入るものを答えなさい。（JIS Full BASIC）",
+    "answer": "① 10\n② KEY\n③ M\n④ 0\n⑤ C",
+    "explanation": "10個の要素を順に確認し、注目する添字の値と入力KEYを比較する。一致するたびにカウンタを増やし、カウンタが0なら見つからないと判定する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 JIS Full BASIC",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問8 JIS Full BASIC。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p43-15.webp"
+    ],
+    "imageAltTexts": [
+      "大問8の原文とJIS Full BASICのプログラム。"
+    ],
+    "modelAnswer": "① 10\n② KEY\n③ M\n④ 0\n⑤ C",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q08-25",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 25,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "入力された値と同じ値が配列に何個あるのかを出力し、一つもなければその旨を表示する。プログラムの①〜⑤に入るものを答えなさい。（C言語）",
+    "answer": "① 10\n② key\n③ m\n④ 0\n⑤ c",
+    "explanation": "10個の要素を順に確認し、注目する添字の値と入力KEYを比較する。一致するたびにカウンタを増やし、カウンタが0なら見つからないと判定する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 C言語",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=45",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問8 C言語。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p45-16.webp"
+    ],
+    "imageAltTexts": [
+      "大問8の原文とC言語のプログラム。"
+    ],
+    "modelAnswer": "① 10\n② key\n③ m\n④ 0\n⑤ c",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q09-26",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 26,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "1〜1000の整数についてコラッツ予想の手続きを実行し、1に到達するまでの偶数操作・奇数操作の回数を求める。空欄①〜⑤を埋めなさい。（JIS Full BASIC）",
+    "answer": "① 1000\n② N\n③ 2\n④ C/2 または C*0.5\n⑤ 3*C + 1",
+    "explanation": "各整数を初期値とし、現在値を2で割った余りが0なら半分にする。奇数なら3倍して1を足して更新し、1になるまで操作回数を数える。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 JIS Full BASIC",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=44",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問9 JIS Full BASIC。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p44-17.webp"
+    ],
+    "imageAltTexts": [
+      "大問9の原文とJIS Full BASICのプログラム。"
+    ],
+    "modelAnswer": "① 1000\n② N\n③ 2\n④ C/2 または C*0.5\n⑤ 3*C + 1",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-level2-q09-27",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 27,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "1〜1000の整数についてコラッツ予想の手続きを実行し、1に到達するまでの偶数操作・奇数操作の回数を求める。空欄①〜⑤を埋めなさい。（C言語）",
+    "answer": "① 1000\n② n\n③ 2\n④ c/2 または c*0.5\n⑤ 3*c + 1",
+    "explanation": "各整数を初期値とし、現在値を2で割った余りが0なら半分にする。奇数なら3倍して1を足して更新し、1になるまで操作回数を数える。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 C言語",
+    "sourceExamSession": "第74回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=46",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 2級・共通＋BASIC/Cの選択 大問9 C言語。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-level2-p46-18.webp"
+    ],
+    "imageAltTexts": [
+      "大問9の原文とC言語のプログラム。"
+    ],
+    "modelAnswer": "① 1000\n② n\n③ 2\n④ c/2 または c*0.5\n⑤ 3*c + 1",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  }
+]

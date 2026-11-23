@@ -58,7 +58,8 @@ describe("IPA paper separation across the complete registered corpus", () => {
     expect(pool.every((q) => q.session === "kamoku-a")).toBe(true);
     expect(defaultPracticeSession("fe", 2019)).toBe("am");
     expect(parsePracticeSession("am2")).toBe("am2");
-    expect(parsePracticeSession("pm2")).toBeUndefined();
+    expect(parsePracticeSession("pm2")).toBe("pm2");
+    expect(parsePracticeSession("pm3")).toBeUndefined();
   });
 });
 

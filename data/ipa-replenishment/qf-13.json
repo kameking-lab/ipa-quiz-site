@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "lane": "qf-13",
+  "previousLane": "qe-13",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18T02:09:21.582541+00:00",
+  "rows": [
+    {
+      "jobId": "PLAN5-223",
+      "exam": "yakuzaishi",
+      "year": 2023,
+      "storedYear": 2023,
+      "season": "annual",
+      "session": "day1-3",
+      "storedSession": "theory",
+      "edition": "第108回",
+      "status": "completed-locally",
+      "action": "不足分だけ新規補充",
+      "officialQuestionCount": 45,
+      "questionCount": 45,
+      "sourcePage": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198925.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/content/001074630.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001074906.pdf",
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/content/001074630.pdf",
+          "pages": 27,
+          "sha256": "5a8ce52a55839f643f06e1e53f610425bbb7b43c019cee4d990ec6e6b3566b1e"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/001074906.pdf",
+          "pages": 2,
+          "sha256": "e109e2c7f187e29763d798d024a68bd246bc12f58ee986224637b442b6746761"
+        }
+      ],
+      "dataPath": "data/questions/yakuzaishi/2023-day1-3-official.json",
+      "dataSha256": "0f9cdfe3cd1b3126eb92ecd48fb0e56fc81760b2b5a6e53e964f4250dd4d3400",
+      "questionIds": [
+        "yakuzaishi-2023-annual-theory-q151",
+        "yakuzaishi-2023-annual-theory-q152",
+        "yakuzaishi-2023-annual-theory-q153",
+        "yakuzaishi-2023-annual-theory-q154",
+        "yakuzaishi-2023-annual-theory-q155",
+        "yakuzaishi-2023-annual-theory-q156",
+        "yakuzaishi-2023-annual-theory-q157",
+        "yakuzaishi-2023-annual-theory-q158",
+        "yakuzaishi-2023-annual-theory-q159",
+        "yakuzaishi-2023-annual-theory-q160",
+        "yakuzaishi-2023-annual-theory-q161",
+        "yakuzaishi-2023-annual-theory-q162",
+        "yakuzaishi-2023-annual-theory-q163",
+        "yakuzaishi-2023-annual-theory-q164",
+        "yakuzaishi-2023-annual-theory-q165",
+        "yakuzaishi-2023-annual-theory-q166",
+        "yakuzaishi-2023-annual-theory-q167",
+        "yakuzaishi-2023-annual-theory-q168",
+        "yakuzaishi-2023-annual-theory-q169",
+        "yakuzaishi-2023-annual-theory-q170",
+        "yakuzaishi-2023-annual-theory-q171",
+        "yakuzaishi-2023-annual-theory-q172",
+        "yakuzaishi-2023-annual-theory-q173",
+        "yakuzaishi-2023-annual-theory-q174",
+        "yakuzaishi-2023-annual-theory-q175",
+        "yakuzaishi-2023-annual-theory-q176",
+        "yakuzaishi-2023-annual-theory-q177",
+        "yakuzaishi-2023-annual-theory-q178",
+        "yakuzaishi-2023-annual-theory-q179",
+        "yakuzaishi-2023-annual-theory-q180",
+        "yakuzaishi-2023-annual-theory-q181",
+        "yakuzaishi-2023-annual-theory-q182",
+        "yakuzaishi-2023-annual-theory-q183",
+        "yakuzaishi-2023-annual-theory-q184",
+        "yakuzaishi-2023-annual-theory-q185",
+        "yakuzaishi-2023-annual-theory-q186",
+        "yakuzaishi-2023-annual-theory-q187",
+        "yakuzaishi-2023-annual-theory-q188",
+        "yakuzaishi-2023-annual-theory-q189",
+        "yakuzaishi-2023-annual-theory-q190",
+        "yakuzaishi-2023-annual-theory-q191",
+        "yakuzaishi-2023-annual-theory-q192",
+        "yakuzaishi-2023-annual-theory-q193",
+        "yakuzaishi-2023-annual-theory-q194",
+        "yakuzaishi-2023-annual-theory-q195"
+      ],
+      "officialAnswerNumbers": [
+        "2,5",
+        "1,3",
+        "1,5",
+        "3,5",
+        "1,5",
+        "2,3",
+        "3,5",
+        "1,3",
+        "1,4",
+        "4,5",
+        "2,4",
+        "2,5",
+        "1,3",
+        "2,5",
+        "3,5",
+        "1,5",
+        "2,5",
+        "4",
+        "4,5",
+        "1,2",
+        "3,4",
+        "3,4",
+        "5",
+        "1,5",
+        "2,4",
+        "1,4",
+        "2,3",
+        "1,4",
+        "3,4",
+        "1,5",
+        "2,4",
+        "5",
+        "3,5",
+        "2,4",
+        "3",
+        "1",
+        "3",
+        "4,5",
+        "2,3",
+        "1,4",
+        "2,5",
+        "1,3",
+        "2,4",
+        "1,4",
+        "1,3"
+      ],
+      "sourcePagesByQuestion": {
+        "151": [
+          2
+        ],
+        "152": [
+          2
+        ],
+        "153": [
+          3
+        ],
+        "154": [
+          3
+        ],
+        "155": [
+          4
+        ],
+        "156": [
+          4
+        ],
+        "157": [
+          5
+        ],
+        "158": [
+          5
+        ],
+        "159": [
+          6
+        ],
+        "160": [
+          6
+        ],
+        "161": [
+          7
+        ],
+        "162": [
+          7
+        ],
+        "163": [
+          8
+        ],
+        "164": [
+          8
+        ],
+        "165": [
+          9
+        ],
+        "166": [
+          10
+        ],
+        "167": [
+          11
+        ],
+        "168": [
+          12
+        ],
+        "169": [
+          12
+        ],
+        "170": [
+          13
+        ],
+        "171": [
+          13
+        ],
+        "172": [
+          14
+        ],
+        "173": [
+          14
+        ],
+        "174": [
+          15
+        ],
+        "175": [
+          16
+        ],
+        "176": [
+          17
+        ],
+        "177": [
+          18
+        ],
+        "178": [
+          18
+        ],
+        "179": [
+          18
+        ],
+        "180": [
+          19
+        ],
+        "181": [
+          19
+        ],
+        "182": [
+          20
+        ],
+        "183": [
+          21
+        ],
+        "184": [
+          21
+        ],
+        "185": [
+          21
+        ],
+        "186": [
+          22
+        ],
+        "187": [
+          22
+        ],
+        "188": [
+          23
+        ],
+        "189": [
+          23
+        ],
+        "190": [
+          24,
+          25
+        ],
+        "191": [
+          26
+        ],
+        "192": [
+          26
+        ],
+        "193": [
+          26
+        ],
+        "194": [
+          27
+        ],
+        "195": [
+          27
+        ]
+      },
+      "assets": [
+        {
+          "path": "public/questions/yakuzaishi/2023-day1-3/q166.png",
+          "questionNumber": 166,
+          "sourcePage": 10,
+          "cropPdfPoints": [
+            93,
+            135,
+            525,
+            498
+          ],
+          "sha256": "42c82118c7e875fbb3b34299c471cfa619b37fc63efd4dc049ee267e04b43050"
+        },
+        {
+          "path": "public/questions/yakuzaishi/2023-day1-3/q175.png",
+          "questionNumber": 175,
+          "sourcePage": 16,
+          "cropPdfPoints": [
+            109,
+            245,
+            514,
+            437
+          ],
+          "sha256": "d81ca85c388a31eff2ab4b3eab02e8df7793dad1b27da51eb9caf744d3d49b20"
+        },
+        {
+          "path": "public/questions/yakuzaishi/2023-day1-3/q176.png",
+          "questionNumber": 176,
+          "sourcePage": 17,
+          "cropPdfPoints": [
+            150,
+            111,
+            442,
+            307
+          ],
+          "sha256": "0fbe366f0afd3c53ed45ede2e9af05abec9b062bba94422744483a1736ab1668"
+        },
+        {
+          "path": "public/questions/yakuzaishi/2023-day1-3/q182.png",
+          "questionNumber": 182,
+          "sourcePage": 20,
+          "cropPdfPoints": [
+            84,
+            200,
+            540,
+            587
+          ],
+          "sha256": "3559cf5baf3484a3ca3cc98522acbb50f321e453a6453b30d897562d2048c1df"
+        },
+        {
+          "path": "public/questions/yakuzaishi/2023-day1-3/q194.png",
+          "questionNumber": 194,
+          "sourcePage": 27,
+          "cropPdfPoints": [
+            175,
+            155,
+            442,
+            327
+          ],
+          "sha256": "e6f7aea1c0080d84a8807979a66fedf0c8abb694cda2f81549989cf98c6d2a12"
+        }
+      ],
+      "excludedSampleQuestionNumbers": [
+        500
+      ],
+      "notes": [
+        "公式冊子表紙の45問を採用。問157–160は共通症例の個別採点対象4問、問500は記入例。",
+        "問173の濃度単位µg/mL、問190の尿蛋白（±）は原本画像で確認。",
+        "問184は公式正答2・4を採用し、双極II型の軽躁エピソードとの区別を解説に記載。",
+        "問191は出題時の正答2・5を維持し、出題後の地図状萎縮治療薬の国内承認を解説に記載。"
+      ],
+      "supplementarySources": {
+        "157": [
+          "https://www.jpnsh.jp/data/jsh2019/JSH2019_hp.pdf"
+        ],
+        "179-181": [
+          "https://www.mhlw.go.jp/content/11120000/000788359.pdf"
+        ],
+        "183": [
+          "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/270428_4235402A2021_1_06",
+          "https://www.pmda.go.jp/safety/info-services/drugs/calling-attention/esc-rsc/0004.html",
+          "https://www.pmda.go.jp/safety/info-services/drugs/calling-attention/revision-of-precautions/0066.html"
+        ],
+        "184": [
+          "https://www.jspn.or.jp/guide/faq/13.php",
+          "https://journal.jspn.or.jp/Disp?mag=0&number=8&start=627&style=ofull&vol=121&year=2019"
+        ],
+        "185": [
+          "https://www.j-circ.or.jp/cms/wp-content/uploads/2018/10/JCS2018_yamagishi_tamaki.pdf"
+        ],
+        "186": [
+          "https://www.pmda.go.jp/files/000249185.pdf",
+          "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/530169_2149042F1211_1_07"
+        ],
+        "187": [
+          "https://www.pmda.go.jp/files/000281992.pdf"
+        ],
+        "188": [
+          "https://www.jsge.or.jp/committees/guideline/guideline/pdf/ibd2020_.pdf"
+        ],
+        "189": [
+          "https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou18/dl/030801-01.pdf"
+        ],
+        "190": [
+          "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/730869_3961008F1373_1_03"
+        ],
+        "191": [
+          "https://www.gankaikai.or.jp/health/51/index.html",
+          "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/800126_1319409A1025_1_02"
+        ],
+        "192": [
+          "https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/ADGL2024.pdf"
+        ],
+        "193": [
+          "https://www.jstct.or.jp/modules/patient/index.php?content_id=21",
+          "https://www.jstct.or.jp/modules/patient/index.php?content_id=20"
+        ]
+      },
+      "duplicateAudit": {
+        "refs": 118,
+        "uniqueCommits": 102,
+        "exactMatches": 0
+      }
+    }
+  ]
+}

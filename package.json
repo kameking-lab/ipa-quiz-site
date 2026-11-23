@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=22"
+    "node": "22.x"
   },
   "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/vercel-migrate.mjs && pnpm run copilot:index:write && next build",
+    "questions:write": "tsx --tsconfig scripts/tsconfig.question-corpus.json scripts/build-question-corpus.ts",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -20,7 +21,7 @@
     "fetch:pdfs": "tsx scripts/fetch-ipa-pdfs.ts",
     "generate:ap": "tsx --env-file=.env.local scripts/generate-ap-all.ts",
     "parse:pdfs": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts",
-    "validate:questions": "tsx scripts/validate-questions.ts",
+    "validate:questions": "tsx --tsconfig scripts/tsconfig.question-corpus.json scripts/validate-questions.ts",
     "validate:asins": "tsx scripts/validate-asins.ts",
     "verify:cost-alert": "tsx scripts/verify-cost-alert.ts",
     "tag:topics": "tsx scripts/topic-tagger.ts",
@@ -48,7 +49,7 @@
     "audit:essays": "tsx scripts/audit-essays.ts",
     "audit:essays:ci": "tsx scripts/audit-essays.ts --ci",
     "copilot:index": "tsx scripts/build-copilot-index.ts",
-    "copilot:index:write": "node --max-old-space-size=4096 --import tsx scripts/build-copilot-index.ts --write",
+    "copilot:index:write": "pnpm run questions:write && node --max-old-space-size=4096 --import tsx scripts/build-copilot-index.ts --write",
     "copilot:eval": "tsx scripts/eval-copilot-rag.ts",
     "test": "vitest run",
     "mascots:build": "tsx scripts/build-study-room-mascots.ts"
@@ -77,10 +78,12 @@
     "react-markdown": "^10.1.0",
     "recharts": "^3.8.1",
     "remark-gfm": "^4.0.1",
+    "sharp": "0.35.5",
     "tailwind-merge": "^3.6.0",
     "zod": "4.6.7"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.3.0",
     "@testing-library/jest-dom": "^6.9.1",

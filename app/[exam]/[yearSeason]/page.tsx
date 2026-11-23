@@ -1,12 +1,12 @@
-import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { ReferralPracticeLink } from "@/components/analytics/ReferralPracticeLink";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
-import type { ExamCode, Season } from "@/lib/questions/types";
+import type { ExamCode } from "@/lib/questions/types";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel, formatYearSeason } from "@/lib/utils";
@@ -16,15 +16,17 @@ import {
   getQuestionsByExamStrict,
   groupByYearSeason,
 } from "@/lib/seo/exam-meta";
-import { questionPagePath } from "@/lib/seo/question-url";
+import { parseQuestionYearSeason, questionPagePath } from "@/lib/seo/question-url";
 import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   QuestionListWithFilter,
   type SessionGroup,
 } from "./QuestionListWithFilter";
+import { displayQuestionGroupLabel } from "./question-list-label";
 
 export const dynamicParams = false;
 
@@ -81,12 +83,6 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
   return out;
 }
 
-function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|round1|round2|early|may|september|january|october|late|annual|july|primary|kansai|february|june|august|march)$/.exec(slug);
-  if (!m) return null;
-  return { year: Number(m[1]), season: m[2] as Season };
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -96,7 +92,7 @@ export async function generateMetadata({
   if (!getAvailableExams().includes(exam as ExamCode)) {
     return { title: "年度が見つかりません", robots: { index: false } };
   }
-  const parsed = parseYearSeason(yearSeason);
+  const parsed = parseQuestionYearSeason(yearSeason);
   if (!parsed) return { title: "年度が見つかりません", robots: { index: false } };
   const pool = getQuestionsByExamStrict(exam as ExamCode).filter(q => q.year === parsed.year && q.season === parsed.season);
   const commonOnly = pool.length > 0 && pool.every(q => q.session === "am1");
@@ -133,7 +129,7 @@ export default async function ExamYearSeasonPage({
 }) {
   const { exam, yearSeason } = await params;
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
-  const parsed = parseYearSeason(yearSeason);
+  const parsed = parseQuestionYearSeason(yearSeason);
   if (!parsed) notFound();
 
   const code = exam as ExamCode;
@@ -248,27 +244,17 @@ export default async function ExamYearSeasonPage({
   };
 
   return (
-    <main className="relative flex-1">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
-
-      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+    <main className="p3-page p3-year flex-1">
+      <div className="study-column pb-12">
         <JsonLd data={jsonLd} />
-      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/${yearSeason}`)} qualification={histLabel} />
 
         <nav
           aria-label="パンくずリスト"
-          className="mb-4 text-xs text-muted-foreground"
+          className="mb-1 text-xs text-muted-foreground"
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -276,7 +262,7 @@ export default async function ExamYearSeasonPage({
             <li>
               <Link
                 href={`/${exam}`}
-                className="inline-block py-1.5 hover:text-foreground hover:underline"
+                className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline"
               >
                 {examLabel(code)}
               </Link>
@@ -288,25 +274,27 @@ export default async function ExamYearSeasonPage({
           </ol>
         </nav>
 
-        <header className="mb-8 animate-fade-in">
-          <Badge variant="soft" className="mb-3">
-            <Sparkles className="h-3 w-3" />
-            {histLabel}
-          </Badge>
-          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              {label}
-            </span>{" "}
-            {histLabel}
-          </h1>
+        <header className="mb-3">
+          <div className="p3-landscape p3-hero p3-year-hero">
+            <div className="min-w-0">
+              <p className="text-sm font-semibold">{histLabel}</p>
+              <h1 className="mt-1 text-2xl font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
+                <span>{label}</span>{" "}<span className="sr-only">{histLabel}</span>
+              </h1>
+              <p className="mt-1 text-sm tabular-nums"><strong className="font-display text-[25px]">{pool.length}</strong> 問</p>
+            </div>
+            <P3Mascot exam={code} className="p3-year-mascot" />
+          </div>
           <p className="mt-3 text-sm text-muted-foreground">
-            過去問一覧 — AI 解説付きで効率的に学習を進められます。
+            過去問一覧 — 問題と解説を確認して学習を進められます。
           </p>
           {code === "shakai" && (
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {parsed.year === 2024
-                ? "第37回（試験日 令和7年2月2日）の共通科目81問と専門科目45問です。共通科目は精神保健福祉士第27回と同じ問題で、公式正答を原文から一意に説明できない3問（問題4・69・76）は掲載を保留しています。"
-                : "第38回（試験日 令和8年2月1日）の全129問です。共通科目は問題1〜84、専門科目は問題85〜129。"}「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
+              {parsed.year === 2023
+                ? "第36回の共通科目・専門科目を収録しています。"
+                : parsed.year === 2024
+                  ? "第37回（試験日 令和7年2月2日）の共通科目81問と専門科目45問です。共通科目は精神保健福祉士第27回と同じ問題で、公式正答を原文から一意に説明できない3問（問題4・69・76）は掲載を保留しています。"
+                  : "第38回（試験日 令和8年2月1日）の全129問です。共通科目は問題1〜84、専門科目は問題85〜129。"}「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
             </p>
           )}
           {code === "seishin" && (
@@ -318,7 +306,7 @@ export default async function ExamYearSeasonPage({
           )}
           {code === "kaigo" && (
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {parsed.year === 2024 ? "第37回（試験日 令和7年1月26日）" : "第38回（試験日 令和8年1月25日）"}の全125問です。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、公益財団法人社会福祉振興・試験センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
+              {parsed.year === 2023 ? "第36回" : parsed.year === 2024 ? "第37回（試験日 令和7年1月26日）" : "第38回（試験日 令和8年1月25日）"}の全125問です。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、公益財団法人社会福祉振興・試験センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
             </p>
           )}
           {code === "civil2" && parsed.year === 2025 && parsed.season === "october" && (
@@ -357,20 +345,19 @@ export default async function ExamYearSeasonPage({
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline">{pool.length} 問</Badge>
             {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"], code)} {items.length}問</Badge>)}
             {commonOnly && <p className="w-full text-muted-foreground">{examLabel(code)}の学習に使える共通の午前I問題です。この一覧には午前IIの問題は含まれません。</p>}
           </div>
         </header>
 
-        <section aria-label="クイズを始める" className="mb-8">
+        <section aria-label="クイズを始める" className="mb-4">
           <div className="grid gap-2 sm:grid-cols-2">
-            {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session]) => (
-              <Button key={session} asChild variant="gradient" size="lg" className="w-full">
-                <Link href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
+            {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session, items]) => (
+              <Button key={session} asChild variant="gradient" size="lg" className="w-full min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
+                <ReferralPracticeLink qualification={histLabel} referralHref={referralPracticeHref(items, `/${exam}/${yearSeason}`)} href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
                   {practiceSessionLabel(session as typeof pool[number]["session"], code)}を解く
                   <ChevronRight className="h-4 w-4" />
-                </Link>
+                </ReferralPracticeLink>
               </Button>
             ))}
           </div>
@@ -380,7 +367,7 @@ export default async function ExamYearSeasonPage({
           <aside aria-label="午前Ⅱ 問23の別教材" className="mb-8 rounded-2xl border border-border bg-card px-4 py-3 text-sm">
             <Link
               href="/st/past-papers/notes/st-2009a-am2-q23"
-              className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4"
+              className="inline-flex min-h-11 min-w-11 items-center font-medium text-primary underline underline-offset-4"
             >
               午前Ⅱ 問23：注記付き・非採点教材
             </Link>
@@ -391,6 +378,23 @@ export default async function ExamYearSeasonPage({
         )}
 
         <QuestionListWithFilter groups={sessionGroups} exam={code} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1"} />
+        <details className="rounded-xl border border-border px-4 text-sm">
+          <summary className="min-h-11 cursor-pointer py-3 font-semibold">問題別の解説</summary>
+          {sessionGroups.map(({ id, session, items }) => (
+            <section key={id ?? session} className="pb-4">
+              <h2 className="mb-2 font-medium">{displayQuestionGroupLabel(session, code)}</h2>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3">
+                {items.map((item) => item.explanationHref && (
+                  <li key={item.id}>
+                    <Link href={item.explanationHref} prefetch={false} className="inline-flex min-h-11 items-center underline">
+                      {item.officialQuestionLabel ?? ('問' + item.qNumber)}の解説を見る
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </details>
       </div>
     </main>
   );

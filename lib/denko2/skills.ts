@@ -1,4 +1,5 @@
 import source from "@/data/questions/denko2/skills-draft.json";
+import { DENKO2_ARCHIVED_SKILLS } from "@/data/questions/denko2/skill-archive";
 
 export interface Denko2SkillProblem {
   id: string;
@@ -23,8 +24,11 @@ export interface Denko2SkillProblem {
   defectCriteriaUrl: string;
 }
 
-/** Non-public preparation corpus; callers must enforce the exam release gate. */
-export const DENKO2_SKILL_PROBLEMS = source as Denko2SkillProblem[];
+/** Callers must enforce the exam release gate. */
+export const DENKO2_SKILL_PROBLEMS: Denko2SkillProblem[] = [
+  ...source as Denko2SkillProblem[],
+  ...DENKO2_ARCHIVED_SKILLS as Denko2SkillProblem[],
+];
 
 export function getSkillProblem(id: string): Denko2SkillProblem | undefined {
   return DENKO2_SKILL_PROBLEMS.find((item) => item.id === id);

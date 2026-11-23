@@ -16,10 +16,22 @@ const question: Question = {
   },
   hasImage: false, sourcePdfUrl: "https://www.ipa.go.jp/shiken/", license: "IPA-public",
 };
-const props = { question, selected: "イ", isCorrect: true, starred: false,
-  onToggleStar: vi.fn(), onNext: vi.fn(), onAskAI: vi.fn() };
+const props = { question, selected: "イ", isCorrect: true, onNext: vi.fn() };
 
 describe("ExplanationCard learning continuity", () => {
+  it("shows a shared fallback source only once", () => {
+    render(<ExplanationCard {...props} />);
+    expect(screen.getAllByRole("link", { name: /公式問題の公開ページ/ })).toHaveLength(1);
+  });
+  it("keeps the answer source in collapsed details before the next action", () => {
+    render(<ExplanationCard {...props} question={{ ...question, sourceAnswerUrl: "https://example.com/answer.pdf" }} />);
+    const answer = document.querySelector('[href="https://example.com/answer.pdf"]');
+    expect(answer).toHaveTextContent("公式正答PDF");
+    expect(answer?.closest("details")?.open).toBe(false);
+    const source = screen.getByRole("link", { name: /公式問題の公開ページ/ });
+    const next = screen.getByRole("button", { name: "次の問題へ" });
+    expect(source.compareDocumentPosition(next)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+  });
   it("shows each dental key in a multiple-selection response as its printed label", () => {
     render(<ExplanationCard {...props} question={{ ...question, exam: "shika-ishi", answer: ["イ", "ウ"] }} selected="イ・ウ" isCorrect={false} />);
     expect(screen.getByText(/正解: b・c \/ あなた: b・c/)).toBeInTheDocument();
@@ -42,6 +54,8 @@ describe("ExplanationCard learning continuity", () => {
     render(<ExplanationCard {...props} isCorrect={false} selected="ア" />);
     const selectedReason = screen.getByRole("region", { name: "あなたが選んだ誤答の理由" });
     expect(selectedReason).toHaveTextContent("選択した誤答に固有の理由");
+    expect(screen.getAllByText(question.choiceExplanations!.ア!)).toHaveLength(1);
+    expect(screen.getByText(question.choiceExplanations!.イ!)).toBeInTheDocument();
     expect(selectedReason.compareDocumentPosition(screen.getByRole("region", { name: "不正解の解説" }).querySelector('[aria-label="選択肢ごとの解説"]')!))
       .toBe(Node.DOCUMENT_POSITION_FOLLOWING);
   });

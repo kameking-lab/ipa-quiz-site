@@ -14,6 +14,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { examLabel } from "@/lib/utils";
+import { groupQualifications, qualificationGroupLabel } from "@/lib/qualifications/groups";
 import {
   computeCategoryStats,
   computeExamProbabilities,
@@ -85,6 +86,8 @@ export function DashboardProgress() {
     return <div className="h-64 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />;
   }
 
+  if (data.totalAnswered === 0) return <div className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground">まだ学習履歴がありません。問題を解くと表示されます。</div>;
+
   const overallAccuracy = data.totalAnswered > 0
     ? Math.round((data.correctCount / data.totalAnswered) * 100)
     : 0;
@@ -98,7 +101,7 @@ export function DashboardProgress() {
             分野別習熟度（直近10分野）
           </h2>
           <div
-            className="h-72"
+            className={data.categoryStats.length > 0 ? "h-64 sm:h-72" : "hidden"}
             role="img"
             aria-label="分野別習熟度を示すレーダーチャート（直近10分野の正答率）"
           >
@@ -144,33 +147,33 @@ export function DashboardProgress() {
           </div>
           {data.categoryStats.length === 0 && (
             <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
-              まだ学習履歴がありません。問題を解くと表示されます。
+              分野別の記録を読み込めませんでした。
             </p>
           )}
         </div>
 
         <div className="space-y-3">
           <SummaryCard label="累計回答" value={data.totalAnswered.toLocaleString("ja-JP")} unit="問" />
-          <SummaryCard label="ユニーク問題" value={data.uniqueAnswered.toLocaleString("ja-JP")} unit="問" />
-          <SummaryCard label="通算正答率" value={`${overallAccuracy}%`} accent />
+          <SummaryCard label="解いた問題の種類" value={data.uniqueAnswered.toLocaleString("ja-JP")} unit="問" />
+          <SummaryCard label="通算正答率" value={data.totalAnswered > 0 ? `${overallAccuracy}%` : "—"} accent />
         </div>
       </section>
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
+      {data.examProbs.some(prob => prob.answered > 0) && <section className="rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
         <h2 className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-          試験別 記録の正答率（13区分）
+          試験別 記録の正答率
         </h2>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {[...data.examProbs]
-            .sort((a, b) => b.answered - a.answered || b.accuracy - a.accuracy)
-            .map((p) => (
-              <ExamRow key={p.exam} prob={p} />
-            ))}
+          {groupQualifications(data.examProbs.filter(prob => prob.answered > 0)
+            .sort((a, b) => b.answered - a.answered || b.accuracy - a.accuracy), prob => prob.exam).map(row => {
+            if ("item" in row) return <ExamRow key={row.item.exam} prob={row.item} />;
+            return <details key={row.group.slug} className="min-w-0 rounded-xl border border-border px-3">
+              <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">{qualificationGroupLabel(row.group, row.children.length)}</summary>
+              <div className="space-y-2 pb-3">{row.children.map(({ item, label }) => <ExamRow key={item.exam} prob={item} label={label} />)}</div>
+            </details>;
+          })}
         </div>
-        <p className="mt-3 text-[11px] text-zinc-500 dark:text-zinc-400">
-          この練習記録での正答率です。未回答の試験は「—」で表示します。
-        </p>
-      </section>
+      </section>}
     </div>
   );
 }
@@ -191,16 +194,16 @@ function SummaryCard({ label, value, unit, accent }: { label: string; value: str
   );
 }
 
-function ExamRow({ prob }: { prob: ExamPassProbability }) {
+function ExamRow({ prob, label = examLabel(prob.exam) }: { prob: ExamPassProbability; label?: string }) {
   const hasAnswers = prob.answered > 0;
   const observedAccuracy = Math.round(prob.accuracy * 100);
   return (
     <Link
       href={`/quiz?mode=random&exam=${prob.exam}`}
-      className="group flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white p-3 transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700"
+      className="group flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white p-3 transition-colors hover:border-sky-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700"
     >
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-semibold">{examLabel(prob.exam)}</div>
+        <div className="break-words text-sm font-semibold">{label}</div>
         <div className="flex items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">
           <span>{prob.answered}問 解答済</span>
 

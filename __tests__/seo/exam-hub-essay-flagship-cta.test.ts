@@ -22,13 +22,13 @@ describe("exam hub funnels the 論文 essay CTA to the indexable flagship /essay
   it("does not advertise unpublished practice or official past-paper grading", () => {
     expect(source).not.toContain("練習問題で腕試し（ベータ）");
     expect(source).not.toContain("実際の午後II過去問で AI 添削");
-    expect(source).toContain("オリジナル論述教材で AI 添削");
+    expect(source).toContain("論述の練習問題を見る");
   });
 
-  it.each(["st", "sa"] as const)("%s labels the essay link as original material", exam => {
+  it.each(["st", "sa"] as const)("%s labels the essay link as practice", exam => {
     const html = renderToStaticMarkup(createElement(ExamTopGuide, { exam }));
     expect(html).toContain('href="/essay"');
-    expect(html).toContain("オリジナル論述教材でAI添削");
+    expect(html).toContain("論述の練習問題");
     expect(html).not.toContain(`href="/${exam}/afternoon"`);
   });
 

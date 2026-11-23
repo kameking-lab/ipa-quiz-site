@@ -12,10 +12,11 @@ const sourcePdfUrl = "https://www.exam.or.jp/wp-content/uploads/2025/10/LC202521
 describe("first-class health supervisor published papers", () => {
   it("labels question metadata and year listings with each official publication month", () => {
     const first2025 = EISEI1_QUESTIONS.find((q) => q.year === 2025 && q.qNumber === 1);
-    const first2026 = EISEI1_QUESTIONS.find((q) => q.year === 2026 && q.qNumber === 1);
+    const first2026 = EISEI1_QUESTIONS.find((q) => q.year === 2026 && q.season === "published" && q.qNumber === 1);
     expect(first2025 && questionTitle(first2025)).toContain("2025年10月公表問題");
     expect(first2026 && questionTitle(first2026)).toContain("2026年4月公表問題");
     expect(groupByYearSeason(EISEI1_QUESTIONS).map((g) => g.label)).toEqual([
+      "2026年10月公表問題",
       "2026年4月公表問題",
       "2025年10月公表問題",
     ]);

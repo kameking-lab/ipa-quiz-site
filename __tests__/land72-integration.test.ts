@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { restoreNichimuSourceUrls } from "./fixtures/nichimu-archive";
 import { existsSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import path from "node:path";
@@ -92,7 +93,7 @@ describe("land special1 72 A-booklet candidate", () => {
     }
     for (const q of LAND_SPECIAL1_QUESTIONS) {
       expect(q.license).toBe("NICHIMU-educational-reuse");
-      expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.nichimu\.or\.jp\/.*-a\.pdf$/);
+      expect(restoreNichimuSourceUrls([q])[0]?.sourcePdfUrl).toMatch(/^https:\/\/www\.nichimu\.or\.jp\/.*-a\.pdf$/);
       expect(q.sourceAnswerUrl).toMatch(/-a-kaito\.pdf$/);
       if (q.hasImage) {
         expect(q.imageUrls).toHaveLength(1);

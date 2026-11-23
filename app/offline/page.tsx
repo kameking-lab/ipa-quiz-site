@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { OfflineHome } from "@/components/offline/OfflineHome";
+import { OfflineHome, type OfflineCatalogGroup } from "@/components/offline/OfflineHome";
 import { ALL_QUESTIONS } from "@/data/questions";
-import { questionPagePath } from "@/lib/seo/question-url";
+import { questionNumberSegment, questionPagePath } from "@/lib/seo/question-url";
 import { questionSourceEdition,questionSourceExam } from "@/lib/questions/source-label";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 
@@ -16,11 +16,31 @@ export const metadata: Metadata = {
 // Static so it gets precached by the service worker.
 export const dynamic = "force-static";
 
+// Each group sends its edition label and route prefix once, keeping the
+// catalog within the prerender response budget as the corpus grows.
+function buildOfflineCatalog(): OfflineCatalogGroup[] {
+  const groups = new Map<string, OfflineCatalogGroup>();
+  for (const q of ALL_QUESTIONS) {
+    const label = `${questionSourceExam(q)} ${questionSourceEdition(q)}`;
+    const href = questionPagePath(q);
+    const hrefPrefix = href.slice(0, href.lastIndexOf("/") + 1);
+    const key = `${hrefPrefix}\0${label}`;
+    let group = groups.get(key);
+    if (!group) {
+      group = { exam: q.exam, label, hrefPrefix, items: [] };
+      groups.set(key, group);
+    }
+    const suffix = q.part ? questionNumberSegment(q.qNumber, q.part).slice(`q${q.qNumber}`.length) : undefined;
+    group.items.push(suffix ? [q.id, q.qNumber, suffix] : [q.id, q.qNumber]);
+  }
+  return [...groups.values()];
+}
+
 export default function OfflinePage() {
   if(strictContentGateEnabled())return <main className="p-6"><h1>オフライン学習</h1><p>事前ダウンロードは有料会員専用です。iPhoneアプリの「端末内で学習」で、有効な署名付き権利と保存済み教材を確認して利用します。</p></main>;
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-4 pb-10 pt-6 sm:px-6 sm:pt-8">
-      <OfflineHome catalog={ALL_QUESTIONS.map(q=>({id:q.id,href:questionPagePath(q),label:`${questionSourceExam(q)} ${questionSourceEdition(q)} 問${q.qNumber}`}))}/>
+      <OfflineHome catalog={buildOfflineCatalog()}/>
     </main>
   );
 }

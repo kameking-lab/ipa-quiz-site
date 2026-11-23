@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("PWA offline support", () => {
   test("manifest is served with PWA-required fields", async ({ request }) => {
-    const res = await request.get("/manifest.webmanifest");
+    const res = await request.get("/manifest.webmanifest", { maxRetries: 1 });
     expect(res.status()).toBe(200);
     const manifest = (await res.json()) as Record<string, unknown>;
 

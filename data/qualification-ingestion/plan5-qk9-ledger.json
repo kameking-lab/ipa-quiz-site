@@ -1,0 +1,558 @@
+{
+  "lane": "qk-9",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "reviews": [
+    {
+      "review": "rv-4",
+      "questionId": "rinsho-kogishi-2025-annual-am-q54",
+      "path": "data/questions/rinsho-kogishi/2025-annual-am-plan5-imported.json",
+      "sourcePdfUrl": "https://www.jaame.or.jp/ce/pdf/39am.pdf#page=21",
+      "sourceAnswerUrl": "https://www.jaame.or.jp/ce/pdf/39ans.pdf",
+      "verifiedOfficialAnswerNumber": "4",
+      "correction": "出力電圧を公式原本と同じ小文字oの下付き表記 Vₒ に統一"
+    }
+  ],
+  "jobs": [
+    {
+      "jobId": "PLAN5-303",
+      "arrayIndex": 302,
+      "key": "sekou-1kenchiku|2022|annual|gakka|r04_1kg_mondai.pdf",
+      "status": "completed",
+      "exam": "sekou-1kenchiku",
+      "officialYear": 2022,
+      "storedSeason": "june",
+      "examDate": "2022-06-12",
+      "path": "data/questions/sekou-1kenchiku/2022-june.json",
+      "sourcePdf": {
+        "url": "https://www.fcip-shiken.jp/pdf/r04_1kg_mondai.pdf",
+        "sha256": "c1026246e2d8d7eab310b347db9615ea830ad098609550af3e7c8036cb7c7f33",
+        "physicalPages": 36,
+        "answerPage": 36
+      },
+      "sourcePage": "https://www.fcip-shiken.jp/about/kako.html",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_1kg_mondai.pdf#page=36",
+      "standardsArchive": "https://www.mlit.go.jp/gobuild/gobuild_tk6_000021.html",
+      "lawSnapshotLinks": [
+        "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000201?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/324AC0000000100?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/322AC0000000049?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/412AC0000000104?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/343CO0000000324?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/335CO0000000270?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/325CO0000000338?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/331CO0000000273?asof=2022-06-12",
+        "https://laws.e-gov.go.jp/api/2/law_data/347M50002000034?asof=2022-06-12"
+      ],
+      "officialQuestionCount": 72,
+      "addedQuestionCount": 72,
+      "choiceExplanationCount": 294,
+      "responseCount": 60,
+      "morningRange": [
+        1,
+        44
+      ],
+      "afternoonRange": [
+        45,
+        72
+      ],
+      "groups": [
+        {
+          "first": 1,
+          "last": 15,
+          "requiredQuestions": 12
+        },
+        {
+          "first": 16,
+          "last": 20,
+          "requiredQuestions": 5
+        },
+        {
+          "first": 21,
+          "last": 30,
+          "requiredQuestions": 7
+        },
+        {
+          "first": 31,
+          "last": 39,
+          "requiredQuestions": 7
+        },
+        {
+          "first": 40,
+          "last": 44,
+          "requiredQuestions": 5
+        },
+        {
+          "first": 45,
+          "last": 54,
+          "requiredQuestions": 10
+        },
+        {
+          "first": 55,
+          "last": 60,
+          "requiredQuestions": 6
+        },
+        {
+          "first": 61,
+          "last": 72,
+          "requiredQuestions": 8
+        }
+      ],
+      "twoSelectionQuestions": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "officialAnswers": [
+        [
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          4
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          3
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          3
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3
+        ],
+        [
+          2
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          3
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ]
+      ],
+      "figures": [
+        {
+          "questionNumber": 9,
+          "pdfPage": 5,
+          "clipPoints": [
+            185,
+            357,
+            466,
+            632
+          ],
+          "url": "/questions/sekou-1kenchiku/2022-q9-1.png",
+          "sha256": "fe9cd2c437b334d610606b10c98ad6f1dccca94ecee807fa23e30758d4d025dc"
+        },
+        {
+          "questionNumber": 10,
+          "pdfPage": 6,
+          "clipPoints": [
+            95,
+            138,
+            510,
+            602
+          ],
+          "url": "/questions/sekou-1kenchiku/2022-q10-1.png",
+          "sha256": "99f4b416ade2f51e2ba2a48df28f8be7221a32c6b883dad1bd2e8d67bd93823d"
+        },
+        {
+          "questionNumber": 20,
+          "pdfPage": 10,
+          "clipPoints": [
+            96,
+            333,
+            528,
+            495
+          ],
+          "url": "/questions/sekou-1kenchiku/2022-q20-1.png",
+          "sha256": "470528e08ccd33877fd52a813e3a477892e02444b415af874445aa525991312c"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-317",
+      "arrayIndex": 316,
+      "key": "kenchikushi1|2023|annual|gakka-1_2|1k-2023-1st-gakka1_2.pdf",
+      "status": "completed",
+      "exam": "kenchikushi1",
+      "officialYear": 2023,
+      "storedSeason": "annual",
+      "sessions": {
+        "keikaku": 20,
+        "kankyo-setsubi": 20
+      },
+      "path": "data/questions/kenchikushi1/2023-annual-gakka-1-2.json",
+      "examDate": "2023-07-23",
+      "examDateSource": "https://www.jaeic.or.jp/other_info/zaidan_information/jaeic_johokoukai.files/202406-jigyohokoku.pdf",
+      "lawReferenceDate": "2023-01-01",
+      "sourcePage": "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
+      "sourcePdf": {
+        "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gakka1_2.pdf",
+        "sha256": "cffb310c15d3aa76880e39aed706f88a1b78dd533ccba7149d5ed89c4206ee11",
+        "physicalPages": 20,
+        "questionPages": [
+          2,
+          19
+        ]
+      },
+      "answerPdf": {
+        "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gokakukijun.pdf",
+        "sha256": "abb629cb2d44f29ae608ac6f68eddaa3e862c84fdb55eeef426c797d3e2c24f8",
+        "physicalPages": 1
+      },
+      "officialQuestionCount": 40,
+      "addedQuestionCount": 40,
+      "choiceExplanationCount": 160,
+      "officialAnswers": {
+        "keikaku": [
+          4,
+          2,
+          4,
+          2,
+          4,
+          2,
+          4,
+          3,
+          1,
+          1,
+          1,
+          3,
+          3,
+          4,
+          3,
+          2,
+          4,
+          2,
+          1,
+          3
+        ],
+        "kankyo-setsubi": [
+          4,
+          1,
+          1,
+          3,
+          1,
+          2,
+          2,
+          4,
+          3,
+          3,
+          2,
+          3,
+          4,
+          3,
+          3,
+          1,
+          2,
+          2,
+          4,
+          2
+        ]
+      },
+      "figures": [
+        {
+          "id": "kenchikushi1-2023-annual-keikaku-q3",
+          "questionNumber": 3,
+          "pdfPage": 3,
+          "clipPoints": [
+            72,
+            78,
+            548,
+            461
+          ],
+          "url": "/questions/kenchikushi1/2023-keikaku-q3.png",
+          "sha256": "59bab3b22777d0a284dbc0fdd59ab437420adb90fcf98525b7a880e62e84d217"
+        },
+        {
+          "id": "kenchikushi1-2023-annual-keikaku-q11",
+          "questionNumber": 11,
+          "pdfPage": 6,
+          "clipPoints": [
+            72,
+            354,
+            548,
+            605
+          ],
+          "url": "/questions/kenchikushi1/2023-keikaku-q11.png",
+          "sha256": "693a99f20bf5d29a0420c9e89ae083eeaadb0273c6a6b45c0e857aff5ea30901"
+        },
+        {
+          "id": "kenchikushi1-2023-annual-kankyo-setsubi-q4",
+          "questionNumber": 4,
+          "pdfPage": 12,
+          "clipPoints": [
+            151,
+            113,
+            441,
+            385
+          ],
+          "url": "/questions/kenchikushi1/2023-kankyo-setsubi-q4.png",
+          "sha256": "d8053537c6562d4be07fd20699c37d703c44b48ae7a364931dc27d311e9d3188"
+        },
+        {
+          "id": "kenchikushi1-2023-annual-kankyo-setsubi-q6",
+          "questionNumber": 6,
+          "pdfPage": 13,
+          "clipPoints": [
+            50,
+            101,
+            545,
+            620
+          ],
+          "url": "/questions/kenchikushi1/2023-kankyo-setsubi-q6.png",
+          "sha256": "47b9557a5dfbb79c4621cc81467deb174c3e5a0829776beab89866c653392121"
+        },
+        {
+          "id": "kenchikushi1-2023-annual-kankyo-setsubi-q7",
+          "questionNumber": 7,
+          "pdfPage": 14,
+          "clipPoints": [
+            85,
+            125,
+            490,
+            567
+          ],
+          "url": "/questions/kenchikushi1/2023-kankyo-setsubi-q7.png",
+          "sha256": "e7344fa5a8ec6befc1662a70ac83c6dda3adbcec78fdfdc63eeb8e57cd524233"
+        },
+        {
+          "id": "kenchikushi1-2023-annual-kankyo-setsubi-q10",
+          "questionNumber": 10,
+          "pdfPage": 15,
+          "clipPoints": [
+            84,
+            525,
+            434,
+            628
+          ],
+          "url": "/questions/kenchikushi1/2023-kankyo-setsubi-q10.png",
+          "sha256": "076be1ba28bc2be090d1508946dcd49adf89f329da1c635e89fd5ed83c885592"
+        }
+      ]
+    }
+  ],
+  "verifiedExisting": [
+    {
+      "jobId": "PLAN5-331",
+      "arrayIndex": 330,
+      "status": "completed-by-assistant-lane",
+      "branch": "cx/kako-5yh9-20261118",
+      "commit": "4e0a5d50924ce5a91cd31506d45bf10050a445c6",
+      "officialQuestionCount": 92,
+      "addedQuestionCount": 0
+    }
+  ],
+  "pending": [
+    {
+      "jobId": "PLAN5-429",
+      "arrayIndex": 428,
+      "status": "official-answer-not-yet-published",
+      "sourcePage": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "officialAnswerPublication": "2026-11-30T10:00:00+09:00",
+      "stagedPath": "data/qualification-staging/hoikushi-2026-late/questions.json"
+    }
+  ]
+}

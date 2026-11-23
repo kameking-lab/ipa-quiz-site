@@ -8,7 +8,7 @@ import net from 'node:net';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { DB1_MIGRATIONS, MIG2_MIGRATIONS } from './vercel-migrate.mjs';
+import { DB1_MIGRATIONS, MIG2_MIGRATIONS, PET1_MIGRATIONS } from './vercel-migrate.mjs';
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const tooling = resolve(process.argv[2]);
@@ -42,8 +42,9 @@ try {
   assert.ok(admin, 'embedded PostgreSQL started on loopback');
   console.log((await admin.query('SELECT version()')).rows[0].version);
   const names = (await readdir(join(repo, 'prisma/migrations'))).filter(name => /^\d/.test(name)).sort();
-  const beforeDb1 = names.filter(name => !DB1_MIGRATIONS.includes(name));
-  const beforeMig2 = names.filter(name => !MIG2_MIGRATIONS.includes(name));
+  const beforePet1 = names.filter(name => !PET1_MIGRATIONS.includes(name));
+  const beforeDb1 = beforePet1.filter(name => !DB1_MIGRATIONS.includes(name));
+  const beforeMig2 = beforePet1.filter(name => !MIG2_MIGRATIONS.includes(name));
   async function baseline(database, include) {
     await admin.query(`CREATE DATABASE "${database}"`);
     const root = join(temp, database);
@@ -84,9 +85,10 @@ try {
     for (const { tablename } of tables) result[tablename] = (await client.query(`SELECT to_jsonb(t) AS value FROM "${tablename}" t ORDER BY to_jsonb(t)::text`)).rows;
     return result;
   }
-  for (const mode of ['five', 'three', 'zero', 'unexpected']) {
+  const expected = { six: 6, four: 4, one: 1, zero: 0 };
+  for (const mode of ['six', 'four', 'one', 'zero', 'unexpected']) {
     const database = `int5b_${mode}`;
-    const included = mode === 'zero' ? names : mode === 'five' ? beforeMig2
+    const included = mode === 'zero' ? names : mode === 'six' ? beforeMig2 : mode === 'one' ? beforePet1
       : mode === 'unexpected' ? beforeDb1.slice(0, -1) : beforeDb1;
     const client = await baseline(database, included);
     try {
@@ -100,7 +102,7 @@ try {
         for (const name of names.filter(name => !included.includes(name))) assert.ok(result.output.includes(name), `error lists ${name}`);
       } else {
         assert.equal(result.code, 0);
-        assert.match(result.output, new RegExp(`Preflight passed: ${mode === 'five' ? 5 : mode === 'three' ? 3 : 0} pending`));
+        assert.match(result.output, new RegExp(`Preflight passed: ${expected[mode]} pending`));
         assert.match(result.output, /deploy and clean postflight passed/);
         for (const [table, rows] of Object.entries(before)) {
           if (table !== '_prisma_migrations') assert.deepEqual(after[table], rows, `preserve ${table}`);
@@ -118,8 +120,14 @@ try {
         }
         const feedbackColumn = (await client.query(`SELECT data_type FROM information_schema.columns WHERE table_schema='public' AND table_name='feedback_unlock' AND column_name='user_id'`)).rows;
         assert.deepEqual(feedbackColumn, [{ data_type: 'text' }]);
-        if (mode === 'five') {
-          assert.equal(run(database).code, 0, 'five applied: rerun accepts zero pending');
+        const petColumns = (await client.query(`SELECT column_name, data_type FROM information_schema.columns WHERE table_schema='public' AND table_name='PetProfile' ORDER BY column_name`)).rows;
+        assert.deepEqual(petColumns.map(row => row.column_name), ['createdAt', 'document', 'updatedAt', 'userId', 'version']);
+        assert.equal(petColumns.find(row => row.column_name === 'document').data_type, 'jsonb');
+        await client.query(`INSERT INTO "PetProfile" ("userId","document","updatedAt") VALUES ('int5b-user','{}'::jsonb,NOW())`);
+        await assert.rejects(client.query(`INSERT INTO "PetProfile" ("userId","document","updatedAt") VALUES ('no-such-user','{}'::jsonb,NOW())`), /foreign key/);
+        await client.query(`DELETE FROM "PetProfile" WHERE "userId"='int5b-user'`);
+        if (mode === 'six') {
+          assert.equal(run(database).code, 0, 'six applied: rerun accepts zero pending');
           assert.deepEqual(await snapshot(client), after, 'rerun preserves all data and history');
         }
       }

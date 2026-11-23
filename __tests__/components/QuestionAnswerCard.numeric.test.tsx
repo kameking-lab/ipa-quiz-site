@@ -9,7 +9,7 @@ const props = {
   question, questionId: question.id, answerKey: question.answer,
   exam: question.exam, year: question.year, season: question.season,
   session: question.session, qNumber: question.qNumber,
-  nextHref: "/q/kangoshi/2025-annual/am/q91",
+  explanation: <section aria-label="解説">計算の解説</section>,
 };
 beforeEach(() => { cleanup(); localStorage.clear(); });
 
@@ -23,22 +23,22 @@ describe("numeric solve-in-place reader", () => {
     expect(screen.getByRole("alert")).toHaveTextContent("数字だけ");
     expect(createHistoryStore().getAllEntries()).toEqual([]);
   });
-  it.each([["　４２　", true], ["41", false]])("grades %j, records once and exposes explanation and next links", (value, correct) => {
+  it.each([["　４２　", true], ["41", false]])("grades %j, records once and leaves the explanation readable", (value, correct) => {
     render(<QuestionAnswerCard {...props} />);
     fireEvent.change(screen.getByRole("textbox"), { target: { value } });
     fireEvent.keyDown(screen.getByRole("textbox"), { key: "Enter" });
     expect(createHistoryStore().getAllEntries()).toMatchObject([{ id: question.id, selected: correct ? "42" : "41", correct }]);
     expect(readLastQuestion()).toMatchObject({ qNumber: 90 });
-    expect(screen.getByRole("link", { name: "解説を読む" })).toHaveAttribute("href", "#explanation");
-    expect(screen.getByRole("link", { name: "次の問題へ" })).toHaveAttribute("href", props.nextHref);
+    expect(screen.getByRole("region", { name: "解説" })).toBeVisible();
     expect(screen.getAllByText(/42 滴\/分/).length).toBeGreaterThan(0);
     fireEvent.submit(screen.getByRole("form"));
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   });
-  it("lets a reader reveal the answer without marking the original as attempted", () => {
+  it("lets a reader open the explanation without recording an attempt", () => {
     render(<QuestionAnswerCard {...props} />);
+    expect(screen.getByRole("region", { name: "解説" })).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: "採点せずに答えだけ見る" }));
-    expect(screen.getAllByText(/42 滴\/分/).length).toBeGreaterThan(0);
+    expect(screen.getByText("正解は 42 滴/分")).toBeVisible();
     expect(createHistoryStore().getAllEntries()).toEqual([]);
     expect(readLastQuestion()).toBeNull();
   });

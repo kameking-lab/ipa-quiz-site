@@ -10,7 +10,7 @@ describe("Riyoshi original diagrams", () => {
   it("shows every stem diagram with edition and meaningful alternative text", () => {
     for(const q of RIYOSHI_CANDIDATES.filter(q=>q.imageUrls?.length)) {
       const result=render(<QuestionCard question={q} />);
-      expect(result.container.textContent).toContain(q.season === "first" ? "第53回" : "第54回");
+      expect(result.container.textContent).toContain(q.year === 2025 ? "第52回" : q.season === "first" ? "第53回" : "第54回");
       for(const [i,url] of (q.imageUrls ?? []).entries()) {
         const alt=q.imageAltTexts?.[i];
         expect(alt).toBeTruthy();

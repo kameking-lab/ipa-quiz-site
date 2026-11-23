@@ -265,6 +265,15 @@ describe("computeExamUsageData — answered total combines every answer source",
 });
 
 describe("computeExamUsageData — page_view path attribution", () => {
+  it("keeps hyphenated qualification codes intact on individual question URLs", async () => {
+    setEnv(true);
+    const entry = buildQualificationMaster().find(row => row.examCode?.includes("-"))!;
+    expect(entry).toBeDefined();
+    vi.stubGlobal("fetch", routedFetch({ pageView: [[`/q/${entry.examCode}/2025/am/1`, "8"]] }));
+    const result = await computeExamUsageData(7);
+    expect(result.rows.find(row => row.key === entry.key)?.metrics.pageViews).toEqual({ status: "measured", count: 8 });
+    expect(result.unattributedPageViews).toBe(0);
+  });
   it("maps /q/{exam}/{yearSeason}/... , the [exam] catch-all, and unmapped paths correctly", async () => {
     setEnv(true);
     vi.stubGlobal(

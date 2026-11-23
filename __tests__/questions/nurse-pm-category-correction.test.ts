@@ -1,5 +1,8 @@
+import { beforeNurseSourceLineBreak } from "../fixtures/kangoshi-before-completion";
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
 import delta from "@/docs/evidence/nurse-pm-category-correction-20261010/DELTA.json";
 import before427 from "@/docs/evidence/nurse-afternoon-three-go-20261010/INTEGRATION.json";
 import { historicalNurseHash, nurseObjectHash } from "./nurse-pm-category-hash";
@@ -12,7 +15,7 @@ describe("114th nursing afternoon official section metadata correction", () => {
     expect(delta.affectedCount).toBe(32);
     expect(delta.changes).toHaveLength(32);
     expect(new Set(delta.changes.map(change => change.id)).size).toBe(32);
-    expect(KANGOSHI_QUESTIONS).toHaveLength(464);
+    expect(KANGOSHI_QUESTIONS).toHaveLength(479);
     for (const change of delta.changes) {
       const question = byId.get(change.id)!;
       expect(question.year, change.id).toBe(2024);
@@ -22,7 +25,7 @@ describe("114th nursing afternoon official section metadata correction", () => {
       expect(change.before).toEqual({ subject: "午後（必修問題）", category: "必修問題", topicTags: ["必修問題", "第114回"] });
       expect(change.after).toEqual({ subject: "午後（一般問題）", category: "一般問題", topicTags: ["一般問題", "第114回"] });
       expect(historicalNurseHash(question, change.id)).toBe(change.beforeFullSha256);
-      expect(nurseObjectHash(question)).toBe(change.afterFullSha256);
+      expect(nurseObjectHash(beforeNurseSourceLineBreak(question))).toBe(change.afterFullSha256);
     }
   });
 
@@ -39,7 +42,7 @@ describe("114th nursing afternoon official section metadata correction", () => {
       const question = byId.get(item.id);
       expect(question, item.id).toBeDefined();
       if (corrected.has(item.id)) expect(historicalNurseHash(question, item.id)).toBe(item.sha256);
-      else expect(nurseObjectHash(question), item.id).toBe(item.sha256);
+      else expect(nurseObjectHash(beforeNurseSourceLineBreak(question)), item.id).toBe(item.sha256);
     }
   });
 
@@ -54,6 +57,6 @@ describe("114th nursing afternoon official section metadata correction", () => {
     expect(category(2025, 90)).toBe("一般問題");
     expect(category(2025, 91)).toBe("状況設定問題");
     expect(byId.has("kangoshi-2025-annual-am-q32")).toBe(false);
-    expect(byId.has("kangoshi-2025-annual-pm-q77")).toBe(false);
+    expect(category(2025, 77)).toBe("一般問題");
   });
 });

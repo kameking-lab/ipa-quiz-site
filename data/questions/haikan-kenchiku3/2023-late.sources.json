@@ -1,0 +1,429 @@
+{
+  "candidateId": "Q5-041",
+  "qualification": "配管（建築配管作業）3級",
+  "fiscalYear": 2023,
+  "period": "後期",
+  "checkedAt": "2026-11-13T15:17:12.943973+09:00",
+  "sources": [
+    {
+      "kind": "questions",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-D17-%E9%85%8D%E7%AE%A1%EF%BC%88%E5%BB%BA%E7%AF%89%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "httpStatus": 200,
+      "sha256": "b9e00e8b5e3f2a869272d8e3f4999870a63e1950ec2bff161ada1b14ba50e4e4",
+      "pages": 3,
+      "checkedAt": "2026-11-13T15:08:06.603552+09:00"
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-D17-%E9%85%8D%E7%AE%A1%EF%BC%88%E5%BB%BA%E7%AF%89%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%93%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "httpStatus": 200,
+      "sha256": "9c6af5e7d4b6a7a272ec616e18d8b2d7fd6cf983d7cbedbed7d88a1b861aad7f",
+      "pages": 1,
+      "checkedAt": "2026-11-13T15:08:07.899279+09:00"
+    }
+  ],
+  "questionCount": 30,
+  "trueFalseCount": 30,
+  "multipleChoiceCount": 0,
+  "choiceExplanationCount": 60,
+  "figureCount": 3,
+  "transcription": "公式問題PDFの全問題ページを原本画像で確認し、問番号・本文・全選択肢・公式正答表を照合。字間・改行・英数字幅を正規化。図は公式原図を切り出し保持。",
+  "answerMapping": {
+    "trueFalse": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "multipleChoice": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "duplicateCheck": {
+    "checkedAt": "2026-11-13T15:08:05.203465+09:00",
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "ledgerMatches": [],
+    "mainRelevantFiles": [],
+    "progressMatches": [
+      {
+        "qual": "配管（建築配管作業） 3級 2025年度 後期",
+        "job": "c5-12",
+        "where": "cx/qnew6-kako-20261112",
+        "status": "完了（30問・全肢独自解説・原図2点・不足0・公式正答全件一致・型チェック/問題検証/関連61テスト/lint成功・04b95dd23/3523b3cc8・未push）",
+        "updated": "2026-11-13T15:04:52.529264+09:00"
+      }
+    ],
+    "sameEditionProgressMatches": [],
+    "refsChecked": 1417,
+    "blobsChecked": 6166,
+    "hits": []
+  },
+  "review": [
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-001",
+      "originalNumber": "1",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-002",
+      "originalNumber": "2",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-003",
+      "originalNumber": "3",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-004",
+      "originalNumber": "4",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-005",
+      "originalNumber": "5",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-006",
+      "originalNumber": "6",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-007",
+      "originalNumber": "7",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-008",
+      "originalNumber": "8",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-009",
+      "originalNumber": "9",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-010",
+      "originalNumber": "10",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-011",
+      "originalNumber": "11",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-012",
+      "originalNumber": "12",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-013",
+      "originalNumber": "13",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-014",
+      "originalNumber": "14",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-015",
+      "originalNumber": "15",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-016",
+      "originalNumber": "16",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-017",
+      "originalNumber": "17",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-018",
+      "originalNumber": "18",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-019",
+      "originalNumber": "19",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-020",
+      "originalNumber": "20",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-021",
+      "originalNumber": "21",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-022",
+      "originalNumber": "22",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-023",
+      "originalNumber": "23",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-024",
+      "originalNumber": "24",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-025",
+      "originalNumber": "25",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-026",
+      "originalNumber": "26",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-027",
+      "originalNumber": "27",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-028",
+      "originalNumber": "28",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-029",
+      "originalNumber": "29",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "haikan-kenchiku3-2023-late-gakka-030",
+      "originalNumber": "30",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    }
+  ],
+  "independentReview": {
+    "step": "c5r-B2",
+    "checkedAt": "2026-11-13T16:56:17.824355+09:00",
+    "questionCount": 30,
+    "officialAnswersMatched": 30,
+    "officialAnswersUnchanged": true,
+    "allStatementsAndChoicesVisuallyChecked": true,
+    "allExplanationsReviewed": true,
+    "allFiguresVisuallyChecked": true,
+    "questionPagesReviewed": [
+      2,
+      3
+    ],
+    "figureCount": 3,
+    "dataSha256": "2d42607bab00e89cc5c52466fc7d3b3f12f86581bf5081c71d48fe067d0fd795",
+    "officialSourceRechecks": [
+      {
+        "candidateId": "Q5-041",
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-D17-%E9%85%8D%E7%AE%A1%EF%BC%88%E5%BB%BA%E7%AF%89%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "b9e00e8b5e3f2a869272d8e3f4999870a63e1950ec2bff161ada1b14ba50e4e4",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:44:54.415632+09:00"
+      },
+      {
+        "candidateId": "Q5-041",
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-D17-%E9%85%8D%E7%AE%A1%EF%BC%88%E5%BB%BA%E7%AF%89%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%93%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "9c6af5e7d4b6a7a272ec616e18d8b2d7fd6cf983d7cbedbed7d88a1b861aad7f",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:44:55.610143+09:00"
+      }
+    ],
+    "duplicateCheck": {
+      "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "refsChecked": 1417,
+      "blobsChecked": 6236,
+      "result": "当ブランチの既存原稿のみ。他の収録・作業との重複なし。新規生成なし。"
+    },
+    "corrections": [
+      {
+        "id": "haikan-kenchiku3-2023-late-gakka-009",
+        "candidateId": "Q5-041",
+        "changes": [
+          "explanation/choiceExplanations: 公式正答自体が誤りと読める表現を解消"
+        ]
+      },
+      {
+        "id": "haikan-kenchiku3-2023-late-gakka-016",
+        "candidateId": "Q5-041",
+        "changes": [
+          "explanation/choiceExplanations: 公式正答自体が誤りと読める表現を解消"
+        ]
+      },
+      {
+        "id": "haikan-kenchiku3-2023-late-gakka-029",
+        "candidateId": "Q5-041",
+        "changes": [
+          "explanation/choiceExplanations: 公式正答自体が誤りと読める表現を解消"
+        ]
+      }
+    ]
+  }
+}

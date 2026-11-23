@@ -8,8 +8,8 @@ describe("site article notice versus quotations", () => {
   it.each([
     ["試験要項の最新情報は必ず", "https://www.ipa.go.jp/shiken/"],
     ["免除の正式な条件・申請手続き・最新情報は必ず", "https://www.ipa.go.jp/shiken/about/koudo_menjo.html"],
-  ])("renders the existing %s notice upright without changing its official link", (condition, href) => {
-    const source = `> 本記事は 過去問AI が独自にまとめた学習ガイドです。${condition} [IPA 公式ページ](${href}) で確認してください。`;
+  ])("renders the concise %s notice upright without changing its official link", (condition, href) => {
+    const source = `> ${condition} [IPA 公式ページ](${href}) で確認してください。`;
     const { container } = render(<BlogMarkdown>{source}</BlogMarkdown>);
     const notice = container.querySelector("blockquote");
     expect(notice).toHaveAttribute("data-article-notice", "true");

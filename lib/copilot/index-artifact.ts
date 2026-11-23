@@ -14,6 +14,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { setImmediate as yieldToEventLoop } from "node:timers/promises";
 import { gunzipSync, gzipSync } from "node:zlib";
 import { tokenize } from "./tokenize";
 import type { InvertedIndex } from "./retriever";
@@ -21,6 +22,8 @@ import type { CorpusDoc } from "./types";
 
 const MAGIC = "CPIX";
 const FORMAT_VERSION = 1;
+const TERM_BATCH = 16_384;
+const POSTING_BATCH = 65_536;
 
 /** リポジトリ直下からの相対パス。next.config.ts の outputFileTracingIncludes と揃える。 */
 export const COPILOT_INDEX_RELATIVE_PATH = "generated/copilot/index.bin";
@@ -162,8 +165,33 @@ export function deserializeIndex(
   docs: CorpusDoc[],
   options: DeserializeOptions = {},
 ): InvertedIndex | null {
+  const decoder = decodeIndex(gunzipSync(gz), docs, options);
+  let step = decoder.next();
+  while (!step.done) step = decoder.next();
+  return step.value;
+}
+
+/** Restore an inflated artifact without blocking pending I/O for the whole decode. */
+export async function decodeIndexAsync(
+  raw: Uint8Array,
+  docs: CorpusDoc[],
+  options: DeserializeOptions,
+): Promise<InvertedIndex | null> {
+  const decoder = decodeIndex(raw, docs, options);
+  let step = decoder.next();
+  while (!step.done) {
+    await yieldToEventLoop();
+    step = decoder.next();
+  }
+  return step.value;
+}
+
+function* decodeIndex(
+  raw: Uint8Array,
+  docs: CorpusDoc[],
+  options: DeserializeOptions,
+): Generator<void, InvertedIndex | null> {
   const fingerprint = options.fingerprint ?? corpusFingerprint(docs);
-  const raw = gunzipSync(gz);
   const view = new DataView(raw.buffer, raw.byteOffset, raw.byteLength);
   if (raw.length < 12 || new TextDecoder().decode(raw.subarray(0, 4)) !== MAGIC) return null;
   if (view.getUint32(4, true) !== FORMAT_VERSION) return null;
@@ -181,19 +209,26 @@ export function deserializeIndex(
   const terms = header.termCount === 0 ? [] : termsText.split("\n");
   if (terms.length !== header.termCount) return null;
   const termIds = new Map<string, number>();
-  for (let t = 0; t < terms.length; t++) termIds.set(terms[t], t);
+  for (let t = 0; t < terms.length; t++) {
+    termIds.set(terms[t], t);
+    if (t % TERM_BATCH === TERM_BATCH - 1) yield;
+  }
 
   let cursor = pos;
   const readVarint = (): number => {
-    let result = 0;
-    let shift = 0;
-    for (;;) {
-      if (cursor >= raw.length || shift > 28) throw new Error("corrupt copilot index varint");
-      const byte = raw[cursor++];
-      result += (byte & 0x7f) * 2 ** shift;
-      if (byte < 0x80) return result;
-      shift += 7;
+    // Most posting frequencies and document deltas fit in one byte.
+    if (cursor < raw.length) {
+      const first = raw[cursor++];
+      if (first < 0x80) return first;
+      let result = first & 0x7f;
+      for (let shift = 7; cursor < raw.length && shift <= 28; shift += 7) {
+        const byte = raw[cursor++];
+        if (shift === 28 && byte > 0x0f) break;
+        result |= (byte & 0x7f) << shift;
+        if (byte < 0x80) return result >>> 0;
+      }
     }
+    throw new Error("corrupt copilot index varint");
   };
 
   const docLen = new Uint32Array(header.docCount);
@@ -201,12 +236,16 @@ export function deserializeIndex(
   for (let i = 0; i < header.docCount; i++) {
     docLen[i] = readVarint();
     totalLen += docLen[i];
+    if (i % TERM_BATCH === TERM_BATCH - 1) yield;
   }
   if (cursor !== pos + header.docLenBytes) return null;
   pos = cursor;
 
   const offsets = new Uint32Array(header.termCount + 1);
-  for (let t = 0; t < header.termCount; t++) offsets[t + 1] = offsets[t] + readVarint();
+  for (let t = 0; t < header.termCount; t++) {
+    offsets[t + 1] = offsets[t] + readVarint();
+    if (t % TERM_BATCH === TERM_BATCH - 1) yield;
+  }
   if (cursor !== pos + header.countsBytes || offsets[header.termCount] !== header.postingCount) return null;
 
   const postingDocs = new Uint32Array(header.postingCount);
@@ -217,6 +256,7 @@ export function deserializeIndex(
       prev += readVarint();
       postingDocs[p] = prev;
       postingTfs[p] = readVarint();
+      if (p % POSTING_BATCH === POSTING_BATCH - 1) yield;
     }
   }
   if (cursor !== raw.length) return null;

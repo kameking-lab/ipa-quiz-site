@@ -1,0 +1,149 @@
+[
+  {
+    "id": "es-2017h-pm1-q1",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "観光案内用ロボット"
+    ],
+    "difficulty": 5,
+    "question": "問1 観光案内用ロボット",
+    "answer": "問１\n                       出題趣旨\n 近年，人型ロボットの応用事例として，観光案内情報を提供する観光案内用ロボットの設置が増えている。\n 本問では，観光案内用ロボットを題材に，組込みシステム技術者に必要とされる基本的なシステム設計能\n力，ハードウェアの理解力，リアルタイムOS の動作の理解力，及びリアルタイムOS を用いたタスクの機能\n仕様の設計能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 212.5\n         (2) 体の正面を0 度にすると，体が正面から右方向に回らないから\n 設問２(1) (a) 5／9\n             (b)  周期    240\n                 High の幅  133\n          誤差     0.50\n         (2) 体の回転を開始してから停止位置になるまでの時間を長くしたいから\n 設問３(1)  a 最も近い人がいる方向\n              b タッチされた座標がメニューのボタンの座標であった\n              c メニュー及びメニューのボタンを表示する\n              d 表示＆LAN 通信\n              e 体をロボット台座の正面に向ける\n         (2) メインタスク，人検出タスク\n\n\n\n\n\n                                                1/3",
+    "modelAnswer": "問１\n                       出題趣旨\n 近年，人型ロボットの応用事例として，観光案内情報を提供する観光案内用ロボットの設置が増えている。\n 本問では，観光案内用ロボットを題材に，組込みシステム技術者に必要とされる基本的なシステム設計能\n力，ハードウェアの理解力，リアルタイムOS の動作の理解力，及びリアルタイムOS を用いたタスクの機能\n仕様の設計能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 212.5\n         (2) 体の正面を0 度にすると，体が正面から右方向に回らないから\n 設問２(1) (a) 5／9\n             (b)  周期    240\n                 High の幅  133\n          誤差     0.50\n         (2) 体の回転を開始してから停止位置になるまでの時間を長くしたいから\n 設問３(1)  a 最も近い人がいる方向\n              b タッチされた座標がメニューのボタンの座標であった\n              c メニュー及びメニューのボタンを表示する\n              d 表示＆LAN 通信\n              e 体をロボット台座の正面に向ける\n         (2) メインタスク，人検出タスク\n\n\n\n\n\n                                                1/3",
+    "explanation": "サーボの制御周期と通信時間を別々に求め、タスク間でデータが更新される順序と同期条件を図で追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-pm1/page-02.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-03.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-04.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-05.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-06.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1 本文・設問（公式問題PDF 2ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1 本文・設問（公式問題PDF 3ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1 本文・設問（公式問題PDF 4ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1 本文・設問（公式問題PDF 5ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1 本文・設問（公式問題PDF 6ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1 本文・設問（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2017-spring-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_pm1_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-pm1-q2",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "カメラ付き防犯灯"
+    ],
+    "difficulty": 5,
+    "question": "問2 カメラ付き防犯灯",
+    "answer": "問２\n                       出題趣旨\n 近年，防犯・防災を目的とした防犯カメラ及び防犯灯の設置が増えている。防犯灯は，LED を採用した省エ\nネ型に変わりつつあり，さらに，防犯カメラが一体となった製品も散見される。\n  本問では，LED を採用したカメラ付き防犯灯を題材に，組込みシステムのソフトウェア開発に関して，要求\n仕様の理解能力，要求仕様に基づくソフトウェアの設計能力，及び仕様変更要求に対する対応能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) (a) n－4 で照明を点灯した。\n             (b) 照明の点灯と消灯を繰り返す動作\n        (2) 37\n        (3) 同じファイル名のファイルが作成される可能性があるから\n 設問２(1)  a 画質調整パラメタ\n              b 移動平均値\n              c 圧縮アクセラレータ\n              d  240 時間以上経過したファイル\n              e 削除\n        (2)  f 画像処理\n              g 照度\n              h 照明\n              i ファイル管理\n        (3) ① ・画像処理\n       ② ・ファイル管理\n        (4) 暗号キーが設定されていないこと\n 設問３(1) 標準電波の受信状況を確認するため\n        (2) (a) メイン\n             (b) ① ・補正時刻になった。\n         ② ・時刻補正スイッチが押された。\n             (c) 受信した時刻データをRTC へ設定し，時刻情報に書き込む。\n\n\n\n\n\n                                                2/3",
+    "modelAnswer": "問２\n                       出題趣旨\n 近年，防犯・防災を目的とした防犯カメラ及び防犯灯の設置が増えている。防犯灯は，LED を採用した省エ\nネ型に変わりつつあり，さらに，防犯カメラが一体となった製品も散見される。\n  本問では，LED を採用したカメラ付き防犯灯を題材に，組込みシステムのソフトウェア開発に関して，要求\n仕様の理解能力，要求仕様に基づくソフトウェアの設計能力，及び仕様変更要求に対する対応能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) (a) n－4 で照明を点灯した。\n             (b) 照明の点灯と消灯を繰り返す動作\n        (2) 37\n        (3) 同じファイル名のファイルが作成される可能性があるから\n 設問２(1)  a 画質調整パラメタ\n              b 移動平均値\n              c 圧縮アクセラレータ\n              d  240 時間以上経過したファイル\n              e 削除\n        (2)  f 画像処理\n              g 照度\n              h 照明\n              i ファイル管理\n        (3) ① ・画像処理\n       ② ・ファイル管理\n        (4) 暗号キーが設定されていないこと\n 設問３(1) 標準電波の受信状況を確認するため\n        (2) (a) メイン\n             (b) ① ・補正時刻になった。\n         ② ・時刻補正スイッチが押された。\n             (c) 受信した時刻データをRTC へ設定し，時刻情報に書き込む。\n\n\n\n\n\n                                                2/3",
+    "explanation": "センサの検知、点灯、撮影、画像保存を時系列で整理し、時刻の変更で既存のファイル名に生じる影響を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-pm1/page-08.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-09.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-10.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-11.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-12.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-13.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2 本文・設問（公式問題PDF 8ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2 本文・設問（公式問題PDF 9ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2 本文・設問（公式問題PDF 10ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2 本文・設問（公式問題PDF 11ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2 本文・設問（公式問題PDF 12ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2 本文・設問（公式問題PDF 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2017-spring-pm1/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_pm1_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-pm1-q3",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "病院内資料配送システム"
+    ],
+    "difficulty": 5,
+    "question": "問3 病院内資料配送システム",
+    "answer": "問３\n                       出題趣旨\n 組込みシステムとして，AC モータを用いた応用例は数多くある。\n 本問では，その一つとして病院内資料配送システムを題材に，LAN を用いた配送システムの構成において，\n効率的なシステムの構築方法，システム制御の実現方法，AC モータの特徴に応じた制御方法，センサや近距\n離無線通信などの使用方法を理解する能力，及び仕様変更要求に対する対応能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 1.9\n         (2)  a 通信点2\n              b 減速制御\n              c 中央\n              d 減速\n 設問２(1) 周波数を徐々に低くする。\n         (2) 位相関係を逆転させ，周波数を徐々に高くする。\n         (3)  e  1，1\n              f  1，0\n              g  0，0\n         (4) (a) サーバ\n             (b) 消費電力を少なくするため\n 設問３(1) 2 台目の配送車が分岐部に接近する前に分岐部を上側に移動しておく。\n         (2) センサを用いて，前方の配送車に追従して移動する。\n\n\n\n\n\n                                                3/3",
+    "modelAnswer": "問３\n                       出題趣旨\n 組込みシステムとして，AC モータを用いた応用例は数多くある。\n 本問では，その一つとして病院内資料配送システムを題材に，LAN を用いた配送システムの構成において，\n効率的なシステムの構築方法，システム制御の実現方法，AC モータの特徴に応じた制御方法，センサや近距\n離無線通信などの使用方法を理解する能力，及び仕様変更要求に対する対応能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 1.9\n         (2)  a 通信点2\n              b 減速制御\n              c 中央\n              d 減速\n 設問２(1) 周波数を徐々に低くする。\n         (2) 位相関係を逆転させ，周波数を徐々に高くする。\n         (3)  e  1，1\n              f  1，0\n              g  0，0\n         (4) (a) サーバ\n             (b) 消費電力を少なくするため\n 設問３(1) 2 台目の配送車が分岐部に接近する前に分岐部を上側に移動しておく。\n         (2) センサを用いて，前方の配送車に追従して移動する。\n\n\n\n\n\n                                                3/3",
+    "explanation": "通信にかかる時間と配送車が分岐部を通過する時間を区別し、分岐の切替えが到着に間に合うかを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-pm1/page-14.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-15.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-16.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-17.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-18.webp",
+      "/questions/ipa/es/2017-spring-pm1/page-19.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3 本文・設問（公式問題PDF 14ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3 本文・設問（公式問題PDF 15ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3 本文・設問（公式問題PDF 16ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3 本文・設問（公式問題PDF 17ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3 本文・設問（公式問題PDF 18ページ）",
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3 本文・設問（公式問題PDF 19ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2017-spring-pm1/answer-q03-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_pm1_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_pm1_ans.pdf#page=3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト試験 2017年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

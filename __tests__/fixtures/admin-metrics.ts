@@ -77,7 +77,6 @@ function buildFeatures(meta: MetricsRangeMeta, rand: () => number): FeatureUsage
     { feature: "模試モード", path: "/modes/mock-exam", uses: base(220), uniqueUsers: base(80) },
     { feature: "AI コパイロット（用語解説）", path: "/api/copilot#explain", uses: base(720), uniqueUsers: base(210) },
     { feature: "AI コパイロット（選択肢分析）", path: "/api/copilot#choices", uses: base(540), uniqueUsers: base(180) },
-    { feature: "AI コパイロット（類題生成）", path: "/api/copilot#similar", uses: base(310), uniqueUsers: base(120) },
     { feature: "AI コパイロット（誤答分析）", path: "/api/copilot#wrong", uses: base(280), uniqueUsers: base(110) },
     { feature: "年度別一覧", path: "/modes/year", uses: base(640), uniqueUsers: base(220) },
     { feature: "分野別一覧", path: "/modes/topic", uses: base(420), uniqueUsers: base(160) },
@@ -314,10 +313,9 @@ function buildInsights(): InsightSection {
     growth: [
       { title: "ストリーム学習", detail: "前期比 +42% で利用増。連続正答演出が効いている可能性。", metric: "+42%" },
       { title: "ITパスポート 受験層", detail: "新規ユーザー比 +28%。土日学習層が増加。", metric: "+28%" },
-      { title: "AI コパイロット 類題生成", detail: "前期比 +19%。類題タブの導線改善が奏功。", metric: "+19%" },
     ],
     aiComment:
-      "ストリーム学習と類題生成が伸びている一方、模試の問題数選択で 38% が脱落しています。模試の初期設定をデフォルト 20 問にプリセットし、設定画面を 1 タップで完了できる UI に変更することで、模試完走率を +10pt 押し上げられる見込みです。AI コパイロットは初回応答後の追問率が低いため、応答末尾に「次に試したい質問」を 2〜3 案提示する小さな追加で会話継続率を改善できます。",
+      "ストリーム学習が伸びている一方、模試の問題数選択で 38% が脱落しています。模試の初期設定をデフォルト 20 問にプリセットし、設定画面を 1 タップで完了できる UI に変更することで、模試完走率を +10pt 押し上げられる見込みです。AI コパイロットは初回応答後の追問率が低いため、応答末尾に「次に試したい質問」を 2〜3 案提示する小さな追加で会話継続率を改善できます。",
   };
 }
 

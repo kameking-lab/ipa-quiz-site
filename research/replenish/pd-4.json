@@ -1,0 +1,40 @@
+{
+  "lane": "pd-4",
+  "branch": "cx/kako-pa4-20261118",
+  "checkedOn": "2026-11-18",
+  "allocation": "candidates zero-based index % 14 == 3",
+  "rows": [
+    {
+      "candidateIndex": 87,
+      "candidateId": "javada-54da858e355b",
+      "qualification": "テクニカルイラストレーション(テクニカルイラストレーションCAD作業)1級（学科）",
+      "examCode": "technical-illustration-cad1",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete-verified-sitting",
+      "questionCount": 50,
+      "choiceExplanationCount": 150,
+      "years": [
+        2025
+      ],
+      "sittings": [
+        "2025年度後期"
+      ],
+      "officialSourceUrls": [
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B57B58-テクニカルイラストレーション（テクニカルイラストレーション手書き作業）（テクニカルイラストレーションCAD作業）-1級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B58-テクニカルイラストレーション（テクニカルイラストレーションCAD作業）-1級-学科試験正解表.pdf"
+      ],
+      "paths": [
+        "data/questions/technical-illustration-cad1",
+        "public/questions/technical-illustration-cad1"
+      ],
+      "notes": "2025年度後期全50問。CAD作業1級の専用正答表を使用。2024年度後期の公式掲載は3級のみ、前期一覧に当該職種なし。2024年度1級は未確認。A群11の整合上の疑義は本文・原図・公式正答×を保持して解説内に注記。"
+    }
+  ],
+  "skippedRows": [
+    {
+      "candidateIndex": 73,
+      "candidateId": "javada-ef489b887c4e",
+      "reason": "cx/kako-pa5-20261118 の pc-5 台帳に着手中・preparedとして登録済み（729bff5db）。重複作業防止のため着手しない。"
+    }
+  ]
+}

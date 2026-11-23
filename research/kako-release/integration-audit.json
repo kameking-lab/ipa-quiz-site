@@ -1,0 +1,428 @@
+{
+  "integratedHead": "af67a4ecbbc3caeca8e725ad9e1ff4f0d25f811b",
+  "method": "Each source tip is compared with its merge-base against origin/main. TypeScript indexes and JSON are loaded from Git objects, then every source registered ID and answer is checked against integrated ALL_QUESTIONS. Added qualification slugs are checked with the three canonical aliases. Changed raw manuscript IDs and answers are also checked, separately for public papers and staging. Counts across branches overlap and must not be summed.",
+  "branches": [
+    {
+      "ref": "cx/kako-home-20261113",
+      "head": "2cd058eea5462e205a6dbb60b8908b813a21ff6b",
+      "base": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "merged": true,
+      "changedIndexes": 0,
+      "sourceRegisteredQuestions": 0,
+      "addedRegisteredQuestionCount": 0,
+      "addedQualificationCount": 0,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {}
+    },
+    {
+      "ref": "cx/reizoko-api-20261113",
+      "head": "2725bad0a29ab75295870f561ac83a2cff223f72",
+      "base": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "merged": true,
+      "changedIndexes": 0,
+      "sourceRegisteredQuestions": 0,
+      "addedRegisteredQuestionCount": 0,
+      "addedQualificationCount": 0,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {}
+    },
+    {
+      "ref": "cx/qnew5-kako-20261112",
+      "head": "bf7ef45fa28abe41ce3da4e2a772f1960a3be43c",
+      "base": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "merged": true,
+      "changedIndexes": 123,
+      "sourceRegisteredQuestions": 7519,
+      "addedRegisteredQuestionCount": 7419,
+      "addedQualificationCount": 122,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {
+        "questionManuscripts": {
+          "changedFiles": 168,
+          "sourceCount": 7339,
+          "addedCount": 7339
+        }
+      }
+    },
+    {
+      "ref": "cx/qnew6-kako-20261112",
+      "head": "bfe9e634fee7ad48a962606aa4d1c8c4094b0347",
+      "base": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "merged": true,
+      "changedIndexes": 110,
+      "sourceRegisteredQuestions": 7314,
+      "addedRegisteredQuestionCount": 7082,
+      "addedQualificationCount": 108,
+      "aliasQualifications": [
+        {
+          "original": "haidenban-kumitate3",
+          "canonical": "haiden-seigyo3"
+        },
+        {
+          "original": "haikan-plant2",
+          "canonical": "plant-haikan2"
+        },
+        {
+          "original": "haikan-plant1",
+          "canonical": "plant-haikan1"
+        }
+      ],
+      "issues": [],
+      "rawGroups": {
+        "questionManuscripts": {
+          "changedFiles": 159,
+          "sourceCount": 7082,
+          "addedCount": 7082
+        }
+      }
+    },
+    {
+      "ref": "cx/replenish-release-20261112",
+      "head": "2ffdca0849ad15ef812c44e72df9dadd73bb7ef7",
+      "base": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "merged": true,
+      "changedIndexes": 24,
+      "sourceRegisteredQuestions": 1968,
+      "addedRegisteredQuestionCount": 1636,
+      "addedQualificationCount": 19,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {
+        "libraryPapers": {
+          "changedFiles": 10,
+          "sourceCount": 350,
+          "addedCount": 350
+        },
+        "stagedManuscripts": {
+          "changedFiles": 2,
+          "sourceCount": 180,
+          "addedCount": 180
+        },
+        "questionManuscripts": {
+          "changedFiles": 22,
+          "sourceCount": 1096,
+          "addedCount": 1096
+        }
+      }
+    },
+    {
+      "ref": "cx/qnew2-kako-20261112",
+      "head": "dabf0e8544754402a720b349d805c67e6ca2d545",
+      "base": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "merged": true,
+      "changedIndexes": 0,
+      "sourceRegisteredQuestions": 0,
+      "addedRegisteredQuestionCount": 0,
+      "addedQualificationCount": 0,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {
+        "stagedManuscripts": {
+          "changedFiles": 13,
+          "sourceCount": 561,
+          "addedCount": 561
+        }
+      }
+    },
+    {
+      "ref": "cx/kako-ctr-20261112",
+      "head": "7b7faf13f87d778facee7465f6fcc674bd6aba55",
+      "base": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "merged": true,
+      "changedIndexes": 0,
+      "sourceRegisteredQuestions": 0,
+      "addedRegisteredQuestionCount": 0,
+      "addedQualificationCount": 0,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {}
+    },
+    {
+      "ref": "cx/k4-20261110",
+      "head": "abf6440a47e571477b8bf837770169e4c6b8b4a3",
+      "base": "630b02b25c7e42ade2fd003783d41312b84ef97d",
+      "merged": true,
+      "changedIndexes": 1,
+      "sourceRegisteredQuestions": 2640,
+      "addedRegisteredQuestionCount": 0,
+      "addedQualificationCount": 0,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {}
+    },
+    {
+      "ref": "cx/k5-20261110",
+      "head": "16aece3247348b8f1098e9f910525a50bbaecaae",
+      "base": "630b02b25c7e42ade2fd003783d41312b84ef97d",
+      "merged": true,
+      "changedIndexes": 1,
+      "sourceRegisteredQuestions": 680,
+      "addedRegisteredQuestionCount": 0,
+      "addedQualificationCount": 0,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {}
+    },
+    {
+      "ref": "cx/x-kako-20261110",
+      "head": "f432e036b3db2d8a1a83aec59dc94350fe75a44c",
+      "base": "630b02b25c7e42ade2fd003783d41312b84ef97d",
+      "merged": true,
+      "changedIndexes": 2,
+      "sourceRegisteredQuestions": 5040,
+      "addedRegisteredQuestionCount": 0,
+      "addedQualificationCount": 0,
+      "aliasQualifications": [],
+      "issues": [],
+      "rawGroups": {}
+    }
+  ],
+  "inventory": {
+    "questionCount": 55281,
+    "questionExamCount": 321,
+    "catalogCount": 316,
+    "liveQualifications": 309,
+    "homeCardCount": 361,
+    "homeDomainCount": 9
+  },
+  "uniqueAddedRegisteredIds": 16137,
+  "uniqueAddedQualificationSlugsBeforeCanonicalization": 156,
+  "duplicateAndMissingCounts": {
+    "duplicateIds": 0,
+    "duplicateSlugs": 0,
+    "duplicateExamCodes": 0,
+    "duplicateHomeLinks": 0,
+    "missingHome": 0
+  },
+  "features": {
+    "head": "af67a4ecbbc3caeca8e725ad9e1ff4f0d25f811b",
+    "checks": [
+      {
+        "label": "AI/API/cost/cap/limits unchanged since initial integration",
+        "ref": "640a906db",
+        "paths": [
+          "app/api",
+          "lib/ai",
+          "lib/copilot",
+          "lib/rate-limit.ts",
+          "lib/reizoko"
+        ],
+        "differences": []
+      },
+      {
+        "label": "Reizoko route, schemas and prompts retained from its source",
+        "ref": "cx/reizoko-api-20261113",
+        "paths": [
+          "app/api/reizoko",
+          "lib/reizoko",
+          "lib/ai"
+        ],
+        "differences": []
+      },
+      {
+        "label": "Home and account/logout UI retained",
+        "ref": "cx/kako-home-20261113",
+        "paths": [
+          "app/page.tsx",
+          "app/home-study.css",
+          "components/home",
+          "components/SafetySiteHeader.tsx",
+          "components/SiteHeader.tsx",
+          "components/MobileBottomNav.tsx",
+          "components/account/AccountNavigation.tsx",
+          "app/account/page.tsx",
+          "app/auth/signout"
+        ],
+        "differences": []
+      },
+      {
+        "label": "Price and free allowance implementation unchanged",
+        "ref": "640a906db",
+        "paths": [
+          "lib/billing/price-page-link.ts",
+          "lib/billing/constants.ts",
+          "app/billing",
+          "app/pricing"
+        ],
+        "differences": []
+      }
+    ],
+    "sourceDomains": [
+      "automotive",
+      "it",
+      "safety",
+      "electrical",
+      "construction",
+      "money",
+      "welfare",
+      "real-estate",
+      "legal"
+    ],
+    "currentDomains": [
+      {
+        "id": "it",
+        "title": "IT・情報処理",
+        "cards": 18
+      },
+      {
+        "id": "money",
+        "title": "お金・ビジネス",
+        "cards": 7
+      },
+      {
+        "id": "real-estate",
+        "title": "不動産",
+        "cards": 6
+      },
+      {
+        "id": "legal",
+        "title": "法律・労務",
+        "cards": 10
+      },
+      {
+        "id": "electrical",
+        "title": "電気・無線",
+        "cards": 73
+      },
+      {
+        "id": "construction",
+        "title": "建設・技術",
+        "cards": 113
+      },
+      {
+        "id": "safety",
+        "title": "安全衛生",
+        "cards": 76
+      },
+      {
+        "id": "welfare",
+        "title": "医療・福祉・生活",
+        "cards": 46
+      },
+      {
+        "id": "automotive",
+        "title": "自動車整備",
+        "cards": 12
+      }
+    ],
+    "missingDomains": [],
+    "unchangedAuditWarnings": [
+      {
+        "key": "configCoverage",
+        "previous": 48,
+        "current": 48,
+        "identical": true
+      },
+      {
+        "key": "answerDisplay",
+        "previous": 128,
+        "current": 128,
+        "identical": true
+      }
+    ]
+  },
+  "privateKHK": {
+    "privatePackCount": 11,
+    "storedQuestions": 381,
+    "sourceOccurrences": 480,
+    "privatePacks": [
+      {
+        "group": "khk-kagaku",
+        "name": "2026-hei-lpg",
+        "stored": 60,
+        "references": 0,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-kagaku",
+        "name": "2026-hei-special",
+        "stored": 56,
+        "references": 4,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-kagaku",
+        "name": "2026-kou",
+        "stored": 34,
+        "references": 1,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-kagaku",
+        "name": "2026-otsu",
+        "stored": 35,
+        "references": 15,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-kikai",
+        "name": "2026-kou",
+        "stored": 1,
+        "references": 34,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-kikai",
+        "name": "2026-otsu",
+        "stored": 16,
+        "references": 34,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-reito",
+        "name": "2026-first",
+        "stored": 35,
+        "references": 0,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-reito",
+        "name": "2026-second",
+        "stored": 30,
+        "references": 10,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-reito",
+        "name": "2026-third",
+        "stored": 35,
+        "references": 0,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-hanbai",
+        "name": "2026-first",
+        "stored": 40,
+        "references": 0,
+        "publicAllowed": false
+      },
+      {
+        "group": "khk-hanbai",
+        "name": "2026-second",
+        "stored": 39,
+        "references": 1,
+        "publicAllowed": false
+      }
+    ],
+    "issues": []
+  },
+  "overlays": [
+    {
+      "ref": "cx/k4-20261110",
+      "file": "data/questions/ap/choice-explanations-cx-k4.json",
+      "count": 588,
+      "fileUnchanged": true,
+      "issues": []
+    },
+    {
+      "ref": "cx/k5-20261110",
+      "file": "data/questions/pm/choice-explanations-cx-k5.json",
+      "count": 162,
+      "fileUnchanged": true,
+      "issues": []
+    }
+  ]
+}

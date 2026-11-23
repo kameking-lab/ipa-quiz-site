@@ -1,96 +1,119 @@
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
 import { measuredPresence } from "@/lib/study-presence-contract";
-vi.mock("@/components/home/StudyRewardCorner", () => ({ StudyRewardCorner: () => null }));
+
 const snapshot = (count: number) => measuredPresence({ count, exams: count ? [{ exam: "fe", count }] : [] }, Date.now());
-afterEach(() => { cleanup(); vi.useRealTimers(); });
-it("expands one room, delays shrinking and resets on unavailable snapshot", () => {
-  vi.useFakeTimers();
-  const { container, rerender } = render(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  const scene = () => container.querySelector(".study-room-scene")!;
-  expect(scene()).toHaveAttribute("data-stage", "0");
-  rerender(<StudyRoom snapshot={snapshot(100)} suggestions={[]} />);
-  expect(scene()).toHaveAttribute("data-stage", "4");
-  expect(container.querySelectorAll(".study-room-seat")).toHaveLength(12);
-  expect(container.querySelector(".study-room-total")).toHaveTextContent("100人");
-  rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  expect(scene()).toHaveAttribute("data-stage", "4");
-  act(() => vi.advanceTimersByTime(60_000));
-  expect(scene()).toHaveAttribute("data-stage", "0");
-  rerender(<StudyRoom snapshot={snapshot(100)} suggestions={[]} />);
-  expect(scene()).toHaveAttribute("data-stage", "4");
+afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllGlobals(); sessionStorage.clear(); localStorage.clear(); });
+
+it("keeps one decorative resting dog when zero people are measured or the count is unavailable", () => {
+  const { rerender } = render(<StudyRoom snapshot={snapshot(60)} current suggestions={[]} />);
+  const scene = screen.getByTestId("study-room-scene");
+  expect(screen.queryByTestId("study-room-sleeper")).not.toBeInTheDocument();
+
+  rerender(<StudyRoom snapshot={snapshot(0)} current suggestions={[]} />);
+  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま0人が勉強");
+  expect(screen.queryByText(/一番乗り/)).not.toBeInTheDocument();
+
+  rerender(<StudyRoom snapshot={{ ...snapshot(0), today: { count: 0, activeCount: 0, exams: [] } }} current suggestions={[]} />);
+  expect(screen.getByText("まだ誰もいません。一番乗りしよう")).toBeInTheDocument();
+  expect(screen.queryByTestId("study-room-total")).not.toBeInTheDocument();
+  expect(scene.querySelectorAll('img[src$="/sleep-empty.webp"][alt=""]')).toHaveLength(1);
+  expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(0);
+
+  rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
+  expect(screen.getByText("前回は勉強中の人はいませんでした")).toBeInTheDocument();
+
   rerender(<StudyRoom snapshot={null} suggestions={[]} />);
-  expect(scene()).toHaveAttribute("data-stage", "0");
-});
-it("returns focus to the scroll region when a selected focused seat disappears", () => {
-  const { container, rerender } = render(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  const seat = container.querySelector<HTMLButtonElement>('[aria-label="自習室の席を選ぶ"] button')!;
-  seat.focus(); fireEvent.click(seat);
-  rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
-  expect(container.querySelector(".study-room-scroll")).toHaveFocus();
+  expect(screen.getByText("勉強中の人数を表示できません")).toBeInTheDocument();
+  expect(screen.queryByTestId("study-room-total")).not.toBeInTheDocument();
+  expect(scene.querySelectorAll('img[src$="/sleep-empty.webp"][alt=""]')).toHaveLength(1);
 });
 
-it("keeps the shrink deadline across fresh snapshots and cancels it on growth", () => {
+it("keeps the same room as the learner count changes", () => {
   vi.useFakeTimers();
-  const { container, rerender } = render(<StudyRoom snapshot={snapshot(100)} suggestions={[]} />);
-  const scene = () => container.querySelector(".study-room-scene")!;
-  rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(30_000));
+  vi.setSystemTime(new Date("2026-11-21T11:00:00+09:00"));
+  const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
+  const scene = () => screen.getByTestId("study-room-scene");
+  expect(scene()).toHaveAttribute("data-room", "p1");
+  rerender(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
+  expect(scene()).toHaveAttribute("data-room", "p1");
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(12);
   rerender(<StudyRoom snapshot={snapshot(2)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(29_999));
-  expect(scene()).toHaveAttribute("data-stage", "4");
-  act(() => vi.advanceTimersByTime(1));
-  expect(scene()).toHaveAttribute("data-stage", "0");
-  rerender(<StudyRoom snapshot={snapshot(100)} suggestions={[]} />);
-  rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(30_000));
-  rerender(<StudyRoom snapshot={snapshot(100)} suggestions={[]} />);
-  act(() => vi.advanceTimersByTime(60_000));
-  expect(scene()).toHaveAttribute("data-stage", "4");
-});
-it("restores focus when an unselected focused seat disappears", () => {
-  const { container, rerender } = render(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  container.querySelector<HTMLButtonElement>('[aria-label="自習室の席を選ぶ"] button')!.focus();
-  rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
-  expect(container.querySelector(".study-room-scroll")).toHaveFocus();
+  expect(scene()).toHaveAttribute("data-room", "p1");
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(2);
+  rerender(<StudyRoom snapshot={null} suggestions={[]} />);
+  expect(scene()).toHaveAttribute("data-room", "p1");
+  expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(0);
 });
 
-it("selects the intended qualification from the non-overlapping seat list and restores focus", () => {
-  const mixed = measuredPresence({ count: 2, exams: [{ exam: "fe", count: 1 }, { exam: "ip", count: 1 }] }, Date.now());
-  const { container } = render(<StudyRoom snapshot={mixed} suggestions={[{ name: "基本情報技術者", href: "/fe" }, { name: "ITパスポート", href: "/ip" }]} />);
-  const seats = screen.getByRole("group", { name: "自習室の席を選ぶ" }).querySelectorAll("button");
-  expect(container.querySelectorAll(".study-room-scene button")).toHaveLength(0);
-  fireEvent.click(seats[1]);
-  expect(seats[1]).toHaveAttribute("aria-pressed", "true");
-  expect(screen.getByRole("link", { name: "ITパスポートの問題を見る" })).toHaveAttribute("href", "/ip");
-  fireEvent.click(screen.getByRole("button", { name: "選択を戻す" }));
-  expect(seats[1]).toHaveFocus();
-  expect(seats[1]).toHaveAttribute("aria-pressed", "false");
+it("uses the seat artwork itself for inspection and keeps one study link", () => {
+  render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(3);
+  expect(screen.getAllByRole("button", { name: /チワワを見る/ })).toHaveLength(3);
+  expect(screen.getAllByRole("link")).toHaveLength(1);
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/search");
 });
 
-it("loads only occupied seat images with accessible qualification/state and keeps the visit on remount", () => {
-  sessionStorage.setItem("study-room-mascot-visit:v1", "0"); // room without an away dog
-  const mixed = measuredPresence({ count: 12, exams: [{ exam: "ip", count: 6 }, { exam: "yakuzaishi", count: 6 }] }, Date.now());
-  const { container, rerender, unmount } = render(<StudyRoom snapshot={mixed} suggestions={[]} />);
-  const images = () => [...container.querySelectorAll<HTMLImageElement>(".study-room-seat img")];
-  expect(images()).toHaveLength(12);
-  const initial = images().map(img => img.outerHTML);
-  images().forEach((img, index) => {
-    expect(img).toHaveAttribute("loading", "lazy");
-    expect(img).toHaveAttribute("decoding", "async");
-    // A seat shows its own pair, or an idle moment of the same character (named as ひと休み).
-    expect(img.src).toMatch(index < 6 ? /\/(idle\/)?ip-/ : /\/(pharmacy-|idle\/yakuzaishi-)/);
-    expect(img.alt).toMatch(index < 6 ? /^ITパスポートのチワワ（(勉強中|あるある：|ひと休み：)/ : /^薬剤師のチワワ（(勉強中|あるある：|ひと休み：)/);
-    expect(img.closest('[aria-hidden="true"]')).toBeNull();
-  });
-  fireEvent.click(screen.getByRole("group", { name: "自習室の席を選ぶ" }).querySelectorAll("button")[2]);
-  rerender(<StudyRoom snapshot={{ ...mixed }} suggestions={[]} />);
-  expect(images().map(img => img.outerHTML)).toEqual(initial);
-  expect(container.querySelectorAll('[data-mascot-state="break"]').length).toBeLessThanOrEqual(3);
+it("starts a supported quiz directly and resolves library qualification aliases to their existing hub", () => {
+  const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[{ exam: "fe", name: "基本情報技術者", href: "/fe" }]} exam="fe" />);
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/quiz?mode=random&exam=fe");
+  rerender(<StudyRoom snapshot={snapshot(3)} suggestions={[{ exam: "dai-1-shu-eisei-kanrisha", name: "第一種衛生管理者", href: "/qualifications/dai-1-shu-eisei-kanrisha" }]} exam="eisei1" />);
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/quiz?mode=random&exam=eisei1");
+  rerender(<StudyRoom snapshot={snapshot(3)} suggestions={[{ exam: "ni-kyu-boiler-gishi", name: "二級ボイラー技士", href: "/e-learning/exams/qualifications/ni-kyu-boiler-gishi" }]} exam="ni-kyu-boiler-gishi" />);
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/e-learning/exams/qualifications/ni-kyu-boiler-gishi");
+});
+
+it("chooses a region after selecting a parent in the standalone study room", () => {
+  render(<StudyRoom standalone snapshot={snapshot(3)} suggestions={[
+    { exam: "chori-hokkaido", name: "調理師試験（北海道）", href: "/chori-hokkaido" },
+    { exam: "chori-gunma", name: "調理師試験（群馬県）", href: "/chori-gunma" },
+  ]} />);
+  fireEvent.click(screen.getByText("資格を選ぶ", { selector: "summary" }));
+  fireEvent.change(screen.getByLabelText("資格"), { target: { value: "group:chori" } });
+  expect(screen.queryByRole("link", { name: "席について解く" })).toBeNull();
+  fireEvent.change(screen.getByLabelText("地域"), { target: { value: "chori-hokkaido" } });
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/quiz?mode=random&exam=chori-hokkaido");
+});
+
+it("preserves the position and visual label of a premium seat", () => {
+  render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} seatDetails={[{ exam: "fe", index: 2, premium: true }]} />);
+  const seats = screen.getAllByTestId("study-room-seat");
+  expect(seats[0]).toHaveAttribute("data-seat-key", "fe:0");
+  expect(seats[2].querySelector('[data-premium="true"]')).not.toBeNull();
+  expect(screen.getByLabelText("特等席")).toBeInTheDocument();
+});
+
+it("opens and closes the selected qualification artwork from the seat itself", () => {
+  render(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
+  const seat = screen.getByRole("button", { name: "1 基本情報技術者のチワワを見る" });
+  const art = within(seat).getByRole("img", { name: /基本情報技術者のチワワ/ });
+  fireEvent.click(seat);
+  const inspection = screen.getByTestId("study-room-inspected");
+  expect(seat).toHaveAttribute("aria-pressed", "true");
+  expect(inspection).toHaveTextContent("基本情報技術者");
+  expect(inspection.querySelector("img")).toHaveAttribute("src", art.getAttribute("src"));
+  fireEvent.click(seat);
+  expect(seat).toHaveAttribute("aria-pressed", "false");
+  expect(screen.queryByTestId("study-room-inspected")).toBeNull();
+});
+
+it("reuses shared pose images, preserves identity poses, and loads only occupied seats", () => {
+  const { container, rerender, unmount } = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
+  const sources = () => screen.getAllByTestId("study-room-seat").map(seat => seat.querySelector("img")?.getAttribute("src"));
+  const initial = sources();
+  expect(new Set(initial).size).toBeLessThanOrEqual(72);
+  container.querySelectorAll("img").forEach(img => { expect(img).toHaveAttribute("loading", "lazy"); expect(img).toHaveAttribute("decoding", "async"); });
+  rerender(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
+  expect(sources()).toEqual(initial);
   unmount();
-  const remounted = render(<StudyRoom snapshot={mixed} suggestions={[]} />);
-  expect([...remounted.container.querySelectorAll(".study-room-seat img")].map(img => img.outerHTML)).toEqual(initial);
-  remounted.rerender(<StudyRoom snapshot={snapshot(0)} suggestions={[]} />);
-  expect(remounted.container.querySelectorAll(".study-room-seat img")).toHaveLength(0);
+  render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
+  expect(sources()).toEqual(initial);
+});
+
+it("returns focus to the room when a focused learner leaves", () => {
+  const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
+  screen.getByRole("button", { name: "3 基本情報技術者のチワワを見る" }).focus();
+  rerender(<StudyRoom snapshot={snapshot(2)} suggestions={[]} />);
+  expect(screen.getByTestId("study-room-scene")).toHaveFocus();
 });

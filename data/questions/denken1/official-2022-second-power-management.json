@@ -1,0 +1,258 @@
+[
+  {
+    "id": "denken1-2022-second-denryoku-q1",
+    "exam": "denken1",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "タービン発電機の進相運転"
+    ],
+    "difficulty": 5,
+    "question": "タービン発電機の進相運転（電力・管理）",
+    "answer": "〔問１の標準解答〕\n\n  (1) 実施目的\n\n   深夜などの軽負荷時に系統側の進み負荷が過剰となり系統電圧が上昇する。\n\n  そこで系統側で発生する過剰な無効電力を，タービン発電機の励磁電流を下げ\n\n  進相運転を行うことで吸収し，系統電圧の上昇を抑制するのが目的である。\n\n  (2) 進相運転時の留意点\n\n  ① 内部誘導起電力が低くなるため，同期化力が減少し，定態安定度が低下す\n\n   る。\n\n  ② 漏れ磁束が固定子端部に通りやすくなり渦電流が増え，発電機固定子鉄心端\n\n   部が過熱する。\n\n  ③ 端子電圧低下により所内電圧が異常に低下する。\n\n  (3) 発電所における対策\n\n   以下の対策から二つ記載されていればよい。\n\n  ① 高速度AVR を設置し端子電圧の変動を少なくさせ定態安定度を向上させる\n\n   とともに，不足励磁制限装置により下限値設定を行う。\n\n  ② 所内電圧が異常に低下しないように所内変圧器に負荷時タップ切換器を設\n\n   置して安全運転範囲内にする。\n\n  ③ 非磁性保持環，鉄心の段落とし，磁束シャントなどの採用により，固定子鉄\n\n   心端部を通る漏れ磁束を低減する。\n\n  ④ 非磁性押え板，押え板の銅板シールド，鉄心端部のスリットなどの採用によ\n\n   り固定子鉄心端部の渦電流を低減する。\n\n\n                                                      - 1 -\n",
+    "modelAnswer": "〔問１の標準解答〕\n\n  (1) 実施目的\n\n   深夜などの軽負荷時に系統側の進み負荷が過剰となり系統電圧が上昇する。\n\n  そこで系統側で発生する過剰な無効電力を，タービン発電機の励磁電流を下げ\n\n  進相運転を行うことで吸収し，系統電圧の上昇を抑制するのが目的である。\n\n  (2) 進相運転時の留意点\n\n  ① 内部誘導起電力が低くなるため，同期化力が減少し，定態安定度が低下す\n\n   る。\n\n  ② 漏れ磁束が固定子端部に通りやすくなり渦電流が増え，発電機固定子鉄心端\n\n   部が過熱する。\n\n  ③ 端子電圧低下により所内電圧が異常に低下する。\n\n  (3) 発電所における対策\n\n   以下の対策から二つ記載されていればよい。\n\n  ① 高速度AVR を設置し端子電圧の変動を少なくさせ定態安定度を向上させる\n\n   とともに，不足励磁制限装置により下限値設定を行う。\n\n  ② 所内電圧が異常に低下しないように所内変圧器に負荷時タップ切換器を設\n\n   置して安全運転範囲内にする。\n\n  ③ 非磁性保持環，鉄心の段落とし，磁束シャントなどの採用により，固定子鉄\n\n   心端部を通る漏れ磁束を低減する。\n\n  ④ 非磁性押え板，押え板の銅板シールド，鉄心端部のスリットなどの採用によ\n\n   り固定子鉄心端部の渦電流を低減する。\n\n\n                                                      - 1 -\n",
+    "explanation": "軽負荷時の系統電圧と無効電力の状態を結び付ける。進相運転の目的と、発電機で運転範囲を制約する要因を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2022-second-power-management/question-p03.webp"
+    ],
+    "imageAltTexts": [
+      "問1 公式の本文・図表・設問（PDF 3ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2022-second-power-management/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1 公式標準解答（PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_q01.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_a01.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 第一種電気主任技術者 二次試験 電力・管理」問1。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問6から4問を選択。"
+  },
+  {
+    "id": "denken1-2022-second-denryoku-q2",
+    "exam": "denken1",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "単位法による三相電力系統の計算"
+    ],
+    "difficulty": 5,
+    "question": "単位法による三相電力系統の計算（電力・管理）",
+    "answer": "〔問２の標準解答〕\n\n  (1) 基準電圧500 kV，基準容量は1 000 MV･A に対応する基準インピーダンスZb，\n\n  基準アドミタンスYb は下式となる。\n\n             500 2\n       Z b =     = 250              1 000\n             1            − 3\n      Yb =   = 4.0  10  S\n           Z b\n\n   したがって，単位法で表した形等価回路の直列インピーダンスZ ，並列アド\n\n         Y\n  ミタンス2 は，下式で表される。\n\n               0.50                         j     200\n              2       Z =          = j 0.2 p.u. ･･･(答)\n               250\n      Y   1 j2.0  10 −6 2  200\n          =                 = j0.1 p.u. ･･･(答)\n         2   2      4.0  10 −3\n\n   したがって，形等価回路は下図となる。\n\n                                           1I    Z = j0.2 p.u.        2I\n\n                            Y\n                                    = j0.1 p.u.\n                                     2                        V1                                             V2  ･･･(答)\n                         Y\n                                = j0.1 p.u.\n                                 2\n\n\n\n\n\n  (2) 上記の形等価回路より電圧については，\n       V1 = V2 + j0.2 (                            I 2 + j0.1V2 )\n\n   が成り立つが，同式を整理することにより次式が得られる。\n       V1 = 0.98V2 + j0.2 I 2 ··········································· ①\n\n   一方，電流については，\n\n\n                                                      - 2 -\n········································· ②         I1 = I 2 + j0.1 (              V1 + V2 )\n\n  が成り立つため，①式を②式に代入すれば下式が得られる。\n         I1 = I 2 + j0.1 ( 0.98V2                      + j0.2 I 2 + V2 )\n        = j0.198V2 + 0.98 I 2\n  したがって， V1 ， 1I と V2 ， 2I の関係を表す式は下式となる。\n\n                                                               0.98    j0.2     V1                    V2                  =                                                                 ･･･(答)                                                                               I1     j0.198  0.98   I 2 \n\n(3) 変圧器容量が500 MV･A であるため，その漏れリアクタンスは系統容量基準\n\n で30 ％となる。変圧器の等価回路を考えれば，この場合の求めるべき式は下式\n\n となる。\n\n                                     1  j0.30        V0                   V1                      =                                                             ･･･(答)                                          \n                   I 0     0   1   I1 \n(4) 小問(2)及び(3)で得られた(2×2)行列は四端子行列であることを考慮すれ\n\n ば，次式が成り立つ。\n         V0     1  j0.30  0.98    j0.2   V2                               =                                              \n                   I 0     0   1   j0.198  0.98  I 2 \n                 0.920 6  j0.494   V2 \n          =                                     j0.198    0.98  I 2 \n  したがって，無負荷( I 2 = 0 )のときには，\n     V0 = 0.920 6V2\n  が成り立つことから，求めるべき V2 は下式となる。\n              1.05\n     V2 =            0.920 6\n         = 1.140 6\n    ≒1.14 p.u. ･･･(答)",
+    "modelAnswer": "〔問２の標準解答〕\n\n  (1) 基準電圧500 kV，基準容量は1 000 MV･A に対応する基準インピーダンスZb，\n\n  基準アドミタンスYb は下式となる。\n\n             500 2\n       Z b =     = 250              1 000\n             1            − 3\n      Yb =   = 4.0  10  S\n           Z b\n\n   したがって，単位法で表した形等価回路の直列インピーダンスZ ，並列アド\n\n         Y\n  ミタンス2 は，下式で表される。\n\n               0.50                         j     200\n              2       Z =          = j 0.2 p.u. ･･･(答)\n               250\n      Y   1 j2.0  10 −6 2  200\n          =                 = j0.1 p.u. ･･･(答)\n         2   2      4.0  10 −3\n\n   したがって，形等価回路は下図となる。\n\n                                           1I    Z = j0.2 p.u.        2I\n\n                            Y\n                                    = j0.1 p.u.\n                                     2                        V1                                             V2  ･･･(答)\n                         Y\n                                = j0.1 p.u.\n                                 2\n\n\n\n\n\n  (2) 上記の形等価回路より電圧については，\n       V1 = V2 + j0.2 (                            I 2 + j0.1V2 )\n\n   が成り立つが，同式を整理することにより次式が得られる。\n       V1 = 0.98V2 + j0.2 I 2 ··········································· ①\n\n   一方，電流については，\n\n\n                                                      - 2 -\n········································· ②         I1 = I 2 + j0.1 (              V1 + V2 )\n\n  が成り立つため，①式を②式に代入すれば下式が得られる。\n         I1 = I 2 + j0.1 ( 0.98V2                      + j0.2 I 2 + V2 )\n        = j0.198V2 + 0.98 I 2\n  したがって， V1 ， 1I と V2 ， 2I の関係を表す式は下式となる。\n\n                                                               0.98    j0.2     V1                    V2                  =                                                                 ･･･(答)                                                                               I1     j0.198  0.98   I 2 \n\n(3) 変圧器容量が500 MV･A であるため，その漏れリアクタンスは系統容量基準\n\n で30 ％となる。変圧器の等価回路を考えれば，この場合の求めるべき式は下式\n\n となる。\n\n                                     1  j0.30        V0                   V1                      =                                                             ･･･(答)                                          \n                   I 0     0   1   I1 \n(4) 小問(2)及び(3)で得られた(2×2)行列は四端子行列であることを考慮すれ\n\n ば，次式が成り立つ。\n         V0     1  j0.30  0.98    j0.2   V2                               =                                              \n                   I 0     0   1   j0.198  0.98  I 2 \n                 0.920 6  j0.494   V2 \n          =                                     j0.198    0.98  I 2 \n  したがって，無負荷( I 2 = 0 )のときには，\n     V0 = 0.920 6V2\n  が成り立つことから，求めるべき V2 は下式となる。\n              1.05\n     V2 =            0.920 6\n         = 1.140 6\n    ≒1.14 p.u. ･･･(答)",
+    "explanation": "基準容量と基準電圧から基準インピーダンスを求め、線路と変圧器を単位法にそろえる。等価回路の両端の電圧と電流を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2022-second-power-management/question-p04.webp"
+    ],
+    "imageAltTexts": [
+      "問2 公式の本文・図表・設問（PDF 4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2022-second-power-management/answer-q02-p02.webp",
+      "/questions/denken1/2022-second-power-management/answer-q02-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2 公式標準解答（PDF 2ページ）",
+      "問2 公式標準解答（PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_q01.pdf#page=4",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_a01.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 第一種電気主任技術者 二次試験 電力・管理」問2。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問6から4問を選択。"
+  },
+  {
+    "id": "denken1-2022-second-denryoku-q3",
+    "exam": "denken1",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "変圧器の効率と運転台数"
+    ],
+    "difficulty": 5,
+    "question": "変圧器の効率と運転台数（電力・管理）",
+    "answer": "〔問３の標準解答〕\n\n  (1)\n   ａ) 全変圧器負荷容量がL のときの変圧器n 台運転時の1 台当たりの銅損 Pc1\n\n   とおくと，\n\n\n                                                      - 3 -\n2\n             L \n                                             L2                   Pc0          n                         ·····································  (1)                Pc1 =                  Pc0 =                                2                                   2                    Pn                  Pn n  ･･･(答)                            \n                \nｂ) n 台運転時の全損失 Wn は，\n                L2 Pc0                L   2                                                                ························  (2)                                                 Wn = n          Pi +                    = nPi + nPc0                                                                                                                                 nPn                                                ･･･(答)            Pn 2 n 2                                       \nｃ) (n-1)台で運転したときの全損失 Wn-1 は，(2)式のn に(n-1)を代入し，\n\n                                                     2\n                                                                         L\n                                                 ························  (3)  Wn-1 = ( n − 1 ) Pi + ( n − 1 ) Pc0                                                                         (                           n − 1 ) Pn  ･･･(答)\n\nｄ) Wn-1  Wn のときに題意を満たすことから，(2)式及び(3)式より，\n\n                                             2                       2                                                  L                                                        L                                                                                                                      ··············  (4)                                                                     ( n − 1 ) Pi + ( n − 1 ) Pc0                               nPi + nPc0                                                                                                                                                        n − 1 ) Pn                                                         nPn                                                                                           (                                        \n\n\n 整理して，\n\n                           2\n       1         L                             Pi ·······································  (5)          Pc0                                ( n − 1 ) n                 Pn \n\n  n=3 を代入してL について整理し，L は正値であることから，\n\n         6Pi    L  Pn      ···············································  (6)\n          Pc0 ･･･(答)\n\nｅ) 定格電流を 0I とおき①式及び②式並びに題意より，次式が成立する。\n           3VI 0    k =            ············································  (7)\n         3VI 0+ 2 Pi\n したがって，変圧器の鉄損 iP は，\n\n        1               3VI 0              Pi =         −  3VI 0        2    k                                               \n          3VI 0 1          =           − 1 \n           2     k    \n\n\n                                                - 4 -\nより， ここで， Pn =  3VI 0\n\n       Pn 1        Pi =       − 1 \n         2   k    \n       Pn( 1 − k )      =          ·············································  (8)\n            2 k    ･･･(答)\n\n ②式，(8)式より，変圧器の銅損 Pc0 は，\n          1\n    Pc0 =  2 Pi     \n        Pn  1           =      − 1 \n         2 k    \n        Pn ( 1 − k )       =         ·············································  (9)\n           2k\n               ･･･(答)\n\nｆ) (6)式に(8)式及び(9)式を代入して，\n\n            Pi    L   6 Pn\n           Pc0\n\n           Pn (1 − k)    2k    L   6 Pn      ×\n                 2k    Pn (1 − k)\n  は正値であることから\n    L   6 Pn ･･･(答)\n\n\n\n\n\n                                                - 5 -\n",
+    "modelAnswer": "〔問３の標準解答〕\n\n  (1)\n   ａ) 全変圧器負荷容量がL のときの変圧器n 台運転時の1 台当たりの銅損 Pc1\n\n   とおくと，\n\n\n                                                      - 3 -\n2\n             L \n                                             L2                   Pc0          n                         ·····································  (1)                Pc1 =                  Pc0 =                                2                                   2                    Pn                  Pn n  ･･･(答)                            \n                \nｂ) n 台運転時の全損失 Wn は，\n                L2 Pc0                L   2                                                                ························  (2)                                                 Wn = n          Pi +                    = nPi + nPc0                                                                                                                                 nPn                                                ･･･(答)            Pn 2 n 2                                       \nｃ) (n-1)台で運転したときの全損失 Wn-1 は，(2)式のn に(n-1)を代入し，\n\n                                                     2\n                                                                         L\n                                                 ························  (3)  Wn-1 = ( n − 1 ) Pi + ( n − 1 ) Pc0                                                                         (                           n − 1 ) Pn  ･･･(答)\n\nｄ) Wn-1  Wn のときに題意を満たすことから，(2)式及び(3)式より，\n\n                                             2                       2                                                  L                                                        L                                                                                                                      ··············  (4)                                                                     ( n − 1 ) Pi + ( n − 1 ) Pc0                               nPi + nPc0                                                                                                                                                        n − 1 ) Pn                                                         nPn                                                                                           (                                        \n\n\n 整理して，\n\n                           2\n       1         L                             Pi ·······································  (5)          Pc0                                ( n − 1 ) n                 Pn \n\n  n=3 を代入してL について整理し，L は正値であることから，\n\n         6Pi    L  Pn      ···············································  (6)\n          Pc0 ･･･(答)\n\nｅ) 定格電流を 0I とおき①式及び②式並びに題意より，次式が成立する。\n           3VI 0    k =            ············································  (7)\n         3VI 0+ 2 Pi\n したがって，変圧器の鉄損 iP は，\n\n        1               3VI 0              Pi =         −  3VI 0        2    k                                               \n          3VI 0 1          =           − 1 \n           2     k    \n\n\n                                                - 4 -\nより， ここで， Pn =  3VI 0\n\n       Pn 1        Pi =       − 1 \n         2   k    \n       Pn( 1 − k )      =          ·············································  (8)\n            2 k    ･･･(答)\n\n ②式，(8)式より，変圧器の銅損 Pc0 は，\n          1\n    Pc0 =  2 Pi     \n        Pn  1           =      − 1 \n         2 k    \n        Pn ( 1 − k )       =         ·············································  (9)\n           2k\n               ･･･(答)\n\nｆ) (6)式に(8)式及び(9)式を代入して，\n\n            Pi    L   6 Pn\n           Pc0\n\n           Pn (1 − k)    2k    L   6 Pn      ×\n                 2k    Pn (1 − k)\n  は正値であることから\n    L   6 Pn ･･･(答)\n\n\n\n\n\n                                                - 5 -\n",
+    "explanation": "負荷に応じて変わる銅損と、運転台数に応じて増える鉄損を分ける。変圧器を追加して減る損失と増える損失を比較する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2022-second-power-management/question-p05.webp",
+      "/questions/denken1/2022-second-power-management/question-p06.webp"
+    ],
+    "imageAltTexts": [
+      "問3 公式の本文・図表・設問（PDF 5ページ）",
+      "問3 公式の本文・図表・設問（PDF 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2022-second-power-management/answer-q03-p03.webp",
+      "/questions/denken1/2022-second-power-management/answer-q03-p04.webp",
+      "/questions/denken1/2022-second-power-management/answer-q03-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3 公式標準解答（PDF 3ページ）",
+      "問3 公式標準解答（PDF 4ページ）",
+      "問3 公式標準解答（PDF 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_a01.pdf#page=3",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 第一種電気主任技術者 二次試験 電力・管理」問3。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問6から4問を選択。"
+  },
+  {
+    "id": "denken1-2022-second-denryoku-q4",
+    "exam": "denken1",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "1機無限大母線系統の過渡安定性"
+    ],
+    "difficulty": 5,
+    "question": "1機無限大母線系統の過渡安定性（電力・管理）",
+    "answer": "〔問４の標準解答〕\n\n  (1) 発電機の動揺方程式は次式で表される。\n           d 2=     M             Pm − Pe                  2           dt\n\n   また， Pe は次式で表される。\n\n          Vs Vr       Pe =     sin           X\n\n     Pm は短時間では変化しないが， Pe は低下するため加速し，無限大母線の発\n  電機との回転速度に差が生じ，が拡大する。・・・(答)\n\n   過渡安定性が悪化する条件は，\n\n   ・ M が小さいこと\n   ・初期のが大きいこと\n\n   ・ X が大きいこと\n\n  である。・・・(答)\n\n  (2) 発電機加速の抑制策として，eP を加速時に大きくすること，故障除去を早くす\n\n  ることが必要である。具体的な対策方法は以下が挙げられる。(以下から3 点)\n    Pe を加速時に大きくする具体的な対策方法\n\n  ・制動抵抗制御(SDR)\n  ・超速応励磁で Vs を高める。\n\n  ・励磁装置頂上電圧を引き上げる。\n\n  ・調相設備で発電機と無限大母線の間の電圧を高める。\n\n  ・以下によるX の低下。\n\n   ・系統電圧階級の引き上げ\n\n   ・直列コンデンサの挿入\n\n   ・多回線化，ループ化，中間開閉所の設置\n\n  故障除去を早くする具体的な対策方法\n\n  ・保護リレー及び遮断器の高速度化\n\n\n\n\n                                                      - 6 -\n(3)\n\n                 故障前                故障前\n\n                 故障除去後               故障除去後\n          減速                 減速\n          領域                 領域\n\n       加速    安定度           加速                               安定度                 故障中                故障中       領域    余裕            領域                                余裕\n\n\n\n\n\n        電制なし                電制あり\n\n   故障除去後の機械的入力を抑制することで過渡安定性が向上する。・・・(答)\n\n\n\n   電制により，周波数の低下や電圧上昇･低下が生じる可能性に留意が必要で\n\n  ある。そのため，電制後の需給バランスに配慮した制御や，調相設備などの開\n\n  閉による無効電力制御を合わせて実施する。・・・(答)\n(4) 故障中の電力相差角曲線( Pe )は，1G2 LG の方が3G3 LG よりも大きくなり，\n 加速領域は小さくなる方向である。他方，故障除去後の電力相差角曲線( Pe )は1 相\n\n が欠相状態となるため，1 回線3 相開放よりも送電電力は低下するため，減速領域\n\n は小さくなる方向である。\n\n  故障除去は高速(3～4 サイクル程度)で行い，再閉路は1 秒程度で行うため，\n\n  1G2 LG の減速領域の減少の影響が大きく，3G3 LG よりも過渡安定性が厳しく\n\n なる。・・・(答)\n\n\n\n\n\n        安定度余裕              安定度余裕\n\n\n\n\n\n            1G2 LG                        3G3 LG\n\n                                                      - 7 -\n",
+    "modelAnswer": "〔問４の標準解答〕\n\n  (1) 発電機の動揺方程式は次式で表される。\n           d 2=     M             Pm − Pe                  2           dt\n\n   また， Pe は次式で表される。\n\n          Vs Vr       Pe =     sin           X\n\n     Pm は短時間では変化しないが， Pe は低下するため加速し，無限大母線の発\n  電機との回転速度に差が生じ，が拡大する。・・・(答)\n\n   過渡安定性が悪化する条件は，\n\n   ・ M が小さいこと\n   ・初期のが大きいこと\n\n   ・ X が大きいこと\n\n  である。・・・(答)\n\n  (2) 発電機加速の抑制策として，eP を加速時に大きくすること，故障除去を早くす\n\n  ることが必要である。具体的な対策方法は以下が挙げられる。(以下から3 点)\n    Pe を加速時に大きくする具体的な対策方法\n\n  ・制動抵抗制御(SDR)\n  ・超速応励磁で Vs を高める。\n\n  ・励磁装置頂上電圧を引き上げる。\n\n  ・調相設備で発電機と無限大母線の間の電圧を高める。\n\n  ・以下によるX の低下。\n\n   ・系統電圧階級の引き上げ\n\n   ・直列コンデンサの挿入\n\n   ・多回線化，ループ化，中間開閉所の設置\n\n  故障除去を早くする具体的な対策方法\n\n  ・保護リレー及び遮断器の高速度化\n\n\n\n\n                                                      - 6 -\n(3)\n\n                 故障前                故障前\n\n                 故障除去後               故障除去後\n          減速                 減速\n          領域                 領域\n\n       加速    安定度           加速                               安定度                 故障中                故障中       領域    余裕            領域                                余裕\n\n\n\n\n\n        電制なし                電制あり\n\n   故障除去後の機械的入力を抑制することで過渡安定性が向上する。・・・(答)\n\n\n\n   電制により，周波数の低下や電圧上昇･低下が生じる可能性に留意が必要で\n\n  ある。そのため，電制後の需給バランスに配慮した制御や，調相設備などの開\n\n  閉による無効電力制御を合わせて実施する。・・・(答)\n(4) 故障中の電力相差角曲線( Pe )は，1G2 LG の方が3G3 LG よりも大きくなり，\n 加速領域は小さくなる方向である。他方，故障除去後の電力相差角曲線( Pe )は1 相\n\n が欠相状態となるため，1 回線3 相開放よりも送電電力は低下するため，減速領域\n\n は小さくなる方向である。\n\n  故障除去は高速(3～4 サイクル程度)で行い，再閉路は1 秒程度で行うため，\n\n  1G2 LG の減速領域の減少の影響が大きく，3G3 LG よりも過渡安定性が厳しく\n\n なる。・・・(答)\n\n\n\n\n\n        安定度余裕              安定度余裕\n\n\n\n\n\n            1G2 LG                        3G3 LG\n\n                                                      - 7 -\n",
+    "explanation": "事故で電気出力が低下すると回転子が加速する。故障除去後の加速・減速領域を図で比較し、運転対策の効果を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2022-second-power-management/question-p07.webp",
+      "/questions/denken1/2022-second-power-management/question-p08.webp"
+    ],
+    "imageAltTexts": [
+      "問4 公式の本文・図表・設問（PDF 7ページ）",
+      "問4 公式の本文・図表・設問（PDF 8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2022-second-power-management/answer-q04-p06.webp",
+      "/questions/denken1/2022-second-power-management/answer-q04-p07.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4 公式標準解答（PDF 6ページ）",
+      "問4 公式標準解答（PDF 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_a01.pdf#page=6",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 第一種電気主任技術者 二次試験 電力・管理」問4。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問6から4問を選択。"
+  },
+  {
+    "id": "denken1-2022-second-denryoku-q5",
+    "exam": "denken1",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "油入変圧器の絶縁劣化診断"
+    ],
+    "difficulty": 5,
+    "question": "油入変圧器の絶縁劣化診断（電力・管理）",
+    "answer": "〔問５の標準解答〕\n\n     (0) の番号             標準解答\n\n           (1)     酸素\n\n           (2)     絶縁破壊電圧\n\n           (3)     全酸価，酸価，酸価度\n\n           (4)     商用周波数\n\n           (5)     水酸化カリウム\n\n           (6)     絶縁紙\n\n           (7)     熱分解\n\n           (8)     クロマトグラフ\n\n           (9)     引張り強さ\n\n          (10)     フルフラール\n\n（複数ある標準解答は，いずれか記載されていればよい。）\n\n\n\n\n\n                                                      - 8 -\n",
+    "modelAnswer": "〔問５の標準解答〕\n\n     (0) の番号             標準解答\n\n           (1)     酸素\n\n           (2)     絶縁破壊電圧\n\n           (3)     全酸価，酸価，酸価度\n\n           (4)     商用周波数\n\n           (5)     水酸化カリウム\n\n           (6)     絶縁紙\n\n           (7)     熱分解\n\n           (8)     クロマトグラフ\n\n           (9)     引張り強さ\n\n          (10)     フルフラール\n\n（複数ある標準解答は，いずれか記載されていればよい。）\n\n\n\n\n\n                                                      - 8 -\n",
+    "explanation": "絶縁油を調べる試験と、絶縁紙の劣化を推定する試験を分ける。測っている量と、劣化に伴って生成する物質を対応させる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2022-second-power-management/question-p09.webp",
+      "/questions/denken1/2022-second-power-management/question-p10.webp"
+    ],
+    "imageAltTexts": [
+      "問5 公式の本文・図表・設問（PDF 9ページ）",
+      "問5 公式の本文・図表・設問（PDF 10ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2022-second-power-management/answer-q05-p08.webp"
+    ],
+    "answerImageAltTexts": [
+      "問5 公式標準解答（PDF 8ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_a01.pdf#page=8",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 第一種電気主任技術者 二次試験 電力・管理」問5。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問6から4問を選択。"
+  },
+  {
+    "id": "denken1-2022-second-denryoku-q6",
+    "exam": "denken1",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "電力・管理",
+    "topicTags": [
+      "V結線での単相・三相負荷供給"
+    ],
+    "difficulty": 5,
+    "question": "V結線での単相・三相負荷供給（電力・管理）",
+    "answer": "〔問６の標準解答〕\n\n  (1) V 結線なので，T1 及びT2 の皮相電力は，\n\n      30\n         = 10  3 = 17.3 kV･A となる。\n       3\n\n   したがって，17.3 kV･A・・・(答)\n\n  (2) 三相負荷に供給しているときのベクトル図は，図a となる。点o は三相負荷\n  の中性点，aI は三相負荷のa 相電流，cI はc 相電流である。aI の大きさと cI の\n\n  大きさとは等しく，\n\n      30 000\n           = 50  3 = 86.603 A である。\n      200  3\n                      c\n\n\n              200 V                200                              V\n                                      3\n                        cI           o                                                   a\n\n            50 3 A\n                                     200 V\n\n\n                  →                              30°      oa\n                   b                              30°                  50 3 A\n                                                aI\n\n\n              図a\n\n   したがって，\n\n   ・T1 の有効電力は，200×86.603cos(60°) = 8 660.3 W ≒ 8.66 kW・・・(答)\n\n   ・T1 の無効電力は，200×86.603sin(60°) = 15 000 var = 15.0 kvar\n\n                                                    15 kvar・・・(答)\n\n   ・T2 の有効電力は，200×86.603cos(0°) = 17 321 W ≒ 17.3 kW・・・(答)\n\n   ・T2 の無効電力は，200×86.603sin(0°) =0 kvar・・・(答)\n\n\n\n\n                                                      - 9 -\n(3) 単相負荷を追加したときのベクトル図は，図b のようになる。\n\n  単相負荷に流れる電流の大きさは，\n\n    8660\n        = 43.300 A である。\n    200\n\n\n                     c\n\n\n\n              200 V\n                               200\n                           V                         cI                            o    3                                                  a\n\n               86.6 A\n                          60°            200 V\n\n                             30°    I aa  →                                      oa\n                   b                             30°\n                                    43.3 A(単相負荷電流)                       86.6 A\n                                             aI\n             図b\n\n\n   T1 のa 相電流 I aa の大きさは図b から，43.300×  3 = 75.000 A となる。\n\n  したがって，\n\n  ・T1 の有効電力は，200×75 cos(30°) = 12 990 ≒ 13.0 kW・・・(答)\n\n  ・T1 の皮相電力は，200×75 = 15 000 = 15.0 kV･A\n\n                                               15 kV･A・・・(答)\n\n\n\n\n\n                                                  - 10 -",
+    "modelAnswer": "〔問６の標準解答〕\n\n  (1) V 結線なので，T1 及びT2 の皮相電力は，\n\n      30\n         = 10  3 = 17.3 kV･A となる。\n       3\n\n   したがって，17.3 kV･A・・・(答)\n\n  (2) 三相負荷に供給しているときのベクトル図は，図a となる。点o は三相負荷\n  の中性点，aI は三相負荷のa 相電流，cI はc 相電流である。aI の大きさと cI の\n\n  大きさとは等しく，\n\n      30 000\n           = 50  3 = 86.603 A である。\n      200  3\n                      c\n\n\n              200 V                200                              V\n                                      3\n                        cI           o                                                   a\n\n            50 3 A\n                                     200 V\n\n\n                  →                              30°      oa\n                   b                              30°                  50 3 A\n                                                aI\n\n\n              図a\n\n   したがって，\n\n   ・T1 の有効電力は，200×86.603cos(60°) = 8 660.3 W ≒ 8.66 kW・・・(答)\n\n   ・T1 の無効電力は，200×86.603sin(60°) = 15 000 var = 15.0 kvar\n\n                                                    15 kvar・・・(答)\n\n   ・T2 の有効電力は，200×86.603cos(0°) = 17 321 W ≒ 17.3 kW・・・(答)\n\n   ・T2 の無効電力は，200×86.603sin(0°) =0 kvar・・・(答)\n\n\n\n\n                                                      - 9 -\n(3) 単相負荷を追加したときのベクトル図は，図b のようになる。\n\n  単相負荷に流れる電流の大きさは，\n\n    8660\n        = 43.300 A である。\n    200\n\n\n                     c\n\n\n\n              200 V\n                               200\n                           V                         cI                            o    3                                                  a\n\n               86.6 A\n                          60°            200 V\n\n                             30°    I aa  →                                      oa\n                   b                             30°\n                                    43.3 A(単相負荷電流)                       86.6 A\n                                             aI\n             図b\n\n\n   T1 のa 相電流 I aa の大きさは図b から，43.300×  3 = 75.000 A となる。\n\n  したがって，\n\n  ・T1 の有効電力は，200×75 cos(30°) = 12 990 ≒ 13.0 kW・・・(答)\n\n  ・T1 の皮相電力は，200×75 = 15 000 = 15.0 kV･A\n\n                                               15 kV･A・・・(答)\n\n\n\n\n\n                                                  - 10 -",
+    "explanation": "三相負荷だけの場合と単相負荷を加えた場合で、各変圧器に流れる電流をフェーザとして求める。その電流から皮相電力を比較する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2022-second-power-management/question-p11.webp"
+    ],
+    "imageAltTexts": [
+      "問6 公式の本文・図表・設問（PDF 11ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2022-second-power-management/answer-q06-p09.webp",
+      "/questions/denken1/2022-second-power-management/answer-q06-p10.webp"
+    ],
+    "answerImageAltTexts": [
+      "問6 公式標準解答（PDF 9ページ）",
+      "問6 公式標準解答（PDF 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_first_a01.pdf#page=9",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 第一種電気主任技術者 二次試験 電力・管理」問6。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問6から4問を選択。"
+  }
+]

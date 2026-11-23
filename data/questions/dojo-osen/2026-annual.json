@@ -1,0 +1,208 @@
+[
+  {
+    "id": "dojo-osen-2026-am-q1",
+    "exam": "dojo-osen",
+    "year": 2026,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "地下水の流動方向に100m離れて存在する2箇所の観測井で年間を通じて地下水位標高に0.5mの差が生じていることが確認された。帯水層の透水係数が950m/年、間隙率0.3、有効間隙率が0.2であるとき、1年間の地下水の移動距離として次に掲げるもののうち、適当なものはどれか。\nなお、有効数字は2桁とする。",
+    "choices": {
+      "ア": "0.95m",
+      "イ": "1.4m",
+      "ウ": "4.8m",
+      "エ": "16m",
+      "オ": "24m"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "透水係数に動水勾配を掛けた4.75 m/年を、有効間隙率0.2で割ると23.75 m/年になる。有効数字2桁で年24 mである。",
+    "choiceExplanations": {
+      "ア": "4.75に0.2を掛けた値に当たるが、実流速は水が流れる有効な間隙で割って求める。",
+      "イ": "4.75に全間隙率0.3を掛けた値に近いが、用いるのは有効間隙率による除算である。",
+      "ウ": "950×0.5÷100を丸めたダルシー流速であり、有効間隙率で割る前の値である。",
+      "エ": "全間隙率0.3で4.75を割った場合の値であり、水の流れに効く有効間隙率0.2を用いる必要がある。",
+      "オ": "動水勾配は0.5÷100=0.005で、950×0.005÷0.2=23.75 m/年となる。これを有効数字2桁に丸める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000441014.pdf#page=3",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000441017.pdf",
+    "sourceAttribution": "出典：環境省 令和8年度土壌汚染調査技術管理者試験 調査 問1。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2026-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2026-am-q2",
+    "exam": "dojo-osen",
+    "year": 2026,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "法で定められている特定有害物質に係る基準に関する次のA~Dについて、正誤の組み合わせとして正しいものはどれか。\nA すべての特定有害物質について、地下水基準は土壌溶出量基準と同じである。 B 土壌含有量基準は、シアン化合物以外の第二種特定有害物質について設定されている。\nC 水銀及びその化合物の土壌含有量基準では、水銀としての濃度とともにアルキル水銀としての濃度(検出されないこと)が設定されている。 D 1,1,1-トリクロロエタンの第二溶出量基準の値は土壌溶出量基準の3倍に設定されている。",
+    "choices": {
+      "ア": "A 正・B 正・C 誤・D 誤",
+      "イ": "A 正・B 誤・C 誤・D 正",
+      "ウ": "A 誤・B 正・C 正・D 誤",
+      "エ": "A 誤・B 誤・C 正・D 正",
+      "オ": "A 誤・B 誤・C 誤・D 正"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "地下水基準と溶出量基準は本問では同じである。含有量基準は遊離シアンにも設定され、水銀の含有量基準にアルキル水銀の項目はなく、1,1,1-トリクロロエタンは溶出量基準1 mg/Lに対し第二溶出量基準3 mg/Lである。",
+    "choiceExplanations": {
+      "ア": "シアン化合物にも遊離シアンとしての土壌含有量基準がある。また、1,1,1-トリクロロエタンは1 mg/Lに対して3 mg/Lである。",
+      "イ": "シアン化合物にも含有量基準があり、アルキル水銀はこの含有量基準の項目ではない。1,1,1-トリクロロエタンの3倍という記述は合っている。",
+      "ウ": "地下水基準と溶出量基準が等しいことと、溶出量基準で扱うアルキル水銀を含有量基準には加えないことを取り違えている。",
+      "エ": "地下水基準は土壌溶出量基準と同じであり、アルキル水銀として検出されないことは土壌含有量基準にはない。",
+      "オ": "シアン化合物の含有量基準は遊離シアンに対して設けられており、第二溶出量基準が3倍である点は正しいが、Aを誤とする判定が合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000441014.pdf#page=3",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000441017.pdf",
+    "sourceAttribution": "出典：環境省 令和8年度土壌汚染調査技術管理者試験 調査 問2。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2026-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2026-am-q3",
+    "exam": "dojo-osen",
+    "year": 2026,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "ポリ塩化ビフェニル(PCB)に関する次のA~Dについて、適当なものの組み合わせはどれか。\nA コプラナーPCBは、ポリ塩化ジベンゾ-パラ-ジオキシン(PCDD)やポリ塩化ジベンゾフラン(PCDF)とともにダイオキシン類と定義されている。 B 法の土壌溶出量基準は「検出されないこと」であり、第二溶出量基準は定められていない。\nC 酸・アルカリに対して強く、不燃性で油類に難溶であり、電気絶縁性に優れた性質を持つため、かつてはトランスやコンデンサ等に広く使用されていた。 D 土壌中では移動性は小さく、化学的に安定で生分解性も低いため、長期間環境中に残留する特徴がある。",
+    "choices": {
+      "ア": "A、B",
+      "イ": "A、C",
+      "ウ": "A、D",
+      "エ": "B、C",
+      "オ": "C、D"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "コプラナーPCBはダイオキシン類に含まれ、PCBは難分解性で長く環境に残留する。PCBにも第二溶出量基準があり、油類には溶けやすい。",
+    "choiceExplanations": {
+      "ア": "コプラナーPCBをダイオキシン類に含めるAは適切だが、PCBにも第二溶出量基準が設定されている。",
+      "イ": "PCBは油類に溶けやすいため、電気絶縁性などの記述が適当でもC全体は適当でない。",
+      "ウ": "Aのダイオキシン類の定義と、DのPCBが難分解性で環境中に残りやすいという説明はどちらも適当である。",
+      "エ": "Bは第二溶出量基準の有無、Cは油への溶けやすさが誤っている。",
+      "オ": "DはPCBの特徴に合っているが、Cの油類に難溶という説明が誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000441014.pdf#page=4",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000441017.pdf",
+    "sourceAttribution": "出典：環境省 令和8年度土壌汚染調査技術管理者試験 調査 問3。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2026-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2026-am-q4",
+    "exam": "dojo-osen",
+    "year": 2026,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "重金属等による自然由来の土壌汚染の可能性に関する次の(1)~(5)の記述のうち、最も不適当なものはどれか。",
+    "choices": {
+      "ア": "自然由来の土壌汚染の可能性のある重金属等とは、法の第二種特定有害物質のうち、水銀及びその化合物を除く8種類である。",
+      "イ": "自然由来の土壌汚染が多く見られる物質は、砒素、鉛、ふっ素及びほう素である。",
+      "ウ": "蛇紋岩帯が分布している地域では、六価クロムによる地下水汚染の可能性がある。",
+      "エ": "鉛は、同位体分析を用いることで自然由来と人為由来の起源を判別できる可能性がある。",
+      "オ": "土壌溶出量が土壌溶出量基準の10倍を超える場合は、人為等に由来する汚染の可能性が高くなる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "自然由来の汚染の可能性を考える第二種特定有害物質の範囲では、シアン化合物を除く。水銀及びその化合物を除くという記述は不適当である。",
+    "choiceExplanations": {
+      "ア": "自然由来の可能性がある8種類を挙げる際に除外されるのはシアン化合物で、水銀及びその化合物ではない。",
+      "イ": "砒素、鉛、ふっ素及びほう素は、自然由来の汚染として比較的多く確認される。",
+      "ウ": "蛇紋岩帯では地質に由来するクロムが酸化して六価クロムを生じることがあり、地下水調査で考慮する。",
+      "エ": "鉛の同位体比が由来によって異なる場合は、自然起源か人為起源かを比較する手掛かりになる。",
+      "オ": "基準値を大きく上回る溶出量は、地質由来だけではなく人為由来などを検討する根拠になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.env.go.jp/content/000441014.pdf#page=4",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000441017.pdf",
+    "sourceAttribution": "出典：環境省 令和8年度土壌汚染調査技術管理者試験 調査 問4。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2026-09-01",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dojo-osen-2026-am-q5",
+    "exam": "dojo-osen",
+    "year": 2026,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "調査",
+    "topicTags": [
+      "調査"
+    ],
+    "difficulty": 3,
+    "question": "法第3条第7項の土地の形質の変更の届出の対象となる土地で、法第3条第8項の土壌汚染状況調査を行うこととなった。法第3条第8項調査を行うときの下図の範囲内での土壌汚染状況調査の対象地と情報の入手・把握の対象とする土地の場所として、(1)~(5)のうち正しいものの組み合わせはどれか。\nなお、Aは事業所の敷地のうちBとCを除く範囲である。",
+    "choices": {
+      "ア": "調査対象地 A+B+C／情報の入手・把握 A+B+C",
+      "イ": "調査対象地 A+B+C／情報の入手・把握 C",
+      "ウ": "調査対象地 B+C／情報の入手・把握 B+C",
+      "エ": "調査対象地 B／情報の入手・把握 A+B+C",
+      "オ": "調査対象地 B／情報の入手・把握 B"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "法第3条第8項の調査対象地は形質変更を行う範囲Bであり、汚染のおそれを把握するための情報は事業所の敷地A＋B＋Cを対象に集める。",
+    "choiceExplanations": {
+      "ア": "敷地全体は情報収集の範囲であり、試料採取等を行う土壌汚染状況調査の対象地を敷地全体に広げるわけではない。",
+      "イ": "対象地は形質変更範囲Bで、情報収集も特定施設を設置していた建物Cだけに限定しない。",
+      "ウ": "CがBと離れており、Cは形質変更を行う範囲に含まれない。一方、情報収集はB＋Cだけでは敷地全体を含まない。",
+      "エ": "土壌汚染状況調査は届出に係るBを対象とし、情報の入手・把握は事業所全体のA＋B＋Cを対象とする。",
+      "オ": "調査対象地をBとする点は適切だが、地歴等の情報をBに限定すると旧施設の位置などを把握できない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/dojo-osen/2026/am-q5.png"
+    ],
+    "imageAltTexts": [
+      "土地の形質の変更を行う範囲Bと、旧有害物質使用特定施設Cを含む事業所の敷地を示した図。"
+    ],
+    "sourcePdfUrl": "https://www.env.go.jp/content/000441014.pdf#page=5",
+    "sourceAnswerUrl": "https://www.env.go.jp/content/000441017.pdf",
+    "sourceAttribution": "出典：環境省 令和8年度土壌汚染調査技術管理者試験 調査 問5。図は公式PDFから切り出し。解説は過去問AI作成。",
+    "license": "INT7-owner-decision",
+    "lawReferenceDate": "2026-09-01",
+    "lastUpdated": "2026-11-19"
+  }
+]

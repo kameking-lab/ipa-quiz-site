@@ -4,6 +4,7 @@ import QuestionPage, { dynamicParams, generateMetadata, generateStaticParams } f
 import ExamTopPage from "@/app/[exam]/page";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
+import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { OT13_RECOVERED_QUESTIONS, OT13_OFFICIAL_EXCLUSIONS } from "@/data/qualification-staging/sagyo-ryohoshi/ot13-recovered";
 
 function route(question: { year: number; session: string; qNumber: number }) {
@@ -53,11 +54,11 @@ describe("registered OT source-backed routes and figures", () => {
     }
   });
 
-  it("shows the 310-question partial-coverage count in the qualification hub", async () => {
+  it("shows the current number of published questions in the qualification hub", async () => {
     const page = await ExamTopPage({ params: Promise.resolve({ exam: "sagyo-ryohoshi" }) });
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
-    const summary = doc.querySelector("header > p")?.textContent ?? "";
-    expect(summary).toContain("310問を部分収録");
+    const summary = [...doc.querySelectorAll("p")].find(item => item.textContent?.includes("第61・60回の午前・午後"))?.textContent ?? "";
+    expect(summary).toContain(`${getQuestionsByExamStrict("sagyo-ryohoshi").length}原問を部分収録`);
     expect(summary).toContain("未収録");
   });
 });

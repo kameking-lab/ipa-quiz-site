@@ -1,41 +1,87 @@
 // Auto-generated barrel — do not edit manually.
 // Run: pnpm tsx scripts/generate-ap-all.ts
 import type { Question } from "@/lib/questions/types";
+
+import { AP_QUESTIONS_2025_SPRING_PM } from "./2025-spring-pm";
+
 import { AP_QUESTIONS_2009_AUTUMN } from "./2009-autumn";
+
 import { AP_QUESTIONS_2009_SPRING } from "./2009-spring";
+
 import { AP_QUESTIONS_2010_AUTUMN } from "./2010-autumn";
+
 import { AP_QUESTIONS_2010_SPRING } from "./2010-spring";
+
 import { AP_QUESTIONS_2011_AUTUMN } from "./2011-autumn";
+
 import { AP_QUESTIONS_2011_SPRING } from "./2011-spring";
+
 import { AP_QUESTIONS_2012_AUTUMN } from "./2012-autumn";
+
 import { AP_QUESTIONS_2012_SPRING } from "./2012-spring";
+
 import { AP_QUESTIONS_2013_AUTUMN } from "./2013-autumn";
+
 import { AP_QUESTIONS_2013_SPRING } from "./2013-spring";
+
 import { AP_QUESTIONS_2014_AUTUMN } from "./2014-autumn";
+
 import { AP_QUESTIONS_2014_SPRING } from "./2014-spring";
+
 import { AP_QUESTIONS_2015_AUTUMN } from "./2015-autumn";
+
 import { AP_QUESTIONS_2015_SPRING } from "./2015-spring";
+
 import { AP_QUESTIONS_2016_AUTUMN } from "./2016-autumn";
+
 import { AP_QUESTIONS_2016_SPRING } from "./2016-spring";
+
 import { AP_QUESTIONS_2017_AUTUMN } from "./2017-autumn";
+
+import { AP_QUESTIONS_2017_AUTUMN_PM } from "./2017-autumn-pm";
+
 import { AP_QUESTIONS_2017_SPRING } from "./2017-spring";
+
 import { AP_QUESTIONS_2018_AUTUMN } from "./2018-autumn";
+
 import { AP_QUESTIONS_2018_SPRING } from "./2018-spring";
+
+
+import { AP_QUESTIONS_2018_SPRING_PM } from "./2018-spring-pm";
+
 import { AP_QUESTIONS_2019_AUTUMN } from "./2019-autumn";
+
 import { AP_QUESTIONS_2019_SPRING } from "./2019-spring";
+
 import { AP_QUESTIONS_2020_AUTUMN } from "./2020-autumn";
+
 import { AP_QUESTIONS_2021_AUTUMN } from "./2021-autumn";
+
 import { AP_QUESTIONS_2021_SPRING } from "./2021-spring";
+
 import { AP_QUESTIONS_2022_AUTUMN } from "./2022-autumn";
+
 import { AP_QUESTIONS_2022_SPRING } from "./2022-spring";
+
 import { AP_QUESTIONS_2023_AUTUMN } from "./2023-autumn";
+
 import { AP_QUESTIONS_2023_SPRING } from "./2023-spring";
+
 import { AP_QUESTIONS_2024_AUTUMN } from "./2024-autumn";
+
 import { AP_QUESTIONS_2024_SPRING } from "./2024-spring";
+
 import { AP_QUESTIONS_2025_AUTUMN } from "./2025-autumn";
+
 import { AP_QUESTIONS_2025_SPRING } from "./2025-spring";
 
+
+import { AP_QUESTIONS_2025_AUTUMN_PM } from "./2025-autumn-pm";
+
+
 export const AP_BY_YEAR_QUESTIONS: Question[] = [
+  ...AP_QUESTIONS_2025_AUTUMN_PM,
+  ...AP_QUESTIONS_2025_SPRING_PM,
   ...AP_QUESTIONS_2009_AUTUMN,
   ...AP_QUESTIONS_2009_SPRING,
   ...AP_QUESTIONS_2010_AUTUMN,
@@ -53,9 +99,11 @@ export const AP_BY_YEAR_QUESTIONS: Question[] = [
   ...AP_QUESTIONS_2016_AUTUMN,
   ...AP_QUESTIONS_2016_SPRING,
   ...AP_QUESTIONS_2017_AUTUMN,
+  ...AP_QUESTIONS_2017_AUTUMN_PM,
   ...AP_QUESTIONS_2017_SPRING,
   ...AP_QUESTIONS_2018_AUTUMN,
   ...AP_QUESTIONS_2018_SPRING,
+  ...AP_QUESTIONS_2018_SPRING_PM,
   ...AP_QUESTIONS_2019_AUTUMN,
   ...AP_QUESTIONS_2019_SPRING,
   ...AP_QUESTIONS_2020_AUTUMN,

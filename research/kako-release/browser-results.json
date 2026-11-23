@@ -1,0 +1,29 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "safeTop": 59
+  },
+  "environment": "Local production build. Synthetic JWT for a local-only account; no OAuth, production credentials, DB, or paid AI. Capture CSS reserves top 59px as in the home review and mirrors the existing native-app dialog inset rules from app/globals.css. This is viewport simulation, not a physical-device test.",
+  "checks": [
+    "Guest home CTA visible, header below top 59px, guest menu offers login, no horizontal overflow.",
+    "Synthetic session accepted by real local Auth.js; home menu reaches account in 2 taps; logout visible above fold; cancel returns to account; real local signout clears session and returns to guest home.",
+    "Built /api/reizoko/generate_recipe returns 403 without client header before provider invocation.",
+    "Both added qualifications are discoverable in the built home finder."
+  ],
+  "screenshots": [
+    "01-home-iphone.png",
+    "02-signed-in-account-entry-iphone.png",
+    "03-account-iphone.png",
+    "04-signout-confirmation-iphone.png",
+    "05-signed-out-menu-iphone.png"
+  ],
+  "pageErrors": [],
+  "externalRequestsBlocked": [],
+  "accountEntryBounds": {
+    "x": 64,
+    "y": 147,
+    "width": 302,
+    "height": 52
+  }
+}

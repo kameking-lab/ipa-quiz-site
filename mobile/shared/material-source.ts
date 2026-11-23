@@ -4,7 +4,7 @@ import { getAnnotatedNotes, annotatedNotePath, LEARNING_NOTICE } from "@/lib/st-
 import { isExamPublished } from "@/lib/qualifications/catalog";
 // Server/tooling entry only. Mobile renderers import material-types (type-only).
 import {DENKEN1_NATIVE_PARTS,denken1NativeQuestionPath} from "@/lib/denken1/native";
-import {NATIVE_EDITIONS,NATIVE_QUESTIONS,nativeQuestionPath} from "@/lib/denken2/native";
+import {getNativeQuestionSource,NATIVE_QUESTIONS,nativeQuestionPath} from "@/lib/denken2/native";
 import {DENKEN3_NATIVE_PARTS,denken3NativeQuestionPath} from "@/lib/denken3/native";
 import {SECONDARY_QUESTIONS,secondaryQuestionPath} from "@/lib/denken2/secondary";
 import {FP2_PRACTICAL_EDITIONS,getPracticalEdition as fp2,practicalSourceUrls as fp2Source} from "@/lib/fp2/practical";
@@ -22,7 +22,18 @@ export function materialGroups():MaterialGroup[] {
   const groups:MaterialGroup[]=[];
   const add=(code:string,name:string,qualification:string,items:Material[])=>{if(items.length)groups.push({code:`material.${code}`,name,qualification,items});};
   add("denken1-native","電験一種 原問形式","denken1",DENKEN1_NATIVE_PARTS.flatMap(p=>p.questions.map(q=>({id:q.id,title:q.topic,href:denken1NativeQuestionPath(q.year,q.subject,q.number),kind:"native" as const,question:q,readerConfig:{examName:"電験一種",examPath:"/denken1" as const,sourceAnswerUrl:p.sourceAnswerUrl,sourceIndexUrl:p.sourceIndexUrl}}))));
-  add("denken2-native","電験二種 原問形式","denken2",NATIVE_QUESTIONS.map(q=>{const p=NATIVE_EDITIONS.find(p=>p.year===q.year)!;return {id:q.id,title:q.topic,href:nativeQuestionPath(q.year,q.subject,q.number),kind:"native" as const,question:q,readerConfig:{examName:"電験二種",examPath:"/denken2" as const,sourceAnswerUrl:p.sourceAnswerUrl,sourceIndexUrl:p.sourceIndexUrl}};}));
+  add("denken2-native", "電験二種 原問形式", "denken2", NATIVE_QUESTIONS.map(question => {
+    const { id, year, subject, number, topic } = question;
+    const source = getNativeQuestionSource(year, subject);
+    if (!source) throw new Error(`Missing Denken2 source: ${id}`);
+    return {
+      id, title: topic, href: nativeQuestionPath(year, subject, number), kind: "native", question,
+      readerConfig: {
+        examName: "電験二種", examPath: "/denken2",
+        sourceAnswerUrl: source.sourceAnswerUrl, sourceIndexUrl: source.sourceIndexUrl,
+      },
+    };
+  }));
   add("denken3-native","電験三種 原問形式","denken3",DENKEN3_NATIVE_PARTS.flatMap(p=>p.questions.map(q=>({id:q.id,title:q.topic,href:denken3NativeQuestionPath(q.sitting,q.subject,q.number),kind:"native" as const,question:q,readerConfig:{examName:"電験三種",examPath:"/denken3" as const,editionSlug:q.sitting,editionLabel:q.sitting,sourceAnswerUrl:p.sourceAnswerUrl,sourceIndexUrl:p.sourceIndexUrl,lawReferenceDate:q.subject==="law"?`${q.year}-04-01`:undefined}}))));
   add("denken2-secondary","電験二種 二次記述","denken2",SECONDARY_QUESTIONS.map(q=>({id:q.id,title:q.topic,href:secondaryQuestionPath(q),kind:"secondary",question:q})));
   add("fp2-practical","FP2級 実技","fp2",FP2_PRACTICAL_EDITIONS.flatMap(edition=>{const d=fp2(edition);if(!d)return [];const {questions,...data}=d;return questions.map(q=>({id:`fp2-practical-${edition}-${q.number}`,title:`${d.label} 問${q.number}`,href:`/fp2/practical/${edition}/${q.number}`,kind:"fp2" as const,edition,data,q,source:fp2Source(edition)}));}));

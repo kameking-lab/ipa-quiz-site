@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
+import { DENKEN1_PRIMARY_QUESTIONS } from "@/data/questions/denken1";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { parseQuestionRoute, questionPagePath } from "@/lib/seo/question-url";
 
@@ -15,10 +15,10 @@ const OFFICIAL = {
 
 describe("denken1 2026 partial launch", () => {
   it("has precisely the five selected original questions and all five blanks", () => {
-    expect(DENKEN1_QUESTIONS).toHaveLength(25);
-    expect(new Set(DENKEN1_QUESTIONS.map((q) => q.id)).size).toBe(25);
+    expect(DENKEN1_PRIMARY_QUESTIONS).toHaveLength(25);
+    expect(new Set(DENKEN1_PRIMARY_QUESTIONS.map((q) => q.id)).size).toBe(25);
     for (const [subject, sheet] of Object.entries(OFFICIAL)) {
-      const rows = DENKEN1_QUESTIONS.filter((q) => q.subject === subject && q.qNumber === sheet.number);
+      const rows = DENKEN1_PRIMARY_QUESTIONS.filter((q) => q.subject === subject && q.qNumber === sheet.number);
       expect(rows).toHaveLength(5);
       rows.forEach((q, i) => {
         expect([q.exam, q.year, q.season, q.session, q.qNumber, q.part]).toEqual([

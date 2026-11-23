@@ -1,0 +1,60 @@
+{
+  "lane": "ql-12",
+  "branch": "cx/kako-5y12-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-qk12-ledger.json",
+  "entries": [
+    {
+      "jobId": "PLAN5-180",
+      "index": 179,
+      "status": "official-text-checked",
+      "checkedQuestionNumbers": [1, 4, 6, 7, 11, 12, 59, 67, 86],
+      "officialAnswerMismatchCount": 0,
+      "sourceManifest": "data/questions/rigaku-ryohoshi/2023-pm-official-sources.json"
+    },
+    {
+      "jobId": "PLAN5-194",
+      "index": 193,
+      "status": "official-text-checked",
+      "checkedQuestionNumbers": [29, 66, 68, 69, 74, 75],
+      "officialAnswerMismatchCount": 0,
+      "sourceManifest": "data/questions/shino-kunrenshi/2026-pm-branch-sources.json"
+    },
+    {
+      "jobId": "PLAN5-208",
+      "index": 207,
+      "status": "official-text-checked",
+      "checkedQuestionNumbers": [287, 288, 289, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 308, 309, 310, 311, 316, 317, 322, 323, 324, 325, 330, 334, 335, 336, 340, 341, 342, 343],
+      "restoredSharedCaseQuestionNumbers": [322, 323],
+      "sharedCasePdfPage": 40,
+      "officialAnswerMismatchCount": 0,
+      "sourceManifest": "data/questions/yakuzaishi/2026-day2-3-sources.json"
+    },
+    {
+      "jobId": "PLAN5-222",
+      "index": 221,
+      "status": "official-text-checked",
+      "checkedQuestionNumbers": [91, 92, 93, 95, 99, 100, 102, 103, 106, 108, 109, 110, 114, 119, 125, 127, 128, 129, 131, 136, 139],
+      "restoredChoiceTextQuestionNumbers": [131],
+      "officialAnswerMismatchCount": 0,
+      "sourceManifest": "data/questions/yakuzaishi/2023-day1-2-sources.json"
+    },
+    {
+      "jobId": "PLAN5-236",
+      "index": 235,
+      "status": "official-text-checked",
+      "checkedQuestionNumbers": [26, 41, 49, 50, 51, 54, 55, 60, 81, 82, 85],
+      "updatedSourceAttributionCount": 28,
+      "officialAnswerMismatchCount": 0,
+      "sourceManifest": "data/questions/rinsho-kogishi/38-pm-plan5-sources.json"
+    },
+    {
+      "jobId": "PLAN5-250",
+      "index": 249,
+      "status": "official-text-checked",
+      "checkedQuestionNumbers": [100, 108, 111, 114, 116, 117, 118, 121, 123, 124, 128, 129, 130, 133, 134, 139, 142, 153, 154, 157, 165, 169, 171, 172, 173, 174, 176, 177, 178, 179],
+      "officialAnswerMismatchCount": 0,
+      "sourceManifest": "data/questions/ahaki/ahaki-hari-kyu-2024-pm-sources.json"
+    }
+  ]
+}

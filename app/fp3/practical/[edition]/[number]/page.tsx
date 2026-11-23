@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import { Fp3PracticalView } from "@/components/quiz/Fp3PracticalView";
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ edition: 
   const data = getPracticalEdition(edition);
   const q = data?.questions.find((item) => item.number === Number(number));
   if (!q) return { title: "問題が見つかりません", robots: { index: false } };
-  return { title: `FP3級 実技 ${data!.label} 問${q.number} 解答`, description: q.stem.replace(/\s+/g, " ").slice(0, 140), alternates: { canonical: `/fp3/practical/${edition}/${q.number}` } };
+  return withCanonicalSocialMetadata({ title: `FP3級 実技 ${data!.label} 問${q.number} 解答`, description: q.stem.replace(/\s+/g, " ").slice(0, 140), alternates: { canonical: `/fp3/practical/${edition}/${q.number}` } });
 }
 
 export default async function Fp3PracticalQuestion({ params }: { params: Promise<{ edition: string; number: string }> }) {

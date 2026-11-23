@@ -3,6 +3,8 @@ import { describe, expect, it } from "vitest";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/data/blog";
 import { BLOG_ARTICLE_ALIASES } from "@/lib/blog/article-aliases";
 import baseline from "@/__tests__/fixtures/worked-guide-body-sha256-20261011.json";
+import { buildWorkedExamplesPost } from "@/data/blog/worked-examples";
+import type { IpaExamCode } from "@/lib/questions/types";
 
 function post(slug: string) {
   const value = getBlogPostBySlug(slug);
@@ -11,13 +13,19 @@ function post(slug: string) {
 }
 
 describe("bounded study-content consolidation", () => {
-  it("preserves the bodies of all 13 completed worked guides", () => {
+  it("preserves all 13 source guides and their worked sections within refreshed articles", () => {
     expect(baseline.guides).toHaveLength(13);
-    for (const entry of baseline.guides) expect(createHash("sha256").update(post(entry.slug).body).digest("hex"), entry.slug).toBe(entry.bodySha256);
+    for (const entry of baseline.guides) {
+      const original = buildWorkedExamplesPost(entry.slug.split("-")[0] as IpaExamCode, "");
+      expect(createHash("sha256").update(original.body).digest("hex"), entry.slug).toBe(entry.bodySha256);
+      // Late-CBT plans add measured counts before the guide. Keep every actual
+      // worked explanation, source, answer and link byte-for-byte unchanged.
+      expect(post(entry.slug).body.endsWith(original.body.slice(original.body.indexOf("## 1."))), entry.slug).toBe(true);
+    }
   });
 
   it("moves both duplicate practice URLs to the qualification's completed worked guide", () => {
-    expect(getAllBlogPosts()).toHaveLength(179);
+    expect(getAllBlogPosts()).toHaveLength(197);
     for (const exam of ["nw", "db"]) {
       expect(getBlogPostBySlug(`${exam}-yoru-tokurensyu`)).toBeUndefined();
       expect(BLOG_ARTICLE_ALIASES[`${exam}-yoru-tokurensyu`]).toBe(`${exam}-hinnshutsu-ronten-toppu10`);
@@ -49,10 +57,11 @@ describe("bounded study-content consolidation", () => {
     expect(post("nw-goukaku-benkyouhou").body).not.toContain("丸暗記で乗り切れる");
   });
 
-  it("uses the same 26-week calculation in the FE plan and FAQ", () => {
+  it("explains the FE planning assumption once and sends time details to its own guide", () => {
     const fe = post("fe-goukaku-benkyouhou").body;
-    expect(fe.match(/週約8〜12時間/g)).toHaveLength(2);
+    expect(fe.match(/週約8〜12時間/g)).toHaveLength(1);
     expect(fe).toContain("200÷26≒7.7、300÷26≒11.5");
     expect(fe).not.toContain("週 12〜20 時間");
+    expect(fe).toContain("/blog/fe-benkyou-jikan-meyasu");
   });
 });

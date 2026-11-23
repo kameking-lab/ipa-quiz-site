@@ -48,7 +48,7 @@ describe("第27回（令和6年度）精神保健福祉士の公式照合", () =
     expect(ALL_SEISHIN_QUESTIONS.filter((q) => q.year === 2025)).toHaveLength(132);
     expect(new Set(ALL_SEISHIN_QUESTIONS.map((q) => q.id)).size).toBe(ALL_SEISHIN_QUESTIONS.length);
     expect(SEISHIN_2024.every((q) => q.examDate === "2025-02-01/2025-02-02" && q.season === "annual")).toBe(true);
-    expect(EXAM_CONFIGS.seishin.yearRange).toEqual({ start: 2024, end: 2025 });
+    expect(EXAM_CONFIGS.seishin.yearRange).toEqual({ start: 2023, end: 2025 });
     expect(sources).toMatchObject({ round: 27, fiscalYear: 2024, examDate: "2025-02-01/2025-02-02" });
     // 社会福祉士第37回は共通科目をこのJSONと共有する（保留3問は社会福祉士側でも出さない）。
     const shakai2024 = SHAKAI_QUESTIONS.filter((q) => q.year === 2024);

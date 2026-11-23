@@ -1,7 +1,6 @@
-import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS } from "../fixtures/kangoshi-before-completion";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import pm4 from "@/docs/evidence/nurse-pm4-followup-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -44,11 +43,4 @@ describe("nursing PM three primary-evidence originals", () => {
     expect(byId.get("kangoshi-2025-annual-pm-q86")?.requiredSelections).toBe(2);
   });
 
-  it("presents the updated partial-collection numbers on the exam home", () => {
-    const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前235問と午後229問");
-    expect(home).toContain("計464原問");
-    expect(home).toContain("全1918肢");
-    expect(home).toContain("午前 問32は厚生労働省が採点対象から除外");
-  });
 });

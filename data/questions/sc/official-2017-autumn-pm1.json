@@ -1,0 +1,51 @@
+[
+  {
+    "id": "sc-2017a-pm1-q3",
+    "exam": "sc",
+    "year": 2017,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "TLSの秘密鍵が漏えいしたときの対応"
+    ],
+    "difficulty": 5,
+    "question": "問3 TLSの秘密鍵が漏えいしたときの対応",
+    "answer": "問３\n                       出題趣旨\n  インターネットにおいて，SSL/TLS は欠くことのできない技術であり，Web サービスをはじめとして，各種\nサービスの基盤として利用されているが，SSL/TLS を利用する場合には注意点がある。サーバ証明書の鍵の漏\nえい，つまり危たい化は起こり得るし，また，新しく発見された攻撃方法によって対応が求められる場合もあ\nる。\n  本問では，サーバの鍵の危たい化を題材に，暗号技術に関する基礎的知識，SSL/TLS についての基礎的知\n 識，及びSSL/TLS を正しく設定し，利用し，運用する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a コ\n              b カ\n              c オ\n              d イ\n         (2) 正規のEC サイトのURL でアクセスしたときに，偽のEC サイトに誘導する。\n         (3) エ\n 設問２(1) ア 利用\n       イ 失効\n         (2) ① ・鍵が危たい化したWeb サイトのFQDN\n       ② ・鍵が危たい化したと思われる日時\n         (3)  e 鍵ペア\n 設問３(1) SSL3.0 を利用しない設定にする。\n         (2) ウ，オ\n         (3) エ\n         (4) ドメイン認証証明書ではサーバの運営者がC 社であることを確認できないから",
+    "modelAnswer": "問３\n                       出題趣旨\n  インターネットにおいて，SSL/TLS は欠くことのできない技術であり，Web サービスをはじめとして，各種\nサービスの基盤として利用されているが，SSL/TLS を利用する場合には注意点がある。サーバ証明書の鍵の漏\nえい，つまり危たい化は起こり得るし，また，新しく発見された攻撃方法によって対応が求められる場合もあ\nる。\n  本問では，サーバの鍵の危たい化を題材に，暗号技術に関する基礎的知識，SSL/TLS についての基礎的知\n 識，及びSSL/TLS を正しく設定し，利用し，運用する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a コ\n              b カ\n              c オ\n              d イ\n         (2) 正規のEC サイトのURL でアクセスしたときに，偽のEC サイトに誘導する。\n         (3) エ\n 設問２(1) ア 利用\n       イ 失効\n         (2) ① ・鍵が危たい化したWeb サイトのFQDN\n       ② ・鍵が危たい化したと思われる日時\n         (3)  e 鍵ペア\n 設問３(1) SSL3.0 を利用しない設定にする。\n         (2) ウ，オ\n         (3) エ\n         (4) ドメイン認証証明書ではサーバの運営者がC 社であることを確認できないから",
+    "explanation": "証明書の失効・新しい鍵の発行・鍵交換方式の見直しを整理します。PFSは長期鍵が漏えいしたときの過去の通信への影響を抑える考え方です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sc/2017-autumn-pm1/page-15.webp",
+      "/questions/ipa/sc/2017-autumn-pm1/page-16.webp",
+      "/questions/ipa/sc/2017-autumn-pm1/page-17.webp",
+      "/questions/ipa/sc/2017-autumn-pm1/page-18.webp",
+      "/questions/ipa/sc/2017-autumn-pm1/page-19.webp",
+      "/questions/ipa/sc/2017-autumn-pm1/page-20.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士試験 2017年度秋期 午後I 問3 公式問題PDF 15ページ",
+      "情報処理安全確保支援士試験 2017年度秋期 午後I 問3 公式問題PDF 16ページ",
+      "情報処理安全確保支援士試験 2017年度秋期 午後I 問3 公式問題PDF 17ページ",
+      "情報処理安全確保支援士試験 2017年度秋期 午後I 問3 公式問題PDF 18ページ",
+      "情報処理安全確保支援士試験 2017年度秋期 午後I 問3 公式問題PDF 19ページ",
+      "情報処理安全確保支援士試験 2017年度秋期 午後I 問3 公式問題PDF 20ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sc/2017-autumn-pm1/answer-q03-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "情報処理安全確保支援士試験 2017年度秋期 午後I 問3 公式解答例 2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sc_pm1_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sc_pm1_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA「情報処理安全確保支援士試験 2017年度秋期 午後I 問3」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

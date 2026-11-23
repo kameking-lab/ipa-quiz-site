@@ -4,7 +4,7 @@ import { test, expect } from "@playwright/test";
 // /feedback は統一問い合わせフォーム /contact?type=error へリダイレクトする。
 test.describe("/feedback redirect (no 404)", () => {
   test("GET /feedback redirects to /contact (not 404)", async ({ request }) => {
-    const res = await request.get("/feedback", { maxRedirects: 0 });
+    const res = await request.get("/feedback", { maxRedirects: 0, maxRetries: 1 });
     expect([301, 308]).toContain(res.status());
     expect(res.headers()["location"]).toContain("/contact");
   });

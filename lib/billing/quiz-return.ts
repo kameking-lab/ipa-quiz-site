@@ -40,6 +40,13 @@ export function readQuizReturn(store: Store, now = Date.now(), order?: string): 
   } catch { return null; }
 }
 
+export function studyCheckoutHeading(href: string | null) {
+  const safe = safeQuizReturn(href);
+  if (!safe) return null;
+  const target = new URL(safe, "https://quiz.invalid");
+  return target.pathname === "/me" && target.searchParams.has("exam") ? "月額プランで今週の復習を始める" : null;
+}
+
 export function billingHref(href: string): string {
   const safe = safeQuizReturn(href);
   return safe ? `/billing?returnTo=${encodeURIComponent(safe)}` : "/billing";

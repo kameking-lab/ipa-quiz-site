@@ -1,0 +1,2648 @@
+{
+  "lane": "qd-10",
+  "branch": "cx/kako-5y10-20261118",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "countDefinition": "公式原問単位。89演習問と公式採点除外1問を区別し、全肢や画像枚数を問数へ加算しない。",
+  "rows": [
+    {
+      "jobId": "PLAN5-136",
+      "index": 135,
+      "exam": "shika-ishi",
+      "officialYear": 2023,
+      "storedYear": 2023,
+      "officialRound": 116,
+      "session": "mondai-c",
+      "status": "完了（89問演習・公式採点除外1問を記録）",
+      "expectedQuestionCount": 90,
+      "previousQuestionCount": 20,
+      "addedQuestionCount": 69,
+      "questionCount": 89,
+      "choiceCount": 440,
+      "numericCount": 1,
+      "orderingCount": 1,
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-02.html",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02c_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+      "sourceAppendixUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02c_02.pdf",
+      "questionPdfSha256": "d56ddd8fa6be895e090ad934987783e3968b89630ede59c11bd8d65f33f8a137",
+      "answerPdfSha256": "5b8be8ea6515d2ad7850f0e66c981448dc4af3237ea5956c2a3c18fbab6707bd",
+      "appendixPdfSha256": "2a5a5388da871bb8db0b28d1ef181cbde91dab6c50e6a484b16506ad675f7a4b",
+      "dataPath": "data/questions/shika-ishi/2023-annual-c-completion.json",
+      "questionIds": [
+        "shika-ishi-2023-annual-mondai-c-q21",
+        "shika-ishi-2023-annual-mondai-c-q22",
+        "shika-ishi-2023-annual-mondai-c-q23",
+        "shika-ishi-2023-annual-mondai-c-q24",
+        "shika-ishi-2023-annual-mondai-c-q25",
+        "shika-ishi-2023-annual-mondai-c-q26",
+        "shika-ishi-2023-annual-mondai-c-q27",
+        "shika-ishi-2023-annual-mondai-c-q28",
+        "shika-ishi-2023-annual-mondai-c-q29",
+        "shika-ishi-2023-annual-mondai-c-q30",
+        "shika-ishi-2023-annual-mondai-c-q31",
+        "shika-ishi-2023-annual-mondai-c-q32",
+        "shika-ishi-2023-annual-mondai-c-q33",
+        "shika-ishi-2023-annual-mondai-c-q34",
+        "shika-ishi-2023-annual-mondai-c-q35",
+        "shika-ishi-2023-annual-mondai-c-q36",
+        "shika-ishi-2023-annual-mondai-c-q37",
+        "shika-ishi-2023-annual-mondai-c-q38",
+        "shika-ishi-2023-annual-mondai-c-q39",
+        "shika-ishi-2023-annual-mondai-c-q40",
+        "shika-ishi-2023-annual-mondai-c-q41",
+        "shika-ishi-2023-annual-mondai-c-q42",
+        "shika-ishi-2023-annual-mondai-c-q43",
+        "shika-ishi-2023-annual-mondai-c-q44",
+        "shika-ishi-2023-annual-mondai-c-q45",
+        "shika-ishi-2023-annual-mondai-c-q46",
+        "shika-ishi-2023-annual-mondai-c-q47",
+        "shika-ishi-2023-annual-mondai-c-q48",
+        "shika-ishi-2023-annual-mondai-c-q49",
+        "shika-ishi-2023-annual-mondai-c-q50",
+        "shika-ishi-2023-annual-mondai-c-q51",
+        "shika-ishi-2023-annual-mondai-c-q52",
+        "shika-ishi-2023-annual-mondai-c-q53",
+        "shika-ishi-2023-annual-mondai-c-q54",
+        "shika-ishi-2023-annual-mondai-c-q55",
+        "shika-ishi-2023-annual-mondai-c-q56",
+        "shika-ishi-2023-annual-mondai-c-q57",
+        "shika-ishi-2023-annual-mondai-c-q58",
+        "shika-ishi-2023-annual-mondai-c-q59",
+        "shika-ishi-2023-annual-mondai-c-q60",
+        "shika-ishi-2023-annual-mondai-c-q61",
+        "shika-ishi-2023-annual-mondai-c-q62",
+        "shika-ishi-2023-annual-mondai-c-q63",
+        "shika-ishi-2023-annual-mondai-c-q64",
+        "shika-ishi-2023-annual-mondai-c-q65",
+        "shika-ishi-2023-annual-mondai-c-q66",
+        "shika-ishi-2023-annual-mondai-c-q67",
+        "shika-ishi-2023-annual-mondai-c-q68",
+        "shika-ishi-2023-annual-mondai-c-q69",
+        "shika-ishi-2023-annual-mondai-c-q70",
+        "shika-ishi-2023-annual-mondai-c-q71",
+        "shika-ishi-2023-annual-mondai-c-q72",
+        "shika-ishi-2023-annual-mondai-c-q73",
+        "shika-ishi-2023-annual-mondai-c-q74",
+        "shika-ishi-2023-annual-mondai-c-q75",
+        "shika-ishi-2023-annual-mondai-c-q76",
+        "shika-ishi-2023-annual-mondai-c-q77",
+        "shika-ishi-2023-annual-mondai-c-q79",
+        "shika-ishi-2023-annual-mondai-c-q80",
+        "shika-ishi-2023-annual-mondai-c-q81",
+        "shika-ishi-2023-annual-mondai-c-q82",
+        "shika-ishi-2023-annual-mondai-c-q83",
+        "shika-ishi-2023-annual-mondai-c-q84",
+        "shika-ishi-2023-annual-mondai-c-q85",
+        "shika-ishi-2023-annual-mondai-c-q86",
+        "shika-ishi-2023-annual-mondai-c-q87",
+        "shika-ishi-2023-annual-mondai-c-q88",
+        "shika-ishi-2023-annual-mondai-c-q89",
+        "shika-ishi-2023-annual-mondai-c-q90"
+      ],
+      "remainingQuestionNumbers": [],
+      "questions": [
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q21",
+          "qNumber": 21,
+          "sourcePdfPages": [
+            20
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "55 歳の男性。舌と頰粘膜の疼痛を主訴として来院した。1 か月前に口唇の腫脹、出血および前腕部の皮疹に気付き、かかりつけ歯科医で副腎皮質ステロイド軟膏の処方を受けていたが、徐々に顔面、口腔内および四肢に水疱とびらんが拡大したという。初診時の顔貌写真（別冊No. 2Ａ）、口腔内写真（別冊No. 2Ｂ）及び前腕皮膚の写真（別冊No. 2Ｃ）を別に示す。血液検査結果を表に示す。白血球数：6,620/μL赤血球数：497 万/μLヘモグロビン：15.3 g/dLヘマトクリット：45.7％AST：20 U/LALT：20 U/LPT-INR：0.95CRP：0.20 mg/dL抗BP 180 抗体：＜9.0 倍（基準値＜9.0 倍）抗デスモグレイン1 抗体：158 倍（基準値＜20.0 倍）抗デスモグレイン3 抗体：8,240 倍（基準値＜20.0 倍） 考えられるのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "GVHD",
+            "B": "帯状疱疹",
+            "C": "類天疱瘡",
+            "D": "尋常性天疱瘡",
+            "E": "Stevens-Johnson 症候群"
+          },
+          "questionSha256": "0f69558d101ab80f8f1a02f312d00e9715a82ad39b3375a31569ff8700f661ee",
+          "choicesSha256": "b1c2163847bc9ef0bdc762447d237d232c98a3b908ba64653eac960443b58ee8",
+          "appendixNo": 2
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q22",
+          "qNumber": 22,
+          "sourcePdfPages": [
+            21
+          ],
+          "officialAnswerNumber": "AE",
+          "answerPdfPage": 2,
+          "sourceText": "主として被写体の光電効果により画像コントラストが形成されるのはどれか。 2 つ選べ。",
+          "sourceChoices": {
+            "A": "CT",
+            "B": "MRI",
+            "C": "PET",
+            "D": "超音波検査",
+            "E": "パノラマエックス線撮影"
+          },
+          "questionSha256": "e402931047ab9e187047ee90c581866c6eed4bde3381d61458bd96b1546a1d3a",
+          "choicesSha256": "3e1bb4fac567516bbd79c30c76e055a9b93b4de41b2fc2018717db38fcc6de46",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q23",
+          "qNumber": 23,
+          "sourcePdfPages": [
+            21
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "59 歳の男性。下顎右側第一大臼歯の冷水痛を主訴として来院した。歯髄電気診に生活反応を示した。初診時の口腔内写真（別冊No. 3Ａ）、窩洞形成終了後の口腔内写真（別冊No. 3Ｂ）、接着処理を行った後の修復操作中の口腔内写真（別冊No. 3Ｃ）及び修復操作後の口腔内写真（別冊No. 3Ｄ）を別に示す。 この充塡法で得られる効果はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "研磨性の向上",
+            "B": "透明性の向上",
+            "C": "象牙質の即時封鎖",
+            "D": "遊離エナメル質の保護",
+            "E": "コントラクションギャップの防止"
+          },
+          "questionSha256": "4eedd98849e366efb4f22612a7705949a37625f457ff312ea017679f332442b1",
+          "choicesSha256": "ad7f3c38d2329d7371f07aa815aa8f2447d0152b3f3f64ec6a3f22b3913169f4",
+          "appendixNo": 3
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q24",
+          "qNumber": 24,
+          "sourcePdfPages": [
+            22
+          ],
+          "officialAnswerNumber": "B",
+          "answerPdfPage": 2,
+          "sourceText": "右側顎下腺摘出術を受けた患者の術後の下唇運動時の写真（別冊No. 4）を別に示す。 障害されているのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "舌神経",
+            "B": "顔面神経",
+            "C": "舌下神経",
+            "D": "大耳介神経",
+            "E": "オトガイ神経"
+          },
+          "questionSha256": "d11694974ffe4d681b26a8f3467cb021649b204fc7cc9a065b73f6cb3a088db1",
+          "choicesSha256": "013cbb3cf1380f898e2bf4d05b626df9bbba4c51d018a2b11ebec12c1f71be37",
+          "appendixNo": 4
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q25",
+          "qNumber": 25,
+          "sourcePdfPages": [
+            22
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "口腔内写真（別冊No. 5）を別に示す。 矢印で示すのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "基底結節",
+            "B": "臼歯結節",
+            "C": "臼傍結節",
+            "D": "Carabelli 結節",
+            "E": "プロトスタイリッド"
+          },
+          "questionSha256": "03dd5feb3e2e61becdeb24b9d5fb1c5e83593686c77036262c43ad923f9cd363",
+          "choicesSha256": "e862470bc70720d8912db582d876190276f4bff73650b22ec6979e02560818ea",
+          "appendixNo": 5
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q26",
+          "qNumber": 26,
+          "sourcePdfPages": [
+            23
+          ],
+          "officialAnswerNumber": "DE",
+          "answerPdfPage": 2,
+          "sourceText": "感染症の予防及び感染症の患者に対する医療に関する法律〈感染症法〉における分類と感染症の組合せで正しいのはどれか。2 つ選べ。 分 類 感染症",
+          "sourceChoices": {
+            "A": "一 類 結 核",
+            "B": "二 類 エボラ出血熱",
+            "C": "三 類 重症急性呼吸器症候群〈SARS〉",
+            "D": "四 類 A 型肝炎",
+            "E": "五 類 梅 毒"
+          },
+          "questionSha256": "e413ba80667aa1b7fb98fce6911ffea2c4916f528cee3e85c58d4c3be52ffde9",
+          "choicesSha256": "41f48fbfa560b1b9520733da5e7e034229cabe73f634b77be6854deefa49cfc8",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q27",
+          "qNumber": 27,
+          "sourcePdfPages": [
+            23
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "健康情報を探し出し、理解して、適切な健康行動につなげる能力はどれか。 1 つ選べ。",
+          "sourceChoices": {
+            "A": "アウトカム",
+            "B": "エンパワメント",
+            "C": "ヘルスリテラシー",
+            "D": "ハイリスクアプローチ",
+            "E": "クリティカル・シンキング"
+          },
+          "questionSha256": "39f669853ed134f50e678fd6edd96947a822d82a8a112ef83da13059c0993600",
+          "choicesSha256": "10e6ff03c6d8729bd7802fba6ecb9e714075c00e28b49df256cfa3c959e7fed8",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q28",
+          "qNumber": 28,
+          "sourcePdfPages": [
+            24
+          ],
+          "officialAnswerNumber": "ABCD",
+          "answerPdfPage": 2,
+          "sourceText": "12 歳の男児。学校歯科健康診断で異常を指摘されて来院した。初診時の口腔内写真（別冊No. 6Ａ）、エックス線画像（別冊No. 6Ｂ）及び歯科用コーンビームCT（別冊No. 6Ｃ）を別に示す。 所見として適切なのはどれか。4 つ選べ。",
+          "sourceChoices": {
+            "A": "上顎洞に囊胞様病変が認められる。",
+            "B": "上顎右側第二小臼歯は口蓋側を向いて埋伏している。",
+            "C": "上顎左側第二乳臼歯は生理的歯根吸収が認められる。",
+            "D": "下顎右側第二小臼歯は先天欠如である。",
+            "E": "下顎右側第二乳臼歯は生理的歯根吸収が認められる。"
+          },
+          "questionSha256": "4c662e7ab8044970c44a98615af417e4ce9bf1bb961c4a01c64adedbbfe85ea9",
+          "choicesSha256": "2304de015b3cee4fa8a4d0a31aeca81e22a384e24e4f8d6eaf17294da3f74b29",
+          "appendixNo": 6
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q29",
+          "qNumber": 29,
+          "sourcePdfPages": [
+            24
+          ],
+          "officialAnswerNumber": "DE",
+          "answerPdfPage": 2,
+          "sourceText": "口腔内写真（別冊No. 7）を別に示す。矢印で示す歯肉退縮の原因と考えられるのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "口呼吸",
+            "B": "歯肉炎",
+            "C": "食片圧入",
+            "D": "歯の位置異常",
+            "E": "不適切なブラッシング"
+          },
+          "questionSha256": "6380173124a10fd97ef58a91af2896303ad8538ec580200845defa3ade4621c5",
+          "choicesSha256": "f7bbe53f49cb116e200eac98717a2b0868ce7a67aba1a9957288fbe73f14012a",
+          "appendixNo": 7
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q30",
+          "qNumber": 30,
+          "sourcePdfPages": [
+            25
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "74 歳の女性。上下顎全部床義歯の維持安定不良による咀嚼困難を主訴として来院した。診察の結果、上顎にインプラント4 本を埋入したインプラントオーバーデンチャーを装着することとした。バーアタッチメントのスリーブを義歯床に取り付けるため、ある操作を行った。スリーブ装着前の口腔内写真（別冊No. 8Ａ）、ある操作を行った写真（別冊No. 8Ｂ）、スリーブ装着時の写真（別冊No. 8Ｃ）及び装着後の義歯の写真（別冊No. 8Ｄ）を別に示す。 矢印で示すある操作の目的はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "維持力の調節",
+            "B": "バーの位置確認",
+            "C": "スリーブの仮固定",
+            "D": "バー直下歯肉の保護",
+            "E": "固定用レジンの迷入防止"
+          },
+          "questionSha256": "6b230aeb07df6ecfe4337bb936bc305aa8266a9f9aabe76ae4b48003325f65fc",
+          "choicesSha256": "0d7e482085b4b2cfe7f9ee9c02af26158cd158ed1e45a4ead06c3cba5d826dfa",
+          "appendixNo": 8
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q31",
+          "qNumber": 31,
+          "sourcePdfPages": [
+            26
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "前歯部被蓋関係の模式図を示す。 下唇の吸唇癖により生じるのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "ア",
+            "B": "イ",
+            "C": "ウ",
+            "D": "エ",
+            "E": "オ"
+          },
+          "questionSha256": "367665891b27006b562cf65415404f8e094da5fa9695dd49d5bc5d78c6730273",
+          "choicesSha256": "e6f2043701c561485ae8757a96421828cf2926d3df151d18a8728dfca513f672",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q32",
+          "qNumber": 32,
+          "sourcePdfPages": [
+            27
+          ],
+          "officialAnswerNumber": "A",
+          "answerPdfPage": 2,
+          "sourceText": "舌癌の小線源治療時に使用される口腔内装置の写真（別冊No. 9Ａ）と装着時の口腔内写真（別冊No. 9Ｂ）を別に示す。 この装置の使用目的に最も関係が深いのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "距 離",
+            "B": "遮 蔽",
+            "C": "酸素効果",
+            "D": "増感効果",
+            "E": "ブラッグピーク"
+          },
+          "questionSha256": "69b1ac3ac46aaca91f90ba542462d369a94a75ac32a3be3ca0f93fd1da6b1aad",
+          "choicesSha256": "15b173fe0a8d1c9b660f1dde8c157b1182399fe17c8886ab35ce7c4d7443f9bc",
+          "appendixNo": 9
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q33",
+          "qNumber": 33,
+          "sourcePdfPages": [
+            27
+          ],
+          "officialAnswerNumber": "ABE",
+          "answerPdfPage": 2,
+          "sourceText": "巨舌を認めるのはどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "先端巨大症",
+            "B": "Down 症候群",
+            "C": "Robin シークエンス",
+            "D": "第一第二鰓弓症候群",
+            "E": "Beckwith-Wiedemann 症候群"
+          },
+          "questionSha256": "6f1bd389bc86c9b3d148c51ac57c4f37d75f1910dc18edd99fbb372812a85577",
+          "choicesSha256": "8f3479c229a3a1d4bee5111ce40d08a3f831de701058ed3afe11295720a396c6",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q34",
+          "qNumber": 34,
+          "sourcePdfPages": [
+            28
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "38 歳の女性。かかりつけ歯科医のエックス線検査で下顎右側犬歯部の異常を指摘され、精査を勧められ来院した。3 に打診痛と動揺はなく、歯肉に炎症所見はない。歯髄電気診で生活反応を示した。初診時の口内法エックス線画像（別冊No. 10Ａ）、パノラマエックス線画像（別冊No. 10Ｂ）、歯科用コーンビームCT（別冊No. 10Ｃ）及び摘出物のH-E 染色病理組織像（別冊No. 10Ｄ）を別に示す。 診断名はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "線維性異形成症",
+            "B": "セメント芽細胞腫",
+            "C": "腺腫様歯原性腫瘍",
+            "D": "石灰化上皮性歯原性腫瘍",
+            "E": "セメント質骨形成線維腫"
+          },
+          "questionSha256": "6e5d0cfc80572ed199499f345a034d41cab4ab7c577f5ea9dce852d9c1e2bd79",
+          "choicesSha256": "aa2ba905dd704b769aac9a24d97056c06284b38f13994198d47430216dbab391",
+          "appendixNo": 10
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q35",
+          "qNumber": 35,
+          "sourcePdfPages": [
+            28
+          ],
+          "officialAnswerNumber": "CD",
+          "answerPdfPage": 2,
+          "sourceText": "感染性産業廃棄物はどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "抜去した歯",
+            "B": "作業用石膏模型",
+            "C": "縫合に用いた針",
+            "D": "使用済み血液製剤",
+            "E": "血液の付着したガーゼ"
+          },
+          "questionSha256": "520db6d5a616f43161a719bc30323abd66a02b8dcd8e40e5fdfd55857bcbcd6a",
+          "choicesSha256": "842d205bea7c990288cfbbe1138591175387535f8a837d8f9e36ab2a02f87afc",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q36",
+          "qNumber": 36,
+          "sourcePdfPages": [
+            29
+          ],
+          "officialAnswerNumber": "ABE",
+          "answerPdfPage": 2,
+          "sourceText": "金属焼付用陶材の成分と役割の組合せで正しいのはどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "石 英 強度の向上",
+            "B": "長 石 透明度の向上",
+            "C": "陶 土 金属色の遮蔽",
+            "D": "フラックス 酸化膜の除去",
+            "E": "リューサイト 熱膨張の増加"
+          },
+          "questionSha256": "1432fde4bd75da734596ca3aa5e7d3f3deaad0d7ba74292b735fa17bb5ee7abe",
+          "choicesSha256": "739c8dd5a8718cb78c0d60c43ecb79ce83a44000290edc6b7da9bf0629a16af0",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q37",
+          "qNumber": 37,
+          "sourcePdfPages": [
+            29
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "75 歳の男性。左側顎下部の腫脹を主訴として来院した。診察の結果、顎下部蜂窩織炎と診断し、抗菌薬の点滴静注を開始したところ、投与開始5 分後に呼吸困難を訴えた。胸部の聴診で喘鳴が聴取され、全身の皮膚に膨疹を認める。この時の生体情報モニタ画面の写真（別冊No. 11）を別に示す。 まず投与すべき薬剤はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "アスピリン",
+            "B": "ジアゼパム",
+            "C": "アドレナリン",
+            "D": "リドカイン塩酸塩",
+            "E": "アセトアミノフェン"
+          },
+          "questionSha256": "4016e4348252693e98d41d5cf04840bddebbb390289c77c0383a84aafccd6494",
+          "choicesSha256": "55a98e00550ffb716a7d789822b0e455d5ec7a611b44d2aa10ba1f0d29c5cc21",
+          "appendixNo": 11
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q38",
+          "qNumber": 38,
+          "sourcePdfPages": [
+            29
+          ],
+          "officialAnswerNumber": "CE",
+          "answerPdfPage": 2,
+          "sourceText": "口腔粘膜や皮膚の色素沈着が家族性に生じるのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "Behçet 病",
+            "B": "白色海綿状母斑",
+            "C": "Peutz-Jeghers 症候群",
+            "D": "Sturge-Weber 症候群",
+            "E": "von Recklinghausen 病"
+          },
+          "questionSha256": "e6155da04a6b603795316d97167a678d1904ac923f405c0234c195617955a6d0",
+          "choicesSha256": "ca670dc9862ec71dc2670eb89f18a19b4be662b8e8a2ea01500cfc6dcf8cf71f",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q39",
+          "qNumber": 39,
+          "sourcePdfPages": [
+            30
+          ],
+          "officialAnswerNumber": "DE",
+          "answerPdfPage": 2,
+          "sourceText": "46 歳の男性。開口障害を主訴として来院した。3 日前に他院で下顎右側第二大臼歯の抜去後から次第に疼痛と腫脹が増大し、昨日から開口しにくくなってきたという。体温は38.3℃で、嚥下痛がある。診察の結果、口腔外から切開排膿することとした。初診時のエックス線画像（別冊No. 12Ａ）、造影CT（別冊No. 12Ｂ）及び切開部位の模式図（別冊No. 12Ｃ）を別に示す。血液検査の結果を表に示す。白血球数：19,000/µL赤血球数：430 万/µLヘモグロビン：13 g/dLヘマトクリット：40％血小板数：23 万/µLCRP：15 mg/dL 適切な切開部位はどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "ア",
+            "B": "イ",
+            "C": "ウ",
+            "D": "エ",
+            "E": "オ"
+          },
+          "questionSha256": "3cb0ea02a3976e43c20bed4dcbadd367047dbf097b0b57cf706b58273ef8cd6c",
+          "choicesSha256": "e6f2043701c561485ae8757a96421828cf2926d3df151d18a8728dfca513f672",
+          "appendixNo": 12
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q40",
+          "qNumber": 40,
+          "sourcePdfPages": [
+            31
+          ],
+          "officialAnswerNumber": "ABDE",
+          "answerPdfPage": 2,
+          "sourceText": "31 歳の女性。前歯部の咬み合わせの異常を主訴として来院した。家族から睡眠中のいびきを指摘されることがあるという。BMI は33、AHI は18、アーチレングスディスクレパンシーは上顎‒ 7 mm、下顎‒ 4 mm である。初診時の口腔内写真（別冊No. 13Ａ）とエックス線画像（別冊No. 13Ｂ）を別に示す。セファロ分析の結果を図に示す。 適切な治療方針はどれか。4 つ選べ。",
+          "sourceChoices": {
+            "A": "内科への紹介",
+            "B": "下顎骨前方移動術",
+            "C": "上顎骨後方移動術",
+            "D": "4 4 の抜歯",
+            "E": "4 4 の抜歯"
+          },
+          "questionSha256": "13c3e020e2597a44591340788b8bac97637369cf576b22610fe1e9292e252ff0",
+          "choicesSha256": "6189b5bfb3bb771ff9d05cb60bc0571a1479fd8cbd73f7c1dc41a56a5e13fbc3",
+          "appendixNo": 13
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q41",
+          "qNumber": 41,
+          "sourcePdfPages": [
+            32
+          ],
+          "officialAnswerNumber": "CD",
+          "answerPdfPage": 2,
+          "sourceText": "メラニン顆粒を有するのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "黒毛舌",
+            "B": "Fordyce 斑",
+            "C": "悪性黒色腫",
+            "D": "色素性母斑",
+            "E": "多形滲出性紅斑"
+          },
+          "questionSha256": "e75c7089725fa84789d188a7ec5d94f8efbd24810ac173c9564d10f24b936339",
+          "choicesSha256": "784a2e60749019e9d55c466abbbeb8517a71be4c98de8180f8377a9a3481513d",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q42",
+          "qNumber": 42,
+          "sourcePdfPages": [
+            32
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "65 歳の男性。咀嚼困難を主訴として来院した。診察の結果、上顎右側第一大臼歯相当部にインプラントを埋入することとした。埋入予定部位の再構成CT 冠状断像（別冊No. 14Ａ）と各種インプラント体の写真（別冊No. 14Ｂ）を別に示す。なお、Ａ、Ｂともスケールの目盛りは1 mm である。 埋入するのに最も適したインプラント体はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "ア",
+            "B": "イ",
+            "C": "ウ",
+            "D": "エ",
+            "E": "オ"
+          },
+          "questionSha256": "f78ee0875c22f943bb82e9ed49728925383bfc59dd0b9f01b50f90fdd6ad3fe4",
+          "choicesSha256": "e6f2043701c561485ae8757a96421828cf2926d3df151d18a8728dfca513f672",
+          "appendixNo": 14
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q43",
+          "qNumber": 43,
+          "sourcePdfPages": [
+            33
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "上顎左側中切歯抜去後にブリッジによる補綴処置を行った。支台歯形成後の口腔内写真（別冊No. 15Ａ）、ブリッジ仮着中に患者が行っている清掃時の写真（別冊No. 15Ｂ）、2 週後に口腔内から外したブリッジの基底面にプラーク染め出し材を塗布した写真（別冊No. 15Ｃ）及び水洗後の基底面の写真（別冊No. 15Ｄ）を別に示す。 今後、ブリッジの管理に適切な指導内容はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "「洗口のみで大丈夫です」",
+            "B": "「太めの歯間ブラシを使ってください」",
+            "C": "「これまでと同じ清掃を継続してください」",
+            "D": "「通常の歯ブラシのみで清掃してください」",
+            "E": "「定期的に受診した際に、外して清掃しましょう」"
+          },
+          "questionSha256": "e148243d62a4caf818612399b79e98c4707e82b095f0fecb0356515998725ee3",
+          "choicesSha256": "9ba7f2cb9479624351ac73ee8eec700c40996ef924fe64e511285b4c92a789af",
+          "appendixNo": 15
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q44",
+          "qNumber": 44,
+          "sourcePdfPages": [
+            33
+          ],
+          "officialAnswerNumber": "ABCDE",
+          "answerPdfPage": 2,
+          "sourceText": "リンパ節腫脹の原因として考えられるのはどれか。すべて選べ。",
+          "sourceChoices": {
+            "A": "結 核",
+            "B": "癌の転移",
+            "C": "悪性リンパ腫",
+            "D": "伝染性単核球症",
+            "E": "サルコイドーシス"
+          },
+          "questionSha256": "254f21bcd02209ab10147c79e82eb289a0d4eae7baf56ae4d763c4e699e7d911",
+          "choicesSha256": "915606a098497fb048e9e5c1aa38389460d5495c4566abf24ba3610dce004e69",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q45",
+          "qNumber": 45,
+          "sourcePdfPages": [
+            34
+          ],
+          "officialAnswerNumber": "ACE",
+          "answerPdfPage": 2,
+          "sourceText": "74 歳の男性。歯肉からの出血を主訴として来院した。数年前から気付いていたがそのままにしていたという。歯周基本治療後に上顎右側犬歯と第一小臼歯に歯周外科手術を行うこととした。初診時のエックス線画像（別冊No. 16Ａ）と再評価時の口腔内写真（別冊No. 16Ｂ）を別に示す。再評価時の歯周組織検査結果の一部を表に示す。頰 側＊歯 種口蓋側＊⑧⑧動揺度＊＊＊ ：プロービング深さ（mm）〇印 ：プロービング時の出血＊＊ ：Miller の判定基準 適切なのはどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "骨移植術",
+            "B": "歯肉切除術",
+            "C": "FGF-2 製剤の応用",
+            "D": "歯肉弁根尖側移動術",
+            "E": "Widman 改良フラップ手術"
+          },
+          "questionSha256": "25b58edd7cab6f5371fbb3c3096cdc3317a0f0a4d650eb92bacdf29586fe9e4d",
+          "choicesSha256": "6e5d2d0c577dab7ab7d3e9eeb2c5f146528e61a223c78b780547c9b713bb2e3a",
+          "appendixNo": 16
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q46",
+          "qNumber": 46,
+          "sourcePdfPages": [
+            35
+          ],
+          "officialAnswerNumber": "ABC",
+          "answerPdfPage": 2,
+          "sourceText": "上顎義歯の写真（別冊No. 17）を別に示す。 矢印で示す構造の役割はどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "舌感の向上",
+            "B": "鋳造収縮の補償",
+            "C": "辺縁封鎖性の向上",
+            "D": "レジン塡入時の移動防止",
+            "E": "フィニッシュラインの明示"
+          },
+          "questionSha256": "43ca4e6860db32816591d1a10811b149ea3d2f890edbd9af42ca5ca1d2a24d55",
+          "choicesSha256": "b0c2e095f92fa1040c19b28a606623c8ac0f08216f5b3c4b59c3efefcd1be7a8",
+          "appendixNo": 17
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q47",
+          "qNumber": 47,
+          "sourcePdfPages": [
+            35
+          ],
+          "officialAnswerNumber": "AD",
+          "answerPdfPage": 2,
+          "sourceText": "骨伝導能を有する生体吸収性材料はどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "β-TCP",
+            "B": "ポリ-L-乳酸",
+            "C": "酸化セルロース",
+            "D": "炭酸アパタイト",
+            "E": "ポリグリコール酸"
+          },
+          "questionSha256": "69099d7a4f0ffc07ad0f9bbdbd404fc1677cdeb1d29f688e23e5ddd9601cc4f3",
+          "choicesSha256": "15872c40b0c5fd48e792610ec8fc8fcf84e7998394d2fa59bba3a768f07ceb31",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q48",
+          "qNumber": 48,
+          "sourcePdfPages": [
+            35
+          ],
+          "officialAnswerNumber": "ABCE",
+          "answerPdfPage": 2,
+          "sourceText": "閉塞型睡眠時無呼吸症患者にみられるのはどれか。4 つ選べ。",
+          "sourceChoices": {
+            "A": "中途覚醒",
+            "B": "起床時頭痛",
+            "C": "日中の傾眠",
+            "D": "構音機能の低下",
+            "E": "睡眠中のいびき"
+          },
+          "questionSha256": "c519144c864ae17ffe7ee5238d8e25514aa4dd6bd52962ac1da707948bc723f8",
+          "choicesSha256": "265673c032c20e60ea5e97046a2d268c7de398f37306bfa4dcbb1e78a5b6c216",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q49",
+          "qNumber": 49,
+          "sourcePdfPages": [
+            36
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "象牙質が視認できる明確な齲窩を認めた。ICDAS コードで正しいのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "1",
+            "B": "2",
+            "C": "3",
+            "D": "4",
+            "E": "5"
+          },
+          "questionSha256": "3b371e514265582b8bfbbed2a088f5bb6be513f42516484ab4eb453e93d54830",
+          "choicesSha256": "5e9efbf4ca42796a02081c5762bd064497207d06ff3900d92a6d8f0dd1ca8a77",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q50",
+          "qNumber": 50,
+          "sourcePdfPages": [
+            36
+          ],
+          "officialAnswerNumber": "CD",
+          "answerPdfPage": 2,
+          "sourceText": "マルチブラケット装置を用いて骨格性下顎前突の改善を図ることとした。矯正歯科治療中の口腔内写真（別冊No. 18）を別に示す。 治療目標として適切なのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "下顎前歯の挺出",
+            "B": "下顎大臼歯の挺出",
+            "C": "下顎前歯の舌側移動",
+            "D": "下顎大臼歯の遠心移動",
+            "E": "下顎大臼歯の頰側傾斜"
+          },
+          "questionSha256": "a5409f4b5464fc3cb2ba9344e9d1e0979224b85d6eaa2c54c2c71ecd9ee75b10",
+          "choicesSha256": "7b7873c7129774eb3c0b5f96f3b9ceee1890cf34d07954231962fcd671e9a52e",
+          "appendixNo": 18
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q51",
+          "qNumber": 51,
+          "sourcePdfPages": [
+            36
+          ],
+          "officialAnswerNumber": "AC",
+          "answerPdfPage": 2,
+          "sourceText": "エッジワイズ法による治療の最終段階で用いるワイヤーに適した材質はどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "ステンレス鋼",
+            "B": "金銀パラジウム合金",
+            "C": "コバルトクロム合金",
+            "D": "ニッケルチタン合金",
+            "E": "チタンモリブデン合金"
+          },
+          "questionSha256": "d95b095c5a8c3f8643b5355112f60fa92ea18fdb36313b665ad7124359b7ba64",
+          "choicesSha256": "15db62c595ae7c09eec3be6e0b3242d9b8ec7c69aa227caca7cf806e6bf5440d",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q52",
+          "qNumber": 52,
+          "sourcePdfPages": [
+            37
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "フラップ手術の治療過程を示す。 浸潤麻酔 或 ① 或 ② 或 ③ 或 ④ 或 ⑤ 或 縫合 ④に入るのはどれか。1 つ選べ。 ただし、①～⑤はａ～ｅのいずれかに該当する。",
+          "sourceChoices": {
+            "A": "切 開",
+            "B": "剝 離",
+            "C": "肉芽除去",
+            "D": "ボーンサウンディング",
+            "E": "スケーリング・ルートプレーニング"
+          },
+          "questionSha256": "7c8fd61b90f878826fc7cc37fc94d1fafd54785a4289da49fd0362405a700210",
+          "choicesSha256": "32944f89cc43f4a67cf4e80d51348d779a121f4836b5c06eaaabe280aed70066",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q53",
+          "qNumber": 53,
+          "sourcePdfPages": [
+            38
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "7 歳の女児。下顎左側臼歯部の夜間痛を主訴として来院した。昨晩は痛みで眠れなかったが、現在痛みはないという。下顎左側第一乳臼歯と第二乳臼歯の動揺度は生理的範囲内である。初診時の口腔内写真（別冊No. 19Ａ）とエックス線画像（別冊No. 19Ｂ）を別に示す。検査結果を表に示す。ＤＥ打診痛－＋歯髄電気診＋＋ 処置の組合せで適切なのはどれか。1 つ選べ。Ｄ Ｅ",
+          "sourceChoices": {
+            "A": "コンポジットレジン修復 コンポジットレジン修復",
+            "B": "生活歯髄切断 コンポジットレジン修復",
+            "C": "生活歯髄切断 抜 髄",
+            "D": "感染根管治療 抜 髄",
+            "E": "抜 歯 抜 歯"
+          },
+          "questionSha256": "9714d492032fa95e123da4003f9d0d6aa28c743c4c42c5b599017ba5d0464bf7",
+          "choicesSha256": "9099fc98dc6326f29d28f0a4ca5b9a87eefbf313bd876a06338b6f5c8d9d5f7c",
+          "appendixNo": 19
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q54",
+          "qNumber": 54,
+          "sourcePdfPages": [
+            39
+          ],
+          "officialAnswerNumber": "DBEAC",
+          "answerPdfPage": 2,
+          "sourceText": "58 歳の女性。前歯部の審美不良を主訴として来院した。7 年前に装着した前装ブリッジが変色し、数年前から気になっていたという。診察の結果、上顎前歯部に陶材焼付ブリッジによる補綴処置を行うこととした。支台歯形成時の口腔内写真（別冊No. 20Ａ）、完成したブリッジの唇側面ならびに口蓋側面の写真（別冊No. 20Ｂ）及び装着時の口腔内写真（別冊No. 20Ｃ）を別に示す。 メタルフレーム鋳造から装着までの過程を実施の順番に並べよ。 解答：メタルフレーム鋳造或①或②或③或④或⑤或装着",
+          "sourceChoices": {
+            "A": "陶材焼成",
+            "B": "ろう付け",
+            "C": "グレージング",
+            "D": "舌面コア採得",
+            "E": "ディギャッシング"
+          },
+          "questionSha256": "09ea5a1b2c1bc1635ce1865cd7004096b71f8d385bac77d9cd8c3b1f9b82f947",
+          "choicesSha256": "291a8cd498dc96a81ae263aaba781dcea8ece60fb1661c4ca637f75437a53588",
+          "appendixNo": 20
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q55",
+          "qNumber": 55,
+          "sourcePdfPages": [
+            39
+          ],
+          "officialAnswerNumber": "ADE",
+          "answerPdfPage": 2,
+          "sourceText": "口腔がんの予防における健康習慣の実践で適切なのはどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "禁 煙",
+            "B": "適正体重の維持",
+            "C": "糖質コントロール",
+            "D": "過度な飲酒習慣の改善",
+            "E": "定期的な口腔衛生管理"
+          },
+          "questionSha256": "61d66c834cc49b0e1e16728cf600db79c28eb046bb7a5d92ad11c80a54510f87",
+          "choicesSha256": "5adeaeac0999237436d49493f56e9bd58f66ad5ef85ca4738c04ac236ffa1385",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q56",
+          "qNumber": 56,
+          "sourcePdfPages": [
+            40
+          ],
+          "officialAnswerNumber": "A",
+          "answerPdfPage": 2,
+          "sourceText": "前歯部正中離開を主訴として来院した女児の口腔内写真（別冊No. 21Ａ）とエックス線画像（別冊No. 21Ｂ）を別に示す。 適切な対応はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "3 の牽引",
+            "B": "4 の抜歯",
+            "C": "2 の抜歯",
+            "D": "3 の抜歯",
+            "E": "5 の牽引"
+          },
+          "questionSha256": "b7ec45a3385cb333d400f75dc658b76b52c742956a0fb82a66b99315bcd50bd8",
+          "choicesSha256": "aba735c177f534d58eec70ebb2cf7bb2a6acffa718e547b5d2898fbfb6645dcd",
+          "appendixNo": 21
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q57",
+          "qNumber": 57,
+          "sourcePdfPages": [
+            40
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "80 歳の女性。2 年ぶりに上顎残根上全部床義歯装着後の定期検診で来院した。7 付近の粘膜の口腔内写真（別冊No. 22Ａ）、ガーゼで粘膜を拭った後の口腔内写真（別冊No. 22Ｂ）及び使用中の義歯の写真（別冊No. 22Ｃ）を別に示す。 最初に行う対応はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "生 検",
+            "B": "経過観察",
+            "C": "抗菌薬投与",
+            "D": "義歯の清掃指導",
+            "E": "副腎皮質ステロイド軟膏の塗布"
+          },
+          "questionSha256": "6d376b428c7f1eb2ab8b3d49a54ba8e12dbd8ad70218a2479603b4108f3afb64",
+          "choicesSha256": "53f91ca56c811415ca92be140fc9814d9c007ca74c4a07d442b267e51d0acfa9",
+          "appendixNo": 22
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q58",
+          "qNumber": 58,
+          "sourcePdfPages": [
+            41
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "舌圧が低下した摂食嚥下障害患者に対して、舌接触補助床を用いて嚥下時の食塊移送を改善するのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "経済的アプローチ",
+            "B": "心理的アプローチ",
+            "C": "代償的アプローチ",
+            "D": "治療的アプローチ",
+            "E": "環境改善アプローチ"
+          },
+          "questionSha256": "d602cc980c389b75b14e1a5ae63565d9fbf168bfc44d6ebfec734f6a5383ac1f",
+          "choicesSha256": "808d54277da6cc3127b8c0c979e82c0f8728eab239dd3243c0fbaa2d44a17831",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q59",
+          "qNumber": 59,
+          "sourcePdfPages": [
+            41
+          ],
+          "officialAnswerNumber": "A",
+          "answerPdfPage": 2,
+          "sourceText": "67 歳の女性。下顎左側智歯部の腫脹を主訴として来院した。半年前から自覚していたが、疼痛がないためそのままにしていたという。触診で軽度の圧痛を認める。初診時の口腔内写真（別冊No. 23Ａ）、エックス線画像（別冊No. 23Ｂ）、CT（別冊No. 23Ｃ）及び生検時のH-E 染色病理組織像（別冊No. 23Ｄ）を別に示す。 診断名はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "含歯性囊胞",
+            "B": "エナメル上皮腫",
+            "C": "歯原性角化囊胞",
+            "D": "腺性歯原性囊胞",
+            "E": "動脈瘤様骨囊胞"
+          },
+          "questionSha256": "205b08696b8bc18ea65110c7d06edf6f882fe4852bea1f4097ee69d6a3e8a80f",
+          "choicesSha256": "35c8450e9e633664be485d708aea63495fa9c924f9158ffc302c48b7264eaed0",
+          "appendixNo": 23
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q60",
+          "qNumber": 60,
+          "sourcePdfPages": [
+            42
+          ],
+          "officialAnswerNumber": "BDE",
+          "answerPdfPage": 2,
+          "sourceText": "Turner 症候群の特徴として正しいのはどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "高身長",
+            "B": "小顎症",
+            "C": "知的障害",
+            "D": "先天性心疾患",
+            "E": "第二次性徴の発現不全"
+          },
+          "questionSha256": "678b246aec156bdec643b253e1cf0ed1dc82ecf13a5b507dedd7941301676021",
+          "choicesSha256": "59a3bf84496ecbe68e081f6972e6d60cdd45e518bbce6c4fdb4ac6ec615e000c",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q61",
+          "qNumber": 61,
+          "sourcePdfPages": [
+            42
+          ],
+          "officialAnswerNumber": "ABC",
+          "answerPdfPage": 2,
+          "sourceText": "MRI T2 強調像で高信号を呈するのはどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "硝子体",
+            "B": "鼻粘膜",
+            "C": "脳脊髄液",
+            "D": "顎関節円板",
+            "E": "胸鎖乳突筋"
+          },
+          "questionSha256": "70cacdfad01849f2ef295ae38d00c35967ff01c7c1d148458c32b805a2dbf758",
+          "choicesSha256": "daf912c9eb1d7ab04bb4acdbcf0b695c7425d531b7c8633ac16e7109d6250a3d",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q62",
+          "qNumber": 62,
+          "sourcePdfPages": [
+            42
+          ],
+          "officialAnswerNumber": "BD",
+          "answerPdfPage": 2,
+          "sourceText": "直接覆髄で露髄面に用いるのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "リン酸水溶液",
+            "B": "滅菌生理食塩液",
+            "C": "ポリカルボン酸水溶液",
+            "D": "次亜塩素酸ナトリウム溶液",
+            "E": "エチレンジアミン四酢酸〈EDTA〉水溶液"
+          },
+          "questionSha256": "dd0a2cb3db2c2a4f18700498c7b2f7f139e4a178851857750eba170ad95b3bc9",
+          "choicesSha256": "327b7d1ecd3713c297f70565772be97f8fa7acbbd7153dad6db54e6b9adce6f4",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q63",
+          "qNumber": 63,
+          "sourcePdfPages": [
+            43
+          ],
+          "officialAnswerNumber": "ABC",
+          "answerPdfPage": 2,
+          "sourceText": "高齢者において服薬アドヒアランスが低下する要因となるのはどれか。 3 つ選べ。",
+          "sourceChoices": {
+            "A": "摂食嚥下障害",
+            "B": "認知機能低下",
+            "C": "ポリファーマシー",
+            "D": "薬剤耐性菌の増加",
+            "E": "処方・調剤の一元管理"
+          },
+          "questionSha256": "b54af68ed06fce068933225720ad475a41d6c77932a6fee6522d5a36ab035844",
+          "choicesSha256": "7cd70456a3eb70128bda37b114ef0aebea13ad7c3e13673a3fcb65c6989b5e02",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q64",
+          "qNumber": 64,
+          "sourcePdfPages": [
+            43
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "4 歳の男児。上顎前歯部の変色を主訴として来院した。6 か月前に転倒し顔面を強打したという。上顎右側乳中切歯には自発痛はなく打診痛があり、歯髄電気診に生活反応を示さなかった。初診時の口腔内写真（別冊No. 24Ａ）とエックス線画像（別冊No. 24Ｂ）を別に示す。 適切な対応はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "経過観察",
+            "B": "生活歯髄切断",
+            "C": "抜 髄",
+            "D": "感染根管治療",
+            "E": "抜 歯"
+          },
+          "questionSha256": "4f56441d80b22a081a72643fe9cc1eb4e0478cba3aad38eb875a2f1c1008895f",
+          "choicesSha256": "02c41ba0f00a5a0085af8db78424ddb29765e98d94657815ba7df3bcfc65ea02",
+          "appendixNo": 24
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q65",
+          "qNumber": 65,
+          "sourcePdfPages": [
+            44
+          ],
+          "officialAnswerNumber": "BC",
+          "answerPdfPage": 2,
+          "sourceText": "老年期の疾患の特徴はどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "個人差が小さい。",
+            "B": "完治が困難である。",
+            "C": "複数の疾患を併発する。",
+            "D": "環境要因に左右されにくい。",
+            "E": "治療に対する反応性が高い。"
+          },
+          "questionSha256": "ce75af46a370723826a4700f4312e3d3f19686d66cb56da8eb6c57e70e5a8936",
+          "choicesSha256": "67846c521b8210516bc860428ae4746aad9ef8cfac7664076720b59558384a83",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q66",
+          "qNumber": 66,
+          "sourcePdfPages": [
+            44
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "9 歳の男児。かかりつけ歯科医で過剰歯を指摘され来院した。全顎的に精査するためパノラマエックス線とCT を撮影した。診断の結果、過剰歯を抜去することとした。初診時の口腔内写真（別冊No. 25Ａ）、エックス線画像（別冊No. 25Ｂ）及びCT（別冊No. 25Ｃ）を別に示す。 抜歯の根拠はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "正中離開がある。",
+            "B": "鼻腔を貫通する可能性がある。",
+            "C": "上顎左側中切歯の歯根が未完成である。",
+            "D": "上顎左側中切歯の歯根吸収の可能性がある。",
+            "E": "上顎左側中切歯が交叉咬合になる可能性がある。"
+          },
+          "questionSha256": "f47fd481338d50376124bbd0768b07ddd35fe2f3931f5bd44891ed2eb7c8497a",
+          "choicesSha256": "dc847043acd2456785e79c2034507306af0f322263a3a1a1208d78a8ed9756f4",
+          "appendixNo": 25
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q67",
+          "qNumber": 67,
+          "sourcePdfPages": [
+            45
+          ],
+          "officialAnswerNumber": "A",
+          "answerPdfPage": 2,
+          "sourceText": "CAD/CAM を応用したコンポジットレジンクラウンの接着で内面処理として行われるサンドブラストに使うのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "Al2O3",
+            "B": "CaSO4",
+            "C": "SiO2",
+            "D": "TiO2",
+            "E": "ZrO2"
+          },
+          "questionSha256": "a28da206472e543b3935ca0d4ca9845cba82b9b439bd18b7601d880e59aeaf76",
+          "choicesSha256": "90c8793fdc3f2d6eb559dfa08996532232416dae6f8a406cdafb204f88411727",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q68",
+          "qNumber": 68,
+          "sourcePdfPages": [
+            45
+          ],
+          "officialAnswerNumber": "BDE",
+          "answerPdfPage": 2,
+          "sourceText": "ハイドロコロイド材で創面を被覆する目的はどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "止 血",
+            "B": "乾燥防止",
+            "C": "殺菌作用",
+            "D": "再生上皮の保護",
+            "E": "瘢痕形成の抑制"
+          },
+          "questionSha256": "d341669df33eb3a24b44d6904ea0070d340eef98e33389be6c04df69322205da",
+          "choicesSha256": "fec4afc9278cb19903b5a6e8586e429c661a1359d3793fb402c00b45ed4688a2",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q69",
+          "qNumber": 69,
+          "sourcePdfPages": [
+            46
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "75 歳の女性。上顎左側第一大臼歯の動揺を主訴として来院した。1 か月前から徐々に動揺してきたという。頸部に腫大したリンパ節は触れない。初診時の口腔内写真（別冊No. 26Ａ）、エックス線画像（別冊No. 26Ｂ）、CT（別冊No. 26Ｃ）及び生検時のH-E 染色病理組織像（別冊No. 26Ｄ）を別に示す。 適切な治療はどれか。1 つ選べ",
+          "sourceChoices": {
+            "A": "抜 歯",
+            "B": "化学療法",
+            "C": "抗菌薬投与",
+            "D": "上顎部分切除",
+            "E": "レーザー照射"
+          },
+          "questionSha256": "a5fc26af7a3a10b40ceb710ca8036d0d819a08456ab882910c0c06999fdda60b",
+          "choicesSha256": "9502ff8662347103f44db1e8996505161209669c2b75bf8a11d168897d118fca",
+          "appendixNo": 26
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q70",
+          "qNumber": 70,
+          "sourcePdfPages": [
+            46
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "35 歳の女性。口腔清掃時に上顎右側小臼歯部にフロスが引っかかることを主訴として来院した。診察の結果、5 の隣接面接触点下に齲蝕を認めた。辺縁隆線を保存して直接修復を行うこととした。初診時の口腔内写真（別冊No. 27Ａ）、エックス線画像（別冊No. 27Ｂ）及び回転切削器具の写真（別冊No. 27Ｃ）を別に示す。 咬合面近心小窩からの便宜拡大に用いる適切な回転切削器具はどれか。 1 つ選べ。",
+          "sourceChoices": {
+            "A": "ア",
+            "B": "イ",
+            "C": "ウ",
+            "D": "エ",
+            "E": "オ"
+          },
+          "questionSha256": "811642b616a6355fae7c01e0e457ad14a2776e35c65d8ab67bbd281ef1c1b039",
+          "choicesSha256": "e6f2043701c561485ae8757a96421828cf2926d3df151d18a8728dfca513f672",
+          "appendixNo": 27
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q71",
+          "qNumber": 71,
+          "sourcePdfPages": [
+            47
+          ],
+          "officialAnswerNumber": "A",
+          "answerPdfPage": 2,
+          "sourceText": "43 歳の女性。下顎左側第二大臼歯遠心歯肉の腫れを主訴として来院した。1 年前から自覚していたがそのままにしていたという。歯周基本治療後の再評価の結果、GTR 法を行うこととした。術中の口腔内写真（別冊No. 28Ａ）、エックス線画像（別冊No. 28Ｂ）及び切開線の写真（別冊No. 28Ｃ）を別に示す。再評価時の歯周組織検査結果の一部を表に示す。舌 側＊⑧歯 種頰 側＊⑧動揺度＊＊＊ ：プロービング深さ（mm）〇印 ：プロービング時の出血＊＊ ：Miller の判定基準 写真に示す切開線で適切なのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "ア",
+            "B": "イ",
+            "C": "ウ",
+            "D": "エ",
+            "E": "オ"
+          },
+          "questionSha256": "fe78d6ca792a6fad441294b513780a299ccd32bd1283ef9a9633b3404aa02b95",
+          "choicesSha256": "e6f2043701c561485ae8757a96421828cf2926d3df151d18a8728dfca513f672",
+          "appendixNo": 28
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q72",
+          "qNumber": 72,
+          "sourcePdfPages": [
+            48
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "52 歳の男性。上顎左側第一小臼歯の冠が外れたことによる咀嚼困難を主訴として来院した。クラウンは数年前に装着し、1 週前に脱離したという。4 は垂直打診に反応を示す。患者は金属色の見えない歯冠修復を希望している。初診時の口腔内写真（別冊No. 29Ａ、Ｂ）とエックス線画像（別冊No. 29Ｃ）を別に示す。歯周組織検査結果の一部を表に示す。頰 側＊⑧歯 種口蓋側＊動揺度＊＊＊ ：プロービング深さ（mm）〇印 ：プロービング時の出血＊＊ ：Miller の判定基準 4 への前処置と修復法の組合せで適切なのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "挺 出 4 オールセラミッククラウン",
+            "B": "挺 出 4 コンポジットレジンクラウン",
+            "C": "抜 歯 ③4 ⑤ レジン前装冠ブリッジ",
+            "D": "抜 歯 ③4 ⑤ オールセラミックブリッジ",
+            "E": "歯冠長延長 4 オールセラミッククラウン"
+          },
+          "questionSha256": "035f8bb34ba6a18799558d94866ff46f116773097d4b6370f6e4419350f768f3",
+          "choicesSha256": "5e25ba1e4bd834ea58525b22ab6556ea3cd18fb680dcda02d70c1736c3fbcc9a",
+          "appendixNo": 29
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q73",
+          "qNumber": 73,
+          "sourcePdfPages": [
+            49
+          ],
+          "officialAnswerNumber": "CDE",
+          "answerPdfPage": 2,
+          "sourceText": "抜歯後にアモキシシリン水和物とロキソプロフェンナトリウム水和物を投与したところ、3 日目に38.5℃の発熱、全身倦怠感、口唇の水疱とびらん及び皮膚に結節性紅斑が現れた。 誘因を特定するための検査はどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "HLA 検査",
+            "B": "蛍光抗体直接法",
+            "C": "プリックテスト",
+            "D": "リンパ球刺激試験",
+            "E": "好塩基球活性化試験"
+          },
+          "questionSha256": "ddbff785c8e23611ea2799fe0fe8c29afdc08c560c5cc2d6ff1e7f22968d637e",
+          "choicesSha256": "20a660ceaf1cd20c38b066d7c45e129d04ee435d8cc407b1c8d85c9b711357ce",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q74",
+          "qNumber": 74,
+          "sourcePdfPages": [
+            49
+          ],
+          "officialAnswerNumber": "BD",
+          "answerPdfPage": 2,
+          "sourceText": "82 歳の女性。義歯の維持安定不良による咀嚼困難を主訴として来院した。診察の結果、新しく上下顎全部床義歯を製作することとした。ろう義歯試適時では上顎に問題はなかったが、咬合接触関係が咬合器上と異なっていたため、中心咬合位にてチェックバイトを採得した。ろう義歯の写真（別冊No. 30Ａ）とチェックバイト採得後の写真（別冊No. 30Ｂ）を別に示す。 この後の操作として正しいのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "人工歯の削合",
+            "B": "下顎人工歯の再排列",
+            "C": "オクルーザルランプの付与",
+            "D": "作業用模型の咬合器再装着",
+            "E": "ろう義歯を用いた咬合圧印象"
+          },
+          "questionSha256": "76207cb0a35c79885eb23e62d7ee0eb72fa1edec11b06e28723d6fa03277eb8f",
+          "choicesSha256": "568298b3eceb94f63ff0887082259013fdec74400670a3f28a3f8aafc35e2ec0",
+          "appendixNo": 30
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q75",
+          "qNumber": 75,
+          "sourcePdfPages": [
+            50
+          ],
+          "officialAnswerNumber": "BE",
+          "answerPdfPage": 2,
+          "sourceText": "インプラントの印象採得において、オープントレー法がクローズドトレー法に比べて有利なのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "術式の簡便さ",
+            "B": "印象材の寸法安定性",
+            "C": "開口量が少ない場合への適用",
+            "D": "印象用コーピングの装着しやすさ",
+            "E": "インプラント体の傾斜に対する許容"
+          },
+          "questionSha256": "a2a42c970006ba2adb0a743a12fa28c7a3a04d980263cda81d8443068d03a5a0",
+          "choicesSha256": "9d9890017382257d4a1c327e994d61ba16315ef37ea4a962777ac1e4c8afc8ea",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q76",
+          "qNumber": 76,
+          "sourcePdfPages": [
+            50
+          ],
+          "officialAnswerNumber": "CD",
+          "answerPdfPage": 2,
+          "sourceText": "嚥下時の違和感を主訴として来院した患者のCT（別冊No. 31Ａ）、MRI T2 強調像（別冊No. 31Ｂ）及び超音波検査の冠状断像（別冊No. 31Ｃ）を別に示す。 矢印で示す疾患で考えられるのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "鰓囊胞",
+            "B": "ラヌーラ",
+            "C": "類表皮囊胞",
+            "D": "甲状舌管囊胞",
+            "E": "Blandin-Nuhn 囊胞"
+          },
+          "questionSha256": "cba3948760faccb6f468a43786168dc5ca6dbb762b2983eb560c875a514880ce",
+          "choicesSha256": "a7524ee9c3c4b5c9f93cc4f3a084306ad4a84b223cf88ab64626dd84ceec6a53",
+          "appendixNo": 31
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q77",
+          "qNumber": 77,
+          "sourcePdfPages": [
+            50
+          ],
+          "officialAnswerNumber": "BCD",
+          "answerPdfPage": 2,
+          "sourceText": "ユニバーサル・ヘルス・カバレッジ〈UHC〉で正しいのはどれか。3 つ選べ。",
+          "sourceChoices": {
+            "A": "日本は未達成である。",
+            "B": "WHO の優先課題である。",
+            "C": "SDGs のターゲットである。",
+            "D": "健康格差の縮小につながる。",
+            "E": "労働者の健康保持増進の指針である。"
+          },
+          "questionSha256": "c18dd8f588dcd053a4f6839808aaa275a1bca916d9d2cb6ae65be6d1a6136088",
+          "choicesSha256": "b730b91286e12341196e862f127440064b7e772b950d5dc471dd69be6cd1c61e",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q79",
+          "qNumber": 79,
+          "sourcePdfPages": [
+            51
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "舌癌に対する動注化学療法を行う際の確認画像（別冊No. 32）を別に示す。 撮像に用いられている放射線はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "ガンマ線",
+            "B": "重粒子線",
+            "C": "ベータ線",
+            "D": "アルファ線",
+            "E": "エックス線"
+          },
+          "questionSha256": "5538a0816e3387dae718881e60454f5bbd1d8fd517bf51216947fe44294e9eff",
+          "choicesSha256": "fa36d472eabd3283d31532dd47b9c9ae69238bb01594be6d25e955eb884bd6d6",
+          "appendixNo": 32
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q80",
+          "qNumber": 80,
+          "sourcePdfPages": [
+            52
+          ],
+          "officialAnswerNumber": "CE",
+          "answerPdfPage": 2,
+          "sourceText": "88 歳の男性。介護者から食事時間の延長が認められるとの訴えがあり、歯科訪問診療を行った。Lewy 小体型認知症の診断を受けて特別養護老人ホームに入所中であり、生活全般にわたり全介助を必要としている。現在の食形態はミキサー食である。上顎義歯を有していないが、家族は積極的な歯科治療を望んでいない。初診時の口腔内写真（別冊No. 33）を別に示す。 まず行うのはどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "間接訓練",
+            "B": "舌圧検査",
+            "C": "口腔衛生管理",
+            "D": "嚥下内視鏡検査",
+            "E": "食事場面の評価"
+          },
+          "questionSha256": "3fbc0ed2ce7717182d4f068930d1b5f6d97a962c62ef6b85880f9986fe1d80f6",
+          "choicesSha256": "3826e69ccadc4141cb484742d137ee6248277d36b437de041a1033e7b297cdec",
+          "appendixNo": 33
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q81",
+          "qNumber": 81,
+          "sourcePdfPages": [
+            53
+          ],
+          "officialAnswerNumber": "B",
+          "answerPdfPage": 2,
+          "sourceText": "9 歳の女児。口が閉じにくいことを主訴として来院した。診断をした結果、矯正歯科治療を行うこととした。初診時の顔面写真（別冊No. 34Ａ）、口腔内写真（別冊No. 34Ｂ）及びエックス線画像（別冊No. 34Ｃ）を別に示す。セファロ分析の結果を図に示す。 適切な矯正装置はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "咬合斜面板",
+            "B": "ヘッドギア",
+            "C": "Herbst 装置",
+            "D": "バイオネーター",
+            "E": "リップバンパー"
+          },
+          "questionSha256": "fc3918567c764f0cf6b318efad16cee3c27c139b800d0d1869f40483d9b85a06",
+          "choicesSha256": "13a4f7b98995a83fbadf0e07b417ca166cf1b8118632b511d5e3ce07d744698b",
+          "appendixNo": 34
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q82",
+          "qNumber": 82,
+          "sourcePdfPages": [
+            54
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "42 歳の女性。下顎右側第一大臼歯の修復物の脱離を主訴として来院した。昨日、脱離したという。痛みや歯肉腫脹はない。初診時の口腔内写真（別冊No. 35Ａ）とエックス線画像（別冊No. 35Ｂ）を別に示す。歯周組織検査結果の一部を表に示す。舌 側＊⑧⑥⑥⑥⑥⑪④③④歯 種頰 側＊④⑤④④④④根分岐部病変＊＊―2 度―動揺度＊＊＊＊ ：プロービング深さ（mm）〇印 ：プロービング時の出血＊＊ ：Lindhe とNyman の分類（－は根分岐部病変がないことを示す）＊＊＊ ：Miller の判定基準 口腔清掃指導後、6 にまず行う処置はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "暫間固定",
+            "B": "歯根尖切除",
+            "C": "感染根管治療",
+            "D": "ヘミセクション",
+            "E": "スケーリング・ルートプレーニング"
+          },
+          "questionSha256": "4f98eb3f571313dd7cb1355d02a6dcfbca2e8aabd304089b4b8e2b3a42209273",
+          "choicesSha256": "0677eea6a4b7f408412d373739a5cdbb2cf470d4de6ad926e24f34385498f340",
+          "appendixNo": 35
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q83",
+          "qNumber": 83,
+          "sourcePdfPages": [
+            55
+          ],
+          "officialAnswerNumber": "D",
+          "answerPdfPage": 2,
+          "sourceText": "ヒトの舌背を主たる定着部位とするのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "Streptococcus mutans",
+            "B": "Streptococcus pyogenes",
+            "C": "Streptococcus sanguinis",
+            "D": "Streptococcus salivarius",
+            "E": "Streptococcus intermedius"
+          },
+          "questionSha256": "70e1a9314737d405fd690f69aa3a72f68231f8486593b199aadc653d18c12018",
+          "choicesSha256": "dee0dcf1f72900b7c712eaf2364f6a2b391887f2f6e24805422c134150097833",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q84",
+          "qNumber": 84,
+          "sourcePdfPages": [
+            55
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "肝臓の解毒能力を評価するのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "レノグラム",
+            "B": "ACTH 試験",
+            "C": "色素排泄試験",
+            "D": "フロセミド負荷試験",
+            "E": "クレアチニンクリアランス"
+          },
+          "questionSha256": "4682b96740000bca2062f157295871b20e02775c65b02ec0c7d1677c5e3f982f",
+          "choicesSha256": "39f10cb7348e51602a5d6d9a7330509557aa3139a20f11259e1894cc5469fb2f",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q85",
+          "qNumber": 85,
+          "sourcePdfPages": [
+            56
+          ],
+          "officialAnswerNumber": "A",
+          "answerPdfPage": 2,
+          "sourceText": "81 歳の男性。舌の汚れを主訴として家族とともに来院した。8 年前に診断された慢性閉塞性肺疾患〈COPD〉に対して気管支拡張薬、3 年前に診断されたAlzheimer 型認知症に対してコリンエステラーゼ阻害薬を処方されているという。口腔内検査では歯と歯周組織には異常を認めなかったため、家族に対して口腔衛生指導を行った。初診時、2 週後および4 週後の舌の写真（別冊No. 36）を別に示す。 改善が期待できるのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "口 臭",
+            "B": "咬合力",
+            "C": "嚥下機能",
+            "D": "呼吸機能",
+            "E": "唾液分泌"
+          },
+          "questionSha256": "bd369d390ed9fce6aa9619c8720b45beabce3765f70f2173926a62292ea73fb8",
+          "choicesSha256": "bb488be6b582b9021feea3ca7dd256bd0bb1b3f49ca57f277372ad66401ffbec",
+          "appendixNo": 36
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q86",
+          "qNumber": 86,
+          "sourcePdfPages": [
+            56
+          ],
+          "officialAnswerNumber": "C",
+          "answerPdfPage": 2,
+          "sourceText": "ある薬物60 mg の血中濃度-時間曲線下面積〈AUC〉は、静脈内注射すると、12 μg・h/mL であり、経口投与すると、6 μg・h/mL であった。 この薬物の分布が1 コンパートメントモデルに従うとき、バイオアベイラビリティはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "18%",
+            "B": "30%",
+            "C": "50%",
+            "D": "72%",
+            "E": "200%"
+          },
+          "questionSha256": "b7fa2b4c771142cd174ac81b2f14185dcfa5636944e064a5b8a5f42b2b3adaee",
+          "choicesSha256": "3be8993934cffe47757345c39cdd24d9fc32c301f1ceed8061eed42621b23b5d",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q87",
+          "qNumber": 87,
+          "sourcePdfPages": [
+            57
+          ],
+          "officialAnswerNumber": "CD",
+          "answerPdfPage": 2,
+          "sourceText": "ロストワックス法によりブリッジを製作することとした。鋳造に用いた埋没材の熱膨張曲線を図に示す。 使用可能な金属はどれか。2 つ選べ。",
+          "sourceChoices": {
+            "A": "純チタン",
+            "B": "22K 金合金",
+            "C": "タイプ3 金合金",
+            "D": "金銀パラジウム合金",
+            "E": "コバルトクロム合金"
+          },
+          "questionSha256": "34163262a7a95df859ab1fed225a66e0e975a5c2dfca9202714c4e43e0614f9b",
+          "choicesSha256": "9b49a59700f06565ca103e8e908858e351a204767a55dc96500bc7d0ee5d000f",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q88",
+          "qNumber": 88,
+          "sourcePdfPages": [
+            57
+          ],
+          "officialAnswerNumber": "B",
+          "answerPdfPage": 2,
+          "sourceText": "正規分布で平均値± 1 標準偏差の範囲に入る確率はどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "55%",
+            "B": "68%",
+            "C": "75%",
+            "D": "86%",
+            "E": "95%"
+          },
+          "questionSha256": "9cc1f3a69bc15a6b783558dd60990c59126b5821fad34eca9868e0566b98f72e",
+          "choicesSha256": "a7a26b126912418c2a32c9646bbf63115b77ad1a9d9fdb467b0ac1385c11d2e4",
+          "appendixNo": null
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q89",
+          "qNumber": 89,
+          "sourcePdfPages": [
+            58
+          ],
+          "officialAnswerNumber": "E",
+          "answerPdfPage": 2,
+          "sourceText": "9 歳の女児。右側顎関節雑音を主訴として来院した。1 年前から右側顎関節部の開口時のクリック音を自覚するようになったという。咀嚼筋に圧痛はなく、最大開口量は45 mm である。初診時の口腔内写真（別冊No. 37Ａ）と両側顎関節部MRI（別冊No. 37Ｂ）を別に示す。 まず行うのはどれか。1 つ選べ。",
+          "sourceChoices": {
+            "A": "咬合調整",
+            "B": "矯正歯科治療",
+            "C": "NSAIDs の投与",
+            "D": "スプリント療法",
+            "E": "セルフケアの指導"
+          },
+          "questionSha256": "20b318ed280e4c35c2015e1afbb7b2ccd144aaf083055fa6d014facb568ea15e",
+          "choicesSha256": "ad3e07808bee894405ff0910a1742c3169d656dcd873310b2e27209bfcec2ff4",
+          "appendixNo": 37
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-c-q90",
+          "qNumber": 90,
+          "sourcePdfPages": [
+            59
+          ],
+          "officialAnswerNumber": "17",
+          "answerPdfPage": 2,
+          "sourceText": "身長60 cm、体重6,120 g の6 か月の男児のKaup 指数を求めよ。 ただし、小数点以下第1 位の数字が得られた場合は四捨五入すること。 解答：① ②① ②0 01 12 23 34 45 56 67 78 89 9",
+          "sourceChoices": {},
+          "questionSha256": "a87520aeb5ee9179d77145bdbaa8f2aca8d0c2bad46c262ba2547dfef165305d",
+          "choicesSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "appendixNo": null
+        }
+      ],
+      "assets": [
+        {
+          "qNumber": 21,
+          "sourceKind": "question",
+          "page": 20,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c021-question-p020.webp",
+          "sha256": "7e852f5e07f9d00a70003add5869a7d02fa421155bc2731c57640b16e862e607",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 21,
+          "sourceKind": "appendix",
+          "page": 6,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c021-appendix-p006.webp",
+          "sha256": "8e6d286882302753976f293d5bb554bb56eb1a0155c451b800c977f60455b34f",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 21,
+          "sourceKind": "appendix",
+          "page": 7,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c021-appendix-p007.webp",
+          "sha256": "6493dfd0b4874e5d43c32e815e144c630fd01e3819ccd7fec77e2010c78d73a3",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 23,
+          "sourceKind": "appendix",
+          "page": 8,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c023-appendix-p008.webp",
+          "sha256": "f224f65202b3bf71aac739e14373d147bd012a68a57487f90e3acb145fe09c63",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 23,
+          "sourceKind": "appendix",
+          "page": 9,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c023-appendix-p009.webp",
+          "sha256": "fb0077c4ae494980ff22d7c676a7b5619bc13b97b977bb4a8561422060e562ef",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 24,
+          "sourceKind": "appendix",
+          "page": 10,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c024-appendix-p010.webp",
+          "sha256": "18f15426eaaaafa2cac9566a54901d40cb42038531d85f88f6688e2098d29483",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 25,
+          "sourceKind": "appendix",
+          "page": 11,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c025-appendix-p011.webp",
+          "sha256": "81fbc3bec5eaea690a7308f6c752125d96953c9dd057276dd2f5eb64e48f1100",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 28,
+          "sourceKind": "appendix",
+          "page": 12,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c028-appendix-p012.webp",
+          "sha256": "689cfbae88dea7b41264ee30705e1129e56bc16e2eb23f33c83bf7f51ea05e9f",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 28,
+          "sourceKind": "appendix",
+          "page": 13,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c028-appendix-p013.webp",
+          "sha256": "7f6818e8297d997dd9c643ed9415887c7a70a44a8edbadde992017b761bdfc7f",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 29,
+          "sourceKind": "appendix",
+          "page": 14,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c029-appendix-p014.webp",
+          "sha256": "8fa8ba27604064edf97c81e5ca94445b8cfc3dfbedf09fa5c4b6c8a2a78e8333",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 30,
+          "sourceKind": "appendix",
+          "page": 16,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c030-appendix-p016.webp",
+          "sha256": "6f038340246c5028141de477dbc540bad0b1542dae8aa9deba167a862e4e0e76",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 30,
+          "sourceKind": "appendix",
+          "page": 17,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c030-appendix-p017.webp",
+          "sha256": "327818b3b584bcde0fde944f6c532870d034007c73d19a06f95482f58721fe6e",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 31,
+          "sourceKind": "question",
+          "page": 26,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c031-question-p026.webp",
+          "sha256": "753819259f35c10cbebe7267209d03e54a3353d2c2f2f9c99094d219f3faacfd",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 32,
+          "sourceKind": "appendix",
+          "page": 18,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c032-appendix-p018.webp",
+          "sha256": "5267a2d925bcaef31ef65a7a88e593e22b9249358fcd1b9cc031a96cc34811bf",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 34,
+          "sourceKind": "question",
+          "page": 28,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            391.0196228027344
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c034-question-p028.webp",
+          "sha256": "135012e364c9bc04f1ce35e94913256c87bbf76a4bfadc340f1a99fc83ce7b23",
+          "width": 942,
+          "height": 636
+        },
+        {
+          "qNumber": 34,
+          "sourceKind": "appendix",
+          "page": 20,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c034-appendix-p020.webp",
+          "sha256": "733951bea270b46170cb14bd6a38c0e6d303e2ea21f949bcfd88de53e1e56138",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 34,
+          "sourceKind": "appendix",
+          "page": 21,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c034-appendix-p021.webp",
+          "sha256": "5c26fbbf6bb8ffbbba0c0522239565ff4735c0cb4d355f06c9f6a9b2a2228aae",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 37,
+          "sourceKind": "appendix",
+          "page": 22,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c037-appendix-p022.webp",
+          "sha256": "b68305fa4f729b2f849ca874faf74f2e0aa7c0159ae3f3408f4b2fd594b1e05a",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 39,
+          "sourceKind": "question",
+          "page": 30,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c039-question-p030.webp",
+          "sha256": "01233c16e29c1a03d6d1b1d199b244aa7b79faf5cacdb845faef8ea6e90a2091",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 39,
+          "sourceKind": "appendix",
+          "page": 24,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c039-appendix-p024.webp",
+          "sha256": "1be77e0883c51db3d9a47c722ddb123a4fc767983f789861860ca5b63688acd9",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 39,
+          "sourceKind": "appendix",
+          "page": 25,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c039-appendix-p025.webp",
+          "sha256": "dc194d5969a392885a87adaea368e5c9e0d0c035fa46885bd87544c0dd94f7b6",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 40,
+          "sourceKind": "question",
+          "page": 31,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c040-question-p031.webp",
+          "sha256": "afcebcfb612b3aa7c15d03635c7183d7b0246d01b7c822223614f7304eb68d25",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 40,
+          "sourceKind": "appendix",
+          "page": 26,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c040-appendix-p026.webp",
+          "sha256": "9d31a1010a2a57086fa73768ec906a85278fb765f2929e104fb319c57345298e",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 42,
+          "sourceKind": "appendix",
+          "page": 27,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c042-appendix-p027.webp",
+          "sha256": "1c6d8e4e887c5a74c7904cfd1c343a397f13283ed302a629cdd53ae537c2536f",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 43,
+          "sourceKind": "appendix",
+          "page": 28,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c043-appendix-p028.webp",
+          "sha256": "dbb607902c06a9f851f258cf104dc05a61cae6426da29b512b48f41c680b6087",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 45,
+          "sourceKind": "question",
+          "page": 34,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c045-question-p034.webp",
+          "sha256": "4a8c9f863a1095f365aa17cf480fad0ccd5e94d0634a79e62e2c7dd03031b33d",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 45,
+          "sourceKind": "appendix",
+          "page": 29,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c045-appendix-p029.webp",
+          "sha256": "8479b12186d18413abc70ffdca004d4c543249eec5849fd19ce709fdc38f10c8",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 46,
+          "sourceKind": "appendix",
+          "page": 30,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c046-appendix-p030.webp",
+          "sha256": "ad4cdc73d803a607b0227a34b0a490213155ef183fc60332bd6a1a88154ba277",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 50,
+          "sourceKind": "appendix",
+          "page": 31,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c050-appendix-p031.webp",
+          "sha256": "3982b8c8e8740dd65eb6c24f75508c29e425f5df9fd099fe3abc6c05f05263c6",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 52,
+          "sourceKind": "question",
+          "page": 37,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c052-question-p037.webp",
+          "sha256": "34bca3095fb07049df4e8a2d4933f313b6d494dcf20dd9cb8c5dff694153b342",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 53,
+          "sourceKind": "question",
+          "page": 38,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c053-question-p038.webp",
+          "sha256": "f18a875d847a4266bc808320e1dc1e3d89f02311f903e34a95bd55f085af5874",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 53,
+          "sourceKind": "appendix",
+          "page": 32,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c053-appendix-p032.webp",
+          "sha256": "73f64b240d8eb2a5379269e605f568b5913b5a935b2c20fbe192eb00374e8da9",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 54,
+          "sourceKind": "question",
+          "page": 39,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            450.547119140625
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c054-question-p039.webp",
+          "sha256": "302f29c34d22d8173a1e7a04868594333b6fddb2fc5477222ef2296a86ad7bb8",
+          "width": 942,
+          "height": 755
+        },
+        {
+          "qNumber": 54,
+          "sourceKind": "appendix",
+          "page": 33,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c054-appendix-p033.webp",
+          "sha256": "2562088cfaf6fd1c97bb14ac391ec090170e28d9f60126308e4f90baff94fb8e",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 56,
+          "sourceKind": "question",
+          "page": 40,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            331.49200439453125
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c056-question-p040.webp",
+          "sha256": "66e490354fd331b43efb4b06d7ff724ccb10e1603586add091aad441b9f591db",
+          "width": 942,
+          "height": 516
+        },
+        {
+          "qNumber": 56,
+          "sourceKind": "appendix",
+          "page": 34,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c056-appendix-p034.webp",
+          "sha256": "3d04858a808f4d8f3bc4c8981533377fbad73c0ee1535da1d354441e8acb649f",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 57,
+          "sourceKind": "question",
+          "page": 40,
+          "rect": [
+            45,
+            331.49200439453125,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c057-question-p040.webp",
+          "sha256": "3b5c6c22599ceb92a0bcb9afbeb5c9d6556b1cceef60ca4c0845a80c28e3aa7d",
+          "width": 942,
+          "height": 720
+        },
+        {
+          "qNumber": 57,
+          "sourceKind": "appendix",
+          "page": 36,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c057-appendix-p036.webp",
+          "sha256": "e83a996996cf3d4f3d1a87b58d15d2b4a323a6ec6f7e47d5c0000323224a3fde",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 57,
+          "sourceKind": "appendix",
+          "page": 37,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c057-appendix-p037.webp",
+          "sha256": "d3902a7c3cc0f12a74caeec6fef2e0364ab98a1279ef3d238f470f4997828d60",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 59,
+          "sourceKind": "appendix",
+          "page": 38,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c059-appendix-p038.webp",
+          "sha256": "c45dceaaf36908e97d37d5d3359390f74a607db60b358816b28db7834211e04b",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 59,
+          "sourceKind": "appendix",
+          "page": 39,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c059-appendix-p039.webp",
+          "sha256": "05d76692bfdb6f89162708d80326212225c9ef0f1dfa603c6494af77cdd460be",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 59,
+          "sourceKind": "appendix",
+          "page": 40,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c059-appendix-p040.webp",
+          "sha256": "8bf3ae5c1d439f9e44e6d64db7cf9115a3bcd444d01190d73d946b3f35e33e40",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 64,
+          "sourceKind": "appendix",
+          "page": 41,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c064-appendix-p041.webp",
+          "sha256": "59c4f4291b92970e7941578232d222f43ad2d7b5d8ae2602fbb061a2e1ac9635",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 66,
+          "sourceKind": "appendix",
+          "page": 42,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c066-appendix-p042.webp",
+          "sha256": "93b76326936078bfae47562eb0a958f74d58d42a0577ea9286d0550cc7e1a08a",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 66,
+          "sourceKind": "appendix",
+          "page": 43,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c066-appendix-p043.webp",
+          "sha256": "00f4f76bd5479dbf0bdff988a2da4eb41aecc72d278b8c452b3df9686218c5da",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 69,
+          "sourceKind": "appendix",
+          "page": 44,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c069-appendix-p044.webp",
+          "sha256": "3bdedef59a54ce9a844b2b249873d46bc3648e4bd216f8ae3a12878955e5d71e",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 69,
+          "sourceKind": "appendix",
+          "page": 45,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c069-appendix-p045.webp",
+          "sha256": "48393c4cc07c1f8d306f31ad146b9548307097b3b5d4f3b3aecc945a141a0dd2",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 69,
+          "sourceKind": "appendix",
+          "page": 46,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c069-appendix-p046.webp",
+          "sha256": "d3dd29248d0e6d07a731636d3dfb5d23b0288195d28a7e219004215f53685579",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 70,
+          "sourceKind": "question",
+          "page": 46,
+          "rect": [
+            45,
+            371.1770324707031,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c070-question-p046.webp",
+          "sha256": "01082b0cc75599a423b29ccc76c7147b4d7eb333a9c050918464fdb65929e089",
+          "width": 942,
+          "height": 640
+        },
+        {
+          "qNumber": 70,
+          "sourceKind": "appendix",
+          "page": 48,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c070-appendix-p048.webp",
+          "sha256": "91e59b5b6ac48d1f607ce6832661bdb536b877084fde2b6a0e084c0f2a48ab16",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 70,
+          "sourceKind": "appendix",
+          "page": 49,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c070-appendix-p049.webp",
+          "sha256": "686978c97c266cb18f7e8975c436b6b9bd13e7398c47c0fc99fcf30747e9d6bc",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 71,
+          "sourceKind": "question",
+          "page": 47,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c071-question-p047.webp",
+          "sha256": "f82b8be830d21c55163e55384a6f42506e1e8ab34d445c5cf69ace43cb9578cf",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 71,
+          "sourceKind": "appendix",
+          "page": 50,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c071-appendix-p050.webp",
+          "sha256": "bbca175d9a46f4d0d84e0660a162191e7e376f8b15aa0286798d44af15ea0967",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 71,
+          "sourceKind": "appendix",
+          "page": 51,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c071-appendix-p051.webp",
+          "sha256": "6a8ae9ff7e3b8db101f2dc09ab08b40f5559947e89c86ddde8f91012db3e983f",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 72,
+          "sourceKind": "question",
+          "page": 48,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c072-question-p048.webp",
+          "sha256": "89d944e931a2a3dc83bb8bfac54584fffaefd8d6781f255be5e7ea388d577649",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 72,
+          "sourceKind": "appendix",
+          "page": 52,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c072-appendix-p052.webp",
+          "sha256": "f94d3f27dfff42aeba7274848efc354b08efcd74bd2a6b7d1edc70c9e21a098e",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 72,
+          "sourceKind": "appendix",
+          "page": 53,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c072-appendix-p053.webp",
+          "sha256": "a37a15e18dc15f53f3ea792807f443608020f0a9dad73453658e886b7a049371",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 74,
+          "sourceKind": "appendix",
+          "page": 54,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c074-appendix-p054.webp",
+          "sha256": "6977cf5f525138c3c697d127ff585098ffd01708d9ce6a45f6874dfaf47f427f",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 76,
+          "sourceKind": "appendix",
+          "page": 55,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c076-appendix-p055.webp",
+          "sha256": "128b2ef9262c9a8262b6c9db7b49903a1b3d532c747e6f787a71d6e0610a6263",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 79,
+          "sourceKind": "appendix",
+          "page": 56,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c079-appendix-p056.webp",
+          "sha256": "527811359d92f2e6552349d44ea9c7f57936da9ad223d551df097dcedb7f22ed",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 80,
+          "sourceKind": "appendix",
+          "page": 57,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c080-appendix-p057.webp",
+          "sha256": "126b8024fd8df4dc2a997da4403e05121158ff5ac24c99c20255e06c1ff3ed16",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 81,
+          "sourceKind": "question",
+          "page": 53,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c081-question-p053.webp",
+          "sha256": "9623de6f93f0675e220f1278db7bcab6c059dc3ad8801c199416d9dd106a5edd",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 81,
+          "sourceKind": "appendix",
+          "page": 58,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c081-appendix-p058.webp",
+          "sha256": "a5779d840fc798242153aba4fd4a95ffff1b965298c73fbe0955321d903236d6",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 81,
+          "sourceKind": "appendix",
+          "page": 59,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c081-appendix-p059.webp",
+          "sha256": "c6783a4e734b04c1c5b8a785006ea49b2945426c7698e0fb32636b91d0319bec",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 82,
+          "sourceKind": "question",
+          "page": 54,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c082-question-p054.webp",
+          "sha256": "f908422bd24d6b67a116c140615285ec8b7262871eaf788639dcf9d7711e78ba",
+          "width": 942,
+          "height": 1235
+        },
+        {
+          "qNumber": 82,
+          "sourceKind": "appendix",
+          "page": 60,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c082-appendix-p060.webp",
+          "sha256": "1cdac0e3863e9685994590fbdac5dc659678552196c91ccf23f71360071e7f16",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 85,
+          "sourceKind": "appendix",
+          "page": 61,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c085-appendix-p061.webp",
+          "sha256": "7547c39790f01501956a16e9ec75d0e8755e64c028b71fc89083f826f5008e5b",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 87,
+          "sourceKind": "question",
+          "page": 57,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            450.5477600097656
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c087-question-p057.webp",
+          "sha256": "cf08545dc4360b5cb418eb0fbd0a8c058115165bb3cfc3b52da432460da679e3",
+          "width": 942,
+          "height": 755
+        },
+        {
+          "qNumber": 89,
+          "sourceKind": "appendix",
+          "page": 62,
+          "rect": [
+            55,
+            55,
+            550,
+            755
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c089-appendix-p062.webp",
+          "sha256": "46cc303eebc23e4e139ebfb828330b1c67cac6a74d1ddd1f792969dea8cfee07",
+          "width": 900,
+          "height": 1370
+        },
+        {
+          "qNumber": 90,
+          "sourceKind": "question",
+          "page": 59,
+          "rect": [
+            45,
+            73.5393295288086,
+            550,
+            690.5032958984375
+          ],
+          "dpi": 144,
+          "path": "public/questions/shika-ishi/116-c/c090-question-p059.webp",
+          "sha256": "18eceb184b1c34d8e76304eb0e6cfb6cd1fc1fc49371a1464ac84a86dfdcb3df",
+          "width": 942,
+          "height": 1235
+        }
+      ],
+      "officialExcludedQuestions": [
+        {
+          "qNumber": 78,
+          "question": "身体障害者手帳の交付対象として身体障害者福祉法に規定されているのはどれか。すべて選べ。",
+          "choices": {
+            "A": "視覚障害",
+            "B": "聴覚障害",
+            "C": "平衡機能障害",
+            "D": "言語機能障害",
+            "E": "そしやく機能障害"
+          },
+          "officialAnswerNumber": null,
+          "answer": null,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02c_01.pdf#page=51",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf#page=2",
+          "noticeUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/C78.pdf",
+          "reason": "問題として適切であるが、受験者レベルでは難しすぎるため。",
+          "explanation": "公式の正答値表は空欄。採点対象から除外するとの公式通知に従い、正答肢を設定しない。身体障害者福祉法別表には視覚、聴覚、平衡、言語、そしやく機能の障害が列挙されるが、認定対象には障害の程度・永続性等の条件もある。",
+          "officialReferenceUrls": [
+            "https://www.mhlw.go.jp/web/t_doc?dataId=83006000&dataType=0&pageNo=2"
+          ]
+        }
+      ],
+      "duplicateComparison": {
+        "refCount": 93,
+        "commitCount": 88,
+        "existingOnlyOnOwnBranch": 20
+      },
+      "supersedes": "data/question-replenishment/qc-10.json#PLAN5-136",
+      "scoringNoticeReceipts": [
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/C16.pdf",
+          "status": 200,
+          "sha256": "1fb5b311b2cb01816b6b52de1720f32b511f4b878410a72b4340526870ebafc7",
+          "text": "問題C第\n（　採点上の取り扱い　）\n正解した受験者については採点対象に含め、不正解の受験者については採点対象か\nら除外する。\n（　理　由　）\n問題として適切であるが、必修問題としては妥当でないため。\n（　別　紙　）\n第116回歯科医師国家試験における採点除外等の取扱いをした問題について\n16 問\n"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/C78.pdf",
+          "status": 200,
+          "sha256": "37310c920bef81b46c233f98258baec3dd502f616bb87aade0f3758190534159",
+          "text": "問題C第\n（　採点上の取り扱い　）\n採点対象から除外する。\n（　理　由　）\n問題として適切であるが、受験者レベルでは難しすぎるため。\n（　別　紙　）\n第116回歯科医師国家試験における採点除外等の取扱いをした問題について\n78 問\n"
+        }
+      ],
+      "addedChoiceCount": 340
+    }
+  ]
+}

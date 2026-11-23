@@ -15,14 +15,27 @@ async function renderedQuestion(exam: ExamCode) {
   return new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
 }
 
+function studyGuide(doc: Document) {
+  return Array.from(doc.querySelectorAll("section > h3"))
+    .find((heading) => heading.textContent?.endsWith("の学習ガイド"))?.closest("section") ?? null;
+}
+
 describe("qualification study-guide promises", () => {
-  it.each(["kanri", "eisei1", "eisei2", "fp2", "denken3"] as const)("omits misleading IPA fallback guides on %s", async (exam) => {
+  it.each(["kanri", "eisei1", "eisei2", "denken3"] as const)("omits misleading IPA fallback guides on %s", async (exam) => {
     expect(blog.getAllBlogPosts().filter((post) => post.exam === exam)).toHaveLength(0);
     expect(getRelatedBlogPosts(exam, 4)).toEqual([]);
     const doc = await renderedQuestion(exam);
-    expect(doc.querySelector('section[aria-label="この試験区分の学習ガイド"]')).toBeNull();
+    expect(studyGuide(doc)).toBeNull();
     expect(doc.querySelector("h1")?.textContent).toBeTruthy();
     expect(doc.querySelector(`a[href="/${exam}"]`)).not.toBeNull();
+  });
+
+  it("shows the released FP2 guide on FP2 questions without adding IPA guides", async () => {
+    const related = getRelatedBlogPosts("fp2", 4);
+    expect(related.map(post => post.slug)).toContain("fp2-free-gakka-review-date");
+    expect(related.every(post => post.exam === "fp2")).toBe(true);
+    const section = studyGuide(await renderedQuestion("fp2"));
+    expect(section?.querySelector('a[href="/blog/fp2-free-gakka-review-date"]')?.textContent).toBeTruthy();
   });
 
   it("only returns exact-exam guides for every published non-IPA qualification", () => {
@@ -37,7 +50,7 @@ describe("qualification study-guide promises", () => {
     expect(related.some((post) => post.exam === "ap")).toBe(true);
     expect(related.some((post) => !post.exam)).toBe(true);
     const doc = await renderedQuestion("ap");
-    const section = doc.querySelector('section[aria-label="この試験区分の学習ガイド"]');
+    const section = studyGuide(doc);
     expect(section?.querySelectorAll('a[href^="/blog/"]').length).toBeGreaterThan(0);
     expect(section?.textContent).toContain("応用情報");
   });
@@ -50,7 +63,7 @@ describe("qualification study-guide promises", () => {
     const spy = vi.spyOn(blog, "getAllBlogPosts").mockReturnValue([fpGuide, hub, seed]);
     try {
       expect(getRelatedBlogPosts("fp2", 4).map((post) => post.slug)).toEqual([fpGuide.slug]);
-      const section = (await renderedQuestion("fp2")).querySelector('section[aria-label="この試験区分の学習ガイド"]');
+      const section = studyGuide(await renderedQuestion("fp2"));
       expect(section?.textContent).toContain(fpGuide.title);
       expect(section?.querySelectorAll("a")).toHaveLength(1);
       expect(section?.querySelector("a")?.getAttribute("href")).toBe(`/blog/${fpGuide.slug}`);

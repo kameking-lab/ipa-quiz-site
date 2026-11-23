@@ -45,6 +45,6 @@ describe("social insurance post-668 GO-only delta", () => {
       })?.id).toBe(addition.id);
       expect(sitemapIds.has(addition.id)).toBe(true);
     }
-    expect(SHAROUSHI_QUESTIONS.some((q) => q.id === "sharoushi-2025-annual-koyou-q1")).toBe(false);
+    expect(proof.added.some((q) => q.id === "sharoushi-2025-annual-koyou-q1")).toBe(false);
   });
 });

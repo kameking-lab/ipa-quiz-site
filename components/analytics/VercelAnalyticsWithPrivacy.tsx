@@ -8,7 +8,7 @@ import { nativeClient } from "@/mobile/shared/contracts";
 
 // Strip known PII-like query params before sending page view events to Vercel Analytics.
 // Vercel Analytics is cookie-free and collects only aggregate traffic data.
-const PII_PARAMS = ["email", "phone", "token", "key", "password", "name", "user", "uid"];
+const PII_PARAMS = ["email", "phone", "token", "key", "password", "name", "user", "uid", "plan", "examDate"];
 
 function beforeSend(event: BeforeSendEvent): BeforeSendEvent | null {
   try {

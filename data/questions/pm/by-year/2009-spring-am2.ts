@@ -24,6 +24,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "コードインスペクションを行うことで、インスペクション作業時間とインスペクションでのバグ修復時間が発生しますが、単体テスト以降でのバグ発見率が低下し、高コストな単体テスト以降でのバグ修復時間を削減できます。具体的には、コードインスペクションを行わない場合の総コスト150時間に対し、コードインスペクションを行った場合の総コストは66時間となるため、84時間の削減効果が期待できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +48,14 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
       "エ": "（グラフ画像）"
     },
     "answer": "ウ",
-    "explanation": "ウが正解である根拠は、EVM（Earned Value Management）におけるコスト超過と納期遅延の判断基準に基づきます。コスト超過しないとは、実績コスト（AC：Actual Cost）が EV（Earned Value）以下、またはコスト差異（CV：Cost Variance = EV - AC）がゼロ以上であることを意味します。納期遅延しないとは、スケジュール差異（SV：Schedule Variance = EV - PV）がゼロ以上であることを意味します。EVMでは、これらの指標の将来予測値（EAC：Estimate at Completion や ETC：Estimate to Complete）を用いて、プロジェクトの完了見通しを評価します。ウの選択肢は、これらの指標が良好な状態を示唆していると考えられます。\n\nアは、コスト超過または納期遅延の可能性が高い状態を示していると考えられます。イは、コストは順調でも納期に遅延する可能性を示唆しています。エは、コストは大幅に超過し、納期も遅延する可能性が高い状態を示していると考えられます。",
+    "explanation": "現在の出来高EVを、計画価値PVと実コストACの両方と比べます。EVがPV以上なら進捗遅れがなく、EVがAC以上なら出来高に対して費用超過がありません。図で両方を満たすのはウです。",
+    "choiceExplanations": {
+      "ア": "EVがPVより上なので進捗は計画より進んでいます。ただしACがEVより上で、得た出来高に対応する予算額より多く使っています。",
+      "イ": "EVはPVを下回るので進捗は遅れています。さらにACはEVより上で、コスト効率も予算どおりの水準を下回ります。",
+      "ウ": "EVがPVとACの両方を上回ります。計画を超える出来高を、その出来高に対応する予算より少ない費用で得ている状態です。",
+      "エ": "EVはACより上なので費用面は有利ですが、EVはPVを下回っています。現在の進み方が続くなら納期の遅れが見込まれます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ファンクションポイント法は、外部仕様からシステムの機能規模を数値化する手法です。入力、出力、参照などの要素数をカウントし、システムの複雑度で重み付けすることで、開発規模を見積もります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +105,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "残りの工数160人日を25日で完了する必要があります。当初の4人では4人×25日＝100人日の作業しかできないため、160-100＝60人日の工数が不足します。増員するプログラマは10日間の学習期間があるため、実質作業できるのは15日間です。したがって、60人日÷15日＝4人のプログラマを増員する必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS X 0129-1における『効率性』とは、明示的な条件の下で、使用する資源の量に対比して適切な性能を提供するソフトウェア製品の能力と定義されます。これは、システムが資源（時間、CPU、メモリなど）をいかに効率的に利用して機能を提供できるかを示す特性です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "散布図は、二つの異なる変数間の相関関係や分布のパターンを視覚的に表現するのに適しています。チェーン店における最寄り駅の乗降客数と来客数の関係を見ることで、両者に相関があるかを分析できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "利用頻度の高いものからシステムの機能を説明する方法は、読者が最も関心のある、または重要度の高い内容から情報を得ることを可能にします。これは個々の内容の軽重に注目し、重要な情報から提示する構成法に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "EMV（期待金額価値）は、リスク事象が発生した場合の金銭的影響と、その事象が発生する確率を掛け合わせて算出されます。これにより、特定の事象が発生した場合にどれくらいの経済的損失（または利益）が期待されるかを数値的に評価できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "デルファイ法は、複数の専門家から匿名で意見を収集し、その結果を要約して再度アンケートを行うことを繰り返すことで合意形成を図る手法です。この繰り返しプロセスにより、個人の影響を排除しつつ、専門家集団の知見を最大限に活用してリスクなどをまとめます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +254,14 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
       "エ": "（テーブル画像）"
     },
     "answer": "ウ",
-    "explanation": "ウが正解である理由は、リスク対策の基本的な考え方に基づいています。リスク対策は、リスク事象の発生確率や影響度を考慮し、そのレベルに応じて「予防対策」と「発生時対策」のいずれか、または両方を実施するか、「受容」するかを決定します。一般的に、発生確率や影響度が高いリスクには予防対策や発生時対策が優先され、低いリスクには受容という判断も含まれます。ウの選択肢は、これらのリスクレベルと対策の組み合わせを論理的に示しており、リスク対応計画の立案に最も適した表形式になっています。\n\nアは、リスク事象の発生確率と影響度による分類と、それに対する対策の選択肢が、リスク管理の一般的な考え方と整合していません。イは、リスク発生時の対策のみに焦点を当てており、リスクを未然に防ぐための予防対策の重要性や、リスクを受容するという選択肢が欠けています。エは、リスク事象の分類が不明確であり、それに対する対策との関連性も、リスク対策の標準的な考え方から逸脱しています。",
+    "explanation": "図の縦軸は発生確率、横軸は影響度です。確率が高いAには予防、影響が大きいDには発生時対策、両方が高いCには両方を割り当てます。確率も影響も小さいBは受容します。この対応をすべて示しているのはウです。",
+    "choiceExplanations": {
+      "ア": "発生確率が高いAに予防がなく、確率も影響も小さいBに予防を割り当てています。表の条件ではAで予防を優先します。",
+      "イ": "確率の低いBを受容する点は適切ですが、Dは発生したときの影響が大きいので、発生時の対応を準備する必要があります。",
+      "ウ": "確率が高いAに予防、影響が大きいDに発生時の対策を用意します。両方が高いCに両対策を取り、両方が低いBは受容します。",
+      "エ": "Cは発生確率も影響も大きいので、発生時対策だけでは不足します。Bは両方が小さいため、予防よりも受容が適しています。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +286,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "定額契約では、納入者が契約金額を固定して開発を行うため、要求仕様が不明確な場合、後からの仕様変更や追加機能の発生による工数増大のリスクを納入者側がすべて負うことになります。これは、予期せぬコスト増加やスケジュールの遅延に直結し、納入者にとって最もリスクの高い契約形態です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +310,14 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
       "エ": "（テーブル画像）"
     },
     "answer": "ウ",
-    "explanation": "ウが正解である理由は、システム開発におけるテストの要求事項が、一般的に「結合テスト」においては「コンポーネント間連携」の妥当性を確認することに主眼が置かれるからです。これは、個々のモジュール（コンポーネント）が正しく機能することを確認する単体テストとは異なり、複数のモジュールが連携する際のインタフェースやデータ連携に問題がないかを検証する段階だからです。\n\nアが誤りであるのは、単体テストでは、個々のモジュールやプログラムの内部ロジックの正しさを検証することに重点が置かれるため、コンポーネント間連携が要求事項となるのは不適切です。\n\nイも不適切で、システムテストは、システム全体が要求仕様を満たしているかを確認する段階であり、個々のコンポーネントの連携というよりは、システム全体の機能や性能、信頼性といったより広範な視点からの検証が中心となります。\n\nエが誤りであるのは、受け入れテストは、最終的なユーザーがシステムを実際に使用する上で、要求された業務や目的に合致しているかを確認するテストであり、開発プロセスにおけるコンポーネント間の連携といった技術的な詳細が直接的な要求事項となるわけではありません。",
+    "explanation": "方式設計では、そこで設計する構成要素同士の結合をどう確かめるかを決めます。システム方式設計にはシステム結合テスト、ソフトウェア方式設計にはソフトウェア結合テストが対応します。詳細設計では個別のユニットの仕様を決めるので、ソフトウェアユニットテストが対応します。",
+    "choiceExplanations": {
+      "ア": "システム方式設計では、構成要素を組み合わせるシステム結合のテスト条件を定めます。運用テストをこの欄に置くのは適切ではありません。",
+      "イ": "ソフトウェア方式設計と詳細設計の対応は適切です。最初の欄は、システムの構成要素の接続を確かめるシステム結合テストです。",
+      "ウ": "システムの構成、ソフトウェアの構成、個別ユニットの詳細を設計する順に、システム結合、ソフトウェア結合、ユニットの各テスト要件を定めます。",
+      "エ": "ソフトウェア方式設計はユニット間の組合せを扱い、詳細設計は各ユニットの仕様を決めます。後ろ二つのテストが逆です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +342,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "状態遷移図は、システムの現在の状態と、特定の事象（イベント）が発生したときにシステムがどのように次の状態へ移行するかを簡潔に記述するのに用いられます。これにより、システムの動的な振る舞いを明確に理解し、分析することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +367,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "臨時保守は緊急の障害対応であるため、事前に保守作業者が障害発生状況を正確に把握していることを確認することが重要です。また、作業完了後には、障害の原因が特定され、適切な処置が実施されたか、そしてその結果どうなったかを確認することが求められます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +392,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "スパイラルモデルは、開発プロセスを複数のサイクルに分割し、各サイクルでリスク分析、設計、開発、テストを繰り返しながら、段階的にシステムの完成度を高めていくモデルです。これにより、開発の初期段階でリスクを特定し、早期に問題を解決しながらシステムの品質を向上させることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +417,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "リバースエンジニアリングとは、既存のソースプログラムや実行ファイルなどを解析し、その内部構造、機能、設計思想などを分析して、プログラム仕様書などの上位レベルの設計情報を再構築する技術です。これにより、既存システムの理解を深めたり、ドキュメントが失われたシステムの保守を可能にしたりします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +442,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "データベースサーバのハードディスクに障害が発生した場合でもサービスを続行するには、ディスクの二重化が最も効果的です。通常稼働時にデータを同時に二つのディスクに書き込むことで、片方のディスクが故障してももう一方のディスクでシステムを停止することなく稼働を継続できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +467,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "業務プログラムに精通した担当者が限られる場合でも、安定した運用管理を継続するためには、運用マニュアルなどのドキュメントを整備し、誰でも業務を遂行できるようにしておくことが重要です。これにより、担当者の異動や不在時でも業務の継続性を確保できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +492,13 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITサービスマネジメントの導入手順として、まず目標を設定し（c）、次にその目標と現状とのギャップを分析します（b）。ギャップを明確にするため、さらに詳細な現状把握を行い（f）、その上で導入に伴うリスクを分析し（e）、具体的な導入計画を策定します（d）。最後に、サービスの進捗や効果を測定するための基準を設定します（a）。",
+    "choiceExplanations": {
+      "ア": "目標を設定するfより先に、目標を達成する方法eを検討しています。現状と目指す姿の差から目標を定め、その後に手段を考えます。",
+      "イ": "目標fを決めてからビジョンcを定め、さらに測定より前に継続的改善を検討しています。目指す姿から手順を組み立てます。",
+      "ウ": "ビジョンと現状を明らかにして目標を設定し、達成方法と達成度の測定方法を検討します。測定の結果を使って継続的に改善します。",
+      "エ": "現状bを把握する前に目標fを設定すると、現状との差が分かりません。実施方法eも測定や継続的改善より前に考えます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +523,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "サプライチェーンマネジメント（SCM）の目的は、原材料の調達から製品が顧客に届くまでのプロセス全体を最適化し、効率を向上させることです。不良在庫の減少は、SCMによって在庫管理が改善され、無駄が削減されたことを示す直接的な指標となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +548,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "情報システムの全体計画立案においてE-Rモデルを用いて全社のデータモデルを作成する際には、まず企業全体の基本的なエンティティを抽出し、それらの相互関係（リレーションシップ）を含む鳥瞰図を作成します。次に、これらのエンティティを詳細化し、すべてのリレーションシップを明確にすることで、全社のデータモデルとして完成させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +573,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "共通フレーム2007における要件定義プロセスのアクティビティには、利害関係者要件の定義が含まれます。このアクティビティは、システムの利用者やその他の関係者がシステムに何を求めているかを明確にし、文書化する初期段階の作業です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +598,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "著作権は、著作物を創作した者に原始的に帰属します。A社がB社にプログラム作成を依頼し、著作権に関する特段の取り決めがない場合、実際にプログラムを創作したB社にその著作権が帰属することになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +623,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "下請法では、発注者は下請事業者に対し、発注時に下請代金の額を定めることを義務付けています。ユーザーとの契約代金が未定であることを理由に、下請代金の取決めを下請業者との契約時以降に先送りすることは、下請業者にとって不利な「買いたたき」や「不当な減額」につながるため、禁止されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +648,7 @@ export const PM_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "個人情報保護法は、生存する個人に関する情報を保護の対象としています。個人情報保護法第2条第1項で、「生存する個人に関する情報であって、特定の個人を識別することができるもの」と定義されており、死亡した個人の情報は原則として対象外となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_pm_am2_qs.pdf",
     "license": "IPA-public"

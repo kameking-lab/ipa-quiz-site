@@ -9,13 +9,17 @@ import { renderExamsSitemapXml } from "@/lib/seo/sitemap-xml";
 import Page from "@/app/chusho-secondary/page";
 import QualificationsPage, { metadata as qualificationsMetadata } from "@/app/qualifications/page";
 
-describe("SME consultant secondary latest-two source and example contract", () => {
-  it("covers two complete years with 100-point cases and no repeated original", () => {
-    expect(CHUSHO_SECONDARY_CASES.map(p => `${p.year}:${p.case}:${p.questions.length}`)).toEqual(["2025:case1:4","2025:case2:4","2025:case3:4","2025:case4:4","2024:case1:4","2024:case2:4","2024:case3:5","2024:case4:4"]);
-    expect(CHUSHO_SECONDARY_ORIGINAL_COUNT).toBe(33);
-    expect(CHUSHO_SECONDARY_SOLUTION_COUNT).toBe(54);
+describe("SME consultant secondary source and example contract", () => {
+  it("covers three complete years with 100-point cases and no repeated original", () => {
+    expect(CHUSHO_SECONDARY_CASES.map(p => `${p.year}:${p.case}:${p.questions.length}`)).toEqual([
+      "2025:case1:4", "2025:case2:4", "2025:case3:4", "2025:case4:4",
+      "2024:case1:4", "2024:case2:4", "2024:case3:5", "2024:case4:4",
+      "2023:case1:4", "2023:case2:4", "2023:case3:5", "2023:case4:4",
+    ]);
+    expect(CHUSHO_SECONDARY_ORIGINAL_COUNT).toBe(50);
+    expect(CHUSHO_SECONDARY_SOLUTION_COUNT).toBe(88);
     for (const p of CHUSHO_SECONDARY_CASES) expect(p.questions.reduce((sum,q) => sum+q.points,0)).toBe(100);
-    expect(new Set(CHUSHO_SECONDARY_QUESTIONS.map(q => q.id)).size).toBe(33);
+    expect(new Set(CHUSHO_SECONDARY_QUESTIONS.map(q => q.id)).size).toBe(50);
     expect(getChushoQuestion(2026,"case1",1)).toBeUndefined();
     expect(getChushoQuestion(2025,"case3",5)).toBeUndefined();
   });
@@ -31,7 +35,7 @@ describe("SME consultant secondary latest-two source and example contract", () =
         pages += 1;
       }
     }
-    expect(pages).toBe(40);
+    expect(pages).toBe(62);
   });
   it("keeps every answer within its stated limit and only editorial provenance", () => {
     for (const q of CHUSHO_SECONDARY_QUESTIONS) {
@@ -44,33 +48,33 @@ describe("SME consultant secondary latest-two source and example contract", () =
         expect(s.checkpoints.length).toBeGreaterThanOrEqual(2);
       }
     }
-    expect(INDEPENDENT_EXAMPLE_NOTICE).toContain("公式の模範解答や採点基準ではなく");
+    expect(INDEPENDENT_EXAMPLE_NOTICE).toContain("公式の模範解答や採点基準ではありません");
   });
-  it("indexes all 42 paths and gives the native exam a working homepage link", () => {
+  it("indexes all 63 paths and gives the native exam a working homepage link", () => {
     const paths=chushoSitemapPaths();
-    expect(paths).toHaveLength(42);
-    expect(new Set(paths).size).toBe(42);
+    expect(paths).toHaveLength(63);
+    expect(new Set(paths).size).toBe(63);
     const sitemap=renderExamsSitemapXml();
     for (const path of paths) expect(sitemap).toContain(path);
-    expect(getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(p=>p.key==="chusho-secondary")).toMatchObject({href:"/chusho-secondary",questionCount:33});
+    expect(getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(p=>p.key==="chusho-secondary")).toMatchObject({href:"/chusho-secondary",questionCount:50});
     const html=renderToStaticMarkup(<Page />);
     expect(html).toContain("独自解答例");
-    expect(html).toContain("得点を保証するものではありません");
+    expect(html).toContain("公式の模範解答や採点基準ではありません");
   });
   it("distinguishes editorial secondary examples from official answer material in the qualification directory", () => {
     const html = renderToStaticMarkup(<QualificationsPage />);
     const document = new DOMParser().parseFromString(html, "text/html");
-    const articles = Array.from(document.querySelectorAll("article"));
-    const secondary = articles.find(article => article.querySelector('a[href="/chusho-secondary"]'));
+    const coverage = document.querySelector("#qualification-coverage");
+    const articles = Array.from(coverage?.querySelectorAll("article") ?? []);
+    const secondary = articles.find(article => article.querySelector("h2")?.textContent === "中小企業診断士二次");
     expect(secondary).toBeDefined();
-    const sourceLink = secondary!.querySelector('a[target="_blank"]')!;
-    expect(sourceLink.getAttribute("href")).toMatch(/jf-cmca.jp/);
-    expect(sourceLink.textContent).toContain("\u516c\u5f0f\u554f\u984c");
-    expect(sourceLink.textContent).not.toContain("\u6b63\u7b54");
-    expect(document.body.textContent).toContain("\u4e2d\u5c0f\u4f01\u696d\u8a3a\u65ad\u58eb\u4e8c\u6b21\u306e\u89e3\u7b54\u4f8b\u306f\u5f53\u30b5\u30a4\u30c8\u306e\u72ec\u81ea\u4f5c\u6210");
-    expect(qualificationsMetadata.description).toContain("\u72ec\u81ea\u89e3\u7b54\u4f8b");
-    const multipleChoice = articles.find(article => article.querySelector('a[href="/fp3"]'));
-    expect(multipleChoice!.querySelector('a[target="_blank"]')!.textContent).toContain("\u6b63\u7b54");
+    const sourceLink = secondary?.querySelector('a[target="_blank"]');
+    expect(sourceLink?.getAttribute("href")).toBe("https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html");
+    expect(sourceLink?.textContent).toBe("公式問題");
+    expect(document.body.textContent).toContain("中小企業診断士二次の解答例は当サイトの独自作成");
+    expect(qualificationsMetadata.description).toContain("独自解答例");
+    const multipleChoice = articles.find(article => article.querySelector("h2")?.textContent === "FP3級");
+    expect(multipleChoice?.querySelector('a[target="_blank"]')?.textContent).toBe("公式問題・正答");
   });
   it("retains explicit year-end cash flow and separates sunk cost decisions", () => {
     const q25=getChushoQuestion(2025,"case4",3)!;

@@ -23,3 +23,76 @@ it("opens the sign-in sheet without waiting for the verifier to be saved (tap fe
   saved();
   await pending;
 });
+
+const SITE = "https://www.kakomon-ai.jp";
+it("requests fresh provider authentication for account deletion without changing ordinary login", async () => {
+  m.set.mockResolvedValue(undefined);m.open.mockResolvedValue(undefined);
+  const {beginLogin}=await import("../src/login");
+  await beginLogin(SITE,"/account/delete",true);
+  const url=new URL(m.open.mock.calls[0][0].url);
+  expect(url.searchParams.get("reauth")).toBe("1");
+  expect(new URL(url.searchParams.get("callbackUrl")!,SITE).searchParams.get("reauth")).toBe("1");
+  expect(JSON.parse(m.set.mock.calls[0][0].value).returnTo).toBe("/account/delete");
+});
+it("opens account switching in the system browser and returns to native membership", async () => {
+  const { beginLogin } = await import("../src/login");
+  await beginLogin(SITE, "/quiz#app-settings", "switch-account");
+  const url = new URL(m.open.mock.calls[0][0].url);
+  expect(url.pathname).toBe("/auth/signin");
+  expect(url.searchParams.get("switchAccount")).toBe("1");
+  expect(new URL(url.searchParams.get("callbackUrl")!, SITE).pathname).toBe("/api/mobile/auth/complete");
+  expect(JSON.parse(m.set.mock.calls[0][0].value).returnTo).toBe("/quiz#app-settings");
+});
+const code = "c".repeat(43), state = "s".repeat(43);
+async function pendingLogin(get: ReturnType<typeof vi.fn>) {
+  get.mockResolvedValue({ value: JSON.stringify({ verifier: "v".repeat(43), state, returnTo: "/ap#app-settings", createdAt: Date.now() }) });
+}
+it("finishes sign-in with a same-origin fetch and waits until the WebView sees the session before leaving", async () => {
+  const { Preferences } = await import("@capacitor/preferences");
+  await pendingLogin(vi.mocked(Preferences.get));
+  const replace = vi.fn();
+  vi.stubGlobal("location", { origin: SITE, pathname: "/ap", search: "", hash: "", replace });
+  vi.stubGlobal("window", { location: { replace } });
+  let sessions = 0;
+  const fetch = vi.fn(async (input: string, init?: RequestInit) => {
+    if (input.endsWith("/api/mobile/auth/exchange")) {
+      expect(init?.credentials).toBe("include");
+      return Response.json({ redirectTo: `${SITE}/ap#app-settings` });
+    }
+    sessions++;
+    return Response.json(sessions < 2 ? {} : { user: { id: "u" } });
+  });
+  vi.stubGlobal("fetch", fetch);
+  const { finishLogin } = await import("../src/login");
+  await expect(finishLogin(`kakomonai://auth?code=${code}&state=${state}`, SITE)).resolves.toBe(true);
+  expect(sessions).toBe(2);
+  expect(replace).toHaveBeenCalledWith(`${SITE}/ap#app-settings`);
+});
+it("shows the server's reason when the exchange is refused", async () => {
+  const { Preferences } = await import("@capacitor/preferences");
+  await pendingLogin(vi.mocked(Preferences.get));
+  vi.stubGlobal("location", { origin: SITE, pathname: "/", search: "", hash: "" });
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ error: "auth_code_expired" }, { status: 401 })));
+  const { finishLogin } = await import("../src/login");
+  await expect(finishLogin(`kakomonai://auth?code=${code}&state=${state}`, SITE)).rejects.toThrow("auth_code_expired");
+});
+it("hands a return that reached the bundled shell to the website instead of exchanging cross-origin", async () => {
+  const { Preferences } = await import("@capacitor/preferences");
+  await pendingLogin(vi.mocked(Preferences.get));
+  const replace = vi.fn();
+  vi.stubGlobal("location", { origin: "capacitor://localhost", pathname: "/index.html", search: "", hash: "" });
+  vi.stubGlobal("window", { location: { replace } });
+  const fetch = vi.fn();vi.stubGlobal("fetch", fetch);
+  const { finishLogin } = await import("../src/login");
+  await finishLogin(`kakomonai://auth?code=${code}&state=${state}`, SITE);
+  expect(fetch).not.toHaveBeenCalled();
+  expect(Preferences.set).toHaveBeenCalledWith({ key: "kakomon:auth-return:v1", value: `kakomonai://auth?code=${code}&state=${state}` });
+  expect(replace).toHaveBeenCalledWith(`${SITE}/ap#app-settings`);
+});
+it("ignores a cold-start launch URL that was already used instead of reporting a failed sign-in", async () => {
+  const { Preferences } = await import("@capacitor/preferences");
+  vi.mocked(Preferences.get).mockResolvedValue({ value: null });
+  const { finishLogin } = await import("../src/login");
+  await expect(finishLogin(`kakomonai://auth?code=${code}&state=${state}`, SITE, undefined, true)).resolves.toBe(false);
+  await expect(finishLogin(`kakomonai://auth?code=${code}&state=${state}`, SITE)).rejects.toThrow("ログインをやり直してください");
+});

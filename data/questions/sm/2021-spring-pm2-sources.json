@@ -1,0 +1,115 @@
+{
+  "jobId": "PLAN5-075",
+  "checkedAt": "2026-11-18",
+  "questionPdf": {
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sm_pm2_qs.pdf",
+    "sha256": "6e67118c9f5a505ff32e061d1b83ac7b1aa609c2a77f15e12c063ac7ddd53b36",
+    "pageCount": 8
+  },
+  "answerPdf": {
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sm_pm2_ans.pdf",
+    "sha256": "1b2d3aef066070f6ecc4b5f73f7b39b0c3b3390d112c99b39746b95e45d11f45",
+    "pageCount": 1,
+    "kind": "出題趣旨"
+  },
+  "questions": [
+    {
+      "questionId": "sm-2021h-pm2-q1-official",
+      "qNumber": 1,
+      "title": "事業関係管理におけるコミュニケーションについて",
+      "questionPages": [
+        3
+      ],
+      "commonPages": [
+        1,
+        2,
+        8
+      ],
+      "questionImages": [
+        {
+          "page": 1,
+          "path": "/questions/sm/2021-spring-pm2/original-p01.jpeg",
+          "sha256": "8956f3949646cb31267daa6fc0b4ee5f7a7fe46573502dca0899e91809fb183d"
+        },
+        {
+          "page": 2,
+          "path": "/questions/sm/2021-spring-pm2/original-p02.jpeg",
+          "sha256": "c60c23ae59c979a333d03c36a4d7d62511f95030a845bde11cb3fbf0690a84e6"
+        },
+        {
+          "page": 3,
+          "path": "/questions/sm/2021-spring-pm2/original-p03.jpeg",
+          "sha256": "0232ca28a976d75cdc373863267101d9811434ba12b39470e77ae894c6150c3a"
+        },
+        {
+          "page": 8,
+          "path": "/questions/sm/2021-spring-pm2/original-p08.jpeg",
+          "sha256": "fd80818a002fc8197aeade13d98d9085e8aae4f48f11948d7d8e4edf6b90d57a"
+        }
+      ],
+      "answerImages": [
+        {
+          "path": "/questions/sm/2021-spring-pm2/q1-intent.png",
+          "page": 1,
+          "clip": [
+            35.0,
+            104.16480255126953,
+            565.2760009765625,
+            255.204833984375
+          ],
+          "sha256": "4b566ee61ea95fa6c4e6680b6d92cb00eae476b622db8a9e4b3fdd2bbd364133"
+        }
+      ],
+      "intentText": "事業関係管理では，利害関係者とのコミュニケーションが重要であり，顧客とのコミュニケーションだけでなく，サービスの供給に関与するその他の利害関係者とのコミュニケーションも必要となる。本問は，事業関係管理の概要及び事業関係管理における役割，事業関係管理のために特に重要と考えたコミュニケーションについて，目的，対象とした情報，特に重要と考えた理由，及びコミュニケーションの仕組み，さらに，顧客との良好な関係を保つという観点での評価，今後の課題と対応について具体的に論述することを求めている。論述を通じて，IT サービスマネージャとして有すべき顧客関係・顧客満足を管理する能力，課題認識能力，方策立案能力などを評価する。"
+    },
+    {
+      "questionId": "sm-2021h-pm2-q2-official",
+      "qNumber": 2,
+      "title": "サービス可用性管理の活動について",
+      "questionPages": [
+        4
+      ],
+      "commonPages": [
+        1,
+        2,
+        8
+      ],
+      "questionImages": [
+        {
+          "page": 1,
+          "path": "/questions/sm/2021-spring-pm2/original-p01.jpeg",
+          "sha256": "8956f3949646cb31267daa6fc0b4ee5f7a7fe46573502dca0899e91809fb183d"
+        },
+        {
+          "page": 2,
+          "path": "/questions/sm/2021-spring-pm2/original-p02.jpeg",
+          "sha256": "c60c23ae59c979a333d03c36a4d7d62511f95030a845bde11cb3fbf0690a84e6"
+        },
+        {
+          "page": 4,
+          "path": "/questions/sm/2021-spring-pm2/original-p04.jpeg",
+          "sha256": "1959c10b3371e28d065ec2217fa507c67590ff8213a0ab571ae3875c2348703a"
+        },
+        {
+          "page": 8,
+          "path": "/questions/sm/2021-spring-pm2/original-p08.jpeg",
+          "sha256": "fd80818a002fc8197aeade13d98d9085e8aae4f48f11948d7d8e4edf6b90d57a"
+        }
+      ],
+      "answerImages": [
+        {
+          "path": "/questions/sm/2021-spring-pm2/q2-intent.png",
+          "page": 1,
+          "clip": [
+            35.0,
+            256.204833984375,
+            565.2760009765625,
+            444.97113037109375
+          ],
+          "sha256": "9614ba39f5ddf5f73cbecedce9e6a5027ad6c93f3c98ff94f2493cd4388c314c"
+        }
+      ],
+      "intentText": "IT サービスマネージャは，顧客とサービス可用性の目標を合意した上で，サービス可用性を損なう事象の監視，課題の抽出，改善策の実施など，サービス可用性の目標を達成するための活動を行うことが求められる。本問では，サービス可用性管理について問う。具体的には，サービス可用性の目標及び目標値，並びにそれらとIT サービスの特徴との関係について論述を求めるとともに，目標を達成するために重要と考えて行ったサービス可用性管理の活動について，監視対象とした事象とその測定項目は何か，測定結果を管理するための評価指標は何か，また，測定結果をどのように分析したか，その内容を具体的に論述することを求めている。併せて，サービス可用性の目標を達成するために対応が必要と考えた課題と改善策は何か，又は，将来のサービス拡大などの環境変化に備えて対応が必要と考えた課題と改善策は何か。いずれか一方の観点から論述することを求めている。論述を通じて，IT サービスマネージャとして有すべき，サービス可用性を監視・評価する能力，課題認識能力，方策立案能力などを評価する。"
+    }
+  ]
+}

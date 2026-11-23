@@ -1,0 +1,237 @@
+[
+ {
+  "id": "soukan-2023-annual-gakka-q3",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2023,
+  "season": "annual",
+  "qNumber": 3,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "2",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和5年度"
+  ],
+  "difficulty": 3,
+  "question": "設計管理に関する次の（A）〜（E）の用語と，それらの説明である（ア）〜（オ）の組合せとして，最も適切なものはどれか。\n（A）信頼性設計\n（B）保全性設計\n（C）デザインイン\n（D）デザインレビュー\n（E）フロントローディング\n（ア）故障が発生した場合，その故障個所がすぐに検知でき，容易に修復できるように考慮した設計法。\n（イ）対象物が，与えられた条件の下で，与えられた期間，故障せずに，要求どおりに遂行できるようにすることを目的とした設計技術。\n（ウ）初期の工程のうちに試作や量産など後工程で発生しそうな問題の検討や改善などに前倒しで取組むことで，品質の向上や工期の短縮などを推進する手法。\n（エ）部品の製造販売を行う業者が，完成品のメーカーに設計の協力をして共同開発を行い，その際に自社の部品をその新製品の組立てに使用するように働きかける活動。\n（オ）対象物のライフサイクル全体にわたる既存又は新規に要求される設計活動に対する，文書化された計画的な審査。",
+  "choices": {
+   "ア": "イ — ア — ウ — エ — オ",
+   "イ": "イ — ア — エ — オ — ウ",
+   "ウ": "イ — ア — エ — ウ — オ",
+   "エ": "ア — イ — ウ — オ — エ",
+   "オ": "ア — イ — オ — エ — ウ"
+  },
+  "answer": "イ",
+  "explanation": "故障せずに機能を果たす設計が信頼性設計、故障検知や修復に配慮する設計が保全性設計である。部品採用を働きかける活動、計画的な設計審査、前倒しの検討は順にデザインイン、デザインレビュー、フロントローディングに当たる。",
+  "choiceExplanations": {
+   "ア": "（A）と（B）は合うが、（C）のデザインインは完成品メーカーと共同開発して自社部品の採用を働きかける活動である。",
+   "イ": "故障せずに機能を果たす設計が信頼性設計、故障検知や修復に配慮する設計が保全性設計である。部品採用を働きかける活動、計画的な設計審査、前倒しの検討は順にデザインイン、デザインレビュー、フロントローディングに当たる。",
+   "ウ": "（A）から（C）までは合うが、（D）は文書化された計画的な審査、（E）は後工程の課題を初期に検討する手法である。",
+   "エ": "（A）信頼性設計と（B）保全性設計が逆である。前倒しで課題を検討する説明は（E）に当たる。",
+   "オ": "（E）の前倒しの検討は合うが、（A）と（B）は逆で、（C）は計画的な審査でなく部品採用への働きかけである。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=3",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－3（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2023-04-01"
+ },
+ {
+  "id": "soukan-2023-annual-gakka-q4",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2023,
+  "season": "annual",
+  "qNumber": 4,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "1",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和5年度"
+  ],
+  "difficulty": 3,
+  "question": "品質管理で用いられる図やグラフと，その用途の例の組合せとして，最も適切なものはどれか。",
+  "choices": {
+   "ア": "パレート図：改善すべき事項の全体に及ぼす影響の確認，及び改善による効果の確認をする。",
+   "イ": "管理図：計量値データを統計的に解析して棒グラフで示し，平均値や中央値などの中心傾向，分布の形状を知る。",
+   "ウ": "ヒストグラム：2つの特性の相関関係を見る。",
+   "エ": "散布図：特定の結果に対する原因を定性的に分類・整理し，重要な原因を追究する。",
+   "オ": "特性要因図：数値データに基づいて工程の異常を発見し，安定状態を維持する。"
+  },
+  "answer": "ア",
+  "explanation": "パレート図は項目の大きい順と累積比率から重要項目を特定でき、改善の前後を比べると効果も確認できる。",
+  "choiceExplanations": {
+   "ア": "パレート図は項目の大きい順と累積比率から重要項目を特定でき、改善の前後を比べると効果も確認できる。",
+   "イ": "度数分布の形状を棒で示すのはヒストグラムである。管理図は工程の変動を時系列で監視する。",
+   "ウ": "2つの特性の相関を調べるには散布図を用いる。ヒストグラムは一つの変数の度数分布を示す。",
+   "エ": "原因を定性的に分類する用途には特性要因図を用いる。散布図は対になったデータを点で描く。",
+   "オ": "数値データから工程の異常を監視するものは管理図である。特性要因図は結果と要因の関係を整理する。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=4",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－4（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2023-04-01"
+ },
+ {
+  "id": "soukan-2023-annual-gakka-q5",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2023,
+  "season": "annual",
+  "qNumber": 5,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "2",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和5年度"
+  ],
+  "difficulty": 3,
+  "question": "ある工場では，設備管理に関する次の取組を行った。このうち，設備総合効率の値を高めた取組として，最も不適切なものはどれか。",
+  "choices": {
+   "ア": "設備の予防保全の活動を見直すことによって，設備の停止時間を減らした。",
+   "イ": "設備の段取作業の省人化によって，段取作業における製造原価を減らした。",
+   "ウ": "設備の作業速度低下の発生を減らすことによって，稼働時間内の加工数量を増やした。",
+   "エ": "設備の改良保全の活動を見直すことによって，不適合品の発生数を減らした。",
+   "オ": "設備の事後保全の活動を見直すことによって，設備故障から復旧までの時間を減らした。"
+  },
+  "answer": "イ",
+  "explanation": "省人化は原価を下げるが、それだけでは時間稼働率、性能稼働率、良品率が改善したとはいえない。",
+  "choiceExplanations": {
+   "ア": "停止時間を減らすことで、負荷時間に占める稼働時間の割合が高まる。",
+   "イ": "省人化は原価を下げるが、それだけでは時間稼働率、性能稼働率、良品率が改善したとはいえない。",
+   "ウ": "設備が稼働している時間内により多く加工できれば、性能稼働率が向上する。",
+   "エ": "ほかの条件が同じで不適合品が減れば、設備総合効率の構成要素である良品率が改善する。",
+   "オ": "設備故障に伴う停止時間の短縮は、時間稼働率を高める。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=4",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－5（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2023-04-01"
+ },
+ {
+  "id": "soukan-2023-annual-gakka-q7",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2023,
+  "season": "annual",
+  "qNumber": 7,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "3",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和5年度"
+  ],
+  "difficulty": 3,
+  "question": "業務改善を実施するうえでの視点を示したECRSの原則を用いた改善活動の説明として，次のうち最も不適切なものはどれか。",
+  "choices": {
+   "ア": "作業のスケジュールを見直すことによって，作業の順序の変更をする。",
+   "イ": "工程分析を行った結果を活用し，一部の工程をなくす。",
+   "ウ": "完成品の利用調査に基づき，完成品の検査合格の許容範囲を狭める。",
+   "エ": "作業者の動作分析を行うことによって，動作方法を単純化する。",
+   "オ": "各工程の作業を見直し，別々であった工程を1つの工程にする。"
+  },
+  "answer": "ウ",
+  "explanation": "合否の許容範囲を狭めることは品質基準の見直しであり、工程の排除、結合、再配置、簡素化のいずれも示していない。",
+  "choiceExplanations": {
+   "ア": "作業順を組み替えるのは、ECRSのRに当たる再配置の例である。",
+   "イ": "不要な工程を取り除く改善は、Eに当たる排除である。",
+   "ウ": "合否の許容範囲を狭めることは品質基準の見直しであり、工程の排除、結合、再配置、簡素化のいずれも示していない。",
+   "エ": "動作を単純にして負担や手順を減らすことは、Sに当たる簡素化である。",
+   "オ": "別々の工程を一体化する改善は、Cに当たる結合である。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=5",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－7（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2023-04-01"
+ },
+ {
+  "id": "soukan-2023-annual-gakka-q8",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2023,
+  "season": "annual",
+  "qNumber": 8,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "5",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和5年度"
+  ],
+  "difficulty": 3,
+  "question": "現品管理の活動として，次の記述のうち最も不適切なものはどれか。",
+  "choices": {
+   "ア": "ICタグを活用して，ものの動きと情報を関連付けた管理を行う。",
+   "イ": "コンビニエンスストアにおいて，販売する食料品の賞味期限の確認を行う。",
+   "ウ": "現品票を用いて，仕掛品の紛失を防止する。",
+   "エ": "バーコードを活用して，販売時点情報を把握する。",
+   "オ": "バスタブカーブの図を活用して，需要予測を行う。"
+  },
+  "answer": "オ",
+  "explanation": "バスタブ曲線が示すのは時間の経過に伴う故障率である。需要を見込む手法でも、現品を識別・追跡する手法でもない。",
+  "choiceExplanations": {
+   "ア": "ICタグで個体を識別し、移動や入出庫の情報を現品と対応づけられる。",
+   "イ": "商品の状態を把握し期限切れを防ぐための賞味期限確認は、現品管理の一例である。",
+   "ウ": "現品票を仕掛品と対応させることで、識別と所在の把握が可能になる。",
+   "エ": "バーコードから販売した品目を識別し、販売時点の情報を現品と結び付けられる。",
+   "オ": "バスタブ曲線が示すのは時間の経過に伴う故障率である。需要を見込む手法でも、現品を識別・追跡する手法でもない。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=6",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－8（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2023-04-01"
+ }
+]

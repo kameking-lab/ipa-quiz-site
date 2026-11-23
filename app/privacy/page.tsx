@@ -15,7 +15,6 @@ import {
   ShoppingBag,
   Trash2,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -65,17 +64,9 @@ export default function PrivacyPage() {
   return (
     <main className="relative flex-1">
       <JsonLd data={jsonLd} />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
 
-      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4">
+      <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           <Link href="/">
             <ArrowLeft className="h-4 w-4" />
             戻る
@@ -83,28 +74,25 @@ export default function PrivacyPage() {
         </Button>
 
         <Breadcrumbs
+          className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
           items={[
             { name: "ホーム", href: "/" },
             { name: "プライバシーポリシー", href: "/privacy" },
           ]}
         />
 
-        <header className="mb-10 animate-fade-in">
-          <Badge variant="soft" className="mb-4">
-            <ShieldCheck className="h-3 w-3" />
-            プライバシー
-          </Badge>
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <header className="mb-8">
+          <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月6日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月23日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
           </p>
         </header>
 
-        <div className="space-y-5">
+        <div className="space-y-0">
           <section
             id="security"
             aria-labelledby="security-heading"
@@ -135,6 +123,7 @@ export default function PrivacyPage() {
               設定はお使いのブラウザの localStorage にのみ保存され、サーバーには送信されません。
               端末・ブラウザを変更すると履歴は引き継がれません。
             </p>
+            <p>通信元のおおよその地域（都道府県）をホームの天気表示に使い、地域は保存・外部送信しません。</p>
             <p>
               任意でログイン（Google / GitHub / メールリンク）された場合は、認証プロバイダから
               提供されるメールアドレス・表示名・プロフィール画像 URL を当社サーバーに保存します。
@@ -216,11 +205,12 @@ export default function PrivacyPage() {
               PostHog は <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">localStorage</code> に匿名 ID を保存してセッションを識別します。
             </p>
             <p>
-              現在の利用人数を表示するため、表示中のページから匿名のブラウザ識別子と最終操作からの経過時間を送信します。
-              識別子はブラウザに保存し、日ごとに更新します。サーバーはハッシュ化した識別子と最終利用時刻だけを保持し、
-              直近2分の利用を集計します。期限を過ぎた記録は次の集計時に削除します。
+              自習室の人数を集計するため、問題に回答すると、ブラウザは匿名の識別子と資格、回答からの経過時間を送信します。
+              識別子はブラウザに保存し、日ごとに更新します。サーバーには識別子のハッシュと最新の回答時刻・資格を保存します。
+              日本時間の午前0時以降に回答したブラウザを、最後に回答した資格ごとに集計します。このうち、直近5分に回答した人数を「いま」と表示します。
+              記録の書き込みに合わせて15分間隔で、日本時間の前日午前0時より古い記録を削除します。書き込みがない間や削除に失敗した場合は、記録が残ることがあります。
+              iPhoneアプリ内ではこの計測を行いません。
               氏名・メールアドレス・回答内容はこの集計に含めません。
-              この説明はアクセス解析に関するものです。
             </p>
             <p>
               本文と出典の確認記録がある学習記事の末尾を <strong>Google AdSense</strong> の広告対象とします。確認記録のない資格トップ・記事には広告枠を表示しません。
@@ -274,7 +264,7 @@ export default function PrivacyPage() {
 
           <section className="space-y-3 rounded-xl border p-5" aria-label="iPhoneの保存情報とAI送信">
             <h2 className="font-bold">iPhoneアプリの保存・購入情報・AI送信</h2>
-            <p>Google Geminiへ質問、会話履歴、問題と解答状況、入力答案・業種を送る前に、送信先・内容・目的を示して許可を確認します。拒否すると送信しません。氏名・連絡先・勤務先の秘密は入力しないでください。入力内の個人情報も送信対象です。iPhone設定の「AI送信の許可を取り消す」で次回送信前の確認に戻せます。</p>
+            <p>質問、会話履歴、問題と解答状況、入力答案・業種はGoogle Geminiで処理します。送信ボタンの近くに送信先と本ポリシーへのリンクを表示し、ボタンを押すことで送信に同意したものとします。氏名・連絡先・勤務先の秘密は入力しないでください。入力内の個人情報も送信対象です。</p>
             <p>購入の検証・復元にはRevenueCatとAppleを利用し、サーバー生成の匿名化した会員識別子、商品・取引・購読の状態と有効期限を処理します。決済カード情報は当サイトで保存しません。審査・TestFlightのSandbox記録は本番ストア記録と分けて保持します。</p>
             <p>端末には学習履歴・下書き・保存教材・必須画像・署名済みオフライン権利を保存します。資格ごとの保存削除、または<Link href="/account/delete" className="underline">アカウントとデータの削除</Link>で消去できます。サーバーの会員情報と同期データは削除処理時に削除します。購入・返金・会計記録はプロフィール・学習履歴から切り離して7年間保持します。Apple認証トークンも失効させます。購読解約は別手続きです。</p>
           </section>
@@ -397,10 +387,10 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Button asChild variant="gradient" size="lg">
+          <Button asChild variant="primary" size="lg" className="w-full sm:w-auto min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href="/">ホームに戻る</Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href="/terms">利用規約</Link>
           </Button>
         </div>
@@ -421,19 +411,19 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={number} className="relative scroll-mt-20 overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md sm:p-7">
+    <section id={number} className="scroll-mt-24 border-b border-border py-6 first:pt-0 last:border-b-0">
       <div className="mb-4 flex items-center gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
           {icon}
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-            Section {number}
+            {number}
           </p>
           <h2 className="text-lg font-semibold text-foreground">{title}</h2>
         </div>
       </div>
-      <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+      <div className="space-y-4 text-sm leading-7 text-foreground/85 [overflow-wrap:anywhere]">
         {children}
       </div>
     </section>

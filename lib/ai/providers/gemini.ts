@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import type { GenerationConfig, UsageMetadata } from "@google/generative-ai";
+import type { GenerationConfig, UsageMetadata, Part } from "@google/generative-ai";
 import type { LLMProvider, StreamChatParams } from "../provider";
 
 /**
@@ -12,6 +12,10 @@ type GenerationConfigWithThinking = GenerationConfig & {
   thinkingConfig?: { thinkingBudget?: number; includeThoughts?: boolean; thinkingLevel?: "low" | "medium" | "high" };
 };
 type UsageMetadataWithThoughts = UsageMetadata & { thoughtsTokenCount?: number };
+
+function messageParts(message: StreamChatParams["messages"][number]): Part[] {
+  return [{ text: message.content }, ...(message.images ?? []).map((image) => ({ inlineData: image }))];
+}
 
 export function createGeminiProvider(): LLMProvider {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -50,7 +54,7 @@ export function createGeminiProvider(): LLMProvider {
 
       const history = params.messages.slice(0, -1).map((m) => ({
         role: m.role === "assistant" ? "model" : "user",
-        parts: [{ text: m.content }],
+        parts: messageParts(m),
       }));
       const last = params.messages[params.messages.length - 1];
       if (!last || last.role !== "user") {
@@ -58,31 +62,41 @@ export function createGeminiProvider(): LLMProvider {
       }
 
       const chat = model.startChat({ history });
-      const stream = await chat.sendMessageStream(last.content);
-      for await (const chunk of stream.stream) {
-        if (params.signal?.aborted) {
-          throw new DOMException("Aborted", "AbortError");
+      const stream = await chat.sendMessageStream(
+        last.images?.length ? messageParts(last) : last.content,
+        { signal: params.signal },
+      );
+      // Attach the rejection handler immediately: the SDK aggregates a second
+      // response promise alongside its iterator, including when iteration fails.
+      const settled = stream.response.then(
+        (response) => ({ response }), (error: unknown) => ({ error }),
+      );
+      try {
+        for await (const chunk of stream.stream) {
+          if (params.signal?.aborted) {
+            throw new DOMException("Aborted", "AbortError");
+          }
+          const text = chunk.text();
+          if (text) yield text;
         }
-        const text = chunk.text();
-        if (text) yield text;
+      } finally {
+        const result = await settled;
+        if (params.onComplete && "response" in result) {
+          const final = result.response;
+          const usage = final.usageMetadata as UsageMetadataWithThoughts | undefined;
+          const finishReason = final.candidates?.[0]?.finishReason;
+          params.onComplete({
+            finishReason,
+            promptTokens: usage?.promptTokenCount,
+            outputTokens: usage?.candidatesTokenCount,
+            thoughtsTokens: usage?.thoughtsTokenCount,
+            totalTokens: usage?.totalTokenCount,
+            truncated: finishReason === "MAX_TOKENS",
+          });
+        }
       }
-
-      if (params.onComplete) {
-        // 集約レスポンスから finishReason と usageMetadata を取り出す。
-        // ここを捨てていたため、応答が MAX_TOKENS で切れても呼び出し側から
-        // 「JSON の解析に失敗した」としか見えなかった。
-        const final = await stream.response;
-        const usage = final.usageMetadata as UsageMetadataWithThoughts | undefined;
-        const finishReason = final.candidates?.[0]?.finishReason;
-        params.onComplete({
-          finishReason,
-          promptTokens: usage?.promptTokenCount,
-          outputTokens: usage?.candidatesTokenCount,
-          thoughtsTokens: usage?.thoughtsTokenCount,
-          totalTokens: usage?.totalTokenCount,
-          truncated: finishReason === "MAX_TOKENS",
-        });
-      }
+      const result = await settled;
+      if ("error" in result) throw result.error;
     },
   };
 }

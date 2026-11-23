@@ -1,0 +1,71 @@
+{
+  "questionId": "gengo-chokakushi-2026-annual-am-q69",
+  "reviewDate": "2026-10-11",
+  "targetVersion": "URAWSS II（2017年改訂版）",
+  "finding": "対象版を明記した大学研究者の公開講義資料が、標準的な読み課題を短文の黙読・内容理解として説明している。開発者本人の公開インタビューもURAWSSの読みを黙読速度と説明し、同じ文脈で現行版URAWSS IIに言及する。したがって『URAWSS II―音読の流暢性』を誤った対応とする独自解説には、一般的な製品目的より具体的な根拠が得られた。ただし、全ての介入課題・任意課題に音読が存在しないとの包括的主張は行わない。",
+  "primaryObservations": [
+    {
+      "url": "https://www.mext.go.jp/content/20210916-mxt_kyokasyo01-000024786_008.pdf",
+      "document": "近藤武夫（東京大学先端科学技術研究センター）『学校現場におけるアセスメントと読み書き支援体制の整備』、文部科学省公開講義資料",
+      "sourceClass": "大学所属研究者の公開講義資料（文部科学省配布）",
+      "versionNamed": "URAWSS II",
+      "location": "PDF p.11（0始まり10頁、資料内印字11）。前頁に対象版見出し。",
+      "directlySupported": {
+        "readingMode": "短文を一定時間黙読",
+        "readingMeasures": ["1分間あたりの読み速度", "内容理解の正答数"],
+        "writingMeasure": "文章の視写による1分間あたりの書き速度",
+        "oralReadingFluencyAsStandardReadingTask": false
+      },
+      "notDisclosedOrNotEstablished": {
+        "fullTaskSet": null,
+        "everyOptionalInterventionProcedure": null,
+        "oralReadingNeverUsedAnywhereInBattery": null,
+        "readingErrorAccuracyScoringForAllTasks": null
+      },
+      "provenanceNote": "URAWSS IIの頁はatacLabショップの製品ページを引用元と記載。ただし閲覧できる製品ページには同じ具体的読み手続を確認できず、講義著者による版別説明として扱う。"
+    },
+    {
+      "url": "https://yomikaki.or.jp/%EF%BC%8326-1-aruyoselect200120/",
+      "document": "『URAWSS 河野俊寛氏に聴く』開発者本人への公開インタビュー（2020年）",
+      "sourceClass": "URAWSS開発者本人の一次発言",
+      "versionNamed": "読みの説明箇所はURAWSSという略称。後続箇所で『今はURAWSSⅡ』と明言。",
+      "location": "『STRAW-RとURAWSS、実践ガイドラインの違い』節",
+      "directlySupported": {
+        "readingMode": "URAWSSの読みは黙読",
+        "readingMeasures": ["黙読の速さ"],
+        "readingAccuracy": "当該説明では読み誤りの正確さを測らないと述べる",
+        "contrast": "STRAW-Rと実践ガイドラインは音読速度・読み誤りを測ると区別"
+      },
+      "notDisclosedOrNotEstablished": {
+        "explicitVersionLabelOnSilentReadingSentence": null,
+        "allURAWSSIIOptionalTasks": null,
+        "neverIncludesOralReading": null
+      },
+      "versionCaution": "インタビューは2017年改訂後の2020年であり現行版への言及があるが、黙読の一文自体はURAWSSと記す。URAWSS II対象版の直接説明には上記の近藤講義資料を使う。"
+    },
+    {
+      "url": "https://atac-lab.com/wp-content/uploads/product/urawss/urawss2.pdf",
+      "document": "atacLab URAWSS II公開製品案内",
+      "sourceClass": "制作元・発行元の公開資料",
+      "versionNamed": "URAWSS II",
+      "directlySupported": {
+        "primaryPurpose": "読み書き速度を評価",
+        "readingAdministration": "改訂版の読み課題は基本的に個別実施",
+        "optionalIntervention": "読み書きの困難を補う方法を検討する介入課題を追加"
+      },
+      "notDisclosedOrNotEstablished": {
+        "readingMode": null,
+        "exactReadingMeasures": null,
+        "readingAccuracy": null,
+        "oralReadingNeverUsedAnywhereInBattery": null
+      }
+    }
+  ],
+  "suggestedQ69ChoiceAExplanation": "URAWSS IIの標準的な読み課題は、短文を黙読して内容理解に答え、読み速度と理解の正答数を確認する。音読の流暢性を測る検査とする組合せは不適切。介入課題を含め全課題に音読がないとまでは断定しない。",
+  "reviewRecommendation": "選択肢アの局所的な根拠不足は解消可能。ただしQ69のneedsReview解除は、他の確認事項と合わせて設問オーナーが判断する。",
+  "accessConstraints": [
+    "丸善出版社robots拒否、ST-Toolbox通常GET403、PMC reCAPTCHA、Sage403、MDPI429の各providerは再取得せず、別host・UA・mirrorで回避していない。",
+    "有料手引き・課題用紙の購入、ログイン、検査素材の取得や転載はしていない。"
+  ],
+  "repositoryAction": "報告JSONのみ作成。WT対象JSONの編集・コミット、全体ビルドなし。"
+}

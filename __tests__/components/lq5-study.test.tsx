@@ -20,7 +20,7 @@ describe("LQ5 ordinary quiz consumers", () => {
     const rendered = document.body.textContent!.replace(/\s/g, "");
     for(const reason of Object.values(q.choiceExplanations!)) expect(rendered).toContain(reason!.replace(/\s/g, ""));
     expect(createHistoryStore().getAllEntries()).toEqual([expect.objectContaining({id:q.id,correct:true,selected:q.answer})]);
-    expect(getCards().map(c=>c.id)).toContain(q.id);
+    expect(getCards()).toEqual([]);
     view.unmount();
     render(<QuizPlayer question={qs[1]} index={1} total={qs.length} mode="year" onNext={vi.fn()}/>);
     expect(createHistoryStore().getAnsweredIds()).toEqual([q.id]);

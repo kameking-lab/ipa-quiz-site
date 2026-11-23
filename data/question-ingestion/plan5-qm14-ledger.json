@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "lane": "qm-14",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "branch": "cx/kako-5y14-20261118",
+  "newQuestionCount": 0,
+  "rows": [
+    {
+      "jobId": "PLAN5-322",
+      "planIndex": 321,
+      "key": "kenchikushi1|2022|annual|gakka-4_5|1k-2022-1st-gakka4_5.pdf",
+      "status": "収録済み・解説の根拠を追確認",
+      "dataset": "data/questions/kenchikushi1/2022-kozo-sekou.json",
+      "sourceQuestionUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gakka4_5.pdf",
+      "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gokakukijun.pdf",
+      "sourceSha256": {
+        "questions": "dcf2ccbf3199f1c0d2b0d12d2f10713a5da01c6e90f675bde8cf4108c9df0d12",
+        "answers": "5fc78a1c39800bf7d9636e51d2081d241c7cbff92d14d2518b2f6b8c83fb7efc"
+      },
+      "checkedAnswerCount": 55,
+      "revisions": [
+        {
+          "id": "kenchikushi1-2022-annual-kozo-q23",
+          "officialAnswerNumber": "1",
+          "summary": "鉄骨部分と鉄筋コンクリート部分を個別に照査することを明記",
+          "referenceUrls": [
+            "https://www.mlit.go.jp/common/001396995.pdf",
+            "https://www.mlit.go.jp/pubcom/07/pubcomt62/05.pdf",
+            "https://kke-resp-team.github.io/resp-d-docs/calculation2/04_cross_section_test/17_src_column_cross_section_test/index.html"
+          ],
+          "unconfirmed": "試験時点の日本建築学会SRC規準本文における詳細な算定式"
+        },
+        {
+          "id": "kenchikushi1-2022-annual-sekou-q15",
+          "officialAnswerNumber": "3",
+          "summary": "国土交通省の評価方法基準と仕様例で木製火打梁の短辺を確認",
+          "referenceUrls": [
+            "https://www.mlit.go.jp/notice/noticedata/sgml/2001/26aa2672/26aa2672.html",
+            "https://www.mlit.go.jp/common/001627106.pdf"
+          ],
+          "unconfirmed": "試験時点の住宅金融支援機構の木造住宅工事仕様書の該当箇所"
+        },
+        {
+          "id": "kenchikushi1-2022-annual-sekou-q25",
+          "officialAnswerNumber": "3",
+          "summary": "令和2年改正約款の第6条第2項、第14条第1項、第22条、第26条の2第3項第9号を各肢解説に反映",
+          "referenceUrls": [
+            "https://www.shijikyo.or.jp/wp/wp-content/uploads/2020/02/sinnkyuu.pdf"
+          ]
+        }
+      ]
+    }
+  ]
+}

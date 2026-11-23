@@ -18,7 +18,8 @@ describe("RETIO 2025 takken paper", () => {
   it("publishes one complete official 50-question paper with every answer mapped correctly", () => {
     expect(QUALIFICATION_CATALOG.find((entry) => entry.examCode === "takken")?.status).toBe("live");
     expect(TAKKEN_2025_QUESTIONS).toHaveLength(50);
-    expect(getQuestionsByExamStrict("takken")).toHaveLength(100);
+    expect(getQuestionsByExamStrict("takken")).toHaveLength(599);
+    expect(getQuestionsByExamStrict("takken").filter(q => q.year === 2025)).toEqual(TAKKEN_2025_QUESTIONS);
     expect(TAKKEN_2025_QUESTIONS.map((question) => question.qNumber)).toEqual(
       Array.from({ length: 50 }, (_, index) => index + 1),
     );

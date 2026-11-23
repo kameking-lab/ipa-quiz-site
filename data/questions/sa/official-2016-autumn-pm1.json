@@ -1,0 +1,202 @@
+[
+  {
+    "id": "sa-2016a-pm1-q1",
+    "exam": "sa",
+    "year": 2016,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "システム設計",
+    "topicTags": [
+      "仕入れ・納品"
+    ],
+    "difficulty": 4,
+    "question": "問1 仕入れ納品システムの変更",
+    "answer": "設問                解答例・解答の要点                備考\n設問１(1) 不定貫商品の価格を確定させる必要があるから\n        (2) 定貫商品か不定貫商品かを表す区分\n        (3) 属性名①・原単価\n          ② ・売単価\n       意味  100 グラム当たりの金額を表す。\n設問２(1) 実際に納品された商品の価格が，納品伝票に記載された価格と不一致となる。\n        (2) 値札に印字された店舗名を見てピッキングする。\n設問３(1) 商品ごとに原価，売価が異なり，数量だけでは算出できないから\n        (2)  a 実納品原価\n                                          順不同\n             b 実納品売価\n             c 納品明細\n             d 原価\n                                          順不同\n             e 売価",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１(1) 不定貫商品の価格を確定させる必要があるから\n        (2) 定貫商品か不定貫商品かを表す区分\n        (3) 属性名①・原単価\n          ② ・売単価\n       意味  100 グラム当たりの金額を表す。\n設問２(1) 実際に納品された商品の価格が，納品伝票に記載された価格と不一致となる。\n        (2) 値札に印字された店舗名を見てピッキングする。\n設問３(1) 商品ごとに原価，売価が異なり，数量だけでは算出できないから\n        (2)  a 実納品原価\n                                          順不同\n             b 実納品売価\n             c 納品明細\n             d 原価\n                                          順不同\n             e 売価\n```",
+    "explanation": "定貫商品と重量で価格が決まる商品で、価格が確定するタイミングが異なる。伝票に載せる情報と実際の納品データを対応させる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/page-02.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-03.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-04.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-05.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-06.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問1 本文・設問（公式問題PDF 2ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問1 本文・設問（公式問題PDF 3ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問1 本文・設問（公式問題PDF 4ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問1 本文・設問（公式問題PDF 5ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問1 本文・設問（公式問題PDF 6ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問1 本文・設問（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA システムアーキテクト 2016年度秋期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "sa-2016a-pm1-q2",
+    "exam": "sa",
+    "year": 2016,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "システム設計",
+    "topicTags": [
+      "業務要件"
+    ],
+    "difficulty": 4,
+    "question": "問2 問合せ管理システムの導入",
+    "answer": "設問                解答例・解答の要点                備考\n設問１(1) 許可されていない端末を用いた社内システムの利用\n        (2) 自社運用システムの利用者ID 及びパスワード\n        (3) 新システムの構築と並行して基幹業務システムの再構築を進めているから\n 設問２  タイミング 問合せ内容を聞取り終了したタイミング\n      ステータス 受付完了・対応中\n設問３(1)  a ク\n            b イ\n            c イ\n            d ア\n            e ア\n            f オ\n            g オ\n        (2) D 社が問合せ顧客に直接聞取りするために，担当者に連絡する必要があるから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１(1) 許可されていない端末を用いた社内システムの利用\n        (2) 自社運用システムの利用者ID 及びパスワード\n        (3) 新システムの構築と並行して基幹業務システムの再構築を進めているから\n 設問２  タイミング 問合せ内容を聞取り終了したタイミング\n      ステータス 受付完了・対応中\n設問３(1)  a ク\n            b イ\n            c イ\n            d ア\n            e ア\n            f オ\n            g オ\n        (2) D 社が問合せ顧客に直接聞取りするために，担当者に連絡する必要があるから\n```",
+    "explanation": "受付の完了時点と、担当者が対応を開始する時点を区別する。顧客への聞取りや連絡に必要なアクセス範囲を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/page-08.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-09.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-10.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-11.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-12.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-13.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-14.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問2 本文・設問（公式問題PDF 8ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問2 本文・設問（公式問題PDF 9ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問2 本文・設問（公式問題PDF 10ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問2 本文・設問（公式問題PDF 11ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問2 本文・設問（公式問題PDF 12ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問2 本文・設問（公式問題PDF 13ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問2 本文・設問（公式問題PDF 14ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問2 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA システムアーキテクト 2016年度秋期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "sa-2016a-pm1-q3",
+    "exam": "sa",
+    "year": 2016,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "システム設計",
+    "topicTags": [
+      "売上・回収"
+    ],
+    "difficulty": 4,
+    "question": "問3 売上・回収業務のシステム改善",
+    "answer": "設問                解答例・解答の要点                 備考\n設問１(1) 売上計上できるデータ 出荷基準の商品のデータ\n      売上計上できないデータ 検収基準の商品のデータ\n       (2) 売上勘定と売掛金勘定への計上処理\n設問２(1) ①・売上計上済商品の売掛金減算処理\n      ②・良品の返品の在庫への加算処理\n       (2) 検収基準での出荷商品の返品データ\n 設問３  前月締日翌日から今月締日まで\n 設問４  顧客名 F 社\n      理由 支払条件である月末締め翌月末払いのとおりで，支払の遅れがないから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n設問１(1) 売上計上できるデータ 出荷基準の商品のデータ\n      売上計上できないデータ 検収基準の商品のデータ\n       (2) 売上勘定と売掛金勘定への計上処理\n設問２(1) ①・売上計上済商品の売掛金減算処理\n      ②・良品の返品の在庫への加算処理\n       (2) 検収基準での出荷商品の返品データ\n 設問３  前月締日翌日から今月締日まで\n 設問４  顧客名 F 社\n      理由 支払条件である月末締め翌月末払いのとおりで，支払の遅れがないから\n```",
+    "explanation": "出荷基準と検収基準で計上時点を分け、返品時の在庫と売掛金への影響を整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/page-15.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-16.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-17.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-18.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-19.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問3 本文・設問（公式問題PDF 15ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問3 本文・設問（公式問題PDF 16ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問3 本文・設問（公式問題PDF 17ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問3 本文・設問（公式問題PDF 18ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問3 本文・設問（公式問題PDF 19ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/answer-q03-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問3 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_ans.pdf#page=3",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA システムアーキテクト 2016年度秋期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "sa-2016a-pm1-q4",
+    "exam": "sa",
+    "year": 2016,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "生活支援ロボット"
+    ],
+    "difficulty": 4,
+    "question": "問4 生活支援ロボットシステムの開発",
+    "answer": "設問                解答例・解答の要点                備考\n設問１(1)  a 承諾を求め\n        (2) 遠隔操縦者がモバイル端末から離れたときに，他人に操縦されることを防ぎた\n      いから\n設問２(1) トレイの収納時と引出し時の重量の差を求め，入庫数で割る。\n        (2) 伝票番号がサーバにあり，テレビドアホンの映像の処理も行うから\n        (3)  b トレイに移替え\n設問３(1) 対象物の形状認識・把持制御部\n        (2) 問題 区別できずに保管場所を取り違える。\n      対策 対象物に識別マークを付ける。\n 設問４  新ロボットが実行中の配達物受取りが中断してしまうから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１(1)  a 承諾を求め\n        (2) 遠隔操縦者がモバイル端末から離れたときに，他人に操縦されることを防ぎた\n      いから\n設問２(1) トレイの収納時と引出し時の重量の差を求め，入庫数で割る。\n        (2) 伝票番号がサーバにあり，テレビドアホンの映像の処理も行うから\n        (3)  b トレイに移替え\n設問３(1) 対象物の形状認識・把持制御部\n        (2) 問題 区別できずに保管場所を取り違える。\n      対策 対象物に識別マークを付ける。\n 設問４  新ロボットが実行中の配達物受取りが中断してしまうから\n```",
+    "explanation": "遠隔操縦とロボットの自律処理で必要な情報を分ける。動作中の割込みや誤操作をどう扱うかを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/page-20.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-21.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-22.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-23.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-24.webp",
+      "/questions/ipa/sa/2016-autumn-pm1/page-25.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問4 本文・設問（公式問題PDF 20ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問4 本文・設問（公式問題PDF 21ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問4 本文・設問（公式問題PDF 22ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問4 本文・設問（公式問題PDF 23ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問4 本文・設問（公式問題PDF 24ページ）",
+      "システムアーキテクト 2016年度秋期 午後I 問4 本文・設問（公式問題PDF 25ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sa/2016-autumn-pm1/answer-q04-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "システムアーキテクト 2016年度秋期 午後I 問4 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_qs.pdf#page=20",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_sa_pm1_ans.pdf#page=3",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA システムアーキテクト 2016年度秋期 午後I 問4。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

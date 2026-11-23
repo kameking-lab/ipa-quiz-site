@@ -72,18 +72,17 @@ describe("bounded public explanation follow-up", () => {
     ]);
   });
 
-  it("describes both existing clinical-laboratory rounds while retaining partial coverage and their exact sources", () => {
+  it("describes the clinical-laboratory corpus and keeps the two recent rounds' official sources", () => {
     const questions = RINSHO_KENSAGISHI_QUESTIONS.filter(isPracticeReadyQuestion);
-    expect(questions).toHaveLength(106);
-    expect(questions.filter((question) => question.year === 2026)).toHaveLength(47);
-    expect(questions.filter((question) => question.year === 2025)).toHaveLength(59);
+    const recent = questions.filter(q => q.year === 2025 || q.year === 2026);
+    expect(recent.filter(q => q.year === 2025)).toHaveLength(200);
+    expect(recent.filter(q => q.year === 2026)).toHaveLength(199);
+    expect(recent.some(q => q.year === 2026 && q.session === "pm" && q.qNumber === 28)).toBe(false);
     const description = examMetaDescription("rinsho-kensagishi", questions.length);
     expect(description).toContain("第72回（2026年実施）・第71回（2025年実施）");
-    expect(description).toContain("106原問");
-    expect(description).toContain("部分収録");
-    expect(description).toContain("全問は未完備");
+    expect(description).toContain(`${questions.length.toLocaleString("ja-JP")}問収録`);
     const { container } = render(<ExamOfficialResources exam="rinsho-kensagishi" />);
-    const sourceUrls = new Set(questions.flatMap((question) => [question.sourcePdfUrl, question.sourceAnswerUrl]).filter(Boolean));
+    const sourceUrls = new Set(recent.flatMap(q => [q.sourcePdfUrl, q.sourceAnswerUrl]).flatMap(url => url ? [url.split("#")[0]] : []));
     const hrefs = [...container.querySelectorAll("a")].map((link) => link.getAttribute("href"));
     expect(new Set(hrefs)).toEqual(sourceUrls);
     expect(hrefs).toHaveLength(6);

@@ -56,7 +56,11 @@ export function createMockProvider(): LLMProvider {
   return {
     name: "mock",
     async *streamChat(params: StreamChatParams): AsyncIterable<string> {
-      const reply = pickReply(params.messages);
+      const isPrintapp = params.responseMimeType === "application/json"
+        && params.system.startsWith("あなたは学校から配布されるプリント");
+      const reply = isPrintapp ? JSON.stringify({
+        type: "お知らせ", fullText: "モック解析", events: [{ eventName: "モックの予定", eventDate: "" }],
+      }) : pickReply(params.messages);
       const chunks = reply.match(/.{1,24}/gs) ?? [reply];
       for (const chunk of chunks) {
         if (params.signal?.aborted) {
@@ -65,6 +69,7 @@ export function createMockProvider(): LLMProvider {
         await new Promise((r) => setTimeout(r, 30));
         yield chunk;
       }
+      if (isPrintapp) params.onComplete?.({ finishReason: "STOP", truncated: false, promptTokens: 0, outputTokens: 0 });
     },
   };
 }

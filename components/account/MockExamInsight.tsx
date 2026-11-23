@@ -19,7 +19,7 @@ export function MockExamInsight() {
     <p className="text-sm">重点分野: {weak.map(([category, stat]) => `${category}（${stat.correct}/${stat.total}）`).join("・") || "今回の模試ではありません"}</p>
     <div className="flex flex-wrap gap-3 text-sm font-semibold text-primary">
       {result.wrongQuestionIds?.length ? <Link href={mockReviewHref(result)} className="inline-flex min-h-11 items-center underline">今回の間違い・未回答を復習</Link> : null}
-      <Link href="/account/dashboard#mock-scores" className="inline-flex min-h-11 items-center underline">模試記録の詳細</Link>
+      <details><summary className="min-h-11 cursor-pointer py-3">模試の資料</summary><Link href="/account/dashboard#mock-scores" className="inline-flex min-h-11 items-center underline">模試記録の詳細</Link></details>
     </div>
   </section>;
 }

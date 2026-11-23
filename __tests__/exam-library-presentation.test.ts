@@ -34,8 +34,8 @@ describe("safety text presentation", () => {
         if (question.choiceCount === 5) choiceCount += 1;
       }
     }
-    expect(count).toBe(2326);
-    expect(choiceCount).toBe(2154);
+    expect(count).toBe(3510);
+    expect(choiceCount).toBe(3322);
   });
 
   it("preserves the source's three distinct axes and deliberate wrong chemical structure", () => {
@@ -96,6 +96,7 @@ describe("safety text presentation", () => {
     const keys = {
       "lckohyo-LC20260401-2": [5, 3, 5, 3, 3, 4, 3, 2],
       "lckohyo-LC20251101": [1, 1, 4, 2, 5, 3, 1, 4],
+      "lckohyo-LC20241101": [2, 2, 2, 4, 3, 4, 2, 3],
     };
     for (const [id, expected] of Object.entries(keys)) {
       const questions = parseExamPaper(read(join(base, "papers", `${id}.json`)), id);

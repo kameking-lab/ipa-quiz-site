@@ -1,0 +1,116 @@
+{
+  "candidate": "Q4-025",
+  "qualification": "機械保全技能検定 3級 電気系保全作業",
+  "year": 2026,
+  "season": "round1",
+  "questionCount": 30,
+  "officialSources": [
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2026/2026_3kyu_denki_mondai1.pdf",
+      "sha256": "e03cfb96e8e444abc92384b0eb0e319a902b8a52e348148bc236a2f7f9566d85",
+      "size": 810266,
+      "pages": 6
+    },
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2026/2026_3kyu_denki_kaitou1.pdf",
+      "sha256": "f6863d9ab23ce1ab2337e7a2e72ba1da4a5ff0b4eb6057a1ad4ad6e5eea9d463",
+      "size": 225891,
+      "pages": 1
+    }
+  ],
+  "officialAnswers": [
+    "○",
+    "○",
+    "×",
+    "×",
+    "○",
+    "×",
+    "×",
+    "○",
+    "○",
+    "○",
+    "×",
+    "×",
+    "○",
+    "○",
+    "×",
+    "×",
+    "×",
+    "×",
+    "○",
+    "○",
+    "○",
+    "○",
+    "○",
+    "×",
+    "×",
+    "○",
+    "○",
+    "×",
+    "○",
+    "○"
+  ],
+  "choiceMapping": {
+    "ア": "○",
+    "イ": "×"
+  },
+  "figures": [
+    {
+      "url": "/images/questions/kikai-hozen-denki3/2026-round1-q01.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        115,
+        90,
+        265,
+        190
+      ],
+      "sha256": "aa24487b7930ab6640ef27c578ff8f854cba291bfb1d544139da3aed03393f07"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki3/2026-round1-q03.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        120,
+        273,
+        260,
+        348
+      ],
+      "sha256": "2b9323e9cdf9cbacf0620bc42ee04d5cc07937ff56934fb064ae8ac5e9e9ef54"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki3/2026-round1-q09.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        120,
+        640,
+        280,
+        734
+      ],
+      "sha256": "8c64e681b148b049d63ac3fefbc15d3f35c53c2d0ee332284ea3d794f118188c"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki3/2026-round1-q29.webp",
+      "pdfPage": 5,
+      "cropPdfPoints": [
+        130,
+        103,
+        180,
+        195
+      ],
+      "sha256": "7e6ce7b5dff0faedab8b0bb8766879370ca66a1b9c0fa814b78c3a97e7de7833"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki3/2026-round1-q30.webp",
+      "pdfPage": 5,
+      "cropPdfPoints": [
+        115,
+        240,
+        198,
+        329
+      ],
+      "sha256": "055cc1e7ad9b57f6366fc9ca2b0e66d738cbf20b0d5af32c21971cd41af00b72"
+    }
+  ],
+  "transcriptionMethod": "公式PDFのテキスト層から本文を転記。改行を結合し全角英数字を正規化。原本図はPDFから切り出し。",
+  "answerVerification": "公式正解表の30記号と全問照合。"
+}

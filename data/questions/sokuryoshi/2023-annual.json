@@ -1,0 +1,128 @@
+[
+  {
+    "id": "sokuryoshi-2023-annual-am-q1",
+    "exam": "sokuryoshi",
+    "year": 2023,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 1,
+    "examDate": "2023-05-21",
+    "type": "multiple-choice",
+    "category": "測量法の定義",
+    "topicTags": [
+      "測量法の定義"
+    ],
+    "difficulty": 3,
+    "question": "次のa〜eの文は、測量法（昭和24年法律第188号）に規定された事項について述べたものである。明らかに間違っているものだけを全て含む組合せはどれか。\n\na. 公共測量とは、その実施に要する費用の全部又は一部について国又は公共団体の負担を受けて行われる測量をいい、国又は公共団体からの補助を受けて行う測量を含まない。\nb. 測量計画機関は、公共測量において永久標識又は一時標識を設置したときは、関係市町村長に通知するとともに、インターネット等で公表しなければならない。\nc. 山林原野等で基本測量を実施する者は、あらかじめ所有者等の承諾を得ることが困難であり、かつ植物又は垣、柵等の現状を著しく損傷しないときは、承諾を得ずにこれらを伐除できる。この場合においては、遅滞なく、その旨を所有者等に通知しなければならない。\nd. 基本測量の測量成果及び測量記録の謄本又は抄本の交付を受けようとする者は、国土交通省令で定めるところにより、国土地理院の長に申請をしなければならない。\ne. 基本測量及び公共測量以外の測量とは、基本測量及び公共測量以外の測量成果を使用して実施する測量をいう。",
+    "choices": {
+      "ア": "a、b、e",
+      "イ": "a、c、d",
+      "ウ": "a、d",
+      "エ": "b、c、e",
+      "オ": "c、d"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "〔No. 1〕",
+    "explanation": "公共測量の定義では国等からの補助も対象になりうる。永久標識の設置に関する通知先や、基本測量及び公共測量以外の測量に使う成果についての説明も誤っている。",
+    "choiceExplanations": {
+      "ア": "aは補助を除く点が誤りで、bは標識の設置時の通知先・手続の説明が誤っている。eも使用する成果についての法の定義と異なる。",
+      "イ": "aは誤っているが、cの伐除の例外と事後の通知、dの交付申請先は測量法に合っている。",
+      "ウ": "aの公共測量の範囲には誤りがあるが、dの国土地理院の長への申請は正しい。",
+      "エ": "bとeは誤りだが、cのように所有者の承諾が困難で損傷が著しくない場合には、事後通知を伴う伐除が認められる。",
+      "オ": "cの例外と事後通知も、dの国土地理院の長への申請も、いずれも法の定めに合っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000249816.pdf#page=3",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000250861.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和5年測量士試験 午前 No.1。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/324AC0000000188?occasion_date=20230521"
+    ]
+  },
+  {
+    "id": "sokuryoshi-2023-annual-am-q2",
+    "exam": "sokuryoshi",
+    "year": 2023,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 2,
+    "examDate": "2023-05-21",
+    "type": "multiple-choice",
+    "category": "ITRFの座標軸",
+    "topicTags": [
+      "ITRFの座標軸"
+    ],
+    "difficulty": 3,
+    "question": "次のa〜eの文は、国際地球基準座標系（以下「ITRF」という。）について述べたものである。明らかに間違っているものだけを全て含む組合せはどれか。\n\na. ITRFにおける地球上の位置は、三次元直交座標（X、Y、Z）で表される。\nb. 日本の測地成果は、ITRFが更新されると連動して更新される。\nc. ITRFのX軸は、回転楕円体の中心及び経度0°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から経度0°の子午線と赤道との交点に向かう値は正である。\nd. ITRFのY軸は、回転楕円体の中心及び東経90°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から東経90°の子午線と赤道との交点に向かう値は正である。\ne. 日本列島の位置をITRFで表すと、X、Y、Zの値域は、X＜0、Y＞0、Z＞0であり、札幌市役所から那覇市役所に向かうベクトル（ΔX、ΔY、ΔZ）の符号は（負、正、負）となる。",
+    "choices": {
+      "ア": "a、b、d",
+      "イ": "a、d",
+      "ウ": "b、c、e",
+      "エ": "b、e",
+      "オ": "c、d"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "〔No. 2〕",
+    "explanation": "日本の測地成果はITRFの更新のたびに自動で改定されるものではない。札幌から那覇への差では那覇のX座標のほうが大きいため、ΔXは正になる。",
+    "choiceExplanations": {
+      "ア": "bは誤りだが、aの三次元直交座標とdのY軸の正方向はいずれも正しい。",
+      "イ": "aの座標の形式、dのY軸の方向はともにITRFの定義に合っている。",
+      "ウ": "bとeは誤りだが、経度0°と赤道の交点に向かう方向をXの正としたcは正しい。",
+      "エ": "国内測地成果はITRFに連動して自動更新されず、那覇のXは札幌より負の程度が小さいためΔXは正になる。",
+      "オ": "Xの正方向は赤道上の経度0°、Yの正方向は赤道上の東経90°なので、cもdも正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000249816.pdf#page=4",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000250861.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和5年測量士試験 午前 No.2。解説は過去問AI作成。"
+  },
+  {
+    "id": "sokuryoshi-2023-annual-am-q3",
+    "exam": "sokuryoshi",
+    "year": 2023,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 3,
+    "examDate": "2023-05-21",
+    "type": "multiple-choice",
+    "category": "公共測量の計画と製品仕様",
+    "topicTags": [
+      "公共測量の計画と製品仕様"
+    ],
+    "difficulty": 3,
+    "question": "次の文は、地理情報標準プロファイル（以下「JPGIS」という。）について述べたものである。明らかに間違っているものはどれか。",
+    "choices": {
+      "ア": "JPGISは、地理情報に関する国際規格（ISO規格）及び日本産業規格の中から、必要となる基本的な要素を抽出し、体系化したものである。",
+      "イ": "JPGISに準拠する応用スキーマで定義された地理空間データは、統一モデル化言語（UML）を用いて符号化される。",
+      "ウ": "JPGISに準拠して整備されたデータが全て同じXML形式で作成されているわけではない。",
+      "エ": "測量計画機関が定める製品仕様書には、得ようとする測量成果の種類、内容、構造、品質等を示さなければならない。",
+      "オ": "JPGISに準拠した製品仕様書のデータ品質要素の検査は、最初に書式一貫性、次に概念一貫性の順で検査を行う。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "〔No. 3〕",
+    "explanation": "UMLは地理空間データの応用スキーマの記述に使う。データの符号化にはXMLやGMLなどが使われ、モデルの記述とデータの符号化は別の工程である。",
+    "choiceExplanations": {
+      "ア": "関連するISO規格やJISから実務上必要な要素を選び、組み合わせている。",
+      "イ": "UMLは応用スキーマの表現に使う記法である。地理空間データそのものをUMLで符号化するという説明は誤っている。",
+      "ウ": "準拠は必ず特定のXML形式で配布することを意味せず、製品仕様に応じたデータ形式が使われる。",
+      "エ": "発注・受注の双方が成果を同じ基準で確認できるよう、製品仕様書では成果の種類や構造、品質などを明示する。",
+      "オ": "まず所定の書式で記録されているかを確かめ、その上で概念スキーマの制約に適合するかを確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000249816.pdf#page=4",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000250861.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和5年測量士試験 午前 No.3。解説は過去問AI作成。"
+  }
+]

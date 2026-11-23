@@ -1,0 +1,146 @@
+[
+  {
+    "id": "pm-2018h-pm1-q1",
+    "exam": "pm",
+    "session": "pm1",
+    "year": 2018,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "プロジェクト計画",
+    "topicTags": [
+      "SaaSを利用した営業支援システムを導入するプロジェクト"
+    ],
+    "difficulty": 4,
+    "question": "問1 SaaSを利用した営業支援システムを導入するプロジェクト",
+    "answer": "設問                解答例・解答の要点                備考\n設問１  (1)  a システムの保守費用の最小化\n        (2)  b ・契約した利用量を見直す必要性\n        ・契約条件に沿った利用になっていること\n        ・次契約の利用者数及びデータ容量\n設問２  (1) ・データ容量を抑えて，費用負担を少なくしたいから\n          ・SaaS の利用にかかる費用負担を少なくしたいから\n        (2) ・現行営業支援システムでは役職コードを取得していないから\n      ・役職に応じたデータの閲覧に必要な利用者権限を適切に付与したいから\n        (3) 新営業支援システムの保管データを失うリスク\n設問３  (1) ・要件定義以降の工程での手戻りのリスク\n      ・計画どおりの期間で稼働できないリスク\n        (2)  c 営業部の担当者の業務負荷が許容範囲に収まること\n        (3) 過度な費用負担にならないようにしたいから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１  (1)  a システムの保守費用の最小化\n        (2)  b ・契約した利用量を見直す必要性\n        ・契約条件に沿った利用になっていること\n        ・次契約の利用者数及びデータ容量\n設問２  (1) ・データ容量を抑えて，費用負担を少なくしたいから\n          ・SaaS の利用にかかる費用負担を少なくしたいから\n        (2) ・現行営業支援システムでは役職コードを取得していないから\n      ・役職に応じたデータの閲覧に必要な利用者権限を適切に付与したいから\n        (3) 新営業支援システムの保管データを失うリスク\n設問３  (1) ・要件定義以降の工程での手戻りのリスク\n      ・計画どおりの期間で稼働できないリスク\n        (2)  c 営業部の担当者の業務負荷が許容範囲に収まること\n        (3) 過度な費用負担にならないようにしたいから\n```",
+    "explanation": "SaaSの標準機能と拡張が必要な機能を分ける。データ移行と関係部門の合意のそれぞれで、何を先に確認するかを整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/pm/2018-spring-pm1/page-02.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-03.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-04.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-05.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-06.webp"
+    ],
+    "imageAltTexts": [
+      "プロジェクトマネージャ 午後I 問1の本文・設問（公式問題冊子 2ページ）",
+      "プロジェクトマネージャ 午後I 問1の本文・設問（公式問題冊子 3ページ）",
+      "プロジェクトマネージャ 午後I 問1の本文・設問（公式問題冊子 4ページ）",
+      "プロジェクトマネージャ 午後I 問1の本文・設問（公式問題冊子 5ページ）",
+      "プロジェクトマネージャ 午後I 問1の本文・設問（公式問題冊子 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/pm/2018-spring-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "プロジェクトマネージャ 午後I 問1の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_pm_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_pm_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2018年度春期 プロジェクトマネージャ 午後I 問1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "pm-2018h-pm1-q2",
+    "exam": "pm",
+    "session": "pm1",
+    "year": 2018,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "品質管理",
+    "topicTags": [
+      "システム開発プロジェクトの品質管理"
+    ],
+    "difficulty": 4,
+    "question": "問2 システム開発プロジェクトの品質管理",
+    "answer": "設問               解答例・解答の要点                備考\n設問１  (1) 設計限界品質に近づける活動\n        (2) 自工程よりも前の工程群での欠陥摘出が不十分だった状況\n設問２  (1) ・テスト工程は納期に近く，時間の余裕が少ないから\n      ・テスト工程は時間の制約で，手戻りをリカバリする余裕が少ないから\n        (2) ・混入工程ごとの総欠陥数\n      ・指標における分母\n設問３  (1) イ50.2\n         ロ58.0\n        (2) 対処のコストが，予防のコスト以下であったケース\n        (3)  a ・α群に関する新しい品質管理指標の数値が，β群よりも高いこと\n        ・両群について，新しい品質管理指標の結果に有意な差があること",
+    "modelAnswer": "```text\n設問               解答例・解答の要点                備考\n設問１  (1) 設計限界品質に近づける活動\n        (2) 自工程よりも前の工程群での欠陥摘出が不十分だった状況\n設問２  (1) ・テスト工程は納期に近く，時間の余裕が少ないから\n      ・テスト工程は時間の制約で，手戻りをリカバリする余裕が少ないから\n        (2) ・混入工程ごとの総欠陥数\n      ・指標における分母\n設問３  (1) イ50.2\n         ロ58.0\n        (2) 対処のコストが，予防のコスト以下であったケース\n        (3)  a ・α群に関する新しい品質管理指標の数値が，β群よりも高いこと\n        ・両群について，新しい品質管理指標の結果に有意な差があること\n```",
+    "explanation": "欠陥が混入した工程と発見された工程を区別する。設問の指標は、どの工程の欠陥を分母とするかを確認してから求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/pm/2018-spring-pm1/page-08.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-09.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-10.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-11.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-12.webp"
+    ],
+    "imageAltTexts": [
+      "プロジェクトマネージャ 午後I 問2の本文・設問（公式問題冊子 8ページ）",
+      "プロジェクトマネージャ 午後I 問2の本文・設問（公式問題冊子 9ページ）",
+      "プロジェクトマネージャ 午後I 問2の本文・設問（公式問題冊子 10ページ）",
+      "プロジェクトマネージャ 午後I 問2の本文・設問（公式問題冊子 11ページ）",
+      "プロジェクトマネージャ 午後I 問2の本文・設問（公式問題冊子 12ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/pm/2018-spring-pm1/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "プロジェクトマネージャ 午後I 問2の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_pm_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_pm_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2018年度春期 プロジェクトマネージャ 午後I 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "pm-2018h-pm1-q3",
+    "exam": "pm",
+    "session": "pm1",
+    "year": 2018,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "ステークホルダ管理",
+    "topicTags": [
+      "情報システム刷新プロジェクトのコミュニケーション"
+    ],
+    "difficulty": 4,
+    "question": "問3 情報システム刷新プロジェクトのコミュニケーション",
+    "answer": "設問                解答例・解答の要点                備考\n設問１  (1) ・主要なステークホルダに対して適切な対応を取ること\n       ・P 社社長への報告経路や報告の会議体を整備すること\n        (2) P 社社長の知りたいことを適切に報告できず，見直し依頼が発生すること\n        (3) ・プロジェクトに対する姿勢に抵抗があるが，影響度は高いから\n       ・T 氏だけでは業務要件を定義できず，S 部長の支援が必要だから\n設問２  (1)  a  A 社社長\n        (2) 最先端のCRM システムの機能や効果を理解して，協力してもらうため\n設問３  (1)  b プロジェクト管理の重要性\n        (2) ・プロジェクトにおけるチーム活動の重要性についての勉強会の開催\n      ・複数メンバでプロジェクトチームを組むことによる業務の遂行\n        (3) 顧客とA 社とのレビューにY 主任も同席してもらうこと",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１  (1) ・主要なステークホルダに対して適切な対応を取ること\n       ・P 社社長への報告経路や報告の会議体を整備すること\n        (2) P 社社長の知りたいことを適切に報告できず，見直し依頼が発生すること\n        (3) ・プロジェクトに対する姿勢に抵抗があるが，影響度は高いから\n       ・T 氏だけでは業務要件を定義できず，S 部長の支援が必要だから\n設問２  (1)  a  A 社社長\n        (2) 最先端のCRM システムの機能や効果を理解して，協力してもらうため\n設問３  (1)  b プロジェクト管理の重要性\n        (2) ・プロジェクトにおけるチーム活動の重要性についての勉強会の開催\n      ・複数メンバでプロジェクトチームを組むことによる業務の遂行\n        (3) 顧客とA 社とのレビューにY 主任も同席してもらうこと\n```",
+    "explanation": "関係者が持つ権限や関心を整理して、情報共有の相手と頻度を決める。会議で扱う課題と契約に反映する内容を対応付ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/pm/2018-spring-pm1/page-14.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-15.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-16.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-17.webp",
+      "/questions/ipa/pm/2018-spring-pm1/page-18.webp"
+    ],
+    "imageAltTexts": [
+      "プロジェクトマネージャ 午後I 問3の本文・設問（公式問題冊子 14ページ）",
+      "プロジェクトマネージャ 午後I 問3の本文・設問（公式問題冊子 15ページ）",
+      "プロジェクトマネージャ 午後I 問3の本文・設問（公式問題冊子 16ページ）",
+      "プロジェクトマネージャ 午後I 問3の本文・設問（公式問題冊子 17ページ）",
+      "プロジェクトマネージャ 午後I 問3の本文・設問（公式問題冊子 18ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/pm/2018-spring-pm1/answer-q03-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "プロジェクトマネージャ 午後I 問3の公式解答例（2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_pm_pm1_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_pm_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2018年度春期 プロジェクトマネージャ 午後I 問3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

@@ -28,7 +28,7 @@ describe("retained mock exam history", () => {
 
   it("shows an empty state without manufacturing a score", () => {
     render(<MockScoreHistory />);
-    expect(screen.getByText(/模試スコアはまだ記録されていません/)).toBeInTheDocument();
+    expect(screen.getByText("この試験の模試スコアはまだありません。")).toBeInTheDocument();
     expect(localStorage.getItem(LS_KEYS.mockScores)).toBeNull();
   });
 });

@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS, beforeNurseSourceLineBreak } from "../fixtures/kangoshi-before-completion";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import pm4 from "@/docs/evidence/nurse-pm4-followup-20261010/INTEGRATION.json";
@@ -22,7 +22,7 @@ describe("nine separately verified nursing PM originals", () => {
     expect(proof.baseCommit).toBe("b6943bc5aa3c031f836d737abcec26ed5c03455f");
     expect(proof.previous442ObjectHashes).toHaveLength(442);
     for (const old of proof.previous442ObjectHashes) {
-      expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
+      expect(nurseObjectHash(beforeNurseSourceLineBreak(byId.get(old.id))), old.id).toBe(old.sha256);
     }
     expect(proof.addedIds).toEqual(expectedIds);
     expect(candidates.map(question => question.id)).toEqual(expectedIds);
@@ -88,14 +88,4 @@ describe("nine separately verified nursing PM originals", () => {
     expect(byId.get("kangoshi-2025-annual-pm-q120")?.question).toContain("次の文を読み118～120 の問いに答えよ。");
   });
 
-  it("shows exact partial coverage and continues to exclude the officially unscored original", () => {
-    const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前235問と午後229問");
-    expect(home).toContain("計464原問");
-    expect(home).toContain("全1918肢");
-    expect(home).toContain("第115回は午前117問・午後115問、第114回は午前118問・午後114問");
-    expect(home).toContain("第115回午前 問32は厚生労働省が採点対象から除外");
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(115);
-    expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "pm")).toHaveLength(114);
-  });
 });

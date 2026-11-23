@@ -16,6 +16,18 @@ const LINKABLE_AP = ALL_QUESTIONS.filter(
 );
 
 describe("getRelatedQuestionsForPost (blog → /q internal-link network)", () => {
+  it("preserves curated order and never fills missing curated links with unrelated questions", () => {
+    const ids = LINKABLE_AP.slice(0, 2).map((q) => q.id).reverse();
+    expect(getRelatedQuestionsForPost(EXAM, [], 3, [ids[0], "missing", ids[0], ids[1]])
+      .map((q) => q.id)).toEqual(ids);
+    expect(getRelatedQuestionsForPost(EXAM, [], 1, ids).map((q) => q.id)).toEqual(ids.slice(0, 1));
+    expect(getRelatedQuestionsForPost(EXAM, [], 3, ["fe-2016a-am-q29"])).toEqual([]);
+    expect(getRelatedQuestionsForPost(EXAM, [], 3, [])).toEqual([]);
+    const unavailable = ALL_QUESTIONS.find(q => q.exam === EXAM && !isPracticeReadyQuestion(q));
+    expect(unavailable).toBeDefined();
+    expect(getRelatedQuestionsForPost(EXAM, [], 3, [unavailable!.id])).toEqual([]);
+  });
+
   it("returns [] when the post has no exam", () => {
     expect(getRelatedQuestionsForPost(undefined, ["any"])).toEqual([]);
   });

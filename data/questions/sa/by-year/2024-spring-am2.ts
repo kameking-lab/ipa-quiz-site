@@ -24,6 +24,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "INVESTの各要素（独立性、交渉可能性、価値、見積もり可能性、小ささ、テスト可能性）は、タスクや作業の品質と管理性に関わる観点です。これらの観点をアクティビティ図作成に適用することで、各アクティビティが明確で独立し、適切に分割されているかを評価でき、結果として効率的な図の作成に繋がると解釈できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "インプロセスデータベースは、データベースエンジンがアプリケーションと同一プロセス、同一メモリ空間で動作する形態です。ライブラリとしてアプリケーションに組み込まれることで、プロセス間通信のオーバーヘッドなしに高速なデータアクセスを実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "サーキットブレーカーパターンは、外部サービスへのリクエストが一定回数失敗した場合、一時的にそのサービスへのリクエストを遮断する仕組みです。これにより、障害が発生したサービスへの無駄なリクエストを避け、システム全体の連鎖的な障害を防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デザインパターンは、ソフトウェア設計で頻繁に現れる典型的な問題に対し、再利用可能な形で解決策をまとめたものです。特定の設計状況に適用できる汎用的な解決策として利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "モジュール結合度は、モジュール間の相互依存の度合いを示す指標であり、低いほど独立性が高く保守性に優れます。単一のデータ項目を引数で受け渡す「データ結合」は、最も結合度が低いとされます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アサーションチェックは、プログラムの特定の箇所で満たされるべき条件（アサーション）を論理式として記述し、実行時にその条件が真であるかを検証する手法です。これにより、プログラムの意図せぬ状態変化やバグを早期に発見し、正当性を確認できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アスペクト指向プログラミングが正解です。アスペクト指向プログラミング（Aspect-Oriented Programming, AOP）は、プログラムの主要な機能（コア機能）とは別に、横断的な関心事（例えば、ログ出力、トランザクション管理、セキュリティチェックなど）をモジュール化し、それをプログラムの特定箇所に自動的に適用する技法です。問題文では、在庫テーブル更新というコア機能とは別に、更新ログ出力という横断的な関心事を共通モジュールで実装し、各プログラムに適用する点がAOPの特徴と合致しています。図案2で「呼び出し方の宣言を共通プログラムなどに記述することによって」とあるのは、AOPにおける「アスペクト」の定義と、それがプログラムの「ジョインポイント」に織り込まれる様子を示唆しています。\n\nオブジェクト指向プログラミングは、データとそれを操作する手続きを「オブジェクト」としてまとめる考え方であり、継承やポリモーフィズムなどを特徴としますが、ログ出力のような横断的な機能の分離・適用には直接的な解決策ではありません。関数型プログラミングは、計算を数学的な関数の評価として捉え、副作用を避けることに主眼を置きますが、これもログ出力のような状態変更を伴う処理を共通化する主要な技法ではありません。構造化プログラミングは、順次、選択、反復といった制御構造を用いてプログラムを記述する技法であり、モジュール化は行いますが、横断的な関心事を効率的に分離・適用する能力は限定的です。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "参照透過性とは、同じ引数を与えれば、関数が常に同じ結果を返し、かつ外部の状態に影響を与えないという特性です。これにより、プログラムの振る舞いが予測しやすくなり、テストや並行処理が容易になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "論理型プログラミングでは、与えられたゴールを達成するために、既知の事実や規則とパターンマッチングを行うことで命題を証明します。このパターンマッチングの機構がユニフィケーション（単一化）と呼ばれ、変数に値を代入して等式を成立させる基本的な機能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS X 0160:2021における移行プロセスは、システムを新たな運用環境へ導入する活動を指します。このプロセスでは、利用者が新システムを円滑に利用できるよう、必要な文書作成や教育訓練の準備、そして実際にシステムを導入するタスクが含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS X 0160:2021の廃棄プロセスは、システムのライフサイクルの任意の段階で適用可能であり、システム要素が使用されなくなった場合に安全かつ適切に処理することを目的とします。これには、プロトタイプや開発途中の要素の廃棄も含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "リーンソフトウェア開発は、トヨタ生産方式に代表されるリーン生産方式をソフトウェア開発に適用したもので、「ムダの排除」「品質の作り込み」「知識の増幅」など七つの原則に基づきます。これらは、開発プロセス全体の効率を高め、価値提供を最大化することを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "デザイン思考は、利用者中心のアプローチで問題解決やイノベーションを創出する手法です。利用者の深い理解と共感から始まり、問題定義、アイデア創出、プロトタイプ作成、テストというプロセスを繰り返し実行します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "WTO政府調達協定（GPA）は、各国政府機関による調達市場の開放を通じて、国際的な競争の機会を増大させ、透明性を高めることを目的としています。これにより、公正な貿易環境を確立し、締約国間の紛争解決も図られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -359,7 +373,8 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
       "エ": "ファブレスメーカー"
     },
     "answer": "ウ",
-    "explanation": "ファウンドリーとは、半導体設計を受託し、自社工場で半導体の製造のみを行う専門企業のことです。LSI設計を自社で行い、製造を外部に委託する場合、このファウンドリーが製造を請け負うことになります。",
+    "explanation": "ファウンドリーとは、他社が設計した半導体の製造を受託し、自社工場で製造する専門企業のことです。LSI設計を自社で行い、製造を外部に委託する場合、このファウンドリーが製造を請け負うことになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "eシールは、法人や組織が作成した電子文書に対して、その作成元が間違いなく当該法人であり、かつ文書が改ざんされていないことを証明する仕組みです。これにより、電子文書の真正性と信頼性が確保されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "コードサイニング証明書は、ソフトウェアの発行元が正当な企業であることを証明し、そのソフトウェアが発行後に改ざんされていないことを保証するためのデジタル証明書です。これにより、利用者は安全にソフトウェアをインストールできます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AES (Advanced Encryption Standard) は、NISTによって制定された共通鍵暗号方式で、鍵長として128ビット、192ビット、256ビットの3種類が標準として定められています。ブロック長は固定で128ビットです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "OCSP (Online Certificate Status Protocol) は、デジタル証明書が失効していないか、あるいは一時的に停止されていないかをリアルタイムでオンライン照会するためのプロトコルです。これにより、証明書の有効性を迅速に確認できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JISEC（ITセキュリティ評価及び認証制度）は、IT製品のセキュリティ機能が適切であるかを国際規格ISO/IEC 15408（コモンクライテリア）に基づいて評価・認証する制度です。評価対象となるのは、保護すべき資産、想定される脅威、適用される環境が明確に定義されたIT製品です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "スーパースカラは、CPUが複数の命令実行ユニットを持つことで、互いにデータ依存性のない複数の命令を同時に（並列に）実行し、プログラムの処理速度を向上させる技術です。これにより、1クロックサイクルで複数の命令を完了させることが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "シンプロビジョニングは、ストレージの割り当てを仮想的に行う技術です。物理的に確保されている容量よりも、論理的に割り当てる容量を大きく見せることで、ストレージの利用効率を高めます。これにより、実際にデータが書き込まれたときに必要な物理容量を動的に割り当てます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールソフトとは、システムに障害が発生した場合でも、可能な限り一部の機能を縮退させたり、性能を低下させたりしながらも、システムの運用を継続しようとする考え方です。これにより、サービスの中断を最小限に抑え、可用性を高めることを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デッドロックは、複数のトランザクションがお互いに相手が保持する資源の解放を待ち、処理が進まなくなる状態です。デッドロックを検出するためには、どのトランザクションがどの資源を保持し、どの資源を待っているかという関係をグラフ構造で表現した「待ちグラフ」が使われます。このグラフにサイクル（循環）が存在すればデッドロックと判断できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "HTTPステータスコードの3xx台はリダイレクト（転送）を示します。特に「302 Found」は、一時的に別のURIにリソースが存在することを示し、WebブラウザにそのURIへアクセスし直すよう促す際に使用されます。これは、指定されたURLにコンテンツがない場合など、一時的な場所変更をブラウザに伝えるためのコードです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"

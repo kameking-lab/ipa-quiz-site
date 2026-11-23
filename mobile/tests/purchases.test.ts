@@ -1,34 +1,116 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
-import { Membership,purchaseError } from "../src/purchases";
+import { Membership,purchaseError,describeStoreError,StoreError,checkNativePurchase,readNativePurchaseHold } from "../src/purchases";
 import { PACKAGE_TYPE, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
 vi.mock("@capacitor/preferences",()=>({Preferences:{get:vi.fn()}}));
 const c:MobileConfiguration={sdkKey:"mock-public-sdk-key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""};
 const a:MobileEntitlement={userId:"u",appUserId:"opaque-server-identity",entitled:false,source:"free",expiresAt:null,checkedAt:"",lease:null};
 const product={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier:c.productId,price:980,priceString:"¥980",currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
-const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn()};
-beforeEach(()=>{vi.resetAllMocks();sdk.isConfigured.mockResolvedValue({isConfigured:false});sdk.isAnonymous.mockResolvedValue({isAnonymous:false});sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[product]}}});});
+const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn(),syncPurchases:vi.fn(),getCustomerInfo:vi.fn()};
+it("reads a shared approval without a local reservation and rejects a malformed status", async () => {
+  const hold = { managed: true, pending: { approval: { reservationId: "shared-reservation" } } };
+  const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(Response.json(hold)).mockResolvedValueOnce(Response.json({ state: null }));
+  await expect(readNativePurchaseHold("current-user", transport)).resolves.toEqual(hold);
+  expect(transport).toHaveBeenCalledWith("https://www.kakomon-ai.jp/api/mobile/purchase-check", expect.objectContaining({
+    method: "PATCH", credentials: "include", body: JSON.stringify({ action: "status", userId: "current-user" }),
+  }));
+  await expect(readNativePurchaseHold("current-user", transport)).rejects.toThrow("invalid_purchase_status");
+});
+let configured=false;
+beforeEach(()=>{vi.resetAllMocks();configured=false;sdk.isConfigured.mockImplementation(async()=>({isConfigured:configured}));sdk.configure.mockImplementation(async()=>{configured=true;});sdk.isAnonymous.mockResolvedValue({isAnonymous:false});sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[product]}}});});
 it("shows server web membership without calling StoreKit or buying twice",async()=>{
   await expect(new Membership(sdk).offer(c,{...a,entitled:true,source:"web"})).rejects.toThrow("追加購入は不要");expect(sdk.configure).not.toHaveBeenCalled();expect(sdk.purchasePackage).not.toHaveBeenCalled();
 });
-it("requires sign-in and server-derived identity",async()=>{
-  await expect(new Membership(sdk).offer(c,{...a,userId:null})).rejects.toThrow("ログイン");expect(sdk.configure).not.toHaveBeenCalled();
+it("shows the store price before sign-in with an anonymous SDK, but buys and restores only as the server identity",async()=>{
+  const guest={...a,userId:null,appUserId:null},m=new Membership(sdk);
+  await expect(m.offer(c,guest)).resolves.toBe(product);
+  expect(sdk.configure).toHaveBeenCalledWith({apiKey:c.sdkKey});
+  await expect(m.buy(c,guest,product)).rejects.toThrow("ログイン");
+  await expect(m.restore(c,guest)).rejects.toThrow("ログイン");
+  expect(sdk.purchasePackage).not.toHaveBeenCalled();expect(sdk.restorePurchases).not.toHaveBeenCalled();
+  // After sign-in the same SDK switches to the opaque server-derived identity.
+  await m.buy(c,a,product);
+  expect(sdk.logIn).toHaveBeenCalledWith({appUserID:a.appUserId});expect(sdk.purchasePackage).toHaveBeenCalledOnce();
 });
-it("buys only the configured one-month JPY product after rechecking price",async()=>{
+it("refuses a signed-in purchase without the server-derived RevenueCat identity",async()=>{
+  await expect(new Membership(sdk).offer(c,{...a,appUserId:null})).rejects.toThrow("app_user_id");expect(sdk.configure).not.toHaveBeenCalled();
+});
+it("clears a previous buyer when a fresh guest screen reuses the configured SDK",async()=>{
+  configured=true;
+  const m=new Membership(sdk);
+  await m.offer(c,{...a,userId:null,appUserId:null});
+  expect(sdk.logOut).toHaveBeenCalledOnce();
+  expect(sdk.logIn).not.toHaveBeenCalled();
+  expect(sdk.logOut.mock.invocationCallOrder[0]).toBeLessThan(sdk.getOfferings.mock.invocationCallOrder[0]);
+});
+it("does not replace an existing anonymous customer on a guest refresh",async()=>{
+  configured=true;sdk.isAnonymous.mockResolvedValue({isAnonymous:true});
+  await new Membership(sdk).offer(c,{...a,userId:null,appUserId:null});
+  expect(sdk.logOut).not.toHaveBeenCalled();
+});
+it("buys the configured monthly product at the App Store's own price (no local price gate)",async()=>{
   const m=new Membership(sdk),offer=await m.offer(c,a);await m.buy(c,a,offer);
   expect(sdk.configure).toHaveBeenCalledWith({apiKey:c.sdkKey,appUserID:a.appUserId});expect(sdk.purchasePackage).toHaveBeenCalledWith({aPackage:product});
-  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[{...product,product:{...product.product,price:1200}}]}}});
-  await expect(m.buy(c,a,offer)).rejects.toThrow("価格");expect(sdk.purchasePackage).toHaveBeenCalledTimes(1);
+  // A different storefront price/currency is shown by StoreKit and Apple's sheet; it must not block buying.
+  const usd={...product,product:{...product.product,price:6.99,priceString:"$6.99",currencyCode:"USD"}} as PurchasesPackage;
+  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[usd]}}});
+  await m.buy(c,a,offer);expect(sdk.purchasePackage).toHaveBeenLastCalledWith({aPackage:usd});
+  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[{...product,product:{...product.product,identifier:"other.product"}}]}}});
+  await expect(m.buy(c,a,offer)).rejects.toThrow("other.product");expect(sdk.purchasePackage).toHaveBeenCalledTimes(2);
+});
+it("falls back to the current offering and names what the store actually returned",async()=>{
+  sdk.getOfferings.mockResolvedValue({all:{},current:{availablePackages:[product]}});
+  await expect(new Membership(sdk).offer(c,a)).resolves.toBe(product);
+  sdk.getOfferings.mockResolvedValue({all:{},current:null});
+  await expect(new Membership(sdk).offer(c,a)).rejects.toThrow("offering「main」なし");
+  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[]}}});
+  await expect(new Membership(sdk).offer(c,a)).rejects.toThrow("mock.monthly なし / 届いた商品: 0件");
+});
+it("reports the RevenueCat code when products cannot be fetched and when configure silently fails",async()=>{
+  sdk.getOfferings.mockRejectedValue(Object.assign(new Error("There is an issue with your configuration."),{code:"23",underlyingErrorMessage:"None of the products registered in the RevenueCat dashboard could be fetched from App Store Connect."}));
+  const error=await new Membership(sdk).offer(c,a).catch(e=>e);
+  expect(error).toBeInstanceOf(StoreError);expect(error.message).toContain("App Storeから商品を取得できませんでした（コード 23 CONFIGURATION_ERROR）");expect(error.message).toContain("None of the products");
+  configured=false;sdk.configure.mockImplementation(async()=>{});
+  await expect(new Membership(sdk).offer(c,a)).rejects.toThrow("configure 失敗");
+});
+it("describes a missing native plugin instead of a generic failure",()=>{
+  expect(describeStoreError(Object.assign(new Error('"Purchases.getOfferings()" is not implemented on ios'),{code:"UNIMPLEMENTED"}),"商品取得")).toContain("アプリの課金機能が読み込まれていません（UNIMPLEMENTED）");
+  expect(describeStoreError("Web not supported in this plugin.","商品取得")).toContain("UNIMPLEMENTED");
+  expect(describeStoreError({code:"10",message:"offline"},"購入")).toContain("コード 10 NETWORK_ERROR");
 });
 it("propagates cancellation, pending purchases and restore errors without granting local rights",async()=>{
   const m=new Membership(sdk);sdk.purchasePackage.mockRejectedValue({userCancelled:true});await expect(m.buy(c,a,product)).rejects.toMatchObject({userCancelled:true});
-  sdk.restorePurchases.mockRejectedValue(new Error("store unavailable"));await expect(m.restore(c,a)).rejects.toThrow("store unavailable");
+  sdk.restorePurchases.mockRejectedValue({code:"2",message:"store unavailable"});await expect(m.restore(c,a)).rejects.toThrow("購入を復元できませんでした（コード 2 STORE_PROBLEM_ERROR）");
   expect(a.entitled).toBe(false);
 });
 it("supports restore and disconnects the RevenueCat identity at sign-out",async()=>{
-  const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();sdk.isConfigured.mockResolvedValue({isConfigured:true});await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
+  const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
+});
+it.each([false, true])("syncs StoreKit before checking the monthly product (active: %s)", async active => {
+  sdk.getCustomerInfo.mockResolvedValue({ customerInfo: { activeSubscriptions: active ? [c.productId] : [], entitlements: { active: {} } } });
+  await expect(new Membership(sdk).hasActiveAppStorePurchase(c, a)).resolves.toBe(active);
+  expect(sdk.configure).toHaveBeenCalledWith({ apiKey: c.sdkKey, appUserID: a.appUserId });
+  expect(sdk.syncPurchases.mock.invocationCallOrder[0]).toBeLessThan(sdk.getCustomerInfo.mock.invocationCallOrder[0]);
+  expect(sdk.purchasePackage).not.toHaveBeenCalled();
+});
+it("does not use cached purchase info after a failed StoreKit sync", async () => {
+  sdk.syncPurchases.mockRejectedValue({ code: "10", message: "offline" });
+  await expect(new Membership(sdk).hasActiveAppStorePurchase(c, a)).rejects.toThrow("App Storeの購入を確認できませんでした");
+  expect(sdk.getCustomerInfo).not.toHaveBeenCalled();
+});
+it("disconnect waits for a pending SDK login so the buyer cannot be reconnected after logout", async()=>{
+  configured=true;
+  let finish!:()=>void;
+  sdk.logIn.mockImplementationOnce(()=>new Promise<void>(resolve=>{finish=resolve;}));
+  const membership=new Membership(sdk);
+  const connecting=membership.connect(c,a);
+  await vi.waitFor(()=>expect(sdk.logIn).toHaveBeenCalledOnce());
+  const disconnecting=membership.disconnect();
+  expect(sdk.logOut).not.toHaveBeenCalled();
+  finish();await connecting;await disconnecting;
+  expect(sdk.logOut).toHaveBeenCalledOnce();
 });
 it("does not leave a pending transaction when price or duration validation fails before StoreKit",async()=>{
   const beforePurchase=vi.fn();
@@ -50,7 +132,7 @@ it("distinguishes rejected transactions from pending or uncertain network/store 
   for(const code of ["0","2","6","10"])expect(purchaseError({code})).toMatchObject({rejected:false,pending:false});
 });
 it("does not log out an already anonymous SDK identity when switching from guest to member",async()=>{
-  sdk.isConfigured.mockResolvedValue({isConfigured:true});sdk.isAnonymous.mockResolvedValue({isAnonymous:true});
+  configured=true;sdk.isAnonymous.mockResolvedValue({isAnonymous:true});
   const m=new Membership(sdk);await m.disconnect();expect(sdk.logOut).not.toHaveBeenCalled();
   await m.offer(c,a);expect(sdk.logIn).toHaveBeenCalledWith({appUserID:a.appUserId});
 });
@@ -62,4 +144,21 @@ it("uses the public SDK key saved by the bundled shell in the online native purc
   await new Membership(sdk).connect({...c,sdkKey:""},a);
   expect(stored).toHaveBeenCalledWith({key:"kakomon:rc-ios-public-key"});
   expect(sdk.configure).toHaveBeenCalledWith({apiKey:"mock-bundled-public-sdk-key",appUserID:a.appUserId});
+});
+it.each(["duplicate_purchase_google", "duplicate_purchase_apple"])("stops StoreKit and pending persistence when the server reports %s", async code => {
+  const transport = vi.fn(async()=>Response.json({error:code},{status:409}));
+  const pending = vi.fn();
+  await expect(new Membership(sdk).buy(c,a,product,async()=>{await checkNativePurchase(transport);await pending();})).rejects.toMatchObject({ message: expect.stringContaining("そちらでログインしてください"), code: "purchase_signin" });
+  expect(pending).not.toHaveBeenCalled(); expect(sdk.purchasePackage).not.toHaveBeenCalled();
+  expect(transport).toHaveBeenCalledWith("https://www.kakomon-ai.jp/api/mobile/purchase-check",expect.objectContaining({method:"POST",credentials:"include"}));
+});
+it.each(["network", "malformed", "denied"])("fails closed with one retry line on %s", async reason => {
+  const transport = vi.fn(async()=>{if(reason==="network")throw Error("private transport detail");return reason==="malformed"?new Response("<html>error</html>"):Response.json({allowed:false});});
+  await expect(checkNativePurchase(transport)).rejects.toThrow("購入済みか確認できませんでした。少し待ってからもう一度お試しください。");
+});
+it("opens StoreKit only after the server check and pending persistence succeed", async()=>{
+  const order:string[]=[];
+  sdk.purchasePackage.mockImplementation(async()=>{order.push("storekit");});
+  await new Membership(sdk).buy(c,a,product,async()=>{await checkNativePurchase(async()=>{order.push("server");return Response.json({allowed:true});});order.push("pending");});
+  expect(order).toEqual(["server","pending","storekit"]);
 });

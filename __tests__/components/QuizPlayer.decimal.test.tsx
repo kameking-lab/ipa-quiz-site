@@ -7,6 +7,7 @@ import { nurseDecimalQuestion as question } from "@/__tests__/fixtures/nurse-dec
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { getLearningActions } from "@/lib/study-plan/pace-storage";
 
 beforeEach(() => {
   cleanup();
@@ -43,7 +44,9 @@ describe("QuizPlayer original decimal", () => {
     expect(screen.getByRole("region",{name:"正解の解説"})).toHaveTextContent("23.4 BMI");
     expect(createHistoryStore().getAllEntries()).toMatchObject([{id:question.id,selected:"23.4",correct:true}]);
     expect(readLastQuestion()).toMatchObject({exam:"kangoshi",year:2024,qNumber:90});
-    expect(localStorage.getItem(LS_KEYS.spacedRepetition)).toContain(question.id);
+    expect(createHistoryStore().getWrongIds()).not.toContain(question.id);
+    expect(getLearningActions().filter(action => action.kind === "answer")).toMatchObject([{ questionId: question.id, correct: true }]);
+    expect(localStorage.getItem(LS_KEYS.spacedRepetition)).toBeNull();
     fireEvent.keyDown(input,{key:"Enter"});
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
     expect(onNext).not.toHaveBeenCalled();

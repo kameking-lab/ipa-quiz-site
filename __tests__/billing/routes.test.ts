@@ -45,10 +45,28 @@ describe("route integration", () => {
   });
   it("missing/under-review questions consume nothing; cross-origin cannot consume quota", async () => {
     mocks.enabled = true;
-    expect((await POST(request({ id: "unknown" }))).status).toBe(404);
+    const missing = await POST(request({ id: "unknown" }));
+    expect(missing.status).toBe(404);
+    expect(await missing.json()).toMatchObject({ error: "not_found" });
     mocks.find.mockResolvedValue({ id: "held", needsReview: true }); expect((await POST(request({ id: "held" }))).status).toBe(409);
     mocks.find.mockResolvedValue({ id: "valid" }); expect((await POST(request({ id: "valid" }, "https://evil.example"))).status).toBe(403);
     expect(mocks.grant).not.toHaveBeenCalled();
+  });
+  it("grants historical Denken 2 material with the source for its year and subject", async () => {
+    const { getNativeQuestionSource } = await import("@/lib/denken2/native");
+    const id = "denken2-2021-primary-law-q01";
+    const source = getNativeQuestionSource(2021, "law");
+    const materialRequest = request({ id });
+    materialRequest.headers.set("X-Kakomon-Material", "1");
+    mocks.enabled = true;
+
+    const response = await POST(materialRequest);
+    expect(response.status).toBe(200);
+    expect(source).toBeDefined();
+    expect(await response.json()).toMatchObject({ question: { id, kind: "native", readerConfig: {
+      sourceAnswerUrl: source?.sourceAnswerUrl, sourceIndexUrl: source?.sourceIndexUrl,
+    } } });
+    expect(mocks.grant).toHaveBeenCalledExactlyOnceWith("alice", id, [], true, expect.any(String));
   });
   it("DB failure closes paid access without altering any history", async () => {
     mocks.enabled = true; mocks.grant.mockRejectedValue(new Error("private database detail"));

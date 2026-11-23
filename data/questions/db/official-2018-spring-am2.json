@@ -1,0 +1,938 @@
+[
+  {
+    "id": "db-2018h-am2-q1",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "SQLのBLOB型",
+    "topicTags": [
+      "SQLのBLOB型"
+    ],
+    "difficulty": 3,
+    "question": "問1　SQLのBLOB型",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "文字列の書式を解釈する型と、画像などをバイナリのまま保持する型の違いを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q01.webp"
+    ],
+    "imageAltTexts": [
+      "問1 SQLのBLOB型の公式本文・選択肢（問題冊子 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q2",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "主キーと外部キー",
+    "topicTags": [
+      "主キーと外部キー"
+    ],
+    "difficulty": 3,
+    "question": "問2　主キーと外部キー",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "A表とB表のどちらが参照元かを確認し、外部キーが参照する先の列を特定する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q02.webp"
+    ],
+    "imageAltTexts": [
+      "問2 主キーと外部キーの公式本文・選択肢（問題冊子 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q3",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "関数従属と候補キー",
+    "topicTags": [
+      "関数従属と候補キー"
+    ],
+    "difficulty": 3,
+    "question": "問3　関数従属と候補キー",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "属性の集合から推移的に決定できる属性を増やしていき、すべての属性を決める最小の集合を探す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q03.webp"
+    ],
+    "imageAltTexts": [
+      "問3 関数従属と候補キーの公式本文・選択肢（問題冊子 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q4",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "第3正規形",
+    "topicTags": [
+      "第3正規形"
+    ],
+    "difficulty": 3,
+    "question": "問4　第3正規形",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "第2正規形で排除した部分関数従属と、第3正規形で扱う推移的な従属を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q04.webp"
+    ],
+    "imageAltTexts": [
+      "問4 第3正規形の公式本文・選択肢（問題冊子 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q5",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "NOT EXISTSの副問合せ",
+    "topicTags": [
+      "NOT EXISTSの副問合せ"
+    ],
+    "difficulty": 3,
+    "question": "問5　NOT EXISTSの副問合せ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "各社員コードについて、それを上司とする別の行があるかを調べる。該当行が存在しない社員だけが残る。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q05.webp"
+    ],
+    "imageAltTexts": [
+      "問5 NOT EXISTSの副問合せの公式本文・選択肢（問題冊子 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q6",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "SQLカーソル",
+    "topicTags": [
+      "SQLカーソル"
+    ],
+    "difficulty": 3,
+    "question": "問6　SQLカーソル",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "カーソルが現在指す行を対象にする操作と、表のすべての行を対象にする操作を分ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q06.webp"
+    ],
+    "imageAltTexts": [
+      "問6 SQLカーソルの公式本文・選択肢（問題冊子 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q7",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "属性の追加とスキーマ",
+    "topicTags": [
+      "属性の追加とスキーマ"
+    ],
+    "difficulty": 3,
+    "question": "問7　属性の追加とスキーマ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "管理項目を列として加える案と、管理項目名を値として登録する案を比べる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q07.webp"
+    ],
+    "imageAltTexts": [
+      "問7 属性の追加とスキーマの公式本文・選択肢（問題冊子 6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q8",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "SQLの自己結合",
+    "topicTags": [
+      "SQLの自己結合"
+    ],
+    "difficulty": 3,
+    "question": "問8　SQLの自己結合",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "親部品が設定されていない行も残す必要がある。どちら側の行を残す外部結合かを考える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q08.webp"
+    ],
+    "imageAltTexts": [
+      "問8 SQLの自己結合の公式本文・選択肢（問題冊子 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q9",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "関係の等結合",
+    "topicTags": [
+      "関係の等結合"
+    ],
+    "difficulty": 3,
+    "question": "問9　関係の等結合",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "二つの関係の行を組み合わせてから、結合条件を満たす行だけを選ぶ演算を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q09.webp"
+    ],
+    "imageAltTexts": [
+      "問9 関係の等結合の公式本文・選択肢（問題冊子 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q10",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "SQLの副問合せ",
+    "topicTags": [
+      "SQLの副問合せ"
+    ],
+    "difficulty": 3,
+    "question": "問10　SQLの副問合せ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "性別ごとの年齢を比べる条件を追い、男女それぞれの最年長者だけが除かれる式を選ぶ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q10.webp"
+    ],
+    "imageAltTexts": [
+      "問10 SQLの副問合せの公式本文・選択肢（問題冊子 8ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q11",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "直列化可能性",
+    "topicTags": [
+      "直列化可能性"
+    ],
+    "difficulty": 3,
+    "question": "問11　直列化可能性",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "並行処理の結果が、取引をどれか一つの順序で直列に実行した結果と一致するかで判断する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q11.webp"
+    ],
+    "imageAltTexts": [
+      "問11 直列化可能性の公式本文・選択肢（問題冊子 8ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q12",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "導出表",
+    "topicTags": [
+      "導出表"
+    ],
+    "difficulty": 3,
+    "question": "問12　導出表",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "問合せで一時的に得た行集合を、別の問合せの表のように扱う仕組みを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q12.webp"
+    ],
+    "imageAltTexts": [
+      "問12 導出表の公式本文・選択肢（問題冊子 9ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q13",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "分散トランザクション",
+    "topicTags": [
+      "分散トランザクション"
+    ],
+    "difficulty": 3,
+    "question": "問13　分散トランザクション",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "複数の実行箇所でコミット判断が分かれないよう、全体の調整を行う仕組みに着目する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q13.webp"
+    ],
+    "imageAltTexts": [
+      "問13 分散トランザクションの公式本文・選択肢（問題冊子 9ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q14",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "表ロックとトランザクションの隔離",
+    "topicTags": [
+      "表ロックとトランザクションの隔離"
+    ],
+    "difficulty": 3,
+    "question": "問14　表ロックとトランザクションの隔離",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "厳格な二相ロッキングと表単位のロックにより、他の処理の影響を受けず直列に実行した場合と同じ結果になる水準を選ぶ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q14.webp"
+    ],
+    "imageAltTexts": [
+      "問14 表ロックとトランザクションの隔離の公式本文・選択肢（問題冊子 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q15",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "インデックスの選択",
+    "topicTags": [
+      "インデックスの選択"
+    ],
+    "difficulty": 3,
+    "question": "問15　インデックスの選択",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "異なる値の数や範囲検索の有無が、B+木とビットマップの使い分けにどう関わるかを整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q15.webp"
+    ],
+    "imageAltTexts": [
+      "問15 インデックスの選択の公式本文・選択肢（問題冊子 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q16",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "デッドロックの検出",
+    "topicTags": [
+      "デッドロックの検出"
+    ],
+    "difficulty": 3,
+    "question": "問16　デッドロックの検出",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "ある処理が別の処理によるロック解除を待つ関係を有向グラフにする。循環があると互いに待って処理が進めない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q16.webp"
+    ],
+    "imageAltTexts": [
+      "問16 デッドロックの検出の公式本文・選択肢（問題冊子 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q17",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "トランザクションの隔離性",
+    "topicTags": [
+      "トランザクションの隔離性"
+    ],
+    "difficulty": 3,
+    "question": "問17　トランザクションの隔離性",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "見えてしまう未確定データや並行更新を防ぐ働きと、その際の同時実行性を比較する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q17.webp"
+    ],
+    "imageAltTexts": [
+      "問17 トランザクションの隔離性の公式本文・選択肢（問題冊子 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q18",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "トランザクションの原子性",
+    "topicTags": [
+      "トランザクションの原子性"
+    ],
+    "difficulty": 3,
+    "question": "問18　トランザクションの原子性",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "複数の操作を一体として扱い、途中までだけ処理が残らない性質を選ぶ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q18.webp"
+    ],
+    "imageAltTexts": [
+      "問18 トランザクションの原子性の公式本文・選択肢（問題冊子 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q19",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "OLAPの分析軸",
+    "topicTags": [
+      "OLAPの分析軸"
+    ],
+    "difficulty": 3,
+    "question": "問19　OLAPの分析軸",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "商品・チャネル・時間・顧客の軸を区別し、原問で行う集計の切り替えを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q19.webp"
+    ],
+    "imageAltTexts": [
+      "問19 OLAPの分析軸の公式本文・選択肢（問題冊子 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q21",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "公開鍵暗号の鍵数",
+    "topicTags": [
+      "公開鍵暗号の鍵数"
+    ],
+    "difficulty": 3,
+    "question": "問21　公開鍵暗号の鍵数",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "通信相手の組ごとに作るのではなく、各人が公開鍵と秘密鍵を一組ずつ持つと数える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q21.webp"
+    ],
+    "imageAltTexts": [
+      "問21 公開鍵暗号の鍵数の公式本文・選択肢（問題冊子 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q22",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "キャッシュの平均時間",
+    "topicTags": [
+      "キャッシュの平均時間"
+    ],
+    "difficulty": 3,
+    "question": "問22　キャッシュの平均時間",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "ヒットの場合とミスの場合の所要時間を、それぞれの発生割合で重み付けする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q22.webp"
+    ],
+    "imageAltTexts": [
+      "問22 キャッシュの平均時間の公式本文・選択肢（問題冊子 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q23",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "障害透過性",
+    "topicTags": [
+      "障害透過性"
+    ],
+    "difficulty": 3,
+    "question": "問23　障害透過性",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "利用者が障害の発生箇所や復旧の手続きを意識せずに済む性質を、位置などの別の透過性と区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q23.webp"
+    ],
+    "imageAltTexts": [
+      "問23 障害透過性の公式本文・選択肢（問題冊子 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q24",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "探索的テスト",
+    "topicTags": [
+      "探索的テスト"
+    ],
+    "difficulty": 3,
+    "question": "問24　探索的テスト",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "ソフトウェアの挙動を学びながら次のテストを考えて実行する手法を、事前に設計したケースの実行と分ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q24.webp"
+    ],
+    "imageAltTexts": [
+      "問24 探索的テストの公式本文・選択肢（問題冊子 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2018h-am2-q25",
+    "exam": "db",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "テスト駆動開発",
+    "topicTags": [
+      "テスト駆動開発"
+    ],
+    "difficulty": 3,
+    "question": "問25　テスト駆動開発",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "求める振る舞いを確認するテストと、テストを通す実装を行う順序に着目する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2018-spring-am2/q25.webp"
+    ],
+    "imageAltTexts": [
+      "問25 テスト駆動開発の公式本文・選択肢（問題冊子 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_db_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

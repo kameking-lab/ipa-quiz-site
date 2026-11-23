@@ -6,24 +6,22 @@ import sharp from "sharp";
 import { describe, expect, it } from "vitest";
 import Denken1Page from "@/app/denken1/page";
 import { NativeReader } from "@/components/denken2/NativeReader";
-import { DENKEN1_QUESTIONS } from "@/data/questions/denken1";
+import { DENKEN1_PRIMARY_QUESTIONS } from "@/data/questions/denken1";
 import {
-  DENKEN1_NATIVE_PARTS, DENKEN1_NATIVE_QUESTIONS, DENKEN1_PUBLISHED_ORIGINAL_COUNT,
+  DENKEN1_NATIVE_PARTS, DENKEN1_NATIVE_QUESTIONS,
   denken1NativeQuestionPaths, getDenken1NativeQuestion,
 } from "@/lib/denken1/native";
 import { renderExamsSitemapXml } from "@/lib/seo/sitemap-xml";
 
 describe("Denken1 source-reviewed native originals", () => {
-  it("keeps legacy 25 quiz blanks and counts unique originals across six native parts", () => {
-    expect(DENKEN1_QUESTIONS).toHaveLength(25);
-    expect(DENKEN1_NATIVE_PARTS.map(p => `${p.year}:${p.subject}:${p.questions.length}:${p.questions.reduce((n, q) => n + q.slots.length, 0)}`))
-      .toEqual(["2025:power:6:35", "2025:machine:7:40", "2026:machine:7:41", "2026:power:6:34", "2025:theory:7:36", "2026:theory:3:18"]);
-    expect(DENKEN1_NATIVE_QUESTIONS).toHaveLength(36);
-    expect(DENKEN1_NATIVE_QUESTIONS.reduce((n, q) => n + q.slots.length, 0)).toBe(204);
-    expect(DENKEN1_PUBLISHED_ORIGINAL_COUNT).toBe(39);
-    expect(new Set(DENKEN1_NATIVE_QUESTIONS.map(q => q.id)).size).toBe(36);
-    expect(getDenken1NativeQuestion(2026, "theory", 4)).toBeUndefined();
-    expect(getDenken1NativeQuestion(2025, "law", 1)).toBeUndefined();
+  it("keeps the 25 launch blanks and unique originals for all four subjects in six years", () => {
+    expect(DENKEN1_PRIMARY_QUESTIONS).toHaveLength(25);
+    expect(new Set(DENKEN1_NATIVE_PARTS.map(p => p.year))).toEqual(new Set([2021, 2022, 2023, 2024, 2025, 2026]));
+    expect(new Set(DENKEN1_NATIVE_PARTS.map(p => `${p.year}:${p.subject}`)).size).toBe(24);
+    expect(DENKEN1_NATIVE_QUESTIONS).toHaveLength(153);
+    expect(new Set(DENKEN1_NATIVE_QUESTIONS.map(q => q.id)).size).toBe(153);
+    expect(getDenken1NativeQuestion(2026, "theory", 4)).toBeDefined();
+    expect(getDenken1NativeQuestion(2025, "law", 1)).toBeDefined();
     expect(getDenken1NativeQuestion(2026, "law", 1)).toBeUndefined();
   });
 
@@ -63,7 +61,7 @@ describe("Denken1 source-reviewed native originals", () => {
 
   it("has byte-identical, decodable official images and an exact native sitemap", async () => {
     const pages = new Map(DENKEN1_NATIVE_QUESTIONS.flatMap(q => q.sourcePages.map(p => [p.url, p] as const)));
-    expect(pages.size).toBe(64);
+    expect(pages.size).toBe(272);
     for (const page of pages.values()) {
       const data = readFileSync(join(process.cwd(), "public", page.url.slice(1)));
       expect(createHash("sha256").update(data).digest("hex")).toBe(page.sha256);
@@ -73,17 +71,15 @@ describe("Denken1 source-reviewed native originals", () => {
       expect(decoded.height).toBeGreaterThan(300);
     }
     const routes = denken1NativeQuestionPaths();
-    expect(routes).toHaveLength(36);
+    expect(routes).toHaveLength(153);
     const xml = renderExamsSitemapXml();
     for (const route of routes) expect(xml).toContain(route);
-    expect(xml).not.toContain("/denken1/2026-primary/theory/q4");
-    expect(xml).not.toContain("/denken1/2025-primary/law/q1");
+    expect(xml).not.toContain("/denken1/2026-primary/law/q1</loc>");
   });
 
-  it("labels partial coverage honestly on the qualification hub", () => {
+  it("links the available native subject indexes from the qualification hub", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<Denken1Page />), "text/html");
-    expect(doc.body.textContent).toContain("39件");
-    expect(doc.body.textContent).toContain("両年度の全問と二次試験は未収録");
-    expect(doc.querySelectorAll('a[href^="/denken1/2025-primary/"], a[href^="/denken1/2026-primary/"]')).toHaveLength(6);
+    expect(doc.body.textContent).toContain("153原問");
+    expect(doc.querySelectorAll('#denken1-native-subjects ~ div a[href^="/denken1/"]')).toHaveLength(24);
   });
 });

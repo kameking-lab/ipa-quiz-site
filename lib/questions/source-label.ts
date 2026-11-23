@@ -9,6 +9,21 @@ export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" 
 
 /** 公式冊子の表紙で照合した回次・実施年。保存年や既存URLは年度/実施年が混在するため表示に使わない。 */
 const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string, string>>>> = {
+  tp220421: {
+    "02": "第115回（2022年実施）",
+    "06": "第74回（2022年実施）",
+    "08": "第57回（2022年実施）",
+  },
+  tp230524: {
+    "02": "第116回（2023年実施）",
+    "06": "第75回（2023年実施）",
+    "08": "第58回（2023年実施）",
+  },
+  tp240424: {
+    "02": "第117回（2024年実施）",
+    "06": "第76回（2024年実施）",
+    "08": "第59回（2024年実施）",
+  },
   tp250428: {
     "05": "第114回（2025年実施）",
     "06": "第77回（2025年実施）",
@@ -28,6 +43,36 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
+  if (q.exam === "kenchiku-daiku3" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年7月13日実施）";
+  }
+  if ((q.exam === "kenchiku-daiku1" || q.exam === "kenchiku-daiku2") && q.year === 2025 && q.season === "late") {
+    return "2025年度後期（2026年2月8日実施）";
+  }
+  if ((q.exam === "chikuro2" || q.exam === "kagaku-bunseki2" || q.exam === "sasshi2") && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月24日実施）";
+  }
+  if ((q.exam === "kyoka-plastic2" || q.exam === "flower2" || q.exam === "tetsudo-sharyo2" || q.exam === "engei-soshoku2") && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年9月7日実施）";
+  }
+  if (q.exam === "fujin-kodomofuku2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月31日実施）";
+  }
+  if (q.exam === "toso2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月24日実施）";
+  }
+  if ((q.exam === "insatsu2" || q.exam === "diecast2" || q.exam === "kagu2" || q.exam === "tekko2") && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月31日実施）";
+  }
+  if (q.exam === "mekki2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月31日実施）";
+  }
+  if (q.exam === "kinzoku-netsushori2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月24日実施）";
+  }
+  if (q.exam === "shohin-soshoku3" || q.exam === "shashin1" || q.exam === "sessaku-kensaku1" || q.exam === "tatami1" || q.exam === "fraise1" || q.exam === "fraise2" || q.exam === "fraise3" || q.exam === "funmatsu-yakin1" || q.exam === "nunohaku1" || q.exam === "kikinzoku-soshin1" || q.exam === "shashin3" || q.exam === "kikinzoku-soshin3" || q.exam === "kagu2" || q.exam === "kagu1" || q.exam === "kikai-kensa3" || q.exam === "kinzoku-press1" || q.exam === "plant-haikan2" || q.exam === "haikan-kenchiku3" || q.exam === "plant-haikan1" || q.exam === "kinzoku-press2" || q.exam === "bousui-frp2" || q.exam === "pan-seizo1" || q.exam === "kikai-shiage1" || q.exam === "plant-haikan-seizu1" || q.exam === "kikai-seizu2" || q.exam === "kikai-seizu-cad2" || q.exam === "kikai-shiage2" || q.exam === "pan-seizo2" || q.exam === "naiso-carpet2" || q.exam === "naiso-plastic1" || q.exam === "naiso-plastic2" || q.exam === "naiso-kosei2" || q.exam === "bousui-urethane2" || q.exam === "sakan2" || q.exam === "sakan1" || q.exam === "zoen-gino1" || q.exam === "zoen-gino2" || q.exam === "sakan3" || q.exam === "zoen-gino3" || q.exam === "kikai-shiage3" || q.exam === "kikai-seizu3" || q.exam === "kikai-seizu-cad3" || q.exam === "kensetsu-kikai-seibi1" || q.exam === "kenchiku-bankin2" || q.exam === "haiden-seigyo3" || q.exam === "haiden-seigyo1" || q.exam === "sequence1" || q.exam === "chuzo2" || q.exam === "chuzo1" || q.exam === "kaiten-denki2" || q.exam === "kaiten-denki1" || q.exam === "sequence3" || q.exam === "chuzo3" || q.exam === "sequence2" || q.exam === "kogyo-hoso2" || q.exam === "kikai-kensa2" || q.exam === "tekkin-zumen1" || q.exam === "katawaku1" || q.exam === "tekkin-zumen2" || q.exam === "katawaku2" || q.exam === "kogyo-hoso1" || q.exam === "kikai-kensa1" || q.exam === "tekkin-zumen3" || q.exam === "katawaku3" || q.exam === "engei-soshoku3" || q.exam === "flower3" || q.exam === "insatsu2" || q.exam === "sasshi2" || q.exam === "sasshi1" || q.exam === "kyoka-plastic2" || q.exam === "chikuro2" || q.exam === "chikuro1" || q.exam === "kagaku-bunseki1" || q.exam === "futsu-senban3" || q.exam === "shashutsu3" || q.exam === "kagaku-bunseki3" || q.exam === "kyoka-plastic1" || q.exam === "engei-soshoku1" || q.exam === "insatsu1" || q.exam === "flower1" || q.exam === "flower2" || q.exam === "kagu3" || q.exam === "denshi-kiki-kumitate1" || q.exam === "denshi-kiki-kumitate3" || q.exam === "tekko2" || q.exam === "mekki3" || q.exam === "kinzoku-netsushori3" || q.exam === "mekki1" || q.exam === "kinzoku-netsushori1" || q.exam === "kinzoku-netsushori2" || q.exam === "kojo-bankin3" || q.exam === "kojo-bankin1" || q.exam === "kenchiku-bankin1" || q.exam === "kenchiku-bankin-duct2" || q.exam === "tekko1" || q.exam === "kenchiku-daiku1" || q.exam === "kenchiku-daiku3" || q.exam === "fujin-kodomofuku1" || q.exam === "fujin-kodomofuku2" || q.exam === "toso1" || q.exam === "denshi-kiki-kumitate2" || q.exam === "kojo-bankin2" || q.exam === "kensetsu-kikai-seibi2" || q.exam === "hyoso1" || q.exam === "tairu2" || q.exam === "sekizai1" || q.exam === "hyoso2" || q.exam === "kikinzoku-soshin2" || q.exam === "shashin2" || q.exam === "diecast1" || q.exam === "tetsudo-sharyo1" || q.exam === "futsu-senban1" || q.exam === "shashutsu1" || q.exam === "tekkin3" || q.exam === "tekkin2" || q.exam === "kikai-seizu-tegaki1" || q.exam === "reito-seko2" || q.exam === "reito-seko1" || q.exam === "kuukiatsu-kumitate2" || q.exam === "kuukiatsu-kumitate1" || q.exam === "henatsuki-kumitate2" || q.exam === "henatsuki-kumitate1" || q.exam === "haidenban-kumitate3" || q.exam === "kikai-seizu-cad1" || q.exam === "plant-haikan-seizu2" || q.exam === "reito-seko3" || q.exam === "netsuzetsuen2" || q.exam === "hiseshoku-jokyo1" || q.exam === "tategu1" || q.exam === "shohin-soshoku1" || q.exam === "kogaku-glass1" || q.exam === "sangyo-sharyo1" || q.exam === "yogashi1" || q.exam === "block-kenchiku3" || q.exam === "block-kenchiku1" || q.exam === "shuzo1" || q.exam === "haikan-plant2" || q.exam === "bousui-frp1" || q.exam === "naiso-carpet1" || q.exam === "haikan-plant1" || q.exam === "shashutsu2" || q.exam === "kagaku-bunseki2" || q.exam === "engei-soshoku2" || q.exam === "mekki2") {
+    return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
+  }
   if (q.exam === "junkango-kansai") {
     return q.fiscalYear !== undefined
       ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`
@@ -50,7 +95,7 @@ if (q.exam === "biyoshi" && q.year === 2026) {
     if (q.season === "second")
         return "第54回（2026年9月6日実施）";
 }
-if (q.exam?.startsWith("kikenbutsu-otsu") && q.season === "published")
+if ((q.exam?.startsWith("kikenbutsu-") || q.exam?.startsWith("shobo-setsubishi-")) && q.season === "published")
     return "2026年6月公表版（個別の出題年・回は非公表）";
 if (q.exam?.startsWith("jken-katsuyo")) {
     if (q.year === 2026 && q.season === "first" && /\/260621_mondaijk0[123]\.pdf$/.test(q.sourcePdfUrl))
@@ -86,15 +131,25 @@ if (q.year === 2025 && q.season === "annual" &&
   if (q.season === "annual" && judoPaper?.[1] === "2025_33" && q.year === 2024) {
     return "第33回（令和6年度・2025年実施）";
   }
+  const gengoNotice = /^https:\/\/www\.mhlw\.go\.jp\/general\/sikaku\/successlist\/(2025|2026)\/siken21\/dl\/(27A40|28A(?:14|35|69|83))\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+  if (q.season === "annual" && gengoNotice &&
+      ((q.year === 2025 && gengoNotice[1] === "2025" && gengoNotice[2] === "27A40") ||
+       (q.year === 2026 && gengoNotice[1] === "2026" && gengoNotice[2]?.startsWith("28A")))) {
+    return `第${q.year === 2025 ? 27 : 28}回（${q.year}年実施）`;
+  }
   const medical2025 = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/tp250428-(06[ab]|07b)_01\.pdf(?:#page=\d+)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2025 && q.season === "annual" && medical2025) {
     return `第${medical2025[1] === "07b" ? 71 : 77}回（2025年実施）`;
+  }
+  if (q.exam === "riyoshi" && q.year === 2025 && q.season === "second" &&
+      /^https:\/\/www\.rbc\.or\.jp\/wp-content\/uploads\/2025\/09\/52rhikki\.pdf(?:#page=[1-9]\d*)?$/.test(q.sourcePdfUrl)) {
+    return "第52回（2025年実施）";
   }
   const riyoshiPaper = /^https:\/\/www\.rbc\.or\.jp\/wp-content\/uploads\/2026\/(03\/53rhikki-1|09\/54rhikki)\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2026 && riyoshiPaper?.[1] === "03/53rhikki-1") return "第53回（2026年3月1日実施）";
   if (q.year === 2026 && riyoshiPaper?.[1] === "09/54rhikki") return "第54回（2026年9月6日実施）";
   if (q.season === "annual") {
-    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp250428|tp260424)-(05[abc]|(?:06[ab]|07b)|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp220421|tp230524|tp240424|tp250428|tp260424)-(02a|05[abc]|(?:06[ab]|07b)|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
     const edition = verifiedPaper
       ? VERIFIED_MEDICAL_EDITIONS[verifiedPaper[1] ?? ""]?.[verifiedPaper[2]?.slice(0, 2) ?? ""]
       : undefined;
@@ -102,7 +157,7 @@ if (q.year === 2025 && q.season === "annual" &&
   }
   if (q.year === 2011 && /tokubetsu/.test(q.sourcePdfUrl)) return "2011年度 特別試験";
   if (q.year === 2020 && q.season === "autumn") return "令和2年度 10月試験";
-  if (q.season === "published") {
+  if (q.season === "published" || (q.season === "october" && (q.exam === "eisei1" || q.exam === "eisei2"))) {
     const officialUpload = /^https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/(20\d{2})\/(0[1-9]|1[0-2])\//.exec(q.sourcePdfUrl);
     if (officialUpload && Number(officialUpload[1]) === q.year) {
       return `${q.year}年${Number(officialUpload[2])}月公表問題`;

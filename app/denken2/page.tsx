@@ -1,3 +1,6 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
+import { formatExamSearchMetadata } from "@/lib/seo/exam-search-metadata";
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
@@ -7,17 +10,20 @@ import { SECONDARY_QUESTIONS } from "@/lib/denken2/secondary";
 import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
 import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
-import { NATIVE_EDITIONS, NATIVE_QUESTIONS, getNativeSubjectQuestions, nativeSubjectPath } from "@/lib/denken2/native";
+import { NATIVE_QUESTIONS, getNativeEdition, getNativeSubjectQuestions, nativeSubjectPath } from "@/lib/denken2/native";
 
-export const metadata: Metadata = {
-  title: "電験二種の過去問｜一次2026・2025年度、二次2025・2024年度",
-  description: "電験二種の一次2026年度30原問・2025年度27原問と、二次2025・2024年度全20原問。公式の図・数式・標準解答、全小問の解説で学べます。",
+const searchMetadata = formatExamSearchMetadata("電験二種", NATIVE_QUESTIONS.length + SECONDARY_QUESTIONS.length, [...NATIVE_QUESTIONS, ...SECONDARY_QUESTIONS].map(q => q.year));
+export const metadata: Metadata = withCanonicalSocialMetadata({
+  ...searchMetadata,
   alternates: { canonical: "/denken2" },
-};
+});
 
 const YEAR = 2026;
 const SEASON = "primary";
 const RETURN_TO = "/denken2";
+const HISTORICAL_NATIVE_YEARS = [...new Set(NATIVE_QUESTIONS.filter(q => q.year < 2025).map(q => q.year))]
+  .sort((a, b) => b - a);
+const NATIVE_SUBJECT_NAMES = { theory: "理論", power: "電力", machine: "機械", law: "法規" } as const;
 
 const SUBJECTS: { session: Session; name: string; description: string }[] = [
   { session: "denryoku", name: "電力", description: "発電・変電・送配電・電力系統" },
@@ -25,15 +31,19 @@ const SUBJECTS: { session: Session; name: string; description: string }[] = [
 ];
 
 export default function Denken2Page() {
-  const examDate = DENKEN2_QUESTIONS[0]?.examDate;
-  const total = DENKEN2_QUESTIONS.length;
-  const native2026 = NATIVE_EDITIONS.find(item => item.year === 2026);
-  const native2025 = NATIVE_EDITIONS.find(item => item.year === 2025);
+  const launchQuestions = DENKEN2_QUESTIONS.filter(q => q.year === YEAR && q.season === SEASON);
+  const examDate = launchQuestions[0]?.examDate;
+  const total = launchQuestions.length;
+  const native2026 = getNativeEdition(2026);
+  const native2025 = getNativeEdition(2025);
   const native2025Total = NATIVE_QUESTIONS.filter(q => q.year === 2025).length;
+  const native2025TheoryAndMachine = native2025?.questions.length ?? 0;
+  const native2025PowerAndLaw = native2025Total - native2025TheoryAndMachine;
   const originalCount2026 = total / 5 + (native2026?.questions.length ?? 0);
   return (
     <main className="mx-auto max-w-5xl px-4 pb-20 pt-8 sm:pt-12">
-      <TsuginoWelcome href={referralPracticeHref(DENKEN2_QUESTIONS, "/denken2")} qualification="電験二種" />
+      <NextExamSchedule exam="denken2" />
+      <TsuginoWelcome href={referralPracticeHref(launchQuestions, "/denken2")} qualification="電験二種" />
       <div className="mb-6">
         <Link href="/qualifications" className="text-sm font-medium text-primary hover:underline">← 資格一覧へ戻る</Link>
       </div>
@@ -43,7 +53,7 @@ export default function Denken2Page() {
         電力・法規は空欄ごとの演習、理論・機械は原問単位の演習で、公式問題の図・数式・正答を確認できます。
       </p>
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        2025年度は理論・機械の{native2025?.questions.length ?? 0}原問・80回答欄、電力・法規の11原問・55回答欄、計{native2025Total}原問を収録しています。法規の問3・問5・問6は未収録です。二次試験は2025・2024年度の全20原問を下の専用ページに収録しています。問7と問8が選択問題の科目は、両原問を掲載していますが、本試験では一方だけ解答します。
+        2025年度は理論・機械の{native2025TheoryAndMachine}原問、電力・法規の{native2025PowerAndLaw}原問を収録しています。問7と問8が選択問題の科目は、両原問を掲載していますが、本試験では一方だけ解答します。
       </p>
 
       <section aria-labelledby="denken2-secondary" className="mt-8 rounded-2xl border border-primary/30 bg-card p-5 sm:p-6">
@@ -56,7 +66,7 @@ export default function Denken2Page() {
         <h2 id="denken2-subjects" className="text-xl font-bold">令和8年度 一次試験の科目を選ぶ</h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {SUBJECTS.map(({ session, name, description }) => {
-            const count = DENKEN2_QUESTIONS.filter((q) => q.year === YEAR && q.season === SEASON && q.session === session).length;
+            const count = launchQuestions.filter(q => q.session === session).length;
             const href = `/quiz?${new URLSearchParams({ mode: "year", exam: "denken2", year: String(YEAR), season: SEASON, session, order: "1", returnTo: RETURN_TO }).toString()}`;
             return (
               <Link key={session} href={href} className="group flex min-h-36 items-center justify-between gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:border-primary hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40">
@@ -105,7 +115,6 @@ export default function Denken2Page() {
       </section>
       <section aria-labelledby="denken2-native-2025-power-law" className="mt-9">
         <h2 id="denken2-native-2025-power-law" className="text-xl font-bold">2025年度 電力・法規の原問を解く</h2>
-        <p className="mt-2 text-sm leading-7 text-muted-foreground">電力7原問・35回答欄、法規4原問・20回答欄を収録。法規の問3・問5・問6は法令の一次根拠を確認中のため掲載していません。</p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {(["power", "law"] as const).map(subject => {
             const questions = getNativeSubjectQuestions(2025, subject);
@@ -118,9 +127,27 @@ export default function Denken2Page() {
           })}
         </div>
       </section>
+      <section aria-labelledby="denken2-native-history" className="mt-9">
+        <h2 id="denken2-native-history" className="text-xl font-bold">2021〜2024年度 一次試験の原問を解く</h2>
+        <ul className="mt-4 space-y-3">
+          {HISTORICAL_NATIVE_YEARS.map(year => (
+            <li key={year} className="flex flex-wrap items-center gap-x-4">
+              <span className="font-bold">{year}年度</span>
+              {(Object.keys(NATIVE_SUBJECT_NAMES) as Array<keyof typeof NATIVE_SUBJECT_NAMES>).map(subject => {
+                const count = getNativeSubjectQuestions(year, subject).length;
+                return count > 0 ? (
+                  <Link key={subject} href={nativeSubjectPath(year, subject)} className="inline-flex min-h-11 items-center text-primary underline">
+                    {NATIVE_SUBJECT_NAMES[subject]}（{count}原問）
+                  </Link>
+                ) : null;
+              })}
+            </li>
+          ))}
+        </ul>
+      </section>
       <ExamYearArchiveLinks exam="denken2" />
       <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
-        問題・正答の出典：一般財団法人 電気技術者試験センター「第二種電気主任技術者一次試験（2025・2026年度）」。2026年度の電力・法規は空欄ごとの演習に分けて整形し、2025年度の収録原問と2026年度の理論・機械は原問単位で原本画像とともに掲載しています。解説は当サイトが独自に作成しました。
+        問題・正答の出典：一般財団法人 電気技術者試験センター「第二種電気主任技術者試験」。
       </p>
     </main>
   );

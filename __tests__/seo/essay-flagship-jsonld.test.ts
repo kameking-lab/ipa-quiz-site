@@ -3,10 +3,9 @@ import { join } from "node:path";
 
 import { describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
-import EssayEditorPage from "@/app/essay/[exam]/[questionId]/page";
+import EssayPracticePage from "@/app/essay/[exam]/[questionId]/page";
 import { getAllEssayQuestions } from "@/lib/essay/load";
 
-vi.mock("@/components/essay/EssayEditor", () => ({ EssayEditor: () => null }));
 vi.mock("@/components/quiz/InlineBookHint", () => ({ InlineBookHint: () => null }));
 
 // The flagship page (app/essay/page.tsx) is the strategic centerpiece the site
@@ -64,24 +63,10 @@ describe("flagship /essay structured data", () => {
     expect(SOURCE).toContain('href="/recommended-books"');
   });
 
-  // The flagship landing converts flagship-intent searchers, yet it shipped
-  // without the objection-handling FAQ that every strategic blog page carries
-  // (sessions 8-11). Pin a FAQPage in the @graph driven by a single ESSAY_FAQ
-  // source that also renders a visible <dl>, so the structured data and on-page
-  // text can never drift. "崩れたら落ちる".
-  it("emits a FAQPage built from a single ESSAY_FAQ source", () => {
-    expect(SOURCE).toContain('"@type": "FAQPage"');
-    expect(SOURCE).toContain("const ESSAY_FAQ");
-    expect(SOURCE).toContain("ESSAY_FAQ.map((f) => ({");
-    expect(SOURCE).toContain('"@type": "Question"');
-    expect(SOURCE).toContain('"@type": "Answer"');
-  });
-
-  it("renders the same ESSAY_FAQ as a visible definition list", () => {
-    expect(SOURCE).toContain("ESSAY_FAQ.map((f) => (");
-    expect(SOURCE).toContain("よくある質問");
-    expect(SOURCE).toContain("<dt");
-    expect(SOURCE).toContain("<dd");
+  it("does not advertise retired grading in FAQ metadata or link to its history", () => {
+    expect(SOURCE).not.toContain('"@type": "FAQPage"');
+    expect(SOURCE).not.toContain("account/essay-history");
+    expect(SOURCE).toContain('learningResourceType: "練習問題"');
   });
 
   // Hub→spoke completion: the flagship funnels blog → /essay (sessions 3-7) but
@@ -96,14 +81,10 @@ describe("flagship /essay structured data", () => {
     expect(SOURCE).toContain('slug: "koudo-ronbun-jikan-haibun"');
     expect(SOURCE).toContain('slug: "koudo-ronbun-hyouka-rank"');
     expect(SOURCE).toContain('slug: "koudo-ronjutsu-jiko-saiten"');
-    expect(SOURCE).toContain("論述の書き方・採点を学ぶ");
+    expect(SOURCE).toContain("論述の書き方・参考書");
   });
 
-  // Anti-exaggeration: the FAQ must not claim AI grading for the mock AP/FE
-  // afternoon data (HD-4) and must keep the 参考評価 caveat. Pin the honest
-  // framing so a future edit can't quietly over-claim coverage.
-  it("keeps the FAQ honest: 参考評価 caveat, no AP/FE grading claim", () => {
-    expect(SOURCE).toContain("参考評価");
+  it("does not advertise AP/FE essay practice", () => {
     expect(SOURCE).not.toContain("応用情報");
     expect(SOURCE).not.toContain("基本情報");
   });
@@ -127,7 +108,7 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
 
   it("renders original practice without claiming an official source in JSON-LD", async () => {
     const question = getAllEssayQuestions()[0]!;
-    const markup = renderToStaticMarkup(await EssayEditorPage({
+    const markup = renderToStaticMarkup(await EssayPracticePage({
       params: Promise.resolve({ exam: question.exam, questionId: question.id }),
     }));
     const document = new DOMParser().parseFromString(markup, "text/html");
@@ -137,6 +118,8 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
     expect(resource?.name).toContain("独自論述練習");
     expect(resource).not.toHaveProperty("isBasedOn");
     expect(document.body.textContent).toContain("独自");
+    expect(document.body.textContent).toContain("解答骨子");
+    expect(document.querySelector("textarea")).toBeNull();
   });
 
   // Soft-404 guard: invalid /essay/{exam}/{id} must return a real 404, not a

@@ -40,8 +40,8 @@ export function toJctcFirstQuestions(source: JctcFirstSource): Question[] {
   if (source.year === 2025 && (source.exam !== "zoen2" || source.season !== "late")) {
     throw new Error("Only 2025 late zoen2 is supported");
   }
-  if (source.year === 2026 && source.season !== "early") {
-    throw new Error("Only 2026 early is supported");
+  if (source.year === 2026 && source.exam === "tsushin2" && source.season !== "early") {
+    throw new Error("Only 2026 early tsushin2 is supported");
   }
   return source.questions.map((item) => {
     const answerKeys = item.officialAnswerNumbers.map((number) => keys[number - 1]);

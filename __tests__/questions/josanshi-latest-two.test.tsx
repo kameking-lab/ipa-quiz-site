@@ -5,7 +5,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
-import { JOSANSHI_QUESTIONS } from "@/data/questions/josanshi";
+import { JOSANSHI_QUESTIONS as ALL_JOSANSHI_QUESTIONS } from "@/data/questions/josanshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const JOSANSHI_QUESTIONS = ALL_JOSANSHI_QUESTIONS.filter(question => question.year >= 2024);
 import baseline from "@/data/questions/josanshi/medical34-live.json";
 import additions from "@/data/questions/josanshi/latest-two-additions.json";
 import excluded from "@/docs/evidence/josanshi-latest-two-20261011/EXCLUDED.json";

@@ -1,0 +1,63 @@
+{
+  "reviewDate": "2026-10-11",
+  "scope": "Independent content QC for private draft PR #733, limited to 28AM35, 28AM69 and 28AM83; not publication approval",
+  "method": "Read-only comparison of current worktree questions with saved local source-review JSON and accompanying evidence/README. No provider reacquisition or new web retrieval. Source statements below are based on those saved records, not a claim of fresh original-source verification.",
+  "targetFile": "C:/wt/kakomon-gengo-chokakushi-latest-two-20261011/data/questions/gengo-chokakushi/official-notice-ready.json",
+  "decision": "KEEP_ALL_THREE_EXCLUDED",
+  "privatePracticeCount": { "reportedBefore": 2, "recommendedAfter": 2, "independentlyRecounted": false },
+  "worktreeEdited": false,
+  "buildOrFullReviewPerformed": false,
+  "officialScoringRule": "Each question accepts either of two alternatives, with requiredSelections=1. Do not require both selections. No published academic rationale was established by the supplied evidence.",
+  "questions": [
+    {
+      "id": "gengo-chokakushi-2026-annual-am-q35",
+      "acceptedNumbers": [1, 3],
+      "requiredSelections": 1,
+      "needsReview": true,
+      "agreementWithLocalProposal": true,
+      "reason": "流動性知能全体のピークを40歳代前半とする命題は確認できない。特定語彙指標の40歳代後半という研究例も、結晶性知能全体へ一般化できない。公式採点の受容と一般的な加齢研究の説明を分ける現行方針は妥当。",
+      "supportedEdits": ["全肢に公式採点の対象・対象外を明記する。", "SOCの補償を、失われた目標達成手段に対する代替手段の使用と説明する。", "ピーク年齢が指標により異なるという限定を保つ。"],
+      "unsupportedAssertions": ["流動性知能の普遍的ピークは40歳代前半である。", "結晶性知能の普遍的ピークは40歳代後半である。", "70歳を共通の変曲点として加齢曲線を確定する。"],
+      "evidenceLimits": ["MITの年齢比較は大学による研究紹介であり原著本文を直接照合した結果として扱わない。", "Schaie原著は限定的抽出・検索表示に基づくため詳細な年齢断定の根拠へ格上げしない。"],
+      "sourceReview": "../review35/review.json"
+    },
+    {
+      "id": "gengo-chokakushi-2026-annual-am-q69",
+      "acceptedNumbers": [1, 2],
+      "requiredSelections": 1,
+      "needsReview": true,
+      "agreementWithLocalProposal": false,
+      "rejectedProposal": "Clear needsReview and increase private practice candidates from 2 to 3",
+      "reason": "URAWSS IIの公開制作元資料が読み書き速度を評価対象として述べることだけでは、音読の流暢性との対応を排除できない。一般目的と個別の読み課題・測定構成概念は同一ではない。局所レビュー自身が音読か黙読かを確定できないと認めており、『代表的な評価対象を表さないから不適切』も未立証の推論である。",
+      "draftContentImprovementAllowed": true,
+      "clearingAfterRemovingOverclaimAllowed": false,
+      "whyRemovalDoesNotClear": "断定削除は誤った説明を防ぐが、アを誤りとして受容する教育上の根拠が未解決であることは変わらない。公式採点の事実だけを正しく表示できることと、全肢の内容照合が完了したことを混同しない。",
+      "proposedExplanation": "公式正答は1または2で、どちらか1肢を選ぶ。正答表の採点結果と以下の検査の説明は区別する。公開制作元資料ではURAWSS IIは小中学生の読み書き速度を評価すると説明されるが、今回照合できた資料からは読み課題が音読か黙読か、音読流暢性との組合せを誤りとする理由までは確定できない。SCTAWは抽象語の理解を調べる検査であり、表出性語彙能力との組合せは合わない。アの説明上の不確実性が残るため、出題候補からの除外を維持する。以下は独自解説であり、未公開の公式採点理由を示すものではない。",
+      "proposedChoiceExplanations": {
+        "ア": "公式採点では本肢を選んでも正答となる。公開制作元資料はURAWSS IIを小中学生の読み書き速度の評価と説明する。今回の資料だけでは音読・黙読の課題手続や音読流暢性との相違を確定できないため、本肢が誤りとされる理由は保留する。",
+        "イ": "SCTAWは標準抽象語理解力検査で、出版社は抽象語を用いた言語理解力の検査と説明している。表出性語彙能力を評価するという組合せとは異なる。",
+        "ウ": "RANは、なじみのある刺激を素早く連続して命名する課題である。関連する処理の自動化を捉える説明と整合するが、一般的な自動化能力を単独で純粋に測るとまではいわない。",
+        "エ": "WISC-Vには絵のスパンがあり、制作元は視覚的ワーキングメモリーを測ると説明する。視覚情報を短時間保持する働きに関係するが、視覚的短期記憶とワーキングメモリーを完全な同義語として扱わない。",
+        "オ": "日本版KABC-IIの書き尺度には短文の作文能力が含まれ、文の構成などの下位検査がある。文レベルの書字との対応は公開資料により支持される。"
+      },
+      "unsupportedAssertions": ["読み課題は黙読速度と内容理解を扱う。", "読み書き速度の評価だから音読流暢性との組合せは不適切である。", "音読流暢性はURAWSS IIの代表的評価対象でないことが今回の資料で確定した。", "WISC-Vの視覚的ワーキングメモリーと視覚的短期記憶は完全な同義語である。"],
+      "reconsiderationCondition": "URAWSS IIの対象版の課題手続・評価構成概念と音読流暢性との相違を直接支持する適法に閲覧可能な一次資料、または公式の具体的説明を確認し、アの説明を再審査する。公式理由の公開だけを必須条件とはしないが、現在の目的記述だけでは不足する。",
+      "sourceReview": "../review69/review69.json",
+      "criticalSource": "https://atac-lab.com/wp-content/uploads/product/urawss/urawss2.pdf"
+    },
+    {
+      "id": "gengo-chokakushi-2026-annual-am-q83",
+      "acceptedNumbers": [1, 2],
+      "requiredSelections": 1,
+      "needsReview": true,
+      "agreementWithLocalProposal": true,
+      "reason": "大学の解剖資料で茎突咽頭筋の喉頭挙上作用が支持され、アを誤りとして公式採点が受容することとの説明上の不整合が残る。採点事実と筋作用を二層で明示する解説は可能だが、通常の出題候補への復帰は承認しない。",
+      "supportedEdits": ["アの喉頭挙上への作用を明確に肯定し、公式採点では選択が受容されることを別に書く。", "イの舌骨運動と挺舌の主働筋を区別する。", "ウの声帯内転、エの軟口蓋挙上、オの括約筋としての閉鎖作用の説明は保存済み照合と整合する。"],
+      "unsupportedAssertions": ["茎突咽頭筋は喉頭挙上に関与しない。", "公式がアを認めた解剖学的理由を推測して補う。", "輪状咽頭筋は嚥下時も収縮を続けて食道入口部を閉じる。"],
+      "evidenceLimits": ["大学の解剖表とUCLAの臨床説明を教育・臨床資料として扱い、すべて原著研究と呼ばない。", "Sage既知拒否先の再取得を条件としない。"],
+      "sourceReview": "../review83/review.json"
+    }
+  ],
+  "accessStopsRespected": ["ST-Toolbox HTTP403", "PMC CAPTCHA", "Sage HTTP403", "MDPI429", "丸善 robots refusal"],
+  "remainingBlocker": "69アの内容根拠不足、35の年齢一般化の根拠不足、83アの公式採点と解剖作用の不整合。独立QCは解説改善を認めるが、3問とも出題除外を維持する。"
+}

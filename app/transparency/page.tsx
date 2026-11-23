@@ -15,8 +15,8 @@ import { buildWebPageNode } from "@/lib/seo/structured-data";
 const TRANSPARENCY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "default",
   title: "運営の透明性レポート",
-  subtitle: "月次更新",
-  body: "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献の証として。",
+  subtitle: "運営方針と公開指標",
+  body: "教材の確認範囲・取得できた運営指標・未確認事項を公開。",
 }).toString()}`;
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "運営の透明性レポート | 過去問AI",
     description:
-      "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献プロジェクトとしての月次レポート。",
+      "教材の確認範囲・取得できた運営指標・未確認事項を公開しています。",
     url: `${SITE_BASE_URL}/transparency`,
     type: "website",
     siteName: SITE_NAME,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "運営の透明性レポート | 過去問AI",
     description:
-      "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献プロジェクトとしての月次レポート。",
+      "教材の確認範囲・取得できた運営指標・未確認事項を公開しています。",
     images: [TRANSPARENCY_OG_URL],
   },
 };
@@ -115,7 +115,7 @@ const REPORTS = [
   },
 ];
 
-export const revalidate = 300;
+export const revalidate = 0;
 
 export default async function TransparencyPage() {
   const domains = getHomeDirectory();
@@ -197,7 +197,7 @@ export default async function TransparencyPage() {
             </li>
             <li>
               <strong>シェア・フィードバックと月額プランで運営を支える。</strong>
-              個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。AI コパイロットは月額対象外で、連続利用や大量送信には適正利用制限があります。
+              個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習には1日10問の無料枠と税込980円の月額プランがあります。{aiAccessClaimsEnabled() ? AI_ACCESS_DESCRIPTION : LEGACY_AI_COPY}
             </li>
             <li>
               <strong>意思決定を公開する。</strong>
@@ -385,3 +385,4 @@ function MetricCard({ label, value, sub }: { label: string; value: string; sub?:
     </Card>
   );
 }
+import { AI_ACCESS_DESCRIPTION, LEGACY_AI_COPY, aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";

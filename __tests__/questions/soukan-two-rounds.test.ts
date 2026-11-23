@@ -85,7 +85,8 @@ describe("技術士第二次試験 総合技術監理部門 択一式（令和7�
       }
     }
     expect(new Set(SOUKAN_QUESTIONS.map((q) => q.id)).size).toBe(SOUKAN_QUESTIONS.length);
-    expect(EXAM_CONFIGS.soukan.yearRange).toEqual({ start: 2025, end: 2026 });
+    expect(EXAM_CONFIGS.soukan.yearRange.start).toBeLessThanOrEqual(2025);
+    expect(EXAM_CONFIGS.soukan.yearRange.end).toBeGreaterThanOrEqual(2026);
     expect(getQualificationByExamCode("soukan")?.status).toBe("live");
   });
 

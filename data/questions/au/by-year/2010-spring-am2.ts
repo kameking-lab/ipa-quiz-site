@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "総合テストは、システムが実際の業務活動の中で正しく機能するかを検証する段階です。そのため、実際の業務シナリオを想定したテストデータを用いて、システムが実運用環境で問題なく動作するかを確認することが重要です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム監査基準において、監査人は監査の目的に適合した監査報告書を作成し、その結果を依頼者に速やかに提出することが求められます。これは、監査結果を適切に伝達し、改善活動に繋げるための重要なプロセスです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "物理的セキュリティ対策の監査では、実際に現場で物理的な管理状況がルール通りに行われているかを確認することが重要です。ノートPCの施錠保管は物理的な盗難・紛失防止策であり、視察による現物確認は有効な監査手続です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "請負契約でも、受託側要員が委託側の物理的・論理的情報資産にアクセスする可能性がある場合、委託側は自社のセキュリティ確保のためにアクセス管理の適切性を監査できる権利と責任を持つべきです。これを契約で明確に定めることは、情報セキュリティリスク管理の観点から重要です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -114,12 +118,19 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     "question": "表はコンピュータを利用して行うシステム監査技法についてまとめたものである。(1)～(4)の組合せとして適切なものはどれか。",
     "choices": {
       "ア": "(1) 稼働中オンラインシステムのテスト (2) プログラムの検証 (3) データの抽出 (4) プログラムロジックの分析",
-      "イ": "(1) 稼働中オンラインシステムのテスト (2) プログラムロジックの分析 (3) データの抽出 (4) プログラムの検証",
+      "イ": "(1) 稼働中オンラインシステムのテスト (2) プログラムロジックの分析 (3) プログラムの検証 (4) データの抽出",
       "ウ": "(1) データの抽出 (2) 稼働中オンラインシステムのテスト (3) プログラムロジックの分析 (4) プログラムの検証",
       "エ": "(1) データの抽出 (2) プログラムロジックの分析 (3) 稼働中オンラインシステムのテスト (4) プログラムの検証"
     },
     "answer": "イ",
-    "explanation": "コンピュータを利用したシステム監査技法において、(1)稼働中オンラインシステムのテストは、システムを停止させずに実際の運用状況で監査を行う手法です。これにより、リアルタイムでの処理や応答性を評価できます。\n\n(2)プログラムロジックの分析は、プログラムのソースコードや設計書をレビューし、処理手順や判断ロジックの妥当性、網羅性を確認する技法です。これは、プログラムが意図した通りに動作するかを評価するために不可欠です。\n\n(3)データの抽出は、監査対象システムから必要なデータを抜き出す作業であり、後続の分析の基礎となります。\n\n(4)プログラムの検証は、プログラムが仕様通りに機能することを確認するためのテストであり、単体テストや結合テストなどが含まれます。\n\n選択肢アは、(2)と(4)が入れ替わっており、プログラムロジックの分析が検証よりも先に行われるべき場合があること、また(3)と(4)も逆であり、データ抽出が検証の前提となるため不適切です。\n選択肢ウは、(1)と(3)が入れ替わっており、稼働中オンラインシステムのテストは通常、データ抽出やプログラム検証など、より詳細な分析の後に行われることが多いため不適切です。(4)と(3)も逆であり、データ抽出がプログラム検証の前提となります。\n選択肢エは、(2)と(3)が入れ替わっており、プログラムロジックの分析よりも先にデータを抽出することが一般的であり、また(3)と(1)が逆であり、稼働中オンラインシステムのテストは、プログラム検証などの準備が整った後に行われることが多いため不適切です。\nしたがって、(1)稼働中オンラインシステムのテスト、(2)プログラムロジックの分析、(3)データの抽出、(4)プログラムの検証の順序が、コンピュータを利用したシステム監査技法の一般的な流れとして最も適切であり、正解はイとなります。",
+    "explanation": "表の（1）はITF法による稼働中オンラインシステムのテストです。（2）は並行シミュレーション法、スナップショット法、トレーシング法によるプログラムロジックの分析です。（3）はコード比較法によるプログラムの検証、（4）は汎用監査ソフトウェア法や組込み監査モジュール法によるデータの抽出です。したがってイです。",
+    "choiceExplanations": {
+      "ア": "誤りです。（1）のITF法の対応は合っていますが、コード比較法の列（3）をデータ抽出としている点が逆です。コードの比較はプログラムを検証するために行います。",
+      "イ": "正しいです。ITF法は稼働中のシステムをテストし、トレーシング法などはロジックを分析します。コード比較法はプログラムを検証し、汎用監査ソフトウェア法などはデータを抽出します。",
+      "ウ": "誤りです。（1）に対応するITF法は、運用中のシステムにテストデータを通す技法です。（1）をデータ抽出とすると、テストと証拠の取出しを混同します。",
+      "エ": "誤りです。コード比較法が該当する（3）はプログラムの検証です。稼働中のオンラインシステムをテストするのは、ITF法に印のある（1）です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "システム監査における監査証跡とは、監査対象システムの処理過程を後から検証・追跡できるように記録された一連の情報やその仕組みを指します。これにより、データの入力から出力までの流れや、誰がいつどのような操作を行ったかなどを確認し、システムの適切性を評価することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム管理基準における運用業務でのソフトウェア管理には、ソフトウェア資産の適切な利用を促し、違法コピーなどの不正利用を防止する活動が含まれます。これには、従業員への著作権遵守に関する教育や意識啓発が重要な要素となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム監査は、まず「何を評価するのか」という監査目的を明確に設定することから始まります。次に、その目的を達成するために監査対象業務の現状を把握し、具体的な監査手続書を作成して証拠を収集し、最終的にコントロールの評価と結論を導き出します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "情報システムの可監査性とは、情報システムが監査人による評価や検証を受けやすいように設計・運用されている特性を指します。具体的には、監査証跡の記録、適切なアクセス制御、変更履歴の管理などにより、情報システム内のコントロールの有効性を容易に監査できる状態であることを意味します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "情報セキュリティ監査基準は、情報セキュリティ監査業務の品質を保証し、監査が有効かつ効率的に実施されることを目的とした、監査人のための行為規範です。これにより、監査人は客観性、独立性、専門家としての正当な注意義務などを守りながら、情報セキュリティに対する適切な評価と助言を提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ベンダ選定プロセスにおいて、特定のITベンダにのみRFP発行後に個別に追加資料を提供することは、他のベンダとの公平性を損ない、透明性に欠ける行為です。このような情報提供は、すべての参加ベンダに対して一律に行われるべきであり、そうでない場合は指摘事項となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "業務処理統制とは、個々のアプリケーションシステムにおいて、データの入力から処理、出力に至る各段階で、データの正確性、完全性、正当性を確保するためのコントロールを指します。販売管理システムにおける入力データの正当性チェック機能は、まさに特定の業務処理においてデータの品質を担保する機能であり、業務処理統制に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "統制活動とは、経営者の命令や指示が組織内で適切に実行されることを保証するために定められる方針や手続きのことです。具体的には、承認・認可、職務分掌、資産の保全、パフォーマンスレビューなどが含まれ、業務活動に組み込まれて機能します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "内部統制の固有の限界とは、どんなに適切な統制を導入しても、完全にリスクを排除できない根本的な制約を指します。ITの新技術導入など、予期せぬ状況の変化によって従来のコントロールが有効でなくなる可能性は、このような固有の限界の一例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "取引データに連番を付与し、入力後に連番が連続しているかを確認する連番チェックは、データ入力の抜けや漏れを検出するための効果的なコントロールです。これにより、すべての取引データがシステムに入力されたことを確認し、入力漏れによるデータの欠落を防ぐことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITサービスの可用性は、ビジネスの継続性にとって非常に重要ですが、100%の可用性を目指すことはコスト面や技術面で現実的ではありません。そのため、ビジネスの要求事項やリスク許容度に基づき、必要なレベルの可用性（サービスレベル）を設定し、それを満たすことを目標とすべきです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "不正アクセス禁止法は、他人の認証情報（ID・パスワードなど）を不正に利用してコンピュータにアクセスする行為を「不正アクセス行為」として禁止しています。社内の正規利用者でなくても、不正に入手したIDとパスワードを用いてサーバにアクセスすることは、この法律に違反する行為となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "労働者派遣法に基づく派遣契約では、派遣された労働者に対する業務の指示・命令は、派遣先企業（この場合はP氏が所属する会社）が直接行うことが定められています。これは、派遣先が派遣労働者の就業条件や業務内容について責任を持つためであり、適切な運用方法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -455,7 +479,8 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
       "エ": "連結グループに属する会社法監査対象会社の会計監査人によって構成される機関であり、連結グループに属する会社の監査役の活動を監査する。"
     },
     "answer": "ア",
-    "explanation": "会社法に基づく監査委員会は、委員会設置会社の機関であり、取締役および執行役の職務執行の適法性・妥当性を監査することを主な役割とします。また、会計監査人の選任・解任や報酬に関する議案の内容を決定する権限も持ち、企業のガバナンス強化に寄与します。",
+    "explanation": "出題当時の会社法における監査委員会は、委員会設置会社の機関であり、取締役及び執行役の職務の執行を監査します。また、株主総会に提出する会計監査人の選任・解任・不再任に関する議案の内容を決定します。アは、職務執行の監査と会計監査人の選任等に関する役割を説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CIO（最高情報責任者）は、経営層の一員として、経営戦略を深く理解し、それと連動する形で企業全体の情報化戦略を立案します。その主要な役割は、情報資源への投資が企業価値の最大化に貢献するよう、投資効果の最適化を図る戦略的なプランを策定することです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -503,7 +529,14 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
       "エ": "選択と和"
     },
     "answer": "ア",
-    "explanation": "正解はアです。関係データベースにおいて、複数の表を結合して結果を得る場合、まず結合条件に合致する行を抽出する「選択（Selection）」操作が行われます。さらに、結合後の結果から必要な列（属性）のみを取り出す「射影（Projection）」操作も必要となります。したがって、表XとYを結合して結果Zを得る演算は、選択と射影の組み合わせとなります。\n\nイは、射影は正しいですが、和（Union）は、同じ構造を持つ2つの表の行を重複なく結合する演算であり、単純な表の結合とは異なります。ウは、選択のみでは不要な列まで含まれてしまうため、結果Zに必要な列だけを取り出すという要件を満たせません。エは、選択は含まれますが、和も不適切であり、射影操作が欠けています。",
+    "explanation": "XとYを学部コードで結合した後、学部名が情報学部の行だけを残す選択を行うと、学生番号2と4の2行が残ります。学部名、学生番号、氏名の3列だけを取り出す射影を行うと、学部コードが除かれてZになります。したがってアです。",
+    "choiceExplanations": {
+      "ア": "正しいです。結合結果から情報学部の2行を残すのが選択で、学部名、学生番号、氏名の3列を取り出すのが射影です。Zには両方が必要です。",
+      "イ": "誤りです。射影で列を絞れますが、和は同じ構造を持つ関係の行を合わせる演算です。情報学部に該当する行だけを残すのは選択です。",
+      "ウ": "誤りです。選択だけで情報学部の2行は残せますが、結合に使った学部コードの列が残ります。図のZと同じ3列にするには射影も必要です。",
+      "エ": "誤りです。選択は情報学部の行を絞る操作です。学部コードを外して必要な3列だけを得るには、行を追加する和ではなく射影を行います。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CSMA/CD（搬送波感知多重アクセス/衝突検出）は、イーサネットで採用される媒体アクセス制御方式です。この方式では、各ステーションはまず伝送路が空いているかを確認（キャリア検知）し、もし同時に送信してデータが衝突した場合、その衝突を検知して一定時間待った後にデータを再送します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム管理基準は、情報システム戦略に基づき、効果的な情報システム投資のため、またリスクを低減するためのコントロールを適切に整備・運用するための実践規範です。経済産業省が策定し、情報システムの適切な管理・運用を促進します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BPMNは、ビジネスプロセスを標準的かつ統一的な記法で図示するためのモデリング記法です。これにより、業務の流れや関係を視覚的に明確にし、関係者間での共通理解を深めることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const AU_QUESTIONS_2010_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "プロダクトポートフォリオマネジメント(PPM)において、市場成長率が低く、相対的市場占有率が高い事業は「金のなる木（Cash Cows）」と位置付けられます。これらの事業は安定したキャッシュフローを生み出し、他の成長分野への投資源となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_1/2010h-8h_au_am2_qs.pdf",
     "license": "IPA-public"

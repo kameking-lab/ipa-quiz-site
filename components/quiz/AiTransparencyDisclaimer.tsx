@@ -1,40 +1,48 @@
-import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import { ipaSourceLabel, isPdfDocumentUrl } from "@/lib/exam-config";
+import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel, isPdfDocumentUrl } from "@/lib/exam-config";
+import { questionReferenceLabel } from "@/lib/questions/reference-label";
+import type { Question } from "@/lib/questions/types";
 
-interface Props {
-  lastUpdatedISO?: string;
-  lastUpdatedJa?: string;
-  sourcePdfUrl: string;
-  answerPdfUrl: string;
-  sourceAttribution?: string;
-}
+export function AiTransparencyDisclaimer({ question }: { question: Question }) {
+  const sourceUrl = getSafePdfUrl(question.sourceArchiveUrl ?? question.sourcePdfUrl);
+  const sourceLabel = question.sourceArchiveUrl ? "公式PDF（保存版）"
+    : isPdfDocumentUrl(sourceUrl) ? "公式問題PDF" : "公式問題の公開ページ";
+  const documentLabel = ipaSourceLabel(sourceUrl, "question");
+  const answerUrl = getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerArchiveUrl ?? question.sourceAnswerUrl);
+  const separateAnswer = answerUrl !== sourceUrl;
+  const references = [...new Set(question.officialReferenceUrls)].filter(
+    (url) => url !== sourceUrl && url !== question.sourcePdfUrl && url !== answerUrl && url !== question.sourceAnswerUrl,
+  );
 
-/**
- * Compact official-source block under the explanation (CLAUDE.md §8):
- * the official question/answer links with their publisher label, the
- * per-question attribution and one link to the explanation policy.
- */
-export function AiTransparencyDisclaimer({
-  sourcePdfUrl,
-  answerPdfUrl,
-  sourceAttribution,
-}: Props) {
-  const linkClass = "inline-flex min-h-11 w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary";
   return (
-    <div role="group" aria-label="AI生成の解説に関する詳細" className="mt-4 text-xs text-muted-foreground">
-      <div className="flex flex-wrap gap-x-4">
-        <a href={sourcePdfUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-          {isPdfDocumentUrl(sourcePdfUrl) ? "公式問題PDF" : "公式問題の公開ページ"}（{ipaSourceLabel(sourcePdfUrl, "question")}）
-          <ExternalLink className="h-3 w-3" aria-hidden="true" />
-        </a>
-        <a href={answerPdfUrl} target="_blank" rel="noopener noreferrer" className={linkClass}>
-          {isPdfDocumentUrl(answerPdfUrl) ? "公式正答PDF" : "公式正答の公開ページ"}（{ipaSourceLabel(answerPdfUrl, "answer")}）
-          <ExternalLink className="h-3 w-3" aria-hidden="true" />
-        </a>
-        <Link href="/transparency#static-explanations" className={linkClass}>静的解説の確認方針</Link>
-      </div>
-      {sourceAttribution && <p>{sourceAttribution}</p>}
+    <div id="question-source" role="group" aria-label="出典" className="mt-4 scroll-mt-20 text-xs text-muted-foreground">
+      <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1 font-medium underline underline-offset-4">
+        {sourceLabel}{documentLabel === "問題PDF" ? "" : `（${documentLabel}）`}
+        <ExternalLink className="h-3 w-3" aria-hidden="true" />
+      </a>
+      {question.sourceAttribution && <p>{question.sourceAttribution}</p>}
+      {(separateAnswer || references.length > 0) && (
+        <details className="mt-2">
+          <summary className="min-h-11 cursor-pointer py-3">出典の詳細</summary>
+          <ul className="space-y-2">
+            {separateAnswer && (
+              <li>
+                <a href={answerUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                  {question.sourceAnswerArchiveUrl ? "公式正答PDF（保存版）"
+                    : isPdfDocumentUrl(answerUrl) ? "公式正答PDF" : "公式正答の公開ページ"}
+                </a>
+              </li>
+            )}
+            {references.map((url) => (
+              <li key={url}>
+                <a href={url} target="_blank" rel="noopener noreferrer" className="underline">
+                  {questionReferenceLabel(question, url)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
     </div>
   );
 }

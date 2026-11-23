@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "expectedOriginals": 400,
+  "officialAnswerEntries": 400,
+  "excludedOriginals": 2,
+  "originalQuestionTextCaptured": 7,
+  "manuscripts": 5,
+  "choiceExplanations": 25,
+  "practiceEligible": 2,
+  "localReviewPending": 3,
+  "missingOriginals": 393,
+  "publicIncrement": 0,
+  "publicationGo": false,
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "exitCode": 0
+  },
+  "lint": {
+    "scope": "All changed TypeScript files; last modified source labels and tests rechecked",
+    "exitCode": 0
+  },
+  "validation": {
+    "command": "pnpm validate:questions --exam=gengo-chokakushi",
+    "count": 2,
+    "ok": 2,
+    "fail": 0,
+    "warn": 0
+  },
+  "tests": {
+    "uniquePassed": 47,
+    "files": 6,
+    "suites": [
+      "__tests__/lib/gengo-registration.test.ts",
+      "__tests__/questions/gengo-notice-ready.test.ts",
+      "__tests__/lib/exam-config-integrity.test.ts",
+      "__tests__/lib/question-source-label.test.ts",
+      "__tests__/questions/get-questions.test.ts",
+      "__tests__/questions/medical44-prepublication.test.ts"
+    ],
+    "note": "Existing all-exam loader first exceeded the 15-second timeout under parallel host load. Retried with --testTimeout=60000 --maxWorkers=1; all seven loader tests and all seven final registration tests passed."
+  },
+  "build": {
+    "executed": false,
+    "note": "The qualification remains unpublished. Full production static generation was not run for this blocked source-intake checkpoint."
+  },
+  "sourceChecks": [
+    "Seven official notice original pages and four final-answer pages visually inspected",
+    "Official notice accepted answer sets crosschecked against the canonical 400-entry ledger",
+    "400 IDs partition into 393 missing originals, two official exclusions, and five explained manuscripts",
+    "Either single alternate answer is accepted; selecting both is rejected",
+    "Both public registries remain empty for this qualification",
+    "Three locally unresolved manuscripts are removed from the practice candidate export"
+  ]
+}

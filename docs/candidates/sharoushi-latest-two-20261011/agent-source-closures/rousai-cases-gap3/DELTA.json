@@ -1,0 +1,26 @@
+{
+  "targetCases": ["2025-rousai-q2-イ", "2025-rousai-q2-ウ", "2025-rousai-q2-エ", "2026-rousai-q1-ア", "2026-rousai-q1-イ", "2026-rousai-q1-ウ", "2026-rousai-q1-エ"],
+  "asOf": {"2025": "2025-04-11", "2026": "2026-04-10"},
+  "newSources": [
+    {"id":"ric-hat-case","date":"publication date not shown; pre-cutoff publication unverified","url":"https://www.rousai-ric.or.jp/tabid/566/Default.aspx","receipt":"ric-hat-case.html.receipt.json","sha256":"c90ed56375e9c2802e048e878970b2a868a43077f43c0e907f31d5b70c311b79","classification":"RIC original FAQ; not the original administrative case decision"},
+    {"id":"ric-direct-trip","date":"publication date not shown; pre-cutoff publication unverified","url":"https://www.rousai-ric.or.jp/tabid/577/Default.aspx","receipt":"ric-direct-trip.html.receipt.json","sha256":"0857263bc180780c34666feef58ea8ca9f5a49f66749e40fdd242d0c5895f428","classification":"RIC original FAQ; not the historical notice"},
+    {"id":"ric-direct-trip-detail","date":"publication date not shown; pre-cutoff publication unverified","url":"https://www.rousai-ric.or.jp/Portals/0/images/under/faq/017_04.pdf","receipt":"ric-direct-trip-detail.pdf.receipt.json","sha256":"d309fb48d167f136e6178031b67d9275a5e11b5df7ed64e02136e54d96878297","classification":"RIC supplementary explanation; not the historical notice"},
+    {"id":"ric-lightning","date":"publication date not shown; pre-cutoff publication unverified","url":"https://www.rousai-ric.or.jp/tabid/594/Default.aspx","receipt":"ric-lightning.html.receipt.json","sha256":"b653e5ba6bb710ab65f9a2b2882daa139de69498262b7e121c69383cf1db10d3","classification":"Different building-work lightning example"},
+    {"id":"ric-treatment-secondary","date":"publication date not shown; pre-cutoff publication unverified","url":"https://www.rousai-ric.or.jp/tabid/593/Default.aspx","receipt":"ric-treatment-secondary.html.receipt.json","sha256":"fc4cfa1697c97f60ce3ac18eb1f9cfd1bfcf699d108212cd54b830cac1d92627","classification":"Different treatment-trip injury with no causal relationship"},
+    {"id":"ric-company-event","date":"publication date not shown; pre-cutoff publication unverified","url":"https://www.rousai-ric.or.jp/tabid/592/Default.aspx","receipt":"ric-company-event.html.receipt.json","sha256":"5811acbe7fef47d5fb8444d7855456044abeca72cef84103c954786952e0d1cf","classification":"Different company sports event; analogous participation factors"},
+    {"id":"ric-company-event-detail","date":"publication date not shown; pre-cutoff publication unverified","url":"https://www.rousai-ric.or.jp/Portals/0/images/under/faq/032.pdf","receipt":"ric-company-event-detail.pdf.receipt.json","sha256":"4d7d65adb4b3c6c9c616cf5e0c24c920a44ffcbfcbad17904eed0f660683e125","classification":"Analogous voluntary company-event factors"},
+    {"id":"osaka-work-injury","date":"publication date not shown; pre-cutoff publication unverified","url":"https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/rousai_hoken/hourei_seido/gfusyo.html","receipt":"osaka-work-injury.html.receipt.json","sha256":"32006c8701584257c92553089734665a4d842203b66019449b3db62fa11731f1","classification":"Official Osaka Labor Bureau general rule; no target individual case"}
+  ],
+  "caseDeltas": [
+    {"case":"2025-rousai-q2-イ","newEvidence":"No same-case court judgment or public administrative republication found","status":"HOLD_ORIGINAL_SOURCE"},
+    {"case":"2025-rousai-q2-ウ","newEvidence":"No same-case court judgment or public administrative republication found","status":"HOLD_ORIGINAL_SOURCE"},
+    {"case":"2025-rousai-q2-エ","newEvidence":"RIC lightning FAQ concerns work on a wooden house; mountain vegetation-board case remains unverified","status":"HOLD_ORIGINAL_SOURCE"},
+    {"case":"2026-rousai-q1-ア","newEvidence":"Osaka Labor Bureau general business/private boundary and RIC voluntary company-event factors support a limited no-business-disaster inference. Same-case 1947-12-19 基発516 original absent. The vessel is 艀（はしけ）, not 鮫","status":"LIMITED_APPLICATION_CANDIDATE_ORIGINAL_HOLD"},
+    {"case":"2026-rousai-q1-イ","newEvidence":"RIC FAQ and PDF expressly support business-disaster characterization for a direct trip from home even on an ordinary commuting route, subject to reasonable route/time; the crossing accident and 1959 notice remain unverified","status":"LIMITED_APPLICATION_CANDIDATE_ORIGINAL_HOLD"},
+    {"case":"2026-rousai-q1-ウ","newEvidence":"RIC FAQ expressly says chasing a windblown hat while fixing a truck cover is a reflex incidental to work; its worker is the driver, while the exam case worker is the driver's assistant, so identity of underlying decision is not established","status":"LIMITED_ANALOGY_CANDIDATE_ORIGINAL_HOLD"},
+    {"case":"2026-rousai-q1-エ","newEvidence":"Question states donor-site weakening from treatment of work injury and physician-directed walking. This supports a limited causal-chain application; RIC treatment-trip case is distinguishable. Same-case 1963-09-30 基収6714 original absent","status":"LIMITED_APPLICATION_CANDIDATE_ORIGINAL_HOLD"}
+  ],
+  "individualPrimaryClosed": 0,
+  "questionPublicationReady": false,
+  "sharedFilesChanged": false
+}

@@ -1,0 +1,953 @@
+{
+  "sitting": "2022-upper",
+  "examDate": "2022-08-21",
+  "subject": "theory",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/third/qa/",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_a01.pdf",
+  "sourceAnswerPdfSha256": "8367761133c5a88e07c1cc1cfda2e996b3e92f4c8998ce0d1a7642f4e5c77974",
+  "sourcePacketSha256": "0dfce01ba80974d8606a2ae1b718c752754fac900c04cfcf80d9940084b3b843",
+  "questions": [
+    {
+      "id": "denken3-2022-upper-theory-q01",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 1,
+      "topic": "平行板コンデンサ",
+      "questionText": "面積がともに S [m²] で円形の二枚の電極板（導体平板）を、互いの中心が一致するように間隔 d [m] で平行に向かい合わせて置いた平行板コンデンサがある。電極板間は誘電率 ε [F/m] の誘電体で一様に満たされ、電極板間の電位差は電圧 V [V] の直流電源によって一定に保たれている。この平行板コンデンサに関する記述として誤っているものを一つ選べ。ただし、端効果は無視する。",
+      "choiceGroups": {
+        "1": "誘電体内の等電位面は、電極板と誘電体の境界面に対して平行である。",
+        "2": "コンデンサに蓄えられる電荷量は、誘電率が大きいほど大きくなる。",
+        "3": "誘電体内の電界の大きさは、誘電率が大きいほど小さくなる。",
+        "4": "誘電体内の電束密度の大きさは、電極板の単位面積当たりの電荷量の大きさに等しい。",
+        "5": "静電エネルギーは誘電体内に蓄えられ、電極板の面積を大きくすると静電エネルギーは増大する。"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "3",
+          "explanation": "電位差と極板間距離が一定なので、電界 E＝V/d は誘電率を変えても一定です。誘電率が大きいと増えるのは電束密度 D＝εE と静電容量 C＝εS/d です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "端効果を無視すると電界は極板に垂直で、等電位面は極板に平行です。",
+            "2": "Q＝CV＝εSV/d なので、電圧を保てば誘電率とともに増えます。",
+            "3": "E は V/d で定まります。誘電率で変わるのは D や C です。",
+            "4": "極板の自由電荷の面密度は Q/S＝εV/d で、誘電体内の D と一致します。",
+            "5": "W＝CV²/2 により、極板面積が増えて C が増すと W も増えます。"
+          }
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken3/2022-upper/theory/page-04.jpg",
+          "sha256": "5f2af02074abe68d3da1a59f35b5c8fa3997476358782751f73f533c0b34872f"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "71fbf0e0f0b09007efa4e5b9945b7f8e57323da68f74e001f40a260bd5aabe10"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q02",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 2,
+      "topic": "クーロン力の合成",
+      "questionText": "真空中において、図に示すように一辺の長さが1 mの正三角形の各頂点に1 C又は−1 Cの点電荷がある。正の点電荷に働く力の大きさ F₁ [N] と、負の点電荷に働く力の大きさ F₂ [N] の比 F₂/F₁ として最も近いものを選べ。",
+      "choiceGroups": {
+        "1": "√2",
+        "2": "1.5",
+        "3": "√3",
+        "4": "2",
+        "5": "√5"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "3",
+          "explanation": "一対の力の大きさを F とすると、負電荷に働く2力は60°、正電荷に働く2力は120°をなします。余弦定理から F₂＝√3F、F₁＝F となるため比は√3です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "同じ大きさの力二つを60°と120°でそれぞれ合成すると √3 になり、√2 とは一致しません。",
+            "2": "同じ大きさの力二つを60°と120°でそれぞれ合成すると √3 になり、1.5 とは一致しません。",
+            "3": "同じ大きさの力二つを60°と120°でそれぞれ合成すると √3 になります。",
+            "4": "同じ大きさの力二つを60°と120°でそれぞれ合成すると √3 になり、2 とは一致しません。",
+            "5": "同じ大きさの力二つを60°と120°でそれぞれ合成すると √3 になり、√5 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "正三角形の上の頂点に−1 C、下の左右にそれぞれ＋1 Cがある。各辺は1 m。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 5,
+          "url": "/images/denken3/2022-upper/theory/page-05.jpg",
+          "sha256": "2ab314837bb20b82fe6e1ada7b033bb1085fb587f2403bac8d68962c75b1d901"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "5dc24f191a02a11cd838952dcbd68da76f91542d74c4dce1af8fbd290d570637"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q03",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 3,
+      "topic": "結合係数",
+      "questionText": "図のような環状鉄心に巻かれたコイルがある。端子1–2間の自己インダクタンスは40 mH、端子3–4間は10 mHである。端子2と3を接続した状態で端子1–4間を測ると86 mHであった。端子1–2間と端子3–4間のコイルの結合係数 k として最も近いものを選べ。",
+      "choiceGroups": {
+        "1": "0.81",
+        "2": "0.90",
+        "3": "0.95",
+        "4": "0.98",
+        "5": "1.8"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "2",
+          "explanation": "和の50 mHより実測が大きいので加極性です。86＝40＋10＋2M より M＝18 mH です。k＝M/√(40×10)＝18/20＝0.90となります。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "相互インダクタンス18 mHを自己インダクタンスの幾何平均20 mHで割って計算すると 0.90 になり、0.81 とは一致しません。",
+            "2": "相互インダクタンス18 mHを自己インダクタンスの幾何平均20 mHで割って計算すると 0.90 になります。",
+            "3": "相互インダクタンス18 mHを自己インダクタンスの幾何平均20 mHで割って計算すると 0.90 になり、0.95 とは一致しません。",
+            "4": "相互インダクタンス18 mHを自己インダクタンスの幾何平均20 mHで割って計算すると 0.90 になり、0.98 とは一致しません。",
+            "5": "相互インダクタンス18 mHを自己インダクタンスの幾何平均20 mHで割って計算すると 0.90 になり、1.8 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "環状鉄心の左側の巻線が端子1・2、右側の巻線が端子3・4につながる。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 6,
+          "url": "/images/denken3/2022-upper/theory/page-06.jpg",
+          "sha256": "1cbe75d854c35b150af27546194d2734c2f532e07fb121089e9410c78326f1e9"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "cef140a8d7f3c926635beae8ca105d0456f9b11a287c92b05566be5dfb9d9a64"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q04",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 4,
+      "topic": "運動する導体の起電力",
+      "questionText": "図1のように、磁束密度 B＝0.02 T の一様な磁界の中に長さ0.5 mの直線状導体が磁界と直角に置かれている。図2のように導体が磁界と直角を維持しつつ磁界に対して60°の角度で、二重線の矢印の方向に0.5 m/sで移動するときの誘導起電力 e [mV] として最も近いものを選べ。静止座標系から見たローレンツ力による起電力とする。",
+      "choiceGroups": {
+        "1": "2.5",
+        "2": "3.0",
+        "3": "4.3",
+        "4": "5.0",
+        "5": "8.6"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "3",
+          "explanation": "速度の磁界に垂直な成分は 0.5 sin60° m/s です。導体は速度と磁束密度の外積の方向に沿うので、e＝0.02×0.5×0.5 sin60°＝0.00433 V、約4.3 mVです。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "速さの磁界に垂直な成分に磁束密度と導体長を掛けて計算すると 4.3 になり、2.5 とは一致しません。",
+            "2": "速さの磁界に垂直な成分に磁束密度と導体長を掛けて計算すると 4.3 になり、3.0 とは一致しません。",
+            "3": "速さの磁界に垂直な成分に磁束密度と導体長を掛けて計算すると 4.3 になります。",
+            "4": "速さの磁界に垂直な成分に磁束密度と導体長を掛けて計算すると 4.3 になり、5.0 とは一致しません。",
+            "5": "速さの磁界に垂直な成分に磁束密度と導体長を掛けて計算すると 4.3 になり、8.6 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "図1では磁界と導体の長手方向が直角。図2の移動方向と磁界のなす角は60°。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 7,
+          "url": "/images/denken3/2022-upper/theory/page-07.jpg",
+          "sha256": "49b1662fde211730db8100c87525ef82809552e1f5272142dfe3876a015de102"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "13d6adaac35e99bdeb1614c66ea0486e07e026c932e89034e1c530269da47f78"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q05",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 5,
+      "topic": "直流抵抗回路",
+      "questionText": "図1のように抵抗 R₁＝1 Ω、R₂ [Ω] と直流電源 V [V] の回路がある。R₂ の両端は100 V、流れる電流 I₂ は5 Aであった。図2のように R₃＝5 Ω を接続したとき、R₃ に流れる I₃ [A] として最も近いものを選べ。",
+      "choiceGroups": {
+        "1": "4.2",
+        "2": "16.8",
+        "3": "20",
+        "4": "21",
+        "5": "26.3"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "2",
+          "explanation": "R₂＝100/5＝20 Ω、電源電圧は100＋1×5＝105 Vです。並列部分 R₂∥R₃＝4 Ω なので、その両端は105×4/(1＋4)＝84 Vです。I₃＝84/5＝16.8 Aとなります。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "R₂とR₃の並列部分に実際に加わる84 Vを5 Ωで割って計算すると 16.8 になり、4.2 とは一致しません。",
+            "2": "R₂とR₃の並列部分に実際に加わる84 Vを5 Ωで割って計算すると 16.8 になります。",
+            "3": "R₂とR₃の並列部分に実際に加わる84 Vを5 Ωで割って計算すると 16.8 になり、20 とは一致しません。",
+            "4": "R₂とR₃の並列部分に実際に加わる84 Vを5 Ωで割って計算すると 16.8 になり、21 とは一致しません。",
+            "5": "R₂とR₃の並列部分に実際に加わる84 Vを5 Ωで割って計算すると 16.8 になり、26.3 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "図1ではR₁とR₂が直列。図2のR₃はR₂と並列で、R₁はその並列部分に直列。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken3/2022-upper/theory/page-08.jpg",
+          "sha256": "d9afd903ec8522dfe80f9d65a0541a953c47fcd417a3514391373027bbfec9a3"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "c0e8bbc6a2e0ae5f7c705de1b9283d75c42526f3e5a3dde41ecffbe539d5a0be"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q06",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 6,
+      "topic": "電荷保存とコンデンサ",
+      "questionText": "図1のように静電容量 C₁＝4 μF、C₂＝2 μF のコンデンサを直列に接続し、直流電圧6 Vで充電する。電源から切り離し、電荷を保持したまま同じ極性の端子同士を図2のように並列接続するとき、端子間電圧 V [V] として最も近いものを選べ。",
+      "choiceGroups": {
+        "1": "2/3",
+        "2": "4/3",
+        "3": "8/3",
+        "4": "16/3",
+        "5": "32/3"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "3",
+          "explanation": "直列合成容量は4/3 μF、各コンデンサの正極の電荷は8 μCです。同極性の並列接続では正極側に16 μCあり、合成容量は6 μFです。V＝16/6＝8/3 Vです。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "正極に集まる16 μCを並列合成容量6 μFで割って計算すると 8/3 になり、2/3 とは一致しません。",
+            "2": "正極に集まる16 μCを並列合成容量6 μFで割って計算すると 8/3 になり、4/3 とは一致しません。",
+            "3": "正極に集まる16 μCを並列合成容量6 μFで割って計算すると 8/3 になります。",
+            "4": "正極に集まる16 μCを並列合成容量6 μFで割って計算すると 8/3 になり、16/3 とは一致しません。",
+            "5": "正極に集まる16 μCを並列合成容量6 μFで割って計算すると 8/3 になり、32/3 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "図1の二つのコンデンサを切り離し、図2では両方の正極を一緒に、負極を一緒に接続する。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 9,
+          "url": "/images/denken3/2022-upper/theory/page-09.jpg",
+          "sha256": "b7e73da7aca1fdeee29c3a4ed8a8017ab5f0f6b6fdb303353944400ac608e8f0"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "1305a64e96b2564b8cae1d2594fa8cee921ff37593a09b94ed678c8d7355c56a"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q07",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 7,
+      "topic": "対称な抵抗回路",
+      "questionText": "図の6個の抵抗を接続した回路で、ab端子間の合成抵抗は0.6 Ωであった。抵抗 Rₓ [Ω] として最も近いものを選べ。",
+      "choiceGroups": {
+        "1": "1.0",
+        "2": "1.2",
+        "3": "1.5",
+        "4": "1.8",
+        "5": "2.0"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "1",
+          "explanation": "左右の中点は同電位なので、水平の2 Ωに電流は流れません。左右の枝の合成は (1＋2)∥(1＋2)＝1.5 Ω で、中央の Rₓ と並列です。1/0.6＝1/1.5＋1/Rₓ より、Rₓ＝1 Ω です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "左右二枝と中央枝の合成抵抗が0.6 Ωになるように計算すると 1.0 になります。",
+            "2": "左右二枝と中央枝の合成抵抗が0.6 Ωになるように計算すると 1.0 になり、1.2 とは一致しません。",
+            "3": "左右二枝と中央枝の合成抵抗が0.6 Ωになるように計算すると 1.0 になり、1.5 とは一致しません。",
+            "4": "左右二枝と中央枝の合成抵抗が0.6 Ωになるように計算すると 1.0 になり、1.8 とは一致しません。",
+            "5": "左右二枝と中央枝の合成抵抗が0.6 Ωになるように計算すると 1.0 になり、2.0 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "端子a・bの間に三つの縦の枝があり、左右は上側1 Ω・下側2 Ω、中央にはRₓがある。左右の中点間の2 Ωは中央枝と接続していない。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken3/2022-upper/theory/page-10.jpg",
+          "sha256": "438ee524e92adddda15211adf3f03f706eecc0c0ab6f4fa5ef65c70964179230"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "6f851673561cb8a03800bdfd4c3f8206543cd0b7af27a0285894e082f89c142c"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q08",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 8,
+      "topic": "RL直列回路の有効電力",
+      "questionText": "図のように、周波数 f [Hz] の正弦波交流電圧 E [V] の電源に、R [Ω] の抵抗、インダクタンス L [H] のコイルとスイッチ S を接続した回路がある。Sを開いているときの消費電力は、閉じているときの消費電力の1/2である。L [H] を表す式を選べ。",
+      "choiceGroups": {
+        "1": "2πfR",
+        "2": "R/(2πf)",
+        "3": "2πf/R",
+        "4": "(2πf)²/R",
+        "5": "R/(πf)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "2",
+          "explanation": "閉じるとコイルは短絡され、P閉＝E²/R です。開くと直列RL回路なので P開＝E²R/(R²＋(2πfL)²) です。比1/2から 2πfL＝R、従って L＝R/(2πf) です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "リアクタンス X_L＝2πfL を L について解くには、角周波数を掛けるのではなく割ります。",
+            "2": "L＝R/(2πf) を代入すると X_L＝R となり、開閉時の電力比は1/2です。",
+            "3": "角周波数を抵抗で割った式は求めるインダクタンスの次元と一致しません。",
+            "4": "電力比の式に二乗が出ますが、リアクタンスを求める段階で平方根を取ります。",
+            "5": "この値を代入すると X_L＝2R となるため、開閉時の電力比は1/5になります。"
+          }
+        }
+      ],
+      "figures": [
+        "R と L が直列。スイッチSはLと並列で、閉じるとコイルを短絡する。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 11,
+          "url": "/images/denken3/2022-upper/theory/page-11.jpg",
+          "sha256": "8aaf47756d76a634b08422e80a58004875b5f3aaac4f3ab21c247786075ae8be"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "bc1e8170014a65fc2656f81bd706b952b2e402a7b7b632688521832225000986"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q09",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 9,
+      "topic": "RLC直列共振",
+      "questionText": "図のように、5 Ω の抵抗、200 mH のコイル、20 μF のコンデンサを直列に接続し、正弦波交流電圧 E [V] を加えた。電流が最大になる周波数で、コイル両端の電圧の大きさは抵抗両端の電圧の大きさの何倍か。最も近いものを選べ。",
+      "choiceGroups": {
+        "1": "5",
+        "2": "10",
+        "3": "15",
+        "4": "20",
+        "5": "25"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "4",
+          "explanation": "直列共振では ωL＝1/(ωC) です。X_L＝√(L/C)＝√(0.2/(20×10⁻⁶))＝100 Ω なので、電流が共通のコイルと抵抗の電圧比は X_L/R＝100/5＝20です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "共振時のリアクタンス100 Ωを抵抗5 Ωで割って計算すると 20 になり、5 とは一致しません。",
+            "2": "共振時のリアクタンス100 Ωを抵抗5 Ωで割って計算すると 20 になり、10 とは一致しません。",
+            "3": "共振時のリアクタンス100 Ωを抵抗5 Ωで割って計算すると 20 になり、15 とは一致しません。",
+            "4": "共振時のリアクタンス100 Ωを抵抗5 Ωで割って計算すると 20 になります。",
+            "5": "共振時のリアクタンス100 Ωを抵抗5 Ωで割って計算すると 20 になり、25 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "5 Ω、200 mH、20 μFの三つの素子と交流電源は同じ枝に直列に並ぶ。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken3/2022-upper/theory/page-12.jpg",
+          "sha256": "3f542315ad75d17c27f3d998173ec7aa99335676fc687719e9ec52e0c8f0425c"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "61afe49a7c64d38b0649b3cbd05fd129ca1eb47a84227ec79b5f41e9ec20764b"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q10",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 10,
+      "topic": "コンデンサ接続時のエネルギー",
+      "questionText": "図の回路でSが開いているとき、C₁＝4 mF の電荷は Q₁＝0.3 C、C₂＝2 mF の電荷は Q₂＝0 C である。Sを閉じ、十分時間が経過して過渡現象が終了するまでに抵抗 R [Ω] で消費される電気エネルギー [J] として最も近いものを選べ。",
+      "choiceGroups": {
+        "1": "1.25",
+        "2": "2.50",
+        "3": "3.75",
+        "4": "5.63",
+        "5": "7.50"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "3",
+          "explanation": "接続前のエネルギーは0.3²/(2×0.004)＝11.25 J、接続後は電荷の合計を0.006 Fで蓄えるので0.3²/(2×0.006)＝7.50 Jです。抵抗で消費したのは差の3.75 Jです。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "接続前の11.25 Jから接続後の7.50 Jを引いて計算すると 3.75 になり、1.25 とは一致しません。",
+            "2": "接続前の11.25 Jから接続後の7.50 Jを引いて計算すると 3.75 になり、2.50 とは一致しません。",
+            "3": "接続前の11.25 Jから接続後の7.50 Jを引いて計算すると 3.75 になります。",
+            "4": "接続前の11.25 Jから接続後の7.50 Jを引いて計算すると 3.75 になり、5.63 とは一致しません。",
+            "5": "接続前の11.25 Jから接続後の7.50 Jを引いて計算すると 3.75 になり、7.50 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "スイッチを閉じると、上側の極板は抵抗を介して、下側の極板は直接つながる。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 13,
+          "url": "/images/denken3/2022-upper/theory/page-13.jpg",
+          "sha256": "87bef6f64d759a388f51344ef3a3cf6bd5c6b068f8883b8d060174760eaf519f"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "1364cb931eed178e717be20d5475c3a833864afc03240836117c01cb87afe509"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q11",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 11,
+      "topic": "接合形FET",
+      "questionText": "図はnチャネル接合形FETの断面を示す。ドレーンに V_DS を加え、ソースを接地すると、nチャネルの（ア）キャリヤが移動して I_D が流れる。ゲートに逆方向電圧 V_GS を加えると、pn接合付近の空乏層によってチャネル幅が（イ）し、I_D が（ウ）する。FETは（エ）制御形である。空欄の組合せを選べ。",
+      "choiceGroups": {
+        "1": "少数／減少／増加／電流",
+        "2": "少数／増加／増加／電流",
+        "3": "多数／増加／減少／電圧",
+        "4": "多数／減少／減少／電流",
+        "5": "多数／減少／減少／電圧"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "5",
+          "explanation": "n形の多数キャリヤは電子です。逆方向のゲート電圧で空乏層が広がると、チャネル幅とドレーン電流がともに減ります。制御する入力はゲート電圧です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "電子はnチャネルの多数キャリヤです。チャネルが狭くなると電流も減少します。",
+            "2": "少数キャリヤによる伝導ではありません。逆方向電圧はチャネル幅と電流をともに減らします。",
+            "3": "多数キャリヤ・電圧制御は合いますが、空乏層が広がるためチャネル幅は減少します。",
+            "4": "多数キャリヤ・幅と電流の減少は合いますが、制御するのはゲート電圧です。",
+            "5": "多数キャリヤが導電を担い、逆方向のゲート電圧でチャネル幅と電流が減るので全て一致します。"
+          }
+        }
+      ],
+      "figures": [
+        "上下のp形領域をゲートとし、中央のnチャネルにソースとドレーンがつながる。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken3/2022-upper/theory/page-14.jpg",
+          "sha256": "e669362a3f78b3f7a5c4f9d9a5373abd620b4121d6b628bef2b08a20ac3fde1f"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "d2109f49d57d2dffc080c77357d58c487cfa97164ca165f4cfdc452011a94d0a"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q12",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 12,
+      "topic": "電子の運動エネルギー",
+      "questionText": "真空中で電子の運動エネルギーが400 eVのとき、速さは1.19×10⁷ m/sであった。運動エネルギーが100 eVのときの速さ [m/s] として最も近いものを選べ。ただし、電子の相対性理論効果は無視する。",
+      "choiceGroups": {
+        "1": "2.98×10⁶",
+        "2": "5.95×10⁶",
+        "3": "2.38×10⁷",
+        "4": "2.98×10⁹",
+        "5": "5.95×10⁹"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "2",
+          "explanation": "質量は同じで K＝mv²/2 だから、速さの比はエネルギー比の平方根です。√(100/400)＝1/2 より、1.19×10⁷/2＝5.95×10⁶ m/sです。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "エネルギー比1/4の平方根をもとの速さに掛けて計算すると 5.95×10⁶ になり、2.98×10⁶ とは一致しません。",
+            "2": "エネルギー比1/4の平方根をもとの速さに掛けて計算すると 5.95×10⁶ になります。",
+            "3": "エネルギー比1/4の平方根をもとの速さに掛けて計算すると 5.95×10⁶ になり、2.38×10⁷ とは一致しません。",
+            "4": "エネルギー比1/4の平方根をもとの速さに掛けて計算すると 5.95×10⁶ になり、2.98×10⁹ とは一致しません。",
+            "5": "エネルギー比1/4の平方根をもとの速さに掛けて計算すると 5.95×10⁶ になり、5.95×10⁹ とは一致しません。"
+          }
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 15,
+          "url": "/images/denken3/2022-upper/theory/page-15.jpg",
+          "sha256": "63dc9b03c4b0196ae54b897e0b8777c1872fa763c14a0df015bf7aad299bf071"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "5bf3dff79fd75c3d04a7c9d2d47c0e308da74bf915c8cd4aada28dbefd9e06a5"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q13",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 13,
+      "topic": "シュミットトリガ",
+      "questionText": "図1は演算増幅器を用いたシュミットトリガ回路である。単電源は＋5 Vで、出力範囲は0～5 V。非反転入力の電圧 v は（ア）の間にある。入力 v_in を0 Vから増加させると（イ）Vを上回った瞬間に出力 v_out は5 Vから0 Vに変わる。v_in を5 Vから減少させると（ウ）Vを下回った瞬間に v_out は0 Vから5 Vに変わる。図2の（エ）特性を示す。",
+      "choiceGroups": {
+        "1": "1.25～3.75／3.75／1.25／位相遅れ",
+        "2": "1.25～3.75／1.25／3.75／ヒステリシス",
+        "3": "2～3／2／3／ヒステリシス",
+        "4": "2～3／2.75／2.25／位相遅れ",
+        "5": "2～3／3／2／ヒステリシス"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "5",
+          "explanation": "非反転端子の節点式から v＝(5/10＋v_out/20)/(1/10＋1/10＋1/20)＝2＋v_out/5 です。上昇時は出力5 Vなので閾値3 V、下降時は出力0 Vなので2 Vです。入力の変化方向で閾値が異なるヒステリシスです。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "非反転入力の計算結果は2～3 Vです。方向で閾値が異なる現象は位相遅れではありません。",
+            "2": "特性名は合いますが、抵抗の比から求めた非反転入力の範囲が違います。",
+            "3": "範囲は合いますが、上昇時は出力5 V、下降時は出力0 Vなので閾値の向きが逆です。",
+            "4": "非反転入力の閾値は3 Vと2 Vです。また、特性はヒステリシスです。",
+            "5": "範囲2～3 V、上昇時3 V、下降時2 Vで、ヒステリシス特性になるため全て一致します。"
+          }
+        }
+      ],
+      "figures": [
+        "非反転入力への接続は、5 Vと接地に各10 kΩ、出力に20 kΩ。反転入力に v_in を加える。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken3/2022-upper/theory/page-16.jpg",
+          "sha256": "20888baa8b3fb5047f245bdbc461666a59e65222d3612f3081e41e005809ebd4"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken3/2022-upper/theory/page-17.jpg",
+          "sha256": "c92162cb6063f1c0fea1f4f50132848c806802cb75c208f065e226bdca29ffc6"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "63cfa56f85c10685e63d891e47e080e2a61bf2d5ebbb6887ca1a6fca5ee17467"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q14",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 14,
+      "topic": "偏位法と零位法",
+      "questionText": "指示計器のように測定量を指針の振れに変えて知る方法は（ア）法である。精密測定で用いる（イ）法は、測定量と同種の調整できる既知量を測定量に平衡させ、既知量の大きさから測定量を知る。（イ）法を用いた測定器の例は（ウ）である。",
+      "choiceGroups": {
+        "1": "偏位／零位／ホイートストンブリッジ",
+        "2": "間接／差動／誘導形電力量計",
+        "3": "間接／零位／ホイートストンブリッジ",
+        "4": "偏位／差動／誘導形電力量計",
+        "5": "偏位／零位／誘導形電力量計"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "",
+          "officialAnswer": "1",
+          "explanation": "針の偏りを読むのが偏位法で、比較する二つの量の差がゼロになる点を使うのが零位法です。ホイートストンブリッジは検流計が零になる抵抗の比から未知抵抗を測ります。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "偏位・零位の違いと、ブリッジで平衡点を求める測定方法が記述に合います。",
+            "2": "針の振れを読む方法は偏位法です。また、本文は平衡時の既知量を用いるので零位法です。",
+            "3": "零位法とブリッジは合っていますが、指針の振れを直接読む方法は偏位法です。",
+            "4": "偏位は合っていますが、比較する量を平衡させるのは零位法で、その例はブリッジです。",
+            "5": "二つの測定法は合っていますが、誘導形電力量計は平衡を利用する零位法の計器ではありません。"
+          }
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 18,
+          "url": "/images/denken3/2022-upper/theory/page-18.jpg",
+          "sha256": "a588d198e52c290bd282ac176ca9745806019bedfd7d6ecfc092544c553cc517"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "73b81df1fc3286e7391cbe2892f5cfcf78a50f3dd2520dde625932124a1ad416"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q15",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 15,
+      "topic": "三相負荷と力率",
+      "questionText": "図のように線間電圧200 Vの対称三相交流電源に、三相負荷として誘導性リアクタンス X＝9 Ω のコイル3個と、R [Ω]、20 Ω、20 Ω、60 Ωの抵抗4個を接続した回路がある。端子a、b、cから流入する線電流の大きさは等しい。次の(a)及び(b)に答えよ。",
+      "choiceGroups": {
+        "(a)": {
+          "1": "0.5",
+          "2": "0.6",
+          "3": "0.7",
+          "4": "0.8",
+          "5": "1.0"
+        },
+        "(b)": {
+          "1": "4",
+          "2": "8",
+          "3": "12",
+          "4": "40",
+          "5": "80"
+        }
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "線電流の大きさが7.7 A、三相負荷の無効電力が1.6 kvar であるとき、三相負荷の力率として最も近いものを選べ。",
+          "officialAnswer": "4",
+          "explanation": "皮相電力 S＝√3×200×7.7≈2.67 kVAです。sinφ＝1.6/2.67≈0.60、cosφ＝√(1−sin²φ)≈0.80です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "無効電力と皮相電力の比をsinφとし、cosφを計算すると 0.8 になり、0.5 とは一致しません。",
+            "2": "無効電力と皮相電力の比をsinφとし、cosφを計算すると 0.8 になり、0.6 とは一致しません。",
+            "3": "無効電力と皮相電力の比をsinφとし、cosφを計算すると 0.8 になり、0.7 とは一致しません。",
+            "4": "無効電力と皮相電力の比をsinφとし、cosφを計算すると 0.8 になります。",
+            "5": "無効電力と皮相電力の比をsinφとし、cosφを計算すると 0.8 になり、1.0 とは一致しません。"
+          }
+        },
+        {
+          "slot": 2,
+          "prompt": "a相に接続された R [Ω] として最も近いものを選べ。",
+          "officialAnswer": "2",
+          "explanation": "20 Ω・20 Ω・60 Ω のΔをYに換算すると、a相側は20×20/100＝4 Ω、b・c相側は20×60/100＝12 Ω ずつです。対称な電源で線電流が等しく、誘導性リアクタンスは各相で同じなので、a相の抵抗も R＋4＝12 Ω。従って R＝8 Ω です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "ΔからYへ変換したa相の4 Ωを、相の抵抗12 Ωから引いて計算すると 8 になり、4 とは一致しません。",
+            "2": "ΔからYへ変換したa相の4 Ωを、相の抵抗12 Ωから引いて計算すると 8 になります。",
+            "3": "ΔからYへ変換したa相の4 Ωを、相の抵抗12 Ωから引いて計算すると 8 になり、12 とは一致しません。",
+            "4": "ΔからYへ変換したa相の4 Ωを、相の抵抗12 Ωから引いて計算すると 8 になり、40 とは一致しません。",
+            "5": "ΔからYへ変換したa相の4 Ωを、相の抵抗12 Ωから引いて計算すると 8 になり、80 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "a、b、c各相に誘導性リアクタンス9 Ωが直列。a相ではRも直列で、その先のΔの枝はa–bとa–cが20 Ω、b–cが60 Ω。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 19,
+          "url": "/images/denken3/2022-upper/theory/page-19.jpg",
+          "sha256": "55eb9e633b841c1733bde7c5c94fa11b3e6476298240f8d58e3efe4d249a4763"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "5394aa1381cb1c30c3b48946cfe335cdd626a5877f08a1a27b735f0ba64a8c44"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q16",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 16,
+      "topic": "直流電位差計",
+      "questionText": "図は、抵抗 R_ab [kΩ] のすべり抵抗器、抵抗 R_d [kΩ]、抵抗 R_e [kΩ] と直流電圧 E_s＝12 V の電源を用いて、端子H、G間に接続した未知の直流電圧を測る回路である。端子Gを電位の基準（0 V）とする。次の(a)及び(b)に答えよ。",
+      "choiceGroups": {
+        "(a)": {
+          "1": "18",
+          "2": "24",
+          "3": "36",
+          "4": "42",
+          "5": "50"
+        },
+        "(b)": {
+          "1": "−5",
+          "2": "−3",
+          "3": "0",
+          "4": "3",
+          "5": "5"
+        }
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "R_d＝5 kΩ、R_e＝5 kΩ とし、3 Vの電源の正極をHに、負極をGに接続した。接触子Cを調整して検流計の電流を零にすると、R_bc＝18 kΩ になった。すべり抵抗器の抵抗 R_ab [kΩ] として最も近いものを選べ。",
+          "officialAnswer": "2",
+          "explanation": "Gは電源負極より12×5/(5＋5)＝6 V高い点です。HはGより3 V高く、平衡時はCとHが同電位なのでCは電源負極より9 V高くなります。12×18/R_ab＝9 より R_ab＝24 kΩ です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "負極を基準にCが9 Vとなるよう、12 Vの分圧比から計算すると 24 になり、18 とは一致しません。",
+            "2": "負極を基準にCが9 Vとなるよう、12 Vの分圧比から計算すると 24 になります。",
+            "3": "負極を基準にCが9 Vとなるよう、12 Vの分圧比から計算すると 24 になり、36 とは一致しません。",
+            "4": "負極を基準にCが9 Vとなるよう、12 Vの分圧比から計算すると 24 になり、42 とは一致しません。",
+            "5": "負極を基準にCが9 Vとなるよう、12 Vの分圧比から計算すると 24 になり、50 とは一致しません。"
+          }
+        },
+        {
+          "slot": 2,
+          "prompt": "3 Vの電源を取り外し、Gから見たHの電圧が E_x [V] の電源を接続した。R_d＝2 kΩ、R_e＝22 kΩ、R_bc＝12 kΩ で検流計の電流が零となった。E_x [V] として最も近いものを選べ。",
+          "officialAnswer": "1",
+          "explanation": "電源負極から見てCは12×12/24＝6 V、Gは12×22/(2＋22)＝11 Vです。平衡時はHとCは同電位です。Gを基準とすると E_x＝6−11＝−5 V です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "負極から見たCの6 VからGの11 Vを引いて計算すると −5 になります。",
+            "2": "負極から見たCの6 VからGの11 Vを引いて計算すると −5 になり、−3 とは一致しません。",
+            "3": "負極から見たCの6 VからGの11 Vを引いて計算すると −5 になり、0 とは一致しません。",
+            "4": "負極から見たCの6 VからGの11 Vを引いて計算すると −5 になり、3 とは一致しません。",
+            "5": "負極から見たCの6 VからGの11 Vを引いて計算すると −5 になり、5 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "12 V電源にすべり抵抗器と R_d・R_e の分圧回路を並列接続する。Gは分圧点。接触子CとHの間に検流計がある。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 20,
+          "url": "/images/denken3/2022-upper/theory/page-20.jpg",
+          "sha256": "9a22bbda8579c5ff7323c457e80c1369b59d49a274b9be4136a7231b740421db"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": null,
+      "reviewedSha256": "3f78a1bc4b1aa9c5bb172eef848461dd560b28d2d803804ad81ea1c1d405317e"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q17",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 17,
+      "topic": "直列コンデンサと比誘電率",
+      "questionText": "直列に接続された二つの平行平板コンデンサに120 Vの電圧が加わっている。C₁ の金属板間は真空で、C₂ には比誘電率 ε_r の誘電体が挿入されている。極板間距離は等しく、C₁ の極板面積は C₂ の2倍である。C₁ の両端電圧は80 Vであった。コンデンサの端効果を無視して、次の(a)及び(b)に答えよ。",
+      "choiceGroups": {
+        "(a)": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5"
+        },
+        "(b)": {
+          "1": "10",
+          "2": "20",
+          "3": "30",
+          "4": "40",
+          "5": "50"
+        }
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "コンデンサ C₂ の誘電体の比誘電率 ε_r として最も近いものを選べ。",
+          "officialAnswer": "4",
+          "explanation": "C₂ の電圧は120−80＝40 Vです。直列で電荷が等しいので C₂/C₁＝80/40＝2 です。C₂ の極板面積はC₁の半分、極板間隔は等しいので C₂/C₁＝ε_r/2、従って ε_r＝4 です。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "容量比が2となるよう、極板面積比1/2を比誘電率に反映して計算すると 4 になり、1 とは一致しません。",
+            "2": "容量比が2となるよう、極板面積比1/2を比誘電率に反映して計算すると 4 になり、2 とは一致しません。",
+            "3": "容量比が2となるよう、極板面積比1/2を比誘電率に反映して計算すると 4 になり、3 とは一致しません。",
+            "4": "容量比が2となるよう、極板面積比1/2を比誘電率に反映して計算すると 4 になります。",
+            "5": "容量比が2となるよう、極板面積比1/2を比誘電率に反映して計算すると 4 になり、5 とは一致しません。"
+          }
+        },
+        {
+          "slot": 2,
+          "prompt": "C₁ の静電容量が30 μFのとき、C₁とC₂の合成容量 [μF] として最も近いものを選べ。",
+          "officialAnswer": "2",
+          "explanation": "C₂＝2C₁＝60 μFです。直列合成容量は30×60/(30＋60)＝20 μFになります。直列合成容量は、小さい方の30 μFよりも小さくなります。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "30 μFと60 μFの逆数を足し、その逆数を計算すると 20 になり、10 とは一致しません。",
+            "2": "30 μFと60 μFの逆数を足し、その逆数を計算すると 20 になります。",
+            "3": "30 μFと60 μFの逆数を足し、その逆数を計算すると 20 になり、30 とは一致しません。",
+            "4": "30 μFと60 μFの逆数を足し、その逆数を計算すると 20 になり、40 とは一致しません。",
+            "5": "30 μFと60 μFの逆数を足し、その逆数を計算すると 20 になり、50 とは一致しません。"
+          }
+        }
+      ],
+      "figures": [
+        "C₁とC₂の直列回路に120 Vを加える。C₁の極板間は真空、C₂は誘電体が入る。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 21,
+          "url": "/images/denken3/2022-upper/theory/page-21.jpg",
+          "sha256": "ed1259eee94af330cb5173ef499037ab612399af9a2ccd1e2d73769cd4079739"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": "本試験では問17・問18のいずれか1問を選択。",
+      "reviewedSha256": "44cfe241e339c6008f04bdc33389e9ea116b7fcc665f16e9a8342806fee02819"
+    },
+    {
+      "id": "denken3-2022-upper-theory-q18",
+      "year": 2022,
+      "sitting": "2022-upper",
+      "examDate": "2022-08-21",
+      "subject": "theory",
+      "number": 18,
+      "topic": "トランジスタのバイアス",
+      "questionText": "図1～図3はトランジスタ増幅器のバイアス回路を示す。V_CC は電源電圧、V_B はベース電圧、I_B はベース電流、I_C はコレクタ電流、I_E はエミッタ電流、R、R_B、R_C、R_E は抵抗を示す。次の(a)及び(b)に答えよ。",
+      "choiceGroups": {
+        "(a)": {
+          "1": "図1／図2／図3",
+          "2": "図2／図3／図1",
+          "3": "図3／図1／図2",
+          "4": "図1／図3／図2",
+          "5": "図3／図2／図1"
+        },
+        "(b)": {
+          "1": "図1／図2／図3",
+          "2": "図2／図3／図1",
+          "3": "図3／図1／図2",
+          "4": "図1／図3／図2",
+          "5": "図2／図1／図3"
+        }
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "prompt": "次の式は図1～図3のいずれかのベース・エミッタ間電圧 V_BE である。① V_BE＝V_B−I_E R_E、② V_BE＝V_CC−I_B R、③ V_BE＝V_CC−I_B R−I_E R_C。式と図の組合せを選べ。",
+          "officialAnswer": "3",
+          "explanation": "①のエミッタ抵抗 R_E を持つのは図3です。②は電源からベースに R がある図1です。③の図2ではコレクタ抵抗にベース電流とコレクタ電流の和 I_E が流れます。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "①にはエミッタ抵抗が必要で、図1ではなく図3です。",
+            "2": "①のエミッタ抵抗があるのは図3です。②はベース抵抗が電源に直結する図1です。",
+            "3": "①のエミッタ抵抗、②の固定バイアス、③のコレクタ帰還が順に図3・図1・図2に対応します。",
+            "4": "③は図2で合っていますが、①と②の対応が誤っています。",
+            "5": "①は合っていますが、②はRが電源へ、③はRがコレクタへつながる回路です。"
+          }
+        },
+        {
+          "slot": 2,
+          "prompt": "温度変化と I_C の関係について、（ア）h_FE が増えると I_C が増え、安定度が悪い。（イ）V_B はほぼ一定で、I_E が増すと V_BE が下がり増加を抑える。安定度はよいが電力損失が大きい。（ウ）I_C が増すと R_C の電圧降下が増え、V_CE が下がって I_B が減少し、I_C の増加を抑える。図の組合せを選べ。",
+          "officialAnswer": "4",
+          "explanation": "図1はベース電流がほぼ一定で負帰還がない固定バイアスです。図3はエミッタ抵抗が I_E の増加を V_BE の低下として戻します。図2はコレクタ電圧の低下でベース電流を減らします。",
+          "derivation": "",
+          "choiceExplanations": {
+            "1": "（ア）は合いますが、エミッタ抵抗を使う（イ）は図3、コレクタ帰還の（ウ）は図2です。",
+            "2": "（イ）は合いますが、負帰還がない固定バイアスの（ア）は図1です。",
+            "3": "図3にはエミッタ抵抗による負帰還があるので、安定度が悪い（ア）には入りません。",
+            "4": "固定バイアス、エミッタ負帰還、コレクタ負帰還が順に図1・図3・図2です。",
+            "5": "図2はコレクタ電圧でベース電流を調整するため、（ア）ではなく（ウ）です。"
+          }
+        }
+      ],
+      "figures": [
+        "図1は電源から抵抗Rでベースに接続し、図2はコレクタから抵抗Rでベースに接続する。図3は分圧回路とエミッタ抵抗R_Eを持つ。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 22,
+          "url": "/images/denken3/2022-upper/theory/page-22.jpg",
+          "sha256": "f5e98aaaca36c1bfcdf9bf0d6f64e1e8b3c12b5456d0814e8d8aa2989c84a26d"
+        },
+        {
+          "physicalPage": 23,
+          "url": "/images/denken3/2022-upper/theory/page-23.jpg",
+          "sha256": "cf85d72a83b29626b5b7fed23bc1fc70fce178d3decdbf9e646b879a970b2460"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+      "sourcePdfSha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520",
+      "alternateQuestionRule": "本試験では問17・問18のいずれか1問を選択。",
+      "reviewedSha256": "290ad58d5ba364b57cb047ce2c3b9d5554522fe56eda72fe9d4e9e5c3a9194cf"
+    }
+  ]
+}

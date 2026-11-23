@@ -1,0 +1,147 @@
+[
+  {
+    "id": "nw-2021h-pm1-q1",
+    "exam": "nw",
+    "year": 2021,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "ネットワーク機器の設定の自動化"
+    ],
+    "difficulty": 5,
+    "question": "問1 ネットワーク機器の設定の自動化。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問１\n                       出題趣旨\n 省力化のために，ネットワークの設定や運用の自動化を行うことが増えてきている。これは，インターネッ\nトの普及によって全国どこでも同質のネットワークが入手しやすくなったことや，システムから直接操作でき\n るAPI を備えたネットワーク機器が増えてきたことが背景にある。\n 具体的な例として，コントローラによるネットワーク機器の集中管理や，ネットワーク構成管理の自動化が\nよく行われる。\n 本問では，システムの全国展開を題材に，自動化する際によく使われるネットワーク，システム，及びプロ\nトコルに関する知識，理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) DHCP サーバ\n         (2) 82\n         (3) L2SW の入力ポート以外の全てのポートに転送される。\n 設問２(1) RT 管理コントローラのIP アドレスが変更された場合でもRT の設定変更が不\n      要である。\n         (2) HTTP 又は  HTTPS\n         (3) 運用管理サーバ\n         (4) 店舗から本社にはBP 経由でしかアクセスができないから\n 設問３(1)  a  2\n         (2)  b  SNMP\n              c  RT 管理コントローラ\n         (3) 各機器の接続構成が構成図どおりであること\n         (4) イ，エ，カ",
+    "modelAnswer": "問１\n                       出題趣旨\n 省力化のために，ネットワークの設定や運用の自動化を行うことが増えてきている。これは，インターネッ\nトの普及によって全国どこでも同質のネットワークが入手しやすくなったことや，システムから直接操作でき\n るAPI を備えたネットワーク機器が増えてきたことが背景にある。\n 具体的な例として，コントローラによるネットワーク機器の集中管理や，ネットワーク構成管理の自動化が\nよく行われる。\n 本問では，システムの全国展開を題材に，自動化する際によく使われるネットワーク，システム，及びプロ\nトコルに関する知識，理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) DHCP サーバ\n         (2) 82\n         (3) L2SW の入力ポート以外の全てのポートに転送される。\n 設問２(1) RT 管理コントローラのIP アドレスが変更された場合でもRT の設定変更が不\n      要である。\n         (2) HTTP 又は  HTTPS\n         (3) 運用管理サーバ\n         (4) 店舗から本社にはBP 経由でしかアクセスができないから\n 設問３(1)  a  2\n         (2)  b  SNMP\n              c  RT 管理コントローラ\n         (3) 各機器の接続構成が構成図どおりであること\n         (4) イ，エ，カ",
+    "explanation": "DHCPによる初期設定、コントローラへの接続、構成の検証を段階ごとに整理する。IPアドレスを直接固定する場合と名前で管理先を参照する場合を比べると、管理先のアドレス変更時に必要な作業の差を説明できる。自動化が完了したという判断では、個々の機器の応答だけでなく、接続構成が設計どおりかを確認する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_qs.pdf#page=2) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2021-spring-pm1/page-02.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-03.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-04.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-05.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-06.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2021年度春期 午後I 問1 本文・図表・設問（公式問題PDF 2ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問1 本文・図表・設問（公式問題PDF 3ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問1 本文・図表・設問（公式問題PDF 4ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問1 本文・図表・設問（公式問題PDF 5ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問1 本文・図表・設問（公式問題PDF 6ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問1 本文・図表・設問（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2021-spring-pm1/answer-q1-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2021年度春期 午後I 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2021r03.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2021年度春期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "nw-2021h-pm1-q2",
+    "exam": "nw",
+    "year": 2021,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "OSPFによる経路制御とクラウド接続"
+    ],
+    "difficulty": 5,
+    "question": "問2 OSPFによる経路制御とクラウド接続。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問２\n                       出題趣旨\n  OSPF は，IP ネットワークにおいて動的経路制御を行うためのルーティングプロトコルとして多く使われて\nいる。動的経路制御を利用した環境において安定したネットワーク運用を行うためには，ルーティングプロト\nコルを正しく理解することが重要である。また，近年において，クラウド内環境と企業内環境間をVPN で接\n続して，クラウド環境を自社内環境と同様に利用する形態もよく見られる。\n  本問では，OSPF プロトコルによるルーティング設計とIPsec トンネリングによるクラウド接続を題材に，\nネットワーク設計と構築に必要な基本的スキルを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a 共有鍵\n              b ルータ\n              c コスト\n              d ダイクストラ\n              e   172.16.0.0\n  設問２   OSPF へデフォルトルートを導入する。\n 設問３(1) ルーティングテーブルサイズを小さくする。\n         (2) ルータ\n         (3) ルータ と FW の間\n         (4)  f ルータ\n              g   172.16.0.0/16\n 設問４(1) h，i，j，k，l\n         (2) 機器   ① ・ルータ\n            ② ・L3SW1\n      設定内容  OSPF 仮想リンクの接続設定を行う。\n         (3) 機器     L3SW1\n      設定内容  OSPF エリア１の支社個別経路を172.16.0.0/16 に集約する。",
+    "modelAnswer": "問２\n                       出題趣旨\n  OSPF は，IP ネットワークにおいて動的経路制御を行うためのルーティングプロトコルとして多く使われて\nいる。動的経路制御を利用した環境において安定したネットワーク運用を行うためには，ルーティングプロト\nコルを正しく理解することが重要である。また，近年において，クラウド内環境と企業内環境間をVPN で接\n続して，クラウド環境を自社内環境と同様に利用する形態もよく見られる。\n  本問では，OSPF プロトコルによるルーティング設計とIPsec トンネリングによるクラウド接続を題材に，\nネットワーク設計と構築に必要な基本的スキルを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a 共有鍵\n              b ルータ\n              c コスト\n              d ダイクストラ\n              e   172.16.0.0\n  設問２   OSPF へデフォルトルートを導入する。\n 設問３(1) ルーティングテーブルサイズを小さくする。\n         (2) ルータ\n         (3) ルータ と FW の間\n         (4)  f ルータ\n              g   172.16.0.0/16\n 設問４(1) h，i，j，k，l\n         (2) 機器   ① ・ルータ\n            ② ・L3SW1\n      設定内容  OSPF 仮想リンクの接続設定を行う。\n         (3) 機器     L3SW1\n      設定内容  OSPF エリア１の支社個別経路を172.16.0.0/16 に集約する。",
+    "explanation": "デフォルトルートの導入、エリア間接続、経路集約の役割を混同しない。経路集約はルーティングテーブルを小さくする一方、到達性の設計と整合している必要がある。OSPFのエリア接続を図上で追い、仮想リンクを設定する機器と、支社の個別経路を集約する機器をそれぞれ特定する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_qs.pdf#page=8) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2021-spring-pm1/page-08.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-09.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-10.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-11.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-12.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-13.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2021年度春期 午後I 問2 本文・図表・設問（公式問題PDF 8ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問2 本文・図表・設問（公式問題PDF 9ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問2 本文・図表・設問（公式問題PDF 10ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問2 本文・図表・設問（公式問題PDF 11ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問2 本文・図表・設問（公式問題PDF 12ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問2 本文・図表・設問（公式問題PDF 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2021-spring-pm1/answer-q2-p2.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2021年度春期 午後I 問2 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2021r03.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2021年度春期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "nw-2021h-pm1-q3",
+    "exam": "nw",
+    "year": 2021,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "VoIPの導入と優先制御"
+    ],
+    "difficulty": 5,
+    "question": "問3 VoIPの導入と優先制御。次の本文・図表を読み、設問に答えよ。",
+    "answer": "問３\n                       出題趣旨\n  音声をVoIP 技術によってIP パケット化し，PBX を廃止する事例は多い。VoIP では，音声符号化方式に低\n ビットレートのCS-ACELP などが利用される。音声パケットに遅延や廃棄が発生すると，音声品質が低下する\nので，既設のLAN で音声パケットを送受信する場合は，遅延や廃棄を避ける対策が必要となることがある。\n 本問では，音声クラウドサービスを利用して，音声パケットを既設のLAN に流す事例を取り上げた。VoIP\n導入によって発生した通話の不具合を，レイヤ2 及びレイヤ3 での優先制御によって改善する対策を題材にし\nて，ネットワークの設計，構築，運用に携わる受験者が修得した技術と経験が，実務で活用できる水準かどう\nかを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a  8\n              b  UDP\n              c 廃棄 又は ドロップ 又は 損失\n              d  ToS\n 設問２(1) 拠点間の内線通話\n         (2) パケットの音声化遅延が大きくなるから\n 設問３(1) 4,472\n         (2) L2SW からの給電は行われない。\n 設問４(1) フレーム中のタグ情報内の優先ビットを使用するから\n         (2) 2\n         (3) データフレームが出力中の場合\n         (4) ア f，g，j\n       イ a，b，c，d，e\n         (5) D パケットによるeLN パケット転送への影響を少なくするため",
+    "modelAnswer": "問３\n                       出題趣旨\n  音声をVoIP 技術によってIP パケット化し，PBX を廃止する事例は多い。VoIP では，音声符号化方式に低\n ビットレートのCS-ACELP などが利用される。音声パケットに遅延や廃棄が発生すると，音声品質が低下する\nので，既設のLAN で音声パケットを送受信する場合は，遅延や廃棄を避ける対策が必要となることがある。\n 本問では，音声クラウドサービスを利用して，音声パケットを既設のLAN に流す事例を取り上げた。VoIP\n導入によって発生した通話の不具合を，レイヤ2 及びレイヤ3 での優先制御によって改善する対策を題材にし\nて，ネットワークの設計，構築，運用に携わる受験者が修得した技術と経験が，実務で活用できる水準かどう\nかを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a  8\n              b  UDP\n              c 廃棄 又は ドロップ 又は 損失\n              d  ToS\n 設問２(1) 拠点間の内線通話\n         (2) パケットの音声化遅延が大きくなるから\n 設問３(1) 4,472\n         (2) L2SW からの給電は行われない。\n 設問４(1) フレーム中のタグ情報内の優先ビットを使用するから\n         (2) 2\n         (3) データフレームが出力中の場合\n         (4) ア f，g，j\n       イ a，b，c，d，e\n         (5) D パケットによるeLN パケット転送への影響を少なくするため",
+    "explanation": "音声パケットは遅延や廃棄が通話品質に直結するため、帯域だけでなく待ち時間も確認する。レイヤ2の優先制御で参照するタグ情報と、レイヤ3のパケット分類を区別する。優先度が高くても既に出力中のデータフレームを直ちに中断できるとは限らない。給電容量や音声化遅延も本文の条件と単位に合わせて計算する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_qs.pdf#page=14) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_ans.pdf#page=3)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2021-spring-pm1/page-14.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-15.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-16.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-17.webp",
+      "/questions/ipa/nw/2021-spring-pm1/page-18.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2021年度春期 午後I 問3 本文・図表・設問（公式問題PDF 14ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問3 本文・図表・設問（公式問題PDF 15ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問3 本文・図表・設問（公式問題PDF 16ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問3 本文・図表・設問（公式問題PDF 17ページ）",
+      "ネットワークスペシャリスト 2021年度春期 午後I 問3 本文・図表・設問（公式問題PDF 18ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2021-spring-pm1/answer-q3.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2021年度春期 午後I 問3 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_nw_pm1_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2021r03.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2021年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

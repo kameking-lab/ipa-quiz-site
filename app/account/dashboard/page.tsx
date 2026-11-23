@@ -3,7 +3,7 @@ import { ALL_QUESTIONS } from "@/data/questions";
 import { DashboardTabs } from "@/components/account/DashboardTabs";
 
 export const metadata: Metadata = {
-  title: "学習ダッシュボード",
+  title: "わたしの記録",
   description:
     "今日の計画・模試記録・進捗・弱点・バッジをまとめて確認できる学習ダッシュボード。",
   alternates: { canonical: "/account/dashboard" },

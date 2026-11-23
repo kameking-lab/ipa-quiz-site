@@ -1,0 +1,531 @@
+[
+  {
+    "id": "ap-2019h-pm-q1",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "ECサイトの利用者認証"
+    ],
+    "difficulty": 5,
+    "question": "問1 ECサイトの利用者認証",
+    "answer": "問１\n                       出題趣旨\n パスワードが推測されたり，どこかのWeb サイトから窃取されたID，パスワードが利用されたりして，不\n正アクセスされる被害が発生している。パスワードの安全な管理・運用は，サイト運営者だけでなくサイト利\n用者にとっても重要な課題である。\n  本問では，EC サイトの利用者認証を題材に，パスワード攻撃の手法，安全なパスワードの管理策，及び利\n用者に求められるパスワードの管理策についての理解を問う。\n\n\n  設問               解答例・解答の要点                備考\n 設問１(1)  a ウ\n              b ア\n         (2) ウ\n 設問２(1)  c 総当たり 又は ブルートフォース\n              d パスワードリスト\n         (2) パスワード入力試行回数の上限値の設定\n 設問３(1) ハッシュ値からパスワードの割出しは難しいから\n         (2) ア\n 設問４ 他サイトから流出したパスワードによって，不正ログインされる。",
+    "modelAnswer": "問１\n                       出題趣旨\n パスワードが推測されたり，どこかのWeb サイトから窃取されたID，パスワードが利用されたりして，不\n正アクセスされる被害が発生している。パスワードの安全な管理・運用は，サイト運営者だけでなくサイト利\n用者にとっても重要な課題である。\n  本問では，EC サイトの利用者認証を題材に，パスワード攻撃の手法，安全なパスワードの管理策，及び利\n用者に求められるパスワードの管理策についての理解を問う。\n\n\n  設問               解答例・解答の要点                備考\n 設問１(1)  a ウ\n              b ア\n         (2) ウ\n 設問２(1)  c 総当たり 又は ブルートフォース\n              d パスワードリスト\n         (2) パスワード入力試行回数の上限値の設定\n 設問３(1) ハッシュ値からパスワードの割出しは難しいから\n         (2) ア\n 設問４ 他サイトから流出したパスワードによって，不正ログインされる。",
+    "explanation": "利用者認証を運営側と利用者側の両面から見直す。ログインの試行回数を制限し、認証情報の保存方法とパスワードの使い回しの影響を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-04.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-05.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-06.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問1 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問1 本文・設問（公式問題PDF 4ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問1 本文・設問（公式問題PDF 5ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問1 本文・設問（公式問題PDF 6ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問1 本文・設問（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q2",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "経営戦略",
+    "topicTags": [
+      "ホテルチェーンのビジネスコンセプト"
+    ],
+    "difficulty": 5,
+    "question": "問2 ホテルチェーンのビジネスコンセプト",
+    "answer": "問２\n                       出題趣旨\n 昨今のホテル業界は，高級化路線をとるグループと低価格化路線をとるグループに二極化している。そのう\nち低価格化路線をとるグループは，低料金かつ高品質のサービスを提供しながら利益を確保できる宿泊特化型\nなどのビジネスモデルを生みだしている。\n 本問では，企業の保養所を活用した観光ホテル事業のビジネスモデル構築プロジェクトを題材に，現状分析\n及び問題発見力，各種ビジネス戦略に関する理解と応用力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) イ，ウ\n         (2)  a 競合他社\n              b 低価格\n  設問２  ウ\n  設問３  開業時の初期投資を賃借料で代替する。\n 設問４(1) 他社の魅力的な保養所も利用できる楽しみ\n         (2) 地域を活性化することで，ホテルの集客力を高めること\n         (3) ウ\n  設問５  保養所全体でスタッフを最適配置する。",
+    "modelAnswer": "問２\n                       出題趣旨\n 昨今のホテル業界は，高級化路線をとるグループと低価格化路線をとるグループに二極化している。そのう\nち低価格化路線をとるグループは，低料金かつ高品質のサービスを提供しながら利益を確保できる宿泊特化型\nなどのビジネスモデルを生みだしている。\n 本問では，企業の保養所を活用した観光ホテル事業のビジネスモデル構築プロジェクトを題材に，現状分析\n及び問題発見力，各種ビジネス戦略に関する理解と応用力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) イ，ウ\n         (2)  a 競合他社\n              b 低価格\n  設問２  ウ\n  設問３  開業時の初期投資を賃借料で代替する。\n 設問４(1) 他社の魅力的な保養所も利用できる楽しみ\n         (2) 地域を活性化することで，ホテルの集客力を高めること\n         (3) ウ\n  設問５  保養所全体でスタッフを最適配置する。",
+    "explanation": "初期投資を抑える仕組みと、保養所を相互利用できる顧客への価値を整理する。地域との連携が集客にどう結び付くかを、設問の条件に沿って説明する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-08.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-09.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-10.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-11.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-12.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問2 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問2 本文・設問（公式問題PDF 8ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問2 本文・設問（公式問題PDF 9ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問2 本文・設問（公式問題PDF 10ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問2 本文・設問（公式問題PDF 11ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問2 本文・設問（公式問題PDF 12ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問2 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q3",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "プログラミング",
+    "topicTags": [
+      "券売機の注文の状態を判定するプログラム"
+    ],
+    "difficulty": 5,
+    "question": "問3 券売機の注文の状態を判定するプログラム",
+    "answer": "問３\n                       出題趣旨\n プログラムに求められる要件は年々複雑になってきている。複雑な値引きルールをシンプルなアルゴリズム\nで実装し，メンテナンス性を維持する能力は重要である。\n 本問では，値引きの自動判定プログラムを題材に，状態遷移図を用いた判定アルゴリズムに関する基本的な\n理解と応用力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 0，2，3，4，5\n         (2) ア  false\n       イ  3 : 0\n  設問２  ウ  order[ i ].A\n       エ  order[ i ].N*100 + order[ i ].S*10\n       オ  status_table [ status ][ event_index ].discount\n       カ  status_table [ status ][ event_index ].status\n       キ  accepted がtrue に等しい\n  設問３  イ，エ",
+    "modelAnswer": "問３\n                       出題趣旨\n プログラムに求められる要件は年々複雑になってきている。複雑な値引きルールをシンプルなアルゴリズム\nで実装し，メンテナンス性を維持する能力は重要である。\n 本問では，値引きの自動判定プログラムを題材に，状態遷移図を用いた判定アルゴリズムに関する基本的な\n理解と応用力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 0，2，3，4，5\n         (2) ア  false\n       イ  3 : 0\n  設問２  ウ  order[ i ].A\n       エ  order[ i ].N*100 + order[ i ].S*10\n       オ  status_table [ status ][ event_index ].discount\n       カ  status_table [ status ][ event_index ].status\n       キ  accepted がtrue に等しい\n  設問３  イ，エ",
+    "explanation": "注文ごとの入力と状態遷移図を照合して、現在の状態番号を更新する。合計金額の更新と、発券できる状態かの判定を別々に追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-14.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-15.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-16.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-17.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-18.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-19.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問3 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問3 本文・設問（公式問題PDF 14ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問3 本文・設問（公式問題PDF 15ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問3 本文・設問（公式問題PDF 16ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問3 本文・設問（公式問題PDF 17ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問3 本文・設問（公式問題PDF 18ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問3 本文・設問（公式問題PDF 19ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q03-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問3 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q4",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "システムアーキテクチャ",
+    "topicTags": [
+      "システム構成の見直し"
+    ],
+    "difficulty": 5,
+    "question": "問4 システム構成の見直し",
+    "answer": "問４\n                       出題趣旨\n 仮想環境を活用することで，費用を抑えて変更容易性の高いシステム構成を実現することができる。\n 本問では，電子書籍サービスにおけるシステム構成の見直しを題材に，システム方式設計に関する基本的な\n 理解，Web API を用いたシステム処理方式設計に関する理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  TLS アクセラレータ\n         (2)  b 利用者の認証\n              c ディスクの読込み負荷\n 設問２(1) エ\n         (2) オ\n 設問３(1) フロントAP の台数ア\n        バックAP の台数 ウ\n         (2) バックAP から電子書籍データを取得しWeb コンテンツに変換する処理\n         (3) 機器 バックAP\n       変更 バッチ処理とその他の処理が実行される機器を分ける。",
+    "modelAnswer": "問４\n                       出題趣旨\n 仮想環境を活用することで，費用を抑えて変更容易性の高いシステム構成を実現することができる。\n 本問では，電子書籍サービスにおけるシステム構成の見直しを題材に，システム方式設計に関する基本的な\n 理解，Web API を用いたシステム処理方式設計に関する理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  TLS アクセラレータ\n         (2)  b 利用者の認証\n              c ディスクの読込み負荷\n 設問２(1) エ\n         (2) オ\n 設問３(1) フロントAP の台数ア\n        バックAP の台数 ウ\n         (2) バックAP から電子書籍データを取得しWeb コンテンツに変換する処理\n         (3) 機器 バックAP\n       変更 バッチ処理とその他の処理が実行される機器を分ける。",
+    "explanation": "変更前後で各サーバが受け持つ処理を整理する。リクエスト数をそろえ、各段階で必要な処理能力から最小台数を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-20.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-21.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-22.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-23.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問4 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問4 本文・設問（公式問題PDF 20ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問4 本文・設問（公式問題PDF 21ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問4 本文・設問（公式問題PDF 22ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問4 本文・設問（公式問題PDF 23ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q04-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問4 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=20",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問4。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q5",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "無線LANの導入"
+    ],
+    "difficulty": 5,
+    "question": "問5 無線LANの導入",
+    "answer": "問５\n                       出題趣旨\n  無線LAN によって柔軟性に富んだPC 利用環境が提供される。しかし，電波を通信に利用することによっ\nて，通信の傍受が容易になることから，有線LAN では考慮しなかった箇所でのセキュリティ対策も必要にな\nる。\n  本問では，無線LAN の導入に当たって必要となる技術面と運用面の課題を題材にして，安全な無線LAN を\n構築する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a サ\n              b イ\n              c キ\n              d エ\n              e オ\n 設問２(1) 4 台のAP に，それぞれ異なる周波数チャネルを設定する。\n         (2) ア\n         (3) 一つのVLAN を設定する箇所   a\n         複数のVLAN を設定する箇所  b，c，d\n 設問３(1)  社員のNPC  L3SW\n        来訪者のNPC ルータ2",
+    "modelAnswer": "問５\n                       出題趣旨\n  無線LAN によって柔軟性に富んだPC 利用環境が提供される。しかし，電波を通信に利用することによっ\nて，通信の傍受が容易になることから，有線LAN では考慮しなかった箇所でのセキュリティ対策も必要にな\nる。\n  本問では，無線LAN の導入に当たって必要となる技術面と運用面の課題を題材にして，安全な無線LAN を\n構築する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a サ\n              b イ\n              c キ\n              d エ\n              e オ\n 設問２(1) 4 台のAP に，それぞれ異なる周波数チャネルを設定する。\n         (2) ア\n         (3) 一つのVLAN を設定する箇所   a\n         複数のVLAN を設定する箇所  b，c，d\n 設問３(1)  社員のNPC  L3SW\n        来訪者のNPC ルータ2",
+    "explanation": "端末の接続先SSIDからVLANと通信経路をたどる。来訪者に必要な接続と社内資源へのアクセスを分け、設定が通信に及ぼす影響を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-24.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-25.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-26.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-27.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問5 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問5 本文・設問（公式問題PDF 24ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問5 本文・設問（公式問題PDF 25ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問5 本文・設問（公式問題PDF 26ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問5 本文・設問（公式問題PDF 27ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q05-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問5 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=24",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問5。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q6",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "薬剤管理システムの再構築"
+    ],
+    "difficulty": 5,
+    "question": "問6 薬剤管理システムの再構築",
+    "answer": "問６\n                       出題趣旨\n\n                                                                               そ ご\n  データベース設計では，E-R 図の他に，操作対象のテーブルや列への設定内容など，齟齬 が生じないよう，\n複数の観点から設計書を作成する。\n また，データベースを利用するアプリケーションを開発する際は，ビューを作成して共用することによって\n処理の簡素化や作業の効率化が実現できる。\n 本問では，薬剤管理システムを題材に，複数のデータベース設計書間の関連を横断的に理解する能力，及び\nビューを作成するためのSQL に関する理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a カ\n              b ウ\n 設問２(1)  c 処方箋明細\n              d 薬剤在庫\n         (2)  e 値を更新する。(3)\n         (3)  f 処方箋ID\n  設問３     g  UNION 又は  UNION ALL\n              h  EXISTS\n  設問４     i  SUM(T3.処方量_大人1 日)\n              j  >= CURRENT_DATE\n              k  IS NULL",
+    "modelAnswer": "問６\n                       出題趣旨\n\n                                                                               そ ご\n  データベース設計では，E-R 図の他に，操作対象のテーブルや列への設定内容など，齟齬 が生じないよう，\n複数の観点から設計書を作成する。\n また，データベースを利用するアプリケーションを開発する際は，ビューを作成して共用することによって\n処理の簡素化や作業の効率化が実現できる。\n 本問では，薬剤管理システムを題材に，複数のデータベース設計書間の関連を横断的に理解する能力，及び\nビューを作成するためのSQL に関する理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a カ\n              b ウ\n 設問２(1)  c 処方箋明細\n              d 薬剤在庫\n         (2)  e 値を更新する。(3)\n         (3)  f 処方箋ID\n  設問３     g  UNION 又は  UNION ALL\n              h  EXISTS\n  設問４     i  SUM(T3.処方量_大人1 日)\n              j  >= CURRENT_DATE\n              k  IS NULL",
+    "explanation": "ER図の関連を先に確認して、SQLの結合条件と抽出条件に分ける。有効期限や処方条件は、どの表の項目で判定できるかを記述と照らし合わせる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-28.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-29.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-30.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-31.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-32.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問6 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問6 本文・設問（公式問題PDF 28ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問6 本文・設問（公式問題PDF 29ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問6 本文・設問（公式問題PDF 30ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問6 本文・設問（公式問題PDF 31ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問6 本文・設問（公式問題PDF 32ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q06-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問6 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=28",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問6。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q7",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "組込みシステム開発",
+    "topicTags": [
+      "家庭用浴室給湯システム"
+    ],
+    "difficulty": 5,
+    "question": "問7 家庭用浴室給湯システム",
+    "answer": "問７\n                       出題趣旨\n 組込みシステムのソフトウェアの設計・実装においては，システムの要求仕様に加えて，ハードウェアの制\n御仕様の理解が求められる。\n 本問では，浴室での異常事象を検出する機能をもった浴室給湯システムを題材に，仕様を把握する能力，セ\nンサの出力仕様を理解して，センサの出力を読み出すタスクを設計・実装する基礎的能力，及び複数のセンサ\nの出力から状態を判定するタスクを設計・実装する基礎的能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a 人感\n              b 出入り\n              c 浴室から出た\n         (2) 3.2\n 設問２(1) （ク）\n         (2) （チ）\n 設問３(1)  d 連続して361 回“未検出”を受信\n         (2)  e 在室\n              f 未定",
+    "modelAnswer": "問７\n                       出題趣旨\n 組込みシステムのソフトウェアの設計・実装においては，システムの要求仕様に加えて，ハードウェアの制\n御仕様の理解が求められる。\n 本問では，浴室での異常事象を検出する機能をもった浴室給湯システムを題材に，仕様を把握する能力，セ\nンサの出力仕様を理解して，センサの出力を読み出すタスクを設計・実装する基礎的能力，及び複数のセンサ\nの出力から状態を判定するタスクを設計・実装する基礎的能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a 人感\n              b 出入り\n              c 浴室から出た\n         (2) 3.2\n 設問２(1) （ク）\n         (2) （チ）\n 設問３(1)  d 連続して361 回“未検出”を受信\n         (2)  e 在室\n              f 未定",
+    "explanation": "センサの状態は出力が確定するまでの読出し回数を数える。タスク間で通知する条件と解除する条件を区別し、タイムチャートと照合する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-34.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-35.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-36.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-37.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問7 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問7 本文・設問（公式問題PDF 34ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問7 本文・設問（公式問題PDF 35ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問7 本文・設問（公式問題PDF 36ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問7 本文・設問（公式問題PDF 37ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q07-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問7 公式解答例（公式PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=34",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=4",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問7。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q8",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "情報システム開発",
+    "topicTags": [
+      "Webサイトの開発"
+    ],
+    "difficulty": 5,
+    "question": "問8 Webサイトの開発",
+    "answer": "問８\n                       出題趣旨\n  Web サイトの開発において，デザイン性，保守性に優れたWeb サイトとするために，CSS（Cascading Style\nSheet）を使用することが一般的になっている。\n  また，CSS を使用し，デバイスに応じて動的にWeb サイトの表示を変更する技術である“レスポンシブ\n Web デザイン”も普及し始めている。\n  本問ではWeb サイトのリニューアルを題材に，レスポンシブWeb デザインを用いてスマートフォン，タブ\nレット，PC に合わせたWeb サイトのデザインを実現する方法や，CSS の利用方法に関する理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a レスポンシブWeb デザイン\n 設問２(1)  b  HTML\n         (2)  c オ\n                                          順不同\n              d キ\n  設問３  デバイスごとのHTML ファイルを開発する必要があるから\n  設問４     e  768px\n              f  1023px\n              g  /images/topimage_w768.jpg\n              h  no-repeat\n  設問５  画像表示の遅延を防ぐため",
+    "modelAnswer": "問８\n                       出題趣旨\n  Web サイトの開発において，デザイン性，保守性に優れたWeb サイトとするために，CSS（Cascading Style\nSheet）を使用することが一般的になっている。\n  また，CSS を使用し，デバイスに応じて動的にWeb サイトの表示を変更する技術である“レスポンシブ\n Web デザイン”も普及し始めている。\n  本問ではWeb サイトのリニューアルを題材に，レスポンシブWeb デザインを用いてスマートフォン，タブ\nレット，PC に合わせたWeb サイトのデザインを実現する方法や，CSS の利用方法に関する理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a レスポンシブWeb デザイン\n 設問２(1)  b  HTML\n         (2)  c オ\n                                          順不同\n              d キ\n  設問３  デバイスごとのHTML ファイルを開発する必要があるから\n  設問４     e  768px\n              f  1023px\n              g  /images/topimage_w768.jpg\n              h  no-repeat\n  設問５  画像表示の遅延を防ぐため",
+    "explanation": "端末ごとの表示要件を画面構成と横幅の条件に分ける。CSSのメディアクエリが適用される範囲と、範囲外で使われる指定を順に確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-38.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-39.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-40.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-41.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-42.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問8 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問8 本文・設問（公式問題PDF 38ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問8 本文・設問（公式問題PDF 39ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問8 本文・設問（公式問題PDF 40ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問8 本文・設問（公式問題PDF 41ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問8 本文・設問（公式問題PDF 42ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q08-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問8 公式解答例（公式PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=38",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=4",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問8。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q9",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "システム更改プロジェクトのスケジュールの作成"
+    ],
+    "difficulty": 5,
+    "question": "問9 システム更改プロジェクトのスケジュールの作成",
+    "answer": "問９\n                       出題趣旨\n 急激なビジネス環境の変化に追従するために，システム開発期間の短縮を求められる場合がある。スケジュ\nールの見直しは，クリティカルパスを見極めて適切に対応する必要がある。\n 本問では，クラウドサービス利用を前提としたシステム更改プロジェクトのスケジュール作成を題材に，作\n業工程図の策定に関する基本的な理解，及びスケジュールを短縮するための方法を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  21\n              b  54\n         (2) カスタマイズの規模が事前の想定とかい離した場合\n 設問２(1)  c クリティカルパス\n         (2)  d  B4\n         (3)  e  32\n              f  70\n         (4) 各モジュールの各作業が完了したタイミングで品質判定を行\n      う。",
+    "modelAnswer": "問９\n                       出題趣旨\n 急激なビジネス環境の変化に追従するために，システム開発期間の短縮を求められる場合がある。スケジュ\nールの見直しは，クリティカルパスを見極めて適切に対応する必要がある。\n 本問では，クラウドサービス利用を前提としたシステム更改プロジェクトのスケジュール作成を題材に，作\n業工程図の策定に関する基本的な理解，及びスケジュールを短縮するための方法を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1)  a  21\n              b  54\n         (2) カスタマイズの規模が事前の想定とかい離した場合\n 設問２(1)  c クリティカルパス\n         (2)  d  B4\n         (3)  e  32\n              f  70\n         (4) 各モジュールの各作業が完了したタイミングで品質判定を行\n      う。",
+    "explanation": "作業の依存関係と要員の割当てを確認し、完了日を制約している作業を特定する。二つの短縮案は、短縮される日数と追加費用を分けて比べる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-44.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-45.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-46.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-47.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-48.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問9 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問9 本文・設問（公式問題PDF 44ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問9 本文・設問（公式問題PDF 45ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問9 本文・設問（公式問題PDF 46ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問9 本文・設問（公式問題PDF 47ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問9 本文・設問（公式問題PDF 48ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q09-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問9 公式解答例（公式PDF 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=44",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=5",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問9。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q10",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "サービス運用のアウトソーシング"
+    ],
+    "difficulty": 5,
+    "question": "問10 サービス運用のアウトソーシング",
+    "answer": "問10\n                       出題趣旨\n 昨今，クラウドサービスやアウトソーシングサービスを利用してサービス運用をアウトソーシングするケー\nスが増えてきている。こうしたケースでは，IT 部門は，顧客とのSLA を支え，整合を図るため，サービスレ\nベルについてアウトソーシング先とSLA を合意することが重要になる。\n 本問では，既存サービスをアウトソーシングする際のSLA 合意を題材に，SLA の策定及びSLA の目標値の\n達成に向けた方策の実施に関する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a ウ\n              b イ\n  設問２  段階的取扱い\n  設問３     d イ\n              e オ\n 設問４(1) サービス可用性を維持して変更作業を行う必要があるから\n         (2) 業務アプリに起因するインシデント\n  設問５  販売部門の販売量予測に基づきリソースの要求量をまとめる。",
+    "modelAnswer": "問10\n                       出題趣旨\n 昨今，クラウドサービスやアウトソーシングサービスを利用してサービス運用をアウトソーシングするケー\nスが増えてきている。こうしたケースでは，IT 部門は，顧客とのSLA を支え，整合を図るため，サービスレ\nベルについてアウトソーシング先とSLA を合意することが重要になる。\n 本問では，既存サービスをアウトソーシングする際のSLA 合意を題材に，SLA の策定及びSLA の目標値の\n達成に向けた方策の実施に関する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a ウ\n              b イ\n  設問２  段階的取扱い\n  設問３     d イ\n              e オ\n 設問４(1) サービス可用性を維持して変更作業を行う必要があるから\n         (2) 業務アプリに起因するインシデント\n  設問５  販売部門の販売量予測に基づきリソースの要求量をまとめる。",
+    "explanation": "障害を受け付けてから報告するまでの担当と処理の順序を表で確認する。委託先とのSLAと、社内の利用部門との約束を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-50.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-51.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-52.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-53.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問10 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問10 本文・設問（公式問題PDF 50ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問10 本文・設問（公式問題PDF 51ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問10 本文・設問（公式問題PDF 52ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問10 本文・設問（公式問題PDF 53ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q10-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問10 公式解答例（公式PDF 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=50",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=5",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問10。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "ap-2019h-pm-q11",
+    "exam": "ap",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "RPAの監査"
+    ],
+    "difficulty": 5,
+    "question": "問11 RPAの監査",
+    "answer": "問11\n                       出題趣旨\n 近年，業務の効率化や高度化を目的としてRPA を導入する企業の事例が多く紹介されるようになってき\nた。その一方で，RPA 導入から導入後の運用・保守体制全般にわたって，IT ガバナンスが十分でないことな\nどに対する注意喚起を行う人も増えている。\n  本問では，RPA の導入及び導入後の運用・保守に関するシステム監査についての基本的な理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a 事務部RPA の実行ログ\n  設問２     b 事務部RPA 開発用資料\n  設問３     c 再発防止策\n  設問４     d ウ\n  設問５     e 変更\n  設問６     f 障害対応手順\n  設問７     g システム関連規程類の改訂案\n              h 全社のRPA の管理責任部署",
+    "modelAnswer": "問11\n                       出題趣旨\n 近年，業務の効率化や高度化を目的としてRPA を導入する企業の事例が多く紹介されるようになってき\nた。その一方で，RPA 導入から導入後の運用・保守体制全般にわたって，IT ガバナンスが十分でないことな\nどに対する注意喚起を行う人も増えている。\n  本問では，RPA の導入及び導入後の運用・保守に関するシステム監査についての基本的な理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a 事務部RPA の実行ログ\n  設問２     b 事務部RPA 開発用資料\n  設問３     c 再発防止策\n  設問４     d ウ\n  設問５     e 変更\n  設問６     f 障害対応手順\n  設問７     g システム関連規程類の改訂案\n              h 全社のRPA の管理責任部署",
+    "explanation": "導入目的の達成を確認できる数値と記録を特定する。連携先の画面が変わったときの影響を押さえ、変更前後に必要なテストと運用記録を整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/page-03.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-54.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-55.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-56.webp",
+      "/questions/ipa/ap/2019-spring-pm/page-57.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問11 共通の解答要領（公式問題PDF 3ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問11 本文・設問（公式問題PDF 54ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問11 本文・設問（公式問題PDF 55ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問11 本文・設問（公式問題PDF 56ページ）",
+      "応用情報技術者試験 2019年度春期 午後 問11 本文・設問（公式問題PDF 57ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2019-spring-pm/answer-q11-p06.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者試験 2019年度春期 午後 問11 公式解答例（公式PDF 6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_qs.pdf#page=54",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_ap_pm_ans.pdf#page=6",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 応用情報技術者試験 2019年度春期 午後 問11。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

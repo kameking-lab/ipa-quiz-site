@@ -4,7 +4,8 @@ import { ALL_QUESTIONS } from "@/data/questions";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 import { getAllBlogSummaries } from "@/data/blog";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
-import { findQuestionByRoute } from "@/lib/seo/question-url";
+import { legacyExamPath } from "@/lib/seo/legacy-exam-path";
+import { findQuestionByRoute, parseQuestionYearSeason } from "@/lib/seo/question-url";
 import { findTopicByAnySlug } from "@/lib/seo/topics";
 import {
   ESSAY_EXAM_CODES,
@@ -65,18 +66,18 @@ function isResolvable(path: string): boolean {
       section: q[3],
       qnum: q[4],
     });
-    return Boolean(found && isPracticeReadyQuestion(found));
+    return Boolean(found && isPracticeReadyQuestion(found) && !legacyExamPath(path));
   }
   // /{exam}/{year-season}
-  const ys = /^\/([a-z]{2})\/(\d{4}-(?:spring|autumn|cbt))$/.exec(path);
-  if (ys) {
+  const ys = /^\/([a-z0-9-]+)\/(\d{4}-[a-z0-9]+)$/.exec(path);
+  if (ys && parseQuestionYearSeason(ys[2])) {
     const [, exam, key] = ys;
     return getQuestionsByExamStrict(exam as ExamCode).some(
-      (x) => `${x.year}-${x.season}` === key,
+      (x) => `${x.year}-${x.season}` === key && !legacyExamPath(path),
     );
   }
   // /{exam}/topic/{category}
-  const cat = /^\/([a-z]{2})\/topic\/(.+)$/.exec(path);
+  const cat = /^\/([a-z0-9-]+)\/topic\/(.+)$/.exec(path);
   if (cat) {
     const [, exam] = cat;
     const category = decodeURIComponent(cat[2]);

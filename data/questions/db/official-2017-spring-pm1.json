@@ -1,0 +1,170 @@
+[
+  {
+    "id": "db-2017h-pm1-q1",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "関数従属性・正規化"
+    ],
+    "difficulty": 4,
+    "question": "問1 データベースの設計",
+    "answer": "設問                解答例・解答の要点                 備考\n設問１(1) 候補キー ｛電子会議番号，投稿番号｝，｛分野番号，表示順，投稿番号｝\n       部分関数従属性の有無  あり    推移的関数従属性の有無 あり\n      部分関数\n            電子会議番号→議題\n       従属性\n      推移的関数\n            電子会議番号→分野番号→分野名\n       従属性\n       (2)  正規形  第1 正規形\n            分野（分野番号，分野名）\n       関係  電子会議（電子会議番号，議題，分野番号，表示順，\n      スキーマ       作成者ユーザID）\n            投稿（電子会議番号，投稿番号，投稿本文，投稿者ユーザID）\n設問２(1)  a 主務グループID\n            b 管理グループID\n            c 送信元ユーザID\n            d 送信先ユーザID\n                                           順不同\n            e 開封日時\n            f 参加可否回答\n       (2)\n                      予約          ユーザ        メッセージ\n\n\n\n\n\n                          スケジュール        兼務        メッセージ\n              設備予約先                           予約先        グループ        送信先\n\n\n\n\n\n                      設備         グループ\n\n設問３(1)   関係   ロール（ロールID，ロール名）\n       スキーマ  ロール付与先（ロールID，ユーザID）\n       関係名  決裁ルート\n       属性名   承認ロールID\n       (2)       一度承認を行った申請が差戻しされた後，再度承認処理を行った\n        状況\n             とき\n             承認（申請ひな形番号，申請連番，ステップ番号，\n        関係\n                承認連番，承認処理結果，コメント，\n       スキーマ\n                承認者ユ ザID 承認日時）",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n設問１(1) 候補キー ｛電子会議番号，投稿番号｝，｛分野番号，表示順，投稿番号｝\n       部分関数従属性の有無  あり    推移的関数従属性の有無 あり\n      部分関数\n            電子会議番号→議題\n       従属性\n      推移的関数\n            電子会議番号→分野番号→分野名\n       従属性\n       (2)  正規形  第1 正規形\n            分野（分野番号，分野名）\n       関係  電子会議（電子会議番号，議題，分野番号，表示順，\n      スキーマ       作成者ユーザID）\n            投稿（電子会議番号，投稿番号，投稿本文，投稿者ユーザID）\n設問２(1)  a 主務グループID\n            b 管理グループID\n            c 送信元ユーザID\n            d 送信先ユーザID\n                                           順不同\n            e 開封日時\n            f 参加可否回答\n       (2)\n                      予約          ユーザ        メッセージ\n\n\n\n\n\n                          スケジュール        兼務        メッセージ\n              設備予約先                           予約先        グループ        送信先\n\n\n\n\n\n                      設備         グループ\n\n設問３(1)   関係   ロール（ロールID，ロール名）\n       スキーマ  ロール付与先（ロールID，ユーザID）\n       関係名  決裁ルート\n       属性名   承認ロールID\n       (2)       一度承認を行った申請が差戻しされた後，再度承認処理を行った\n        状況\n             とき\n             承認（申請ひな形番号，申請連番，ステップ番号，\n        関係\n                承認連番，承認処理結果，コメント，\n       スキーマ\n                承認者ユ ザID 承認日時）\n```",
+    "explanation": "候補キーを列挙し、部分関数従属性と推移的関数従属性の有無を確認して、関係の分解につなげる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-05.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-06.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-07.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-08.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-09.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-10.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-11.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 3ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 4ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 5ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問1 本文・設問（公式問題PDF 6ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問1 本文・設問（公式問題PDF 7ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問1 本文・設問（公式問題PDF 8ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問1 本文・設問（公式問題PDF 9ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問1 本文・設問（公式問題PDF 10ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問1 本文・設問（公式問題PDF 11ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2017-spring-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午後I 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_pm1_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-pm1-q2",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "排他制御"
+    ],
+    "difficulty": 4,
+    "question": "問2 トランザクションの排他制御",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１    a  SUM(S.出庫数量)\n            b  LEFT OUTER JOIN\n            c  GROUP BY B.部品番号,S.出庫年月日\n            d 出庫便番号\n            e  NOT NULL\n設問２(1) “在庫”テーブルの同じ行に対して，先行するAP の①と②の間で，後続のAP の\n      ①が実行された場合\n       (2) 実行状況        t2           t4           t6           t8\n             ①               ②③④\n\n             又は\n\n                               t2           t4           t6           t8\n            ①②③④\n\n       状態  出庫対象在庫数量が倉庫内在庫数量を超える。\n       (3)  f  CURRENT\n設問３(1) ア 倉庫コード\n                                           順不同\n      イ 部品番号\n      ウ 在庫\n      エ ロックの解放待ち\n       (2) オ 出庫元倉庫コード\n                                           順不同\n      カ 部品番号\n      キ 出庫\n      ク テーブルスキャン\n      ケ 更新 又は 専有ロック",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１    a  SUM(S.出庫数量)\n            b  LEFT OUTER JOIN\n            c  GROUP BY B.部品番号,S.出庫年月日\n            d 出庫便番号\n            e  NOT NULL\n設問２(1) “在庫”テーブルの同じ行に対して，先行するAP の①と②の間で，後続のAP の\n      ①が実行された場合\n       (2) 実行状況        t2           t4           t6           t8\n             ①               ②③④\n\n             又は\n\n                               t2           t4           t6           t8\n            ①②③④\n\n       状態  出庫対象在庫数量が倉庫内在庫数量を超える。\n       (3)  f  CURRENT\n設問３(1) ア 倉庫コード\n                                           順不同\n      イ 部品番号\n      ウ 在庫\n      エ ロックの解放待ち\n       (2) オ 出庫元倉庫コード\n                                           順不同\n      カ 部品番号\n      キ 出庫\n      ク テーブルスキャン\n      ケ 更新 又は 専有ロック\n```",
+    "explanation": "ロック対象と取得順序を処理ごとに追い、待ちが起きる箇所とその解消に必要な制御を考える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-05.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-12.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-13.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-14.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-15.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-16.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-17.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 3ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 4ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 5ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問2 本文・設問（公式問題PDF 12ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問2 本文・設問（公式問題PDF 13ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問2 本文・設問（公式問題PDF 14ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問2 本文・設問（公式問題PDF 15ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問2 本文・設問（公式問題PDF 16ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問2 本文・設問（公式問題PDF 17ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2017-spring-pm1/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午後I 問2 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_pm1_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-pm1-q3",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "テーブル・SQL"
+    ],
+    "difficulty": 4,
+    "question": "問3 テーブル及びSQLの設計",
+    "answer": "設問                解答例・解答の要点                 備考\n設問１(1) ア主\n     イ副次\n         ウ360,000\n         エ3,600\n         オ30,000\n         カ1,000\n     キ2\n         ク2,000\n       ケ200\n       コ200\n       (2)  a 売上額2 月 - 売上額1 月\n            b 売上年 = '2017' 又は 売上年 = ?\n       (3) 比較する売上年月ごとに選択リストの列名を変更しなければならないから\n設問２(1) 電話番号が設定されている行だけを登録したいから\n       (2) 社員ID，電話番号 又は 電話番号，社員ID\n       (3)  c ①\n            d ③\n            e ④\n       (4)  f ①\n            g ②\n                                           順不同\n            h ③\n\n       (5)    社員ID     表示順     電話番号\n                E1              1             1111\n              E1             2            3333\n              E2             1            2222\n              E3             1            3333\n              E4             1            4444",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n設問１(1) ア主\n     イ副次\n         ウ360,000\n         エ3,600\n         オ30,000\n         カ1,000\n     キ2\n         ク2,000\n       ケ200\n       コ200\n       (2)  a 売上額2 月 - 売上額1 月\n            b 売上年 = '2017' 又は 売上年 = ?\n       (3) 比較する売上年月ごとに選択リストの列名を変更しなければならないから\n設問２(1) 電話番号が設定されている行だけを登録したいから\n       (2) 社員ID，電話番号 又は 電話番号，社員ID\n       (3)  c ①\n            d ③\n            e ④\n       (4)  f ①\n            g ②\n                                           順不同\n            h ③\n\n       (5)    社員ID     表示順     電話番号\n                E1              1             1111\n              E1             2            3333\n              E2             1            2222\n              E3             1            3333\n              E4             1            4444\n```",
+    "explanation": "テーブルのキーを確認した上で、求める集計単位に対して結合条件や絞込み条件が適切かを確かめる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-05.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-18.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-19.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-20.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-21.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-22.webp",
+      "/questions/ipa/db/2017-spring-pm1/page-23.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 3ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 4ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 共通の解答要領（公式問題PDF 5ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問3 本文・設問（公式問題PDF 18ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問3 本文・設問（公式問題PDF 19ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問3 本文・設問（公式問題PDF 20ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問3 本文・設問（公式問題PDF 21ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問3 本文・設問（公式問題PDF 22ページ）",
+      "データベーススペシャリスト 2017年度春期 午後I 問3 本文・設問（公式問題PDF 23ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2017-spring-pm1/answer-q03-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午後I 問3 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_pm1_qs.pdf#page=18",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_pm1_ans.pdf#page=3",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

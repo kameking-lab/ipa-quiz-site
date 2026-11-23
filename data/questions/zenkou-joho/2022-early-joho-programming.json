@@ -1,0 +1,177 @@
+[
+  {
+    "id": "zenkou-joho-2022-early-joho-programming-q01",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "基本挿入法で配列d(1)〜d(n)を昇順に整列する流れ図の、①〜⑤を埋めなさい。",
+    "answer": "① n − 1\n② i\n③ j − 1\n④ d(j + 1)\n⑤ i + 1",
+    "explanation": "d(1)〜d(i)が整列済みだと考える。次に挿入するd(i＋1)が存在するのはiがn−1以下の間なので、①はn−1。②iをjに入れて末尾から調べ、大きい要素を右へ1つ移すたびに③j−1へ戻る。止まったjの直後である④d(j＋1)にworkを置き、⑤i＋1として整列済み範囲を広げる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=28",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・プログラミングの基礎知識 大問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-programming-q01.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・プログラミングの基礎知識 大問1 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① n − 1\n② i\n③ j − 1\n④ d(j + 1)\n⑤ i + 1",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-programming-q02",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "自然数nを素因数分解する流れ図の①〜⑤を埋めなさい。乗算は「×」、除算は分数で表す。",
+    "answer": "① n ≧ gs\n② m = 0\n③ k ← k + 1\n④ n\n⑤ n ← n/k",
+    "explanation": "候補kを試すのは①n≧k²（gs）の間。②余りm＝0ならkは因数なので表示し、⑤nをn/kに置き換える。同じ素因数が複数回現れるため、この枝ではkを増やさない。割り切れない枝では③k←k＋1とする。n＜k²なら、それまでの候補で割れない残りは素数なので④nを表示する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=29",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・プログラミングの基礎知識 大問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-programming-q02.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・プログラミングの基礎知識 大問2 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① n ≧ gs\n② m = 0\n③ k ← k + 1\n④ n\n⑤ n ← n/k",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-programming-q03",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "漸化式を用いて整数nの立方根を近似する流れ図の①〜⑤を埋めなさい。",
+    "answer": "① b\n② <\n③ ≧\n④ k + 1\n⑤ a",
+    "explanation": "直前の近似値aから求めた新しい近似値を①bとし、大小どちらの場合も差dを非負にする。a←bで値を更新し、差dがEPS未満（②＜）なら繰返しを終える。差がまだ大きい場合（③≧）は④k＋1回目へ進む。20回以内に止まった場合の表示は⑤a。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=30",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・プログラミングの基礎知識 大問3。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-programming-q03.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・プログラミングの基礎知識 大問3 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① b\n② <\n③ ≧\n④ k + 1\n⑤ a",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-programming-q04",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "5次の魔方陣を作るCプログラムの①〜⑤を埋めなさい。",
+    "answer": "① 2\n② 1\n③ x + 1\n④ y\n⑤ ms[y][x]",
+    "explanation": "初めに1を入れているので①2から始める。②余り1の回だけ直下に移る。ほかは右斜め上へ進むため③x＋1とy−1を使い、上端を越えた場合は④yを最下行へ戻す。右端を越えた場合はxを左端へ戻し、行y・列xの⑤ms[y][x]にjを書き込む。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=31",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・プログラミングの基礎知識 大問4。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-programming-q04.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・プログラミングの基礎知識 大問4 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① 2\n② 1\n③ x + 1\n④ y\n⑤ ms[y][x]",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  },
+  {
+    "id": "zenkou-joho-2022-early-joho-programming-q05",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2022,
+    "season": "early",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "モンテカルロ法で円周率πを求めるCプログラムの①〜⑤を埋めなさい。",
+    "answer": "① #include <stdlib.h>\n② i = a\n③ x\n④ x * x + y * y\n⑤ 4.0",
+    "explanation": "①stdlib.hからrand、srand、RAND_MAXを使う。②i＝aで試行回数を設定し、③xとyに0〜1の座標を作る。④x²＋y²が1以下の点だけを数える。単位正方形内にある半径1の四分円の面積はπ/4なので、比b/aを⑤4.0倍する。問題の考え方では第1象限の座標を正と説明しているが、掲載プログラムと標準解答の条件は座標が0となる境界点も含む。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第68回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=32",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/68joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 令和4年度前期 第68回情報技術検定試験 1級・プログラミングの基礎知識 大問5。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/68-programming-q05.webp"
+    ],
+    "imageAltTexts": [
+      "公式問題 1級・プログラミングの基礎知識 大問5 の設問と資料"
+    ],
+    "officialAnswerExample": true,
+    "modelAnswer": "① #include <stdlib.h>\n② i = a\n③ x\n④ x * x + y * y\n⑤ 4.0",
+    "scoringCriteria": "無駄な繰り返しや無意味な代入がなく、論理的に正しい別解も正解となる。"
+  }
+]

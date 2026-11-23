@@ -5,6 +5,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { POSTHOG_CONFIG, isPostHogConfigured, posthogCapture, setPostHogClient } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { markReferralVisit } from "@/lib/analytics/referral";
+import { firstTouch } from "@/lib/analytics/first-touch";
 
 /**
  * PostHog 初期化 + page_view 自動送信のクライアントプロバイダ。
@@ -16,6 +17,7 @@ export function PostHogProvider() {
 
   useEffect(() => {
     if (typeof window === "undefined" || nativeClient() || location.pathname.startsWith("/auth/")) return;
+    firstTouch();
     markReferralVisit();
     if (!isPostHogConfigured) return;
     let cancelled = false;

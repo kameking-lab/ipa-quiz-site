@@ -170,7 +170,13 @@ export const DB_QUESTIONS_2012_AUTUMN_AM1: Question[] = [
     "explanation": "ガーベジコレクション (Garbage Collection, GC) は、プログラムの実行中にヒープ領域に確保されたメモリのうち、どの変数からも参照されなくなった不要な領域を自動的に検出して解放し、再利用可能にする機能です。これにより、プログラマが手動でメモリを解放する手間を省き、メモリリークのリスクを低減します。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2012h-6_2/2012h-6a_db_am1_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "空き領域を集約するのはコンパクションであり、要求量に応じて区画を作る可変区画方式とは違います。主記憶管理では、不要領域の回収、空き領域の集約、結合、配置位置の変更を区別します。",
+      "イ": "参照されなくなったオブジェクトなどが使う領域を自動回収し、再利用可能にするのがガーベジコレクションです。主記憶管理では、不要領域の回収、空き領域の集約、結合、配置位置の変更を区別します。",
+      "ウ": "格納位置の変更は動的再配置に関する説明で、必要なモジュールを結び付ける動的リンキングではありません。主記憶管理では、不要領域の回収、空き領域の集約、結合、配置位置の変更を区別します。",
+      "エ": "必要になったモジュールの読込みは動的ローディングであり、主記憶上の位置を変える動的再配置ではありません。主記憶管理では、不要領域の回収、空き領域の集約、結合、配置位置の変更を区別します。"
+    }
   },
   {
     "id": "db-2012a-am1-q8",
@@ -266,7 +272,13 @@ export const DB_QUESTIONS_2012_AUTUMN_AM1: Question[] = [
     "explanation": "Ajax (Asynchronous JavaScript and XML) は、Webブラウザに搭載された非同期通信機能を利用し、JavaScriptなどを用いてサーバとデータをやり取りする技術です。Webページの全部を再読み込みすることなく、必要な部分だけを動的に更新できるため、地図の高速スクロールや検索候補の逐次表示といった、インタラクティブで応答性の高いWebアプリケーションを実現します。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2012h-6_2/2012h-6a_db_am1_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "Ajax（Asynchronous JavaScript and XML）は、JavaScriptからブラウザ組込みのXMLHttpRequestなどを使ってサーバと非同期通信し、ページ全体を再読込みせずに一部だけを更新する技術です。地図のスクロールや入力に応じた検索候補表示が代表例です。",
+      "イ": "CSS（Cascading Style Sheets）は、HTML文書の色・フォント・レイアウトなどの見た目を指定するスタイルシート言語です。サーバとの非同期通信機能を提供する技術ではありません。",
+      "ウ": "DOM（Document Object Model）は、HTMLやXML文書を木構造のオブジェクトとして扱い、スクリプトから要素を参照・変更するためのAPIです。Ajaxで取得したデータを画面に反映する際に使われますが、非同期通信そのものの技術ではありません。",
+      "エ": "SAX（Simple API for XML）は、XML文書を先頭から読み込み、要素の開始・終了などのイベントごとに処理するイベント駆動型のXMLパーサAPIです。ブラウザとサーバの非同期通信を行う技術ではありません。"
+    }
   },
   {
     "id": "db-2012a-am1-q12",
@@ -458,7 +470,13 @@ export const DB_QUESTIONS_2012_AUTUMN_AM1: Question[] = [
     "explanation": "EVM (Earned Value Management) は、プロジェクトのパフォーマンスを定量的に管理するための手法です。この手法では、計画された作業の予算（Planned Value）、実際にかかった費用（Actual Cost）、そして完了した作業の価値（Earned Value）を比較することで、プロジェクトの「コスト」と「スケジュール」の進捗状況を統合的に評価します。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2012h-6_2/2012h-6a_db_am1_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "実コストと出来高で費用を、計画価値と出来高で進捗を評価し、コストとスケジュールを管理します。ＥＶＭでは計画価値、出来高、実コストを対応付けて、費用と進捗の差異を測定します。",
+      "イ": "コストは対象ですが、リスクの発生可能性などをＥＶＭの出来高指標で直接測定するものではありません。ＥＶＭでは計画価値、出来高、実コストを対応付けて、費用と進捗の差異を測定します。",
+      "ウ": "スケジュールは対象ですが、品質の欠陥数や適合度をＥＶＭの主要指標として測るわけではありません。ＥＶＭでは計画価値、出来高、実コストを対応付けて、費用と進捗の差異を測定します。",
+      "エ": "品質とリスクはいずれも重要な管理対象ですが、ＥＶＭが一体的に測るコストと進捗の組合せではありません。ＥＶＭでは計画価値、出来高、実コストを対応付けて、費用と進捗の差異を測定します。"
+    }
   },
   {
     "id": "db-2012a-am1-q20",

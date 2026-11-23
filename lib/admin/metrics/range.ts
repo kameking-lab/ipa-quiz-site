@@ -6,13 +6,20 @@ function formatDate(d: Date): string {
   return d.toISOString().slice(0, 10);
 }
 
+function parsedDate(value: string | undefined, fallback: Date): Date {
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return fallback;
+  const date = new Date(`${value}T00:00:00Z`);
+  return Number.isFinite(date.getTime()) && formatDate(date) === value ? date : fallback;
+}
+
 export function resolveRange(
   range: MetricsRange,
   customFrom?: string,
   customTo?: string,
   now: Date = new Date(),
 ): MetricsRangeMeta {
-  const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+  const today = new Date(Date.UTC(jst.getUTCFullYear(), jst.getUTCMonth(), jst.getUTCDate()));
 
   let from: Date;
   let to: Date;
@@ -40,8 +47,8 @@ export function resolveRange(
       label = "今月";
       break;
     case "custom": {
-      const f = customFrom && /^\d{4}-\d{2}-\d{2}$/.test(customFrom) ? new Date(customFrom + "T00:00:00Z") : today;
-      const t = customTo && /^\d{4}-\d{2}-\d{2}$/.test(customTo) ? new Date(customTo + "T00:00:00Z") : today;
+      const f = parsedDate(customFrom, today);
+      const t = parsedDate(customTo, today);
       from = f.getTime() <= t.getTime() ? f : t;
       to = f.getTime() <= t.getTime() ? t : f;
       label = `${formatDate(from)} 〜 ${formatDate(to)}`;

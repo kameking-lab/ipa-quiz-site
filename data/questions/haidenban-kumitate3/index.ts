@@ -1,0 +1,1 @@
+export { HAIDEN_SEIGYO3_QUESTIONS as HAIDENBAN_KUMITATE3_QUESTIONS } from "../haiden-seigyo3";

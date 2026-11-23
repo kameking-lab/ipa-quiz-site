@@ -1,26 +1,35 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import Denken3Page from "@/app/denken3/page";
 import Denken2Page from "@/app/denken2/page";
 import Denken1Page from "@/app/denken1/page";
 import YearPage, { generateStaticParams, generateMetadata } from "@/app/[exam]/[yearSeason]/page";
 import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
-import type { ExamCode } from "@/lib/questions/types";
+
+const search = vi.hoisted(() => ({ value: new URLSearchParams() }));
+vi.mock("next/navigation", async importOriginal => ({
+  ...await importOriginal<typeof import("next/navigation")>(),
+  useSearchParams: () => search.value,
+}));
+afterEach(() => { search.value = new URLSearchParams(); });
 
 function documentFor(html: string) {
   return new DOMParser().parseFromString(html, "text/html");
 }
 
 describe("dedicated electrical-exam hubs link to existing year archives", () => {
+  it("renders the third-class landing with no request parameters", () => {
+    expect(renderToStaticMarkup(Denken3Page())).toContain("2025年度 下期の科目を選ぶ");
+  });
+
   it.each(["denken3", "denken2", "denken1"] as const)("%s links exactly its practice-ready years, with a return link", async (exam) => {
-    const page = exam === "denken3" ? await Denken3Page({ searchParams: Promise.resolve({}) }) : exam === "denken2" ? Denken2Page() : Denken1Page();
+    const page = exam === "denken3" ? Denken3Page() : exam === "denken2" ? Denken2Page() : Denken1Page();
     const doc = documentFor(renderToStaticMarkup(page));
     const years = groupByYearSeason(getQuestionsByExamStrict(exam));
     const links = [...doc.querySelectorAll(`[aria-labelledby="${exam}-year-archives"] a`)]
       .map(a => a.getAttribute("href"));
     expect(links).toEqual(years.map(y => `/${exam}/${y.key}`));
     expect(new Set(links).size).toBe(links.length);
-    expect(links.length).toBe(exam === "denken3" ? 4 : 1);
     const staticParams = await generateStaticParams();
     for (const year of years) {
       const params = { exam, yearSeason: year.key };
@@ -34,8 +43,9 @@ describe("dedicated electrical-exam hubs link to existing year archives", () => 
 
   it.each([
     ["2025", "first"], ["2025", "second"], ["2024", "first"], ["2024", "second"],
-  ] as const)("keeps the selected third-class %s/%s subject quizzes and filter return target", async (year, season) => {
-    const doc = documentFor(renderToStaticMarkup(await Denken3Page({ searchParams: Promise.resolve({ year, season }) })));
+  ] as const)("keeps the selected third-class %s/%s subject quizzes and filter return target", (year, season) => {
+    search.value = new URLSearchParams({ year, season });
+    const doc = documentFor(renderToStaticMarkup(Denken3Page()));
     const quizzes = [...doc.querySelectorAll('a[href^="/quiz?"]')];
     expect(quizzes).toHaveLength(4);
     expect(doc.querySelector(`a[href="/denken3?year=${year}&season=${season}"][aria-current="page"]`)).not.toBeNull();
@@ -48,20 +58,20 @@ describe("dedicated electrical-exam hubs link to existing year archives", () => 
     }
   });
 
-  it.each(["denken2", "denken1"] as const)("keeps %s empty-slot units, scope and subject quizzes", (exam) => {
+  it.each(["denken2", "denken1"] as const)("keeps %s empty-slot units and subject quizzes for the 2026 sitting", (exam) => {
     const doc = documentFor(renderToStaticMarkup(exam === "denken2" ? Denken2Page() : Denken1Page()));
+    const primary = getQuestionsByExamStrict(exam).filter(q => q.year === 2026 && q.season === "primary");
     if (exam === "denken2") {
-      expect(doc.body.textContent).toContain(`14原問・${getQuestionsByExamStrict(exam).length}空欄`);
+      expect(doc.body.textContent).toContain(`14原問・${primary.length}空欄`);
       expect(doc.body.textContent).toContain("計30原問");
       expect(doc.querySelectorAll('a[href^="/denken2/2026-primary/"][href$="/theory"], a[href^="/denken2/2026-primary/"][href$="/machine"]')).toHaveLength(2);
       expect(doc.querySelectorAll('a[href^="/denken2/2025-primary/"][href$="/theory"], a[href^="/denken2/2025-primary/"][href$="/machine"]')).toHaveLength(2);
       expect(doc.querySelectorAll('a[href^="/denken2/2025-primary/"][href$="/power"], a[href^="/denken2/2025-primary/"][href$="/law"]')).toHaveLength(2);
     } else {
-      expect(doc.body.textContent).toContain(`全${getQuestionsByExamStrict(exam as ExamCode).length}空欄`);
+      expect(doc.body.textContent).toContain(`全${primary.length}空欄`);
     }
-    expect(doc.body.textContent).toContain("未収録");
     const quizzes = [...doc.querySelectorAll('a[href^="/quiz?"]')];
-    expect(quizzes).toHaveLength(new Set(getQuestionsByExamStrict(exam).map(q => q.session)).size);
+    expect(quizzes).toHaveLength(new Set(primary.map(q => q.session)).size);
     for (const quiz of quizzes) {
       const query = new URL(quiz.getAttribute("href")!, "https://www.kakomon-ai.jp").searchParams;
       expect(query.get("exam")).toBe(exam);

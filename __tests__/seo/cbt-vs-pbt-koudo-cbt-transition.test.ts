@@ -17,15 +17,17 @@ describe("CBT/PBT 記事の応用情報・高度試験 CBT 移行 是正", () =>
 
   it("2026年度の期間制CBT実施を述べている", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("2026年度前期・後期にCBT方式で実施");
-    expect(body).toContain("申込受付と科目群ごとの実施期間");
+    expect(body).toContain("2026年度後期");
+    expect(body).toContain("CBTは会場のパソコンで問題を読み");
+    expect(body).toContain("申込期間と科目別の実施期間");
   });
 
-  it("IPA 公式の durable fact（試験時間は変更なし・科目A／科目B 名称）を述べている", () => {
+  it("出題形式の継続と区分別の科目A／科目B名称を述べている", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("各試験時間に変更はありません");
-    expect(body).toContain("科目A試験");
-    expect(body).toContain("科目B試験");
+    expect(body).toContain("知識・技能の範囲と、出題形式・出題数等は移行によって変わりません");
+    expect(body).toContain("APは科目A・B");
+    expect(body).toContain("高度は科目A-1・A-2と科目B-1・B-2");
+    expect(body).toContain("SCは科目A-1・A-2と科目B");
   });
 
   it("出典として IPA 公式の CBT 実施告知へリンクしている", () => {

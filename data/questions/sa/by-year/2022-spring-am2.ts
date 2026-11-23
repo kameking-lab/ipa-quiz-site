@@ -24,6 +24,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "インセプションデッキは、アジャイル開発の初期段階でプロジェクトの目的、スコープ、リスク、チーム構成などに対する共通認識を関係者間で得るためのツールです。あらかじめ設定された設問を通じて、プロジェクトの基本的な要素を合意形成し、その成果を共有する手法として適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "GoF（Gang of Four）のデザインパターンは、オブジェクト指向開発における設計の再利用可能な解決策をまとめたものです。これらのパターンは、オブジェクトの生成（Creational）、構造（Structural）、振る舞い（Behavioral）の三つのカテゴリに分類されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "Reflectionパターンは、ソフトウェアシステムを「ベースレベル」（アプリケーションロジック）と「メタレベル」（アプリケーションの構造や振る舞いを記述・操作するロジック）の二つのレベルに分割します。これにより、メタレベルがベースレベルに関する情報を提供し、ソフトウェアの動的な変更を可能にする仕組みを提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "インプロセスデータベースは、データベースエンジンがライブラリとして提供され、アプリケーションプログラムと同一のメモリ空間で動作する形式です。これにより、プロセス間通信やネットワーク通信のオーバーヘッドを排除し、高速なデータアクセスとリソース効率の向上を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,13 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ストラテジパターンは、アルゴリズムファミリーを定義し、それぞれをカプセル化して、それらを交換可能にするデザインパターンです。これにより、アルゴリズムが独立して変化しても、それを利用するクライアントに影響を与えずに済みます。\n\nイが正解となるのは、ストラテジパターンの特性として、新しいフォーマット（アルゴリズム）を追加したい場合、帳票出力ストラテジクラスの新しいサブクラスを作成するだけで対応できるためです。これにより、既存のコードを変更することなく、柔軟に機能拡張が可能です。\n\nアは、ストラテジパターンの利点ではありますが、クライアントが「意識せずに」利用できるというよりは、具体的にどのストラテジ（フォーマット）を利用するかを選択・設定する必要があるため、厳密には不適切です。\nウは、帳票出力ストラテジクラスではなく、コンテキストクラス（Context）が、どのフォーマットで帳票を出力するかというストラテジの選択・委譲を行う役割を担います。\nエは、帳票出力のアルゴリズムは、ストラテジインターフェース（Strategy）を実装した個々のサブクラス（Concrete Strategy）の中に記述されます。コンテキストクラスは、これらのストラテジを保持し、実行を委譲する役割です。",
+    "choiceExplanations": {
+      "ア": "コンテキストは共通のインタフェースを使って出力します。出力形式を指定する側では、対応する具象ストラテジを選ぶ必要があります。",
+      "イ": "帳票出力の共通操作を実装するサブクラスを追加すれば、新しい形式を扱えます。各形式のアルゴリズムが別のクラスにまとまっています。",
+      "ウ": "図ではPDF用とHTML用のアルゴリズムがそれぞれのサブクラスにあります。抽象側の帳票出力ストラテジは共通の操作を定めます。",
+      "エ": "コンテキストは選ばれたストラテジに帳票出力を委譲します。PDFやHTMLの具体的な出力処理は、それぞれのサブクラスに置きます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "モジュール結合度はモジュール間の依存関係の強さを示し、低いほど独立性が高く保守性に優れます。単一のデータ項目を引数で受け渡す方法は、モジュール間で必要な情報だけを明示的に渡すため、他の選択肢の大域的データやデータ構造全体を渡す方法に比べて最も結合度が低くなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "DFD作成の適切な手順は、まず現行システムの物理的な状況（現物理モデル）を把握し、そこから本質的な業務の流れ（現論理モデル）を抽出します。次に、その論理モデルを基に新システムの理想的な業務設計（新論理モデル）を行い、最後に具体的なシステム構成（新物理モデル）を設計します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "探索的テストは、テスト設計とテスト実行を同時に行うアプローチであり、テスターの知識や経験、直感を活用してリアルタイムにテストケースを生成・実行します。入力値の組み合わせを試し、その結果に基づいて次のテストケースを動的に決定しテストを繰り返す方法は、探索的テストの特徴をよく表しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "バグ管理図において、テスト項目消化、バグ摘出、未解決バグのすべての累積件数が変化しなくなった場合、テストが完全に収束したか、あるいは解決困難な深刻なバグに直面している可能性が考えられます。この状況では、問題の根本原因を特定し、確認する必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "FMEA（Failure Mode and Effects Analysis：故障モード影響解析）は、システムや製品の個々の構成要素において起こり得る潜在的な故障モードを特定し、その故障がシステム全体にどのような影響を与えるか（影響度）を評価する手法です。これにより、故障の予防と信頼性向上を図ります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS X 0160:2021の廃棄プロセスの「廃棄を確実化する」アクティビティでは、ソフトウェアシステムの廃棄戦略を定義するタスクが実施されます。この戦略には、廃棄方法、データ処理、セキュリティ、環境影響などの計画が含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS X 0160:2021において、「修整（Tailoring）」は、ライフサイクルモデルの目的や成果を達成するために、既存のライフサイクルプロセスを特定のプロジェクトや組織のニーズに合わせて調整・変更したり、新しいプロセスを定義したりすることを指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "バランススコアカードの「内部ビジネスプロセスの視点」は、企業の内部業務の効率性や品質向上に関する目標と指標を設定します。「注文受付から製品出荷までの日数短縮」は、業務プロセスの効率化に直接関わる指標であるため、この視点に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ファウンドリは、半導体メーカーから設計データを受け取り、その設計に基づいてLSIの製造のみを専門に行う企業です。LSI設計を自社で行い製造を外部委託する場合、この製造の委託先として適切なのはファウンドリです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ラボ契約（ラボ型開発契約）は、依頼元がベンダ企業に対し、特定のスキルを持つ開発チームや一定数のエンジニアを確保してもらい、そのチームに対して継続的に業務を委託する契約形態です。依頼元はベンダ企業に対し、契約に基づき要員確保を求める代わりに、一定以上の発注量を約束します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "eシール（電子公印、組織署名）は、法人が作成した電子文書データについて、その文書の作成元が間違いなくその法人であることを証明し、かつ文書が作成後に改ざんされていないことを保証するものです。個人の電子署名とは異なり、法人としての信頼性を提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "マルチベクトル型DDoS攻撃は、複数の異なる攻撃手法（攻撃ベクトル）を組み合わせて同時に実行することで、標的の防御を困難にするDDoS攻撃です。Webサーバのリソース枯渇を狙うアプリケーション層への攻撃と、DNS通信でネットワーク帯域を消費するネットワーク層への攻撃を同時に行うことは、マルチベクトル型に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +454,8 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
       "エ": "デジタル署名に公開鍵暗号方式が使用されることはなく、共通鍵暗号方式が使用される。"
     },
     "answer": "イ",
-    "explanation": "共通鍵暗号方式は、暗号化と復号の両方に同じ鍵を使用する暗号方式です。この鍵は、通信を行う両者間で秘密に共有される必要があります。",
+    "explanation": "共通鍵暗号方式では、暗号化と復号に同じ鍵を使うため、通信する双方がその鍵を秘密に共有します。AESはこの方式です。一方、RSAなどの公開鍵暗号方式では公開鍵と秘密鍵を対にして使い、内容を秘匿するときは受信者の公開鍵で暗号化し、受信者の秘密鍵で復号します。署名では秘密の生成鍵と対応する検証鍵を用います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "CRYPTREC（クリプトレック、暗号技術検討会）の主要な役割は、電子政府で利用する暗号技術の安全性と実装性に関する評価を行い、推奨すべき暗号技術のリスト（CRYPTREC暗号リスト）を策定・更新することです。これにより、日本の電子政府における情報セキュリティ確保のための暗号技術選定と監視を行っています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ファイアウォールのNAPT（Network Address Port Translation）機能は、内部ネットワークのプライベートIPアドレスとポート番号を、外部ネットワークから見えるグローバルIPアドレスとポート番号に変換します。これにより、外部から内部ネットワークの具体的なIPアドレスを直接知ることが困難になり、インターネットからの不正アクセスを防ぐセキュリティ効果があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "キャッシュシステムの平均アクセス時間は、一般的に「（キャッシュヒット率 × キャッシュアクセス時間）＋（キャッシュミス率 × 主記憶アクセス時間）」で算出されます。問題文で「命令キャッシュに存在しない確率をr」とあるため、rはキャッシュミス率、(1-r)はキャッシュヒット率です。選択肢エの式 `r・x + (1-r)・y` が正解であるためには、問題文の「xナノ秒の命令キャッシュ」と「yナノ秒の主記憶」という定義を、それぞれ「xナノ秒の主記憶」と「yナノ秒の命令キャッシュ」と読み替える必要があります。この読み替えを行うと、平均アクセス時間は (1-r)y + rx となり、選択肢エと一致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "シェアードエブリシング構成においても、システム設計によっては、共有データに対する特定の処理責任や管理範囲が各サーバに論理的に割り当てられることがあります。この場合、担当サーバが故障すると、その特定の範囲のデータ処理が中断され、システム全体の可用性が部分的に低下する可能性を示唆しています。これは、共有リソース管理における運用上の課題を強調する記述と考えられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "フェールオーバは、システムにフォールト（故障）が発生した際に、自動的に待機系のサブシステムに切り替えることで、システムの停止時間を最小限に抑える技術です。これにより、故障から復旧するまでの時間（MTTR）は大幅に短縮されます。しかし、フォールトの発生自体を防ぐものではないため、故障が発生する間隔（MTBF）は変化しないとされています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -575,7 +604,14 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
       "エ": "T₄"
     },
     "answer": "イ",
-    "explanation": "イのT₂が正解です。トランザクションの待ちグラフは、あるトランザクションが他のトランザクションのロック解除を待っている関係を示します。Tᵢ→Tⱼという矢印は、Tⱼがロックしている資源のアンロックをTᵢが待つことを意味します。選択肢の文言から、T₁がcommitを発行する直前の状態における待ちグラフが作成されたとあります。\n\nアのT₁が誤りである理由は、T₁はcommitを発行する直前であり、他のトランザクションのロック解除を待つ状態ではないからです。T₁自身がcommitすることでロックが解除され、待ち状態から解放される立場にあると考えられます。\n\nウのT₃やエのT₄も同様に、問題文からT₁がcommitする直前という状況設定であり、T₁がcommitすることで問題なく終了するトランザクションである可能性が高く、待ちグラフにおいて他のトランザクションを待つ関係にあるとは考えにくいからです。待ちグラフの構造は、デッドロックの検出などに用いられるもので、T₁がcommitするということは、T₁が関わる待ち関係が解消されることを示唆しています。したがって、T₁のcommit直前の待ちグラフで、T₁自身が他のトランザクションを待つ関係にあるとは想定されません。T₂は、T₁がcommitする前にアンロックを待っている資源をロックしている可能性があり、最も待ちグラフに登場する可能性が高いトランザクションと言えます。",
+    "explanation": "矢印は、ロックを待つ側から保持する側へ引きます。T₄はBの更新でT₂・T₃を待ち、T₂はCの更新でT₁を待ちます。T₃はAの更新でT₁・T₄を待ちます。これを図に当てはめるとa＝T₂、b＝T₄、c＝T₃、d＝T₁です。",
+    "choiceExplanations": {
+      "ア": "T₁はAとCの共有ロックを保持し、T₂とT₃から待たれます。自身は他のロック解放を待っておらず、出る矢印がないdです。",
+      "イ": "T₂はCの更新でT₁の共有ロックを待ち、Bの共有ロックを持つのでT₄から待たれます。a→dとb→aに対応します。",
+      "ウ": "T₃はAの更新でT₁とT₄を待ち、BのロックをT₄から待たれます。dとbに矢印が出てbからも矢印が入るcです。",
+      "エ": "T₄はBの更新に際し、Bを共有ロックしているT₂とT₃の両方を待ちます。aとcへ矢印が出ているbです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,13 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "図は、既存の電話機とPBXを利用した企業内内線網をIPネットワークへ統合する構成を示しています。aから順に、既存のPBX（構内交換機：Private Branch eXchange）は、社内電話網の交換機能を担います。次にbは、PBXとIPネットワークを連携させるための装置で、アナログ音声信号をIPパケットに変換するVoIPゲートウェイ（Voice over IP Gateway：IP電話網との接続装置）またはIPネットワークの通信を制御するルータ（Router：ネットワーク間の経路選択を行う機器）が考えられます。そしてcは、IPネットワークの終端または入口に位置し、IPネットワーク全体を管理・制御するルータ、あるいはPBX機能を持ったIP-PBX（IP-PBX：IP電話網上で交換機能を提供するシステム）が該当し得ます。\n\n正解はアです。図の構成から、まず既存の電話機群がPBXに接続され、PBXの機能の一部がIPネットワークへ統合されると考えられます。PBXからIPネットワークへ接続する際に、アナログ電話信号をデジタルIPパケットへ変換するVoIPゲートウェイが必要となり、その先にIPネットワークを介して外部との通信を制御するルータが配置されるのが標準的な構成です。したがって、aにPBX、bにVoIPゲートウェイ、cにルータの順で配置されるのが適切です。\n\n選択肢イは、bにルータ、cにVoIPゲートウェイと配置していますが、PBXからIPネットワークへの接続にはVoIPゲートウェイが先行し、その先にルータが置かれるのが一般的です。選択肢ウは、aにVoIPゲートウェイ、bにPBXとしていますが、既存の内線網をIP化する文脈では、まずPBXが存在し、それをIPネットワークへ繋ぐためにVoIPゲートウェイが介在します。選択肢エは、aにVoIPゲートウェイ、bにルータとしていますが、これもPBXが先行しないため不適切です。",
+    "choiceExplanations": {
+      "ア": "既存の電話機はPBXに接続します。VoIPゲートウェイで電話の信号をIP網で扱える形に変換し、ルータを通してIP網に送ります。",
+      "イ": "PBXの出力をルータでそのままIP網用に変換することはできません。PBXの次にはVoIPゲートウェイが必要です。",
+      "ウ": "既存の電話機をまとめて内線を交換する役割はPBXが担うので、電話機の次がPBXです。ゲートウェイはPBXとルータの間に置きます。",
+      "エ": "PBXは既存の電話機を収容します。IP網の手前に置くのは、VoIPゲートウェイから受け取ったIPパケットを転送するルータです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"

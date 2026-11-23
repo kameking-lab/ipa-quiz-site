@@ -1,0 +1,144 @@
+[
+  {
+    "id": "sa-2024h-pm1-q1",
+    "exam": "sa",
+    "session": "pm1",
+    "year": 2024,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "システム設計",
+    "topicTags": [
+      "生産管理",
+      "システム統合",
+      "業務要件"
+    ],
+    "difficulty": 5,
+    "question": "問1　システムの統合\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１  (1) 製品を期日までに製造するために逆算して各工程の製造開始日時を決めるから\n         (2) 比例 所要時間×製造指示数\n       一定 所要時間\n 設問２  (1) 製品と仕掛品は“無”，原材料は“有”に設定する。\n         (2) ファイル① 製造\n       ファイル② 投入\n       要件 一つの製品を1 日に複数回製造する場合があるという要件\n         (3) 発注書の様式をA 社で定めた様式に変更すること\n 設問３  (1) 製造担当者が月末に記録表を参照し，まとめて生産管理システムに入力する作\n       業\n         (2) 前日までの実績を反映した管理指標値が参照可能になった。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１  (1) 製品を期日までに製造するために逆算して各工程の製造開始日時を決めるから\n         (2) 比例 所要時間×製造指示数\n       一定 所要時間\n 設問２  (1) 製品と仕掛品は“無”，原材料は“有”に設定する。\n         (2) ファイル① 製造\n       ファイル② 投入\n       要件 一つの製品を1 日に複数回製造する場合があるという要件\n         (3) 発注書の様式をA 社で定めた様式に変更すること\n 設問３  (1) 製造担当者が月末に記録表を参照し，まとめて生産管理システムに入力する作\n       業\n         (2) 前日までの実績を反映した管理指標値が参照可能になった。\n```",
+    "explanation": "既存システムを再利用するときは、合併後の業務要件と元のデータの持ち方を照合します。製造の開始日時は納期から工程を逆算して決まり、所要時間は数量に比例する工程と一定の工程を分けて計算します。同じ製品を同じ日に複数回製造する要件は、日付と製品だけで記録を識別できるかという設計の論点になります。実績の入力を月末の一括処理から変えることで、参照できる管理指標の鮮度も変わります。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-2.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-3.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-4.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-5.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-6.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-7.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2024年春 午後I 問1 本文・図表・設問 原本2ページ",
+      "システムアーキテクト 2024年春 午後I 問1 本文・図表・設問 原本3ページ",
+      "システムアーキテクト 2024年春 午後I 問1 本文・図表・設問 原本4ページ",
+      "システムアーキテクト 2024年春 午後I 問1 本文・図表・設問 原本5ページ",
+      "システムアーキテクト 2024年春 午後I 問1 本文・図表・設問 原本6ページ",
+      "システムアーキテクト 2024年春 午後I 問1 本文・図表・設問 原本7ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2024年度 春期 システムアーキテクト試験 午後I」問1。"
+  },
+  {
+    "id": "sa-2024h-pm1-q2",
+    "exam": "sa",
+    "session": "pm1",
+    "year": 2024,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "システム設計",
+    "topicTags": [
+      "会員サービス",
+      "業務ルール",
+      "要件定義"
+    ],
+    "difficulty": 5,
+    "question": "問2　会員向けサービスに関わるシステム改善\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１  次回の実約定日に振替先口座がある金融機関の口振結果営業日数を足す。\n  設問２  お知らせサービス，各種情報照会サービス，問合せサービス\n 設問３  (1) ボーナス月の変更によってボーナス月が1 年に3 回以上とならないようにする\n       こと\n         (2) 住所変更の有無\n         (3) 条件① 電話番号ステータスが“無効”であること\n       条件② 収入証明書有効期限が3 か月以内に到来すること\n 設問４  (1) 勤務先変更理由が，転職，転籍又は退職の場合\n         (2) 契約ステータスが“解約予約”で借入残高が0 円であること",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１  次回の実約定日に振替先口座がある金融機関の口振結果営業日数を足す。\n  設問２  お知らせサービス，各種情報照会サービス，問合せサービス\n 設問３  (1) ボーナス月の変更によってボーナス月が1 年に3 回以上とならないようにする\n       こと\n         (2) 住所変更の有無\n         (3) 条件① 電話番号ステータスが“無効”であること\n       条件② 収入証明書有効期限が3 か月以内に到来すること\n 設問４  (1) 勤務先変更理由が，転職，転籍又は退職の場合\n         (2) 契約ステータスが“解約予約”で借入残高が0 円であること\n```",
+    "explanation": "既存のカードローン業務を機能ごとに分け、変更可能な情報と変更時に守る条件を整理します。口座振替の結果を得られる日は、実約定日に金融機関ごとの営業日数を加えて求めます。ボーナス月の変更では年間回数の制約を、電話番号や収入証明書ではそれぞれの状態・期限を確認します。契約の終了も予約状態だけで判断せず、借入残高が0円という条件と組み合わせて、業務上の条件を処理の判定に落とし込みます。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-8.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-9.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-10.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-11.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-12.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-13.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2024年春 午後I 問2 本文・図表・設問 原本8ページ",
+      "システムアーキテクト 2024年春 午後I 問2 本文・図表・設問 原本9ページ",
+      "システムアーキテクト 2024年春 午後I 問2 本文・図表・設問 原本10ページ",
+      "システムアーキテクト 2024年春 午後I 問2 本文・図表・設問 原本11ページ",
+      "システムアーキテクト 2024年春 午後I 問2 本文・図表・設問 原本12ページ",
+      "システムアーキテクト 2024年春 午後I 問2 本文・図表・設問 原本13ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/answer-q2-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2024年度 春期 システムアーキテクト試験 午後I」問2。"
+  },
+  {
+    "id": "sa-2024h-pm1-q3",
+    "exam": "sa",
+    "session": "pm1",
+    "year": 2024,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "システム設計",
+    "topicTags": [
+      "機能設計",
+      "データ連携",
+      "影響分析"
+    ],
+    "difficulty": 5,
+    "question": "問3　学習塾の登下校システム\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１  登校時と下校時で別の登下校用端末を使用した場合\n 設問２  (1) 登下校通知メールに写真を添付する要望\n         (2) 保護者メールアドレスが同一の複数の生徒が，別々の拠点に所属している場合\n 設問３  (1) 機能名  生徒情報管理\n       変更内容 全ての生徒の保護者メールアドレスを設定するように変更する。\n         (2) 登下校通知メールの送信が遅延する。\n         (3) ① 機能名 登下校通知メール送信\n         変更内容 拠点名を登下校履歴ファイルの拠点コードから取得するように\n              変更する。\n       ② 機能名 拠点在室人数表示\n         変更内容 登下校日時が当日で，拠点コードが自拠点のものを抽出するよ\n              うに変更する。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１  登校時と下校時で別の登下校用端末を使用した場合\n 設問２  (1) 登下校通知メールに写真を添付する要望\n         (2) 保護者メールアドレスが同一の複数の生徒が，別々の拠点に所属している場合\n 設問３  (1) 機能名  生徒情報管理\n       変更内容 全ての生徒の保護者メールアドレスを設定するように変更する。\n         (2) 登下校通知メールの送信が遅延する。\n         (3) ① 機能名 登下校通知メール送信\n         変更内容 拠点名を登下校履歴ファイルの拠点コードから取得するように\n              変更する。\n       ② 機能名 拠点在室人数表示\n         変更内容 登下校日時が当日で，拠点コードが自拠点のものを抽出するよ\n              うに変更する。\n```",
+    "explanation": "複数拠点の機能を連携させる際は、生徒・保護者・拠点の関係を分けて追います。同じ保護者メールアドレスに別拠点の生徒がひも付く場合や、登校と下校で端末が異なる場合は、端末内だけの情報では判断できません。写真を扱う変更は通知機能の処理時間にも影響します。拠点名の取得元や在室人数の抽出条件は、変更後の履歴ファイルの項目に合わせ、どの機能をどう変えるかまで具体化します。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-14.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-15.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-16.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-17.webp",
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/question-18.webp"
+    ],
+    "imageAltTexts": [
+      "システムアーキテクト 2024年春 午後I 問3 本文・図表・設問 原本14ページ",
+      "システムアーキテクト 2024年春 午後I 問3 本文・図表・設問 原本15ページ",
+      "システムアーキテクト 2024年春 午後I 問3 本文・図表・設問 原本16ページ",
+      "システムアーキテクト 2024年春 午後I 問3 本文・図表・設問 原本17ページ",
+      "システムアーキテクト 2024年春 午後I 問3 本文・図表・設問 原本18ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/sa/2024-spring-pm1/answer-q3-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問3 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sa_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2024年度 春期 システムアーキテクト試験 午後I」問3。"
+  }
+]

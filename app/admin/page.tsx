@@ -13,6 +13,9 @@ import {
 } from "lucide-react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ActivitySummary } from "@/components/admin/ActivitySummary";
+
+export const dynamic = "force-dynamic";
 
 // Bare /admin previously had no page — authed requests 404'd while unauthed
 // ones hit the Basic-auth 401/503 (empirical review #6). This index gives the
@@ -26,6 +29,7 @@ export const metadata: Metadata = {
 };
 
 const TOOLS: { href: string; title: string; desc: string; icon: typeof Activity }[] = [
+  { href: "/admin/conversion", title: "課金までの流れ", desc: "直近14日の回答・上限・月額申込（Web／iOS）", icon: TrendingUp },
   { href: "/admin/feedback", title: "改善の意見", desc: "追加10問の意見・希望資格・選択肢集計", icon: Users },
   { href: "/admin/launch-monitoring", title: "ローンチ監視", desc: "稼働状況・初日監視ハブ", icon: Rocket },
   { href: "/admin/metrics", title: "メトリクス", desc: "主要 KPI ダッシュボード", icon: BarChart3 },
@@ -47,6 +51,7 @@ export default function AdminIndexPage() {
           運営向けの管理ツール一覧です（Basic Auth 保護・検索非対象）。
         </p>
       </header>
+      <ActivitySummary />
       <div className="grid gap-3 sm:grid-cols-2">
         {TOOLS.map(({ href, title, desc, icon: Icon }) => (
           <Link key={href} href={href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-2xl">

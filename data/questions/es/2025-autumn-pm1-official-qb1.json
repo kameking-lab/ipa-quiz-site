@@ -1,0 +1,119 @@
+[
+  {
+    "id": "es-2025a-pm1-q1",
+    "exam": "es",
+    "session": "pm1",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "センサー",
+      "安全設計",
+      "リアルタイム制御"
+    ],
+    "difficulty": 5,
+    "question": "問1　次世代一人乗り電動車椅子の設計\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  (1) 外的環境の変化によってバッテリー残量が不足し，目的地との往復ができない\n       可能性があるから\n         (2) 色認識はLiDAR ではできず，ステレオカメラではできるため\n         (3) ・緊急ブレーキで停止中に赤信号になると危険なため\n       ・不要な緊急ブレーキが頻発して進めなくなるため\n         (4) ・電波が届かない場所で安全運転支援機能が動作できなくなるため\n       ・エッジで処理を行いリアルタイム性を確保するため\n         (5) 坂道やカーブでシニアカーが速度を落とさず走行し転倒する。\n 設問２  (1)   a  2,520,000\n               b  50\n         (2) 軌跡 （エ）\n       動作 自転車を検知し回避を行い，その後衝突する危険を検知し緊急ブレー\n          キが作動し停止した。\n         (3) 追従走行中に坂道で坂道・カーブ減速機能が働いた。\n 設問３  (1) 間欠的な通信障害でアラートが頻発することを防止するため\n         (2) 映像  LED 式信号機\n       理由 西日本では，信号機の点滅と同期してしまって，信号の色が映らない\n          ことがあるため\n         (3)  90",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  (1) 外的環境の変化によってバッテリー残量が不足し，目的地との往復ができない\n       可能性があるから\n         (2) 色認識はLiDAR ではできず，ステレオカメラではできるため\n         (3) ・緊急ブレーキで停止中に赤信号になると危険なため\n       ・不要な緊急ブレーキが頻発して進めなくなるため\n         (4) ・電波が届かない場所で安全運転支援機能が動作できなくなるため\n       ・エッジで処理を行いリアルタイム性を確保するため\n         (5) 坂道やカーブでシニアカーが速度を落とさず走行し転倒する。\n 設問２  (1)   a  2,520,000\n               b  50\n         (2) 軌跡 （エ）\n       動作 自転車を検知し回避を行い，その後衝突する危険を検知し緊急ブレー\n          キが作動し停止した。\n         (3) 追従走行中に坂道で坂道・カーブ減速機能が働いた。\n 設問３  (1) 間欠的な通信障害でアラートが頻発することを防止するため\n         (2) 映像  LED 式信号機\n       理由 西日本では，信号機の点滅と同期してしまって，信号の色が映らない\n          ことがあるため\n         (3)  90\n```",
+    "explanation": "設問1では、走行距離だけでなく外的環境によるバッテリー残量の変化を考える。センサーは、距離を測る機能と信号の色を識別する機能など、必要な情報の違いに応じて選択する。安全のための緊急ブレーキも、交差点内で不用意に止まる危険や、頻繁な停止で移動できなくなる状況まで含めて設計する必要がある。\n\n通信が途切れる場所でも安全運転支援を続けるため、即時の判断はエッジ側で処理する。設問2では、図の軌跡と検知・回避・緊急停止の順序を対応させ、追従中でも坂道・カーブの減速機能が働く点を読む。設問3は、一時的な通信障害によるアラートの頻発と、カメラの撮影周期がLED信号機の点滅と同期する現象を別の問題として扱う。数値解答は原本に示された仕様に沿って計算する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-3.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-4.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-5.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-6.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-7.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-8.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-9.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-10.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-11.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-12.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-13.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本3ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本4ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本5ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本6ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本7ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本8ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本9ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本10ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本11ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本12ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問1 本文・図表・設問 原本13ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 エンベデッドシステムスペシャリスト試験 午後I」問1。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "es-2025a-pm1-q2",
+    "exam": "es",
+    "session": "pm1",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "CubeSat",
+      "タスク調停",
+      "OTA",
+      "ECC"
+    ],
+    "difficulty": 5,
+    "question": "問2　超小型人工衛星による建設進捗監視システム\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  (1)  116.3\n         (2) ・昼間の撮影完了後に，充電姿勢モードに移行した。\n       ・建設現場の撮影完了後に，バッテリー残量が一定値を下回った。\n         (3)  (a) データ部長又は分割データ長にエラーが発生した場合も，ECC による訂\n          正が可能となる。\n              (b)  15.9\n 設問２  (1)   a 充電姿勢モード終了\n               b テレメトリ送信停止\n               c テレメトリ送信開始\n               d 目標姿勢\n               e 姿勢変更完了\n         (2)   f 中\n               g テレメトリデータの送信\n               h コマンドデータの処理\n               i 姿勢モードの変更\n         (3) ① ミッションタスクに対して撮影中止の通知を行う。\n       ② 地上通信タスクに対して画像送信停止の通知を行う。\n 設問３  (1) 画像送信の開始後，画像送信停止までOTA 処理タスクにOTA コマンドを通知し\n       ない。\n         (2)  (a)   j 画像データの送信前及び送信後に，姿勢モードの要求を通知しな\n            い。\n                     k 通信可能範囲に入ると，通信開始及び画像送信開始を通知する。\n              (b)  1.8",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  (1)  116.3\n         (2) ・昼間の撮影完了後に，充電姿勢モードに移行した。\n       ・建設現場の撮影完了後に，バッテリー残量が一定値を下回った。\n         (3)  (a) データ部長又は分割データ長にエラーが発生した場合も，ECC による訂\n          正が可能となる。\n              (b)  15.9\n 設問２  (1)   a 充電姿勢モード終了\n               b テレメトリ送信停止\n               c テレメトリ送信開始\n               d 目標姿勢\n               e 姿勢変更完了\n         (2)   f 中\n               g テレメトリデータの送信\n               h コマンドデータの処理\n               i 姿勢モードの変更\n         (3) ① ミッションタスクに対して撮影中止の通知を行う。\n       ② 地上通信タスクに対して画像送信停止の通知を行う。\n 設問３  (1) 画像送信の開始後，画像送信停止までOTA 処理タスクにOTA コマンドを通知し\n       ない。\n         (2)  (a)   j 画像データの送信前及び送信後に，姿勢モードの要求を通知しな\n            い。\n                     k 通信可能範囲に入ると，通信開始及び画像送信開始を通知する。\n              (b)  1.8\n```",
+    "explanation": "撮影姿勢、充電姿勢、通信などの要求は同時に満たせるとは限らない。設問1では、撮影完了やバッテリー残量の条件によって姿勢モードが変わる流れを読む。データ本体だけでなく、データ部長や分割データ長を含めてECCで保護すると、長さ情報の誤りも訂正対象にできる。\n\n設問2の状態遷移では、テレメトリ送信の停止・開始と姿勢変更の要求・完了を区別し、タスク間でどの通知が必要かを確認する。複数機能の競合を防ぐには、撮影中止や画像送信停止を相手のタスクへ確実に伝える。設問3では、画像送信中にOTAコマンドを処理することで生じる干渉を避けるため、送信停止まで通知を保留する。追加機能の実現だけでなく、既存の姿勢制御や通信手順との整合を追うことが要点となる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-14.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-15.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-16.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-17.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-18.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-19.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-20.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-21.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-22.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-23.webp",
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/question-24.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本14ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本15ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本16ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本17ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本18ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本19ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本20ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本21ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本22ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本23ページ",
+      "エンベデッドシステムスペシャリスト 2025年秋 午後I 問2 本文・図表・設問 原本24ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/es/2025-autumn-pm1/answer-q2-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_es_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 エンベデッドシステムスペシャリスト試験 午後I」問2。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  }
+]

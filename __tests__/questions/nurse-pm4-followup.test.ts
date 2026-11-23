@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS, beforeNurseSourceLineBreak } from "../fixtures/kangoshi-before-completion";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import integration from "@/docs/evidence/nurse-pm4-followup-20261010/INTEGRATION.json";
 import candidates from "@/docs/evidence/nurse-pm4-followup-20261010/GO-CANDIDATES.json";
@@ -12,7 +12,7 @@ describe("four independently verified nursing PM originals", () => {
     expect(integration.baseCommit).toBe("f6bf8e12223311ececebc10d7ae7f386bd0f4c4e");
     expect(integration.previous457ObjectHashes).toHaveLength(457);
     for (const old of integration.previous457ObjectHashes) {
-      expect(nurseObjectHash(byId.get(old.id)), old.id).toBe(old.sha256);
+      expect(nurseObjectHash(beforeNurseSourceLineBreak(byId.get(old.id))), old.id).toBe(old.sha256);
     }
     expect(candidates.map(question => question.id)).toEqual(integration.addedIds);
     expect(integration.addedIds).toEqual([

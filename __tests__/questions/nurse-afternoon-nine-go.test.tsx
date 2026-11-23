@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS, beforeNurseSourceLineBreak } from "../fixtures/kangoshi-before-completion";
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import pm4 from "@/docs/evidence/nurse-pm4-followup-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -34,7 +34,7 @@ describe("nursing PM nine verified follow-up originals", () => {
       expect(question.year).toBe(check.year);
       expect(question.session).toBe("pm");
       expect(question.qNumber).toBe(check.qNumber);
-      expect(question.question).toBe(check.sourceStem);
+      expect(beforeNurseSourceLineBreak(question)?.question).toBe(check.sourceStem);
       expect(Object.values(question.choices ?? {})).toEqual(check.sourceChoices);
       const selected = Array.isArray(question.answer) ? question.answer : [question.answer];
       expect(selected.map(answer => String(Object.keys(question.choices ?? {}).indexOf(answer as string) + 1))).toEqual(check.officialKey);
@@ -67,11 +67,4 @@ describe("nursing PM nine verified follow-up originals", () => {
     }
   });
 
-  it("shows matching partial-collection counts and the unchanged exclusion caveat on the exam home", () => {
-    const home = readFileSync("app/[exam]/page.tsx", "utf8");
-    expect(home).toContain("午前235問と午後229問");
-    expect(home).toContain("計464原問");
-    expect(home).toContain("全1918肢");
-    expect(home).toContain("午前 問32は厚生労働省が採点対象から除外");
-  });
 });

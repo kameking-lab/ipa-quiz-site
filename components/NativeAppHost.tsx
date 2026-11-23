@@ -1,16 +1,24 @@
 "use client";
 import { useEffect, useState, type ComponentType } from "react";
 import { nativeClient } from "@/mobile/shared/contracts";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 export function NativeAppHost() {
   const [Tools, setTools] = useState<ComponentType | null>(null);
   const pathname=usePathname();
+  const router = useRouter();
   useEffect(() => {
     if (!nativeClient()) return;
     // Safe-area rules for the edge-to-edge iOS WebView (app/globals.css).
     document.documentElement.classList.add("native-app");
     void import("@/mobile/src/NativeTools").then(m=>setTools(()=>m.NativeTools)).catch(error=>console.error("[native] tools failed to load",error));
-  }, []);
+    let stopped = false;
+    let stopReminders: (() => void) | undefined;
+    const report = (error: unknown) => console.error("[native] study reminders failed", error);
+    void import("@/mobile/src/study-reminders").then(({ startWebStudyReminders }) => {
+      if (!stopped) stopReminders = startWebStudyReminders(path => router.push(path), report);
+    }).catch(report);
+    return () => { stopped = true; stopReminders?.(); };
+  }, [router]);
   if (pathname.startsWith("/billing")) return null;
   // Until the tools chunk arrives, hold the height of their first row (only
   // visible under html.native-app, see app/globals.css) so the page below

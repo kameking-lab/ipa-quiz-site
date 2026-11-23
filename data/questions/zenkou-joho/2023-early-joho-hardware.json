@@ -1,0 +1,2112 @@
+[
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q01",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 1,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "16進数"
+    ],
+    "difficulty": 2,
+    "question": "16進数の1F.Aを8倍したものを16進数で表しなさい。",
+    "explanation": "1F.A₁₆は16＋15＋10/16＝31.625。8倍して253を得る。253＝15×16＋13なので、桁の値15をF、13をDと書く。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1 (1)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問1 (1)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p21-q01.webp"
+    ],
+    "imageAltTexts": [
+      "16進数、2進数、整数部分、補数、偶数パリティを問う大問1の原文。"
+    ],
+    "type": "descriptive",
+    "answer": "FD",
+    "modelAnswer": "FD",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q02",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 2,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "情報量"
+    ],
+    "difficulty": 2,
+    "question": "2進数の1をランプ点灯，0をランプ消灯としたとき，10進数の1～10000を表すために必要なランプの個数を答えなさい。",
+    "explanation": "13個で表せる最大値は2¹³−1＝8191で、10000に届かない。14個に増やすと最大値は16383になり、1～10000をすべて表せる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1 (2)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問1 (2)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p21-q01.webp"
+    ],
+    "imageAltTexts": [
+      "16進数、2進数、整数部分、補数、偶数パリティを問う大問1の原文。"
+    ],
+    "type": "descriptive",
+    "answer": "14個",
+    "modelAnswer": "14個",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q03",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 3,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "床関数"
+    ],
+    "difficulty": 2,
+    "question": "yが正の整数，zが正の小数（0＜z＜1），x＝−(y＋z)であるとする。x−int(x)をzを用いた式で表しなさい。",
+    "explanation": "−y−1＜x＜−yである。x以下の最大の整数は−y−1だから、xから引くと(−y−z)−(−y−1)＝1−zになる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1 (3)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問1 (3)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p21-q01.webp"
+    ],
+    "imageAltTexts": [
+      "16進数、2進数、整数部分、補数、偶数パリティを問う大問1の原文。"
+    ],
+    "type": "descriptive",
+    "answer": "1−z",
+    "modelAnswer": "1−z",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q04",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 4,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "2の補数"
+    ],
+    "difficulty": 2,
+    "question": "次の数値に対する2の補数を2進数16けたで答えなさい。（70）₁₀",
+    "explanation": "正の70を16ビットで書くと0000 0000 0100 0110。全ビットを反転して1111 1111 1011 1001にし、最下位に1を足すと−70の表現になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1 (4)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問1 (4)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p21-q01.webp"
+    ],
+    "imageAltTexts": [
+      "16進数、2進数、整数部分、補数、偶数パリティを問う大問1の原文。"
+    ],
+    "type": "descriptive",
+    "answer": "1111 1111 1011 1010",
+    "modelAnswer": "1111 1111 1011 1010",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q05",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 5,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "偶数パリティ"
+    ],
+    "difficulty": 2,
+    "question": "7ビットの文字コードの先頭に1ビットの偶数パリティビットを付加するとき，文字コード4A，75，12にパリティビットを付加したものを，それぞれ16進数で答えなさい。",
+    "explanation": "4Aと75の1ビットはそれぞれ3個と5個で奇数だから、先頭を1にして80₁₆を足す。12の1ビットは2個で既に偶数なので、先頭を0にして値を保つ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1 (5)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=21",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問1 (5)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p21-q01.webp"
+    ],
+    "imageAltTexts": [
+      "16進数、2進数、整数部分、補数、偶数パリティを問う大問1の原文。"
+    ],
+    "type": "descriptive",
+    "answer": "4A → CA\n75 → F5\n12 → 12",
+    "modelAnswer": "4A → CA\n75 → F5\n12 → 12",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q06",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 6,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "EX-ORとOR"
+    ],
+    "difficulty": 2,
+    "question": "Xレジスタ，Yレジスタが表の状態のとき，出力端子の状態①，②はどうなるか。0または1で答えなさい。",
+    "explanation": "EX-ORは対応する2ビットが異なると1になる。1011と0110では異なる組があり、そのORは1。1001同士では全EX-OR出力が0なのでORも0。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 (1)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問2 問1 (1)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p22-q02-1.webp"
+    ],
+    "imageAltTexts": [
+      "XとYの2組の4ビットレジスタを4個のEX-ORと1個のORで比較する回路。"
+    ],
+    "type": "descriptive",
+    "answer": "① 1\n② 0",
+    "modelAnswer": "① 1\n② 0",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q07",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 7,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "一致検出回路"
+    ],
+    "difficulty": 2,
+    "question": "2つのレジスタを比較する論理回路の説明の空欄③に入る語を選びなさい。",
+    "explanation": "全ビットが一致する場合、すべてのEX-ORの出力は0になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 (2) ③",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問2 問1 (2) ③。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p22-q02-1.webp"
+    ],
+    "imageAltTexts": [
+      "XとYの2組の4ビットレジスタを4個のEX-ORと1個のORで比較する回路。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "1",
+      "ウ": "一致検出",
+      "エ": "パリティーチェック"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "choiceExplanations": {
+      "ア": "全ビットが一致する場合、すべてのEX-ORの出力は0になる。",
+      "イ": "論理値1。対応するビットが異なる位置が一つでもあると最終OR出力に現れる。 全ビットが一致する場合、すべてのEX-ORの出力は0になる。",
+      "ウ": "2つのビット列が同じかを判定する回路名。 全ビットが一致する場合、すべてのEX-ORの出力は0になる。",
+      "エ": "1の個数の偶奇に基づいて符号の誤りを検査する方法。 全ビットが一致する場合、すべてのEX-ORの出力は0になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q08",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 8,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "一致検出回路"
+    ],
+    "difficulty": 2,
+    "question": "2つのレジスタを比較する論理回路の説明の空欄④に入る語を選びなさい。",
+    "explanation": "入力がすべて0のときOR出力は0になり、全ビットが一致したことを表す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 (2) ④",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問2 問1 (2) ④。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p22-q02-1.webp"
+    ],
+    "imageAltTexts": [
+      "XとYの2組の4ビットレジスタを4個のEX-ORと1個のORで比較する回路。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "1",
+      "ウ": "一致検出",
+      "エ": "パリティーチェック"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "choiceExplanations": {
+      "ア": "入力がすべて0のときOR出力は0になり、全ビットが一致したことを表す。",
+      "イ": "論理値1。対応するビットが異なる位置が一つでもあると最終OR出力に現れる。 入力がすべて0のときOR出力は0になり、全ビットが一致したことを表す。",
+      "ウ": "2つのビット列が同じかを判定する回路名。 入力がすべて0のときOR出力は0になり、全ビットが一致したことを表す。",
+      "エ": "1の個数の偶奇に基づいて符号の誤りを検査する方法。 入力がすべて0のときOR出力は0になり、全ビットが一致したことを表す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q09",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 9,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "一致検出回路"
+    ],
+    "difficulty": 2,
+    "question": "2つのレジスタを比較する論理回路の説明の空欄⑤に入る語を選びなさい。",
+    "explanation": "XとYを対応する桁ごとに比較し、全桁の一致を検出する。桁中の1の個数は数えない。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 (2) ⑤",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=22",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問2 問1 (2) ⑤。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p22-q02-1.webp"
+    ],
+    "imageAltTexts": [
+      "XとYの2組の4ビットレジスタを4個のEX-ORと1個のORで比較する回路。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "1",
+      "ウ": "一致検出",
+      "エ": "パリティーチェック"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "choiceExplanations": {
+      "ア": "論理値0。EX-ORでは2入力が等しいときに現れる。 XとYを対応する桁ごとに比較し、全桁の一致を検出する。桁中の1の個数は数えない。",
+      "イ": "論理値1。対応するビットが異なる位置が一つでもあると最終OR出力に現れる。 XとYを対応する桁ごとに比較し、全桁の一致を検出する。桁中の1の個数は数えない。",
+      "ウ": "XとYを対応する桁ごとに比較し、全桁の一致を検出する。桁中の1の個数は数えない。",
+      "エ": "1の個数の偶奇に基づいて符号の誤りを検査する方法。 XとYを対応する桁ごとに比較し、全桁の一致を検出する。桁中の1の個数は数えない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q10",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 10,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "シフトレジスタ"
+    ],
+    "difficulty": 2,
+    "question": "各FFの出力Q₁～Q₄のタイムチャートを完成しなさい。",
+    "explanation": "すべての段がクロックの立上りで同時に、直前に入力されていた値を取り込む。Q₁はDを、Q₂は更新前のQ₁を、Q₃とQ₄も一つ前の段を取り込むため、1はクロックごとに一段ずつ右へ移る。P.19の公式訂正に従い設問の図はタイムチャートとして解く。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2 (1)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問2 問2 (1)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p23-q02-2.webp"
+    ],
+    "imageAltTexts": [
+      "4段のDフリップフロップ、共通クロック、入力Dを示す空欄のタイムチャート。"
+    ],
+    "type": "descriptive",
+    "answer": "クロックの立上り直後の値（初期値は各段0）。\n\n| 出力 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Q₁ | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 |\n| Q₂ | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 1 |\n| Q₃ | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 |\n| Q₄ | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |",
+    "modelAnswer": "クロックの立上り直後の値（初期値は各段0）。\n\n| 出力 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Q₁ | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 |\n| Q₂ | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 | 1 |\n| Q₃ | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 | 0 |\n| Q₄ | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |",
+    "scoringCriteria": "Q₁～Q₄は各2点。",
+    "answerImageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p58-q02-2-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "??????????D???Q??Q????????????"
+    ],
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q11",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 11,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "シフトレジスタ"
+    ],
+    "difficulty": 2,
+    "question": "（1）のFFを組み合わせた回路の名称を次の解答群から選びなさい。",
+    "explanation": "各段のQが次段のDにつながり、共通クロックの立上りごとに1ビットずつ移る。4段なので4ビットシフトレジスタである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2 (2)",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=23",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問2 問2 (2)。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p23-q02-2.webp"
+    ],
+    "imageAltTexts": [
+      "4段のDフリップフロップ、共通クロック、入力Dを示す空欄のタイムチャート。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "全加算回路",
+      "イ": "同期式4進カウンタ",
+      "ウ": "4ビットシフトレジスタ",
+      "エ": "マルチプレクサ",
+      "オ": "パラレルレジスタ",
+      "カ": "リングカウンタ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "choiceExplanations": {
+      "ア": "全加算器は2個の加数ビットと桁上がり入力から、和と次桁への繰上がりを組合せ回路で出す。",
+      "イ": "4進カウンタはクロックごとに0～3の状態を巡る。この回路の状態は計数値ではなく外部入力Dの履歴で決まる。",
+      "ウ": "各段のQが次段のDにつながり、共通クロックの立上りごとに1ビットずつ移る。4段なので4ビットシフトレジスタである。",
+      "エ": "複数の入力から制御信号で一つを選ぶ回路。ここには入力を選ぶための信号がない。",
+      "オ": "各ビットに外部から同時に別々の値を与えるレジスタ。この図で外からデータを受ける段は先頭だけである。",
+      "カ": "最後の出力を最初の入力に戻してビットを巡回させる。この図の最初の段には外部入力Dがつながる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q12",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 12,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "ビデオメモリ"
+    ],
+    "difficulty": 2,
+    "question": "横1024ドット，縦768ドットの画面で，各ドットはRGBそれぞれ8ビットを持つ。1画面を記憶するビデオメモリは約何Mバイト必要か。小数第2位を切り上げて求めなさい。",
+    "explanation": "1ドットは24ビット、すなわち3バイト。1024×768×3バイトを1024²で割ると2.25 Mバイトになる。小数第2位を切り上げる指定なので2.3 Mバイト。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問1",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問3 問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p24-q03-12.webp"
+    ],
+    "imageAltTexts": [
+      "画面の画素数と色深度、4種類のCPU命令のCPI表と実行順。"
+    ],
+    "type": "descriptive",
+    "answer": "2.3 Mバイト",
+    "modelAnswer": "2.3 Mバイト",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q13",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 13,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "CPIとCPU実行時間"
+    ],
+    "difficulty": 2,
+    "question": "図のプログラムの実行時間[n秒]を求めなさい。CPUのクロックを4[GHz]とする。",
+    "explanation": "表のCPIはA=3、B=8、C=10、D=2。出現回数は6、4、2、2なので合計74クロック。4GHzは1ナノ秒当たり4クロックだから74/4＝18.5ナノ秒になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問2",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問3 問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p24-q03-12.webp"
+    ],
+    "imageAltTexts": [
+      "画面の画素数と色深度、4種類のCPU命令のCPI表と実行順。"
+    ],
+    "type": "descriptive",
+    "answer": "18.5 n秒",
+    "modelAnswer": "18.5 n秒",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q14",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 14,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "入力装置"
+    ],
+    "difficulty": 2,
+    "question": "入力装置に関する次の記述①～⑤にそれぞれ最も関連の深い字句を解答群から選びなさい。\n\n①に当てはまる答えを選びなさい。",
+    "explanation": "記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問3 ①",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問3 問3 ①。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p24-q03-3.webp"
+    ],
+    "imageAltTexts": [
+      "入力装置5つの記述と、8個の機器名を並べた解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "QRコードリーダ",
+      "イ": "OCR",
+      "ウ": "プロッタ",
+      "エ": "ジョイスティック",
+      "オ": "ペンタブレット",
+      "カ": "バーコードリーダ",
+      "キ": "マウス",
+      "ク": "生体認証装置"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "ク",
+    "choiceExplanations": {
+      "ア": "正方形モジュールで構成される二次元コードを読み取る装置。 記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+      "イ": "文書の画像から文字を認識し、編集可能な文字データに変換する仕組み。 記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+      "ウ": "図面などを紙へ描画する出力装置。 記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+      "エ": "スティックを傾け、その方向や傾きを入力する装置。 記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+      "オ": "板のセンサでペン先の位置を読み取る装置。 記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+      "カ": "縞の太さや間隔を光学的に読み取る装置。 記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+      "キ": "机上で本体を滑らせて移動量を入力する装置。 記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。",
+      "ク": "記述①はパターンの読み取り結果を本人照合に使う点が決め手。手の静脈も指紋も生体情報である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q15",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 15,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "入力装置"
+    ],
+    "difficulty": 2,
+    "question": "入力装置に関する次の記述①～⑤にそれぞれ最も関連の深い字句を解答群から選びなさい。\n\n②に当てはまる答えを選びなさい。",
+    "explanation": "記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問3 ②",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問3 問3 ②。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p24-q03-3.webp"
+    ],
+    "imageAltTexts": [
+      "入力装置5つの記述と、8個の機器名を並べた解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "QRコードリーダ",
+      "イ": "OCR",
+      "ウ": "プロッタ",
+      "エ": "ジョイスティック",
+      "オ": "ペンタブレット",
+      "カ": "バーコードリーダ",
+      "キ": "マウス",
+      "ク": "生体認証装置"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "choiceExplanations": {
+      "ア": "記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+      "イ": "文書の画像から文字を認識し、編集可能な文字データに変換する仕組み。 記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+      "ウ": "図面などを紙へ描画する出力装置。 記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+      "エ": "スティックを傾け、その方向や傾きを入力する装置。 記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+      "オ": "板のセンサでペン先の位置を読み取る装置。 記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+      "カ": "縞の太さや間隔を光学的に読み取る装置。 記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+      "キ": "机上で本体を滑らせて移動量を入力する装置。 記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。",
+      "ク": "指紋や手のひらの静脈など身体の特徴を使って本人か確認する装置。 記述②の三隅の位置検出パターンはQRコードの特徴で、回転や大きさを推定する手掛かりになる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q16",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 16,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "入力装置"
+    ],
+    "difficulty": 2,
+    "question": "入力装置に関する次の記述①～⑤にそれぞれ最も関連の深い字句を解答群から選びなさい。\n\n③に当てはまる答えを選びなさい。",
+    "explanation": "記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問3 ③",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問3 問3 ③。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p24-q03-3.webp"
+    ],
+    "imageAltTexts": [
+      "入力装置5つの記述と、8個の機器名を並べた解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "QRコードリーダ",
+      "イ": "OCR",
+      "ウ": "プロッタ",
+      "エ": "ジョイスティック",
+      "オ": "ペンタブレット",
+      "カ": "バーコードリーダ",
+      "キ": "マウス",
+      "ク": "生体認証装置"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": "キ",
+    "choiceExplanations": {
+      "ア": "正方形モジュールで構成される二次元コードを読み取る装置。 記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+      "イ": "文書の画像から文字を認識し、編集可能な文字データに変換する仕組み。 記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+      "ウ": "図面などを紙へ描画する出力装置。 記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+      "エ": "スティックを傾け、その方向や傾きを入力する装置。 記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+      "オ": "板のセンサでペン先の位置を読み取る装置。 記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+      "カ": "縞の太さや間隔を光学的に読み取る装置。 記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+      "キ": "記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。",
+      "ク": "指紋や手のひらの静脈など身体の特徴を使って本人か確認する装置。 記述③は本体の移動を平面上で測るマウス。ボタンやホイールも同じ装置に備わる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q17",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 17,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "入力装置"
+    ],
+    "difficulty": 2,
+    "question": "入力装置に関する次の記述①～⑤にそれぞれ最も関連の深い字句を解答群から選びなさい。\n\n④に当てはまる答えを選びなさい。",
+    "explanation": "記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問3 ④",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問3 問3 ④。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p24-q03-3.webp"
+    ],
+    "imageAltTexts": [
+      "入力装置5つの記述と、8個の機器名を並べた解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "QRコードリーダ",
+      "イ": "OCR",
+      "ウ": "プロッタ",
+      "エ": "ジョイスティック",
+      "オ": "ペンタブレット",
+      "カ": "バーコードリーダ",
+      "キ": "マウス",
+      "ク": "生体認証装置"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "カ",
+    "choiceExplanations": {
+      "ア": "正方形モジュールで構成される二次元コードを読み取る装置。 記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+      "イ": "文書の画像から文字を認識し、編集可能な文字データに変換する仕組み。 記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+      "ウ": "図面などを紙へ描画する出力装置。 記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+      "エ": "スティックを傾け、その方向や傾きを入力する装置。 記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+      "オ": "板のセンサでペン先の位置を読み取る装置。 記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+      "カ": "記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+      "キ": "机上で本体を滑らせて移動量を入力する装置。 記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。",
+      "ク": "指紋や手のひらの静脈など身体の特徴を使って本人か確認する装置。 記述④のPOSで読まれる幅の異なる縦線は一次元バーコードの例である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q18",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 18,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "入力装置"
+    ],
+    "difficulty": 2,
+    "question": "入力装置に関する次の記述①～⑤にそれぞれ最も関連の深い字句を解答群から選びなさい。\n\n⑤に当てはまる答えを選びなさい。",
+    "explanation": "記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問3 ⑤",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=24",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問3 問3 ⑤。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p24-q03-3.webp"
+    ],
+    "imageAltTexts": [
+      "入力装置5つの記述と、8個の機器名を並べた解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "QRコードリーダ",
+      "イ": "OCR",
+      "ウ": "プロッタ",
+      "エ": "ジョイスティック",
+      "オ": "ペンタブレット",
+      "カ": "バーコードリーダ",
+      "キ": "マウス",
+      "ク": "生体認証装置"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "オ",
+    "choiceExplanations": {
+      "ア": "正方形モジュールで構成される二次元コードを読み取る装置。 記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+      "イ": "文書の画像から文字を認識し、編集可能な文字データに変換する仕組み。 記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+      "ウ": "図面などを紙へ描画する出力装置。 記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+      "エ": "スティックを傾け、その方向や傾きを入力する装置。 記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+      "オ": "記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+      "カ": "縞の太さや間隔を光学的に読み取る装置。 記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+      "キ": "机上で本体を滑らせて移動量を入力する装置。 記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。",
+      "ク": "指紋や手のひらの静脈など身体の特徴を使って本人か確認する装置。 記述⑤は板が専用ペンの座標を読み取るため、描画や手書きに使うペンタブレットが該当する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q19",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 19,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n①に当てはまる答えを選びなさい。",
+    "explanation": "①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ①",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ①。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "タ",
+    "officialAnswerNumber": "タ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "イ": "10は第2行でGR1に読み込む初期値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "オ": "−10は10から20を引いた値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "カ": "−20は20を0から引いた値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "コ": "23は11の上、151の下にある。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "サ": "61はスタックの底に残った値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "シ": "83はスタックの底から2番目に残った値。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "タ": "①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ①はサブルーチンが演算や一時保存で使用し、呼出元へ戻る際に値を復元する汎用レジスタ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q20",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 20,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n②に当てはまる答えを選びなさい。",
+    "explanation": "②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ②",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ②。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "チ",
+    "officialAnswerNumber": "チ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "イ": "10は第2行でGR1に読み込む初期値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "オ": "−10は10から20を引いた値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "カ": "−20は20を0から引いた値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "コ": "23は11の上、151の下にある。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "サ": "61はスタックの底に残った値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "シ": "83はスタックの底から2番目に残った値。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "チ": "②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ②は呼出し前の値をPUSHし、逆順にPOPして元のレジスタへ戻せるスタック領域。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q21",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 21,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n③に当てはまる答えを選びなさい。",
+    "explanation": "③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ③",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ③。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "ク",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "イ": "10は第2行でGR1に読み込む初期値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "オ": "−10は10から20を引いた値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "カ": "−20は20を0から引いた値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "ク": "③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "コ": "23は11の上、151の下にある。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "サ": "61はスタックの底に残った値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "シ": "83はスタックの底から2番目に残った値。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ③は最終深さ6からPUSH7回とPOP3回の純増4を引くと初期深さ2。最初のPUSHは底から3段目の11である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q22",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 22,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n④に当てはまる答えを選びなさい。",
+    "explanation": "④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ④",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ④。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "ス",
+    "officialAnswerNumber": "ス",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "イ": "10は第2行でGR1に読み込む初期値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "オ": "−10は10から20を引いた値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "カ": "−20は20を0から引いた値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "コ": "23は11の上、151の下にある。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "サ": "61はスタックの底に残った値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "シ": "83はスタックの底から2番目に残った値。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "ス": "④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ④の第9命令は最後のPUSHの直前に行うPUSHで、その値は先頭の18の直下に見える151。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q23",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 23,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n⑤に当てはまる答えを選びなさい。",
+    "explanation": "⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ⑤",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ⑤。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "イ": "⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "オ": "−10は10から20を引いた値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "カ": "−20は20を0から引いた値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "コ": "23は11の上、151の下にある。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "サ": "61はスタックの底に残った値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "シ": "83はスタックの底から2番目に残った値。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ⑤の第4行はGR1の値をPUSHするだけでGR1を書き換えない。第2行で設定した10のまま。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q24",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 24,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n⑥に当てはまる答えを選びなさい。",
+    "explanation": "⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ⑥",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ⑥。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "イ": "10は第2行でGR1に読み込む初期値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "ウ": "⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "オ": "−10は10から20を引いた値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "カ": "−20は20を0から引いた値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "コ": "23は11の上、151の下にある。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "サ": "61はスタックの底に残った値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "シ": "83はスタックの底から2番目に残った値。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ⑥の第5行は第3行で設定されたGR2の20を退避する。PUSHはGR2を変更しない。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q25",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 25,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n⑦に当てはまる答えを選びなさい。",
+    "explanation": "⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ⑦",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ⑦。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "イ": "10は第2行でGR1に読み込む初期値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "ウ": "⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "オ": "−10は10から20を引いた値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "カ": "−20は20を0から引いた値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "コ": "23は11の上、151の下にある。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "サ": "61はスタックの底に残った値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "シ": "83はスタックの底から2番目に残った値。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ⑦の第7行では直前に退避した方のGR2を先に復元する。最後に積んだ20を取り出す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q26",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 26,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n⑧に当てはまる答えを選びなさい。",
+    "explanation": "⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ⑧",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ⑧。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "イ": "⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "オ": "−10は10から20を引いた値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "カ": "−20は20を0から引いた値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "コ": "23は11の上、151の下にある。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "サ": "61はスタックの底に残った値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "シ": "83はスタックの底から2番目に残った値。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ⑧の第8行ではGR2の値を取り出した後なので、スタックに残っていたGR1の初期値10を復元する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q27",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 27,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n⑨に当てはまる答えを選びなさい。",
+    "explanation": "⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ⑨",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ⑨。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "オ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "イ": "10は第2行でGR1に読み込む初期値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "オ": "⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "カ": "−20は20を0から引いた値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "コ": "23は11の上、151の下にある。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "サ": "61はスタックの底に残った値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "シ": "83はスタックの底から2番目に残った値。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ⑨の第10行は直前のSUBAで求めたGR1＝10−20＝−10をAに格納する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q28",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 28,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "アセンブリ言語とスタック"
+    ],
+    "difficulty": 2,
+    "question": "原文のアセンブリ言語とPUSH・POPの説明を読み，①～⑩の空欄に入る語または値を答えなさい。\n\n⑩に当てはまる答えを選びなさい。",
+    "explanation": "⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4 ⑩",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=25",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問4 ⑩。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p25-q04.webp"
+    ],
+    "imageAltTexts": [
+      "PUSH・POPの命令順、処理後のスタック、GR1とGR2を操作するプログラムおよび解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "0",
+      "イ": "10",
+      "ウ": "20",
+      "エ": "30",
+      "オ": "−10",
+      "カ": "−20",
+      "キ": "−30",
+      "ク": "11",
+      "ケ": "18",
+      "コ": "23",
+      "サ": "61",
+      "シ": "83",
+      "ス": "151",
+      "セ": "サイン",
+      "ソ": "プログラム",
+      "タ": "汎用",
+      "チ": "スタック",
+      "ツ": "フラグ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "choiceExplanations": {
+      "ア": "0は演算結果が相殺される場合の値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "イ": "⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "ウ": "20は第3行でGR2に読み込む初期値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "エ": "30は第6行の加算を終えた時点のGR1。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "オ": "−10は10から20を引いた値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "カ": "−20は20を0から引いた値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "キ": "−30は第6行で得た30の符号を反転した値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "ク": "11は完成したスタックで83のすぐ上にある値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "ケ": "18はすべての命令後のスタックの先頭。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "コ": "23は11の上、151の下にある。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "サ": "61はスタックの底に残った値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "シ": "83はスタックの底から2番目に残った値。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "ス": "151は最終結果で先頭の18の一つ下。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "セ": "サインは値の正負に関わる状態で、オペランドを汎用に保持する種類名ではない。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "ソ": "プログラムレジスタは次に実行する命令の番地を指す。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "タ": "汎用レジスタは演算やデータ保持など複数の用途に用いられる。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "チ": "スタックは最後に入れたデータを最初に取り出す退避領域。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。",
+      "ツ": "フラグは演算結果のゼロや桁上がりなどの状態を保持する。 ⑩の第12行の直前でもGR2は20。Aへ格納したときのGR1＝−10に20を加えるとBは10。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q29",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 29,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n①に当てはまる答えを選びなさい。",
+    "explanation": "①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ①",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ①。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "オ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "オ": "①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "コ": "ジョブの終了を処理するプログラム。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "サ": "ジョブの起動を処理するプログラム。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ①は利用者から見た仕事の単位を問うため、ジョブを入れる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q30",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 30,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n②に当てはまる答えを選びなさい。",
+    "explanation": "②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ②",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ②。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "ケ",
+    "officialAnswerNumber": "ケ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "ケ": "②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "コ": "ジョブの終了を処理するプログラム。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "サ": "ジョブの起動を処理するプログラム。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ②はOSから見た実行管理の単位を問うため、タスクを入れる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q31",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 31,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n③に当てはまる答えを選びなさい。",
+    "explanation": "③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ③",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ③。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "シ",
+    "officialAnswerNumber": "シ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "コ": "ジョブの終了を処理するプログラム。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "サ": "ジョブの起動を処理するプログラム。 ③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。",
+      "シ": "③に入るのは利用者が実行順序を指定できる言語JCL（Job Control Language）。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q32",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 32,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n④に当てはまる答えを選びなさい。",
+    "explanation": "④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ④",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ④。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": "キ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "キ": "④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "コ": "ジョブの終了を処理するプログラム。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "サ": "ジョブの起動を処理するプログラム。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ④は入力から出力までのジョブ全体をさらに分けた段階なので、ジョブステップ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q33",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 33,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n⑤に当てはまる答えを選びなさい。",
+    "explanation": "⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑤",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ⑤。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "サ",
+    "officialAnswerNumber": "サ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "コ": "ジョブの終了を処理するプログラム。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "サ": "⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ⑤は実行に移す時の起動処理なので、ジョブイニシエータが該当する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q34",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 34,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n⑥に当てはまる答えを選びなさい。",
+    "explanation": "⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑥",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ⑥。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "コ",
+    "officialAnswerNumber": "コ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "コ": "⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "サ": "ジョブの起動を処理するプログラム。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ⑥は出力の側に進む前の終了処理に用いるジョブターミネータ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q35",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 35,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n⑦に当てはまる答えを選びなさい。",
+    "explanation": "⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑦",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ⑦。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "choiceExplanations": {
+      "ア": "⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "コ": "ジョブの終了を処理するプログラム。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "サ": "ジョブの起動を処理するプログラム。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ⑦はCPUと並ぶハードウェア資源を問う。主記憶の領域も実行中のタスク間で使われる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q36",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 36,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n⑧に当てはまる答えを選びなさい。",
+    "explanation": "⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑧",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ⑧。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": "カ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "カ": "⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "コ": "ジョブの終了を処理するプログラム。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "サ": "ジョブの起動を処理するプログラム。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ⑧は待機中のタスクをCPUで実行できる状態にするタスクディスパッチャ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q37",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 37,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n⑨に当てはまる答えを選びなさい。",
+    "explanation": "⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑨",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ⑨。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "ク",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "ウ": "待機時間などの状況に応じて優先度を変更するスケジューリング。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "ク": "⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "コ": "ジョブの終了を処理するプログラム。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "サ": "ジョブの起動を処理するプログラム。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ⑨は低優先度のタスクが高優先度の処理に常に先を越される、資源配分上のスタベーション。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-hardware-q38",
+    "exam": "zenkou-joho",
+    "session": "joho-hardware",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 38,
+    "category": "1級・ハードウェアの基礎知識",
+    "topicTags": [
+      "オペレーティングシステムのジョブ管理"
+    ],
+    "difficulty": 2,
+    "question": "原文を読み，オペレーティングシステムに関する説明の①～⑩に入る語を答えなさい。\n\n⑩に当てはまる答えを選びなさい。",
+    "explanation": "⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑩",
+    "sourceExamSession": "第70回 1級・ハードウェアの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=26",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=58",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 1級・ハードウェアの基礎知識 大問5 ⑩。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-hardware-p26-q05.webp"
+    ],
+    "imageAltTexts": [
+      "ジョブとタスク、優先度方式に関する文章と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "主記憶装置",
+      "イ": "静的優先度方式",
+      "ウ": "動的優先度方式",
+      "エ": "データ",
+      "オ": "ジョブ",
+      "カ": "タスクディスパッチャ",
+      "キ": "ジョブステップ",
+      "ク": "スタベーション",
+      "ケ": "タスク",
+      "コ": "ジョブターミネータ",
+      "サ": "ジョブイニシエータ",
+      "シ": "JCL"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "choiceExplanations": {
+      "ア": "プログラムや作業データを実行中に保持するハードウェア。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "イ": "事前に与えた優先度を実行中に変更しないスケジューリング。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "ウ": "⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "エ": "処理の対象になる内容であり、処理を管理する単位の名前ではない。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "オ": "利用者がシステムに依頼する仕事全体。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "カ": "実行すべきタスクにCPU使用権を渡す制御機能。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "キ": "一つのジョブの中で手順を構成する個々の作業段階。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "ク": "低い優先度などのため処理がいつまでも資源を得られない現象。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "ケ": "実行時にOSがCPUなどの資源を割り当てて管理する処理単位。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "コ": "ジョブの終了を処理するプログラム。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "サ": "ジョブの起動を処理するプログラム。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。",
+      "シ": "ジョブ制御言語。処理手順や実行条件を記述するために使う。 ⑩は待ち時間を見ながら優先度を変える動的方式。長く待ったタスクの優先度を上げれば、実行の機会を作れる。"
+    },
+    "explanationCoverage": "full"
+  }
+]

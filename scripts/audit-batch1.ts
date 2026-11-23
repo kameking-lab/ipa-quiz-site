@@ -13,19 +13,23 @@ import { nativeBQuestionIssue } from "@/lib/questions/native-b";
 import { numericQuestionIssue } from "@/lib/questions/numeric";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 
-export async function auditBatch1() {
-  for (const name of readdirSync("reports/int1b-20261104")) {
-    if (/^rejected-[a-z0-9-]+\.json$/.test(name)) unlinkSync(`reports/int1b-20261104/${name}`);
+export async function auditBatch1({ writeReports = true } = {}) {
+  if (writeReports) {
+    for (const name of readdirSync("reports/int1b-20261104")) {
+      if (/^rejected-[a-z0-9-]+\.json$/.test(name)) unlinkSync(`reports/int1b-20261104/${name}`);
+    }
   }
   const published = QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode);
   const directory = getHomeDirectory().flatMap(domain => [...domain.featured, ...domain.compact]);
   const indexable = new Set(getIndexableQuestions().map(q => q.id));
+  const retainedByExam = new Map<string, Awaited<ReturnType<typeof getQuestionsForExam>>>();
   const failures: string[] = [];
   const rows = [];
   for (const entry of published) {
     const code = entry.examCode!;
     const sync = QUESTIONS_BY_EXAM[code] ?? [];
     const lazy = await getQuestionsForExam(code);
+    if (BATCH1_QUESTIONS[code]) retainedByExam.set(code, lazy);
     const practice = filterQuestions(lazy, { mode: "year", exam: code });
     const ids = (questions: typeof sync) => questions.map(q => q.id).sort().join("\n");
     if (ids(sync.filter(isPracticeReadyQuestion)) !== ids(practice)) failures.push(`${code}: sync/lazy practice mismatch`);
@@ -42,10 +46,32 @@ export async function auditBatch1() {
       directory: directory.some(item => item.href === `/${code}`), periodCounts,
       firstUrl: paths[0], summary: entry.reuseSummary });
     const rejected = lazy.filter(q => !isPracticeReadyQuestion(q));
-    if (rejected.length) writeFileSync(`reports/int1b-20261104/rejected-${code}.json`, JSON.stringify(rejected.map(q => ({ id: q.id, native: nativeBQuestionIssue(q), numeric: numericQuestionIssue(q), unrenderable: hasUnrenderableContent(q), needsReview: q.needsReview })), null, 2));
+    if (writeReports && rejected.length) writeFileSync(`reports/int1b-20261104/rejected-${code}.json`, JSON.stringify(rejected.map(q => ({ id: q.id, native: nativeBQuestionIssue(q), numeric: numericQuestionIssue(q), unrenderable: hasUnrenderableContent(q), needsReview: q.needsReview })), null, 2));
   }
   for (const [code, source] of Object.entries(BATCH1_QUESTIONS)) {
-    if (rows.find(row => row.code === code)?.practiceCount !== source!.length) failures.push(`${code}: projected manuscript count differs from practice`);
+    const row = rows.find(row => row.code === code);
+    if (!row) {
+      failures.push(`${code}: projected manuscript is missing from the public registry`);
+      continue;
+    }
+    const practiceById = new Map((QUESTIONS_BY_EXAM[row.code] ?? []).filter(isPracticeReadyQuestion).map(q => [q.id, q]));
+    const retainedById = new Map(retainedByExam.get(code)?.map(q => [q.id, q]));
+    for (const original of source ?? []) {
+      if (original.officialScoring?.kind === "credit-for-all") {
+        const retained = retainedById.get(original.id);
+        if (practiceById.has(original.id) || retained?.officialScoring?.kind !== "credit-for-all"
+          || retained.sourceAnswerUrl !== original.sourceAnswerUrl || retained.sourcePdfUrl !== original.sourcePdfUrl
+          || JSON.stringify(retained.answer) !== JSON.stringify(original.answer)) {
+          failures.push(`${code}: projected manuscript question ${original.id} must stay reference-only with its official sources`);
+        }
+        continue;
+      }
+      const actual = practiceById.get(original.id);
+      if (!actual || JSON.stringify(actual.answer) !== JSON.stringify(original.answer)
+        || actual.sourcePdfUrl !== original.sourcePdfUrl || actual.sourceAnswerUrl !== original.sourceAnswerUrl) {
+        failures.push(`${code}: projected manuscript question ${original.id} differs from practice`);
+      }
+    }
   }
   const pe = PE_FIRST_CATALOG.map(entry => {
     const questions = loadPeFirstPaper(entry.id);
@@ -56,6 +82,6 @@ export async function auditBatch1() {
   const allIds = ALL_QUESTIONS.map(q => q.id);
   if (new Set(allIds).size !== allIds.length) failures.push("Global duplicate question IDs");
   const result = { generatedAt: new Date().toISOString(), rows, pe, total: ALL_QUESTIONS.length, failures };
-  writeFileSync("reports/int1b-20261104/count-audit.json", JSON.stringify(result, null, 2) + "\n");
+  if (writeReports) writeFileSync("reports/int1b-20261104/count-audit.json", JSON.stringify(result, null, 2) + "\n");
   return result;
 }

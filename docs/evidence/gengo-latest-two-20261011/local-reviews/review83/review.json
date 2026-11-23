@@ -1,0 +1,59 @@
+{
+  "questionId": "gengo-chokakushi-2026-annual-am-q83",
+  "reviewedAt": "2026-10-11",
+  "scope": "第28回言語聴覚士国家試験・午前問83のみ。原稿は読み取り専用。",
+  "officialScoring": {
+    "acceptedNumbers": [1, 2],
+    "requiredSelections": 1,
+    "source": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken21/dl/28seitou.pdf#page=1",
+    "location": "午前、問81〜90の行：問83＝1または2",
+    "caveat": "正解表には1を認めた解剖学的理由は記されていない。"
+  },
+  "anatomicalReview": [
+    {
+      "number": 1,
+      "pair": "茎突咽頭筋 ― 喉頭挙上",
+      "anatomicalAssessment": "正しい作用の組合せ。茎突咽頭筋は喉頭を挙上する。",
+      "officialAssessment": "誤りとして選んでも採点上正答扱い。",
+      "sources": ["https://anatomy.ttuhscep.edu/schemes/larynx_tables.html#Muscles"]
+    },
+    {
+      "number": 2,
+      "pair": "オトガイ舌骨筋 ― 挺舌",
+      "anatomicalAssessment": "誤り。オトガイ舌骨筋は舌骨の挙上・下顎の下制に働く。舌の前方突出は主にオトガイ舌筋。",
+      "officialAssessment": "採点上正答扱い。",
+      "sources": ["https://anatomy.ttuhscep.edu/schemes/swallowing_tables.html#Muscles"]
+    },
+    {
+      "number": 3,
+      "pair": "外側輪状披裂筋 ― 声門閉鎖",
+      "anatomicalAssessment": "正しい。声帯内転により声門を閉鎖する。",
+      "officialAssessment": "正答対象外。",
+      "sources": ["https://anatomy.ttuhscep.edu/schemes/larynx_tables.html#Muscles"]
+    },
+    {
+      "number": 4,
+      "pair": "口蓋帆挙筋 ― 軟口蓋挙上",
+      "anatomicalAssessment": "正しい。軟口蓋を挙上する。",
+      "officialAssessment": "正答対象外。",
+      "sources": ["https://anatomy.ttuhscep.edu/schemes/swallowing_tables.html#Muscles"]
+    },
+    {
+      "number": 5,
+      "pair": "輪状咽頭筋 ― 食道入口部収縮",
+      "anatomicalAssessment": "正しい。上部食道括約筋の主要な筋成分で、安静時は入口部を閉じる。嚥下時は弛緩して開く。",
+      "officialAssessment": "正答対象外。",
+      "sources": [
+        "https://www.uclahealth.org/medical-services/gastro/esophageal-health/diseases-we-treat/cricopharyngeal-bar",
+        "https://journals.sagepub.com/doi/abs/10.1177/0003489414522975"
+      ]
+    }
+  ],
+  "recommendation": {
+    "educationalExplanationPossible": true,
+    "needsReview": true,
+    "reason": "公式採点と大学の解剖教材が1肢について両立しない。現行原稿は矛盾を明示し出題候補から除外しているので維持する。公式が1を認めた理由を推測で補わない。",
+    "releaseCondition": "公式正答の採点情報と解剖学的作用を別欄で明示し、1を解剖学的に誤りと断定しない表示を実装・確認した場合だけneedsReview解除を再判断する。通常の一意解の練習問題としては出さない。"
+  },
+  "accessNote": "既知の拒否先であるST-ToolboxおよびPMCは取得していない。"
+}

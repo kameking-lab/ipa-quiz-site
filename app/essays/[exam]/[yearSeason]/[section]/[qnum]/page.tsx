@@ -163,7 +163,7 @@ export default async function EssayPm2DetailPage({
       <AiContentNotice
         className="mb-6"
         headline="AI生成の参考答案（架空）"
-        body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。論述の骨格・業種事例の参考としてご活用ください。"
+        body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶためのAI生成の架空例です。論述の骨格・業種事例の参考としてご活用ください。"
       />
 
       <section className="mb-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
@@ -190,15 +190,15 @@ export default async function EssayPm2DetailPage({
       />
 
       <div className="print:hidden mt-8 rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 dark:border-violet-900/40 dark:from-violet-950/40">
-        <h2 className="mb-2 text-base font-bold">自分の答案を AI で採点してみる</h2>
+        <h2 className="mb-2 text-base font-bold">別の題材で論述を練習する</h2>
         <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
-          上記の答案例を参考に論述を書いたら、AI 添削で「適合度・論理性・具体性・業種事例」の4軸でフィードバックを受けましょう。
+          別の題材で、設問に合わせた構成を確認できます。
         </p>
         <Link
           href="/essay"
           className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600"
         >
-          AI 論述添削を試す →
+          論述の練習問題を見る →
         </Link>
       </div>
 

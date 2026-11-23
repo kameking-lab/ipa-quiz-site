@@ -1,0 +1,115 @@
+{
+  "jobId": "PLAN5-061",
+  "checkedAt": "2026-11-18",
+  "questionPdf": {
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_au_pm2_qs.pdf",
+    "sha256": "774061da2bc58404fed61cc1d53f6d44260cbadd96215f32841ab724229ca060",
+    "pageCount": 8
+  },
+  "answerPdf": {
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_au_pm2_ans.pdf",
+    "sha256": "47f5f02fd75113efc906b777c1a27d35580b7643183fde40431faa8257f26371",
+    "pageCount": 1,
+    "kind": "出題趣旨"
+  },
+  "questions": [
+    {
+      "questionId": "au-2023a-pm2-q1-official",
+      "qNumber": 1,
+      "title": "データ利活用基盤の構築に関するシステム監査について",
+      "questionPages": [
+        3
+      ],
+      "commonPages": [
+        1,
+        2,
+        8
+      ],
+      "questionImages": [
+        {
+          "page": 1,
+          "path": "/questions/au/2023-autumn-pm2/original-p01.jpeg",
+          "sha256": "8bec7312d88202f39ee6391933f4b1d3ec75889ff8e7ed7f4020ed3ec5d77f9e"
+        },
+        {
+          "page": 2,
+          "path": "/questions/au/2023-autumn-pm2/original-p02.jpeg",
+          "sha256": "fcb0cef5361b3878c008e98fc60b671072bf6e8005b82422276ed6717b9fdf13"
+        },
+        {
+          "page": 3,
+          "path": "/questions/au/2023-autumn-pm2/original-p03.jpeg",
+          "sha256": "597084f754e2f513db5041e307bea2fb3e78e83078372034e766576761c86092"
+        },
+        {
+          "page": 8,
+          "path": "/questions/au/2023-autumn-pm2/original-p08.jpeg",
+          "sha256": "e8765dd8e2f10dfff4b2eba4e8aa90b42b348cb3eb1d1b89dba200f62bce77f7"
+        }
+      ],
+      "answerImages": [
+        {
+          "path": "/questions/au/2023-autumn-pm2/q1-intent.png",
+          "page": 1,
+          "clip": [
+            35.0,
+            104.04480743408203,
+            565.2760009765625,
+            281.84478759765625
+          ],
+          "sha256": "c4a812c9a33f1016e13519203f342411b3cf4a25f17e16d88f8893a78e9fdf71"
+        }
+      ],
+      "intentText": "企業などの組織を取り巻く環境の変化が激しくなる中，ビジネス，サービスの高度化，又は新たな価値創造などによって，競争力を高めていくことがますます求められている。そのためには，社内外の様々なデータを収集し，活用できるデータ利活用基盤の導入が重要である。一方で，収集するデータの定義が整合していなかったり，偏りなどがあると，誤った分析結果になったり，判断を誤ったりするおそれがある。このような状況を踏まえて，システム監査人は，データ利活用基盤が適切に構築されているかどうかを確かめる必要がある。本問では，システム監査人として，データ利活用基盤の構築に際して想定するリスク，及びリスクに基づいて適切に構築されているかどうかを確かめるための監査手続を具体的に論述することを通じて，データ利活用基盤の構築を監査するための知識・能力などを評価する。"
+    },
+    {
+      "questionId": "au-2023a-pm2-q2-official",
+      "qNumber": 2,
+      "title": "サイバーセキュリティ管理態勢に関するシステム監査について",
+      "questionPages": [
+        4
+      ],
+      "commonPages": [
+        1,
+        2,
+        8
+      ],
+      "questionImages": [
+        {
+          "page": 1,
+          "path": "/questions/au/2023-autumn-pm2/original-p01.jpeg",
+          "sha256": "8bec7312d88202f39ee6391933f4b1d3ec75889ff8e7ed7f4020ed3ec5d77f9e"
+        },
+        {
+          "page": 2,
+          "path": "/questions/au/2023-autumn-pm2/original-p02.jpeg",
+          "sha256": "fcb0cef5361b3878c008e98fc60b671072bf6e8005b82422276ed6717b9fdf13"
+        },
+        {
+          "page": 4,
+          "path": "/questions/au/2023-autumn-pm2/original-p04.jpeg",
+          "sha256": "7dac2354ec4a941bf6dbd3e9e3466e1a15f2d537a109d99fee02d61f5c110279"
+        },
+        {
+          "page": 8,
+          "path": "/questions/au/2023-autumn-pm2/original-p08.jpeg",
+          "sha256": "e8765dd8e2f10dfff4b2eba4e8aa90b42b348cb3eb1d1b89dba200f62bce77f7"
+        }
+      ],
+      "answerImages": [
+        {
+          "path": "/questions/au/2023-autumn-pm2/q2-intent.png",
+          "page": 1,
+          "clip": [
+            35.0,
+            282.84478759765625,
+            565.2760009765625,
+            455.03216552734375
+          ],
+          "sha256": "257b7316ed6c8032c5a2978819336be2b9accaf6de7c8ecb4a2e7d01cea66d19"
+        }
+      ],
+      "intentText": "インターネットに接続した情報システム又はデバイスが多くなるに伴い，サイバーセキュリティのリスクはますます高まってきている。また，サイバー攻撃の手口は，高度化，巧妙化し，インシデントを未然に防ぐことは難しくなっている。したがって，企業などの組織には，インシデントの発生を未然に防ぐための技術的な対策だけではなく，サイバーセキュリティ管理態勢を構築して，PDCA サイクルを実施することが求められる。このような点を踏まえて，システム監査人は，変化していくサイバーセキュリティのリスクに対応していくために，サイバーセキュリティ管理態勢が適切かどうかを確かめる必要がある。本問では，サイバーセキュリティ管理態勢が適切かどうかを確かめるための監査の着眼点，入手すべき監査証拠及び具体的に確かめるべき内容の論述を通じて，監査の知識・能力などを評価する。"
+    }
+  ]
+}

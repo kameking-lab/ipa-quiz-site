@@ -12,6 +12,7 @@ import { NextResponse } from "next/server";
 import { Prisma } from "@prisma/client";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db/prisma";
+import { preserveStudyWeekdays } from "@/lib/study-plan/pace-compat";
 import type { StudyPlanSyncEntry } from "@/lib/sync/types";
 
 export const runtime = "nodejs";
@@ -36,7 +37,7 @@ export async function POST(req: Request) {
   }
   const userId = session.user.id;
 
-  const body = (await req.json().catch(() => null)) as { entries?: unknown; expectedUserId?: unknown } | null;
+  const body = (await req.json().catch(() => null)) as { entries?: unknown; expectedUserId?: unknown; includePace?: unknown } | null;
   if (!body || typeof body.expectedUserId !== "string" || !body.expectedUserId) {
     return NextResponse.json({ error: "expected_user_required" }, { status: 400 });
   }
@@ -50,30 +51,32 @@ export async function POST(req: Request) {
   let merged = 0;
   if (incoming.length > 0) {
     const existing = await prisma.studyPlan.findMany({
-      where: { userId },
-      select: { id: true, updatedAt: true },
+      where: { userId, id: { in: incoming.map(entry => entry.id) } },
+      select: { id: true, updatedAt: true, payload: true },
     });
     const existingMap = new Map(
-      existing.map((r: { id: string; updatedAt: Date }) => [r.id, r.updatedAt.getTime()]),
+      existing.map(row => [row.id, row] as const),
     );
 
     for (const e of incoming) {
-      const prevUpdated = existingMap.get(e.id);
-      if (prevUpdated !== undefined && e.updatedAt <= prevUpdated) continue;
+      const prev = existingMap.get(e.id);
+      if (prev && e.updatedAt <= prev.updatedAt.getTime()) continue;
       const data = {
-        payload: e.payload as Prisma.InputJsonValue,
+        payload: preserveStudyWeekdays(e.payload, prev?.payload) as Prisma.InputJsonValue,
         progress:
           e.progress === undefined || e.progress === null
             ? Prisma.JsonNull
             : (e.progress as Prisma.InputJsonValue),
         updatedAt: new Date(e.updatedAt),
       };
-      if (prevUpdated !== undefined) {
+      if (prev) {
         // Owned by this user (id was in existingMap) → safe to update.
-        await prisma.studyPlan.update({
-          where: { id: e.id },
+        const updated = await prisma.studyPlan.updateMany({
+          where: { id: e.id, userId, updatedAt: prev.updatedAt },
           data: { ...data, version: { increment: 1 } },
         });
+        if (!updated.count) return NextResponse.json({ error: "sync_retry" }, { status: 409 });
+        existingMap.set(e.id, { id: e.id, updatedAt: data.updatedAt, payload: data.payload as Prisma.JsonValue });
         merged += 1;
         continue;
       }
@@ -94,6 +97,7 @@ export async function POST(req: Request) {
           version: 1,
         },
       });
+      existingMap.set(e.id, { id: e.id, updatedAt: data.updatedAt, payload: data.payload as Prisma.JsonValue });
       merged += 1;
     }
   }
@@ -102,7 +106,11 @@ export async function POST(req: Request) {
     where: { userId },
     orderBy: { updatedAt: "desc" },
   });
-  const entries: StudyPlanSyncEntry[] = all.map(
+  // Older clients cast every returned payload to the original task planner.
+  // Only clients explicitly supporting tagged pace/activity JSON receive it.
+  const visible = all.filter((row: { payload: unknown }) => body.includePace === true ||
+    !row.payload || typeof row.payload !== "object" || !("kind" in row.payload));
+  const entries: StudyPlanSyncEntry[] = visible.map(
     (r: { id: string; payload: unknown; progress: unknown; createdAt: Date; updatedAt: Date }) => ({
       id: r.id,
       payload: r.payload,
@@ -112,5 +120,5 @@ export async function POST(req: Request) {
     }),
   );
 
-  return NextResponse.json({ entries, merged, total: all.length });
+  return NextResponse.json({ entries, merged, total: visible.length });
 }

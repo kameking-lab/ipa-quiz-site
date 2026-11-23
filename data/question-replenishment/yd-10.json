@@ -1,0 +1,69 @@
+{
+  "lane": "yd-10",
+  "jobs": [
+    {
+      "jobId": "PLAN5-318",
+      "index": 317,
+      "status": "complete",
+      "exam": "kenchikushi1",
+      "year": 2023,
+      "season": "annual",
+      "session": "houki",
+      "lawReferenceDate": "2023-01-01",
+      "examDate": "2023-07-23",
+      "examDateSource": "https://www.mlit.go.jp/report/press/content/001626237.pdf",
+      "questionSource": {
+        "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gakka3.pdf",
+        "sha256": "c7ce4ac5788a1d928b4c351ef870c04877d38007e4e8de9dbbd56b6ffefc7848",
+        "pages": 20
+      },
+      "answerSource": {
+        "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gokakukijun.pdf",
+        "sha256": "abb629cb2d44f29ae608ac6f68eddaa3e862c84fdb55eeef426c797d3e2c24f8",
+        "pages": 1
+      },
+      "officialQuestionCount": 30,
+      "registeredQuestionCount": 30,
+      "choiceExplanationCount": 120,
+      "registeredQuestionIds": [
+        "kenchikushi1-2023-annual-houki-q1",
+        "kenchikushi1-2023-annual-houki-q2",
+        "kenchikushi1-2023-annual-houki-q3",
+        "kenchikushi1-2023-annual-houki-q4",
+        "kenchikushi1-2023-annual-houki-q5",
+        "kenchikushi1-2023-annual-houki-q6",
+        "kenchikushi1-2023-annual-houki-q7",
+        "kenchikushi1-2023-annual-houki-q8",
+        "kenchikushi1-2023-annual-houki-q9",
+        "kenchikushi1-2023-annual-houki-q10",
+        "kenchikushi1-2023-annual-houki-q11",
+        "kenchikushi1-2023-annual-houki-q12",
+        "kenchikushi1-2023-annual-houki-q13",
+        "kenchikushi1-2023-annual-houki-q14",
+        "kenchikushi1-2023-annual-houki-q15",
+        "kenchikushi1-2023-annual-houki-q16",
+        "kenchikushi1-2023-annual-houki-q17",
+        "kenchikushi1-2023-annual-houki-q18",
+        "kenchikushi1-2023-annual-houki-q19",
+        "kenchikushi1-2023-annual-houki-q20",
+        "kenchikushi1-2023-annual-houki-q21",
+        "kenchikushi1-2023-annual-houki-q22",
+        "kenchikushi1-2023-annual-houki-q23",
+        "kenchikushi1-2023-annual-houki-q24",
+        "kenchikushi1-2023-annual-houki-q25",
+        "kenchikushi1-2023-annual-houki-q26",
+        "kenchikushi1-2023-annual-houki-q27",
+        "kenchikushi1-2023-annual-houki-q28",
+        "kenchikushi1-2023-annual-houki-q29",
+        "kenchikushi1-2023-annual-houki-q30"
+      ],
+      "officialAnswerNumbers": "143123244323424433131142111142",
+      "verifiedFigures": {
+        "q05-official.png": "471cbc051809094e75e92322c85a4bd29bf823831041f9456f3caeb91b86f03a",
+        "q16-official.png": "b406dde3a45e70bf4b6c413c41ead18df83c8701fd7b60ffafbaebf24b56023b",
+        "q17-official.png": "0bd7210ccf9175653a7c3e1723ee46d61d82ee37f6bd926e22f15604fc36ae0d"
+      },
+      "dataFile": "data/questions/kenchikushi1/2023-houki.json"
+    }
+  ]
+}

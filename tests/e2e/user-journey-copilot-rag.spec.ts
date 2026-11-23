@@ -1,4 +1,5 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type APIResponse } from "@playwright/test";
+import { AI_POLICY_VERSION } from "../../lib/ai/access-policy";
 
 // Run this file's tests sequentially (override the global fullyParallel). Each
 // valid /api/copilot POST runs the RAG pipeline, which on first hit loads the
@@ -36,14 +37,30 @@ const VALID_BODY = JSON.stringify({
   messages: [{ role: "user", content: "この問題を解説してください" }],
 });
 
+async function streamsUnderCiConfiguration(response: APIResponse) {
+  if (process.env.AI_QUOTA_ROLLOUT === "true") {
+    // This job deliberately runs without the credentials for guest identity and usage storage.
+    expect(response.status()).toBe(503);
+    expect(await response.json()).toMatchObject({ error: "ai_unavailable" });
+    expect(response.headers()).toMatchObject({
+      "x-ai-policy-version": AI_POLICY_VERSION,
+      "x-ai-attempt": "not-started",
+      "x-ai-quota-consumed": "0",
+    });
+    expect(response.headers()["x-provider"]).toBeUndefined();
+    return false;
+  }
+  expect([200, 429]).toContain(response.status());
+  return response.status() === 200;
+}
+
 test.describe("copilot API: basic contract", () => {
-  test("POST /api/copilot returns 200 with streaming text", async ({ request }) => {
+  test("POST /api/copilot respects the configured rollout and credentials", async ({ request }) => {
     const res = await request.post("/api/copilot", {
       headers: { "Content-Type": "application/json" },
       data: VALID_BODY,
     });
-    // May return 429 if rate-limited; both are acceptable in CI
-    expect([200, 429]).toContain(res.status());
+    if (await streamsUnderCiConfiguration(res)) expect((await res.text()).length).toBeGreaterThan(0);
   });
 
   test("POST /api/copilot with invalid body returns 400", async ({ request }) => {
@@ -59,7 +76,7 @@ test.describe("copilot API: basic contract", () => {
       headers: { "Content-Type": "application/json" },
       data: VALID_BODY,
     });
-    if (res.status() === 200) {
+    if (await streamsUnderCiConfiguration(res)) {
       expect(res.headers()["x-rag-enabled"]).toMatch(/^[01]$/);
       expect(res.headers()["x-rag-passages"]).toMatch(/^\d+$/);
       expect(res.headers()["x-rag-top-score"]).toMatch(/^\d+\.\d+$/);
@@ -72,7 +89,7 @@ test.describe("copilot API: basic contract", () => {
       headers: { "Content-Type": "application/json" },
       data: VALID_BODY,
     });
-    if (res.status() === 200) {
+    if (await streamsUnderCiConfiguration(res)) {
       expect(res.headers()["x-ratelimit-limit"]).toBeUndefined();
       expect(res.headers()["x-ratelimit-remaining"]).toBeUndefined();
       expect(res.headers()["x-ratelimit-reset"]).toBeUndefined();
@@ -87,20 +104,21 @@ test.describe("copilot UI: question page integration", () => {
     expect(res.status()).toBe(200);
   });
 
-  test("question page renders AI copilot section", async ({ page }) => {
+  test("question page offers AI follow-up without opening it by default", async ({ page }) => {
     await page.goto(QUESTION);
-    // The AI copilot panel should appear on the page
-    const copilot = page.locator("[aria-label='AI コパイロット']");
-    await expect(copilot).toBeVisible();
+    await expect(page.locator("summary").filter({ hasText: /^AIに質問$/ })).toBeVisible();
+    await expect(page.getByRole("textbox", { name: /^AIへの質問を入力/ })).toHaveCount(0);
   });
 
-  test("copilot panel is keyboard-accessible (focusable child elements)", async ({ page }) => {
+  test("keyboard opens the AI follow-up with input focus and a processing notice", async ({ page }) => {
     await page.goto(QUESTION);
-    const copilot = page.locator("[aria-label='AI コパイロット']");
+    await page.locator("summary").filter({ hasText: /^AIに質問$/ }).press("Enter");
+    const copilot = page.getByRole("region", { name: "この問題についてAIに質問", exact: true });
     await expect(copilot).toBeVisible();
-    // Panel should contain at least one interactive element
-    const buttons = copilot.locator("button, input, textarea, a");
-    await expect(buttons.first()).toBeVisible();
+    await expect(copilot.getByRole("textbox", { name: /^AIへの質問を入力/ })).toBeFocused();
+    await expect(copilot.getByRole("button", { name: "送信", exact: true })).toBeDisabled();
+    await expect(copilot.getByText("Google Geminiで処理します", { exact: false })).toBeVisible();
+    await expect(copilot.getByRole("link", { name: "プライバシーポリシー" })).toHaveAttribute("href", "/privacy#2");
   });
 });
 

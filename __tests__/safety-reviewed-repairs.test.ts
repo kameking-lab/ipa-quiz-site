@@ -3,14 +3,17 @@ import { loadExamPaper } from "@/lib/exam-library-papers";
 import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { isScorableQuestion, gradeExamAnswer } from "@/lib/exam-library-model";
 import keys from "@/data/exam-library/reviewed-answer-keys.json";
+import officialCatalog from "@/data/exam-library/official-catalog.json";
 
 describe("source-reviewed safety repairs", () => {
-  it("grades all 360 visually reviewed vector-mark answers against the exact source manifest", () => {
-    expect(keys).toHaveLength(18);
+  it("grades all 600 visually reviewed vector-mark answers against the exact source manifest", () => {
+    expect(keys).toHaveLength(30);
+    expect(new Set(keys.map(({ paperId }) => paperId)).size).toBe(30);
     for (const source of keys) {
       const catalog = EXAM_CATALOG.find((p) => p.id === source.paperId)!;
       const questions = loadExamPaper(source.paperId)!;
       expect(catalog.pdfUrl).toBe(source.pdfUrl);
+      expect(officialCatalog.find((p) => p.id === source.paperId)?.pdfSha256).toBe(source.pdfSha256);
       expect(catalog.answerMode).toBe("official-choice");
       expect(catalog.scoredCount).toBe(20);
       expect(questions).toHaveLength(20);

@@ -1,0 +1,91 @@
+{
+  "lane": "ql-8",
+  "branch": "cx/kako-5y8-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "records": [
+    {
+      "jobId": "PLAN5-302",
+      "index": 301,
+      "exam": "sekou-1kenchiku",
+      "year": 2023,
+      "season": "annual",
+      "session": "gakka",
+      "status": "complete-on-branch",
+      "examDate": "2023-06-11",
+      "officialPrintedQuestionCount": 72,
+      "officialQuestionNumberRange": [
+        1,
+        72
+      ],
+      "officialAmQuestionCount": 44,
+      "officialPmQuestionCount": 28,
+      "officialRequiredQuestionCount": 60,
+      "officialMultipleSelectionQuestionNumbers": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_1kg_mondai.pdf",
+      "sourceAnswerPage": 37,
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/ans1k.pdf",
+      "sourceSha256": {
+        "302-question-answer.pdf": "c4fed26009d3b01dddd7fcf29205e4459b64acbc7118c77e850a82f74c1ae205",
+        "302-answer-only.pdf": "89c6b6d62753c47d7f5afb9f7042c19cc2d62b3f4f3e14cde55303315894b993"
+      },
+      "answerDifferences": 0,
+      "addedPracticeQuestions": 72,
+      "officialIntake": "tools/qk-8/302-official-intake.json",
+      "notes": "PLAN5 counted 10; the official booklet contains 72 originals.",
+      "choiceExplanations": 294,
+      "originalImages": {
+        "/questions/sekou-1kenchiku/2023-june/q8.png": "3642f560c2270025e390cb41f313ed27a8f0e552f51e37554b86cb45af627a28",
+        "/questions/sekou-1kenchiku/2023-june/q9.png": "bdbe17bab8f1083261f4f2e468f479925e1bab5cd396f49548ed81b56f73fc8d",
+        "/questions/sekou-1kenchiku/2023-june/q10.png": "1c2ec0de159b7cd98f6a17494ef6580ef207ec0fe65557302be96a15d567682b",
+        "/questions/sekou-1kenchiku/2023-june/q10-choice1.png": "99e9a7a21ca7871e03580cb5a26e7d8541ad97467b66d8e7829b1de286213a75",
+        "/questions/sekou-1kenchiku/2023-june/q10-choice2.png": "8501221ac0c2958341e26aa4d76487b6c264139a3bc1c2d247c632b9e2bf1082",
+        "/questions/sekou-1kenchiku/2023-june/q10-choice3.png": "7b4d3b18c48719ba86d73e6e2bb12baa9dbc7542b1b7f321c62d2084ee633e46",
+        "/questions/sekou-1kenchiku/2023-june/q10-choice4.png": "31a73f74d19d9c95997db747c33a62d19d545be6efb8c97761d7d12eaf33a9bc"
+      },
+      "storageSeason": "june",
+      "storageSessions": [
+        "am",
+        "pm"
+      ],
+      "yearRoute": "/sekou-1kenchiku/2023-june",
+      "sourceFile": "data/questions/sekou-1kenchiku/2023-june.json",
+      "officialAnswerValues": 78
+    },
+    {
+      "jobId": "PLAN5-330",
+      "index": 329,
+      "exam": "denki1",
+      "year": 2023,
+      "season": "annual",
+      "session": "gakka",
+      "status": "complete-in-helper-branch",
+      "sourceBranch": "cx/kako-5yh8-20261118",
+      "sourceCommit": "d85289259",
+      "existingPracticeQuestions": 92,
+      "addedPracticeQuestions": 0,
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_1dg_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_1dg_mondai.pdf#page=42"
+    },
+    {
+      "jobId": "PLAN5-428",
+      "index": 427,
+      "exam": "hoikushi",
+      "year": 2026,
+      "season": "late",
+      "session": "kyoiku-genri",
+      "status": "official-answer-publication-pending",
+      "sourcePdfUrl": "https://www.hoyokyo.or.jp/08AP2-2.pdf",
+      "sourceIndexUrl": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "officialAnswerPublicationScheduledAt": "2026-11-30T10:00:00+09:00",
+      "confirmedDormantQuestions": 10,
+      "addedPracticeQuestions": 0
+    }
+  ]
+}

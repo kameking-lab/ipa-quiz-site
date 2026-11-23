@@ -9,9 +9,12 @@ import type { PetLearningFact } from "./profile";
 import { PetProfileStore } from "./profile-store";
 import type { PetOwnerContext } from "./profile-store";
 import { applyPetLearningFact } from "./learning";
+import { readDailyGoalTarget } from "@/lib/motivation/daily-goal";
+import { dateForEntry, getHeatmapMap } from "@/lib/motivation/heatmap";
 import type { PetLearningResult } from "./learning";
 import { migrateLegacyPetProfiles } from "./migration";
 import { petLocalOwnerResolver } from "./platform";
+import { signalPetAccountOwner } from "./cloud-signal";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { getChoiceKeys, isAcceptedAnswer } from "@/lib/questions/answers";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
@@ -38,15 +41,17 @@ function readPetAccount() {
   return request;
 }
 /** Session truth comes from auth, never the last cloud-sync owner alone. */
-export async function preparePetOwner(isCurrent: () => boolean): Promise<PetOwnerLease | null> {
+export async function preparePetOwner(isCurrent: () => boolean, readAccount = readPetAccount): Promise<PetOwnerLease | null> {
   try {
     const localResolver = petLocalOwnerResolver();
     if (localResolver) return await localResolver(isCurrent);
     const token = localStorage.getItem(LS_KEYS.syncLocalOwner);
-    const account = await readPetAccount();
+    const account = await readAccount();
     const ownerScope = account ? `user:${account.id}` : "guest";
     const current = () => isCurrent() && localStorage.getItem(LS_KEYS.syncLocalOwner) === token;
     if (!current()) return null;
+    // Members' pets are also saved to their account (lazy, layout-level sync).
+    if (account) signalPetAccountOwner(ownerScope);
     return { ownerScope, isCurrent: current, async revalidate() {
       try {
         if (!current()) return false;
@@ -92,7 +97,8 @@ export async function persistPetAttempt(options: {
   let applied: PetLearningResult | undefined;
   const saved = await store.update({ ...owner, verifyCurrent: () => owner.revalidate() }, timeZone, previous => {
     const migrated = owner.ownerScope === "guest" ? migrateLegacyPetProfiles(previous, options.legacyRaw(), attempt.occurredAt) : previous;
-    applied = applyPetLearningFact(migrated, fact.data);
+    applied = applyPetLearningFact(migrated, fact.data, { target: readDailyGoalTarget(),
+      answeredToday: getHeatmapMap()[dateForEntry(attempt.occurredAt)] ?? 0 });
     return applied.document;
   });
   if (saved.status !== "ready") return saved.status;

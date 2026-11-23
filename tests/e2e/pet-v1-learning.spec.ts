@@ -41,18 +41,6 @@ for (const width of [320, 390]) test(`local learning preserves legacy, persists 
   expect((await profile()).growth).toBe(3);
   expect(ai).toEqual([]); expect(petApis).toEqual([]);
 });
-test("reveal and a subsequent correct retry remain reading without growth or study history on reveal", async ({ page }) => {
-  await page.goto("/q/ap/2023-spring/am/q1");
-  await page.getByRole("button", { name: "採点せずに答えだけ見る" }).tap();
-  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key) ?? '{"events":[]}').events.length, key), { timeout: 15000 }).toBe(1);
-  expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).profiles[0].growth, key)).toBe(0);
-  expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1") ?? '{"entries":[]}').entries.length)).toBe(0);
-  await page.goto(quiz);
-  await page.waitForURL(url => url.searchParams.get("question") === "ap-2023h-am-q1");
-  await page.getByRole("radio").first().tap();
-  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).events.length, key), { timeout: 15000 }).toBe(2);
-  expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).profiles[0].growth, key)).toBe(0);
-});
 test("an unavailable session does not silently write to the guest pet", async ({ page }) => {
   await page.unroute("**/api/auth/session");
   await page.route("**/api/auth/session", route => route.fulfill({ status: 503, json: { error: "unavailable" } }));

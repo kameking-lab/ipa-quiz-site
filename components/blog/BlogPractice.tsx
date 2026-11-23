@@ -23,6 +23,7 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
   const resultRef = useRef<HTMLDivElement>(null);
   const submitted = useRef(false);
   const correct = selected !== null && isAcceptedAnswer(question.answer, selected);
+  const sourceUrl = getSafePdfUrl(question.sourceArchiveUrl ?? question.sourcePdfUrl);
   function answer(key: ChoiceKey) {
     if (submitted.current) return;
     submitted.current = true;
@@ -30,7 +31,7 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
     const isCorrect = isAcceptedAnswer(question.answer, key);
     if (readSettings().recordHistory) {
       createHistoryStore().record({ id: question.id, selected: key, correct: isCorrect, at: Date.now() });
-      pet.record(question, { kind: "multiple-choice", selected: [key] }, isCorrect);
+      pet.answer(question, { kind: "multiple-choice", selected: [key] });
       writeLastQuestion({ exam: question.exam, year: question.year, season: question.season, session: question.session, qNumber: question.qNumber, part: question.part, answeredAt: Date.now() });
     } else pet.submit({ source: "question", questionId: question.id, answer: { kind: "multiple-choice", selected: [key] } }, { source: "question", question });
     posthogCapture("blog_practice_answered", { slug, questionId: question.id, exam: question.exam, correct: isCorrect });
@@ -54,7 +55,9 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
         <div ref={resultRef} tabIndex={-1} aria-label="チャレンジの解答結果" className="mt-4 scroll-mt-24 rounded-xl border border-border bg-background p-4 outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
           <p role="status" className="font-bold">{correct ? "正解です" : `不正解です。正解は${question.answer}です`}</p>
           {explanation}
-          <a href={getSafePdfUrl(question.sourcePdfUrl)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm underline">{ipaSourceLabel(question.sourcePdfUrl, "question")}（原典PDF）</a>
+          <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm underline">
+            {question.sourceArchiveUrl ? "公式PDF（保存版）" : `${ipaSourceLabel(question.sourcePdfUrl, "question")}（原典PDF）`}
+          </a>
           <div className="mt-3 flex flex-col gap-2 sm:flex-row">
             <Button asChild variant="primary" className="min-h-12"><Link href={continueHref} onClick={() => posthogCapture("blog_practice_continued", { slug, exam: question.exam })}>同じ分野の演習を続ける</Link></Button>
             <Button asChild variant="outline" className="min-h-12"><Link href={questionPagePath(question)}>問題の詳細・誤り報告</Link></Button>
@@ -62,7 +65,7 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
         </div>
       )}
       <a href="#article-body" className="mt-3 inline-flex min-h-11 items-center text-sm underline">記事の本文を読む</a>
-      <LearningPetCorner qualificationId={question.exam} questionId={question.id} />
+      <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
     </section>
   );
 }

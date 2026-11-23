@@ -34,8 +34,9 @@ describe("medical Q45–55 prepublication candidate", () => {
   it("preserves the original 34 ready rows alongside separately verified latest-two additions", () => {
     expect(hokenshiLive).toHaveLength(16);
     expect(josanshiLive).toHaveLength(18);
-    expect(HOKENSHI_QUESTIONS).toHaveLength(202);
-    expect(JOSANSHI_QUESTIONS).toHaveLength(219);
+    const recent = (question: { year: number }) => question.year === 2024 || question.year === 2025;
+    expect(HOKENSHI_QUESTIONS.filter(recent)).toHaveLength(220);
+    expect(JOSANSHI_QUESTIONS.filter(recent)).toHaveLength(219);
     expect(gateReady).toHaveLength(34);
     expect(gateReady.every(question => question.needsReview === false)).toBe(true);
     expect(gateReady.filter(question => question.hasImage)).toHaveLength(0);
@@ -62,7 +63,7 @@ describe("medical Q45–55 prepublication candidate", () => {
         expect(question).toEqual(source);
       }
     }
-    expect(HOKENSHI_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(202);
+    expect(HOKENSHI_QUESTIONS.filter(recent).filter(isPracticeReadyQuestion)).toHaveLength(220);
     expect(isExamPublished("hokenshi")).toBe(true);
     expect(isExamPublished("josanshi")).toBe(true);
     expect(QUESTIONS_BY_EXAM.hokenshi?.map(question => question.id)).toEqual(HOKENSHI_QUESTIONS.map(question => question.id));

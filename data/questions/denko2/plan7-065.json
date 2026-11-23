@@ -1,0 +1,2298 @@
+[
+  {
+    "id": "denko2-2017-first-gakka-q1",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "合成抵抗"
+    ],
+    "difficulty": 3,
+    "question": "合成抵抗に関する第1問。",
+    "choices": {
+      "ア": "イ．2.5",
+      "イ": "ロ．5",
+      "ウ": "ハ．7.5",
+      "エ": "ニ．15"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "端子間から見ると二つの5 Ωが並列です。逆数の和は2/5なので、合成抵抗は2.5 Ωです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q01-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第1問の原本（合成抵抗）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "端子間から見ると二つの5 Ωが並列です。逆数の和は2/5なので、合成抵抗は2.5 Ωです。",
+      "イ": "原本のロは5です。端子間から見ると二つの5 Ωが並列です。逆数の和は2/5なので、合成抵抗は2.5 Ωです。",
+      "ウ": "原本のハは7.5です。端子間から見ると二つの5 Ωが並列です。逆数の和は2/5なので、合成抵抗は2.5 Ωです。",
+      "エ": "原本のニは15です。端子間から見ると二つの5 Ωが並列です。逆数の和は2/5なので、合成抵抗は2.5 Ωです。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q2",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "交流回路の力率"
+    ],
+    "difficulty": 3,
+    "question": "交流回路の力率に関する第2問。",
+    "choices": {
+      "ア": "イ．35",
+      "イ": "ロ．47",
+      "ウ": "ハ．65",
+      "エ": "ニ．88"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "抵抗を流れる電流と同相の電圧は180 Vです。電源電圧204 Vで割り、100を掛けると約88 %になります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q02-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第2問の原本（交流回路の力率）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "原本のイは35です。抵抗を流れる電流と同相の電圧は180 Vです。電源電圧204 Vで割り、100を掛けると約88 %になります。",
+      "イ": "原本のロは47です。抵抗を流れる電流と同相の電圧は180 Vです。電源電圧204 Vで割り、100を掛けると約88 %になります。",
+      "ウ": "原本のハは65です。抵抗を流れる電流と同相の電圧は180 Vです。電源電圧204 Vで割り、100を掛けると約88 %になります。",
+      "エ": "抵抗を流れる電流と同相の電圧は180 Vです。電源電圧204 Vで割り、100を掛けると約88 %になります。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q3",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "導体の抵抗"
+    ],
+    "difficulty": 3,
+    "question": "導体の抵抗に関する第3問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "同じ材質の抵抗は長さに比例し、直径の二乗に反比例します。長さの比1/2に直径比の二乗4を掛け、AはBの2倍です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q03-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第3問の原本（導体の抵抗）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "同じ材質の抵抗は長さに比例し、直径の二乗に反比例します。長さの比1/2に直径比の二乗4を掛け、AはBの2倍です。",
+      "イ": "原本のロは導体の抵抗の条件と一致しません。同じ材質の抵抗は長さに比例し、直径の二乗に反比例します。長さの比1/2に直径比の二乗4を掛け、AはBの2倍です。",
+      "ウ": "原本のハは導体の抵抗の条件と一致しません。同じ材質の抵抗は長さに比例し、直径の二乗に反比例します。長さの比1/2に直径比の二乗4を掛け、AはBの2倍です。",
+      "エ": "原本のニは導体の抵抗の条件と一致しません。同じ材質の抵抗は長さに比例し、直径の二乗に反比例します。長さの比1/2に直径比の二乗4を掛け、AはBの2倍です。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q4",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "力率改善"
+    ],
+    "difficulty": 3,
+    "question": "力率改善に関する第4問。",
+    "choices": {
+      "ア": "イ．零になる。",
+      "イ": "ロ．コンデンサ設置前と比べて変化しない。",
+      "ウ": "ハ．コンデンサ設置前と比べて増加する。",
+      "エ": "ニ．コンデンサ設置前と比べて減少する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "並列コンデンサが負荷の誘導性無効電流を打ち消します。同じ有効電力を送るときに電源から流れる電流が減ります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q04-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第4問の原本（力率改善）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "原本のイは力率改善の条件と一致しません。並列コンデンサが負荷の誘導性無効電流を打ち消します。同じ有効電力を送るときに電源から流れる電流が減ります。",
+      "イ": "原本のロは力率改善の条件と一致しません。並列コンデンサが負荷の誘導性無効電流を打ち消します。同じ有効電力を送るときに電源から流れる電流が減ります。",
+      "ウ": "原本のハは力率改善の条件と一致しません。並列コンデンサが負荷の誘導性無効電流を打ち消します。同じ有効電力を送るときに電源から流れる電流が減ります。",
+      "エ": "並列コンデンサが負荷の誘導性無効電流を打ち消します。同じ有効電力を送るときに電源から流れる電流が減ります。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q5",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "三相回路の断線"
+    ],
+    "difficulty": 3,
+    "question": "三相回路の断線に関する第5問。",
+    "choices": {
+      "ア": "イ．断線前116、断線後100",
+      "イ": "ロ．断線前116、断線後116",
+      "ウ": "ハ．断線前100、断線後116",
+      "エ": "ニ．断線前100、断線後100"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "断線前は平衡Y結線なので200/√3≒116 Vです。断線後は等しい抵抗2本が線間200 Vを半分ずつ受け持ちます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q05-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第5問の原本（三相回路の断線）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "断線前は平衡Y結線なので200/√3≒116 Vです。断線後は等しい抵抗2本が線間200 Vを半分ずつ受け持ちます。",
+      "イ": "原本のロは三相回路の断線の条件と一致しません。断線前は平衡Y結線なので200/√3≒116 Vです。断線後は等しい抵抗2本が線間200 Vを半分ずつ受け持ちます。",
+      "ウ": "原本のハは三相回路の断線の条件と一致しません。断線前は平衡Y結線なので200/√3≒116 Vです。断線後は等しい抵抗2本が線間200 Vを半分ずつ受け持ちます。",
+      "エ": "原本のニは三相回路の断線の条件と一致しません。断線前は平衡Y結線なので200/√3≒116 Vです。断線後は等しい抵抗2本が線間200 Vを半分ずつ受け持ちます。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q6",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "電圧降下"
+    ],
+    "difficulty": 3,
+    "question": "電圧降下に関する第6問。",
+    "choices": {
+      "ア": "イ．0.15",
+      "イ": "ロ．0.75",
+      "ウ": "ハ．1.5",
+      "エ": "ニ．3.0"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "負荷電流は1500/100＝15 Aです。往復20 mの電線抵抗は0.1 Ωなので、電圧降下は1.5 Vです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q06-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第6問の原本（電圧降下）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=6",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "原本のイは0.15です。負荷電流は1500/100＝15 Aです。往復20 mの電線抵抗は0.1 Ωなので、電圧降下は1.5 Vです。",
+      "イ": "原本のロは0.75です。負荷電流は1500/100＝15 Aです。往復20 mの電線抵抗は0.1 Ωなので、電圧降下は1.5 Vです。",
+      "ウ": "負荷電流は1500/100＝15 Aです。往復20 mの電線抵抗は0.1 Ωなので、電圧降下は1.5 Vです。",
+      "エ": "原本のニは3.0です。負荷電流は1500/100＝15 Aです。往復20 mの電線抵抗は0.1 Ωなので、電圧降下は1.5 Vです。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q7",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "電線の許容電流"
+    ],
+    "difficulty": 3,
+    "question": "電線の許容電流に関する第7問。",
+    "choices": {
+      "ア": "イ．19",
+      "イ": "ロ．24",
+      "ウ": "ハ．27",
+      "エ": "ニ．35"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "この設問では直径2.0 mmの軟銅線の許容電流34 Aに、指定の電流減少係数0.7を掛けます。23.8 Aで、最も近いのは24 Aです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q07-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第7問の原本（電線の許容電流）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=6",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "原本のイは19です。この設問では直径2.0 mmの軟銅線の許容電流34 Aに、指定の電流減少係数0.7を掛けます。23.8 Aで、最も近いのは24 Aです。",
+      "イ": "この設問では直径2.0 mmの軟銅線の許容電流34 Aに、指定の電流減少係数0.7を掛けます。23.8 Aで、最も近いのは24 Aです。",
+      "ウ": "原本のハは27です。この設問では直径2.0 mmの軟銅線の許容電流34 Aに、指定の電流減少係数0.7を掛けます。23.8 Aで、最も近いのは24 Aです。",
+      "エ": "原本のニは35です。この設問では直径2.0 mmの軟銅線の許容電流34 Aに、指定の電流減少係数0.7を掛けます。23.8 Aで、最も近いのは24 Aです。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q8",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "幹線の許容電流"
+    ],
+    "difficulty": 3,
+    "question": "幹線の許容電流に関する第8問。",
+    "choices": {
+      "ア": "イ．70",
+      "イ": "ロ．74",
+      "ウ": "ハ．80",
+      "エ": "ニ．150"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "電動機は10＋30＝40 Aで、電熱器の30 Aより大きいので、電動機分を1.25倍します。幹線には40×1.25＋30＝80 Aが必要です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q08-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第8問の原本（幹線の許容電流）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=6",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "原本のイは70です。電動機は10＋30＝40 Aで、電熱器の30 Aより大きいので、電動機分を1.25倍します。幹線には40×1.25＋30＝80 Aが必要です。",
+      "イ": "原本のロは74です。電動機は10＋30＝40 Aで、電熱器の30 Aより大きいので、電動機分を1.25倍します。幹線には40×1.25＋30＝80 Aが必要です。",
+      "ウ": "電動機は10＋30＝40 Aで、電熱器の30 Aより大きいので、電動機分を1.25倍します。幹線には40×1.25＋30＝80 Aが必要です。",
+      "エ": "原本のニは150です。電動機は10＋30＝40 Aで、電熱器の30 Aより大きいので、電動機分を1.25倍します。幹線には40×1.25＋30＝80 Aが必要です。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q9",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "分岐回路の組合せ"
+    ],
+    "difficulty": 3,
+    "question": "分岐回路の組合せに関する第9問。",
+    "choices": {
+      "ア": "イ．20 A、1.6 mm、15 Aコンセント2個",
+      "イ": "ロ．30 A、2.0 mm、30 Aコンセント2個",
+      "ウ": "ハ．20 A、2.0 mm、20 Aコンセント3個",
+      "エ": "ニ．30 A、2.6 mm、20 Aコンセント1個"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "ロの30 A分岐回路は電線が直径2.0 mmです。設問の分岐回路の条件では、30 Aに対応する電線として細すぎます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q09-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第9問の原本（分岐回路の組合せ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=6",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる分岐回路の組合せの誤りには当たりません。",
+      "イ": "ロの30 A分岐回路は電線が直径2.0 mmです。設問の分岐回路の条件では、30 Aに対応する電線として細すぎます。",
+      "ウ": "原本のハは、この設問で問われる分岐回路の組合せの誤りには当たりません。",
+      "エ": "原本のニは、この設問で問われる分岐回路の組合せの誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q10",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "分岐点と遮断器の位置"
+    ],
+    "difficulty": 3,
+    "question": "分岐点と遮断器の位置に関する第10問。",
+    "choices": {
+      "ア": "イ．3",
+      "イ": "ロ．5",
+      "ウ": "ハ．8",
+      "エ": "ニ．制限なし"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "分岐電線の42 Aは上流の遮断器50 Aの55 %を超えます。設問条件ではこの比率を満たすと、a−b間の長さに制限がありません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q10-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第10問の原本（分岐点と遮断器の位置）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "原本のイは分岐点と遮断器の位置の条件と一致しません。分岐電線の42 Aは上流の遮断器50 Aの55 %を超えます。設問条件ではこの比率を満たすと、a−b間の長さに制限がありません。",
+      "イ": "原本のロは分岐点と遮断器の位置の条件と一致しません。分岐電線の42 Aは上流の遮断器50 Aの55 %を超えます。設問条件ではこの比率を満たすと、a−b間の長さに制限がありません。",
+      "ウ": "原本のハは分岐点と遮断器の位置の条件と一致しません。分岐電線の42 Aは上流の遮断器50 Aの55 %を超えます。設問条件ではこの比率を満たすと、a−b間の長さに制限がありません。",
+      "エ": "分岐電線の42 Aは上流の遮断器50 Aの55 %を超えます。設問条件ではこの比率を満たすと、a−b間の長さに制限がありません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q11",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "絶縁ブッシング"
+    ],
+    "difficulty": 3,
+    "question": "絶縁ブッシングに関する第11問。",
+    "choices": {
+      "ア": "イ．電線の被覆を損傷させないため。",
+      "イ": "ロ．金属管相互を接続するため。",
+      "ウ": "ハ．金属管を造営材に固定するため。",
+      "エ": "ニ．電線の接続を容易にするため。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "金属管の端は電線の被覆に直接触れるおそれがあります。端部を絶縁ブッシングで覆い、引き入れた電線の被覆を保護します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q11-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第11問の原本（絶縁ブッシング）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "金属管の端は電線の被覆に直接触れるおそれがあります。端部を絶縁ブッシングで覆い、引き入れた電線の被覆を保護します。",
+      "イ": "原本のロは絶縁ブッシングの条件と一致しません。金属管の端は電線の被覆に直接触れるおそれがあります。端部を絶縁ブッシングで覆い、引き入れた電線の被覆を保護します。",
+      "ウ": "原本のハは絶縁ブッシングの条件と一致しません。金属管の端は電線の被覆に直接触れるおそれがあります。端部を絶縁ブッシングで覆い、引き入れた電線の被覆を保護します。",
+      "エ": "原本のニは絶縁ブッシングの条件と一致しません。金属管の端は電線の被覆に直接触れるおそれがあります。端部を絶縁ブッシングで覆い、引き入れた電線の被覆を保護します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q12",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "LEDランプ"
+    ],
+    "difficulty": 3,
+    "question": "LEDランプに関する第12問。",
+    "choices": {
+      "ア": "イ．寿命が短い。",
+      "イ": "ロ．発光効率が高い（同じ明るさでは消費電力が少ない）。",
+      "ウ": "ハ．価格が高い。",
+      "エ": "ニ．力率が低い。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "電球形LEDランプは白熱電球より寿命が長いので、「寿命が短い」が誤りです。設問は発光効率や価格とは別の比較を求めています。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q12-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第12問の原本（LEDランプ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "電球形LEDランプは白熱電球より寿命が長いので、「寿命が短い」が誤りです。設問は発光効率や価格とは別の比較を求めています。",
+      "イ": "原本のロは、この設問で問われるLEDランプの誤りには当たりません。",
+      "ウ": "原本のハは、この設問で問われるLEDランプの誤りには当たりません。",
+      "エ": "原本のニは、この設問で問われるLEDランプの誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q13",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "三相誘導電動機"
+    ],
+    "difficulty": 3,
+    "question": "三相誘導電動機に関する第13問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "極数が同じなら同期速度は電源周波数に比例します。60 Hzから50 Hzに変更すると速度は低下するので、ハの増加は誤りです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q13-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第13問の原本（三相誘導電動機）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる三相誘導電動機の誤りには当たりません。",
+      "イ": "原本のロは、この設問で問われる三相誘導電動機の誤りには当たりません。",
+      "ウ": "極数が同じなら同期速度は電源周波数に比例します。60 Hzから50 Hzに変更すると速度は低下するので、ハの増加は誤りです。",
+      "エ": "原本のニは、この設問で問われる三相誘導電動機の誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q14",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "コンクリート壁への管取付け"
+    ],
+    "difficulty": 3,
+    "question": "コンクリート壁への管取付けに関する第14問。",
+    "choices": {
+      "ア": "イ．ホルソ、カールプラグ、ハンマ、ステープル",
+      "イ": "ロ．振動ドリル、カールプラグ、サドル、木ねじ",
+      "ウ": "ハ．ハンマ、たがね、ステープル、コンクリート釘",
+      "エ": "ニ．振動ドリル、ホルソ、サドル、ボルト"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "振動ドリルで下穴を開け、カールプラグに木ねじを効かせてサドルを固定する組合せです。サドルで管を壁に保持します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q14-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第14問の原本（コンクリート壁への管取付け）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイはコンクリート壁への管取付けの条件と一致しません。振動ドリルで下穴を開け、カールプラグに木ねじを効かせてサドルを固定する組合せです。サドルで管を壁に保持します。",
+      "イ": "振動ドリルで下穴を開け、カールプラグに木ねじを効かせてサドルを固定する組合せです。サドルで管を壁に保持します。",
+      "ウ": "原本のハはコンクリート壁への管取付けの条件と一致しません。振動ドリルで下穴を開け、カールプラグに木ねじを効かせてサドルを固定する組合せです。サドルで管を壁に保持します。",
+      "エ": "原本のニはコンクリート壁への管取付けの条件と一致しません。振動ドリルで下穴を開け、カールプラグに木ねじを効かせてサドルを固定する組合せです。サドルで管を壁に保持します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q15",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "太陽光発電設備"
+    ],
+    "difficulty": 3,
+    "question": "太陽光発電設備に関する第15問。",
+    "choices": {
+      "ア": "イ．パワーコンディショナ",
+      "イ": "ロ．低圧進相コンデンサ",
+      "ウ": "ハ．調光器",
+      "エ": "ニ．自動点滅器"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "太陽電池が出す電気は直流です。系統に連系するため、パワーコンディショナで交流に変換します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q15-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第15問の原本（太陽光発電設備）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "太陽電池が出す電気は直流です。系統に連系するため、パワーコンディショナで交流に変換します。",
+      "イ": "原本のロは太陽光発電設備の条件と一致しません。太陽電池が出す電気は直流です。系統に連系するため、パワーコンディショナで交流に変換します。",
+      "ウ": "原本のハは太陽光発電設備の条件と一致しません。太陽電池が出す電気は直流です。系統に連系するため、パワーコンディショナで交流に変換します。",
+      "エ": "原本のニは太陽光発電設備の条件と一致しません。太陽電池が出す電気は直流です。系統に連系するため、パワーコンディショナで交流に変換します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q16",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "電線管用工具"
+    ],
+    "difficulty": 3,
+    "question": "電線管用工具に関する第16問。",
+    "choices": {
+      "ア": "イ．金属管の切断に使用する。",
+      "イ": "ロ．ライティングダクトの切断に使用する。",
+      "ウ": "ハ．硬質塩化ビニル電線管の切断に使用する。",
+      "エ": "ニ．金属線びの切断に使用する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "写真の工具は樹脂管を受けて刃で切る形状です。金属管や金属線び用ではなく、硬質塩化ビニル電線管の切断に使います。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q16-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第16問の原本（電線管用工具）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは電線管用工具の条件と一致しません。写真の工具は樹脂管を受けて刃で切る形状です。金属管や金属線び用ではなく、硬質塩化ビニル電線管の切断に使います。",
+      "イ": "原本のロは電線管用工具の条件と一致しません。写真の工具は樹脂管を受けて刃で切る形状です。金属管や金属線び用ではなく、硬質塩化ビニル電線管の切断に使います。",
+      "ウ": "写真の工具は樹脂管を受けて刃で切る形状です。金属管や金属線び用ではなく、硬質塩化ビニル電線管の切断に使います。",
+      "エ": "原本のニは電線管用工具の条件と一致しません。写真の工具は樹脂管を受けて刃で切る形状です。金属管や金属線び用ではなく、硬質塩化ビニル電線管の切断に使います。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q17",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "電動機保護用遮断器"
+    ],
+    "difficulty": 3,
+    "question": "電動機保護用遮断器に関する第17問。",
+    "choices": {
+      "ア": "イ．漏電警報器",
+      "イ": "ロ．電磁開閉器",
+      "ウ": "ハ．漏電遮断器",
+      "エ": "ニ．配線用遮断器（電動機保護兼用）"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "写真の器具は電動機保護兼用の配線用遮断器です。電動機の過負荷を保護するとともに、配線の過電流を遮断します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q17-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第17問の原本（電動機保護用遮断器）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは電動機保護用遮断器の条件と一致しません。写真の器具は電動機保護兼用の配線用遮断器です。電動機の過負荷を保護するとともに、配線の過電流を遮断します。",
+      "イ": "原本のロは電動機保護用遮断器の条件と一致しません。写真の器具は電動機保護兼用の配線用遮断器です。電動機の過負荷を保護するとともに、配線の過電流を遮断します。",
+      "ウ": "原本のハは電動機保護用遮断器の条件と一致しません。写真の器具は電動機保護兼用の配線用遮断器です。電動機の過負荷を保護するとともに、配線の過電流を遮断します。",
+      "エ": "写真の器具は電動機保護兼用の配線用遮断器です。電動機の過負荷を保護するとともに、配線の過電流を遮断します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q18",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "照度計"
+    ],
+    "difficulty": 3,
+    "question": "照度計に関する第18問。",
+    "choices": {
+      "ア": "イ．検相器",
+      "イ": "ロ．周波数計",
+      "ウ": "ハ．クランプ形電流計",
+      "エ": "ニ．照度計"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "受光部で面に当たる光を測る器具が照度計です。検相器やクランプ形電流計の電気回路用端子・クランプとは外形が違います。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q18-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第18問の原本（照度計）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは照度計の条件と一致しません。受光部で面に当たる光を測る器具が照度計です。検相器やクランプ形電流計の電気回路用端子・クランプとは外形が違います。",
+      "イ": "原本のロは照度計の条件と一致しません。受光部で面に当たる光を測る器具が照度計です。検相器やクランプ形電流計の電気回路用端子・クランプとは外形が違います。",
+      "ウ": "原本のハは照度計の条件と一致しません。受光部で面に当たる光を測る器具が照度計です。検相器やクランプ形電流計の電気回路用端子・クランプとは外形が違います。",
+      "エ": "受光部で面に当たる光を測る器具が照度計です。検相器やクランプ形電流計の電気回路用端子・クランプとは外形が違います。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q19",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "特殊場所の配線"
+    ],
+    "difficulty": 3,
+    "question": "特殊場所の配線に関する第19問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "ロは危険物を貯蔵する場所で、ビニルシースケーブルを防護装置に収めていません。設問では特殊場所でのケーブルの保護条件を比較します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q19-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第19問の原本（特殊場所の配線）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる特殊場所の配線の誤りには当たりません。",
+      "イ": "ロは危険物を貯蔵する場所で、ビニルシースケーブルを防護装置に収めていません。設問では特殊場所でのケーブルの保護条件を比較します。",
+      "ウ": "原本のハは、この設問で問われる特殊場所の配線の誤りには当たりません。",
+      "エ": "原本のニは、この設問で問われる特殊場所の配線の誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q20",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "単相3線式の分岐遮断器"
+    ],
+    "difficulty": 3,
+    "question": "単相3線式の分岐遮断器に関する第20問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "2極1素子の遮断器では、過電流を検出する素子を非接地側に割り当てます。ニでは素子側に中性線を結線している点が不適切です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q20-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第20問の原本（単相3線式の分岐遮断器）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる単相3線式の分岐遮断器の誤りには当たりません。",
+      "イ": "原本のロは、この設問で問われる単相3線式の分岐遮断器の誤りには当たりません。",
+      "ウ": "原本のハは、この設問で問われる単相3線式の分岐遮断器の誤りには当たりません。",
+      "エ": "2極1素子の遮断器では、過電流を検出する素子を非接地側に割り当てます。ニでは素子側に中性線を結線している点が不適切です。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q21",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "屋内配線の施設場所"
+    ],
+    "difficulty": 3,
+    "question": "屋内配線の施設場所に関する第21問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "ニの施設場所は湿気の多い場所です。ライティングダクト工事の可否には、展開の有無に加えて湿気の条件が関係します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q21-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第21問の原本（屋内配線の施設場所）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる屋内配線の施設場所の誤りには当たりません。",
+      "イ": "原本のロは、この設問で問われる屋内配線の施設場所の誤りには当たりません。",
+      "ウ": "原本のハは、この設問で問われる屋内配線の施設場所の誤りには当たりません。",
+      "エ": "ニの施設場所は湿気の多い場所です。ライティングダクト工事の可否には、展開の有無に加えて湿気の条件が関係します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q22",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "屋側配線"
+    ],
+    "difficulty": 3,
+    "question": "屋側配線に関する第22問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "車庫に電気を供給する設問の屋側配線には、1種金属製線びを使用する工事は適しません。屋側での施設条件に着目します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q22-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第22問の原本（屋側配線）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる屋側配線の誤りには当たりません。",
+      "イ": "原本のロは、この設問で問われる屋側配線の誤りには当たりません。",
+      "ウ": "車庫に電気を供給する設問の屋側配線には、1種金属製線びを使用する工事は適しません。屋側での施設条件に着目します。",
+      "エ": "原本のニは、この設問で問われる屋側配線の誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q23",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "D種接地工事"
+    ],
+    "difficulty": 3,
+    "question": "D種接地工事に関する第23問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "ロでは電動機の設置場所に水気があります。示された漏電遮断器があることを根拠に、設問の接地工事を省略することはできません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q23-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第23問の原本（D種接地工事）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われるD種接地工事の誤りには当たりません。",
+      "イ": "ロでは電動機の設置場所に水気があります。示された漏電遮断器があることを根拠に、設問の接地工事を省略することはできません。",
+      "ウ": "原本のハは、この設問で問われるD種接地工事の誤りには当たりません。",
+      "エ": "原本のニは、この設問で問われるD種接地工事の誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q24",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "低圧電路の測定器"
+    ],
+    "difficulty": 3,
+    "question": "低圧電路の測定器に関する第24問。",
+    "choices": {
+      "ア": "イ．クランプ形電流計と負荷電流の測定",
+      "イ": "ロ．回路計（テスタ）と導通の確認",
+      "ウ": "ハ．検相器と電動機の回転速度の測定",
+      "エ": "ニ．検電器と電路の充電の有無の確認"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "検相器は三相の相順を調べる測定器です。ハにある電動機の回転速度を測定する目的には回転計を使います。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q24-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第24問の原本（低圧電路の測定器）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる低圧電路の測定器の誤りには当たりません。",
+      "イ": "原本のロは、この設問で問われる低圧電路の測定器の誤りには当たりません。",
+      "ウ": "検相器は三相の相順を調べる測定器です。ハにある電動機の回転速度を測定する目的には回転計を使います。",
+      "エ": "原本のニは、この設問で問われる低圧電路の測定器の誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q25",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "絶縁性能と漏えい電流"
+    ],
+    "difficulty": 3,
+    "question": "絶縁性能と漏えい電流に関する第25問。",
+    "choices": {
+      "ア": "イ．0.1",
+      "イ": "ロ．0.2",
+      "ウ": "ハ．1.0",
+      "エ": "ニ．2.0"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "絶縁抵抗を測定しにくい設問条件では漏えい電流で確認します。試験で用いた判定の上限は1.0 mAです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q25-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第25問の原本（絶縁性能と漏えい電流）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは絶縁性能と漏えい電流の条件と一致しません。絶縁抵抗を測定しにくい設問条件では漏えい電流で確認します。試験で用いた判定の上限は1.0 mAです。",
+      "イ": "原本のロは絶縁性能と漏えい電流の条件と一致しません。絶縁抵抗を測定しにくい設問条件では漏えい電流で確認します。試験で用いた判定の上限は1.0 mAです。",
+      "ウ": "絶縁抵抗を測定しにくい設問条件では漏えい電流で確認します。試験で用いた判定の上限は1.0 mAです。",
+      "エ": "原本のニは絶縁性能と漏えい電流の条件と一致しません。絶縁抵抗を測定しにくい設問条件では漏えい電流で確認します。試験で用いた判定の上限は1.0 mAです。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q26",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 26,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "接地抵抗計"
+    ],
+    "difficulty": 3,
+    "question": "接地抵抗計に関する第26問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "ロのように端子間を開放して測定する方法では、接地抵抗計の零点の調整になりません。電池容量、地電圧、補助極は測定前の確認項目です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q26-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第26問の原本（接地抵抗計）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる接地抵抗計の誤りには当たりません。",
+      "イ": "ロのように端子間を開放して測定する方法では、接地抵抗計の零点の調整になりません。電池容量、地電圧、補助極は測定前の確認項目です。",
+      "ウ": "原本のハは、この設問で問われる接地抵抗計の誤りには当たりません。",
+      "エ": "原本のニは、この設問で問われる接地抵抗計の誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q27",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 27,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "交流回路の計器"
+    ],
+    "difficulty": 3,
+    "question": "交流回路の計器に関する第27問。",
+    "choices": {
+      "ア": "イ．a 電流計、b 電圧計、c 電力計",
+      "イ": "ロ．a 電力計、b 電流計、c 電圧計",
+      "ウ": "ハ．a 電圧計、b 電流計、c 電力計",
+      "エ": "ニ．a 電圧計、b 電力計、c 電流計"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "aは電源に並列なので電圧計、bは負荷へ直列なので電流計です。cは電流側と電圧側を負荷に結ぶ電力計です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q27-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第27問の原本（交流回路の計器）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは交流回路の計器の条件と一致しません。aは電源に並列なので電圧計、bは負荷へ直列なので電流計です。cは電流側と電圧側を負荷に結ぶ電力計です。",
+      "イ": "原本のロは交流回路の計器の条件と一致しません。aは電源に並列なので電圧計、bは負荷へ直列なので電流計です。cは電流側と電圧側を負荷に結ぶ電力計です。",
+      "ウ": "aは電源に並列なので電圧計、bは負荷へ直列なので電流計です。cは電流側と電圧側を負荷に結ぶ電力計です。",
+      "エ": "原本のニは交流回路の計器の条件と一致しません。aは電源に並列なので電圧計、bは負荷へ直列なので電流計です。cは電流側と電圧側を負荷に結ぶ電力計です。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q28",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 28,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "工事中の免状携帯"
+    ],
+    "difficulty": 3,
+    "question": "工事中の免状携帯に関する第28問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "ロの電気工事士は免状を営業所に置いたまま作業しています。電気工事士法の、作業に従事するときの免状携帯に反します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q28-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第28問の原本（工事中の免状携帯）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=10",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる工事中の免状携帯の誤りには当たりません。",
+      "イ": "ロの電気工事士は免状を営業所に置いたまま作業しています。電気工事士法の、作業に従事するときの免状携帯に反します。",
+      "ウ": "原本のハは、この設問で問われる工事中の免状携帯の誤りには当たりません。",
+      "エ": "原本のニは、この設問で問われる工事中の免状携帯の誤りには当たりません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q29",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 29,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "電気工事の作業範囲"
+    ],
+    "difficulty": 3,
+    "question": "電気工事の作業範囲に関する第29問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "配電盤を造営材に取り付ける作業と電線管を曲げる作業の組合せが該当します。二つの作業それぞれについて資格要件を照合します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q29-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第29問の原本（電気工事の作業範囲）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=10",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "配電盤を造営材に取り付ける作業と電線管を曲げる作業の組合せが該当します。二つの作業それぞれについて資格要件を照合します。",
+      "イ": "原本のロは電気工事の作業範囲の条件と一致しません。配電盤を造営材に取り付ける作業と電線管を曲げる作業の組合せが該当します。二つの作業それぞれについて資格要件を照合します。",
+      "ウ": "原本のハは電気工事の作業範囲の条件と一致しません。配電盤を造営材に取り付ける作業と電線管を曲げる作業の組合せが該当します。二つの作業それぞれについて資格要件を照合します。",
+      "エ": "原本のニは電気工事の作業範囲の条件と一致しません。配電盤を造営材に取り付ける作業と電線管を曲げる作業の組合せが該当します。二つの作業それぞれについて資格要件を照合します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q30",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 30,
+    "type": "multiple-choice",
+    "category": "一般問題",
+    "topicTags": [
+      "特定電気用品"
+    ],
+    "difficulty": 3,
+    "question": "特定電気用品に関する第30問。",
+    "choices": {
+      "ア": "イ．カバー付ナイフスイッチ",
+      "イ": "ロ．電磁開閉器",
+      "ウ": "ハ．ライティングダクト",
+      "エ": "ニ．タイムスイッチ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "この設問の四つの器具では、タイムスイッチが特定電気用品です。設問が定格電圧や定格電流などの適用条件を満たすと指定しています。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q30-stem.webp"
+    ],
+    "imageAltTexts": [
+      "第30問の原本（特定電気用品）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=10",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは特定電気用品の条件と一致しません。この設問の四つの器具では、タイムスイッチが特定電気用品です。設問が定格電圧や定格電流などの適用条件を満たすと指定しています。",
+      "イ": "原本のロは特定電気用品の条件と一致しません。この設問の四つの器具では、タイムスイッチが特定電気用品です。設問が定格電圧や定格電流などの適用条件を満たすと指定しています。",
+      "ウ": "原本のハは特定電気用品の条件と一致しません。この設問の四つの器具では、タイムスイッチが特定電気用品です。設問が定格電圧や定格電流などの適用条件を満たすと指定しています。",
+      "エ": "この設問の四つの器具では、タイムスイッチが特定電気用品です。設問が定格電圧や定格電流などの適用条件を満たすと指定しています。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q31",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 31,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "分電盤の図記号"
+    ],
+    "difficulty": 3,
+    "question": "分電盤の図記号に関する第31問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "分電盤は長方形を斜めに二分し、片側を塗りつぶす図記号です。図の①の盤（L-1）に対応します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q31-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第31問の原本（分電盤の図記号）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは分電盤の図記号の条件と一致しません。分電盤は長方形を斜めに二分し、片側を塗りつぶす図記号です。図の①の盤（L-1）に対応します。",
+      "イ": "原本のロは分電盤の図記号の条件と一致しません。分電盤は長方形を斜めに二分し、片側を塗りつぶす図記号です。図の①の盤（L-1）に対応します。",
+      "ウ": "分電盤は長方形を斜めに二分し、片側を塗りつぶす図記号です。図の①の盤（L-1）に対応します。",
+      "エ": "原本のニは分電盤の図記号の条件と一致しません。分電盤は長方形を斜めに二分し、片側を塗りつぶす図記号です。図の①の盤（L-1）に対応します。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q31-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q31-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q31-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q31-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q32",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 32,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "電線管の表示"
+    ],
+    "difficulty": 3,
+    "question": "電線管の表示に関する第32問。",
+    "choices": {
+      "ア": "イ．波付硬質合成樹脂管",
+      "イ": "ロ．硬質塩化ビニル電線管",
+      "ウ": "ハ．耐衝撃性硬質塩化ビニル電線管",
+      "エ": "ニ．合成樹脂製可とう電線管"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "配線図②の傍記はPF22です。PFは合成樹脂製可とう電線管を表し、22は管の呼びです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q32-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第32問の原本（電線管の表示）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは電線管の表示の条件と一致しません。配線図②の傍記はPF22です。PFは合成樹脂製可とう電線管を表し、22は管の呼びです。",
+      "イ": "原本のロは電線管の表示の条件と一致しません。配線図②の傍記はPF22です。PFは合成樹脂製可とう電線管を表し、22は管の呼びです。",
+      "ウ": "原本のハは電線管の表示の条件と一致しません。配線図②の傍記はPF22です。PFは合成樹脂製可とう電線管を表し、22は管の呼びです。",
+      "エ": "配線図②の傍記はPF22です。PFは合成樹脂製可とう電線管を表し、22は管の呼びです。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q33",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 33,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "水銀灯の傍記"
+    ],
+    "difficulty": 3,
+    "question": "水銀灯の傍記に関する第33問。",
+    "choices": {
+      "ア": "イ．M100",
+      "イ": "ロ．H100",
+      "ウ": "ハ．N100",
+      "エ": "ニ．W100"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "③の外灯は100 Wの水銀灯です。水銀灯のHと定格100 Wを組み合わせたH100が指定の傍記です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q33-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第33問の原本（水銀灯の傍記）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは水銀灯の傍記の条件と一致しません。③の外灯は100 Wの水銀灯です。水銀灯のHと定格100 Wを組み合わせたH100が指定の傍記です。",
+      "イ": "③の外灯は100 Wの水銀灯です。水銀灯のHと定格100 Wを組み合わせたH100が指定の傍記です。",
+      "ウ": "原本のハは水銀灯の傍記の条件と一致しません。③の外灯は100 Wの水銀灯です。水銀灯のHと定格100 Wを組み合わせたH100が指定の傍記です。",
+      "エ": "原本のニは水銀灯の傍記の条件と一致しません。③の外灯は100 Wの水銀灯です。水銀灯のHと定格100 Wを組み合わせたH100が指定の傍記です。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q34",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 34,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "誘導灯の図記号"
+    ],
+    "difficulty": 3,
+    "question": "誘導灯の図記号に関する第34問。",
+    "choices": {
+      "ア": "イ．非常用照明",
+      "イ": "ロ．一般用照明",
+      "ウ": "ハ．誘導灯",
+      "エ": "ニ．保安用照明"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "④は出入口に付く誘導灯です。出入口の位置を示す器具であり、照明そのものを目的とする照明器具と図記号が異なります。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q34-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第34問の原本（誘導灯の図記号）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは誘導灯の図記号の条件と一致しません。④は出入口に付く誘導灯です。出入口の位置を示す器具であり、照明そのものを目的とする照明器具と図記号が異なります。",
+      "イ": "原本のロは誘導灯の図記号の条件と一致しません。④は出入口に付く誘導灯です。出入口の位置を示す器具であり、照明そのものを目的とする照明器具と図記号が異なります。",
+      "ウ": "④は出入口に付く誘導灯です。出入口の位置を示す器具であり、照明そのものを目的とする照明器具と図記号が異なります。",
+      "エ": "原本のニは誘導灯の図記号の条件と一致しません。④は出入口に付く誘導灯です。出入口の位置を示す器具であり、照明そのものを目的とする照明器具と図記号が異なります。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q35",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 35,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "電磁開閉器用押しボタン"
+    ],
+    "difficulty": 3,
+    "question": "電磁開閉器用押しボタンに関する第35問。",
+    "choices": {
+      "ア": "イ．過負荷警報を知らせるブザー",
+      "イ": "ロ．確認表示灯付の電磁開閉器用押しボタン",
+      "ウ": "ハ．運転時に点灯する青色のパイロットランプ",
+      "エ": "ニ．負荷を運転させる為のフロートスイッチ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "⑤の位置にあるのは確認表示灯付きの押しボタンです。電磁開閉器を操作する器具で、外部の水位で動作する器具ではありません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q35-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第35問の原本（電磁開閉器用押しボタン）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは電磁開閉器用押しボタンの条件と一致しません。⑤の位置にあるのは確認表示灯付きの押しボタンです。電磁開閉器を操作する器具で、外部の水位で動作する器具ではありません。",
+      "イ": "⑤の位置にあるのは確認表示灯付きの押しボタンです。電磁開閉器を操作する器具で、外部の水位で動作する器具ではありません。",
+      "ウ": "原本のハは電磁開閉器用押しボタンの条件と一致しません。⑤の位置にあるのは確認表示灯付きの押しボタンです。電磁開閉器を操作する器具で、外部の水位で動作する器具ではありません。",
+      "エ": "原本のニは電磁開閉器用押しボタンの条件と一致しません。⑤の位置にあるのは確認表示灯付きの押しボタンです。電磁開閉器を操作する器具で、外部の水位で動作する器具ではありません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q36",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 36,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "電力量計の図記号"
+    ],
+    "difficulty": 3,
+    "question": "電力量計の図記号に関する第36問。",
+    "choices": {
+      "ア": "イ．電力計",
+      "イ": "ロ．タイムスイッチ",
+      "ウ": "ハ．配線用遮断器",
+      "エ": "ニ．電力量計"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "⑥の円の中にあるWhは、電力量の単位ワット時です。瞬時の電力を測る電力計ではなく、電力量計を示します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q36-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第36問の原本（電力量計の図記号）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは電力量計の図記号の条件と一致しません。⑥の円の中にあるWhは、電力量の単位ワット時です。瞬時の電力を測る電力計ではなく、電力量計を示します。",
+      "イ": "原本のロは電力量計の図記号の条件と一致しません。⑥の円の中にあるWhは、電力量の単位ワット時です。瞬時の電力を測る電力計ではなく、電力量計を示します。",
+      "ウ": "原本のハは電力量計の図記号の条件と一致しません。⑥の円の中にあるWhは、電力量の単位ワット時です。瞬時の電力を測る電力計ではなく、電力量計を示します。",
+      "エ": "⑥の円の中にあるWhは、電力量の単位ワット時です。瞬時の電力を測る電力計ではなく、電力量計を示します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q37",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 37,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "絶縁抵抗の基準"
+    ],
+    "difficulty": 3,
+    "question": "絶縁抵抗の基準に関する第37問。",
+    "choices": {
+      "ア": "イ．0.1",
+      "イ": "ロ．0.2",
+      "ウ": "ハ．0.4",
+      "エ": "ニ．1.0"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "⑦は配線図で三相200 Vの電路です。この設問の電圧区分に対応する、電路と大地との絶縁抵抗の最小値は0.2 MΩです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q37-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第37問の原本（絶縁抵抗の基準）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは絶縁抵抗の基準の条件と一致しません。⑦は配線図で三相200 Vの電路です。この設問の電圧区分に対応する、電路と大地との絶縁抵抗の最小値は0.2 MΩです。",
+      "イ": "⑦は配線図で三相200 Vの電路です。この設問の電圧区分に対応する、電路と大地との絶縁抵抗の最小値は0.2 MΩです。",
+      "ウ": "原本のハは絶縁抵抗の基準の条件と一致しません。⑦は配線図で三相200 Vの電路です。この設問の電圧区分に対応する、電路と大地との絶縁抵抗の最小値は0.2 MΩです。",
+      "エ": "原本のニは絶縁抵抗の基準の条件と一致しません。⑦は配線図で三相200 Vの電路です。この設問の電圧区分に対応する、電路と大地との絶縁抵抗の最小値は0.2 MΩです。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q38",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 38,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "配線の最少心線数"
+    ],
+    "difficulty": 3,
+    "question": "配線の最少心線数に関する第38問。",
+    "choices": {
+      "ア": "イ．2",
+      "イ": "ロ．3",
+      "ウ": "ハ．4",
+      "エ": "ニ．5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "⑧でつなぐ区間を配線図でたどると、必要なのは2心です。別の回路につながる電線を⑧の心線数に含めません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q38-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第38問の原本（配線の最少心線数）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "⑧でつなぐ区間を配線図でたどると、必要なのは2心です。別の回路につながる電線を⑧の心線数に含めません。",
+      "イ": "原本のロは配線の最少心線数の条件と一致しません。⑧でつなぐ区間を配線図でたどると、必要なのは2心です。別の回路につながる電線を⑧の心線数に含めません。",
+      "ウ": "原本のハは配線の最少心線数の条件と一致しません。⑧でつなぐ区間を配線図でたどると、必要なのは2心です。別の回路につながる電線を⑧の心線数に含めません。",
+      "エ": "原本のニは配線の最少心線数の条件と一致しません。⑧でつなぐ区間を配線図でたどると、必要なのは2心です。別の回路につながる電線を⑧の心線数に含めません。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q39",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 39,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "引掛形コンセント"
+    ],
+    "difficulty": 3,
+    "question": "引掛形コンセントに関する第39問。",
+    "choices": {
+      "ア": "イ．T",
+      "イ": "ロ．ET",
+      "ウ": "ハ．EL",
+      "エ": "ニ．LK"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "引掛形のコンセントはプラグを回して固定します。図記号の傍記Tがこの引掛形を表します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q39-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第39問の原本（引掛形コンセント）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "引掛形のコンセントはプラグを回して固定します。図記号の傍記Tがこの引掛形を表します。",
+      "イ": "原本のロは引掛形コンセントの条件と一致しません。引掛形のコンセントはプラグを回して固定します。図記号の傍記Tがこの引掛形を表します。",
+      "ウ": "原本のハは引掛形コンセントの条件と一致しません。引掛形のコンセントはプラグを回して固定します。図記号の傍記Tがこの引掛形を表します。",
+      "エ": "原本のニは引掛形コンセントの条件と一致しません。引掛形のコンセントはプラグを回して固定します。図記号の傍記Tがこの引掛形を表します。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q40",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 40,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "引込線取付点の高さ"
+    ],
+    "difficulty": 3,
+    "question": "引込線取付点の高さに関する第40問。",
+    "choices": {
+      "ア": "イ．2.5",
+      "イ": "ロ．3.0",
+      "ウ": "ハ．3.5",
+      "エ": "ニ．4.0"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "⑩の条件は道路を横断せず、やむを得ない場合で交通に支障がありません。その条件に対応する最低値が2.5 mです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q40-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第40問の原本（引込線取付点の高さ）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=11",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "⑩の条件は道路を横断せず、やむを得ない場合で交通に支障がありません。その条件に対応する最低値が2.5 mです。",
+      "イ": "原本のロは引込線取付点の高さの条件と一致しません。⑩の条件は道路を横断せず、やむを得ない場合で交通に支障がありません。その条件に対応する最低値が2.5 mです。",
+      "ウ": "原本のハは引込線取付点の高さの条件と一致しません。⑩の条件は道路を横断せず、やむを得ない場合で交通に支障がありません。その条件に対応する最低値が2.5 mです。",
+      "エ": "原本のニは引込線取付点の高さの条件と一致しません。⑩の条件は道路を横断せず、やむを得ない場合で交通に支障がありません。その条件に対応する最低値が2.5 mです。"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q41",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 41,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "接地極付きコンセント"
+    ],
+    "difficulty": 3,
+    "question": "接地極付きコンセントに関する第41問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "⑪の傍記は20 A・250 V・Eです。定格が一致する接地極付きの器具を、接地端子用のねじの有無とも照合します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q41-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第41問の原本（接地極付きコンセント）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=12",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは接地極付きコンセントの条件と一致しません。⑪の傍記は20 A・250 V・Eです。定格が一致する接地極付きの器具を、接地端子用のねじの有無とも照合します。",
+      "イ": "原本のロは接地極付きコンセントの条件と一致しません。⑪の傍記は20 A・250 V・Eです。定格が一致する接地極付きの器具を、接地端子用のねじの有無とも照合します。",
+      "ウ": "⑪の傍記は20 A・250 V・Eです。定格が一致する接地極付きの器具を、接地端子用のねじの有無とも照合します。",
+      "エ": "原本のニは接地極付きコンセントの条件と一致しません。⑪の傍記は20 A・250 V・Eです。定格が一致する接地極付きの器具を、接地端子用のねじの有無とも照合します。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q41-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q41-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q41-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q41-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q42",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 42,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "リングスリーブと刻印"
+    ],
+    "difficulty": 3,
+    "question": "リングスリーブと刻印に関する第42問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "図の⑫で同じ接続点に集まる心線の本数を数えます。接続の組合せに対応する種類と刻印は、中1個と小2個（○、小）です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q42-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第42問の原本（リングスリーブと刻印）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=12",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイはリングスリーブと刻印の条件と一致しません。図の⑫で同じ接続点に集まる心線の本数を数えます。接続の組合せに対応する種類と刻印は、中1個と小2個（○、小）です。",
+      "イ": "原本のロはリングスリーブと刻印の条件と一致しません。図の⑫で同じ接続点に集まる心線の本数を数えます。接続の組合せに対応する種類と刻印は、中1個と小2個（○、小）です。",
+      "ウ": "原本のハはリングスリーブと刻印の条件と一致しません。図の⑫で同じ接続点に集まる心線の本数を数えます。接続の組合せに対応する種類と刻印は、中1個と小2個（○、小）です。",
+      "エ": "図の⑫で同じ接続点に集まる心線の本数を数えます。接続の組合せに対応する種類と刻印は、中1個と小2個（○、小）です。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q42-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q42-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q42-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q42-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q43",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 43,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "圧着端子用工具"
+    ],
+    "difficulty": 3,
+    "question": "圧着端子用工具に関する第43問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "写真の端子は裸圧着端子です。リングスリーブ用の工具やペンチと区別し、裸圧着端子用の圧着工具を選びます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q43-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第43問の原本（圧着端子用工具）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=12",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは圧着端子用工具の条件と一致しません。写真の端子は裸圧着端子です。リングスリーブ用の工具やペンチと区別し、裸圧着端子用の圧着工具を選びます。",
+      "イ": "原本のロは圧着端子用工具の条件と一致しません。写真の端子は裸圧着端子です。リングスリーブ用の工具やペンチと区別し、裸圧着端子用の圧着工具を選びます。",
+      "ウ": "原本のハは圧着端子用工具の条件と一致しません。写真の端子は裸圧着端子です。リングスリーブ用の工具やペンチと区別し、裸圧着端子用の圧着工具を選びます。",
+      "エ": "写真の端子は裸圧着端子です。リングスリーブ用の工具やペンチと区別し、裸圧着端子用の圧着工具を選びます。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q43-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q43-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q43-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q43-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q44",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 44,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "水位検出電極"
+    ],
+    "difficulty": 3,
+    "question": "水位検出電極に関する第44問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "⑭はポンプの水位制御に用いる電極です。図の制御配線から用途を判断し、写真の棒状の電極と対応させます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q44-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第44問の原本（水位検出電極）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=12",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "⑭はポンプの水位制御に用いる電極です。図の制御配線から用途を判断し、写真の棒状の電極と対応させます。",
+      "イ": "原本のロは水位検出電極の条件と一致しません。⑭はポンプの水位制御に用いる電極です。図の制御配線から用途を判断し、写真の棒状の電極と対応させます。",
+      "ウ": "原本のハは水位検出電極の条件と一致しません。⑭はポンプの水位制御に用いる電極です。図の制御配線から用途を判断し、写真の棒状の電極と対応させます。",
+      "エ": "原本のニは水位検出電極の条件と一致しません。⑭はポンプの水位制御に用いる電極です。図の制御配線から用途を判断し、写真の棒状の電極と対応させます。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q44-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q44-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q44-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q44-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q45",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 45,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "プルボックス"
+    ],
+    "difficulty": 3,
+    "question": "プルボックスに関する第45問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "⑮は金属管の配線を引き入れる角形のプルボックスです。側面に管を取り付ける丸形のボックスやアウトレットボックスと区別します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q45-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第45問の原本（プルボックス）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=12",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイはプルボックスの条件と一致しません。⑮は金属管の配線を引き入れる角形のプルボックスです。側面に管を取り付ける丸形のボックスやアウトレットボックスと区別します。",
+      "イ": "⑮は金属管の配線を引き入れる角形のプルボックスです。側面に管を取り付ける丸形のボックスやアウトレットボックスと区別します。",
+      "ウ": "原本のハはプルボックスの条件と一致しません。⑮は金属管の配線を引き入れる角形のプルボックスです。側面に管を取り付ける丸形のボックスやアウトレットボックスと区別します。",
+      "エ": "原本のニはプルボックスの条件と一致しません。⑮は金属管の配線を引き入れる角形のプルボックスです。側面に管を取り付ける丸形のボックスやアウトレットボックスと区別します。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q45-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q45-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q45-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q45-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q46",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 46,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "ねじなし電線管の施工工具"
+    ],
+    "difficulty": 3,
+    "question": "ねじなし電線管の施工工具に関する第46問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "イ",
+    "explanation": "⑯のE19はねじなし電線管の表示です。切断や曲げ、端面の仕上げは行いますが、管にねじを切る工具は使いません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q46-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第46問の原本（ねじなし電線管の施工工具）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=13",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "⑯のE19はねじなし電線管の表示です。切断や曲げ、端面の仕上げは行いますが、管にねじを切る工具は使いません。",
+      "イ": "原本のロは、この設問で問われるねじなし電線管の施工工具の誤りには当たりません。",
+      "ウ": "原本のハは、この設問で問われるねじなし電線管の施工工具の誤りには当たりません。",
+      "エ": "原本のニは、この設問で問われるねじなし電線管の施工工具の誤りには当たりません。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q46-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q46-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q46-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q46-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q47",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 47,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "差込形コネクタの個数"
+    ],
+    "difficulty": 3,
+    "question": "差込形コネクタの個数に関する第47問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ハ",
+    "explanation": "⑰のボックスで同電位になる心線をまとめ、各接続点の心線数を数えます。2本用3個、3本用1個、4本用1個の組合せです。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q47-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第47問の原本（差込形コネクタの個数）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=13",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは差込形コネクタの個数の条件と一致しません。⑰のボックスで同電位になる心線をまとめ、各接続点の心線数を数えます。2本用3個、3本用1個、4本用1個の組合せです。",
+      "イ": "原本のロは差込形コネクタの個数の条件と一致しません。⑰のボックスで同電位になる心線をまとめ、各接続点の心線数を数えます。2本用3個、3本用1個、4本用1個の組合せです。",
+      "ウ": "⑰のボックスで同電位になる心線をまとめ、各接続点の心線数を数えます。2本用3個、3本用1個、4本用1個の組合せです。",
+      "エ": "原本のニは差込形コネクタの個数の条件と一致しません。⑰のボックスで同電位になる心線をまとめ、各接続点の心線数を数えます。2本用3個、3本用1個、4本用1個の組合せです。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q47-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q47-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q47-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q47-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q48",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 48,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "リングスリーブの個数"
+    ],
+    "difficulty": 3,
+    "question": "リングスリーブの個数に関する第48問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "⑱で接続する心線を接続点ごとに数え、指定のVVF1.6に対応するサイズを当てます。小2個と中1個が必要です。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q48-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第48問の原本（リングスリーブの個数）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=13",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイはリングスリーブの個数の条件と一致しません。⑱で接続する心線を接続点ごとに数え、指定のVVF1.6に対応するサイズを当てます。小2個と中1個が必要です。",
+      "イ": "⑱で接続する心線を接続点ごとに数え、指定のVVF1.6に対応するサイズを当てます。小2個と中1個が必要です。",
+      "ウ": "原本のハはリングスリーブの個数の条件と一致しません。⑱で接続する心線を接続点ごとに数え、指定のVVF1.6に対応するサイズを当てます。小2個と中1個が必要です。",
+      "エ": "原本のニはリングスリーブの個数の条件と一致しません。⑱で接続する心線を接続点ごとに数え、指定のVVF1.6に対応するサイズを当てます。小2個と中1個が必要です。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q48-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q48-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q48-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q48-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q49",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 49,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "ダウンライトの図記号"
+    ],
+    "difficulty": 3,
+    "question": "ダウンライトの図記号に関する第49問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "ロ",
+    "explanation": "⑲の記号は天井に埋め込むダウンライトです。写真の中で天井埋込形になっている器具を選びます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q49-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第49問の原本（ダウンライトの図記号）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=13",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイはダウンライトの図記号の条件と一致しません。⑲の記号は天井に埋め込むダウンライトです。写真の中で天井埋込形になっている器具を選びます。",
+      "イ": "⑲の記号は天井に埋め込むダウンライトです。写真の中で天井埋込形になっている器具を選びます。",
+      "ウ": "原本のハはダウンライトの図記号の条件と一致しません。⑲の記号は天井に埋め込むダウンライトです。写真の中で天井埋込形になっている器具を選びます。",
+      "エ": "原本のニはダウンライトの図記号の条件と一致しません。⑲の記号は天井に埋め込むダウンライトです。写真の中で天井埋込形になっている器具を選びます。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q49-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q49-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q49-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q49-choice-4.webp"
+    }
+  },
+  {
+    "id": "denko2-2017-first-gakka-q50",
+    "exam": "denko2",
+    "session": "gakka",
+    "year": 2017,
+    "season": "first",
+    "examDate": "2017-06-04",
+    "qNumber": 50,
+    "type": "multiple-choice",
+    "category": "配線図",
+    "topicTags": [
+      "配線図にないスイッチ"
+    ],
+    "difficulty": 3,
+    "question": "配線図にないスイッチに関する第50問。",
+    "choices": {
+      "ア": "原本の選択肢イ",
+      "イ": "原本の選択肢ロ",
+      "ウ": "原本の選択肢ハ",
+      "エ": "原本の選択肢ニ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "ニ",
+    "explanation": "配線図にあるスイッチの図記号を、選択肢の写真と接点図に照らします。ニの接点構成を示すスイッチは配線図にありません。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/denko2-2017-first-gakka/q50-stem.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-diagram.webp",
+      "/questions/plan7/denko2-2017-first-gakka/wiring-notes.webp"
+    ],
+    "imageAltTexts": [
+      "第50問の原本（配線図にないスイッチ）",
+      "集合住宅共用部の配線図",
+      "配線図問題の共通条件"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_q01.pdf#page=13",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/construction/upload/20170604_co_second_a01.pdf",
+    "sourceAttribution": "出典：一般財団法人 電気技術者試験センター 平成29年度第二種電気工事士上期筆記試験",
+    "license": "ECEE-educational-reuse",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本のイは、この設問で問われる配線図にないスイッチの誤りには当たりません。",
+      "イ": "原本のロは、この設問で問われる配線図にないスイッチの誤りには当たりません。",
+      "ウ": "原本のハは、この設問で問われる配線図にないスイッチの誤りには当たりません。",
+      "エ": "配線図にあるスイッチの図記号を、選択肢の写真と接点図に照らします。ニの接点構成を示すスイッチは配線図にありません。"
+    },
+    "choiceImageUrls": {
+      "ア": "/questions/plan7/denko2-2017-first-gakka/q50-choice-1.webp",
+      "イ": "/questions/plan7/denko2-2017-first-gakka/q50-choice-2.webp",
+      "ウ": "/questions/plan7/denko2-2017-first-gakka/q50-choice-3.webp",
+      "エ": "/questions/plan7/denko2-2017-first-gakka/q50-choice-4.webp"
+    }
+  }
+]

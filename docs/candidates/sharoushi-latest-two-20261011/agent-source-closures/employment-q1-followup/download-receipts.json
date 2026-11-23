@@ -1,0 +1,48 @@
+[
+  {
+    "file": "employment-decree-asof20250411.json",
+    "url": "https://laws.e-gov.go.jp/api/2/law_data/350CO0000000025?asof=2025-04-11",
+    "status": 200,
+    "sha256": "9033dda2757b9496084ecf318a12bfa8c30487e1135d039df262e2672bca2065",
+    "requestedAsOf": "2025-04-11",
+    "revisionId": "350CO0000000025_20250401_507CO0000000161",
+    "enforcementDate": "2025-04-01",
+    "headers": {
+      "Content-Type": "application/json",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Date": "Sun, 11 Oct 2026 02:12:10 GMT",
+      "X-XSS-Protection": "1; mode=block",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "X-Frame-Options": "DENY",
+      "X-Content-Type-Options": "nosniff",
+      "Vary": "accept-encoding",
+      "X-Cache": "Miss from cloudfront",
+      "Via": "1.1 8246396d0e0c0de7666d18eae9856bde.cloudfront.net (CloudFront)",
+      "X-Amz-Cf-Pop": "NRT57-P1",
+      "Alt-Svc": "h3=\":443\"; ma=86400",
+      "X-Amz-Cf-Id": "oXFqudkmxujlRBIxNx0MWm8DsyFNU8OaYAXkwMWSB1dc3_4pH4KENA==",
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; form-action 'self'; frame-ancestors 'none'; connect-src 'self';",
+      "Cache-Control": "max-age=0, no-cache, no-store",
+      "pragma": "no-cache"
+    }
+  },
+  {
+    "file": "employment-decree-asof20130401.json",
+    "url": "https://laws.e-gov.go.jp/api/2/law_data/350CO0000000025?asof=2013-04-01",
+    "status": "FAILED_NO_RETRY",
+    "error": "HTTP Error 400: Bad Request"
+  },
+  {
+    "file": "employment-act-asof20130401.json",
+    "url": "https://laws.e-gov.go.jp/api/2/law_data/349AC0000000116?asof=2013-04-01",
+    "status": "FAILED_NO_RETRY",
+    "error": "HTTP Error 400: Bad Request"
+  },
+  {
+    "file": "collection-act-asof20130401.json",
+    "url": "https://laws.e-gov.go.jp/api/2/law_data/344AC0000000084?asof=2013-04-01",
+    "status": "FAILED_NO_RETRY",
+    "error": "HTTP Error 400: Bad Request"
+  }
+]

@@ -35,7 +35,8 @@ function fixture(route = "/review") {
         : selector === '[role=dialog],dialog[open]' ? dialogs
         : selector === 'main p,main span,main div' ? loading : [],
     },
-    window: {}, Date: { now: () => now }, scrollY: 100, innerHeight: 800, captureRequest: { route },
+    window: { Capacitor: { isPluginAvailable: vi.fn(() => true) } },
+    Date: { now: () => now }, scrollY: 100, innerHeight: 800, captureRequest: { route },
   };
   return { context, selectors, dialogs, loading, element, filter, main, target,
     tick: (time = 0) => { now = time; return runInNewContext(`(() => {${script}\n})()`, context); } };
@@ -54,6 +55,26 @@ it("requires exact trusted origin, route, document completion and native tools",
   f.context.document.readyState = "complete";
   delete f.selectors['[aria-label="iPhoneの学習機能"]'];
   expect(f.tick()).toBe("waiting for native online tools");
+});
+
+it("requires the Local Notifications bridge before capturing the bundled reminder screen", () => {
+  const f = fixture("reminder");
+  f.context.window.Capacitor.isPluginAvailable.mockReturnValue(false);
+  expect(f.tick()).toBe("waiting for local notifications bridge");
+  expect(f.context.window.Capacitor.isPluginAvailable).toHaveBeenCalledWith("LocalNotifications");
+  f.context.window.Capacitor.isPluginAvailable.mockReturnValue(true);
+  expect(f.tick(1000)).toBe("waiting for stable layout");
+  expect(f.tick(3000)).toBe("ready");
+});
+
+it("holds the bundled screen only for the guarded simulator capture", () => {
+  const source = controller.match(/#if ASC_CAPTURE && DEBUG && targetEnvironment\(simulator\)\s+if ASCCapture\.isActive, let webView = webView \{\s+\/\/[^\n]*\n\s+let source = "([^"]+)"/)?.[1];
+  expect(source).toBeDefined();
+  for (const [protocol, hostname, bundled] of [["capacitor:", "localhost", true], ["https:", "www.kakomon-ai.jp", undefined]]) {
+    const window: { __ascCaptureLocal?: boolean } = {};
+    runInNewContext(source!, { window, location: { protocol, hostname } });
+    expect(window.__ascCaptureLocal).toBe(bundled);
+  }
 });
 
 it("waits for review's actual empty response and dashboard data instead of their headings", () => {

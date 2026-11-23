@@ -1,3 +1,4 @@
+import { OT61_PM_REMAINING14_QUESTIONS } from "@/data/qualification-staging/sagyo-ryohoshi/ot61-pm-remaining15";
 import { describe, expect, it } from "vitest";
 import { SAGYO_RYOHOSHI_QUESTIONS } from "@/data/questions/sagyo-ryohoshi";
 import { SHINO_KUNRENSHI_QUESTIONS } from "@/data/questions/shino-kunrenshi";
@@ -7,8 +8,9 @@ import laterIntegration from "@/docs/evidence/shino-sagyo-pm57-end-ready-2026101
 
 import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
 import go34 from "@/data/questions/shino-kunrenshi/saved-go34-20261011.json";
+import { reviewedOtIds, reviewedVisionIds } from "../fixtures/rehabilitation-reviewed-ids";
 
-const restoredIds = new Set([...ot13.newIds, ...go34.map(question => question.id)]);
+const restoredIds = new Set([...OT61_PM_REMAINING14_QUESTIONS.map(q => q.id), ...ot13.newIds, ...go34.map(question => question.id)]);
 
 const restoredImageIds = new Set([...ot13.newIds, ...go34.filter(question => question.hasImage).map(question => question.id)]);
 
@@ -16,17 +18,20 @@ const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午後の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 166],
-    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 105],
-  ] as const)("%s は原典照合済み部分集合のみ公開する", async (exam, questions, expectedCount) => {
-    const loaded = (await getQuestionsForExam(exam)).filter(question => question.session === "pm");
-    expect(loaded).toEqual(questions.filter(question => question.session === "pm"));
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, reviewedOtIds, 180],
+    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, reviewedVisionIds, 105],
+  ] as const)("%s は当初照合した午後原問を採点・配信で保持する", async (exam, questions, reviewedIds, expectedCount) => {
+    const reviewedPm = (question: typeof questions[number]) => question.session === "pm" && reviewedIds.has(question.id);
+    const loaded = (await getQuestionsForExam(exam)).filter(reviewedPm);
+    expect(loaded).toEqual(questions.filter(reviewedPm));
     expect(loaded).toHaveLength(expectedCount);
     expect(new Set(loaded.map((question) => question.id)).size).toBe(expectedCount);
     expect(loaded.every((question) => question.session === "pm")).toBe(true);
     expect(new Set(loaded.map((question) => question.year))).toEqual(new Set([2024, 2025]));
 
-    for (const question of loaded) {
+    // The recovered14 have dedicated source/image/alternative-answer tests.
+    const recoveredIds = new Set(OT61_PM_REMAINING14_QUESTIONS.map(q => q.id));
+    for (const question of loaded.filter(q => !recoveredIds.has(q.id))) {
       expect(question.needsReview).toBe(false);
       expect(question.hasImage).toBe(restoredImageIds.has(question.id));
       expect(question.sourcePdfUrl).toContain("mhlw.go.jp/");
@@ -43,14 +48,14 @@ describe("作業療法士・視能訓練士 午後の部分収録", () => {
   });
 
   it("原典回収で解消した午後問だけを復帰し、残る保留を除外する", () => {
-    const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS].filter(question => question.session === "pm");
+    const all = [...SAGYO_RYOHOSHI_QUESTIONS.filter(q => reviewedOtIds.has(q.id)), ...SHINO_KUNRENSHI_QUESTIONS.filter(q => reviewedVisionIds.has(q.id))].filter(question => question.session === "pm");
     const identities = new Set(all.map((question) => {
       const round = question.exam === "sagyo-ryohoshi"
         ? (question.year === 2025 ? 61 : 60)
         : (question.year === 2025 ? 56 : 55);
       return `${question.exam}-${round}-pm-${question.qNumber}`;
     }));
-    expect(all).toHaveLength(271);
+    expect(all).toHaveLength(285);
     expect(integration.draftOriginals).toBe(135);
     expect(integration.heldDrafts).toHaveLength(15);
     expect(integration.excludedBeforeDraft).toHaveLength(9);

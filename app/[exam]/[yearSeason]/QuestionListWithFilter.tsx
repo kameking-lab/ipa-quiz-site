@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
+import { displayQuestionGroupLabel } from "./question-list-label";
 import type { ExamCode } from "@/lib/questions/types";
 import { Check, ChevronRight, X } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -25,13 +26,6 @@ export interface SessionGroup {
   id?: string;
   items: QuestionListItem[];
 }
-
-function sessionLabel(session: string, exam?: ExamCode): string {
-  const parsed = parsePracticeSession(session);
-  return parsed ? practiceSessionLabel(parsed, exam) : session;
-}
-
-type Filter = "all" | "unanswered" | "wrong";
 
 interface SolvedMap {
   [id: string]: { correct: boolean };
@@ -60,7 +54,6 @@ function readSolvedMap(): SolvedMap {
 export function QuestionListWithFilter({ groups, exam, showSectionNavigation = false }: { groups: SessionGroup[]; exam?: ExamCode; showSectionNavigation?: boolean }) {
   const [solved, setSolved] = React.useState<SolvedMap>({});
   const [hydrated, setHydrated] = React.useState(false);
-  const [filter, setFilter] = React.useState<Filter>("all");
 
   React.useEffect(() => {
      
@@ -86,47 +79,14 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
     }
   }
 
-  function shouldShow(item: QuestionListItem): boolean {
-    if (!hydrated) return true;
-    const s = solved[item.id];
-    if (filter === "unanswered") return !s;
-    if (filter === "wrong") return !!s && !s.correct;
-    return true;
-  }
-
-  const visibleSectionGroups = showSectionNavigation
-    ? groups.filter((group) => group.id && group.items.some(shouldShow))
-    : [];
+  const visibleSectionGroups = showSectionNavigation ? groups.filter((group) => group.id && group.items.length > 0) : [];
 
   return (
     <div>
       {hydrated && answered > 0 && (
-        <div
-          role="group"
-          aria-label="解答状況フィルター"
-          className="mb-5 flex flex-wrap items-center gap-2"
-        >
-          <FilterButton
-            active={filter === "all"}
-            onClick={() => setFilter("all")}
-            label="全て"
-            count={total}
-          />
-          <FilterButton
-            active={filter === "unanswered"}
-            onClick={() => setFilter("unanswered")}
-            label="未解答のみ"
-            count={total - answered}
-          />
-          <FilterButton
-            active={filter === "wrong"}
-            onClick={() => setFilter("wrong")}
-            label="不正解のみ"
-            count={wrong}
-          />
-          <span className="ml-auto text-[11px] text-muted-foreground">
-            {answered} / {total} 解答済み
-          </span>
+        <div className="mb-5 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+          <span>{answered} / {total} 解答済み</span>
+          {wrong > 0 && exam && <a href={'/quiz?' + new URLSearchParams({ exam, mode: "review", reviewKind: "wrong" })} className="inline-flex min-h-11 items-center underline">間違えた問題を復習</a>}
         </div>
       )}
 
@@ -136,7 +96,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
           <div className="grid gap-2 sm:grid-cols-2">
             {visibleSectionGroups.map((group) => (
               <a key={group.id} href={`#${group.id}`} className="rounded-xl border border-border px-3 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                {sessionLabel(group.session, exam)}
+                {displayQuestionGroupLabel(group.session, exam)}
               </a>
             ))}
           </div>
@@ -144,16 +104,15 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
       )}
 
       {groups.map(({ session, id, items }) => {
-        const filtered = items.filter(shouldShow);
-        if (filtered.length === 0) return null;
+        if (items.length === 0) return null;
         return (
-          <section key={session} id={id} aria-label={sessionLabel(session, exam)} className="mb-8 scroll-mt-6">
-            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted-foreground">
+          <section key={session} id={id} aria-label={displayQuestionGroupLabel(session, exam)} className="p3-listed mb-4 scroll-mt-16">
+            <h2 className="flex items-center gap-2 border-b border-hairline bg-primary-soft px-3 py-2.5 text-sm font-bold text-primary-soft-foreground">
               <span className="h-1 w-1 rounded-full bg-primary" />
-              {sessionLabel(session, exam)}
+              {displayQuestionGroupLabel(session, exam)}
             </h2>
-            <ul className="space-y-2">
-              {filtered.map((q) => {
+            <ul className="divide-y divide-hairline">
+              {items.map((q) => {
                 const status = solved[q.id];
                 return (
                   <li key={q.id}>
@@ -161,17 +120,17 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       href={q.href}
                       aria-label={`${q.officialQuestionLabel ?? `問${q.qNumber}`}を解く`}
                       className={cn(
-                        "group flex items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
+                        "study-focus group flex min-h-12 items-center gap-2 border-s-2 px-2.5 py-1.5",
                         status
                           ? status.correct
                             ? "border-emerald-300/70 bg-emerald-50/50 hover:border-emerald-400 dark:border-emerald-900/60 dark:bg-emerald-950/20"
                             : "border-rose-300/70 bg-rose-50/50 hover:border-rose-400 dark:border-rose-900/60 dark:bg-rose-950/20"
-                          : "border-border bg-card hover:border-primary/40",
+                          : "border-transparent hover:border-primary hover:bg-primary-soft",
                       )}
                     >
                       <span
                         className={cn(
-                          "flex h-8 w-12 shrink-0 items-center justify-center rounded-lg text-xs font-bold",
+                          "flex min-h-8 w-11 shrink-0 items-center justify-center rounded-lg text-sm font-semibold tabular-nums",
                           status
                             ? status.correct
                               ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200"
@@ -181,9 +140,9 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       >
                         {q.officialQuestionLabel ?? `問${q.qNumber}`}
                       </span>
-                      <span className="flex-1 space-y-1.5 min-w-0">
+                      <span className="flex min-w-0 flex-1 flex-col-reverse gap-0.5">
                         <span className="flex flex-wrap items-center gap-1.5 text-xs">
-                          <Badge variant="default">{q.category}</Badge>
+                          <span className="text-xs font-medium text-primary">{practiceCategoryLabel(q.category, exam)}</span>
                           {q.isCalculation && <Badge variant="warn">計算</Badge>}
                           {q.isPlaceholder && (
                             <Badge variant="warn">解説準備中</Badge>
@@ -206,20 +165,15 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                         </span>
                         <span
                           className={cn(
-                            "line-clamp-2 block text-sm leading-relaxed",
+                            "line-clamp-2 text-[13px] leading-snug",
                             status ? "text-foreground/80" : "text-foreground",
                           )}
                         >
                           {q.questionPreview}
                         </span>
                       </span>
-                      <span className="mt-2 flex shrink-0 items-center gap-1 text-xs font-medium text-primary">解く<ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
+                      <span className="flex shrink-0 items-center gap-1 text-xs font-medium text-primary">解く<ChevronRight className="size-4" aria-hidden="true" /></span>
                     </a>
-                    {q.explanationHref && (
-                      <div className="flex flex-wrap gap-3 px-4 pb-2 pt-1 text-xs">
-                        <a href={q.explanationHref} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">{q.officialQuestionLabel ?? `問${q.qNumber}`}の解説を見る</a>
-                      </div>
-                    )}
                   </li>
                 );
               })}
@@ -228,42 +182,6 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
         );
       })}
 
-      {hydrated &&
-        answered > 0 &&
-        groups.every((g) => g.items.filter(shouldShow).length === 0) && (
-          <p className="rounded-2xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">
-            該当する問題はありません。
-          </p>
-        )}
     </div>
-  );
-}
-
-function FilterButton({
-  active,
-  onClick,
-  label,
-  count,
-}: {
-  active: boolean;
-  onClick: () => void;
-  label: string;
-  count: number;
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors",
-        active
-          ? "border-primary/40 bg-primary-soft text-primary-soft-foreground"
-          : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:bg-muted",
-      )}
-    >
-      <span>{label}</span>
-      <span className="text-[10px] tabular-nums opacity-70">{count}</span>
-    </button>
   );
 }

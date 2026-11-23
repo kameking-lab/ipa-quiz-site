@@ -50,7 +50,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はエです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問2）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "原本のアは、BとDが0ならAにかかわらず1になります。しかし、図のAB＝10の行は全て0なので、この項は不要な1を作ります。",
+      "イ": "原本のイは、AB＝00の行でCまで0に限定しています。CD＝10のマスも1であり、Dが0の二つのマスを拾うにはCを限定しません。",
+      "ウ": "原本のウの第1項は、Aが1のときにしか成り立ちません。図ではAB＝01でも、CD＝01又は11なら出力は1です。",
+      "エ": "図の端でつながる二つの1はA＝B＝D＝0、中央の四つの1はB＝D＝1です。各組で変化する変数を除き、二つの条件を論理和で結びます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q3",
@@ -146,7 +153,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はエです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問6）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "クイックソートは基準値で配列を二つに分割して整列を進めます。図の手順には分割がなく、隣接する二要素だけを比較して交換します。",
+      "イ": "選択ソートでは未整列範囲の最小の要素を探してから、整列済みの並びの隣へ置きます。この図では比較のたびに隣の要素と交換します。",
+      "ウ": "挿入ソートは整列済みの範囲の中へ次の要素を挿入します。この図では未整列範囲の右端から順に比較し、小さな要素を左へ送ります。",
+      "エ": "A[j]が左隣より小さければその二要素を交換します。右から左への一巡で最小要素を左端へ送り、この操作を繰り返すバブルソートです。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q7",
@@ -554,7 +568,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問23）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "原本のアの最終段は、両入力が1になる条件と、両入力が0になる条件をANDで結びます。同時には成立しないので出力は常に0です。",
+      "イ": "原本のイはX、Y及びその否定をORでつなぎます。例えばX＝0、Y＝1でも論理和は1となり、入力が異なるときに0を出せません。",
+      "ウ": "三つのNANDによって、X・Yと¬X・¬Yの論理和になります。両入力が1又は両入力が0の場合にだけ、どちらかの項が1になります。",
+      "エ": "原本のエは、両入力が同じときに成り立つ二条件を最終段でNORに入れます。等しいとき0、異なるとき1になる回路です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q24",
@@ -650,7 +671,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問27）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "原本のアは両方の表にある行を全て残した和集合です。差集合では異動表に共通するA005とB010を残さず、D080も追加しません。",
+      "イ": "従業員表から異動表にも存在するA005とB010の行を除きます。従業員表にだけあるA001、C003、C011の三行が結果です。",
+      "ウ": "原本のウにあるA005とB010は、両方の表に共通する行です。差集合では、これらの共通行を結果から除外します。",
+      "エ": "原本のエのD080は異動表にだけある行です。異動表から従業員表を引いた場合に得られ、設問の差集合とは向きが逆です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q28",
@@ -674,7 +702,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問28）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "最大の差額900円だけを選ぶと仕入先は一つですが、条件は全体の平均360円を超えることです。500円の行も抽出します。",
+      "イ": "差額500円のHとIは同額ですが、仕入先コードはS4とS5で別です。DISTINCTで重複を除く対象は差額ではなく仕入先コードです。",
+      "ウ": "平均差額は360円です。これを超えるD、E、H、Iの仕入先は順にS1、S1、S4、S5なので、重複を除くと三つです。",
+      "エ": "条件に合う商品は四つですが、DとEはどちらも仕入先S1です。同じ仕入先コードを一度だけ数えると三つになります。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q29",
@@ -698,7 +733,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問29）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "T1はチェックポイントより前にコミットしています。この時点までに確定した変更は保存済みとして扱うので、前進復帰の対象外です。",
+      "イ": "T2とT3は障害までにコミットしていません。チェックポイントとの前後関係にかかわらず、未確定の変更を復旧後に再適用しません。",
+      "ウ": "T4とT5は、いずれもチェックポイントより後、障害発生より前にコミットしています。確定済みの変更を前進復帰で再適用します。",
+      "エ": "T5だけでなくT4も対象です。T4はチェックポイント前に始まっていますが、判定に使うのは開始時点ではなくコミットの時点です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q30",
@@ -1154,7 +1196,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問48）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "全命令が実行される点は合っています。右側の二つのAND判定にはNoで抜けるケースがなく、分岐網羅率は100％になりません。",
+      "イ": "全変数0のケースでは命令1、2、4、全変数1では命令3、5を通ります。全5命令と、五つの二分岐のうち8経路を網羅します。",
+      "ウ": "命令3と5は後者のケースで実行されるので全5命令を通ります。一方、右側にある二つの判定のNo経路は通りません。",
+      "エ": "分岐網羅率80％は合っていますが、命令網羅率は100％です。二例を合わせると、命令1から命令5まで全てが実行されます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q49",
@@ -1250,7 +1299,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問52）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "11日目はBが終わる時点です。Bの開始3日後に着手したCはその1日後に終わるので、全体は11日では完了しません。",
+      "イ": "BはAの終了より2日早い4日目に開始します。CはBの開始から3日後の7日目に着手し、5日後の12日目に全体が完了します。",
+      "ウ": "BをAの終了時点から7日間と数えると13日になりますが、Bには2日のリードがあります。Bを早めてCを7日目に始められます。",
+      "エ": "Aの完了を待ってBを始める計算では、Cの終了が14日目となります。終了－開始関係に指定されたリード2日を反映します。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q53",
@@ -1274,7 +1330,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はエです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問53）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "設計だけなら6人月を上級技術者2人から3人に増やし、3か月から2か月へ1か月短縮します。他の二工程にも上級技術者を追加します。",
+      "イ": "プログラム作成・単体テストだけで2か月は縮まりません。上級技術者換算の作業能力が3人分から4人分となり、4か月から3か月に縮まります。",
+      "ウ": "設計と結合テストの短縮は計3か月です。プログラム作成・単体テストの1か月の短縮も加えると、合計は4か月になります。",
+      "エ": "各工程の期間は、設計3→2か月、プログラム作成・単体テスト4→3か月、結合テスト6→4か月です。重複しないので計4か月短縮します。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q54",
@@ -1538,7 +1601,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問64）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "Aは回収総額こそBと同じ240万円ですが、回収が後半に偏っています。後の回収ほど強く割り引くので、正味現在価値はBを下回ります。",
+      "イ": "Bは初年度に120万円を回収し、三案で最も回収が早い配分です。各年を5％で割り引き、220万円を引くと約1.4万円で最大です。",
+      "ウ": "Cは毎年80万円を回収しますが、年別に割り引いた回収額の合計は約217.9万円です。220万円の投資額を下回ります。",
+      "エ": "投資しない場合の正味現在価値は0です。Bは割引後の回収額が投資額を上回り、正の正味現在価値が得られます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q65",
@@ -1730,7 +1800,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問72）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "200個は、出荷するAの300個からAの在庫100個を引いた生産数です。部品bの需要は、Aの直下と部品aの下の両方にあります。",
+      "イ": "Aを200個、aを500個作るので、bを200×2＋500×1＝900個使います。そのうち300個は在庫で賄い、残る600個が正味所要量です。",
+      "ウ": "900個はAの生産に直接使う400個と、aの生産に使う500個を合計した総所要量です。正味所要量を求めるにはbの在庫300個を引きます。",
+      "エ": "1,500個は在庫を考慮せずAを300個全て作る場合のbの総数です。A、a、bの各在庫を対応する段階で差し引く必要があります。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q73",
@@ -1850,7 +1927,14 @@ export const AP_QUESTIONS_2022_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和4年度秋期 午前 問77）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "2,000千円は機械を全て甲に使い、1,000個を生産した場合の営業利益です。時間当たりの限界利益は乙の方が高いので増益できます。",
+      "イ": "乙は1個当たり11千円の限界利益を8時間で得るので、甲より高効率です。乙を1,250個製造し、固定費を引くと3,750千円です。",
+      "ウ": "営業利益4,750千円には固定費込みで14,750千円の限界利益が必要です。機械を全て乙に使っても限界利益は13,750千円です。",
+      "エ": "甲より乙の方が時間当たりの稼ぎは大きいですが、1万時間で稼げる限界利益は最大13,750千円です。固定費控除後は6,150千円に届きません。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2022a-am-q78",

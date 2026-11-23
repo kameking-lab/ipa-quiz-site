@@ -1,0 +1,5 @@
+import type { Question } from "@/lib/questions/types";
+import questions2025 from "./2025-early.json";
+
+/** 原本A群・B群各1〜25を内部番号1〜50に対応させる。 */
+export const KENSETSU_KIKAI_SEIBI2_QUESTIONS: Question[] = questions2025 as Question[];

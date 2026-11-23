@@ -1,0 +1,144 @@
+[
+  {
+    "id": "sm-2023h-pm1-q1",
+    "exam": "sm",
+    "session": "pm1",
+    "year": 2023,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "システム監視",
+      "しきい値",
+      "イベント管理"
+    ],
+    "difficulty": 5,
+    "question": "問1　AIを使ったシステム監視の改善\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１  (1) インシデント対応を行うための時間が減少するから\n         (2) R ソフトが設定したしきい値の妥当性\n         (3) 71\n 設問２  (1) 勤務日のCPU 使用率より低い休業日のCPU 使用率を学習すると，設定されるし\n       きい値が下がるから\n         (2) イベント情報の記録が自動化され，イベント記録簿として出力できるから\n  設問３   ・CPU 使用率が同じ曜日，同じ時間帯と違う傾向にあることを検知できるから\n          ・CPU 使用率70％以上が1 時間継続する状態を，監視チームが発見できるから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１  (1) インシデント対応を行うための時間が減少するから\n         (2) R ソフトが設定したしきい値の妥当性\n         (3) 71\n 設問２  (1) 勤務日のCPU 使用率より低い休業日のCPU 使用率を学習すると，設定されるし\n       きい値が下がるから\n         (2) イベント情報の記録が自動化され，イベント記録簿として出力できるから\n  設問３   ・CPU 使用率が同じ曜日，同じ時間帯と違う傾向にあることを検知できるから\n          ・CPU 使用率70％以上が1 時間継続する状態を，監視チームが発見できるから\n```",
+    "explanation": "監視のしきい値を学習から決める場合は、学習対象の日や時間帯が実運用と合っているかを確認します。勤務日よりCPU使用率が低い休業日のデータを混ぜると、しきい値が下がり不要な検知につながります。一方、自動記録によってイベント記録の作業を減らす効果もあります。同じ曜日・時間帯との比較と、CPU使用率が高い状態の継続の確認を組み合わせ、検知件数だけでなく対応に使える時間まで評価します。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-3.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-4.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-5.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-6.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-7.webp"
+    ],
+    "imageAltTexts": [
+      "ITサービスマネージャ 2023年春 午後I 問1 本文・図表・設問 原本3ページ",
+      "ITサービスマネージャ 2023年春 午後I 問1 本文・図表・設問 原本4ページ",
+      "ITサービスマネージャ 2023年春 午後I 問1 本文・図表・設問 原本5ページ",
+      "ITサービスマネージャ 2023年春 午後I 問1 本文・図表・設問 原本6ページ",
+      "ITサービスマネージャ 2023年春 午後I 問1 本文・図表・設問 原本7ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2023年度 春期 ITサービスマネージャ試験 午後I」問1。"
+  },
+  {
+    "id": "sm-2023h-pm1-q2",
+    "exam": "sm",
+    "session": "pm1",
+    "year": 2023,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "ログ管理",
+      "マルウェア対策",
+      "運用設計"
+    ],
+    "difficulty": 5,
+    "question": "問2　情報セキュリティの管理\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１  (1) ・時間軸での発生事象の流れを正確に把握\n      ・時系列でインシデント状況を正確に把握\n         (2) 設置する場所  LAN1・LAN2\n         理由   内部セグメントは，外部から攻撃を受けにくく，ログの改ざ\n              んから守れるから\n         (3) ストレージサービスを使って，バックアップを保存\n 設問２  (1) 当該業務ツールの実行ファイルをL サーバに登録する。\n         (2) 完成した業務ツールをL ソフトでテストし，検知した場合は安全かどうかの判\n       定をL 社に依頼する。\n  設問３  解析依頼時刻が18 時以降の場合，L 社の回答が翌営業日になる可能性があるか\n       ら",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１  (1) ・時間軸での発生事象の流れを正確に把握\n      ・時系列でインシデント状況を正確に把握\n         (2) 設置する場所  LAN1・LAN2\n         理由   内部セグメントは，外部から攻撃を受けにくく，ログの改ざ\n              んから守れるから\n         (3) ストレージサービスを使って，バックアップを保存\n 設問２  (1) 当該業務ツールの実行ファイルをL サーバに登録する。\n         (2) 完成した業務ツールをL ソフトでテストし，検知した場合は安全かどうかの判\n       定をL 社に依頼する。\n  設問３  解析依頼時刻が18 時以降の場合，L 社の回答が翌営業日になる可能性があるか\n       ら\n```",
+    "explanation": "ログの時刻を合わせる目的は、複数の機器の記録を時系列で関連付けてインシデントを調べることです。保存先は攻撃による改ざんの受けにくさとバックアップを考慮します。自社の業務ツールに対する検知は、許可する実行ファイルの登録と、完成後にテストして安全性を確認する手順を分けて考えます。外部会社へ解析を依頼する運用では、依頼する時刻によって回答が翌営業日になるという制約も業務影響に含めます。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-8.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-9.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-10.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-11.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-12.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-13.webp"
+    ],
+    "imageAltTexts": [
+      "ITサービスマネージャ 2023年春 午後I 問2 本文・図表・設問 原本8ページ",
+      "ITサービスマネージャ 2023年春 午後I 問2 本文・図表・設問 原本9ページ",
+      "ITサービスマネージャ 2023年春 午後I 問2 本文・図表・設問 原本10ページ",
+      "ITサービスマネージャ 2023年春 午後I 問2 本文・図表・設問 原本11ページ",
+      "ITサービスマネージャ 2023年春 午後I 問2 本文・図表・設問 原本12ページ",
+      "ITサービスマネージャ 2023年春 午後I 問2 本文・図表・設問 原本13ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/answer-q2-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2023年度 春期 ITサービスマネージャ試験 午後I」問2。"
+  },
+  {
+    "id": "sm-2023h-pm1-q3",
+    "exam": "sm",
+    "session": "pm1",
+    "year": 2023,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "DX",
+      "初期サポート",
+      "サービス評価"
+    ],
+    "difficulty": 5,
+    "question": "問3　DXの取組におけるサービスの計画及び運用\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１  (1) ・最新の施主向け報告書を確認すること\n      ・いつでも施主向け報告書を確認すること\n         (2) ・残業時間の削減量\n       ・残業時間の削減率\n  設問２  初期サポート完了判定後に発生し，初期サポート終了時点で未解決のインシデ\n       ント\n 設問３  (1) E 社で使われている用語や表現に変更\n         (2) 第1 段階の展開で実際に発生した問合せの内容\n 設問４  (1) ・ログ情報\n         ・G システムのログ情報\n         (2) ・経営課題の解決には，新サービスの定着が必要だから\n      ・新サービスの定着は，経営課題の解決に貢献する取組だから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１  (1) ・最新の施主向け報告書を確認すること\n      ・いつでも施主向け報告書を確認すること\n         (2) ・残業時間の削減量\n       ・残業時間の削減率\n  設問２  初期サポート完了判定後に発生し，初期サポート終了時点で未解決のインシデ\n       ント\n 設問３  (1) E 社で使われている用語や表現に変更\n         (2) 第1 段階の展開で実際に発生した問合せの内容\n 設問４  (1) ・ログ情報\n         ・G システムのログ情報\n         (2) ・経営課題の解決には，新サービスの定着が必要だから\n      ・新サービスの定着は，経営課題の解決に貢献する取組だから\n```",
+    "explanation": "新サービスの目的を、報告書をいつでも最新の状態で確認できることや残業時間の削減といった利用者の効果に結び付けます。初期サポートは完了判定後に発生した未解決インシデントも含め、終了時点の状況で判断します。マニュアルやFAQは利用部門の用語と実際の問合せに合わせ、ログ情報から利用状況を確認します。サービスを導入した事実ではなく、定着して経営課題の解決に役立ったかを評価することが要点です。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-14.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-15.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-16.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-17.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-18.webp",
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/question-19.webp"
+    ],
+    "imageAltTexts": [
+      "ITサービスマネージャ 2023年春 午後I 問3 本文・図表・設問 原本14ページ",
+      "ITサービスマネージャ 2023年春 午後I 問3 本文・図表・設問 原本15ページ",
+      "ITサービスマネージャ 2023年春 午後I 問3 本文・図表・設問 原本16ページ",
+      "ITサービスマネージャ 2023年春 午後I 問3 本文・図表・設問 原本17ページ",
+      "ITサービスマネージャ 2023年春 午後I 問3 本文・図表・設問 原本18ページ",
+      "ITサービスマネージャ 2023年春 午後I 問3 本文・図表・設問 原本19ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb14/sm/2023-spring-pm1/answer-q3-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問3 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sm_pm1_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2023年度 春期 ITサービスマネージャ試験 午後I」問3。"
+  }
+]

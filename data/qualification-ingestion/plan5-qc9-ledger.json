@@ -1,0 +1,1501 @@
+{
+  "lane": "qc-9",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "branchAuditRefCount": 92,
+  "jobs": [
+    {
+      "jobId": "PLAN5-121",
+      "arrayIndex": 120,
+      "key": "kangoshi|2022|annual|am|tp220421-05a_01.pdf",
+      "status": "completed",
+      "path": "data/questions/kangoshi/2021-annual.json",
+      "officialYear": 2022,
+      "storedYear": 2021,
+      "round": 111,
+      "questionCount": 120,
+      "existingQuestionCount": 10,
+      "addedQuestionCount": 110,
+      "unchangedExistingIds": [
+        "kangoshi-2021-annual-am-q3",
+        "kangoshi-2021-annual-am-q5",
+        "kangoshi-2021-annual-am-q7",
+        "kangoshi-2021-annual-am-q8",
+        "kangoshi-2021-annual-am-q9",
+        "kangoshi-2021-annual-am-q12",
+        "kangoshi-2021-annual-am-q13",
+        "kangoshi-2021-annual-am-q14",
+        "kangoshi-2021-annual-am-q15",
+        "kangoshi-2021-annual-am-q16"
+      ],
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "kangoshi-2021-annual-am-q1",
+          "questionPdfPages": [
+            7
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 2,
+          "id": "kangoshi-2021-annual-am-q2",
+          "questionPdfPages": [
+            7
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 4,
+          "id": "kangoshi-2021-annual-am-q4",
+          "questionPdfPages": [
+            7
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 6,
+          "id": "kangoshi-2021-annual-am-q6",
+          "questionPdfPages": [
+            8
+          ],
+          "officialAnswer": [
+            "2",
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "65cffdb210d85660f2e749e75f2d9185da5e8aa36f44f544e0628ec0804205be"
+        },
+        {
+          "qNumber": 10,
+          "id": "kangoshi-2021-annual-am-q10",
+          "questionPdfPages": [
+            9
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 11,
+          "id": "kangoshi-2021-annual-am-q11",
+          "questionPdfPages": [
+            10
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 17,
+          "id": "kangoshi-2021-annual-am-q17",
+          "questionPdfPages": [
+            12
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 18,
+          "id": "kangoshi-2021-annual-am-q18",
+          "questionPdfPages": [
+            13
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 19,
+          "id": "kangoshi-2021-annual-am-q19",
+          "questionPdfPages": [
+            13
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 20,
+          "id": "kangoshi-2021-annual-am-q20",
+          "questionPdfPages": [
+            14
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 21,
+          "id": "kangoshi-2021-annual-am-q21",
+          "questionPdfPages": [
+            14
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 22,
+          "id": "kangoshi-2021-annual-am-q22",
+          "questionPdfPages": [
+            14
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 23,
+          "id": "kangoshi-2021-annual-am-q23",
+          "questionPdfPages": [
+            14
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 24,
+          "id": "kangoshi-2021-annual-am-q24",
+          "questionPdfPages": [
+            15
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 25,
+          "id": "kangoshi-2021-annual-am-q25",
+          "questionPdfPages": [
+            15
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 26,
+          "id": "kangoshi-2021-annual-am-q26",
+          "questionPdfPages": [
+            15
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 27,
+          "id": "kangoshi-2021-annual-am-q27",
+          "questionPdfPages": [
+            16
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 28,
+          "id": "kangoshi-2021-annual-am-q28",
+          "questionPdfPages": [
+            16
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 29,
+          "id": "kangoshi-2021-annual-am-q29",
+          "questionPdfPages": [
+            16
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 30,
+          "id": "kangoshi-2021-annual-am-q30",
+          "questionPdfPages": [
+            16
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 31,
+          "id": "kangoshi-2021-annual-am-q31",
+          "questionPdfPages": [
+            17
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 32,
+          "id": "kangoshi-2021-annual-am-q32",
+          "questionPdfPages": [
+            17
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 33,
+          "id": "kangoshi-2021-annual-am-q33",
+          "questionPdfPages": [
+            17
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 34,
+          "id": "kangoshi-2021-annual-am-q34",
+          "questionPdfPages": [
+            17
+          ],
+          "officialAnswer": [
+            "1",
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "3032d08f88700270bb55bf88bb5ac57472d67c34b42bd5ce277aa58933917d80"
+        },
+        {
+          "qNumber": 35,
+          "id": "kangoshi-2021-annual-am-q35",
+          "questionPdfPages": [
+            18
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 36,
+          "id": "kangoshi-2021-annual-am-q36",
+          "questionPdfPages": [
+            18
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 37,
+          "id": "kangoshi-2021-annual-am-q37",
+          "questionPdfPages": [
+            18
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 38,
+          "id": "kangoshi-2021-annual-am-q38",
+          "questionPdfPages": [
+            19
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 39,
+          "id": "kangoshi-2021-annual-am-q39",
+          "questionPdfPages": [
+            19
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 40,
+          "id": "kangoshi-2021-annual-am-q40",
+          "questionPdfPages": [
+            19
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 41,
+          "id": "kangoshi-2021-annual-am-q41",
+          "questionPdfPages": [
+            19
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 42,
+          "id": "kangoshi-2021-annual-am-q42",
+          "questionPdfPages": [
+            20
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 43,
+          "id": "kangoshi-2021-annual-am-q43",
+          "questionPdfPages": [
+            20
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 44,
+          "id": "kangoshi-2021-annual-am-q44",
+          "questionPdfPages": [
+            20
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 45,
+          "id": "kangoshi-2021-annual-am-q45",
+          "questionPdfPages": [
+            21
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 46,
+          "id": "kangoshi-2021-annual-am-q46",
+          "questionPdfPages": [
+            21
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 47,
+          "id": "kangoshi-2021-annual-am-q47",
+          "questionPdfPages": [
+            21
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 48,
+          "id": "kangoshi-2021-annual-am-q48",
+          "questionPdfPages": [
+            21
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 49,
+          "id": "kangoshi-2021-annual-am-q49",
+          "questionPdfPages": [
+            22
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 50,
+          "id": "kangoshi-2021-annual-am-q50",
+          "questionPdfPages": [
+            22
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 51,
+          "id": "kangoshi-2021-annual-am-q51",
+          "questionPdfPages": [
+            22
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 52,
+          "id": "kangoshi-2021-annual-am-q52",
+          "questionPdfPages": [
+            22
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 53,
+          "id": "kangoshi-2021-annual-am-q53",
+          "questionPdfPages": [
+            23
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 54,
+          "id": "kangoshi-2021-annual-am-q54",
+          "questionPdfPages": [
+            23
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 55,
+          "id": "kangoshi-2021-annual-am-q55",
+          "questionPdfPages": [
+            23
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 56,
+          "id": "kangoshi-2021-annual-am-q56",
+          "questionPdfPages": [
+            24
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 57,
+          "id": "kangoshi-2021-annual-am-q57",
+          "questionPdfPages": [
+            24
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 58,
+          "id": "kangoshi-2021-annual-am-q58",
+          "questionPdfPages": [
+            24
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 59,
+          "id": "kangoshi-2021-annual-am-q59",
+          "questionPdfPages": [
+            25
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 60,
+          "id": "kangoshi-2021-annual-am-q60",
+          "questionPdfPages": [
+            25
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 61,
+          "id": "kangoshi-2021-annual-am-q61",
+          "questionPdfPages": [
+            25
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 62,
+          "id": "kangoshi-2021-annual-am-q62",
+          "questionPdfPages": [
+            26
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 63,
+          "id": "kangoshi-2021-annual-am-q63",
+          "questionPdfPages": [
+            26
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 64,
+          "id": "kangoshi-2021-annual-am-q64",
+          "questionPdfPages": [
+            26
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 65,
+          "id": "kangoshi-2021-annual-am-q65",
+          "questionPdfPages": [
+            26
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 66,
+          "id": "kangoshi-2021-annual-am-q66",
+          "questionPdfPages": [
+            27
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 67,
+          "id": "kangoshi-2021-annual-am-q67",
+          "questionPdfPages": [
+            27
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 68,
+          "id": "kangoshi-2021-annual-am-q68",
+          "questionPdfPages": [
+            27
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 69,
+          "id": "kangoshi-2021-annual-am-q69",
+          "questionPdfPages": [
+            28
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 70,
+          "id": "kangoshi-2021-annual-am-q70",
+          "questionPdfPages": [
+            28
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 71,
+          "id": "kangoshi-2021-annual-am-q71",
+          "questionPdfPages": [
+            28
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 72,
+          "id": "kangoshi-2021-annual-am-q72",
+          "questionPdfPages": [
+            29
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 73,
+          "id": "kangoshi-2021-annual-am-q73",
+          "questionPdfPages": [
+            29
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 74,
+          "id": "kangoshi-2021-annual-am-q74",
+          "questionPdfPages": [
+            29
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 75,
+          "id": "kangoshi-2021-annual-am-q75",
+          "questionPdfPages": [
+            30
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 76,
+          "id": "kangoshi-2021-annual-am-q76",
+          "questionPdfPages": [
+            30
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 77,
+          "id": "kangoshi-2021-annual-am-q77",
+          "questionPdfPages": [
+            31
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 78,
+          "id": "kangoshi-2021-annual-am-q78",
+          "questionPdfPages": [
+            31
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 79,
+          "id": "kangoshi-2021-annual-am-q79",
+          "questionPdfPages": [
+            32
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 80,
+          "id": "kangoshi-2021-annual-am-q80",
+          "questionPdfPages": [
+            32
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 81,
+          "id": "kangoshi-2021-annual-am-q81",
+          "questionPdfPages": [
+            32
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 82,
+          "id": "kangoshi-2021-annual-am-q82",
+          "questionPdfPages": [
+            33
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 83,
+          "id": "kangoshi-2021-annual-am-q83",
+          "questionPdfPages": [
+            33
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 84,
+          "id": "kangoshi-2021-annual-am-q84",
+          "questionPdfPages": [
+            34
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 85,
+          "id": "kangoshi-2021-annual-am-q85",
+          "questionPdfPages": [
+            34
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 86,
+          "id": "kangoshi-2021-annual-am-q86",
+          "questionPdfPages": [
+            35
+          ],
+          "officialAnswer": [
+            "25"
+          ],
+          "requiredSelections": 2,
+          "answerSha256": "c316efc0c2aea385d597663a88aa82dbd79d3023f6f3ac3badce93ba3978cbd0"
+        },
+        {
+          "qNumber": 87,
+          "id": "kangoshi-2021-annual-am-q87",
+          "questionPdfPages": [
+            35
+          ],
+          "officialAnswer": [
+            "14"
+          ],
+          "requiredSelections": 2,
+          "answerSha256": "1cbd94c3f62d63237d1c41646271db4bd84971a96d31c11a27bf24cf39c5c25e"
+        },
+        {
+          "qNumber": 88,
+          "id": "kangoshi-2021-annual-am-q88",
+          "questionPdfPages": [
+            36
+          ],
+          "officialAnswer": [
+            "25"
+          ],
+          "requiredSelections": 2,
+          "answerSha256": "c316efc0c2aea385d597663a88aa82dbd79d3023f6f3ac3badce93ba3978cbd0"
+        },
+        {
+          "qNumber": 89,
+          "id": "kangoshi-2021-annual-am-q89",
+          "questionPdfPages": [
+            36
+          ],
+          "officialAnswer": [
+            "45"
+          ],
+          "requiredSelections": 2,
+          "answerSha256": "31f2b85ea46093eb99704c98730124286cc2990b55eed153a81d8e57a35e6c3e"
+        },
+        {
+          "qNumber": 90,
+          "id": "kangoshi-2021-annual-am-q90",
+          "questionPdfPages": [
+            37
+          ],
+          "officialAnswer": [
+            "38"
+          ],
+          "requiredSelections": null,
+          "answerSha256": "9dffff97b5690b91f68cbc86e426c8217a00fbc4bdcb82537609da5fde2c507b"
+        },
+        {
+          "qNumber": 91,
+          "id": "kangoshi-2021-annual-am-q91",
+          "questionPdfPages": [
+            38
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 92,
+          "id": "kangoshi-2021-annual-am-q92",
+          "questionPdfPages": [
+            38,
+            39
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 93,
+          "id": "kangoshi-2021-annual-am-q93",
+          "questionPdfPages": [
+            38,
+            39
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 94,
+          "id": "kangoshi-2021-annual-am-q94",
+          "questionPdfPages": [
+            40
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 95,
+          "id": "kangoshi-2021-annual-am-q95",
+          "questionPdfPages": [
+            40
+          ],
+          "officialAnswer": [
+            "34"
+          ],
+          "requiredSelections": 2,
+          "answerSha256": "b5e66d9f8babef5308780414a02a3054217566bfbb585ce75c50b25560ec1662"
+        },
+        {
+          "qNumber": 96,
+          "id": "kangoshi-2021-annual-am-q96",
+          "questionPdfPages": [
+            40,
+            41
+          ],
+          "officialAnswer": [
+            "15"
+          ],
+          "requiredSelections": 2,
+          "answerSha256": "ba0a457fa1bcab979378d83b6c26b2e46ef2ba698e7055dadc8e44900c93e528"
+        },
+        {
+          "qNumber": 97,
+          "id": "kangoshi-2021-annual-am-q97",
+          "questionPdfPages": [
+            42
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 98,
+          "id": "kangoshi-2021-annual-am-q98",
+          "questionPdfPages": [
+            42,
+            43
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 99,
+          "id": "kangoshi-2021-annual-am-q99",
+          "questionPdfPages": [
+            42,
+            43
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 100,
+          "id": "kangoshi-2021-annual-am-q100",
+          "questionPdfPages": [
+            44
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 101,
+          "id": "kangoshi-2021-annual-am-q101",
+          "questionPdfPages": [
+            44,
+            45
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 102,
+          "id": "kangoshi-2021-annual-am-q102",
+          "questionPdfPages": [
+            44,
+            45
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 103,
+          "id": "kangoshi-2021-annual-am-q103",
+          "questionPdfPages": [
+            46
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 104,
+          "id": "kangoshi-2021-annual-am-q104",
+          "questionPdfPages": [
+            46,
+            47
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 105,
+          "id": "kangoshi-2021-annual-am-q105",
+          "questionPdfPages": [
+            46,
+            47
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 106,
+          "id": "kangoshi-2021-annual-am-q106",
+          "questionPdfPages": [
+            48
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 107,
+          "id": "kangoshi-2021-annual-am-q107",
+          "questionPdfPages": [
+            48
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 108,
+          "id": "kangoshi-2021-annual-am-q108",
+          "questionPdfPages": [
+            48,
+            49
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 109,
+          "id": "kangoshi-2021-annual-am-q109",
+          "questionPdfPages": [
+            50
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 110,
+          "id": "kangoshi-2021-annual-am-q110",
+          "questionPdfPages": [
+            50
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 111,
+          "id": "kangoshi-2021-annual-am-q111",
+          "questionPdfPages": [
+            50,
+            51
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 112,
+          "id": "kangoshi-2021-annual-am-q112",
+          "questionPdfPages": [
+            52
+          ],
+          "officialAnswer": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7"
+        },
+        {
+          "qNumber": 113,
+          "id": "kangoshi-2021-annual-am-q113",
+          "questionPdfPages": [
+            52
+          ],
+          "officialAnswer": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec"
+        },
+        {
+          "qNumber": 114,
+          "id": "kangoshi-2021-annual-am-q114",
+          "questionPdfPages": [
+            52,
+            53
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 115,
+          "id": "kangoshi-2021-annual-am-q115",
+          "questionPdfPages": [
+            54
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 116,
+          "id": "kangoshi-2021-annual-am-q116",
+          "questionPdfPages": [
+            54
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        },
+        {
+          "qNumber": 117,
+          "id": "kangoshi-2021-annual-am-q117",
+          "questionPdfPages": [
+            54,
+            55
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 118,
+          "id": "kangoshi-2021-annual-am-q118",
+          "questionPdfPages": [
+            56
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 119,
+          "id": "kangoshi-2021-annual-am-q119",
+          "questionPdfPages": [
+            56
+          ],
+          "officialAnswer": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68"
+        },
+        {
+          "qNumber": 120,
+          "id": "kangoshi-2021-annual-am-q120",
+          "questionPdfPages": [
+            56,
+            57
+          ],
+          "officialAnswer": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94"
+        }
+      ],
+      "sources": [
+        {
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-05a_01.pdf",
+          "sha256": "e853d7a86ef06ef41e8622f550dcf9bb3ffa48af076e412394070f237827bfb3",
+          "pages": 60
+        },
+        {
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-05seitou.pdf",
+          "sha256": "b395c7eddb7820daaaf19ae44766889cf19b7b4f5e0d8f9411a8ba1787dfac85",
+          "pages": 2
+        },
+        {
+          "kind": "booklet",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-05a_02.pdf",
+          "sha256": "d3e042798573d06bef043358d1026849148260ab712fe811edfa2617d244f907",
+          "pages": 12
+        }
+      ],
+      "assets": [
+        {
+          "path": "public/images/questions/kangoshi/111-am/q11.webp",
+          "sourceKind": "question",
+          "page": 10,
+          "clipFractions": [
+            0.34,
+            0.115,
+            0.67,
+            0.585
+          ],
+          "rotation": 0,
+          "sha256": "60204598801898fd1abc25c35c6c6248d4fda625bc4f8a262cd3f4dc297f9f50"
+        },
+        {
+          "path": "public/images/questions/kangoshi/111-am/q18.webp",
+          "sourceKind": "question",
+          "page": 13,
+          "clipFractions": [
+            0.14,
+            0.11,
+            0.74,
+            0.41
+          ],
+          "rotation": 0,
+          "sha256": "71acae23f26acbfa668e027d2034a155beebfc6d28a426204fa8da5f57adfcc1"
+        },
+        {
+          "path": "public/images/questions/kangoshi/111-am/q77.webp",
+          "sourceKind": "question",
+          "page": 31,
+          "clipFractions": [
+            0.14,
+            0.1,
+            0.89,
+            0.35
+          ],
+          "rotation": 0,
+          "sha256": "03976066954ba185e805318dedd5ef24cb8d79b4db88444fbb6948d5fb8d4260"
+        },
+        {
+          "path": "public/images/questions/kangoshi/111-am/q91.webp",
+          "sourceKind": "question",
+          "page": 38,
+          "clipFractions": [
+            0.14,
+            0.335,
+            0.88,
+            0.69
+          ],
+          "rotation": 0,
+          "sha256": "f08ca6baa569c2ce90573bd20615cf694c89ebea2a5015de732980da9a3fa7a4"
+        },
+        {
+          "path": "public/images/questions/kangoshi/111-am/q103.webp",
+          "sourceKind": "question",
+          "page": 46,
+          "clipFractions": [
+            0.29,
+            0.17,
+            0.73,
+            0.44
+          ],
+          "rotation": 0,
+          "sha256": "25c7b164dee0576144327030c8dcac754a4a331f62684d3c09966306b321b712"
+        },
+        {
+          "path": "public/images/questions/kangoshi/111-am/q104.webp",
+          "sourceKind": "question",
+          "page": 47,
+          "clipFractions": [
+            0.15,
+            0.14,
+            0.85,
+            0.5
+          ],
+          "rotation": 0,
+          "sha256": "3d13af0479968b45eeefa9a2cca2dacc08538f4999217c9aef27eb59efc27b22"
+        },
+        {
+          "path": "public/images/questions/kangoshi/111-am/q37.webp",
+          "sourceKind": "booklet",
+          "page": 5,
+          "clipFractions": [
+            0.1,
+            0.06,
+            0.62,
+            0.91
+          ],
+          "rotation": 90,
+          "sha256": "b1005356c08c984a75d9ac10ba501f900aa1023249b97cc003b24ecc9c6c9950"
+        },
+        {
+          "path": "public/images/questions/kangoshi/111-am/q81.webp",
+          "sourceKind": "booklet",
+          "page": 9,
+          "clipFractions": [
+            0.1,
+            0.1,
+            0.62,
+            0.91
+          ],
+          "rotation": 90,
+          "sha256": "07eca90bf8811fafd1633f0652f47c6571ca02bcf6931efc4035065c22b9d72e"
+        }
+      ],
+      "notes": [
+        "既存の保存年とIDを保持し、第111回・公式PDFで重複照合。",
+        "問6・34は公式が認める各正答を一つ選ぶ。問86〜89・95〜96は二つ選択。問90の公式38は解答欄3.8を表す。"
+      ]
+    }
+  ]
+}

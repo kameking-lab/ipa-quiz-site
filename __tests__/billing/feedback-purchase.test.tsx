@@ -7,13 +7,15 @@ const feedbackEvents = () => capture.mock.calls.filter(([event]) => event === "p
 beforeEach(() => { capture.mockClear(); sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 it.each([true, false])("tracks confirmation views by customers with feedback history (%s), without claiming conversion", async submitted => {
-  const fetcher = vi.fn(async () => Response.json({ entitled: true, feedbackSubmitted: submitted, purchase: { id: "order", status: "paid" } }));
+  const fetcher = vi.fn<typeof fetch>(async url => String(url) === "/api/auth/session"
+    ? Response.json(null)
+    : Response.json({ entitled: true, feedbackSubmitted: submitted, purchase: { id: "order", status: "paid" } }));
   vi.stubGlobal("fetch", fetcher);
   const view = render(<PurchaseStatus order="order" />);
   await screen.findByRole("heading", { name: "購入が完了しました" });
   await waitFor(() => expect(feedbackEvents()).toHaveLength(submitted ? 1 : 0));
-  expect(fetcher).toHaveBeenCalledTimes(1);
-  expect(fetcher.mock.calls[0]).toEqual(["/api/billing/status?order=order", { cache: "no-store" }]);
+  const statusCalls = fetcher.mock.calls.filter(([url]) => String(url).startsWith("/api/billing/status?"));
+  expect(statusCalls).toEqual([["/api/billing/status?order=order", { cache: "no-store", method: "POST" }]]);
   view.unmount();
   render(<PurchaseStatus order="order" />);
   await screen.findByRole("heading", { name: "購入が完了しました" });

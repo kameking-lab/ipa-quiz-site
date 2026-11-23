@@ -1,60 +1,90 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import type { Question } from "@/lib/questions/types";
 import { sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionNumberLabel } from "@/lib/questions/display";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 
-const DESCRIPTION_MAX = 158;
+const DESCRIPTION_MAX = 110;
 
-/**
- * Soft ceiling for the page-specific <title> (before layout appends
- * " | 過去問AI"). Measured across the corpus, every /q/* title truncated in the
- * SERP and 46% ran past 45 chars — the supplementary `category` word piled on
- * top of an already-long "{year} {exam} {session} 問N 解説" core. We trim only
- * the egregious cases: `category` is the safe drop because the visible <h1>
- * renders just the core (category has its own badge/link below it) and the meta
- * description still carries the category, so no identifying info is lost. The
- * core (year/exam/session/問N/解説) is never truncated — we never cut 問N or 解説.
- */
-const TITLE_MAX = 40;
+const TITLE_TARGET = 38;
+const TITLE_MAX = 63;
+const TITLE_SEPARATOR = "｜答えと解説｜";
+const MIN_STEM = 7;
+const CTA = "答えと解説を無料で確認できます。";
 
-/** Call-to-action tail shared by every /q/* description. */
-const CTA = "AIが選択肢ごとの違いを無料で即解説。今すぐ演習できます。";
+function searchableStem(q: Question): string {
+  return q.question.replace(/\s+/g, " ").trim();
+}
 
 function truncate(s: string, n: number): string {
-  // Cap at exactly n chars *including* the ellipsis, so the 158-char budget
+  // Cap at exactly n chars *including* the ellipsis, so the description budget
   // is a hard ceiling rather than n+1.
   return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }
 
-/** Page <title> for a single question. */
-export function questionTitle(q: Question): string {
-  const core = `${questionSourceEdition(q)} ${questionSourceExam(q)} ${sessionLabel(q.session, q.exam)} 問${questionNumberLabel(q)}`;
-  const withCategory = `${core} ${q.category} 解説`;
-  // Keep the category only while the whole title stays within budget; once it
-  // would push the title past TITLE_MAX, drop it and fall back to the core.
-  return withCategory.length <= TITLE_MAX ? withCategory : `${core} 解説`;
+function searchSourceExam(q: Question) {
+  const name = q.exam.startsWith("shobo-setsubishi-") ? getQualificationByExamCode(q.exam)?.shortName : undefined;
+  return name ?? questionSourceExam(q);
 }
 
-/**
- * meta description for a single question page.
- *
- * Phase 10 (review C-5): we no longer front-load "正解は{X}". Surfacing the
- * answer in the SERP snippet spoils the click — a user who already sees the
- * answer key has no reason to open the page. Lead with the exam/year context
- * and the question stem, then close with an AI-explainer CTA. The answer is
- * intentionally absent from the description. Capped at 158 chars, with the CTA
- * reserved so it always survives truncation.
- */
+/** Source identity for the page heading and search description. */
+export function questionHeading(q: Question): string {
+  // The electrical and thermal papers reuse printed question/answer numbers.
+  const field = q.exam === "energy-kanri"
+    ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
+    : undefined;
+  return [questionSourceEdition(q), searchSourceExam(q), field,
+    sessionLabel(q.session, q.exam), `問${questionNumberLabel(q)}`].filter(Boolean).join(" ");
+}
+
+function supplementaryCategory(q: Question): string {
+  const category = practiceCategoryLabel(q.category, q.exam);
+  const canRepeatSession = q.exam === "gijutsushi1-kikai" || category === "午前" || category === "午後";
+  return canRepeatSession && category === sessionLabel(q.session, q.exam) ? "" : category;
+}
+
+/** Lead with the searchable stem and retain the paper identity for repeated stems. */
+export function questionTitle(q: Question): string {
+  const edition = questionSourceEdition(q).replace(/（[^）]*）$/, "").replace(/年度/g, "").replaceAll(" ", "");
+  const exam = searchSourceExam(q);
+  const session = sessionLabel(q.session, q.exam);
+  const field = q.exam === "energy-kanri" ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
+    : q.exam === "dekyo-chief-2" || q.exam.startsWith("dekyo-charge-") ? q.category
+    : q.exam === "riku-tech1" && q.topicTags.length > 1 ? truncate(q.topicTags.at(-1)!, 17)
+    : q.exam === "tohan" ? (q.season === "kansai" ? "関西" : q.sourcePdfUrl.includes("metro.tokyo.lg.jp") ? "東京" : undefined)
+    : undefined;
+  const qualifier = q.session === "am1" && exam === "高度試験共通" ? q.exam.toUpperCase() : undefined;
+  const printedNumber = questionNumberLabel(q).replace(/^問/, "");
+  const numberedItem = /第(\d+)問\s*(.*)$/.exec(printedNumber);
+  const qualifiedItem = /^(.+?)\s+(大問\d+)$/.exec(printedNumber);
+  // Keep the official number ahead of the language label when a title needs truncation.
+  const number = numberedItem ? "問" + numberedItem[1] + numberedItem[2]
+    : qualifiedItem ? `${qualifiedItem[2]} ${qualifiedItem[1]}`
+    : "問" + printedNumber;
+  const maxSource = TITLE_MAX - TITLE_SEPARATOR.length - MIN_STEM;
+  let source = [exam + edition, field, session, qualifier, number].filter(Boolean).join(" ");
+  if (source.length > maxSource) {
+    const examName = truncate(exam, 12);
+    const numberLabel = truncate(number, 16);
+    const paper = [edition, session, qualifier, field].filter(Boolean).join(" ");
+    const paperBudget = maxSource - examName.length - numberLabel.length - 2;
+    source = examName + " " + truncate(paper, paperBudget) + " " + numberLabel;
+  }
+  const stem = truncate(searchableStem(q), Math.max(MIN_STEM, TITLE_TARGET - source.length - TITLE_SEPARATOR.length));
+  return stem + TITLE_SEPARATOR + source;
+}
+
 export function questionSnippet(q: Question): string {
-  const examStr = questionSourceExam(q);
-  const ys = questionSourceEdition(q);
-  const ss = sessionLabel(q.session, q.exam);
-  const prefix = `【${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}・${q.category}】`;
+  const category = supplementaryCategory(q);
+  const context = questionHeading(q) + (category ? "・" + category : "");
   const cta = q.exam === "khk-reito-1" && isSelfReviewedDescriptiveQuestion(q)
-    ? "公式解答例と独自解説で、記述・作図を自己確認できます。"
+    ? "公式解答例と独自解説で、記述・作図を無料で自己確認できます。"
     : q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
-  const budget = DESCRIPTION_MAX - prefix.length - cta.length - 1;
-  const qPreview = truncate(q.question.replace(/\s+/g, " "), Math.max(20, budget));
-  return truncate(`${prefix}${qPreview} ${cta}`, DESCRIPTION_MAX);
+  const source = "【" + truncate(context, 43) + "】";
+  const lead = truncate(searchableStem(q), DESCRIPTION_MAX - source.length - cta.length - 1);
+  const description = lead + " " + cta + source;
+  const review = "年度別・分野別の一覧から、同じ資格で収録されているほかの問題を探して、苦手な分野を復習できます。";
+  return description.length < 80 ? truncate(description + review, DESCRIPTION_MAX) : description;
 }

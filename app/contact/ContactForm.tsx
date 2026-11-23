@@ -7,7 +7,6 @@ import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { cn } from "@/lib/utils";
 import { posthogCapture } from "@/lib/posthog";
 import { submitSupport } from "@/lib/feedback/submit";
-import { PrivacyNote } from "@/components/ui/privacy-note";
 
 // Inlined at build time. When unset (dev / CI / pre-activation) the widget is
 // not rendered and the server verification fails open, so the form behaves
@@ -252,7 +251,6 @@ export function ContactForm({ initialCategory = "improvement" }: { initialCatego
         <Send className="h-4 w-4" />
         {status === "sending" ? "送信中..." : "送信する"}
       </Button>
-      <PrivacyNote variant="message" />
     </form>
   );
 }

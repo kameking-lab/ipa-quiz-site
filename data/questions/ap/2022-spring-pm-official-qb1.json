@@ -1,0 +1,507 @@
+[
+  {
+    "id": "ap-2022h-pm-q1",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "セキュリティ",
+    "topicTags": [
+      "WAF",
+      "ゼロデイ攻撃",
+      "SIEM"
+    ],
+    "difficulty": 5,
+    "question": "問1　通信販売サイトのセキュリティ対策\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a サービス\n  設問２     b  WAF\n  設問３  イ，ウ\n 設問４(1) ゼロデイ攻撃\n         (2) ウ\n         (3)  c ア\n         (4)  d インシデント対応チーム\n         (5) SIEM",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a サービス\n  設問２     b  WAF\n  設問３  イ，ウ\n 設問４(1) ゼロデイ攻撃\n         (2) ウ\n         (3)  c ア\n         (4)  d インシデント対応チーム\n         (5) SIEM\n```",
+    "explanation": "IPSとWAFでは確認する通信の範囲や着眼点が異なる。設問1はネットワーク側の制御でどのサービスを許可するか、設問2はWebアプリケーションへの攻撃を検査する機器という対応になる。設問3は実施済みの対策だけでなく、表の運用体制と更新管理の不備を読んで再発防止策を選ぶ。\n\n設問4では、修正プログラムがまだ提供されていない時点の攻撃をゼロデイ攻撃と捉える。防御機器を導入しただけでは、未知の攻撃や体制の不備への対応まで完了したことにはならない。インシデント対応チームによる対処と、SIEMによるログの集約・分析を、問題中で必要とされる活動に対応させる。どの機器を置くかと、誰が何を判断するかを分けて考えると整理しやすい。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-4.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-5.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-6.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-7.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問1 本文・図表・設問 原本4ページ",
+      "応用情報技術者 2022年春 午後 問1 本文・図表・設問 原本5ページ",
+      "応用情報技術者 2022年春 午後 問1 本文・図表・設問 原本6ページ",
+      "応用情報技術者 2022年春 午後 問1 本文・図表・設問 原本7ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問1。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q2",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "経営戦略",
+    "topicTags": [
+      "ゲーム理論",
+      "意思決定",
+      "固定費"
+    ],
+    "difficulty": 5,
+    "question": "問2　化粧品製造販売会社の事業戦略\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) イ\n         (2) 売上高の増減に対して営業利益の増減幅が大きくなる。\n 設問２(1) 景気の見通しの予測は難しいが営業利益は予測できる。\n         (2)  a オ\n              b イ\n         (3) 中高価格帯の商品は粗利益率が高いから\n 設問３(1) 固定費の割合の減少\n         (2) 顧客は実際に商品を試してから購入したい。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) イ\n         (2) 売上高の増減に対して営業利益の増減幅が大きくなる。\n 設問２(1) 景気の見通しの予測は難しいが営業利益は予測できる。\n         (2)  a オ\n              b イ\n         (3) 中高価格帯の商品は粗利益率が高いから\n 設問３(1) 固定費の割合の減少\n         (2) 顧客は実際に商品を試してから購入したい。\n```",
+    "explanation": "設問1では営業利益を、売上高から変動費と固定費を差し引いて求める。固定費の比率が高い事業では、売上高の変動が営業利益に大きく表れやすい。設問2は、景気の状態そのものを正確に予測することと、各状態が起きた場合の営業利益を計算することを区別する。利得表の行と列がどちらの戦略を表すかをそろえて比較する。\n\n中高価格帯の商品への対応では、販売量だけでなく粗利益率の高さに着目する。設問3は、コスト構造の変更による固定費の割合の減少と、顧客が実際に商品を試してから購入したいという販売上の要請を分けて捉える。利益計算の結果だけで販売方法を決めず、問題文に示された顧客行動との整合も確認する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-8.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-9.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-10.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-11.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-12.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問2 本文・図表・設問 原本8ページ",
+      "応用情報技術者 2022年春 午後 問2 本文・図表・設問 原本9ページ",
+      "応用情報技術者 2022年春 午後 問2 本文・図表・設問 原本10ページ",
+      "応用情報技術者 2022年春 午後 問2 本文・図表・設問 原本11ページ",
+      "応用情報技術者 2022年春 午後 問2 本文・図表・設問 原本12ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q2-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問2。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q3",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "アルゴリズムとプログラミング",
+    "topicTags": [
+      "深さ優先探索",
+      "再帰",
+      "バックトラック"
+    ],
+    "difficulty": 5,
+    "question": "問3　パズルを解く深さ優先探索プログラム\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１  ア board[x]が0 でない\n       イ x＋1\n       ウ  check_ok(n, x)がtrue と等しい\n       エ  0\n  設問２  オ  div(x, 9)*9\n       カ board[row_top＋i]がn と等しい\n       キ  mod(x, 9)\n       ク  board[column_top＋9*i]がn と等しい\n       ケ  mod(div(x, 9)*9, 27)\n  設問３   処理A  データ構造Z を退避する\n        処理B  退避したデータ構造Z を取り出す",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１  ア board[x]が0 でない\n       イ x＋1\n       ウ  check_ok(n, x)がtrue と等しい\n       エ  0\n  設問２  オ  div(x, 9)*9\n       カ board[row_top＋i]がn と等しい\n       キ  mod(x, 9)\n       ク  board[column_top＋9*i]がn と等しい\n       ケ  mod(div(x, 9)*9, 27)\n  設問３   処理A  データ構造Z を退避する\n        処理B  退避したデータ構造Z を取り出す\n```",
+    "explanation": "盤面の位置xを1次元配列の添字として扱い、既に値が入っているマスなら次の位置へ進む。空きマスに候補nを置く前に、行・列・ブロックで条件を満たすかをcheck_okで検査する。候補が後続の探索につながらなければ0に戻し、次の候補を試す。この復元がないと、失敗した探索の値が次の探索に残ってしまう。\n\n行の先頭はdiv(x,9)*9、列の先頭はmod(x,9)として求める。各列の探索では9ずつ添字を進める。ブロック内の位置は、9列の配置と3行・3列のまとまりを分けて追う。再帰呼出しを使わない実装では、探索途中のデータ構造を退避し、戻るときに取り出す処理を明示する必要がある。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-14.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-15.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-16.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-17.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-18.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-19.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問3 本文・図表・設問 原本14ページ",
+      "応用情報技術者 2022年春 午後 問3 本文・図表・設問 原本15ページ",
+      "応用情報技術者 2022年春 午後 問3 本文・図表・設問 原本16ページ",
+      "応用情報技術者 2022年春 午後 問3 本文・図表・設問 原本17ページ",
+      "応用情報技術者 2022年春 午後 問3 本文・図表・設問 原本18ページ",
+      "応用情報技術者 2022年春 午後 問3 本文・図表・設問 原本19ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q3-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問3 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問3。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q4",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "システムアーキテクチャ",
+    "topicTags": [
+      "PaaS",
+      "FaaS",
+      "CDN",
+      "性能見積り"
+    ],
+    "difficulty": 5,
+    "question": "問4　クラウドを活用した名刺管理サービス\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a スケールアウト\n              b 関数\n              c キャッシュ\n 設問２(1) PaaS やFaaS では，OS やミドルウェアのメンテナンスが不要だから\n         (2)  d  CDN\n         (3) バッチ実行時間が上限の10 分を超えてしまう問題\n  設問３     e  8\n              f  2,600\n              g  1,800\n 設問４(1)  h  FaaS\n         (2) 20 分未満の間隔でFaaS 上のアプリケーションを定期的に呼び出す。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a スケールアウト\n              b 関数\n              c キャッシュ\n 設問２(1) PaaS やFaaS では，OS やミドルウェアのメンテナンスが不要だから\n         (2)  d  CDN\n         (3) バッチ実行時間が上限の10 分を超えてしまう問題\n  設問３     e  8\n              f  2,600\n              g  1,800\n 設問４(1)  h  FaaS\n         (2) 20 分未満の間隔でFaaS 上のアプリケーションを定期的に呼び出す。\n```",
+    "explanation": "スケールアウトはサーバ数を増やして負荷を分散する方法である。PaaSやFaaSを採用したときに不要になるOS・ミドルウェアの保守と、アプリケーション側に残る作業を区別する。静的コンテンツの配信負荷を分散する箇所はCDNに対応する。設問3のリソース数や料金は、表に示された単位と課金条件をそろえて計算する。\n\nFaaSでは、問題文に示された1回当たりの実行時間上限がバッチ処理の制約になる。また、一定時間呼び出されなかった場合の初回実行の遅延と、処理能力そのものの不足は別の問題である。設問4では20分未満の間隔で定期的に呼び出すという、本文の動作条件に即した対策を選ぶ。実行時間上限や待機時間は本問のサービス仕様として読む。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-20.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-21.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-22.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-23.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問4 本文・図表・設問 原本20ページ",
+      "応用情報技術者 2022年春 午後 問4 本文・図表・設問 原本21ページ",
+      "応用情報技術者 2022年春 午後 問4 本文・図表・設問 原本22ページ",
+      "応用情報技術者 2022年春 午後 問4 本文・図表・設問 原本23ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q4-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問4 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問4。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q5",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "プロキシ",
+      "DNS",
+      "ルーティング"
+    ],
+    "difficulty": 5,
+    "question": "問5　SaaS利用時の通信経路とネットワーク負荷\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) 宛先IP アドレスが示す，NPC，機器又はサーバ名 プロキシサーバ\n       送信元IP アドレスが示す，NPC，機器又はサーバ名営業所のNPC\n         (2) ルータ，FW，プロキシサーバ\n         (3)  a 外部DNS サーバ\n              b プロキシサーバ\n              c 社内DNS サーバ\n  設問２    IS サーバ\n 設問３(1) q-SaaS 宛ての通信のネクストホップがIPsec ルータ1 となる経路\n         (2)  d  q-SaaS\n              e 営業所LAN",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) 宛先IP アドレスが示す，NPC，機器又はサーバ名 プロキシサーバ\n       送信元IP アドレスが示す，NPC，機器又はサーバ名営業所のNPC\n         (2) ルータ，FW，プロキシサーバ\n         (3)  a 外部DNS サーバ\n              b プロキシサーバ\n              c 社内DNS サーバ\n  設問２    IS サーバ\n 設問３(1) q-SaaS 宛ての通信のネクストホップがIPsec ルータ1 となる経路\n         (2)  d  q-SaaS\n              e 営業所LAN\n```",
+    "explanation": "プロキシを利用する通信では、端末が直接接続する相手と、利用したいSaaSのサーバを区別する。設問1のIPパケットでは宛先がプロキシサーバ、送信元が営業所のNPCとなる。アドレス変換や中継を行うルータ・FW・プロキシを通過するたびに、どの区間のパケットを見ているかを確認する。\n\nDNSの問い合わせ先も、外部向けの名前解決と社内向けの名前解決で異なる。経路変更後は、q-SaaS宛ての通信をIPsecルータ1へ向ける経路と、営業所LANからの通信を扱う設定を対応させる。通信負荷を本社へ集約しない構成にする際にも、接続先をどのDNSで引き、どの装置を次の転送先にするかが一貫している必要がある。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-24.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-25.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-26.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-27.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-28.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問5 本文・図表・設問 原本24ページ",
+      "応用情報技術者 2022年春 午後 問5 本文・図表・設問 原本25ページ",
+      "応用情報技術者 2022年春 午後 問5 本文・図表・設問 原本26ページ",
+      "応用情報技術者 2022年春 午後 問5 本文・図表・設問 原本27ページ",
+      "応用情報技術者 2022年春 午後 問5 本文・図表・設問 原本28ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q5-3.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問5 原本3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問5。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q6",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "トランザクション",
+      "排他制御",
+      "SQL"
+    ],
+    "difficulty": 5,
+    "question": "問6　クーポン発行サービスの排他制御と連番管理\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1)  a 施設コード\n                                           順不同\n              b プランコード\n\n              c ↑\n         (2)  d  ALTER TABLE\n         (3) 1 枚のクーポンは一つの予約だけに利用できる。\n  設問２     e クーポン発行連番\n  設問３     f  SET 発行済枚数 = 発行済枚数 + 1\n              g 発行上限枚数\n  設問４  下線② RU\n       下線③ C",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1)  a 施設コード\n                                           順不同\n              b プランコード\n\n              c ↑\n         (2)  d  ALTER TABLE\n         (3) 1 枚のクーポンは一つの予約だけに利用できる。\n  設問２     e クーポン発行連番\n  設問３     f  SET 発行済枚数 = 発行済枚数 + 1\n              g 発行上限枚数\n  設問４  下線② RU\n       下線③ C\n```",
+    "explanation": "キーの構成は、同じ施設やプランで何を一意に識別するかという業務上の条件から決める。1枚のクーポンを使える予約は一つだけなので、予約との対応にもその制約を反映する。表の定義を変更するSQLと、発行時にデータを更新するSQLは役割が異なる。\n\n発行済枚数を読み出してアプリ側で加算し、その値を後から書き戻すと、同時実行による更新の競合を考える必要がある。設問3のSQLは発行済枚数を1増やす更新と、発行上限枚数の条件を対応させる。連番を管理する対象と、トランザクションが確定するタイミングも確認する。設問4のRUとCは、本文で定義された排他制御・確定処理の位置に当てはめて読み、一般的な処理順を思い込みで補わない。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-30.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-31.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-32.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-33.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-34.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問6 本文・図表・設問 原本30ページ",
+      "応用情報技術者 2022年春 午後 問6 本文・図表・設問 原本31ページ",
+      "応用情報技術者 2022年春 午後 問6 本文・図表・設問 原本32ページ",
+      "応用情報技術者 2022年春 午後 問6 本文・図表・設問 原本33ページ",
+      "応用情報技術者 2022年春 午後 問6 本文・図表・設問 原本34ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q6-3.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問6 原本3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問6。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q7",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "状態遷移",
+      "バッファ",
+      "撮影時間"
+    ],
+    "difficulty": 5,
+    "question": "問7　Wi-Fiワイヤレスカメラの設計\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     (t2-t1)+Ta\n  設問２    60\n 設問３(1) S1 遠隔撮影状態\n             S2 自動撮影状態\n         (2)  a 遠隔撮影開始イベント\n              b 自動撮影タイマ通知イベント\n         (3)  c ①，③，⑦\n 設問４(1) 書込みと読込みが同時に行われ，バッファの先頭のデータが上書きされた。\n         (2)  d 終端\n              e 始端\n         (3)  f リングバッファ",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     (t2-t1)+Ta\n  設問２    60\n 設問３(1) S1 遠隔撮影状態\n             S2 自動撮影状態\n         (2)  a 遠隔撮影開始イベント\n              b 自動撮影タイマ通知イベント\n         (3)  c ①，③，⑦\n 設問４(1) 書込みと読込みが同時に行われ，バッファの先頭のデータが上書きされた。\n         (2)  d 終端\n              e 始端\n         (3)  f リングバッファ\n```",
+    "explanation": "撮影時間は、撮影を開始した時刻と停止条件が成立した時刻の差に、仕様で決まる継続時間Taを加えて求める。状態遷移図では、状態名とイベント名、遷移時に実行する処理をそれぞれ分ける。遠隔撮影を始めるイベントと、自動撮影タイマによるイベントを取り違えないことが大切である。\n\n設問4の不具合は、同じバッファに対する書込みと読込みが並行し、まだ利用する先頭データが上書きされることで起きる。単に容量が足りないという説明では、どの操作が競合したかが明確にならない。データの終端と始端を管理するリングバッファの使い方に着目し、書込み位置・読込み位置がデータの有効範囲を保つように扱われるかを確認する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-36.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-37.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-38.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-39.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-40.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問7 本文・図表・設問 原本36ページ",
+      "応用情報技術者 2022年春 午後 問7 本文・図表・設問 原本37ページ",
+      "応用情報技術者 2022年春 午後 問7 本文・図表・設問 原本38ページ",
+      "応用情報技術者 2022年春 午後 問7 本文・図表・設問 原本39ページ",
+      "応用情報技術者 2022年春 午後 問7 本文・図表・設問 原本40ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q7-4.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問7 原本4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問7。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q8",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "システム開発",
+    "topicTags": [
+      "データ連携",
+      "コード体系",
+      "整合性確認"
+    ],
+    "difficulty": 5,
+    "question": "問8　バス運行の空席情報を連携するシステム\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) H 社，S 社，T 社\n         (2)   発車日     20220510\n        発車時刻    1800\n       統合便コード  G0030110\n        空席数     8\n  設問２  ア，エ\n  設問３  エ\n  設問４     a ヘッダレコードのデータレコード件数\n                                           順不同\n              b 処理したデータレコードの件数\n  設問５  ターミナルの運行計画に設定された空席数をnull にする。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) H 社，S 社，T 社\n         (2)   発車日     20220510\n        発車時刻    1800\n       統合便コード  G0030110\n        空席数     8\n  設問２  ア，エ\n  設問３  エ\n  設問４     a ヘッダレコードのデータレコード件数\n                                           順不同\n              b 処理したデータレコードの件数\n  設問５  ターミナルの運行計画に設定された空席数をnull にする。\n```",
+    "explanation": "複数の事業者の便を統合する際は、各社のコードをそのまま同一視せず、統合便コードへの対応を確認する。設問1では発車日・発車時刻・統合便コード・空席数をそれぞれ指定された形式へ写す。日付や時刻の書式をそろえるだけでなく、どの便の空席情報かを一意に対応付ける必要がある。\n\nファイル連携では、ファイルが届いたことと全データを取り込めたことは異なる。ヘッダに記載されたデータレコード件数と、実際に処理した件数を比較して不足を検知する。空席情報が得られない場合にはnullを設定し、空席が0である場合と区別する。これにより、情報が未取得なのに満席と扱ったり、古い空席数を確定情報として残したりすることを避けられる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-42.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-43.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-44.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-45.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-46.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問8 本文・図表・設問 原本42ページ",
+      "応用情報技術者 2022年春 午後 問8 本文・図表・設問 原本43ページ",
+      "応用情報技術者 2022年春 午後 問8 本文・図表・設問 原本44ページ",
+      "応用情報技術者 2022年春 午後 問8 本文・図表・設問 原本45ページ",
+      "応用情報技術者 2022年春 午後 問8 本文・図表・設問 原本46ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q8-4.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問8 原本4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問8。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q9",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "調達",
+      "契約",
+      "リスク対応"
+    ],
+    "difficulty": 5,
+    "question": "問9　販売システム再構築の調達とリスク\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) (d)\n         (2) ユースケース図\n 設問２(1) イ\n         (2)  a 検収\n              b 著作権\n 設問３(1)  c 提出期限\n         (2) 作業の途中で品質レビューを行う。\n         (3) 上位2 種類以外のブラウザでは問題が生じる場合があること",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) (d)\n         (2) ユースケース図\n 設問２(1) イ\n         (2)  a 検収\n              b 著作権\n 設問３(1)  c 提出期限\n         (2) 作業の途中で品質レビューを行う。\n         (3) 上位2 種類以外のブラウザでは問題が生じる場合があること\n```",
+    "explanation": "調達時には、要求事項、契約で確認する事項、開発作業中に管理する事項を分けて考える。設問1では、利用者とシステムの関わりを表すユースケース図が要求の共有に役立つ。設問2の検収や著作権は、成果物を受け入れる条件や権利の扱いに関わる契約上の確認点に対応する。\n\n設問3では、提出期限に間に合わせることと、十分な品質を確保することを両立させる必要がある。完了後だけの確認では修正が遅れるため、作業途中の品質レビューで問題を早く見つける。対応するブラウザを限定する場合は、対象外のブラウザで問題が生じる可能性を利用者側と共有する。すべてに対応したかのように扱わず、選択した対応範囲と残るリスクを具体的に示す。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-48.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-49.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-50.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-51.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-52.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問9 本文・図表・設問 原本48ページ",
+      "応用情報技術者 2022年春 午後 問9 本文・図表・設問 原本49ページ",
+      "応用情報技術者 2022年春 午後 問9 本文・図表・設問 原本50ページ",
+      "応用情報技術者 2022年春 午後 問9 本文・図表・設問 原本51ページ",
+      "応用情報技術者 2022年春 午後 問9 本文・図表・設問 原本52ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q9-5.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問9 原本5ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問9。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q10",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "エスカレーション",
+      "既知の誤り",
+      "問題管理"
+    ],
+    "difficulty": 5,
+    "question": "問10　インシデント管理と問題管理\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a ア\n              b オ\n 設問２(1) L 君が階層的エスカレーションを行わなかった。\n         (2) ・既知の誤りを調査し，回避策を見つける。\n      ・解決担当者だけでインシデントの解決を試みる。\n 設問３(1) 根本原因と解決策が特定されている未解決な問題\n         (2)  c 運用課だけでインシデントを解決する\n         (3) イ",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a ア\n              b オ\n 設問２(1) L 君が階層的エスカレーションを行わなかった。\n         (2) ・既知の誤りを調査し，回避策を見つける。\n      ・解決担当者だけでインシデントの解決を試みる。\n 設問３(1) 根本原因と解決策が特定されている未解決な問題\n         (2)  c 運用課だけでインシデントを解決する\n         (3) イ\n```",
+    "explanation": "インシデント対応では、担当者が解決できるかという技術上の判断だけでなく、影響や時間に応じて管理者へ知らせる階層的エスカレーションが必要になる。設問2では、L君がこの手続を行わなかった点を特定する。既知の誤りを調べて回避策を探す活動と、解決担当者だけで解決を試みる活動が、どの段階に位置付けられているかを本文の手順に沿って確認する。\n\n問題管理は、当面のサービス回復だけでなく、発生や再発の防止につながる原因を扱う。既知の誤りは、根本原因と解決策が特定されていても、まだ解消していない問題である。原因が分かっただけで対応済みと扱わないことが要点となる。運用課だけで解決するという条件がどの判断に関係するかを、手順の流れから読む。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-54.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-55.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-56.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-57.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-58.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-59.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問10 本文・図表・設問 原本54ページ",
+      "応用情報技術者 2022年春 午後 問10 本文・図表・設問 原本55ページ",
+      "応用情報技術者 2022年春 午後 問10 本文・図表・設問 原本56ページ",
+      "応用情報技術者 2022年春 午後 問10 本文・図表・設問 原本57ページ",
+      "応用情報技術者 2022年春 午後 問10 本文・図表・設問 原本58ページ",
+      "応用情報技術者 2022年春 午後 問10 本文・図表・設問 原本59ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q10-5.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問10 原本5ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問10。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "ap-2022h-pm-q11",
+    "exam": "ap",
+    "session": "pm",
+    "year": 2022,
+    "season": "spring",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "業務委託",
+      "権限分離",
+      "監査手続"
+    ],
+    "difficulty": 5,
+    "question": "問11　販売物流システムの監査\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a 出荷指図データ\n              b 外部倉庫システム\n  設問２  営業担当者に売上訂正処理権限があるから\n  設問３     c 出荷指図データ\n                                           順不同\n              d 売上データ\n  設問４     e カ\n                                           順不同\n              f キ\n              g ク\n                                           順不同\n              h エ",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a 出荷指図データ\n              b 外部倉庫システム\n  設問２  営業担当者に売上訂正処理権限があるから\n  設問３     c 出荷指図データ\n                                           順不同\n              d 売上データ\n  設問４     e カ\n                                           順不同\n              f キ\n              g ク\n                                           順不同\n              h エ\n```",
+    "explanation": "販売から出荷、売上計上までのデータの流れを追い、どのシステムが出荷指図データを受け渡すかを確認する。外部倉庫へ業務を委託していても、社内側の売上データとの整合を確認する統制は必要になる。設問2では、営業担当者に売上訂正処理権限があることが、監査で着目するリスクに結び付く。\n\n設問3は、出荷指図データと売上データという、照合する二つのデータを特定する。監査手続を選ぶ際は、担当者への質問だけでなく、実際の処理権限や記録、照合結果から何を確かめるかを対応させる。処理が正しく行われるはずだという前提を置かず、訂正を含む業務の流れとコントロールの証拠を確認することが中心となる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-60.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-61.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-62.webp",
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/question-63.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2022年春 午後 問11 本文・図表・設問 原本60ページ",
+      "応用情報技術者 2022年春 午後 問11 本文・図表・設問 原本61ページ",
+      "応用情報技術者 2022年春 午後 問11 本文・図表・設問 原本62ページ",
+      "応用情報技術者 2022年春 午後 問11 本文・図表・設問 原本63ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/ap/2022-spring-pm/answer-q11-6.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問11 原本6ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2022年度 春期 応用情報技術者試験 午後」問11。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  }
+]

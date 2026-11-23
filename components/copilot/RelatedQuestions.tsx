@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ArrowRight, Layers } from "lucide-react";
+import { Layers } from "lucide-react";
 import type { RelatedQuestion } from "@/lib/copilot/header-codec";
 import { posthogCapture } from "@/lib/posthog";
 
@@ -13,7 +13,6 @@ interface Props {
 /**
  * AI コパイロット応答の下に表示される「この質問に関連する問題」セクション。
  * RAG citation に採用されなかった近接問題を BM25 ベースでサジェストする。
- * 「演習開始」ボタンで該当問題のクイズプレイヤーを新規タブで開く。
  */
 export function RelatedQuestionsSection({ items, messageIndex }: Props) {
   if (items.length === 0) return null;
@@ -77,10 +76,6 @@ function RelatedQuestionRow({
           {item.preview}
         </p>
       </div>
-      <span className="mt-1 inline-flex shrink-0 items-center gap-1 rounded-full bg-sky-600 px-2 py-1 text-[10px] font-semibold text-white transition-transform group-hover/related:translate-x-0.5">
-        演習開始
-        <ArrowRight className="h-3 w-3" aria-hidden="true" />
-      </span>
     </a>
   );
 }

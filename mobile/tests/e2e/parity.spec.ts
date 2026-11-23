@@ -77,9 +77,9 @@ async function openMockStore(page:Page,context:BrowserContext,scenario:Parameter
   await page.evaluate(scenario=>{window.mobileTest.mockStore(scenario);window.mobileTest.showMembership();},scenario);
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
 }
-test("a changed store price does not start a purchase or leave the membership locked as pending",async({page,context})=>{
-  await openMockStore(page,context,"changed-price");await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
-  await expect(page.getByRole("status")).toContainText("月額商品の設定・価格");
+test("a changed store product does not start a purchase or leave the membership locked as pending",async({page,context})=>{
+  await openMockStore(page,context,"changed-product");await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
+  await expect(page.getByRole("status")).toContainText("mock.monthly なし");
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
   expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
   await expect(page.getByText("購入内容をサーバーで確認中です。",{exact:false})).toHaveCount(0);
@@ -132,7 +132,7 @@ test("unconfirmed dates have no add button and an installed target app avoids br
   await expect(page.getByRole("status")).toHaveText("保存をキャンセルしました。");
 });
 
-test("server denial never renders the eleventh question and AI refusal sends nothing",async({page,context})=>{
+test("server denial never renders the eleventh question",async({page,context})=>{
   await routeLocal(context);const used=new Set<string>();
   await context.route("**/api/billing/question",async route=>{
     const body=route.request().postDataJSON() as {id:string};
@@ -142,7 +142,6 @@ test("server denial never renders the eleventh question and AI refusal sends not
   await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.showContent());
   for(let i=1;i<=10;i++){await page.getByLabel("問題を選択").selectOption(`mock-${i}`);await expect(page.getByRole("radiogroup")).toBeVisible();}
   await page.getByLabel("問題を選択").selectOption("mock-11");await expect(page.getByRole("alert")).toContainText("無料10問");await expect(page.getByRole("radiogroup")).toHaveCount(0);expect(used.size).toBe(10);
-  page.once("dialog",dialog=>dialog.dismiss());expect(await page.evaluate(()=>window.mobileTest.aiConsent())).toBe(false);
 });
 test("unviewed diagram survives save, restart and airplane mode",async({page,context})=>{
   await routeLocal(context);

@@ -5,6 +5,7 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import integration from "@/docs/evidence/shino-sagyo-am-ready-20261010/INTEGRATION.json";
 import newAm from "@/docs/evidence/medical-am3-next-20261010/INTEGRATION.json";
 import savedGo34 from "@/data/questions/shino-kunrenshi/saved-go34-20261011.json";
+import { reviewedOtIds, reviewedVisionIds } from "../fixtures/rehabilitation-reviewed-ids";
 
 import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
 
@@ -16,11 +17,11 @@ const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午前の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 144, 310],
-    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 115, 220],
-  ] as const)("%s は保存済み原本で確認した午前問だけ追加する", async (exam, questions, amCount, totalCount) => {
-    const loaded = await getQuestionsForExam(exam);
-    expect(loaded).toEqual(questions);
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, reviewedOtIds, 144, 324],
+    ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, reviewedVisionIds, 115, 220],
+  ] as const)("%s は当初照合した午前原問を採点・配信で保持する", async (exam, questions, reviewedIds, amCount, totalCount) => {
+    const loaded = (await getQuestionsForExam(exam)).filter(q => reviewedIds.has(q.id));
+    expect(loaded).toEqual(questions.filter(q => reviewedIds.has(q.id)));
     expect(loaded).toHaveLength(totalCount);
     expect(new Set(loaded.map(question => question.id)).size).toBe(totalCount);
     const morning = loaded.filter(question => question.session === "am");
@@ -40,8 +41,8 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
   });
 
   it("共有設例を保持し、原典回収で解消した保留だけを復帰する", () => {
-    const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(530);
+    const all = [...SAGYO_RYOHOSHI_QUESTIONS.filter(q => reviewedOtIds.has(q.id)), ...SHINO_KUNRENSHI_QUESTIONS.filter(q => reviewedVisionIds.has(q.id))];
+    expect(all).toHaveLength(544);
     const ids = new Set(all.map(question => question.id));
     for (const original of [...integration.heldDrafts, ...integration.excludedBeforeDraft]) {
       const parts = original.identity.match(/^(.+)-(\d+)-am-(\d+)$/);

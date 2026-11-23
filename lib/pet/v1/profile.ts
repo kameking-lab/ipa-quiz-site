@@ -37,6 +37,11 @@ export const petQuestionSchema = z.object({
   question.independentCorrectAts.every((time, index, times) => index === 0 || time - times[index - 1] >= 86_400_000));
 export const petStageSchema = z.enum(["puppy", "partner", "expert"]);
 export const petPathSchema = z.enum(["exploration", "memory", "precision", "companionship"]);
+export const petRoomAppearanceSchema = z.object({
+  costume: z.enum(["qualification", "formal"]),
+  accessory: z.enum(["none", "bandana", "bow", "scarf", "star"]),
+  updatedAt: petTimestampSchema,
+}).strict();
 export function isPetLearningDay(value: string): boolean {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
   const [year, month, day] = value.split("-").map(Number);
@@ -72,7 +77,7 @@ export const petProfileSchema = z.object({
   roomEvents: z.array(z.object({ scene: z.enum(PET_ROOM_SCENES), day: petLearningDaySchema, occurredAt: petTimestampSchema }).strict())
     .max(6).refine(events => unique(events.map(event => event.scene)) && unique(events.map(event => event.day))).default([]),
   recentAnswers: z.array(z.object({ questionId: z.string().min(1).max(1000), correct: z.boolean() }).strict()).max(20).default([]),
-  care: z.object({ autoFeed: z.boolean(), meals: z.array(z.object({
+  care: z.object({ autoFeed: z.boolean(), appearance: petRoomAppearanceSchema.optional(), meals: z.array(z.object({
     rewardId: petLearningDaySchema, earnedAt: petTimestampSchema, consumedAt: petTimestampSchema.nullable(),
   }).strict()).refine(meals => unique(meals.map(meal => meal.rewardId))) }).strict().default(() => ({ autoFeed: true, meals: [] })),
   combo: z.object({ sessionId: z.string().min(1).max(128), questionIds: z.array(z.string().min(1).max(1000)) }).strict()
@@ -128,7 +133,7 @@ export function compactPetProfileDocument(document: PetProfileDocument) {
       };
     }), ...(combo === null ? {} : { combo }), ...(memories.length === 0 ? {} : { memories }),
     ...(recentAnswers.length ? { recentAnswers } : {}), ...(roomEvents.length ? { roomEvents } : {}),
-    ...(care.autoFeed && care.meals.length === 0 ? {} : { care }) };
+      ...(care.autoFeed && care.meals.length === 0 && !care.appearance ? {} : { care }) };
   }), ...(events.length === 0 ? {} : { events: events.map(event => {
     const { reviewBefore, fieldId, ...fact } = event;
     return { ...fact, ...(reviewBefore === null ? {} : { reviewBefore }), ...(fieldId === null ? {} : { fieldId }) };

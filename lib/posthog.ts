@@ -10,7 +10,10 @@
 // プロバイダ初期化はクライアント側 PostHogProvider で行う。
 
 import type { PostHog } from "posthog-js";
+import { sendConversion } from "@/lib/billing/conversion-client";
+import { captureActivity } from "@/lib/analytics/activity-client";
 import { hasReferralStage, markReferralStage, currentReferral, referralProps } from "@/lib/analytics/referral";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com";
@@ -104,6 +107,12 @@ export function getPostHogClient(): PostHog | null {
 
 /** Configured clients buffer hydration events until the lazy SDK is ready. */
 export function posthogCapture(name: PostHogEventName, props?: PostHogEventProps): void {
+  if (name === "question_answered" || name === "blog_practice_answered") {
+    if (typeof props?.exam === "string") reportStudyAnswer(props.exam);
+    sendConversion("guest_answered");
+  }
+  // Page views have an independent root tracker, so SDK readiness cannot lose or double them.
+  if (name !== "page_view") captureActivity(name, props);
   if (!posthogClient && !isPostHogConfigured) return;
   try {
     const referral = currentReferral();

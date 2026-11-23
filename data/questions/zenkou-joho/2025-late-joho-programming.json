@@ -1,0 +1,170 @@
+[
+  {
+    "id": "zenkou-joho-2025-late-joho-programming-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "配列x(1)〜x(n)に入っているn個のデータの降順の順位を配列に格納する。空欄①〜⑤を埋めなさい。",
+    "answer": "① n－1\n② j＋1\n③ ＜\n④ ＞\n⑤ ＝",
+    "explanation": "jをn－1まで動かし、重複比較を避けるため後続のj＋1から比較する。値の大小で小さい側の順位を下げ、等しい場合は同順位として扱う。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第75回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=31",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 1級・プログラミングの基礎知識 大問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-programming-p31-01.webp"
+    ],
+    "imageAltTexts": [
+      "大問1の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① n－1\n② j＋1\n③ ＜\n④ ＞\n⑤ ＝",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-programming-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "1回に1段または2段登る場合、n段（3段以上）の階段の登り方が何通りあるかを求める。空欄①〜⑤を埋めなさい。",
+    "answer": "① f2 ← 2（f2＝2 も正解）\n② n≧3\n③ f1＋f2\n④ f2\n⑤ f3",
+    "explanation": "1段は1通り、2段は2通り。i段の登り方は直前の2つの登り方の和であるため、f3に和を入れ、f1とf2を1段ずつ進める。訂正資料は①に代入記号を指示しつつ、等号表記も正答とする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2",
+    "sourceExamSession": "第75回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=32",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 1級・プログラミングの基礎知識 大問2。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-programming-p32-02.webp"
+    ],
+    "imageAltTexts": [
+      "大問2の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① f2 ← 2（f2＝2 も正解）\n② n≧3\n③ f1＋f2\n④ f2\n⑤ f3",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。",
+    "officialReferenceUrls": [
+      "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=20"
+    ]
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-programming-q03-03",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "正の実数aを入力し、その平方根をニュートン法で求める。空欄①〜⑤を埋めなさい。",
+    "answer": "① a＞0\n② flg\n③ x₀\n④ j＋1\n⑤ x",
+    "explanation": "aが正か確認し、接線による更新値と直前の値x₀との差を比較する。収束はflgで記録し、反復回数jを増やして、収束すると近似値xを表示する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3",
+    "sourceExamSession": "第75回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=33",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 1級・プログラミングの基礎知識 大問3。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-programming-p33-03.webp"
+    ],
+    "imageAltTexts": [
+      "大問3の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① a＞0\n② flg\n③ x₀\n④ j＋1\n⑤ x",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-programming-q04-04",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "文字列を逐次探索し、指定した文字列が見つかった位置と見つかった箇所を囲んだ文字列を表示する。空欄①〜⑤を埋めなさい。",
+    "answer": "① j\n② i\n③ '\\0'\n④ 〈%s〉\n⑤ &data[i]",
+    "explanation": "一致した文字数をjで数え、元文字列の添字iは1文字ずつ進める。検索語の終端を確認したら検索語を囲んで表示し、元文字列のi以降を続けて出力する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamSession": "第75回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=34",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 1級・プログラミングの基礎知識 大問4。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-programming-p34-04.webp"
+    ],
+    "imageAltTexts": [
+      "大問4の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① j\n② i\n③ '\\0'\n④ 〈%s〉\n⑤ &data[i]",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-programming-q05-05",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "3桁の10進数の10個のデータを基数ソートで昇順に並べ替える。空欄①〜⑤を埋めなさい。",
+    "answer": "① data[p]\n② temp[u]\n③ data[u]\n④ count\n⑤ data[p]",
+    "explanation": "現在の桁をtempへ取り出し、0〜9の値ごとに元の順序を保ってresへ集める。書込み位置countを増やし、各桁の処理後に結果をdataへ戻す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5",
+    "sourceExamSession": "第75回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=35",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=61",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 1級・プログラミングの基礎知識 大問5。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-programming-p35-05.webp"
+    ],
+    "imageAltTexts": [
+      "大問5の原文と流れ図またはプログラム。"
+    ],
+    "modelAnswer": "① data[p]\n② temp[u]\n③ data[u]\n④ count\n⑤ data[p]",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  }
+]

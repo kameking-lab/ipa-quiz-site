@@ -9,24 +9,26 @@ afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 it("puts the plan first and the feedback bonus second, accepts multiple choices, and resumes only after storage success", async () => {
   const resume = vi.fn();
   let finish: (r: Response) => void = () => {};
-  const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
+  const fetcher = vi.fn(async (url: string, init?: RequestInit) => url === "/api/funnel" ? new Response(null, { status: 204 }) : init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
   vi.stubGlobal("fetch", fetcher);
   render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year&question=q1" backHref="/" onUnlocked={resume} />);
   const button = await screen.findByRole("button", { name: "意見を送ってあと10問" });
-  const purchase = screen.getByRole("link", { name: "月額980円で続ける" });
+  const purchase = screen.getByRole("link", { name: /月額プランに申し込む/ });
   expect(purchase).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/quiz?mode=year&question=q1"));
   expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   expect(screen.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
-  expect(screen.getByText("明日また10問")).toBeTruthy();
+  expect(screen.getByText("月額プランは演習回数無制限。")).toBeTruthy();
   expect(purchase.classList.contains("bg-primary")).toBe(true);
-  // Only the plan button and the one-line terms link; nothing else to tap.
-  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["月額980円で続ける", "条件・返金"]);
+  expect(screen.getByRole("link", { name: "条件・特商法表示" })).toHaveAttribute("target", "_blank");
+  // Offer, disclosure and policies share the original return-to-question flow.
+  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["申し込む", "今日はここまで", "条件・特商法表示", "利用規約", "プライバシーポリシー"]);
+  expect(screen.getByRole("link", { name: "今日はここまで" })).toHaveAttribute("href", "/");
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
   expect(resume).not.toHaveBeenCalled();
-  const submitted = JSON.parse(fetcher.mock.calls.find(([, init]) => init?.method === "POST")![1]!.body as string);
+  const submitted = JSON.parse(fetcher.mock.calls.find(([url, init]) => url === "/api/feedback-unlock" && init?.method === "POST")![1]!.body as string);
   expect(submitted.choices).toEqual(["explanations", "mobile"]);
   await act(async () => finish(Response.json({ ok: true, remaining: 10 })));
   await waitFor(() => expect(resume).toHaveBeenCalledTimes(1));
@@ -88,7 +90,7 @@ it("preserves all inputs through 401, login navigation and remount, requiring a 
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "入力を保つ" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
   const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
-  expect(screen.getByRole("alert")).toHaveTextContent("有効期限");
+  expect(screen.getByRole("alert")).toHaveTextContent("入力はこの画面に残しています");
   expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeDisabled();
   expect(link.getAttribute("href")).not.toContain("行政書士");
   // Prevent jsdom navigation while still exercising the component click handler.
@@ -118,7 +120,7 @@ it("keeps inputs when storage is blocked and can continue after login in another
   const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   const storage = vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => { throw new Error("blocked"); });
   fireEvent.click(link);
-  expect(screen.getByRole("alert")).toHaveTextContent("別のタブ");
+  expect(screen.getByRole("alert")).toHaveTextContent("この画面を残して");
   expect(screen.getByRole("textbox", { name: /自由記述/ })).toHaveValue("下書き");
   fireEvent.click(screen.getByRole("button", { name: "別タブでログインした後に再確認" }));
   await waitFor(() => expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeEnabled());
@@ -145,6 +147,6 @@ it("offers only the plan once the feedback bonus is used", async () => {
   await waitFor(() => expect(fetcher).toHaveBeenCalled());
   await act(async () => {});
   expect(screen.queryByText(/受け取り済み/)).toBeNull();
-  expect(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")).toMatch(/^\/billing/);
+  expect(screen.getByRole("link", { name: /月額プランに申し込む/ }).getAttribute("href")).toMatch(/^\/billing/);
   expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });

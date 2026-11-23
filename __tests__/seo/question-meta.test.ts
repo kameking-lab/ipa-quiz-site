@@ -23,70 +23,33 @@ const baseQuestion: Question = {
   license: "IPA-public",
 };
 
+
 describe("questionSnippet", () => {
-  it("does not reveal the answer (no 正解は / answer key front-load)", () => {
-    const snippet = questionSnippet(baseQuestion);
-    expect(snippet).not.toContain("正解は");
-    // The bare answer key must not appear as the leading reveal.
-    expect(snippet.startsWith("【")).toBe(true);
-  });
-
-  it("leads with exam context and the question stem", () => {
-    const snippet = questionSnippet(baseQuestion);
-    expect(snippet).toContain("基礎理論");
-    expect(snippet).toContain("可変長符号化");
-  });
-
-  it("ends with the AI CTA and never exceeds 158 chars", () => {
-    const snippet = questionSnippet(baseQuestion);
-    expect(snippet).toContain("AI");
-    expect(snippet.length).toBeLessThanOrEqual(158);
-  });
-
-  it("keeps the CTA even when the question stem is very long", () => {
-    const long: Question = {
-      ...baseQuestion,
-      question: "あ".repeat(300),
-    };
-    const snippet = questionSnippet(long);
-    expect(snippet.length).toBeLessThanOrEqual(158);
-    expect(snippet).toContain("AI");
+  it.each([baseQuestion.question, "あ".repeat(300), "次はどれか。"])("leads with the stem and explains what the page includes", question => {
+    const snippet = questionSnippet({ ...baseQuestion, question });
+    expect(snippet.startsWith(question.slice(0, 7))).toBe(true);
+    expect(snippet).toContain("答えと解説");
+    expect(snippet).toContain("問1");
+    expect(snippet).not.toContain("正解はウ");
+    expect(snippet.length).toBeGreaterThanOrEqual(80);
+    expect(snippet.length).toBeLessThanOrEqual(110);
   });
 });
 
 describe("questionTitle", () => {
-  it("includes year, exam, session, question number and category when within budget", () => {
-    const title = questionTitle(baseQuestion);
+  it.each([baseQuestion.question, "図の説明で正しいのはどれか。", "あ".repeat(80)])("leads with the stem and identifies the source question", question => {
+    const title = questionTitle({ ...baseQuestion, question });
+    expect(title.startsWith(question.slice(0, 6))).toBe(true);
+    expect(title).toContain("｜答えと解説｜");
     expect(title).toContain("問1");
-    expect(title).toContain("基礎理論");
-    expect(title).toContain("解説");
-    expect(title.length).toBeLessThanOrEqual(40);
+    expect(title).toContain("春期");
+    expect(title.length).toBeLessThanOrEqual(42);
   });
 
-  it("drops the supplementary category for an over-long title but keeps the question-number core and 解説", () => {
-    // es 2024 spring → "エンベデッドシステムスペシャリスト試験" (long label); with a
-    // long category the full title overflows the 40-char budget.
-    const longExam: Question = {
-      ...baseQuestion,
-      id: "es-2024a-am2-q18",
-      exam: "es",
-      session: "am2",
-      year: 2024,
-      season: "autumn",
-      qNumber: 18,
-      category: "プロジェクトマネジメント",
-    };
-    const title = questionTitle(longExam);
-    expect(title).toContain("問18");
-    expect(title.endsWith("解説")).toBe(true);
-    // The supplementary category is dropped (it has its own badge/link + lives
-    // in the description) so the identifying core survives in the SERP.
-    expect(title).not.toContain("プロジェクトマネジメント");
-  });
-
-  it("identifies AM1 as a common paper rather than attributing it to the study filter", () => {
+  it("identifies AM1 as a common paper", () => {
     const title = questionTitle({ ...baseQuestion, exam: "es", session: "am1" });
-    expect(title).toContain("高度試験共通 午前I");
+    expect(title).toContain("高度試験共通");
+    expect(title).toContain("午前I");
     expect(title).not.toContain("エンベデッド");
   });
 });

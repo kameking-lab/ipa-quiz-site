@@ -2,9 +2,7 @@
 import { describe,it,expect,beforeEach,vi } from "vitest";
 import { render,screen,cleanup } from "@testing-library/react";
 import { EssayResultView } from "@/components/essay/EssayResultView";
-import { AfternoonResultView } from "@/components/afternoon/AfternoonResultView";
 import { findEssayQuestion } from "@/lib/essay/load";
-import { findAfternoonQuestion } from "@/__tests__/fixtures/archived-afternoon-load";
 import type { EssayGradingResult } from "@/lib/essay/types";
 import { EssayHistoryView } from "@/app/account/essay-history/EssayHistoryView";
 const history = vi.hoisted(() => ({clear:vi.fn(),entries:[{id:"history1",questionId:"au-2024a-pm2-q1",exam:"au",industry:"it",rank:"A",totalScore:80,passProbability:99,gradedAt:"2026-10-08"}]}));
@@ -22,10 +20,6 @@ describe("grading presentation",()=>{
   render(<EssayResultView result={{...result,gradingMode:"simplified"}} question={findEssayQuestion(result.questionId)!}/>);
   expect(screen.getByRole("status")).toHaveTextContent("内容を評価したものではありません");
   expect(screen.queryByText("設問への適合")).toBeNull();expect(screen.queryByText("A")).toBeNull();
- });
- it("legacy simplified afternoon never displays a score",()=>{
-  render(<AfternoonResultView result={{questionId:"ap-2024h-pm-q1",totalScore:70,subResults:[],overallComment:"",gradingMode:"simplified"}} question={findAfternoonQuestion("ap-2024h-pm-q1")!}/>);
-  expect(screen.getByRole("status")).toHaveTextContent("内容を評価したものではありません");expect(screen.queryByText(/総合/)).toBeNull();
  });
 });
 

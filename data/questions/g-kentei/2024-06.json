@@ -1,0 +1,150 @@
+[
+  {
+    "id": "g-kentei-2024-06-q05",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "機械学習の概要",
+    "topicTags": [
+      "レコメンド"
+    ],
+    "difficulty": 2,
+    "question": "あなたは来月リリース予定のECサイトにおけるレコメンデーションエンジンの作成を任された。商品が多いので、サイトのリリース時点で使えるレコメンドを開始したいという要望を受けた。この時、良好な精度が期待できる手法として、最も適切な選択肢を 1 つ選べ",
+    "choices": {
+      "ア": "コンテンツベースフィルタリング",
+      "イ": "協調フィルタリング",
+      "ウ": "主成分分析 (PCA)",
+      "エ": "クラスタリング"
+    },
+    "answer": "ア",
+    "explanation": "コンテンツベースフィルタリングでは商品属性や説明の類似性を利用できるため、他の利用者の行動履歴を十分に集める前でも候補を作れます。",
+    "choiceExplanations": {
+      "ア": "コンテンツベースフィルタリングでは商品属性や説明の類似性を利用できるため、他の利用者の行動履歴を十分に集める前でも候補を作れます。",
+      "イ": "協調フィルタリングは利用者の閲覧や評価に現れる共通パターンを使うため、新規サイトでは履歴の不足が問題になります。",
+      "ウ": "主成分分析は相関のある特徴を少数の軸にまとめる手法で、単独では利用者に合う商品の順位を決めません。",
+      "エ": "クラスタリングは似た商品や利用者をまとめられますが、グループ化だけでは個人ごとの推薦順位を決められません。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No03",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#6に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第6回",
+    "officialQuestionLabel": "第6回・公開Q5"
+  },
+  {
+    "id": "g-kentei-2024-06-q06",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの概要",
+    "topicTags": [
+      "KLダイバージェンス"
+    ],
+    "difficulty": 2,
+    "question": "カルバック・ライブラー情報量 (KL) に関する説明として、最も適切な選択肢を 1 つ選べ",
+    "choices": {
+      "ア": "2つの確率分布がどの程度異なるかを定量的に評価するための指標である。この指標は非対称であるため、分布Pから見たQと分布Qから見たPの距離は一致しない",
+      "イ": "2つの確率分布がどの程度異なるかを定量的に評価するための指標である。この指標は対称であるため、分布Pから見たQと分布Qから見たPの距離は一致する",
+      "ウ": "1つの確率分布がどの程度一様分布に近いかを定量的に評価するための指標である",
+      "エ": "1つの確率分布がどの程度正規分布に近いかを定量的に評価するための指標である"
+    },
+    "answer": "ア",
+    "explanation": "KLダイバージェンスは分布Pで重み付けした対数比を使います。PとQを入れ替えると重みも変わるため、一般に値は一致しません。",
+    "choiceExplanations": {
+      "ア": "KLダイバージェンスは分布Pで重み付けした対数比を使います。PとQを入れ替えると重みも変わるため、一般に値は一致しません。",
+      "イ": "不一致の度合いを表す点は合っていますが、KLダイバージェンスは一般に対称ではありません。",
+      "ウ": "比較先を一様分布に設定することはできますが、任意の二つの確率分布を比較できます。",
+      "エ": "比較先を正規分布に設定することはできますが、正規分布との比較に限られません。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No04",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#6に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第6回",
+    "officialQuestionLabel": "第6回・公開Q6"
+  },
+  {
+    "id": "g-kentei-2024-06-q10",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの要素技術",
+    "topicTags": [
+      "言い換え"
+    ],
+    "difficulty": 2,
+    "question": "Paraphrasingに関する説明として、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "テキストデータのスペルエラーをランダムに追加する手法である",
+      "イ": "テキストデータをシャッフルしてランダムな順序にする手法である",
+      "ウ": "テキストデータの単語を同義語や言い換えによって変換する手法である",
+      "エ": "テキストデータの各単語をランダムに削除する手法である"
+    },
+    "answer": "ウ",
+    "explanation": "言い換えでは、同義語や別の表現を使って元の意味を保ちながら文を変えます。",
+    "choiceExplanations": {
+      "ア": "綴りの誤りを加えるのはノイズを与える手法で、別の表現で同じ内容を述べる操作とは異なります。",
+      "イ": "無作為な語順変更では文章の意味や文法が崩れる可能性があります。",
+      "ウ": "言い換えでは、同義語や別の表現を使って元の意味を保ちながら文を変えます。",
+      "エ": "無作為な単語の削除は、元の文章に含まれる情報を落とす場合があります。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No05",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#6に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第6回",
+    "officialQuestionLabel": "第6回・公開Q10"
+  },
+  {
+    "id": "g-kentei-2024-06-q13",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの応用例",
+    "topicTags": [
+      "ゼロショット学習"
+    ],
+    "difficulty": 2,
+    "question": "zero-shot Learningの説明として、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "訓練データ内カテゴリの新しいサンプルを識別する機械学習の手法である",
+      "イ": "新しいクラスのデータに対して事前の学習なしに識別を行う機械学習の手法である",
+      "ウ": "教師あり学習と強化学習の中間に位置する機械学習の手法である",
+      "エ": "訓練データに存在しないカテゴリのサンプルを用いて、パラメータの更新を行う機械学習の手法である"
+    },
+    "answer": "イ",
+    "explanation": "ゼロショット学習では対象クラスの訓練例を用いず、ラベルの意味や属性などの知識を使って新しいクラスを識別します。",
+    "choiceExplanations": {
+      "ア": "既知カテゴリの未見サンプルを分類するのは通常の汎化で、対象クラスの訓練例がないという条件を満たしません。",
+      "イ": "ゼロショット学習では対象クラスの訓練例を用いず、ラベルの意味や属性などの知識を使って新しいクラスを識別します。",
+      "ウ": "この用語は未学習のクラスに対する識別を指し、教師あり学習と強化学習の中間という意味ではありません。",
+      "エ": "対象カテゴリの例でパラメータを更新するなら、対象クラスの訓練例を利用しています。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No06",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#6に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第6回",
+    "officialQuestionLabel": "第6回・公開Q13"
+  }
+]

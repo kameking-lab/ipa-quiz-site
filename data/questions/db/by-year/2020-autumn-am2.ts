@@ -24,6 +24,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CAP定理は、分散システムが「一貫性（Consistency）」、「可用性（Availability）」、「分断耐性（Partition Tolerance）」の3つの特性を同時に満たすことはできないという定理です。ネットワークが分断し、データ更新の通知ができなくなった状況では、分断耐性（P）は必然的に満たされます。この状況下で、システムは一貫性（C）と可用性（A）のどちらを優先するかを選択する必要があります。\n\nCAP定理の特性C（一貫性）とP（分断耐性）を重視する場合、データの一貫性を保つために、更新が成功したことを確認できないサーバはサービスを停止させ、一貫性を保てるサーバのみが動作を続けます。一方、CAP定理の特性A（可用性）とP（分断耐性）を重視する場合、システム全体としてサービスを提供し続けることを優先するため、両方のサーバが動作を続けます。ただし、この場合、データの一貫性は失われる可能性があります。したがって、イが正しい組合せとなります。\n\nアは、CAP定理の特性AとPを重視する場合に両方のサーバが停止すると述べていますが、可用性を重視するなら停止は避けるべきであり、不適切です。ウは、CAP定理の特性CとPを重視する場合に両方のサーバが動作し続けるとしていますが、一貫性を最優先するならば、分断発生時には片方のサーバは停止せざるを得ません。エは、CAP定理の特性AとPを重視する場合に両方のサーバが停止すると述べていますが、可用性を重視するシステムでネットワーク分断時に両方のサーバが停止するのは、可用性を損なうため不適切です。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BASE特性は、基本的に可用であること（Basically Available）、厳密な整合性を保証しない（Soft state）、最終的に整合性が取れる（Eventually consistent）を特徴とします。データの更新結果がシステムに障害がなければいつかは全てのノードに反映されるという「結果整合性」は、このBASE特性の重要な要素の一つです。したがって、この記述はBASE特性を満たすNoSQLデータベースシステムに適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "候補キーとは、関係内の全ての属性を一意に識別できる最小の属性集合です。関数従属A→{B, C}と{C, D}→Eが与えられている場合、{A, D}の閉包はA→B,Cにより{A, B, C, D}となり、さらに{C, D}→Eにより{A, B, C, D, E}と、全ての属性を導出できます。また、A単独やD単独では全ての属性を導出できないため、{A, D}は最小性を満たし、候補キーとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "DBMSが取得するログは、主にデータベースの復旧処理に用いられます。ロールフォワードは、媒体障害などによって失われたデータをバックアップ時点から最新の状態まで再構築する処理であり、これにはデータベースの更新後の情報（After Image: AI）が必要です。このログ情報を用いて、バックアップ取得後に実行されたすべてのトランザクションの更新を再適用することで、最新の状態を復元します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,13 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ウが第2正規形でありながら第3正規形でない表である。正規化とは、データベースの冗長性を排除し、データの整合性を保つための手法である。第2正規形は、完全関数従属のみを許容する。すなわち、主キーの全ての属性が、非キー属性を決定しなければならない。第3正規形は、推移的関数従属を排除する。推移的関数従属とは、非キー属性が他の非キー属性を決定することである。\n\n選択肢ウでは、社員番号が主キーであり、氏名、所属コード、勤務地が非キー属性である。講義名に対して担当教員が一意に決まるという条件から、所属コードが勤務地を一意に決定する。これは非キー属性である所属コードが非キー属性である勤務地を決定する推移的関数従属にあたるため、第3正規形ではない。しかし、社員番号が氏名、所属コード、勤務地をそれぞれ一意に決定するため、第2正規形は満たしている。\n\nアは、学生番号が講義名、担当教員、成績を決定し、講義名が担当教員を決定する。担当教員は講義名にのみ依存し、主キーである学生番号全体に完全関数従属しているとは言えず、第2正規形を満たさない可能性がある。\nイは、社員番号が氏名、入社年月日、電話番号を決定するため、第2正規形かつ第3正規形である。\nエでは、社員番号が身長、体重、趣味を決定する。趣味は繰返し項目であるが、これは属性値としての表現であり、正規形定義に直接抵触するわけではない。第3正規形も満たしていると考えられる。",
+    "choiceExplanations": {
+      "ア": "主キーは学生番号と講義名の組です。担当教員が講義名だけで決まる部分関数従属が残っているので、第2正規形を満たしません。",
+      "イ": "この表では氏名、入社年月日、電話番号は社員番号に従属します。非キー項目を経由する関数従属は条件に示されていません。",
+      "ウ": "単一の主キーで部分関数従属はありませんが、社員番号→所属コード→勤務地という推移的な従属があり、第3正規形を満たしません。",
+      "エ": "趣味欄では一人分の複数の趣味を一つのセルにまとめています。繰返し項目があるので第1正規形を満たしません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アが正解である理由は、1対1対応を実装する際の外部キー制約の原則に基づきます。1対1対応では、どちらかの表の主キーをもう一方の表に追加し、外部キーとして設定することで、一方のレコードが他方のレコードと厳密に1つだけ関連付けられることを保証できます。どちらの表に主キーを追加しても、この関係は成立します。\n\nイは、A表とB表の対応関係が1対多の場合、多（B表）の側に、1（A表）の主キーである列aを追加して外部キーとするのが一般的であり、逆の操作は関係性を正しく表現しません。\n\nウは、多対多対応の場合、新しい中間表を作成し、そこに両方の表の主キー（列aと列b）をそれぞれ外部キーとして設定するのが正規の設計方法であり、どちらか一方だけでは多対多の関係を表現できません。\n\nエは、多対多対応の場合、列aをB表に、列bをA表にそれぞれ追加するという記述は、多対多関係を正しく表現するための標準的な方法ではなく、関係が複雑化し、データの整合性を損なう可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アのCOALESCEが正解となるのは、FULL JOIN句によって、RまたはSのどちらか一方にしか存在しない行も結果に含まれるためです。この場合、JOIN条件であるR.ID = S.IDを満たせない側のテーブルからは、NULL値が生成されます。SELECT句で (R.ID, S.ID) AS ID と指定しているため、どちらか一方のIDがNULLになる可能性があります。COALESCE関数は、引数リストを順に評価し、最初にNULLでない値を返します。そのため、R.IDとS.IDのどちらかがNULLであっても、NULLでない方のIDを結果のIDとして取得するためにCOALESCEが使用されます。\n\nイのDISTINCTは、重複する行を除外する機能であり、ここではNULL値の扱いとは直接関係がないため不適切です。ウのNULLIFは、2つの引数が等しい場合にNULLを返す関数であり、IDを結合してNULLでない値を取得したいこのケースには合いません。エのUNIQUEは、値が一意であることを示す制約やキーワードであり、SQL文のSELECT句でNULL値を処理する目的では使用されません。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,13 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "このSQL文は、社員表から「上司」として参照されていない社員コードを抽出することを目的としています。「NOT EXISTS」句は、副問い合わせが返す結果セットにレコードが存在しない場合に真となります。ここでは、社員Xの社員コードが、社員Yの「上司」列に存在しないレコードを検索します。つまり、誰からも上司とされていない社員、すなわち、組織の最上位に位置する社員、または上司がNULLである社員を抽出することになります。\n\nアは、社員コードS001, S003, S005, S006は、それぞれ上司として他の社員から参照されているため、このSQL文の条件を満たさないことから誤りです。イは、S001が上司として参照されていること、S005はS006の上司であることから、誤りです。エは、S003とS006はそれぞれS001とS005の上司として参照されているため、誤りです。したがって、上司として誰からも参照されていない社員コードであるS002, S004, S007が正解となります。",
+    "choiceExplanations": {
+      "ア": "S001・S003・S005・S006は他の行の上司欄に登場します。この結果はEXISTSに相当し、NOT EXISTSでは除かれます。",
+      "イ": "S001とS005は上司欄がNULLの社員です。SQL文が調べるのは本人の上司の有無でなく、自分を上司とする社員の有無です。",
+      "ウ": "各社員コードについて、同じコードを上司とする行がない場合だけ残します。上司欄に現れないS002・S004・S007です。",
+      "エ": "S003はS004の上司、S006はS007の上司です。副問合せに一致する行があるため、NOT EXISTSの結果から除かれます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +236,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "関係代数における直積（Cartesian Product）は、二つの関係（表）RとSがある場合に、Rの全てのタプルとSの全てのタプルの考えられるあらゆる組み合わせからなる新しい関係を生成する演算です。結合条件なしに二つの関係の全タプルの組合せを作り出すことが特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +261,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SQL文は「男女それぞれの最年長社員を除く全ての社員」を取り出すことを目的としています。サブクエリ内で `WHERE S1.性別=S2.性別` と指定することで、外側のクエリ（S1）の社員と同じ性別の社員の中から、`MIN(生年月日)` で最も古い生年月日（最年長の生年月日）を抽出します。そして、外側のWHERE句で `生年月日 > (サブクエリ)` とすることで、各性別の最年長社員よりも生年月日が新しい（つまり若い）社員を選び出すことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +286,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "直列化可能性は、同時に実行される複数のトランザクションが、あたかもそれらが何らかの順序で逐次実行されたかのように見える性質を指します。これはACID特性の「隔離性」の最高レベルであり、トランザクション間の干渉を完全に排除することを目指します。したがって、隔離性水準が低い状態では直列化可能性は保証されず、トランザクション間の干渉が発生し得るため、直列化可能性が達成されていない対照的な状態を説明していると言えます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +311,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "セーブポイント（SAVEPOINT）は、SQLトランザクションの実行中に一時的な目印を設定する機能です。これにより、トランザクション全体をロールバックするのではなく、特定のセーブポイントまで処理を巻き戻し、部分的に変更を取り消すことが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +336,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ハッシュ方式によるデータ格納は、レコードの特定のデータ項目の値（キー）を引数としてハッシュ関数を適用し、その計算結果によってレコードを格納する物理アドレスを決定します。この方法により、検索キーから直接格納場所を計算できるため、高速なアクセスが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +361,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "楽観的同時実行制御法は、トランザクション間の競合は稀であると仮定し、通常はロックを行いません。トランザクションのコミット時に、更新対象のデータが他のトランザクションによって競合されていないかを確認し、競合がなければコミットを確定させ、競合があればトランザクションをロールバックする方式です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +386,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "CEP（Complex Event Processing：複合イベント処理）は、センサーデータやログデータなど、連続して発生する大量のイベントデータストリームをリアルタイムで分析する技術です。あらかじめ定義された複雑なパターンや条件に合致するイベントの組み合わせを検出し、その検出結果に基づいて即座に特定の処理を実行することを目的とします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +411,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "キーバリューストアは、NoSQLデータベースの中でも最もシンプルなデータモデルを持ち、一意なキーに対して一つの値を格納します。データ間の関係が疎結合であり、この単純な構造により、データの分散配置が容易で、高いスケーラビリティと可用性を実現しやすい特徴があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +436,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "OLAPの多次元分析操作におけるダイス（Dice）は、多次元データキューブから特定の次元や範囲を選択して、新しいサブキューブ（断片）を切り出す操作です。この問題では、分析の観点を「販売チャネル」軸から「顧客タイプ」軸に切り替えることで、新たな視点でデータを分析しており、この操作はダイスに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +461,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "分散型DBMSにおけるセミジョイン法は、二つのデータベースサイト間で結合を行う際に、ネットワーク転送量を削減するための手法です。まず、一方の表から結合キーとなる列値のみを抽出し、もう一方のサイトに送信して、結合可能な行をフィルタリングします。その後、フィルタリングされた結果のみを元のサイトに送り返し、最終的な結合を行うことで、不必要なデータを転送せずに効率的な結合を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +486,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "エクスプロイトコードは「攻撃コード」とも呼ばれ、ソフトウェアやシステムのセキュリティ上の脆弱性を悪用するように設計されたプログラムコードのことです。これらのコードは、脆弱性を突いてシステムを乗っ取ったり、データを破壊したり、特権を昇格させたりする目的で使用されますが、セキュリティ研究者が脆弱性を検証するためにも利用されることがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "TLS（Transport Layer Security）ハンドシェイクにおいて、ディジタル証明書は、通信相手（通常はサーバー）の認証と、通信データの暗号化に用いる共通鍵を安全に交換するために利用されます。クライアントは、受け取ったサーバー証明書に記載された公開鍵を使用して通信相手を認証し、安全な共通鍵の確立プロセスを開始します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "マルチベクトル型DDoS攻撃は、複数の異なる攻撃手法（ベクトル）を組み合わせて標的を攻撃する手法です。例えば、Webサーバーのリソースを枯渇させるアプリケーション層攻撃と、ネットワーク帯域を消費させるネットワーク層攻撃を同時に実行することで、標的の防御を困難にし、攻撃効果を最大化します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "電気泳動型電子ペーパーは、微小なカプセル内に異なる色（通常は黒と白）に帯電した粒子を封入し、電極に電圧を印加することでこれらの粒子を上下に移動させて表示を行います。これにより、表示された画像は電圧供給が停止しても保持され、紙のように高い視認性と低消費電力を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "HAクラスタにおけるフェールオーバ処理では、本番系サーバからのハートビート信号が途絶えた際、まず本当に本番系に障害が発生したのか、それともネットワーク障害による誤検知なのかを確認することが重要です。このため、待機系サーバはまず共有スイッチを通じてネットワークの状況を確認し（3）、次に共有ディスクのログをチェックして本番系の状態をより確実に判断します（1）。その後、共有リソースの専有権を安全に奪い（2）、最終的に本番系が誤って復旧しないよう強制シャットダウンを行います（4）。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BPMN（Business Process Model and Notation）は、ビジネスプロセスを視覚的に表現するための標準的な表記法です。これにより、業務の各ステップ、意思決定ポイント、参加者などを統一された図記号で記述できるため、関係者間で業務の流れに対する共通理解を促進し、要求事項の明確化に役立ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const DB_QUESTIONS_2020_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ユースケース駆動開発は、システムの機能要求をユースケースとして定義し、そのユースケースを開発の主要な単位として進めるアプローチです。これにより、個々のユースケース（ひとまとまりの要件）ごとに設計、実装、テストを段階的に実施できるため、特定の機能や要件に関する開発の進捗状況を明確に把握しやすくなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_db_am2_qs.pdf",
     "license": "IPA-public"

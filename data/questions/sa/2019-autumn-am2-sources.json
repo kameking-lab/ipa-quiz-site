@@ -1,0 +1,214 @@
+{
+  "exam": "sa",
+  "year": 2019,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_am2_qs.pdf",
+      "sha256": "dd042435e302e815bb47ab24d791df121aa0200e18a2ffab90cb31cd4f9767c6"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_sa_am2_ans.pdf",
+      "sha256": "bb00a1013622ffe125b5eb4b4245de97eaeeeb313efedcb1de4a213a1659eb89"
+    }
+  },
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "イウイアウアイアエエウイイアウエエエエアウアウアウ",
+  "verification": "公式問題冊子の全問題ページを画像で読み，本文・選択肢を転記。別の公式解答PDFをpdftotextで抽出して25件照合。本文ハッシュ・原本ページ・原図の切出し座標を記録。",
+  "duplicateCheck": "共有台帳2026-11-11のSA 2019行はspring am1のみ。yr-1と指定10ブランチ取り込み後，追加前のgit log --all -- data/questions/sa/by-year/2019-autumn-am2.tsに履歴なし。",
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "イ",
+      "printedPage": 3,
+      "normalizedTextSha256": "62ce0362e77f5aa03c79a3ba414340e980cfd7a63a959c1b51916c4bcd7a160e",
+      "figure": {
+        "path": "/images/questions/sa/2019-autumn-am2-q1.png",
+        "sha256": "4cc838495fde03dec82c9d7c3b4a1340c8678f068e3c95de84b8f92508d63352",
+        "page": 3,
+        "cropPdfPoints": [
+          70,
+          164,
+          433,
+          534
+        ]
+      }
+    },
+    {
+      "qNumber": 2,
+      "answer": "ウ",
+      "printedPage": 4,
+      "normalizedTextSha256": "0f0ad9a2a13913aee1b3c0a0a434dd9c7bb9609107a2d72fbd74463c8de8ceaa"
+    },
+    {
+      "qNumber": 3,
+      "answer": "イ",
+      "printedPage": 4,
+      "normalizedTextSha256": "d5ae077d7d43656f7a96dfd8bf9b0aa7a8b828d00c8f875ad010b9f8f062a209"
+    },
+    {
+      "qNumber": 4,
+      "answer": "ア",
+      "printedPage": 4,
+      "normalizedTextSha256": "235c7490e7b8e646c5f01ace5ee9e1aebd201d86fe76703faf40701ef7abbfef"
+    },
+    {
+      "qNumber": 5,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "29f99c7bbed883850235819c43028a62924ac1374a495ea3ab94d8fa95492964"
+    },
+    {
+      "qNumber": 6,
+      "answer": "ア",
+      "printedPage": 5,
+      "normalizedTextSha256": "69153ad3a0abeabb1545327d01a6b81f6cb517d464bbc884564d6aa65a826eeb"
+    },
+    {
+      "qNumber": 7,
+      "answer": "イ",
+      "printedPage": 5,
+      "normalizedTextSha256": "bd58ec7444e419c819b295e472667fdaa554ad153f4c733e3c20cbb27b974f97"
+    },
+    {
+      "qNumber": 8,
+      "answer": "ア",
+      "printedPage": 6,
+      "normalizedTextSha256": "c179d619c4c9feeacd72406ae0b7db85fc18788686cf215e30bd658763951a7d"
+    },
+    {
+      "qNumber": 9,
+      "answer": "エ",
+      "printedPage": 6,
+      "normalizedTextSha256": "47c3f6b37aaf99814d8883aa64e347b6527e09d2b8e1cd7f5c19d40966dfbcc4"
+    },
+    {
+      "qNumber": 10,
+      "answer": "エ",
+      "printedPage": 6,
+      "normalizedTextSha256": "78b409629b3109373fc4aa0ab7aead66ec3a1a2a528e29420c81161282d8a0ef"
+    },
+    {
+      "qNumber": 11,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "bf5309e4c1a48569704d5979182894b6331bf1a37dd1ecf0b378266a1b213832"
+    },
+    {
+      "qNumber": 12,
+      "answer": "イ",
+      "printedPage": 7,
+      "normalizedTextSha256": "c6900bede9880418d970862b34b9ed8223f36ca3d79d8d780490f00b543dc9c0"
+    },
+    {
+      "qNumber": 13,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "9aba706f76ad899156c83e4dbdb788b90efdad26b1c7ccd2c1403e3879ac6f39"
+    },
+    {
+      "qNumber": 14,
+      "answer": "ア",
+      "printedPage": 8,
+      "normalizedTextSha256": "2a60a5d105d01c950b7af531ed89d29cdbeae1e560ca8807cd8e474f9a7cf2cd"
+    },
+    {
+      "qNumber": 15,
+      "answer": "ウ",
+      "printedPage": 8,
+      "normalizedTextSha256": "6df256c4a6a617cae9c4177224ef47991750ab031414bfd5f358a60c855ed7c7",
+      "referenceUrls": [
+        "https://tenkai.jaea.go.jp/achievement/warrant/"
+      ]
+    },
+    {
+      "qNumber": 16,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "71ab6e1acadfc60683d902e9e9fff66cc7b401348e154c28e8d2b19796ae3c77",
+      "referenceUrls": [
+        "https://www.jftc.go.jp/dk/guideline/unyoukijun/chitekizaisan_files/chitekizaisangl.pdf"
+      ]
+    },
+    {
+      "qNumber": 17,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "8bde9c6b186ab866906ad42eaa44779559db41ed919b7c03910698b236341bbc"
+    },
+    {
+      "qNumber": 18,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "af4e389da93390ab163ea19d3e20d21a2ac7ac1f40eb372b4b9866780bd232d3",
+      "figure": {
+        "path": "/images/questions/sa/2019-autumn-am2-q18.png",
+        "sha256": "d80a58e09f21f9e23f20b974ffe6cad8a143ade19623a909dad9db47577ebaed",
+        "page": 10,
+        "cropPdfPoints": [
+          118,
+          122,
+          420,
+          191
+        ]
+      }
+    },
+    {
+      "qNumber": 19,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "38ba2c85e8497e951c216e3a212c98cc586c76122563baa339aea96cd1d07119"
+    },
+    {
+      "qNumber": 20,
+      "answer": "ア",
+      "printedPage": 11,
+      "normalizedTextSha256": "5c972694cd940fda247d04666cc3c5a7b9684016a05a69d673facbb93e8f806c"
+    },
+    {
+      "qNumber": 21,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "2476e64e0010d86500816c7ba540d06e5ebf5de982b4eaec30e8b7cd81718d39"
+    },
+    {
+      "qNumber": 22,
+      "answer": "ア",
+      "printedPage": 11,
+      "normalizedTextSha256": "9684d2e0b7f8746f03e0cc15c1a0ffa623b8a1bfad75f30d5946cbe5fdc5bff0",
+      "figure": {
+        "path": "/images/questions/sa/2019-autumn-am2-q22.png",
+        "sha256": "bb05f01e2612cf9444a5d0bc50ba192839ef1e0706c861edd6274d603adc5a94",
+        "page": 11,
+        "cropPdfPoints": [
+          118,
+          489,
+          397,
+          525
+        ]
+      }
+    },
+    {
+      "qNumber": 23,
+      "answer": "ウ",
+      "printedPage": 12,
+      "normalizedTextSha256": "3bd094e7b9743117033715f86915a1fa0838d9555cd8c7ec017697ce1934cd5d"
+    },
+    {
+      "qNumber": 24,
+      "answer": "ア",
+      "printedPage": 12,
+      "normalizedTextSha256": "fe27d4999ce2a7c4eb0f6ac517fd0f55be955d5d104a6c5c5afb58904513ebc1"
+    },
+    {
+      "qNumber": 25,
+      "answer": "ウ",
+      "printedPage": 12,
+      "normalizedTextSha256": "03e883c0825043e0ceca5d140a6f89e1c3b14d83960d59c2c4333e5ddab1908e"
+    }
+  ]
+}

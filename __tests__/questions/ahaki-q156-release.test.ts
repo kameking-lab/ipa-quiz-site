@@ -14,13 +14,13 @@ function canonical(value: unknown): string {
 }
 describe("accepted Q156 integration", () => {
   it("retains all 359 baseline objects and registers the one independently accepted original", async () => {
-    const previous = AHAKI_HARI_KYUU_QUESTIONS.filter(q => q.id !== receipt.id)
+    const previous = AHAKI_HARI_KYUU_QUESTIONS.filter(q => [2025, 2026].includes(q.year) && q.id !== receipt.id)
       .sort((a, b) => a.year - b.year || a.qNumber - b.qNumber);
     expect(previous).toHaveLength(359);
     expect(createHash("sha256").update(canonical(previous)).digest("hex")).toBe(receipt.preservedExistingCanonicalSha256);
     const pool = await getQuestionsForExam("ahaki-hari-kyu");
-    expect(pool).toHaveLength(360);
-    expect(new Set(pool.map(q => q.id)).size).toBe(360);
+    expect(pool.filter(q => [2025, 2026].includes(q.year))).toHaveLength(360);
+    expect(new Set(pool.map(q => q.id)).size).toBe(pool.length);
     const added = pool.find(q => q.id === receipt.id)!;
     expect(added.answer).toBe("エ");
     expect(added.choices?.エ).toBe("上巨虚");

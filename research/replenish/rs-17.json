@@ -1,0 +1,76 @@
+{
+  "step": "rs-17",
+  "branch": "cx/kako-restock-g14-20261117",
+  "candidateRule": "PLAN3原順位からrs-4〜16の実補充資格を除外して再採番。未処理の割当候補は未着手として残す。",
+  "remainingCandidates": [
+    {
+      "position": 1,
+      "exam": "benrishi",
+      "assigned": true
+    },
+    {
+      "position": 2,
+      "exam": "shihoshoshi",
+      "assigned": false
+    },
+    {
+      "position": 3,
+      "exam": "denken2",
+      "assigned": true
+    },
+    {
+      "position": 4,
+      "exam": "tsukanshi",
+      "assigned": false
+    },
+    {
+      "position": 5,
+      "exam": "gas-kou",
+      "assigned": true
+    },
+    {
+      "position": 6,
+      "exam": "zoen1",
+      "assigned": false
+    },
+    {
+      "position": 7,
+      "exam": "keiryoshi-nodo",
+      "assigned": true
+    },
+    {
+      "position": 8,
+      "exam": "kenchikushi1",
+      "assigned": false
+    },
+    {
+      "position": 9,
+      "exam": "rinsho-kensagishi",
+      "assigned": true
+    },
+    {
+      "position": 10,
+      "exam": "kanri-eiyoshi",
+      "assigned": false
+    },
+    {
+      "position": 11,
+      "exam": "mokuzo-kenchikushi",
+      "assigned": true
+    }
+  ],
+  "additions": [
+    {
+      "key": "mokuzo-kenchikushi|2024|annual|gakka-I",
+      "questions": 25,
+      "choiceExplanations": 125,
+      "remainingSubjects": {
+        "gakka-II": 25,
+        "gakka-III": 25,
+        "gakka-IV": 25
+      },
+      "sourceManifest": "data/questions/mokuzo-kenchikushi/2024-am1-sources.json",
+      "status": "local-committed-only"
+    }
+  ]
+}

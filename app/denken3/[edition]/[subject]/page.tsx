@@ -1,7 +1,8 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { DENKEN3_NATIVE_SUBJECTS, denken3NativeQuestionPath, denken3NativeSubjectPath, getDenken3NativePart } from "@/lib/denken3/native";
+import { DENKEN3_NATIVE_SUBJECTS, denken3NativeQuestionPath, denken3NativeSittingLabel, denken3NativeSubjectPath, getDenken3NativePart } from "@/lib/denken3/native";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => DENKEN3_NATIVE_SUBJECTS.map(part => ({ edition: part.sitting, subject: part.subject }));
@@ -10,17 +11,17 @@ const names = { theory: "理論", power: "電力", machine: "機械", law: "法�
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition, subject } = await params;
   const part = getDenken3NativePart(edition, subject);
-  return part ? {
-    title: `電験三種 ${part.sitting === "2026-upper" ? "2026年度上期" : "2025年度下期"} ${names[part.subject]} 原問${part.questions.length}題`,
+  return part ? withCanonicalSocialMetadata({
+    title: `電験三種 ${denken3NativeSittingLabel(part.sitting)} ${names[part.subject]} 原問${part.questions.length}題`,
     description: `確認済み${part.questions.length}原問・${part.questions.reduce((sum, q) => sum + q.slots.length, 0)}回答欄を原本画像とともに掲載。`,
     alternates: { canonical: denken3NativeSubjectPath(part.sitting, part.subject) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   const { edition, subject } = await params;
   const part = getDenken3NativePart(edition, subject);
   if (!part) notFound();
-  const label = edition === "2026-upper" ? "2026年度上期" : "2025年度下期";
+  const label = denken3NativeSittingLabel(part.sitting);
   return <main className="mx-auto max-w-4xl px-4 py-8 sm:py-12">
     <Link href="/denken3" className="text-primary underline">← 電験三種へ戻る</Link>
     <h1 className="mt-6 text-2xl font-bold sm:text-3xl">電験三種 {label} {names[part.subject]}</h1>

@@ -10,8 +10,12 @@ document.profiles.push(newPetProfile("guest", "yakuzaishi"));
 vi.mock("@/components/pet/usePetProfileView", () => ({ usePetProfileView: (listener: typeof notify) => {
   notify = listener; return { status: "ready", document };
 } }));
+vi.mock("next/dynamic", () => ({ default: () => function Sheet({ initialAppearanceOpen, onClose }: { initialAppearanceOpen: boolean; onClose(): void }) {
+  return <div data-testid="care-sheet" data-appearance-open={initialAppearanceOpen}><button onClick={onClose}>シートを閉じる</button></div>;
+} }));
 beforeEach(() => {
   localStorage.clear(); vi.useFakeTimers();
+  document.profiles[0].memories = []; document.profiles[0].unlockedStages = ["puppy"]; document.profiles[0].unlockedPaths = [];
   vi.stubGlobal("IntersectionObserver", class { constructor(private callback: (entries: { isIntersecting: boolean }[]) => void) {} observe() { this.callback([{ isIntersecting: true }]); } disconnect() {} });
   localStorage.setItem(petProfileStorageKey("guest"), "unchanged-profile");
 });
@@ -73,4 +77,24 @@ it("restores a saved closed preference without taking focus from learning", () =
   expect(screen.getByRole("button", { name: "チワワのひと休みを開く" })).toBeInTheDocument();
   expect(learning).toHaveFocus();
   expect(localStorage.getItem(petProfileStorageKey("guest"))).toBe("unchanged-profile");
+});
+it("announces growth without showing a care action in the answer", () => {
+  const view = render(<LearningPetCorner qualificationId="fe" questionId="fe-question" compact />);
+  expect(view.container.querySelector("[data-pet-compact=true]")).toBeInTheDocument();
+  expect(screen.queryByRole("button", { name: /の姿を見る|チワワのお世話を開く/ })).toBeNull();
+});
+it("stops gestures and removes transient feedback while the page is hidden, without replay on return", () => {
+  const view = render(<LearningPetCorner qualificationId="ap" questionId="ap-q1" />);
+  act(() => notify(fresh()));
+  expect(view.container.querySelector("section")).toHaveAttribute("data-pet-pose", "correct");
+  try {
+    Object.defineProperty(window.document, "hidden", { configurable: true, value: true });
+    act(() => { window.document.dispatchEvent(new Event("visibilitychange")); });
+    expect(view.container.querySelector("section")).toHaveAttribute("data-pet-pose", "study");
+    expect(screen.queryByText("+3 ♥+1")).toBeNull();
+    Object.defineProperty(window.document, "hidden", { configurable: true, value: false });
+    act(() => { window.document.dispatchEvent(new Event("visibilitychange")); });
+    expect(view.container.querySelector("section")).toHaveAttribute("data-pet-pose", "study");
+    expect(screen.queryByText("+3 ♥+1")).toBeNull();
+  } finally { Reflect.deleteProperty(window.document, "hidden"); }
 });

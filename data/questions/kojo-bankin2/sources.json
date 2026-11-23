@@ -1,0 +1,732 @@
+{
+  "qualification": "工場板金技能士2級（曲げ板金作業）",
+  "year": 2025,
+  "season": "early",
+  "questionCount": 50,
+  "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R07-1-B26-%E5%B7%A5%E5%A0%B4%E6%9D%BF%E9%87%91%EF%BC%88%E6%9B%B2%E3%81%92%E6%9D%BF%E9%87%91%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+  "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R07-1-B26-%E5%B7%A5%E5%A0%B4%E6%9D%BF%E9%87%91%EF%BC%88%E6%9B%B2%E3%81%92%E6%9D%BF%E9%87%91%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+  "questionSha256": "016680d4f86229974956f1f54ef2819a807d2763959ee061cc6941abb32803d4",
+  "answerSha256": "f2ea4146ec5d44b3e6e3392fc491823c5301b325ae36c96f4683fc9d6dfb66e4",
+  "officialAnswers": {
+    "A": [
+      "×",
+      "○",
+      "○",
+      "×",
+      "○",
+      "×",
+      "○",
+      "○",
+      "○",
+      "×",
+      "○",
+      "×",
+      "×",
+      "×",
+      "×",
+      "○",
+      "×",
+      "○",
+      "×",
+      "×",
+      "○",
+      "○",
+      "○",
+      "○",
+      "×"
+    ],
+    "B": [
+      "ニ",
+      "ロ",
+      "ニ",
+      "ニ",
+      "イ",
+      "ハ",
+      "イ",
+      "ハ",
+      "ハ",
+      "ハ",
+      "ロ",
+      "イ",
+      "ハ",
+      "ロ",
+      "ニ",
+      "ハ",
+      "イ",
+      "ニ",
+      "ロ",
+      "イ",
+      "ハ",
+      "ロ",
+      "ニ",
+      "ハ",
+      "ロ"
+    ]
+  },
+  "answerMapping": {
+    "trueFalse": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "multipleChoice": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "checkedAt": "2026-11-12",
+  "audit": [
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-001",
+      "group": "A",
+      "originalNumber": 1,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-002",
+      "group": "A",
+      "originalNumber": 2,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-003",
+      "group": "A",
+      "originalNumber": 3,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-004",
+      "group": "A",
+      "originalNumber": 4,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-005",
+      "group": "A",
+      "originalNumber": 5,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-006",
+      "group": "A",
+      "originalNumber": 6,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-007",
+      "group": "A",
+      "originalNumber": 7,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-008",
+      "group": "A",
+      "originalNumber": 8,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-009",
+      "group": "A",
+      "originalNumber": 9,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-010",
+      "group": "A",
+      "originalNumber": 10,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-011",
+      "group": "A",
+      "originalNumber": 11,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-012",
+      "group": "A",
+      "originalNumber": 12,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-013",
+      "group": "A",
+      "originalNumber": 13,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-014",
+      "group": "A",
+      "originalNumber": 14,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-015",
+      "group": "A",
+      "originalNumber": 15,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-016",
+      "group": "A",
+      "originalNumber": 16,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-017",
+      "group": "A",
+      "originalNumber": 17,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-018",
+      "group": "A",
+      "originalNumber": 18,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-019",
+      "group": "A",
+      "originalNumber": 19,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-020",
+      "group": "A",
+      "originalNumber": 20,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-021",
+      "group": "A",
+      "originalNumber": 21,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-022",
+      "group": "A",
+      "originalNumber": 22,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-023",
+      "group": "A",
+      "originalNumber": 23,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-024",
+      "group": "A",
+      "originalNumber": 24,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-a-025",
+      "group": "A",
+      "originalNumber": 25,
+      "pdfPage": 4,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-001",
+      "group": "B",
+      "originalNumber": 1,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-002",
+      "group": "B",
+      "originalNumber": 2,
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-003",
+      "group": "B",
+      "originalNumber": 3,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-004",
+      "group": "B",
+      "originalNumber": 4,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-005",
+      "group": "B",
+      "originalNumber": 5,
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-006",
+      "group": "B",
+      "originalNumber": 6,
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-007",
+      "group": "B",
+      "originalNumber": 7,
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-008",
+      "group": "B",
+      "originalNumber": 8,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-009",
+      "group": "B",
+      "originalNumber": 9,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-010",
+      "group": "B",
+      "originalNumber": 10,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-011",
+      "group": "B",
+      "originalNumber": 11,
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-012",
+      "group": "B",
+      "originalNumber": 12,
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-013",
+      "group": "B",
+      "originalNumber": 13,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-014",
+      "group": "B",
+      "originalNumber": 14,
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-015",
+      "group": "B",
+      "originalNumber": 15,
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-016",
+      "group": "B",
+      "originalNumber": 16,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-017",
+      "group": "B",
+      "originalNumber": 17,
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-018",
+      "group": "B",
+      "originalNumber": 18,
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-019",
+      "group": "B",
+      "originalNumber": 19,
+      "pdfPage": 8,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-020",
+      "group": "B",
+      "originalNumber": 20,
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-021",
+      "group": "B",
+      "originalNumber": 21,
+      "pdfPage": 9,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-022",
+      "group": "B",
+      "originalNumber": 22,
+      "pdfPage": 9,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-023",
+      "group": "B",
+      "originalNumber": 23,
+      "pdfPage": 9,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-024",
+      "group": "B",
+      "originalNumber": 24,
+      "pdfPage": 9,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kojo-bankin2-2025-early-gakka-b-025",
+      "group": "B",
+      "originalNumber": 25,
+      "pdfPage": 9,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    }
+  ],
+  "figures": [
+    {
+      "file": "/questions/kojo-bankin2/2025-early-a12.webp",
+      "pdfPage": 2,
+      "cropPixelsAtScale1_7": [
+        170,
+        983,
+        490,
+        1175
+      ],
+      "alt": "ノギスの本尺と副尺。※印で両目盛が一致している。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-a17.webp",
+      "pdfPage": 3,
+      "cropPixelsAtScale1_7": [
+        172,
+        400,
+        540,
+        610
+      ],
+      "alt": "板の6か所の曲げ位置を左端からA・B・C・D・E・Fとした製品図。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-a21.webp",
+      "pdfPage": 3,
+      "cropPixelsAtScale1_7": [
+        172,
+        922,
+        408,
+        1111
+      ],
+      "alt": "3本ロール機の断面。下側を①、右側を②、上側を③とした図。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-b13.webp",
+      "pdfPage": 7,
+      "cropPixelsAtScale1_7": [
+        165,
+        383,
+        333,
+        535
+      ],
+      "alt": "水平な板に垂直な板を立て、その手前側の隅を溶接した実形。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-b13-i.webp",
+      "pdfPage": 7,
+      "cropPixelsAtScale1_7": [
+        343,
+        385,
+        524,
+        480
+      ],
+      "alt": "図イ：矢が継手の手前側を指し、基線の下に片開先の記号がある。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-b13-ro.webp",
+      "pdfPage": 7,
+      "cropPixelsAtScale1_7": [
+        595,
+        374,
+        787,
+        480
+      ],
+      "alt": "図ロ：矢が継手の手前側を指し、基線の上にV形の記号がある。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-b13-ha.webp",
+      "pdfPage": 7,
+      "cropPixelsAtScale1_7": [
+        343,
+        513,
+        525,
+        600
+      ],
+      "alt": "図ハ：矢が継手の手前側を指し、基線の下に三角形の記号がある。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-b13-ni.webp",
+      "pdfPage": 7,
+      "cropPixelsAtScale1_7": [
+        594,
+        502,
+        788,
+        600
+      ],
+      "alt": "図ニ：矢が継手の手前側を指し、基線の上に三角形の記号がある。"
+    },
+    {
+      "file": "/questions/kojo-bankin2/2025-early-b20.webp",
+      "pdfPage": 8,
+      "cropPixelsAtScale1_7": [
+        235,
+        903,
+        662,
+        1049
+      ],
+      "alt": "3本ロール機の図A・B・C。ロールの配置と調整方向の矢印を示す。"
+    }
+  ]
+}

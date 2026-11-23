@@ -1,0 +1,230 @@
+[
+  {
+    "id": "sc-2024a-pm-q1",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "インシデント対応",
+    "topicTags": [
+      "ログ分析",
+      "インシデント対応",
+      "RDP"
+    ],
+    "difficulty": 4,
+    "question": "問1 インシデントレスポンスに関する次の記述を読んで，設問に答えよ。",
+    "answer": "令和６年度 秋期 情報処理安全確保支援士試験 解答例\n\n午後試験\n\n問１\n\n                       出題趣旨\n サイバー攻撃はエンドポイントへの侵入から始まることが多い。攻撃者は，マルウェアを仕掛けた後に，よ\nり高い権限の奪取を試みたり，ほかのエンドポイントを探索したりする。そのため，エンドポイントのセキュ\nリティ対策としてログの分析が重要になってきている。\n インシデント発生時に迅速に対応するためには，どのような攻撃を受けているのかをログから推測・確認す\nる対応力が必要となる。本問では，ソフトウェア開発会社の社内システムの運用及びインシデント対応を題材\nとして，ログを解析する能力及び技術的対策を立案する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１  (1)   a   PC-C\n         (2)   b   filesv\n         (3)   c   ad01\\user019\n         (4)   d  無効化\n         (5) 全てのドメインユーザーに対して，https://△△△.com/，https://□□□.com/\n         及びhttps://〇〇〇.com/を管理者拒否リストに登録する。\n         (6) https://○〇○.com/，https://△△△.com/又はhttps://□□□.com/に通信\n        したL 社内ホストがないか調査する。\n         (7) タスク名がinstall であるタスクが登録されているL 社内ホストがないか調\n       査する。\n         (8) マルウェア対策サービスのログから，マルウェア対策ソフトが停止したL 社\n       内ホストを検出する。                          順不同で\n        ドメインサーバのログから，RDP 接続をくり返しているL 社内ホストを検出す 二つ解答\n       る。\n  設問２      e  仮想PC へのRDP 接続に対して，IP アドレスによる接続元制限を行う\n                f   L 社内にDLP を導入し，ファイルの持出しを制限する\n\n\n\n\n\n                                                1/4\n\n                                                                            ©2024 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "設問1(1)〜(8)と設問2のe・fを分けて照合する。特定したホスト・アカウントの名称、調査対象の通信先・タスク名、二つの検出方法を確認する。対策は対象と実施内容まで書く。",
+    "explanation": "ログはホスト名だけで追わず、接続先、利用アカウント、時刻を対応付けて攻撃の順序を整理する。設問1のa〜cは、この対応から侵害された端末・サーバ・アカウントを特定する問題である。封じ込めではアカウントの無効化と管理者拒否リストへの登録を区別し、横展開の調査では外部への通信先とinstallタスクを指標にする。マルウェア対策ソフトの停止とRDP接続の繰返しは異なるログに現れるため、単一の監視だけに頼らない。設問2では、仮想PCへの接続元をIPアドレスで限定する対策と、DLPでファイルの持出しを制限する対策を、侵入と持出しの各段階に対応付けて確認する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/sc/2024-autumn-pm/question-p02.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p03.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p04.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p05.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p06.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p07.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p08.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p09.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p10.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p11.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子2ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子3ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子4ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子5ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子6ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子7ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子8ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子9ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子10ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問1：公式問題冊子11ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/sc/2024-autumn-pm/answer-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2024年度秋期 情報処理安全確保支援士 午後 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問1"
+  },
+  {
+    "id": "sc-2024a-pm-q2",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "DMARC",
+      "SPF",
+      "DKIM"
+    ],
+    "difficulty": 4,
+    "question": "問2 ドメイン名変更に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問２\n\n                       出題趣旨\n 電子メール（以下，メールという）の送信者メールアドレスを詐称したフィッシングが多くなっている。送\n信者メールアドレスの正当性を判定する対策としてDMARC の導入が進んでいる。\n 本問では，メールのドメイン名の変更を機とした新たなメールサービスの導入を題材として，メールサービ\n スの設定及びDMARC の導入を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１  (1)    a    A 社ドメイン名\n         (2)    b  全て\n  設問２       c    SMTPS\n 設問３  (1) エ\n         (2)    d  イ\n 設問４  (1) ソフトウェア修正プログラムに見せかけたマルウェアをダウンロードさせ\n       る。\n         (2) メール 社外サービスのパスワード再設定画面のURL が書かれたメール\n       攻撃  任意のパスワードを設定し，アカウントを乗っ取る。\n         (3)    e  ア\n 設問５  (1)  SPF レコードに，T サービスのメール送信元IP アドレスを追加する。\n         (2) SPF     SPF レコードにY サービスの情報が登録されていないのに，メールが\n                      Y サービスから送られる。\n              DKIM    DKIM レコードのh タグにSubject が含まれているのに，Y サービスで\n               メールのSubject が変わる。\n\n\n\n\n\n                                                2/4\n\n                                                                            ©2024 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "設問1〜5の解答欄を確認する。SPFとDKIMの認証失敗を混同せず、送信元IPアドレスの登録漏れと署名対象ヘッダーの変更をそれぞれ説明する。指定された記号と英字10字以内の条件も照合する。",
+    "explanation": "メールサービスの移行では、送信元を確認するSPFと、署名を確認するDKIMを別々に追う。SPFについては、実際にメールを送るサービスのIPアドレスがDNSのSPFレコードに含まれるかを確認する。DKIMについては、署名対象にSubjectが含まれるのに中継サービスがSubjectを書き換えると、検証に必要な内容が変わる。設問5はこの二つの失敗理由を、Sサービスの登録内容とYサービスの動作に結び付けて記述する問題である。また、移行時のドメイン名の失効は、偽の修正プログラムの配布だけでなく、パスワード再設定メールを利用した外部サービスの乗っ取りにもつながる。解答ではメールの内容と、その後の攻撃を一組で示す。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/sc/2024-autumn-pm/question-p12.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p13.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p14.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p15.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p16.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p17.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p18.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p19.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p20.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p21.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子12ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子13ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子14ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子15ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子16ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子17ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子18ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子19ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子20ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問2：公式問題冊子21ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/sc/2024-autumn-pm/answer-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2：2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2024年度秋期 情報処理安全確保支援士 午後 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問2"
+  },
+  {
+    "id": "sc-2024a-pm-q3",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "Webスキミング",
+      "XSS",
+      "ログ分析"
+    ],
+    "difficulty": 4,
+    "question": "問3 クレジットカード情報の漏えいに関する次の記述を読んで，設問に答えよ。",
+    "answer": "問３\n\n                       出題趣旨\n\n                                                   ぜい\n   Web サイトの改ざんが発生したときには，悪用された脆 弱性，影響を受けた利用者及びデータの範囲などを\n特定し，再発防止策を講じる必要がある。\n  本問では，EC サイトのWeb スキミングによるクレジットカード情報の漏えいを題材として，HTML の仕様，\n ECMAScript の仕様，Web サーバの動作及びWeb アプリケーションプログラムの脆弱性に関する知識及び影響を\n受けた利用者を特定する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a   5\n               b クロスサイトスクリプティング\n               c 格納\n               d   2\n               e   SQL インジェクション\n設問２  (1)\n\n           配送先・支払方法選択\n\n        配送先\n\n                      ▽\n\n        お支払方法\n\n        カード番号\n        有効期限     月/     年\n\n        名義\n\n        セキュリティコード\n\n\n                戻る   次へ\n\n\n\n\n         (2) パラメータ名      order[Payment]\n       値                1\n         (3)  addEventListener メソッドで配送先・支払方法選択画面のform 要素にイベント\n        リスナーを登録し，submit 時にクレジットカード情報をクエリパラメータとし\n           てi-sha.com に送信する。\n設問３  (1)  Web サーバのアクセスログのリクエストURI から情報を取得する。\n         (2)   f 配送先・支払方法選択画面にアクセスしたアカウント名\n\n\n\n\n\n                                                3/4\n\n                                                                            ©2024 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "設問2(1)の画面図は公式解答例の入力欄・ボタンと比較する。パラメータ名と値、送信先、イベント発生時点を確認する。調査に使うログ項目と被害対象のアカウントを対応付ける。",
+    "explanation": "偽フォームの表示、決済方法の変更、入力情報の送信を、それぞれ別の処理として追う。設問1ではHTMLとスクリプトの該当行を、格納型クロスサイトスクリプティングやSQLインジェクションの成立箇所に対応付ける。設問2では配送先・支払方法選択画面にカード情報の入力欄が差し込まれ、order[Payment]が1に変更されることを確認する。addEventListenerでformのsubmitを捕捉し、カード情報をクエリパラメータとして送る動作まで説明する。設問3は漏えい経路を逆に利用した調査であり、攻撃者側のアクセスログのリクエストURIと、選択画面にアクセスしたアカウント名から影響範囲を絞り込む。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/sc/2024-autumn-pm/question-p22.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p23.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p24.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p25.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p26.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p27.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p28.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p29.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子22ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子23ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子24ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子25ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子26ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子27ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子28ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問3：公式問題冊子29ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/sc/2024-autumn-pm/answer-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問3：3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2024年度秋期 情報処理安全確保支援士 午後 問3",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問3"
+  },
+  {
+    "id": "sc-2024a-pm-q4",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "autumn",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "セッション管理",
+      "WebAPI",
+      "多要素認証"
+    ],
+    "difficulty": 4,
+    "question": "問4 セキュリティ診断に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問４\n\n                       出題趣旨\n\n   ぜい\n 脆 弱性は一つ一つが軽微でも，複数組み合わせて悪用されると，重大な被害につながることがある。また，\n診断ツールで検出される脆弱性以外にも，想定される攻撃に対して，セキュリティ対策が不足しているといっ\nた脆弱性もある。診断者がこういった脆弱性も報告に含めることで，その後，システムのセキュリティが大き\nく向上することがある。\n  本問では，個人情報を取り扱うWeb サイトに対するセキュリティ診断を題材に，診断ツールで検出された脆\n弱性について，悪用された場合の被害を想定する能力及び被害を低減するための対策を立案する能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１  (1)   a  (イ)\n         (2)   b  https://test.△△△.jp/\n         (3)   c メール受信者によるログイン\n         (4)   d  使用済みのsessionID を無効にした上で，新しいsessionID を発行\n         (5)   e   M サイトへの接続をHTTPS に強制することができる。\n                   M サイトのコンテンツに対して，Content-Type ヘッダーで指定したMIME\n               f\n         タイプを強制的に適用することができる。\n  設問２     画面09 で，会社名に，図C のabc@example.com を攻撃者のメールアド\n               g\n         レスに変更した文字列を入力して変更ボタンをクリックする。\n           画面04 からの一連の操作において，画面05 又は画面07 で再設定後の\n               h\n           パスワードを入力して，WebAPI キーを確認又は発行する。\n 設問３ ①    求職者ID が推測困難なものになるように，求職者ID の生成方法を変更 ①～③に限ら\n               i\n         する。                                            ず，WebAPI に\n                   APIkey が窃取された場合，当該求人企業への問合せ又は応募をした求職 関する被害を軽\n               j\n         者の情報漏えいだけに被害を軽減することができるから        減する仕様の改\n     ②       WebAPI のアクセス元IP アドレスを限定して接続を許可するように変更 善方針案が記述\n               i\n         する。                              されていること\n               j   WebAPI への第三者による不正なアクセスを防ぐことができるから\n     ③       WebAPI で取得できる求職者属性情報は，個人を特定できないものだけに\n               i\n         限定するように変更する。\n             不正にWebAPI が利用されても，個人を特定できない情報の漏えいだけ\n               j\n         に被害を軽減することができるから\n     ④   k ログインの認証を，多要素認証に変更する。           ④～⑥に限ら\n               l アカウントの乗っ取りを防ぐことができるから                 ず，Web アプリ\n     ⑤    利用者ごとにアクセス元IP アドレスを限定して接続を許可するように ケーションプロ\n               k\n         変更する。                           グラムに関する\n               l 第三者による不正なアクセスを防ぐことができるから         被害を軽減する\n                                         仕様の改善方針     ⑥    求人企業プロパティ変更において，メールアドレス以外を変更した場合\n               k                                  案が記述されて         でも，メールを送信するように変更する。\n                                           いること               l 不正に求人企業プロパティが変更された場合に気付くことができるから\n\n\n\n\n\n                                                4/4\n\n                                                                            ©2024 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "設問1のa〜f、設問2のg・h、設問3のi・jとk・lをそれぞれ照合する。改善方法だけでなく、その方法で防止・軽減できる被害まで記述する。複数案の許容範囲は公式解答例の備考を確認する。",
+    "explanation": "診断結果を個別の脆弱性の列挙で終わらせず、どの画面操作を組み合わせると情報を取得できるかを追う。設問1ではログインを境にsessionIDを更新して旧IDを無効にする処理、HTTPSの強制、MIMEタイプの強制適用をそれぞれ確認する。設問2では会社名への入力を利用したメール送信から、パスワード再設定後のWebAPIキーの確認・発行まで、画面番号と操作を具体化する。設問3はWebAPIとWebアプリケーションを分け、求職者IDの推測困難化、接続元制限、取得属性の限定、多要素認証、変更通知などの改善と効果を一対一で記述する。公式解答例の複数案では、同じ目的に対する別の改善方針が示されている。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/sc/2024-autumn-pm/question-p30.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p31.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p32.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p33.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p34.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p35.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p36.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p37.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p38.webp",
+      "/images/questions/sc/2024-autumn-pm/question-p39.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子30ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子31ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子32ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子33ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子34ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子35ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子36ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子37ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子38ページ（本文・図表・設問）",
+      "情報処理安全確保支援士 2024年秋 午後 問4：公式問題冊子39ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/sc/2024-autumn-pm/answer-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問4：4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2024年度秋期 情報処理安全確保支援士 午後 問4",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問4"
+  }
+]

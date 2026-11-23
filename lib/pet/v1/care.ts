@@ -1,17 +1,25 @@
 import type { PetProfileDocument, PetProfile } from "./profile";
+import { normalizePetName } from "./name";
 
 export type PetCareAction =
   | { type: "name"; name: string }
   | { type: "stage"; stage: "puppy" | "partner" | "expert" }
   | { type: "path"; path: PetProfile["selectedPath"] }
   | { type: "autoFeed"; enabled: boolean }
+  | { type: "appearance"; costume: "qualification" | "formal"; accessory: "none" | "bandana" | "bow" | "scarf" | "star" }
   | { type: "feed"; rewardId: string };
 /** Store.update supplies an exclusive, detached document and revalidates ownership. */
 export function applyPetCare(document: PetProfileDocument, qualificationId: string, action: PetCareAction, now: number) {
   const profile = document.profiles.find(item => item.qualificationId === qualificationId);
   if (!profile) throw new Error("pet_not_found");
   switch (action.type) {
-    case "name": profile.name = action.name.trim(); break;
+    case "appearance":
+      profile.care.appearance = { costume: action.costume, accessory: action.accessory, updatedAt: now }; break;
+    case "name": {
+      const result = normalizePetName(action.name);
+      if (!result.ok) throw new Error("pet_name_invalid");
+      profile.name = result.name; break;
+    }
     case "stage":
       if (!profile.unlockedStages.includes(action.stage)) throw new Error("pet_stage_locked");
       profile.selectedStage = action.stage; break;

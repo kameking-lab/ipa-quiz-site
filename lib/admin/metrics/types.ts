@@ -146,4 +146,11 @@ export interface UnavailableMetricsResponse {
   reason: string;
 }
 
-export type MetricsResponse = AvailableMetricsResponse | UnavailableMetricsResponse;
+export interface AggregateMetricsResponse {
+  meta: MetricsRangeMeta;
+  source: "kv";
+  generatedAt: string;
+  cachedAt?: string;
+  activity: import("@/lib/analytics/activity-contract").ActivityData;
+}
+export type MetricsResponse = AvailableMetricsResponse | UnavailableMetricsResponse | AggregateMetricsResponse;

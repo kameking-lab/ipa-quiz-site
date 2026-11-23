@@ -1,0 +1,114 @@
+{
+  "lane": "rs-21",
+  "branch": "cx/kako-restock-g18-20261117",
+  "checkedAt": "2026-11-17",
+  "integrationBaseline": "28e0a231a",
+  "allocation": {
+    "lane": "rs-21",
+    "branch": "cx/kako-restock-g18-20261117",
+    "integrationBaseline": "28e0a231a",
+    "remainingPriority": [
+      "benrishi",
+      "shihoshoshi",
+      "denken2",
+      "gas-kou",
+      "zoen1",
+      "keiryoshi-nodo",
+      "kenchikushi1",
+      "rinsho-kensagishi",
+      "kanri-eiyoshi"
+    ],
+    "allocation": [
+      "shihoshoshi",
+      "keiryoshi-nodo"
+    ],
+    "interpretation": "先行班と同じく、rs-4〜19が実際に補充した資格を除く。未処理候補をすべて除外すると残り0件となるため、実績・着手済み原稿を照合。2番目から4つおき。",
+    "shihoshoshi2024": "rs-5で担当修正により取り消した下書き。存続ブランチへの収録なし。rs-21で原典から独立照合し、旧スクリプトは実行しない。",
+    "excludedCompleted": [
+      "mankan",
+      "kaikeishi",
+      "fp1",
+      "denken1",
+      "kanteishi",
+      "chusho-secondary",
+      "gyosei",
+      "chosashi",
+      "sharoushi",
+      "tsukanshi",
+      "takken",
+      "caremanager",
+      "kenchikushi2",
+      "kenchiku-setsubishi",
+      "mokuzo-kenchikushi"
+    ]
+  },
+  "rows": [
+    {
+      "key": "shihoshoshi|2024|annual",
+      "qualificationCode": "shihoshoshi",
+      "year": 2024,
+      "sitting": "annual",
+      "session": "am",
+      "status": "ブランチに有り（未公開）",
+      "questionCount": 35,
+      "originalQuestionCount": 35,
+      "statementExplanationCount": 175,
+      "choiceExplanationCount": 175,
+      "officialAnswerCount": 35,
+      "remainingAmCount": 0,
+      "remainingPmMultipleChoiceCount": 35,
+      "officialSourceUrls": [
+        "https://www.moj.go.jp/MINJI/minji05_00635.html",
+        "https://www.moj.go.jp/content/001422259.pdf",
+        "https://www.moj.go.jp/content/001422263.pdf"
+      ],
+      "sourceManifest": "data/questions/shihoshoshi/2024-am-sources.json",
+      "questionIds": [
+        "shihoshoshi-2024-am-q1",
+        "shihoshoshi-2024-am-q2",
+        "shihoshoshi-2024-am-q3",
+        "shihoshoshi-2024-am-q4",
+        "shihoshoshi-2024-am-q5",
+        "shihoshoshi-2024-am-q6",
+        "shihoshoshi-2024-am-q7",
+        "shihoshoshi-2024-am-q8",
+        "shihoshoshi-2024-am-q9",
+        "shihoshoshi-2024-am-q10",
+        "shihoshoshi-2024-am-q11",
+        "shihoshoshi-2024-am-q12",
+        "shihoshoshi-2024-am-q13",
+        "shihoshoshi-2024-am-q14",
+        "shihoshoshi-2024-am-q15",
+        "shihoshoshi-2024-am-q16",
+        "shihoshoshi-2024-am-q17",
+        "shihoshoshi-2024-am-q18",
+        "shihoshoshi-2024-am-q19",
+        "shihoshoshi-2024-am-q20",
+        "shihoshoshi-2024-am-q21",
+        "shihoshoshi-2024-am-q22",
+        "shihoshoshi-2024-am-q23",
+        "shihoshoshi-2024-am-q24",
+        "shihoshoshi-2024-am-q25",
+        "shihoshoshi-2024-am-q26",
+        "shihoshoshi-2024-am-q27",
+        "shihoshoshi-2024-am-q28",
+        "shihoshoshi-2024-am-q29",
+        "shihoshoshi-2024-am-q30",
+        "shihoshoshi-2024-am-q31",
+        "shihoshoshi-2024-am-q32",
+        "shihoshoshi-2024-am-q33",
+        "shihoshoshi-2024-am-q34",
+        "shihoshoshi-2024-am-q35"
+      ],
+      "notes": [
+        "rs-5の取消下書きと保存済み公式PDFをrs-21で独立に照合。旧スクリプト・patchは実行しない。",
+        "PyMuPDFとpdfplumberによる本文35・選択肢175一致。公式正答35は座標列と表で一致。",
+        "既存2025・2026年139原稿は不変。演習可能は129+35=164問。",
+        "2024午前の残り0問、午後択一35問は未追加。"
+      ]
+    }
+  ],
+  "skipped": {
+    "keiryoshi-nodo": "2024年度は既存原稿あり。2023年度は公式一覧・問題候補・正答が403。本文未確認につき追加0件。候補URLはtools/rs-21/keiryoshi-download.jsonに記録し、収録出典には使わない。"
+  }
+}

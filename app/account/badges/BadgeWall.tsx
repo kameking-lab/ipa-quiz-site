@@ -35,7 +35,7 @@ export function BadgeWall() {
 
   return (
     <>
-      <div className="mb-6 rounded-2xl border border-zinc-200 bg-gradient-to-br from-sky-50 to-indigo-50 p-5 dark:border-zinc-800 dark:from-sky-950/40 dark:to-indigo-950/40">
+      <div className="mb-6 rounded-2xl border border-zinc-200 bg-card p-5 dark:border-zinc-800">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">現在の連続学習</p>
@@ -79,7 +79,7 @@ export function BadgeWall() {
                   <button
                     type="button"
                     onClick={() => setShareTarget(shareTarget === t ? null : t)}
-                    className="rounded-lg border border-zinc-200 p-1.5 text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
+                    className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-zinc-200 p-1.5 text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
                     aria-label="シェアする"
                   >
                     <Share2 className="h-4 w-4" />

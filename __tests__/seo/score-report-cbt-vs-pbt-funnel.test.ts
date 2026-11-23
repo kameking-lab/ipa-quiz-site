@@ -12,26 +12,26 @@ import { getBlogPostBySlug } from "@/data/blog";
 
 const SLUG = "cbt-goukaku-happyou-score-report";
 
-describe("結果確認記事の CBT 移行 → cbt-vs-pbt funnel", () => {
+describe("結果確認記事の通年CBTとAP・高度・SCの日程の区別", () => {
   it("記事が存在する", () => {
     expect(getBlogPostBySlug(SLUG), `${SLUG} が存在しない`).toBeDefined();
   });
 
-  it("令和8年度の CBT 移行（予定）に触れている", () => {
+  it("AP・高度・SCの2026年度の結果照会を区別して案内する", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("令和8年度（2026年度）");
-    expect(body).toContain("CBT 方式への移行");
+    expect(body).toContain("AP・高度・支援士は別の日程");
+    expect(body).toContain("AP・高度・SCの2026年度案内");
   });
 
-  it("canonical 解説 cbt-vs-pbt へ内部リンクで funnel している", () => {
+  it("結果照会の日程を公式の実施案内へ直接つなぐ", () => {
     expect(getBlogPostBySlug(SLUG)!.body).toContain(
-      "/blog/ipa-shiken-cbt-vs-pbt",
+      "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html",
     );
   });
 
-  it("移行内容の durable fact（時間変更なし・科目A／科目B 名称）を断定せず述べている", () => {
+  it("科目A群と科目B群の結果を区別し通年CBTの照会時期を当てはめない", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("各試験時間に変更はなく");
-    expect(body).toContain("午前→科目A・午後→科目B");
+    expect(body).toContain("科目A群の結果表示と科目B群の成績照会を分けています");
+    expect(body).toContain("IP・SG・FEのスコアレポートの時期をそのまま当てはめず");
   });
 });

@@ -73,7 +73,7 @@ describe("採点根拠データの型 — PM で確立（強み1）", () => {
 
 describe("採点AIが採点根拠データを参照する（buildUserPrompt + プロンプト）", () => {
   const source = readFileSync(
-    join(process.cwd(), "app/api/essay-grade/route.ts"),
+    join(process.cwd(), "lib/essay/legacy-grade.ts"),
     "utf8",
   );
 

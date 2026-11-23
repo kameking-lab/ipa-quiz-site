@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "exam": "kai-toku2",
+  "year": 2022,
+  "season": "february",
+  "checkedAt": "2026-11-17",
+  "edition": "令和4年2月期 第二級海上特殊無線技士試験",
+  "officialQuestionCount": 24,
+  "questionCount": 24,
+  "remainingQuestionCount": 0,
+  "answerSourceNote": "両科目の公式正答表が令和4年2月期と明記。法規1〜12、無線工学13〜24の原問番号を保持。",
+  "inheritedData": {
+    "path": "data/questions/kai-toku2/two-sittings.json",
+    "questionCount": 48,
+    "sha256": "f9f17212b8bb4bdff357c1c10a6e1511fbc3997af6bed54838a004118a216922"
+  },
+  "sourceFiles": [
+    {
+      "name": "hoki",
+      "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-2-hoki.pdf",
+      "sha256": "4cff0cc22a3a5cec05ea543decde0a39cd518e31066ebc47f87c79d87ec85678",
+      "pages": 2
+    },
+    {
+      "name": "hoki-kaito",
+      "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-2-hoki-kaito.pdf",
+      "sha256": "3516577a061b4388b5f8a97dd5393fdefa54baa4c6552ec2abbb45a22ee87769",
+      "pages": 1
+    },
+    {
+      "name": "kogaku",
+      "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-2-kogaku.pdf",
+      "sha256": "5da349ef4db626e4a4ffd37108b2819a4869192abfeb0b7cd635acf2e690e1f7",
+      "pages": 2
+    },
+    {
+      "name": "kogaku-kaito",
+      "url": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-2-kogaku-kaito.pdf",
+      "sha256": "e05ead9e2dc1f17785ad21a7b58002f57b64c7badf7845f55566654809a32e94",
+      "pages": 1
+    }
+  ],
+  "officialAnswers": {
+    "1": 1,
+    "2": 4,
+    "3": 2,
+    "4": 3,
+    "5": 2,
+    "6": 4,
+    "7": 4,
+    "8": 1,
+    "9": 4,
+    "10": 3,
+    "11": 2,
+    "12": 1,
+    "13": 3,
+    "14": 1,
+    "15": 2,
+    "16": 4,
+    "17": 2,
+    "18": 3,
+    "19": 4,
+    "20": 3,
+    "21": 3,
+    "22": 4,
+    "23": 1,
+    "24": 2
+  },
+  "figures": [
+    {
+      "qNumber": 13,
+      "pdfPage": 1,
+      "rect": [
+        110,
+        144,
+        277,
+        215
+      ],
+      "scale": 3,
+      "path": "public/images/questions/kai-toku2/2022-february-q13.png",
+      "sha256": "a5d0eaffe16a25d49747e27bf3c62cb6d7c9312e54f86c730e3fbcf00757f298",
+      "alt": "端子aとbの間に20kΩと5kΩの抵抗を並列に接続した回路。"
+    },
+    {
+      "qNumber": 14,
+      "pdfPage": 1,
+      "rect": [
+        173,
+        354,
+        231,
+        410
+      ],
+      "scale": 3,
+      "path": "public/images/questions/kai-toku2/2022-february-q14.png",
+      "sha256": "9e5038b579c6abd9eb9a5c307a2769def019b23a992c75cd89590fca1564ea28",
+      "alt": "FETの図記号。上側の端子にaと表示し、左側にゲート、下側にもう一つの端子を示す。"
+    },
+    {
+      "qNumber": 19,
+      "pdfPage": 2,
+      "rect": [
+        48,
+        181,
+        289,
+        334
+      ],
+      "scale": 3,
+      "path": "public/images/questions/kai-toku2/2022-february-q19.png",
+      "sha256": "b9654fbc56305169d2371cb7602bce2b0a954fa84063fb4251db397d49bfdd4e",
+      "alt": "振幅120Vの無変調搬送波と、包絡線が変化する振幅変調波。零の基準から正側の包絡線の最大値までをAとする。"
+    },
+    {
+      "qNumber": 20,
+      "pdfPage": 2,
+      "rect": [
+        110,
+        535,
+        296,
+        646
+      ],
+      "scale": 3,
+      "path": "public/images/questions/kai-toku2/2022-february-q20.png",
+      "sha256": "081bebca8237506158eae1621806cbcfe042b62ea82a8035145dc29f14696949",
+      "alt": "信号波fSと搬送波fCを平衡変調器へ入力し、上側波帯通過用の帯域フィルタから出力を得る構成。"
+    }
+  ],
+  "legalReferenceDate": "2022-02-01",
+  "legalReferences": [
+    {
+      "title": "電波法",
+      "id": "325AC0000000131_20210401_503AC1000000019",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/325AC0000000131_20210401_503AC1000000019",
+      "enforcementDate": "2021-04-01",
+      "sha256": "59b5a63563636482e1b7bf04bb93730b2398ee3b685612c2b394688169bebecc",
+      "asof": "2022-02-01",
+      "monthChanges": []
+    },
+    {
+      "title": "電波法施行規則",
+      "id": "325M50080000014_20211120_503M60000008101",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/325M50080000014_20211120_503M60000008101",
+      "enforcementDate": "2021-11-20",
+      "sha256": "b621ca8e04fc9bcc22e7206a2a9360aa96b2f2fcec0b76919c128d0ed2496822",
+      "asof": "2022-02-01",
+      "monthChanges": []
+    },
+    {
+      "title": "無線局運用規則",
+      "id": "325M50080000017_20210820_503M60000008079",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/325M50080000017_20210820_503M60000008079",
+      "enforcementDate": "2021-08-20",
+      "sha256": "02d521886d5f12cf90888d7f1795ced041d8f1fb6d8ff2d04f782a96796fb32f",
+      "asof": "2022-02-01",
+      "monthChanges": []
+    },
+    {
+      "title": "無線設備規則",
+      "id": "325M50080000018_20211129_503M60000008103",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/325M50080000018_20211129_503M60000008103",
+      "enforcementDate": "2021-11-29",
+      "sha256": "56330738c181188496bac09322d4a69349d8d1011ce5070b15f95a0fab01b43e",
+      "asof": "2022-02-01",
+      "monthChanges": []
+    },
+    {
+      "title": "無線従事者規則",
+      "id": "402M50001000018_20210416_503M60000008048",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/402M50001000018_20210416_503M60000008048",
+      "enforcementDate": "2021-04-16",
+      "sha256": "32defa30e3ce8cd592aa4ce9774d64f56e37a5ecf2ff21aaabec180e50a2d6e6",
+      "asof": "2022-02-01",
+      "monthChanges": []
+    }
+  ],
+  "supplementaryReferences": [
+    {
+      "name": "ais",
+      "url": "https://www.kaiho.mlit.go.jp/soshiki/koutsuu/toudai/ais-info.html",
+      "sha256": "59d7176d78ed01bd03d34d820a79d9012cb23913cabc5f8808de864f1fdb8711",
+      "status": 200
+    },
+    {
+      "name": "radar",
+      "url": "https://www.furunousa.com/-/media/sites/furuno/document_library/documents/manuals/public_manuals/851mk2_operators_manual_version_d.pdf",
+      "sha256": "0eff597378334e31080f3647167121db85734c3ceefb283b6c07201611e82fd7",
+      "status": 200,
+      "pdfPages": [
+        14
+      ]
+    }
+  ],
+  "transcriptionPolicy": [
+    "公式問題・全選択肢・正答を保持。字幅・改行・空白を整理。",
+    "PDFの空欄は□、fの添字はfS/fC、選択肢の表は項目名付き文字列で表示。",
+    "問20選択肢2のfC＋2fCを原文どおり保持。",
+    "問6は出題当時の免許状掲示規定として解説。"
+  ],
+  "questions": [
+    {
+      "id": "radio21-sea2-2022-02-hoki-q01",
+      "qNumber": 1,
+      "session": "houki",
+      "sourcePage": 1,
+      "questionSha256": "8c97ba4c417840fc75d5bfbc15a45115c40cd4c827536cb0be374ade317b3648",
+      "choicesSha256": "c52f17f4907be3ba1152eefd58c1ea95d7b8e330a8efc5c186394d38283792ca",
+      "officialAnswerNumber": "1"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q02",
+      "qNumber": 2,
+      "session": "houki",
+      "sourcePage": 1,
+      "questionSha256": "bd30f45b8f9026231f93ce67267daaefec39ed42d563be23e71de443d885cce9",
+      "choicesSha256": "1d377ad62cd7564c950d8faf3960c5f578f30f51ef212ae052eb4818006fdddb",
+      "officialAnswerNumber": "4"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q03",
+      "qNumber": 3,
+      "session": "houki",
+      "sourcePage": 1,
+      "questionSha256": "e2262e2aa1c21e8911427308b55437863cb575d73e75b36b70a7ec80c3cbe1a3",
+      "choicesSha256": "c8d42c4db19108119494daf3d645d17e08e4f98c25c34460cea78bfcb02b73df",
+      "officialAnswerNumber": "2"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q04",
+      "qNumber": 4,
+      "session": "houki",
+      "sourcePage": 1,
+      "questionSha256": "8b23f4cf89ae1f7169b27dd94b06c321a8d2dd04367a530df6c3df0bddd135f0",
+      "choicesSha256": "e7dbfcb2ec73d687cb735ad4ddaf51bd581384e82b3eecfbbe57af9504ce27bd",
+      "officialAnswerNumber": "3"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q05",
+      "qNumber": 5,
+      "session": "houki",
+      "sourcePage": 1,
+      "questionSha256": "4b4f37a0b1bd479c2f74cd5366f825c29b97f386a50a54fdd80489a1f9e26477",
+      "choicesSha256": "088a7b2576465f3b3aab31df728d9f417ee3c633c97157bbac78069622f1a817",
+      "officialAnswerNumber": "2"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q06",
+      "qNumber": 6,
+      "session": "houki",
+      "sourcePage": 1,
+      "questionSha256": "c9d623067113bef87963249588e8ed861f2ce9c81d51fef74b2cf00c4f9dfa67",
+      "choicesSha256": "fe0142e4855fc2e952475f05e7ba70eb03e4e7262bd7d57d459e6f1549f39eab",
+      "officialAnswerNumber": "4"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q07",
+      "qNumber": 7,
+      "session": "houki",
+      "sourcePage": 2,
+      "questionSha256": "b6e31ab7224ffd022463b78c6168a11556b3963312265c80b2be31ba1135d2fd",
+      "choicesSha256": "43bfc982bc1cdc0966eb0547487126a0de353894a1d4372be634d680c398136a",
+      "officialAnswerNumber": "4"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q08",
+      "qNumber": 8,
+      "session": "houki",
+      "sourcePage": 2,
+      "questionSha256": "ae9eaed6f4d82df56d8e571796f0a42b7f4b263fb2fc4bb9a1ad9cb57cee2297",
+      "choicesSha256": "f465f96acca5b97c69252ee15ee8deddcab827ec4061a065f184f01fba8fb443",
+      "officialAnswerNumber": "1"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q09",
+      "qNumber": 9,
+      "session": "houki",
+      "sourcePage": 2,
+      "questionSha256": "94eeb71103ba6eb2cd2fac92356c58e68dfe63876409660ff83fe3fbccb9d550",
+      "choicesSha256": "965f7ab19619ff999c04955f271f7b48b45a2f5dfff862fcd782f5ef24ca5a7b",
+      "officialAnswerNumber": "4"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q10",
+      "qNumber": 10,
+      "session": "houki",
+      "sourcePage": 2,
+      "questionSha256": "55d0b7a949e8c83f7c5142d6e29b1a4d21ddcf5a05813cf28abb9453d0a78c73",
+      "choicesSha256": "452a9eb6a9b03a9f88c5e95c6cfdd16e8d213275d5b83993429456b618b40f92",
+      "officialAnswerNumber": "3"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q11",
+      "qNumber": 11,
+      "session": "houki",
+      "sourcePage": 2,
+      "questionSha256": "e721c6173dca7b2c2039af0d477d8da3c7bd0136fca32e7650619cf666840b6e",
+      "choicesSha256": "c30f19eef75fa584de43a80efc382eac1d2eb6a3ac0617835df9fb450d95a794",
+      "officialAnswerNumber": "2"
+    },
+    {
+      "id": "radio21-sea2-2022-02-hoki-q12",
+      "qNumber": 12,
+      "session": "houki",
+      "sourcePage": 2,
+      "questionSha256": "fdc3a0f6cb60d131a974506e8786dba3df85374409911e87248b373a1314eab6",
+      "choicesSha256": "a6731976ad30063c8dd39bc570596e171571631b6d2ab14ca11dbd6c4752bc2b",
+      "officialAnswerNumber": "1"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q13",
+      "qNumber": 13,
+      "session": "kogaku",
+      "sourcePage": 1,
+      "questionSha256": "4ab574c85951cc499baf7f6e37b2565cf8970ed5fdde331c449b3bcbda77fe67",
+      "choicesSha256": "fee70855d23b75a73a73c46da71e92bd4953260d2c58de08693805ca2433414a",
+      "officialAnswerNumber": "3"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q14",
+      "qNumber": 14,
+      "session": "kogaku",
+      "sourcePage": 1,
+      "questionSha256": "7f12e2f00e4b3429455dc0934a50d2731f74241fc66da7562d81d22aebb2f6d6",
+      "choicesSha256": "a2731ada18d5820a8cc20aff21c0691369f83ba51d1d51c8dbae440b65c1e963",
+      "officialAnswerNumber": "1"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q15",
+      "qNumber": 15,
+      "session": "kogaku",
+      "sourcePage": 1,
+      "questionSha256": "c9d8e67c884f85af95c9322fedc6d32885eae94a5cc1fd0d9ac09d3d228f2422",
+      "choicesSha256": "7868cdf6042a32575c4258bfb79b1d52cd67f05cb3026996c12355caa59243ef",
+      "officialAnswerNumber": "2"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q16",
+      "qNumber": 16,
+      "session": "kogaku",
+      "sourcePage": 1,
+      "questionSha256": "f1d158c97e6032631a28afdbd980121440ad8267b6eafa90dd7c960dc58eeb56",
+      "choicesSha256": "d30dfa7b3e88c2488764cbb53b714a3cab2800efc1e94925a45204aa52429346",
+      "officialAnswerNumber": "4"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q17",
+      "qNumber": 17,
+      "session": "kogaku",
+      "sourcePage": 1,
+      "questionSha256": "07eee43a7ce55a8410d43e09adde5cefd3c949b4c3d318587bf15000f33fb75d",
+      "choicesSha256": "56c6c23b8ed52dd409e0cbc9c56105255da939382570930f8327bd7fb5e7cc30",
+      "officialAnswerNumber": "2"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q18",
+      "qNumber": 18,
+      "session": "kogaku",
+      "sourcePage": 1,
+      "questionSha256": "f3f0d647c2e3c5fab852bc693c22df2c84fc880961a5fee905972869cf68b091",
+      "choicesSha256": "beaf191490461b5c95f8981f5fbbabcd1b8429c39d83f39c3f00eed957c7144b",
+      "officialAnswerNumber": "3"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q19",
+      "qNumber": 19,
+      "session": "kogaku",
+      "sourcePage": 2,
+      "questionSha256": "9e735225df8b157807fe49f44ff527ff476bb411ecba5a1c5b90b959771a55c4",
+      "choicesSha256": "95e2c9cf93c7ba6d00dc40809744ffef7ac45b0ef2770a6b9e131fc9ef23c745",
+      "officialAnswerNumber": "4"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q20",
+      "qNumber": 20,
+      "session": "kogaku",
+      "sourcePage": 2,
+      "questionSha256": "8b2d5f33e70515c1fd1e1944e21ff2de5f0e900f46ec2bb4ab7f4229d5e7d859",
+      "choicesSha256": "10f5a50b81d45f6b51e0bfbfeb1c5e626f5a65b8e78e9abbcb4dc8eb58869619",
+      "officialAnswerNumber": "3"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q21",
+      "qNumber": 21,
+      "session": "kogaku",
+      "sourcePage": 2,
+      "questionSha256": "12614af1380610eeaae41bc6782d99720cb93a4da035f2d42e26dd3ce2563dcd",
+      "choicesSha256": "ba34073df2be6c386504d4f4735fac7a95a419cd7f27bd72f5a0baf605f1785a",
+      "officialAnswerNumber": "3"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q22",
+      "qNumber": 22,
+      "session": "kogaku",
+      "sourcePage": 2,
+      "questionSha256": "ad4f165077e15579cb3628e3ccefbda15d42229ce054b62d87dcef760d84ea52",
+      "choicesSha256": "cb548b66ad026f9a7418196e5c6df440f05d0ba9e28aaff80792030bbad5e0e7",
+      "officialAnswerNumber": "4"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q23",
+      "qNumber": 23,
+      "session": "kogaku",
+      "sourcePage": 2,
+      "questionSha256": "b937964733a0aa960010933af96c16c0c28819260cbb00fb88a288dc224523a9",
+      "choicesSha256": "22f59e193857938bf997afb0ccf5894b603f069ac98c179b4559e2342e71a9f6",
+      "officialAnswerNumber": "1"
+    },
+    {
+      "id": "radio21-sea2-2022-02-kogaku-q24",
+      "qNumber": 24,
+      "session": "kogaku",
+      "sourcePage": 2,
+      "questionSha256": "bd4bbc115dfca85c7f002ce5f5cb95616d311ff9929c8b4b60b092a8d11023ac",
+      "choicesSha256": "08ef2aedf2c78e3b8ca5192b77f3c7696562b6096406a592a2b2f78d10f046b6",
+      "officialAnswerNumber": "2"
+    }
+  ],
+  "verification": {
+    "questionCount": 24,
+    "choiceCount": 96,
+    "sourceMismatchCount": 0,
+    "normalization": "NFKC、改行・空白の除去、PDFの空欄***を□に、マイナスの字形を統一。問16の表見出しを選択肢へ移した表示と対応。原図領域を本文抽出から除外。",
+    "engineCounts": {
+      "PyMuPDF": {
+        "body": 24,
+        "choices": 96,
+        "answers": 24
+      },
+      "pdfplumber": {
+        "body": 24,
+        "choices": 96,
+        "answers": 24
+      }
+    },
+    "status": "verified"
+  }
+}

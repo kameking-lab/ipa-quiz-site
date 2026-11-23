@@ -4,8 +4,9 @@ import { render } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const m = vi.hoisted(() => ({ native: false, pathname: "/q/ip/2024-cbt/am/q1" }));
+const router = { push: vi.fn() };
 vi.mock("@/mobile/shared/contracts", () => ({ nativeClient: () => m.native }));
-vi.mock("next/navigation", () => ({ usePathname: () => m.pathname }));
+vi.mock("next/navigation", () => ({ usePathname: () => m.pathname, useRouter: () => router }));
 vi.mock("@/mobile/src/NativeTools", () => ({ NativeTools: () => <aside>native tools</aside> }));
 
 import { NATIVE_APP_BOOTSTRAP_SCRIPT } from "@/lib/native-app-bootstrap";

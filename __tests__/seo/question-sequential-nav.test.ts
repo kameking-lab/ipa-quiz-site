@@ -30,7 +30,7 @@ function sessionPool(q: Question): Question[] {
         x.session === q.session &&
         isPracticeReadyQuestion(x),
     )
-    .sort((a, b) => a.qNumber - b.qNumber);
+    .sort((a, b) => a.qNumber - b.qNumber || (a.part ?? "").localeCompare(b.part ?? ""));
 }
 
 /** Delegates to the page's real selection function so the test can't drift. */
@@ -104,10 +104,11 @@ describe("/q 前後ナビ — 境界の正しさ (最初に前なし・最後に
     const ordered = sessionPool(seed as Question);
     const mid = ordered[1];
     const { prev, next } = siblings(mid);
-    expect(prev?.qNumber).toBe(ordered[0].qNumber);
-    expect(next?.qNumber).toBe(ordered[2].qNumber);
-    expect(prev!.qNumber).toBeLessThan(mid.qNumber);
-    expect(next!.qNumber).toBeGreaterThan(mid.qNumber);
+    expect(prev?.id).toBe(ordered[0].id);
+    expect(next?.id).toBe(ordered[2].id);
+    // Multipart papers can share a printed qNumber. Their part is the tie-breaker.
+    expect(prev!.qNumber).toBeLessThanOrEqual(mid.qNumber);
+    expect(next!.qNumber).toBeGreaterThanOrEqual(mid.qNumber);
   });
 });
 
@@ -125,11 +126,12 @@ describe("/q 前後ナビ — ページ構造ガード (SSR でクローラブ�
     expect(source).toMatch(/rel="next"\s+href=/);
   });
 
-  it("可視ナビ「前の問題」「次の問題」と境界フォールバックを持つ", () => {
-    expect(source).toContain("前の問題");
-    expect(source).toContain("次の問題");
-    expect(source).toContain("最初の問題です");
-    expect(source).toContain("最後の問題です");
+  it("解説後のナビから次問か年度一覧へ進める", () => {
+    expect(source).toContain('aria-label="解説のあとに学ぶ"');
+    expect(source).toContain("次の問題へ");
+    expect(source).toContain("年度の問題一覧へ戻る");
+    expect(source).toContain("const nextHref = next ? questionPagePath(next) : breadcrumbItems[2].href;");
+    expect(source).toContain("href={nextHref}");
   });
 
   it("前後ナビの選択を getSessionNeighbors に委譲する", () => {

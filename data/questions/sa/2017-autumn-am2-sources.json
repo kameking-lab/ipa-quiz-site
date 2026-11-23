@@ -1,0 +1,234 @@
+{
+  "exam": "sa",
+  "year": 2017,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sa_am2_qs.pdf",
+      "sha256": "0779256bc23a67eb7e7043d3aa594766016cdb71d211654c9b64d831bee2dc87"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sa_am2_ans.pdf",
+      "sha256": "fefd094f2210b00cc229e5560f007bb45441f3580ed0f92bf118531e9f448c59"
+    }
+  },
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "エウアウイアウイアウウアイイウエエイウエアアウアエ",
+  "verification": "公式問題冊子の全問題ページを画像で読み，本文・選択肢を転記。別の公式解答PDFをpdftotextで抽出して25件照合。本文ハッシュ・原本ページ・原図の切出し座標を記録。",
+  "duplicateCheck": "共有台帳2026-11-11のSA 2017行はspring am1のみ。yr-1と指定10ブランチ取り込み後，追加前のgit log --all -- data/questions/sa/by-year/2017-autumn-am2.tsに履歴なし。",
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "エ",
+      "printedPage": 3,
+      "normalizedTextSha256": "ac51da0a48a4c1d4b7aceeaa012a19775df1bee47ed16c037703b5947848e345",
+      "referenceUrls": [
+        "https://xp123.com/invest-in-good-stories-and-smart-tasks/"
+      ]
+    },
+    {
+      "qNumber": 2,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "21d1d6ec301c522f12bcf98e5dee2035753d5fd2ea5e84e150a1e0b8edc2e5f2"
+    },
+    {
+      "qNumber": 3,
+      "answer": "ア",
+      "printedPage": 4,
+      "normalizedTextSha256": "4b11568f2d9b6b23f86f218bd941408a48a573eab67b58c34e0776673b4f297a",
+      "figure": {
+        "path": "/images/questions/sa/2017-autumn-am2-q3.png",
+        "sha256": "941bb6dd1edd3856078b1d6b1c35a47f98158b3fd2684384109fb03184939b04",
+        "page": 4,
+        "cropPdfPoints": [
+          65,
+          155,
+          440,
+          665
+        ]
+      }
+    },
+    {
+      "qNumber": 4,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "4a045c5463b3b6d5946080a3099e97abf41dc9b097d82e33ce29e7c39722638d",
+      "referenceUrls": [
+        "https://www.omg.org/spec/SysML/1.5/PDF"
+      ]
+    },
+    {
+      "qNumber": 5,
+      "answer": "イ",
+      "printedPage": 5,
+      "normalizedTextSha256": "850615bb10de73500193d1ef622b75cae7fa05b643afa9b8df21664e38cfe701"
+    },
+    {
+      "qNumber": 6,
+      "answer": "ア",
+      "printedPage": 6,
+      "normalizedTextSha256": "b9ee7bc508dfea78b065587e9ef2ee262402a70d1fdde01f9fd94c0418f8e5b4"
+    },
+    {
+      "qNumber": 7,
+      "answer": "ウ",
+      "printedPage": 6,
+      "normalizedTextSha256": "fe1e46b8950c0635d1c36bdfb584e2a434676283803bd97753696c043d92f929"
+    },
+    {
+      "qNumber": 8,
+      "answer": "イ",
+      "printedPage": 6,
+      "normalizedTextSha256": "cae03bc1d4faf926900db5ed72715aa00e21f8dbf0ed536053828135fa199b05"
+    },
+    {
+      "qNumber": 9,
+      "answer": "ア",
+      "printedPage": 7,
+      "normalizedTextSha256": "ebf94d2388afa9d8a3d7b1b1aa60cdddecd2048ac26b13ff2fb1c2a6ac554a92"
+    },
+    {
+      "qNumber": 10,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "4f17bbfa6f94b8464172e6210fa902ef0c300748e85319db4df0e7015583ddb0"
+    },
+    {
+      "qNumber": 11,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "3e5f78cfe192f9107d11f6c8f804eb2fb9537b8fa361cb272434f9a7704d6c8f"
+    },
+    {
+      "qNumber": 12,
+      "answer": "ア",
+      "printedPage": 8,
+      "normalizedTextSha256": "6882e9d54a9dce5e60de19c8527618828039cd7a09c5fa206020a9a8df2533a3"
+    },
+    {
+      "qNumber": 13,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "2443dc1b82103d44e2ea18f59b1f67aede883fba16710868ad2fc778045b0dfd"
+    },
+    {
+      "qNumber": 14,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "0c8c1f1a2a1c50972163862f3b4609942fce14e10490e1c3fa30b28c96f67947"
+    },
+    {
+      "qNumber": 15,
+      "answer": "ウ",
+      "printedPage": 9,
+      "normalizedTextSha256": "8ff9f038bc74854bdb890531c85c50a844fbb7349ff7e4542991b82d17e5c9f0",
+      "referenceUrls": [
+        "https://www.jftc.go.jp/dk/guideline/unyoukijun/chitekizaisan_files/chitekizaisangl.pdf"
+      ]
+    },
+    {
+      "qNumber": 16,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "af1cf53f7f45e0fc9e100b0af647353fcd26a666ac1aa3936402aa4620066553"
+    },
+    {
+      "qNumber": 17,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "ab71d039ced78d2f3cb215503b71e83332a9e23ca3af7aaa017a503a493a1fc4"
+    },
+    {
+      "qNumber": 18,
+      "answer": "イ",
+      "printedPage": 11,
+      "normalizedTextSha256": "92346372ef59522c89931220369fc935572e37385d650a60f7212e59d0ee91b7"
+    },
+    {
+      "qNumber": 19,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "514021596de5d61c3d773ce02c716c2768353f0f8fcd10667b6ce81c4dbc129b"
+    },
+    {
+      "qNumber": 20,
+      "answer": "エ",
+      "printedPage": 12,
+      "normalizedTextSha256": "e02680b8aa72c13ad887a6064ba7b2386df4e58ff3d830e056d78ee6a9e1b320"
+    },
+    {
+      "qNumber": 21,
+      "answer": "ア",
+      "printedPage": 13,
+      "normalizedTextSha256": "13f94b72f400c701b3a31afcac2c5318603c66e089c6c56198dcad9097dbc6a3",
+      "figure": {
+        "path": "/images/questions/sa/2017-autumn-am2-q21.png",
+        "sha256": "89725f5e69a7282c082e33a92ef8545c8648fe0766c37b9de3f05dcc1067b69a",
+        "page": 13,
+        "cropPdfPoints": [
+          65,
+          155,
+          440,
+          640
+        ]
+      }
+    },
+    {
+      "qNumber": 22,
+      "answer": "ア",
+      "printedPage": 14,
+      "normalizedTextSha256": "9684d2e0b7f8746f03e0cc15c1a0ffa623b8a1bfad75f30d5946cbe5fdc5bff0",
+      "figure": {
+        "path": "/images/questions/sa/2017-autumn-am2-q22.png",
+        "sha256": "ae016cabbd12b122ebd4d64489bc904a23bf741241d8a65804a242820445a4e9",
+        "page": 14,
+        "cropPdfPoints": [
+          100,
+          132,
+          407,
+          183
+        ]
+      }
+    },
+    {
+      "qNumber": 23,
+      "answer": "ウ",
+      "printedPage": 14,
+      "normalizedTextSha256": "b0b6079dc32847aef4f6eb5f85825564f647cca917c33a25f89b7f46861cb3f5"
+    },
+    {
+      "qNumber": 24,
+      "answer": "ア",
+      "printedPage": 14,
+      "normalizedTextSha256": "b7893adcebe6cf3647cd4a0e633944730642b4007ebaa9ffceccf742fd6e3347",
+      "referenceUrls": [
+        "https://csrc.nist.gov/pubs/fips/197/final"
+      ]
+    },
+    {
+      "qNumber": 25,
+      "answer": "エ",
+      "printedPage": 15,
+      "normalizedTextSha256": "18c15a8358bb33494d56fa0dbf19195e6542e5e945268f07528350a090510f8d",
+      "referenceUrls": [
+        "https://www.rfc-editor.org/rfc/rfc6409"
+      ]
+    }
+  ],
+  "independentChecks": {
+    "officialAnswers": "pdfplumberで公式解答25件を読み取り，pdftotextによる生成結果と一致",
+    "calculationQuestions": {
+      "9": "発見率1/5，総数50−発見済み10＝残存40個",
+      "18": "平均CPI2.8，280万クロック÷1GHz＝2.8ms",
+      "20": "有理数演算で1〜99台を列挙し，速度比3を満たすのは6台のみ"
+    },
+    "figureReview": "原図3点の全域を画像で確認。問21の主キー実線・外部キー破線を保持。",
+    "mergedBranchCount": 12,
+    "priorLedgerRows": "先行12ブランチのrows/additionsの全要素が統合後台帳に含まれることを確認"
+  }
+}

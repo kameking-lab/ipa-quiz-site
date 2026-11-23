@@ -1,0 +1,1652 @@
+[
+  {
+    "id": "yakuzaishi-2025-annual-theory-q93",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 93,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ボルツマン分布は、異なるエネルギー準位E1、E2（E2 > E1）にある分子の数をそれぞれN1、N2としたとき、熱平衡状態における両者の比（R = N2/N1）とエネルギー差（ΔE = E2 − E1）との間にある一定の関係を与える。この関係を表すグラフの概形として正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "ボルツマン分布よりR = N2/N1 = exp(−ΔE/kT)である。ΔE = 0のときR = 1で、ΔEが大きくなるほどRは指数関数的に減少して0に漸近する。これは下に凸の単調減少曲線であり、グラフ3に相当する。",
+    "choiceExplanations": {
+      "ア": "誤り。直線的な減少ではなく指数関数的な減少である。",
+      "イ": "誤り。ΔEが大きいほど高準位の分子数は減るので、Rは増加しない。",
+      "ウ": "正しい。R = exp(−ΔE/kT)に対応し、ΔE = 0でR = 1、ΔEの増加とともに下に凸で減少して0に近づく。",
+      "エ": "誤り。Rは増加せず、S字状の変化もしない。また上限は1である。",
+      "オ": "誤り。上に凸の減少曲線で、右端で急に低下する形は指数関数的な減衰ではない。指数関数は下に凸である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問93（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q093-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問93の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q94",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 94,
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "次の酵素反応の反応速度vはミカエリス・メンテンの式に従う。\nE + S ⇄ ES → P\nただし、Eは酵素、Sは基質、ESはEとSの複合体、Pは生成物を表し、ミカエリス定数をKm、最大反応速度をVmaxとする。この反応に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "vは、Pの生成速度（d[P]/dt）で表される。",
+      "イ": "vは、[ES]が一定（d[ES]/dt = 0）となる定常状態を仮定した場合の速度である。",
+      "ウ": "[S]がKmの2倍であるとき、vはVmaxの1/4となる。",
+      "エ": "Kmは反応温度に依存しない。",
+      "オ": "Kmが小さいほどEとSの親和性は低い。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ミカエリス・メンテンの式v = Vmax[S]/(Km + [S])における反応速度vは、生成物Pの生成速度d[P]/dtである。この式は、ESの濃度が一定とみなせる定常状態を仮定して導かれる。したがって1と2が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。vは生成物Pの生成速度d[P]/dtで表される。",
+      "イ": "正しい。d[ES]/dt = 0の定常状態近似から式が導かれる。",
+      "ウ": "誤り。[S] = 2Kmのとき、v = Vmax×2Km/(Km + 2Km) = (2/3)Vmaxである。1/4ではない。",
+      "エ": "誤り。Kmは各素過程の速度定数から決まるので、温度によって変化する。",
+      "オ": "誤り。Kmが小さいほど、少ない基質濃度で速度が上がるので、EとSの親和性は高い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問94（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q95",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 95,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "放射性医薬品に汎用されるテクネチウム99mTcは、99Moから放射平衡を利用してジェネレーターにより得られる。このことに関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "放射平衡は、親核種の半減期が娘核種の半減期より十分長いときに成り立つ。",
+      "イ": "99Moと99mTcの間には永続平衡が成り立つ。",
+      "ウ": "99mTcの壊変形式は核異性体転移である。",
+      "エ": "カラムから未壊変の99Moを溶出する方法をミルキングという。",
+      "オ": "カラムの担体には微量のTlを含むNaIの単結晶を用いる。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "放射平衡は、親核種の半減期が娘核種より長いときに成り立つ。99Moの半減期は約66時間、99mTcの半減期は約6時間なので、両者の間には過渡平衡が成り立つ。99mTcは核異性体転移（IT）で壊変する。したがって1と3が正しい。",
+    "choiceExplanations": {
+      "ア": "正しい。親の半減期が娘より十分長いとき、放射平衡が成立する。",
+      "イ": "誤り。永続平衡は、親の半減期が娘に比べて極めて長い場合の平衡である。99Moと99mTcの間は、半減期の差が小さい過渡平衡である。",
+      "ウ": "正しい。99mTcは準安定な核異性体で、核異性体転移（IT）によりγ線を放出して99Tcになる。",
+      "エ": "誤り。ミルキングは、カラムに保持された親核種99Moから生じた娘核種99mTcを溶出する操作である。未壊変の99Moを溶出するのではない。",
+      "オ": "誤り。微量のTlを含むNaIの単結晶はシンチレーション検出器に用いられるものである。ジェネレーターのカラムの担体にはアルミナなどを用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問95（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q96",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 96,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "28%アンモニア水を量り、水で全量500 mLとした後、その20 mLを正確に量り、さらに水で全量1000 mLとした。この水溶液のpHを測定したところ、11.0であった。28%アンモニア水の採取量に最も近いのはどれか。1つ選べ。\nただし、28%アンモニア水の比重d = 0.90、アンモニアの分子量NH3 = 17、アンモニアの塩基解離定数Kb = 1.7 × 10^−5 mol/L、水のイオン積[H+][OH−] = 1.0 × 10^−14 (mol/L)^2、√1.0から√1.1の範囲の値は1とし、温度は25℃とする。",
+    "choices": {
+      "ア": "10 mL",
+      "イ": "20 mL",
+      "ウ": "50 mL",
+      "エ": "100 mL",
+      "オ": "200 mL"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "1) pH 11.0より[OH−] = 1.0×10^−3 mol/L。\n2) Kb = [OH−]²/(C − [OH−])より、C − 1.0×10^−3 = (1.0×10^−3)²/(1.7×10^−5) ≒ 5.9×10^−2 mol/L。よってC ≒ 5.9×10^−2 + 0.1×10^−2 ≒ 6.0×10^−2 mol/L（最終液1000 mLのNH3濃度）。\n3) 20 mLを1000 mLにしたので50倍に希釈されている。500 mL液の濃度は6.0×10^−2 × 50 = 3.0 mol/L。\n4) 500 mL中のNH3は3.0 × 0.5 = 1.5 mol。質量は1.5 × 17 ≒ 25.5 g。\n5) 28%アンモニア水の質量は25.5/0.28 ≒ 91 g。体積は91/0.90 ≒ 101 mL ≒ 100 mL。\nよって選択肢4が最も近い。",
+    "choiceExplanations": {
+      "ア": "誤り。計算で求めた採取量は約101 mLであり、10 mLでは濃度が約1/10しかない。",
+      "イ": "誤り。20 mLでは必要量（約101 mL）の約1/5である。",
+      "ウ": "誤り。50 mLでは必要量の約半分である。",
+      "エ": "正しい。計算により約101 mLとなり、100 mLが最も近い。",
+      "オ": "誤り。200 mLでは必要量の約2倍である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問96（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q97",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 97,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "純度試験の操作を行って得られる芳香族第一アミンの許容限度に最も近いのはどれか。1つ選べ。ただし、芳香族第一アミンの本操作による呈色物の比吸光度 E(1%,1cm)(485 nm)は475、層長は1 cmとする。",
+    "choices": {
+      "ア": "0.040％",
+      "イ": "0.079％",
+      "ウ": "0.16％",
+      "エ": "0.79％",
+      "オ": "1.58％"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "純度試験では、本品0.20 gを操作して最終液を50 mLとし、485 nmの吸光度が0.15以下であることが規定されています。許容限度の吸光度0.15を、比吸光度475と層長1 cmでアミン由来の呈色物の濃度に換算します。\n1) A = E(1%,1cm) × C × l から、C(g/100 mL) = 0.15 ÷ (475 × 1) = 3.158×10^-4 g/100 mL。\n2) 最終液は50 mLなので、含まれる量は 3.158×10^-4 × 50/100 = 1.579×10^-4 g(約0.158 mg)。\n3) 試料量0.20 gに対する割合は 1.579×10^-4 ÷ 0.20 × 100 = 0.0789％で、約0.079％です。したがって2が正解です。",
+    "choiceExplanations": {
+      "ア": "0.040％は正解の約半分です。最終液の容量50 mLを100 mL当たりに換算する際に、操作を誤った値です。",
+      "イ": "正しい選択肢です。0.15 ÷ 475 = 3.158×10^-4 g/100 mL、×50/100 = 1.579×10^-4 g、÷0.20 g×100 = 0.079％となります。",
+      "ウ": "0.16％は正解の約2倍です。最終液を50 mLではなく100 mLとして換算した場合などの誤りです。",
+      "エ": "0.79％は正解の10倍です。小数点の位置を誤った値です。",
+      "オ": "1.58％は正解の20倍です。換算の桁を誤った値です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=7",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問97（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q097-physical-formulation-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問97の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q98",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 98,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "定量法に関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "本定量法の原理は、Volhard法に基づいている。",
+      "イ": "下線部アの標準液は、0.1 mol/Lチオシアン酸アンモニウム液の標定に用いられる。",
+      "ウ": "下線部イの指示薬の代わりにフルオレセインナトリウムを用いることができる。",
+      "エ": "[ウ]に入る色は、橙色である。",
+      "オ": "[エ]に入る数字は、20.46である。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "この定量法は、亜鉛と水酸化ナトリウムで有機ヨウ素を無機ヨウ化物イオンに変え、硝酸銀で沈殿滴定するものです。終点は吸着指示薬で判定します。\n・正しいのは2と5です。0.1 mol/L硝酸銀液は、0.1 mol/Lチオシアン酸アンモニウム液の標定に用います。\n・5は計算で確かめられます。アミドトリゾ酸1分子にヨウ素が3原子あるので、I⁻ 3 molとAg⁺ 3 molが反応し、本品1 molはAgNO3 3 molに対応します。0.1 mol/L硝酸銀液1 mL中のAg⁺は0.1 mmolなので、本品は 0.1 mmol ÷ 3 = 0.0333 mmolに対応し、613.91 mg/mmol × 0.0333 mmol = 20.46 mgとなります。",
+    "choiceExplanations": {
+      "ア": "誤りです。Volhard法は、過剰の硝酸銀にチオシアン酸アンモニウムで逆滴定する方法で、鉄(III)を指示薬に用います。本定量法は、吸着指示薬を用いるFajans法に基づく直接滴定です。",
+      "イ": "正しい記述です。硝酸銀液は、チオシアン酸アンモニウム液の標定に用いる標準液です。",
+      "ウ": "誤りです。この滴定は酢酸酸性で行います。フルオレセインナトリウムは弱酸性の強い酸性側では解離が抑えられて指示薬として働きにくく、中性〜弱アルカリ性で用います。そのため、酸性条件で使えるテトラブロモフェノールフタレインエチルエステルを用いています。",
+      "エ": "誤りです。沈殿の黄色が変わる終点の色は、橙色ではなく緑色(濃緑色)です。",
+      "オ": "正しい記述です。I 3原子とAg 3原子が対応するため、613.91 ÷ 3 × 0.1 = 20.46 mgとなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=7",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問98（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q098-physical-formulation-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問98の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q99",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 99,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方金チオリンゴ酸ナトリウムの定量法には原子吸光光度法が用いられる。このことに関する記述として正しいのはどれか。2つ選べ。なお、測定条件は以下のとおりである。\n測定条件\n使用ガス：可燃性ガス [ア]　支燃性ガス 空気\nランプ：[イ](波長242.8 nm)",
+    "choices": {
+      "ア": "[ア]に入るのは、アセチレンである。",
+      "イ": "[イ]に入るのは、重水素放電管である。",
+      "ウ": "原子化には冷蒸気方式が用いられる。",
+      "エ": "定量には、ランベルト・ベール(Lambert-Beer)の法則が適用される。",
+      "オ": "金の原子スペクトルは、連続スペクトルである。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "フレーム方式の原子吸光光度法では、アセチレン−空気フレームで試料を原子化し、測定元素の中空陰極ランプの輝線の吸収を測ります。正しいのは1と4です。吸光度は原子蒸気中の原子数(濃度)に比例し、ランベルト・ベールの法則に従います。",
+    "choiceExplanations": {
+      "ア": "正しい記述です。支燃性ガスが空気の場合、可燃性ガスにはアセチレンを用います。",
+      "イ": "誤りです。[イ]に入るのは金の中空陰極ランプです。重水素放電管は、バックグラウンド補正用の光源であり、測定元素の光源ではありません。",
+      "ウ": "誤りです。冷蒸気方式は水銀に特有の方法です。金の測定はフレーム(または電気加熱)で原子化します。",
+      "エ": "正しい記述です。原子蒸気による光の吸収は、ランベルト・ベールの法則に従い、吸光度が濃度に比例します。",
+      "オ": "誤りです。原子の吸収・発光スペクトルは、特定波長の線スペクトルです。連続スペクトルではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=8",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問99（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q100",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 100,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "フェノール、パラオキシ安息香酸及びトルエンを含む混合物試料を高速液体クロマトグラフィー(HPLC)により分析した。このことに関する記述として正しいのはどれか。2つ選べ。なお、HPLCの分析条件は以下のとおりである。\n分析条件\n検出器：紫外吸光光度計(測定波長：270 nm)\nカラム：内径4.6 mm、長さ15 cmのステンレス管に粒径5 μmの液体クロマトグラフィー用オクタデシルシリル化シリカゲルを充てんする。\nカラム温度：35 ℃付近の一定温度\n移動相：pH 7.0の0.1 mol/Lリン酸塩緩衝液／メタノール(3：1)混液",
+    "choices": {
+      "ア": "使用したHPLCは順相クロマトグラフィーである。",
+      "イ": "3つの化合物のうち、最後に溶出するのはトルエンである。",
+      "ウ": "カラム温度を高くするとピーク高さは大きくなり、ピーク面積は減少する。",
+      "エ": "パラオキシ安息香酸の保持時間を長くするには、移動相中の緩衝液のpHを低くする。",
+      "オ": "トルエンの保持時間を長くするには、移動相中のメタノールの比率を高くする。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "固定相がODS(無極性)で移動相が極性の水系なので、逆相クロマトグラフィーです。極性が低く疎水性が高い物質ほど遅く溶出します。pH 7.0ではパラオキシ安息香酸のカルボキシ基がイオン化して最も早く溶出し、次にフェノール、最後に無極性のトルエンが溶出します。正しいのは2と4です。",
+    "choiceExplanations": {
+      "ア": "誤りです。固定相がオクタデシルシリル化シリカゲルで、移動相が水系の緩衝液/メタノールなので、逆相クロマトグラフィーです。",
+      "イ": "正しい記述です。トルエンは最も疎水性が高く、ODSカラムに強く保持されるため、最後に溶出します。",
+      "ウ": "誤りです。カラム温度を高くすると保持時間が短くなり、ピークは鋭くなって高さは大きくなります。ただし注入量が同じなら、ピーク面積は変わりません。",
+      "エ": "正しい記述です。pHを下げるとカルボキシ基のイオン化が抑えられて分子形が増え、疎水性が高まるので保持時間が長くなります。",
+      "オ": "誤りです。メタノールの比率を高くすると移動相の溶出力が強まるため、トルエンの保持時間は短くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=9",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問100（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q101",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 101,
+    "officialAnswerNumber": "6",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "有機化合物A〜Dが100 mgずつ含まれるジエチルエーテル(エーテル)溶液100 mLについて、エーテルと同体積の各水溶液を用いて、分液ロートによる以下の操作を行った。このとき分液操作②によって得られた水層には、有機化合物Dの塩が主に含まれていた。有機化合物A〜Dを分離する分液操作の組合せとして、最も適切なのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5",
+      "カ": "6"
+    },
+    "answer": "カ",
+    "requiredSelections": 1,
+    "explanation": "酸性度の差を利用して、弱い塩基・弱い酸から順に取り出します。\n1) 飽和NaHCO3水溶液(ウ)は弱塩基性です。カルボン酸である安息香酸B(pKa 約4)だけが塩になって水層に移ります。フェノールD(pKa 約10)は塩にならず、エーテル層に残ります。\n2) 2 mol/L NaOH水溶液(イ)は強塩基性です。フェノールDが塩になって水層に移ります。問題文のとおり、操作②の水層にはDの塩が含まれていました。\n3) 2 mol/L塩酸(ア)では、アニリンCがアンモニウム塩になって水層に移ります。エーテル層には中性のアニソールAが残ります。\nよって、①ウ、②イ、③アの6が正解です。",
+    "choiceExplanations": {
+      "ア": "①でア(塩酸)を使うとアニリンCが先に抜けます。②でイ(NaOH)を使うと、BとDの両方が水層に入り分離できません。また③のウでは、中性のAしか残っておらず分離の意味がありません。",
+      "イ": "①でイ(NaOH)を使うと、安息香酸BとフェノールDが同時に水層に抜け、分離できません。②でウを使う操作の時点でも、すでにBとDは除かれてしまっています。",
+      "ウ": "①ウでBは分離できます。しかし②でア(塩酸)を使うとCが抜けて、Dの塩は水層に得られません。問題文の条件(②の水層はDの塩)に合いません。",
+      "エ": "①でア(塩酸)を使うとCが先に抜けます。②のウ(NaHCO3)ではBが抜けるので、②の水層にDの塩が主に含まれるという条件に合いません。",
+      "オ": "①でイ(NaOH)を使うとBとDが同時に水層に移り、分離できません。②のア、③のウも、Dの塩を得る条件に合いません。",
+      "カ": "正しい組合せです。ウでB、イでD、アでCを順に水層へ分け、Aがエーテル層に残ります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=10",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問101（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q101-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問101の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q102",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 102,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の反応式のうち、右に示された主生成物が誤っているのはどれか。1つ選べ。ただし、各反応はそれぞれ適切な溶媒を用いて行い、反応終了後、適切な後処理を施したものとする。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "アルキンの代表的な反応を確認する問題です。\n・リンドラー触媒を用いた部分水素化では、2つのHが同じ側から付加し、シス(Z)アルケンが得られます。\n・4の生成物は、図ではエチル基が二重結合の反対側に描かれたトランス(E)体です。リンドラー触媒の生成物としては誤りで、トランス体が得られるのはNa/液体NH3による還元です。したがって4が正解(誤っているもの)です。",
+    "choiceExplanations": {
+      "ア": "正しい反応です。末端アルキンはNaNH2でアセチリドイオンとなり、臭化エチルとSN2反応して内部アルキンの3-ヘキシンになります。",
+      "イ": "正しい反応です。嵩高いボランによるヒドロホウ素化・酸化は、アンチマルコフニコフ型で末端炭素にOHが入り、エノールを経て、末端アルキンからアルデヒド(ブタナール)が得られます。",
+      "ウ": "正しい反応です。HgSO4/H3O+による水和で生じたエノールがケトンに互変異性化し、対称な3-ヘキシンからは3-ヘキサノンが得られます。",
+      "エ": "誤っている反応です。リンドラー触媒ではシス(Z)アルケンが生成します。図のトランス体は主生成物として誤りです。",
+      "オ": "正しい反応です。HClが2当量付加すると、同一炭素に2つのClが付くジクロロ体(ジェミナルジハロゲン化物)が生成します。3-ヘキシンからは3,3-ジクロロヘキサンです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=11",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問102（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q102-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問102の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q103",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 103,
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の反応で、生成物を与える電子移動を示す一連の矢印が正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "巻き矢印は電子対の移動を表し、電子が豊富な部位（孤立電子対・結合）から電子不足な部位へ向かって描く。3 はアルコキシドの O⁻ の孤立電子対が CH3-I の炭素を攻撃し、C-I 結合電子対がヨウ化物イオンへ移る SN2 反応で、矢印は正しい。4 はベンゼンのπ電子が求電子剤 ⁺NO2 を攻撃してσ錯体を生じ、その後 H⁺ が脱離して芳香族性が回復するニトロ化で、矢印は正しい。",
+    "choiceExplanations": {
+      "ア": "誤り。ヒドリド還元では、BH4⁻ の B-H 結合電子対がカルボニル炭素を攻撃し、C=O のπ電子が酸素へ移る。図の矢印は、カルボニル基から水素へ向かう逆向きになっている。",
+      "イ": "誤り。アミンの窒素の孤立電子対がβ炭素を攻撃し、C=C のπ電子がカルボニル側へ移る共役付加（マイケル付加）が適切である。図は N-H 結合の電子対を用いて描かれており、矢印の起点と向きが正しくない。",
+      "ウ": "正しい。O⁻ の孤立電子対が CH3 の炭素を攻撃し、C-I 結合の電子対がヨウ素へ移る。SN2 型のエーテル生成の矢印として適切である。",
+      "エ": "正しい。ベンゼン環のπ電子が ⁺NO2 の窒素を攻撃してσ錯体を与える。続く脱プロトン化でニトロベンゼンになる。矢印は適切である。",
+      "オ": "誤り。メチル基転位では、移動するメチル基の C-C 結合電子対がカチオン炭素へ移る。そのため矢印はこの結合の中央から出て、カチオン炭素へ向かう必要がある。図の矢印は、カチオン炭素側から隣接炭素へ向かって描かれており、電子の流れの向きが適切でない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=12",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問103（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q103-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問103の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q104",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 104,
+    "officialAnswerNumber": "4,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、DNA の二重らせん構造の一部で、2本のポリヌクレオチド鎖間で形成される相補的塩基対を示している。以下の記述のうち、適切なのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "塩基アのヘテロ環はピラジン環である。",
+      "イ": "塩基イはウリジンである。",
+      "ウ": "矢印Aはポリヌクレオチド鎖ウの3′→5′末端の方向を指す。",
+      "エ": "酸素原子エは水素結合受容体として機能する。",
+      "オ": "塩基アと塩基イの相補的塩基対は、平面状に形成される。"
+    },
+    "answer": [
+      "エ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "塩基アは、2位にカルボニル、4位にアミノ基を持つピリミジン塩基（シトシン型）である。塩基イは糖を含まないグアニン塩基である。図の対は3本の水素結合で結ばれており、塩基対は平面を作り、らせん内で積み重なる。酸素原子エは、相手塩基の N-H と水素結合する C=O の酸素であり、水素結合受容体として働く。",
+    "choiceExplanations": {
+      "ア": "誤り。塩基アのヘテロ環は、窒素が1,3位に並ぶピリミジン環である。ピラジンは窒素が1,4位に並ぶ環であり、該当しない。",
+      "イ": "誤り。塩基イはプリン環を持つグアニン型の塩基である。ウリジンはウラシルを塩基とするリボヌクレオシドで、ピリミジン塩基であるため該当しない。また図の糖はデオキシリボースである。",
+      "ウ": "誤り。矢印Aはポリヌクレオチド鎖ウの 5′→3′ 末端の方向を指しており、3′→5′ ではない。",
+      "エ": "正しい。酸素原子エはカルボニル酸素で、相手塩基の N-H との水素結合に対して孤立電子対を提供する水素結合受容体である。",
+      "オ": "正しい。塩基対を構成する芳香環は、ほぼ同一平面上で水素結合により結ばれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=13",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問104（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q104-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問104の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q105",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 105,
+    "officialAnswerNumber": "1,2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、アセチルCoA が生合成される一連の反応を模式的に示している。以下の記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "構造式アのMg2+は、リン酸部位の陰イオンを電気的に中和し、リン原子の求電子性を高めている。",
+      "イ": "矢印イで示した酸素原子は、酢酸イオンに由来する。",
+      "ウ": "アセチルCoA の点線で囲ったカルボニル基の炭素原子は、矢印ウの硫黄原子を酸素原子に置換したものに比べて求電子性が低い。",
+      "エ": "矢印エで示したリン原子は、5価4配位構造をもつキラル中心である。",
+      "オ": "アセチルCoA が生合成される過程において、CoA-SH のスルファニル基（チオール基）オは求核剤として作用し、SN2反応によりアセチル化される。"
+    },
+    "answer": [
+      "ア",
+      "イ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "Mg2+ はATPのリン酸の負電荷を中和し、リン原子の求電子性を高めて、酢酸イオンの酸素による求核攻撃を受けやすくする。そのため、生成するアセチルアデニル酸の矢印イの酸素は酢酸イオン由来である。",
+    "choiceExplanations": {
+      "ア": "正しい。Mg2+ がリン酸の負電荷を中和するため、リン原子の求電子性が高まり、求核攻撃を受けやすくなる。",
+      "イ": "正しい。酢酸イオンのカルボキシラート酸素がリン原子を攻撃して二リン酸が脱離する。このため、矢印イの酸素は酢酸イオン由来である。",
+      "ウ": "誤り。チオエステルは、酸素エステルに比べて硫黄の孤立電子対によるカルボニルへの共鳴供与が弱いため、カルボニル炭素の求電子性は高い。したがって、求電子性が低いとする記述は誤りである。",
+      "エ": "誤り。矢印エのリン原子は5価で4配位であるが、P=O と P-O⁻ の酸素は共鳴により等価に扱われる。同一の置換基が2つあるため、キラル中心にはならない。",
+      "オ": "誤り。アセチル化はカルボニル炭素（sp2）への求核付加と、続く脱離（付加–脱離機構、求核アシル置換）で進む。sp3 炭素上で一段階で進む SN2 反応ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=14",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問105（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q105-organic-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問105の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q107",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 107,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "薬学理論問題",
+    "topicTags": [
+      "薬学理論問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、インスリンの構造を模式的に示している。図中の○はアミノ酸残基を示し、特徴のあるアミノ酸残基を3文字表記している。\n近年、インスリンの化学構造を部分的に改変することで、治療目的に沿った血糖降下作用を発揮するインスリンアナログ製剤（1〜5）が開発されている。このうち、構造改変によりインスリンの等電点（pI約5.4）を中性付近（pI約6.7）に近づけることにより、生理的pHで等電点沈殿を起こし、皮下で徐々に溶解、吸収され、1日1回の皮下投与で安定した血糖降下作用を示すのはどれか。1つ選べ。\nなお、各アナログ製剤の構造はインスリンと同様な方法で図示しており、図中の灰色の○はインスリンと異なるアミノ酸残基を示す。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "等電点を中性付近へ上げるには、塩基性アミノ酸を加えて正電荷を増やすのが有効である。選択肢2は、B鎖C末端に塩基性残基 Arg を2つ付加し、A21 の Asn を Gly に置換している。これにより pI が約6.7に上昇し、生理的 pH で等電点沈殿を起こして皮下で徐々に溶解・吸収されるため、1日1回投与の持効型となる。",
+    "choiceExplanations": {
+      "ア": "誤り。B28 と B29 の Pro と Lys を入れ替えた改変で、会合を抑えて吸収を速めるタイプの構造である。pI を上げて等電点沈殿を起こす構造ではない。",
+      "イ": "正しい。Arg の付加で塩基性が増して pI が中性付近に上がり、皮下で沈殿して徐々に溶解・吸収される。",
+      "ウ": "誤り。B3 を Lys に、B29 を Glu に置換した構造で、速効型の設計に相当する。等電点沈殿による持続化を目的とした構造ではない。",
+      "エ": "誤り。脂肪酸（二酸）側鎖の修飾により、多量体形成とアルブミン結合で作用を持続させる設計であり、pI を中性付近に近づけて等電点沈殿を起こす機構ではない。",
+      "オ": "誤り。B28 を酸性残基 Asp に置換した構造で、会合を抑制して吸収を速めるタイプである。酸性残基を増やすと pI は上がらず、等電点沈殿も起こさない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=16",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」薬学理論問題 問107（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q107-insulin-next-original-1.png",
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q107-insulin-next-original-2.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 薬学理論問題 問107の原図1",
+      "第110回薬剤師国家試験 薬学理論問題 問107の原図2"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q108",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 108,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "図は、アラニン誘導体Aの 1H NMR スペクトル〔400 MHz、CDCl3、基準物質はテトラメチルシラン（TMS）〕を示している。以下の記述のうち、正しいのはどれか。2つ選べ。\nなお、×印のシグナルはCDCl3中に含まれるCHCl3のプロトンに由来するシグナルであり、fのピークは重水（D2O）を添加するとほぼ消失した。",
+    "choices": {
+      "ア": "ピークa、b、cのプロトン数の合計は6である。",
+      "イ": "ピークeに対応するプロトンはエであり、重水を加えると四重線（カルテット）となる。",
+      "ウ": "ピークgに対応するプロトンはカとキである。",
+      "エ": "アのプロトンとカップリング（スピン-スピン結合）しているのは、ピークdに対応するプロトンである。",
+      "オ": "イのプロトンのピークは、コのプロトンのシグナルより高磁場側にある。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "ピークの帰属は次の通りである。a（約1.3 ppm、三重線）はア（3H）、b（約1.5 ppm、二重線）はウ（3H）、c（約3.9 ppm、一重線）はコ（3H）、d（約4.2 ppm）はイ（2H）、e（約4.8 ppm）はエ、f はオ（NH、D2O で消失）、g は OCH3 のオルト位の芳香環H（ケとキ）、h はカルボニルのオルト位の芳香環H（カとク）である。",
+    "choiceExplanations": {
+      "ア": "誤り。a は CH3（3H）、b は CH3（3H）、c は OCH3（3H）なので、合計は9である。6ではない。",
+      "イ": "正しい。ピークeはαプロトンのエである。通常は CH3 と NH の両方とカップリングするが、重水添加で NH が重水素に置換されると NH とのカップリングが消え、CH3（3H）のみとカップリングして四重線になる。",
+      "ウ": "誤り。ピークgはメトキシ基のオルト位にあたるケとキであり、カとキではない。カとクはカルボニルのオルト位で、より低磁場のピークhに現れる。",
+      "エ": "正しい。アはエチルのCH3であり、隣接する OCH2（イ）とカップリングする。イはピークdに対応するため、アとカップリングするのはピークdのプロトンである。",
+      "オ": "誤り。イ（エステル酸素に結合した OCH2、約4.2 ppm）は、コ（OCH3、約3.9 ppm）より低磁場側（ppm の大きい側）にある。高磁場側ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=18",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問108（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q108-organic-original-1.png",
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q108-organic-original-2.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問108の原図1",
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問108の原図2"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q112",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 112,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "甲状腺ホルモン（T3、T4）はヨウ素を含むアミノ酸誘導体であるが、アミノ酸から直接作られるのではない。甲状腺濾胞における生合成過程では、タンパク質のチログロブリンが前駆物質となる。下図は、甲状腺濾胞においてT3、T4 が作られるまでに、チログロブリンが移動する流れを示したものである。チログロブリンは甲状腺濾胞上皮細胞で作られてからコロイド中に分泌され、再び甲状腺濾胞上皮細胞に取り込まれ、最終的にT3、T4 が濾胞外に分泌される。図中の1 ～5 のうち、チログロブリンのヨウ素化反応が行われる場所はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "チログロブリンのヨウ素化は、コロイド中(上皮細胞の頂端側の膜面付近)で行われます。ここで甲状腺ペルオキシダーゼが働き、チログロブリンのチロシン残基がヨウ素化されます。正答は3です。",
+    "choiceExplanations": {
+      "ア": "誤りです。小胞体はチログロブリンのタンパク質合成の場です。ヨウ素化はまだ行われません。",
+      "イ": "誤りです。ゴルジ体はチログロブリンの糖鎖修飾や分泌小胞への仕分けを行う場です。ヨウ素化の場ではありません。",
+      "ウ": "正しいです。分泌されたチログロブリンはコロイド中で、甲状腺ペルオキシダーゼによりヨウ素化されます。",
+      "エ": "誤りです。エンドソームは、ヨウ素化済みのチログロブリンを取り込んだ後の輸送経路です。",
+      "オ": "誤りです。リソソームでは、取り込まれたチログロブリンが分解されてT3、T4が遊離します。ヨウ素化の場ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問112（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q112-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問112の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q115",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 115,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "コラーゲンは、下図に示すように、ポリペプチド鎖（コラーゲン単量体）の3本が、らせん状に絡み合って三重らせん構造（コラーゲン三量体）を形成する。図上段に示すように、単量体ポリペプチド鎖のアミノ酸配列では、3個おきにグリシン残基（Gly）が配置する。Xはプロリン（Pro）の翻訳後修飾で生じたアミノ酸である。このコラーゲンに関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "コラーゲンの三重らせん構造は、α-ヘリックスである。",
+      "イ": "Xは、ヒドロキシ化されたプロリンである。",
+      "ウ": "グリシン残基が繰り返し存在することが、三重らせん構造の形成に重要である。",
+      "エ": "ビタミンCは、コラーゲン産生細胞の核内に入り、コラーゲン遺伝子の転写を促進する。",
+      "オ": "コラーゲン三量体は、細胞内の細胞骨格を構成することにより組織の強度を保つ。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は2と3。コラーゲンはGly-X-Yの繰り返し配列を持つ。問題文のXはプロリンの翻訳後修飾で生じたアミノ酸であり、これはプロリン残基のヒドロキシ化（ヒドロキシプロリン）に当たる。また、3残基ごとのグリシンは側鎖が最小（水素）なので、3本鎖の中心部に入り込んで密にらせんを巻くことができる。このため、三重らせんの形成に重要である。",
+    "choiceExplanations": {
+      "ア": "誤り。コラーゲンの三重らせんは、左巻きのポリプロリンⅡ型らせん様の3本の鎖が右巻きに絡み合った構造である。タンパク質の二次構造であるα-ヘリックスとは異なる。",
+      "イ": "正しい。Xはプロリンの翻訳後修飾で生じたアミノ酸であり、プロリルヒドロキシラーゼによるヒドロキシ化で生じるヒドロキシプロリンである。これが三重らせんの安定化に寄与する。",
+      "ウ": "正しい。グリシンは側鎖が水素原子だけで最も小さい。そのため、3本の鎖が密に接する中心部に入ることができ、Gly-X-Yの繰り返しが三重らせん形成に重要となる。",
+      "エ": "誤り。ビタミンCは、プロリンやリシンのヒドロキシ化酵素の補因子（Fe²⁺の還元維持）として働く。核内に入って遺伝子転写を促進するわけではない。",
+      "オ": "誤り。コラーゲンは細胞外マトリックスの主要成分として細胞外で線維を形成し、組織の強度を保つ。細胞内の細胞骨格を構成するものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問115（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q115-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問115の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q116",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 116,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "図1に示すDNAの塩基配列は、ある遺伝子のセンス鎖の一部で、転写・翻訳されるときの読み枠は配列の下に示されている。この塩基配列中＊印のシトシン残基2ケ所に脱アミノ反応が生じた。変化したヌクレオチド残基が修復されずに塩基配列の変異が2ケ所とも固定した。ただし、フレームシフト変異は起きていない。変異したDNAが転写・翻訳されてできるタンパク質の当該部分のアミノ酸配列はどれか。1つ選べ。\n図2にコドン対応表を示す。",
+    "choices": {
+      "ア": "Thr-Glu-Arg",
+      "イ": "Ile-Glu-Cys",
+      "ウ": "Thr-Glu-Cys",
+      "エ": "Leu-Glu-Trp",
+      "オ": "Ile-Glu-Arg"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "手順は次のとおり。\n1) センス鎖の読み枠はACT／GAA／CGT。mRNAではACU／GAA／CGU→ACU／GAA／CGUとなり、変異前のアミノ酸はThr-Glu-Argである。\n2) シトシンの脱アミノ反応でC→U（DNA上ではT）となる。\n3) 1つ目のコドンACTの＊（2番目のC）がTに変わるとATT、すなわちmRNAではAUUとなり、Ileをコードする。\n4) 2つ目のコドンGAAは変化せず、Gluのままである。\n5) 3つ目のコドンCGTの＊（1番目のC）がTに変わるとTGT、すなわちmRNAではUGUとなり、Cysをコードする。\n6) したがって、Ile-Glu-Cysとなり、選択肢2が正しい。",
+    "choiceExplanations": {
+      "ア": "変異前の野生型配列Thr-Glu-Argである。2ケ所とも変異が固定しているので、これにはならない。",
+      "イ": "正しい。ACT→ATT（AUU：Ile）、GAA（Glu）、CGT→TGT（UGU：Cys）となる。",
+      "ウ": "1つ目のコドンの変異（Thr→Ile）が反映されていない。2つ目のみが変異した場合の配列である。",
+      "エ": "ACTの2番目のCがUになるとAUU（Ile）であり、Leuにはならない。また3つ目のコドンのCGTが変わるとUGU（Cys）であり、Trp（UGG）にはならない。",
+      "オ": "1つ目は正しくIleとなるが、3つ目のコドンはCGTがTGT（Cys）に変わるので、Argのままとはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=24",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問116（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q116-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問116の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q117",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 117,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "細胞周期は有糸分裂と細胞質分裂が起こる分裂期（M期）と間期に分けられ、間期はさらにG1期、S期、G2期に分けられる。増殖中の細胞集団の細胞に対して、DNA結合性蛍光色素で細胞を標識した。このとき蛍光強度は細胞内DNA量を反映する。個々の細胞の蛍光強度を測定したところ、相対蛍光強度と細胞数の関係は下図のようになった。G2期の細胞はどこに分布するか。1つ選べ。",
+    "choices": {
+      "ア": "領域A",
+      "イ": "領域B",
+      "ウ": "領域C",
+      "エ": "領域Aと領域B",
+      "オ": "領域Aと領域C"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "蛍光強度はDNA量を反映する。強度1のピークがDNA量2C（G1期）で、強度2のピークがDNA量4C（G2期およびM期）である。G1期細胞は領域A、DNA合成中のS期細胞は両者の間の領域B、DNA複製を終えたG2期細胞は領域Cに分布する。よって正解は3。",
+    "choiceExplanations": {
+      "ア": "領域AはDNA量が複製前の細胞（G1期）の位置であり、G2期ではない。",
+      "イ": "領域Bは、DNA量が1から2へ増加する途中にある細胞（S期）の位置である。",
+      "ウ": "正しい。G2期の細胞はDNA複製を終えており、DNA量はG1期の2倍である。この2倍の位置が領域Cである。",
+      "エ": "領域AはG1期、領域BはS期の細胞なので、どちらもG2期ではない。",
+      "オ": "領域Cは正しいが、領域AはG1期であり、G2期ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=25",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問117（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q117-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問117の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q118",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 118,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "マクロファージをリポ多糖で刺激して得た培養液を採取し、この培養液中のサイトカインXの濃度をサンドイッチELISA（Enzyme-linked immunosorbent assay）法で定量することにした。各試料をマイクロプレートに採取し反応を行った後、450 nmの吸光度を測定した。サイトカインXの標準物質を用いて標準曲線（検量線）を作成したところ、下図のようになった。この測定に関する記述として適切なのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "この培養液の測定値が吸光度1.5であった場合、培養液を希釈して再測定することが必要である。",
+      "イ": "10倍希釈した培養液の測定値が吸光度0.6である場合、もとの培養液中のサイトカインX濃度は約600 pg/mLである。",
+      "ウ": "培養液に含まれる別のサイトカインYを測定するためには、サイトカインXの測定とすべて同じ抗体を利用できる。",
+      "エ": "サンドイッチELISA法では抗原に対する2種類の抗体が使われるが、それぞれの抗体が認識するエピトープは異なる。",
+      "オ": "この培養液の測定で発色が検出限界以下だった場合、標準曲線（検量線）の測定の場合よりも反応時間を長めにしてもよい。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は1と4。吸光度1.5は検量線の範囲（図では最大でも約0.93、1付近まで）を超えている。このため、定量には試料を希釈して検量線の範囲内で再測定する必要がある。またサンドイッチELISAでは、捕捉抗体と検出抗体が同じ抗原上の異なるエピトープを認識する。同じエピトープなら両抗体が同時に結合できないためである。",
+    "choiceExplanations": {
+      "ア": "適切。吸光度1.5は検量線の範囲を超えており、検量線の外挿は信頼できない。希釈して範囲内に入れて再測定する必要がある。",
+      "イ": "不適切。検量線から吸光度0.6に対応する濃度は約600 pg/mLである。これは10倍希釈後の値なので、もとの培養液の濃度は10倍した約6000 pg/mLとなる。",
+      "ウ": "不適切。抗体は抗原特異的に結合する。サイトカインYの測定には、Yを認識する別の抗体が必要である。",
+      "エ": "適切。サンドイッチELISAでは、捕捉抗体と検出抗体の2種類で抗原を挟む。両者が同時に結合するためには、異なるエピトープを認識する必要がある。",
+      "オ": "不適切。反応時間は、検量線を作る標準物質も含めて、すべての試料で同一の条件にそろえる必要がある。試料だけ反応時間を変えると、検量線から濃度を求められなくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=26",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問118（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q118-graph-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問118の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q119",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 119,
+    "subject": "薬学理論問題",
+    "type": "multiple-choice",
+    "category": "理論問題",
+    "topicTags": [
+      "薬剤師",
+      "第110回",
+      "理論問題"
+    ],
+    "difficulty": 3,
+    "question": "細菌毒素に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "リポ多糖は、グラム陰性菌外膜の構成成分であり、多糖部位に免疫刺激作用がある。",
+      "イ": "スーパー抗原は、B細胞受容体と非特異的に結合して抗体産生を抑制する。",
+      "ウ": "ストレプトリジンOは、化膿レンサ球菌から産生され、コレステロールと結合して宿主の細胞膜に孔をあける。",
+      "エ": "ベロ毒素は、百日咳菌から産生され、咽頭粘膜と結合して偽膜を形成する。",
+      "オ": "破傷風毒素は、運動神経の終末部から取り込まれ、脊髄まで運ばれる。"
+    },
+    "answer": [
+      "ア",
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "公式の正答は「1,3,5※」で、注記は「※いずれか2つ選択で正解とする。」である。したがって、1・3・5のうちのいずれか2つを選べば正解となる。2と4は誤りである。選択肢1は、リポ多糖がグラム陰性菌外膜の構成成分であることを述べている。選択肢3は、ストレプトリジンOがコレステロールと結合して孔を形成するコレステロール依存性細胞溶解毒素であることを述べている。選択肢5は、破傷風毒素が運動神経終末から取り込まれ、軸索を逆行性輸送されて脊髄に達することを述べている。",
+    "choiceExplanations": {
+      "ア": "公式の受理キー（1・3・5のうち任意の2つ）に含まれる。LPSはグラム陰性菌の外膜成分で、多糖部分にはO抗原があり、抗原として認識される。一方、リピドAは内毒素の炎症・毒性作用を担う。多糖部分の抗原性とリピドAの内毒素活性を区別し、免疫刺激作用を内毒素活性だけに限定して本肢を否定しない。",
+      "イ": "誤り。スーパー抗原は、MHCクラスⅡ分子とT細胞受容体のVβ領域に非特異的に結合してT細胞を多クローン性に活性化し、大量のサイトカイン放出を起こす。B細胞受容体に結合して抗体産生を抑制するものではない。",
+      "ウ": "公式の受理キーに含まれる。ストレプトリジンOは化膿レンサ球菌が産生し、コレステロールを含む宿主細胞膜に結合して孔を形成する（コレステロール依存性細胞溶解毒素）。",
+      "エ": "誤り。ベロ毒素（志賀毒素様毒素）は腸管出血性大腸菌などが産生し、リボソームを障害して細胞のタンパク質合成を阻害する。百日咳菌が産生するものではなく、咽頭粘膜に結合して偽膜を形成するものでもない。偽膜形成はジフテリアに関する事項である。",
+      "オ": "公式の受理キーに含まれる。破傷風毒素は運動神経の終末部から取り込まれ、逆行性軸索輸送で脊髄へ運ばれる。抑制性神経伝達物質の放出を阻害し、痙攣性麻痺を起こす。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」理論 問119（問題・最終正答）。解説は独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-13",
+    "officialAnswerNumber": "1,3,5"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q120",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 120,
+    "officialAnswerNumber": "2,4",
+    "type": "multiple-choice",
+    "category": "薬学理論問題",
+    "topicTags": [
+      "薬学理論問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "問120–121 ナイアシンに関する以下の問いに答えよ。\n\nナイアシンに関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "妊娠中にナイアシンが欠乏すると、胎児に神経管閉鎖障害が起こる。",
+      "イ": "ナイアシンが欠乏すると、皮膚炎や下痢、中枢神経症状が現れる。",
+      "ウ": "ナイアシンの一種であるニコチン酸には「日本人の食事摂取基準（2020年版）」で耐容上限量が設定されていない。",
+      "エ": "トウモロコシを主食とする地域では、ナイアシンの欠乏症に注意する必要がある。",
+      "オ": "ナイアシンが過剰になると、頭蓋内圧の亢進が起こる。"
+    },
+    "answer": [
+      "イ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正答は2と4。ナイアシン欠乏症はペラグラであり、皮膚炎、下痢、認知症（中枢神経症状）が三主徴である。トウモロコシを主食とする地域では、トウモロコシ中のナイアシンが結合型で利用されにくく、トリプトファン含量も低いので、欠乏に注意が必要である。",
+    "choiceExplanations": {
+      "ア": "誤り。胎児の神経管閉鎖障害は、妊娠前後の葉酸不足に関連する。",
+      "イ": "正しい。ナイアシン欠乏症（ペラグラ）では、皮膚炎、下痢、中枢神経症状（認知症）が現れる。",
+      "ウ": "誤り。「日本人の食事摂取基準（2020年版）」では、ナイアシンのうちニコチンアミドとニコチン酸のそれぞれについて耐容上限量が設定されている。設定されていないという記述は誤りである。",
+      "エ": "正しい。トウモロコシ中のナイアシンは結合型で吸収されにくく、トリプトファンも少ないため、トウモロコシを主食とする地域ではペラグラに注意が必要である。",
+      "オ": "誤り。頭蓋内圧の亢進は、ビタミンAの過剰摂取で知られる症状である。ナイアシン過剰では、皮膚の紅潮や肝障害などが問題となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=28",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」薬学理論問題 問120（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q121",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 121,
+    "officialAnswerNumber": "2,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "問120–121 ナイアシンに関する以下の問いに答えよ。\n\nナイアシンから合成される下図の補酵素について、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "酸化型の構造を示している。",
+      "イ": "340 nm の吸収極大を有する。",
+      "ウ": "3-ヒドロキシ-3-メチルグルタリルCoA（HMG-CoA）からメバロン酸を産生する反応に関与する。",
+      "エ": "ピルビン酸からアセチルCoA を産生する反応に関与する。",
+      "オ": "ミトコンドリア内膜上での電子の受け渡しに関与する。"
+    },
+    "answer": [
+      "イ",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "図はニコチンアミド部分が1,4-ジヒドロピリジン環（4位にH2）で、アデノシンの2'位にリン酸基をもつため、還元型のNADPHである。還元型のジヒドロニコチンアミド環は340 nm付近に吸収極大をもつ（選択肢2）。また、NADPHはHMG-CoA還元酵素によるHMG-CoAからメバロン酸への還元反応の補酵素として働く（選択肢3）。",
+    "choiceExplanations": {
+      "ア": "誤り。ジヒドロピリジン環（4位にH2をもつ）を示しており、還元型の構造である。",
+      "イ": "正しい。還元型ニコチンアミド補酵素は340 nm付近に吸収極大をもつ。",
+      "ウ": "正しい。HMG-CoA還元酵素はNADPHを用いてHMG-CoAをメバロン酸へ還元する。",
+      "エ": "誤り。ピルビン酸からアセチルCoAを生じる反応（ピルビン酸脱水素酵素複合体）の補酵素はNAD+であり、2'位リン酸をもつNADP(H)ではない。",
+      "オ": "誤り。ミトコンドリア内膜の電子伝達系に電子を渡すのは主にNADHであり、2'位にリン酸をもつNADPHは主に還元的生合成に用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=29",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問121（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q121-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問121の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q122",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 122,
+    "officialAnswerNumber": "3,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下表は、日本人を対象とした5つのコホート研究のデータを統合して解析し、男性の飲酒量と大腸がん、結腸がん及び直腸がんの関係について調べた結果である。この表に関する記述として正しいのはどれか。2つ選べ。ただし、下表を基に算出した「飲酒しない群」の大腸がん発症率は10万観察人年当たり142人、「23.0 g/日以上のアルコール摂取群」の大腸がん発症率は10万観察人年当たり196人である。",
+    "choices": {
+      "ア": "週に1回未満の飲酒であっても、飲酒は大腸がんのリスクを有意に増加させる。",
+      "イ": "22.9 g/日以下のアルコール摂取であっても、週に1回以上の飲酒は直腸がんのリスクを有意に増加させる。",
+      "ウ": "23.0 g/日以上のアルコール摂取は、結腸がんのリスクを有意に増加させる。",
+      "エ": "飲酒しない群と比較して、23.0 g/日以上アルコールを摂取する日本人男性では、飲酒によって10万観察人年当たり338人が過剰に大腸がんを発症すると推定される。",
+      "オ": "飲酒しない群と比較して、23.0 g/日以上アルコールを摂取する日本人男性の大腸がんのうち、28％は飲酒によるものであると推定される。"
+    },
+    "answer": [
+      "ウ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "表（元の表は画像参照）より、結腸がんのハザード比は23.0 g/日以上の各群で1.60（1.31–1.95）、1.97、1.90、3.44といずれも95%信頼区間が1を含まず有意である（選択肢3）。過剰発症は196−142＝54人/10万観察人年で、寄与割合は54÷196＝0.275…≒28％（選択肢5）。",
+    "choiceExplanations": {
+      "ア": "誤り。週1回未満群の大腸がんのハザード比は1.00（0.79–1.28）で、信頼区間が1を含み有意ではない。",
+      "イ": "誤り。22.9 g/日以下（0.1–22.9）の直腸がんのハザード比は1.30（0.90–1.56）で、信頼区間が1を含み有意ではない。",
+      "ウ": "正しい。23.0 g/日以上の各群で結腸がんのハザード比の95%信頼区間は1を含まず、有意に上昇している。",
+      "エ": "誤り。過剰発症は196−142＝54人/10万観察人年であり、338人ではない（338は142+196の和であり、過剰発症は和ではなく差で求める）。",
+      "オ": "正しい。(196−142)÷196＝54÷196≒0.276で、約28％が飲酒に起因すると推定される（寄与危険割合）。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=30",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問122（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q122-biological-science-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問122の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q123",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 123,
+    "officialAnswerNumber": "2,6",
+    "type": "multiple-choice",
+    "category": "薬学理論問題",
+    "topicTags": [
+      "薬学理論問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "疾病予防とその目的及び具体例の組合せのうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "一次予防／早期発見・早期治療／新生児マススクリーニング",
+      "イ": "一次予防／健康増進／衛生教育や健康教室",
+      "ウ": "二次予防／特異的予防／予防接種",
+      "エ": "二次予防／早期発見・早期治療／デイサービス",
+      "オ": "三次予防／能力低下防止／呼吸用保護具の使用",
+      "カ": "三次予防／機能回復／リハビリテーション"
+    },
+    "answer": [
+      "イ",
+      "カ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "一次予防は健康増進と特異的予防（予防接種など）、二次予防は早期発見・早期治療（健診、スクリーニングなど）、三次予防は能力低下防止・機能回復・再発防止（リハビリテーションなど）である。したがって2と6が正しい。",
+    "choiceExplanations": {
+      "ア": "誤り。早期発見・早期治療と新生児マススクリーニングは二次予防である。",
+      "イ": "正しい。健康増進、衛生教育や健康教室は一次予防である。",
+      "ウ": "誤り。特異的予防や予防接種は一次予防である。",
+      "エ": "誤り。早期発見・早期治療は二次予防ですが、デイサービスを早期発見・早期治療の具体例とする組合せは不適切です。",
+      "オ": "誤り。呼吸用保護具の使用は有害物質曝露を防ぐ一次予防（特異的予防）であり、三次予防の能力低下防止ではない。",
+      "カ": "正しい。リハビリテーションによる機能回復は三次予防である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=32",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」薬学理論問題 問123（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q123-finite-saved-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 薬学理論問題 問123の原表"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q128",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 128,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回",
+      "食品添加物"
+    ],
+    "difficulty": 3,
+    "question": "食品添加物Ａ～Ｅに関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "Ａは、食品に甘味を与える目的で使用される指定添加物である。",
+      "イ": "Ｂは、鮮魚介類や食肉、野菜類の色調を調節する目的で使用される。",
+      "ウ": "Ｃは、食品を漂白する目的で使用され、殺菌料としても用いられる。",
+      "エ": "Ｄは、金属イオンと錯体を形成することによって、油脂などの酸化を防ぐ目的で使用される。",
+      "オ": "Ｅは、カビや細菌などの発育を抑制し、保存性を高める目的で乳製品などの食品に添加して使用される。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "図のＡはグリチルリチン酸二ナトリウムの骨格を示し、甘味料として指定された添加物である。Ｂは食用赤色２号（アマランス）で、使用基準では鮮魚介類、食肉、野菜への使用が禁じられる。ＣはNaClO（次亜塩素酸ナトリウム）で、食品の漂白処理と殺菌に用いられる。Ｄはアスコルビン酸型のエンジオールラクトンで、還元作用による酸化防止と金属イオンの錯体形成を取り違えている。Ｅはチアベンダゾールで、かんきつ類・バナナ以外には使用できない。正解は1と3。",
+    "choiceExplanations": {
+      "ア": "正しい。Ａはグリチルリチン酸二ナトリウムに一致する骨格を持つ。厚生省の指定通知は、しょう油・みそへ甘味を付ける目的と指定を明記する。",
+      "イ": "誤り。Ｂは消費者庁の成分規格に示された食用赤色２号（アマランス）と同じ、２つのナフタレン環をアゾ基でつないだ三スルホン酸ナトリウム塩の構造である。その使用基準では、鮮魚介類、食肉、野菜への使用が禁じられる。",
+      "ウ": "正しい。Ｃは図にNaClOと印刷されている次亜塩素酸ナトリウムである。厚生労働省の通知は食品であるデンプンの漂白処理への使用を記し、同省の食品衛生Ｑ＆Ａは食品用殺菌剤としての使用を明記する。",
+      "エ": "誤り。Ｄはアスコルビン酸型の構造を持つ。アスコルビン酸型抗酸化剤の主な作用は電子供与による還元であり、設問の金属イオン錯体形成という説明とは異なる。図から正確な異性体までは断定しない。",
+      "オ": "誤り。Ｅはチアベンダゾールの構造である。消費者庁の使用基準では、かんきつ類及びバナナ以外の食品に使用してはならず、乳製品は対象外である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/yakuzaishi/110-theory-q128-official-chemical-structures.png"
+    ],
+    "imageAltTexts": [
+      "食品添加物Ａ～Ｅの化学構造式。Ａはトリテルペン配糖体、Ｂはアゾ色素、ＣはNaClO、Ｄはエンジオールラクトン、Ｅはベンゾイミダゾールとチアゾールを含む。"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問128（問題・原図・最終正答）。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-13",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=00ta5566&dataType=1&pageNo=1",
+      "https://www.caa.go.jp/policies/policy/standards_evaluation/food_additives/second_additive_01/assets/cms_standards103_20240507_08.pdf",
+      "https://www.caa.go.jp/policies/policy/standards_evaluation/food_additives/second_additive_01/assets/cms_standards103_20240507_11.pdf",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177609.html"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q129",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 129,
+    "officialAnswerNumber": "3,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "特別用途食品と保健機能食品に関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "機能性表示食品には、疾病リスク低減表示が認められている。",
+      "イ": "特定保健用食品は、消費者庁による安全性と機能性に関する審査を行うことなく事業者が販売できる。",
+      "ウ": "n-3系脂肪酸は、栄養機能食品として機能を表示することができる。",
+      "エ": "保健機能食品以外の食品には、機能性の表示が認められていない。",
+      "オ": "病者用食品を販売するためには、厚生労働省に届け出なければならない。"
+    },
+    "answer": [
+      "ウ",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "n-3系脂肪酸は栄養機能食品で機能表示が認められる栄養成分である。また、食品の機能表示は保健機能食品に限られる。正解はウ（3）とエ（4）。",
+    "choiceExplanations": {
+      "ア": "誤り。機能性表示食品では疾病リスク低減表示は認められていない。",
+      "イ": "誤り。特定保健用食品は消費者庁による安全性・有効性の審査と許可が必要である。審査なしで販売できるのは機能性表示食品（届出制）である。",
+      "ウ": "正しい。n-3系脂肪酸は栄養機能食品として機能表示ができる成分である。",
+      "エ": "正しい。保健機能食品（特定保健用食品、栄養機能食品、機能性表示食品）以外の食品には機能性の表示はできない。",
+      "オ": "誤り。病者用食品として特別な用途を表示するには、厚生労働省への届出ではなく、消費者庁長官の許可が必要である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問129（問題・最終正答）。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q130",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 130,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "食の安全を確保するための法制度に関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "食品衛生法に基づいて広域連携協議会が設置され、複数の都道府県にまたがる広域的な食中毒事案への対策が講じられている。",
+      "イ": "HACCP に沿った衛生管理では、都道府県が作成した衛生管理計画に基づいて衛生管理を実施しなければならない。",
+      "ウ": "食品衛生法では、薬剤師は、指定成分等含有食品の摂取によるものと疑われる人の健康被害の把握に努めることとされている。",
+      "エ": "食品表示法に基づく栄養成分表示では、熱量、たんぱく質、脂質、炭水化物、カルシウム及びビタミン類の表示が義務づけられている。",
+      "オ": "分別生産流通管理（IP ハンドリング）が行われた非遺伝子組換え農産物を原料とする食品は、「遺伝子組換えでない」の表示が義務づけられている。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "食品衛生法に基づく広域連携協議会は広域食中毒に対応する。薬剤師は指定成分等含有食品による健康被害の把握に努める。正解はア（1）とウ（3）。",
+    "choiceExplanations": {
+      "ア": "正しい。食品衛生法に基づき広域連携協議会が設置され、広域的な食中毒事案に対応する。",
+      "イ": "誤り。衛生管理計画は都道府県ではなく、事業者自身が作成して実施する。",
+      "ウ": "正しい。食品衛生法で、薬剤師を含む医療関係者は指定成分等含有食品による健康被害の把握に努めることとされている。",
+      "エ": "誤り。義務表示は熱量、たんぱく質、脂質、炭水化物、食塩相当量（ナトリウム）で、カルシウムやビタミン類は義務ではない。",
+      "オ": "誤り。「遺伝子組換えでない」の表示は義務ではない。表示できるかどうかには、原料中の遺伝子組換え農産物の混入状況など別の要件がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問130（問題・最終正答）。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-10"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q131",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 131,
+    "officialAnswerNumber": "1,3",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "化学物質の毒性又は毒性発現機序に関する記述として正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "吸入曝露された六価クロムは、鼻中隔穿孔及び肺がんを起こす。",
+      "イ": "カドミウムは、中枢神経系に移行し、視野狭窄及び運動失調を起こす。",
+      "ウ": "フェノトリンは、ナトリウムチャネルを開放状態にして、神経伝達を阻害する。",
+      "エ": "グリホサートは、アセチルコリンエステラーゼを阻害して副交感神経の興奮を起こす。",
+      "オ": "2,3,7,8-テトラクロロジベンゾ-p-ジオキシンは、プレグナンX 受容体（PXR）に結合し、種々の遺伝子の転写を活性化する。"
+    },
+    "answer": [
+      "ア",
+      "ウ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "六価クロムの吸入曝露は鼻中隔穿孔や肺がんの原因となる。ピレスロイド系のフェノトリンは神経の電位依存性ナトリウムチャネルを長く開かせる。正解はア（1）とウ（3）。",
+    "choiceExplanations": {
+      "ア": "正しい。六価クロムの吸入は鼻中隔穿孔や肺がんの原因となる。",
+      "イ": "誤り。カドミウムの主な標的は腎臓（近位尿細管障害）や骨である。視野狭窄・運動失調は有機水銀（メチル水銀）の中毒症状である。",
+      "ウ": "正しい。フェノトリンはピレスロイド系殺虫剤で、ナトリウムチャネルの開放状態を持続させる。",
+      "エ": "誤り。アセチルコリンエステラーゼを阻害するのは有機リン系やカルバメート系である。グリホサートは植物のEPSPS（芳香族アミノ酸合成）を阻害する除草剤である。",
+      "オ": "誤り。TCDDが結合するのはアリール炭化水素受容体（AhR）であり、PXRではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問131（問題・最終正答）。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q132",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 132,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "活性酸素による傷害を防ぐための生体防御因子に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "カタラーゼは、過酸化水素を水と酸素に分解する。",
+      "イ": "スーパーオキシドジスムターゼは、活性中心にヘム鉄をもつ。",
+      "ウ": "グルタチオンペルオキシダーゼは、活性中心にマンガンをもつ。",
+      "エ": "β-カロテンは、体内で代謝されてビタミンA となる。",
+      "オ": "ビタミンE は、主に細胞質で抗酸化作用を示す。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "カタラーゼは過酸化水素を水と酸素に分解する。β-カロテンはプロビタミンAで、体内でビタミンAへ変換される。正解はア（1）とエ（4）。",
+    "choiceExplanations": {
+      "ア": "正しい。2H2O2→2H2O＋O2の反応を触媒する。",
+      "イ": "誤り。ヒトの主要なSODには銅・亜鉛型とマンガン型があり、ヘム鉄を活性中心とする酵素ではない。",
+      "ウ": "誤り。グルタチオンペルオキシダーゼの活性中心はセレン（セレノシステイン）である。",
+      "エ": "正しい。β-カロテンはプロビタミンAで、体内でレチノールへ代謝される。",
+      "オ": "誤り。ビタミンEは脂溶性で、主に生体膜（脂質二重層）で脂質過酸化を抑制する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題）問132（問題・最終正答）。解説は過去問AIが独自作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q136",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 136,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "電離放射線による人体への影響及び評価基準に関する記述として、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "吸収線量は、物質1 kg 当たりに、1 J のエネルギーを吸収した際に物質が受けた線量を1 Gy と定義されている。",
+      "イ": "実効線量は、確定的影響のしきい値を規定するのに用いられる。",
+      "ウ": "等価線量は、全身の被ばくの影響を評価するための指標で、各組織又は臓器当たりの吸収線量に組織加重係数を掛けて、合計して算出する。",
+      "エ": "等価線量を求めるのに用いられる放射線加重係数は、γ 線よりα 線の方が大きい。",
+      "オ": "「時間」、「距離」、「遮へい」の防御の3 原則は、内部被ばくの低減に重要である。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正解は1と4です。1 Gy=1 J/kgです。放射線加重係数はγ線が1、α線が20なので、α線の方が大きくなります。",
+    "choiceExplanations": {
+      "ア": "正しい。吸収線量1 Gyは、物質1 kg当たり1 Jのエネルギーを吸収したときの線量です。",
+      "イ": "誤り。確定的影響（組織反応）の評価には吸収線量を用い、高LET放射線では適切なRBEで加重した吸収線量を用います。実効線量は確率的影響のリスク評価に用います。",
+      "ウ": "誤り。組織加重係数を掛けて合計し、全身の影響を評価するのは実効線量です。等価線量は吸収線量に放射線加重係数を掛けたものです。",
+      "エ": "正しい。放射線加重係数はγ線が1、α線が20で、α線の方が大きいです。",
+      "オ": "誤り。時間・距離・遮へいの3原則は主に外部被ばくの低減に重要です。内部被ばくでは放射性物質の体内への取り込みを防ぐことが重要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=41",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問136（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q138",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 138,
+    "officialAnswerNumber": "1,4",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、薬品沈殿-急速ろ過方式の浄水過程を模式的に示したものである。次の記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "Ａの段階で前塩素処理を追加すると、アンモニア態窒素を除去したり、藍藻類の繁殖を抑制したりすることができる。",
+      "イ": "Ｂの段階で中塩素処理、次いで粒状活性炭処理を追加すると、生物膜を形成した生物活性炭による有機物の除去に有効である。",
+      "ウ": "急速ろ過の過程では、主に砂層及び石礫層に繁殖した微生物によって有機物が除去される。",
+      "エ": "Ｃの段階でオゾン処理及び粒状活性炭処理を追加すると、溶解性の有機物や臭気物質の除去に有効である。",
+      "オ": "トリハロメタン前駆物質の除去を目的として、Ｄの段階で粉末活性炭を注入する。"
+    },
+    "answer": [
+      "ア",
+      "エ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "正解は1と4です。凝集沈殿の前の前塩素処理は、アンモニア態窒素の酸化や藍藻類の抑制に有効です。急速ろ過の後(C)のオゾン処理と粒状活性炭処理は、溶解性有機物や臭気物質の除去に有効です。",
+    "choiceExplanations": {
+      "ア": "正しい。前塩素処理では、アンモニア態窒素を酸化して除去でき、藍藻類などの繁殖も抑制できます。",
+      "イ": "誤り。生物活性炭は付着した微生物の働きを利用するため、その前で中塩素処理を行うと、残留塩素によって生物処理が妨げられます。オゾン処理後の粒状活性炭処理を組み合わせる方法などが用いられます。",
+      "ウ": "誤り。微生物の働きで有機物を除くのは緩速ろ過です。急速ろ過は主に物理的なろ過で濁質を除きます。",
+      "エ": "正しい。オゾン処理と粒状活性炭処理の組合せ(高度浄水処理)は、溶解性有機物や臭気物質の除去に有効です。",
+      "オ": "誤り。トリハロメタン前駆物質は塩素処理前に除く必要があり、塩素処理後のDでの粉末活性炭注入は目的に合いません。粉末活性炭は凝集沈殿の前などに注入します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=42",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問138（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q138-environmental-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問138の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q140",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 140,
+    "officialAnswerNumber": "2,5",
+    "type": "multiple-choice",
+    "category": "一般問題（薬学理論問題）",
+    "topicTags": [
+      "一般問題（薬学理論問題）",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図の汚染物質A～Cは、全国の一般環境大気測定局における窒素酸化物、二酸化硫黄又は光化学オキシダントのいずれかの季節変動を示したものである。汚染物質A～Cに関する記述のうち、正しいのはどれか。2つ選べ。",
+    "choices": {
+      "ア": "汚染物質Aは、揮発性有機化合物や非メタン炭化水素に太陽光、特に紫外線が照射されることによって生成する。",
+      "イ": "汚染物質Bは、移動発生源である自動車のほかに、一般家庭で使用される燃焼器具も発生源となる。",
+      "ウ": "汚染物質Cは、主に固定発生源における化石燃料の燃焼によって生成する。",
+      "エ": "汚染物質Aの測定には、ザルツマン法が用いられる。",
+      "オ": "汚染物質Cの測定には、中性ヨウ化カリウム法が用いられる。"
+    },
+    "answer": [
+      "イ",
+      "オ"
+    ],
+    "requiredSelections": 2,
+    "explanation": "図から物質を判別します。Aは濃度が常に0.00～0.003 ppm程度ときわめて低く、二酸化硫黄と考えられます。Bは濃度が0.01～0.02 ppm程度で、冬に高く夏に低い窒素酸化物です。Cは濃度が0.02～0.05 ppmで、春（4月ごろ）に高い光化学オキシダントです。したがって正答は2と5です。",
+    "choiceExplanations": {
+      "ア": "誤りです。VOCなどに紫外線が当たって生成するのは光化学オキシダント（C）です。Aは二酸化硫黄です。",
+      "イ": "正しいです。窒素酸化物（B）は、自動車などの移動発生源のほか、ガスストーブなどの家庭用燃焼器具からも発生します。",
+      "ウ": "誤りです。Cは光化学オキシダントで、大気中での二次生成物です。固定発生源での化石燃料の燃焼による生成は、二酸化硫黄や窒素酸化物の説明にあたります。",
+      "エ": "誤りです。ザルツマン法は二酸化窒素の測定法です。二酸化硫黄（A）には、紫外線蛍光法や溶液導電率法などが用いられます。",
+      "オ": "正しいです。光化学オキシダント（C）は、中性ヨウ化カリウム法（ヨウ素を遊離させて測る方法）などで測定されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=44",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」一般問題（薬学理論問題） 問140（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q140-environmental-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 一般問題（薬学理論問題） 問140の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-theory-q148",
+    "exam": "yakuzaishi",
+    "session": "theory",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 148,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "薬学理論問題",
+    "topicTags": [
+      "薬学理論問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "評価対象医薬品Ａは比較対照医薬品Ｂと比べて追加的有用性が示されており、費用効用分析を行うこととなった。分析の結果、増分費用効果比（ICER）は「200万円／QALY」であった。分析結果の記述として、正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "Ａに切り替えずＢを使用する場合、1QALY当たり200万円の費用を削減できる。",
+      "イ": "Ｂを使用してＡと同等のQALYを得るには、200万円の費用の追加が必要である。",
+      "ウ": "Ａに切り替えずＢを使用することによって、1QALYの減少に伴い、200万円の費用の削減ができる。",
+      "エ": "ＢからＡに切り替える場合、1QALY当たり200万円の費用を削減できる。",
+      "オ": "ＢからＡに切り替えることによって、1QALYを追加的に得るのに200万円の費用の追加が必要である。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "ICER = 増分費用 ÷ 増分効果です。増分費用は 3億 − 2億 = 1億円、増分QALYは 60 − 10 = 50 QALYです。したがって ICER = 1億円 ÷ 50 = 200万円/QALY となります。これは、ＢからＡに切り替えると、1QALYを追加で得るために200万円の追加費用が必要という意味です。",
+    "choiceExplanations": {
+      "ア": "誤り。ＡはＢより費用が高いので、Ｂを使うと費用は減ります。ただしQALYも減ります。「1QALY当たり費用を削減できる」という表現は、ICERの意味と合いません。",
+      "イ": "誤り。ICERは、QALYを1単位追加で得るのに必要な追加費用を表します。「同等のQALYを得るのに200万円の追加」という意味ではありません。",
+      "ウ": "誤り。本問のICERは、比較対照Bから評価対象Aへ切り替えて得る追加効果1 QALY当たりの追加費用です。選択肢3はQALYの減少に伴う費用削減として述べており、この分析で示す追加効果・追加費用の説明とは比較の方向が異なります。",
+      "エ": "誤り。ＢからＡに切り替えると費用は増えます。費用が削減されるわけではありません。",
+      "オ": "正しい。ＢからＡに切り替えると、1QALYを追加で得るのに200万円の追加費用が必要になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-theory-q148-saved-calculation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 問148の原表"
+    ],
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455152.pdf#page=49",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」薬学理論問題 問148（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  }
+]

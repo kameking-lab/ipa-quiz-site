@@ -404,7 +404,10 @@ describe("2025年10月2級土木施工管理・照合済みNo.6〜10", () => {
   it("publishes a distinct five-question edition with exact official keys", () => {
     expect(CIVIL2_2026_QUESTIONS).toHaveLength(66);
     expect(CIVIL2_2025_QUESTIONS).toHaveLength(66);
-    expect(CIVIL2_QUESTIONS).toHaveLength(132);
+    expect(CIVIL2_QUESTIONS.filter((q) =>
+      (q.year === 2026 && q.season === "early") || (q.year === 2025 && q.season === "october"),
+    )).toEqual([...CIVIL2_2026_QUESTIONS, ...CIVIL2_2025_QUESTIONS]);
+    expect(new Set(CIVIL2_QUESTIONS.map((q) => q.id)).size).toBe(CIVIL2_QUESTIONS.length);
     expect(EXAM_CONFIGS.civil2.yearRange).toEqual({ start: 2025, end: 2026 });
     expect(EXAM_CONFIGS.civil2.seasons).toContain("october");
     expect(candidate.questions.map((question) => question.number)).toEqual([6, 7, 8, 9, 10]);

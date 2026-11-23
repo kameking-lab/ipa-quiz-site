@@ -26,7 +26,7 @@ export const JKEN_SYSTEM_QUESTIONS: Question[] = JKEN_SYSTEM_PAPERS.flatMap(pape
       choices: bank.choices,
       answer: slot.answer as ChoiceKey,
       officialAnswerNumber: slot.answer,
-      explanation: `${law ? `出題時点（${paper.examDate}）の法令・制度を前提とします。\n\n` : ""}${slot.explanation}\n\n[公式正答表](${paper.answerUrl})`,
+      explanation: `${law ? `出題時点（${paper.examDate}）の法令・制度を前提とします。\n\n` : ""}${slot.explanation}`,
       choiceExplanations: slot.choiceExplanations, explanationCoverage: "full",
       hasImage: original.figures.length > 0,
       ...(original.figures.length ? { imageUrls: original.figures.map(item => item.url), imageAltTexts: original.figures.map(item => item.alt) } : {}),

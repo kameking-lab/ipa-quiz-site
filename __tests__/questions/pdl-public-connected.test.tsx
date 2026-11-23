@@ -1,11 +1,10 @@
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 
 import { QuestionSourcePresentation } from "@/components/quiz/QuestionSourcePresentation";
+import { ExplanationCard } from "@/components/quiz/ExplanationCard";
 import { KANTEISHI_QUESTIONS } from "@/data/questions/kanteishi";
 import { KAIKEISHI_QUESTIONS } from "@/data/questions/kaikeishi";
 import reviewedManifest from "@/data/questions/pdl-reviewed-manifest.json";
@@ -14,34 +13,40 @@ import { choiceDisplayLabel } from "@/lib/questions/display";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { isOfficialPastOnlyRequest } from "@/lib/questions/past-question-policy";
 import { normalizePublicPdlQuestion } from "@/lib/questions/pdl-public";
-import { parseQuestionRoute, questionPagePath } from "@/lib/seo/question-url";
+import { findQuestionByRoute, parseQuestionRoute, parseQuestionYearSeason, questionPagePath } from "@/lib/seo/question-url";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
-// Import only the two newly connected exam chunks. Their original source and
-// permission decisions are independently pinned by the reviewed manifest.
-const questions = [...KANTEISHI_QUESTIONS, ...KAIKEISHI_QUESTIONS];
+// Keep the reviewed sessions separate from the added historical cohorts.
+const reviewedAppraisal = KANTEISHI_QUESTIONS.filter((q) => q.year === 2025 || q.year === 2026);
+const reviewedAccounting = KAIKEISHI_QUESTIONS.filter((q) => q.year === 2026);
+const questions = [...reviewedAppraisal, ...reviewedAccounting];
 const numberedKeys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ"];
 
 function sourceMarkup(question: Question, phase: "before" | "after"): string {
   return renderToStaticMarkup(<QuestionSourcePresentation question={question} phase={phase} />);
 }
 
+function explanationMarkup(question: Question): string {
+  return renderToStaticMarkup(<ExplanationCard question={question} selected={String(question.answer)} isCorrect onNext={() => {}} />);
+}
+
 describe("locally connected PDL question data", () => {
   it("joins exactly the two screened exams and their actual sessions", () => {
-    expect(KANTEISHI_QUESTIONS).toHaveLength(160);
-    expect(KAIKEISHI_QUESTIONS).toHaveLength(186);
+    expect(reviewedAppraisal).toHaveLength(160);
+    expect(reviewedAccounting).toHaveLength(186);
     expect(new Set(questions.map((q) => q.id)).size).toBe(346);
-    expect(KANTEISHI_QUESTIONS.filter((q) => q.year === 2025)).toHaveLength(80);
-    expect(KANTEISHI_QUESTIONS.filter((q) => q.year === 2026)).toHaveLength(80);
-    expect(KANTEISHI_QUESTIONS.filter((q) => q.session === "gyosei")).toHaveLength(80);
-    expect(KANTEISHI_QUESTIONS.filter((q) => q.session === "riron")).toHaveLength(80);
-    expect(KAIKEISHI_QUESTIONS.filter((q) => q.season === "round1")).toHaveLength(93);
-    expect(KAIKEISHI_QUESTIONS.filter((q) => q.season === "round2")).toHaveLength(93);
-    expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "kigyo")).toHaveLength(40);
-    expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "kanri")).toHaveLength(36);
-    expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "kansa")).toHaveLength(40);
-    expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "zaimu")).toHaveLength(70);
-    expect(reviewedManifest.questions).toHaveLength(346);
+    expect(reviewedAppraisal.filter((q) => q.year === 2025)).toHaveLength(80);
+    expect(reviewedAppraisal.filter((q) => q.year === 2026)).toHaveLength(80);
+    expect(reviewedAppraisal.filter((q) => q.session === "gyosei")).toHaveLength(80);
+    expect(reviewedAppraisal.filter((q) => q.session === "riron")).toHaveLength(80);
+    expect(reviewedAccounting.filter((q) => q.season === "round1")).toHaveLength(93);
+    expect(reviewedAccounting.filter((q) => q.season === "round2")).toHaveLength(93);
+    expect(reviewedAccounting.filter((q) => q.session === "kigyo")).toHaveLength(40);
+    expect(reviewedAccounting.filter((q) => q.session === "kanri")).toHaveLength(36);
+    expect(reviewedAccounting.filter((q) => q.session === "kansa")).toHaveLength(40);
+    expect(reviewedAccounting.filter((q) => q.session === "zaimu")).toHaveLength(70);
+    const reviewedIds = new Set(questions.map((q) => q.id));
+    expect(reviewedManifest.questions.filter(({ id }) => reviewedIds.has(id))).toHaveLength(346);
     expect(reviewedManifest.assets).toHaveLength(56);
   });
 
@@ -117,10 +122,10 @@ describe("locally connected PDL question data", () => {
       const html = sourceMarkup(q, phase);
       expect(html).toContain("景観区域内");
       expect(html).toContain("国土交通省");
-      expect(html).toContain(q.sourcePdfUrl);
-      expect(html).toContain(q.sourceAnswerUrl);
       expect(html).toContain("過去問AI");
     }
+    expect(explanationMarkup(q)).toContain(q.sourcePdfUrl);
+    expect(explanationMarkup(q)).toContain(q.sourceAnswerUrl);
   });
 
   it("renders original tables and shared facts before answering and authored sections afterward", () => {
@@ -134,14 +139,15 @@ describe("locally connected PDL question data", () => {
     expect(accounting.sourcePresentation?.originalAuthor).toBe("公認会計士・監査審査会");
     expect(accounting.sourcePresentation?.processor).toBe("過去問AI");
     expect(accounting.sourcePresentation?.processedParts.length).toBeGreaterThanOrEqual(3);
-    expect(sourceMarkup(accounting, "before")).toContain(accounting.sourcePdfUrl);
-    expect(sourceMarkup(accounting, "after")).toContain(accounting.sourceAnswerUrl);
+    const explanation = explanationMarkup(accounting);
+    expect(explanation).toContain(accounting.sourcePdfUrl);
+    expect(explanation).toContain(accounting.sourceAnswerUrl);
   });
 });
 
 describe("PDL route and admission boundaries", () => {
   it("parses both 2026 CPA rounds and keeps these IDs in past-question-only requests", () => {
-    for (const q of KAIKEISHI_QUESTIONS.filter((item) => item.qNumber === 1)) {
+    for (const q of reviewedAccounting.filter((item) => item.qNumber === 1)) {
       const path = questionPagePath(q);
       const [, , exam, yearSeason, section, qnum] = path.split("/");
       expect(parseQuestionRoute({ exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! })).toMatchObject({
@@ -149,23 +155,17 @@ describe("PDL route and admission boundaries", () => {
       });
       expect(isOfficialPastOnlyRequest(q.exam, q.id)).toBe(true);
     }
-    expect(parseQuestionRoute({ exam: "kaikeishi", yearSeason: "2026-round3", section: "zaimu", qnum: "q1" })).toBeNull();
+    expect(findQuestionByRoute(KAIKEISHI_QUESTIONS, { exam: "kaikeishi", yearSeason: "2026-round3", section: "zaimu", qnum: "q1" })).toBeUndefined();
     expect(isOfficialPastOnlyRequest("kanteishi", "kanteishi-2025-riron-q01")).toBe(true);
   });
 
-  it("keeps both actual app page parsers open to round1 and round2", () => {
-    for (const relative of [
-      "app/q/[exam]/[yearSeason]/[section]/[qnum]/page.tsx",
-      "app/[exam]/[yearSeason]/page.tsx",
-    ]) {
-      const source = readFileSync(resolve(process.cwd(), relative), "utf8");
-      expect(source, relative).toContain("round1");
-      expect(source, relative).toContain("round2");
-    }
+  it("recognizes both CPA rounds in the shared year and question parsers", () => {
+    expect(parseQuestionYearSeason("2026-round1")).toEqual({ year: 2026, season: "round1" });
+    expect(parseQuestionYearSeason("2026-round2")).toEqual({ year: 2026, season: "round2" });
   });
 
   it("rejects a new ID, image, URL, blank reason, or pending-review flag", () => {
-    const seed = KANTEISHI_QUESTIONS[0]!;
+    const seed = reviewedAppraisal[0]!;
     const changes: Array<(q: Question) => void> = [
       (q) => { q.id = "kanteishi-2025-gyosei-q99"; },
       (q) => { q.imageUrls = ["/questions/kanteishi/unreviewed.png"]; q.imageAltTexts = ["未確認図"]; q.hasImage = true; },
@@ -197,9 +197,13 @@ describe("PDL route and admission boundaries", () => {
 
   it("exposes the two chunks via the lazy registry only when published", async () => {
     const registered = getRegisteredExamCodes();
-    for (const [exam, expected] of [["kanteishi", 160], ["kaikeishi", 186]] as const) {
+    for (const [exam, expected] of [["kanteishi", reviewedAppraisal], ["kaikeishi", reviewedAccounting]] as const) {
       const loaded = await getQuestionsForExam(exam);
-      expect(loaded.length).toBe(registered.includes(exam) ? expected : 0);
+      const years = new Set(expected.map((question) => question.year));
+      const reviewed = loaded.filter((question) => years.has(question.year));
+      expect(new Set(reviewed.map((question) => question.id))).toEqual(
+        new Set(registered.includes(exam) ? expected.map((question) => question.id) : []),
+      );
     }
   });
 });
@@ -207,7 +211,7 @@ describe("PDL route and admission boundaries", () => {
 describe("published accounting commentary", () => {
   it("keeps authored bytes while displaying the accepted reader-facing pointer", () => {
     const needle = "個々の根拠はstatementAssessmentsを参照。";
-    const authored = KAIKEISHI_QUESTIONS.flatMap((q) => Object.values(q.choiceExplanations ?? {}));
+    const authored = reviewedAccounting.flatMap((q) => Object.values(q.choiceExplanations ?? {}));
     expect(authored.filter((text) => text?.includes(needle))).toHaveLength(204);
     for (const q of KAIKEISHI_QUESTIONS) {
       for (const text of [q.explanation, ...Object.values(q.choiceExplanations ?? {})]) {

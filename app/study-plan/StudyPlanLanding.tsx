@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CalendarDays, Sparkles, Trash2 } from "lucide-react";
+import { CalendarDays, Trash2 } from "lucide-react";
 import { SchedulePlanner } from "@/components/SchedulePlanner";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { Button } from "@/components/ui/button";
@@ -37,7 +37,6 @@ export function StudyPlanLanding({ categoriesByExam }: { categoriesByExam?: Reco
       />
       <header className="mb-8">
         <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-medium text-primary-soft-foreground">
-          <Sparkles className="h-3.5 w-3.5" aria-hidden />
           NEW
         </div>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">

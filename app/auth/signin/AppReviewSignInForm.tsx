@@ -23,11 +23,11 @@ export function AppReviewSignInForm({ callbackUrl }: { callbackUrl: string }) {
     finally { setPending(false); }
   }
   return <details className="mt-5 border-t border-border pt-4">
-    <summary>App Review 審査用ログイン</summary>
+    <summary className="flex min-h-11 cursor-pointer items-center text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">App Review 審査用ログイン</summary>
     <form onSubmit={submit} className="mt-3 flex flex-col gap-3">
       <label htmlFor="review-code">審査用コード</label>
-      <input id="review-code" name="code" type="password" autoComplete="current-password" required minLength={43} maxLength={128} disabled={pending} className="rounded border p-2" />
-      <Button type="submit" disabled={pending}>{pending ? "確認中…" : "審査用アカウントでログイン"}</Button>
+      <input id="review-code" name="code" type="password" autoComplete="current-password" required minLength={43} maxLength={128} disabled={pending} className="min-h-12 rounded-xl border border-input bg-background px-3 text-base text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+      <Button size="lg" type="submit" disabled={pending}>{pending ? "確認中…" : "審査用アカウントでログイン"}</Button>
       {error && <p role="alert">{error}</p>}
     </form>
   </details>;

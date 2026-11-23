@@ -87,8 +87,9 @@ test("index.html paints the same art and colour before any script runs", () => {
   assert.match(html, /prefers-reduced-motion: reduce/);
   // Above the native-app status-bar band (app/globals.css body::before, z-index 60).
   assert.match(read("../app/globals.css"), /html\.native-app body::before \{[^}]*z-index: 60;/);
-  const main = read("src/main.tsx");
-  assert.match(main, /if \(await shouldOpenWebHome\(\)\) \{ await openWebHome\(\); return; \}/, "online launch keeps the boot splash up");
+  const start = read("src/main.tsx").split("async function start() {")[1];
+  assert.match(start.split("createRoot(")[0], /if \(await shouldOpenWebHome\(\)[^{]*\{\s*await openWebHome\([^\r\n]*\);\s*return;\s*\}/,
+    "online launch leaves the boot splash in place until it navigates");
 });
 
 test("ios:prepare replaces Capacitor's template launch screen and is idempotent", async (t) => {

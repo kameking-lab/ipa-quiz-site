@@ -1,0 +1,5 @@
+import type { Question } from "@/lib/questions/types";
+import late2023 from "./2023-late.json";
+import late2025 from "./2025-late.json";
+
+export const KOGYO_HOSO1_QUESTIONS: Question[] = [...late2025, ...late2023] as Question[];

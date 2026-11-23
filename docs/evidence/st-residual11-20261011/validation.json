@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-11T07:16:39.773652+00:00",
+  "commands": [
+    {
+      "command": "node node_modules/vitest/vitest.mjs run __tests__/questions/st-all-year-choice-explanations.test.ts __tests__/questions/st-two-year-choice-explanations.test.ts __tests__/questions/st-residual-source-corrections.test.ts --maxWorkers=1",
+      "exitCode": 0,
+      "testFiles": 3,
+      "passedTests": 18,
+      "note": "Repeated after adding official-summary notices: 18/18 pass"
+    },
+    {
+      "command": "node node_modules/eslint/bin/eslint.js data/questions/st/index.ts __tests__/questions/st-all-year-choice-explanations.test.ts __tests__/questions/st-residual-source-corrections.test.ts",
+      "exitCode": 0
+    },
+    {
+      "command": "node node_modules/tsx/dist/cli.mjs scripts/validate-questions.ts --exam=st",
+      "exitCode": 0,
+      "questions": 680,
+      "failed": 0,
+      "warning": "Pre-existing empty topicTags and missing imageUrls outside eight corrected questions."
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "completedBaselineRuntimeQuestionsPreservedExactly": 669,
+  "fullBuildRuns": 0,
+  "typecheck": "Hosted CI requested after PR creation",
+  "productionOperations": 0,
+  "pdfCropsVisuallyInspected": 11,
+  "independentSourceConflictsReview": {
+    "reviewer": "gpt-6-astra",
+    "execution": "native subagent",
+    "reviewerTask": "st_source_conflict_review",
+    "result": "three source conflicts remain blocked"
+  },
+  "mediaStatusAndPlanExecuted": true,
+  "sourceConflictNotices": 3
+}

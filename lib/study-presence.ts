@@ -8,8 +8,8 @@ export const PRESENCE_POLL_MS = 90_000;
 /** Browser acquisition cadence; measurement validity/window remain separate. */
 export const PRESENCE_REFRESH_MS = 60 * 60_000;
 export const PRESENCE_EVENT = "study-presence-count";
-export const PRESENCE_EXAM_ATTRIBUTE = "data-study-presence-exam";
 export const PRESENCE_VIEWER_ATTRIBUTE = "data-study-presence-viewer";
+export const PRESENCE_VISITOR_ID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 // Reuse public Japanese names; never display an unrecognised code as a name.
 const aliases: Record<string, string> = { "dai-1-shu-eisei-kanrisha": "eisei1", "dai-2-shu-eisei-kanrisha": "eisei2" };
@@ -28,6 +28,8 @@ export function presenceExamName(exam: string): string | undefined { return name
 
 export interface StudyPresenceCount { exam: string; count: number }
 export interface StudyPresenceSnapshot { count: number; exams: StudyPresenceCount[] }
+export interface StudyPresenceTodayCount extends StudyPresenceCount { activeCount: number }
+export interface StudyPresenceToday extends StudyPresenceSnapshot { activeCount: number; exams: StudyPresenceTodayCount[] }
 
 export function parseStudyPresence(value: unknown): StudyPresenceSnapshot | null {
   if (!value || typeof value !== "object") return null;
@@ -48,10 +50,25 @@ export function parseStudyPresence(value: unknown): StudyPresenceSnapshot | null
   return { count: data.count as number, exams };
 }
 
+export function parseStudyPresenceToday(value: unknown): StudyPresenceToday | null {
+  const snapshot = parseStudyPresence(value);
+  if (!snapshot) return null;
+  const data = value as StudyPresenceToday;
+  const activeByExam = new Map<string, number>();
+  let activeCount = 0;
+  for (const row of data.exams) {
+    if (!Number.isSafeInteger(row.activeCount) || row.activeCount < 0 || row.activeCount > row.count) return null;
+    activeByExam.set(row.exam, row.activeCount);
+    activeCount += row.activeCount;
+  }
+  if (activeCount !== data.activeCount) return null;
+  return { count: snapshot.count, activeCount, exams: snapshot.exams.map(row => ({ ...row, activeCount: activeByExam.get(row.exam)! })) };
+}
+
 export function isActiveStudyTab(visible: boolean, lastActivity: number, now: number) {
   return visible && now - lastActivity < PRESENCE_IDLE_MS;
 }
 
 export function isPresenceBot(userAgent: string): boolean {
-  return /bot|crawler|spider|headless|playwright|puppeteer|lighthouse|monitor|health-check/i.test(userAgent);
+  return !userAgent.trim() || /bot|crawl|spider|slurp|headless|playwright|puppeteer|lighthouse|monitor|health-check|facebookexternalhit|curl|wget|python|httpclient|go-http/i.test(userAgent);
 }

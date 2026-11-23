@@ -1,0 +1,43 @@
+{
+  "scope": "Only 2026 employment q1E; downloaded public government documents",
+  "retrievedUtcDate": "2026-10-11",
+  "files": [
+    {
+      "file": "mext-2024-05-27-local-public-secondment.pdf",
+      "url": "https://www.mext.go.jp/content/20240527-mxt_kyoikujinzai01-000014888_6.pdf",
+      "httpStatus": 200,
+      "bytes": 983372,
+      "sha256": "3173b7d440d1299f95f2c6fd62cff619eb70afbaaa3ac8b8790705710b16984e",
+      "lastModified": "Fri, 31 May 2024 08:00:04 GMT",
+      "documentDate": "2024-05-27 (URL date; official MEXT material)",
+      "physicalPage": 1,
+      "section": "地方公共団体と民間との交流（民間→地方）; reference to MHLW employment insurance manual, 2023-10-01 onward, 20352(2)",
+      "fact": "Contains the direct local-government secondment/Article 38 permission/continuing private employment/insurance continuation sentence."
+    },
+    {
+      "file": "narita-mhlw-application-manual-r5-4.pdf",
+      "url": "https://www.city.narita.chiba.jp/content/000211665.pdf",
+      "linkPage": "https://www.city.narita.chiba.jp/shisei/page003300.html",
+      "httpStatus": 200,
+      "bytes": 7081919,
+      "sha256": "5ea5aab4afe6b6f07d2de106f92cd0ca834349edd7f3a8eb4bde1a09b2fea567",
+      "lastModified": "Wed, 02 Sep 2026 03:10:46 GMT",
+      "versionMarkOnRelevantPages": "R5.4 (printed pages 22–23; PDF physical pages 22–23)",
+      "section": "20352(2)イ(イ)d(b)",
+      "fact": "The MHLW manual expressly preserves the originating employer's insured status under the stated Article 38 permission and ongoing employment conditions. Narita's current server timestamp alone is not cutoff-date proof; the independent MEXT 2024 document corroborates the text before cutoff."
+    },
+    {
+      "file": "narita-soumu-2023-03-31-notice.pdf",
+      "url": "https://www.city.narita.chiba.jp/content/000211664.pdf",
+      "linkPage": "https://www.city.narita.chiba.jp/shisei/page003300.html",
+      "httpStatus": 200,
+      "bytes": 89173,
+      "sha256": "c47b6f80997e9d533294cd1210972139ed75c5c6067780dc96ae11281a3f6a68",
+      "lastModified": "Wed, 02 Sep 2026 03:10:45 GMT",
+      "documentDate": "2023-03-31",
+      "issuer": "総務省自治行政局公務員部公務員課",
+      "physicalPages": [1, 2],
+      "fact": "Article 38 permission allows the private employee to retain private and local-public status concurrently; it does not itself decide unemployment insurance."
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "lane": "yc-13",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-363",
+      "exam": "denken2",
+      "year": 2021,
+      "season": "primary",
+      "session": "riron",
+      "status": "completed-locally",
+      "examDate": "2021-08-21",
+      "officialQuestionCount": 8,
+      "officialAnswerFields": 40,
+      "requiredQuestionCount": 7,
+      "requiredAnswerFields": 35,
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q01.pdf",
+      "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_a01.pdf",
+      "sourcePdfSha256": "8cb6dc40bfe04ad1789b0f2a598ba4f086ce425fa0e6ff6c9df8c237c3a86230",
+      "sourceAnswerPdfSha256": "595888e2402a71ab1055f07b5a3f3b8a0e9f89917058c9d12a1cc0e7730c047c",
+      "officialAnswers": [
+        [
+          "カ",
+          "ハ",
+          "ロ",
+          "ヌ",
+          "ヘ"
+        ],
+        [
+          "ハ",
+          "ヨ",
+          "ヌ",
+          "チ",
+          "カ"
+        ],
+        [
+          "ホ",
+          "チ",
+          "ワ",
+          "ト",
+          "ニ"
+        ],
+        [
+          "ヲ",
+          "ハ",
+          "イ",
+          "リ",
+          "ニ"
+        ],
+        [
+          "ホ",
+          "ル",
+          "ヌ",
+          "ハ",
+          "ト"
+        ],
+        [
+          "リ",
+          "ヘ",
+          "ハ",
+          "ル",
+          "ロ"
+        ],
+        [
+          "ハ",
+          "ヨ",
+          "ト",
+          "イ",
+          "カ"
+        ],
+        [
+          "ヌ",
+          "ト",
+          "ヘ",
+          "カ",
+          "ロ"
+        ]
+      ],
+      "alternateQuestionRule": "問７及び問８のどちらかを選んで解答すること。両方解答すると採点されません。",
+      "questionCount": 8,
+      "answerFieldCount": 40,
+      "figurePageCount": 16,
+      "dataPath": "data/questions/denken2/native-2021-theory.json",
+      "sourcePacketSha256": "caff77a3ff08c001e9d123a3d9b9d87651ebb0ba989abe97f54dc91a955fc77f"
+    },
+    {
+      "jobId": "PLAN5-321",
+      "exam": "kenchikushi1",
+      "year": 2022,
+      "season": "annual",
+      "session": "houki",
+      "status": "completed-locally",
+      "officialQuestionCount": 30,
+      "questionCount": 30,
+      "choiceExplanationCount": 120,
+      "figureCount": 5,
+      "dataPath": "data/questions/kenchikushi1/2022-houki.json",
+      "lawReferenceDate": "2022-01-01",
+      "technicalReferences": {
+        "building": "https://laws.e-gov.go.jp/law/325AC0000000201_20211101_503AC0000000031",
+        "building_order": "https://laws.e-gov.go.jp/law/325CO0000000338_20211101_503CO0000000296",
+        "building_rules": "https://laws.e-gov.go.jp/law/325M50004000040_20211101_503M60000800069",
+        "architect": "https://laws.e-gov.go.jp/law/325AC1000000202_20210901_503AC0000000037",
+        "architect_rules": "https://laws.e-gov.go.jp/law/325M50004000038_20211216_503M60000800078",
+        "city": "https://laws.e-gov.go.jp/law/343AC0000000100_20211101_503AC0000000031",
+        "city_order": "https://laws.e-gov.go.jp/law/344CO0000000158_20210715_503CO0000000205",
+        "fire": "https://laws.e-gov.go.jp/law/323AC1000000186_20210901_503AC0000000036",
+        "fire_order": "https://laws.e-gov.go.jp/law/336CO0000000037_20210401_503CO0000000137",
+        "barrier": "https://laws.e-gov.go.jp/law/418AC0000000091_20210401_502AC0000000028",
+        "barrier_order": "https://laws.e-gov.go.jp/law/418CO0000000379_20211001_502CO0000000345",
+        "energy": "https://laws.e-gov.go.jp/law/427AC0000000053_20210401_501AC0000000004",
+        "energy_order": "https://laws.e-gov.go.jp/law/428CO0000000008_20210401_502CO0000000266",
+        "housing": "https://laws.e-gov.go.jp/law/411AC0000000081_20210930_503AC0000000048",
+        "contracting": "https://laws.e-gov.go.jp/law/324AC0000000100_20210930_503AC0000000048",
+        "contracting_order": "https://laws.e-gov.go.jp/law/331CO0000000273_20210901_503CO0000000224",
+        "longlife": "https://laws.e-gov.go.jp/law/420AC0000000087_20210528_503AC0000000048",
+        "carbon": "https://laws.e-gov.go.jp/law/424AC0000000084_20211101_503AC0000000031",
+        "energy_standard": "https://www.mlit.go.jp/common/001500252.pdf"
+      },
+      "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gakka3.pdf",
+      "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2022-1st-gokakukijun.pdf",
+      "sourcePdfSha256": "4ab1a4d456c08b7787effb8255019f0e83c19533bdd167ecaaabe3e6e85d663c",
+      "sourceAnswerPdfSha256": "5fc78a1c39800bf7d9636e51d2081d241c7cbff92d14d2518b2f6b8c83fb7efc",
+      "officialAnswerNumbers": [
+        1,
+        4,
+        3,
+        2,
+        4,
+        3,
+        2,
+        2,
+        1,
+        3,
+        4,
+        1,
+        4,
+        4,
+        3,
+        4,
+        3,
+        3,
+        2,
+        3,
+        1,
+        4,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        4
+      ],
+      "imageSha256": {
+        "/questions/kenchikushi1/2022-houki/q01.webp": "b150f4419d7204bfa4c808ba70fbdc87fd7c16c68072bc998f287f1a60d8d807",
+        "/questions/kenchikushi1/2022-houki/q17.webp": "251f5af74561cba78bb71dc333719746c6401b6e0d1b0539a5b43a46fc6f67a6",
+        "/questions/kenchikushi1/2022-houki/q18.webp": "36cc1b258663b34004b18a96ac610625494f2e7309a3dd055087ac46d7e34d08",
+        "/questions/kenchikushi1/2022-houki/q23.webp": "bcda804d40bdf05e602cf27b2a4c4d50fb08a5417397a582b8870eaa29c2e23f",
+        "/questions/kenchikushi1/2022-houki/q28.webp": "21199d9841e612847b2fbe4b830983b449c060ee8901dead50d631bd0516c0c6"
+      }
+    }
+  ]
+}

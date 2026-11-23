@@ -29,7 +29,10 @@ describe("live external qualification two-year publication gate", () => {
   it("publishes all five electrician academic papers and eight practical days after the release gate", () => {
     const status = QUALIFICATION_CATALOG.find((item) => item.examCode === "denko2")?.status;
     expect(status).toBe("live");
-    expect(DENKO2_QUESTIONS).toHaveLength(250);
+    const reviewed = DENKO2_QUESTIONS.filter(q => q.session === "gakka" && (
+      (q.year === 2024 || q.year === 2025) || (q.year === 2026 && q.season === "first")
+    ));
+    expect(reviewed).toHaveLength(250);
     for (const year of [2024, 2025]) {
       for (const season of ["first", "second"] as const) {
         const paper = DENKO2_QUESTIONS.filter((item) => item.year === year && item.season === season);
@@ -48,8 +51,9 @@ describe("live external qualification two-year publication gate", () => {
         }
       }
     }
-    expect(DENKO2_SKILL_PROBLEMS).toHaveLength(104);
-    const dates = [...new Set(DENKO2_SKILL_PROBLEMS.map((item) => item.date))];
+    const reviewedSkills = DENKO2_SKILL_PROBLEMS.filter(item => item.year === 2024 || item.year === 2025);
+    expect(reviewedSkills).toHaveLength(104);
+    const dates = [...new Set(reviewedSkills.map((item) => item.date))];
     expect(dates).toHaveLength(8);
     for (const date of dates) {
       const day = DENKO2_SKILL_PROBLEMS.filter((item) => item.date === date);

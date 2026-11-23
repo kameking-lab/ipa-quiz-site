@@ -1,7 +1,8 @@
+import { beforeNurseSourceLineBreak } from "../fixtures/kangoshi-before-completion";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS } from "../fixtures/kangoshi-before-completion";
 import { SHAROUSHI_QUESTIONS } from "@/data/questions/sharoushi";
 import { FP1_QUESTIONS } from "@/data/questions/fp1";
 import { getFp1AppliedEdition } from "@/lib/fp1/applied";
@@ -23,7 +24,7 @@ const expectedChoiceTotal = pm4.totalChoices;
 describe("frozen next nurse and labor consultant bundle",()=>{
   it("retains every root281 nurse and16 labor consultant original with identical contents",()=>{
     expect(proof.previousNurse281ObjectHashes).toHaveLength(281);expect(proof.previousSharoushi16ObjectHashes).toHaveLength(16);
-    for(const item of proof.previousNurse281ObjectHashes)expect(hash(KANGOSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
+    for(const item of proof.previousNurse281ObjectHashes)expect(hash(beforeNurseSourceLineBreak(KANGOSHI_QUESTIONS.find(q=>q.id===item.id))),item.id).toBe(item.sha256);
     for(const item of proof.previousSharoushi16ObjectHashes)expect(hash(SHAROUSHI_QUESTIONS.find(q=>q.id===item.id)),item.id).toBe(item.sha256);
     expect(KANGOSHI_QUESTIONS).toHaveLength(expectedNurseTotal + am7.addedOriginals + pm4.addedOriginals + 3);expect(SHAROUSHI_QUESTIONS.length).toBeGreaterThanOrEqual(101);
     expect(KANGOSHI_QUESTIONS.reduce((n,q)=>n+Object.keys(q.choices??{}).length,0)).toBe(expectedChoiceTotal + 12);
@@ -36,15 +37,20 @@ describe("frozen next nurse and labor consultant bundle",()=>{
     expect(KANGOSHI_QUESTIONS.filter(q=>q.type === "numeric")).toHaveLength(2);
   });
   it("preserves all129 FP1 originals while registering the sole new basic Q10",()=>{
+    const current = new Map(FP1_QUESTIONS.map(q => [q.id, q]));
     for(const item of proof.fp1UnchangedSourceFiles){
-      let source=readFileSync(item.path,"utf8").replace(/\r\n/g,"\n");
-      if(item.path==="data/questions/fp1/index.ts"){
-        expect(FP1_QUESTIONS.filter(q=>q.id==="fp1-2026-september-gakka-q10")).toHaveLength(1);
-        source=source.replace('import septemberQ10 from "./2026-september-q10.json";\n','').replace(', ...septemberQ10','');
-      }
+      if (item.path === "data/questions/fp1/index.ts") continue;
+      const source=readFileSync(item.path,"utf8").replace(/\r\n/g,"\n");
       expect(createHash("sha256").update(source).digest("hex"),item.path).toBe(item.sha256);
+      if (item.path.startsWith("data/questions/fp1/") && source.trimStart().startsWith("[")) {
+        for (const original of JSON.parse(source) as typeof FP1_QUESTIONS) {
+          expect(current.get(original.id), original.id).toEqual(original);
+        }
+      }
     }
+    expect(FP1_QUESTIONS.filter(q=>q.id==="fp1-2026-september-gakka-q10")).toHaveLength(1);
     const applied=getFp1AppliedEdition("202605")!.questions.length+getFp1ExtensionQuestions("202605").length+getFp1ExtensionQuestions("202609").length;
-    expect(FP1_QUESTIONS.length+applied).toBe(130);
+    const basic = FP1_QUESTIONS.filter(q => q.year === 2026 && (q.season === "may" || q.season === "september"));
+    expect(basic.length+applied).toBe(130);
   });
 });

@@ -1,6 +1,10 @@
+import { readFile } from "node:fs/promises";
+import { basename, join } from "node:path";
 import { ImageResponse } from "next/og";
+import { CARD_LABELS, cardQualification, parseStudyCard } from "@/lib/sharing/card";
+import { qualificationStudyArt } from "@/lib/home/study-room";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 const SIZE = { width: 1200, height: 630 };
 
@@ -10,54 +14,23 @@ interface TypeStyle {
   subtitle: string;
 }
 
-// Module-level cache for the Noto Sans JP font buffer.
-// Each Vercel Edge worker instance caches across requests within the same isolate.
-let _fontBuffer: ArrayBuffer | null | undefined;
+let japaneseFont: Promise<ArrayBuffer> | undefined;
 
-async function loadJapaneseFont(origin: string): Promise<ArrayBuffer | null> {
-  if (_fontBuffer !== undefined) return _fontBuffer;
-  // Try local copy first (public/fonts/noto-sans-jp-700.woff)
-  try {
-    const res = await fetch(`${origin}/fonts/noto-sans-jp-700.woff`);
-    if (res.ok) {
-      const buf = await res.arrayBuffer();
-      _fontBuffer = buf;
-      return buf;
-    }
-  } catch {
-    // fall through to Google Fonts
-  }
-  // Fallback: fetch from Google Fonts CSS API (woff2)
-  try {
-    const css = await fetch(
-      "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap",
-      {
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-        },
-      },
-    ).then((r) => r.text());
-    const urls = [
-      ...css.matchAll(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/g),
-    ].map((m) => m[1]);
-    if (urls.length > 0) {
-      const buf = await fetch(urls[0]).then((r) => r.arrayBuffer());
-      _fontBuffer = buf;
-      return buf;
-    }
-  } catch {
-    // give up
-  }
-  _fontBuffer = null;
-  return null;
+function loadJapaneseFont(): Promise<ArrayBuffer> {
+  japaneseFont ??= readFile(join(process.cwd(), "public/fonts/noto-sans-jp-700.woff"))
+    .then((font) => new Uint8Array(font).buffer)
+    .catch((error: unknown) => {
+      japaneseFont = undefined;
+      throw error;
+    });
+  return japaneseFont;
 }
 
 const TYPE_META: Record<string, TypeStyle> = {
   home: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
-    emoji: "🤖",
-    subtitle: "AIネイティブ過去問学習",
+    emoji: "📚",
+    subtitle: "資格の過去問演習",
   },
   exam: {
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%)",
@@ -131,7 +104,7 @@ const TYPE_META: Record<string, TypeStyle> = {
   },
   default: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
-    emoji: "✨",
+    emoji: "📚",
     subtitle: "過去問AI",
   },
 };
@@ -148,9 +121,71 @@ function safeNumber(s: string | null, fallback = 0): number {
 }
 
 export async function GET(request: Request) {
+  const params = new URL(request.url).searchParams;
+  const isStudyCard = params.get("type") === "study-card";
+  const exam = params.get("exam") ?? "";
+  const card = isStudyCard ? parseStudyCard(params) : null;
+  const qualification = isStudyCard ? cardQualification(exam) : null;
+  if (isStudyCard && (!card || !qualification || params.getAll("exam").length !== 1 || params.getAll("type").length !== 1)) {
+    return new Response("Invalid study card", { status: 400 });
+  }
+  try {
+    const image = card && qualification ? await renderStudyCard(exam, qualification.name, card) : await renderImage(request);
+    // ImageResponse streams its render. Read it here so a font or renderer
+    // failure can still return the default image before headers are sent.
+    return new Response(await image.arrayBuffer(), { headers: image.headers });
+  } catch (error) {
+    console.error("[og] image generation failed", error);
+    const fallback = await readFile(join(process.cwd(), "app/api/og/default.png"));
+    return new Response(new Uint8Array(fallback), {
+      headers: {
+        "Content-Type": "image/png",
+        "Cache-Control": "public, no-transform, max-age=300, s-maxage=3600",
+      },
+    });
+  }
+}
+
+async function renderStudyCard(exam: string, name: string, card: NonNullable<ReturnType<typeof parseStudyCard>>) {
+  const artFile = basename(qualificationStudyArt(exam));
+  const [font, art, { default: sharp }] = await Promise.all([
+    loadJapaneseFont(),
+    readFile(join(process.cwd(), "public/images/home/study-room-mascots", artFile)),
+    import("sharp"),
+  ]);
+  // The OG renderer recognizes WebP dimensions but does not paint WebP layers into PNG.
+  const png = await sharp(art).resize({ width: 335, height: 410, fit: "inside" }).png().toBuffer();
+  return new ImageResponse(
+    <div style={{ ...SIZE, display: "flex", alignItems: "center", padding: "56px 68px",
+      fontFamily: "Noto Sans JP", color: "#172f3f", background: "#f8f4e8" }}>
+      <div style={{ display: "flex", flexDirection: "column", width: "720px", gap: "24px" }}>
+        <div style={{ display: "flex", fontSize: "24px", color: "#2a645e" }}>過去問AI</div>
+        <div style={{ display: "flex", fontSize: "38px", lineHeight: 1.23 }}>{name}</div>
+        <div style={{ display: "flex", fontSize: "56px", lineHeight: 1.2 }}>{CARD_LABELS[card.kind]}</div>
+        <div style={{ display: "flex", gap: "16px" }}>
+          {[["正解済み", `${card.mastered.toLocaleString("ja-JP")} / ${card.total.toLocaleString("ja-JP")}問`],
+            ["連続学習", `${card.streak.toLocaleString("ja-JP")}日`]].map(([label, value]) => (
+              <div key={label} style={{ display: "flex", flexDirection: "column", gap: "6px",
+                padding: "14px 22px", borderRadius: "19px", background: "#e3eee7" }}>
+                <div style={{ display: "flex", fontSize: "20px", color: "#2a645e" }}>{label}</div>
+                <div style={{ display: "flex", fontSize: "34px" }}>{value}</div>
+              </div>
+            ))}
+        </div>
+      </div>
+      {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse renders an embedded asset */}
+      <img alt="" src={`data:image/png;base64,${png.toString("base64")}`} width={335} height={410}
+        style={{ objectFit: "contain", flexShrink: 0, marginLeft: "12px" }} />
+    </div>,
+    { ...SIZE, fonts: [{ name: "Noto Sans JP", data: font, weight: 700, style: "normal" }],
+      headers: { "Cache-Control": "public, no-transform, max-age=86400, s-maxage=604800" } },
+  );
+}
+
+async function renderImage(request: Request) {
   const url = new URL(request.url);
   const type = url.searchParams.get("type") ?? "default";
-  const meta = TYPE_META[type] ?? TYPE_META.default;
+  const meta = Object.hasOwn(TYPE_META, type) ? TYPE_META[type] : TYPE_META.default;
 
   const title = safeText(url.searchParams.get("title"), "過去問AI", 80);
   const subtitle = safeText(url.searchParams.get("subtitle"), meta.subtitle, 60);
@@ -188,11 +223,7 @@ export async function GET(request: Request) {
     type === "mock-exam" ||
     type === "essay";
 
-  const origin = new URL(request.url).origin;
-  const fontBuffer = await loadJapaneseFont(origin);
-  const fontOptions = fontBuffer
-    ? [{ name: "Noto Sans JP", data: fontBuffer, weight: 700 as const, style: "normal" as const }]
-    : undefined;
+  const font = await loadJapaneseFont();
 
   return new ImageResponse(
     (
@@ -387,7 +418,7 @@ export async function GET(request: Request) {
     ),
     {
       ...SIZE,
-      ...(fontOptions ? { fonts: fontOptions } : {}),
+      fonts: [{ name: "Noto Sans JP", data: font, weight: 700, style: "normal" }],
       // OG 画像はクエリ文字列で内容が一意に定まる決定的レスポンス（問題数や
       // streak 等の動的値も URL に含まれるため別キャッシュキーになる）。
       // 既定は max-age=0, must-revalidate で毎回フォント取得＋satori 再レンダー

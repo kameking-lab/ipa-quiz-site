@@ -1,0 +1,264 @@
+[
+  {
+    "id": "denken2-2022-second-denryoku-q1",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 1,
+    "examDate": "2022-11-13",
+    "category": "電力・管理",
+    "subject": "電力・管理",
+    "topicTags": [
+      "調整池式水力発電"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問1　調整池式水力発電",
+    "answer": "〔問１の標準解答〕 \n貯水容量V[m3]，自然流量Q[m3/s]及びピーク負荷時間T[h]としたときのピー\nク負荷時使用水量Qp，オフピーク負荷時使用水量Qo は以下のとおり。 \np\n60 60\nV\nQ\nQ\nT \no\n60 60\n24\nV\nQ\nQ\nT\n \nよって，題意より， \n3\np\n180 10\n20\n28.333\n3 600 6\nQ\nm3/s \n3\no\n180 10\n20\n17.222\n3 600 18\nQ\nm3/s \nピーク時出力をPp[kW]，オフピーク時出力をPo[kW]とすると， \np\n9.8 28.333 60 0.85\n14 161\n14 200\nP\nkW ･･･(答) \no\n9.8\n17.222\n60\n0.80\n8 101.2\n8 100\nP\nkW ･･･(答)",
+    "modelAnswer": "〔問１の標準解答〕 \n貯水容量V[m3]，自然流量Q[m3/s]及びピーク負荷時間T[h]としたときのピー\nク負荷時使用水量Qp，オフピーク負荷時使用水量Qo は以下のとおり。 \np\n60 60\nV\nQ\nQ\nT \no\n60 60\n24\nV\nQ\nQ\nT\n \nよって，題意より， \n3\np\n180 10\n20\n28.333\n3 600 6\nQ\nm3/s \n3\no\n180 10\n20\n17.222\n3 600 18\nQ\nm3/s \nピーク時出力をPp[kW]，オフピーク時出力をPo[kW]とすると， \np\n9.8 28.333 60 0.85\n14 161\n14 200\nP\nkW ･･･(答) \no\n9.8\n17.222\n60\n0.80\n8 101.2\n8 100\nP\nkW ･･･(答)",
+    "explanation": "ピーク負荷時とそれ以外の時間を分け、流入量と使える貯水量から通水量を求める。落差と効率を掛けて出力に換算する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-denryoku/q01-p03.webp"
+    ],
+    "imageAltTexts": [
+      "電力・管理 問1の公式本文・図表（3ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-denryoku/a01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "電力・管理 問1の公式標準解答（1ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q01.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=1",
+    "sourceAttribution": "出典：電気技術者試験センター 2022年度 二次・電力・管理 問1",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-denryoku-q2",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 2,
+    "examDate": "2022-11-13",
+    "category": "電力・管理",
+    "subject": "電力・管理",
+    "topicTags": [
+      "酸化亜鉛形避雷器"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問2　酸化亜鉛形避雷器",
+    "answer": "- 1 - \n \n \n〔問２の標準解答〕 \n(1) 以下の避雷器の設置上の留意点及びその理由から一つ記載されていればよい。 \n・避雷器は線路引込口や極力被保護機器に近く設置する(約50 m 以下)ことが望\nましく，距離があまり遠くなると被保護機器の端子に加わる異常電圧の値は避\n雷器の制限電圧に比べて高くなり，これを設置した効果がなくなる。 \n・避雷器と大地間の接地線は極力接地抵抗(インピーダンス)を小さくし，高周波\nサージに対するインダクタンスを抑えることで，避雷器－大地間の電圧上昇に\n\nより保護レベルに影響をおよぼさないようにする。 \n(2) 以下の酸化亜鉛形避雷器の特徴とメリットから三つ記載されていればよい。 \n・直列ギャップがないため放電電圧－時間特性に関係する課題がなく，機器絶縁\nに対する保護レベルが向上する。 \n・微小電流から大電流サージ領域まで高い非直線抵抗特性を有することで過電\n圧を抑制することができる。 \n・素子の単位体積当たりの処理エネルギーが大きいので，従来に比べ寸法の小型\n化と構造の簡素化が実現できる。 \n・並列素子数を増加することにより，許容される吸収エネルギーの増加が図れ,サ\nージに対する耐量が向上する。 \n・無続流のため，多重雷などに対する動作責務に余裕があり温度上昇が少なく，\n機器の長寿命化が期待できる。 \n・降雨等による汚損及び洗浄時の不均一電位分布などの問題がなく，局部アーク\nの発生を抑制することができる。 \n(3) \n・課電率を高くすることで，保護レベルを低く設定でき，絶縁設計の合理化が実\n現できるが，機器寿命が短くなるためこの経済バランスを考慮した仕様検討が\n必要となる。",
+    "modelAnswer": "- 1 - \n \n \n〔問２の標準解答〕 \n(1) 以下の避雷器の設置上の留意点及びその理由から一つ記載されていればよい。 \n・避雷器は線路引込口や極力被保護機器に近く設置する(約50 m 以下)ことが望\nましく，距離があまり遠くなると被保護機器の端子に加わる異常電圧の値は避\n雷器の制限電圧に比べて高くなり，これを設置した効果がなくなる。 \n・避雷器と大地間の接地線は極力接地抵抗(インピーダンス)を小さくし，高周波\nサージに対するインダクタンスを抑えることで，避雷器－大地間の電圧上昇に\n\nより保護レベルに影響をおよぼさないようにする。 \n(2) 以下の酸化亜鉛形避雷器の特徴とメリットから三つ記載されていればよい。 \n・直列ギャップがないため放電電圧－時間特性に関係する課題がなく，機器絶縁\nに対する保護レベルが向上する。 \n・微小電流から大電流サージ領域まで高い非直線抵抗特性を有することで過電\n圧を抑制することができる。 \n・素子の単位体積当たりの処理エネルギーが大きいので，従来に比べ寸法の小型\n化と構造の簡素化が実現できる。 \n・並列素子数を増加することにより，許容される吸収エネルギーの増加が図れ,サ\nージに対する耐量が向上する。 \n・無続流のため，多重雷などに対する動作責務に余裕があり温度上昇が少なく，\n機器の長寿命化が期待できる。 \n・降雨等による汚損及び洗浄時の不均一電位分布などの問題がなく，局部アーク\nの発生を抑制することができる。 \n(3) \n・課電率を高くすることで，保護レベルを低く設定でき，絶縁設計の合理化が実\n現できるが，機器寿命が短くなるためこの経済バランスを考慮した仕様検討が\n必要となる。",
+    "explanation": "異常電圧を吸収する避雷器の役割と、ギャップがない構造の効果を分けて整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-denryoku/q02-p04.webp"
+    ],
+    "imageAltTexts": [
+      "電力・管理 問2の公式本文・図表（4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-denryoku/a02-p01.webp",
+      "/questions/denken2/2022-second-denryoku/a02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "電力・管理 問2の公式標準解答（1ページ）",
+      "電力・管理 問2の公式標準解答（2ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q01.pdf#page=4",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=1",
+    "sourceAttribution": "出典：電気技術者試験センター 2022年度 二次・電力・管理 問2",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-denryoku-q3",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 3,
+    "examDate": "2022-11-13",
+    "category": "電力・管理",
+    "subject": "電力・管理",
+    "topicTags": [
+      "調相設備の計算"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問3　調相設備の計算",
+    "answer": "- 2 - \n \n \n〔問３の標準解答〕 \n負荷端における電力の平衡式は下記。 \nj\n0.5\nj0.2\nP\nQ\n負荷電力\n調相設備電力 \n左辺を各電圧変数で表すと，線路電流をI ，無限大母線から負荷母線に至る全\n体のリアクタンスを\ntotal\nX\nとするとき，\n\n- 3 - \n \nd\n*\n0\nd\n*\nd\nd\ntotal\n2\n0 d\nd\ntotal\nj\n2\n0 d\nd\ntotal\n2\n0 d\nd\nd\nd\ntotal\n2\n0 d\nd\n0 d\nd\nd\ntotal\ntotal\nj\nj\nj\ne\nj\n(cos\njsin\n)\nj\nsin\ncos\nj\nV\nV\nP\nQ\nV I\nV\nX\nV V\nV\nX\nV V\nV\nX\nV V\nV\nX\nV V\nV V\nV\nX\nX\n \nまた，右辺は， \n*\nd\nd\nd\n2\nd\nd\n0.5\nj0.2\n(j\n)\n0.5\nj(0.2\n)\nV\nY V\nY V\n \nすなわち， \n0\nd\nd\ntotal\n2\n2\n0\nd\nd\nd\nd\nd\ntotal\nsin\n0.5\ncos\n0.2\nV V\nX\nV V\nV\nY V\nX\n \n(参考：\nd\njY は，コンデンサの場合は\nd\nj\n0\nC Y\n，リアクトルの場合は\nd\n1\n0\nj\nY\nL\nの単位法表示を総称した変数。この\nd\njY で消費される電力は｢\n2\nd d\nY V\n｣の負符\n号の遅れ無効電力。そこで，\nd\nY による無効電力の流れる向きを母線d に入\nる向きとし，｢\n2\nd d\nY V\nの無効電力供給源｣とする考えもある。) \n \n(1) 上式の実数分等価式(P 潮流等価)にsin が含まれており，その式を用いる。 \ntotal\n0.8\n0.2\n0.6\n2\nX\nなので， \n※式(P+jQ)の３行目の誤植を修正しました。\n\n- 4 - \n \n0\nd\nd\ntotal\nd\nsin\n0.5\n1.1 1.05 sin\n0.5\n0.6\nV V\nX\n \nこれから， \nd\n0.5 0.6\nsin\n1.1 1.05\n0.259 74\n \nd\nsin\n0.260 ・・・(答) \n(2) 上式の虚数分等価式(Q 潮流等価)を取り出すと， \n2\n0 d\nd\nd\ntotal\n2\nd\nd\ncos\n1.1 1.05 cos\n1.05\n0.6\n1.925cos\n1.837 5\nV V\nV\nQ\nX\n \nd\n1.93 cos\n1.84\nQ\n・・・(答) \n(3) 上記Q 式と冒頭式のQ 平衡式から， \n2\nd\nd\n1.925cos\n1.837 5\n0.2\n1.05\nQ\nY \nd\nY を左辺に移行して， \nd\nd\n2\nd\n1.925cos\n2.037 5\n1.05\n1.746 0cos\n1.848 1\nY\n \nd\nd\n1.75 cos\n1.85\nY\n・・・(答) \n \n(4) 上記設問の右辺\nd\ncos\nは小問(1)の答を用いて， \n2\nd\nd\n2\ncos\n1\nsin\n1\n( 0.259 74)\n0.965 68\n\n題意より\nd\n2 (\nd\ncos\n0 )なので正値を採用。この値を小問(3)の式に代入\nして， \nd\n1.746 0 0.965 68 1.848 1\n0.162 02\nY\n \nd\n0.162\nY\n・・・(答)",
+    "modelAnswer": "- 2 - \n \n \n〔問３の標準解答〕 \n負荷端における電力の平衡式は下記。 \nj\n0.5\nj0.2\nP\nQ\n負荷電力\n調相設備電力 \n左辺を各電圧変数で表すと，線路電流をI ，無限大母線から負荷母線に至る全\n体のリアクタンスを\ntotal\nX\nとするとき，\n\n- 3 - \n \nd\n*\n0\nd\n*\nd\nd\ntotal\n2\n0 d\nd\ntotal\nj\n2\n0 d\nd\ntotal\n2\n0 d\nd\nd\nd\ntotal\n2\n0 d\nd\n0 d\nd\nd\ntotal\ntotal\nj\nj\nj\ne\nj\n(cos\njsin\n)\nj\nsin\ncos\nj\nV\nV\nP\nQ\nV I\nV\nX\nV V\nV\nX\nV V\nV\nX\nV V\nV\nX\nV V\nV V\nV\nX\nX\n \nまた，右辺は， \n*\nd\nd\nd\n2\nd\nd\n0.5\nj0.2\n(j\n)\n0.5\nj(0.2\n)\nV\nY V\nY V\n \nすなわち， \n0\nd\nd\ntotal\n2\n2\n0\nd\nd\nd\nd\nd\ntotal\nsin\n0.5\ncos\n0.2\nV V\nX\nV V\nV\nY V\nX\n \n(参考：\nd\njY は，コンデンサの場合は\nd\nj\n0\nC Y\n，リアクトルの場合は\nd\n1\n0\nj\nY\nL\nの単位法表示を総称した変数。この\nd\njY で消費される電力は｢\n2\nd d\nY V\n｣の負符\n号の遅れ無効電力。そこで，\nd\nY による無効電力の流れる向きを母線d に入\nる向きとし，｢\n2\nd d\nY V\nの無効電力供給源｣とする考えもある。) \n \n(1) 上式の実数分等価式(P 潮流等価)にsin が含まれており，その式を用いる。 \ntotal\n0.8\n0.2\n0.6\n2\nX\nなので， \n※式(P+jQ)の３行目の誤植を修正しました。\n\n- 4 - \n \n0\nd\nd\ntotal\nd\nsin\n0.5\n1.1 1.05 sin\n0.5\n0.6\nV V\nX\n \nこれから， \nd\n0.5 0.6\nsin\n1.1 1.05\n0.259 74\n \nd\nsin\n0.260 ・・・(答) \n(2) 上式の虚数分等価式(Q 潮流等価)を取り出すと， \n2\n0 d\nd\nd\ntotal\n2\nd\nd\ncos\n1.1 1.05 cos\n1.05\n0.6\n1.925cos\n1.837 5\nV V\nV\nQ\nX\n \nd\n1.93 cos\n1.84\nQ\n・・・(答) \n(3) 上記Q 式と冒頭式のQ 平衡式から， \n2\nd\nd\n1.925cos\n1.837 5\n0.2\n1.05\nQ\nY \nd\nY を左辺に移行して， \nd\nd\n2\nd\n1.925cos\n2.037 5\n1.05\n1.746 0cos\n1.848 1\nY\n \nd\nd\n1.75 cos\n1.85\nY\n・・・(答) \n \n(4) 上記設問の右辺\nd\ncos\nは小問(1)の答を用いて， \n2\nd\nd\n2\ncos\n1\nsin\n1\n( 0.259 74)\n0.965 68\n\n題意より\nd\n2 (\nd\ncos\n0 )なので正値を採用。この値を小問(3)の式に代入\nして， \nd\n1.746 0 0.965 68 1.848 1\n0.162 02\nY\n \nd\n0.162\nY\n・・・(答)",
+    "explanation": "単位法で各母線の電圧と系統のインピーダンスを表し、無効電力の符号から必要な設備を判別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-denryoku/q03-p05.webp"
+    ],
+    "imageAltTexts": [
+      "電力・管理 問3の公式本文・図表（5ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-denryoku/a03-p02.webp",
+      "/questions/denken2/2022-second-denryoku/a03-p03.webp",
+      "/questions/denken2/2022-second-denryoku/a03-p04.webp",
+      "/questions/denken2/2022-second-denryoku/a03-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "電力・管理 問3の公式標準解答（2ページ）",
+      "電力・管理 問3の公式標準解答（3ページ）",
+      "電力・管理 問3の公式標準解答（4ページ）",
+      "電力・管理 問3の公式標準解答（5ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q01.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=2",
+    "sourceAttribution": "出典：電気技術者試験センター 2022年度 二次・電力・管理 問3",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-denryoku-q4",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 4,
+    "examDate": "2022-11-13",
+    "category": "電力・管理",
+    "subject": "電力・管理",
+    "topicTags": [
+      "高圧受電設備の保護"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問4　高圧受電設備の保護",
+    "answer": "- 5 - \n \n \n〔問４の標準解答〕 \n(1) 受電設備容量300 kV･A 以下の主遮断装置には，高圧限流ヒューズ(PF)と負\n荷開閉器(LBS 又はS)を組み合わせた方式が主に用いられる。 \n地絡事故が発生したときは地絡リレー(GR)又は地絡方向リレー(DGR)で\n検出し開閉器をトリップ(※)させ，短絡事故のときは，短絡電流が大電流であ\nるためPF で遮断する。 \n300 kV･A 以上の主遮断装置には，真空遮断器(VCB)などの遮断器(CB)と\n地絡・短絡などのリレーを組み合わせた方式が主に用いられる。 \n地絡，短絡などの事故，あるいは過負荷が発生したときは，GR 又はDGR，\n過電流リレー(OCR)などで検出(※)しCB を遮断させ設備を保護する。 \n※地絡事故時の保護は，PAS の取り付けに言及した場合，PAS を遮断も可 \n(\nGR\nOCG\n(\n)\nR\n)\n・地絡リレー\nは，地絡過電流リレー\nでも可\n・負荷開閉器は，高圧交流負荷開閉器でも可\n \n(2) DGR は，零相電圧検出器(ZPD)で零相電圧(V0)，零相変流器(ZCT)で零相電\n流(I0)を同時に検出する。また，V0 とI0 の位相から地絡電流の方向を判別する\nことで，地絡事故が自家用構内側か構外側かを区別している。 \nGR は，ZCT のみしか使用していないため，一定以上のI0 が流れた場合に地\n絡事故の判定をする。零相電流の値のみのため，誤作動の可能性がある。",
+    "modelAnswer": "- 5 - \n \n \n〔問４の標準解答〕 \n(1) 受電設備容量300 kV･A 以下の主遮断装置には，高圧限流ヒューズ(PF)と負\n荷開閉器(LBS 又はS)を組み合わせた方式が主に用いられる。 \n地絡事故が発生したときは地絡リレー(GR)又は地絡方向リレー(DGR)で\n検出し開閉器をトリップ(※)させ，短絡事故のときは，短絡電流が大電流であ\nるためPF で遮断する。 \n300 kV･A 以上の主遮断装置には，真空遮断器(VCB)などの遮断器(CB)と\n地絡・短絡などのリレーを組み合わせた方式が主に用いられる。 \n地絡，短絡などの事故，あるいは過負荷が発生したときは，GR 又はDGR，\n過電流リレー(OCR)などで検出(※)しCB を遮断させ設備を保護する。 \n※地絡事故時の保護は，PAS の取り付けに言及した場合，PAS を遮断も可 \n(\nGR\nOCG\n(\n)\nR\n)\n・地絡リレー\nは，地絡過電流リレー\nでも可\n・負荷開閉器は，高圧交流負荷開閉器でも可\n \n(2) DGR は，零相電圧検出器(ZPD)で零相電圧(V0)，零相変流器(ZCT)で零相電\n流(I0)を同時に検出する。また，V0 とI0 の位相から地絡電流の方向を判別する\nことで，地絡事故が自家用構内側か構外側かを区別している。 \nGR は，ZCT のみしか使用していないため，一定以上のI0 が流れた場合に地\n絡事故の判定をする。零相電流の値のみのため，誤作動の可能性がある。",
+    "explanation": "設備容量による主遮断装置の使い分けと、地絡の方向を判別するリレーの動作を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-denryoku/q04-p06.webp"
+    ],
+    "imageAltTexts": [
+      "電力・管理 問4の公式本文・図表（6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-denryoku/a04-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "電力・管理 問4の公式標準解答（5ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q01.pdf#page=6",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=5",
+    "sourceAttribution": "出典：電気技術者試験センター 2022年度 二次・電力・管理 問4",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-denryoku-q5",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 5,
+    "examDate": "2022-11-13",
+    "category": "電力・管理",
+    "subject": "電力・管理",
+    "topicTags": [
+      "再生可能エネルギー"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問5　再生可能エネルギー",
+    "answer": "〔問５の標準解答〕 \n(1) 2 割 \n(2)  \n①電力需給 \n再生可能エネルギーの発電量は，天候や季節により変動してコントロー\nルが難しいため，調整力が不足すると需給バランスに問題が生じる。 \n  ②送配電設備容量 \n電力需要が少ないエリアなどで再生可能エネルギーが大量に導入され\nると，既存の一部の送電線や連系線の設備容量が不足し，送電に問題が生\nじる。 \n  ③安定度 \n非同期電源である太陽光発電などが大量に導入され，火力発電等の同期\n電源の割合が減少すると，系統全体の慣性力・同期化力が減少し，事故時\nの安定度に問題が生じる。",
+    "modelAnswer": "〔問５の標準解答〕 \n(1) 2 割 \n(2)  \n①電力需給 \n再生可能エネルギーの発電量は，天候や季節により変動してコントロー\nルが難しいため，調整力が不足すると需給バランスに問題が生じる。 \n  ②送配電設備容量 \n電力需要が少ないエリアなどで再生可能エネルギーが大量に導入され\nると，既存の一部の送電線や連系線の設備容量が不足し，送電に問題が生\nじる。 \n  ③安定度 \n非同期電源である太陽光発電などが大量に導入され，火力発電等の同期\n電源の割合が減少すると，系統全体の慣性力・同期化力が減少し，事故時\nの安定度に問題が生じる。",
+    "explanation": "発電電力量の割合は出題時の統計を用いる。普及による需給調整、系統、事業の課題は切り分けて記述する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-denryoku/q05-p07.webp"
+    ],
+    "imageAltTexts": [
+      "電力・管理 問5の公式本文・図表（7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-denryoku/a05-p06.webp"
+    ],
+    "answerImageAltTexts": [
+      "電力・管理 問5の公式標準解答（6ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q01.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=6",
+    "sourceAttribution": "出典：電気技術者試験センター 2022年度 二次・電力・管理 問5",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-denryoku-q6",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "denryoku",
+    "qNumber": 6,
+    "examDate": "2022-11-13",
+    "category": "電力・管理",
+    "subject": "電力・管理",
+    "topicTags": [
+      "配電線と需要の集約"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問6　配電線と需要の集約",
+    "answer": "- 6 - \n \n \n〔問６の標準解答〕 \n(1) 需要設備a，b，c の最大電力[kW]を，それぞれPa，Pb，Pcとすると， \n最大電力＝設備容量×力率×需要率の関係があるので， \nPa ＝9 000×0.9×0.6＝4 860 kW  \nPb ＝5 000×0.9×0.7＝3 150 kW   ･･･(答) \nPc ＝3 000×0.9×0.8＝2 160 kW  \n(2) 配電線A，B の最大電力を，それぞれPA，PB とすると， \n総合最大電力＝合計最大電力／不等率の関係があるので， \nB\nA\n3 150\n2 160\n4 248 kW\n4 860 kW\n1.25\nP\nP\n \n \nよって，同様に，変電所の総合最大電力PS は， \nA\nB\nS\n4860\n4248\n8280kW\n1.1\n1.1\nP\nP\nP\n･･･(答)\n\n- 7 - \n \n(3) 需要設備a，b，c の平均電力[kW]を，それぞれ\na\nb\nc\nP\nP\nP\n，，とすると， \n平均電力＝最大電力×負荷率の関係があるので， \na\n4860×0.7\n3402\n3400kW\nP\n→\n \nb\n3150×0.8\n2520\n2520kW\nP\n→\n    ･･･(答)    \nc\n2160×0.6\n1296\n1300kW\nP\n→\n \n(4) 変電所の平均電力を\nSP とすると，  \nS\na\nb\nc\nP\nP\nP\nP \nよって，小問(3)で示した関係式より，変電所の総合負荷率LF は， \nS\nS\n×100\n3402\n2520\n1296\n    \n×100\n87.17\n87.2\n8280\nP\nLF\nP\n \n≒\n％･･･（答） \n→",
+    "modelAnswer": "- 6 - \n \n \n〔問６の標準解答〕 \n(1) 需要設備a，b，c の最大電力[kW]を，それぞれPa，Pb，Pcとすると， \n最大電力＝設備容量×力率×需要率の関係があるので， \nPa ＝9 000×0.9×0.6＝4 860 kW  \nPb ＝5 000×0.9×0.7＝3 150 kW   ･･･(答) \nPc ＝3 000×0.9×0.8＝2 160 kW  \n(2) 配電線A，B の最大電力を，それぞれPA，PB とすると， \n総合最大電力＝合計最大電力／不等率の関係があるので， \nB\nA\n3 150\n2 160\n4 248 kW\n4 860 kW\n1.25\nP\nP\n \n \nよって，同様に，変電所の総合最大電力PS は， \nA\nB\nS\n4860\n4248\n8280kW\n1.1\n1.1\nP\nP\nP\n･･･(答)\n\n- 7 - \n \n(3) 需要設備a，b，c の平均電力[kW]を，それぞれ\na\nb\nc\nP\nP\nP\n，，とすると， \n平均電力＝最大電力×負荷率の関係があるので， \na\n4860×0.7\n3402\n3400kW\nP\n→\n \nb\n3150×0.8\n2520\n2520kW\nP\n→\n    ･･･(答)    \nc\n2160×0.6\n1296\n1300kW\nP\n→\n \n(4) 変電所の平均電力を\nSP とすると，  \nS\na\nb\nc\nP\nP\nP\nP \nよって，小問(3)で示した関係式より，変電所の総合負荷率LF は， \nS\nS\n×100\n3402\n2520\n1296\n    \n×100\n87.17\n87.2\n8280\nP\nLF\nP\n \n≒\n％･･･（答） \n→",
+    "explanation": "需要設備ごとの最大電力と平均電力を求めてから、各配電線を通る需要をまとめる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-denryoku/q06-p08.webp"
+    ],
+    "imageAltTexts": [
+      "電力・管理 問6の公式本文・図表（8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-denryoku/a06-p06.webp",
+      "/questions/denken2/2022-second-denryoku/a06-p07.webp"
+    ],
+    "answerImageAltTexts": [
+      "電力・管理 問6の公式標準解答（6ページ）",
+      "電力・管理 問6の公式標準解答（7ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q01.pdf#page=8",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=6",
+    "sourceAttribution": "出典：電気技術者試験センター 2022年度 二次・電力・管理 問6",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  }
+]

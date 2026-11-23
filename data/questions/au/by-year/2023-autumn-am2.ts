@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エは、学習の基礎となるデータの信頼性確保において、根拠のない憶測に基づき実績のないAIシステムに判断させたデータを利用している状況です。これはデータの品質や信頼性に重大な問題があるため、監査人が指摘事項として報告書に記載すべき内容です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ISMAPの監査対象期間は原則1年ですが、新規申請などでは1年より短縮することが可能です。その際、当該クラウドサービス等が申請日時点で最低1か月の運用実績を有している必要があります。エの記述はこの要件に合致しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 19011:2019における“監査プログラム”は、特定の目的のために、決められた期間内に実行するよう計画された一連の監査に関する取決めと定義されています。エの記述は、この定義に合致するものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "システム監査基準において、予備調査は監査対象の概要、関連する業務、組織体制などを把握するための情報収集活動とされています。アは、事前資料の閲覧を通じて監査対象の詳細を把握する活動であり、予備調査の主要な作業です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "監査の結論を表明するためには、その結論を裏付ける合理的な根拠が必要です。エは、保証監査と助言監査のいずれにおいても、結論のための合理的な根拠を得るまで監査手続を実施するという、監査の信頼性確保に不可欠な原則を述べています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "監査調書は、監査人が監査の過程で得た証拠、分析結果、結論に至るプロセスなどを体系的に記録・整理したものです。エは、監査調書を組織の規程に従って適切に整理・保管し、権限のある者のみが利用できるようにするという、監査調書の信頼性と機密性に関する適切な管理原則を述べています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "システム監査基準における「十分かつ適切な監査証拠」は、量と質の双方から評価されます。アは、証拠の「質的十分性」と、その「保管要件への適合性」、そして「偽造されていないこと」という、監査証拠の信頼性を確保するための重要な要素を具体的に説明しており、基準の考え方に合致しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ITに係る全般統制は、情報システム全体の信頼性、安全性、効率性を確保するための統制活動です。アは、法令改正に対応するためのシステム変更プロセスを管理するものであり、システム全体の正確性と信頼性を維持する全般統制に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "事後的な債権残高の異常検証には、過去のデータとの比較や分析が有効です。ウは、売掛債権回転期間を前年同期と比較することで、業務処理の異常や傾向を事後的に検出する分析的レビューであり、適切な方法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ITに係る全般統制は、システム開発・保守、運用、セキュリティなど、情報システム全体に共通して適用される統制です。エは、プログラムの品質と信頼性を確保するための開発・保守統制の一部であり、システム全体に影響を及ぼす全般統制に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "SLA策定では、まず目標達成に不可欠な要因（CSF）を特定し、次にその達成度を測る指標（KPI）を設定します。最後に、KPIに基づき具体的な目標値（SLO）を定めるのが論理的な順序です。したがって、CSF → KPI → SLOの順が適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +298,14 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "D案"
     },
     "answer": "ウ",
-    "explanation": "TCO（総所有費用）とは、システム導入から廃棄までの総コストのことです。これには、初期投資費用、運用・保守費用、廃棄費用などが含まれます。提示された4案の中からTCOが最小のものを選ぶ問題です。\n\n正解であるウ案がTCO最小となるのは、初期開発費用と3年間の運用・保守費用を合計した総額が、他の選択肢よりも最も低くなると判断されるためです。\n\nア案は、初期開発費用は低いものの、運用・保守費用が高額になる傾向があるため、3年間のTCOではウ案に劣ると考えられます。イ案は、初期開発費用は高いものの、運用・保守費用が低いという特徴があり、一見魅力的ですが、開発費用の高さがTCO全体を押し上げ、ウ案の総コストを下回らないと推測されます。エ案は、提示された情報からは具体的なコスト構造が不明瞭ですが、ウ案と比較して何らかの理由でTCOが高くなると判断されたと考えられます。",
+    "explanation": "初期費用はハードウェア導入、システム開発、導入教育の合計です。年間費用は通信、保守、運用の合計で、3年分を加えます。表から、A案は65＋32×3＝161、B案は85＋29×3＝172、C案は75＋26×3＝153、D案は85＋24×3＝157百万円です。最も小さいのはC案なのでウです。",
+    "choiceExplanations": {
+      "ア": "誤りです。A案の初期費用は65百万円と最小ですが、毎年の費用は32百万円掛かります。3年分を足すと161百万円で、C案の153百万円を上回ります。",
+      "イ": "誤りです。B案は初期費用85百万円に毎年29百万円を3年分足して172百万円です。運用費用の一部が安くても、総額ではC案を上回ります。",
+      "ウ": "正しいです。C案の初期費用は40＋30＋5＝75百万円、毎年の費用は15＋5＋6＝26百万円です。3年間の総額153百万円が4案で最小です。",
+      "エ": "誤りです。D案の年間費用24百万円は最小ですが、初期費用は85百万円です。3年分を足した157百万円は、C案より4百万円高くなります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "フェアユースは、主にアメリカ合衆国の著作権法における概念で、批評、解説、ニュース報道、教授、研究などの公正な目的であれば、一定の範囲で著作物を利用しても著作権侵害とならないという考え方です。エは、この説明を正確に記述しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -335,7 +354,8 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "“特定デジタルプラットフォーム提供者”は、毎年度,事業概要や苦情処理などの所定の事項を記載した報告書を経済産業大臣に提出しなければならない。"
     },
     "answer": "エ",
-    "explanation": "特定デジタルプラットフォームの透明性及び公正性の向上に関する法律は、巨大なデジタルプラットフォーム提供者に対し、取引の透明性・公正性確保のための義務を課しています。エは、本法律第6条に規定されている、事業概要等の報告書を経済産業大臣に提出する義務を正確に述べています。",
+    "explanation": "特定デジタルプラットフォームの透明性及び公正性の向上に関する法律は、巨大なデジタルプラットフォーム提供者に対し、取引の透明性・公正性確保のための義務を課しています。エは、本法律第9条に規定されている、事業概要等の報告書を経済産業大臣に提出する義務を正確に述べています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "民法の契約不適合責任において、買主は契約内容に適合しない目的物に対して、履行の追完請求（修補、代替物引渡しなど）、代金減額請求、損害賠償請求、契約の解除などの権利を行使できます。イはこれらの権利を適切に記述しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "SL理論（状況的リーダーシップ理論）は、ハーシーとブランチャードが提唱したもので、リーダーシップをタスク志向と人間関係志向の強弱で分類し、部下の成熟度（能力と意欲）に応じて最適なリーダーシップスタイルが変化すると説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "公開鍵基盤におけるCPS（Certification Practice Statement）は、認証局（CA）が認証業務をどのように運用するかを詳細に規定した文書です。これには証明書の発行、失効、セキュリティポリシーなどが含まれます。ウの記述は、このCPSの役割を正確に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +454,8 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "脆弱性関連情報の発見から公表に至るまでの対処プロセス"
     },
     "answer": "イ",
-    "explanation": "サイバー情報共有イニシアティブ（J-CSIP）は、NISCが推進する、重要インフラ事業者等とサイバー攻撃情報を共有する枠組みです。参加企業が検知した情報を集約・分析し、対策につなげることを目的としています。イの記述は、その活動内容を正確に表しています。",
+    "explanation": "サイバー情報共有イニシアティブ（J-CSIP）は、IPAを情報の集約点として、参加組織間でサイバー攻撃情報を共有する枠組みです。参加組織が検知した情報をIPAが集約・分析し、情報提供元や機微情報を匿名化して共有することで、高度なサイバー攻撃への対策につなげます。イの記述は、その活動内容を表しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 27000:2019におけるリスク評価は、リスク分析の結果をリスク基準と比較し、リスクが受容可能か否かを決定するプロセスと定義されています。イの記述は、この定義に合致しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "クリプトジャッキングは、他人のPCやサーバなどの情報処理リソースを、所有者の許可なく利用して暗号資産のマイニング（採掘）を行うサイバー攻撃です。アの記述は、クリプトジャッキングの定義そのものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,13 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "「付加情報」表に「顧客」表に対する参照制約を指定する、という選択肢ウが正解です。これは、ER図（エンティティ・リレーションシップ図）などで表現されるデータモデルをリレーショナルデータベース（関係データベース）に実装する際の基本的な考え方に基づいています。参照制約とは、あるテーブルの列の値が、別のテーブルの主キー（一意に識別する列）の値であることを保証する仕組みです。これにより、データの整合性が保たれます。\n\n選択肢アは、「付加情報」表のどの行でも「指定送付先」を選択できるとするのは、データ間の関連性が不明確で、不正なデータ登録を招く可能性があるため不適切です。選択肢イは、「付加情報」表と「顧客」表の行数が一致することは、必ずしも必須ではありません。例えば、一人の顧客が複数の付加情報を持つ場合や、付加情報を持たない顧客がいる場合などが考えられます。選択肢エは、「付加情報」表が「注文」表に対して参照制約を持つかは、データモデルの設計によりますが、一般的に「顧客」との関連性の方が直接的であると考えられ、常に正しいとは言えません。",
+    "choiceExplanations": {
+      "ア": "誤りです。図の注記では、指定送付先の注文主と当該注文の顧客が一致する必要があります。他の顧客に属する付加情報は送付先に選べません。",
+      "イ": "誤りです。顧客に対する付加情報側の多重度は＊です。ある顧客には付加情報がなく、別の顧客には複数あることも許されるので、行数は一致する必要がありません。",
+      "ウ": "正しいです。付加情報には注文主となる顧客が必ず1人対応します。付加情報側に顧客表への外部キーを設けると、存在しない顧客への参照を防げます。",
+      "エ": "誤りです。注文は指定送付先として付加情報を0件又は1件参照し、同じ付加情報を複数の注文が参照できます。この関連の参照制約は注文表側に置きます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リンクアグリゲーションは、複数の物理的なネットワークポート（ケーブル）を束ねて、論理的に単一のリンクとして扱う技術です。これにより、帯域幅の増加や冗長性の確保が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -551,7 +585,14 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "a:ラウンドロビン, b:ウォークスルー, c:インスペクション"
     },
     "answer": "エ",
-    "explanation": "エが正解となるのは、a、b、cで説明されているレビューの特性と、それぞれに対応するインスペクション、ウォークスルー、ラウンドロビンという手法の定義が合致するためです。インスペクションは、厳密な手順とチェックリストを用いて、欠陥の発見を目的とするレビューです。ウォークスルーは、開発者自身がコードや設計を説明し、参加者が理解を深め、潜在的な問題を共有することを目的とします。ラウンドロビンは、複数人で順番に担当部分を確認していく形式であり、aの説明にある「複数人が順次、担当範囲をチェックする」という特徴に合致します。\n\nアは、aの説明がインスペクションではなくラウンドロビンであるべきなので不適切です。イは、bの説明がウォークスルーではなくインスペクションであるべきなので誤りです。ウは、aの説明がラウンドロビン、bの説明がインスペクションであることは正しいですが、cの説明がウォークスルーではなくラウンドロビンであるため不適切です。",
+    "explanation": "aでは参加者全員が順番にレビュー責任者を務めるので、ラウンドロビンです。bではレビュー対象物の作成者が説明を進め、参加者が質問などをするので、ウォークスルーです。cでは資料を準備し、議長などの役割を決めて正式に評価するので、インスペクションです。したがって組合せはエです。",
+    "choiceExplanations": {
+      "ア": "誤りです。bのウォークスルーは合っていますが、aのレビュー責任者は持ち回りなのでラウンドロビンです。役割を事前に決めて公式に評価するcがインスペクションです。",
+      "イ": "誤りです。aは作成者が説明する形式ではなく、責任者を参加者で交代する方式です。またbで説明するのは作成者なので、ここがウォークスルーに当たります。",
+      "ウ": "誤りです。aだけが合っています。作成者が中心となって説明するbはウォークスルーで、議長などの役割を決めて厳密に進めるcはインスペクションです。",
+      "エ": "正しいです。責任者の持ち回りがaのラウンドロビン、作成者の説明が中心のbがウォークスルー、役割を定め正式に評価するcがインスペクションです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +617,13 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ファイブフォース分析は、業界の競争構造を5つの要因で分析するフレームワークであり、そのうちの一つとして「業者間の敵対関係」が挙げられます。これは、既存の競合企業間の激しい競争や価格競争、広告競争などが業界全体の収益性を低下させる要因となることを指します。問題文は、図中のaに入る要因を問うており、ファイブフォース分析の構成要素として、業者間の競争の激しさを表す「業者間の敵対関係」が最も適切です。\n\nアの規模の経済性は、生産量が増えるほど単位あたりのコストが低下する現象を指し、これは新規参入の障壁となる要因ですが、五つの力そのものではありません。ウの仕入先の集中度は、仕入先が少数に集中している場合に、仕入先が価格交渉力を持ち、業界の収益性を低下させる要因となりますが、これも五つの力そのものではありません。エの流通チャネルの確保も、新規参入の障壁となる要因であり、五つの力そのものではありません。",
+    "choiceExplanations": {
+      "ア": "誤りです。規模の経済性は、新規参入者が既存企業と同じコストで事業を始めにくくなる要因です。図では既に示された新規参入の脅威に関係します。",
+      "イ": "正しいです。図の四方にある新規参入、代替品、売り手、買い手の力に加え、既存の業者同士が価格やサービスなどで争う競争が中央に入ります。",
+      "ウ": "誤りです。仕入先が少数に集中していると、購入側が仕入先を切り替えにくくなります。これは図の左側にある売り手の交渉力を強める要因です。",
+      "エ": "誤りです。新規参入者が商品の販売経路を確保しにくければ、それが参入障壁になります。中央が示す既存の業者同士の競争とは役割が異なります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +648,7 @@ export const AU_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ウが正解である根拠は、「不協和低減型」という製品タイプにおける消費者の行動特性にあります。このタイプは、製品への関与度は高いものの、ブランド間の違いをあまり認識していない、あるいは重要視しない状況を指します。そのため、消費者は購入時点でどのブランドが良いか明確な判断ができず、購入後に「この選択で良かったのだろうか」といった後悔（認知的不協和）を感じ、その解消のためにブランドを評価する行動をとります。\n\nアは、ブランド間の違いを認識し、多様性を求める「バラエティシーキング型」の行動であり、不協和低減型とは異なります。イは、ブランド間に違いがないと認識し、習慣や利便性で選ぶ「習慣型（インパルサive型）」、あるいは「バラエティシーキング型」の行動の一部であり、不協和低減型とは異なります。エは、ブランド間の差異を深く理解し、慎重に比較検討する「複雑な購買行動型」の行動であり、不協和低減型とは根本的に異なります。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_au_am2_qs.pdf",
     "license": "IPA-public"

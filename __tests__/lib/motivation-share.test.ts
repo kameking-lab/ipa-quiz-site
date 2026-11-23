@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
   buildOgImageUrl,
-  buildXShareUrl,
   buildLineShareUrl,
   buildSessionText,
   buildStreakText,
@@ -10,7 +9,7 @@ import {
 import { SITE_BASE_URL } from "@/lib/seo/config";
 
 // share.ts はストリーク/セッション/バッジ獲得時の SNS シェア URL・本文を組み立てる
-// ユーザー向け導線（X/LINE 共有・OG 画像）。クエリの欠落・エンコード崩れは共有カードの
+// ユーザー向け導線（LINE 共有・OG 画像）。クエリの欠落・エンコード崩れは共有カードの
 // 破損や 404 に直結する。崩れたら落ちる契約として現挙動を回帰固定する（source 無変更）。
 
 describe("buildOgImageUrl", () => {
@@ -54,14 +53,7 @@ describe("buildOgImageUrl", () => {
   });
 });
 
-describe("buildXShareUrl / buildLineShareUrl", () => {
-  it("X intent はテキストと URL をクエリに載せる", () => {
-    const u = new URL(buildXShareUrl("結果はこちら", "https://example.com/r"));
-    expect(u.origin + u.pathname).toBe("https://twitter.com/intent/tweet");
-    expect(u.searchParams.get("text")).toBe("結果はこちら");
-    expect(u.searchParams.get("url")).toBe("https://example.com/r");
-  });
-
+describe("buildLineShareUrl", () => {
   it("LINE 共有はテキストと URL を改行連結し全体をエンコードする", () => {
     const out = buildLineShareUrl("結果はこちら", "https://example.com/r");
     expect(out).toBe(

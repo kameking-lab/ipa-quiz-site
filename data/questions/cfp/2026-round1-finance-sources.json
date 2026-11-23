@@ -1,0 +1,303 @@
+{
+  "exam": "cfp",
+  "edition": "2026年度第1回",
+  "subject": "金融資産運用設計",
+  "checkedAt": "2026-11-17",
+  "scope": {
+    "officialSubjectQuestions": 50,
+    "addedQuestions": 14,
+    "remainingSubjectQuestions": 36,
+    "otherSubjects": "未収録・本レーンでは件数未集計"
+  },
+  "sources": [
+    {
+      "url": "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP01_q.pdf",
+      "file": "cfp-2026-1-finance-q.pdf",
+      "sha256": "4f16566a06db9746593b6a30e635e4df59a96656d4655621304abba285c0080b",
+      "pages": 40
+    },
+    {
+      "url": "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP01_a.pdf",
+      "file": "cfp-2026-1-finance-a.pdf",
+      "sha256": "947749e744a7e01bc96e68fa0824d9da21cec33786cc294412c383f574f098f1",
+      "pages": 1
+    }
+  ],
+  "references": [
+    {
+      "key": "arbitrage",
+      "url": "https://www.jpx.co.jp/ose-toshijuku/column/futures_option/futures/02.html",
+      "resolvedUrl": "https://www.jpx.co.jp/ose-toshijuku/column/futures_option/futures/02.html",
+      "file": "arbitrage.html",
+      "sha256": "15e41984260a7c4fa3f2497e452b7a5b03b1807188d571cc68b09fb99678a47c",
+      "status": 200
+    },
+    {
+      "key": "arbitrage-data",
+      "url": "https://www.jpx.co.jp/markets/statistics-equities/program/index.html",
+      "resolvedUrl": "https://www.jpx.co.jp/markets/statistics-equities/program/index.html",
+      "file": "arbitrage-data.html",
+      "sha256": "fd2d11605a2d2c5b4602c9ecc65537f2d9e45ea5a9e74e8cb702a5f07b4b3991",
+      "status": 200
+    },
+    {
+      "key": "gdp",
+      "url": "https://www.esri.cao.go.jp/jp/sna/otoiawase/faq/qa14.html",
+      "resolvedUrl": "https://www.esri.cao.go.jp/jp/sna/otoiawase/faq/qa14.html",
+      "file": "gdp.html",
+      "sha256": "467a8d70a4c2227b8c4cdec3da6d969c69a27062153f6a27abf20142b0b0eab8",
+      "status": 200
+    },
+    {
+      "key": "jgb",
+      "url": "https://www.mof.go.jp/jgbs/individual/kojinmuke/main/outline/index.html",
+      "resolvedUrl": "https://www.mof.go.jp/jgbs/individual/kojinmuke/main/outline/index.html",
+      "file": "jgb.html",
+      "sha256": "e9e845b521b1b80e26e3832914c12e9afedfdfcc559078c6ae3193e6a1e241a4",
+      "status": 200
+    },
+    {
+      "key": "money",
+      "url": "https://www.boj.or.jp/statistics/outline/exp/data/exms01.pdf",
+      "resolvedUrl": "https://www.boj.or.jp/statistics/outline/exp/data/exms01.pdf",
+      "file": "money.pdf",
+      "sha256": "fedd0cd450386cf872c036debe356048d24cd7447b193ad56ddbbda044aea87e",
+      "status": 200
+    },
+    {
+      "key": "prospectus",
+      "url": "https://www.toushin.or.jp/files/profile/5/jita-reg37.pdf",
+      "resolvedUrl": "https://www.toushin.or.jp/files/profile/5/jita-reg37.pdf",
+      "file": "prospectus.pdf",
+      "sha256": "2366bbae18d012c400116c6b91e8074638f9d824e980ccdfbe8aa099132f5eda",
+      "status": 200
+    },
+    {
+      "key": "settlement",
+      "url": "https://www.jpx.co.jp/equities/trading/domestic/02.html",
+      "resolvedUrl": "https://www.jpx.co.jp/equities/trading/domestic/02.html",
+      "file": "settlement.html",
+      "sha256": "3633aa0f7f9c23efaad85946cc7db92245dbbe9e605f47733cad0aadb8f2ee25",
+      "status": 200
+    },
+    {
+      "key": "structured",
+      "url": "https://www.jsda.or.jp/about/hatten/risk/01shikumi.pdf",
+      "resolvedUrl": "https://www.jsda.or.jp/about/hatten/risk/01shikumi.pdf",
+      "file": "structured.pdf",
+      "sha256": "e7ccb16b59b380cd75cac63d9e69eca54b206a626861ad52bccf10440f5ff89d",
+      "status": 200
+    },
+    {
+      "key": "tankan",
+      "url": "https://www.boj.or.jp/statistics/outline/exp/tk/faqtk06.htm",
+      "resolvedUrl": "https://www.boj.or.jp/statistics/outline/exp/tk/faqtk06.htm",
+      "file": "tankan.html",
+      "sha256": "b7d8f027ff6275d16fdce381c89782067a8d12ece15d236f2b3a9933d5b0558e",
+      "status": 200
+    },
+    {
+      "key": "tax-cost",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1466.htm",
+      "resolvedUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1466.htm",
+      "file": "tax-cost.html",
+      "sha256": "af89b9a6d52e14c17fd9299b4cf2c8e10b857d724041fcfe4fcb5a8aae0baecf",
+      "status": 200
+    },
+    {
+      "key": "tax-dividend",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1331.htm",
+      "resolvedUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1331.htm",
+      "file": "tax-dividend.html",
+      "sha256": "621495555b3d1fa3b6a0144812b873f95c704b51e928316642b802b9b42865d8",
+      "status": 200
+    },
+    {
+      "key": "tax-interest",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1310.htm",
+      "resolvedUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1310.htm",
+      "file": "tax-interest.html",
+      "sha256": "1f107d6b179be6f5dc07786ac94dbb705ef3c7106b3d3f991e0fc59a73e25624",
+      "status": 200
+    },
+    {
+      "key": "tax-loss",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm",
+      "resolvedUrl": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm",
+      "file": "tax-loss.html",
+      "sha256": "91111d470297e5555e0facfec114d85c856eeb4556d55c398448045e9c6dfc4f",
+      "status": 200
+    },
+    {
+      "key": "teigaku",
+      "url": "https://www.jp-bank.japanpost.jp/kojin/chokin/teigaku/kj_cho_tg_teigaku.html",
+      "resolvedUrl": "https://www.jp-bank.japanpost.jp/kojin/chokin/teigaku/kj_cho_tg_teigaku.html",
+      "file": "teigaku.html",
+      "sha256": "5645fe0340e8e7d13a2fc9719e8d2a2a15a67ae7a3ed1803d83c96c3ae4ee135",
+      "status": 200
+    }
+  ],
+  "checks": {
+    "bodyDualExtraction": 14,
+    "choicesDualExtraction": 56,
+    "answersTextAndTable": 14,
+    "visualQuestionPages": [
+      1,
+      2,
+      5,
+      14,
+      15,
+      17,
+      18,
+      22,
+      23
+    ],
+    "visualAnswerPages": [
+      1
+    ]
+  },
+  "questions": [
+    {
+      "id": "cfp-2026-round1-gakka-q1",
+      "officialQuestionNumber": 1,
+      "pdfPage": 1,
+      "officialAnswer": 4,
+      "transcriptionSha256": "b7afa2102b128aa265977adc5e27da63c34ec865eb9ee33f86367ebf81e2c8a8",
+      "referenceKeys": [
+        "gdp"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q3",
+      "officialQuestionNumber": 3,
+      "pdfPage": 2,
+      "officialAnswer": 3,
+      "transcriptionSha256": "b3f60ae8514893c9711f97dba40c498cb0383057c36b99d125be4d929b8a7270",
+      "referenceKeys": [
+        "tankan"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q4",
+      "officialQuestionNumber": 4,
+      "pdfPage": 2,
+      "officialAnswer": 3,
+      "transcriptionSha256": "c7b263650d32d34ec229d95ef5e1f55fcbdfc5354d0cb6dc86126b9cc684f75b",
+      "referenceKeys": [
+        "money"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q9",
+      "officialQuestionNumber": 9,
+      "pdfPage": 5,
+      "officialAnswer": 3,
+      "transcriptionSha256": "a55ed049123067f0edfc936f71dbe4b9e0a72b7e1cf903e70b29be9d349bf095",
+      "referenceKeys": [
+        "teigaku",
+        "tax-interest"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q17",
+      "officialQuestionNumber": 17,
+      "pdfPage": 14,
+      "officialAnswer": 3,
+      "transcriptionSha256": "9631272de9beb8ac7b7d34a0d02ab65f333a9e826ac91ded6bca046bc6afdcd4",
+      "referenceKeys": [
+        "tax-cost",
+        "tax-dividend",
+        "tax-loss"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q18",
+      "officialQuestionNumber": 18,
+      "pdfPage": 15,
+      "officialAnswer": 2,
+      "transcriptionSha256": "eb177ac17f10d997508dbc2e1d3c1e6b6119a9d437976676c747947e25ffa07a",
+      "referenceKeys": [
+        "settlement"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q19",
+      "officialQuestionNumber": 19,
+      "pdfPage": 15,
+      "officialAnswer": 2,
+      "transcriptionSha256": "bd065524536971d13d3e92f8f37cefd0643b0ba1dd834a6a474639004562f2dd",
+      "referenceKeys": [
+        "arbitrage",
+        "arbitrage-data"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q22",
+      "officialQuestionNumber": 22,
+      "pdfPage": 17,
+      "officialAnswer": 3,
+      "transcriptionSha256": "ca557f4e4d81e219cc4d872ebe7d39a764589ce8b468caab911db2945c244765",
+      "referenceKeys": [
+        "jgb"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q23",
+      "officialQuestionNumber": 23,
+      "pdfPage": 17,
+      "officialAnswer": 1,
+      "transcriptionSha256": "76a6b16869e1ab4bf113a4db8a3ea880d1748a217443d8a6d054eef050ffafab",
+      "referenceKeys": []
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q24",
+      "officialQuestionNumber": 24,
+      "pdfPage": 18,
+      "officialAnswer": 4,
+      "transcriptionSha256": "639937f6d06aabfbc1cd8d3243793d9e0aca22b9ffbe933c0c0560bf119ab6a9",
+      "referenceKeys": []
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q25",
+      "officialQuestionNumber": 25,
+      "pdfPage": 18,
+      "officialAnswer": 4,
+      "transcriptionSha256": "1ae86b78776b3dd4a2574da623bf52a44f023fe8817974a0048b0db78eac3e04",
+      "referenceKeys": [
+        "structured"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q29",
+      "officialQuestionNumber": 29,
+      "pdfPage": 22,
+      "officialAnswer": 1,
+      "transcriptionSha256": "43bb44756a41429d790447ec1f468d5a1fb9d0219d09981a56b7ac9cae3da430",
+      "referenceKeys": []
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q30",
+      "officialQuestionNumber": 30,
+      "pdfPage": 22,
+      "officialAnswer": 2,
+      "transcriptionSha256": "3dc583b0f7f562f006b4e603857d9afb6b842013bbf1f34b6485194c12c1789f",
+      "referenceKeys": [
+        "prospectus"
+      ]
+    },
+    {
+      "id": "cfp-2026-round1-gakka-q31",
+      "officialQuestionNumber": 31,
+      "pdfPage": 23,
+      "officialAnswer": 4,
+      "transcriptionSha256": "25f8d6ab6a9af66f01951c900bcc10490b8b122ed82a2d7e6924894024349681",
+      "referenceKeys": []
+    }
+  ],
+  "commonInstructionsSource": {
+    "url": "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/CFP_hyoushisample.pdf",
+    "sha256": "1fbbb553f4d12a6d302bcb73ce7e07cdcc24fc19093f3a0cd970e601bf37a66b",
+    "pages": 2
+  },
+  "commonInstructionsNote": "問9は公式表紙サンプル2頁の復興特別所得税を考慮しない共通条件を解答前に表示。所得税15％・住民税5％で公式正答3を独立計算確認。"
+}

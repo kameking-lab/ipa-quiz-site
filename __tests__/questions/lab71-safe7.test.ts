@@ -10,20 +10,19 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 const lab2025 = RINSHO_KENSAGISHI_QUESTIONS.filter(q => q.year === 2025);
 
 describe("lab71 seven remaining safe saved originals", () => {
-  it("preserves seven saved originals while both runtime loaders expose only PM35 and retain six holds", async () => {
+  it("preserves all seven originals and official keys after the 2025 completion", async () => {
     expect(batch2.map(q => q.qNumber)).toEqual([32, 35, 36, 39, 41, 44, 45]);
     expect(batch2.map(q => q.id)).toEqual(Object.keys(official).map(n => `rinsho-kensagishi-2025-annual-pm-q${n}`));
-    expect(lab2025).toHaveLength(59);
-    expect(new Set(lab2025.map(q => q.id)).size).toBe(59);
-    const saved = new Set(batch2.map(q => q.id));
-    const newlyAccepted = ["rinsho-kensagishi-2025-annual-pm-q35"];
-    expect(RINSHO_KENSAGISHI_QUESTIONS.filter(q => saved.has(q.id)).map(q => q.id)).toEqual(newlyAccepted);
-    expect(ALL_QUESTIONS.filter(q => saved.has(q.id)).map(q => q.id)).toEqual(newlyAccepted);
-    const stillHeld = batch2.filter(q => !newlyAccepted.includes(q.id));
-    expect(stillHeld).toHaveLength(6);
-    for (const q of stillHeld) {
-      expect(RINSHO_KENSAGISHI_QUESTIONS.some(row => row.id === q.id)).toBe(false);
-      expect(ALL_QUESTIONS.some(row => row.id === q.id)).toBe(false);
+    expect(lab2025).toHaveLength(200);
+    expect(new Set(lab2025.map(q => q.id)).size).toBe(200);
+    const published = new Map(ALL_QUESTIONS.filter(q => q.exam === "rinsho-kensagishi").map(q => [q.id, q]));
+    for (const original of batch2) {
+      const question = lab2025.find(q => q.id === original.id);
+      expect(published.get(original.id), original.id).toEqual(question);
+      expect(question?.answer, original.id).toEqual(original.answer);
+      expect(question?.officialAnswerNumber, original.id).toBe(original.officialAnswerNumber);
+      expect(question?.sourcePdfUrl, original.id).toBe(original.sourcePdfUrl);
+      expect(question?.sourceAnswerUrl, original.id).toBe(original.sourceAnswerUrl);
     }
     expect(await getQuestionsForExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(receipt.individualHoldReleaseCount).toBe(0);

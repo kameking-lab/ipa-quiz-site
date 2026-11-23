@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "lane": "qf-11",
+  "previousLane": "qe-11",
+  "date": "2026-11-18",
+  "assignment": "jobs array index % 14 == 10",
+  "completedJobs": [
+    {
+      "jobId": "PLAN5-277",
+      "exam": "gyosei",
+      "year": 2022,
+      "season": "annual",
+      "session": "gakka",
+      "status": "completed",
+      "expectedOriginalQuestions": 56,
+      "officialAnswerTableQuestions": 60,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 56,
+      "importedRecords": 0,
+      "newRecords": 56,
+      "remainingOriginalQuestions": 0,
+      "officialBodyUnconfirmedQuestionNumbers": [
+        1,
+        58,
+        59,
+        60
+      ],
+      "dataPath": "data/questions/gyosei/2022.ts",
+      "imageAssetCount": 0,
+      "sourceFiles": [
+        {
+          "url": "https://www.gyosei-shiken.or.jp/pdf/r4_mondai.pdf",
+          "file": "qe-11/gyosei2022-questions.pdf",
+          "sha256": "6c208e00a4dedd8a2b7e637bb70ad811af2efd3de1220f20c513f48282f5bbca"
+        },
+        {
+          "url": "https://gyosei-shiken.or.jp/doc/exam/r4ans.html",
+          "file": "qe-11/gyosei2022-answers.html",
+          "sha256": "506a7e21667ce7b9b831bbd45ced7d3844325a7d40998fd0b21e19dd7a450b02"
+        }
+      ],
+      "sourceCommits": [],
+      "notes": "公式PDFの公開本文は問2〜57。択一50、多肢選択3、記述3。問46の公式正解例2通りを含む。"
+    },
+    {
+      "jobId": "PLAN5-291",
+      "exam": "denken3",
+      "year": 2022,
+      "season": "first",
+      "session": "riron",
+      "status": "completed",
+      "expectedOriginalQuestions": 18,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 18,
+      "importedRecords": 0,
+      "newRecords": 18,
+      "remainingOriginalQuestions": 0,
+      "answerSlotCount": 22,
+      "dataPath": "data/questions/denken3/native-2022-upper-theory.json",
+      "imageAssetCount": 20,
+      "sourceFiles": [
+        {
+          "url": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q01.pdf",
+          "file": "qf-11/291-q01.pdf",
+          "sha256": "3f30a75bb34635895dfb602311ea8c39c3622988e94b850fd6fbd190ff1c0520"
+        },
+        {
+          "url": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_a01.pdf",
+          "file": "qf-11/291-a01.pdf",
+          "sha256": "8367761133c5a88e07c1cc1cfda2e996b3e92f4c8998ce0d1a7642f4e5c77974"
+        }
+      ],
+      "sourceCommits": [],
+      "notes": "問13と18は各2ページ。問15〜18は各2解答欄。問17・18は本試験でどちらか一方を選択。"
+    },
+    {
+      "jobId": "PLAN5-305",
+      "exam": "denko1",
+      "year": 2026,
+      "season": "second",
+      "session": "gakka",
+      "status": "completed",
+      "expectedOriginalQuestions": 50,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 50,
+      "importedRecords": 0,
+      "newRecords": 50,
+      "remainingOriginalQuestions": 0,
+      "answerSlotCount": 50,
+      "dataPath": "data/questions/denko1/reviewed/20261004-q01-50.json",
+      "imageAssetCount": 36,
+      "sourceFiles": [
+        {
+          "url": "https://www.shiken.or.jp/construction/upload/20261004_co_first_q01.pdf",
+          "file": "qf-11/305-q01.pdf",
+          "sha256": "278ed5f5c2464f29c939e52579a7e32a44804e685acf0c30eb003697c1277c97"
+        },
+        {
+          "url": "https://www.shiken.or.jp/construction/upload/20261004_co_first_a01.pdf",
+          "file": "qf-11/305-a01.pdf",
+          "sha256": "d66f03c7eaa12af1a6929a85c71a90ac294dbb3ab6b3a990afbaa0468a6bb869"
+        }
+      ],
+      "sourceCommits": [],
+      "notes": "一般問題40問と配線図10問。全200肢の独自解説、設問図13点、共通図3点、選択肢図20点。"
+    },
+    {
+      "jobId": "PLAN5-319",
+      "exam": "kenchikushi1",
+      "year": 2023,
+      "season": "annual",
+      "session": "gakka-4_5",
+      "status": "completed",
+      "expectedOriginalQuestions": 55,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 55,
+      "importedRecords": 0,
+      "newRecords": 55,
+      "remainingOriginalQuestions": 0,
+      "answerSlotCount": 55,
+      "dataPath": "data/questions/kenchikushi1/2023-kouzo-sekou.json",
+      "imageAssetCount": 14,
+      "sourceFiles": [
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gakka4_5.pdf",
+          "file": "qf-11/319-questions.pdf",
+          "sha256": "f355b696c8721563908f44c417d9949a68630c512bfbe095881b4627f6918e65"
+        },
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2023-1st-gokakukijun.pdf",
+          "file": "qf-11/319-answers.pdf",
+          "sha256": "abb629cb2d44f29ae608ac6f68eddaa3e862c84fdb55eeef426c797d3e2c24f8"
+        }
+      ],
+      "sourceCommits": [],
+      "notes": "学科Ⅳ（構造）30問、学科Ⅴ（施工）25問。出題法令基準日2023-01-01。全220肢の独自解説と原本図14点。"
+    },
+    {
+      "jobId": "PLAN5-333",
+      "exam": "kenchikushi2",
+      "year": 2024,
+      "season": "annual",
+      "session": "gakka-1_2",
+      "status": "completed",
+      "expectedOriginalQuestions": 50,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 50,
+      "importedRecords": 25,
+      "newRecords": 25,
+      "remainingOriginalQuestions": 0,
+      "answerSlotCount": 50,
+      "dataPaths": [
+        "data/questions/kenchikushi2/2024-gakka-I.json",
+        "data/questions/kenchikushi2/2024-gakka-II.json"
+      ],
+      "imageAssetCount": 5,
+      "sourceFiles": [
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka1_2.pdf",
+          "sha256": "7a4c4576522ed11a3ee01c73c4ca7e32b2ce3a88727436b07de263b78d3a0b71",
+          "file": "qf-11/333-questions.pdf"
+        },
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+          "sha256": "26cc40072d9a073e9d4fdbc6b0678846350df20353023ca90b51bd0a1461dc8f",
+          "file": "qf-11/333-answers.pdf"
+        }
+      ],
+      "sourceCommits": [
+        "5b198a61cabcf92893356eaa8d0d89b4046c61ed"
+      ],
+      "notes": "学科Ⅰ（建築計画）は保存原稿の25問を同一blobで取り込み。学科Ⅱ（建築法規）25問のみ新規。出題法令基準日2024-01-01。"
+    },
+    {
+      "jobId": "PLAN5-347",
+      "exam": "denken2",
+      "year": 2025,
+      "season": "primary",
+      "session": "law",
+      "status": "completed",
+      "expectedOriginalQuestions": 7,
+      "existingOriginalQuestions": 4,
+      "addedRecords": 3,
+      "importedRecords": 0,
+      "newRecords": 3,
+      "remainingOriginalQuestions": 0,
+      "answerSlotCount": 15,
+      "dataPaths": [
+        "data/questions/denken2/native-2025-power-law-go11.json"
+      ],
+      "imageAssetCount": 4,
+      "sourceFiles": [
+        {
+          "url": "https://www.shiken.or.jp/chief/upload/20250831_ch_second_q04.pdf",
+          "sha256": "c7f26f319a74fa283770dee777e8dac5cf86824fb93433f8595cd2900e50b609",
+          "file": "qf-11/347-question.pdf"
+        },
+        {
+          "url": "https://www.shiken.or.jp/chief/upload/20250831_ch_second_a01.pdf",
+          "sha256": "1facc27c2ae522cf40dec746e16ec4f9c72c90b04a39ce52f73f6f194b143263",
+          "file": "qf-11/347-answer.pdf"
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+          "sha256": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb",
+          "file": "qf-11/347-meti-20241022.pdf"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/339AC0000000170?asof=2025-04-01&response_format=xml",
+          "sha256": "7e01fe1194f4d3771cad9dfa6b90534719e5dd7f7ebf581a9e489b43a1f861f5",
+          "file": "qf-11/347-339AC0000000170.xml"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/407M50000400077?asof=2025-04-01&response_format=xml",
+          "sha256": "f5d7eb5c27cd202a29d17de4144ef3805f66c7c4fb8d90d3961fa88886f15a4d",
+          "file": "qf-11/347-407M50000400077.xml"
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/409M50000400052?asof=2025-04-01&response_format=xml",
+          "sha256": "f80b836cb6c266dc650d5dd0011ea4e8d62d43f9e9022e83d291f20aff4b8822",
+          "file": "qf-11/347-409M50000400052.xml"
+        }
+      ],
+      "sourceCommits": [
+        "97330f217"
+      ],
+      "notes": "既収録の法規4原問を保持し、問3・5・6を追加。出題法令基準日2025-04-01。法規は全7原問・35解答欄。"
+    }
+  ],
+  "remainingOwnJobIds": [],
+  "preflightJobs": [],
+  "helperCompletedJobs": [
+    {
+      "jobId": "PLAN5-361",
+      "branch": "cx/kako-5yh11-20261118",
+      "report": "yb-11.md",
+      "commit": "a969ddfb7",
+      "reportedOriginalQuestions": 7
+    },
+    {
+      "jobId": "PLAN5-375",
+      "branch": "cx/kako-5yh11-20261118",
+      "report": "yb-11.md",
+      "commit": "f0436e4aa",
+      "reportedOriginalQuestions": 6
+    },
+    {
+      "jobId": "PLAN5-389",
+      "branch": "cx/kako-5yh11-20261118",
+      "report": "yb-11.md",
+      "commit": "bc3bb982b",
+      "reportedOriginalQuestions": 50
+    },
+    {
+      "jobId": "PLAN5-403",
+      "branch": "cx/kako-5yh11-20261118",
+      "report": "yb-11.md",
+      "commit": "bc3bb982b",
+      "reportedOriginalQuestions": 64
+    },
+    {
+      "jobId": "PLAN5-417",
+      "branch": "cx/kako-5yh11-20261118",
+      "report": "yb-11.md",
+      "commit": "bc3bb982b",
+      "reportedOriginalQuestions": 50
+    }
+  ]
+}

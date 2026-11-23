@@ -1,6 +1,7 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { KIKAI_HOZEN_STAGED_QUESTIONS, type KikaiHozenStagedQuestion } from "@/data/qualification-staging/kikai-hozen";
 import { projectStagedQuestions } from "../batch4/project-staged";
+import annual2023 from "./2023-annual.json";
 
 const IMAGE_BASE = "/images/questions/kikai-hozen";
 /** 真偽法（〇×）は2択のア・イに写す。表示は「正しい（〇）」「誤り（×）」で原本の記号を残す。 */
@@ -37,5 +38,8 @@ function project(row: KikaiHozenStagedQuestion): Question {
   };
 }
 
-/** 2024年度・2025年度 第2回 2級 機械系保全作業 学科 各50問（独立レビュー PASS 済み）。 */
-export const KIKAI_HOZEN_QUESTIONS: Question[] = KIKAI_HOZEN_STAGED_QUESTIONS.map(project);
+/** 2023〜2025年度 第2回 2級 機械系保全作業 学科 各50問。 */
+export const KIKAI_HOZEN_QUESTIONS: Question[] = [
+  ...KIKAI_HOZEN_STAGED_QUESTIONS.map(project),
+  ...(annual2023 as Question[]),
+];

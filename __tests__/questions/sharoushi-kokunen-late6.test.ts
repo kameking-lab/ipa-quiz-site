@@ -18,6 +18,7 @@ const canonical = (value: unknown): unknown => Array.isArray(value) ? value.map(
   ? Object.fromEntries(Object.entries(value).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0).map(([key, item]) => [key, canonical(item)])) : value;
 const sha = (value: string) => createHash("sha256").update(value).digest("hex");
 const byId = new Map(SHAROUSHI_QUESTIONS.map(question => [question.id, question]));
+const recent = SHAROUSHI_QUESTIONS.filter(q => q.year === 2025 || q.year === 2026);
 const labels = { A: "ア", B: "イ", C: "ウ", D: "エ", E: "オ" } as const;
 const expectedIds = ["sharoushi-2025-annual-kokunen-q5", "sharoushi-2025-annual-kokunen-q7", "sharoushi-2026-annual-kokunen-q3", "sharoushi-2026-annual-kokunen-q4", "sharoushi-2026-annual-kokunen-q6", "sharoushi-2026-annual-kokunen-q7"];
 
@@ -30,10 +31,10 @@ describe("immutable late six national-pension originals", () => {
       expect(sha(JSON.stringify(canonical(byId.get(prior.id)))), prior.id).toBe(prior.sha256);
     }
     const priorIds = new Set(baseline.previousMcObjectHashes.map(question => question.id));
-    expect(SHAROUSHI_QUESTIONS.filter(question => !priorIds.has(question.id)).map(question => question.id).toSorted()).toEqual(expectedIds.toSorted());
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(107);
-    expect(byId.size).toBe(107);
-    expect(SHAROUSHI_QUESTIONS.reduce((count, question) => count + Object.keys(question.choices ?? {}).length, 0)).toBe(535);
+    expect(SHAROUSHI_QUESTIONS.filter(question => question.session === "kokunen" && !priorIds.has(question.id)).map(question => question.id).toSorted()).toEqual(expectedIds.toSorted());
+    expect(recent).toHaveLength(130);
+    expect(byId.size).toBe(SHAROUSHI_QUESTIONS.length);
+    expect(recent.reduce((count, question) => count + Object.keys(question.choices ?? {}).length, 0)).toBe(650);
     expect(sha(readFileSync("data/questions/sharoushi/sentaku/originals.json", "utf8").replace(/\r\n/g, "\n"))).toBe(baseline.native16FileSha256);
     expect(PUBLISHED_SENTAKU).toHaveLength(16);
   });
@@ -76,10 +77,9 @@ describe("immutable late six national-pension originals", () => {
 
   it("states the qualification partial total and national-pension completion precisely", () => {
     const catalog = QUALIFICATION_CATALOG.find(row => row.slug === "sharoushi")!;
-    expect(catalog.reuseSummary).toContain("択一式107原問・全535肢");
-    expect(catalog.reuseSummary).toContain("全156原問中123原問");
-    expect(catalog.reuseSummary).toContain("国民年金法20原問");
-    expect(catalog.reuseSummary).toContain("両年度各10原問が揃っています");
-    expect(catalog.remainingWork).toContain("未収録33原問（択一式のみ）の原典・正答・試験時点資料を確認");
+    expect(catalog.reuseSummary).toContain("第58・57回の択一式130原問");
+    expect(catalog.reuseSummary).toContain("選択式16原問・80空欄");
+    expect(recent.filter(q => q.session === "kokunen")).toHaveLength(20);
+    expect(catalog.remainingWork).toContain("未収録10原問（択一式のみ）の原典・正答・試験時点資料を確認");
   });
 });
