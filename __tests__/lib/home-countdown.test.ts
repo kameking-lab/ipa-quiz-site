@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { deadlineWarning, homeCountdowns } from "@/lib/study-plan/home";
+import { registrationTiming } from "@/lib/study-plan/countdown";
 import { createPacePlan, type PacePlan } from "@/lib/study-plan/pace";
 import { parseRegistration } from "@/lib/study-plan/schedule";
 
@@ -17,6 +18,25 @@ const prior = { id: "previous", label: "2025年度 後期（CBT方式）", fisca
 const next = { id: "next", label: "令和8年度後期（日程未発表）", fiscalYear: "2026",
   scheduleStatus: "missing", datePrecision: "unknown", sourceUrl: null };
 const parse = (...sessions: object[]) => parseRegistration({ id: "ap", sessions }, "ap");
+
+describe("registration status", () => {
+  it.each([
+    ["2026-11-19", "before", { kind: "start", days: 1 }],
+    ["2026-11-20", "open", { kind: "deadline", days: 20 }],
+    ["2026-12-10", "open", { kind: "deadline", days: 0 }],
+    ["2026-12-11", "closed", null],
+  ])("uses inclusive registration dates on %s", (date, state, countdown) => {
+    expect(registrationTiming("2026-11-20", "2026-12-10", date)).toMatchObject({ state, countdown });
+  });
+
+  it("counts down to a known deadline without assuming registration has opened", () => {
+    expect(registrationTiming(null, "2026-12-10", today)).toMatchObject({
+      state: "unknown", countdown: { kind: "deadline", days: 23 },
+    });
+    expect(registrationTiming(null, null, today)).toEqual({ state: "unknown", countdown: null });
+    expect(registrationTiming("2026-11-16", null, today)).toEqual({ state: "unknown", countdown: null });
+  });
+});
 
 describe("home study plan countdowns", () => {
   it("counts calendar days and shows opening before the registration deadline", () => {

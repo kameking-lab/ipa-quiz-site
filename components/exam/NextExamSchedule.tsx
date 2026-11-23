@@ -4,8 +4,7 @@ import { Suspense, useEffect, useState, useSyncExternalStore } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PlanCreateSheet } from "@/components/home/pace/PlanCreateSheet";
 import { japanDate } from "@/lib/home/featured-exams";
-import { examDateFromSearch, examTopPlanDate, nextDatedSession, planCreatedHref, tsuginoQualificationHref } from "@/lib/study-plan/next-qualification";
-import { dayNumber } from "@/lib/study-plan/pace";
+import { examTopSchedule, planCreatedHref, tsuginoQualificationHref } from "@/lib/study-plan/next-qualification";
 import { listPacePlans } from "@/lib/study-plan/pace-storage";
 import { qualificationIdsForExam, type ExamSchedule } from "@/lib/study-plan/schedule";
 import { examLabel } from "@/lib/utils";
@@ -30,6 +29,18 @@ function ExamScheduleRow({ exam }: { exam: string }) {
   const hasPlan = useSyncExternalStore(subscribeToPlans,
     () => listPacePlans().some(plan => plan.exam === exam), serverPlanStatus);
   const [schedule, setSchedule] = useState<ExamSchedule>();
+  const [today, setToday] = useState(() => japanDate(new Date()));
+  useEffect(() => {
+    if (hasPlan !== false) return;
+    const refresh = () => setToday(japanDate(new Date()));
+    refresh();
+    const timer = window.setInterval(refresh, 60_000);
+    window.addEventListener("focus", refresh);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener("focus", refresh);
+    };
+  }, [hasPlan]);
   useEffect(() => {
     if (hasPlan !== false || !qualificationIdsForExam(exam).length) return;
     const controller = new AbortController();
@@ -45,57 +56,53 @@ function ExamScheduleRow({ exam }: { exam: string }) {
 
   if (hasPlan !== false) return null;
   const sessions = schedule?.exam === exam && schedule.source === "tsugino" ? schedule.sessions : [];
-  const today = japanDate(new Date());
-  const date = examTopPlanDate(exam, search, sessions, today);
-  const upcoming = nextDatedSession(sessions, today);
-  const isPeriod = upcoming && (upcoming.datePrecision === "month" || upcoming.examPhaseWindows?.length ||
-    (upcoming.examDateEnd && upcoming.examDateEnd !== upcoming.examDate));
+  const upcoming = examTopSchedule(exam, search, sessions, today);
+  if (!upcoming) return null;
+  const { examCountdown, qualificationId } = upcoming;
+  const scheduled = "dates" in upcoming ? upcoming : null;
+  const dates = scheduled?.dates;
+  const registration = scheduled?.registration;
+  const countdown = registration?.countdown;
+  const basisYears = new Set([examCountdown?.basisYear, dates?.applicationBasisYear].filter(Boolean));
 
-  if (isPeriod && upcoming.examDate && upcoming.qualificationId && !examDateFromSearch(search, today) &&
-      (!date || upcoming.examDate <= date.examDate)) {
-    const start = upcoming.datePrecision === "month" ? upcoming.examDate.slice(0, 7) : upcoming.examDate;
-    const windows = upcoming.examPhaseWindows?.length ? upcoming.examPhaseWindows : [
-      { label: "", start, end: upcoming.examDateEnd === upcoming.examDate ? null : upcoming.examDateEnd },
-    ];
-    const deadline = upcoming.applicationEstimated ? null : upcoming.applicationDeadline;
-    const remaining = deadline ? dayNumber(deadline)! - dayNumber(today)! : null;
-
-    return <section className="my-4 border-t border-border text-muted-foreground" aria-label="試験日程">
-      <p className="text-sm font-medium">次回の試験日</p>
-      {windows.map(window => <p className="mt-1 text-sm tabular-nums" key={window.label + window.start}>
-        {window.label && <span className="mr-1">{window.label}</span>}
-        <time dateTime={window.start}>{window.start}</time>
-        {window.end && window.end !== window.start && <>〜<time dateTime={window.end}>{window.end}</time></>}
-      </p>)}
-      {deadline && remaining !== null && <p className="mt-1 text-sm">申込締切 <time dateTime={deadline}>{deadline}</time>
-        {remaining === 0 ? "（今日まで）" : remaining > 0 ? `（あと${remaining}日）` : "（受付終了）"}</p>}
-      <ScheduleLink qualificationId={upcoming.qualificationId} />
-    </section>;
-  }
-
-  if (!date) return null;
-  const { examDate, daysUntil, qualificationId } = date;
-  const [, month, day] = examDate.split("-").map(Number);
-
-  return <section className="my-4 border-t border-border text-muted-foreground" aria-label="試験日程">
+  return <section className="my-4 space-y-1 border-t border-border pt-3 text-sm text-muted-foreground" aria-label="試験日程">
+    <h2 className="font-semibold text-foreground">次の試験</h2>
+    {examCountdown && <div className="flex flex-wrap gap-x-3 tabular-nums">
+      <p>{scheduled ? "試験日" : "受験予定日"} <time dateTime={examCountdown.date}>{examCountdown.date}</time>
+        {examCountdown.basisYear && "（見込み）"}</p>
+      <p className="font-medium text-foreground">{examCountdown.days === 0 && !examCountdown.basisYear
+        ? "試験は今日です" : `試験まであと${examCountdown.days}日${examCountdown.basisYear ? "（見込み）" : ""}`}</p>
+    </div>}
+    {scheduled?.windows.map(window => <p className="tabular-nums" key={window.label + window.start}>
+      {window.label && <span className="mr-1">{window.label}</span>}
+      <time dateTime={window.start}>{window.start}</time>
+      {window.end && window.end !== window.start && <>〜<time dateTime={window.end}>{window.end}</time></>}
+    </p>)}
+    {dates && (dates.applicationStart || dates.applicationDeadline) && <div className="flex flex-wrap gap-x-3 tabular-nums">
+      <p>{dates.applicationStart && dates.applicationDeadline ? "申込期間" : dates.applicationStart ? "申込開始" : "申込締切"}
+        {" "}{dates.applicationStart && <time dateTime={dates.applicationStart}>{dates.applicationStart}</time>}
+        {dates.applicationStart && dates.applicationDeadline && "〜"}
+        {dates.applicationDeadline && <time dateTime={dates.applicationDeadline}>{dates.applicationDeadline}</time>}
+        {dates.applicationBasisYear && "（見込み）"}</p>
+      {registration?.state === "open" && <p className="font-medium text-foreground">受付中{dates.applicationBasisYear && "（見込み）"}</p>}
+      {registration?.state === "closed" && <p>受付終了{dates.applicationBasisYear && "（見込み）"}</p>}
+      {countdown && <p className="font-medium text-foreground">{countdown.kind === "start" ? `あと${countdown.days}日で申込開始`
+        : `申込締切まであと${countdown.days}日`}{countdown.basisYear && "（見込み）"}</p>}
+    </div>}
+    {[...basisYears].map(year => <p key={year} className="text-xs">{year}年度の同じ回をもとに推定</p>)}
     <div className="flex flex-wrap items-center gap-x-3">
-      <p className="whitespace-nowrap text-sm tabular-nums">試験日 <time dateTime={examDate}>{month}月{day}日</time>（あと{daysUntil}日）</p>
-      <ExamPlanButton exam={exam} examDate={examDate} />
+      {examCountdown && <ExamPlanButton exam={exam} examDate={examCountdown.date} sessionId={scheduled?.sessionId} />}
+      <a className="study-focus inline-flex min-h-8 items-center rounded text-xs underline underline-offset-4"
+        href={tsuginoQualificationHref(qualificationId, "exam_schedule")}>申込方法は次の資格で確認</a>
     </div>
-    <ScheduleLink qualificationId={qualificationId} />
   </section>;
 }
 
-function ScheduleLink({ qualificationId }: { qualificationId: string | null }) {
-  return <a className="study-focus inline-flex min-h-8 items-center rounded text-xs underline underline-offset-4"
-    href={tsuginoQualificationHref(qualificationId, "exam_schedule")}>申込方法は次の資格で確認</a>;
-}
-
-function ExamPlanButton({ exam, examDate }: { exam: string; examDate: string }) {
+function ExamPlanButton({ exam, examDate, sessionId }: { exam: string; examDate: string; sessionId?: string }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   return <PlanCreateSheet open={open} onOpenChange={setOpen} items={[{ key: exam, name: examLabel(exam) }]}
-    initialExam={exam} initialDate={examDate} onCreated={plan => router.push(planCreatedHref(plan.id))}
+    initialExam={exam} initialDate={examDate} initialSessionId={sessionId} onCreated={plan => router.push(planCreatedHref(plan.id))}
     trigger={<button type="button" className="study-focus min-h-11 rounded px-1 text-xs font-medium text-primary underline underline-offset-4">
       この日で学習計画を作る
     </button>} />;

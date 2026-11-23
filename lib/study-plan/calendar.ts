@@ -1,4 +1,7 @@
+import { hasSingleExamDay, sessionCountdownDates } from "./countdown";
+import { tsuginoQualificationHref } from "./next-qualification";
 import { dayNumber, EVERY_DAY, type PacePlan } from "./pace";
+import { qualificationIdsForExam, type ExamScheduleSession } from "./schedule";
 
 const MS_PER_DAY = 86_400_000;
 const WEEKDAYS = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"] as const;
@@ -18,7 +21,10 @@ function fold(line: string): string {
   return output;
 }
 
-export function studyPlanCalendar(plan: PacePlan, name: string, origin: string, today: string, now = new Date()) {
+export function studyPlanCalendar(plan: PacePlan, name: string, origin: string, today: string, now = new Date(),
+  sessions: readonly ExamScheduleSession[] = []) {
+  const session = sessions.find(item => item.id === plan.sessionId);
+  const dates = session && sessionCountdownDates(session, sessions);
   const end = plan.examDate && dayNumber(plan.examDate);
   const start = dayNumber(today);
   if (typeof end !== "number" || start === null || end < start) return null;
@@ -29,14 +35,37 @@ export function studyPlanCalendar(plan: PacePlan, name: string, origin: string, 
   const url = new URL("/quiz/today", origin);
   url.searchParams.set("plan", plan.id);
   const stamp = now.toISOString().replace(/[-:]|\.\d{3}/g, "");
-  const event = (kind: string, summary: string, date: number, repeat: string[] = []) => [
+  const event = (kind: string, summary: string, date: number, description: string, href: string, extra: string[] = []) => [
     "BEGIN:VEVENT", "UID:" + text(plan.id + "-" + kind + "@" + url.hostname), "DTSTAMP:" + stamp,
     "DTSTART;VALUE=DATE:" + compact(dateValue(date)), "SUMMARY:" + text(summary),
-    "DESCRIPTION:" + text("計画の問題を解く\n" + url.href), "URL:" + url.href, ...repeat, "END:VEVENT",
+    "DESCRIPTION:" + text(description), "URL:" + href, ...extra, "END:VEVENT",
   ];
-  const study = first !== undefined && first < end ? event("study", name + "の勉強", first, [
+  const studyDescription = "計画の問題を解く\n" + url.href;
+  const study = first !== undefined && first < end ? event("study", name + "の勉強", first, studyDescription, url.href, [
     "RRULE:FREQ=WEEKLY;BYDAY=" + days.map(day => WEEKDAYS[day]).join(",") + ";UNTIL=" + compact(dateValue(end - 1)),
   ]) : [];
+
+  const ids = qualificationIdsForExam(plan.exam);
+  const qualificationId = session?.qualificationId ?? (ids.length === 1 ? ids[0] : null);
+  const scheduleUrl = qualificationId && tsuginoQualificationHref(qualificationId, "exam_schedule");
+  const scheduleDescription = scheduleUrl ? "申込方法・最新の日程を次の資格で確認\n" + scheduleUrl : studyDescription;
+  const examDay = (dates?.examDate ? dayNumber(dates.examDate) : null) ?? end;
+  const examEstimated = dates?.examBasisYear || (!dates && plan.registration?.estimated) ||
+    (session?.scheduleStatus === "tentative" && hasSingleExamDay(session) && session.examDate === plan.examDate);
+  const exam = event("exam", name + "の試験" + (examEstimated ? "（見込み）" : ""), examDay, scheduleDescription, scheduleUrl || url.href);
+  const saved = plan.registration?.sourceUrl && !plan.registration.estimated ? plan.registration : null;
+  const registrationEvents = [
+    { kind: "application-start", label: "申込開始", date: dates ? dates.applicationStart : saved?.start },
+    { kind: "application-deadline", label: "申込締切", date: dates ? dates.applicationDeadline : saved?.deadline },
+  ].flatMap(({ kind, label, date }) => {
+    const day = date ? dayNumber(date) : null;
+    if (day === null) return [];
+    const summary = name + "の" + label + (dates?.applicationBasisYear ? "（見込み）" : "");
+    const alarms = kind === "application-deadline" ? ["-P1D", "-P3D"].flatMap(trigger => [
+      "BEGIN:VALARM", "TRIGGER:" + trigger, "ACTION:DISPLAY", "DESCRIPTION:" + text(summary), "END:VALARM",
+    ]) : [];
+    return event(kind, summary, day, scheduleDescription, scheduleUrl || url.href, alarms);
+  });
   return ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Kakomon AI//Study Plan//JA", "CALSCALE:GREGORIAN",
-    ...study, ...event("exam", name + "の試験", end), "END:VCALENDAR", ""].map(fold).join("\r\n");
+    ...study, ...exam, ...registrationEvents, "END:VCALENDAR", ""].map(fold).join("\r\n");
 }

@@ -1,34 +1,10 @@
-import { dayNumber, type AnswerAttempt, type PacePlan } from "./pace";
-import { estimateFromPreviousSession, type ExamScheduleSession } from "./schedule";
-
-type Countdown = { date: string; days: number; basisYear?: number };
-type RegistrationCountdown = Countdown & { kind: "start" | "deadline" };
-
-function daysUntil(date: string, today: string) {
-  const day = dayNumber(date);
-  const current = dayNumber(today);
-  return day === null || current === null ? -1 : day - current;
-}
-
-function countdown(date: string | null | undefined, today: string, basisYear?: number): Countdown | null {
-  if (!date) return null;
-  const days = daysUntil(date, today);
-  return days < 0 ? null : { date, days, basisYear };
-}
-
-function registrationCountdown(
-  start: string | null | undefined, deadline: string | null | undefined, today: string, basisYear?: number,
-): RegistrationCountdown | null {
-  if (deadline && daysUntil(deadline, today) < 0) return null;
-  const opening = countdown(start, today, basisYear);
-  if (opening && opening.days > 0) return { ...opening, kind: "start" };
-  const closing = countdown(deadline, today, basisYear);
-  return closing && { ...closing, kind: "deadline" };
-}
+import { dateCountdown, registrationTiming, sessionCountdownDates } from "./countdown";
+import type { AnswerAttempt, PacePlan } from "./pace";
+import type { ExamScheduleSession } from "./schedule";
 
 export function deadlineWarning(plan: PacePlan, today: string) {
   if (plan.registered) return null;
-  const application = registrationCountdown(plan.registration?.start, plan.registration?.deadline, today);
+  const application = registrationTiming(plan.registration?.start, plan.registration?.deadline, today).countdown;
   if (application?.kind !== "deadline" || application.days > 14) return null;
   const remaining = application.days;
   return { remaining, urgency: remaining <= 1 ? "urgent" : remaining <= 7 ? "soon" : "notice" };
@@ -38,25 +14,15 @@ export function homeCountdowns(plan: PacePlan, today: string, sessions: readonly
   const none = { exam: null, registration: null };
   if (plan.result) return none;
   const session = sessions.find(item => item.id === plan.sessionId);
-  const uncertainExam = session && session.scheduleStatus !== "ondemand" && (
-    session.scheduleStatus !== "official" || !session.examDate ||
-    session.datePrecision === "month" || session.datePrecision === "unknown"
-  );
-  const uncertainApplication = session
-    ? session.scheduleStatus !== "official" || session.applicationEstimated
-    : plan.registration?.estimated;
-  const estimate = session && (uncertainExam || uncertainApplication) ? estimateFromPreviousSession(session, sessions) : null;
-  const singleExamDay = session?.scheduleStatus === "official" && !session.examPhaseWindows?.length &&
-    (!session.examDateEnd || session.examDateEnd === session.examDate) ? session.examDate : null;
-  const plannedDate = plan.examDate ?? singleExamDay;
-  const exam = uncertainExam
-    ? countdown(estimate?.examDate, today, estimate?.basisYear)
-    : countdown(!session && plan.registration?.estimated ? null : plannedDate, today);
+  const dates = session && sessionCountdownDates(session, sessions);
+  const plannedDate = !session && plan.registration?.estimated ? null : plan.examDate;
+  const exam = dateCountdown(dates?.uncertainExam ? dates.examDate : plannedDate ?? dates?.examDate,
+    today, dates?.examBasisYear);
   if (plan.registered || session?.scheduleStatus === "ondemand") return { exam, registration: null };
-  const registration = uncertainApplication
-    ? registrationCountdown(estimate?.applicationStart, estimate?.applicationDeadline, today, estimate?.basisYear)
-    : registrationCountdown(session ? session.applicationStart : plan.registration?.start,
-      session ? session.applicationDeadline : plan.registration?.deadline, today);
+  const registration = dates || !plan.registration?.estimated
+    ? registrationTiming(dates ? dates.applicationStart : plan.registration?.start,
+      dates ? dates.applicationDeadline : plan.registration?.deadline, today, dates?.applicationBasisYear).countdown
+    : null;
   return { exam, registration };
 }
 

@@ -138,18 +138,21 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const postExam = !!plan?.examDate && plan.examDate < today;
   const examToday = plan?.examDate === today;
   const scheduleExam = !createOnLoad && !postExam && !plan?.result && plan?.sessionId && qualificationIdsForExam(plan.exam).length ? plan.exam : null;
-  const [schedule, setSchedule] = useState<ExamSchedule | null>(null);
+  const [schedule, setSchedule] = useState<{ exam: string; data: ExamSchedule | null }>();
   useEffect(() => {
     if (!scheduleExam) return;
     const controller = new AbortController();
     void fetch(`/api/exam-schedule/${encodeURIComponent(scheduleExam)}`, { signal: controller.signal })
       .then(async response => response.ok ? await response.json() as ExamSchedule : null)
-      .then(data => { if (!controller.signal.aborted && data?.exam === scheduleExam) setSchedule(data); })
-      .catch(() => {});
+      .catch(() => null)
+      .then(data => {
+        if (!controller.signal.aborted) setSchedule({ exam: scheduleExam, data: data?.exam === scheduleExam ? data : null });
+      });
     return () => controller.abort();
   }, [scheduleExam]);
+  const scheduleSessions = schedule?.exam === scheduleExam ? schedule?.data?.sessions : undefined;
   const { exam: examCountdown, registration: registrationCountdown } = plan && !postExam
-    ? homeCountdowns(plan, today, schedule?.exam === scheduleExam ? schedule.sessions : undefined)
+    ? homeCountdowns(plan, today, scheduleSessions)
     : { exam: null, registration: null };
   const countdownBasisYear = examCountdown?.basisYear ?? registrationCountdown?.basisYear;
   const warning = plan && registrationCountdown?.kind === "deadline" && !registrationCountdown.basisYear &&
@@ -198,7 +201,9 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   }
   const calendarConfirmation = created && <div className="mt-3 space-y-1 rounded-xl border border-border bg-card p-3 text-card-foreground">
     <p className="text-sm font-semibold" role="status">学習計画を作りました</p>
-    <PlanCalendarButton plan={created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today} />
+    <PlanCalendarButton plan={created} name={items.find(entry => entry.key === created.exam)?.name ?? created.exam} today={today}
+      sessions={created.exam === scheduleExam ? scheduleSessions : undefined}
+      loading={created.exam === scheduleExam && schedule?.exam !== scheduleExam} />
     <MobileInstallNudge placement="plan-created" />
   </div>;
   if (createOnLoad) return <PlanCreateSheet embedded open items={planItems} initialExam={initialExam}

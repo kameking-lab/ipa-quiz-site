@@ -23,13 +23,19 @@ const weekdayPresets = [
 ];
 const fieldClass = "mt-1.5 min-h-11 w-full min-w-0 rounded-lg border border-input bg-card px-3";
 
+function selectableSessions(sessions: readonly ExamScheduleSession[], today: string) {
+  return sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate ||
+    (s.examDateEnd ?? s.examDate) >= today || s.examPhaseWindows?.some(phase => phase.end >= today))
+    .sort((a, b) => (a.examDate ?? "9999").localeCompare(b.examDate ?? "9999"));
+}
+
 export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initialDate, initialSessionId, onCreated, embedded = false, editing, trigger }: {
   embedded?: boolean; editing?: PacePlan; trigger?: ReactNode;
   open: boolean; onOpenChange: (open: boolean) => void; items: readonly Pick<HomeDirectoryItem, "key" | "name">[];
   initialExam: string; initialDate?: string; initialSessionId?: string; onCreated: (plan: PacePlan) => void;
 }) {
   const [exam, setExam] = useState(initialExam);
-  const [sessions, setSessions] = useState<ExamScheduleSession[]>([]);
+  const [schedule, setSchedule] = useState<ExamSchedule>();
   const [sessionId, setSessionId] = useState("");
   const [date, setDate] = useState("");
   const [loading, setLoading] = useState(false);
@@ -72,7 +78,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
   }, [open]);
   useEffect(() => {
     if (!open) return;
-    setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : exam === initialExam ? initialDate ?? "" : ""); setSessions([]); setSessionId(""); setScheduleFailed(false);
+    setLoading(!!exam); setError(""); setDate(editing?.exam === exam ? editing.examDate ?? "" : exam === initialExam ? initialDate ?? "" : ""); setSchedule(undefined); setSessionId(""); setScheduleFailed(false);
     if (!exam) return;
     const controller = new AbortController();
     void fetch(`/api/exam-schedule/${encodeURIComponent(exam)}`, { signal: controller.signal })
@@ -80,11 +86,10 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
         if (!response.ok) throw new Error("schedule");
         const data = await response.json() as ExamSchedule;
         if (controller.signal.aborted) return;
+        if (data.exam !== exam) throw new Error("schedule");
         const today = japanDate(new Date());
-        const future = data.sessions.filter(s => s.scheduleStatus === "ondemand" || !s.examDate ||
-          (s.examDateEnd ?? s.examDate) >= today || s.examPhaseWindows?.some(phase => phase.end >= today))
-          .sort((a, b) => (a.examDate ?? "9999").localeCompare(b.examDate ?? "9999"));
-        setSessions(future);
+        const future = selectableSessions(data.sessions, today);
+        setSchedule(data);
         const prefilled = exam === initialExam ? initialDate : undefined;
         const matchingSession = exam === initialExam && initialSessionId ? future.find(s => s.id === initialSessionId)
           : prefilled ? future.find(s => s.examDate && s.datePrecision !== "month"
@@ -96,10 +101,14 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
       .finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
   }, [exam, open, editing, initialExam, initialDate, initialSessionId]);
+  const scheduleSessions = schedule?.exam === exam ? schedule.sessions : [];
+  const sessions = selectableSessions(scheduleSessions, today);
   const session = sessions.find(s => s.id === sessionId);
   // A window/month is not an individual's appointment. Always ask for the booked day.
   const manual = !session?.examDate || session.scheduleStatus === "ondemand" ||
-    session.datePrecision === "month" || Boolean(session.examPhaseWindows?.length) || !!session.examDateEnd && session.examDateEnd !== session.examDate;
+    session.datePrecision === "month" || session.datePrecision === "unknown" ||
+    (session.scheduleStatus === "tentative" && !!initialDate && session.id === initialSessionId) ||
+    Boolean(session.examPhaseWindows?.length) || !!session.examDateEnd && session.examDateEnd !== session.examDate;
   const examDate = manual ? date : session?.examDate ?? "";
   const options = rangeOptions(questions ?? [], exam);
   const sameExam = editing?.exam === exam;
@@ -133,7 +142,9 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
   }
   const fields = (
       <div className="mt-4 space-y-3">
-        {editing && <PlanCalendarButton plan={editing} name={items.find(item => item.key === editing.exam)?.name ?? editing.exam} today={today} />}
+        {editing && <PlanCalendarButton plan={editing} name={items.find(item => item.key === editing.exam)?.name ?? editing.exam} today={today}
+          sessions={editing.exam === exam ? scheduleSessions : undefined}
+          loading={!!editing.sessionId && editing.exam === exam && loading} />}
         <QualificationSelect items={items} value={exam} onChange={setExam} label="受ける資格" emptyLabel="資格を選ぶ" className="text-sm font-medium" fieldClass={fieldClass} />
         {exam && <>
         {loading ? <p role="status" className="text-sm text-muted-foreground">日程を確認中…</p> : <>
