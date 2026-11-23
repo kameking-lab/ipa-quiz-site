@@ -1,5 +1,7 @@
 import { useLayoutEffect, useRef, useState, type RefObject } from "react";
 
+import { paceRunSprite } from "@/lib/home/pace-run";
+
 const START_X = 39;
 const TRACK_LENGTH = 244;
 const TRACK_WIDTH = 320;
@@ -17,8 +19,9 @@ function runnerFrameX(center: number) {
   return left - center;
 }
 
-function RunningChihuahua({ src, percent, lineY, fillRef, stopped }: {
+function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
   src: string;
+  frames: number;
   percent: number;
   lineY: number;
   fillRef: RefObject<SVGLineElement | null>;
@@ -27,8 +30,8 @@ function RunningChihuahua({ src, percent, lineY, fillRef, stopped }: {
   const runner = useRef<SVGGElement>(null);
   const frame = useRef<SVGSVGElement>(null);
   const strip = useRef<SVGImageElement>(null);
-  const progress = useRef(percent);
-  const [startPercent] = useState(percent);
+  const [startPercent] = useState(() => frames > 4 && !stopped ? 0 : percent);
+  const progress = useRef(startPercent);
   const [imageReady, setImageReady] = useState(false);
 
   useLayoutEffect(() => {
@@ -52,9 +55,10 @@ function RunningChihuahua({ src, percent, lineY, fillRef, stopped }: {
     };
     function finish() {
       cancelAnimationFrame(request);
+      request = 0;
       draw(percent, 0, 0);
     }
-    if (stopped || motion.matches || distance === 0) {
+    if (stopped || motion.matches || document.hidden || distance === 0) {
       finish();
       return;
     }
@@ -62,27 +66,43 @@ function RunningChihuahua({ src, percent, lineY, fillRef, stopped }: {
       draw(from, 0, 0);
       return;
     }
-    const start = performance.now();
+    let start = 0;
     function advance(now: number) {
+      if (document.hidden || motion.matches) return finish();
       const elapsed = Math.max(0, now - start);
       if (elapsed >= duration) return finish();
       const stride = (elapsed % STRIDE_MS) / STRIDE_MS;
-      draw(from + (percent - from) * elapsed / duration, BOUNCE_HEIGHT * Math.sin(Math.PI * stride), Math.floor(stride * 4));
+      draw(from + (percent - from) * elapsed / duration,
+        frames === 4 ? BOUNCE_HEIGHT * Math.sin(Math.PI * stride) : 0, Math.floor(stride * frames));
       request = requestAnimationFrame(advance);
     }
-    request = requestAnimationFrame(advance);
-    motion.addEventListener("change", finish);
+    function updateVisibility(inView: boolean) {
+      if (!inView || document.hidden || motion.matches) return finish();
+      if (request || progress.current === percent) return;
+      start = performance.now();
+      request = requestAnimationFrame(advance);
+    }
+    const suspend = () => { if (document.hidden || motion.matches) finish(); };
+    const track = dog.ownerSVGElement;
+    const observer = typeof IntersectionObserver === "undefined" || !track ? null
+      : new IntersectionObserver(([entry]) => updateVisibility(entry.isIntersecting));
+    if (observer && track) observer.observe(track);
+    else updateVisibility(true);
+    document.addEventListener("visibilitychange", suspend);
+    motion.addEventListener("change", suspend);
     return () => {
       cancelAnimationFrame(request);
-      motion.removeEventListener("change", finish);
+      observer?.disconnect();
+      document.removeEventListener("visibilitychange", suspend);
+      motion.removeEventListener("change", suspend);
     };
-  }, [fillRef, imageReady, percent, stopped]);
+  }, [fillRef, frames, imageReady, percent, stopped]);
 
   const startX = trackX(startPercent);
-  return <g ref={runner} transform={`translate(${startX} 0)`} aria-hidden="true" className="p3-track-runner">
+  return <g ref={runner} transform={`translate(${startX} 0)`} aria-hidden="true" className="p3-track-runner" data-pace-sprite={frames > 4 ? "v2" : undefined}>
     <svg ref={frame} x={runnerFrameX(startX)} y={lineY - RUNNER_SIZE + 1} width={RUNNER_SIZE} height={RUNNER_SIZE}
       viewBox={`0 0 ${FRAME_SIZE} ${FRAME_SIZE}`} className="overflow-hidden">
-      <image ref={strip} href={src} width={FRAME_SIZE * 4} height={FRAME_SIZE} x="0" onLoad={() => setImageReady(true)} onError={() => setImageReady(true)} />
+      <image ref={strip} href={src} width={FRAME_SIZE * frames} height={FRAME_SIZE} x="0" onLoad={() => setImageReady(true)} onError={() => setImageReady(true)} />
     </svg>
   </g>;
 }
@@ -91,6 +111,7 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
   runArt: string; mastered: number; total: number; stopped?: boolean;
 }) {
   const fillRef = useRef<SVGLineElement>(null);
+  const sprite = paceRunSprite(runArt);
   const percent = total ? 100 * mastered / total : 0;
   const lineY = 75;
   return <svg viewBox={`0 -10 ${TRACK_WIDTH} 111`} className="p3-pace-track block w-full" role="img" aria-label={`正解済み ${mastered} / ${total}問`}>
@@ -98,7 +119,7 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
     <line ref={fillRef} x1={START_X} y1={lineY} x2={trackX(percent)} y2={lineY}
       strokeWidth="8" strokeLinecap="round" className="p3-trail-progress stroke-primary" />
     <FinishFlag lineY={lineY} height={70} />
-    <RunningChihuahua key={runArt} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
+    <RunningChihuahua key={sprite.src} {...sprite} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
     <TrackLabel x={START_X} y={97}>0問</TrackLabel>
     <TrackLabel x={trackX(100)} y={97} end>{`${total}問`}</TrackLabel>
   </svg>;
