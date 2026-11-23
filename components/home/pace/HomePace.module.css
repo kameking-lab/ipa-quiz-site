@@ -1,12 +1,13 @@
 .stack { display: grid; grid-template-columns: minmax(0, 1fr); }
 .hero {
   margin-inline: -16px;
-  padding: 8px 16px 12px;
+  --p3-hero-gutter: 16px;
+  padding: 8px var(--p3-hero-gutter) 12px;
   --p3-sun-size: 42px;
   overflow: hidden;
 }
 .stack:is([data-home-state="planned"], [data-home-state="post-exam"]) .hero { --p3-sun-top: 49px; --p3-sun-right: 30px; }
-.hero > :not(svg, [data-home-weather]) { position: relative; }
+.hero > :not(svg, [data-home-weather], .p3-event-art-slot) { position: relative; }
 .first { padding-bottom: 13px; }
 .room, .recent, .upcoming { margin-top: 12px; }
 .rowName {
@@ -25,7 +26,7 @@
 }
 .recent .rowName::before { background: var(--primary); }
 @media (min-width: 640px) {
-  .hero { margin-inline: -24px; padding-inline: 24px; }
+  .hero { margin-inline: -24px; --p3-hero-gutter: 24px; }
 }
 
 .qualification {
