@@ -12,6 +12,7 @@ import { useAccountStatus } from "@/components/account/AccountNavigation";
 import { sendConversion } from "@/lib/billing/conversion-client";
 import { subscriptionEndingLabel } from "./SubscriptionEnding";
 import type { SubscriptionManagement } from "@/lib/billing/subscription/domain";
+import { notifyWebAdPurchase } from "@/lib/ads/web-ads";
 interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; management?: SubscriptionManagement | null; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean; examCancelAt?: string }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null; examEndPending?: boolean; returnTo?: string | null } | null }
 export function PurchaseStatus({ order, canceled = false, closeCheckout = false, testMode = true }: { order: string; canceled?: boolean; closeCheckout?: boolean; testMode?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
@@ -65,7 +66,11 @@ export function PurchaseStatus({ order, canceled = false, closeCheckout = false,
     return () => { disposed = true; clearTimeout(timer); state.request++; state.active = false; };
   }, [check, canceled]);
   const complete = status?.purchase?.id === order && status.purchase.status === "paid" && status.entitled;
-  useEffect(() => { if (complete) purchaseJourney(order); }, [complete, order]);
+  useEffect(() => {
+    if (!complete) return;
+    notifyWebAdPurchase();
+    purchaseJourney(order);
+  }, [complete, order]);
   useEffect(() => {
     if (!complete || !status?.feedbackSubmitted) return;
     // Confirmation views by customers with feedback history, not purchase conversions.

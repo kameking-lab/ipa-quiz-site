@@ -226,7 +226,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
     <Suspense><HomePlanReferral keys={referralKeys} onOpen={openPrefilled} /></Suspense>
     <section className={styles.stack} id="today" aria-label="今日の学習" aria-busy={restoring} data-home-state={restoring ? "loading" : postExam ? "post-exam" : plan ? "planned" : returning ? "returning" : "new"}
       data-home-calendar-layout={calendarPending ? "pending" : calendarEmpty ? "empty" : undefined}>
-      <div className={`${styles.hero} p3-landscape p3-home-scene`} data-pace-view={postExam ? "post-exam" : examDayLayout ? "exam-day" : plan ? "planned" : returning ? "returning" : "new"}>
+      <div className={`${styles.hero} p3-landscape p3-home-scene`} data-auto-ad-keep-clear="home-hero" data-pace-view={postExam ? "post-exam" : examDayLayout ? "exam-day" : plan ? "planned" : returning ? "returning" : "new"}>
         <HomeWeather />
         <HomeEventArt event={event} />
         {restoring && <div className={styles.planLoading}>
