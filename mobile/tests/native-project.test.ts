@@ -38,8 +38,10 @@ it("every SDK call the app makes is a declared native method of the same JS plug
 
 it("the custom bridge controller keeps Capacitor's automatic plugin registration", () => {
   const controller = readFileSync(join(mobile, "ios-assets/QualificationBridgeViewController.swift"), "utf8");
-  // Overriding these would stop packageClassList plugins (RevenueCat, Preferences, Browser…) from loading.
-  expect(controller).not.toMatch(/autoRegisterPlugins|instanceDescriptor\(\)|override func loadView/);
+  // Keep packageClassList plugins (RevenueCat, Preferences, Browser…) and
+  // install the ad container only after Capacitor has built the bridge.
+  expect(controller).not.toMatch(/autoRegisterPlugins|instanceDescriptor\(\)/);
+  expect(controller).toMatch(/override func loadView\(\)\s*\{\s*super\.loadView\(\)/);
   expect(controller).toMatch(/override func capacitorDidLoad\(\)/);
   const configure = readFileSync(join(mobile, "scripts/configure-ios.rb"), "utf8");
   // configure-ios.rb rewrites capacitor.config.json; it must keep packageClassList.

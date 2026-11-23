@@ -54,8 +54,8 @@ const registrations = files("src").filter(path => /\.tsx?$/.test(path)).flatMap(
 });
 
 it("inventories every custom native plugin and matches both sides of the bridge", () => {
-  expect(nativeFiles).toHaveLength(2);
-  expect(plugins.map(plugin => plugin.className).sort()).toEqual(["QualificationBridgePlugin", "StudyReviewPlugin", "TrackingTransparencyPlugin"]);
+  expect(nativeFiles).toHaveLength(3);
+  expect(plugins.map(plugin => plugin.className).sort()).toEqual(["NativeBannerAds", "QualificationBridgePlugin", "StudyReviewPlugin", "TrackingTransparencyPlugin"]);
   expect(new Set(plugins.map(plugin => plugin.identifier)).size).toBe(plugins.length);
   expect(new Set(plugins.map(plugin => plugin.jsName)).size).toBe(plugins.length);
   expect(registrations.map(registration => registration.name).sort()).toEqual(plugins.map(plugin => plugin.jsName).sort());

@@ -6,7 +6,11 @@ public final class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "TrackingTransparencyPlugin"
     public let jsName = "TrackingTransparency"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "prepare", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "prepare", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "status", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "requestPermission", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "enableAds", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "disableAds", returnType: CAPPluginReturnPromise)
     ]
 
     @objc func prepare(_ call: CAPPluginCall) {
@@ -29,4 +33,10 @@ public final class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
             }
         }
     }
+
+    // Older versions of the online UI still speak this bridge contract.
+    @objc func status(_ call: CAPPluginCall) { call.resolve(["status": "restricted"]) }
+    @objc func requestPermission(_ call: CAPPluginCall) { status(call) }
+    @objc func enableAds(_ call: CAPPluginCall) { call.resolve(["enabled": false]) }
+    @objc func disableAds(_ call: CAPPluginCall) { call.resolve() }
 }
