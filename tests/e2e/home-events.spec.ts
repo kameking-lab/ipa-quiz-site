@@ -96,7 +96,7 @@ for (const { width, file, motion } of [
       expect(await intro.boundingBox()).toEqual(introBefore);
       expect(await art.boundingBox()).toEqual(before);
       await expect(art.locator("img")).toHaveCSS("object-fit", "cover");
-      await expect(art.locator("img")).toHaveCSS("object-position", "98% 43%");
+      await expect(art.locator("img")).toHaveCSS("object-position", width === 390 ? "78% 43%" : "98% 43%");
       await expect(art.locator("img")).toHaveCSS("filter", "brightness(0.48) saturate(0.86)");
       expect(imageRequests).toEqual([`/images/home/event-scenes/${file}`]);
     } finally {
@@ -138,7 +138,7 @@ test("switches backgrounds at midnight and clears on ordinary dates", async ({ p
   await expect(art).toHaveCount(0);
   await expect(page.locator("html")).not.toHaveAttribute("data-home-event-layout", "");
   const hero = page.locator(".p3-home-scene");
-  await expect(hero.locator("[data-event-panel='intro']")).toHaveCSS("display", "contents");
+  await expect(hero.locator("[data-event-panel='intro']")).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
   await expect(hero).not.toHaveCSS("background-image", "none");
 });
 

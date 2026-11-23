@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { getHomeEvent, type HomeEventId } from "@/lib/home/home-events";
 import { HOME_EVENT_ART, HOME_EVENT_ART_DIR } from "@/lib/home/home-event-art";
 import { setHomeEventLayout } from "@/lib/home/home-event-layout";
@@ -15,7 +15,7 @@ export function useHomeEvent() {
       window.clearTimeout(timer);
       const now = new Date();
       const current = getHomeEvent(now);
-      setHomeEventLayout(current !== null);
+      setHomeEventLayout(current);
       setEvent(current);
       const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
       timer = window.setTimeout(update, nextDay.getTime() - now.getTime());
@@ -58,7 +58,7 @@ function EventArtImage({ event, assetBase }: { event: HomeEventId; assetBase: st
   const [ready, setReady] = useState(false);
   const { file, position } = HOME_EVENT_ART[event];
   return <picture className="p3-event-art" data-home-event-art={event} data-home-event-ready={ready || undefined}>
-    <img src={`${assetBase}/${HOME_EVENT_ART_DIR}/${file}`} alt="" style={{ objectPosition: position }}
+    <img src={`${assetBase}/${HOME_EVENT_ART_DIR}/${file}`} alt="" style={{ "--p3-art-position": position } as CSSProperties}
       fetchPriority="low" decoding="async"
       onLoad={event => { void event.currentTarget.decode().then(() => setReady(true), () => {}); }}
       onError={() => setReady(false)} />

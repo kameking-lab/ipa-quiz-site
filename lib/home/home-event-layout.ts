@@ -1,12 +1,14 @@
-import { createHomeEventCalendar, getHomeEvent } from "./home-events";
+import { createHomeEventCalendar, getHomeEvent, type HomeEventId } from "./home-events";
 
-export function setHomeEventLayout(active: boolean) {
-  document.documentElement.toggleAttribute("data-home-event-layout", active);
+export function setHomeEventLayout(event: HomeEventId | null) {
+  const root = document.documentElement;
+  if (event) root.dataset.homeEventLayout = event;
+  else delete root.dataset.homeEventLayout;
 }
 
 export const HOME_EVENT_LAYOUT_BOOTSTRAP_SCRIPT =
-  `(${setHomeEventLayout.toString()})(Boolean((${createHomeEventCalendar.toString()})().getHomeEvent(new Date())));`;
+  `(${setHomeEventLayout.toString()})((${createHomeEventCalendar.toString()})().getHomeEvent(new Date()));`;
 
 export function initHomeEventLayout() {
-  setHomeEventLayout(Boolean(getHomeEvent(new Date())));
+  setHomeEventLayout(getHomeEvent(new Date()));
 }
