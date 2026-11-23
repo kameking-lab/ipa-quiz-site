@@ -135,9 +135,11 @@ describe("one graded answer per question visit", () => {
     expect(await screen.findByRole("heading", { name: "計画の問題 · 1問" }, todayQuizWait)).toBeInTheDocument();
     const [first, second] = await screen.findAllByRole("radio", {}, todayQuizWait);
     answerBeforeRender(first, second, "2");
-    expectHistory(single, "ア");
-    expect(getLearningActions().map(action => action.questionId)).toEqual([single.id]);
-    expect(grant.mock.calls).toEqual([[single.id]]);
+    await waitFor(() => {
+      expectHistory(single, "ア");
+      expect(getLearningActions().map(action => action.questionId)).toEqual([single.id]);
+      expect(grant.mock.calls).toEqual([[single.id]]);
+    }, todayQuizWait);
   });
 
   it("records one history entry in the stream when the practice gate is off", () => {
@@ -189,9 +191,11 @@ describe("one graded answer per question visit", () => {
     const [first, second] = screen.getAllByRole("radio");
     answerBeforeRender(first, second, "2");
     expect(first).toBeChecked();
-    expect(getLearningActions()).toMatchObject([{ questionId: paperQuestion.id, kind: "answer", correct: true }]);
-    expect(reward).toHaveBeenCalledTimes(1);
-    expect(grant.mock.calls).toEqual([[paperQuestion.id]]);
+    await waitFor(() => {
+      expect(getLearningActions()).toMatchObject([{ questionId: paperQuestion.id, kind: "answer", correct: true }]);
+      expect(reward).toHaveBeenCalledTimes(1);
+      expect(grant.mock.calls).toEqual([[paperQuestion.id]]);
+    }, { timeout: 5000 });
   });
 
   it("records one history entry and quota grant only when both choices are selected", async () => {
