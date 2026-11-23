@@ -8,6 +8,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { WeakMark } from "@/components/quiz/WeakMark";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
 import { PracticeRequestError } from "@/lib/billing/guest-client";
+import { MEMBERSHIP_CHECK_PENDING, MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/lib/billing/domain";
 import { readSettings } from "@/lib/storage/settings";
 import { recordSessionAnswer } from "@/lib/motivation/session";
 import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
@@ -614,6 +615,11 @@ export function ExamQuestionPlayer({
       onUnlocked={() => setContentAttempt(n => n + 1)} />
     {!paceSession && <div className="study-column pb-6">{blockedNavigation}</div>}
   </>;
+  if (contentPending && contentError === MEMBERSHIP_CHECK_PENDING) return <section className="space-y-4" aria-live="polite">
+    <p role="status">{MEMBERSHIP_CHECK_PENDING_MESSAGE}</p>
+    <button type="button" onClick={() => setContentAttempt(n => n + 1)}>再確認</button>
+    {blockedNavigation}
+  </section>;
   if (contentPending) return <section className="space-y-4" aria-live="polite">
     {contentError ? <p role="alert">{contentError === "sign_in_required" ? accountStatus === "unauthenticated" ? "無料枠を端末間で共有するためログインが必要です。" : "利用状態を確認できません。もう一度お試しください。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
     {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><SignedOutOnly><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · </SignedOutOnly><Link href="/billing">有料会員・購入復元</Link></p></>}

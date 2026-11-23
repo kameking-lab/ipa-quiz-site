@@ -6,7 +6,8 @@ import { z } from "zod";
 import { getProvider, type LLMProvider } from "@/lib/ai/provider";
 import { checkMonthlyCostCap, estimateTokens, recordAiCost, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
-import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
+import { checkAiNormalUse, checkFreeAiServiceUse } from "@/lib/ai/normal-use-server";
+import { copilotRateLimitResponse } from "@/lib/copilot/rate-limit-response";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { EXAM_ID_PATTERN, examSourcePdfUrl, isScorableQuestion, officialPdfPageUrl } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
@@ -92,15 +93,10 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   track(usage);
   if (usage.response) return usage.response;
 
-  const ipRl = await checkAiNormalUse(req, "copilot", usage, {
+  const ipDenial = copilotRateLimitResponse(await checkAiNormalUse(req, "copilot", usage, {
     requireKv: Boolean(process.env.GEMINI_API_KEY),
-  });
-  if (!ipRl.ok) {
-    if (ipRl.reason === "unavailable") {
-      return NextResponse.json({ error: "rate_limit_unavailable", message: "AIサービスは一時的に利用できません。少し待ってから再試行してください。" }, { status: 503, headers: { ...usage.headers, "Retry-After": "60" } });
-    }
-    return NextResponse.json({ error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, scope: ipRl.scope, resetAt: ipRl.resetAt }, { status: 429, headers: usage.headers });
-  }
+  }), usage.headers);
+  if (ipDenial) return ipDenial;
 
   let provider: LLMProvider;
   try {
@@ -111,6 +107,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     return NextResponse.json({ error: "provider_unavailable", message: "AIサービスが一時的に利用できません。" }, { status: 503 });
   }
   const maxTokens = 1200;
+  const usageDenial = await consumeAiUsage(usage, provider.name, ["exam-library", examId, questionId, selectedChoice, messages]);
+  if (usageDenial) return usageDenial;
+
   const budget = textBudget(tierForModel(COPILOT_MODEL), system, messages, maxTokens);
   let reservation: Awaited<ReturnType<typeof checkMonthlyCostCap>>["reservation"];
   if (provider.name !== "mock") {
@@ -124,10 +123,12 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     }
   }
 
-  const usageDenial = await consumeAiUsage(usage, provider.name, ["exam-library", examId, questionId, selectedChoice, messages]);
-  if (usageDenial) {
-    if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
-    return usageDenial;
+  if (usage.access.kind === "free" && provider.name !== "mock") {
+    const serviceDenial = copilotRateLimitResponse(await checkFreeAiServiceUse(usage), usage.headers);
+    if (serviceDenial) {
+      if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
+      return serviceDenial;
+    }
   }
   usage.streaming = true;
   const stream = createCopilotResponseStream({

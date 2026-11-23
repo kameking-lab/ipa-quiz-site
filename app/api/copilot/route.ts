@@ -5,7 +5,8 @@ import { z } from "zod";
 import { getProvider } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
-import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
+import { checkAiNormalUse, checkFreeAiServiceUse } from "@/lib/ai/normal-use-server";
+import { copilotRateLimitResponse } from "@/lib/copilot/rate-limit-response";
 import type { Question } from "@/lib/questions/types";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { ragEnabled } from "@/lib/copilot/rag";
@@ -114,21 +115,10 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   track(usage);
   if (usage.response) return usage.response;
 
-  const ipRl = await checkAiNormalUse(req, "copilot", usage, {
+  const ipDenial = copilotRateLimitResponse(await checkAiNormalUse(req, "copilot", usage, {
     requireKv: Boolean(process.env.GEMINI_API_KEY),
-  });
-  if (!ipRl.ok) {
-    if (ipRl.reason === "unavailable") {
-      return NextResponse.json(
-        { error: "rate_limit_unavailable", message: "AIサービスは一時的に利用できません。少し待ってから再試行してください。" },
-        { status: 503, headers: { ...usage.headers, "X-Error-Type": "server_error", "Retry-After": "60" } },
-      );
-    }
-    return NextResponse.json(
-      { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, scope: ipRl.scope, resetAt: ipRl.resetAt },
-      { status: 429, headers: { ...usage.headers, "X-Error-Type": "rate_limited" } },
-    );
-  }
+  }), usage.headers);
+  if (ipDenial) return ipDenial;
 
   const quickAction = payload.quickAction as QuickActionId | undefined;
 
@@ -186,6 +176,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       : payload.responseLength === "medium"
         ? 1200
         : 1800;
+  const usageDenial = await consumeAiUsage(usage, provider.name,
+    ["copilot", question.id, selectedChoice, quickAction, payload.messages, payload.responseLength, payload.learnerProfile]);
+  if (usageDenial) return usageDenial;
 
   const budget = textBudget(tierForModel(model), system, userMessages, maxTokens);
   let reservation: Awaited<ReturnType<typeof checkMonthlyCostCap>>["reservation"];
@@ -208,11 +201,12 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   const isRealProvider = provider.name !== "mock";
 
-  const usageDenial = await consumeAiUsage(usage, provider.name,
-    ["copilot", question.id, selectedChoice, quickAction, payload.messages, payload.responseLength, payload.learnerProfile]);
-  if (usageDenial) {
-    if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
-    return usageDenial;
+  if (usage.access.kind === "free" && provider.name !== "mock") {
+    const serviceDenial = copilotRateLimitResponse(await checkFreeAiServiceUse(usage), usage.headers);
+    if (serviceDenial) {
+      if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
+      return serviceDenial;
+    }
   }
 
   // app includes all handler work before provider streaming, including pre, rag and prompt.

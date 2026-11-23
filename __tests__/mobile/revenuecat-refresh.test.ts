@@ -113,8 +113,11 @@ it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase 
     await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1, "checkedAt"=$2',
       [new Date(Date.now() - 1_000), new Date()]);
     transport.mockRejectedValueOnce(new DOMException("test timeout", "TimeoutError"));
-    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
     transport.mockResolvedValueOnce(Response.json(paid));
     await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+    await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1', [new Date(Date.now() - 1_000)]);
+    transport.mockResolvedValueOnce(new Response(null, { status: 404 }));
+    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
   } finally { await pg.close(); }
 });

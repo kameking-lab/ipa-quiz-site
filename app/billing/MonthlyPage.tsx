@@ -12,12 +12,15 @@ import { terminal, type SubscriptionManagement } from "@/lib/billing/subscriptio
 import { SubscriptionEnding } from "./SubscriptionEnding";
 import { aiAccessClaimsEnabled } from "@/lib/ai/quota-copy";
 import { AI_QUOTA_COPY } from "@/lib/constants/ai-quota";
+import { aiQuotaEnabled } from "@/lib/ai/access-config";
+import { BillingError, MEMBERSHIP_CHECK_PENDING, MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/lib/billing/domain";
 
 /** One button and one line of terms; the full conditions live on /billing/terms. */
 export default async function MonthlyPage({ returnTo }: { returnTo?: string } = {}) {
   let config: ReturnType<typeof monthlyConfig> | null = null;
   try { config = monthlyConfig(); } catch { /* Keep the unconfigured sales page closed. */ }
   let canManage = false, hasContract = false, showTrial = true, management: SubscriptionManagement | null = null;
+  let checkingMembership = false;
   try {
     if (config) {
       const userId = await billingIdentity();
@@ -38,15 +41,15 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
       canManage = state.canManage; hasContract = !!state.subscription && !terminal(state.subscription.status);
       showTrial = state.trialDays > 0;
       management = state.management;
-      hasContract ||= state.entitled || !!await revenueCatAccess(userId);
+      hasContract ||= state.entitled || !!await revenueCatAccess(userId, false, aiQuotaEnabled());
     }
-  } catch { /* Signed out or storage unavailable: the plan button signs in first. */ }
-  return <MonthlyPlanView {...{ canManage, hasContract, showTrial, management, returnTo }} salesOpen={config?.enabled === true} today={jstDateString(new Date())} />;
+  } catch (error) { checkingMembership = error instanceof BillingError && error.code === MEMBERSHIP_CHECK_PENDING; }
+  return <MonthlyPlanView {...{ canManage, hasContract, showTrial, management, returnTo, checkingMembership }} salesOpen={config?.enabled === true} today={jstDateString(new Date())} />;
 }
 
-export function MonthlyPlanView({ canManage, hasContract, showTrial, management, returnTo, salesOpen, today }: {
+export function MonthlyPlanView({ canManage, hasContract, showTrial, management, returnTo, salesOpen, today, checkingMembership = false }: {
   canManage: boolean; hasContract: boolean; showTrial: boolean; management: SubscriptionManagement | null;
-  returnTo?: string; salesOpen: boolean; today: string;
+  returnTo?: string; salesOpen: boolean; today: string; checkingMembership?: boolean;
 }) {
   return <>
     <BillingPageBeacon />
@@ -67,11 +70,12 @@ export function MonthlyPlanView({ canManage, hasContract, showTrial, management,
       </div>
       {management ? <SubscriptionEnding key={management.orderId} initial={management} today={today} />
         : hasContract ? <p role="status" className="text-sm">契約済みです（支払確認中を含む）。</p>
+        : checkingMembership ? <p role="status" className="text-sm">{MEMBERSHIP_CHECK_PENDING_MESSAGE}</p>
         : salesOpen ? <MonthlyPlanLink returnTo={returnTo ?? ""} />
         : <p role="status" className="rounded-lg bg-muted px-4 py-3 text-sm">現在、新規申込を受け付けていません。</p>}
       {canManage && (management ? <ManageSubscriptionButton label="契約・お支払い" /> : <ManageSubscriptionButton />)}
       <div className="p3-listed px-4 py-3">
-        <MonthlyConditions showTrial={!hasContract && showTrial} contract={hasContract} />
+        <MonthlyConditions showTrial={!hasContract && !checkingMembership && showTrial} contract={hasContract} />
       </div>
     </section>
   </>;

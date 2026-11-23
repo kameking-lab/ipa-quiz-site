@@ -112,6 +112,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           if (!await input.confirmBeforeDelivery()) throw new Error("AI quota settlement unavailable");
           upstreamAbort.signal.throwIfAborted();
           deliverBody(responseText);
+          answered = bodyDelivered;
         }
         if (usage?.truncated) {
           controller.enqueue(encoder.encode(`\n\n${COPILOT_PARTIAL_ANSWER} 出力上限に達したため、回答は途中までです。`));

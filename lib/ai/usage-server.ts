@@ -2,7 +2,8 @@ import "server-only";
 import { type AiAccessPolicy, type AiFeature } from "./access-policy";
 import { aiAccessPolicy } from "./access-config";
 import { resolveAiAccess, type AiAccessResolution } from "./access-server";
-import { questionQuotaStore, recordPaidAiQuestion } from "./question-quota-kv";
+import { questionQuotaStore, recordPaidAiQuestion, type QuotaSettlement } from "./question-quota-kv";
+import { MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/lib/billing/domain";
 
 export interface AiUsageContext {
   legacy: boolean;
@@ -10,7 +11,7 @@ export interface AiUsageContext {
   headers: Record<string, string>;
   access: AiAccessResolution;
   policy: AiAccessPolicy;
-  settle?: (completed: boolean) => Promise<void>;
+  settle?: (settlement: QuotaSettlement) => Promise<void>;
   streaming?: boolean;
   leaseExpiresAt?: number;
   clientSignal?: AbortSignal;
@@ -45,6 +46,7 @@ export async function prepareAiUsage(
   const errors = {
     not_configured: [503, "AIの提供設定を確認できないため、生成を一時停止しています。"],
     unavailable: [503, "会員情報を確認できないため、生成を一時停止しています。"],
+    membership_check_pending: [503, MEMBERSHIP_CHECK_PENDING_MESSAGE],
     login_required: [401, "AIの新規生成にはログインが必要です。"],
     not_included: [403, "このAI機能は現在の提供対象に含まれていません。"],
   } as const;
@@ -70,7 +72,7 @@ export async function consumeAiUsage(
   if (context.access.kind === "paid") {
     context.headers["X-AI-Attempt"] = "admitted";
     context.settle = async completed => {
-      if (completed) await recordPaidAiQuestion(now);
+      if (completed === true) await recordPaidAiQuestion(now);
     };
     return null;
   }
@@ -78,12 +80,15 @@ export async function consumeAiUsage(
   const { dailyNewGenerationLimit: limit, dailyResetUtcOffsetMinutes: offset } = context.policy;
   if (limit === null || offset === null) return denied("ai_not_configured", 503, "AIの提供設定を確認できません。");
   try {
-    const admission = await store.reserve({ subject: context.access.subject, limit, offset, now }, request);
+    const { subject, guestSubject } = context.access;
+    const day = { subject, limit, offset, now };
+    if (guestSubject && (await store.claimGuest(day, guestSubject)).status === "pending") return pendingQuestion(context);
+    const admission = await store.reserve(day, request);
     setQuotaHeaders(context, limit, admission);
+    if (admission.status === "claimed") return claimedGuest(context);
     if (admission.status === "exhausted") return denied("ai_daily_quota_exhausted", 429,
       `今日の無料のAI質問（${limit}回）はここまで`, { resetAt: admission.resetAt, scope: "subject-day" }, context.headers);
-    if (admission.status === "pending") return denied("ai_question_pending", 409,
-      "AIが回答中です。少し待ってからもう一度お試しください。", {}, context.headers);
+    if (admission.status === "pending") return pendingQuestion(context);
     if (admission.status === "answered") return denied("ai_question_answered", 409,
       "この質問には本日回答済みです。", {}, context.headers);
     const lease = admission.lease;
@@ -91,10 +96,10 @@ export async function consumeAiUsage(
     context.headers["X-AI-Attempt"] = "admitted";
     context.leaseExpiresAt = lease.expiresAt;
     context.headers["X-AI-Quota-Consumed"] = admission.status === "repeat" ? "0" : "pending";
-    context.settle = async completed => {
-      const result = await store.settle(lease, completed).catch(() => store.settle(lease, completed));
+    context.settle = async settlement => {
+      const result = await store.settle(lease, settlement).catch(() => store.settle(lease, settlement));
       setQuotaHeaders(context, limit, result);
-      if (completed && result.status !== "completed" && result.status !== "recovered") throw new Error("unconfirmed AI answer");
+      if (settlement && result.status !== "completed" && result.status !== "recovered") throw new Error("unconfirmed AI answer");
       context.headers["X-AI-Quota-Consumed"] = result.status === "completed" && admission.status !== "repeat" ? "1" : "0";
     };
     return null;
@@ -102,6 +107,14 @@ export async function consumeAiUsage(
     context.headers["X-AI-Attempt"] = "unknown";
     return denied("ai_usage_unavailable", 503, "AI利用回数を確認できないため、生成を一時停止しています。", {}, context.headers);
   }
+}
+
+function pendingQuestion(context: AiUsageContext) {
+  return denied("ai_question_pending", 409, "AIが回答中です。少し待ってからもう一度お試しください。", {}, context.headers);
+}
+
+function claimedGuest(context: AiUsageContext) {
+  return denied("ai_login_required", 401, "このブラウザーの今日のAI利用回数は引き継ぎ済みです。ログインして続けてください。", {}, context.headers);
 }
 
 /** Leave time to record the cost and settle the free slot before its lease expires. */
@@ -112,10 +125,16 @@ export function gradingSignal(context: AiUsageContext, client: AbortSignal) {
 }
 
 export function confirmFreeAnswer(context: AiUsageContext) {
-  if (context.access.kind !== "free" || !context.settle) return undefined;
+  const settle = context.settle;
+  if (context.access.kind !== "free" || !settle) return undefined;
   return async () => {
-    await settleAiUsage(context, true);
-    return context.headers["X-AI-Quota-Consumed"] !== "unknown";
+    // Retain the same owner until the stream reports whether it enqueued the body.
+    try {
+      await settle("confirm");
+      return true;
+    } catch {
+      return false;
+    }
   };
 }
 
@@ -131,7 +150,8 @@ export async function settleAiUsage(context: AiUsageContext, completed: boolean)
   const settle = context.settle;
   context.settle = undefined;
   try {
-    await settle?.(completed);
+    const settlement = completed && context.streaming && context.access.kind === "free" ? "delivered" : completed;
+    await settle?.(settlement);
   } catch {
     context.headers["X-AI-Quota-Consumed"] = "unknown";
     console.warn("[ai-question-quota] settlement unavailable", { tier: context.access.kind, completed });
@@ -148,7 +168,11 @@ export async function readAiUsageStatus(request: Request, feature: AiFeature) {
   const offset = context.policy.dailyResetUtcOffsetMinutes;
   if (context.access.kind === "free" && limit !== null && offset !== null) {
     try {
-      const { remaining, resetAt } = await questionQuotaStore.read({ subject: context.access.subject, limit, offset, now: Date.now() });
+      const { subject, guestSubject } = context.access;
+      const day = { subject, limit, offset, now: Date.now() };
+      if (guestSubject && (await questionQuotaStore.claimGuest(day, guestSubject)).status === "pending") return pendingQuestion(context);
+      const { status, remaining, resetAt } = await questionQuotaStore.read(day);
+      if (status === "claimed") return claimedGuest(context);
       return reply({ kind: "free", remaining, resetAt });
     } catch {
       return denied("ai_usage_unavailable", 503, "AI利用回数を確認できません。", {}, context.headers);

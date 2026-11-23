@@ -10,6 +10,30 @@ const draft = "この選択肢が違う理由を教えてください";
 
 test.use({ viewport: { width: 390, height: 844 }, serviceWorkers: "block" });
 
+test("shows retry guidance during an App Store renewal without showing a purchase offer", async ({ page }) => {
+  let verified = false;
+  const pending = {
+    status: 503,
+    headers: { "X-AI-Policy-Version": AI_POLICY_VERSION, "X-Error-Type": "ai_membership_check_pending" },
+    json: { error: "ai_membership_check_pending" },
+  };
+  await page.route("**/api/ai/usage?feature=copilot", route =>
+    route.fulfill(verified ? { json: { kind: "paid" } } : pending));
+  await page.route("**/api/copilot", route => route.fulfill(pending));
+  await page.goto(problem);
+  await page.locator("summary").filter({ hasText: /^AIに質問$/ }).click();
+  const panel = page.getByRole("region", { name: "この問題についてAIに質問" });
+  await expect(panel.getByText(/月額会員の更新を確認中です/)).toBeVisible();
+  const input = panel.getByRole("textbox");
+  await input.fill(draft);
+  await panel.getByRole("button", { name: "送信", exact: true }).click();
+  await expect(input).toHaveValue(draft);
+  await expect(panel.getByRole("link", { name: checkoutLabel })).toHaveCount(0);
+  verified = true;
+  await page.evaluate(() => window.dispatchEvent(new Event("focus")));
+  await expect(panel.getByText("月額会員 · AI質問は回数制限なし")).toBeVisible();
+});
+
 test("shows the remaining quota, offers equal actions, and restores the draft on return", async ({ page }) => {
   let remaining = limit;
   let paid = false;
