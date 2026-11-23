@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { WEB_ADS_MEMBERSHIP_CHANNEL, WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL } from "../../lib/ads/web-ads";
+import { WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL } from "../../lib/ads/web-ads";
 
 test.use({ serviceWorkers: "block" });
 
@@ -81,19 +81,25 @@ test("clears a running script on a client-side transition to billing", async ({ 
   await expect(fakeAd(page)).toHaveCount(0);
 });
 
-test("clears ads when purchase confirmation in another document changes eligibility", async ({ page }) => {
+test("clears ads when purchase confirmation in another tab changes eligibility", async ({ context, page }) => {
   let entitled = false;
   await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled } }));
   await page.goto("/about");
   await expect(fakeAd(page)).toBeVisible();
   const reload = page.waitForRequest(request => request.isNavigationRequest() &&
     new URL(request.url()).pathname === "/about");
-  entitled = true;
-  await page.evaluate(channelName => {
-    const channel = new BroadcastChannel(channelName);
-    channel.postMessage("paid");
-    channel.close();
-  }, WEB_ADS_MEMBERSHIP_CHANNEL);
+
+  const order = "ca570a11-78e4-4b70-b1ec-85ed89b76a01";
+  const purchase = await context.newPage();
+  await purchase.route(url => url.pathname === "/api/billing/status" && url.searchParams.get("order") === order,
+    route => {
+      entitled = true;
+      return route.fulfill({ json: { entitled, purchase: { id: order, status: "paid" } } });
+    });
+  await purchase.goto(`/billing/success?order=${order}`);
+  await expect(purchase.getByRole("heading", { name: "購入が完了しました" })).toBeVisible();
+  await expect(tag(purchase)).toHaveCount(0);
+
   await reload;
   await page.waitForLoadState("load");
   await expect(tag(page)).toHaveCount(0);
