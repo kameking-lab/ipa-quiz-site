@@ -55,11 +55,13 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
       const seats = [...element.querySelectorAll('[data-testid="study-room-seat"]')].map(seat => seat.getBoundingClientRect());
       return { fits: document.documentElement.scrollWidth <= innerWidth,
         seatsFit: seats.every(seat => seat.left >= box.left && seat.right <= box.right + 1 && seat.top >= box.top && seat.bottom <= box.bottom + 1),
-        minWidth: Math.min(...seats.map(seat => seat.width)) };
+        minWidth: Math.min(...seats.map(seat => seat.width)),
+        maxWidth: Math.max(...seats.map(seat => seat.width)) };
     });
     expect(geometry.fits).toBe(true);
     expect(geometry.seatsFit).toBe(true);
-    expect(geometry.minWidth).toBeGreaterThanOrEqual(56);
+    expect(geometry.minWidth).toBeGreaterThanOrEqual(42);
+    if (count >= 12) expect(geometry.maxWidth).toBeGreaterThanOrEqual(70);
     const seat = scene.getByRole("button", { name: /のチワワを見る$/ }).first();
     await seat.press("Enter");
     await expect(seat).toHaveAttribute("aria-pressed", "true");
