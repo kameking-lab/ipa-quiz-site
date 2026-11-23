@@ -1,8 +1,9 @@
 // ビルド時に書き出すコパイロット用ファイル（generated/copilot/）の読み書き。
 //
 //   manifest.json            版・コーパス指紋・件数
-//   docs.json.gz             検索文書のメタ（問題文書の本文は持たず、問題から都度組み立てる）
-//   index.bin                BM25 索引（index-artifact.ts の形式）
+//   docs.bin                 検索文書のメタ。64件ずつ展開できる
+//   index-directory.v8.gz    BM25 の全体統計と語ごとの位置
+//   index-postings.bin       必要な語だけ展開できるポスティング
 //   question-ids.json.gz     問題 ID を共通コーパスの試験別ファイル内の位置に対応づける
 //
 // 実行時に全問題データ（約 150MB の JS）を読まずに済ませるための仕組み。
@@ -12,21 +13,20 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { setImmediate as yieldToEventLoop } from "node:timers/promises";
-import { promisify } from "node:util";
-import { gunzip, gunzipSync, gzipSync } from "node:zlib";
+import { gunzipSync, gzipSync } from "node:zlib";
 import { openQuestionCorpus } from "@/lib/questions/corpus-files";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { buildQuestionDoc } from "./corpus-docs";
-import { decodeIndexAsync, serializeIndex } from "./index-artifact";
-import type { InvertedIndex } from "./retriever";
+import { COPILOT_PREBUILT_DIR, INDEX_DIRECTORY_FILE, INDEX_POSTINGS_FILE, openPackedIndex, serializeIndex } from "./index-artifact";
+import type { InvertedIndex, SearchIndex } from "./retriever";
 import type { CopilotSource } from "./source";
 import type { CorpusDoc } from "./types";
 
-export const COPILOT_PREBUILT_DIR = "generated/copilot";
-const FORMAT_VERSION = 2;
-const DOC_BATCH = 4096;
-const unzip = promisify(gunzip);
+export { COPILOT_PREBUILT_DIR } from "./index-artifact";
+const FORMAT_VERSION = 3;
+const DOCS_FILE = "docs.bin";
+const DOCS_PER_BLOCK = 64;
+const DOC_BLOCK_CACHE_SIZE = 128;
 type QuestionIdsByExam = Partial<Record<ExamCode, string[]>>;
 
 interface Manifest {
@@ -67,23 +67,16 @@ export function writePrebuiltCopilotFiles(
   ) as QuestionIdsByExam;
   write(join(dir, "question-ids.json.gz"), gzipSync(JSON.stringify(questionIds), { level: 9 }));
 
-  const docs: StoredDoc[] = index.docs.map((doc) => ({
-    id: doc.id,
-    kind: doc.kind,
-    title: doc.title,
-    url: doc.url,
-    meta: doc.meta,
-    textLength: doc.text.length,
-    ...(doc.kind === "glossary" ? { text: doc.text } : {}),
-  }));
-  write(join(dir, "docs.json.gz"), gzipSync(JSON.stringify(docs), { level: 9 }));
-  write(join(dir, "index.bin"), serializeIndex(index));
+  write(join(dir, DOCS_FILE), packDocs(index.docs));
+  const { directory, postings } = serializeIndex(index, fingerprint);
+  write(join(dir, INDEX_DIRECTORY_FILE), directory);
+  write(join(dir, INDEX_POSTINGS_FILE), postings);
 
   const manifest: Manifest = {
     version: FORMAT_VERSION,
     fingerprint,
     questionCount: Object.values(questionIds).reduce((total, ids) => total + ids.length, 0),
-    docCount: docs.length,
+    docCount: index.docs.length,
   };
   write(join(dir, "manifest.json"), JSON.stringify(manifest));
   return { bytes };
@@ -93,7 +86,8 @@ function isManifest(value: unknown): value is Manifest {
   if (typeof value !== "object" || value === null) return false;
   const v = value as Record<string, unknown>;
   return v.version === FORMAT_VERSION && typeof v.fingerprint === "string" &&
-    Number.isInteger(v.questionCount) && Number.isInteger(v.docCount);
+    typeof v.questionCount === "number" && Number.isSafeInteger(v.questionCount) && v.questionCount >= 0 &&
+    typeof v.docCount === "number" && Number.isSafeInteger(v.docCount) && v.docCount >= 0;
 }
 
 /**
@@ -101,7 +95,9 @@ function isManifest(value: unknown): value is Manifest {
  * 索引・文書は index() の初回に、問題は該当する試験を初めて引いたときに読む。
  */
 export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): CopilotSource | null {
-  const dir = join(rootDir, COPILOT_PREBUILT_DIR);
+  // next.config.ts explicitly traces generated/copilot for this route. rootDir
+  // is also supplied by the build verifier and tests.
+  const dir = join(/*turbopackIgnore: true*/ rootDir, COPILOT_PREBUILT_DIR);
   let manifest: Manifest;
   try {
     const manifestFile = join(dir, "manifest.json");
@@ -130,52 +126,37 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
     return question;
   };
 
-  const loadDocs = async () => {
-    const file = await readCompressedFile(join(dir, "docs.json.gz"));
+  const loadIndex = async (): Promise<SearchIndex> => {
     const started = performance.now();
-    const stored = JSON.parse(file.data.toString("utf8")) as StoredDoc[];
-    if (stored.length !== manifest.docCount) throw new Error("copilot prebuilt docs count mismatch");
-    // Reuse the parsed metadata and share one lazy text getter across the corpus.
-    const text = lazyTextDescriptor(getQuestion);
-    for (let i = 0; i < stored.length; i++) {
-      const doc = stored[i];
-      if (doc.text === undefined) Object.defineProperty(doc, "text", text);
-      if (i % DOC_BATCH === DOC_BATCH - 1) await yieldToEventLoop();
-    }
-    return {
-      docs: stored as CorpusDoc[],
-      readMs: file.readMs,
-      inflateMs: file.inflateMs,
-      materializeMs: performance.now() - started,
+    const read = async (file: string) => {
+      const data = await readFile(/*turbopackIgnore: true*/ join(dir, file));
+      return { data, ms: performance.now() - started };
     };
-  };
-
-  const loadIndex = async (): Promise<InvertedIndex> => {
-    const started = performance.now();
-    // Restore document metadata while the independent index file reads and inflates.
-    const [metadata, indexFile] = await Promise.all([
-      loadDocs(),
-      readCompressedFile(join(dir, "index.bin")),
+    const [docs, directory, postings] = await Promise.all([
+      read(DOCS_FILE),
+      read(INDEX_DIRECTORY_FILE),
+      read(INDEX_POSTINGS_FILE),
     ]);
-    const { docs } = metadata;
-    // 索引と文書は同じビルドで書かれている。指紋は両ファイルの突き合わせに使う
-    // （全文から計算し直すと全試験の問題を読むことになるため）。
+    // 全資格の統計だけを復元し、語のポスティングと文書のメタは検索中に必要な分だけ開く。
     const decodeStarted = performance.now();
-    const restored = await decodeIndexAsync(indexFile.data, docs, {
-      fingerprint: manifest.fingerprint,
-      verifyTokenization: false,
-    });
+    const getDoc = openPackedDocs(docs.data, manifest.docCount, getQuestion);
+    const restored = openPackedIndex(
+      { directory: directory.data, postings: postings.data },
+      manifest.fingerprint,
+      manifest.docCount,
+      getDoc,
+    );
     if (!restored) throw new Error("copilot prebuilt index does not match its manifest");
     const done = performance.now();
     console.info("[copilot] prebuilt index loaded", {
-      ms: done - started, docs: docs.length,
-      docsReadMs: metadata.readMs, docsInflateMs: metadata.inflateMs, docsMaterializeMs: metadata.materializeMs,
-      indexReadMs: indexFile.readMs, indexInflateMs: indexFile.inflateMs, indexDecodeMs: done - decodeStarted,
+      ms: done - started, docs: manifest.docCount,
+      docsReadMs: docs.ms, directoryReadMs: directory.ms, postingsReadMs: postings.ms,
+      directoryDecodeMs: done - decodeStarted,
     });
     return restored;
   };
 
-  let index: Promise<InvertedIndex> | undefined;
+  let index: Promise<SearchIndex> | undefined;
   return {
     kind: "prebuilt",
     getQuestion,
@@ -186,12 +167,63 @@ export function openPrebuiltCopilotSource(rootDir: string = process.cwd()): Copi
   };
 }
 
-async function readCompressedFile(path: string) {
-  const started = performance.now();
-  const bytes = await readFile(path);
-  const readAt = performance.now();
-  const data = await unzip(bytes, { chunkSize: 256 * 1024 });
-  return { data, readMs: readAt - started, inflateMs: performance.now() - readAt };
+function packDocs(docs: CorpusDoc[]): Buffer {
+  const blockCount = Math.ceil(docs.length / DOCS_PER_BLOCK);
+  const offsets = Buffer.alloc((blockCount + 1) * 4);
+  const blocks: Buffer[] = [offsets];
+  let offset = offsets.length;
+  for (let block = 0; block < blockCount; block++) {
+    offsets.writeUInt32LE(offset, block * 4);
+    const start = block * DOCS_PER_BLOCK;
+    const stored: StoredDoc[] = docs.slice(start, start + DOCS_PER_BLOCK).map((doc) => ({
+      id: doc.id,
+      kind: doc.kind,
+      title: doc.title,
+      url: doc.url,
+      meta: doc.meta,
+      textLength: doc.text.length,
+      ...(doc.kind === "glossary" ? { text: doc.text } : {}),
+    }));
+    const packed = gzipSync(JSON.stringify(stored));
+    blocks.push(packed);
+    offset += packed.length;
+  }
+  offsets.writeUInt32LE(offset, blockCount * 4);
+  return Buffer.concat(blocks, offset);
+}
+
+function openPackedDocs(data: Buffer, docCount: number, getQuestion: CopilotSource["getQuestion"]): SearchIndex["getDoc"] {
+  const blockCount = Math.ceil(docCount / DOCS_PER_BLOCK);
+  const headerBytes = (blockCount + 1) * 4;
+  if (data.length < headerBytes || data.readUInt32LE(0) !== headerBytes ||
+      data.readUInt32LE(blockCount * 4) !== data.length) {
+    throw new Error("invalid copilot document directory");
+  }
+  const blocks = new Map<number, CorpusDoc[]>();
+  const text = lazyTextDescriptor(getQuestion);
+  return (docIdx) => {
+    if (docIdx < 0 || docIdx >= docCount) throw new Error("invalid copilot document index");
+    const blockId = Math.floor(docIdx / DOCS_PER_BLOCK);
+    let block = blocks.get(blockId);
+    if (!block) {
+      const start = data.readUInt32LE(blockId * 4);
+      const end = data.readUInt32LE((blockId + 1) * 4);
+      if (start < headerBytes || end <= start || end > data.length) {
+        throw new Error("invalid copilot document block range");
+      }
+      const stored = JSON.parse(gunzipSync(data.subarray(start, end)).toString("utf8")) as StoredDoc[];
+      if (stored.length !== Math.min(DOCS_PER_BLOCK, docCount - blockId * DOCS_PER_BLOCK)) {
+        throw new Error("copilot prebuilt document block count mismatch");
+      }
+      for (const doc of stored) {
+        if (doc.text === undefined) Object.defineProperty(doc, "text", text);
+      }
+      block = stored as CorpusDoc[];
+      if (blocks.size >= DOC_BLOCK_CACHE_SIZE) blocks.delete(blocks.keys().next().value!);
+      blocks.set(blockId, block);
+    }
+    return block[docIdx % DOCS_PER_BLOCK];
+  };
 }
 
 function lazyTextDescriptor(getQuestion: (id: string) => Question | undefined): PropertyDescriptor {
