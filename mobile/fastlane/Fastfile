@@ -11,6 +11,7 @@ platform :ios do
     require "json"
     require "fileutils"
     config = AscConfig.read(ENV)
+    ad_update = config[:version] == "1.0.3"
     sh("python3", File.join(asc_root, "scripts/asc_validate.py"), "--screenshots")
     # Official Codemagic credential resolution/JWT generation, including refresh.
     # No fastlane API-key action, key-content arguments, temp key or lane context.
@@ -26,7 +27,7 @@ platform :ios do
     versions = app.get_app_store_versions(filter: { platform: "IOS", versionString: config[:version] })
     version = versions.find { |v| v.version_string == config[:version] }
     if version
-      allowed = config[:submit] ? %w[READY_FOR_REVIEW] : %w[PREPARE_FOR_SUBMISSION DEVELOPER_REJECTED REJECTED METADATA_REJECTED]
+      allowed = config[:submit] && !ad_update ? %w[READY_FOR_REVIEW] : %w[PREPARE_FOR_SUBMISSION DEVELOPER_REJECTED REJECTED METADATA_REJECTED]
       UI.user_error!("Version is not editable; no automatic cancellation") unless allowed.include?(version.app_version_state || version.app_store_state)
     else
       UI.user_error!("Stage app and IAP review items before submitting") if config[:submit]
@@ -35,18 +36,18 @@ platform :ios do
         # A new ASC app starts with an empty "1.0" draft. Reuse it (renaming the version
         # string) only while it is still a plain draft; never touch reviewed or live versions.
         state = existing.app_version_state || existing.app_store_state
-        UI.user_error!("Another editable version exists") unless state == "PREPARE_FOR_SUBMISSION"
+        UI.user_error!("Another editable version exists") unless state == "PREPARE_FOR_SUBMISSION" && !ad_update
         existing.update(attributes: { versionString: config[:version] })
         version = app.get_app_store_versions(filter: { platform: "IOS", versionString: config[:version] })
           .find { |v| v.version_string == config[:version] }
         UI.user_error!("Draft version rename did not take effect") unless version && version.id == existing.id
       else
         version = Spaceship::ConnectAPI.post_app_store_version(app_id: app.id, attributes: {
-          platform: "IOS", versionString: config[:version], releaseType: "MANUAL"
+          platform: "IOS", versionString: config[:version], releaseType: ad_update ? "AFTER_APPROVAL" : "MANUAL"
         }).first
       end
     end
-    unless config[:submit]
+    if !config[:submit] || ad_update
       editable = app.get_edit_app_store_version(platform: "IOS")
       UI.user_error!("deliver would target another version") unless editable && editable.id == version.id
     end
@@ -62,8 +63,12 @@ platform :ios do
         review_detail.demo_account_password.match?(/\A[A-Za-z0-9_-]{43,128}\z/)
       UI.user_error!("Complete existing ASC review contact and App Review code are required; owner must verify production access") unless valid
     end
-    unless config[:submit]
-      version.select_build(build_id: builds.first.id)
+    if !config[:submit] || ad_update
+      if ad_update && config[:submit]
+        UI.user_error!("Submit tag must match the build selected during listing") unless version.get_build&.id == builds.first.id
+      else
+        version.select_build(build_id: builds.first.id)
+      end
       # deliver reads the version's review detail and crashes with "No data" when the
       # first version has none yet (fastlane issue). Create an empty one up front.
       begin
@@ -82,7 +87,7 @@ platform :ios do
         skip_metadata: false, skip_screenshots: false, overwrite_screenshots: true,
         # ASC5 submits the exact app + IAP draft below. fastlane's submitter
         # rejects drafts containing IAP items it did not create itself.
-        submit_for_review: false, automatic_release: false,
+        submit_for_review: ad_update && config[:submit], automatic_release: ad_update,
         force: true, reject_if_possible: false,
         precheck_include_in_app_purchases: false
       }
@@ -96,8 +101,21 @@ platform :ios do
           demo_user: "App Review", notes: notes
         )
       end
+      if ad_update
+        info = app.fetch_edit_app_info
+        rating = info&.fetch_age_rating_declaration
+        UI.user_error!("Editable age rating declaration required") unless rating
+        rating.update(attributes: { advertising: true }) unless rating.advertising
+        UI.user_error!("ASC did not confirm advertising") unless info.fetch_age_rating_declaration.advertising
+        version.update(attributes: { releaseType: "AFTER_APPROVAL" })
+        version.fetch_app_store_review_detail.update(attributes: { notes: notes }) unless config[:review_ready]
+      end
       # fastlane masks app_review_information.demo_password in its summary.
       deliver(**options)
+      if ad_update
+        confirmed = app.get_app_store_versions(filter: { platform: "IOS", versionString: config[:version] }).find { |item| item.id == version.id }
+        UI.user_error!("ASC did not confirm automatic release") unless confirmed&.release_type == "AFTER_APPROVAL"
+      end
     else
       # The staged version snapshots metadata. Do not change it after iapreview.
       sh(ENV.fetch("ASC_SETUP_PYTHON"), File.join(asc_root, "scripts/asc_setup.py"), "--submit-staged-review")
@@ -120,10 +138,10 @@ platform :ios do
     FileUtils.mkdir_p(File.join(asc_root, "build/asc"))
     File.write(File.join(asc_root, "build/asc/result.json"), JSON.pretty_generate({
       app_id: app.id, version: config[:version], build: config[:build],
-      metadata_uploaded: !config[:submit], screenshots_uploaded: !config[:submit],
-      review_information_uploaded: !config[:submit] && config[:review_ready], submitted_for_review: submitted,
+      metadata_uploaded: ad_update || !config[:submit], screenshots_uploaded: ad_update || !config[:submit],
+      review_information_uploaded: (ad_update || !config[:submit]) && config[:review_ready], submitted_for_review: submitted,
       observed_review_state: observed_state,
-      release: "manual", follow_up: "asc-api-followup.md"
+      release: ad_update ? "automatic" : "manual", follow_up: "asc-api-followup.md"
     }))
   end
 end

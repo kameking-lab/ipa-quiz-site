@@ -28,7 +28,7 @@ module Spaceship
     end
     class Build
       def self.all(**options)
-        raise "Unsafe lookup" unless options[:build_number] == "17" && options[:version] == "1.0.0" && options[:processing_states] == "VALID"
+        raise "Unsafe lookup" unless options[:build_number] == "17" && %w[1.0.0 1.0.3].include?(options[:version]) && options[:processing_states] == "VALID"
         ConnectAPI.builds
       end
     end
@@ -64,10 +64,18 @@ ReviewRecord = Struct.new(:contact_first_name, :contact_last_name, :contact_phon
   def update(attributes:); self.updates = attributes; end
 end
 Version = Struct.new(:id, :version_string, :app_version_state, :app_store_state, :selected, :review) do
+  attr_accessor :release_type, :listed_build
+  def update(attributes:); self.release_type = attributes.fetch(:releaseType); end
+  def get_build; listed_build; end
   def select_build(build_id:); self.selected = build_id; end
   def fetch_app_store_review_detail; review; end
 end
 AppRecord = Struct.new(:id, :version, :editable) do
+  Rating = Struct.new(:advertising) do
+    def update(attributes:); self.advertising = attributes.fetch(:advertising); end
+  end
+  def fetch_edit_app_info; self; end
+  def fetch_age_rating_declaration; @rating ||= Rating.new(false); end
   def get_app_store_versions(**); [version]; end
   # Match fastlane 2.241.2: READY_FOR_REVIEW is not an editable version.
   def get_edit_app_store_version(**)
@@ -144,6 +152,20 @@ Dir.chdir(File.join(root, "fastlane")) do
     raise unless error.message.start_with?("Review was requested but ASC did not confirm submission")
   end
   raise "Staged submission changed build/notes" if v.selected || v.review.updates
+  v.version_string = "1.0.3"
+  v.app_version_state = "PREPARE_FOR_SUBMISSION"
+  ENV["CM_TAG"] = "asc-kakomon-submit-v1.0.3-b17-rtest"
+  h.return_without_submission = false
+  begin
+    h.run
+    raise "Mismatched listed build should fail"
+  rescue RuntimeError => error
+    raise unless error.message.start_with?("Submit tag must match")
+  end
+  v.listed_build = Spaceship::ConnectAPI.builds.first
+  begin; h.run; rescue UploadBoundary; end
+  raise "App-only automatic submission required" unless h.options[:submit_for_review] && h.options[:automatic_release] && v.release_type == "AFTER_APPROVAL"
+  raise "Advertising was not declared" unless Spaceship::ConnectAPI.app.fetch_age_rating_declaration.advertising
   raise "Wrong token adapter" unless Spaceship::ConnectAPI.token.is_a?(AscCodemagicToken)
   raise "Private key reached Spaceship" if Spaceship::ConnectAPI.token.key_raw
 end
