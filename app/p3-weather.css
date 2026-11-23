@@ -6,8 +6,9 @@
   --weather-cloud-light: #eff3f3e0;
   --weather-cloud-base: #b7c3cdd6;
   --weather-orb-offset: 8px;
-  --weather-rain: #56768a44;
-  --weather-snow: #fffdf3e0;
+  --weather-rain: #3b546eb8;
+  --weather-snow: #fff;
+  --weather-snow-edge: #526d8b70;
   position: absolute;
   z-index: -2;
   inset: 0;
@@ -22,8 +23,8 @@
   --weather-wash: #6f7c8729;
   --weather-cloud-light: #53647be0;
   --weather-cloud-base: #3a465cde;
-  --weather-rain: #9fbad642;
-  --weather-snow: #96b2cd30;
+  --weather-rain: #a7c0db9e;
+  --weather-snow-edge: #c9e2f980;
 }
 
 [data-home-scene="night"] .p3-weather { --weather-orb-offset: 24px; }
@@ -32,17 +33,18 @@
 
 .p3-weather[data-home-weather="rain"] {
   --weather-wash: #6d80963a;
-  --weather-cloud-light: #ccd7e0e8;
-  --weather-cloud-base: #a9b9c8dd;
+  --weather-cloud-light: #929ba7ed;
+  --weather-cloud-base: #727d8add;
 }
 
 :is(.dark, [data-home-scene="night"]) .p3-weather[data-home-weather="rain"] {
   --weather-wash: #41557559;
-  --weather-cloud-light: #485b77ed;
-  --weather-cloud-base: #303d54ed;
+  --weather-cloud-light: #555f6eed;
+  --weather-cloud-base: #38414eed;
 }
 
-.p3-weather-cloud {
+.p3-weather-cloud,
+.p3-weather[data-home-weather="cloudy"]::before {
   position: absolute;
   height: 30px;
   width: clamp(70px, 27%, 140px);
@@ -56,6 +58,19 @@
 .p3-weather-cloud-middle { top: 12%; right: 33%; transform: scale(.72); opacity: .75; }
 .p3-weather-cloud-right { top: calc(var(--p3-orb-top, var(--p3-sun-top, 18px)) + var(--weather-orb-offset)); right: 3%; }
 
+.p3-weather[data-home-weather="cloudy"] .p3-weather-cloud {
+  height: 34px;
+  width: clamp(78px, 30%, 154px);
+}
+
+.p3-weather[data-home-weather="cloudy"]::before {
+  top: 37%;
+  right: 19%;
+  transform: scale(.7);
+  opacity: .7;
+  content: "";
+}
+
 .p3-weather-fall-mask,
 .p3-weather-fall {
   position: absolute;
@@ -64,21 +79,32 @@
 }
 
 .p3-weather-fall-mask {
-  --weather-mask: linear-gradient(transparent 8%, #000 25%, #0008 48%, transparent 72%);
+  --weather-mask: linear-gradient(transparent 8%, #000 23%, #000 41%, #0006 58%, transparent 72%);
   -webkit-mask-image: var(--weather-mask);
   mask-image: var(--weather-mask);
 }
 
 .p3-weather-fall {
   /* Keep the strongest precipitation in the open sky beside the hero text. */
-  --weather-mask: linear-gradient(90deg, #0003 6%, #0005 44%, #000 86%);
+  --weather-mask: linear-gradient(90deg, #0008, #0004 9%, #0004 52%, #000b 86%);
   -webkit-mask-image: var(--weather-mask);
   mask-image: var(--weather-mask);
 }
 
+[data-home-event-layout] .p3-weather-fall {
+  /* The event panels shield the text, leaving more room for visible weather. */
+  --weather-mask: linear-gradient(90deg, #000a, #0007 30%, #000a 82%);
+}
+
+/* Protect both ends of the progress track when precipitation crosses them. */
+:where(html:not([data-home-event-layout])) .p3-home-scene:has(> .p3-weather:is([data-home-weather="rain"], [data-home-weather="snow"])) .p3-event-tick-panel {
+  display: block;
+  fill: color-mix(in srgb, var(--p3-sky) 84%, transparent);
+}
+
 .p3-weather-fall::before {
   position: absolute;
-  inset: -66px -45px;
+  inset: -66px -80px;
   content: "";
   animation: p3-weather-fall var(--weather-duration) linear infinite paused;
 }
@@ -88,10 +114,13 @@
   --weather-drift: -10px;
   --weather-skew: -10deg;
   background-image:
-    radial-gradient(ellipse 1px 7px at 11px 15px, var(--weather-rain) 32%, transparent 100%),
-    radial-gradient(ellipse 1px 6px at 33px 37px, var(--weather-rain) 32%, transparent 100%),
-    radial-gradient(ellipse 1px 8px at 55px 9px, var(--weather-rain) 32%, transparent 100%),
-    radial-gradient(ellipse 1px 5px at 64px 49px, var(--weather-rain) 32%, transparent 100%);
+    radial-gradient(ellipse 1.7px 11px at 6px 16px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.5px 9px at 17px 42px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.8px 13px at 29px 32px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.5px 10px at 40px 13px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.7px 12px at 51px 41px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.5px 9px at 61px 24px, var(--weather-rain) 58%, transparent 100%),
+    radial-gradient(ellipse 1.6px 11px at 70px 39px, var(--weather-rain) 58%, transparent 100%);
   background-size: 72px 56px;
 }
 
@@ -100,10 +129,13 @@
   --weather-drift: 72px;
   --weather-skew: 0deg;
   background-image:
-    radial-gradient(circle at 12px 19px, var(--weather-snow) 1px, transparent 2px),
-    radial-gradient(circle at 34px 42px, var(--weather-snow) 1.6px, transparent 2.4px),
-    radial-gradient(circle at 55px 9px, var(--weather-snow) 1.3px, transparent 2.3px),
-    radial-gradient(circle at 66px 52px, var(--weather-snow) 1px, transparent 1.9px);
+    radial-gradient(circle 3.5px at 8px 18px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 2.8px at 16px 42px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 3.7px at 29px 30px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 2.7px at 39px 9px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 3.2px at 50px 48px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 3.5px at 60px 20px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent),
+    radial-gradient(circle 2.9px at 68px 35px, var(--weather-snow) 58%, var(--weather-snow-edge) 78%, transparent);
   background-size: 72px 56px;
 }
 
