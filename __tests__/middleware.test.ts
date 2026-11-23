@@ -228,7 +228,7 @@ describe("question archive legacy redirects", () => {
   );
 
   it.each([
-    "/denken1/2025-primary/theory", "/denken2/2025-primary/kikai",
+    "/denken1/2025-primary/theory", "/denken2/2025-primary/machine",
     "/denken3/2021-annual/theory", "/thinking/2025/spring", "/sc/2025/case1",
   ])("does not rewrite %s", path => {
     expect(middleware(archiveReq(path)).headers.get("x-middleware-rewrite")).toBeNull();
