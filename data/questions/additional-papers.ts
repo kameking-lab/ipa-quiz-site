@@ -174,7 +174,8 @@ export function loadAdditionalPapers(exam: ExamCode): Question[] | undefined {
   let papers = papersByExam.get(exam);
   if (!papers) {
     const file = join(process.cwd(), additionalPaperSource(exam));
-    papers = JSON.parse(readFileSync(file, "utf8")) as Question[];
+    // Read the full byte buffer before decoding the large UTF-8 sources.
+    papers = JSON.parse(readFileSync(file).toString("utf8")) as Question[];
     papersByExam.set(exam, papers);
   }
   return papers;
