@@ -68,9 +68,10 @@ describe("prebuilt copilot source (generated/copilot)", () => {
     const restoring = source.index();
     expect(source.index()).toBe(restoring);
     const restored = await restoring;
-    expect(restored.docs.map((d) => [d.id, d.kind, d.title, d.url, d.meta, d.text]))
+    const restoredDocs = docs.map((_, i) => restored.getDoc(i));
+    expect(restoredDocs.map((d) => [d.id, d.kind, d.title, d.url, d.meta, d.text]))
       .toEqual(docs.map((d) => [d.id, d.kind, d.title, d.url, d.meta, d.text]));
-    expect(restored.docs.every((d, i) => d.textLength === docs[i].text.length)).toBe(true);
+    expect(restoredDocs.every((d, i) => d.textLength === docs[i].text.length)).toBe(true);
     const query = `${questions[0].category} ${questions[0].question.slice(0, 30)}`;
     const ids = (r: ReturnType<typeof retrieve>) => r.map((c) => [c.doc.id, c.score]);
     expect(ids(retrieve(restored, query, 10))).toEqual(ids(retrieve(index, query, 10)));

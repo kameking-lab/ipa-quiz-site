@@ -6,7 +6,7 @@
 // （scripts/build-copilot-index.ts が書き出し時に全件一致を確かめる）。
 
 import type { Question } from "@/lib/questions/types";
-import type { InvertedIndex } from "./retriever";
+import type { SearchIndex } from "./retriever";
 import { openPrebuiltCopilotSource } from "./source-prebuilt";
 
 export interface CopilotSource {
@@ -14,7 +14,7 @@ export interface CopilotSource {
   /** 問題を ID で引く（公開中の全問題。検索対象外の問題も含む）。 */
   getQuestion(id: string): Question | undefined;
   /** 検索索引（文書つき）。初回は読み込みのぶん重い。 */
-  index(): InvertedIndex | Promise<InvertedIndex>;
+  index(): SearchIndex | Promise<SearchIndex>;
 }
 
 let SOURCE: Promise<CopilotSource> | null = null;

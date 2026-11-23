@@ -1,6 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { buildIndex, getCachedIndex, resetIndexCache, retrieve, scoreBM25 } from "@/lib/copilot/retriever";
-import { corpusFingerprint, deserializeIndex, serializeIndex } from "@/lib/copilot/index-artifact";
+import { corpusFingerprint, deserializeIndex, openPackedIndex, serializeIndex } from "@/lib/copilot/index-artifact";
 import type { CorpusDoc } from "@/lib/copilot/types";
 
 function doc(id: string, text: string, kind: CorpusDoc["kind"] = "question"): CorpusDoc {
@@ -48,6 +48,17 @@ describe("prebuilt copilot index artifact", () => {
     const restored = deserializeIndex(serializeIndex(built), DOCS);
 
     expect(restored?.postingTfs.subarray(0, values.length)).toEqual(values);
+  });
+
+  it("scores compressed postings and opens only top-scoring document metadata", () => {
+    const docs = Array.from({ length: 5000 }, (_, i) => doc(`doc-${i}`, "rsa"));
+    const built = buildIndex(docs);
+    const fingerprint = corpusFingerprint(docs);
+    const getDoc = vi.fn((i: number) => docs[i]);
+    const packed = openPackedIndex(serializeIndex(built, fingerprint), fingerprint, docs.length, getDoc);
+    if (!packed) throw new Error("packed index not readable");
+    expect(retrieve(packed, "rsa", 3)).toEqual(retrieve(built, "rsa", 3));
+    expect(getDoc.mock.calls).toEqual([[0], [1], [2]]);
   });
 
   it("accepts a known fingerprint without re-reading document text (prebuilt mode)", () => {
