@@ -282,7 +282,7 @@ export default async function ExamTopPage({
         </nav>
 
         <header className="mb-4">
-          <div className="p3-landscape p3-hero p3-exam-hero">
+          <div className="p3-landscape p3-hero p3-exam-hero" data-auto-ad-keep-clear="exam-hero">
             <div className="min-w-0 self-center">
               <h1 className="text-[clamp(1.35rem,5.65vw,1.625rem)] font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
                 <span className="block text-balance">{examLabel(code)}</span>{" "}

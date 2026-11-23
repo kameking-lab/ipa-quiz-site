@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AlertTriangle, ExternalLink, HomeIcon, MessageSquare, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { captureException } from "@/lib/monitoring/sentry";
+import { WEB_ADS_ERROR_PAGE_ID } from "@/lib/ads/web-ads";
 
 export default function ErrorPage({
   error,
@@ -25,7 +26,7 @@ export default function ErrorPage({
   }, [error, digest]);
 
   return (
-    <main className="relative flex flex-1 items-center justify-center px-4 py-16">
+    <main id={WEB_ADS_ERROR_PAGE_ID} className="relative flex flex-1 items-center justify-center px-4 py-16">
 
       <div className="relative w-full max-w-md text-center">
         <div className="overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">

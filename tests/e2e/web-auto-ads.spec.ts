@@ -1,0 +1,97 @@
+import { expect, test, type Page } from "@playwright/test";
+import { WEB_ADS_MEMBERSHIP_CHANNEL, WEB_ADS_SCRIPT_ID, WEB_ADS_SCRIPT_URL } from "../../lib/ads/web-ads";
+
+test.use({ serviceWorkers: "block" });
+
+const tag = (page: Page) => page.locator(`#${WEB_ADS_SCRIPT_ID}`);
+const fakeAd = (page: Page) => page.locator("[data-test-auto-ad]");
+
+test.beforeEach(async ({ context }) => {
+  await context.route(WEB_ADS_SCRIPT_URL, route => route.fulfill({
+    contentType: "text/javascript",
+    body: `const ad = document.createElement("div");
+      ad.className = "google-auto-placed";
+      ad.dataset.testAutoAd = "";
+      ad.textContent = "Test Auto Ad";
+      document.body.appendChild(ad);`,
+  }));
+});
+
+test("loads once after the free result, including after client navigation", async ({ page }) => {
+  let allow!: () => void;
+  const pending = new Promise<void>(resolve => { allow = resolve; });
+  await page.route("**/api/billing/status", async route => {
+    await pending;
+    await route.fulfill({ json: { error: "sign_in_required" }, status: 401 });
+  });
+  const check = page.waitForRequest("**/api/billing/status");
+  await page.goto("/");
+  await check;
+  await expect(tag(page)).toHaveCount(0);
+  allow();
+  await expect(tag(page)).toHaveCount(1);
+  await expect(fakeAd(page)).toBeVisible();
+  await page.locator('footer a[href="/blog"]').click();
+  await expect(page).toHaveURL(/\/blog$/);
+  await expect(tag(page)).toHaveCount(1);
+  await expect(fakeAd(page)).toHaveCount(1);
+});
+
+test("keeps the script out of a paid member's first page", async ({ page }) => {
+  await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: true } }));
+  const checked = page.waitForResponse("**/api/billing/status");
+  await page.goto("/about");
+  await checked;
+  await page.evaluate(() => new Promise<void>(resolve => requestIdleCallback(() => resolve())));
+  await expect(tag(page)).toHaveCount(0);
+});
+
+test("keeps the script out of the app WebView", async ({ page }) => {
+  await page.addInitScript(() => { Object.assign(window, { Capacitor: { isNativePlatform: () => true } }); });
+  await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
+  await page.goto("/about");
+  await expect(page.locator("html")).toHaveClass(/\bnative-app\b/);
+  await expect(tag(page)).toHaveCount(0);
+});
+
+for (const path of ["/quiz?mode=weak", "/auth/signin", "/billing/terms", "/settings", "/q/ad-test-missing/2009-spring/am/q1"]) {
+  test(`keeps the script out of ${path}`, async ({ page }) => {
+    await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
+    await page.goto(path);
+    await expect(page).toHaveURL(url => url.pathname === path.split("?")[0]);
+    await page.evaluate(() => new Promise<void>(resolve => requestIdleCallback(() => resolve())));
+    await expect(tag(page)).toHaveCount(0);
+  });
+}
+
+test("clears a running script on a client-side transition to billing", async ({ page }) => {
+  await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
+  await page.goto("/about");
+  await expect(fakeAd(page)).toBeVisible();
+  const documentRequest = page.waitForRequest(request => request.isNavigationRequest() &&
+    new URL(request.url()).pathname === "/billing/terms");
+  await page.getByRole("link", { name: "月額プランの条件" }).click();
+  await documentRequest;
+  await page.waitForLoadState("load");
+  await expect(tag(page)).toHaveCount(0);
+  await expect(fakeAd(page)).toHaveCount(0);
+});
+
+test("clears ads when purchase confirmation in another document changes eligibility", async ({ page }) => {
+  let entitled = false;
+  await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled } }));
+  await page.goto("/about");
+  await expect(fakeAd(page)).toBeVisible();
+  const reload = page.waitForRequest(request => request.isNavigationRequest() &&
+    new URL(request.url()).pathname === "/about");
+  entitled = true;
+  await page.evaluate(channelName => {
+    const channel = new BroadcastChannel(channelName);
+    channel.postMessage("paid");
+    channel.close();
+  }, WEB_ADS_MEMBERSHIP_CHANNEL);
+  await reload;
+  await page.waitForLoadState("load");
+  await expect(tag(page)).toHaveCount(0);
+  await expect(fakeAd(page)).toHaveCount(0);
+});

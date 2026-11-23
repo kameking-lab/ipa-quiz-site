@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Keep existing injected ads out of view during a membership check or reload. */
+html:is([data-web-ads-paused], [data-web-ads-reloading], :has(#web-ads-excluded-page))
+  :is(ins.adsbygoogle, .google-auto-placed, iframe[id^="aswift_"], iframe[id^="google_ads_iframe_"]) {
+  visibility: hidden !important;
+}
+
 @font-face {
   font-family: "Noto Serif JP Display";
   src: url("/fonts/noto-serif-jp-display.woff2") format("woff2");
