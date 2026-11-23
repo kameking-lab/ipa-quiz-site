@@ -18,6 +18,8 @@ test.beforeEach(async ({ context }) => {
 });
 
 test("loads once after the free result, including after client navigation", async ({ page }) => {
+  let scriptRequests = 0;
+  page.on("request", request => { if (request.url() === WEB_ADS_SCRIPT_URL) scriptRequests += 1; });
   let allow!: () => void;
   const pending = new Promise<void>(resolve => { allow = resolve; });
   await page.route("**/api/billing/status", async route => {
@@ -31,10 +33,12 @@ test("loads once after the free result, including after client navigation", asyn
   allow();
   await expect(tag(page)).toHaveCount(1);
   await expect(fakeAd(page)).toBeVisible();
+  await page.getByText("サイトマップ・運営情報", { exact: true }).click();
   await page.locator('footer a[href="/blog"]').click();
   await expect(page).toHaveURL(/\/blog$/);
   await expect(tag(page)).toHaveCount(1);
   await expect(fakeAd(page)).toHaveCount(1);
+  expect(scriptRequests).toBe(1);
 });
 
 test("keeps the script out of a paid member's first page", async ({ page }) => {
@@ -54,7 +58,7 @@ test("keeps the script out of the app WebView", async ({ page }) => {
   await expect(tag(page)).toHaveCount(0);
 });
 
-for (const path of ["/quiz?mode=weak", "/auth/signin", "/billing/terms", "/settings", "/q/ad-test-missing/2009-spring/am/q1"]) {
+for (const path of ["/quiz?mode=random&exam=ap&limit=3", "/auth/signin", "/billing/terms", "/settings", "/q/ad-test-missing/2009-spring/am/q1"]) {
   test(`keeps the script out of ${path}`, async ({ page }) => {
     await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
     await page.goto(path);
