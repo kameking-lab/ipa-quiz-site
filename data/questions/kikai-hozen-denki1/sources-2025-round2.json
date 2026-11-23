@@ -1,0 +1,188 @@
+{
+  "candidate": "Q4-026",
+  "qualification": "機械保全技能検定 1級 電気系保全作業",
+  "year": 2025,
+  "season": "round2",
+  "questionCount": 50,
+  "officialSources": [
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_1kyu_denki_mondai.pdf",
+      "sha256": "fca6a5864fc74623d398ff1558755d77558c9b8f26ee0a98991a63ee186a829b",
+      "size": 1075404,
+      "pages": 12
+    },
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_1kyu_denki_kaitou.pdf",
+      "sha256": "f82774b6f1c277719ffbc77a25dda721bb5b032dd4953f1c5b774ac8665b8137",
+      "size": 171755,
+      "pages": 1
+    }
+  ],
+  "officialAnswers": [
+    "×",
+    "×",
+    "〇",
+    "〇",
+    "〇",
+    "×",
+    "〇",
+    "〇",
+    "×",
+    "×",
+    "×",
+    "×",
+    "〇",
+    "〇",
+    "〇",
+    "×",
+    "×",
+    "〇",
+    "×",
+    "〇",
+    "×",
+    "〇",
+    "×",
+    "〇",
+    "×",
+    "イ",
+    "ウ",
+    "ウ",
+    "ア",
+    "イ",
+    "エ",
+    "ウ",
+    "ア",
+    "イ",
+    "ウ",
+    "イ",
+    "ア",
+    "ア",
+    "イ",
+    "ア",
+    "イ",
+    "ア",
+    "ウ",
+    "ウ",
+    "ウ",
+    "エ",
+    "エ",
+    "ア",
+    "エ",
+    "エ"
+  ],
+  "choiceMapping": {
+    "trueFalse": {
+      "ア": "〇",
+      "イ": "×"
+    },
+    "multipleChoice": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    }
+  },
+  "figures": [
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q03.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        76,
+        184,
+        200,
+        291
+      ],
+      "sha256": "569a3e16cb487164388ffcd2a90a196a4d88f601854536cf3e8b2ac8617f5a50"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q05.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        79,
+        371,
+        183,
+        496
+      ],
+      "sha256": "feac9a7d35733b9007b1f4d7b25d1987d573a741fb829b3caba8d9f44a840952"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q14.webp",
+      "pdfPage": 3,
+      "cropPdfPoints": [
+        83,
+        177,
+        185,
+        266
+      ],
+      "sha256": "43aa450b9a2d7e382137b39b1673eb8e58dc0d8483b416b797defbae77c766b4"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q32.webp",
+      "pdfPage": 5,
+      "cropPdfPoints": [
+        70,
+        248,
+        270,
+        351
+      ],
+      "sha256": "eb2e030b8dfdc720202d6691c16ad85b12afd5ae82560985b90c4a9f6ef7c4f8"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q33.webp",
+      "pdfPage": 5,
+      "cropPdfPoints": [
+        72,
+        510,
+        307,
+        615
+      ],
+      "sha256": "3bff699d9a5ff25c201835f0a10369df96400d9d4b7c0e6818608477dc2dd7d8"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q34.webp",
+      "pdfPage": 6,
+      "cropPdfPoints": [
+        70,
+        93,
+        195,
+        687
+      ],
+      "sha256": "23ad9b4a85d763f358c8f4ad89e7b567accc873a3a4bd823b4a4ab55f958dd58"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q41.webp",
+      "pdfPage": 8,
+      "cropPdfPoints": [
+        72,
+        451,
+        494,
+        617
+      ],
+      "sha256": "5708e07dab652fa656d0f3b25687bace28eb5aefb280931c1fedeb250c9687fe"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q49.webp",
+      "pdfPage": 11,
+      "cropPdfPoints": [
+        83,
+        104,
+        210,
+        303
+      ],
+      "sha256": "e2b0b50fd9277db5d21dd74ed5bbe2becde9481c62d6ee2ec84d96bbc4fcb280"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q50.webp",
+      "pdfPage": 11,
+      "cropPdfPoints": [
+        76,
+        435,
+        166,
+        546
+      ],
+      "sha256": "156ae34193a7fee9a231589ab09d68f1c3d16f7ea9d3f0c6fb183b3ce5d7a35e"
+    }
+  ],
+  "transcriptionMethod": "公式PDFのテキスト層を座標順に読み、本文とア〜エを分離。改行を結合し全角英数字を正規化。原本ページ画像で全問照合。原図はPDFから切り出し。",
+  "answerVerification": "公式正解表の画像から転記した50記号とPDFテキスト層を全問照合。"
+}

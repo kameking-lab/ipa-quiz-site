@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="title desc">
+  <title id="title">通信経路を読む独自の構成例</title>
+  <desc id="desc">端末からファイアウォール、Webサーバ、DBサーバの順で通信する。設問が問うWebからDBへの区間を青色で示す。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8" fill="#0369a1"/></marker></defs>
+  <rect width="720" height="180" rx="16" fill="#f0f9ff"/>
+  <g fill="#fff" stroke="#0369a1" stroke-width="2">
+    <rect x="20" y="55" width="120" height="60" rx="8"/><rect x="200" y="55" width="120" height="60" rx="8"/>
+    <rect x="380" y="55" width="120" height="60" rx="8"/><rect x="560" y="55" width="140" height="60" rx="8"/>
+    <path d="M145 85H190M325 85H370M505 85H550" marker-end="url(#arrow)"/>
+  </g>
+  <g font-family="sans-serif" fill="#0c4a6e" text-anchor="middle" font-size="21"><text x="80" y="93">端末</text><text x="260" y="93">FW</text><text x="440" y="93">Web</text><text x="630" y="93">DB</text><text x="550" y="148" font-size="18">通信元・宛先・ポートを照合</text></g>
+</svg>

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { DENKO2_SKILL_PROBLEMS } from "@/lib/denko2/skills";
 import { examMetaDescription, getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 describe("denko2 metadata follows the published data", () => {
   it("describes the actual years, periods and count without downgrading the current coverage", () => {
@@ -7,7 +8,8 @@ describe("denko2 metadata follows the published data", () => {
     const last = Math.max(...pool.map((q) => q.year));
     const desc = examMetaDescription("denko2", pool.length);
     expect(desc).toContain(`${first}〜${last}年度`);
-    expect(desc).toContain(`${pool.length}問・${groupByYearSeason(pool).length}期分`);
+    expect(desc).toContain(`${pool.length.toLocaleString("ja-JP")}問・${groupByYearSeason(pool).length}期分`);
+    expect(desc).toContain(`技能試験${DENKO2_SKILL_PROBLEMS.length}課題`);
     expect(desc).not.toContain("2024・2025年度上下期");
   });
 });

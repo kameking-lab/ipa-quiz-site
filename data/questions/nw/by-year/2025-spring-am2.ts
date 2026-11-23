@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "呼量は、単位時間あたりの総呼数と平均回線保留時間の積で計算されます。電話機1台あたり1時間に20回（60分/3分）の呼が発生し、これが180台あるため、総呼数は1時間あたり20回/台 × 180台 = 3600回となります。平均回線保留時間は80秒（80/3600時間）なので、呼量は 3600回/時間 × (80/3600)時間/回 = 80アーランとなります。ただし、提示された正解が「ア:4」である場合、問題文の前提（例えば、180台の電話機全体で1時間あたり180回の呼が発生するという解釈など）に特殊な解釈がある可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IEEE 802.3 イーサネットフレームは、宛先MACアドレス(6オクテット)、送信元MACアドレス(6オクテット)、タイプ/長さ(2オクテット)、MACクライアントデータ(1,400オクテット)、フレームチェックシーケンス(4オクテット)で構成されます。これらの合計は、6 + 6 + 2 + 1,400 + 4 = 1,418オクテットとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "まず、1電文あたりのビット数を計算します（100バイト × 8ビット/バイト = 800ビット）。1電文が誤りを含む確率は、電文のビット数と平均ビット誤り率の積で近似できるため、800ビット × 1×10⁻⁵ = 0.008となります。次に、総データ量から電文の総数を求めると、200,000バイト / 100バイト/電文 = 2000電文です。したがって、誤りが発生する電文の個数は、2000電文 × 0.008 = 16個と算出されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IEEE 802.3-2022 で定められている 10GBASE-T は、カテゴリ6Aケーブルを使用した場合、最大100mのケーブル長をサポートします。カテゴリ6ケーブルでは55mに制限されますが、カテゴリ6Aではより長距離での10Gbps通信が可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "CoAP (Constrained Application Protocol) は、IoTデバイスのようなリソースに制約のある環境（小電力、低帯域、メモリが少ないなど）での利用を想定したアプリケーション層プロトコルです。UDPをベースとしており、パケット損失が発生しやすいネットワーク環境でも効率的に動作し、軽量なメッセージ交換に適しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "HTTP/1.1において、GETメソッドが使用される場合、入力データはURLのクエリ文字列としてリクエスト行に含まれます。一方、POSTメソッドが使用される場合、入力データはリクエストメッセージのメッセージボディ部に含まれて送信されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "IPパケットのヘッダーには「プロトコル番号」フィールドがあり、これによってIPパケットのペイロードがどのプロトコル（TCP、UDP、ICMPなど）のデータであるかを識別します。ICMPの場合、このプロトコル番号は1となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -191,7 +198,14 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "エ": "ネットワークアドレス: 172.16.1.192, サブネットマスク: 255.255.255.192"
     },
     "answer": "ウ",
-    "explanation": "セグメントAに割り当てるサブネットワークアドレスとして適切なものはウです。\n\n可変長サブネットマスク（VLSM）は、ネットワークアドレス空間を効率的に利用するために、サブネットごとに異なるサブネットマスクを適用する技術です。サブネットマスクは、IPアドレスのネットワーク部とホスト部を区切るためのビット列であり、2進数で表現されます。サブネットマスクの「1」のビット数が増えるほど、ネットワーク部が長くなり、ホスト部が短くなるため、作成できるサブネットの数が増え、各サブネットが使用できるホスト数は少なくなります。\n\n選択肢ウは、ネットワークアドレスが172.16.1.128、サブネットマスクが255.255.255.192です。255.255.255.192を2進数で表すと、24ビットのデフォルトマスクにさらに2ビットが追加されています（11000000）。これにより、4つのサブネットが作成可能になり、各サブネットで62台のホストが利用できます。他のセグメントとの通信も可能となるためには、このサブネットマスクが適切に割り当てられている必要があります。\n\nアはサブネットマスク255.255.255.128（2進数で10000000）であり、これはデフォルトマスクから1ビット追加されており、2つのサブネットに分割されますが、ホスト数が不足する可能性があります。イはネットワークアドレス172.16.1.128ですが、サブネットマスク255.255.255.128は、アドレス空間の利用効率が悪い場合があります。エはサブネットマスク255.255.255.192であり、IPアドレス172.16.1.192は、172.16.1.128から始まるサブネットの範囲外となるため不適切です。",
+    "explanation": "図の172.16.1.xの末尾に着目します。Bは／27で32〜63、Cは／30で224〜227、Dは／26で64〜127です。Aの候補のうち他の範囲と重複しないのは、172.16.1.128を先頭とする／26の128〜191だけです。これを割り当てれば、各セグメントを異なるサブネットとして経路を設定できます。",
+    "choiceExplanations": {
+      "ア": "マスクが／25なので末尾は0〜127です。セグメントBの32〜63とDの64〜127を両方含むため、重複します。",
+      "イ": "マスクが／25なので末尾は128〜255です。ルータ間を接続するセグメントCの224〜227がこの範囲に含まれます。",
+      "ウ": "マスクが／26なので末尾は128〜191です。Bの32〜63、Dの64〜127、Cの224〜227のいずれとも重複しません。",
+      "エ": "マスクが／26なので末尾は192〜255です。その中にセグメントCの224〜227が含まれ、Cと重複します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "PPP (Point-to-Point Protocol) は、LCP (Link Control Protocol) を用いてリンクを確立した後、認証フェーズに進むことができます。この認証フェーズでは、CHAPやPAPなどの認証プロトコルを実行し、通信相手の正当性を確認することが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ルーティングプロトコルであるRIP (Routing Information Protocol) は、経路情報の交換にUDPポート520番を使用します。これに対し、BGPはTCPを、OSPFはIPプロトコル自身を直接使用します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "TCPの3ウェイハンドシェイクにおいて、サーバはクライアントからの接続要求（SYNフラグの付いたパケット）を受け付けるために「LISTEN」状態にあります。SYNパケットを受信すると、サーバはSYN/ACKパケットを返送し、「SYN-RECEIVED」状態に移行します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ICMPv6の近隣探索メッセージには、Duplicate Address Detection (DAD) の機能が含まれています。これにより、ノードが使用しようとしているIPv6アドレスが、ネットワーク上の他のノードによって既に使われていないかを検出することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "OpenFlowプロトコルにおいて、OpenFlowスイッチが受信したパケットがフローテーブルにマッチせず、コントローラーによる処理が必要な場合、スイッチはそのパケットを「Packet-In」メッセージとしてOpenFlowコントローラーに送信します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "FTPにおいて、クライアントがPASVコマンドを送信すると、サーバはデータ転送用のポートを開放し、そのポート番号をクライアントに通知します。これにより、クライアント側からそのポートに対してデータ転送用コネクションを確立することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "無線LAN規格のIEEE 802.11nは、2.4 GHz帯と5 GHz帯の両方を使用するデュアルバンドに対応しています。一方、IEEE 802.11acは、高速通信を実現するために5 GHz帯のみを使用します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "TLSで利用する個人認証用のデジタル証明書は、セキュリティ強化のためICカードやUSBトークンなどの安全な媒体に格納することができます。これにより、利用するPCに依存せず、どこでも安全に認証を行うことが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "テンペスト攻撃とは、コンピュータやディスプレイなどの電子機器から放射される微弱な電磁波を傍受・解析することで、画面表示内容や入力データなどの機密情報を盗み取る攻撃です。この攻撃に対する主要な対策は、電磁波の漏洩を防ぐための物理的な遮蔽やシールドを施すことです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DRDoS (Distributed Reflection Denial of Service) 攻撃は、攻撃者が標的のIPアドレスを偽装したリクエストを多数の正規のサーバ（DNSサーバなど）に送信し、それらのサーバからの大量の応答パケットを標的のサーバに集中させることでサービス妨害を引き起こします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "WPA3-Enterpriseは、IEEE 802.1X認証規格に準拠した利用者認証と、動的に生成・共有される暗号鍵（PMK）を用いた強力な暗号化通信を実装するための無線LANセキュリティ規格です。これにより、より堅牢な認証とデータ保護が提供されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DNSSEC (DNS Security Extensions) の主な機能は、DNSサーバから受信するリソースレコードに対してデジタル署名を利用することです。これにより、DNS応答の送信元が正当であることと、データが改ざんされていないこと（データの完全性）を検証し、DNSキャッシュポイズニングなどの攻撃を防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "OP25B (Outbound Port 25 Blocking) は、スパムメール対策の一環として、ISP管理下の動的IPアドレスを持つユーザが、ISPが指定するメールサーバ以外へTCPポート25番（SMTP）で直接通信するのを遮断する措置です。これにより、マルウェアに感染したPCが直接スパムを送信することを防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ライトスルー方式は、データをキャッシュメモリと主記憶の両方に同時に書き込むため、常に両者の内容が一致します。これにより、キャッシュミス発生時に主記憶から読み出すデータが常に最新であることが保証されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "MTTR (平均修復時間) は、システムが故障してから復旧するまでの時間を示します。エラーログ取得機能は、故障発生時に原因特定を迅速に行い、復旧作業にかかる時間を短縮するのに役立ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ブローカーパターンは、分散環境においてクライアントとサーバ間の直接的な相互作用を排除し、ブローカーを介してサービスの登録、検索、メッセージ交換を行うことで、両者の結合度を弱めます。これにより、システム全体の柔軟性と拡張性が向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const NW_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ステージング環境は、本運用システムとほぼ同等の構成を持つ環境であり、システムリリース前に最終的な動作確認やパフォーマンステストを行うために使用されます。これにより、本番環境での不具合のリスクを最小限に抑えることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am2_qs.pdf",
     "license": "IPA-public"

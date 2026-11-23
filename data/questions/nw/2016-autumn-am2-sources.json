@@ -1,0 +1,223 @@
+{
+  "exam": "nw",
+  "year": 2016,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html",
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "エウウイアアウエエエウイアイエエアアアウイイウウウ",
+  "verification": "公式問題冊子の全問題ページを画像で確認し転記。別の公式解答PDFをpdftotextで抽出し全25件照合。本文・選択肢のハッシュと原本ページを記録。 問3・4・7・13の原図4点を切出し，ラベル・アドレス・接続・表の欠けがないことを画像確認。問4・20・24の選択肢表は列名を付けてテキスト化。",
+  "duplicateCheck": "共有台帳2026-11-11のNW 2016行はspring am1のみ。指定先行ブランチ取り込み後，git log --all -- data/questions/nw/by-year/2016-autumn-am2.tsに履歴なし。",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_am2_qs.pdf",
+      "sha256": "92f962289246ab1eafb3275230febc920251201ba3cc77815bd6e9b646c0630e"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_am2_ans.pdf",
+      "sha256": "b89ff3686ed1aea474df0e09d36af0f6948716737371826781470b1ea3dc03ac"
+    }
+  },
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "エ",
+      "printedPage": 3,
+      "normalizedTextSha256": "6b0771a03a24580a257f60477248a3c6445b1ad56aceb846812e67b7789d13ab"
+    },
+    {
+      "qNumber": 2,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "aa949580e01ee6939cc7cb9095e82ef52df5481de1d7e273d4f4b538d7f1bf5e"
+    },
+    {
+      "qNumber": 3,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "a96ef9daf752e66ec3949113d296f1c481e17d1a6a088b3d15abbb9d2e2ab52d",
+      "figure": {
+        "path": "/images/questions/nw/2016-autumn-am2-q3.png",
+        "alt": "X，A～G，Yを結ぶネットワーク。各線の数字は同時に使用できる論理回線の多重度。",
+        "pdfPage": 3,
+        "clipPoints": [
+          112.5,
+          515.625,
+          400.0,
+          621.875
+        ],
+        "sha256": "946aaf628ab672699d6bd5f7c7d4a86dd2295daada9f7796f7b1697de43fd4ab"
+      }
+    },
+    {
+      "qNumber": 4,
+      "answer": "イ",
+      "printedPage": 4,
+      "normalizedTextSha256": "8ecf3bebd54f12d2c56b8f8dc21290ced33ddc5fb497af427745e4ad00d29fb4",
+      "figure": {
+        "path": "/images/questions/nw/2016-autumn-am2-q4.png",
+        "alt": "OSPFルータa～iの構成。拠点1はa，拠点2はc，拠点3はiに接続し，b-eがWAN1，d-gがWAN2。g-fのコストがx，g-hがy。",
+        "pdfPage": 4,
+        "clipPoints": [
+          87.5,
+          165.625,
+          440.625,
+          253.125
+        ],
+        "sha256": "4f8de63802613d4fbb9bb9c5cb302023707960ffd82032b75d169cf092fb2147"
+      }
+    },
+    {
+      "qNumber": 5,
+      "answer": "ア",
+      "printedPage": 4,
+      "normalizedTextSha256": "453caa2b53d0a3dd53da2ccb67ad362e5b304709d1e69c01470c21b8d4c8a7ad"
+    },
+    {
+      "qNumber": 6,
+      "answer": "ア",
+      "printedPage": 5,
+      "normalizedTextSha256": "c5acf9ff13f241106dfc2729bd2b0c19f4b55abf0ef5bd4ad7363a58faac9a55"
+    },
+    {
+      "qNumber": 7,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "743cee5268d37f082dd2658e71abf549a76b927be0f91685e124f8a8bf2f94c4",
+      "figure": {
+        "path": "/images/questions/nw/2016-autumn-am2-q7.png",
+        "alt": "新IPヘッダ，ESPヘッダ，オリジナルIPヘッダ，TCPヘッダ，データ，ESPトレーラ，ESP認証データの順に並ぶESPトンネルモードの電文。",
+        "pdfPage": 5,
+        "clipPoints": [
+          103.125,
+          359.375,
+          415.625,
+          403.125
+        ],
+        "sha256": "81d24481eb818d67b4809db6a9ff8b7500fb46f13c89e5c43c8cf91dbc24406a"
+      }
+    },
+    {
+      "qNumber": 8,
+      "answer": "エ",
+      "printedPage": 5,
+      "normalizedTextSha256": "7bd561c4c66d0d60c8298fa859e752bf29a424072d766744938e77e8fceb2e4f"
+    },
+    {
+      "qNumber": 9,
+      "answer": "エ",
+      "printedPage": 6,
+      "normalizedTextSha256": "ba855c7501674d5a5e1a0f239eb2a0c25d7d16033f8031145d4150372f1dd994"
+    },
+    {
+      "qNumber": 10,
+      "answer": "エ",
+      "printedPage": 6,
+      "normalizedTextSha256": "b950ad47a82710b988a918472b8bbe143e052edba267845ee5bd96e5f4a7a377"
+    },
+    {
+      "qNumber": 11,
+      "answer": "ウ",
+      "printedPage": 6,
+      "normalizedTextSha256": "dd1091fbaa4f6f9154bffdffb76ea1e58faceb7b396e144d447dc6d690dee007"
+    },
+    {
+      "qNumber": 12,
+      "answer": "イ",
+      "printedPage": 7,
+      "normalizedTextSha256": "28ed1791301a265e16357258da52477e26b40b3f7a77db28532e4be43a1682ff"
+    },
+    {
+      "qNumber": 13,
+      "answer": "ア",
+      "printedPage": 8,
+      "normalizedTextSha256": "b0352f2519965676960228b36069f1c634511d5613b2ebee2659c0fc79e2a715",
+      "figure": {
+        "path": "/images/questions/nw/2016-autumn-am2-q13.png",
+        "alt": "ルータY，Z，A～Dの接続図と，ルータZの宛先アドレス，サブネットマスク，ネクストホップを示すルーティングテーブル。",
+        "pdfPage": 8,
+        "clipPoints": [
+          90.625,
+          156.25,
+          478.125,
+          478.125
+        ],
+        "sha256": "1a0149d7f607854df05edd2359885f64b8a0cc88af7d0e162d95a02fe2341f77"
+      }
+    },
+    {
+      "qNumber": 14,
+      "answer": "イ",
+      "printedPage": 9,
+      "normalizedTextSha256": "9d630291ad4528c73bdbbe84e0a3dd7a81ff0707aaef4e4d72c4da8bc303a353"
+    },
+    {
+      "qNumber": 15,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "ba322c7f1f57d175e35bac73538d0f90fd341548d940c9b384c14b576afce7b2"
+    },
+    {
+      "qNumber": 16,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "7021077af2dcf365ddc204632f562d44f6649e26a1479aa63a45a28297b8695e"
+    },
+    {
+      "qNumber": 17,
+      "answer": "ア",
+      "printedPage": 10,
+      "normalizedTextSha256": "1a8ff009eace6dcb512a75d6ebb09c2789d7e3c0cf3b2e666635be2553360caa"
+    },
+    {
+      "qNumber": 18,
+      "answer": "ア",
+      "printedPage": 11,
+      "normalizedTextSha256": "64c2ffa492eab9515284d485dc692141c337cdfde395eeed6e0515cb9ae6b38d"
+    },
+    {
+      "qNumber": 19,
+      "answer": "ア",
+      "printedPage": 11,
+      "normalizedTextSha256": "ce196113010384dc675fe38aa2a32c8ec2df767aa42c7ab23ffd11e7c0e62697"
+    },
+    {
+      "qNumber": 20,
+      "answer": "ウ",
+      "printedPage": 12,
+      "normalizedTextSha256": "793fdc62c0da83a68b54c683d14627d24dc49165aa7466995fff0aebeb8dac61"
+    },
+    {
+      "qNumber": 21,
+      "answer": "イ",
+      "printedPage": 12,
+      "normalizedTextSha256": "875f433c375dafeb2f15070f141f5a1619d2ef873656f6c913ab1733cb54eda6"
+    },
+    {
+      "qNumber": 22,
+      "answer": "イ",
+      "printedPage": 13,
+      "normalizedTextSha256": "2fc6095f2b5aeb76a1e1db50a375493489f0b2a45caa0cdc0ab5ac43adcb803b"
+    },
+    {
+      "qNumber": 23,
+      "answer": "ウ",
+      "printedPage": 13,
+      "normalizedTextSha256": "eae56b11f84d8228b81fc2e7aa3e3135c620a701deca3e1676507e8c14fe0585"
+    },
+    {
+      "qNumber": 24,
+      "answer": "ウ",
+      "printedPage": 14,
+      "normalizedTextSha256": "89b80f78594dba70a50f2405f2c0e0e77ece31c3f0c6f8a9288c4b89e0b3a730"
+    },
+    {
+      "qNumber": 25,
+      "answer": "ウ",
+      "printedPage": 14,
+      "normalizedTextSha256": "8c563eb1a54d0d51a72a3f6dba09d8cc466e96dc2aa34c1013925ab583a39207"
+    }
+  ]
+}

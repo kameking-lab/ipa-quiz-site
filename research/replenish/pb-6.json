@@ -1,0 +1,193 @@
+{
+  "lane": "pb-6",
+  "branch": "cx/kako-pa6-20261118",
+  "updatedOn": "2026-11-18",
+  "allocationRule": "candidatesの0始まり配列index % 14 == 5",
+  "allocatedCandidateIds": [
+    "dekyo-charge-2",
+    "kogai-16",
+    "cfp-3",
+    "building-cleaning-1",
+    "government-guide-2026-dd860fc011ad6e9b",
+    "javada-857dbaeca9e1",
+    "javada-3fa1bf751b91",
+    "javada-4c9d8b06259a",
+    "javada-aa97298a81f9",
+    "javada-dc36248df38d",
+    "javada-d0a49e7388e6",
+    "javada-038c8ef9c21c",
+    "javada-e63a174cd692",
+    "javada-ebc79c522493",
+    "javada-132de90a63d0",
+    "javada-36a5bbf82269",
+    "javada-8511b30969f1",
+    "javada-81c039b1dcea",
+    "javada-6646621da53c",
+    "javada-d72cad956e00",
+    "javada-50075ac9a903"
+  ],
+  "sourceAudit": "tools/pb-6/allocation-audit.json（実行フォルダ内）",
+  "summary": {
+    "addedQuestions": 136,
+    "choiceExplanations": 432,
+    "completedTelecomSittings": 3,
+    "remainingTelecomQuestions": 0,
+    "remainingCfpQuestions": 90,
+    "officialAnswersChanged": 0,
+    "untouchedCandidateRows": 18
+  },
+  "rows": [
+    {
+      "key": "dekyo-charge-2|2025|first|gakka|basic-technology",
+      "planCandidateId": "dekyo-charge-2",
+      "planArrayIndex": 5,
+      "qualificationCode": "dekyo-charge-2",
+      "qualification": "工事担任者 第二級アナログ通信",
+      "year": 2025,
+      "sitting": "first",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 42,
+      "choiceExplanationCount": 130,
+      "previousQuestionCount": 20,
+      "totalSittingQuestionCount": 62,
+      "remainingQuestionCount": 0,
+      "officialQuestionLabels": "基礎 第1問（ア）〜第5問（オ）、技術及び理論 第1問（ア）〜第4問（オ）",
+      "dataFile": "data/questions/dekyo-charge-2/2025-first-basic-technology.json",
+      "officialSourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648b93cd2e.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683649aeee990.pdf"
+      ],
+      "notes": [
+        "前回の法規20問と重複しない基礎22問・技術及び理論20問を追加。3科目62問の収録が完了。",
+        "分数・否定線・添字・図表は原本画像で照合。公式正答の変更なし。"
+      ]
+    },
+    {
+      "key": "dekyo-charge-2|2025|second|gakka|basic-technology",
+      "planCandidateId": "dekyo-charge-2",
+      "planArrayIndex": 5,
+      "qualificationCode": "dekyo-charge-2",
+      "qualification": "工事担任者 第二級アナログ通信",
+      "year": 2025,
+      "sitting": "second",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 42,
+      "choiceExplanationCount": 131,
+      "previousQuestionCount": 20,
+      "totalSittingQuestionCount": 62,
+      "remainingQuestionCount": 0,
+      "officialQuestionLabels": "基礎 第1問（ア）〜第5問（オ）、技術及び理論 第1問（ア）〜第4問（オ）",
+      "dataFile": "data/questions/dekyo-charge-2/2025-second-basic-technology.json",
+      "officialSourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692637b9c235e.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639ddb0052.pdf"
+      ],
+      "notes": [
+        "前回の法規20問と重複しない基礎22問・技術及び理論20問を追加。3科目62問の収録が完了。",
+        "分数・否定線・添字・図表は原本画像で照合。公式正答の変更なし。"
+      ]
+    },
+    {
+      "key": "dekyo-charge-2|2026|first|gakka|basic-technology",
+      "planCandidateId": "dekyo-charge-2",
+      "planArrayIndex": 5,
+      "qualificationCode": "dekyo-charge-2",
+      "qualification": "工事担任者 第二級アナログ通信",
+      "year": 2026,
+      "sitting": "first",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 42,
+      "choiceExplanationCount": 131,
+      "previousQuestionCount": 20,
+      "totalSittingQuestionCount": 62,
+      "remainingQuestionCount": 0,
+      "officialQuestionLabels": "基礎 第1問（ア）〜第5問（オ）、技術及び理論 第1問（ア）〜第4問（オ）",
+      "dataFile": "data/questions/dekyo-charge-2/2026-first-basic-technology.json",
+      "officialSourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a16292ca933d.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a779d168.pdf"
+      ],
+      "notes": [
+        "前回の法規20問と重複しない基礎22問・技術及び理論20問を追加。3科目62問の収録が完了。",
+        "分数・否定線・添字・図表は原本画像で照合。公式正答の変更なし。"
+      ]
+    },
+    {
+      "key": "cfp-3|2026|round1|gakka",
+      "planCandidateId": "cfp-3",
+      "planArrayIndex": 33,
+      "qualificationCode": "cfp-3",
+      "qualification": "CFP・ライフプランニング・リタイアメントプランニング",
+      "year": 2026,
+      "sitting": "round1",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 5,
+      "choiceExplanationCount": 20,
+      "remainingQuestionCount": 45,
+      "officialQuestionLabels": "問題1〜5",
+      "dataFile": "data/questions/cfp-3/2026-round1-selected.json",
+      "officialSourceUrls": [
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP03_q.pdf",
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP03_a.pdf"
+      ],
+      "notes": [
+        "各回の問題1〜5を全肢解説付きで部分収録。問題6〜50は未収録。",
+        "既存の金融資産運用設計14問とは課目・原本が異なり、重複なし。"
+      ]
+    },
+    {
+      "key": "cfp-3|2026|round2|gakka",
+      "planCandidateId": "cfp-3",
+      "planArrayIndex": 33,
+      "qualificationCode": "cfp-3",
+      "qualification": "CFP・ライフプランニング・リタイアメントプランニング",
+      "year": 2026,
+      "sitting": "round2",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 5,
+      "choiceExplanationCount": 20,
+      "remainingQuestionCount": 45,
+      "officialQuestionLabels": "問題1〜5",
+      "dataFile": "data/questions/cfp-3/2026-round2-selected.json",
+      "officialSourceUrls": [
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP03_q.pdf",
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP03_a.pdf"
+      ],
+      "notes": [
+        "各回の問題1〜5を全肢解説付きで部分収録。問題6〜50は未収録。",
+        "既存の金融資産運用設計14問とは課目・原本が異なり、重複なし。"
+      ]
+    }
+  ],
+  "notStartedCandidateIds": [
+    "building-cleaning-1",
+    "government-guide-2026-dd860fc011ad6e9b",
+    "javada-857dbaeca9e1",
+    "javada-3fa1bf751b91",
+    "javada-4c9d8b06259a",
+    "javada-aa97298a81f9",
+    "javada-dc36248df38d",
+    "javada-d0a49e7388e6",
+    "javada-038c8ef9c21c",
+    "javada-e63a174cd692",
+    "javada-ebc79c522493",
+    "javada-132de90a63d0",
+    "javada-36a5bbf82269",
+    "javada-8511b30969f1",
+    "javada-81c039b1dcea",
+    "javada-6646621da53c",
+    "javada-d72cad956e00",
+    "javada-50075ac9a903"
+  ],
+  "humanDecisionsRequired": []
+}

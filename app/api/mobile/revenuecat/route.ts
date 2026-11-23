@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     if (event.app_id !== c.appId || event.environment && !(c.environment === "APP_STORE" ? ["PRODUCTION", "SANDBOX"].includes(event.environment) : event.environment === c.environment)) return json({ ignored: true });
     const identities = [...new Set([event.app_user_id, ...event.transferred_from ?? [], ...event.transferred_to ?? []].filter((x): x is string => !!x))];
     if (identities.length > 20) throw new BillingError("invalid_event", 400);
-    for (const id of identities) await refreshRevenueCat(id);
+    for (const id of identities) await refreshRevenueCat(id, { retryOverlapAudit: true });
     return json({ ok: true });
   } catch (error) { return billingFailure(error); }
 }

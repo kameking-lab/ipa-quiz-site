@@ -1,0 +1,52 @@
+{
+  "rows": [
+    {
+      "jobId": "PLAN5-030",
+      "index": 29,
+      "exam": "sa",
+      "officialYear": 2023,
+      "season": "spring",
+      "session": "pm1",
+      "status": "既収録・公式解答例の照合ハッシュを更新",
+      "newCount": 0,
+      "importedCount": 0,
+      "questionIds": [
+        "sa-2023h-pm1-q4"
+      ],
+      "dataPath": "data/ipa-replenishment/qb-2.json",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_sa_pm1_ans.pdf#page=2",
+      "answerTextSha256": "220446651e49a673611cad01460cb8fe80f02e6703b1880226def075c49d0759",
+      "notes": "設問3(2)の改行修正を行った42d286412と公式PDF2ページを照合。登録済みの公式解答例と画像を確認し、台帳のハッシュを更新。"
+    },
+    {
+      "jobId": "PLAN5-240",
+      "index": 239,
+      "exam": "rinsho-kogishi",
+      "officialYear": 2023,
+      "storedYear": 2022,
+      "season": "annual",
+      "session": "pm",
+      "status": "既収録・公式紙面の表と記号を復元",
+      "newCount": 0,
+      "importedCount": 0,
+      "questionIds": [
+        "rinsho-kogishi-2022-annual-pm-q48",
+        "rinsho-kogishi-2022-annual-pm-q57",
+        "rinsho-kogishi-2022-annual-pm-q58"
+      ],
+      "dataPath": "data/questions/rinsho-kogishi/plan5-240-completion.json",
+      "officialUrl": "https://www.jaame.or.jp/ce/pdf/36pm.pdf",
+      "answerUrl": "https://www.jaame.or.jp/ce/pdf/36ans.pdf#page=2",
+      "sourcePages": [
+        20,
+        26,
+        27
+      ],
+      "sourceHashes": {
+        "questions.pdf": "0a7999b09b6f41809490be6671788c653ea23cdbbeec8aa6c38dfe8c3becfc1d",
+        "answers.pdf": "1287d450c26cb0ef388310f4c383395c96703e5d69a24c83ad16329edd9ef225"
+      },
+      "notes": "問48の丸数字・電圧記号を復元。問57の論理記号の注記を解説へ移動。問58の初期値を原本と同じ5列の表に復元。午後90問の公式正答を照合。"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import ExamPage from "@/app/e-learning/exams/[id]/page";
+import officialArchivePapers from "@/data/exam-library/official-archive-papers.json";
 import catalog from "@/data/exam-library/official-catalog.json";
 import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { examSourcePdfUrl, parseExamCatalogEntry } from "@/lib/exam-library-model";
@@ -14,9 +15,21 @@ beforeEach(() => {
 });
 afterEach(cleanup);
 
-describe("archived consultant PDF links", () => {
-  it("retains all eleven reviewed copies while preserving the old official URLs as provenance", () => {
-    expect(archiveEntries).toHaveLength(11);
+describe("archived safety exam PDF links", () => {
+  it("preserves the eleven consultant copies and the six pinned captures of official PDFs", () => {
+    const consultant = archiveEntries.filter((entry) => entry.group === "cskohyo");
+    expect(consultant.map((entry) => entry.id).sort()).toEqual(
+      Array.from({ length: 11 }, (_, i) => `cskohyo-CS202119${String(i + 1).padStart(2, "0")}`),
+    );
+    const official = archiveEntries.filter((entry) => entry.group !== "cskohyo");
+    expect(official.map((entry) => entry.id).sort()).toEqual(Object.keys(officialArchivePapers).sort());
+    expect(official).toHaveLength(6);
+    for (const [id, pin] of Object.entries(officialArchivePapers)) {
+      const raw = official.find((entry) => entry.id === id)!;
+      expect(raw).toMatchObject(pin);
+      expect(raw.archiveSourceUrl?.endsWith(raw.pdfUrl)).toBe(true);
+      expect(parseExamCatalogEntry({ ...raw, pdfSha256: "0".repeat(64) })).toBeNull();
+    }
     for (const raw of archiveEntries) {
       const entry = EXAM_CATALOG.find((candidate) => candidate.id === raw.id)!;
       expect(entry.sourceMode).toBe("official-archive-copy");

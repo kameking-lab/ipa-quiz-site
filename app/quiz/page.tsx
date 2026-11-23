@@ -6,7 +6,6 @@ import type { ExamCode, QuizFilter, QuizMode, Season } from "@/lib/questions/typ
 import { getExplicitPoolIds, getPoolIds } from "@/lib/questions/pool-server";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
-import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 import { redirect } from "next/navigation";
 import { practiceGateEnabled } from "@/lib/billing/practice-access";
 
@@ -76,7 +75,8 @@ export default async function QuizPage({
   searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
-  const mode = (VALID_MODES.includes(sp.mode as QuizMode) ? sp.mode : "random") as QuizMode;
+  const isWeaknessPool = sp.source === "weakness";
+  const mode = (isWeaknessPool ? "year" : VALID_MODES.includes(sp.mode as QuizMode) ? sp.mode : "random") as QuizMode;
 
 
   const examGroup = sp.examGroup
@@ -93,29 +93,32 @@ export default async function QuizPage({
     : undefined;
 
   const exam: ExamCode = ALL_QUIZ_EXAM_CODES.includes(sp.exam as ExamCode) ? sp.exam as ExamCode : "ap";
-  if (exam === "denken3" && (
+  // A weakness session uses explicit IDs from the existing published question
+  // pool. The restrictions below still apply to ordinary annual sessions.
+  if (!isWeaknessPool && exam === "denken3" && (
     mode !== "year" ||
     !["2024", "2025"].includes(sp.year ?? "") ||
     !["first", "second"].includes(sp.season ?? "") ||
     !["riron", "denryoku", "kikai", "houki"].includes(sp.session ?? "")
   )) redirect("/denken3");
-  if (exam === "denken2" && (
+  if (!isWeaknessPool && exam === "denken2" && (
     mode !== "year" ||
     sp.year !== "2026" ||
     sp.season !== "primary" ||
     !["denryoku", "houki"].includes(sp.session ?? "")
   )) redirect("/denken2");
-  if (exam === "denken1" && (
+  if (!isWeaknessPool && exam === "denken1" && (
     mode !== "year" ||
     sp.year !== "2026" ||
     sp.season !== "primary" ||
     !["riron", "denryoku", "kikai", "houki"].includes(sp.session ?? "")
   )) redirect("/denken1");
   const isSearchPool = sp.source === "search";
-  const session = isSearchPool || (mode === "review" && sp.scope === "exam")
+  const isExplicitPool = isSearchPool || isWeaknessPool;
+  const session = isExplicitPool || (mode === "review" && sp.scope === "exam")
     ? undefined
     : parsePracticeSession(sp.session) ?? (examGroup?.length || sp.category || sp.categoryGroup || sp.topic ? undefined : defaultPracticeSession(exam, sp.year ? Number(sp.year) : undefined));
-  const examQuestions = await getQuestionsForExam(exam);
+  const examQuestions = isExplicitPool ? [] : await getQuestionsForExam(exam);
   const sessions = PRACTICE_SESSIONS.filter((s) => examQuestions.some((q) => q.session === s && (!sp.year || q.year === Number(sp.year)) && (!sp.season || q.season === sp.season)));
   const filter: QuizFilter = {
     mode,
@@ -133,14 +136,14 @@ export default async function QuizPage({
 
   // Search-origin sessions carry an exact, bounded set. Invalid or stale IDs
   // are discarded and an invalid payload fails closed to the empty state.
-  const fullPoolIds = isSearchPool
-    ? await getExplicitPoolIds(sp.ids ?? "")
+  const fullPoolIds = isExplicitPool
+    ? await getExplicitPoolIds(sp.ids ?? "", isWeaknessPool ? exam : undefined)
     : await getPoolIds(filter);
   // Honor the optional limit query (the home 3問体験 CTA sends limit=3).
   // Cap at 200 so a malformed value cannot make the page hang.
   const limit = sp.limit ? Math.max(1, Math.min(200, Number(sp.limit) || 0)) : 0;
   const poolIds = limit > 0 ? fullPoolIds.slice(0, limit) : fullPoolIds;
-  const backHref = quizBackHref({ exam, mode, returnTo: sp.returnTo });
+  const backHref = isWeaknessPool ? `/me?${new URLSearchParams({ exam })}` : quizBackHref({ exam, mode, returnTo: sp.returnTo });
 
   let categoryById: Record<string, string> | undefined;
   if (mode === "weakness") {
@@ -152,22 +155,24 @@ export default async function QuizPage({
   return (
     <>
       <h1 className="sr-only">
-        {isSearchPool
+        {isWeaknessPool ? "弱点レポートの復習" : isSearchPool
           ? "検索結果から選んだ過去問演習"
           : `${EXAM_CONFIGS[exam].nameFull} ${MODE_LABELS[mode]}過去問演習`}
       </h1>
-      {!isSearchPool && exam !== "denken3" && exam !== "denken2" && exam !== "denken1" && <QuizModeTabs active={mode} exam={exam} />}
-      {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
+      {!isExplicitPool && !examGroup?.length && sessions.length > 1 && (
+        <details className="mx-auto w-full max-w-2xl px-4 pt-3 text-sm">
+          <summary className="min-h-11 cursor-pointer py-3">試験科目を選ぶ</summary>
+          <PracticeSessionTabs sessions={[...sessions]} selected={session} />
+        </details>
+      )}
       <QuizClient
         billingGateEnabled={practiceGateEnabled()}
         poolIds={poolIds}
         initialQuestionId={sp.question}
         mode={mode}
         backHref={backHref}
-        backLabel={isSearchPool ? "検索結果に戻る" : undefined}
+        backLabel={isWeaknessPool ? "わたしの記録に戻る" : isSearchPool ? "検索結果に戻る" : undefined}
         exam={isSearchPool ? "search" : exam}
-        completionLabel={isSearchPool ? "検索結果から選んだ問題" : undefined}
-        completionShareHref={isSearchPool ? backHref : undefined}
         categoryById={categoryById}
         wrongOnly={mode === "review" && sp.reviewKind === "wrong"}
         mockResultId={mode === "review" ? sp.mock : undefined}

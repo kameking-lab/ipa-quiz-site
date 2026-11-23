@@ -263,6 +263,7 @@ function resolveExamCodeFromPath(segments: string[], knownExamCodes: ReadonlySet
   const [s0, s1] = segments;
   if (!s0) return null;
   if (s0 === "q" && s1) {
+    if (knownExamCodes.has(s1)) return s1;
     const code = s1.split("-")[0];
     return code && knownExamCodes.has(code) ? code : null;
   }

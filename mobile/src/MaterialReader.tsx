@@ -8,7 +8,6 @@ import {Fp3PracticalView} from "@/components/quiz/Fp3PracticalView";
 import {AppliedExtensionPage} from "@/app/fp1/applied/_components/extension-page";
 import {SentakuReader} from "@/app/sharoushi/sentaku/_components/reader";
 import {CaseQuestionView} from "@/components/chusho-secondary/CaseQuestionView";
-import {EssayEditor} from "@/components/essay/EssayEditor";
 import type {Material} from "../shared/material-types";
 function MaterialReaderBody({material:m}:{material:Material}) {
   switch(m.kind) {
@@ -22,7 +21,22 @@ function MaterialReaderBody({material:m}:{material:Material}) {
     case "fp3":return <Fp3PracticalView edition={m.edition} data={m.data} q={m.q} source={m.source}/>;
     case "sentaku":return <SentakuReader question={m.question}/>;
     case "chusho":return <CaseQuestionView paper={m.paper} question={m.question}/>;
-    case "essay":return <section className="space-y-4"><h1>{m.question.title}</h1><p>AI採点はオンラインで実行します。入力と下書きは端末に保存できます。</p><EssayEditor question={m.question}/></section>;
+    case "essay": return (
+      <article className="space-y-4">
+        <h1>{m.question.title}</h1>
+        <p className="whitespace-pre-wrap">{m.question.context}</p>
+        {m.question.subPrompts.map((section) => (
+          <section key={section.key}>
+            <h2>設問{section.key}</h2>
+            <p>{section.prompt}</p>
+            <details>
+              <summary>解答骨子</summary>
+              <p className="whitespace-pre-wrap">{section.modelOutline}</p>
+            </details>
+          </section>
+        ))}
+      </article>
+    );
   }
 }
 export default function MaterialReader({material}:{material:Material}) {return <NativeQuestionGate id={material.id}><MaterialReaderBody material={material}/></NativeQuestionGate>;}

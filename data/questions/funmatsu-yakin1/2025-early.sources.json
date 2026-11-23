@@ -1,0 +1,588 @@
+{
+  "candidateId": "Q4-201",
+  "qualification": "1級粉末冶金（成形・再圧縮作業）",
+  "fiscalYear": 2025,
+  "period": "前期",
+  "checkedAt": "2026-11-13T12:09:19.204231+09:00",
+  "sources": [
+    {
+      "kind": "questions",
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B08-%E7%B2%89%E6%9C%AB%E5%86%B6%E9%87%91%EF%BC%88%E6%88%90%E5%BD%A2%E3%83%BB%E5%86%8D%E5%9C%A7%E7%B8%AE%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "httpStatus": 200,
+      "sha256": "09724c4c09fec69346f5464f0f10352de184258ad9e78046400179a12d4969cd",
+      "pages": 10
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B08-%E7%B2%89%E6%9C%AB%E5%86%B6%E9%87%91%EF%BC%88%E6%88%90%E5%BD%A2%E3%83%BB%E5%86%8D%E5%9C%A7%E7%B8%AE%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "httpStatus": 200,
+      "sha256": "0c97886e603a894dedbd0b10f4a1cd642f0dfa0645e3411d81322527eedfcce8",
+      "pages": 1
+    }
+  ],
+  "questionCount": 50,
+  "trueFalseCount": 25,
+  "multipleChoiceCount": 25,
+  "choiceExplanationCount": 150,
+  "figureCount": 5,
+  "transcription": "公式問題PDFの全ページを原本画像で確認し、問番号・本文・全選択肢・公式正答表を照合。字間・改行・英数字幅を正規化。図は公式原図を切り出し保持。",
+  "answerMapping": {
+    "trueFalse": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "multipleChoice": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "duplicateCheck": {
+    "checkedAt": "2026-11-13T11:55:20.168508+09:00",
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "qualification": "粉末冶金（成形・再圧縮作業） 1級",
+    "ledgerMatches": [],
+    "progressMatchesBeforeStart": [],
+    "openPullRequestMatches": [],
+    "dataRefsChecked": [
+      "origin/main",
+      "cx/qnew-kako-20261112",
+      "cx/qnew2-kako-20261112",
+      "cx/qnew3-kako-20261112",
+      "cx/qnew4-kako-20261112",
+      "cx/qnew5-kako-20261112",
+      "cx/qnew6-kako-20261112"
+    ],
+    "targetMatches": {}
+  },
+  "review": [
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-001",
+      "originalNumber": "A群 1",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-002",
+      "originalNumber": "A群 2",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-003",
+      "originalNumber": "A群 3",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-004",
+      "originalNumber": "A群 4",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-005",
+      "originalNumber": "A群 5",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-006",
+      "originalNumber": "A群 6",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-007",
+      "originalNumber": "A群 7",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-008",
+      "originalNumber": "A群 8",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-009",
+      "originalNumber": "A群 9",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-010",
+      "originalNumber": "A群 10",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-011",
+      "originalNumber": "A群 11",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-012",
+      "originalNumber": "A群 12",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-013",
+      "originalNumber": "A群 13",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-014",
+      "originalNumber": "A群 14",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-015",
+      "originalNumber": "A群 15",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-016",
+      "originalNumber": "A群 16",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-017",
+      "originalNumber": "A群 17",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-018",
+      "originalNumber": "A群 18",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-019",
+      "originalNumber": "A群 19",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-020",
+      "originalNumber": "A群 20",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-021",
+      "originalNumber": "A群 21",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-022",
+      "originalNumber": "A群 22",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-023",
+      "originalNumber": "A群 23",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-024",
+      "originalNumber": "A群 24",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-a-025",
+      "originalNumber": "A群 25",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-001",
+      "originalNumber": "B群 1",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-002",
+      "originalNumber": "B群 2",
+      "pdfPage": 4,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-003",
+      "originalNumber": "B群 3",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-004",
+      "originalNumber": "B群 4",
+      "pdfPage": 4,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-005",
+      "originalNumber": "B群 5",
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-006",
+      "originalNumber": "B群 6",
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-007",
+      "originalNumber": "B群 7",
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-008",
+      "originalNumber": "B群 8",
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-009",
+      "originalNumber": "B群 9",
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-010",
+      "originalNumber": "B群 10",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-011",
+      "originalNumber": "B群 11",
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-012",
+      "originalNumber": "B群 12",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-013",
+      "originalNumber": "B群 13",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-014",
+      "originalNumber": "B群 14",
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-015",
+      "originalNumber": "B群 15",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-016",
+      "originalNumber": "B群 16",
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-017",
+      "originalNumber": "B群 17",
+      "pdfPage": 8,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-018",
+      "originalNumber": "B群 18",
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-019",
+      "originalNumber": "B群 19",
+      "pdfPage": 8,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-020",
+      "originalNumber": "B群 20",
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-021",
+      "originalNumber": "B群 21",
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-022",
+      "originalNumber": "B群 22",
+      "pdfPage": 9,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-023",
+      "originalNumber": "B群 23",
+      "pdfPage": 9,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-024",
+      "originalNumber": "B群 24",
+      "pdfPage": 9,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "funmatsu-yakin1-2025-early-gakka-b-025",
+      "originalNumber": "B群 25",
+      "pdfPage": 10,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    }
+  ],
+  "figures": [
+    {
+      "qNumber": 19,
+      "file": "/images/questions/funmatsu-yakin1/funmatsu-yakin1-2025-early-019.png",
+      "sha256": "5b29567f6432093fa1fcd6fa030b8ef41f8f8dfe5ee11d267b24904e170ad5a2"
+    },
+    {
+      "qNumber": 29,
+      "file": "/images/questions/funmatsu-yakin1/funmatsu-yakin1-2025-early-029.png",
+      "sha256": "2214c941e1e4221cb734342b275828b0441285b19409ca2cac4b1d48cfef7769"
+    },
+    {
+      "qNumber": 37,
+      "file": "/images/questions/funmatsu-yakin1/funmatsu-yakin1-2025-early-037.png",
+      "sha256": "aa28e36f7e5c4a005eebb675573586f9fe124226e853277311ae6d75e1669064"
+    },
+    {
+      "qNumber": 48,
+      "file": "/images/questions/funmatsu-yakin1/funmatsu-yakin1-2025-early-048.png",
+      "sha256": "99e6b44ade3cbadfe5d7310ad8d608c524327528406a346ab76010caadb70bc0"
+    },
+    {
+      "qNumber": 50,
+      "file": "/images/questions/funmatsu-yakin1/funmatsu-yakin1-2025-early-050.png",
+      "sha256": "cf239f7073bcb40b2630f905ca5731c959f28d018f4dbb1e17098cefc275b9bb"
+    }
+  ]
+}

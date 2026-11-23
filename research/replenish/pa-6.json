@@ -1,0 +1,169 @@
+{
+  "lane": "pa-6",
+  "branch": "cx/kako-pa6-20261118",
+  "updatedOn": "2026-11-18",
+  "allocationRule": "candidatesの0始まり配列index % 14 == 5",
+  "allocatedCandidateCount": 21,
+  "allocatedCandidateIds": [
+    "dekyo-charge-2",
+    "kogai-16",
+    "cfp-3",
+    "building-cleaning-1",
+    "government-guide-2026-dd860fc011ad6e9b",
+    "javada-857dbaeca9e1",
+    "javada-3fa1bf751b91",
+    "javada-4c9d8b06259a",
+    "javada-aa97298a81f9",
+    "javada-dc36248df38d",
+    "javada-d0a49e7388e6",
+    "javada-038c8ef9c21c",
+    "javada-e63a174cd692",
+    "javada-ebc79c522493",
+    "javada-132de90a63d0",
+    "javada-36a5bbf82269",
+    "javada-8511b30969f1",
+    "javada-81c039b1dcea",
+    "javada-6646621da53c",
+    "javada-d72cad956e00",
+    "javada-50075ac9a903"
+  ],
+  "sourceAudit": "tools/pa-6/allocation-audit.json（実行フォルダ内）",
+  "baseline": "origin/mainと指定37ブランチの統合後に既存出典を照合",
+  "productionCheck": "公開サイトの対象ルートは閲覧ツールで取得できず、実配信の再確認は未確認。origin/main・統合ブランチ・共有ledgerで対象出典の既存収録を確認できなかった。",
+  "summary": {
+    "newDivisions": 2,
+    "completedCandidateRows": 1,
+    "partialCandidateRows": 1,
+    "newQuestions": 70,
+    "choiceExplanations": 238,
+    "officialAnswersChanged": 0,
+    "remainingTelecomQuestions": 126,
+    "untouchedCandidateRows": 19
+  },
+  "rows": [
+    {
+      "key": "dekyo-charge-2|2026|first|gakka",
+      "planCandidateId": "dekyo-charge-2",
+      "planArrayIndex": 5,
+      "qualificationCode": "dekyo-charge-2",
+      "qualification": "工事担任者 第二級アナログ通信",
+      "year": 2026,
+      "sitting": "first",
+      "sittingLabel": "2026年度第1回",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 20,
+      "choiceExplanationCount": 62,
+      "officialQuestionLabels": "法規 第1問（ア）〜第4問（オ）",
+      "dataFile": "data/questions/dekyo-charge-2/2026-first-law.json",
+      "officialSourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a16292ca933d.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a779d168.pdf"
+      ],
+      "remainingQuestionCount": 42,
+      "notes": [
+        "法規20回答欄を全肢解説付きで収録。基礎22問と技術及び理論20問は未収録。",
+        "公式本文・公式正答の変更なし。配点ラベルと紙面の改行を除き、独立したPDF抽出でも照合。"
+      ]
+    },
+    {
+      "key": "dekyo-charge-2|2025|second|gakka",
+      "planCandidateId": "dekyo-charge-2",
+      "planArrayIndex": 5,
+      "qualificationCode": "dekyo-charge-2",
+      "qualification": "工事担任者 第二級アナログ通信",
+      "year": 2025,
+      "sitting": "second",
+      "sittingLabel": "2025年度第2回",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 20,
+      "choiceExplanationCount": 63,
+      "officialQuestionLabels": "法規 第1問（ア）〜第4問（オ）",
+      "dataFile": "data/questions/dekyo-charge-2/2025-second-law.json",
+      "officialSourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692637b9c235e.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639ddb0052.pdf"
+      ],
+      "remainingQuestionCount": 42,
+      "notes": [
+        "法規20回答欄を全肢解説付きで収録。基礎22問と技術及び理論20問は未収録。",
+        "公式本文・公式正答の変更なし。配点ラベルと紙面の改行を除き、独立したPDF抽出でも照合。"
+      ]
+    },
+    {
+      "key": "dekyo-charge-2|2025|first|gakka",
+      "planCandidateId": "dekyo-charge-2",
+      "planArrayIndex": 5,
+      "qualificationCode": "dekyo-charge-2",
+      "qualification": "工事担任者 第二級アナログ通信",
+      "year": 2025,
+      "sitting": "first",
+      "sittingLabel": "2025年度第1回",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 20,
+      "choiceExplanationCount": 63,
+      "officialQuestionLabels": "法規 第1問（ア）〜第4問（オ）",
+      "dataFile": "data/questions/dekyo-charge-2/2025-first-law.json",
+      "officialSourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648b93cd2e.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683649aeee990.pdf"
+      ],
+      "remainingQuestionCount": 42,
+      "notes": [
+        "法規20回答欄を全肢解説付きで収録。基礎22問と技術及び理論20問は未収録。",
+        "公式本文・公式正答の変更なし。配点ラベルと紙面の改行を除き、独立したPDF抽出でも照合。"
+      ]
+    },
+    {
+      "key": "kogai-16|2026|annual|gakka",
+      "planCandidateId": "kogai-16",
+      "planArrayIndex": 19,
+      "qualificationCode": "kogai-16",
+      "qualification": "公害防止管理者・大気・水質概論",
+      "year": 2026,
+      "sitting": "annual",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 10,
+      "choiceExplanationCount": 50,
+      "dataFile": "data/questions/kogai-16/2026-annual.json",
+      "officialSourceUrls": [
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_16.pdf",
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf"
+      ],
+      "remainingQuestionCount": 0,
+      "notes": [
+        "公式一覧の2026年度全10問・全50肢を収録。問1の下線記号は原図も保持。",
+        "2025年度は現行公式一覧で原本を確認できず、別年度での穴埋めなし。"
+      ]
+    }
+  ],
+  "notStartedCandidateIds": [
+    "cfp-3",
+    "building-cleaning-1",
+    "government-guide-2026-dd860fc011ad6e9b",
+    "javada-857dbaeca9e1",
+    "javada-3fa1bf751b91",
+    "javada-4c9d8b06259a",
+    "javada-aa97298a81f9",
+    "javada-dc36248df38d",
+    "javada-d0a49e7388e6",
+    "javada-038c8ef9c21c",
+    "javada-e63a174cd692",
+    "javada-ebc79c522493",
+    "javada-132de90a63d0",
+    "javada-36a5bbf82269",
+    "javada-8511b30969f1",
+    "javada-81c039b1dcea",
+    "javada-6646621da53c",
+    "javada-d72cad956e00",
+    "javada-50075ac9a903"
+  ],
+  "humanDecisionsRequired": []
+}

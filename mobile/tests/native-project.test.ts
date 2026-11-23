@@ -12,6 +12,9 @@ import config from "../capacitor.config";
 // Windows and CI without Xcode; ios-project.test.mjs checks the generated file.
 const mobile = fileURLToPath(new URL("../", import.meta.url));
 const require = createRequire(join(mobile, "package.json"));
+const { findPluginClasses } = require("@capacitor/cli/dist/util/iosplugin.js") as {
+  findPluginClasses(files: string[]): Promise<string[]>;
+};
 const pluginRoot = dirname(require.resolve("@revenuecat/purchases-capacitor/package.json"));
 const pluginPackage = JSON.parse(readFileSync(join(pluginRoot, "package.json"), "utf8")) as { capacitor?: { ios?: { src?: string } } };
 const swiftFiles = (directory: string): string[] => readdirSync(directory, { withFileTypes: true })
@@ -20,7 +23,6 @@ const iosSources = swiftFiles(join(pluginRoot, pluginPackage.capacitor?.ios?.src
 const nativeSource = iosSources.map(file => readFileSync(file, "utf8")).join("\n");
 
 it("cap sync discovers the RevenueCat native class, so the iOS bridge registers it", async () => {
-  const { findPluginClasses } = require("@capacitor/cli/dist/util/iosplugin.js") as { findPluginClasses: (files: string[]) => Promise<string[]> };
   expect(await findPluginClasses(iosSources)).toContain("PurchasesPlugin");
   // An include list would silently drop plugins from packageClassList.
   expect(JSON.stringify(config)).not.toContain("includePlugins");

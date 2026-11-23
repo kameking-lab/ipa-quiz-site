@@ -5,7 +5,8 @@ const CHOICE_KEYS = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "�
 
 /**
  * The advanced exams reuse one common morning-I paper across several exam
- * contexts.  Only byte-for-byte equivalent source questions are consolidated:
+ * contexts. Only equivalent source questions are consolidated (an absent
+ * image list and an empty one both mean no image URLs):
  * editorial fields such as the category and explanation deliberately do not
  * participate, so each requested exam page can keep its own learning context.
  */
@@ -16,7 +17,7 @@ function sourceQuestionFingerprint(q: Question): string {
     choices: [...CHOICE_KEYS.map((key) => q.choices?.[key] ?? null), ...(q.choices?.タ !== undefined ? [q.choices.タ] : [])],
     answer: q.answer,
     hasImage: q.hasImage,
-    imageUrls: q.imageUrls ?? null,
+    imageUrls: q.imageUrls ?? [],
   });
 }
 
@@ -44,6 +45,7 @@ function compareRepresentativeCandidates(a: Question, b: Question): number {
 }
 
 const canonicalByPool = new WeakMap<readonly Question[], Map<string, Question>>();
+const directByPool = new WeakMap<readonly Question[], Map<string, Question | null>>();
 
 function buildCanonicalIndex(pool: readonly Question[]): Map<string, Question> {
   const canonicalById = new Map<string, Question>();
@@ -84,6 +86,24 @@ export function getQuestionCanonicalRepresentative(
   pool: readonly Question[],
   question: Question,
 ): Question {
+  const cached = canonicalByPool.get(pool);
+  if (cached) return cached.get(question.id) ?? question;
+  // Only shared papers need source fingerprinting. Ordinary question pages
+  // can resolve their own ID without initializing every shared-paper group.
+  if (question.session !== "am1" && question.session !== "kyotsu") {
+    let direct = directByPool.get(pool);
+    if (!direct) {
+      direct = new Map();
+      for (const candidate of pool) {
+        direct.set(candidate.id, direct.has(candidate.id) ? null : candidate);
+      }
+      directByPool.set(pool, direct);
+    }
+    const match = direct.get(question.id);
+    if (match === undefined) return question;
+    if (match && match.session !== "am1" && match.session !== "kyotsu") return match;
+    // Duplicate IDs and a shared-paper match keep the original resolution.
+  }
   return getCanonicalIndex(pool).get(question.id) ?? question;
 }
 

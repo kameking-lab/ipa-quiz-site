@@ -8,6 +8,7 @@ import type { ProgressMap, StudyPlan } from "@/lib/study-plan/types";
 import { todayLocalDate } from "@/lib/study-plan/generator";
 import { examLabel } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 
 export function DashboardStudyPlan() {
   const [plans, setPlans] = React.useState<StudyPlan[] | null>(null);
@@ -24,21 +25,22 @@ export function DashboardStudyPlan() {
     if (current) { setSelectedId(current.id); setProgress(getProgress(current.id)); }
   }, []);
   if (!plans) return <p role="status">学習計画を読み込み中...</p>;
-  const plan = plans.find((item) => item.id === selectedId);
-  if (!plan) return <section className="rounded-2xl border border-border bg-card p-5">
+  if (plans.length === 0) return <section className="rounded-2xl border border-border bg-card p-5">
     <h2 className="text-lg font-semibold">今日の学習計画</h2>
-    <p className="my-3 text-sm text-muted-foreground">期間と学習時間から、毎日の演習・復習を計算します。</p>
-    <Button asChild><Link href="/study-plan">学習計画を作成する</Link></Button>
+    <Button asChild size="lg" className="mt-4"><Link href="/study-plan">学習計画を作成する</Link></Button>
   </section>;
-  const day = plan.daily.find((item) => item.date === today);
-  const stats = computeCompletionStats(plan, progress);
+  const plan = plans.find((item) => item.id === selectedId);
+  const day = plan?.daily.find((item) => item.date === today);
+  const stats = plan && computeCompletionStats(plan, progress);
+  const options = plans.map(({ id, input }) => ({
+    key: id, exam: input.exam, name: examLabel(input.exam), detail: `終了日 ${input.examDate}`,
+  }));
   return <section aria-label="今日の学習計画" className="space-y-4 rounded-2xl border border-border bg-card p-4 sm:p-5">
     <h2 className="text-lg font-semibold">今日の学習計画</h2>
-    <label className="block text-sm font-medium">実行する計画
-      <select value={selectedId} onChange={(event) => { setSelectedId(event.target.value); setProgress(getProgress(event.target.value)); }} className="mt-2 block min-h-11 w-full rounded-xl border border-border bg-background px-3">
-        {plans.map((item) => <option key={item.id} value={item.id}>{examLabel(item.input.exam)} ・ 終了日 {item.input.examDate}</option>)}
-      </select>
-    </label>
+    <QualificationSelect items={options} value={selectedId} onChange={id => { setSelectedId(id); setProgress(id ? getProgress(id) : {}); }}
+      label="実行する計画" emptyLabel="計画を選ぶ" className="text-sm font-medium"
+      fieldClass="mt-2 block min-h-11 w-full rounded-xl border border-border bg-background px-3" />
+    {plan && stats && <>
     <p className="text-sm">計画全体: {stats.done}/{stats.total}タスク完了（{stats.percent}%）</p>
     {day ? <>
       <p className="text-sm font-semibold">{today} ・ {day.budgetMinutes}分目安</p>
@@ -46,9 +48,8 @@ export function DashboardStudyPlan() {
       {day.tasks.length > 0 && day.tasks.every((task) => progress[task.key]?.done) ? <p role="status" className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">今日のタスクは完了です。</p> : null}
     </> : <p className="text-sm text-muted-foreground">今日はこの計画の期間外です。全日程を確認するか、新しい計画を作成できます。</p>}
     <div className="flex flex-wrap gap-3 text-sm">
-      <Link className="inline-flex min-h-11 items-center text-primary underline" href={`/study-plan/result/${plan.id}`}>この計画の全日程を見る</Link>
-      <Link className="inline-flex min-h-11 items-center text-primary underline" href="/study-plan">学習計画を作成・見直す</Link>
+      <details><summary className="min-h-11 cursor-pointer py-3">全日程</summary><Link className="inline-flex min-h-11 items-center text-primary underline" href={`/study-plan/result/${plan.id}`}>この計画の全日程を見る</Link></details>
     </div>
-    <p className="text-xs text-muted-foreground">タスクの完了チェックは全日程の表示と共通です。</p>
+    </>}
   </section>;
 }

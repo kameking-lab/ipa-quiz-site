@@ -16,7 +16,7 @@ describe("404 page surfaces the flagship /essay recovery link", () => {
     expect(source).toContain('href="/essay"');
   });
 
-  it("labels the link as 午後論述の AI 採点 recovery affordance", () => {
-    expect(source).toContain("午後論述のAI採点");
+  it("labels the link as IPA essay preparation", () => {
+    expect(source).toContain("IPA 論文対策");
   });
 });

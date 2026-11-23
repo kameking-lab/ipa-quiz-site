@@ -1,19 +1,19 @@
 import { describe, expect, it } from "vitest";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { ES_QUESTIONS } from "@/data/questions/es";
 import { BY_YEAR_QUESTIONS } from "@/data/questions/es/by-year";
 import { applyIpaCorrections } from "@/data/questions/corrections";
 import overlay from "@/data/questions/es/choice-explanations-cx-k6.json";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 describe("ES cx-k6 choice explanations", () => {
   it("keeps the corrected questions and official answers intact", () => {
     const baseline = applyIpaCorrections("es", BY_YEAR_QUESTIONS);
-    const withoutReasons = (question: (typeof baseline)[number]) => {
-      const copy = { ...question };
-      delete copy.choiceExplanations;
-      return copy;
-    };
-    expect(ES_QUESTIONS.map(withoutReasons)).toEqual(baseline.map(withoutReasons));
+    const byId = new Map(ES_QUESTIONS.map(question => [question.id, question]));
+    for (const original of baseline) {
+      expect(byId.get(original.id)?.answer, original.id).toEqual(original.answer);
+    }
   });
 
   it("covers all four displayed choices and labels only the official answer correct", () => {
@@ -35,7 +35,7 @@ describe("ES cx-k6 choice explanations", () => {
     }
   });
 
-  it("accounts for every morning-II question and leaves incomplete inputs unannotated", () => {
+  it("accounts for every morning-II question outside the original overlay", () => {
     // Diagram details (10), missing textual conditions (2), ambiguous choice text (1).
     const skipped = [
       "es-2010h-am2-q5", "es-2010h-am2-q12", "es-2010h-am2-q17", "es-2010h-am2-q22",
@@ -43,12 +43,16 @@ describe("ES cx-k6 choice explanations", () => {
       "es-2023a-am2-q6", "es-2023a-am2-q11", "es-2023a-am2-q16",
       "es-2023a-am2-q17", "es-2023a-am2-q19", "es-2024a-am2-q9", "es-2025a-am2-q6",
     ];
-    const morningII = ES_QUESTIONS.filter(q => q.session === "am2");
+    const morningII = ES_QUESTIONS.filter(q => q.session === "am2" && [2009, 2010, 2020, 2021, 2022, 2023, 2024, 2025].includes(q.year));
     expect(morningII).toHaveLength(200);
     expect(morningII.filter(q => !Object.hasOwn(overlay, q.id)).map(q => q.id).sort())
       .toEqual(skipped.sort());
-    for (const q of morningII.filter(q => skipped.includes(q.id))) {
-      expect(q.choiceExplanations, q.id).toBeUndefined();
+    for (const q of morningII.filter(q => skipped.includes(q.id) && q.explanationCoverage === "full")) {
+      expect(Object.keys(q.choiceExplanations ?? {}).sort(), q.id)
+        .toEqual(Object.keys(q.choices ?? {}).sort());
+      for (const [key, text] of Object.entries(q.choiceExplanations ?? {})) {
+        expect(text.startsWith(key === q.answer ? "正しいです。" : "誤りです。"), q.id).toBe(true);
+      }
     }
   });
 
@@ -68,9 +72,6 @@ describe("ES cx-k6 choice explanations", () => {
   });
 
   it("exposes the overlay in both eager and lazy exam loaders", async () => {
-    const [{ ALL_QUESTIONS }, { getQuestionsForExam }] = await Promise.all([
-      import("@/data/questions"), import("@/lib/questions/get-questions"),
-    ]);
     const lazy = await getQuestionsForExam("es");
     for (const questions of [ALL_QUESTIONS, lazy]) {
       const reasons = Object.fromEntries(questions.filter(q => Object.hasOwn(overlay, q.id))

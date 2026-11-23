@@ -1,0 +1,39 @@
+{
+  "lane": "ql-6",
+  "branch": "cx/kako-5y6-20261118",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "assignment": "zero-based jobs index % 14 == 5",
+  "unconfirmed": [
+    {
+      "jobId": "PLAN5-426",
+      "index": 425,
+      "exam": "hoikushi",
+      "year": 2026,
+      "season": "late",
+      "session": "kodomo-katei-fukushi",
+      "status": "awaiting-official-answers",
+      "checkedAt": "2026-11-18",
+      "examDate": "2026-10-24",
+      "lawReferenceDate": "2026-04-01",
+      "examGuidanceUrl": "https://www.hoyokyo.or.jp/exam/guidance/writtenexam2.html",
+      "sourcePdfUrl": "https://www.hoyokyo.or.jp/08AP4-2.pdf",
+      "sourcePdfSha256": "63813954b115a97e8c714863c3cec6503cbc9d0e5c568a0167232a2f4654ff4e",
+      "officialPublicationPage": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "expectedAnswerPublication": "2026-11-30T10:00:00+09:00",
+      "stagingQuestions": "data/qualification-staging/hoikushi-2026-late/questions.json",
+      "verifiedQuestionCount": 20,
+      "verifiedChoiceCount": 100,
+      "multipleSelectionsByQuestion": {
+        "6": 2,
+        "7": 3,
+        "10": 2,
+        "20": 3
+      },
+      "verifiedStemUnderlines": {
+        "9": "誤ったもの"
+      },
+      "officialAnswerCount": 0,
+      "newQuestionCount": 0
+    }
+  ]
+}

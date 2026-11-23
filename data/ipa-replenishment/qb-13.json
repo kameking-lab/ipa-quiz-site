@@ -1,0 +1,980 @@
+{
+  "lane": "qb-13",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "date": "2026-11-18",
+  "rows": [
+    {
+      "jobId": "PLAN5-013",
+      "key": "sc|2021|autumn|pm2|2021r03a_sc_pm2_qs.pdf",
+      "exam": "sc",
+      "year": 2021,
+      "season": "autumn",
+      "session": "pm2",
+      "format": "descriptive",
+      "status": "local-complete",
+      "questionCount": 2,
+      "dataPath": "data/questions/sc/official-2021-autumn-pm2.json",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_sc_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_sc_pm2_ans.pdf",
+      "sourcePdfSha256": "47bcf4d8be59dc61a8f0743111e567178c0b95fb8a73120c7f9c17363dee5099",
+      "sourceAnswerSha256": "f31653bf7b6ada2dd51fe6fde4a1ca9d9555d4197a9e823fbf3e1d1e54a6a8b2",
+      "sourceCheckedAt": "2026-11-17T19:57:25.151490+00:00",
+      "questions": [
+        {
+          "id": "sc-2021a-pm2-q1",
+          "qNumber": 1,
+          "sourcePdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            null
+          ],
+          "answerTextSha256": "be668bf230e2a9065fbc6faa34d5ccadfefceeeaa16f49893fb4071cf5d85eb1",
+          "assetsSha256": {
+            "/questions/ipa/sc/2021-autumn-pm2/page-02.webp": "05836f8c5b4a95ce40180528d7a2d6b8b1ef94d9d66995b9b840d13cbfd65010",
+            "/questions/ipa/sc/2021-autumn-pm2/page-03.webp": "5d00043943d07b2d14042e4bf84506b54c33459578d30499879fb9d95fdf26df",
+            "/questions/ipa/sc/2021-autumn-pm2/page-04.webp": "1510fb21fea5b219f3cfb0152ae3eef00a5b052aec5d25efa0da60f3c5f3413a",
+            "/questions/ipa/sc/2021-autumn-pm2/page-05.webp": "cfe76adc468f62e08d2d8cc33c4533f1faec10e512901c0ed68702150a966035",
+            "/questions/ipa/sc/2021-autumn-pm2/page-06.webp": "8276840209fb42fc1e5d75e7b06daed9b6524ebf32587fa261b1623e0bc532b6",
+            "/questions/ipa/sc/2021-autumn-pm2/page-07.webp": "111145cb11b313cb641a7003f36b652ca8e7c7117421c762f83b7501d247912a",
+            "/questions/ipa/sc/2021-autumn-pm2/page-08.webp": "72c4241b5192cf3fa2328b8c137245c921dccf4494c99cf791f2db42a3276054",
+            "/questions/ipa/sc/2021-autumn-pm2/page-09.webp": "9131084315668e725e0b29b8ab559cfd5dde2fe704933532ec057f806cce12cd",
+            "/questions/ipa/sc/2021-autumn-pm2/page-10.webp": "05bd86b1c48aa643f51a81e0fc7bffb92777645673c6ff9a1bd14bbfe8a6df63",
+            "/questions/ipa/sc/2021-autumn-pm2/page-11.webp": "bdc61c66fcd19750ce2b8033234db3770674a2114557b4ae43f0a2534bf5dd85",
+            "/questions/ipa/sc/2021-autumn-pm2/page-12.webp": "8584a2dda399d0703d6e6d41961613ee6ca53ef994dacc001adf28a6780640c8",
+            "/questions/ipa/sc/2021-autumn-pm2/page-13.webp": "8705b18990d7513b82572fa1113a25293613133edb55d9087234c7e15a218bcd",
+            "/questions/ipa/sc/2021-autumn-pm2/answer-q1-p01.webp": "f731e851d37968bc569048d77a5db73bbda9bf0f5a6929e492cd9a50fa1ada58"
+          }
+        },
+        {
+          "id": "sc-2021a-pm2-q2",
+          "qNumber": 2,
+          "sourcePdfPages": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "sourceAnswerPages": [
+            2
+          ],
+          "sourceAnswerClips": [
+            null
+          ],
+          "answerTextSha256": "86891a558dcd58950f984fc90813ec9266ba2ec8695cd24920249215cc367c02",
+          "assetsSha256": {
+            "/questions/ipa/sc/2021-autumn-pm2/page-14.webp": "46b2fcdf56fa0fd2202631ac2225cca8b2fa936b998fb2f0114d5e5b2607ee8f",
+            "/questions/ipa/sc/2021-autumn-pm2/page-15.webp": "e99b484425868f8dafa8ddf8fa411b1b46f6bcb66ed93e49a9187de9c3ab076e",
+            "/questions/ipa/sc/2021-autumn-pm2/page-16.webp": "8c825ee6ac9fd83b17c02b036504fdcd971dbc3f306197e60d854cc64c0c11ee",
+            "/questions/ipa/sc/2021-autumn-pm2/page-17.webp": "da99d51a087cde1a582abc3443b731365f8c0e57c5e0318fea0ec3315115f6cc",
+            "/questions/ipa/sc/2021-autumn-pm2/page-18.webp": "baa96b23b089719b0523d17497b48d11e0b6e20fbd1d9bf37f8adcd0ebeaba86",
+            "/questions/ipa/sc/2021-autumn-pm2/page-19.webp": "9e0712dd329753f2150e1142cc1693f277ac6b0b8cc43fc31acc6215abb058a4",
+            "/questions/ipa/sc/2021-autumn-pm2/page-20.webp": "9bc23e3d9604eb39c49161ec54cab92d8793491fd2ad0c30b475111192b8174a",
+            "/questions/ipa/sc/2021-autumn-pm2/page-21.webp": "601cba75ea00eb7e84b81c279d60c453ef0c8cf185f1c7fd37c71dcba5cda6c6",
+            "/questions/ipa/sc/2021-autumn-pm2/page-22.webp": "ef1aaf257d06a60552c3110e23523c89b29cd8a3fdb22363a9952f2c9927e706",
+            "/questions/ipa/sc/2021-autumn-pm2/page-23.webp": "778bdc7b840ce027d16bcd0ac2a7f5d8f87a97e00ccfbfacd7ecb900e4d438f8",
+            "/questions/ipa/sc/2021-autumn-pm2/page-24.webp": "cc6362f07f6fab87a9332e79f5758f5b2d1ac644d0c8cea461edcd1d710efbff",
+            "/questions/ipa/sc/2021-autumn-pm2/page-25.webp": "90c4fcb9c3a08f7d2d4591c6c12b9843d37687f3b09b75ee1a68f29c1484a9d3",
+            "/questions/ipa/sc/2021-autumn-pm2/answer-q2-p02.webp": "3d05b21ecad30137b36b7f2b158e8bf81859a3779f311eaa01d93d74f1a3df05"
+          }
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-027",
+      "key": "sa|2025|spring|pm2|2025r07h_sa_pm2_qs.pdf",
+      "exam": "sa",
+      "year": 2025,
+      "season": "spring",
+      "session": "pm2",
+      "format": "essay",
+      "status": "local-complete",
+      "questionCount": 2,
+      "dataPath": "data/questions/sa/official-2025-spring-pm2.json",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sa_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sa_pm2_ans.pdf",
+      "sourcePdfSha256": "a200f3c3a6ca8155ab4555024884a3a08d1c8781fb62f3bb5e79e0dcd951e05f",
+      "sourceAnswerSha256": "64f841e69ec194ef9793cdc63469ececf5abf538b0352bfa90dff0054c9e33c0",
+      "sourceCheckedAt": "2026-11-17T19:57:28.934918+00:00",
+      "questions": [
+        {
+          "id": "sa-2025h-pm2-q1",
+          "qNumber": 1,
+          "sourcePdfPages": [
+            2,
+            4,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              103.0,
+              555,
+              249.9
+            ]
+          ],
+          "answerTextSha256": "8d0ad13294d6b5e98408a2b5e29e6476b5a8feca3855c0a9d4b9fb1400c86f29",
+          "assetsSha256": {
+            "/questions/ipa/sa/2025-spring-pm2/page-02.webp": "3654293007a751b0287c1e392ed0fd04aa709dbc325f94bc4f296e2dfd33020c",
+            "/questions/ipa/sa/2025-spring-pm2/page-04.webp": "8e8590d2aba31ec1c492275a5fc9045409a01a099e3382b54595e1b731c0604e",
+            "/questions/ipa/sa/2025-spring-pm2/page-08.webp": "c4b18f15a64c0bed60d5aa444f1e6afc80da435786f4cdd302fef5fd81ac0351",
+            "/questions/ipa/sa/2025-spring-pm2/answer-q1-p01.webp": "20381e0a72e3c30a763156a5db741bbaa599925bd98eade8ae516949052f92c7"
+          }
+        },
+        {
+          "id": "sa-2025h-pm2-q2",
+          "qNumber": 2,
+          "sourcePdfPages": [
+            2,
+            6,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              253.9,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "80cc23202c0b1f13a33b8d57bf79e1f5fdf17182a0a89c43b496c9f341132a1b",
+          "assetsSha256": {
+            "/questions/ipa/sa/2025-spring-pm2/page-02.webp": "3654293007a751b0287c1e392ed0fd04aa709dbc325f94bc4f296e2dfd33020c",
+            "/questions/ipa/sa/2025-spring-pm2/page-06.webp": "876f13d414ef76de8ecc09bd39bc3c66b500419382c07db93ea6f72a00935a49",
+            "/questions/ipa/sa/2025-spring-pm2/page-08.webp": "c4b18f15a64c0bed60d5aa444f1e6afc80da435786f4cdd302fef5fd81ac0351",
+            "/questions/ipa/sa/2025-spring-pm2/answer-q2-p01.webp": "5997527005d425eb3d8fa2ece3151cf6dfc16805b135c624791abecec1985b11"
+          }
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-041",
+      "key": "ap|2023|spring|pm|2023r05h_ap_pm_qs.pdf",
+      "exam": "ap",
+      "year": 2023,
+      "season": "spring",
+      "session": "pm",
+      "format": "descriptive",
+      "status": "local-complete",
+      "questionCount": 11,
+      "dataPath": "data/questions/ap/official-2023-spring-pm.json",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+      "sourcePdfSha256": "801f06d5f13652b6d3a8a09e72d0b1bf01746278db3f8590b952ec5341c9940c",
+      "sourceAnswerSha256": "dea64ec1f36d2aeabe4ff8eb1fbe66c75229757b84be574aa161cfa0ec40c0fa",
+      "sourceCheckedAt": "2026-11-17T19:57:33.187652+00:00",
+      "questions": [
+        {
+          "id": "ap-2023h-pm-q1",
+          "qNumber": 1,
+          "sourcePdfPages": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              103.0,
+              555,
+              406.6
+            ]
+          ],
+          "answerTextSha256": "50a44b030141566f66c7ccd6ffbdc58d279add2deac365ea67f2d3196955f789",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-04.webp": "ee2b24596df1434cfeb16ec5d5453fcc6742b8b0b3c1fffb314cc37ff08c2468",
+            "/questions/ipa/ap/2023-spring-pm/page-05.webp": "2c8e6c11392ce52bcec50f96f879ddbdd3c4a5befe2627d714099d42fea5ea02",
+            "/questions/ipa/ap/2023-spring-pm/page-06.webp": "5dfbc1af495af117b0463fa676457fc51cf62ef98983b53a667e67045e2c3367",
+            "/questions/ipa/ap/2023-spring-pm/page-07.webp": "69e41d399e9b4f5c1d539ddd509eba35c6825e734a11b748a9562761327da6e3",
+            "/questions/ipa/ap/2023-spring-pm/page-08.webp": "4080ba2f63229938a8a6148508a8f2c69c990ad0906568ccda5cb2f6c25ef600",
+            "/questions/ipa/ap/2023-spring-pm/answer-q1-p01.webp": "74999d1e75e65e017f5896419c4d5ee4597556d049e5a838089e9620fdc3be34"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q2",
+          "qNumber": 2,
+          "sourcePdfPages": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              410.6,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "2395f70648d2aa21f5164dbfe4a778fd751e50b5a2740ed0ee1417660bbaba43",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-10.webp": "f1b5976b4f11e0500be835bf6ec28cabe621dceaded37e59ccd686c37699ee34",
+            "/questions/ipa/ap/2023-spring-pm/page-11.webp": "46a16c4fdeb2ce45011b69a682c2aa3015a9227f5936180aab859cafb1e290cd",
+            "/questions/ipa/ap/2023-spring-pm/page-12.webp": "615a41c9d1680dc78a1098e39f348d95e108fc4b65cd4c347dd9140056fe51ae",
+            "/questions/ipa/ap/2023-spring-pm/page-13.webp": "68c43bb9f341ae57f5e9661b9bb97627c336cad5fd4164e65264f4271a1adb69",
+            "/questions/ipa/ap/2023-spring-pm/page-14.webp": "684c2b59f49ed72b66bcfd140bc43ce5a9780bb500989acac86b8eccfec9c297",
+            "/questions/ipa/ap/2023-spring-pm/answer-q2-p01.webp": "cb4872520a6f25df7172e972d98d1d165044f10c70b68280c89ce737f973f891"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q3",
+          "qNumber": 3,
+          "sourcePdfPages": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "sourceAnswerPages": [
+            2
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              49.0,
+              555,
+              352.6
+            ]
+          ],
+          "answerTextSha256": "9c350dd439247a2e3634fec47cc847372fd612acabff26d3daea7e4a4c881e7f",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-16.webp": "1c20a14b02e49988f82959b5660bb9f1055495d8470a7ee1ff7192fbef5046ee",
+            "/questions/ipa/ap/2023-spring-pm/page-17.webp": "e0fa4d82c78754aa95925dbab093a89f9b0423f74c09e9f63eb2118522006131",
+            "/questions/ipa/ap/2023-spring-pm/page-18.webp": "7d7f4c3ba1889b9dbd97760239ddd72fe2c97371db06e65fec71b094af8575e8",
+            "/questions/ipa/ap/2023-spring-pm/page-19.webp": "5a11791e5f8a41276897b4a917ef2e45eae2810da9d0f1e06724013bf8369cce",
+            "/questions/ipa/ap/2023-spring-pm/page-20.webp": "dff502a9eebae69c86ed0a46495f39839184c3acd4636c3146c420e769d7dd0c",
+            "/questions/ipa/ap/2023-spring-pm/answer-q3-p02.webp": "f1173df3fed78171d35b49f675466491974d1a05916bd06289e3725d2c3d126b"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q4",
+          "qNumber": 4,
+          "sourcePdfPages": [
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "sourceAnswerPages": [
+            2
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              356.6,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "703b55a90e4dbbf4888f565c0600d756d21432f30afb01c6f6e95fc8b12fad55",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-22.webp": "c8ef1e3e54f56e4861a8480149d1f7342769bc6f32bfaed6e1268291596f9995",
+            "/questions/ipa/ap/2023-spring-pm/page-23.webp": "fa0f8cbc7e7acd88c83e7a36c49f351efad5a68a0cb016db91c077393700879e",
+            "/questions/ipa/ap/2023-spring-pm/page-24.webp": "9cd9e082bcbe4ba59206513b754eef1692992715d8eb2b41283658fb6cb4017c",
+            "/questions/ipa/ap/2023-spring-pm/page-25.webp": "fa5b691b9a829d282a95f7cbc47cd6f5345880a320e6ba89d73578e7c139c939",
+            "/questions/ipa/ap/2023-spring-pm/page-26.webp": "3786675fa7300bef6f4df39d28b7cf55518db3fb9cc738d4fc36d31a1764f3f7",
+            "/questions/ipa/ap/2023-spring-pm/answer-q4-p02.webp": "0196a5b5137d08a1c29a8b3740b59d51f3d69be6d227372a7125a2c71f2d3a3f"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q5",
+          "qNumber": 5,
+          "sourcePdfPages": [
+            28,
+            29,
+            30,
+            31
+          ],
+          "sourceAnswerPages": [
+            3
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              49.0,
+              555,
+              336.6
+            ]
+          ],
+          "answerTextSha256": "44de87d6aca014c8377dcc114f3c0b73067b8cd651d88ccca0e65b1237ff0dbe",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-28.webp": "20405e73b6080913237c781f2e4a6ac10f5538d4ab3683e28a4b5ef4bfeaad5b",
+            "/questions/ipa/ap/2023-spring-pm/page-29.webp": "ccdc13f0269e390ae93ba7ab1641570cc94ce1204a2756b4accc6adfe856148d",
+            "/questions/ipa/ap/2023-spring-pm/page-30.webp": "ed5f83bdaef4d594af1b4aa6f85347c9cc30bc5c40e3448e10ece3507d8cb063",
+            "/questions/ipa/ap/2023-spring-pm/page-31.webp": "467a6b9533ef4c04f6524fb5b013ca7e3cddf1ea885010c208aa7fdfd48e68b8",
+            "/questions/ipa/ap/2023-spring-pm/answer-q5-p03.webp": "b16c8ef7778f1b3e064d8ac75ead75daa7314bcc06375e078f0473cb0d65412b"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q6",
+          "qNumber": 6,
+          "sourcePdfPages": [
+            32,
+            33,
+            34,
+            35,
+            36
+          ],
+          "sourceAnswerPages": [
+            3
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              340.6,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "2873103d01635c99eb4353b049ddd561ebee26430912d5ae0a7fe90ffd16ca29",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-32.webp": "5dd251e02f9d76187a56dab9e8cb12158b0d0742788d1dfee95452de698e943a",
+            "/questions/ipa/ap/2023-spring-pm/page-33.webp": "a5e7c48225f0b952286f3cf045afdb969400dacdb907e926f45c9d2b03e67566",
+            "/questions/ipa/ap/2023-spring-pm/page-34.webp": "0dfba5838a3850cb78a778ca7e28da7acebc9910c929f846731f09feb7b7ff35",
+            "/questions/ipa/ap/2023-spring-pm/page-35.webp": "ff312c1c30ded8ee76dc1938358e52ea862de5054a921b75e64c6a2ed36aec79",
+            "/questions/ipa/ap/2023-spring-pm/page-36.webp": "213e48ac1feb2477d488dcc8728128e8a6df90e6d0aed58dfe783f4480c969ba",
+            "/questions/ipa/ap/2023-spring-pm/answer-q6-p03.webp": "2c8d6696b62b321e6d1ea56512715a1068ca9dd9007bc28677a9fb05e87564e6"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q7",
+          "qNumber": 7,
+          "sourcePdfPages": [
+            38,
+            39,
+            40,
+            41,
+            42
+          ],
+          "sourceAnswerPages": [
+            4
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              49.0,
+              555,
+              351.6
+            ]
+          ],
+          "answerTextSha256": "d56b32901709c0d5fc4e50097b722ec5e69b04f9329c4a6c98e3069f18e70f91",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-38.webp": "4e622ece2204413fb4b95ee899c1877541d00683ce9e55230ae9cf9e276bb350",
+            "/questions/ipa/ap/2023-spring-pm/page-39.webp": "047198609f5f4abd80a4abd66ce99b4e5bed157846a27ac84419df27db874155",
+            "/questions/ipa/ap/2023-spring-pm/page-40.webp": "1bba7529fbae3cc1402f6df55c4e2ea9bceb8971f9b3952b8b298d3241546bf5",
+            "/questions/ipa/ap/2023-spring-pm/page-41.webp": "24ac7d35f319f357928d0077cb34ca4c182ce49ab664b9cda24aeef4a533651e",
+            "/questions/ipa/ap/2023-spring-pm/page-42.webp": "36da56ab8024a04940817363567241ec373dd5a50ff2e6e31bc481c49314a4c8",
+            "/questions/ipa/ap/2023-spring-pm/answer-q7-p04.webp": "61bd607a94ba6bc08ec9153eff978077a7423e4fecaf4ae6cceed3d0097a32fb"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q8",
+          "qNumber": 8,
+          "sourcePdfPages": [
+            44,
+            45,
+            46,
+            47,
+            48
+          ],
+          "sourceAnswerPages": [
+            4
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              355.6,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "0e7e7ab4c8841f9aa7ef9c45553674903b06d1cb2166d66d4738f7592d0f36e0",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-44.webp": "c21ff5b3328382c12e0be49462d348d4edec68ad2b36c937b9b438c2c49c5a50",
+            "/questions/ipa/ap/2023-spring-pm/page-45.webp": "ee28782590dc8159914b6ca409a28637ceef519355d9d7974545022c82d9b621",
+            "/questions/ipa/ap/2023-spring-pm/page-46.webp": "152a1cbd69458336cda2297cac3163d53b11a94ecf109468fa66c79a6be80067",
+            "/questions/ipa/ap/2023-spring-pm/page-47.webp": "3cb2e6883fd84a79e74b48fc25b9cb17d2c1addca0ea4a6e8d5c145cacfc50df",
+            "/questions/ipa/ap/2023-spring-pm/page-48.webp": "77fb480482e2ed80c97096e6a155c8476de8172fc837f95d55cc3af856e73c01",
+            "/questions/ipa/ap/2023-spring-pm/answer-q8-p04.webp": "b1bbd086b257d2d334776c93a72c809e2b58b444503e79b6bf82ccda07ac948c"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q9",
+          "qNumber": 9,
+          "sourcePdfPages": [
+            50,
+            51,
+            52,
+            53,
+            54
+          ],
+          "sourceAnswerPages": [
+            5
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              49.0,
+              555,
+              322.7
+            ]
+          ],
+          "answerTextSha256": "ef56a25bee9bbcbbfc622c0af31c670fb1da0be5edecd783da468dd1798ae9e2",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-50.webp": "d5bd5210e35d85b8812cd53b3da0be22c992d2f8a61619ddd4dc25a17732146e",
+            "/questions/ipa/ap/2023-spring-pm/page-51.webp": "f3451ab3b5837c980189a1152b3da2ecfe23434d87f8dd2f7833c8d6ceae5be6",
+            "/questions/ipa/ap/2023-spring-pm/page-52.webp": "4761c419e7d29958068954afd9f04fa29c7ab34d38bc767d5e10318b9013848f",
+            "/questions/ipa/ap/2023-spring-pm/page-53.webp": "063ba9b41266457208dc50e80622ae0a9ae2008e24c13cb21c539a80600870cc",
+            "/questions/ipa/ap/2023-spring-pm/page-54.webp": "0a7476c9225575528a3560e979f8be112c01917e80a1a30119e0b4444451f68b",
+            "/questions/ipa/ap/2023-spring-pm/answer-q9-p05.webp": "91bd352c27d3a80a834864961dc51f993fb30fb6944c96a96290d506e9bcecaa"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q10",
+          "qNumber": 10,
+          "sourcePdfPages": [
+            56,
+            57,
+            58,
+            59,
+            60,
+            61
+          ],
+          "sourceAnswerPages": [
+            5
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              326.7,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "4127e6eca27b0a4f53a81b43bdcfe9e89afe1f2b16350c0bf92dcd77d52e7c80",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-56.webp": "f044cc46bd4870a54833338a19da604eac970332f8d7e5947a8c18b37c83b93d",
+            "/questions/ipa/ap/2023-spring-pm/page-57.webp": "d5983b1ad2fe270359b8268edc061891f4455dc5d5805a44306c1879af70e7e7",
+            "/questions/ipa/ap/2023-spring-pm/page-58.webp": "e0453b3d331fa7aefcb4e6d81e312f2a646832395c0822168e17ec7a045dd366",
+            "/questions/ipa/ap/2023-spring-pm/page-59.webp": "7002b9ee57b6aa86239c448fa17e0fa9dd6c61b5f4d521d51b871286c251644c",
+            "/questions/ipa/ap/2023-spring-pm/page-60.webp": "1b12d819f85a934d78494a3b2ebfef0de015c6333280faffbe4cd37076bf0b59",
+            "/questions/ipa/ap/2023-spring-pm/page-61.webp": "fa1d4df3d863d3c9ad2a0df079be7ae86c181653140ad1eb307a5573eb23a89e",
+            "/questions/ipa/ap/2023-spring-pm/answer-q10-p05.webp": "4da7ab3fadac59c580fab5fadfe1948351f45e57bd3f880e5db9de5408abdf8e"
+          }
+        },
+        {
+          "id": "ap-2023h-pm-q11",
+          "qNumber": 11,
+          "sourcePdfPages": [
+            62,
+            63,
+            64,
+            65
+          ],
+          "sourceAnswerPages": [
+            6
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              49.0,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "dd12f688c9eafd809138b5221e58fc8d9b9fb0d28a164cd27e359c8302d09351",
+          "assetsSha256": {
+            "/questions/ipa/ap/2023-spring-pm/page-62.webp": "1befd8c6e73c2f5b148ab073e19230ecf24426a40fae8aff51d474b483f610db",
+            "/questions/ipa/ap/2023-spring-pm/page-63.webp": "2b32789928c2569435c49f17fee02b3ea24ac132d6991c0b65f79ce2cff13333",
+            "/questions/ipa/ap/2023-spring-pm/page-64.webp": "f31e3343cc7d00f219361c5bcc8e55569c24e932397fea56e37de94f968d933b",
+            "/questions/ipa/ap/2023-spring-pm/page-65.webp": "90ec4306c56021c2e64685d5ee14af8129ba320ce5b3dd4fa52c3ac44abfc25c",
+            "/questions/ipa/ap/2023-spring-pm/answer-q11-p06.webp": "3f5093bd46c479cb7da54d9e736d6d69e1d0723d5b24d45b6ab5e980463c6040"
+          }
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-055",
+      "key": "st|2021|spring|pm2|2021r03h_st_pm2_qs.pdf",
+      "exam": "st",
+      "year": 2021,
+      "season": "spring",
+      "session": "pm2",
+      "format": "essay",
+      "status": "local-complete",
+      "questionCount": 3,
+      "dataPath": "data/questions/st/official-2021-spring-pm2.json",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_st_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_st_pm2_ans.pdf",
+      "sourcePdfSha256": "8483cb16244cbf2f7b4c51a5c76cfcef534229aa48ef3adcb50eeb86567a1461",
+      "sourceAnswerSha256": "fb5b15d7bf6f81fefb53f624901ec17c676344715d2b77a55493c829c5472cd5",
+      "sourceCheckedAt": "2026-11-17T19:57:36.390853+00:00",
+      "questions": [
+        {
+          "id": "st-2021h-pm2-q1",
+          "qNumber": 1,
+          "sourcePdfPages": [
+            2,
+            3,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              103.2,
+              555,
+              236.9
+            ]
+          ],
+          "answerTextSha256": "7e5c86d04f8de67159aa99b14e02962d220f2cdd3da73e953b24142b19bc187f",
+          "assetsSha256": {
+            "/questions/ipa/st/2021-spring-pm2/page-02.webp": "4913c981f3b4c768b7053c63728c4157cf56c40f4a9690bc7aec155b36c5d29b",
+            "/questions/ipa/st/2021-spring-pm2/page-03.webp": "0404c9ff7bfdd0417715367345030047e81d4b045d7ce35650fc227679bc7048",
+            "/questions/ipa/st/2021-spring-pm2/page-08.webp": "63cad75028e73a6de8a64404349723077b25e3c3a00e68910d8ea9487591e514",
+            "/questions/ipa/st/2021-spring-pm2/answer-q1-p01.webp": "aa4f1ee47c18e95607ff9de9ed9569bd5d3aedb0492e040417eed552afe99957"
+          }
+        },
+        {
+          "id": "st-2021h-pm2-q2",
+          "qNumber": 2,
+          "sourcePdfPages": [
+            2,
+            4,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              240.9,
+              555,
+              374.6
+            ]
+          ],
+          "answerTextSha256": "10c6a31702838b8b468af077d8433850b958ef88a917130dd81e19e44bba396b",
+          "assetsSha256": {
+            "/questions/ipa/st/2021-spring-pm2/page-02.webp": "4913c981f3b4c768b7053c63728c4157cf56c40f4a9690bc7aec155b36c5d29b",
+            "/questions/ipa/st/2021-spring-pm2/page-04.webp": "d33362f2c8cc3daccf6dc4a6c1981d1a881959704765ed0d5a32006eb630b113",
+            "/questions/ipa/st/2021-spring-pm2/page-08.webp": "63cad75028e73a6de8a64404349723077b25e3c3a00e68910d8ea9487591e514",
+            "/questions/ipa/st/2021-spring-pm2/answer-q2-p01.webp": "8cba359bdfc40c236fed4bd05c5649e13a29806759a125be8ada6c8f62344641"
+          }
+        },
+        {
+          "id": "st-2021h-pm2-q3",
+          "qNumber": 3,
+          "sourcePdfPages": [
+            2,
+            5,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              378.6,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "81a897e0e9e7433471b73a0b67e28a287951a75f1dd8b0bc213f22a7f629917c",
+          "assetsSha256": {
+            "/questions/ipa/st/2021-spring-pm2/page-02.webp": "4913c981f3b4c768b7053c63728c4157cf56c40f4a9690bc7aec155b36c5d29b",
+            "/questions/ipa/st/2021-spring-pm2/page-05.webp": "bc763d9f1e82481f1fbcfbc64691e1ec3ab4bed38c5c81d93a2888b74c41668f",
+            "/questions/ipa/st/2021-spring-pm2/page-08.webp": "63cad75028e73a6de8a64404349723077b25e3c3a00e68910d8ea9487591e514",
+            "/questions/ipa/st/2021-spring-pm2/answer-q3-p01.webp": "596a4e426f7c955fd0fed3bd60c4f75b14d1b851a7e4750a26effec11f941c31"
+          }
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-069",
+      "key": "sm|2024|spring|pm2|2024r06h_sm_pm2_qs.pdf",
+      "exam": "sm",
+      "year": 2024,
+      "season": "spring",
+      "session": "pm2",
+      "format": "essay",
+      "status": "local-complete",
+      "questionCount": 2,
+      "dataPath": "data/questions/sm/official-2024-spring-pm2.json",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sm_pm2_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sm_pm2_ans.pdf",
+      "sourcePdfSha256": "e141130426020a5d711f60990249aed84ed5fe286f9feca664c9e6b4e11236ad",
+      "sourceAnswerSha256": "75f4422879af3a8759c4ecde50cce6a5275333584aefd12c8174ee7fce340a7a",
+      "sourceCheckedAt": "2026-11-17T19:57:39.479146+00:00",
+      "questions": [
+        {
+          "id": "sm-2024h-pm2-q1",
+          "qNumber": 1,
+          "sourcePdfPages": [
+            2,
+            3,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              103.1,
+              555,
+              263.8
+            ]
+          ],
+          "answerTextSha256": "12f3e2b3fa5c53c129099bfa0334045217eb3fc2b7c4dc71798f5ed2a9fee997",
+          "assetsSha256": {
+            "/questions/ipa/sm/2024-spring-pm2/page-02.webp": "d964f2936afefd34e10e30d4bcfb3d4e3a1ce394e271deec5123c0bf650c39a9",
+            "/questions/ipa/sm/2024-spring-pm2/page-03.webp": "e2e6cc69b6a7f891406ab0c405c2284d25b6b8c8815b5fa2bb8bc90120291d8b",
+            "/questions/ipa/sm/2024-spring-pm2/page-08.webp": "0db938cb34ead0584a4f6abd05f77f5fea109312f119af9f411e667c59ef4bf9",
+            "/questions/ipa/sm/2024-spring-pm2/answer-q1-p01.webp": "3a1545b601371954de8eaaef2c295f5c2accb45285a12f3a07ba2837ac160ee5"
+          }
+        },
+        {
+          "id": "sm-2024h-pm2-q2",
+          "qNumber": 2,
+          "sourcePdfPages": [
+            2,
+            4,
+            8
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              267.8,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "8045358ce76cf7e83412a6b9a8b4751318a8e88f1c505af98317a19144148852",
+          "assetsSha256": {
+            "/questions/ipa/sm/2024-spring-pm2/page-02.webp": "d964f2936afefd34e10e30d4bcfb3d4e3a1ce394e271deec5123c0bf650c39a9",
+            "/questions/ipa/sm/2024-spring-pm2/page-04.webp": "8fa7f962f0d0806bb50144787c7e84af521b56efa73fde20f0dc22f24aad69ed",
+            "/questions/ipa/sm/2024-spring-pm2/page-08.webp": "0db938cb34ead0584a4f6abd05f77f5fea109312f119af9f411e667c59ef4bf9",
+            "/questions/ipa/sm/2024-spring-pm2/answer-q2-p01.webp": "c68eafb34ccc61af465e2e27f59b93d233410b9d96a73132c1407ced44f3a866"
+          }
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-083",
+      "key": "pm|2023|autumn|pm1|2023r05a_pm_pm1_qs.pdf",
+      "exam": "pm",
+      "year": 2023,
+      "season": "autumn",
+      "session": "pm1",
+      "format": "descriptive",
+      "status": "local-complete",
+      "questionCount": 3,
+      "dataPath": "data/questions/pm/official-2023-autumn-pm1.json",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_pm_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_pm_pm1_ans.pdf",
+      "sourcePdfSha256": "e3516eeaafd31248ad30d9f3d1af2d1ddc2fb70df241d0c87a6ee9f154cf6bfa",
+      "sourceAnswerSha256": "9ee01aabf6e8a84e73fb398a7173a6a87e0275e8449ece62af97d050e1999237",
+      "sourceCheckedAt": "2026-11-17T19:57:42.908611+00:00",
+      "questions": [
+        {
+          "id": "pm-2023a-pm1-q1",
+          "qNumber": 1,
+          "sourcePdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              95.0,
+              555,
+              366.6
+            ]
+          ],
+          "answerTextSha256": "79a8a29c7675123f2d26317384a59ba8e87fce42097e13d08cdf929e6acf27b9",
+          "assetsSha256": {
+            "/questions/ipa/pm/2023-autumn-pm1/page-02.webp": "e0566f7a0f508343ccd5b4edffa169345ad55f591b3188504b081a416ec5e602",
+            "/questions/ipa/pm/2023-autumn-pm1/page-03.webp": "bf13ece325e3e7fabfa0f787fca6517845c6e9c768b1e8361d134967a0e6efde",
+            "/questions/ipa/pm/2023-autumn-pm1/page-04.webp": "9017ebfbd294031250f6e0dba9c0c89592305f150a4ee21044a75fcf7202ec30",
+            "/questions/ipa/pm/2023-autumn-pm1/page-05.webp": "d9f02b4bdca00019ff289314902a5868a8bda8ca551ae155268537e9e5407013",
+            "/questions/ipa/pm/2023-autumn-pm1/page-06.webp": "005932f4c52fbc915ef91635fbbfe566f8ba262f7014819b189010c691b19976",
+            "/questions/ipa/pm/2023-autumn-pm1/answer-q1-p01.webp": "b85ebb47153fdbf4ec87f3082ddd29fa43e76fe5c27f03309ff1f09cb2b548c6"
+          }
+        },
+        {
+          "id": "pm-2023a-pm1-q2",
+          "qNumber": 2,
+          "sourcePdfPages": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "sourceAnswerPages": [
+            1
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              370.6,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "2bf73a63e14a5127ccc7b67b1785eb9ddac67b53a35022ca4911bc3ee615480d",
+          "assetsSha256": {
+            "/questions/ipa/pm/2023-autumn-pm1/page-07.webp": "8a369e1636bec22e9d5fa9bae40937ab08994ea66defd05f4cfcb03ce1d86396",
+            "/questions/ipa/pm/2023-autumn-pm1/page-08.webp": "56b6d8e61cca2746289e04b2a5a81632004c40dfb9413a1dbdca64000f5cff5f",
+            "/questions/ipa/pm/2023-autumn-pm1/page-09.webp": "e6751571b35e5b04b6dbab92082296a83efac8125597e5b8d6ce5e9107f7d260",
+            "/questions/ipa/pm/2023-autumn-pm1/page-10.webp": "a23fde0ff08635fcc10f24b76996341e441e338595e68b2b25eb5002947b0522",
+            "/questions/ipa/pm/2023-autumn-pm1/page-11.webp": "646146e64270aa2fefba7f44c57617f60b09e31c1c5947e5cef594a4e555b682",
+            "/questions/ipa/pm/2023-autumn-pm1/answer-q2-p01.webp": "69c7116bd12473a9a5ac62e1bf46fbc4a68938ab7f2520b68acb28c433e836de"
+          }
+        },
+        {
+          "id": "pm-2023a-pm1-q3",
+          "qNumber": 3,
+          "sourcePdfPages": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "sourceAnswerPages": [
+            2
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              49.0,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "28f4e2318d69af3f9b871aacb8450af8529af0498319ea8b81ce00f80021425f",
+          "assetsSha256": {
+            "/questions/ipa/pm/2023-autumn-pm1/page-12.webp": "dc98051054825556178f02f7bed2b81ce22abe1fec7dead207d40f9708fae9c9",
+            "/questions/ipa/pm/2023-autumn-pm1/page-13.webp": "6a9a1fe0700284d6126d05bfba2fdba55232d135a04102af34212cf3411114e7",
+            "/questions/ipa/pm/2023-autumn-pm1/page-14.webp": "e0a107c5599493c09cdbda8f7f0a804c24a96401665ec62183416877fe942a31",
+            "/questions/ipa/pm/2023-autumn-pm1/page-15.webp": "91c1c0439d5c9b1b1e5f62e0ccf215a8b65969b60d47448a8f00dab11f08b6a1",
+            "/questions/ipa/pm/2023-autumn-pm1/answer-q3-p02.webp": "bf390769e2847aecb21a157d7e69a5fa7ed582b1e06451f28b04b9b92acbc101"
+          }
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-097",
+      "key": "db|2021|autumn|pm1|2021r03a_db_pm1_qs.pdf",
+      "exam": "db",
+      "year": 2021,
+      "season": "autumn",
+      "session": "pm1",
+      "format": "descriptive",
+      "status": "local-complete",
+      "questionCount": 3,
+      "dataPath": "data/questions/db/official-2021-autumn-pm1.json",
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_db_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_db_pm1_ans.pdf",
+      "sourcePdfSha256": "169f3f042026238456b22b1ca3459499a4eac7adfb93c4faa516276eec7f2460",
+      "sourceAnswerSha256": "e18d29bde7f068dd97e99ed3133f97297c395905a83745bd6bfe2dbc6c2e7c8d",
+      "sourceCheckedAt": "2026-11-17T19:57:47.940847+00:00",
+      "questions": [
+        {
+          "id": "db-2021a-pm1-q1",
+          "qNumber": 1,
+          "sourcePdfPages": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "sourceAnswerPages": [
+            1,
+            2
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              103,
+              555,
+              760
+            ],
+            [
+              40,
+              40,
+              555,
+              217.8
+            ]
+          ],
+          "answerTextSha256": "906f2d57f1472df3a8934d582e5c687b9bb7a90941c7e01751a676a6d1440763",
+          "assetsSha256": {
+            "/questions/ipa/db/2021-autumn-pm1/page-03.webp": "7ef2aca5cf32c745687436eaad6b8ff8cc7b9f58b7b2f931f84fb967347d79a6",
+            "/questions/ipa/db/2021-autumn-pm1/page-04.webp": "f6361a2a4c710d1a4b1e05ba7efca44bb7239817c4332f787e35136387ec1982",
+            "/questions/ipa/db/2021-autumn-pm1/page-05.webp": "4bb1f3e3b3207e39d29304d167c57317cf2e60019329f0fa9f4e6582cccf1e25",
+            "/questions/ipa/db/2021-autumn-pm1/page-07.webp": "2fb0f3141055d38314f2c8856235a5a7bed3f53afb9fe4255bb3aab248f7fa08",
+            "/questions/ipa/db/2021-autumn-pm1/page-08.webp": "b5938ca251174b8f443a1a0747cac184ace0ac50f50533d27737da50c0ec38a0",
+            "/questions/ipa/db/2021-autumn-pm1/page-09.webp": "318de7f5791908e91775853f2c636dbd984e186d19f4419331856a11ef8c1a77",
+            "/questions/ipa/db/2021-autumn-pm1/page-10.webp": "f21f4b6f2dd7f725e12f5ca17694bd599b6de88f6adf1fbc928bc0e3073a4296",
+            "/questions/ipa/db/2021-autumn-pm1/page-11.webp": "8974b8690f1d9542ec840e980964d807b851acaec2be720e2f33e99f80ac1745",
+            "/questions/ipa/db/2021-autumn-pm1/page-12.webp": "25abc84d0a256f5aae4f981c7e02482a8ec55a7df987a4cfa96d8982fd2bd340",
+            "/questions/ipa/db/2021-autumn-pm1/answer-q1-p01.webp": "8bd961bd3199131a851d7f9fdf776a811b21ddd9cb1667590180e10485d15d53",
+            "/questions/ipa/db/2021-autumn-pm1/answer-q1-p02.webp": "dcf92071fd5f5ab5982c8d12f55134c7e2d8b7a638c3fe715c0bd906a16cc34e"
+          }
+        },
+        {
+          "id": "db-2021a-pm1-q2",
+          "qNumber": 2,
+          "sourcePdfPages": [
+            3,
+            4,
+            5,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "sourceAnswerPages": [
+            2
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              221.8,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "ff86e95eb747d9a4ec8af7167e388f92b20bfc9b1ea2dbe01ddbb86f2bbb5a8b",
+          "assetsSha256": {
+            "/questions/ipa/db/2021-autumn-pm1/page-03.webp": "7ef2aca5cf32c745687436eaad6b8ff8cc7b9f58b7b2f931f84fb967347d79a6",
+            "/questions/ipa/db/2021-autumn-pm1/page-04.webp": "f6361a2a4c710d1a4b1e05ba7efca44bb7239817c4332f787e35136387ec1982",
+            "/questions/ipa/db/2021-autumn-pm1/page-05.webp": "4bb1f3e3b3207e39d29304d167c57317cf2e60019329f0fa9f4e6582cccf1e25",
+            "/questions/ipa/db/2021-autumn-pm1/page-14.webp": "13654ba4442e0911b8fab1c715db459fec344c6de94fa8f5e2974a3b197c5a30",
+            "/questions/ipa/db/2021-autumn-pm1/page-15.webp": "c8cb56b0932e5db7f903abb5eaf54c74a10e9335971a21c11af80eb2ea4d9203",
+            "/questions/ipa/db/2021-autumn-pm1/page-16.webp": "72104aa746f25637b1e8f048355814aa70dd0984dd3c163f480d7df3289cb282",
+            "/questions/ipa/db/2021-autumn-pm1/page-17.webp": "154820ca4e4d73981db76e2dcfe44ba0d9b0ab1fa87192b5bd4e3972d82b06f3",
+            "/questions/ipa/db/2021-autumn-pm1/page-18.webp": "292d32399691f4299a7853426cb7a1310d1cc28ae372560bb5c14793b8401790",
+            "/questions/ipa/db/2021-autumn-pm1/page-19.webp": "4db22c8b3dee5b962ed472438359c6c8a9effe707fc6a0515fa6d63b2480c751",
+            "/questions/ipa/db/2021-autumn-pm1/answer-q2-p02.webp": "339d36907a5a3c32c7667a7dc4549a538f73c8e6ccab9f084bf7a3e45c20532b"
+          }
+        },
+        {
+          "id": "db-2021a-pm1-q3",
+          "qNumber": 3,
+          "sourcePdfPages": [
+            3,
+            4,
+            5,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "sourceAnswerPages": [
+            3
+          ],
+          "sourceAnswerClips": [
+            [
+              40,
+              49.0,
+              555,
+              760
+            ]
+          ],
+          "answerTextSha256": "75786b417ebb0870e863ccfde219f8873a0025e5fda30c3e4b6f1a6e8c61ca8f",
+          "assetsSha256": {
+            "/questions/ipa/db/2021-autumn-pm1/page-03.webp": "7ef2aca5cf32c745687436eaad6b8ff8cc7b9f58b7b2f931f84fb967347d79a6",
+            "/questions/ipa/db/2021-autumn-pm1/page-04.webp": "f6361a2a4c710d1a4b1e05ba7efca44bb7239817c4332f787e35136387ec1982",
+            "/questions/ipa/db/2021-autumn-pm1/page-05.webp": "4bb1f3e3b3207e39d29304d167c57317cf2e60019329f0fa9f4e6582cccf1e25",
+            "/questions/ipa/db/2021-autumn-pm1/page-20.webp": "e776fd5c9e8b23c55d5a81dff9c16179a64bc16c3f3544173d718c10a4f09ed2",
+            "/questions/ipa/db/2021-autumn-pm1/page-21.webp": "bc642980da02cf97ade743b878b0caa182c944bfd1cb9b1efaac22be78dd0594",
+            "/questions/ipa/db/2021-autumn-pm1/page-22.webp": "2e1631b09d398206daeadd1d57dbd13e8d5ebe8dfefff852da51c16ad730b908",
+            "/questions/ipa/db/2021-autumn-pm1/page-23.webp": "07401a0f2a0fd035d2647c5926b30c9841d96e7439917a72f7baccc0d6ab04bd",
+            "/questions/ipa/db/2021-autumn-pm1/page-24.webp": "c4ec1526bd53f770f0466027d43b6374d3b91e3afd1eb4efb9ac7bc6f9224d48",
+            "/questions/ipa/db/2021-autumn-pm1/page-25.webp": "8d2b94658f6bf79d949606ec47da1d1abf88aeba081696d0c929849b432c7816",
+            "/questions/ipa/db/2021-autumn-pm1/answer-q3-p03.webp": "18f44e4f3d36584623d69abfe8dc905cadca2458d29dfd4f28e794694a7fd3bf"
+          }
+        }
+      ]
+    }
+  ],
+  "duplicateCheck": {
+    "mainCommit": "9e3182117ce198aee83addcf405afd2316567fcd",
+    "refCount": 93,
+    "uniqueRefCommits": 82,
+    "scope": "origin/main; cx/kako-*; rel/kako-*; research/replenish/ledger.json; PLAN5",
+    "existingOfficialPaperMatches": {
+      "PLAN5-013": 0,
+      "PLAN5-027": 0,
+      "PLAN5-041": 0,
+      "PLAN5-055": 0,
+      "PLAN5-069": 0,
+      "PLAN5-083": 0,
+      "PLAN5-097": 0
+    },
+    "sharedDisplaySourceCommit": "55602f5fdef699381ffc7d0b58ee57784d0d5811"
+  }
+}

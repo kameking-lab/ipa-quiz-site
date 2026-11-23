@@ -1,0 +1,129 @@
+{
+  "lane": "qe-12",
+  "branch": "cx/kako-5y12-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-qd12-ledger.json",
+  "entries": [
+    {
+      "jobId": "PLAN5-180",
+      "index": 179,
+      "exam": "rigaku-ryohoshi",
+      "officialYear": 2023,
+      "session": "pm",
+      "status": "completed",
+      "officialQuestionCount": 100,
+      "scoredQuestionCount": 99,
+      "addedNewQuestions": 99,
+      "importedQuestions": 0,
+      "existingQuestions": 0,
+      "officialExclusions": [
+        43
+      ],
+      "officialIndexUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-08_09.html",
+      "manifest": "data/questions/rigaku-ryohoshi/2023-pm-official-sources.json"
+    },
+    {
+      "jobId": "PLAN5-194",
+      "index": 193,
+      "exam": "shino-kunrenshi",
+      "officialYear": 2026,
+      "session": "pm",
+      "status": "completed",
+      "officialQuestionCount": 75,
+      "scoredQuestionCount": 75,
+      "addedNewQuestions": 0,
+      "importedQuestions": 20,
+      "existingQuestions": 55,
+      "officialExclusions": [],
+      "officialIndexUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-10.html",
+      "manifest": "data/questions/shino-kunrenshi/2026-pm-branch-sources.json",
+      "storedYear": 2025
+    },
+    {
+      "jobId": "PLAN5-208",
+      "index": 207,
+      "exam": "yakuzaishi",
+      "officialYear": 2026,
+      "session": "day2-3",
+      "status": "completed",
+      "officialQuestionCount": 60,
+      "scoredQuestionCount": 60,
+      "addedNewQuestions": 1,
+      "importedQuestions": 34,
+      "existingQuestions": 25,
+      "officialExclusions": [],
+      "officialIndexUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198929.html",
+      "manifest": "data/questions/yakuzaishi/2026-day2-3-sources.json",
+      "officialQuestionRange": [
+        286,
+        345
+      ]
+    },
+    {
+      "jobId": "PLAN5-222",
+      "index": 221,
+      "exam": "yakuzaishi",
+      "officialYear": 2023,
+      "session": "day1-2",
+      "status": "completed",
+      "officialQuestionCount": 60,
+      "scoredQuestionCount": 60,
+      "addedNewQuestions": 60,
+      "importedQuestions": 0,
+      "existingQuestions": 0,
+      "officialExclusions": [],
+      "officialIndexUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198925.html",
+      "manifest": "data/questions/yakuzaishi/2023-day1-2-sources.json",
+      "officialQuestionRange": [
+        91,
+        150
+      ]
+    },
+    {
+      "jobId": "PLAN5-236",
+      "index": 235,
+      "exam": "rinsho-kogishi",
+      "officialYear": 2025,
+      "storedYear": 2024,
+      "session": "pm",
+      "status": "completed",
+      "officialQuestionCount": 90,
+      "scoredQuestionCount": 90,
+      "addedNewQuestions": 1,
+      "importedQuestions": 30,
+      "existingQuestions": 59,
+      "officialExclusions": [],
+      "officialIndexUrl": "https://www.jaame.or.jp/ce/past-test.html",
+      "manifest": "data/questions/rinsho-kogishi/38-pm-plan5-sources.json"
+    },
+    {
+      "jobId": "PLAN5-348",
+      "index": 347,
+      "exam": "denken2",
+      "officialYear": 2024,
+      "session": "denryoku",
+      "status": "skipped-existing-branch",
+      "officialQuestionCount": 7,
+      "scoredAnswerSlots": 35,
+      "existingBranch": "cx/kako-explain3-20261117",
+      "existingCommit": "03b7a5f89",
+      "officialProblemUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q02.pdf",
+      "officialAnswerUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_a01.pdf"
+    },
+    {
+      "jobId": "PLAN5-432",
+      "index": 431,
+      "exam": "kyusui",
+      "officialYear": 2025,
+      "session": "gakka-1",
+      "status": "skipped-existing-main",
+      "officialQuestionCount": 40,
+      "scoredQuestionCount": 39,
+      "officialAllCorrect": [18],
+      "existingPath": "data/questions/batch1/kyusui.json",
+      "officialProblemUrl": "https://www.kyuukou.or.jp/shiken/file-r07/file-r07_gakka-01.pdf",
+      "officialAnswerUrl": "https://www.kyuukou.or.jp/shiken/file-r07/file-r07_seitou-num.pdf",
+      "notes": "演習用qNumberは問18を除いて詰め、公式番号はofficialQuestionLabelで保持する。問40は既収録で公式正答4と一致。"
+    }
+  ]
+}

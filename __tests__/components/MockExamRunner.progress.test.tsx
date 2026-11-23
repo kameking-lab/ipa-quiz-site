@@ -45,7 +45,7 @@ describe("mock submission → progress, review and score history", () => {
       expect.objectContaining({ id: questions[0].id, correct: true, selected: "ア" }),
       expect.objectContaining({ id: questions[1].id, correct: false, selected: "" }),
     ]);
-    expect(getCards().map((card) => card.id)).toEqual(questions.map((q) => q.id));
+    expect(getCards()).toEqual([]);
     expect(getMockScores()).toEqual([expect.objectContaining({ id: result.id, score: 1, total: 2 })]);
     expect(screen.getByRole("link", { name: "今回の間違い・未回答を復習" }).getAttribute("href")).toContain(`mock=${result.id}`);
     await act(async () => { await vi.advanceTimersByTimeAsync(3000); });

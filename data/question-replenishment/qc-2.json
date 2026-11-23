@@ -1,0 +1,1274 @@
+{
+  "lane": "qc-2",
+  "branch": "cx/kako-5y2-20261118",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "comparison": "origin/main、cx/kako-*・rel/kako-*の92参照（88ユニークコミット）と共有台帳を再照合。対象欠番の新たな収録なし。",
+  "rows": [
+    {
+      "jobId": "PLAN5-114",
+      "index": 113,
+      "exam": "kangoshi",
+      "officialYear": 2026,
+      "storedYear": 2025,
+      "season": "annual",
+      "session": "pm",
+      "status": "収録済み（ローカルブランチ）",
+      "questionCount": 5,
+      "importedCount": 4,
+      "newCount": 1,
+      "questionIds": [
+        "kangoshi-2025-annual-pm-q7",
+        "kangoshi-2025-annual-pm-q77",
+        "kangoshi-2025-annual-pm-q82",
+        "kangoshi-2025-annual-pm-q87",
+        "kangoshi-2025-annual-pm-q88"
+      ],
+      "imports": [
+        {
+          "id": "kangoshi-2025-annual-pm-q7",
+          "commit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "path": "data/questions/kangoshi/followup-20261011.json",
+          "recordSha256": "420c3eeb4e2b62e3d16a6988de942f823e5f84075900d7d965c59a5e61557523"
+        },
+        {
+          "id": "kangoshi-2025-annual-pm-q87",
+          "commit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "path": "data/questions/kangoshi/followup-20261011.json",
+          "recordSha256": "813bd29c9e09efd12be03d2d2b0da2cc1037d3a711dcc7e19e1004d17346da86"
+        },
+        {
+          "id": "kangoshi-2025-annual-pm-q88",
+          "commit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "path": "data/questions/kangoshi/followup-20261011.json",
+          "recordSha256": "5b6381832656d370ea9248ba4e74f30a667a7571c65ac2f9ea3c74ae0e26dacf"
+        },
+        {
+          "id": "kangoshi-2025-annual-pm-q82",
+          "commit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+          "path": "data/questions/kangoshi/primary-followup-20261011.json",
+          "recordSha256": "a3ae34c556720b53b5724f05adcebeeb3116b6ba57de61b6cb1730b2fbda7d99"
+        }
+      ],
+      "dataPath": "data/questions/kangoshi/plan5-114-completion.json",
+      "officialDocuments": [
+        {
+          "jobId": "PLAN5-114",
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf",
+          "sha256": "077b98c37e858176f02e133376ac33bef18682199b5160c556a2464f1531cf48",
+          "pages": 60
+        },
+        {
+          "jobId": "PLAN5-114",
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf",
+          "sha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+          "pages": 2
+        }
+      ],
+      "sourceFigure": {
+        "asset": "public/images/exams/kangoshi/plan5-114/115-pm-q77.webp",
+        "pdfPage": 30,
+        "crop": [
+          200,
+          95,
+          400,
+          415
+        ],
+        "scale": 2
+      },
+      "notes": [
+        "午後全120原問を収録。保存年2025は既存IDに合わせ、公式原本の実施年2026と区別。",
+        "問77の原図と公式正答4を保持し、対応の疑義は解説に注記。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-128",
+      "index": 127,
+      "exam": "shika-ishi",
+      "officialYear": 2025,
+      "storedYear": 2025,
+      "season": "annual",
+      "session": "mondai-c",
+      "status": "公式資料で補充対象外を確認",
+      "questionCount": 0,
+      "importedCount": 0,
+      "newCount": 0,
+      "questionIds": [],
+      "imports": [],
+      "officialDocuments": [
+        {
+          "jobId": "PLAN5-128",
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02c_01.pdf",
+          "sha256": "ccf8deec37de49b68310ef3c58af92587f0d8633b3b22318fc9770fc47949f76",
+          "pages": 64
+        },
+        {
+          "jobId": "PLAN5-128",
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02seitou.pdf",
+          "sha256": "78a3b990c3bf01948fbeb0af86284d7547ee61b76f40ce8aa3e304752240bb00",
+          "pages": 2
+        }
+      ],
+      "verifiedFindings": [
+        {
+          "qNumber": 69,
+          "sourcePdfPage": 47,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02c_01.pdf#page=47",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02seitou.pdf",
+          "originalPageText": "69  15 歳の男子。開口困難を主訴として来院した。昨夜、自転車で転倒し顔面を強\n 打したという。観血的整復固定術を行うこととした。初診時のエックス線画像（別\n  冊No. 28Ａ）と3 D-CT（別冊No. 28Ｂ）を別に示す。\n 　次に示す5 つのステップのうち、3 番目に行うのはどれか。1 つ選べ。\n  ａ　顎間固定\n  ｂ　線副子の装着\n  ｃ　粘膜骨膜弁の剝離\n  ｄ　スクリューによる固定\n  ｅ　骨接合用プレートの試適\n\n                　　別　冊　　\n                                No. 28　Ａ、Ｂ\n\n\n\n\n70 下顎左側臼歯部の咬合時の違和感を主訴として来院した患者のエックス線画像\n （別冊No. 29Ａ）、CT（別冊No. 29Ｂ）、MRI（別冊No. 29Ｃ）及びH-E 染色病理組織\n 像（別冊No. 29Ｄ）を別に示す。\n 　診断名はどれか。1 つ選べ。\n  ａ　軟骨腫\n  ｂ　歯原性粘液腫\n  ｃ　単純性骨囊胞\n  ｄ　歯原性角化囊胞\n  ｅ　石灰化上皮性歯原性腫瘍\n\n                　　別　冊　　\n                            No. 29　Ａ、Ｂ、Ｃ、Ｄ\n\n\n\n\n\n                 　　　　35                           DKIX-02-CH-47",
+          "officialAnswerNumber": null,
+          "finding": "公式採点除外（正答値表は空欄）",
+          "officialScoringNotice": {
+            "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken02/dl/C69.pdf",
+            "sha256": "ffa7f2374aa9a2e399b1e39160aa968d969db239c768d215b42e8339de623433",
+            "officialText": "（　別　紙　）\n\n  第118回歯科医師国家試験における採点除外等の取扱いをした問題について\n\n 問題C 第  69 問\n\n\n\n\n\n（　採点上の取り扱い　）\n\n\n\n 採点対象から除外する。\n\n\n\n（　理　由　）\n\n\n 問題として適切であるが、受験者レベルでは難しすぎるため。"
+          }
+        },
+        {
+          "qNumber": 83,
+          "sourcePdfPage": 53,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02c_01.pdf#page=53",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02seitou.pdf",
+          "originalPageText": "82 健やか親子21（第2 次）で示された基盤課題はどれか。3 つ選べ。\n  ａ　若年性認知症施策の強化\n  ｂ　切れ目ない妊産婦・乳幼児への保健対策\n  ｃ　障害児の健やかな育成のための発達支援\n  ｄ　学童期・思春期から成人期に向けた保健対策\n  ｅ　こどもの健やかな成長を見守り育む地域づくり\n\n\n\n83 咬頭嵌合位において臼歯部にJankelsonⅡ級の早期接触が認められた。\n 　削合する部位はどれか。1 つ選べ。\n  ａ　下顎頰側咬頭外斜面\n  ｂ　下顎頰側咬頭内斜面\n  ｃ　上顎頰側咬頭内斜面\n  ｄ　上顎口蓋側咬頭外斜面\n  ｅ　上顎口蓋側咬頭内斜面\n\n\n\n84  E-line の評価に必要な部位はどれか。3 つ選べ。\n  ａ　鼻下点\n  ｂ　額の最突出点\n  ｃ　上唇の最突出点\n  ｄ　下唇の最突出点\n  ｅ　オトガイ部の最突出点\n\n\n\n\n\n                 　　　　41                           DKIX-02-CH-53",
+          "officialAnswerNumber": null,
+          "finding": "公式採点除外（正答値表は空欄）",
+          "officialScoringNotice": {
+            "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken02/dl/C83.pdf",
+            "sha256": "49b81a0405ea1b471aa84337022b4f41b7fe4689b147e121280e5d91cd330da8",
+            "officialText": "（　別　紙　）\n\n  第118回歯科医師国家試験における採点除外等の取扱いをした問題について\n\n 問題C 第  83 問\n\n\n\n\n\n（　採点上の取り扱い　）\n\n\n\n 採点対象から除外する。\n\n\n\n（　理　由　）\n\n\n 問題として適切であるが、受験者レベルでは難しすぎるため。"
+          }
+        }
+      ],
+      "notes": [
+        "原問・正答値表・公式の採点除外通知を保持。通常の正答を新しく作らない。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-142",
+      "index": 141,
+      "exam": "shinryo-hoshasengishi",
+      "officialYear": 2026,
+      "storedYear": 2026,
+      "season": "annual",
+      "session": "am",
+      "status": "採点除外と公式図版省略を確認",
+      "questionCount": 0,
+      "importedCount": 0,
+      "newCount": 0,
+      "questionIds": [],
+      "imports": [],
+      "officialDocuments": [
+        {
+          "jobId": "PLAN5-142",
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+          "sha256": "dcf6807d059bc3101546a246dd3cdd936f999b4a030f10f9bfef7ca517cfc9d0",
+          "pages": 52
+        },
+        {
+          "jobId": "PLAN5-142",
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+          "sha256": "09bc1518c5e3dbc9beeb740097d884ca9270089802ae4a924c8975d85efec658",
+          "pages": 1
+        }
+      ],
+      "verifiedFindings": [
+        {
+          "qNumber": 15,
+          "sourcePdfPage": 11,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf#page=11",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+          "originalPageText": "15  18F-FDG PET/CT で得られたPET 像（別冊No. 6）を別に示す。\n 　矢印で示す欠損部の原因で最も考えられるのはどれか。\n   1．部分容積効果\n   2．体動による散乱補正エラー\n   3．呼吸位相の違いによる減弱補正エラー\n   4．体内の高吸収物質による減弱補正エラー\n   5．PET とCT の有効視野の違いによるトランケーションアーチファクト\n\n                　　別　冊　　\n                                     No. 6\n\n\n\n\n16 PET 装置の性能評価（NEMA NU 2-2018）とその関連項目の組合せで誤っている\n のはどれか。\n   1．画　質            NEMA IEC 胴体ファントム\n   2．感　度          アルミニウム管\n   3．空間分解能                 22Na 点線源\n   4．計数率特性        散乱ファントム\n   5．散乱フラクション           18F 点線源\n\n\n\n17 放射性医薬品投与時に30 秒以上かけてゆっくり静注する必要があるのはどれか。\n    1．99mTc－ECD\n    2．99mTc－MIBI\n    3．123I－MIBG\n   4．131I－アドステロール\n     5．201TlCl\n\n\n\n                 　　　　7                          DKIX-06-前H-11",
+          "officialAnswerNumber": "2",
+          "finding": "公式別冊No.6が「省略」のため矢印付きPET像を確認できない",
+          "sourceFigureUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf#page=10",
+          "sourceFigurePdfSha256": "f2dd1ef130488fcd654250e08e03616ef9c8ddf2b82e2f41e28e5aa9581d4a93",
+          "sourceFigurePageText": "No.　6       （問題15 ）\n\n\n\n\n\n省　略\n\n\n\n\n\n    6                           DKIX-06-前B-10"
+        },
+        {
+          "qNumber": 23,
+          "sourcePdfPage": 13,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf#page=13",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+          "originalPageText": "21 外部放射線治療で正しいのはどれか。\n   1．局所的な治療ができる。\n   2．高齢者には適応がない。\n   3．良性腫瘍は適応とならない。\n   4．臓器の機能や形態を温存できない。\n   5．手術療法と比較して腫瘍制御の確実性が高い。\n\n\n\n22 放射線治療効果で誤っているのはどれか。\n   1．温熱療法は放射線増感効果を示す。\n   2．加速過分割照射は増殖が遅い腫瘍に有効である。\n   3．シスプラチン（白金製剤）は放射線増感効果を示す。\n   4．放射線治療期間の延長は治療成績の悪化につながる。\n   5．定位放射線照射は通常分割照射に比べ高い局所効果が得られる。\n\n\n\n23 肺癌に対する放射線治療の基準点線量処方で正しいのはどれか。\n   1．平均肺線量処方\n   2．計画標的体積のD2cc 処方\n   3．計画標的体積のD95％処方\n   4．計画標的体積のDmax 処方\n   5．計画標的体積のV20Gy 処方\n\n\n\n\n\n                 　　　　9                          DKIX-06-前H-13",
+          "officialAnswerNumber": null,
+          "finding": "公式採点除外（正答値表は空欄）",
+          "officialScoringNotice": {
+            "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken06/dl/AM23.pdf",
+            "sha256": "f6a28bdb2d307107a145387c7ffb2485fa900a49c86bdf03f8f07a011b55cc1d",
+            "officialText": "（別　紙）\n\n          第78回放射線技師国家試験における\n        採点除外等の取扱いをした問題について\n\n\n午前 第  23 問\n\n\n\n\n\n（　採点上の取り扱い　）\n\n\n\n 採点対象から除外する。\n\n\n\n（　理　由　）\n\n\n  設問が不適切で正解が得られないため。"
+          }
+        }
+      ],
+      "notes": [
+        "問15の公式正答2は保持し、公式非公表の図を推測しない。問23は公式採点除外通知で正答空欄を確認。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-156",
+      "index": 155,
+      "exam": "rinsho-kensagishi",
+      "officialYear": 2026,
+      "storedYear": 2026,
+      "season": "annual",
+      "session": "am",
+      "status": "収録済み（ローカルブランチ）",
+      "questionCount": 70,
+      "importedCount": 66,
+      "newCount": 4,
+      "questionIds": [
+        "rinsho-kensagishi-2026-annual-am-q1",
+        "rinsho-kensagishi-2026-annual-am-q2",
+        "rinsho-kensagishi-2026-annual-am-q4",
+        "rinsho-kensagishi-2026-annual-am-q5",
+        "rinsho-kensagishi-2026-annual-am-q7",
+        "rinsho-kensagishi-2026-annual-am-q8",
+        "rinsho-kensagishi-2026-annual-am-q9",
+        "rinsho-kensagishi-2026-annual-am-q10",
+        "rinsho-kensagishi-2026-annual-am-q11",
+        "rinsho-kensagishi-2026-annual-am-q12",
+        "rinsho-kensagishi-2026-annual-am-q13",
+        "rinsho-kensagishi-2026-annual-am-q14",
+        "rinsho-kensagishi-2026-annual-am-q15",
+        "rinsho-kensagishi-2026-annual-am-q16",
+        "rinsho-kensagishi-2026-annual-am-q18",
+        "rinsho-kensagishi-2026-annual-am-q19",
+        "rinsho-kensagishi-2026-annual-am-q20",
+        "rinsho-kensagishi-2026-annual-am-q23",
+        "rinsho-kensagishi-2026-annual-am-q29",
+        "rinsho-kensagishi-2026-annual-am-q34",
+        "rinsho-kensagishi-2026-annual-am-q35",
+        "rinsho-kensagishi-2026-annual-am-q36",
+        "rinsho-kensagishi-2026-annual-am-q37",
+        "rinsho-kensagishi-2026-annual-am-q39",
+        "rinsho-kensagishi-2026-annual-am-q40",
+        "rinsho-kensagishi-2026-annual-am-q43",
+        "rinsho-kensagishi-2026-annual-am-q44",
+        "rinsho-kensagishi-2026-annual-am-q47",
+        "rinsho-kensagishi-2026-annual-am-q48",
+        "rinsho-kensagishi-2026-annual-am-q50",
+        "rinsho-kensagishi-2026-annual-am-q51",
+        "rinsho-kensagishi-2026-annual-am-q52",
+        "rinsho-kensagishi-2026-annual-am-q53",
+        "rinsho-kensagishi-2026-annual-am-q55",
+        "rinsho-kensagishi-2026-annual-am-q56",
+        "rinsho-kensagishi-2026-annual-am-q57",
+        "rinsho-kensagishi-2026-annual-am-q59",
+        "rinsho-kensagishi-2026-annual-am-q60",
+        "rinsho-kensagishi-2026-annual-am-q61",
+        "rinsho-kensagishi-2026-annual-am-q64",
+        "rinsho-kensagishi-2026-annual-am-q65",
+        "rinsho-kensagishi-2026-annual-am-q67",
+        "rinsho-kensagishi-2026-annual-am-q68",
+        "rinsho-kensagishi-2026-annual-am-q70",
+        "rinsho-kensagishi-2026-annual-am-q71",
+        "rinsho-kensagishi-2026-annual-am-q72",
+        "rinsho-kensagishi-2026-annual-am-q73",
+        "rinsho-kensagishi-2026-annual-am-q74",
+        "rinsho-kensagishi-2026-annual-am-q75",
+        "rinsho-kensagishi-2026-annual-am-q76",
+        "rinsho-kensagishi-2026-annual-am-q77",
+        "rinsho-kensagishi-2026-annual-am-q79",
+        "rinsho-kensagishi-2026-annual-am-q80",
+        "rinsho-kensagishi-2026-annual-am-q81",
+        "rinsho-kensagishi-2026-annual-am-q82",
+        "rinsho-kensagishi-2026-annual-am-q83",
+        "rinsho-kensagishi-2026-annual-am-q85",
+        "rinsho-kensagishi-2026-annual-am-q87",
+        "rinsho-kensagishi-2026-annual-am-q88",
+        "rinsho-kensagishi-2026-annual-am-q89",
+        "rinsho-kensagishi-2026-annual-am-q90",
+        "rinsho-kensagishi-2026-annual-am-q91",
+        "rinsho-kensagishi-2026-annual-am-q92",
+        "rinsho-kensagishi-2026-annual-am-q93",
+        "rinsho-kensagishi-2026-annual-am-q94",
+        "rinsho-kensagishi-2026-annual-am-q95",
+        "rinsho-kensagishi-2026-annual-am-q96",
+        "rinsho-kensagishi-2026-annual-am-q97",
+        "rinsho-kensagishi-2026-annual-am-q99",
+        "rinsho-kensagishi-2026-annual-am-q100"
+      ],
+      "imports": [
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q1",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "2a85e54e1847d2cbccb611427d71f39888874f4d04dd8d5ab591a079048ed9e3"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q2",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "ed08f0e9909ece70bb6be193e730508d3df7d957feb81cf7e56e34f50c6b4f03"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q5",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "12aefea57dff5cb62c77a8d8c19d72c96e1ada78f2f25ecd062e90db0f8ce4c6"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q9",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "702203cb410a7d58b04a7d72d390281408713c6489edd636abfb0166eedf7a53"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q10",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "82a7c9431f16c0d2847b2ad215668e70b8dee84fe12ac06d5dcc8377c8e37285"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q11",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "c565df2eafbc4ffbc4e83ee847a0e07f4809fa9927a86e37626b8373beab41a6"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q12",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "e5dffafbf7fe214a78b1b6e8d87fee37528273f41fbfbcde4f2ff359691b743a"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q13",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "f97bd4ef14ff74a62cf0b13bc487415f7f5d4b742d80bacb1e4eb8a4310bf3b0"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q14",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "5cb1db0aa2cab8e53f79617f24ecb1a906add943f5b88ceb23a83df17b33ff53"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q16",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "7a4bb9190f44baf3c1a2101256bde6dcd03ca1e8c24281329bc2164f5e461e30"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q18",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "dde3aa7983aad441ec6d1fa6f196d6a06cc720d757ae673ad6808e7b9d46c949"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q19",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "6f900c84f6c97a572f9f6271eae20347a06a17e72b22cdc1c1b8d0416cadb6cd"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q20",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-am24-20261019.json",
+          "recordSha256": "c43163e38e21dc196bbc2760e015002619cb0107898b7852a7c8affbd0a6ba8e"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q100",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "6597fcfe6a4d6637f4b67ec9735eaafc676b7b0d2b4a044440a4e2dc70ac4303"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q23",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "d601c0ed92d5326c6cb7a6a79942b8a5aac146102a4c23e4d1b89890e4a87f7c"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q29",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "86a756bac8301c7fa5870fa9247d7bf1786654f73ca3c42a5ebfb0fe53ac6629"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q34",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "48fdc56381d3ed9b562b7b0f74fb62af1139e800f135887de25493e10fbe5139"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q35",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "57712b757d79a99bec9e25a6a15161d025b7e9ad16f7062b2cb83b7abc591a72"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q36",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "0036973d6632f4c91dd6b07423096ed3ded6b5694e141b5e701c3f8af02eeb4b"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q37",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "5c58b3c4067e44957b0eb4d7c0d45349abc3ec8fd00f00c3da0a6ceaf9f74c96"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q39",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "dc9b2d94d98d7cb66ec8573335b4d62dc08b6d0c269f790d4e64446a882fd685"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q40",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "ca4a5c67b5a9fac959e3cc001c4e3acd898bcb4924abde65349321a756e51641"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q43",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "06e4ae0a8231191e8ab528f644d358e6a7aa651562011a88510ee99738b0454c"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q44",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "b5554c93c625f986db051cfbc5fc92484c14bddf84ec7299827e0c26178dd783"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q48",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "805a19da97b4eaac54beb6eb2dfc5e29be9bb0f6fa78938cc28935ea7841c404"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q50",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "e03c0e1c3406b59b35663f9674d213952fd24bef236ceecb7f92dc47172aa3cd"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q51",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "5a7a3f2492f6f35ca6be70f14206b209ee4d3bbf7dd94e20ca8c010290e5952e"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q52",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "b7a44d8bdffeb062062e4eb8f77606cf808bb593dee6c6f0e9185d67ebc6b07f"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q53",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "7e4205fa362fd5939dfc4e007e9e921091e647197698b826246f6c4fff6468ca"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q55",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "b3ac3aebf4e74b872fdea2541538a808ecd9ea03d70c8f7a9eec8bff452b45cb"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q56",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "5b917574199c984e156f6aba28f5e45ae11843980e78cc57778c8c253cedb783"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q57",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "e0741f923f9014ed2911c6b59381ead5c051eba4ea4ff4d745d8dc957ffaf7bf"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q59",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "6b3052cacae2d4aa96ebe7978bbe422c1fd991ae7f4977a24eafd11b0516ae0a"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q60",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "65c3f1ded191d76e46532a001962d5656dc04f84a3bc9e0f5e9ff040af86f0b2"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q61",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "016672a739e7780ae8e1840a144b83ca7079ed2f9d12c4fafcc6583b829651f3"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q64",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "562ceec75d5adb61ef3e5432e401967a90a570fbca18e1707541c936d14cf4b9"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q65",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "3e90392cc7b083cb0f809a749758934b3c397ae262dcd4361b29407f7fc170e1"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q67",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "bafd53ff6dba183000f2ecb0db5b3dea4e2f637308fd2bb85ddfffbc7646c14a"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q68",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "0f2d39f7521eddd90ad2c38cac2064ca9b6c111c5eb2181257b9134bb14ae4a9"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q70",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "34eafcdb2ba19e0a3b290b9d86b9659d291629f91c73c89df2c932d543b9f582"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q71",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "21dc929c4b014e81366136656964d2990b0009039967563424df28d9982428af"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q72",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "d53aaa5f279483a1ce80e25d51429cb2ef6fca40ecd39c8250c4f22ff3342264"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q74",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "2db3a74a3eb179d540f7f4541960b0e7b0fe5e5cb81498e6fa409eba721ddbd5"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q75",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "e81157d96ebb61a9eed6a5ddeacf7a2bf93685723beed7f6d4422a1c389a5ad7"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q76",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "f19dca0d483f8e215e7375441ab3b1db7a6f86c9bf2aa6a31b2843809f9240cf"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q77",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "b9d9246b7282f89c2beadd3183090c96cff1acf69f2fdb2457502a3d9d6cc620"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q79",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "d2d46ded51ce51b02f081018414cddf59d2b0e2fec6bd1c9204b9fc032bba498"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q80",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "cec3d753390812a48d38770dea26ecb73c2bb8a405a348e51bebe794ce61495a"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q81",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "bd0cc8232e88423a33e628a7da94e3aeaf32afa76e260f6f0fe8ec6b831dbf2f"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q82",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "2b5cc507e015c0b82e6e78f0debb80252e63406312e8a6a983910e76020119da"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q83",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "f0b5e0bafa21539d4b2838e0b265592cd03a978b576ad8b0a03e6049438a12b0"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q87",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "c071c326b55ada766acf5a6a72ac865483b952aa80399e76160a3dedcf292abc"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q88",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "d91e88f072c0b799f33f14ec58c2f4c48d9a9760e73e1b2d4da162248ecb373a"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q89",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "498742250ecffd774a3970e9b84277a534e9ebb0f85083297cc43440c0c30106"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q90",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "7ed5d3b5c2e86e8ce9ea3026f5bef53e023e4bd520d479029101a5d20f9eed2a"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q91",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "792f219d08155f7e36e73a0497936870ec60814eab0a7e698d531eeceda93aa5"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q92",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "3141e0ec8b0aaa27517421d5e3bef273f36eaef5798d7673a3ee2c45a20009e8"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q93",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "0244deb504cb87d8c55a79b5d008ee1048f95eb002ece8e5cf5a8aefedd7c662"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q94",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "04fee23f737f1e4621112d9f0e3816d2ed049d76ac28f9ab9dbeeb6658ca6466"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q95",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "59fd499408be17dbf320753fc00ad03de0ac885d065d8465752456256963ab28"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q96",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "c0d47551ba2c2de041f8e3651a132c82993b39dace7bf90fdb183e4f86a5e476"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q97",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "e7729de5ea69f2006d40c76778f6ed44a22e64dd9b21f8161678845e0a3d81ae"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q15",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "9874860f2138e6940470684c75ae6357985120a5737f49c5bd750291215daab0"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q4",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "1743556c00769fb7649ff8c62f2c8dc83c5d9a52c3d650209d15c3741ccfc7a1"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q7",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "b0a06e31a06d3374041ce1f4d035697af356a6b86be8cff65e513326f4172d06"
+        },
+        {
+          "id": "rinsho-kensagishi-2026-annual-am-q8",
+          "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+          "path": "data/questions/rinsho-kensagishi/private-saved320-20261019.json",
+          "recordSha256": "7880ee9fe6b6115a87ff3466471a918726a632edd6ce32d59740bf83487b4a88"
+        }
+      ],
+      "dataPath": "data/questions/rinsho-kensagishi/plan5-156-completion.json",
+      "officialDocuments": [
+        {
+          "jobId": "PLAN5-156",
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+          "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "pages": 44
+        },
+        {
+          "jobId": "PLAN5-156",
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+          "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+          "pages": 1
+        }
+      ],
+      "notes": [
+        "午前全100原問。既存30問は変更せず、既存候補66問をそのまま取り込み、47・73・85・99だけ新規補充。",
+        "追加70問すべてのofficialAnswerNumberを公式正答値表と照合。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-170",
+      "index": 169,
+      "exam": "josanshi",
+      "officialYear": 2023,
+      "storedYear": 2022,
+      "season": "annual",
+      "session": "pm",
+      "status": "収録済み（ローカルブランチ）",
+      "questionCount": 55,
+      "importedCount": 0,
+      "newCount": 55,
+      "questionIds": [
+        "josanshi-2022-annual-pm-q1",
+        "josanshi-2022-annual-pm-q2",
+        "josanshi-2022-annual-pm-q3",
+        "josanshi-2022-annual-pm-q4",
+        "josanshi-2022-annual-pm-q5",
+        "josanshi-2022-annual-pm-q6",
+        "josanshi-2022-annual-pm-q7",
+        "josanshi-2022-annual-pm-q8",
+        "josanshi-2022-annual-pm-q9",
+        "josanshi-2022-annual-pm-q10",
+        "josanshi-2022-annual-pm-q11",
+        "josanshi-2022-annual-pm-q12",
+        "josanshi-2022-annual-pm-q13",
+        "josanshi-2022-annual-pm-q14",
+        "josanshi-2022-annual-pm-q15",
+        "josanshi-2022-annual-pm-q16",
+        "josanshi-2022-annual-pm-q17",
+        "josanshi-2022-annual-pm-q18",
+        "josanshi-2022-annual-pm-q19",
+        "josanshi-2022-annual-pm-q20",
+        "josanshi-2022-annual-pm-q21",
+        "josanshi-2022-annual-pm-q22",
+        "josanshi-2022-annual-pm-q23",
+        "josanshi-2022-annual-pm-q24",
+        "josanshi-2022-annual-pm-q25",
+        "josanshi-2022-annual-pm-q26",
+        "josanshi-2022-annual-pm-q27",
+        "josanshi-2022-annual-pm-q28",
+        "josanshi-2022-annual-pm-q29",
+        "josanshi-2022-annual-pm-q30",
+        "josanshi-2022-annual-pm-q31",
+        "josanshi-2022-annual-pm-q32",
+        "josanshi-2022-annual-pm-q33",
+        "josanshi-2022-annual-pm-q34",
+        "josanshi-2022-annual-pm-q35",
+        "josanshi-2022-annual-pm-q36",
+        "josanshi-2022-annual-pm-q37",
+        "josanshi-2022-annual-pm-q38",
+        "josanshi-2022-annual-pm-q39",
+        "josanshi-2022-annual-pm-q40",
+        "josanshi-2022-annual-pm-q41",
+        "josanshi-2022-annual-pm-q42",
+        "josanshi-2022-annual-pm-q43",
+        "josanshi-2022-annual-pm-q44",
+        "josanshi-2022-annual-pm-q45",
+        "josanshi-2022-annual-pm-q46",
+        "josanshi-2022-annual-pm-q47",
+        "josanshi-2022-annual-pm-q48",
+        "josanshi-2022-annual-pm-q49",
+        "josanshi-2022-annual-pm-q50",
+        "josanshi-2022-annual-pm-q51",
+        "josanshi-2022-annual-pm-q52",
+        "josanshi-2022-annual-pm-q53",
+        "josanshi-2022-annual-pm-q54",
+        "josanshi-2022-annual-pm-q55"
+      ],
+      "imports": [],
+      "dataPath": "data/questions/josanshi/plan5-170-completion.json",
+      "officialDocuments": [
+        {
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-04b_01.pdf",
+          "sha256": "ed8d9c02575253aacffc6675e585df59b2ba6d0e06c98b0c4cee1988ade5aa1d",
+          "pages": 36
+        },
+        {
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-04seitou.pdf",
+          "sha256": "422fa69f723045240ab7421734d1299d29c08d33d310a36cf683ed8cc77f0675",
+          "pages": 1
+        }
+      ],
+      "sourceFigures": [
+        {
+          "page": 9,
+          "crop": [
+            92,
+            105,
+            520,
+            420
+          ],
+          "alt": "公式の4つの神経学的所見。1は上肢のもどり反応90度、2は手首の角窓0度、3は膝窩角90度、4は足首の背屈90度。",
+          "asset": "public/images/exams/josanshi/plan5-170/106-pm-q8.webp"
+        },
+        {
+          "page": 10,
+          "crop": [
+            90,
+            104,
+            460,
+            330
+          ],
+          "alt": "公式の妊娠経過表。16週6日から30週6日までの子宮底長、腹囲、体重、血圧、浮腫、尿蛋白、尿糖、推定胎児体重。",
+          "asset": "public/images/exams/josanshi/plan5-170/106-pm-q10.webp"
+        }
+      ],
+      "questions": [
+        {
+          "id": "josanshi-2022-annual-pm-q1",
+          "sourcePdfPage": 7,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "5565e35c5e112e88fd59b0b401917be5df14a9b57ed8a92bb6eceb32fc9eafcf"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q2",
+          "sourcePdfPage": 7,
+          "officialAnswerNumber": "1",
+          "hasSharedCase": false,
+          "originalTextSha256": "15b3d70a53313ff238f213d5ff603151fb6bf37c5cf9393d307f4cb6ef1d300f"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q3",
+          "sourcePdfPage": 7,
+          "officialAnswerNumber": "1",
+          "hasSharedCase": false,
+          "originalTextSha256": "3e5f9f79c64962c426f479b07db6e7e00a83fdb99cf0f2e9aa546d5c3636f80b"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q4",
+          "sourcePdfPage": 7,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": false,
+          "originalTextSha256": "96b873de41c0009b68dbe6cd8afad9bb4c3db91fad8041483166f221215a2c51"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q5",
+          "sourcePdfPage": 8,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "0318979c9e6027cc4351518489e584932cc30057f7a7a6925f0e5f965a3f258b"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q6",
+          "sourcePdfPage": 8,
+          "officialAnswerNumber": "2",
+          "hasSharedCase": false,
+          "originalTextSha256": "bce42c0e934b0574e2b743a73011412c2a0035a301d8f780e4489ecb3b3c4a38"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q7",
+          "sourcePdfPage": 8,
+          "officialAnswerNumber": "1",
+          "hasSharedCase": false,
+          "originalTextSha256": "92517ec9fe61b71c85b5b45cd910c941839dd18ab06c2e7c73b78d4be6236309"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q8",
+          "sourcePdfPage": 9,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "83630f6ed3357b5b0346384fb0b68c89c5459dcb62e66eb0a4346064e93ed356"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q9",
+          "sourcePdfPage": 9,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": false,
+          "originalTextSha256": "068cb16fd33569076b5c1ae6a07816cbcaa77d862147773e0fd921a808ba1a3f"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q10",
+          "sourcePdfPage": 10,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": false,
+          "originalTextSha256": "8e7078846a222d02f8d6fe90f4f09ee288ba6ca0865decbe24969872e65df74a"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q11",
+          "sourcePdfPage": 10,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "2327be7c625526b2fe8904b7f1003b047731137924f60f3eb4032b4753738a2c"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q12",
+          "sourcePdfPage": 11,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "83eaf3d26e7eb34d8e04adca9780eda09081f024cfc953cacb9d255ead1d2ed1"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q13",
+          "sourcePdfPage": 11,
+          "officialAnswerNumber": "2",
+          "hasSharedCase": false,
+          "originalTextSha256": "ee0e71b274608f73f0a8de51513a587e002ad6859139fbb2d1f46d32aa00ee17"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q14",
+          "sourcePdfPage": 11,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": false,
+          "originalTextSha256": "764868cf6c9082c900b48ec2beb17d55dfe9fde87e4b3b2a62b364a2f17c2116"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q15",
+          "sourcePdfPage": 12,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "e6a01b99c3085938996de1b4be9951c2b785bf82fe729eaa80c27330d49b7998"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q16",
+          "sourcePdfPage": 12,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": false,
+          "originalTextSha256": "778c2b4dc245443c0dd55665672b8ddd86df5b6b3aaa33e55552ea9db2ff0b37"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q17",
+          "sourcePdfPage": 12,
+          "officialAnswerNumber": "1",
+          "hasSharedCase": false,
+          "originalTextSha256": "2bc5e9414217cdaf4b7626179d3f6931067912b45543ac0879e118e1d93cadd8"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q18",
+          "sourcePdfPage": 13,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "46d316c75dfa3c2a82fed0ba367172d52d31aa094bfd1bcd7e402886be8d2545"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q19",
+          "sourcePdfPage": 13,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": false,
+          "originalTextSha256": "fe846e8a7703a43916409c9ced67cd8cc738e3ebdff4df7207af2aa43019b60a"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q20",
+          "sourcePdfPage": 13,
+          "officialAnswerNumber": "2",
+          "hasSharedCase": false,
+          "originalTextSha256": "8da8cf40c53355d2dc3bdf3ae778ea9a782be0d6d5a8d4c678a2274091ef90d2"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q21",
+          "sourcePdfPage": 14,
+          "officialAnswerNumber": "5",
+          "hasSharedCase": false,
+          "originalTextSha256": "3343d8b3ed4970f9914c43c11c76b3d250e69674751a2ff9fb2cecc6de30e699"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q22",
+          "sourcePdfPage": 14,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": false,
+          "originalTextSha256": "19fbe5c4b3272a43c0f53ef303c40539bac940d6acefc79e1ec516d6f04fe0af"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q23",
+          "sourcePdfPage": 14,
+          "officialAnswerNumber": "2",
+          "hasSharedCase": false,
+          "originalTextSha256": "ef459270977778c62db04a4bd0965712bf0998ed4ac6992836816236ab9596c5"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q24",
+          "sourcePdfPage": 15,
+          "officialAnswerNumber": "5",
+          "hasSharedCase": false,
+          "originalTextSha256": "58ccdbdd7e2d2f58a2f0053ceb6f3970e01385d896b0a185572cd87401f66945"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q25",
+          "sourcePdfPage": 15,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": false,
+          "originalTextSha256": "1e0030bcfa8d84b02ffea7eff2d10a42b2b510dd5ea8fed3364ec84e53902b9c"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q26",
+          "sourcePdfPage": 15,
+          "officialAnswerNumber": "45",
+          "hasSharedCase": false,
+          "originalTextSha256": "917e1f84e1125bc7a2a9a1bb7f62b81af710d51ec8d4ad8e18c8b4c0f3d86748"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q27",
+          "sourcePdfPage": 16,
+          "officialAnswerNumber": "12",
+          "hasSharedCase": false,
+          "originalTextSha256": "046b4698ac7f40fb79c7bc2d84d0a724768888ea17a8909c6bd872d139b43a71"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q28",
+          "sourcePdfPage": 16,
+          "officialAnswerNumber": "24",
+          "hasSharedCase": false,
+          "originalTextSha256": "77a37661367ee7fd98d361caa16e9c459a3dac6d11b2b49c9eb24f24df476327"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q29",
+          "sourcePdfPage": 16,
+          "officialAnswerNumber": "45",
+          "hasSharedCase": false,
+          "originalTextSha256": "f15199d23fd77b5aaa44e405e96d5acbce62995fdecbb5464e5359a651cd83f9"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q30",
+          "sourcePdfPage": 17,
+          "officialAnswerNumber": "15",
+          "hasSharedCase": false,
+          "originalTextSha256": "62156b86925c4303fe8f3ff9b91dc0ce8114d6c336d3c3becdb5a5a163b8c7b7"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q31",
+          "sourcePdfPage": 17,
+          "officialAnswerNumber": "15",
+          "hasSharedCase": false,
+          "originalTextSha256": "3bac49c337d39e8cc820d9a720772c44603cadee394b45f05cdba6582f1774ba"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q32",
+          "sourcePdfPage": 17,
+          "officialAnswerNumber": "24",
+          "hasSharedCase": false,
+          "originalTextSha256": "76b5bd1aae31c1d8a7f7683e6be45873f1c0b145ce2f090d8dc193e3a52eb66e"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q33",
+          "sourcePdfPage": 18,
+          "officialAnswerNumber": "35",
+          "hasSharedCase": false,
+          "originalTextSha256": "a7f409bc9adf6722f3c3c8ada9eaeeb40f19a941f4ae9e466527920cfea663c4"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q34",
+          "sourcePdfPage": 18,
+          "officialAnswerNumber": "24",
+          "hasSharedCase": false,
+          "originalTextSha256": "e53d20e6bd0a5cc037f1be8d4f0f4abede307bce6f49bac61c7e6ee44b3363f5"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q35",
+          "sourcePdfPage": 19,
+          "officialAnswerNumber": "14",
+          "hasSharedCase": false,
+          "originalTextSha256": "fa35fca2bfffef5ae17294d5631a661687570f69acd3b24ba764d0ef8757da82"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q36",
+          "sourcePdfPage": 20,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": true,
+          "originalTextSha256": "136f2962b2a25c50f9271d967dada9799fce24c73efe27267a5fa33fb6ac36cd"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q37",
+          "sourcePdfPage": 20,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": true,
+          "originalTextSha256": "080e0aebd61b17cfe7c7b1b9803fba0a4ba9bd179d08a05379c23da067e1d6d4"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q38",
+          "sourcePdfPage": 21,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": true,
+          "originalTextSha256": "a16850543186d213dae58c391265ce9deb58999478a7d8f75623b89e9e401227"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q39",
+          "sourcePdfPage": 22,
+          "officialAnswerNumber": "5",
+          "hasSharedCase": true,
+          "originalTextSha256": "5d837c0df558c65b31f7b38439950133c0d0357eb7ecace7e9177c9b0cd9ce1d"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q40",
+          "sourcePdfPage": 22,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": true,
+          "originalTextSha256": "9477a3bea5d71f3105f5752012a329c0518c6c8f73b7da8a0d4f958ee952886d"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q41",
+          "sourcePdfPage": 23,
+          "officialAnswerNumber": "15",
+          "hasSharedCase": true,
+          "originalTextSha256": "8579fc768e15657f2775938b1b276428df1d1f2b8953905401928b00d20bf6b2"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q42",
+          "sourcePdfPage": 24,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": true,
+          "originalTextSha256": "4b67d881f98fcac515a2b0d4e965b1d8753b9762c14941e4870f7452be404752"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q43",
+          "sourcePdfPage": 24,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": true,
+          "originalTextSha256": "3f9b5a56182917f779efc4d46a8e9163176b2f324c95a6b3514cff768350fbf1"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q44",
+          "sourcePdfPage": 25,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": true,
+          "originalTextSha256": "dc018d3a67ca78dcefb09b284dfc017bd635bfbde1443e20be5008fbe2860b18"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q45",
+          "sourcePdfPage": 26,
+          "officialAnswerNumber": "2",
+          "hasSharedCase": true,
+          "originalTextSha256": "385ac48d7955bb5e7d1c69db9b8d32810c78114b9427fb65c371eb86907f3ad0"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q46",
+          "sourcePdfPage": 26,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": true,
+          "originalTextSha256": "c61635edb9b08bdc5f0325d3499c301b9954473ce93d9a0c20ffe3303363a2cf"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q47",
+          "sourcePdfPage": 27,
+          "officialAnswerNumber": "5",
+          "hasSharedCase": true,
+          "originalTextSha256": "6cff5e5076c1b3e0ae8e00a482bec9dd6e3ef965e1847556a8650286fcbf5e53"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q48",
+          "sourcePdfPage": 28,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": true,
+          "originalTextSha256": "196c83f4a2ced45a7da5401e1c073b77b5bc67a27969b2b3e3a405b0eec814b9"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q49",
+          "sourcePdfPage": 28,
+          "officialAnswerNumber": "2",
+          "hasSharedCase": true,
+          "originalTextSha256": "e0160df93dff899bddc872a44c21ecf3d916f558443fb5d8c4371988b3d661b7"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q50",
+          "sourcePdfPage": 29,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": true,
+          "originalTextSha256": "e381db716afbe6e8c50d092ed6e7210ba0e3c4a64c9bb3747112f931bcfa172a"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q51",
+          "sourcePdfPage": 30,
+          "officialAnswerNumber": "1",
+          "hasSharedCase": true,
+          "originalTextSha256": "9d705124c5597a6843c23e4feae3221fd753bdaa9ecdf113275eb3bccda56961"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q52",
+          "sourcePdfPage": 30,
+          "officialAnswerNumber": "5",
+          "hasSharedCase": true,
+          "originalTextSha256": "a09ebd1e15b2383abddf584416fcb3a0014c127e3cba98ca51401f3f7857ea7b"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q53",
+          "sourcePdfPage": 31,
+          "officialAnswerNumber": "2",
+          "hasSharedCase": true,
+          "originalTextSha256": "c14d99fb854648c4818b769f0737156ec7b3eba0d95676b32a9da0deb0a651e2"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q54",
+          "sourcePdfPage": 31,
+          "officialAnswerNumber": "4",
+          "hasSharedCase": true,
+          "originalTextSha256": "0ef32e65d9df3829e332d187f8bc62c5d6406f72e6625a932b214932c9ad5294"
+        },
+        {
+          "id": "josanshi-2022-annual-pm-q55",
+          "sourcePdfPage": 32,
+          "officialAnswerNumber": "3",
+          "hasSharedCase": true,
+          "originalTextSha256": "165bdd22fd3f02c42cc4b990e5d93b5975fd0bce3b1e334f4a88cb7c1a1109d0"
+        }
+      ],
+      "notes": [
+        "全55原問の本文・選択肢・公式正答・全肢解説を収録。共通事例は各問題に保持。",
+        "問8の図4肢と問10の妊娠経過表を公式PDFの可逆画像で保持。制度に関する問題は出題当時の説明。",
+        "着手前にmain・関連92参照・共有台帳を再照合し、取り込み可能な既存原稿なし。",
+        "rv-1再照合。第106回午前の保存年度2022に合わせて午後55問も2022へ配置。2023年実施・公式正答55件は維持。"
+      ]
+    },
+    {
+      "jobId": "PLAN5-184",
+      "index": 183,
+      "exam": "sagyo-ryohoshi",
+      "officialYear": 2026,
+      "storedYear": 2025,
+      "season": "annual",
+      "session": "pm",
+      "status": "採点対象を収録済み（ローカルブランチ）、問34は公式採点除外を確認",
+      "questionCount": 3,
+      "importedCount": 0,
+      "newCount": 3,
+      "questionIds": [
+        "sagyo-ryohoshi-2025-annual-pm-q38",
+        "sagyo-ryohoshi-2025-annual-pm-q48",
+        "sagyo-ryohoshi-2025-annual-pm-q61"
+      ],
+      "imports": [],
+      "dataPath": "data/questions/sagyo-ryohoshi/plan5-184-completion.json",
+      "officialDocuments": [
+        {
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09b_01.pdf",
+          "sha256": "b7d49f377e890ae5753318788f7a41c372dc6b4aa58ec5003df1337a83523805",
+          "pages": 52
+        },
+        {
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09seitou.pdf",
+          "sha256": "369949cff20ad86f0c56f4772052300eaa1aa0c077f86c3d0c12fef3700ef9e2",
+          "pages": 1
+        }
+      ],
+      "verifiedFindings": [
+        {
+          "qNumber": 34,
+          "officialAnswerNumber": null,
+          "finding": "公式採点除外（正答値表は空欄）",
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09b_01.pdf#page=23",
+          "originalPageText": "32 高次脳機能障害で正しいのはどれか。\n 1．遂行機能障害は計画立案が保たれる。\n 2．半側空間無視は視野欠損が原因である。\n 3．視覚失認では濃い色の物品は呼称できる。\n 4．観念失行は道具の一連の操作は可能である。\n 5．観念運動失行は検者が行う「敬礼」の模倣ができない。\n\n\n\n33 リンパ浮腫への対応で正しいのはどれか。\n 1．運動療法は禁忌である。\n 2．重い物を持つ動作を制限する。\n 3．圧迫療法は発症初期には行わない。\n 4．締め付けの強い下着の着用を勧める。\n 5．保湿は浮腫を悪化させるため避ける。\n\n\n\n34  Down 症候群の特徴的な合併症でないのはどれか。\n 1．近　視\n 2．てんかん\n 3．外反扁平足\n 4．環軸椎亜脱臼\n 5．先天性心疾患\n\n\n\n\n\n                     　　　　17                                  DKIX-09-後H-23",
+          "officialScoringNotice": {
+            "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/OT_PM34.pdf",
+            "sha256": "dda2e19f4e2518bff910696ff8d211efc8b97757521eca4bffe12ea64073fc1d",
+            "officialText": "（別　紙）\n\n  第61回作業療法士国家試験における採点除外等の取扱いをした問題について\n\n\n午後 第  34 問\n\n\n\n\n\n（　採点上の取り扱い　）\n\n\n\n 採点対象から除外する。\n\n\n\n（　理　由　）\n\n\n 設問および選択肢が不十分なため。"
+          },
+          "retainedOriginalPath": "data/qualification-staging/sagyo-ryohoshi/ot61-pm-remaining15/excluded.ts"
+        }
+      ],
+      "notes": [
+        "既存96問に38・48・61を追加し、採点対象99問を収録。",
+        "保存年2025は既存IDに合わせ、公式実施年2026と区別。問34は既存の原文と公式採点除外記録を保持。",
+        "着手前にmain・関連92参照・共有台帳を再照合し、取り込み可能な既存原稿なし。"
+      ]
+    }
+  ]
+}

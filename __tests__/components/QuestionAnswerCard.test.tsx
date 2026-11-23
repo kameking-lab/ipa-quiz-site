@@ -1,10 +1,11 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import { render, screen, fireEvent, cleanup, within } from "@testing-library/react";
 
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "@/data/questions/kikai-hozen-denki1";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 const baseProps = {
@@ -17,8 +18,9 @@ const baseProps = {
   season: "spring" as const,
   session: "am" as const,
   qNumber: 1,
-  nextHref: "/q/ip/2024-spring/am/q2",
 };
+
+const feedback = () => within(screen.getByRole("group", { name: "採点結果" }));
 
 beforeEach(() => {
   cleanup();
@@ -29,6 +31,12 @@ beforeEach(() => {
 });
 
 describe("QuestionAnswerCard — solve in place", () => {
+  it("shows the official circle answer for a mixed-format mechanical-maintenance paper", () => {
+    const q = KIKAI_HOZEN_DENKI1_QUESTIONS.find(q => q.officialAnswerNumber === "○" && Object.keys(q.choices ?? {}).length === 2)!;
+    render(<QuestionAnswerCard {...baseProps} question={q} questionId={q.id} choices={q.choices!} answerKey={q.answer as ChoiceKey} exam={q.exam} year={q.year} season={q.season} session={q.session} qNumber={q.qNumber} />);
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(feedback().getByText("不正解 — 正解は ○")).toBeVisible();
+  });
   it("answers a public five-choice Denken3 question with official labels and keyboard 5", () => {
     const q = DENKEN3_QUESTIONS[0]!;
     render(
@@ -48,13 +56,13 @@ describe("QuestionAnswerCard — solve in place", () => {
     expect(screen.getAllByRole("radio")).toHaveLength(5);
     expect(screen.getByRole("radio", { name: /選択肢 \(5\)/ })).toBeTruthy();
     fireEvent.keyDown(window, { key: "5" });
-    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(feedback().getByText("正解！")).toBeVisible();
     expect(createHistoryStore().getAllEntries()[0]).toMatchObject({ id: q.id, selected: "オ", correct: true });
   });
   it("renders a table in the revealed answer without raw Markdown", () => {
     const table = "| 店 |\n| --- |\n| B |";
     const { container } = render(<QuestionAnswerCard {...baseProps} answerText={table} />);
-    fireEvent.click(screen.getByRole("button", { name: /答えだけ見る/ }));
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
     expect(container.querySelector("table td")?.textContent).toBe("B");
     expect(container.textContent).not.toContain("| --- |");
   });
@@ -62,13 +70,13 @@ describe("QuestionAnswerCard — solve in place", () => {
     render(<QuestionAnswerCard {...baseProps} answerKey="コ" choices={{...baseProps.choices, オ:"選択肢オ",カ:"選択肢カ",キ:"選択肢キ",ク:"選択肢ク",ケ:"選択肢ケ",コ:"選択肢コ"}} />);
     expect(screen.getAllByRole("radio")).toHaveLength(10);
     fireEvent.keyDown(window, {key:"0"});
-    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(feedback().getByText("正解！")).toBeVisible();
     expect(createHistoryStore().getAllEntries()[0]).toMatchObject({ selected:"コ", correct:true });
   });
   it("accepts the second official answer and records a correct attempt", () => {
     render(<QuestionAnswerCard {...baseProps} answerKey={["ア", "ウ"]} />);
     fireEvent.click(screen.getByRole("radio", { name: /選択肢 ウ/ }));
-    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(feedback().getByText("正解！")).toBeVisible();
     expect(createHistoryStore().getAllEntries()[0]).toMatchObject({ selected: "ウ", correct: true });
   });
   it("renders every choice text (so the content is crawlable / readable)", () => {
@@ -84,7 +92,7 @@ describe("QuestionAnswerCard — solve in place", () => {
     fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
 
     // result banner
-    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(feedback().getByText("正解！")).toBeVisible();
 
     // recorded once, correct, no new LS key (uses the shared history store)
     const entries = createHistoryStore().getAllEntries();
@@ -99,24 +107,28 @@ describe("QuestionAnswerCard — solve in place", () => {
     render(<QuestionAnswerCard {...baseProps} />);
     fireEvent.click(screen.getByRole("radio", { name: /選択肢 ア/ }));
 
-    expect(screen.getByText(/不正解 — 正解は イ/)).toBeTruthy();
+    expect(feedback().getByText("不正解 — 正解は イ")).toBeVisible();
     const entries = createHistoryStore().getAllEntries();
     expect(entries).toHaveLength(1);
     expect(entries[0]).toMatchObject({ selected: "ア", correct: false });
   });
 
-  it("'答えだけ見る' reveals without recording (stats stay honest)", () => {
-    render(<QuestionAnswerCard {...baseProps} />);
-    fireEvent.click(screen.getByRole("button", { name: /答えだけ見る/ }));
-
-    // Revealed: the banner's answer-text span (「：選択肢イの本文」) is unique to
-    // the visible banner (the sr-only status has no answerText), and the
-    // 解説を読む link only renders once revealed.
-    expect(screen.getByText(/：選択肢イの本文/)).toBeTruthy();
-    expect(screen.getByRole("link", { name: /解説を読む/ })).toBeTruthy();
-    // nothing recorded — it was not a genuine attempt
+  it("reveals the answer beside the explanation without recording an attempt", () => {
+    render(<QuestionAnswerCard {...baseProps} explanation={<p>学習用の解説</p>} />);
+    expect(screen.getByText("学習用の解説")).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "採点せずに答えだけ見る" }));
+    expect(screen.getByText("正解は イ")).toBeVisible();
+    expect(screen.queryByText(/不正解/)).toBeNull();
     expect(createHistoryStore().getAllEntries()).toHaveLength(0);
     expect(readLastQuestion()).toBeNull();
+  });
+
+  it("discards a partial multiple selection when revealing without grading", () => {
+    render(<QuestionAnswerCard {...baseProps} answerKey={["イ", "ウ"]} requiredSelections={2} />);
+    fireEvent.keyDown(window, { key: "2" });
+    fireEvent.click(screen.getByRole("button", { name: "採点せずに答えだけ見る" }));
+    expect(screen.getByRole("status")).toHaveTextContent(/^正解は/);
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
   });
 
   it("disables further selection once revealed (answer is irreversible)", () => {
@@ -129,20 +141,13 @@ describe("QuestionAnswerCard — solve in place", () => {
     expect(entries[0].selected).toBe("イ");
   });
 
-  it("shows the 次の問題へ link after answering when a next question exists", () => {
-    render(<QuestionAnswerCard {...baseProps} />);
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
-    const next = screen.getByRole("link", { name: /次の問題へ/ });
-    expect(next.getAttribute("href")).toBe("/q/ip/2024-spring/am/q2");
-  });
-
   it("respects recordHistory=false (no history written)", () => {
     localStorage.setItem("ipa-quiz:settings:v1", JSON.stringify({ recordHistory: false }));
     render(<QuestionAnswerCard {...baseProps} />);
     fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
     expect(createHistoryStore().getAllEntries()).toHaveLength(0);
     // banner still shows (UX works regardless of the history setting)
-    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(feedback().getByText("正解！")).toBeVisible();
   });
 });
 
@@ -150,7 +155,7 @@ describe("QuestionAnswerCard — explanation before supplementary guides", () =>
   it("keeps note cards out of the answer-to-explanation path after solving or revealing", () => {
     const { rerender } = render(<QuestionAnswerCard {...baseProps} />);
     fireEvent.click(screen.getByRole("radio", { name: /選択肢 ア/ }));
-    expect(screen.getByRole("link", { name: "解説を読む" })).toHaveAttribute("href", "#explanation");
+    expect(screen.queryByRole("link", { name: "解説を読む" })).toBeNull();
     expect(screen.queryByText(/noteの/)).not.toBeInTheDocument();
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
     rerender(<QuestionAnswerCard {...baseProps} exam="au" />);
@@ -172,7 +177,7 @@ describe("QuestionAnswerCard — number-key selection", () => {
   it("number key 2 selects the second choice (イ) — the correct one here", () => {
     render(<QuestionAnswerCard {...baseProps} />);
     fireEvent.keyDown(window, { key: "2" });
-    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(feedback().getByText("正解！")).toBeVisible();
     expect(createHistoryStore().getAllEntries()[0].selected).toBe("イ");
   });
 

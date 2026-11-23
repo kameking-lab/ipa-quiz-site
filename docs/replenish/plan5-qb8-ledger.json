@@ -1,0 +1,1743 @@
+{
+  "lane": "qb-8",
+  "branch": "cx/kako-5y8-20261118",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "scope": "plan5.jobs の配列 index % 14 == 7。追加・取り込みはこのレーンの担当行のみ。",
+  "assignedJobCount": 32,
+  "completedJobCount": 9,
+  "pendingJobIds": [
+    "PLAN5-134",
+    "PLAN5-148",
+    "PLAN5-162",
+    "PLAN5-176",
+    "PLAN5-190",
+    "PLAN5-204",
+    "PLAN5-218",
+    "PLAN5-232",
+    "PLAN5-246",
+    "PLAN5-260",
+    "PLAN5-274",
+    "PLAN5-288",
+    "PLAN5-302",
+    "PLAN5-316",
+    "PLAN5-330",
+    "PLAN5-344",
+    "PLAN5-358",
+    "PLAN5-372",
+    "PLAN5-386",
+    "PLAN5-400",
+    "PLAN5-414",
+    "PLAN5-428",
+    "PLAN5-442"
+  ],
+  "countNotes": [
+    "IPAの大問とFEの選択式原問を区別し、枝問の合算はしない。",
+    "看護師は採点対象119問。公式採点除外の問35は新規不足に数えない。",
+    "branch-completeはこのブランチ内の状態。本番反映を意味しない。"
+  ],
+  "rows": [
+    {
+      "jobId": "PLAN5-008",
+      "path": "data/questions/sc/by-year/2022-autumn-pm1.ts",
+      "count": 3,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_sc_pm1_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_sc_pm1_ans.pdf",
+      "questionSha256": "0412927abff44047e16cbefec36ff9fdc33c8f93ad25821c080e932a61810fa3",
+      "answerSha256": "a880a5dc914fbadf686d5a4e66a819f1ae8aaefac622fd43bea79124a458ac60",
+      "questions": [
+        {
+          "id": "sc-2022a-pm1-q1",
+          "sourcePages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                215.31521606445312,
+                555.2760009765625,
+                407.9248046875
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p2.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p3.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p4.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p5.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p6.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p7.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/sc-2022a-pm1-q1-answer-1.webp"
+          ]
+        },
+        {
+          "id": "sc-2022a-pm1-q2",
+          "sourcePages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                532.2352294921875,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p8.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p9.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p10.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p11.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p12.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p13.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/sc-2022a-pm1-q2-answer-1.webp"
+          ]
+        },
+        {
+          "id": "sc-2022a-pm1-q3",
+          "sourcePages": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "answerRegions": [
+            {
+              "page": 2,
+              "clip": [
+                44.0,
+                183.27523803710938,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p14.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p15.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p16.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p17.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p18.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_sc_pm1-p19.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/sc-2022a-pm1-q3-answer-1.webp"
+          ]
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2022,
+      "season": "autumn",
+      "session": "pm1",
+      "qualification": "情報処理安全確保支援士",
+      "action": "不足分だけ新規補充",
+      "newlyAuthoredRecordCount": 3,
+      "importedRecordCount": 0,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-008",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_sc_pm1_qs.pdf",
+          "pages": 20,
+          "sha256": "0412927abff44047e16cbefec36ff9fdc33c8f93ad25821c080e932a61810fa3"
+        },
+        {
+          "jobId": "PLAN5-008",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_sc_pm1_ans.pdf",
+          "pages": 2,
+          "sha256": "a880a5dc914fbadf686d5a4e66a819f1ae8aaefac622fd43bea79124a458ac60"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-022",
+      "path": "data/questions/nw/by-year/2022-spring-pm1.ts",
+      "count": 3,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_nw_pm1_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_nw_pm1_ans.pdf",
+      "questionSha256": "0c844c7ac8300ffae8e33d0039ee158928f52e44e7cb7a9446b3eaa910eef044",
+      "answerSha256": "b0ac2844846d802b5bd7df8722a8af1a261c7e7f5f071273084f5a77314953e2",
+      "questions": [
+        {
+          "id": "nw-2022h-pm1-q1",
+          "sourcePages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                256.5951843261719,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p3.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p4.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p5.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p6.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p7.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p8.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/nw-2022h-pm1-q1-answer-1.webp"
+          ]
+        },
+        {
+          "id": "nw-2022h-pm1-q2",
+          "sourcePages": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "answerRegions": [
+            {
+              "page": 2,
+              "clip": [
+                44.0,
+                210.63522338867188,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p9.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p10.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p11.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p12.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p13.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p14.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-errata.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/nw-2022h-pm1-q2-answer-1.webp"
+          ]
+        },
+        {
+          "id": "nw-2022h-pm1-q3",
+          "sourcePages": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "answerRegions": [
+            {
+              "page": 3,
+              "clip": [
+                44.0,
+                196.35519409179688,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p15.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p16.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p17.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p18.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p19.webp",
+            "/questions/ipa-plan5-qb8/2022r04h_nw_pm1-p20.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/nw-2022h-pm1-q3-answer-1.webp"
+          ]
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2022,
+      "season": "spring",
+      "session": "pm1",
+      "qualification": "ネットワークスペシャリスト",
+      "action": "不足分だけ新規補充",
+      "newlyAuthoredRecordCount": 3,
+      "importedRecordCount": 0,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-022",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_nw_pm1_qs.pdf",
+          "pages": 21,
+          "sha256": "0c844c7ac8300ffae8e33d0039ee158928f52e44e7cb7a9446b3eaa910eef044"
+        },
+        {
+          "jobId": "PLAN5-022",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_nw_pm1_ans.pdf",
+          "pages": 3,
+          "sha256": "b0ac2844846d802b5bd7df8722a8af1a261c7e7f5f071273084f5a77314953e2"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-036",
+      "path": "data/questions/ap/by-year/2025-autumn-pm.ts",
+      "count": 11,
+      "importedFromCommit": "1712224b06004bd1dd7f9d88d8e6269c5cfb968b",
+      "importedFromRef": "fix/cloud-ap-fe-text-first-20261103",
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_pm_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_pm_ans.pdf",
+      "questions": [
+        {
+          "id": "ap-2025a-pm-q1",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q1-figure-1.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q2",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q3",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q3-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q3-figure-2.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q4",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q4-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q4-figure-2.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q5",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q5-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q5-figure-2.webp",
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q5-figure-3.webp",
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q5-figure-4.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q6",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q6-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q6-figure-2.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q7",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q7-figure-1.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q8",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q8-figure-1.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q9",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07a_ap_pm_qs-q9-figure-1.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q10",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "ap-2025a-pm-q11",
+          "imageUrls": [],
+          "answerImageUrls": []
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2025,
+      "season": "autumn",
+      "session": "pm",
+      "qualification": "応用情報技術者",
+      "action": "新しく作らず、そのブランチを取り込む",
+      "newlyAuthoredRecordCount": 0,
+      "importedRecordCount": 11,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-036",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_pm_qs.pdf",
+          "pages": 68,
+          "sha256": "9eeb6e4844ea596670b83164dcff074383cf7ad920b6c80c321fc19c7953ab54"
+        },
+        {
+          "jobId": "PLAN5-036",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_pm_ans.pdf",
+          "pages": 6,
+          "sha256": "5d44280a82179093499ef2aece4fa9ea0e74e7b59f8afd7ef23d32bebe260147"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-050",
+      "path": "data/questions/st/by-year/2023-spring-pm1.ts",
+      "count": 4,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_st_pm1_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_st_pm1_ans.pdf",
+      "questionSha256": "362ad58b6a9bf21a83fa6178d89b74850f5130fda0dec41cfc3bb79259087354",
+      "answerSha256": "dd5b9ea59bac6959f3b364298ee3ad938ebb8e18bf22922e8cd6668d23a649df",
+      "questions": [
+        {
+          "id": "st-2023h-pm1-q1",
+          "sourcePages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                227.55520629882812,
+                555.2760009765625,
+                351.7648010253906
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p2.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p3.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p4.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p5.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/st-2023h-pm1-q1-answer-1.webp"
+          ]
+        },
+        {
+          "id": "st-2023h-pm1-q2",
+          "sourcePages": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                488.1952209472656,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p6.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p7.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p8.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p9.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p10.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/st-2023h-pm1-q2-answer-1.webp"
+          ]
+        },
+        {
+          "id": "st-2023h-pm1-q3",
+          "sourcePages": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "answerRegions": [
+            {
+              "page": 2,
+              "clip": [
+                44.0,
+                167.55520629882812,
+                555.2760009765625,
+                321.6448059082031
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p11.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p12.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p13.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p14.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p15.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/st-2023h-pm1-q3-answer-1.webp"
+          ]
+        },
+        {
+          "id": "st-2023h-pm1-q4",
+          "sourcePages": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "answerRegions": [
+            {
+              "page": 2,
+              "clip": [
+                44.0,
+                458.1952209472656,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p16.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p17.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p18.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p19.webp",
+            "/questions/ipa-plan5-qb8/2023r05h_st_pm1-p20.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/st-2023h-pm1-q4-answer-1.webp"
+          ]
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2023,
+      "season": "spring",
+      "session": "pm1",
+      "qualification": "ITストラテジスト",
+      "action": "不足分だけ新規補充",
+      "newlyAuthoredRecordCount": 4,
+      "importedRecordCount": 0,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-050",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_st_pm1_qs.pdf",
+          "pages": 24,
+          "sha256": "362ad58b6a9bf21a83fa6178d89b74850f5130fda0dec41cfc3bb79259087354"
+        },
+        {
+          "jobId": "PLAN5-050",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_st_pm1_ans.pdf",
+          "pages": 2,
+          "sha256": "dd5b9ea59bac6959f3b364298ee3ad938ebb8e18bf22922e8cd6668d23a649df"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-064",
+      "path": "data/questions/au/by-year/2021-autumn-pm1.ts",
+      "count": 3,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_au_pm1_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_au_pm1_ans.pdf",
+      "questionSha256": "3e0d0bc6a937a1da9e1856cb40726d58df638ad514db9218c30281c1df3253b1",
+      "answerSha256": "ca6c577ca4dbabaae74d53b5ae08194403b9101f8ffabd50b33ae75334f1103a",
+      "questions": [
+        {
+          "id": "au-2021a-pm1-q1",
+          "sourcePages": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                228.03518676757812,
+                555.2760009765625,
+                364.9648132324219
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p2.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p3.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p4.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p5.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/au-2021a-pm1-q1-answer-1.webp"
+          ]
+        },
+        {
+          "id": "au-2021a-pm1-q2",
+          "sourcePages": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                516.2752685546875,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p6.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p7.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p8.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p9.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/au-2021a-pm1-q2-answer-1.webp"
+          ]
+        },
+        {
+          "id": "au-2021a-pm1-q3",
+          "sourcePages": [
+            10,
+            11,
+            12,
+            13
+          ],
+          "answerRegions": [
+            {
+              "page": 2,
+              "clip": [
+                44.0,
+                181.95523071289062,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p10.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p11.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p12.webp",
+            "/questions/ipa-plan5-qb8/2021r03a_au_pm1-p13.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/au-2021a-pm1-q3-answer-1.webp"
+          ]
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2021,
+      "season": "autumn",
+      "session": "pm1",
+      "qualification": "システム監査技術者",
+      "action": "不足分だけ新規補充",
+      "newlyAuthoredRecordCount": 3,
+      "importedRecordCount": 0,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-064",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_au_pm1_qs.pdf",
+          "pages": 16,
+          "sha256": "3e0d0bc6a937a1da9e1856cb40726d58df638ad514db9218c30281c1df3253b1"
+        },
+        {
+          "jobId": "PLAN5-064",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_au_pm1_ans.pdf",
+          "pages": 2,
+          "sha256": "ca6c577ca4dbabaae74d53b5ae08194403b9101f8ffabd50b33ae75334f1103a"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-078",
+      "path": "data/questions/fe/by-year/2023-cbt-kamoku-b.ts",
+      "count": 6,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_b_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_b_ans.pdf",
+      "questions": [
+        {
+          "id": "fe-2023cbt-kamoku-b-q1",
+          "sourcePages": [
+            2,
+            3,
+            4
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p2.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p3.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p4.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "fe-2023cbt-kamoku-b-q2",
+          "sourcePages": [
+            2,
+            3,
+            5
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p2.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p3.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p5.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "fe-2023cbt-kamoku-b-q3",
+          "sourcePages": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p2.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p3.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p6.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p7.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "fe-2023cbt-kamoku-b-q4",
+          "sourcePages": [
+            2,
+            3,
+            8,
+            9
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p2.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p3.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p8.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p9.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "fe-2023cbt-kamoku-b-q5",
+          "sourcePages": [
+            2,
+            3,
+            10,
+            11
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p2.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p3.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p10.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p11.webp"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "fe-2023cbt-kamoku-b-q6",
+          "sourcePages": [
+            2,
+            3,
+            12,
+            13
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p2.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p3.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p12.webp",
+            "/questions/ipa-plan5-qb8/2023r05_fe_kamoku_b-p13.webp"
+          ],
+          "answerImageUrls": []
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2023,
+      "season": "cbt",
+      "session": "kamoku-b",
+      "qualification": "基本情報技術者",
+      "action": "不足分だけ新規補充",
+      "newlyAuthoredRecordCount": 6,
+      "importedRecordCount": 0,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-078",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_b_qs.pdf",
+          "pages": 16,
+          "sha256": "04fc7d8dbeed2f29bb7082d24ecdc8712c78b39012de0813c6a11cd1c5eea25a"
+        },
+        {
+          "jobId": "PLAN5-078",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/t6hhco0000003zx0-att/2023r05_fe_kamoku_b_ans.pdf",
+          "pages": 1,
+          "sha256": "416572bcae9a3fdcdf21a6b0bde3717c31b66591fca1d58e27dcc750f438e6e6"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-092",
+      "path": "data/questions/db/by-year/2024-autumn-pm2.ts",
+      "count": 2,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_pm2_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_pm2_ans.pdf",
+      "questionSha256": "8b878faf8435e7f1dd0954328699fc8eb640b76394cb956be503fe11b79c7ae2",
+      "answerSha256": "77469980ad76da655ecec3bb3d12a37ffb7afb96aa6c6083d3048eb7d66a0b5a",
+      "questions": [
+        {
+          "id": "db-2024a-pm2-q1",
+          "sourcePages": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                241.47518920898438,
+                555.2760009765625,
+                775.0
+              ]
+            },
+            {
+              "page": 2,
+              "clip": [
+                44.0,
+                30.0,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p3.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p4.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p5.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p6.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p7.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p8.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p9.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p10.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p11.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p12.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p13.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p14.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p15.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p16.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p17.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p18.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p19.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/db-2024a-pm2-q1-answer-1.webp",
+            "/questions/ipa-plan5-qb8/db-2024a-pm2-q1-answer-2.webp"
+          ]
+        },
+        {
+          "id": "db-2024a-pm2-q2",
+          "sourcePages": [
+            3,
+            4,
+            5,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          "answerRegions": [
+            {
+              "page": 3,
+              "clip": [
+                44.0,
+                195.51522827148438,
+                555.2760009765625,
+                775.0
+              ]
+            },
+            {
+              "page": 4,
+              "clip": [
+                44.0,
+                30.0,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p3.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p4.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p5.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p20.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p21.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p22.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p23.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p24.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p25.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p26.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p27.webp",
+            "/questions/ipa-plan5-qb8/2024r06a_db_pm2-p28.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/db-2024a-pm2-q2-answer-1.webp",
+            "/questions/ipa-plan5-qb8/db-2024a-pm2-q2-answer-2.webp"
+          ]
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2024,
+      "season": "autumn",
+      "session": "pm2",
+      "qualification": "データベーススペシャリスト",
+      "action": "不足分だけ新規補充",
+      "newlyAuthoredRecordCount": 2,
+      "importedRecordCount": 0,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-092",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_pm2_qs.pdf",
+          "pages": 32,
+          "sha256": "8b878faf8435e7f1dd0954328699fc8eb640b76394cb956be503fe11b79c7ae2"
+        },
+        {
+          "jobId": "PLAN5-092",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_db_pm2_ans.pdf",
+          "pages": 4,
+          "sha256": "77469980ad76da655ecec3bb3d12a37ffb7afb96aa6c6083d3048eb7d66a0b5a"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-106",
+      "path": "data/questions/es/by-year/2022-autumn-pm2.ts",
+      "count": 2,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_es_pm2_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_es_pm2_ans.pdf",
+      "questionSha256": "2da70ab0598a6029d5a5cf9d00173df0de73d032c524d50f534f23accd20b1b7",
+      "answerSha256": "5a446c4c41600bfd2ab37ff5b643314ad5b17218f7496d2812e285e583afc9fc",
+      "questions": [
+        {
+          "id": "es-2022a-pm2-q1",
+          "sourcePages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "answerRegions": [
+            {
+              "page": 1,
+              "clip": [
+                44.0,
+                213.51522827148438,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p2.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p3.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p4.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p5.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p6.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p7.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p8.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p9.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p10.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p11.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p12.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/es-2022a-pm2-q1-answer-1.webp"
+          ]
+        },
+        {
+          "id": "es-2022a-pm2-q2",
+          "sourcePages": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "answerRegions": [
+            {
+              "page": 2,
+              "clip": [
+                44.0,
+                153.51522827148438,
+                555.2760009765625,
+                775.0
+              ]
+            }
+          ],
+          "imageUrls": [
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p13.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p14.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p15.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p16.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p17.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p18.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p19.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p20.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p21.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p22.webp",
+            "/questions/ipa-plan5-qb8/2022r04a_es_pm2-p23.webp"
+          ],
+          "answerImageUrls": [
+            "/questions/ipa-plan5-qb8/es-2022a-pm2-q2-answer-1.webp"
+          ]
+        }
+      ],
+      "status": "complete",
+      "officialYear": 2022,
+      "season": "autumn",
+      "session": "pm2",
+      "qualification": "エンベデッドシステムスペシャリスト",
+      "action": "不足分だけ新規補充",
+      "newlyAuthoredRecordCount": 2,
+      "importedRecordCount": 0,
+      "officialFiles": [
+        {
+          "jobId": "PLAN5-106",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_es_pm2_qs.pdf",
+          "pages": 28,
+          "sha256": "2da70ab0598a6029d5a5cf9d00173df0de73d032c524d50f534f23accd20b1b7"
+        },
+        {
+          "jobId": "PLAN5-106",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_es_pm2_ans.pdf",
+          "pages": 2,
+          "sha256": "5a446c4c41600bfd2ab37ff5b643314ad5b17218f7496d2812e285e583afc9fc"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-120",
+      "path": "data/questions/kangoshi/2022-annual.json",
+      "count": 119,
+      "officialExpectedQuestionCount": 120,
+      "officialExcludedQuestionNumbers": [
+        35
+      ],
+      "importedFromCommit": "ae983af203a31b62b9ba504280bf645c70dc40ec",
+      "importedFromRef": "cx/kako-explain2-20261117",
+      "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-05c_01.pdf",
+      "answerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-05seitou.pdf",
+      "storedYear": 2022,
+      "officialYear": 2023,
+      "round": 112,
+      "questions": [
+        {
+          "id": "kangoshi-2022-annual-pm-q1",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q2",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q3",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q4",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q5",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q6",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q7",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q8",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q9",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q10",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q11",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q12",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q13",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q14",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q15",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q16",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q17",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q18",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q19",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q20",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q21",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q22",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q23",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q24",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q25",
+          "imageUrls": [
+            "/questions/kangoshi/2022-pm-q25.png"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q26",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q27",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q28",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q29",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q30",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q31",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q32",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q33",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q34",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q36",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q37",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q38",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q39",
+          "imageUrls": [
+            "/questions/kangoshi/2022-pm-q39.png"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q40",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q41",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q42",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q43",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q44",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q45",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q46",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q47",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q48",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q49",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q50",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q51",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q52",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q53",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q54",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q55",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q56",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q57",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q58",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q59",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q60",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q61",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q62",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q63",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q64",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q65",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q66",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q67",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q68",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q69",
+          "imageUrls": [
+            "/questions/kangoshi/2022-pm-q69.png"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q70",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q71",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q72",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q73",
+          "imageUrls": [
+            "/questions/kangoshi/2022-pm-q73.png"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q74",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q75",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q76",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q77",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q78",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q79",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q80",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q81",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q82",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q83",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q84",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q85",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q86",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q87",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q88",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q89",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q90",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q91",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q92",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q93",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q94",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q95",
+          "imageUrls": [
+            "/questions/kangoshi/2022-pm-q95.png"
+          ],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q96",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q97",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q98",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q99",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q100",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q101",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q102",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q103",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q104",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q105",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q106",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q107",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q108",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q109",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q110",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q111",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q112",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q113",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q114",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q115",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q116",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q117",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q118",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q119",
+          "imageUrls": [],
+          "answerImageUrls": []
+        },
+        {
+          "id": "kangoshi-2022-annual-pm-q120",
+          "imageUrls": [],
+          "answerImageUrls": []
+        }
+      ],
+      "status": "complete-scoring-scope",
+      "season": "annual",
+      "session": "pm",
+      "qualification": "看護師",
+      "action": "ブランチ・main保管分を先に取り込み、残りだけ補充",
+      "newlyAuthoredRecordCount": 0,
+      "importedRecordCount": 119,
+      "officialFiles": [],
+      "notes": [
+        "第112回は2023年実施、既存データの保存年・IDは2022を保持。",
+        "問35は公式に採点除外。正答を補作しない。",
+        "問95は1または3のいずれか1肢を正解とする既存実装を保持。",
+        "既存の午前10レコードは全フィールド保持。"
+      ],
+      "officialScoringNoticeUrls": [
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken03_04_05/dl/kangoshi_pm35.pdf",
+        "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken03_04_05/dl/kangoshi_pm95.pdf"
+      ]
+    }
+  ]
+}

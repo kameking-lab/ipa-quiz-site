@@ -1,7 +1,15 @@
 import { test, expect } from "@playwright/test";
 test.use({ viewport: { width: 360, height: 800 }, reducedMotion: "reduce" });
 
-for (const slug of ["it-shikaku-rirekisho-kakikata", "ipa-shiken-fukusuu-kubun-juken", "koudo-gozen1-taisaku", "nw-gogo-jikan-haibun"]) {
+test("the resume reference guide opens qualification choices without an unrelated practice", async ({ page }) => {
+  await page.goto("/blog/it-shikaku-rirekisho-kakikata");
+  await expect(page.locator("#article-practice")).toHaveCount(0);
+  await page.locator('#article-body a[href="/fe"]').click();
+  await expect(page).toHaveURL(/\/fe$/);
+  await expect(page.getByRole("region", { name: "今すぐ解く" })).toBeVisible();
+});
+
+for (const slug of ["ipa-shiken-fukusuu-kubun-juken", "koudo-gozen1-taisaku", "nw-gogo-jikan-haibun"]) {
   test(`${slug}: answer in the article and continue with the mapped exam and session`, async ({ page }, testInfo) => {
     let aiCalls = 0;
     await page.route("**/api/copilot**", route => { aiCalls++; return route.abort(); });
@@ -60,8 +68,8 @@ test("390px: a six-choice worked example keeps all choices and its actual choice
 test("the study room returns to the qualification last answered on this device", async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem("ipa-quiz:last-question:v1", JSON.stringify({ exam: "sg", year: 2025, season: "cbt", session: "kamoku-a", qNumber: 5, answeredAt: Date.now() })));
   await page.goto("/");
-  const link = page.getByRole("link", { name: "情報セキュリティマネジメントをもう1問", exact: true }).first();
-  await expect(link).toHaveAttribute("href", "/quiz?mode=random&exam=sg");
+  const link = page.getByRole("link", { name: "続きを解く", exact: true });
+  await expect(link).toHaveAttribute("href", "/quiz?mode=year&exam=sg&year=2025&season=cbt&session=kamoku-a&question=sg-2025cbt-kamoku-a-q5");
   await link.click();
   await expect(page).toHaveURL(/exam=sg/);
   await expect(page.getByRole("radio").first()).toBeVisible();

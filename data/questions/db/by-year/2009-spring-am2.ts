@@ -24,6 +24,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ANSI/SPARC 3層スキーマの外部スキーマは、応用プログラムから見たデータの論理構造を定義します。一方、概念スキーマはデータベース全体の論理構造を定義するため、関係データベースのビューやネットワークデータベースのサブスキーマは外部スキーマに相当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "候補キーは、関係の全ての属性を一意に識別できる最小の属性集合です。関数従属A→BCとCD→Eから、属性ADの閉包を計算すると、AはBとCを決定し、CDはEを決定するため、ADはA, B, C, D, Eの全てを決定できます。A単独、D単独では全てを決定できないため、ADが最小性も満たす候補キーとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ロールフォワードは、媒体障害などからの復旧において、障害発生前の状態にデータベースを復旧した後、コミットされたトランザクションの更新を再適用して一貫性のある状態に戻す処理です。この処理には、データベースの更新されたページに対する更新後情報（REDO情報）をログから読み出して適用する必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +98,14 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
       "エ": "エ"
     },
     "answer": "ウ",
-    "explanation": "問題文の業務ルールに基づき、適切なE-R図を選択する問題です。正解は「ウ」です。\n\nまず、正解の根拠を説明します。業務ルールには「営業員は一つ以上の担当地域が定められており、担当地域の1人以上の顧客から受注を得る」とあります。この「営業員」と「担当地域」の関係は、営業員が複数の地域を担当し、地域も複数の営業員が担当しうるため、多対多の関係となります。また、「担当地域の1人以上の顧客から受注を得る」という部分から、営業員と顧客の間にも、営業員が複数の顧客を持ち、顧客も複数の営業員から受注しうる多対多の関係が示唆されます。さらに、「一つの地域を1人以上の営業員が担当する」という記述は、地域と営業員の関係が多対多であることを補強しています。E-R図において、多対多の関連は通常、関連エンティティ（中間テーブル）を介して表現されます。正解の「ウ」では、これらの関係性が正しく表現されていると考えられます。\n\n次に、他の選択肢がなぜ不適切かを分析します。\n選択肢「ア」は、営業員と担当地域が一対多の関係になっている可能性があります。しかし、業務ルールでは「一つの地域を1人以上の営業員が担当する」とあり、これは多対多の関係を示唆するため、「ア」は不適切です。\n選択肢「イ」は、営業員と顧客の関係が一対多になっている可能性があります。業務ルールから、営業員が複数の顧客を担当し、顧客も複数の営業員から受注する可能性があるため、一対多では不十分であり、「イ」は不適切です。\n選択肢「エ」は、地域と顧客の関係が多対多になっている可能性がありますが、営業員と地域、営業員と顧客の関係性において、本来必要とされる多対多の関連や、それを表現するための中間エンティティが欠落している可能性があります。業務ルールで示唆される複雑な関連性を正しく捉えきれていないため、「エ」は不適切です。",
+    "explanation": "営業員一人が複数の地域を担当し、同じ地域を複数の営業員が担当できます。この多対多を、地域と営業員の双方を参照する担当地域で表します。受注は顧客と営業員に結び付け、教材との対応は受注明細で管理するウが適切です。",
+    "choiceExplanations": {
+      "ア": "営業員が直接一つの地域に属する多対一の関連になっています。業務ルールでは営業員一人が複数の地域を担当できます。",
+      "イ": "営業員と顧客を直接結んでいますが、営業員の担当は顧客ごとでなく地域ごとに定まります。営業員と地域の多対多を表せていません。",
+      "ウ": "地域と営業員を中間の担当地域で結び、多対多を表します。受注は顧客一人と営業員一人に対応し、教材は受注明細で管理します。",
+      "エ": "担当地域が地域と顧客の間にあり、どの営業員がどの地域を担当するかを表せません。担当地域は地域と営業員を結びます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +129,14 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
       "エ": "エ"
     },
     "answer": "エ",
-    "explanation": "この問題は、関係データベースにおける正規化、特に第3正規形への変換を問うものです。第3正規形とは、関係が第2正規形であり、かつ推移的関数従属がない状態を指します。推移的関数従属とは、非候補キー属性が他の非候補キー属性に関数従属している状態です。\n\n正解はエです。選択肢エは、元の関係（a b c d e）を、属性間の従属関係に基づいて複数の関係に分割し、各関係において非候補キー属性が候補キー属性にのみ関数従属するように設計されています。これにより、推移的関数従属が排除され、第3正規形が満たされます。\n\nアは、元の関係を適切に正規化できていない可能性があります。イは、非候補キー属性間の従属関係が残存しており、推移的関数従属の解消が不十分である可能性があります。ウも同様に、属性間の関数従属関係を正しく分割できておらず、第3正規形を満たさない可能性が高いです。",
+    "explanation": "図から、a→b、a→d、b→c、（b, d）→eを読み取れます。a→cはa→b→cから導けるので、それぞれの決定項で（a, b, d）、（b, c）、（b, d, e）に分けるエが第3正規形です。",
+    "choiceExplanations": {
+      "ア": "（a, b, c, d）にb→cが残ります。a→bと組み合わさってaからcが推移的に決まるので、第3正規形になりません。",
+      "イ": "（b, c）を別にしても、（a, b, c, d）にもcを残しているため、その表のa→b→cという推移的な従属が解消されません。",
+      "ウ": "（b, d, c, e）の中では（b, d）がキーですが、cはその一部のbだけで決まります。この部分関数従属を分離します。",
+      "エ": "aでbとdが決まり、bでcが決まり、bとdの組でeが決まります。それぞれの決定項ごとに三つの関係へ分けています。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +161,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ウが正解となるのは、組織の親子関係を表現するために、組織テーブルにおいて親組織と子組織を関連付ける必要があり、その関連付けには親組織のIDを子組織の属性として持つことが一般的だからです。WHERE句で組織1と組織2という2つの組織インスタンスを比較する際、組織1の組織IDが組織2の親組織IDと一致する場合、組織1が組織2の親組織であることを意味します。これは、自己結合 (Self-Join) を用いて階層構造を辿る際の基本的な考え方です。\n\nアは、組織1の親組織IDと組織2の子組織IDを比較しており、これは親と子の逆の関係や、子組織に複数親が存在するような誤った構造を示唆するため不適切です。イは、組織1の親組織IDと組織2の組織IDを比較しており、これは親組織が子組織のIDを持つという、本来の親子関係とは逆の構造になってしまうため誤りです。エは、組織1と組織2の組織ID同士を比較しており、これは組織自身を比較することになり、親子関係の特定には繋がりません。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +186,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "このSQL文では、まず所在地が「東京」の取引先データのみを表示する「東京取引先」というビューを作成しています。次に、ユーザー「8823」に対して、このビューに対するSELECT（参照）権限を付与しています。これにより、「8823」のユーザーは、ビューを通じて所在地が「東京」の取引先データだけを参照できるようになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +211,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "R-(R-S)の演算を考えると、まずR-SはRに含まれるがSには含まれないタプルの集合です。次に、RからこのR-Sの集合を除外すると、結果的にRに含まれ、かつSにも含まれるタプルの集合が得られます。これはRとSの共通集合であるR∩Sと等しくなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +236,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "社員ごとの勤務成績の平均を求めるには、「社員」表と「人事異動」表を社員コードで結合し、その結果を社員コードと社員名でグループ化する必要があります。グループ化した後、各グループ内で勤務成績の平均を`AVG(勤務成績)`関数で算出します。選択肢イがこの処理を正確に記述しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +261,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA データベーススペシャリスト試験 2009年度春期 午前II 問10）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +286,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "WALプロトコルでは、データベースの実更新(②)に先立って更新前情報(③)がログに記録され、実更新後に更新後情報(④)が記録されます。トランザクションの開始(①)後、これらの更新処理を経て、まず論理的なトランザクションの終了(⑥)が記録され、最終的にコミット(⑤)によってそのトランザクションの永続化が保証されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +311,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "分散データベースシステムにおける結合演算では、中間結果やアクセス頻度の高いデータをサイトのローカルキャッシュに保持することで、ネットワーク通信量を削減し、全体的な処理性能を向上させることが可能です。LRU法は、このキャッシュ管理において、最も長く使用されていないデータを破棄して新しいデータに置き換えることで、キャッシュの効率を最適化し、結果として結合演算の最適化に間接的に寄与します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +336,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "DBMSの排他制御機能は、複数のトランザクションが同時に同じデータにアクセスして更新する際に、データの矛盾や不整合が発生するのを防ぎます。これにより、各トランザクションが独立して実行されているかのように見せかけ、データベースの整合性を保つことが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +361,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スタースキーマ構造におけるファクトテーブルは、データウェアハウスにおいて分析対象となる数値データ（測定値やメジャー）を格納する中心的なテーブルです。売上数量や金額といったトランザクションデータがここに集約され、ディメンションテーブルへの外部キーを持ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +386,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DNSキャッシュポイズニングは、DNSサーバーのキャッシュに偽の情報を注入することで、利用者を悪意のある偽装されたWebサーバーへ誘導する攻撃です。選択肢ウの「攻撃者がDNSサーバを踏み台に利用して再帰的な問合せを大量に行う」行為は、DDoS攻撃の一種であるDNSリフレクション攻撃を指しますが、大量の問い合わせがキャッシュの更新を頻繁に誘発し、キャッシュポイズニングを成功させる機会を与える可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +411,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "A氏が秘密鍵で署名し、B商店がA氏の公開鍵で署名を確認することで、注文がA氏の秘密鍵によって作成されたものであることを検証できます。秘密鍵はA氏のみが持つため、これによりB商店は、受け取った注文が確かにA氏本人からのものであることを確認でき、A氏による注文の否認を防止できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +436,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "情報システムのリスク分析は、システム内に潜在するリスク（脆弱性や脅威）を特定し、それが顕在化した場合にシステムに与える影響の大きさや発生可能性を評価するプロセスです。この分析を通じて、損失をもたらすリスクがどこにどのように存在するかを識別し、その影響度を測定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +461,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スーパコンピュータは、極めて高い計算性能を必要とする科学技術計算やシミュレーションのために設計されたコンピュータです。この高い性能は、ベクトル命令を備えたプロセッサを複数結合したり、数多くのマイクロプロセッサを大規模に並列接続したりすることで実現されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +486,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RAID5は、複数のディスクにデータを分散して書き込むストライピングと、パリティ情報を特定のディスクに集中させるのではなく、各ディスクに分散して格納する方式を組み合わせたものです。これにより、ディスクアレイ内のいずれか1台のディスクが故障しても、パリティ情報を用いてデータを復旧できる冗長性と、高い並列アクセス性能を両立させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ホットスタンバイシステムでは、現用系が正常に稼働していることを示す「ハートビート」と呼ばれるメッセージを定期的に待機系へ送信します。このハートビートメッセージが一定時間途切れた場合、待機系は現用系の障害と判断し、自動的に処理を引き継ぐ切り替えを行います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "現在の応答時間は、サーバ処理時間100ミリ秒、総回線伝送時間400ミリ秒、端末処理時間500ミリ秒の合計1000ミリ秒です。各対策が応答時間に与える影響を比較すると、選択肢イの「サーバ処理時間を80%改善する」ことが、サーバ処理時間を20ミリ秒まで短縮し、全体の応答時間を920ミリ秒にすることで、最も応答時間を短縮する効果があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールセーフは、システムに故障が発生した場合でも、その故障が直ちに危険な状態を引き起こすのではなく、安全な側へ向かうように設計する考え方です。交通管制システムが故障した際に信号機が赤色に点灯するのは、車両を停止させ、衝突事故などの危険を回避するための安全側への動作であり、フェールセーフの典型的な例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "状態遷移図は、システムの振る舞いを記述するために用いられる図であり、システムが取りうる「状態」、ある状態から別の状態へ移行する原因となる「事象」、そして事象が発生した結果到達する「次の状態」の関係を簡潔に表現することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "リバースエンジニアリングは、完成したソフトウェアのソースプログラムを詳細に解析し、その動作原理や内部構造、設計意図などを理解することで、元の設計書や仕様書を作成する技術です。これは特に、ドキュメントが不足しているレガシーシステムの保守や改修において重要な役割を果たします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const DB_QUESTIONS_2009_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ウォータフォールモデルは、各工程を順に進め、前の工程への逆戻りを基本的に行わない一方向性の開発モデルです。そのため、各工程でのレビューやテストによる品質確保が極めて重要であり、これによって手戻りを防ぎ、開発効率の維持を目指します。この説明はウォータフォールモデルの特性を正確に捉えています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_1/2009h-9h_db_am2_qs.pdf",
     "license": "IPA-public"

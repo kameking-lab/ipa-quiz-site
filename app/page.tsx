@@ -1,15 +1,18 @@
-import "./home-study.css";
 import type { Metadata } from "next";
-import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
-import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
-import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
-import { HomeHero } from "@/components/home/landing/HomeHero";
+import { HomePace } from "@/components/home/pace/HomePace";
+import { QualificationDirectory } from "@/components/home/pace/QualificationDirectory";
+import { HomeStudyRoom } from "@/components/home/pace/HomeStudyRoom";
+import { planCatalogKeys } from "@/lib/study-plan/catalog-keys";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { japanDate } from "@/lib/home/featured-exams";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { CAFE_POSE_FILES } from "@/lib/home/study-room-cafe-mascots";
+import { groupHomeDirectory } from "@/lib/home/grouped-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
+import styles from "./HomePage.module.css";
 
 const title = "資格の公開過去問と学習用解説 — 過去問AI";
-const description = "IPA・FP・電気・医療・福祉・不動産・安全衛生等の資格の公開過去問を無料で学習。資格と実施回から問題を選び、公式出典・正答とAI支援で編集した学習用解説を確認して演習・復習を進められます。";
+const description = "IPA・FP・電気・医療・福祉・不動産・安全衛生等の資格の公開過去問を無料で学習。資格と実施回から問題を選び、公式出典・正答と学習用解説を確認して演習・復習を進められます。";
 export const metadata: Metadata = {
   title, description,
   alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },
@@ -19,20 +22,20 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const domains = getHomeDirectory();
-  const roomItems = domains.flatMap(domain => domain.featured.slice(0, 1));
-  const roomKeys = new Set(roomItems.map(item => item.key));
-  roomItems.push(...domains.flatMap(domain => [...domain.featured, ...domain.compact]).filter(item => !roomKeys.has(item.key)));
 
   return (
-    <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-6 sm:px-10 sm:pt-12">
+    <main className={`${styles.home} p3-page p3-home study-column flex-1`}>
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
-      <HomeHero domains={domains} />
-      <TotalAnswerCounter suggestions={roomItems.filter(item => item.questionCount > 0)
-        .map(({ name, href, key }) => ({ name, href, exam: key }))} />
-      <HomeDirectory domains={domains} />
-      <div className="study-context">
-      <HomeScheduleLink />
-      </div>
+      <HomePace domains={domains} planExamKeys={planCatalogKeys()} initialDate={japanDate(new Date())} directory={
+        <details id="home-qualification-directory">
+          <summary className="study-focus min-h-12 cursor-pointer py-3 text-sm underline underline-offset-4 hover:text-primary">資格・区分一覧</summary>
+          <div className="mt-2">
+            <QualificationDirectory domains={groupHomeDirectory(domains)} />
+          </div>
+        </details>
+      }>
+        <HomeStudyRoom poseFiles={CAFE_POSE_FILES} />
+      </HomePace>
     </main>
   );
 }

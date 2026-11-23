@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "es-2016h-am2-q1",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "キャッシュコヒーレンシ"
+    ],
+    "difficulty": 3,
+    "question": "問1 キャッシュコヒーレンシ",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "各キャッシュが共有主記憶の変更を検知し、手元のコピーの整合性を保つ動作に着目します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q01.webp"
+    ],
+    "imageAltTexts": [
+      "問1 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問1」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q2",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "キャッシュの平均アクセス時間"
+    ],
+    "difficulty": 3,
+    "question": "問2 キャッシュの平均アクセス時間",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "ヒット時とミス時の時間をそれぞれの場合の確率で重み付けします。単純に二つの時間を平均しません。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q02.webp"
+    ],
+    "imageAltTexts": [
+      "問2 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問2」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q3",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "フレームバッファ"
+    ],
+    "difficulty": 3,
+    "question": "問3 フレームバッファ",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "表示の画素数と1画素を表すビット数を掛け、必要な記憶容量に直します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q03.webp"
+    ],
+    "imageAltTexts": [
+      "問3 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問3」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q4",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "I2Cバス"
+    ],
+    "difficulty": 3,
+    "question": "問4 I2Cバス",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "I2Cはクロック線とデータ線の2本を共有し、アドレスで通信するデバイスを選びます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q04.webp"
+    ],
+    "imageAltTexts": [
+      "問4 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問4」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q5",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "周辺装置との転送方式"
+    ],
+    "difficulty": 3,
+    "question": "問5 周辺装置との転送方式",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "エ",
+    "explanation": "パラレル方式では複数の信号線の到達時刻をそろえる必要があり、高速化すると線間のずれが問題になります。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q05.webp"
+    ],
+    "imageAltTexts": [
+      "問5 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問5」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q6",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "指数分布と残存台数"
+    ],
+    "difficulty": 3,
+    "question": "問6 指数分布と残存台数",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "時間を秒にそろえ、指数分布の残存確率に稼働開始時点の台数を掛けます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q06.webp"
+    ],
+    "imageAltTexts": [
+      "問6 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問6」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q7",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "完了通知"
+    ],
+    "difficulty": 3,
+    "question": "問7 完了通知",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "要求に応じて動くドライバ側は、処理完了時に要求したタスクを待ち状態から戻せるよう通知します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q07.webp"
+    ],
+    "imageAltTexts": [
+      "問7 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問7」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q8",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "ページサイズ"
+    ],
+    "difficulty": 3,
+    "question": "問8 ページサイズ",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "ページがプログラムより大きいと、割り当てたページ内の未使用部分が増えます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q08.webp"
+    ],
+    "imageAltTexts": [
+      "問8 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問8」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q9",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "タスクの優先度"
+    ],
+    "difficulty": 3,
+    "question": "問9 タスクの優先度",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "実行できる仕事がないときは、割込みが来るまでCPUを休止させると消費電力を抑えられます。待機中も空の処理を繰り返す方式ではCPUが動き続けます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q09.webp"
+    ],
+    "imageAltTexts": [
+      "問9 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問9」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q10",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "タスクの終了時刻"
+    ],
+    "difficulty": 3,
+    "question": "問10 タスクの終了時刻",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "新しいタスクの発生時点ごとに実行中のタスクと優先度を比較します。中断したタスクの残り時間を持ち越します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q10.webp"
+    ],
+    "imageAltTexts": [
+      "問10 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問10」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q11",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "コンパイラ最適化"
+    ],
+    "difficulty": 3,
+    "question": "問11 コンパイラ最適化",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "元の処理結果を変えず実行量を減らす変換を選びます。処理を移動できるかは変数の依存関係で確かめます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q11.webp"
+    ],
+    "imageAltTexts": [
+      "問11 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問11」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q12",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "ブラシ付き直流モータ"
+    ],
+    "difficulty": 3,
+    "question": "問12 ブラシ付き直流モータ",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "回転方向を変えるにはモータ端子間の電圧の向きを変えます。回転速度を変える制御と区別します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q12.webp"
+    ],
+    "imageAltTexts": [
+      "問12 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問12」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q13",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "FeRAM"
+    ],
+    "difficulty": 3,
+    "question": "問13 FeRAM",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "エ",
+    "explanation": "FeRAMは強誘電体の分極を利用する不揮発性メモリです。フラッシュメモリに比べて書換え回数が多く、書換え速度が速いことが原問の判断点です。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q13.webp"
+    ],
+    "imageAltTexts": [
+      "問13 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問13」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q14",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "NANDによる組合せ回路"
+    ],
+    "difficulty": 3,
+    "question": "問14 NANDによる組合せ回路",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "各NANDは論理積を反転した出力です。途中の出力を式で表すと、回路全体を比較できます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q14.webp"
+    ],
+    "imageAltTexts": [
+      "問14 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問14」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q15",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "PWMの復調回路"
+    ],
+    "difficulty": 3,
+    "question": "問15 PWMの復調回路",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "パルス列の高周波成分を抑え、デューティ比に応じた平均電圧を取り出す回路を選びます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q15.webp"
+    ],
+    "imageAltTexts": [
+      "問15 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問15」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q16",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "マイコン端子とランプ点灯"
+    ],
+    "difficulty": 3,
+    "question": "問16 マイコン端子とランプ点灯",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "出力端子の状態ごとにランプ電流の経路を追い、端子の電流の向きで選びます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q16.webp"
+    ],
+    "imageAltTexts": [
+      "問16 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問16」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q17",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "TCPとUDPに共通するフィールド"
+    ],
+    "difficulty": 3,
+    "question": "問17 TCPとUDPに共通するフィールド",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "エ",
+    "explanation": "TCPとUDPの両方がチェックサムの欄を持ちます。シーケンス番号などはTCPの欄です。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q17.webp"
+    ],
+    "imageAltTexts": [
+      "問17 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問17」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q18",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "EDoSの目的"
+    ],
+    "difficulty": 3,
+    "question": "問18 EDoSの目的",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "従量課金では使われた資源量が費用に結び付きます。設問では攻撃者が利用者に負わせる損失に着目します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q18.webp"
+    ],
+    "imageAltTexts": [
+      "問18 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問18」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q19",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "DNSゾーン転送の制御"
+    ],
+    "difficulty": 3,
+    "question": "問19 DNSゾーン転送の制御",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "ゾーン転送を許可する相手を必要なDNSサーバに絞ることで、外部へ不要な情報が出るのを防ぎます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q19.webp"
+    ],
+    "imageAltTexts": [
+      "問19 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問19」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q20",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "DFDの段階的詳細化"
+    ],
+    "difficulty": 3,
+    "question": "問20 DFDの段階的詳細化",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "親プロセスの外部とやりとりする入力・出力の関係を、子プロセスに分けても維持します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q20.webp"
+    ],
+    "imageAltTexts": [
+      "問20 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問20」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q21",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "ハードウェアとソフトウェアのコデザイン"
+    ],
+    "difficulty": 3,
+    "question": "問21 ハードウェアとソフトウェアのコデザイン",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "性能やコストなどの制約を満たすよう、機能のハードウェアとソフトウェアへの配分を両方から検討します。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q21.webp"
+    ],
+    "imageAltTexts": [
+      "問21 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問21」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q22",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "Observerパターン"
+    ],
+    "difficulty": 3,
+    "question": "問22 Observerパターン",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "explanation": "監視対象が変わったときに登録された相手に通知する仕組みです。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q22.webp"
+    ],
+    "imageAltTexts": [
+      "問22 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問22」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q23",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "状態遷移"
+    ],
+    "difficulty": 3,
+    "question": "問23 状態遷移",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "現在の状態と入力事象の組に対して、次の状態や処理が対応する表現を選びます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q23.webp"
+    ],
+    "imageAltTexts": [
+      "問23 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問23」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q24",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "最大スタック使用量"
+    ],
+    "difficulty": 3,
+    "question": "問24 最大スタック使用量",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "explanation": "呼出しが重なる経路をたどり、同時に保持されるスタックフレームの最大値を求めます。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q24.webp"
+    ],
+    "imageAltTexts": [
+      "問24 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問24」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2016h-am2-q25",
+    "exam": "es",
+    "year": 2016,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "特許のサブライセンス"
+    ],
+    "difficulty": 3,
+    "question": "問25 特許のサブライセンス",
+    "choices": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "explanation": "特許の実施許諾を受けた者が、許諾契約の範囲内で第三者に再許諾することです。",
+    "explanationCoverage": "official-summary",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2016-spring-am2/q25.webp"
+    ],
+    "imageAltTexts": [
+      "問25 公式の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_es_am2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "sourceAttribution": "出典：IPA「エンベデッドシステムスペシャリスト試験 2016年度春期 午前II 問25」。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

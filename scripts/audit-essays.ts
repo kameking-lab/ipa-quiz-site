@@ -28,7 +28,12 @@
 import { readdirSync, existsSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import { findAfternoonQuestion } from "@/lib/afternoon/load";
+import { AU_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/au";
+import { PM_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/pm";
+import { SA_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sa";
+import { SC_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sc";
+import { SM_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sm";
+import { ST_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/st";
 import type { IndustryVariant } from "@/lib/afternoon/types";
 
 const CI_MODE = process.argv.includes("--ci");
@@ -117,10 +122,15 @@ const INDUSTRY_WORK_TERMS: Record<string, string[]> = {
   healthcare: ["患者", "病院", "処方", "病床", "検査", "診療", "医療"]
 };
 
-// 親設問が存在する場合はその条件を使用。旧年度の独自教材は実配信側と同じ上限。
+// 保管中の独自教材も、その版の親設問に記録した字数条件で監査する。
+const archivedQuestions = new Map([
+  ...AU_AFTERNOON_QUESTIONS, ...PM_AFTERNOON_QUESTIONS, ...SA_AFTERNOON_QUESTIONS,
+  ...SC_AFTERNOON_QUESTIONS, ...SM_AFTERNOON_QUESTIONS, ...ST_AFTERNOON_QUESTIONS,
+].map(question => [question.id, question]));
+
 export function auditEssayLengths(v: IndustryVariant, exam: string, period: string) {
   const [year, season] = period.split("-");
-  const parent = findAfternoonQuestion(`${exam}-${year}${season === "spring" ? "h" : "a"}-pm2-q1`);
+  const parent = archivedQuestions.get(`${exam}-${year}${season === "spring" ? "h" : "a"}-pm2-q1`);
   return [v.essayA, v.essayI, v.essayU].map((text, i) => {
     const condition = parent?.subQuestions[i];
     const min = condition?.minLength ?? 0;

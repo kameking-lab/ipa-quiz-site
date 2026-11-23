@@ -1,0 +1,86 @@
+[
+  {
+    "id": "au-2020a-pm2-q1",
+    "exam": "au",
+    "session": "pm2",
+    "year": 2020,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "essay",
+    "category": "システム監査",
+    "topicTags": [
+      "AI技術を利用したシステムの企画・開発に関する監査について"
+    ],
+    "difficulty": 4,
+    "question": "問1 AI技術を利用したシステムの企画・開発に関する監査について",
+    "answer": "問１\n                       出題趣旨\n   AI 技術の進展に伴い，画像認識による顔認証，テキスト・音声を通じて会話するチャットボット，人材マッ\nチングによる採用支援，顧客の信用力スコアリングによる与信審査など，AI 技術を利用したシステムであるAI\nシステムの導入事例が増えてきている。\n  一方，AI システムには，予測・判断結果の解釈が難しかったり，精度が低かったりすることがあるので，機\n能要件を確定してから構築する従来の開発手法による対応では難しくなる。また，精度を高めるための収集デ\nータの加工に多くのコストが掛かったり，ベンダが有するノウハウなどの権利帰属の問題によって，ユーザの\n利用時に制約が生じたりすることも想定される。\n  本問では，システム監査人として，AI システムの利用段階において想定されるリスクを踏まえて，AI システ\nムの導入目的，開発手法，ユーザ・ベンダ間の取決めなどが適切かどうかを企画・開発段階において監査するた\nめの知識・能力などを問う。",
+    "modelAnswer": "```text\n問１\n                       出題趣旨\n   AI 技術の進展に伴い，画像認識による顔認証，テキスト・音声を通じて会話するチャットボット，人材マッ\nチングによる採用支援，顧客の信用力スコアリングによる与信審査など，AI 技術を利用したシステムであるAI\nシステムの導入事例が増えてきている。\n  一方，AI システムには，予測・判断結果の解釈が難しかったり，精度が低かったりすることがあるので，機\n能要件を確定してから構築する従来の開発手法による対応では難しくなる。また，精度を高めるための収集デ\nータの加工に多くのコストが掛かったり，ベンダが有するノウハウなどの権利帰属の問題によって，ユーザの\n利用時に制約が生じたりすることも想定される。\n  本問では，システム監査人として，AI システムの利用段階において想定されるリスクを踏まえて，AI システ\nムの導入目的，開発手法，ユーザ・ベンダ間の取決めなどが適切かどうかを企画・開発段階において監査するた\nめの知識・能力などを問う。\n```",
+    "explanation": "AIシステムの利用時に想定されるリスクを先に整理する。導入目的、開発の進め方、ベンダとの取決めを確かめる監査手続につなげる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/au/2020-autumn-pm2/page-03.webp",
+      "/questions/ipa/au/2020-autumn-pm2/page-02.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 午後II 問1の本文・設問（公式問題冊子 3ページ）",
+      "システム監査技術者 午後II 問1の本文・設問（公式問題冊子 2ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/au/2020-autumn-pm2/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "システム監査技術者 午後II 問1の公式出題趣旨（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_au_pm2_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_au_pm2_ans.pdf#page=1",
+    "sourceAnswerKind": "intent",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2020年度秋期 システム監査技術者 午後II 問1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "au-2020a-pm2-q2",
+    "exam": "au",
+    "session": "pm2",
+    "year": 2020,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "essay",
+    "category": "IT組織の監査",
+    "topicTags": [
+      "IT組織の役割・責任に関するシステム監査について"
+    ],
+    "difficulty": 4,
+    "question": "問2 IT組織の役割・責任に関するシステム監査について",
+    "answer": "問２\n                       出題趣旨\n   IT 組織は，外部サービスの利用拡大に伴って，従来のOJT による知識・経験が習得できなくなったり，IT 組\n織の要員削減や新たな能力の獲得・維持が求められたりする。また，AI システムなどの新技術の導入において\nは，新たな開発手法や技術に関連する知識・経験に加えて，組織全体のデジタル化推進役がIT 組織に求められ\nる場合がある。\n  これらのIT 環境の変化によってIT 組織に求められる役割・責任の変更は，新たなIT 組織の役割・責任を達\n成できないリスクを発生させる。したがって，IT 組織の役割・責任を適切に果たすためには，これらのリスク\nへの対応策を適切に構築し，有効に運用する必要がある。\n  本問では，システム監査人として，IT 環境の変化によって新たに求められるIT 組織の役割・責任を適切に果\nたすことを阻害するリスクの評価及びこのリスク対応策が適切かどうかを監査するための知識・能力などを問\nう。",
+    "modelAnswer": "```text\n問２\n                       出題趣旨\n   IT 組織は，外部サービスの利用拡大に伴って，従来のOJT による知識・経験が習得できなくなったり，IT 組\n織の要員削減や新たな能力の獲得・維持が求められたりする。また，AI システムなどの新技術の導入において\nは，新たな開発手法や技術に関連する知識・経験に加えて，組織全体のデジタル化推進役がIT 組織に求められ\nる場合がある。\n  これらのIT 環境の変化によってIT 組織に求められる役割・責任の変更は，新たなIT 組織の役割・責任を達\n成できないリスクを発生させる。したがって，IT 組織の役割・責任を適切に果たすためには，これらのリスク\nへの対応策を適切に構築し，有効に運用する必要がある。\n  本問では，システム監査人として，IT 環境の変化によって新たに求められるIT 組織の役割・責任を適切に果\nたすことを阻害するリスクの評価及びこのリスク対応策が適切かどうかを監査するための知識・能力などを問\nう。\n```",
+    "explanation": "外部サービスなどで変化した役割と責任を示す。新しい役割を果たせないリスクへの対応が有効に運用されているかを検証する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/au/2020-autumn-pm2/page-04.webp",
+      "/questions/ipa/au/2020-autumn-pm2/page-02.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 午後II 問2の本文・設問（公式問題冊子 4ページ）",
+      "システム監査技術者 午後II 問2の本文・設問（公式問題冊子 2ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/au/2020-autumn-pm2/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "システム監査技術者 午後II 問2の公式出題趣旨（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_au_pm2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_au_pm2_ans.pdf#page=1",
+    "sourceAnswerKind": "intent",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2020年度秋期 システム監査技術者 午後II 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

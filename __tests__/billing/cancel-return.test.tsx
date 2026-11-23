@@ -19,6 +19,7 @@ beforeEach(() => {
   wiring.service = new Service(f.store, f.config, () => new Date("2026-10-26T14:00:00Z"));
   localStorage.setItem("test-learning-history", "existing-history");
   vi.stubGlobal("fetch", vi.fn(async (input: string | URL | Request, options?: RequestInit) => {
+    if (String(input) === "/api/funnel" || String(input) === "/api/activity") return new Response(null, { status: 204 });
     if (String(input) !== `/api/billing/status?order=${f.purchase.id}` || (options?.method && options.method !== "GET")) {
       throw Error("unexpected_network_or_mutation");
     }
@@ -42,10 +43,10 @@ describe("cancel return page, real status route/service with memory and identity
     } else {
       fireEvent.click(screen.getByRole("button", { name: "購入状況を再確認" }));
     }
-    await waitFor(() => expect(vi.mocked(fetch)).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(vi.mocked(fetch).mock.calls.filter(([input]) => String(input).startsWith("/api/billing/status?"))).toHaveLength(2));
     expect(await wiring.service!.status("alice", f.purchase.id)).toMatchObject({ entitled: state === "paid", purchase: { status: state } });
     expect({ purchases: f.store.purchases, events: f.store.events, finances: f.store.finances }).toEqual(before);
     expect(localStorage.getItem("test-learning-history")).toBe("existing-history");
-    expect(vi.mocked(fetch).mock.calls.every(([, init]) => !init?.method || init.method === "GET")).toBe(true);
+    expect(vi.mocked(fetch).mock.calls.filter(([input]) => String(input).startsWith("/api/billing/")).every(([, init]) => !init?.method || init.method === "GET")).toBe(true);
   });
 });

@@ -5,6 +5,12 @@ import { MonthlyService, monthlyTerms } from "@/lib/billing/subscription/service
 export class MonthlyMemoryStore implements MonthlyStore {
   accounts = new Map<string, Account>(); fail = false; private queue = Promise.resolve();
   async owner(customerId: string, mode: Realm) { return [...this.accounts.values()].find(a => a.mode === mode && a.customer?.id === customerId)?.userId ?? null; }
+  async trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string) {
+    return [...this.accounts.values()].find(a => a.mode === mode && a.userId !== exceptUserId && a.trialCards?.[cardHash])?.userId ?? null;
+  }
+  purchaseTransaction<T>(userId: string, mode: Realm, source: string, fn: (account: Account, members: Account[]) => T | Promise<T>) {
+    return this.transaction<T>(userId, mode, source, async account => fn(account, [account]));
+  }
   async transaction<T>(userId: string, mode: Realm, source: string, fn: (a: Account) => Promise<T>, readOnly = false) {
     const before = this.queue; let done!: () => void; this.queue = new Promise(resolve => done = resolve); await before;
     try {
@@ -17,7 +23,7 @@ export class MonthlyMemoryStore implements MonthlyStore {
   }
 }
 export const monthlyFixtureConfig: MonthlyConfig = { mode: "stripe-test", sourceInstance: "monthly-fixture", origin: "http://localhost:3338", enabled: true,
-  priceId: "price_monthly", priceYen: 980, freeDaily: 10, portalConfigurationId: "bpc_fixture", termsVersion: "monthly-draft-v1",
+  priceId: "price_monthly", priceYen: 980, freeDaily: 10, trialDays: 0, portalConfigurationId: "bpc_fixture", termsVersion: "monthly-draft-v1",
   seller: { name: "架空", address: "架空", phone: "000", support: "test@example.invalid", refund: "架空テスト条件" } };
 export async function monthlyFixture() {
   const config = structuredClone(monthlyFixtureConfig), store = new MonthlyMemoryStore();
@@ -26,8 +32,10 @@ export async function monthlyFixture() {
   let observation: Observation = { contracts: [], invoices: [], payments: [] };
   const provider: MonthlyProvider = {
     customer: vi.fn(async () => "cus_alice"), checkout: vi.fn(async () => ({ id: "cs_test_monthly", url: "https://checkout.stripe.com/c/pay/monthly" })),
+    checkoutSession: vi.fn<MonthlyProvider["checkoutSession"]>(
+      async (_customerId, signup) => signup.sessionId ? { id: signup.sessionId, status: "open" } : null),
     portal: vi.fn(async () => "https://billing.stripe.com/p/session/fixture"), resolve: vi.fn(async () => ({ customerId: "cus_alice", subscriptionIds: ["sub_monthly"], invoiceIds: [] })),
-    observe: vi.fn(async () => structuredClone(observation)), stopRenewal: vi.fn(async () => undefined),
+    observe: vi.fn(async () => structuredClone(observation)), stopRenewal: vi.fn(async () => undefined), endTrial: vi.fn(async () => undefined),
     expireCheckout: vi.fn(async () => undefined),
   };
   const checkout = await service.checkout("alice", monthlyTerms(config), provider);

@@ -17,7 +17,7 @@ describe("AfternoonEssayHint — 論述区分ゲート", () => {
     for (const exam of ESSAY_EXAM_CODES) {
       cleanup();
       render(<AfternoonEssayHint exam={exam as ExamCode} />);
-      const link = screen.getByRole("link", { name: /午後論述 AI 添削を試す/ });
+      const link = screen.getByRole("link", { name: "論述の練習問題を見る" });
       expect(link.getAttribute("href")).toBe("/essay");
     }
   });

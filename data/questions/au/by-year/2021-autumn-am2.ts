@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "システム管理基準(平成30年)では、COBIT 5の考え方を参考にITガバナンスの説明を行っており、COBIT 5のガバナンスモデルはEDM (Evaluate, Direct, Monitor) モデルであるため。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 19011:2019では、第一者監査を組織自身の内部監査と定義しますが、この問題の文脈では、組織が自社の事業活動の一部である業務委託先を監査することも、広義の第一者監査として捉えている可能性があります。これは、委託先が自社の管理責任範囲内とみなされるためです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム管理基準(平成30年)では、アジャイル開発において利害関係者との密なコミュニケーションが重要であるとされています。プロダクトオーナーや開発チームがデモンストレーションを実施し、フィードバックを得ることは、開発の方向性を早期に調整し、顧客満足度を高めるために適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "システム監査基準(平成30年)は、システム監査人が監査業務を実施する際に遵守すべき原則や手続き、倫理規定などを体系的に示したものであり、監査人の行為規範として機能します。これにより、監査の品質と信頼性が確保されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ITF (Integrated Test Facility) 法は、実稼働中のシステム内に監査専用の仮想的なテスト口座（施設）を設け、実際の取引データと共にテストデータを入力して処理させ、その結果を検証する技法です。これにより、実環境下でのプログラムの正確性や内部統制の有効性を評価します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム監査基準(平成30年)の「監査の結論の形成」では、システム監査人は監査結果に基づき合理的な監査の結論を形成し、その結論に至ったプロセスや根拠を監査調書に詳細に記録することが求められています。これにより、監査の透明性と信頼性が保証されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "日本公認会計士協会の保証業務実務指針3402に基づき、受託業務に係る内部統制の保証報告書は受託会社監査人が作成します。一方、システムに関する記述書と受託会社確認書は、受託会社が自己の責任において作成し、提供する文書です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム監査基準(平成30年)における「十分かつ適切な監査証拠」とは、監査の結論を裏付けるために、量的に十分であり、質的に確かめるべき事項に適合し、かつ信頼性や説得力がある証明力を備えた証拠を指します。これにより、監査の結論の客観性と正当性が担保されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "金融庁の実施基準におけるITに係る全般統制の「システムの運用・管理」では、システムの安定稼働とデータ保全が重要視されます。障害や故障によるデータ消失に備えて、定期的なバックアップや復旧計画が適切に策定・実施されていることが、監査上の重要な留意点です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "IT全般統制は、情報システム全体の信頼性を確保するための基盤となる統制であり、「システムの開発・保守に係る管理」が含まれます。固定資産管理システムにおいて、会計基準や税法の改正をシステム変更要件に適切に反映し承認を得ることは、システムの正確性と法令遵守を維持する上で不可欠な全般統制です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "サービス提供可能時間は、14時間/日 × 30日 = 420時間です。サービス提供時間内の停止時間は7時間なので、稼働時間は420時間 - 7時間 = 413時間です。したがって、サービス可用性は (413時間 / 420時間) × 100 ≈ 98.333%となり、小数第2位を四捨五入して98.3%となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "データセンターにおけるコールドアイルは、サーバーラックの前面（吸気面）同士を対向配置することで形成される、冷気をIT機器に供給するための通路です。これにより、空調機からの冷気とIT機器からの熱排気が混ざるのを防ぎ、効率的な冷却を可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "GDPR第20条の「データポータビリティの権利」は、データ主体が、Webサービスなどの事業者に提供した自己の個人データを、構造化され、一般的に利用可能で機械可読性のある形式で受け取り、または他の事業者に転送させる権利を定めています。これはデータの移動性を保障するものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "下請代金支払遅延等防止法において、下請代金の支払期日は原則として給付を受領した日から起算して60日以内と定められています。プログラムに重大なバグがあり修正が必要となった場合、修正済みのプログラムが新たに納品された日が実質的な給付受領日となるため、この日が支払期日の起算日となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "民法における契約不適合責任では、契約内容に適合しない目的物を受け取った買主（A社）は、売主（B社）に対し、履行の追完（修補、代替物の引渡し等）、代金減額、損害賠償、契約解除などの権利を、契約不適合の程度に応じて行使することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "営業利益は、売上高から売上原価と販売費及び一般管理費を差し引いて計算されます。提示された資料では、売上高1,500百万円、売上原価1,000百万円、販売費及び一般管理費200百万円なので、営業利益は 1,500 - 1,000 - 200 = 300百万円となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "コードサイニング証明書は、ソフトウェアの発行元を特定し、そのソフトウェアが発行後に改ざんされていないことを検証するために使用されるディジタル証明書です。これにより、利用者はダウンロードしたソフトウェアの信頼性を確認できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "共通鍵暗号方式でN人の送受信者が相互に暗号化通信を行う場合、必要な共通鍵の総数は、N個から2個を選ぶ組み合わせの数で計算されます。100人の場合は、100 × (100 - 1) / 2 = 4,950個の共通鍵が必要となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "NISTサイバーセキュリティフレームワークの「識別 (Identify)」機能は、組織の資産、システム、データ、能力、リスクなどを理解することを目指します。「リスクアセスメント (Risk Assessment)」は識別のカテゴリの一つであり、組織の業務や資産に対するサイバーセキュリティリスクを把握する活動を指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 27000:2019における「リスク特定」とは、リスクを発見、認識し、その特性を記述するプロセスです。これには、リスク源、事象、それらの原因、および起こり得る結果を特定することが含まれ、情報セキュリティマネジメントシステムにおいて重要な初期ステップです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ビューは基の表から指定した列を論理的に抽出し、新しい仮想的な表を作成する機能が主です。行の抽出はビュー定義の一部として条件式で指定されますが、この記述は、ビューの「構造」を定義する主要な要素が列の選択にあるという視点に基づいている可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ZigBeeは、IEEE 802.15.4を下位層とする低消費電力の無線通信技術です。センサネットワークやスマートメータ、ホームオートメーションなど、IoT分野での利用が進められており、柔軟なメッシュネットワーク構築能力などが特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -551,7 +573,14 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
       "エ": "性能効率性"
     },
     "answer": "イ",
-    "explanation": "保守作業者はシステムの変更や拡張を行う際に、既存のシステムや外部システムとの互換性が極めて重要です。互換性が低いと、新しいコンポーネントの導入やシステム連携において作業が複雑化し、困難になるため、保守作業の品質に大きく影響します。",
+    "explanation": "出題当時のJIS X 25010:2013では、保守作業者の利用時の品質に大きな影響を与える製品品質特性として、互換性、保守性、移植性を挙げています。選択肢でこれに当たるのはイの互換性です。互換性には、同じ環境で他の製品と共存することや、他のシステムと情報を交換して利用することが含まれます。",
+    "choiceExplanations": {
+      "ア": "誤りです。機能適合性は、機能が利用者の目的をどの程度満たすかを表します。出題当時の規格が保守作業者について挙げる特性には、互換性、保守性、移植性があります。",
+      "イ": "正しいです。出題当時の規格では、保守作業者の利用時の品質に大きく影響する製品品質特性として互換性、保守性、移植性を挙げています。このうち選択肢にあるのは互換性です。",
+      "ウ": "誤りです。使用性は、利用者が機能を理解し操作できるかに関わる特性です。出題当時の規格で保守作業者について大きな影響を挙げた特性の一つは互換性です。",
+      "エ": "誤りです。性能効率性は、時間や資源に対するシステムの性能に関わる特性です。出題当時の規格で保守作業者について大きな影響を挙げた特性の一つは互換性です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ペネトレーション価格戦略は、新製品の導入初期に意図的に低い価格を設定し、短期間で市場に浸透させることを目指します。この戦略は、初期利益よりも早期の市場シェア獲得と、その後の規模の経済によるコスト削減を優先します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const AU_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IVR（Interactive Voice Response）は、顧客からの電話に対し、コンピュータが自動音声で応答し、顧客がプッシュボタン操作などによって情報を選択・取得できる仕組みです。これにより、オペレータを介さずに用件を処理できるため、コールセンターの効率化と顧客満足度向上に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_au_am2_qs.pdf",
     "license": "IPA-public"

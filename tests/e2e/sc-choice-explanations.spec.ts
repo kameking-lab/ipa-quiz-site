@@ -9,8 +9,10 @@ test("SC wrong answer shows its reason, official evidence, and preserves the ret
   await page.getByRole("radio", { name: /^選択肢 ア:/ }).click();
   const reason = page.getByRole("region", { name: "あなたが選んだ誤答の理由" });
   await expect(reason).toContainText("ゼロデイ攻撃");
-  await expect(page.getByRole("link", { name: "問題PDF" })).toHaveAttribute("href", /2025r07h_sc_am2_qs\.pdf$/);
-  await expect(page.getByRole("link", { name: "公式解答PDF" })).toHaveAttribute("href", /2025r07h_sc_am2_ans\.pdf$/);
+  const source = page.getByRole("group", { name: "出典", exact: true });
+  await expect(source.getByRole("link", { name: "公式問題PDF", exact: true })).toHaveAttribute("href", /2025r07h_sc_am2_qs\.pdf$/);
+  await source.getByText("出典の詳細", { exact: true }).click();
+  await expect(source.getByRole("link", { name: "公式正答PDF", exact: true })).toHaveAttribute("href", /2025r07h_sc_am2_ans\.pdf$/);
 
   await page.getByRole("button", { name: "モード選択に戻る" }).click();
   await expect(page).toHaveURL(/\/sc\/2025-spring$/);

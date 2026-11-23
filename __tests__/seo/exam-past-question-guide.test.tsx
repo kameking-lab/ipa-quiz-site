@@ -50,7 +50,7 @@ it("separates SA written answers from essays without promising an official model
   expect(steps[2]).toContain("午後Iは公式の解答例・出題趣旨・採点講評");
   expect(steps[2]).toContain("午後IIは出題趣旨・採点講評と設問条件を使い、自分の経験に基づく論述を点検");
   expect(doc.querySelector("#afternoon")?.textContent).toContain("模範論述は掲載されていません");
-  expect(doc.querySelector('a[href="/essay"]')?.textContent).toContain("オリジナル論述教材でAI添削");
+  expect(doc.querySelector('a[href="/essay"]')?.textContent).toContain("論述の練習問題");
 });
 
 it.each(["sc", "ap", "nw"] as const)("keeps the evidence-based written-answer workflow for %s", exam => {

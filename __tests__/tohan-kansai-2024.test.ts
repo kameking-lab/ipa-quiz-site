@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { TOHAN_2024_KANSAI_QUESTIONS, TOHAN_CATEGORIES, TOHAN_QUESTIONS } from "@/data/questions/tohan";
+import { TOHAN_2024_KANSAI_QUESTIONS, TOHAN_2025_KANSAI_QUESTIONS, TOHAN_CATEGORIES, TOHAN_QUESTIONS } from "@/data/questions/tohan";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 
 /** 公式「令和６年度 関西広域連合 登録販売者試験 正答」PDF（R06touhankaitou.pdf）の問1〜120。 */
@@ -28,9 +28,12 @@ describe("登録販売者試験令和6年度 全120問", () => {
   it("問1〜120がそろい、令和7年度と合わせて2回分になる", () => {
     expect(TOHAN_2024_KANSAI_QUESTIONS).toHaveLength(120);
     expect(TOHAN_2024_KANSAI_QUESTIONS.map((q) => q.qNumber)).toEqual(Array.from({ length: 120 }, (_, i) => i + 1));
-    expect(TOHAN_QUESTIONS).toHaveLength(240);
-    expect(new Set(TOHAN_QUESTIONS.map((q) => q.id)).size).toBe(240);
-    expect(new Set(TOHAN_QUESTIONS.map((q) => q.year))).toEqual(new Set([2024, 2025]));
+    const regionalPapers = TOHAN_QUESTIONS.filter((q) => q.season === "kansai" && (q.year === 2024 || q.year === 2025));
+    expect(regionalPapers).toHaveLength(240);
+    expect(new Set(regionalPapers.map((q) => q.id))).toEqual(new Set(
+      [...TOHAN_2024_KANSAI_QUESTIONS, ...TOHAN_2025_KANSAI_QUESTIONS].map((q) => q.id),
+    ));
+    expect(new Set(TOHAN_QUESTIONS.map((q) => q.id)).size).toBe(TOHAN_QUESTIONS.length);
   });
 
   it("正答は公式正答PDFと受領記録の両方に一致する", () => {

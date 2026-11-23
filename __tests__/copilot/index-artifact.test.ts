@@ -40,6 +40,16 @@ describe("prebuilt copilot index artifact", () => {
     expect(deserializeIndex(bytes, DOCS.slice(1))).toBeNull();
   });
 
+  it("restores each varint width as an unsigned value", () => {
+    const built = buildIndex(DOCS);
+    const values = Uint32Array.of(127, 128, 0x4000, 0x200000, 0x10000000, 0xffffffff);
+    built.postingTfs.set(values);
+
+    const restored = deserializeIndex(serializeIndex(built), DOCS);
+
+    expect(restored?.postingTfs.subarray(0, values.length)).toEqual(values);
+  });
+
   it("accepts a known fingerprint without re-reading document text (prebuilt mode)", () => {
     const built = buildIndex(DOCS);
     const bytes = serializeIndex(built);

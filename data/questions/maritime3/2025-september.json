@@ -1,0 +1,3272 @@
+[
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q01",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-1"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、図に示すリング変調回路の理想的な動作等について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a01.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-1の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-1（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "変調入力があると搬送波は打ち消され、f₍c₎±f₍s₎ の両側波だけが出ます。変調入力がなければ理想回路の出力はありません。",
+    "choiceExplanations": {
+      "ア": "平衡回路なので搬送波は相殺されます。変調信号の入力がないときにも、理想回路の出力は生じません。",
+      "イ": "変調入力があると搬送波は打ち消され、f₍c₎±f₍s₎ の両側波だけが出ます。変調入力がなければ理想回路の出力はありません。",
+      "ウ": "理想回路は平衡しているので、変調信号を与えても搬送波成分は残りません。",
+      "エ": "変調信号がない場合は出力がない点は合いますが、変調時の出力に搬送波は含まれません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q02",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-2"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、FM(F3E)送信機に用いられる回路について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a02.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-2の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-2（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "プレエンファシスで高域を強調し、IDCで変調入力を制限して最大周波数偏移を抑えます。受信側では逆の特性で高域を戻します。",
+    "choiceExplanations": {
+      "ア": "プレエンファシスで高域を強調し、IDCで変調入力を制限して最大周波数偏移を抑えます。受信側では逆の特性で高域を戻します。",
+      "イ": "高域の強調は合いますが、クラリファイアは受信周波数の微調整に使われ、最大偏移はIDCが抑えます。",
+      "ウ": "IDCは合いますが、送信側は高域を強調します。高域を戻すのは受信側のディエンファシスです。",
+      "エ": "送信側で高域を強調するのがプレエンファシスで、偏移の抑制にはIDCを用います。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q03",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-3"
+    ],
+    "difficulty": 3,
+    "question": "図は、FM（F3E）受信機の基本的な構成例を示したものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a03.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-3の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-3（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "混合器で中間周波数を作り、振幅制限器で振幅変動を除いてから周波数弁別します。スケルチが無信号時の音を抑えます。",
+    "choiceExplanations": {
+      "ア": "Aは入力信号と局部発振信号を混合する回路です。また、弁別の前には振幅制限器を置きます。",
+      "イ": "Bに振幅制限器を置く点は合いますが、Aは周波数混合器で、Cは無信号時の雑音を抑えるスケルチです。",
+      "ウ": "Aは周波数混合器です。Bは自動周波数制御用ではなく振幅変動を除く回路で、Cはスケルチです。",
+      "エ": "混合器で中間周波数を作り、振幅制限器で振幅変動を除いてから周波数弁別します。スケルチが無信号時の音を抑えます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q04",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-4"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、デジタル変調方式について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a04.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-4の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-4（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "PSKは位相を切り替えます。QAMでは直交する二成分を変えることで、合成した搬送波の振幅と位相が変わります。",
+    "choiceExplanations": {
+      "ア": "QAMは振幅と位相を変えますが、FSKが変えるのは周波数です。位相だけを変える方式はPSKです。",
+      "イ": "FSKは周波数を、ASKは振幅だけを変える方式です。問題の二つの条件にはいずれも合いません。",
+      "ウ": "PSKは位相を切り替えます。QAMでは直交する二成分を変えることで、合成した搬送波の振幅と位相が変わります。",
+      "エ": "位相を変えるPSKは合いますが、ASKは振幅だけで情報を表すため、振幅と位相を変える条件に合いません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q05",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-5"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、船舶に搭載する船舶自動識別装置（AIS）の概要について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a05.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-5の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-5（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "船舶間でVHFを使い、受信した他船の位置などの情報はECDISまたはレーダーに重ねて表示できます。ECDISは電子海図情報表示装置です。",
+    "choiceExplanations": {
+      "ア": "VHFを使う点は合いますが、NAVTEXは航行警報などの文字放送を受信する装置です。",
+      "イ": "船舶間でVHFを使い、受信した他船の位置などの情報はECDISまたはレーダーに重ねて表示できます。ECDISは電子海図情報表示装置です。",
+      "ウ": "AISの船舶間通信はVHFであり、NAVTEXの表示を用いて他船の位置を把握するものではありません。",
+      "エ": "ECDISとの連携は合いますが、AISの船舶間通信はUHFではなくVHFを使用します。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q06",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-6"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、捜索救助用レーダートランスポンダ（SART）について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a06.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-6の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-6（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "SARTは9 GHz帯の捜索レーダーに応答します。12個の輝点列の手前側の点がSARTの位置に対応します。",
+    "choiceExplanations": {
+      "ア": "SARTは5 GHz帯ではなくX帯の9 GHz帯で動作し、標準的な表示は12個の輝点列です。",
+      "イ": "12個は合いますが、周波数帯が違い、位置を示すのは自船から最も遠い点ではありません。",
+      "ウ": "9 GHz帯は合いますが、輝点は12個であり、自船に最も近い点がSARTの方向と距離を示します。",
+      "エ": "SARTは9 GHz帯の捜索レーダーに応答します。12個の輝点列の手前側の点がSARTの位置に対応します。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q07",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-7"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、デジタル選択呼出装置(DSC)について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a07.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-7の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-7（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "別経路で同じ信号を受けるルートダイバーシティは、このDSC装置の誤り軽減方式ではありません。DSCでは誤り検出や反復で信頼性を上げます。",
+    "choiceExplanations": {
+      "ア": "DSCにはMF、HF、VHFそれぞれの呼出用周波数があります。利用する帯域は局の設備や海域によります。",
+      "イ": "VHFのDSCは副搬送波を信号で変調するデジタル通信で、F2Bの電波型式を用います。",
+      "ウ": "遭難警報は個別呼出しではなく、電波が届く範囲の船舶局や海岸局が受信できる形式で送信します。",
+      "エ": "別経路で同じ信号を受けるルートダイバーシティは、このDSC装置の誤り軽減方式ではありません。DSCでは誤り検出や反復で信頼性を上げます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q08",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-8"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、電池の一般的特性について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a08.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-8の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-8（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "同一規格の電池を直列につなぐと電圧が加算され、Ahで表す容量は単体と同じです。容量を増やすのは並列接続です。",
+    "choiceExplanations": {
+      "ア": "鉛蓄電池は充電により電池反応を逆向きに進め、繰り返し使うことができる二次電池です。",
+      "イ": "放電時は電極材料の化学反応によって電圧が生じ、外部回路で電気エネルギーを取り出します。",
+      "ウ": "高い充電状態と高温は副反応を進めるため、長期保管時の容量劣化が大きくなります。",
+      "エ": "同一規格の電池を直列につなぐと電圧が加算され、Ahで表す容量は単体と同じです。容量を増やすのは並列接続です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q09",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-9"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、電波を半波長ダイポールアンテナで受信したときに誘起される電圧の値を求める手順を述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a09.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-9の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-9（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "波長はc/fで、半波長ダイポールの実効長の最大値はλ/πです。したがってV＝Eλ/π＝Ec/(πf)です。",
+    "choiceExplanations": {
+      "ア": "波長はc/fで、半波長ダイポールの実効長の最大値はλ/πです。したがってV＝Eλ/π＝Ec/(πf)です。",
+      "イ": "波長は合いますが、λ/(2π)では実効長を半分に見積もるため、誘起電圧も半分になります。",
+      "ウ": "波長は2c/fになりません。半波長ダイポールの実効長もλ/(2π)ではなくλ/πです。",
+      "エ": "実効長の式は合っていますが、波長はc/fなので、選択肢の電圧は正しい値の2倍です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q10",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-10"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、給電線に必要な電気的条件について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a10.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-10の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-10（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "外部電波による誘導が小さければ、給電線が不要信号を拾いにくく、伝送される信号への混入を抑えられます。",
+    "choiceExplanations": {
+      "ア": "給電線の漏れ放射が多いと、伝送損失や周囲の無線機器への干渉が増えます。",
+      "イ": "外部電波による誘導が小さければ、給電線が不要信号を拾いにくく、伝送される信号への混入を抑えられます。",
+      "ウ": "絶縁物での誘電損失は電力を熱に変えるため、給電線では小さい方が望ましい性質です。",
+      "エ": "導体のオーム損は伝送中の電力損失になるため、小さい方が有利です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q11",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 11,
+    "part": "a",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-11"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、直流電流計について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-a11.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 A-11の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 A-11（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "回路の電流を変えないよう内部抵抗の小さい電流計を直列につなぎ、電流が正端子から入る図Ⅰの向きに接続します。",
+    "choiceExplanations": {
+      "ア": "図Ⅰの極性は合いますが、電流計の内部抵抗が大きいと直列の抵抗を増やし、測ろうとする電流を変えてしまいます。",
+      "イ": "内部抵抗を小さくし、図Ⅰのように電源の正極側を電流計の正端子につなぎます。図Ⅱは端子の極性が逆です。",
+      "ウ": "回路の電流を変えないよう内部抵抗の小さい電流計を直列につなぎ、電流が正端子から入る図Ⅰの向きに接続します。",
+      "エ": "内部抵抗は小さい方が有利ですが、図Ⅱは電流が負端子に入る接続になっています。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q12",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-1"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、一般的なスーパヘテロダイン受信機における影像周波数による混信妨害と、それを軽減するための方法について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-b01.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 B-1の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 B-1（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：影像信号と希望信号は局発を挟んで同じ周波数差を持ち、どちらも同じ中間周波数に変換されます。\nイ：アンテナ側のトラップで影像周波数の信号を減衰させ、混合器への入力を減らします。\nウ：同調回路のQを大きく、すなわち通過帯域を狭くすると影像周波数を抑えやすくなります。\nエ：高周波増幅器や周波数変換部を遮へいすると、影像信号が直接回り込むのを抑えられます。\nオ：希望信号と影像信号の周波数差は中間周波数の2倍なので、中間周波数を高くすると差が広がります。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "局部発振周波数",
+          "explanation": "局部発振周波数は混合の基準です。"
+        },
+        {
+          "id": "2",
+          "label": "逓倍",
+          "explanation": "逓倍回路は入力の整数倍の周波数を作ります。"
+        },
+        {
+          "id": "3",
+          "label": "帯域幅 B を",
+          "explanation": "帯域幅を大きくすると選択度は下がります。"
+        },
+        {
+          "id": "4",
+          "label": "低周波増幅器",
+          "explanation": "低周波増幅器は復調後の音声を増幅します。"
+        },
+        {
+          "id": "5",
+          "label": "高く",
+          "explanation": "中間周波数を高くすると影像との間隔が広がります。"
+        },
+        {
+          "id": "6",
+          "label": "中間周波数",
+          "explanation": "影像周波数も混合によって中間周波数に変換されます。"
+        },
+        {
+          "id": "7",
+          "label": "トラップ",
+          "explanation": "トラップは特定の周波数を抑圧します。"
+        },
+        {
+          "id": "8",
+          "label": "尖鋭度 Q を",
+          "explanation": "Qを上げると同調特性が鋭くなります。"
+        },
+        {
+          "id": "9",
+          "label": "高周波増幅器",
+          "explanation": "高周波増幅器は混合前の信号を増幅します。"
+        },
+        {
+          "id": "10",
+          "label": "低く",
+          "explanation": "中間周波数を低くすると影像と希望周波数は近づきます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "影像信号と希望信号は局発を挟んで同じ周波数差を持ち、どちらも同じ中間周波数に変換されます。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "アンテナ側のトラップで影像周波数の信号を減衰させ、混合器への入力を減らします。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "同調回路のQを大きく、すなわち通過帯域を狭くすると影像周波数を抑えやすくなります。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "高周波増幅器や周波数変換部を遮へいすると、影像信号が直接回り込むのを抑えられます。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "希望信号と影像信号の周波数差は中間周波数の2倍なので、中間周波数を高くすると差が広がります。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q13",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-2"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、図に示す原理的な構造(断面)の円形パラボラアンテナについて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-b02.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 B-2の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 B-2（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：短い波長に比べて大きな開口を取りやすいマイクロ波帯で一般に用いられます。\nイ：放物面の焦点に一次放射器を置くと、反射波が軸に沿って平行に進みます。\nウ：焦点からの球面波は反射鏡で平行な波となり、開口面から平面波として放射されます。\nエ：口径を固定したとき、周波数が高いほど波長が短くなり、開口径と波長の比が増すので利得が上がります。\nオ：周波数と開口効率を一定とすれば利得は口径の二乗に比例するため、直径を増やすと利得も増えます。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "短波（HF）",
+          "explanation": "短波では波長が長く、実用的な開口寸法のパラボラには不向きです。"
+        },
+        {
+          "id": "2",
+          "label": "頂点",
+          "explanation": "頂点は放物面と中心軸が交差する点です。"
+        },
+        {
+          "id": "3",
+          "label": "球面",
+          "explanation": "点波源から広がる波面は球面ですが、平行となる反射波とは異なります。"
+        },
+        {
+          "id": "4",
+          "label": "高い",
+          "explanation": "口径が同じとき、周波数を高くすると電気的な口径が大きくなります。"
+        },
+        {
+          "id": "5",
+          "label": "大きく",
+          "explanation": "口径を広げると利得は大きくなります。"
+        },
+        {
+          "id": "6",
+          "label": "マイクロ波（SHF）",
+          "explanation": "マイクロ波では開口を波長に比べ十分大きくしやすくなります。"
+        },
+        {
+          "id": "7",
+          "label": "焦点",
+          "explanation": "焦点から出た波は放物面の反射で平行になります。"
+        },
+        {
+          "id": "8",
+          "label": "平面",
+          "explanation": "平面波は波面が平面となる波です。"
+        },
+        {
+          "id": "9",
+          "label": "低い",
+          "explanation": "周波数が低いほど、同じ開口での利得は小さくなります。"
+        },
+        {
+          "id": "10",
+          "label": "小さく",
+          "explanation": "利得は開口面を広げると小さくなるのではなく、大きくなります。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "短い波長に比べて大きな開口を取りやすいマイクロ波帯で一般に用いられます。"
+        },
+        {
+          "label": "イ",
+          "answer": "7",
+          "explanation": "放物面の焦点に一次放射器を置くと、反射波が軸に沿って平行に進みます。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "焦点からの球面波は反射鏡で平行な波となり、開口面から平面波として放射されます。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "口径を固定したとき、周波数が高いほど波長が短くなり、開口径と波長の比が増すので利得が上がります。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "周波数と開口効率を一定とすれば利得は口径の二乗に比例するため、直径を増やすと利得も増えます。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q14",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-3"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、標準大気及び電波の対流圏伝搬について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-b03.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 B-3の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 B-3（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：屈折率が高さとともに下がると電波は地表側へ曲がり、電波の見通しは幾何学的な見通しより長くなります。\nイ：標準大気は真空より屈折率がわずかに大きく、1より小さいとする記述は誤りです。\nウ：高さが増すにつれて空気の密度が下がるため、標準大気の屈折率も小さくなります。\nエ：地球の半径を等価的に置き換えると、実際には曲がる電波を直線として見通しを計算できます。\nオ：標準大気の等価半径係数には通常4/3を用います。3/4はその逆数です。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "標準大気における送受信局間の電波の見通し距離は、幾何学的な見通し距離より長い。",
+          "answer": "1",
+          "explanation": "屈折率が高さとともに下がると電波は地表側へ曲がり、電波の見通しは幾何学的な見通しより長くなります。",
+          "candidateExplanations": {
+            "1": "屈折率が高さとともに下がると電波は地表側へ曲がり、電波の見通しは幾何学的な見通しより長くなります。",
+            "2": "標準大気の屈折により見かけの地球半径は大きくなるため、光学的な地平線で電波の見通しが終わるとはいえません。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "標準大気の屈折率の値は、1 より小さい。",
+          "answer": "2",
+          "explanation": "標準大気は真空より屈折率がわずかに大きく、1より小さいとする記述は誤りです。",
+          "candidateExplanations": {
+            "2": "標準大気は真空より屈折率がわずかに大きく、1より小さいとする記述は誤りです。",
+            "1": "空気中の電波速度は真空中よりわずかに遅いため、真空の速度を空気中の速度で割った屈折率を1未満とはできません。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "標準大気では、地表高が高くなるにつれて大気の屈折率は、小さくなる。",
+          "answer": "1",
+          "explanation": "高さが増すにつれて空気の密度が下がるため、標準大気の屈折率も小さくなります。",
+          "candidateExplanations": {
+            "1": "高さが増すにつれて空気の密度が下がるため、標準大気の屈折率も小さくなります。",
+            "2": "空気が薄くなる上空ほど屈折率は真空の値に近づくので、高さとともに小さくなる記述は妥当です。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "対流圏をわん曲して進む電波を直進するとして取り扱うには、地球の等価半径係数を用いればよい。",
+          "answer": "1",
+          "explanation": "地球の半径を等価的に置き換えると、実際には曲がる電波を直線として見通しを計算できます。",
+          "candidateExplanations": {
+            "1": "地球の半径を等価的に置き換えると、実際には曲がる電波を直線として見通しを計算できます。",
+            "2": "等価地球半径によって地表側の曲率を変えれば、電波を直線として作図できるので、記述どおりです。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "標準大気において、地球の等価半径係数の値は 3/4 である。",
+          "answer": "2",
+          "explanation": "標準大気の等価半径係数には通常4/3を用います。3/4はその逆数です。",
+          "candidateExplanations": {
+            "2": "標準大気の等価半径係数には通常4/3を用います。3/4はその逆数です。",
+            "1": "標準大気では幾何学的な半径に4/3を掛けて扱い、3/4を掛けると見通しが伸びる効果を表せません。"
+          }
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-kogaku-q15",
+    "exam": "maritime3",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-4"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、図に示すループアンテナについて述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-kogaku-b04.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 無線工学 B-4の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 無線工学 B-4（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：磁束が枠を最もよく貫くのは、設問の配置で電波の進行が枠面と平行な場合です。\nイ：面積が大きくなるほど各巻を貫く磁束が増し、誘起電圧はAに比例します。\nウ：各巻に生じる電圧の和が端子に現れるので、他条件が等しければNに比例します。\nエ：磁束の時間変化が大きいほど誘起電圧は増し、周波数に比例するため、波長λには反比例します。\nオ：枠面と平行な二方向で最大、垂直な方向で最小となるため、水平面内に8字形が現れます。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "平行に",
+          "explanation": "枠の面内に沿う到来方向で最大となります。"
+        },
+        {
+          "id": "2",
+          "label": "A に比例",
+          "explanation": "磁束に対する有効面積が増すと誘起電圧が増えます。"
+        },
+        {
+          "id": "3",
+          "label": "N に比例",
+          "explanation": "各巻の誘起電圧が加算されるため巻数に比例します。"
+        },
+        {
+          "id": "4",
+          "label": "λ に比例",
+          "explanation": "波長が長いと同じ電界強度での誘起電圧は小さくなります。"
+        },
+        {
+          "id": "5",
+          "label": "全方向性",
+          "explanation": "水平面内で到来方向により受信感度が変化します。"
+        },
+        {
+          "id": "6",
+          "label": "直角に",
+          "explanation": "枠面の法線方向では水平面内の受信感度が零になります。"
+        },
+        {
+          "id": "7",
+          "label": "A に反比例",
+          "explanation": "面積が増えると誘起電圧も増えるので反比例ではありません。"
+        },
+        {
+          "id": "8",
+          "label": "N に反比例",
+          "explanation": "巻数の増加で誘起電圧は増えるので反比例ではありません。"
+        },
+        {
+          "id": "9",
+          "label": "λ に反比例",
+          "explanation": "小ループの誘起電圧は周波数に比例し、波長に反比例します。"
+        },
+        {
+          "id": "10",
+          "label": "8 字形",
+          "explanation": "水平面内の最大方向が互いに反対側にあり、直角方向が零になる形です。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "磁束が枠を最もよく貫くのは、設問の配置で電波の進行が枠面と平行な場合です。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "面積が大きくなるほど各巻を貫く磁束が増し、誘起電圧はAに比例します。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "各巻に生じる電圧の和が端子に現れるので、他条件が等しければNに比例します。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "磁束の時間変化が大きいほど誘起電圧は増し、周波数に比例するため、波長λには反比例します。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "枠面と平行な二方向で最大、垂直な方向で最小となるため、水平面内に8字形が現れます。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q01",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-1"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、海上移動業務の無線局の免許の有効期間及び再免許について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a01.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-1の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-1（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "電波法第13条が上限を5年とし、施行規則が対象局を原則5年とします。再免許は原則として満了の3～6箇月前に申請し、審査に適合すれば免許を受けます。",
+    "choiceExplanations": {
+      "ア": "有効期間の上限の5年は合いますが、対象局の原則も5年であり、手続を経て与えられるのは再度の免許です。",
+      "イ": "法律の上限も対象局の原則も5年です。上限10年、対象局3年のいずれも設問の局には当てはまりません。",
+      "ウ": "対象局の原則5年は合いますが、法律の上限も5年で、原則の申請時期は満了前3箇月以上6箇月を超えない期間です。",
+      "エ": "電波法第13条が上限を5年とし、施行規則が対象局を原則5年とします。再免許は原則として満了の3～6箇月前に申請し、審査に適合すれば免許を受けます。",
+      "オ": "対象局の原則を3年とする点が異なり、第19条の手続で交付されるのは予備免許ではなく免許です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q02",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-2"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、海上移動業務における電波の使用制限について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a02.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-2の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-2（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "8,291 kHzは無線電話の遭難・緊急・安全通信に使い、156.8 MHzは設問の条件の医事の緊急呼出しや安全呼出しにも使用できます。",
+    "choiceExplanations": {
+      "ア": "8,291 kHzの無線電話は遭難通信だけでなく緊急通信・安全通信にも使えます。156.8 MHzで緊急呼出しに限るのは医事通報です。",
+      "イ": "156.8 MHzで医事通報は緊急呼出しに限る点は合いますが、安全呼出しを海上保安業務の急を要する通報に置き換える規定ではありません。",
+      "ウ": "8,291 kHzは無線電話の遭難・緊急・安全通信に使い、156.8 MHzは設問の条件の医事の緊急呼出しや安全呼出しにも使用できます。",
+      "エ": "8,291 kHzは無線電話の通信に用いる周波数で、DSCで行うとする組合せは合いません。",
+      "オ": "8,291 kHzはDSC専用でも遭難通信専用でもありません。156.8 MHzで緊急呼出しに限られるのも、気象通報ではなく医事通報です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q03",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-3"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、義務船舶局の無線設備の機器等について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a03.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-3の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-3（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "遭難自動通報設備を備え、入港中に定期点検し、停泊港に整備用の計器等を備える方法があります。対象海域の国際旅客船と所定の300トン以上の船舶には二つの措置が必要です。",
+    "choiceExplanations": {
+      "ア": "第33条で送受信機器と並んで挙げられるのは遭難自動通報設備です。点検は定期に行い、設問の総トン数の下限は300トンです。",
+      "イ": "遭難自動通報設備と定期点検は合いますが、整備用計器等を備えるのは停泊港で、対象船は300トン以上の船舶などです。",
+      "ウ": "遭難自動通報設備を備え、入港中に定期点検し、停泊港に整備用の計器等を備える方法があります。対象海域の国際旅客船と所定の300トン以上の船舶には二つの措置が必要です。",
+      "エ": "第33条の空欄は遭難自動通報設備であり、整備方法の一つは必要に応じた点検ではなく定期点検です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q04",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-4"
+    ],
+    "difficulty": 3,
+    "question": "無線電話通信における遭難通信、緊急通信又は安全通信に係る通報の送信速度に関する次の事項のうち、無線局運用規則（第１６条）の規定に照らし、この規定に定めるところに該当するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a04.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-4の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-4（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "無線局運用規則第16条では、無線電話の遭難・緊急・安全通報は受信者が筆記できる程度の速度で送ると定めています。",
+    "choiceExplanations": {
+      "ア": "無線局運用規則第16条では、無線電話の遭難・緊急・安全通報は受信者が筆記できる程度の速度で送ると定めています。",
+      "イ": "送信者が速く話せても、受信者が筆記できなければ規定の速度条件を満たしません。",
+      "ウ": "無線電話の通報速度は受信者が筆記できる程度とされ、1分間の文字数による上限はこの規定にはありません。",
+      "エ": "聞き取りに誤りがないだけでは足りず、受信者が通報を筆記できる速度で話す必要があります。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q05",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-5"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、船舶局無線従事者証明の要件について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a05.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-5の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-5（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "操作またはその監督を行うための証明です。所定の無線従事者資格を持ち、大臣が認定した同等訓練の場合は修了から5年未満が条件です。",
+    "choiceExplanations": {
+      "ア": "証明の対象は無線設備の操作またはその監督で、所定の要件は無線従事者資格と訓練の修了です。業務経歴は空欄に入りません。",
+      "イ": "操作または監督は合いますが、業務経歴を資格に追加する規定はなく、認定訓練の修了から5年を経過していないことが条件です。",
+      "ウ": "操作またはその監督を行うための証明です。所定の無線従事者資格を持ち、大臣が認定した同等訓練の場合は修了から5年未満が条件です。",
+      "エ": "必要なのは操作または監督についての証明であり、認定訓練を修了して5年を経過した人は設問の条件を満たしません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q06",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-6"
+    ],
+    "difficulty": 3,
+    "question": "次に掲げる書類のうち、国際航海に従事する船舶の義務船舶局であって国際通信を行うものに備え付けておかなければならないものに該当しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a06.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-6の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-6（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "これらは資格者本人が業務の際に携帯する証書で、第38条の表の局に備え付ける業務書類とは扱いが異なります。",
+    "choiceExplanations": {
+      "ア": "電波法施行規則第38条の表は、国際航海に従事する義務船舶局等に海岸局及び特別業務の局の局名録を求めています。",
+      "イ": "無線局の免許申請の添付書類の写しは、船舶局と船舶地球局で備え付ける業務書類に含まれます。",
+      "ウ": "船舶局の局名録と海上移動業務識別の割当表は、義務船舶局等が備え付けるものです。",
+      "エ": "これらは資格者本人が業務の際に携帯する証書で、第38条の表の局に備え付ける業務書類とは扱いが異なります。",
+      "オ": "国際通信を行う船舶局等では、海上移動業務と海上移動衛星業務の便覧が備付け対象です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q07",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-7"
+    ],
+    "difficulty": 3,
+    "question": "混信等の防止に関する次の記述のうち、電波法（第５６条）の規定に照らし、この規定に定めるところに適合するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a07.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-7の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-7（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "他の無線局や総務大臣が指定した一定の受信設備に妨害を与えない運用を求め、遭難・緊急・安全・非常通信を例外としています。",
+    "choiceExplanations": {
+      "ア": "第56条の保護対象は電気通信業務の局に限らず、他の無線局と一定の指定受信設備です。特定の発射抑止機能だけを定める条文でもありません。",
+      "イ": "条文は特定の発射抑止機能を要件にしておらず、例外には遭難のほか緊急、安全、非常通信も含まれます。",
+      "ウ": "他の無線局や総務大臣が指定した一定の受信設備に妨害を与えない運用を求め、遭難・緊急・安全・非常通信を例外としています。",
+      "エ": "受信設備の保護対象は総務大臣への届出でなく指定で決まり、妨害を防ぐ義務は電気通信業務以外の無線局にも及びます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q08",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-8"
+    ],
+    "difficulty": 3,
+    "question": "海上移動業務の無線局の免許後の変更手続きに関する次の記述のうち、電波法（第１７条、第１８条及び第１９条）の規定に照らし、これらの規定に定めるところに適合しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a08.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-8の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-8（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "第18条の変更検査の対象には目的の変更も含まれます。この選択肢は許可後に検査を受けるべき変更から局の目的を落としています。",
+    "choiceExplanations": {
+      "ア": "第17条の変更許可の対象には局の目的も含まれ、設備工事のうち総務省令の軽微な事項が例外となります。",
+      "イ": "第18条は周波数、電波の型式または空中線電力を変更するような工事を認めず、所定の技術基準への適合も求めます。",
+      "ウ": "指定は免許人が変更を申請した際、混信の除去その他特に必要がある場合に第19条の規定で変更できます。",
+      "エ": "第18条の変更検査の対象には目的の変更も含まれます。この選択肢は許可後に検査を受けるべき変更から局の目的を落としています。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q09",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-9"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、海上移動業務におけるデジタル選択呼出通信の呼出し（遭難通信、緊急通信及び安全通信を行う場合を除く。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a09.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-9の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-9（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "送信事項は呼出しの種類と自局の識別信号で、船舶局は5分以上の間隔で2回、応答がなければ再開まで15分以上を空けます。",
+    "choiceExplanations": {
+      "ア": "送信事項は呼出しの種類と自局の識別信号で、船舶局は5分以上の間隔で2回、応答がなければ再開まで15分以上を空けます。",
+      "イ": "5分と15分の間隔は合いますが、最初の項目は呼出しの種類で、後の項目は相手局の信号符字ではなく自局の識別信号です。",
+      "ウ": "呼出しの種類は合いますが、相手局の信号符字ではなく自局の識別信号を送り、送信間隔と再開間隔は5分・15分です。",
+      "エ": "自局の識別信号は合いますが、最初に送るのは選択呼出番号ではなく呼出しの種類で、時間も3分・10分ではありません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q10",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 10,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-10"
+    ],
+    "difficulty": 3,
+    "question": "船舶局無線従事者証明を受けている無線従事者が電波法若しくは電波法に基づく命令又はこれらに基づく処分に違反したときに、総務大臣から受けることがある処分に関する次の記述のうち、電波法（第７９条）の規定に照らし、この規定に定めるところに該当するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a10.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-10の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-10（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "電波法第79条は、法令や処分に違反した無線従事者について、船舶局無線従事者証明を取り消せるとしています。",
+    "choiceExplanations": {
+      "ア": "電波法第79条は、法令や処分に違反した無線従事者について、船舶局無線従事者証明を取り消せるとしています。",
+      "イ": "従事者個人に対する第79条の処分は免許や証明の取消し、または業務の停止であり、この選択肢のような業務の制限ではありません。",
+      "ウ": "3箇月以内という期間は業務の停止に関するもので、操作できる設備の範囲を制限するための期間ではありません。",
+      "エ": "第79条の処分は違反した無線従事者に対するものです。所属する無線局の運用を制限する処分を定めた条文ではありません。",
+      "オ": "無線従事者の業務を停止できる場合と、免許人に対して無線局の運用を停止する場合は別の処分です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q11",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 11,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-11"
+    ],
+    "difficulty": 3,
+    "question": "国際電気通信業務を利用する公衆の権利及び電気通信の停止等に関する次の記述のうち、国際電気通信連合憲章（第３３条、第３４条及び第３５条）の規定に照らし、これらの規定に定めるところに適合しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a11.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-11の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-11（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "私報の伝送停止を認める第34条第1項の基準は「国の安全を害する」場合などです。停止通知の例外に出る「公共の福祉」を、停止事由に移した点が誤りです。",
+    "choiceExplanations": {
+      "ア": "憲章第33条は国際公衆通信業務を公衆が利用する権利を認め、同一種類の通信サービスの条件に特恵を付けないとしています。",
+      "イ": "第34条第2項では、国内法に従い国の安全を害するなどの私用の電気通信を切断する権利を留保しています。",
+      "ウ": "私報の伝送停止を認める第34条第1項の基準は「国の安全を害する」場合などです。停止通知の例外に出る「公共の福祉」を、停止事由に移した点が誤りです。",
+      "エ": "第35条は国際電気通信業務を全面的に、または一定の関係・種類について停止でき、事務総局長経由で通知するとしています。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q12",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 12,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-12"
+    ],
+    "difficulty": 3,
+    "question": "遭難警報、緊急信号、安全信号等に関する次の記述のうち、無線通信規則（第３２条及び第３３条）の規定に照らし、これらの規定に定めるところに適合しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a12.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-12の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-12（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "船舶等の責任者の権限を要する規定は、遭難警報等と緊急呼出フォーマット・緊急信号にあります。安全呼出フォーマットや安全信号まで一括して含めた点が誤りです。",
+    "choiceExplanations": {
+      "ア": "遭難警報または呼出しは重大かつ急迫した危険にあって、直ちに救助が必要なことを知らせるものです。",
+      "イ": "地上通信の遭難警報には遭難呼出フォーマットのDSCを使い、衛星経由では遭難通報フォーマットが中継されます。",
+      "ウ": "船舶等の責任者の権限を要する規定は、遭難警報等と緊急呼出フォーマット・緊急信号にあります。安全呼出フォーマットや安全信号まで一括して含めた点が誤りです。",
+      "エ": "緊急呼出フォーマットや緊急信号は、移動体または人の安全に関係する極めて急ぎの通報があることを示します。",
+      "オ": "安全呼出フォーマットと安全信号は、航行警報や気象警報などの重要な安全情報を伝える予告に使われます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q13",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 13,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-13"
+    ],
+    "difficulty": 3,
+    "question": "遭難警報等を受信した船舶局の執るべき措置に関する次の記述のうち、無線局運用規則（第８１条の５）の規定に照らし、この規定に定めるところに適合しないものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a13.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-13の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-13（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "短波帯以外に関する設問の条件では、受信周波数を聴守します。範囲内の全船舶への中継送信を義務付ける規定ではありません。",
+    "choiceExplanations": {
+      "ア": "短波帯で受信した遭難警報への応答は禁止され、船舶局は受信した周波数を聴守します。",
+      "イ": "所定の方法による遭難警報や中継を受信したら、まず自船の責任者に直ちに通知する必要があります。",
+      "ウ": "短波帯以外に関する設問の条件では、受信周波数を聴守します。範囲内の全船舶への中継送信を義務付ける規定ではありません。",
+      "エ": "海岸局と通信できない海域にあり、付近の船からの警報と明らかなときは、遅滞なく応答して適当な海岸局に通報します。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q14",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 14,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-14"
+    ],
+    "difficulty": 3,
+    "question": "船舶局又は船舶地球局の無線業務日誌に関する次に掲げる記述のうち、電波法施行規則（第４０条）の規定に照らし、この記述に適合するものはどれか。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a14.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-14の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-14（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "法令に反して運用した無線局を認めた場合は、第80条第2号に関係する事項として記録します。施行規則第40条第1項の記載事項です。",
+    "choiceExplanations": {
+      "ア": "日誌は次の定期検査までではなく、使用を終えた日から2年間の保存が義務付けられています。",
+      "イ": "蓄電池の充電について記録するのは充電時間・充電電流・充電前後の電圧であり、回数と充電後だけの値ではありません。",
+      "ウ": "電波法第80条第3号に当たる場合に記録する事項は、その事項及び措置の内容です。設問のように検査結果について指示を受けたことと措置の概要を記載する規定とは異なります。",
+      "エ": "法令に反して運用した無線局を認めた場合は、第80条第2号に関係する事項として記録します。施行規則第40条第1項の記載事項です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q15",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 15,
+    "part": "a",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-15"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、局の検査について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-a15.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 A-15の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 A-15（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "検査に協力するのは通信士か局の責任者です。検査職員は証票または記章を示し、許可書の不提示または明白な違反で設備を検査できますが、知識の証明は要求できません。",
+    "choiceExplanations": {
+      "ア": "検査に協力するのは通信士か局の責任者です。検査職員は証票または記章を示し、許可書の不提示または明白な違反で設備を検査できますが、知識の証明は要求できません。",
+      "イ": "検査を容易にする主体は船の指揮者に限らず、その局の通信士または責任者で、検査職員は記章によっても身分を示せます。",
+      "ウ": "証票だけに限らず記章でもよく、設備検査の対象は許可書の不提示に加えて明白な違反が認められる場合です。",
+      "エ": "証票または記章と知識の組合せは合いますが、検査を容易にするのは局の通信士または責任者で、明白な違反も設備検査の理由になります。",
+      "オ": "検査職員は証票だけでなく記章も使用でき、通信士の証明書は求められても職務上の知識の証明は求められません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q16",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-1"
+    ],
+    "difficulty": 3,
+    "question": "用語の定義を述べた次の記述のうち、電波法施行規則（第２条）の規定に照らし、この規定に定めるところに適合するものを１、適合しないものを２として解答せよ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-b01.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 B-1の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 B-1（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：レーダーは対象から反射または再発射される信号を基準信号と比較する無線測位設備です。\nイ：この設備で双方向の通信を行う組合せは捜索救助に当たる船舶局と航空機局です。船舶同士や航空機同士を含む記述は規定より広すぎます。\nウ：船舶保安警報は、危害を及ぼす行為によって船舶の安全が脅かされていることなどを通報するものです。\nエ：施行規則の船舶自動識別装置には、船舶情報を自動送受信する設備と、航路標識の情報を自動送信する海岸局の設備が含まれます。\nオ：レーダーに応答して位置を表示するのは捜索救助用レーダートランスポンダです。衛星非常用位置指示無線標識は衛星に信号を送ります。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "「レーダー」とは、決定しようとする位置から反射され、又は再発射される無線信号と基準信号との比較を基礎とする 無線測位の設備をいう。",
+          "answer": "1",
+          "explanation": "レーダーは対象から反射または再発射される信号を基準信号と比較する無線測位設備です。",
+          "candidateExplanations": {
+            "1": "レーダーは対象から反射または再発射される信号を基準信号と比較する無線測位設備です。",
+            "2": "比較するのは基準信号と対象から戻る信号で、レーダーの定義と矛盾しません。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "「船舶航空機間双方向無線電話」とは、船舶局又は航空機局の無線電話であって、船舶又は航空機が遭難した場合に 当該船舶又は航空機と他の船舶又は航空機との間で当該船舶又は航空機の捜索及び人命の救助に係る双方向の通信を 行うために使用するものをいう。",
+          "answer": "2",
+          "explanation": "この設備で双方向の通信を行う組合せは捜索救助に当たる船舶局と航空機局です。船舶同士や航空機同士を含む記述は規定より広すぎます。",
+          "candidateExplanations": {
+            "2": "この設備で双方向の通信を行う組合せは捜索救助に当たる船舶局と航空機局です。船舶同士や航空機同士を含む記述は規定より広すぎます。",
+            "1": "船舶間や航空機間まで含める記述は広すぎるため、規定に適合するとはいえません。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "「船舶保安警報」とは、船舶に危害を及ぼす行為が発生した場合に送信する通報であって、当該行為によって当該船舶の 安全が脅かされていることを示す情報その他の情報からなるものをいう。",
+          "answer": "1",
+          "explanation": "船舶保安警報は、危害を及ぼす行為によって船舶の安全が脅かされていることなどを通報するものです。",
+          "candidateExplanations": {
+            "1": "船舶保安警報は、危害を及ぼす行為によって船舶の安全が脅かされていることなどを通報するものです。",
+            "2": "危害によって船舶の安全が脅かされている情報を送るため、船舶保安警報の定義に当てはまります。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "「船舶自動識別装置」とは、次の(1)及び(2)に掲げるものをいう。 (1) 船舶局、海岸局又は船舶地球局の無線設備であって、船舶の船名その他の船舶を識別する情報、位置、針路、速度 その他の自動的に更新される情報であって航行の安全に関する情報及び目的地、目的地への到着予定時刻その他の手動 で更新される情報であって運航に関する情報を船舶局相互間、船舶局と海岸局との間、船舶局と人工衛星局との間又は 船舶地球局と人工衛星局との間において自動的に送受信する機能を有するもの。 (2) 海岸局の無線設備であって、航路標識（航路標識法第１条第２項の航路標識をいう。）の種別、名称、位置その他 情報を自動的に送信する機能を有するもの。",
+          "answer": "1",
+          "explanation": "施行規則の船舶自動識別装置には、船舶情報を自動送受信する設備と、航路標識の情報を自動送信する海岸局の設備が含まれます。",
+          "candidateExplanations": {
+            "1": "施行規則の船舶自動識別装置には、船舶情報を自動送受信する設備と、航路標識の情報を自動送信する海岸局の設備が含まれます。",
+            "2": "船舶に関する情報だけでなく航路標識の情報を送る設備も定義に含まれます。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "「衛星非常用位置指示無線標識」とは、遭難自動通報設備であって、船舶が遭難した場合に、レーダーから発射された 電波を受信したとき、それに応答して電波を発射し、当該レーダーの指示器上にその位置を表示させるものをいう。",
+          "answer": "2",
+          "explanation": "レーダーに応答して位置を表示するのは捜索救助用レーダートランスポンダです。衛星非常用位置指示無線標識は衛星に信号を送ります。",
+          "candidateExplanations": {
+            "2": "レーダーに応答して位置を表示するのは捜索救助用レーダートランスポンダです。衛星非常用位置指示無線標識は衛星に信号を送ります。",
+            "1": "衛星向けの遭難通報である点を欠き、レーダーへの応答を特徴とするため、衛星非常用位置指示無線標識の定義には合いません。"
+          }
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q17",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-2"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、無線電話通信における海岸局及び船舶局の運用について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-b02.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 B-2の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 B-2（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：船舶局は原則として航行中に運用し、受信装置のみの運用や法第52条各号の通信などは例外です。\nイ：無線電話では反覆する呼出しの間隔は2分とされ、無応答で再開するまでの間隔は少なくとも3分です。\nウ：他の通信に混信を与えているとの通知を受けた無線局は、その呼出しを直ちに中止しなければなりません。\nエ：第62条第3項は、海岸局との通信で海岸局の指示に従う規定です。他の船舶局からの指示や空中線電力はこの条文の対象ではありません。\nオ：海岸局には妨害を除去するため必要な措置を求める権限があります。船舶局の運用停止を命令できるという規定ではありません。",
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1"
+        },
+        {
+          "id": "2",
+          "label": "2"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "prompt": "船舶局の運用は、その船舶の航行中に限る。ただし、受信装置のみを運用するとき、遭難通信、緊急通信、安全通信、 非常通信、放送の受信その他総務省令で定める通信を行うとき、その他総務省令で定める場合は、この限りでない。",
+          "answer": "1",
+          "explanation": "船舶局は原則として航行中に運用し、受信装置のみの運用や法第52条各号の通信などは例外です。",
+          "candidateExplanations": {
+            "1": "船舶局は原則として航行中に運用し、受信装置のみの運用や法第52条各号の通信などは例外です。",
+            "2": "航行中に限る原則と、受信や例外となる通信を挙げており、規定に反する点はありません。"
+          }
+        },
+        {
+          "label": "イ",
+          "prompt": "海上移動業務における呼出しは、１分間の間隔をおいて２回反覆することができる。呼出しを反覆しても応答がない ときは、少なくとも２分間の間隔をおかなければ、呼出しを再開してはならない。",
+          "answer": "2",
+          "explanation": "無線電話では反覆する呼出しの間隔は2分とされ、無応答で再開するまでの間隔は少なくとも3分です。",
+          "candidateExplanations": {
+            "2": "無線電話では反覆する呼出しの間隔は2分とされ、無応答で再開するまでの間隔は少なくとも3分です。",
+            "1": "呼出しの間隔と、応答がないときの再開までの間隔を取り違えているので適合しません。"
+          }
+        },
+        {
+          "label": "ウ",
+          "prompt": "船舶局は、自局の呼出しが他の既に行われている通信に混信を与える旨の通知を受けたときは、直ちにその呼出しを 中止しなければならない。",
+          "answer": "1",
+          "explanation": "他の通信に混信を与えているとの通知を受けた無線局は、その呼出しを直ちに中止しなければなりません。",
+          "candidateExplanations": {
+            "1": "他の通信に混信を与えているとの通知を受けた無線局は、その呼出しを直ちに中止しなければなりません。",
+            "2": "混信を通知された後も呼出しを続けることはできず、記述どおり直ちに中止します。"
+          }
+        },
+        {
+          "label": "エ",
+          "prompt": "船舶局は、海岸局又はその他の船舶局と通信を行う場合において、通信の順序若しくは時刻又は使用電波の型式若しくは 周波数並びに空中線電力について、海岸局又は船舶局から指示を受けたときは、その指示に従わなければならない。",
+          "answer": "2",
+          "explanation": "第62条第3項は、海岸局との通信で海岸局の指示に従う規定です。他の船舶局からの指示や空中線電力はこの条文の対象ではありません。",
+          "candidateExplanations": {
+            "2": "第62条第3項は、海岸局との通信で海岸局の指示に従う規定です。他の船舶局からの指示や空中線電力はこの条文の対象ではありません。",
+            "1": "海岸局との通信に限定せず、他の船舶局の指示や空中線電力まで含めているので適合しません。"
+          }
+        },
+        {
+          "label": "オ",
+          "prompt": "海岸局は、船舶局から自局の運用に妨害を受けたときは、妨害している船舶局に対して、その妨害を除去するために 船舶局の運用の停止を命令することができる。",
+          "answer": "2",
+          "explanation": "海岸局には妨害を除去するため必要な措置を求める権限があります。船舶局の運用停止を命令できるという規定ではありません。",
+          "candidateExplanations": {
+            "2": "海岸局には妨害を除去するため必要な措置を求める権限があります。船舶局の運用停止を命令できるという規定ではありません。",
+            "1": "妨害除去に必要な措置を求めることと、運用停止を命令することは異なり、後者はこの条文にありません。"
+          }
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q18",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-3"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、無線局の発射する電波が総務省令で定めるものに適合しないと認めるときに総務大臣が免許人に対して行う処分等について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-b03.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 B-3の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 B-3（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：第72条が参照する第28条の対象は、周波数の偏差や幅などを含む電波の質です。\nイ：不適合と認めるとき第72条は、臨時に電波の発射を停止するよう命令できるとしています。\nウ：適合に至った旨の申出を受けたときは、総務大臣はその無線局に電波を試験的に発射させます。\nエ：試験発射の電波の質が適合していれば、総務大臣は発射停止を直ちに解除します。\nオ：発射停止命令や適合の申出があったときなどは、職員を派遣し設備等を検査させることができます。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "電波の周波数の安定度",
+          "explanation": "周波数の安定度は電波の質に関わる一指標であり、条文が対象とする語全体ではありません。"
+        },
+        {
+          "id": "2",
+          "label": "電波の質",
+          "explanation": "第28条は周波数の偏差などを含む電波の質を規定します。"
+        },
+        {
+          "id": "3",
+          "label": "期間を定めて無線局の運用の停止",
+          "explanation": "一定期間の運用停止は法令違反に対する別の処分です。"
+        },
+        {
+          "id": "4",
+          "label": "臨時に電波の発射の停止",
+          "explanation": "電波の質が不適合の場合は臨時の発射停止を命令できます。"
+        },
+        {
+          "id": "5",
+          "label": "電波の質の測定結果を報告させ",
+          "explanation": "適合の申出後に求めるのは測定結果の報告ではなく試験発射です。"
+        },
+        {
+          "id": "6",
+          "label": "電波を試験的に発射させ",
+          "explanation": "改善の申出後には電波を試験的に発射させます。"
+        },
+        {
+          "id": "7",
+          "label": "直ちに①の電波の発射の停止を解除",
+          "explanation": "適合を確認したら臨時の発射停止を直ちに解除します。"
+        },
+        {
+          "id": "8",
+          "label": "直ちに①の運用の停止を解除",
+          "explanation": "この手順の解除対象は臨時の発射停止です。"
+        },
+        {
+          "id": "9",
+          "label": "その職員を無線局に派遣し、その無線設備等を検査させる",
+          "explanation": "総務大臣が派遣した職員は第73条に基づき設備等を検査できます。"
+        },
+        {
+          "id": "10",
+          "label": "免許人に対し、文書で報告を求める",
+          "explanation": "免許人に文書で報告を求めることは、設問の第73条による派遣検査に当たりません。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "第72条が参照する第28条の対象は、周波数の偏差や幅などを含む電波の質です。"
+        },
+        {
+          "label": "イ",
+          "answer": "4",
+          "explanation": "不適合と認めるとき第72条は、臨時に電波の発射を停止するよう命令できるとしています。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "適合に至った旨の申出を受けたときは、総務大臣はその無線局に電波を試験的に発射させます。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "試験発射の電波の質が適合していれば、総務大臣は発射停止を直ちに解除します。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "発射停止命令や適合の申出があったときなどは、職員を派遣し設備等を検査させることができます。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q19",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 4,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-4"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、遭難通報等を受信した海岸局及び船舶局の執るべき措置について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-b04.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 B-4の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 B-4（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：海岸局と船舶局は、遭難呼出しの受信後もその受信周波数を聴守します。\nイ：海岸局が受信内容を遅滞なく伝える先は、海上保安庁その他の救助機関です。\nウ：船舶局は自船の責任者に受信した通報を直ちに知らせます。\nエ：海岸局が聴守中に通報を受け、遭難した船舶等が付近にあると明らかな場合は直ちに応答します。\nオ：救助できないうえに他の無線局も応答しない場合、船舶局は遭難通報を送って知らせます。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "これを受信した周波数",
+          "explanation": "遭難呼出しを受信した周波数で聴守します。"
+        },
+        {
+          "id": "2",
+          "label": "無線局運用規則第70条の2に規定する遭難通信等に使用する電波の周波数",
+          "explanation": "遭難用周波数を一般的に列挙するのではなく、ここでは呼出しを受信した周波数が指定されます。"
+        },
+        {
+          "id": "3",
+          "label": "海上保安庁その他の救助機関",
+          "explanation": "海岸局は海上保安庁その他の救助機関に通報します。"
+        },
+        {
+          "id": "4",
+          "label": "遭難に係る船舶又は航空機を運行する者",
+          "explanation": "船舶や航空機の運行者への通報は、ここでの海岸局の義務ではありません。"
+        },
+        {
+          "id": "5",
+          "label": "船舶の所有者及び適当な海岸局",
+          "explanation": "船舶局が直ちに通知するのは船舶の所有者や海岸局ではなく自船の責任者です。"
+        },
+        {
+          "id": "6",
+          "label": "その船舶の責任者",
+          "explanation": "船舶局は自船の責任者に知らせます。"
+        },
+        {
+          "id": "7",
+          "label": "自局の付近にあること",
+          "explanation": "海岸局の即時応答の条件は遭難している船舶等が付近にあると明らかなことです。"
+        },
+        {
+          "id": "8",
+          "label": "重大かつ急迫した状態にあること",
+          "explanation": "重大かつ急迫した危険は遭難通信の背景であり、即時応答の所在地要件ではありません。"
+        },
+        {
+          "id": "9",
+          "label": "遭難通報を送信",
+          "explanation": "自船が救助できず、他局も応答しないときは遭難通報を送信します。"
+        },
+        {
+          "id": "10",
+          "label": "その遭難通報に対して応答",
+          "explanation": "船舶局が救助できず他局も応答しないときの行為は、自ら遭難通報を送信することです。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "海岸局と船舶局は、遭難呼出しの受信後もその受信周波数を聴守します。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "海岸局が受信内容を遅滞なく伝える先は、海上保安庁その他の救助機関です。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "船舶局は自船の責任者に受信した通報を直ちに知らせます。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "海岸局が聴守中に通報を受け、遭難した船舶等が付近にあると明らかな場合は直ちに応答します。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "救助できないうえに他の無線局も応答しない場合、船舶局は遭難通報を送って知らせます。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-hoki-q20",
+    "exam": "maritime3",
+    "session": "houki",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 5,
+    "part": "b",
+    "subject": "法規",
+    "category": "法規",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-5"
+    ],
+    "difficulty": 3,
+    "question": "次の記述は、緊急通信について述べたものである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-hoki-b05.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 法規 B-5の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-hoki-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 法規 B-5（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：電波法第52条は、重大かつ急迫の危険に陥るおそれがある場合などに行う通信を緊急通信と定めています。\nイ：自局に関係のないことを確認するまで、原則として当該緊急通信を続けて受信します。\nウ：最低受信時間が定められるのはモールス無線電信または無線電話による緊急信号です。\nエ：所定の方法で受信したときは少なくとも3分間受信を継続します。\nオ：自局宛てでない緊急通信の場合、使用している周波数以外であれば通信を行えます。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "陥るおそれがある場合",
+          "explanation": "危険に陥るおそれがある場合は緊急通信の対象です。"
+        },
+        {
+          "id": "2",
+          "label": "陥った場合又は陥るおそれがある場合",
+          "explanation": "既に重大かつ急迫した危険に陥った場合は、遭難通信の定義に当たります。"
+        },
+        {
+          "id": "3",
+          "label": "自局に関係のないことを確認する",
+          "explanation": "関係のない通信と確認するまで受信を継続するのが原則です。"
+        },
+        {
+          "id": "4",
+          "label": "終了する",
+          "explanation": "通信の終了まで一律に受信を続ける条件ではありません。"
+        },
+        {
+          "id": "5",
+          "label": "デジタル選択呼出装置",
+          "explanation": "デジタル選択呼出装置の緊急信号は、ここでの受信時間の例外の対象ではありません。"
+        },
+        {
+          "id": "6",
+          "label": "モールス無線電信又は無線電話",
+          "explanation": "モールス無線電信または無線電話による緊急信号には最低受信時間があります。"
+        },
+        {
+          "id": "7",
+          "label": "3分間",
+          "explanation": "所定方式の緊急信号を受信した場合の最低受信時間は3分です。"
+        },
+        {
+          "id": "8",
+          "label": "15分間",
+          "explanation": "緊急通信の最低受信時間を15分とする規定ではありません。"
+        },
+        {
+          "id": "9",
+          "label": "周波数以外の周波数",
+          "explanation": "自局宛てでないときは、緊急通信に使用中の周波数を避けて通信できます。"
+        },
+        {
+          "id": "10",
+          "label": "周波数",
+          "explanation": "緊急通信が続く同じ周波数を使うと妨害になるため、この例外では使用できません。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "電波法第52条は、重大かつ急迫の危険に陥るおそれがある場合などに行う通信を緊急通信と定めています。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "自局に関係のないことを確認するまで、原則として当該緊急通信を続けて受信します。"
+        },
+        {
+          "label": "ウ",
+          "answer": "6",
+          "explanation": "最低受信時間が定められるのはモールス無線電信または無線電話による緊急信号です。"
+        },
+        {
+          "label": "エ",
+          "answer": "7",
+          "explanation": "所定の方法で受信したときは少なくとも3分間受信を継続します。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "自局宛てでない緊急通信の場合、使用している周波数以外であれば通信を行えます。"
+        }
+      ],
+      "officialLabel": "B-5",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表：小設問各1点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q01",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-1"
+    ],
+    "difficulty": 3,
+    "question": "The coastal waters of Oregon are shaping up to be key for advances in two forms of renewable energy: wave power and wind turbines that float. The way electricity is traditionally generated is a major cause of climate change, so clean alternatives are key to addressing it.\n\nWave energy is at an earlier stage than floating wind turbines, but the potential could be big. According to the National Renewable Energy Laboratory, marine energy, a term researchers use to refer to power generated from tides, currents or waves, is the world's largest untapped energy resource. The federal government announced it will invest over $112 million to boost the design, fabrication and testing of wave energy devices. The work on floating wind turbines is further along, but still early, and encountering resistance. The only way to build offshore wind power on the West Coast is to use floating turbines. The ocean is too deep to affix traditional turbines to the seafloor, said Mark Severy, a research engineer at the Pacific Northwest National Lab who works on addressing challenges to offshore wind development in the U.S.\n\nIn Oregon, opposition from tribes, fishermen and coastal residents highlights some of the challenges with renewable energy offshore. The opposition is largely directed at the U.S. government's plans for floating wind turbines in two areas covering 790 square kilometers off Oregon's southern coast. Some in those communities are concerned that the construction will harm sea life, marine habitat, culturally important areas and views of the ocean. While the wind areas identified by the Bureau of Ocean Energy Management (BOEM) are miles from land, the lights used to illuminate the turbines at night would be visible from the shore, according to a BOEM visual simulation.\n\nOregon's wave energy test site hasn't sparked similar resistance. Burke Hales, the Oregon State professor serving as chief scientist for the site, attributed this to researchers working together with fishermen to identify the location for the site early in the approval process. One reason wave energy is still in its infancy and not yet competitive with wind, solar and geothermal power is because it is challenging for companies to develop projects that can withstand the harshest ocean conditions where the waves or currents are the strongest, then convert that movement to electricity efficiently and affordably.\n\nOregon Governor Tina Kotek has been working to ease tensions over wind development in her state and acknowledged that the federal government's process for developing it \"hasn't started off on the right foot.\" But she said the state must explore renewable energy options — including floating offshore wind turbines — in order to meet its climate goals. ＜注＞ untapped 未開発の fabrication 製造 affix 設置する geothermal 地熱の start off on the right foot 初めからうまくいく\n\nHow are Oregon's coastal waters expected to contribute to renewable energy development?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-1（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問1 A-1",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "As the only source of hydroelectric power in the region",
+      "イ": "Through wave power and floating wind turbine development",
+      "ウ": "By being shallow enough to support fixed wind turbines on the seafloor"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "冒頭でオレゴン沖が波力発電と浮体式風力発電の発展にとって重要になると述べています。本文はこの二つを再生可能エネルギーとして挙げています。",
+    "choiceExplanations": {
+      "ア": "本文が挙げるのは洋上の二つの発電技術です。地域で唯一の水力発電源になるとは述べていません。",
+      "イ": "冒頭でオレゴン沖が波力発電と浮体式風力発電の発展にとって重要になると述べています。本文はこの二つを再生可能エネルギーとして挙げています。",
+      "ウ": "西海岸沖は従来型の風車を海底に固定するには深すぎるので、本文では浮体式が必要だと述べています。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q02",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-2"
+    ],
+    "difficulty": 3,
+    "question": "The coastal waters of Oregon are shaping up to be key for advances in two forms of renewable energy: wave power and wind turbines that float. The way electricity is traditionally generated is a major cause of climate change, so clean alternatives are key to addressing it.\n\nWave energy is at an earlier stage than floating wind turbines, but the potential could be big. According to the National Renewable Energy Laboratory, marine energy, a term researchers use to refer to power generated from tides, currents or waves, is the world's largest untapped energy resource. The federal government announced it will invest over $112 million to boost the design, fabrication and testing of wave energy devices. The work on floating wind turbines is further along, but still early, and encountering resistance. The only way to build offshore wind power on the West Coast is to use floating turbines. The ocean is too deep to affix traditional turbines to the seafloor, said Mark Severy, a research engineer at the Pacific Northwest National Lab who works on addressing challenges to offshore wind development in the U.S.\n\nIn Oregon, opposition from tribes, fishermen and coastal residents highlights some of the challenges with renewable energy offshore. The opposition is largely directed at the U.S. government's plans for floating wind turbines in two areas covering 790 square kilometers off Oregon's southern coast. Some in those communities are concerned that the construction will harm sea life, marine habitat, culturally important areas and views of the ocean. While the wind areas identified by the Bureau of Ocean Energy Management (BOEM) are miles from land, the lights used to illuminate the turbines at night would be visible from the shore, according to a BOEM visual simulation.\n\nOregon's wave energy test site hasn't sparked similar resistance. Burke Hales, the Oregon State professor serving as chief scientist for the site, attributed this to researchers working together with fishermen to identify the location for the site early in the approval process. One reason wave energy is still in its infancy and not yet competitive with wind, solar and geothermal power is because it is challenging for companies to develop projects that can withstand the harshest ocean conditions where the waves or currents are the strongest, then convert that movement to electricity efficiently and affordably.\n\nOregon Governor Tina Kotek has been working to ease tensions over wind development in her state and acknowledged that the federal government's process for developing it \"hasn't started off on the right foot.\" But she said the state must explore renewable energy options — including floating offshore wind turbines — in order to meet its climate goals. ＜注＞ untapped 未開発の fabrication 製造 affix 設置する geothermal 地熱の start off on the right foot 初めからうまくいく\n\nHow does the National Renewable Energy Laboratory describe marine energy?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-2（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問1 A-2",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Marine energy is the world's biggest unused energy resource.",
+      "イ": "Marine energy has been cultivated much earlier than wind turbine power generation.",
+      "ウ": "Marine energy devices are already important, and further development will not be funded by the federal government."
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "研究所は、潮汐や海流、波を利用する海洋エネルギーを、世界最大の未開発のエネルギー資源と説明しています。",
+    "choiceExplanations": {
+      "ア": "研究所は、潮汐や海流、波を利用する海洋エネルギーを、世界最大の未開発のエネルギー資源と説明しています。",
+      "イ": "本文では波力発電が浮体式風力発電より初期段階にあると述べ、選択肢はその関係を逆にしています。",
+      "ウ": "米連邦政府は波力装置の設計・製造・試験に対する投資を発表しており、今後資金を出さないとは述べていません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q03",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-3"
+    ],
+    "difficulty": 3,
+    "question": "The coastal waters of Oregon are shaping up to be key for advances in two forms of renewable energy: wave power and wind turbines that float. The way electricity is traditionally generated is a major cause of climate change, so clean alternatives are key to addressing it.\n\nWave energy is at an earlier stage than floating wind turbines, but the potential could be big. According to the National Renewable Energy Laboratory, marine energy, a term researchers use to refer to power generated from tides, currents or waves, is the world's largest untapped energy resource. The federal government announced it will invest over $112 million to boost the design, fabrication and testing of wave energy devices. The work on floating wind turbines is further along, but still early, and encountering resistance. The only way to build offshore wind power on the West Coast is to use floating turbines. The ocean is too deep to affix traditional turbines to the seafloor, said Mark Severy, a research engineer at the Pacific Northwest National Lab who works on addressing challenges to offshore wind development in the U.S.\n\nIn Oregon, opposition from tribes, fishermen and coastal residents highlights some of the challenges with renewable energy offshore. The opposition is largely directed at the U.S. government's plans for floating wind turbines in two areas covering 790 square kilometers off Oregon's southern coast. Some in those communities are concerned that the construction will harm sea life, marine habitat, culturally important areas and views of the ocean. While the wind areas identified by the Bureau of Ocean Energy Management (BOEM) are miles from land, the lights used to illuminate the turbines at night would be visible from the shore, according to a BOEM visual simulation.\n\nOregon's wave energy test site hasn't sparked similar resistance. Burke Hales, the Oregon State professor serving as chief scientist for the site, attributed this to researchers working together with fishermen to identify the location for the site early in the approval process. One reason wave energy is still in its infancy and not yet competitive with wind, solar and geothermal power is because it is challenging for companies to develop projects that can withstand the harshest ocean conditions where the waves or currents are the strongest, then convert that movement to electricity efficiently and affordably.\n\nOregon Governor Tina Kotek has been working to ease tensions over wind development in her state and acknowledged that the federal government's process for developing it \"hasn't started off on the right foot.\" But she said the state must explore renewable energy options — including floating offshore wind turbines — in order to meet its climate goals. ＜注＞ untapped 未開発の fabrication 製造 affix 設置する geothermal 地熱の start off on the right foot 初めからうまくいく\n\nWhat are some of the major concerns of the communities opposing the floating wind turbine plans?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-3（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問1 A-3",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "The turbines are too close to the shore and the residents there will be affected by strong winds.",
+      "イ": "The turbines and their lights might damage sea life, marine habitats, cultural sites and ocean views.",
+      "ウ": "The cost of installing wind turbines may affect the budgets of local governments, leading to tax increases."
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "反対する地域の人々は海洋生物、生息域、文化上重要な場所、景観への影響を懸念しています。夜間照明が陸から見えるとされています。",
+    "choiceExplanations": {
+      "ア": "建設区域は海岸から離れています。問題となっているのは陸上で風が強まることではなく、建設や夜間の照明などの影響です。",
+      "イ": "反対する地域の人々は海洋生物、生息域、文化上重要な場所、景観への影響を懸念しています。夜間照明が陸から見えるとされています。",
+      "ウ": "本文が挙げた懸念は環境や文化、景観への影響で、自治体予算や増税についての説明はありません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q04",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-4"
+    ],
+    "difficulty": 3,
+    "question": "The coastal waters of Oregon are shaping up to be key for advances in two forms of renewable energy: wave power and wind turbines that float. The way electricity is traditionally generated is a major cause of climate change, so clean alternatives are key to addressing it.\n\nWave energy is at an earlier stage than floating wind turbines, but the potential could be big. According to the National Renewable Energy Laboratory, marine energy, a term researchers use to refer to power generated from tides, currents or waves, is the world's largest untapped energy resource. The federal government announced it will invest over $112 million to boost the design, fabrication and testing of wave energy devices. The work on floating wind turbines is further along, but still early, and encountering resistance. The only way to build offshore wind power on the West Coast is to use floating turbines. The ocean is too deep to affix traditional turbines to the seafloor, said Mark Severy, a research engineer at the Pacific Northwest National Lab who works on addressing challenges to offshore wind development in the U.S.\n\nIn Oregon, opposition from tribes, fishermen and coastal residents highlights some of the challenges with renewable energy offshore. The opposition is largely directed at the U.S. government's plans for floating wind turbines in two areas covering 790 square kilometers off Oregon's southern coast. Some in those communities are concerned that the construction will harm sea life, marine habitat, culturally important areas and views of the ocean. While the wind areas identified by the Bureau of Ocean Energy Management (BOEM) are miles from land, the lights used to illuminate the turbines at night would be visible from the shore, according to a BOEM visual simulation.\n\nOregon's wave energy test site hasn't sparked similar resistance. Burke Hales, the Oregon State professor serving as chief scientist for the site, attributed this to researchers working together with fishermen to identify the location for the site early in the approval process. One reason wave energy is still in its infancy and not yet competitive with wind, solar and geothermal power is because it is challenging for companies to develop projects that can withstand the harshest ocean conditions where the waves or currents are the strongest, then convert that movement to electricity efficiently and affordably.\n\nOregon Governor Tina Kotek has been working to ease tensions over wind development in her state and acknowledged that the federal government's process for developing it \"hasn't started off on the right foot.\" But she said the state must explore renewable energy options — including floating offshore wind turbines — in order to meet its climate goals. ＜注＞ untapped 未開発の fabrication 製造 affix 設置する geothermal 地熱の start off on the right foot 初めからうまくいく\n\nAccording to Hales, why has Oregon's wave energy test site faced less opposition than the wind project?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-4（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問1 A-4",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Because no companies have tackled the development of efficient and affordable power generation",
+      "イ": "Because it uses technology that has already been proved to be competitive with solar and geothermal power",
+      "ウ": "Because researchers collaborated with fishermen in choosing its location at an early stage of development"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "研究者が承認の早い段階から漁業者と協力して実験施設の場所を選定したことを、Halesは理由に挙げています。",
+    "choiceExplanations": {
+      "ア": "効率よく手頃な発電を実現する難しさは、波力がまだ発展途上である理由として述べられています。反対が少なかった理由は別です。",
+      "イ": "波力発電はまだ風力・太陽光・地熱と競える段階にないと、本文は説明しています。",
+      "ウ": "研究者が承認の早い段階から漁業者と協力して実験施設の場所を選定したことを、Halesは理由に挙げています。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q05",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-5"
+    ],
+    "difficulty": 3,
+    "question": "The coastal waters of Oregon are shaping up to be key for advances in two forms of renewable energy: wave power and wind turbines that float. The way electricity is traditionally generated is a major cause of climate change, so clean alternatives are key to addressing it.\n\nWave energy is at an earlier stage than floating wind turbines, but the potential could be big. According to the National Renewable Energy Laboratory, marine energy, a term researchers use to refer to power generated from tides, currents or waves, is the world's largest untapped energy resource. The federal government announced it will invest over $112 million to boost the design, fabrication and testing of wave energy devices. The work on floating wind turbines is further along, but still early, and encountering resistance. The only way to build offshore wind power on the West Coast is to use floating turbines. The ocean is too deep to affix traditional turbines to the seafloor, said Mark Severy, a research engineer at the Pacific Northwest National Lab who works on addressing challenges to offshore wind development in the U.S.\n\nIn Oregon, opposition from tribes, fishermen and coastal residents highlights some of the challenges with renewable energy offshore. The opposition is largely directed at the U.S. government's plans for floating wind turbines in two areas covering 790 square kilometers off Oregon's southern coast. Some in those communities are concerned that the construction will harm sea life, marine habitat, culturally important areas and views of the ocean. While the wind areas identified by the Bureau of Ocean Energy Management (BOEM) are miles from land, the lights used to illuminate the turbines at night would be visible from the shore, according to a BOEM visual simulation.\n\nOregon's wave energy test site hasn't sparked similar resistance. Burke Hales, the Oregon State professor serving as chief scientist for the site, attributed this to researchers working together with fishermen to identify the location for the site early in the approval process. One reason wave energy is still in its infancy and not yet competitive with wind, solar and geothermal power is because it is challenging for companies to develop projects that can withstand the harshest ocean conditions where the waves or currents are the strongest, then convert that movement to electricity efficiently and affordably.\n\nOregon Governor Tina Kotek has been working to ease tensions over wind development in her state and acknowledged that the federal government's process for developing it \"hasn't started off on the right foot.\" But she said the state must explore renewable energy options — including floating offshore wind turbines — in order to meet its climate goals. ＜注＞ untapped 未開発の fabrication 製造 affix 設置する geothermal 地熱の start off on the right foot 初めからうまくいく\n\nWhat does Governor Kotek believe about floating offshore wind turbines?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-5（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問1 A-5",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "They must be included among the renewable energy options to achieve the state's climate goals.",
+      "イ": "They should be abandoned due to strong community opposition though their renewable energy is very attractive.",
+      "ウ": "They may not be an attractive option but should be kept open until the stakeholders have reached an agreement."
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "知事は気候目標の達成に必要な再生可能エネルギーの選択肢として、浮体式洋上風力発電も探るべきだと述べました。",
+    "choiceExplanations": {
+      "ア": "知事は気候目標の達成に必要な再生可能エネルギーの選択肢として、浮体式洋上風力発電も探るべきだと述べました。",
+      "イ": "知事は地域との緊張を和らげようとしていますが、反対を理由に計画を断念すべきだとは述べていません。",
+      "ウ": "全関係者の合意まで判断を保留するという説明はありません。本文で知事は気候目標のためにこの選択肢を検討すると述べています。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q06",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-6"
+    ],
+    "difficulty": 3,
+    "question": "For transmissions carrying identification signals, in order that stations may be readily identified, each radio station shall transmit its identification as frequently as practicable during the course of transmissions, including those made for tests, adjustments or experiments.\n\nWhen should radio stations transmit identification signals as often as reasonably possible for them to be readily identified?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-6（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問2 A-6",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "When they transmit radio waves for tests or adjustments of equipment but not for experiments",
+      "イ": "When they transmit radio waves for tests, adjustments or experiments but not for communications",
+      "ウ": "When they transmit radio waves for any kind of radio transmission, including tests or experiments"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "試験や実験を含む識別信号付き送信の間に、実行できる限り頻繁に識別符号を送信するという趣旨です。識別のしやすさを目的とする規定です。",
+    "choiceExplanations": {
+      "ア": "英文は実験のための送信も明示的に含めています。試験や調整に限る読み方はできません。",
+      "イ": "試験・調整・実験を含むという表現は、それらだけに送信を限定する意味ではありません。",
+      "ウ": "試験や実験を含む識別信号付き送信の間に、実行できる限り頻繁に識別符号を送信するという趣旨です。識別のしやすさを目的とする規定です。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q07",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-7"
+    ],
+    "difficulty": 3,
+    "question": "All stations which receive a distress alert or call transmitted on the distress and safety frequencies in the MF, HF and VHF bands shall immediately cease any transmission capable of interfering with distress traffic and prepare for subsequent distress traffic.\n\nWhat is the primary obligation of stations receiving a distress alert on the frequencies so designated?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-7（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問2 A-7",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "To immediately send their acknowledgement of the distress alert and prepare for further distress traffic",
+      "イ": "To continue their own transmissions regardless of their frequency bands while monitoring the situation",
+      "ウ": "To stop any transmissions that might disrupt distress communication and get ready for further messages"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "妨害のおそれのある送信を直ちに中止し、その後の遭難通信に備えるという英文に合っています。対象はすでに発信中の妨害し得る電波も含みます。",
+    "choiceExplanations": {
+      "ア": "英文は遭難通信に干渉し得る送信を直ちに止める義務について述べています。即時の受信応答を一律に求めていません。",
+      "イ": "自局の送信が遭難通信の妨げになるおそれがあれば、監視しながら続けるのではなく中止します。",
+      "ウ": "妨害のおそれのある送信を直ちに中止し、その後の遭難通信に備えるという英文に合っています。対象はすでに発信中の妨害し得る電波も含みます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q08",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 8,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-8"
+    ],
+    "difficulty": 3,
+    "question": "Ship-to-ship distress alerts are based on the use of digital selective calling (DSC). Ship stations equipped for DSC procedures may transmit a distress call and distress message immediately following the DSC distress alert in order to attract attention from as many ship stations as possible.\n\nFor what purpose is a ship station allowed to transmit a distress call and message right after a DSC distress alert?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-8（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問2 A-8",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "To increase the chances of being noticed by other ship stations",
+      "イ": "To inform nearby stations that the rescue operation has already started",
+      "ウ": "To prevent errors caused by the repetition of the digital selective calling transmission"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "英文後半の目的は、できるだけ多くの船舶局に気付いてもらうことです。直後に声や文字で通報して、DSC警報に続いて注意を引きます。",
+    "choiceExplanations": {
+      "ア": "英文後半の目的は、できるだけ多くの船舶局に気付いてもらうことです。直後に声や文字で通報して、DSC警報に続いて注意を引きます。",
+      "イ": "DSC警報後の呼出しや通報は注意を促すためです。すでに救助が始まったことを知らせるとは書かれていません。",
+      "ウ": "繰り返しに伴うエラーの防止は、直後に遭難呼出しと通報を行う目的として示されていません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q09",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 9,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "A-9"
+    ],
+    "difficulty": 3,
+    "question": "The officer in charge of the navigational watch shall ensure that range scales of the radar employed are changed at sufficiently frequent intervals so that echoes are detected as early as possible. It shall be borne in mind that small or poor echoes may escape detection.\n\nHow often should the navigational watch officer adjust the radar range scales to detect echoes as quickly as possible?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） A-9（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "officialLabel": "問2 A-9",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "The range scales should be as constant as possible in all situations when the ship needs to detect echoes.",
+      "イ": "Adjustment of the range scales should be performed at sufficient intervals to detect echoes as early as possible.",
+      "ウ": "The frequency of range scale adjustment should be kept constant so that the workload of the officer may be minimized."
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "反射波をなるべく早く検出できるよう、十分な間隔でレーダーのレンジスケールを切り替えるという趣旨です。",
+    "choiceExplanations": {
+      "ア": "レンジスケールを十分な頻度で変えるという英文なので、どの状況でもなるべく一定にするという選択肢は合いません。",
+      "イ": "反射波をなるべく早く検出できるよう、十分な間隔でレーダーのレンジスケールを切り替えるという趣旨です。",
+      "ウ": "調整の頻度は反射波の早期検出のために決めます。担当者の負担を最小化するという目的は述べられていません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q10",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "part": "b",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-1"
+    ],
+    "difficulty": 3,
+    "question": "日本のスタートアップ企業が、広島県の島々を繋ぐ定期航路で自律航行する水上バスの試行運用を開始し た。その船は、AIやセンサー技術を活用した「AI船長」と呼ばれるプラットフォームを搭載していて、12人 までの乗客と商品を乗せることができる。そのプロジェクトは、島しょ間のより良い、そしてより持続可能 な交通業務の提供を目指している。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-eigo-b01.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 英語（筆記） B-1の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） B-1（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：trial operationは「試行運用」です。trialの後ろに運用を表す名詞が必要です。\nイ：be equipped with Aは「Aを搭載している」で、AI船長と呼ばれる仕組みを載せていることに対応します。\nウ：AIやセンサー技術を活用するので、利用するという意味のutilizesを入れます。\nエ：乗客と商品を載せるという意味を表すには、人や物を収容するaccommodatesが合います。\nオ：島の間の交通業務を目指すので、サービスの種類を示すtransportationが入ります。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "accommodates",
+          "explanation": "人や物を収容できることを表す動詞です。"
+        },
+        {
+          "id": "2",
+          "label": "accumulates",
+          "explanation": "時間をかけて品物や量などを蓄積する意味です。"
+        },
+        {
+          "id": "3",
+          "label": "equipped",
+          "explanation": "be equipped withで機器などを搭載していることを表します。"
+        },
+        {
+          "id": "4",
+          "label": "operation",
+          "explanation": "operationは運用を意味し、trial operationで試行運用となります。"
+        },
+        {
+          "id": "5",
+          "label": "orientation",
+          "explanation": "orientationは方向や進路、導入時の説明などを意味します。"
+        },
+        {
+          "id": "6",
+          "label": "prepared",
+          "explanation": "準備されたという過去分詞で、機器の搭載を表す文ではequippedが通常です。"
+        },
+        {
+          "id": "7",
+          "label": "stabilizes",
+          "explanation": "stabilizeは安定させるという意味で、技術を利用することとは異なります。"
+        },
+        {
+          "id": "8",
+          "label": "transformation",
+          "explanation": "transformationは変形や変革を意味し、交通業務を表しません。"
+        },
+        {
+          "id": "9",
+          "label": "transportation",
+          "explanation": "transportationは輸送を意味し、servicesと結び付くと交通業務を指します。"
+        },
+        {
+          "id": "10",
+          "label": "utilizes",
+          "explanation": "utilizeは技術などを活用するという意味です。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "4",
+          "explanation": "trial operationは「試行運用」です。trialの後ろに運用を表す名詞が必要です。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "be equipped with Aは「Aを搭載している」で、AI船長と呼ばれる仕組みを載せていることに対応します。"
+        },
+        {
+          "label": "ウ",
+          "answer": "10",
+          "explanation": "AIやセンサー技術を活用するので、利用するという意味のutilizesを入れます。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "乗客と商品を載せるという意味を表すには、人や物を収容するaccommodatesが合います。"
+        },
+        {
+          "label": "オ",
+          "answer": "9",
+          "explanation": "島の間の交通業務を目指すので、サービスの種類を示すtransportationが入ります。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 10,
+        "pointsPerSlot": 2,
+        "note": "公式正答表：小設問各2点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q11",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "part": "b",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-2"
+    ],
+    "difficulty": 3,
+    "question": "航海用カヌー「ホクレア」の乗組員たちがハワイに集まり、船の50周年を祝った。半世紀前に進水したこの カヌーは、星、波、天候を解読する航海の技術を復活させることにより、ハワイ文化に誇りを加える一助と なった。アークトゥルス星を意味するハワイ語にちなんで「ホクレア」と名付けられたこのカヌーは、数十 年後のディズニーの大ヒット映画「モアナ」にも影響を与えた。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-eigo-b02.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 英語（筆記） B-2の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） B-2（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：カヌーが半世紀前に進水したので、名詞canoeを説明する過去分詞launchedを入れます。\nイ：航海技術を復活させたという意味で、revivingが前の節の内容を補います。\nウ：星や波、天候を読み解くことで航海するので、byの後ろにdecodingを置きます。\nエ：ハワイ語の名称に「ちなんで」名付けたことを示すため、named … after … を使います。\nオ：数十年後を表す時間表現なので、laterの前にdecadesを置きます。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "after",
+          "explanation": "name A after Bで「BにちなんでAと名付ける」となります。"
+        },
+        {
+          "id": "2",
+          "label": "behind",
+          "explanation": "物の後ろや物事の背後を指す表現で、名の由来を表す定型表現にはなりません。"
+        },
+        {
+          "id": "3",
+          "label": "bounced",
+          "explanation": "bounceは跳ねることを指し、カヌーを進水させる意味にはなりません。"
+        },
+        {
+          "id": "4",
+          "label": "decades",
+          "explanation": "decades laterで「数十年後」を表します。"
+        },
+        {
+          "id": "5",
+          "label": "decoding",
+          "explanation": "decodeは符号や手掛かりを解読する意味です。"
+        },
+        {
+          "id": "6",
+          "label": "encoding",
+          "explanation": "encodeは符号化する、すなわち情報を別の形へ変換する意味です。"
+        },
+        {
+          "id": "7",
+          "label": "launched",
+          "explanation": "launch a canoeでカヌーを進水させることを表します。"
+        },
+        {
+          "id": "8",
+          "label": "periods",
+          "explanation": "periodsは期間を表す一般的な語で、数十年とは限りません。"
+        },
+        {
+          "id": "9",
+          "label": "retreating",
+          "explanation": "retreatは退くという意味で、失われかけた技術を復活させることとは異なります。"
+        },
+        {
+          "id": "10",
+          "label": "reviving",
+          "explanation": "reviveは衰えたものを復活させるという意味です。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "7",
+          "explanation": "カヌーが半世紀前に進水したので、名詞canoeを説明する過去分詞launchedを入れます。"
+        },
+        {
+          "label": "イ",
+          "answer": "10",
+          "explanation": "航海技術を復活させたという意味で、revivingが前の節の内容を補います。"
+        },
+        {
+          "label": "ウ",
+          "answer": "5",
+          "explanation": "星や波、天候を読み解くことで航海するので、byの後ろにdecodingを置きます。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "ハワイ語の名称に「ちなんで」名付けたことを示すため、named … after … を使います。"
+        },
+        {
+          "label": "オ",
+          "answer": "4",
+          "explanation": "数十年後を表す時間表現なので、laterの前にdecadesを置きます。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 10,
+        "pointsPerSlot": 2,
+        "note": "公式正答表：小設問各2点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eigo-q12",
+    "exam": "maritime3",
+    "session": "eigo",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "part": "b",
+    "subject": "英語",
+    "category": "英語（筆記）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "B-3"
+    ],
+    "difficulty": 3,
+    "question": "検査職員は、退去する前に、船舶局若しくは船舶地球局を有する船舶、その他移動体の指揮者又は責任者に 検査の結果を通告しなければならない。関連する無線通信規則の条項によって課される条件に違反すること が認められた場合には、検査職員は、その通告を文書で行わなければならない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/maritime3/2025/2025-09-eigo-b03.png"
+    ],
+    "imageAltTexts": [
+      "2025年9月期 第三級海上無線通信士 英語（筆記） B-3の原問題"
+    ],
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_hikki.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（筆記） B-3（問題・正答）。原問題画像は公式PDFの当該箇所を切り出しています。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "native-b",
+    "explanation": "ア：person responsible for the shipで船舶の責任者を表します。\nイ：局を有する船舶という意味で、船舶を後ろから説明する現在分詞carryingを使います。\nウ：条件への違反を表す名詞が必要なので、any breach of the conditionsとなります。\nエ：「規則の条項によって課される条件」は、conditions imposed by the relevant articlesで表せます。\nオ：違反が認められた場合を述べる受動態なので、is observedが入ります。",
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "admired",
+          "explanation": "admireは称賛する意味で、ここで求める違反を確認する行為は表しません。"
+        },
+        {
+          "id": "2",
+          "label": "breach",
+          "explanation": "breachは規則や条件の違反を指す名詞です。"
+        },
+        {
+          "id": "3",
+          "label": "carrying",
+          "explanation": "carryには機器を搭載するという意味があります。"
+        },
+        {
+          "id": "4",
+          "label": "competent",
+          "explanation": "competentは能力がある、または権限があるという意味で、責任を負うとは区別されます。"
+        },
+        {
+          "id": "5",
+          "label": "imposed",
+          "explanation": "imposeは規則などによって条件を課すという意味です。"
+        },
+        {
+          "id": "6",
+          "label": "objection",
+          "explanation": "objectionは異議を指します。条件に違反することとは違います。"
+        },
+        {
+          "id": "7",
+          "label": "observed",
+          "explanation": "observeは違反などを認める、確認するという意味で使えます。"
+        },
+        {
+          "id": "8",
+          "label": "operating",
+          "explanation": "operateは運用するという意味で、機器を有することと同じではありません。"
+        },
+        {
+          "id": "9",
+          "label": "reserved",
+          "explanation": "reserveは取り置く、留保するという意味です。"
+        },
+        {
+          "id": "10",
+          "label": "responsible",
+          "explanation": "be responsible forで人や物について責任を負うことを表します。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "10",
+          "explanation": "person responsible for the shipで船舶の責任者を表します。"
+        },
+        {
+          "label": "イ",
+          "answer": "3",
+          "explanation": "局を有する船舶という意味で、船舶を後ろから説明する現在分詞carryingを使います。"
+        },
+        {
+          "label": "ウ",
+          "answer": "2",
+          "explanation": "条件への違反を表す名詞が必要なので、any breach of the conditionsとなります。"
+        },
+        {
+          "label": "エ",
+          "answer": "5",
+          "explanation": "「規則の条項によって課される条件」は、conditions imposed by the relevant articlesで表せます。"
+        },
+        {
+          "label": "オ",
+          "answer": "7",
+          "explanation": "違反が認められた場合を述べる受動態なので、is observedが入ります。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 10,
+        "pointsPerSlot": 2,
+        "note": "公式正答表：小設問各2点。"
+      }
+    }
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eikaiwa-q01",
+    "exam": "maritime3",
+    "session": "eikaiwa",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 1,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（会話）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "QUESTION 1"
+    ],
+    "difficulty": 3,
+    "question": "公式の放送原稿を読んで答えなさい。\n\nBefore dinner, my friend said he had been working hard all day and was starving. How did he feel?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_kaiwa.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（会話） QUESTION 1（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "He was very hungry.",
+      "イ": "He had lost his appetite.",
+      "ウ": "He did not feel like eating.",
+      "エ": "He had had too much food for lunch."
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "starvingは会話では「とても空腹で」という意味に使われます。一日じゅう仕事をした後で腹をすかせています。",
+    "choiceExplanations": {
+      "ア": "starvingは会話では「とても空腹で」という意味に使われます。一日じゅう仕事をした後で腹をすかせています。",
+      "イ": "lost his appetiteは食欲がなくなったという意味で、非常に空腹だったとする発言に合いません。",
+      "ウ": "did not feel like eatingは食べる気がしないという意味です。ここでのstarvingは食べたいほど空腹であることを表します。",
+      "エ": "昼食を食べすぎたことは話に出ておらず、starvingは満腹を表す語でもありません。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eikaiwa-q02",
+    "exam": "maritime3",
+    "session": "eikaiwa",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 2,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（会話）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "QUESTION 2"
+    ],
+    "difficulty": 3,
+    "question": "公式の放送原稿を読んで答えなさい。\n\nA young environmentalist made a speech in front of a large audience. Most of the audience empathized with what he said. What did they think of his speech?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_kaiwa.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（会話） QUESTION 2（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "The speech was not appreciated.",
+      "イ": "Most of the audience were indifferent.",
+      "ウ": "Most of the audience did not agree with him.",
+      "エ": "The speech appealed to a majority of the audience."
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "most of the audienceが発言に共感したので、演説は過半数の聴衆の心に響いたといえます。",
+    "choiceExplanations": {
+      "ア": "empathized withは共感したという意味なので、演説が評価されなかったという読み方は合いません。",
+      "イ": "indifferentは無関心を意味し、大半の聴衆が発言に共感した状況とは異なります。",
+      "ウ": "発言に共感した聴衆が大半だったので、大半が意見に反対したという説明は合いません。",
+      "エ": "most of the audienceが発言に共感したので、演説は過半数の聴衆の心に響いたといえます。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eikaiwa-q03",
+    "exam": "maritime3",
+    "session": "eikaiwa",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 3,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（会話）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "QUESTION 3"
+    ],
+    "difficulty": 3,
+    "question": "公式の放送原稿を読んで答えなさい。\n\nWhen they look at him, many people say the son is the image of his father. What do they mean?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_kaiwa.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（会話） QUESTION 3（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "The son looks like his father.",
+      "イ": "The son loves his father very much.",
+      "ウ": "The son has inherited his father's business.",
+      "エ": "The son likes taking photographs of his father."
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "be the image of someoneは見た目がその人にそっくりだという表現です。look like his fatherがその言い換えです。",
+    "choiceExplanations": {
+      "ア": "be the image of someoneは見た目がその人にそっくりだという表現です。look like his fatherがその言い換えです。",
+      "イ": "父親を大切に思うという意味ではありません。人々は息子を見て父親によく似ていると述べています。",
+      "ウ": "父親の事業を引き継いだことを述べる話ではなく、息子の外見について述べています。",
+      "エ": "imageには画像の意味もありますが、この慣用表現は父親の写真を撮ることではなく容姿が似ていることを表します。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eikaiwa-q04",
+    "exam": "maritime3",
+    "session": "eikaiwa",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 4,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（会話）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "QUESTION 4"
+    ],
+    "difficulty": 3,
+    "question": "公式の放送原稿を読んで答えなさい。\n\nEvery ship lights up sidelights during the night or in poor visibility. A red light is attached to the port side and a green light to the starboard. What is the purpose of using lights of two different colors?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_kaiwa.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（会話） QUESTION 4（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "So that other ships can tell how the ship is trimmed",
+      "イ": "So that other ships can tell which way the ship is listing",
+      "ウ": "So that other ships can tell which way the ship is pointing",
+      "エ": "So that other ships can tell how old the ship is from its lights"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "左舷に赤、右舷に緑をつけるため、見える色を手がかりに他船がどちらを向いているか判断できます。これは船の相対的な向きを判断する手掛かりになります。",
+    "choiceExplanations": {
+      "ア": "trimは船首と船尾方向の傾きです。左右別の色で示すのは、他船から見た船側や船首の方向です。",
+      "イ": "listは左右方向の傾斜です。舷灯の色を左右で変える目的は、傾斜量を知らせることではありません。",
+      "ウ": "左舷に赤、右舷に緑をつけるため、見える色を手がかりに他船がどちらを向いているか判断できます。これは船の相対的な向きを判断する手掛かりになります。",
+      "エ": "舷灯の色は船齢を示す表示ではなく、見えている船側や船首の方向の識別に使います。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eikaiwa-q05",
+    "exam": "maritime3",
+    "session": "eikaiwa",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 5,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（会話）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "QUESTION 5"
+    ],
+    "difficulty": 3,
+    "question": "公式の放送原稿を読んで答えなさい。\n\nThe operator of a gantry crane moves the trolley back and forth between the ship and the quay along the boom and uses the spreader to fetch and release the cargo. Where do you find such cranes?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_kaiwa.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（会話） QUESTION 5（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "At lock gates on canals",
+      "イ": "At passenger ship terminals",
+      "ウ": "On quays for container ships",
+      "エ": "On quays for large oil tankers"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "トロリーとスプレッダーを動かして船と岸壁の間でコンテナを扱うガントリークレーンは、コンテナ船用の岸壁にあります。",
+    "choiceExplanations": {
+      "ア": "閘門は船の通過に合わせて水位を調整する設備です。設問のクレーンは岸壁と船の間でコンテナを移します。",
+      "イ": "旅客船ターミナルの主目的は人の乗降です。設問のスプレッダーは貨物コンテナをつかむ装置です。",
+      "ウ": "トロリーとスプレッダーを動かして船と岸壁の間でコンテナを扱うガントリークレーンは、コンテナ船用の岸壁にあります。",
+      "エ": "大型タンカーは通常、配管などで液体貨物を移します。コンテナをつかむクレーンとは用途が違います。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eikaiwa-q06",
+    "exam": "maritime3",
+    "session": "eikaiwa",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 6,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（会話）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "QUESTION 6"
+    ],
+    "difficulty": 3,
+    "question": "公式の放送原稿を読んで答えなさい。\n\nThere are several rules for maneuvering vessels at sea to prevent collisions. The port-to-port rule is one of them. When another ship is coming toward you from the front, which side do you generally turn towards?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_kaiwa.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（会話） QUESTION 6（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Your port side",
+      "イ": "Your starboard side",
+      "ウ": "It depends on the country.",
+      "エ": "You wait for the other captain's instructions."
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "正面で行き会うときは通常、starboard（右舷）側に変針し、双方が左舷側を向き合わせて通過します。",
+    "choiceExplanations": {
+      "ア": "左舷同士で通過するには、正面から来る他船に対して通常は自船を右へ向けます。",
+      "イ": "正面で行き会うときは通常、starboard（右舷）側に変針し、双方が左舷側を向き合わせて通過します。",
+      "ウ": "ここでは国による違いではなく、左舷対左舷ですれ違う一般的な行き会い規則を問うています。",
+      "エ": "他船の船長からの指示を待つことではなく、衝突を避けるための通常の変針方向が問われています。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "radio21-maritime3-2025-09-eikaiwa-q07",
+    "exam": "maritime3",
+    "session": "eikaiwa",
+    "year": 2025,
+    "season": "september",
+    "qNumber": 7,
+    "part": "a",
+    "subject": "英語",
+    "category": "英語（会話）",
+    "topicTags": [
+      "第三級海上無線通信士",
+      "2025年9月期",
+      "QUESTION 7"
+    ],
+    "difficulty": 3,
+    "question": "公式の放送原稿を読んで答えなさい。\n\nYou are the engineer officer of a cargo ship. The ballast water controller does not work well and has to be fixed. What negative consequence might you encounter if you leave it as it is?",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo_kaiwa.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kaijyo-tu-3-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 第三級海上無線通信士 2025年9月期 英語（会話） QUESTION 7（問題・正答）。解説は過去問AIが作成しました。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "The ship may start sinking if you have heavy rain.",
+      "イ": "The list of the ship may increase when loading or unloading cargo.",
+      "ウ": "The cooks may not be able to prepare meals without any drinkable water.",
+      "エ": "The ship has to reduce its speed because the engine temperature will increase."
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "積み降ろしで船の重さの分布が変わるとき、バラスト水を調整できないと船の横傾斜が増すおそれがあります。",
+    "choiceExplanations": {
+      "ア": "バラスト水は船の姿勢や安定性の調整に使います。ここで想定する直接の問題は、大雨による沈没ではありません。",
+      "イ": "積み降ろしで船の重さの分布が変わるとき、バラスト水を調整できないと船の横傾斜が増すおそれがあります。",
+      "ウ": "バラスト水は船体の安定を調整するもので、料理に使う飲料水の供給設備ではありません。",
+      "エ": "バラスト水の制御は船の姿勢を保つためのもので、機関温度の上昇による減速とは直接関係しません。"
+    },
+    "explanationCoverage": "full"
+  }
+]

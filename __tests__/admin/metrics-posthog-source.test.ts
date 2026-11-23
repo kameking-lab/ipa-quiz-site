@@ -5,6 +5,8 @@ afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 it.each([false, true])("never fabricates measurements when configured=%s", async (configured) => {
   vi.stubEnv("POSTHOG_API_KEY", configured ? "test" : "");
   vi.stubEnv("POSTHOG_PROJECT_ID", configured ? "1" : "");
+  vi.stubEnv("KV_REST_API_URL", "");
+  vi.stubEnv("KV_REST_API_TOKEN", "");
   const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ results: [[987654321]] }) });
   vi.stubGlobal("fetch", fetchMock);
   const result = await fetchMetrics(resolveRange("7d"));

@@ -8,10 +8,11 @@ import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("通関士 第59回: 択一式の「該当なし＝0」", () => {
-  const nonePrompts = TSUKANSHI_QUESTIONS.filter((q) => !q.part && q.choices?.[TSUKANSHI_NONE_KEY] !== undefined);
+  const paper = TSUKANSHI_QUESTIONS.filter((q) => q.year === 2025 && q.season === "annual");
+  const nonePrompts = paper.filter((q) => !q.part && q.choices?.[TSUKANSHI_NONE_KEY] !== undefined);
   it("publishes all 105 answer units and keeps every unit practice-ready", () => {
-    expect(TSUKANSHI_QUESTIONS).toHaveLength(105);
-    expect(TSUKANSHI_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(105);
+    expect(paper).toHaveLength(105);
+    expect(paper.filter(isPracticeReadyQuestion)).toHaveLength(105);
   });
   it("moves the 0 option of the 30 single/multi-choice prompts to タ and labels it 0", () => {
     expect(nonePrompts).toHaveLength(30);
@@ -44,9 +45,9 @@ describe("通関士 第59回: 択一式の「該当なし＝0」", () => {
 });
 
 describe("機械保全 2級: 真偽法の2択表示", () => {
-  it("publishes 100 reviewed questions with the official answers", () => {
-    expect(KIKAI_HOZEN_QUESTIONS).toHaveLength(100);
-    expect(KIKAI_HOZEN_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(100);
+  it("publishes 150 questions with the official answers", () => {
+    expect(KIKAI_HOZEN_QUESTIONS).toHaveLength(150);
+    expect(KIKAI_HOZEN_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(150);
     for (const [index, staged] of KIKAI_HOZEN_STAGED_QUESTIONS.entries()) {
       const q = KIKAI_HOZEN_QUESTIONS[index]!;
       const expected = staged.answerFormat === "true-false" ? ({ "〇": "ア", "×": "イ" } as const)[staged.officialAnswer as "〇" | "×"] : staged.officialAnswer;
@@ -56,12 +57,12 @@ describe("機械保全 2級: 真偽法の2択表示", () => {
   });
   it("labels true/false choices with the original 〇・× symbols", () => {
     const tf = KIKAI_HOZEN_QUESTIONS.filter((q) => q.qNumber <= 25);
-    expect(tf).toHaveLength(50);
+    expect(tf).toHaveLength(75);
     for (const q of tf) expect(q.choices, q.id).toEqual({ ア: "正しい（〇）", イ: "誤り（×）" });
   });
   it("serves every figure from public/images", () => {
     const withImages = KIKAI_HOZEN_QUESTIONS.filter((q) => q.hasImage);
-    expect(withImages).toHaveLength(10);
+    expect(withImages).toHaveLength(15);
     for (const q of withImages) expect(q.imageUrls?.[0], q.id).toMatch(/^\/images\/questions\/kikai-hozen\/\d{4}-q\d{2}\.webp$/);
   });
 });

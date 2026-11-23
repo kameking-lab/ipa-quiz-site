@@ -24,6 +24,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "BASE特性は、基本的に可用性があり（Basically Available）、一時的に不整合な状態が存在し（Soft State）、最終的には整合性が取れる（Eventually Consistent）という分散システムの特徴です。選択肢イは、データの更新が最終的には全てのノードに反映されるという「最終的整合性」の概念を説明しており、BASE特性の「Eventually Consistent」に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,13 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "条件(1)「全ての社員は入社年を特定できる」は、社員クラスのインスタンスが必ず1つの年クラスのインスタンスと関連を持つことを意味するため、年クラス側の多重度は「1」です。条件(2)「年によっては社員が入社しないこともある」は、年クラスのインスタンスが社員クラスのインスタンスと全く関連を持たない可能性があることを意味するため、社員クラス側の多重度は「0..*」となります。",
+    "choiceExplanations": {
+      "ア": "aの0..＊は入社者のいない年も表せます。ただし、bの0..1は入社年が決まらない社員を許すため条件に合いません。",
+      "イ": "年から見た入社者数aは0人以上、社員から見た入社年bは必ず一つです。よってaは0..＊、bは1です。",
+      "ウ": "aを1..＊にすると毎年少なくとも一人が入社し、bを0..1にすると入社年のない社員を許します。どちらも条件に合いません。",
+      "エ": "bの1は社員の入社年が必ず一つであることを表します。aの1..＊では、誰も入社しなかった年を表せません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "属性集合の閉包を計算します。初期集合{A, B}から始め、関数従属性A→Cを適用すると{A, B, C}が得られます。次に{C, D}→Eを適用しようとしますが、Dが集合に含まれていないためEは導出できません。これ以上属性を追加できないため、最終的な閉包は{A, B, C}となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +105,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "関数従属性の集合Wを簡約化します。`A→{B,C}`は`A→B`と`A→C`に分解できます。`A→C`は`A→B`と`B→C`から導出可能なので冗長です。また、`{A,C,D}→E`は`{A,D}→E`と`A→C`（導出可能）から導出できるため冗長です。これらを削除すると、`{A→B, B→C, C→B, {A,D}→E}`が残ります。これは選択肢Xに一致し、また`A→C`を含む選択肢Yも、`A→B`を`A→C`と`C→B`から導出できるため最小カバーの一つとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "第2正規形（2NF）は、主キーでない属性が主キー全体に完全に機能従属している状態です。第3正規形（3NF）は、2NFであることに加え、主キーでない属性が主キーに推移的に機能従属していない状態を指します。したがって、第2正規形である関係が第3正規形であるための条件は、推移的関数従属性が存在しないことです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "結果を見ると、`文書`表の全てのレコードが含まれており、`作成者ID`が`500`のレコードのように、対応する`社員`が存在しない場合でも`作成者氏名`が`NULL`として表示されています。これは`文書`表の全レコードを保持しつつ、対応する`社員`レコードがあれば結合し、なければ`NULL`を埋める`LEFT OUTER JOIN`の挙動と一致します。`社員`表は`作成者`と`承認者`で2回結合されるため、それぞれエイリアス（A, B）を使用します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "まず`商品`と`商品別売上実績`を`LEFT OUTER JOIN`します。この結果に対して`WHERE 商品ランク = 'A'`でフィルタリングすると、商品コードS001 (売上50), S002 (売上NULL), S003 (売上250)の3行が残ります。`AVG(売上合計金額)`は通常NULL値を無視して計算するため、(50+250)/2 = 150となります。しかし、選択肢の正解が275であることから、本問では`WHERE`句と`GROUP BY`句が結果に影響を与えず、`LEFT OUTER JOIN`で得られる全ての売上合計金額（50, 250, 350, 450）の平均値が計算されたものと解釈すると、(50+250+350+450)/4 = 1100/4 = 275となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SQL文は「`社員X`の`社員コード`が、他の`社員Y`の`上司`として使われていない」行、つまり「誰の上司でもない社員」の`社員コード`を抽出します。表のデータを見ると、S001, S003, S005, S006はそれぞれ誰かの上司になっています。一方、S002, S004, S007はどの社員の`上司`列にも出現しないため、これらの社員コードが結果として得られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SQL文1 `SELECT * FROM R UNION SELECT * FROM R` は、`UNION`演算子が重複する行を自動的に排除するため、結果は`R`から重複行を除いたものになります。SQL文2 `SELECT * FROM R` は、`R`の全行をそのまま返します。この二つの結果が同一になるためには、元の表`R`に重複する行が一切存在しないことが必要十分条件です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "共通集合演算`R∩S`は、関係`R`と関係`S`の両方に含まれるタプルの集合です。選択肢イの`R-(R-S)`は、「Rから、RにあってSにないものを取り除く」という意味になります。これは、RのうちSにも含まれる部分だけを残すことになるため、`R∩S`と等しい結果をもたらします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "等結合演算は、二つの関係の直積をとり、特定の条件（共通する属性の値が等しい）を満たすタプルだけを選択する操作です。関係代数では、`R ⋈_{条件} S` は `σ_{条件}(R × S)` と表現され、直積（×）と選択（σ）の組み合わせによって実現されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "このSQL文は`WHERE 生年月日 > a`となっており、`a`には「男女それぞれの最年長社員の生年月日」が入る必要があります。選択肢ウの相関サブクエリ`SELECT MIN(生年月日) FROM 社員 AS S2 WHERE S1.性別 = S2.性別 GROUP BY S2.性別`は、外側のクエリで参照されている`S1`と同じ`性別`を持つ社員の中から、最も古い生年月日（最年長）を正確に導出します。これにより、各性別の最年長社員が除外され、それ以外の社員が選択されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デッドロックは、複数のトランザクションが互いに相手がロックしているリソースを待機し、処理が進まなくなる状態です。これを回避するためには、リソース（レコードなど）をロックする順序を全てのトランザクションで統一することが有効です。これにより、循環待機を防ぎ、デッドロックの発生を大幅に削減できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "この現象は、トランザクションT₁が同じ行Xを複数回読み込んだ際に、その間に別のトランザクションT₂が行Xを更新しコミットしたため、異なる値が読み取られる「反復不能読み取り（Non-repeatable Read）」です。SQLの隔離性水準において、反復不能読み取りを回避できる最も低い水準は`REPEATABLE READ`です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "トランザクションのACID特性における原子性（Atomicity）は、「全てか、何もなしか（All or Nothing）」の原則を指します。これは、トランザクション内の全ての操作が完全に実行されるか、あるいは全く実行されないかのどちらかであり、途中の状態で終了することはない、という性質を示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "複合イベント処理（CEP）は、大量のデータストリーム（イベント）をリアルタイムで分析し、あらかじめ定義されたパターンや条件に合致する「複合イベント」を検出する技術です。これにより、ビジネスにおける異常検知や即時的な意思決定を支援します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "Jupyter Labは、Jupyter Notebookの次世代版であり、Webブラウザ上でコードの記述、実行、結果の可視化をインタラクティブに行える統合開発環境です。データ分析、機械学習モデルの開発、データサイエンスの教育など、多岐にわたる用途で利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "データレイクは、様々な形式（構造化、半構造化、非構造化）の生データを、そのままで（未加工の状態で）大規模に保存するリポジトリです。これは、将来的にどのような分析が必要になるか未定な場合でも、全てのデータを蓄積しておくことで、後から多様な分析ニーズに対応できるようにするための特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AES（Advanced Encryption Standard）は、NIST（米国国立標準技術研究所）によって制定された暗号規格です。AESは、セキュリティレベルに応じて3種類の鍵長をサポートしており、具体的には128ビット、192ビット、256ビットから選択することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DLP（Data Loss Prevention：データ損失防止）は、企業内の機密情報や個人情報などの重要データが、不正なアクセスや誤操作によって外部へ漏洩したり、損失したりすることを防ぐためのソリューションです。その主な機能には、重要データの監視、コピー・送信などの操作の検知、そしてそれらの操作のブロックが含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "IPsec（IP Security）は、IP層、すなわちネットワーク層でデータの暗号化と認証を行うためのプロトコル群です。IPv6において、IPsecは標準でサポートされており、ネットワーク層でのセキュアな通信を実現するために利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "シンプロビジョニングとは、ストレージの仮想化技術の一つで、利用者が要求するストレージ容量を仮想的に提供します。物理ディスクの領域は、実際にデータが書き込まれた分だけ割り当てられるため、ストレージリソースの効率的な利用と初期投資の削減が可能となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アクセス透過性とは、分散処理システムにおいて、ユーザーやアプリケーションが遠隔地の資源（データやサービス）を、あたかもローカルにある資源であるかのように利用できる性質を指します。これにより、資源の物理的な配置やアクセス方法を意識することなく、統一された操作で扱えるようになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ソフトウェアの保守性とは、変更や修正のしやすさ、欠陥の修正の容易さなどを指します。「適正規模の基準を満たすプログラムの数」は、個々のモジュールが適切な複雑度や規模に収まっているかを示し、これにより変更時の影響範囲が限定され、理解しやすくなるため、保守性の高さを示す指標となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const DB_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ドキュメンテーションジェネレーターは、プログラマーがソースコード中に特定のフォーマットで記述したコメントやメタデータを利用して、プログラムの設計書やAPIリファレンスなどのドキュメントを自動的に生成するツールです。これにより、ソースコードとドキュメントの一貫性を保ちやすくし、ドキュメント作成の手間を削減できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_db_am2_qs.pdf",
     "license": "IPA-public"

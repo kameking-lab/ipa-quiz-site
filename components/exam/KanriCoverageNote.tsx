@@ -8,10 +8,11 @@ const PAPERS = [
 ] as const;
 
 export function KanriCoverageNote({ questions }: { questions: Question[] }) {
+  const reviewedCount = questions.filter(question => PAPERS.some(paper => paper.year === question.year)).length;
   return (
     <section aria-label="管理業務主任者の掲載範囲" className="mt-3 text-sm text-muted-foreground">
       <p>
-        各年度の公式50問のうち、現在演習できる問題は計{questions.length}問です。
+        令和6・7年度の公式問題から、現在演習できる問題は計{reviewedCount}問です。
         解説は試験当時の法令・規約等に沿った学習用の独自作成で、協会の公式解説ではありません。
       </p>
       <ul className="mt-2 space-y-2">

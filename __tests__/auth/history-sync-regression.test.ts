@@ -1,11 +1,12 @@
 // @vitest-environment node
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-const mock = vi.hoisted(() => ({ auth: vi.fn(), findMany: vi.fn(), createMany: vi.fn() }));
+const mock = vi.hoisted(() => ({ auth: vi.fn(), findMany: vi.fn(), createMany: vi.fn(), updateMany: vi.fn() }));
 vi.mock("@/lib/auth", () => ({ auth: mock.auth }));
 vi.mock("@/lib/db/prisma", () => ({ prisma: { studyRecord: {
   findMany: mock.findMany,
   createMany: mock.createMany,
+  updateMany: mock.updateMany,
 } } }));
 
 import { POST } from "@/app/api/account/history-sync/route";
@@ -30,6 +31,18 @@ function request(entries: unknown[] = []) {
 }
 
 describe("account history contract with mocked auth and database", () => {
+  it("reconciles a simultaneous incorrect grade even if another device inserted the correct grade first", async () => {
+    const at = 1700000000000;
+    const row = { questionId: "q", answeredAt: new Date(at), correct: true };
+    mock.auth.mockResolvedValue({ user: { id: "unit-user" } });
+    mock.findMany.mockResolvedValueOnce([]).mockResolvedValueOnce([row]);
+    mock.createMany.mockResolvedValue({ count: 0 });
+    mock.updateMany.mockResolvedValue({ count: 1 });
+    const response = await POST(request([{ id: "q", correct: false, at }]));
+    expect(mock.updateMany).toHaveBeenCalledWith({ where: { userId: "unit-user", correct: true,
+      OR: [{ questionId: "q", answeredAt: new Date(at) }] }, data: { correct: false } });
+    expect(await response.json()).toMatchObject({ entries: [{ id: "q", correct: false, at }] });
+  });
   it.each([null, { message: "Configuration error" }, { user: {} }])(
     "rejects missing user IDs without touching history",
     async (session) => {

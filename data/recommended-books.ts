@@ -372,7 +372,7 @@ export const RECOMMENDED_BOOKS = {
       difficulty: "intermediate",
       recommendedFor: "午後の記述で得点が安定しない人",
       description:
-        "AP午後の定番対策本。設問タイプ別の解き筋と模範解答プロセスを徹底解説。AI採点と組み合わせると最強。",
+        "AP午後の定番対策本。設問タイプ別の解き筋と模範解答プロセスを徹底解説。",
     },
     {
       id: "ap-toriidori",

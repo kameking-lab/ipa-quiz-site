@@ -1,0 +1,659 @@
+[
+  {
+    "id": "fe-2019a-pm-q1",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "テレワークの導入"
+    ],
+    "difficulty": 5,
+    "question": "問1 テレワークの導入",
+    "answer": "問1   設問1  ａ  エ\n         ｂ  オ\n     設問2     オ\n     設問3     イ",
+    "modelAnswer": "問1   設問1  ａ  エ\n         ｂ  オ\n     設問2     オ\n     設問3     イ",
+    "explanation": "VPNで確認する端末の証明書と、接続後に使う認証を区別する。各端末から宛先へ向かう通信がフィルタの条件を満たすかを順に確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-05.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-06.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-07.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-08.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-09.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問1 本文・設問（公式問題PDF 5ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問1 本文・設問（公式問題PDF 6ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問1 本文・設問（公式問題PDF 7ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問1 本文・設問（公式問題PDF 8ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問1 本文・設問（公式問題PDF 9ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q2",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ハードウェア・ソフトウェア",
+    "topicTags": [
+      "プログラムの並列化"
+    ],
+    "difficulty": 5,
+    "question": "問2 プログラムの並列化",
+    "answer": "問2   設問1  ａ  オ\n         ｂ  ウ\n     設問2  ｃ  ウ\n         ｄ  イ\n     設問3  ｅ  エ",
+    "modelAnswer": "問2   設問1  ａ  オ\n         ｂ  ウ\n     設問2  ｃ  ウ\n         ｄ  イ\n     設問3  ｅ  エ",
+    "explanation": "並列に動かせる処理の割合から高速化の上限を求める。配列の更新では、別のスレッドが次に読む要素を先に書き換えるかを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-10.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-11.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-12.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-13.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問2 本文・設問（公式問題PDF 10ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問2 本文・設問（公式問題PDF 11ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問2 本文・設問（公式問題PDF 12ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問2 本文・設問（公式問題PDF 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問2 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q3",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "書籍及び貸出情報を管理する関係データベースの設計及び運用"
+    ],
+    "difficulty": 5,
+    "question": "問3 書籍及び貸出情報を管理する関係データベースの設計及び運用",
+    "answer": "問3   設問1  ａ  エ\n         ｂ  イ\n     設問2  ｃ  イ\n     設問3  ｄ  ア\n         ｅ  カ",
+    "modelAnswer": "問3   設問1  ａ  エ\n         ｂ  イ\n     設問2  ｃ  イ\n     設問3  ｄ  ア\n         ｅ  カ",
+    "explanation": "貸出中の判定には返却日の有無を用いる。書籍とその個体、貸出記録を分け、ISBNと個体を識別するキーの役割を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-14.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-15.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-16.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-17.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-18.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-19.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問3 本文・設問（公式問題PDF 14ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問3 本文・設問（公式問題PDF 15ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問3 本文・設問（公式問題PDF 16ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問3 本文・設問（公式問題PDF 17ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問3 本文・設問（公式問題PDF 18ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問3 本文・設問（公式問題PDF 19ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q03-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問3 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q4",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "IPv4とIPv6間の通信"
+    ],
+    "difficulty": 5,
+    "question": "問4 IPv4とIPv6間の通信",
+    "answer": "問4   設問1     エ\n     設問2  ａ  エ\n         ｂ  ウ\n         ｃ  イ\n         ｄ  カ",
+    "modelAnswer": "問4   設問1     エ\n     設問2  ａ  エ\n         ｂ  ウ\n         ｃ  イ\n         ｄ  カ",
+    "explanation": "変換の前後で送信元と宛先のIPアドレス・ポート番号を並べる。返りのパケットについて、どの変換情報を参照するかを追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-20.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-21.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-22.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-23.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問4 本文・設問（公式問題PDF 20ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問4 本文・設問（公式問題PDF 21ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問4 本文・設問（公式問題PDF 22ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問4 本文・設問（公式問題PDF 23ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q04-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問4 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=20",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問4。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q5",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "ソフトウェア設計",
+    "topicTags": [
+      "ストレスチェックの検査支援を行うシステム"
+    ],
+    "difficulty": 5,
+    "question": "問5 ストレスチェックの検査支援を行うシステム",
+    "answer": "問5   設問1  ａ  ア\n         ｂ  オ\n         ｃ  ク\n         ｄ  キ\n     設問2  ｅ  オ\n         ｆ  ク",
+    "modelAnswer": "問5   設問1  ａ  ア\n         ｂ  オ\n         ｃ  ク\n         ｄ  キ\n     設問2  ｅ  オ\n         ｆ  ク",
+    "explanation": "判別結果が変わる境界値に着目する。各領域の得点と合計で判定する条件を分けて、用意したテストデータが通る分岐を確かめる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-24.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-25.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-26.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-27.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問5 本文・設問（公式問題PDF 24ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問5 本文・設問（公式問題PDF 25ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問5 本文・設問（公式問題PDF 26ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問5 本文・設問（公式問題PDF 27ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q05-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問5 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=24",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問5。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q6",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "販売管理システム開発の結合テストにおける進捗及び品質管理"
+    ],
+    "difficulty": 5,
+    "question": "問6 販売管理システム開発の結合テストにおける進捗及び品質管理",
+    "answer": "問6   設問1  ａ  ア\n         ｂ  ア\n         ｃ  エ\n     設問2  ｄ  エ\n         ｅ  イ\n     設問3  ｆ  イ",
+    "modelAnswer": "問6   設問1  ａ  ア\n         ｂ  ア\n         ｃ  エ\n     設問2  ｄ  エ\n         ｅ  イ\n     設問3  ｆ  イ",
+    "explanation": "消化したテストと残っているテストの件数を担当者別に整理する。バグの数とテスト項目の消化率が示す課題を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-28.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-29.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-30.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-31.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-32.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問6 本文・設問（公式問題PDF 28ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問6 本文・設問（公式問題PDF 29ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問6 本文・設問（公式問題PDF 30ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問6 本文・設問（公式問題PDF 31ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問6 本文・設問（公式問題PDF 32ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q06-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問6 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=28",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問6。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q7",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "経営戦略",
+    "topicTags": [
+      "製品別の収益分析"
+    ],
+    "difficulty": 5,
+    "question": "問7 製品別の収益分析",
+    "answer": "問7   設問1  ａ  イ\n         ｂ  イ\n     設問2  ｃ  ア\n     設問3  ｄ  イ\n         ｅ  ウ",
+    "modelAnswer": "問7   設問1  ａ  イ\n         ｂ  イ\n     設問2  ｃ  ア\n     設問3  ｄ  イ\n         ｅ  ウ",
+    "explanation": "変動費を引いた限界利益と固定費を使って損益分岐点売上高を求める。値引きや販売構成の変化は限界利益率に反映させて比較する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-33.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-34.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-35.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-36.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-37.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問7 本文・設問（公式問題PDF 33ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問7 本文・設問（公式問題PDF 34ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問7 本文・設問（公式問題PDF 35ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問7 本文・設問（公式問題PDF 36ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問7 本文・設問（公式問題PDF 37ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q07-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問7 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=33",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問7。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q8",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "データ構造及びアルゴリズム",
+    "topicTags": [
+      "ビットマスクによる文字列検索"
+    ],
+    "difficulty": 5,
+    "question": "問8 ビットマスクによる文字列検索",
+    "answer": "問8   設問1  ａ  イ\n         ｂ  ア\n         ｃ  ア\n     設問2  ｄ  イ\n         ｅ  キ\n         ｆ  カ\n     設問3  ｇ  カ\n         ｈ  イ\n         ｉ  ウ",
+    "modelAnswer": "問8   設問1  ａ  イ\n         ｂ  ア\n         ｃ  ア\n     設問2  ｄ  イ\n         ｅ  キ\n         ｆ  カ\n     設問3  ｇ  カ\n         ｈ  イ\n         ｉ  ウ",
+    "explanation": "各文字に対応するビット位置を確認する。検索する文字を一つ進めるたびに、ビットのシフトと積で一致候補を更新する流れを追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-38.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-39.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-40.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-41.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-42.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-43.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-44.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-03.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-04.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問8 本文・設問（公式問題PDF 38ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 本文・設問（公式問題PDF 39ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 本文・設問（公式問題PDF 40ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 本文・設問（公式問題PDF 41ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 本文・設問（公式問題PDF 42ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 本文・設問（公式問題PDF 43ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 本文・設問（公式問題PDF 44ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 共通の解答要領（公式問題PDF 3ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問8 共通の解答要領（公式問題PDF 4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q08-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問8 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=38",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問8。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q9",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "ソフトウェア開発",
+    "topicTags": [
+      "入力ファイルを表示するCプログラム"
+    ],
+    "difficulty": 5,
+    "question": "問9 入力ファイルを表示するCプログラム",
+    "answer": "問9   設問1  ａ  ア\n         ｂ  イ\n         ｃ  ア\n         ｄ  オ\n     設問2  ｅ  オ\n         ｆ  ウ",
+    "modelAnswer": "問9   設問1  ａ  ア\n         ｂ  イ\n         ｃ  ア\n         ｄ  オ\n     設問2  ｅ  オ\n         ｆ  ウ",
+    "explanation": "1行を表示する単位とファイル終端を切り分ける。最後の行が行幅に満たない場合に、バッファのどの範囲を表示するかを追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-45.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-46.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-47.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-48.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-49.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問9 本文・設問（公式問題PDF 45ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問9 本文・設問（公式問題PDF 46ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問9 本文・設問（公式問題PDF 47ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問9 本文・設問（公式問題PDF 48ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問9 本文・設問（公式問題PDF 49ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q09-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問9 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=45",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問9。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q10",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "ソフトウェア開発",
+    "topicTags": [
+      "販売リストを作るCOBOLプログラム"
+    ],
+    "difficulty": 5,
+    "question": "問10 販売リストを作るCOBOLプログラム",
+    "answer": "問10  設問1  ａ  エ\n         ｂ  オ\n         ｃ  イ\n         ｄ  イ\n     設問2  ｅ  ウ\n         ｆ  ア",
+    "modelAnswer": "問10  設問1  ａ  エ\n         ｂ  オ\n         ｃ  イ\n         ｄ  イ\n     設問2  ｅ  ウ\n         ｆ  ア",
+    "explanation": "店舗の切替点で出力と集計値の初期化がどう行われるかを確認する。販売グラフを追加するときは、集計用と印字用の項目を分ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-50.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-51.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-52.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-53.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-54.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-55.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-56.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問10 本文・設問（公式問題PDF 50ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問10 本文・設問（公式問題PDF 51ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問10 本文・設問（公式問題PDF 52ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問10 本文・設問（公式問題PDF 53ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問10 本文・設問（公式問題PDF 54ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問10 本文・設問（公式問題PDF 55ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問10 本文・設問（公式問題PDF 56ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q10-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問10 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=50",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問10。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q11",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "ソフトウェア開発",
+    "topicTags": [
+      "通知メッセージを配信するJavaプログラム"
+    ],
+    "difficulty": 5,
+    "question": "問11 通知メッセージを配信するJavaプログラム",
+    "answer": "問11  設問1  ａ  イ\n         ｂ  オ\n         ｃ  イ\n         ｄ  オ\n         ｅ  ウ\n     設問2     オ",
+    "modelAnswer": "問11  設問1  ａ  イ\n         ｂ  オ\n         ｃ  イ\n         ｄ  オ\n         ｅ  ウ\n     設問2     オ",
+    "explanation": "端末の登録、通知の待機、メッセージの配送をスレッドごとに追う。共有するデータと排他制御の範囲を照合する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-57.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-58.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-59.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-60.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-61.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-62.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-63.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-77.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-78.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問11 本文・設問（公式問題PDF 57ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 本文・設問（公式問題PDF 58ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 本文・設問（公式問題PDF 59ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 本文・設問（公式問題PDF 60ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 本文・設問（公式問題PDF 61ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 本文・設問（公式問題PDF 62ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 本文・設問（公式問題PDF 63ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 共通の解答要領（公式問題PDF 77ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問11 共通の解答要領（公式問題PDF 78ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q11-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問11 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=57",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問11。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q12",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 12,
+    "type": "descriptive",
+    "category": "ソフトウェア開発",
+    "topicTags": [
+      "ビット列を処理するアセンブラプログラム"
+    ],
+    "difficulty": 5,
+    "question": "問12 ビット列を処理するアセンブラプログラム",
+    "answer": "問12  設問1  ａ  ア\n         ｂ  ア\n         ｃ  イ\n     設問2  ｄ  エ\n         ｅ  エ\n        ｆ正解なし\n     設問3  ｇ  オ\n         ｈ  ウ",
+    "modelAnswer": "問12  設問1  ａ  ア\n         ｂ  ア\n         ｃ  イ\n     設問2  ｄ  エ\n         ｅ  エ\n        ｆ正解なし\n     設問3  ｇ  オ\n         ｈ  ウ",
+    "explanation": "レジスタのビット列を追い、符号部、マスクで抽出した部分、処理結果を分けて記録する。分岐はその直前の演算結果で判断する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-64.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-65.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-66.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-67.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-68.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-69.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-79.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-80.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-81.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-82.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-83.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-84.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問12 本文・設問（公式問題PDF 64ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 本文・設問（公式問題PDF 65ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 本文・設問（公式問題PDF 66ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 本文・設問（公式問題PDF 67ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 本文・設問（公式問題PDF 68ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 本文・設問（公式問題PDF 69ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 共通の解答要領（公式問題PDF 79ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 共通の解答要領（公式問題PDF 80ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 共通の解答要領（公式問題PDF 81ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 共通の解答要領（公式問題PDF 82ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 共通の解答要領（公式問題PDF 83ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問12 共通の解答要領（公式問題PDF 84ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q12-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問12 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=64",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問12。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2019a-pm-q13",
+    "exam": "fe",
+    "year": 2019,
+    "season": "autumn",
+    "session": "pm",
+    "qNumber": 13,
+    "type": "descriptive",
+    "category": "ソフトウェア開発",
+    "topicTags": [
+      "メロンの販売価格と箱詰めを処理する表計算"
+    ],
+    "difficulty": 5,
+    "question": "問13 メロンの販売価格と箱詰めを処理する表計算",
+    "answer": "問13  設問1  ａ  エ\n         ｂ  エ\n         ｃ  ウ\n     設問2  ｄ  キ\n         ｅ  キ\n         ｆ  イ",
+    "modelAnswer": "問13  設問1  ａ  エ\n         ｂ  エ\n         ｃ  ウ\n     設問2  ｄ  キ\n         ｅ  キ\n         ｆ  イ",
+    "explanation": "販売価格の切上げ単位と、その対象になるセルを確認する。マクロでは書込み先と、行を進める条件を別々に追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/page-70.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-71.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-72.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-73.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-74.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-75.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-76.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-85.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-86.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-87.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-88.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-89.webp",
+      "/questions/ipa/fe/2019-autumn-pm/page-90.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問13 本文・設問（公式問題PDF 70ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 本文・設問（公式問題PDF 71ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 本文・設問（公式問題PDF 72ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 本文・設問（公式問題PDF 73ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 本文・設問（公式問題PDF 74ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 本文・設問（公式問題PDF 75ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 本文・設問（公式問題PDF 76ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 共通の解答要領（公式問題PDF 85ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 共通の解答要領（公式問題PDF 86ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 共通の解答要領（公式問題PDF 87ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 共通の解答要領（公式問題PDF 88ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 共通の解答要領（公式問題PDF 89ページ）",
+      "基本情報技術者試験 2019年度秋期 午後 問13 共通の解答要領（公式問題PDF 90ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2019-autumn-pm/answer-q13-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者試験 2019年度秋期 午後 問13 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_qs.pdf#page=70",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000dict-att/2019r01a_fe_pm_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html"
+    ],
+    "sourceAttribution": "出典：IPA 基本情報技術者試験 2019年度秋期 午後 問13。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

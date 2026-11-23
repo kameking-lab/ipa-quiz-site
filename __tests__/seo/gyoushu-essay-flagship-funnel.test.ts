@@ -30,14 +30,12 @@ describe("業種別論文記事 → 旗艦 /essay 直 funnel", () => {
       expect(ESSAY_EXAM_CODES).toContain(exam);
     });
 
-    it(`${slug} 本文が indexable 旗艦 /essay へ直リンクし「参考評価」を明記`, () => {
+    it(`${slug} 本文が indexable 旗艦 /essay へ直リンクし「論述の練習問題」を明記`, () => {
       const body = getBlogPostBySlug(slug)!.body;
       // 旗艦ハブ /essay への直リンク（noindex の /essays 複数形ではない）
       expect(body).toContain("](/essay)");
-      // 誇大回避: AI 採点は参考評価であることを明記
-      expect(body).toContain("参考評価");
-      // /essay の採点4軸コピーと整合
-      expect(body).toContain("適合度・論理性・具体性・業種事例");
+      expect(body).toContain("[論述の練習問題](/essay)");
+      expect(body).toContain("設問ア・イ・ウの構成");
     });
   }
 });

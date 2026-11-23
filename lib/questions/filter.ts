@@ -4,7 +4,9 @@ import { numericQuestionIssue } from "./numeric";
 import { orderingQuestionIssue } from "./ordering";
 import { hasUnrenderableContent } from "./content-quality";
 import type { Question, QuizFilter } from "./types";
+import { canonicalExamCode } from "./exam-aliases";
 import type { HistoryStore } from "@/lib/storage/history";
+import { weakQuestionStatus } from "@/lib/study-plan/pace";
 import { usesNumberedChoices } from "./display";
 
 
@@ -23,6 +25,20 @@ export function isPracticeReadyQuestion(q: Question): boolean {
   return !q.officialScoring && q.publicAllowed !== false && !isReferenceOnlyQuestionId(q.id) && !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
 }
 
+export function isPlanScorableQuestion(q: Question): boolean {
+  if (!isPracticeReadyQuestion(q)) return false;
+  if (q.type === "native-b") return !!q.nativeB;
+  if (q.type === "ordering" || q.type === "numeric") return true;
+  return q.type === "multiple-choice" && !!q.choices && Object.keys(q.choices).length > 0 &&
+    (Array.isArray(q.answer) ? q.answer.length > 0 : !!q.answer);
+}
+
+export function reviewIdFilter(history: HistoryStore, wrongOnly = false) {
+  const wrong = new Set(history.getWrongIds());
+  const marked = new Set(wrongOnly ? [] : history.getStarredIds());
+  return (id: string) => weakQuestionStatus(wrong.has(id), marked.has(id)).weak;
+}
+
 export function filterQuestions(
   all: Question[],
   filter: QuizFilter,
@@ -31,10 +47,11 @@ export function filterQuestions(
   let pool = [...all];
 
   if (filter.examGroup && filter.examGroup.length > 0) {
-    const set = new Set(filter.examGroup);
+    const set = new Set(filter.examGroup.map(canonicalExamCode));
     pool = pool.filter((q) => set.has(q.exam));
   } else if (filter.exam) {
-    pool = pool.filter((q) => q.exam === filter.exam);
+    const exam = canonicalExamCode(filter.exam);
+    pool = pool.filter((q) => q.exam === exam);
   }
   if (filter.year) pool = pool.filter((q) => q.year === filter.year);
   if (filter.season) pool = pool.filter((q) => q.season === filter.season);
@@ -52,9 +69,8 @@ export function filterQuestions(
     pool = pool.filter((q) => q.isCalculation === true);
   }
   if (filter.mode === "review" && history) {
-    const wrongIds = new Set(history.getWrongIds());
-    const starredIds = new Set(history.getStarredIds());
-    pool = pool.filter((q) => wrongIds.has(q.id) || starredIds.has(q.id));
+    const included = reviewIdFilter(history);
+    pool = pool.filter(q => isPlanScorableQuestion(q) && included(q.id));
   }
   if (filter.mode === "unanswered" && history) {
     const answered = new Set(history.getAnsweredIds());
@@ -85,6 +101,7 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 export function shuffleChoices(q: Question): Question {
+  if (q.exam === "bousui-frp2" || q.exam === "pan-seizo1" || q.exam === "pan-seizo2") return q;
   // Printed numbers and official answer fields refer to the original order.
   if (usesNumberedChoices(q.exam) || q.officialAnswerNumber !== undefined) return q;
   if (["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "khk-kikai-kou", "khk-kikai-otsu", "energy-kanri", "reform-mgr", "shohi-sodan"].includes(q.exam)) return q;

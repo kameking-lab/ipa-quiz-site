@@ -10,6 +10,15 @@ const items: ExamCatalogItem[] = EXAM_CATALOG.map((entry) => ({
 }));
 afterEach(cleanup);
 describe("consistent qualification selection", () => {
+  it("shows a parent link and keeps the selected engineering department's annual papers", () => {
+    const groupLinks = [{ id: "pe-first", href: "/qualifications/gijutsushi-first", label: "技術士第一次試験（科目・部門別 22）" }];
+    const view = render(<ExamCatalogBrowser groups={EXAM_GROUPS} items={items} initialGroup="lckohyo" initialSubject={null} groupLinks={groupLinks} />);
+    expect(screen.getByRole("link", { name: /^技術士第一次試験/ })).toHaveAttribute("href", "/qualifications/gijutsushi-first");
+    expect(screen.queryByRole("link", { name: /技術士第一次・化学/ })).toBeNull();
+    view.rerender(<ExamCatalogBrowser groups={EXAM_GROUPS} items={items} initialGroup="pe-first" initialSubject="技術士第一次・化学" />);
+    expect(screen.getByRole("heading", { name: "技術士第一次・化学の過去問" })).toBeVisible();
+    expect(screen.getAllByRole("link").some(link => link.getAttribute("href") === "/e-learning/exams/pe-first-chemical-2025")).toBe(true);
+  });
   it("separates the two consultant qualifications without category tabs", () => {
     render(<ExamCatalogBrowser groups={EXAM_GROUPS} items={items} initialGroup="lckohyo" initialSubject={null} />);
     expect(screen.queryByRole("tablist")).toBeNull();

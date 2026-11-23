@@ -1,0 +1,141 @@
+[
+  {
+    "id": "sm-2022h-pm1-q1",
+    "exam": "sm",
+    "year": 2022,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "サービスレベル管理",
+    "topicTags": [
+      "SLA",
+      "可用性",
+      "供給者管理"
+    ],
+    "difficulty": 5,
+    "question": "問1 サービスレベル管理\n\n原本の本文・図表・設問に従って解答してください。",
+    "answer": "問１\n                       出題趣旨\n  新規にSLA を設定する場合，サービスレベル目標を仮設定し，サービス目標値に対する達成度を測定し，\nサービス目標値が達成可能か，又は調整が必要かを確認する必要がある。\n 本問では，既存システムの再構築を行う事例の中で，SLA の設定，サービスレベル目標に対する達成状況の\n確認，外部供給者との調整を通じて，サービスレベル管理の実務能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ・現実的に達成可能なSLA を，営業部と合意するため\n       ・現実的に達成可能なSLA であることを確認するため\n      ・目標値を実現する上で，改善が必要かを確認するため\n         (2) 427\n  設問２    99.2\n 設問３(1) 項番  3\n              ・30 分以上短縮できる可能性があるから\n      理由\n         ・手順の中で最も時間を要しているから\n         (2) 表4 の項番2 の90 分以内を60 分以内に変更する。\n  設問４  ・インシデントの検出に20 分掛かったから\n       ・アラート検知が営業部の連絡より15 分遅いから",
+    "modelAnswer": "問１\n                       出題趣旨\n  新規にSLA を設定する場合，サービスレベル目標を仮設定し，サービス目標値に対する達成度を測定し，\nサービス目標値が達成可能か，又は調整が必要かを確認する必要がある。\n 本問では，既存システムの再構築を行う事例の中で，SLA の設定，サービスレベル目標に対する達成状況の\n確認，外部供給者との調整を通じて，サービスレベル管理の実務能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ・現実的に達成可能なSLA を，営業部と合意するため\n       ・現実的に達成可能なSLA であることを確認するため\n      ・目標値を実現する上で，改善が必要かを確認するため\n         (2) 427\n  設問２    99.2\n 設問３(1) 項番  3\n              ・30 分以上短縮できる可能性があるから\n      理由\n         ・手順の中で最も時間を要しているから\n         (2) 表4 の項番2 の90 分以内を60 分以内に変更する。\n  設問４  ・インシデントの検出に20 分掛かったから\n       ・アラート検知が営業部の連絡より15 分遅いから",
+    "explanation": "仮の目標値を測定して、達成できるSLAかどうかを利用部門と確認する。可用性の計算では対象時間と停止時間の範囲をそろえる。回復手順のうち時間の長い工程や、検知に掛かった時間を切り分けると、供給者との契約をどこまで短縮・調整すべきかを具体化できる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_qs.pdf#page=3) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sm/2022-spring-pm1/page-03.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-04.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-05.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-06.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "ITサービスマネージャ 2022年度春期 午後I 問1 サービスレベル管理（公式問題PDF 3ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問1 サービスレベル管理（公式問題PDF 4ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問1 サービスレベル管理（公式問題PDF 5ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問1 サービスレベル管理（公式問題PDF 6ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問1 サービスレベル管理（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sm/2022-spring-pm1/answer-q1.webp"
+    ],
+    "answerImageAltTexts": [
+      "ITサービスマネージャ 2022年度春期 午後I 問1 公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA ITサービスマネージャ 2022年度春期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sm-2022h-pm1-q2",
+    "exam": "sm",
+    "year": 2022,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "容量・能力管理",
+    "topicTags": [
+      "キャパシティ管理",
+      "需要管理"
+    ],
+    "difficulty": 5,
+    "question": "問2 容量・能力管理\n\n原本の本文・図表・設問に従って解答してください。",
+    "answer": "問２\n                       出題趣旨\n 容量・能力管理では，サービスの要求事項に従い，サービスのパフォーマンスを適正な容量・能力で提供す\nる。\n 本問では，業務サーバ能力の検討，ディスク装置容量の検討，業務特性に応じてピーク時の需要を分散する\n方策の検討などの活動に関して，IT サービスマネージャに要求される容量・能力管理の能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１    25\n  設問２  会員1 人当たりの平均購入回数\n  設問３  会員が閲覧する1 か月当たりの総ページ数\n 設問４(1) 2024 年3 月末までに最大スループットが基準値の20TPS を超えるから\n         (2) ディスク装置の基準値を現在の設定値より低い値に変更する。\n  設問５  商品カテゴリごとにタイムセールの曜日や時間帯を分散させる。",
+    "modelAnswer": "問２\n                       出題趣旨\n 容量・能力管理では，サービスの要求事項に従い，サービスのパフォーマンスを適正な容量・能力で提供す\nる。\n 本問では，業務サーバ能力の検討，ディスク装置容量の検討，業務特性に応じてピーク時の需要を分散する\n方策の検討などの活動に関して，IT サービスマネージャに要求される容量・能力管理の能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１    25\n  設問２  会員1 人当たりの平均購入回数\n  設問３  会員が閲覧する1 か月当たりの総ページ数\n 設問４(1) 2024 年3 月末までに最大スループットが基準値の20TPS を超えるから\n         (2) ディスク装置の基準値を現在の設定値より低い値に変更する。\n  設問５  商品カテゴリごとにタイムセールの曜日や時間帯を分散させる。",
+    "explanation": "会員数だけでなく、一人当たりの購入回数や閲覧ページ数も将来の需要を左右する。増加率を基にスループットが基準値を超える時点を確認し、ディスクの基準値も見直す。タイムセールはカテゴリごとに曜日や時間帯をずらすことで、ピークを分散できる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_qs.pdf#page=8) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sm/2022-spring-pm1/page-08.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-09.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-10.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-11.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-12.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-13.webp"
+    ],
+    "imageAltTexts": [
+      "ITサービスマネージャ 2022年度春期 午後I 問2 容量・能力管理（公式問題PDF 8ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問2 容量・能力管理（公式問題PDF 9ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問2 容量・能力管理（公式問題PDF 10ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問2 容量・能力管理（公式問題PDF 11ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問2 容量・能力管理（公式問題PDF 12ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問2 容量・能力管理（公式問題PDF 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sm/2022-spring-pm1/answer-q2.webp"
+    ],
+    "answerImageAltTexts": [
+      "ITサービスマネージャ 2022年度春期 午後I 問2 公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA ITサービスマネージャ 2022年度春期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sm-2022h-pm1-q3",
+    "exam": "sm",
+    "year": 2022,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "サービスの移行",
+    "topicTags": [
+      "PaaS",
+      "サービス移行",
+      "事業継続"
+    ],
+    "difficulty": 5,
+    "question": "問3 サービスの移行\n\n原本の本文・図表・設問に従って解答してください。",
+    "answer": "問３\n                       出題趣旨\n 近年，クラウドサービスを活用したサービス運用が増えている。クラウドサービスを活用するに当たり，ク\nラウドサービスの制約を認識し，利用者に提供するサービスのサービス目標に照らして，サービスの移行を計\n画する必要がある。\n  本問では，インフラ基盤のPaaS への移行を題材として，サービスの移行に関する要求事項の計画及び外部\n供給者との調整能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) B 社が計画停止を実施する何日前に，B 社からA 社に計画停止の案内を行う\n      か。\n         (2) B 社のPaaS が復旧した後の販売アプリの稼働確認時間が確保できないから\n         (3) 本番データとバックアップデータが同時に利用できなくなる可能性があるから\n         (4) A 社にデータが適切な形で戻されることを確認しておく。\n 設問２(1) 3,460\n         (2) 2,212\n  設問３    PaaS 障害対応状況の経過連絡に関する方法とタイミング",
+    "modelAnswer": "問３\n                       出題趣旨\n 近年，クラウドサービスを活用したサービス運用が増えている。クラウドサービスを活用するに当たり，ク\nラウドサービスの制約を認識し，利用者に提供するサービスのサービス目標に照らして，サービスの移行を計\n画する必要がある。\n  本問では，インフラ基盤のPaaS への移行を題材として，サービスの移行に関する要求事項の計画及び外部\n供給者との調整能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) B 社が計画停止を実施する何日前に，B 社からA 社に計画停止の案内を行う\n      か。\n         (2) B 社のPaaS が復旧した後の販売アプリの稼働確認時間が確保できないから\n         (3) 本番データとバックアップデータが同時に利用できなくなる可能性があるから\n         (4) A 社にデータが適切な形で戻されることを確認しておく。\n 設問２(1) 3,460\n         (2) 2,212\n  設問３    PaaS 障害対応状況の経過連絡に関する方法とタイミング",
+    "explanation": "PaaSの復旧時間だけでは利用者向けサービスの復旧時間にならず、その後のアプリ稼働確認も必要になる。本番とバックアップを同時に失う可能性、契約終了時のデータ返却、計画停止の予告を別々に確認する。障害時の経過連絡は、方法とタイミングまで供給者と調整する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_qs.pdf#page=14) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sm/2022-spring-pm1/page-14.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-15.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-16.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-17.webp",
+      "/questions/ipa/sm/2022-spring-pm1/page-18.webp"
+    ],
+    "imageAltTexts": [
+      "ITサービスマネージャ 2022年度春期 午後I 問3 サービスの移行（公式問題PDF 14ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問3 サービスの移行（公式問題PDF 15ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問3 サービスの移行（公式問題PDF 16ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問3 サービスの移行（公式問題PDF 17ページ）",
+      "ITサービスマネージャ 2022年度春期 午後I 問3 サービスの移行（公式問題PDF 18ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sm/2022-spring-pm1/answer-q3.webp"
+    ],
+    "answerImageAltTexts": [
+      "ITサービスマネージャ 2022年度春期 午後I 問3 公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sm_pm1_ans.pdf",
+    "sourceAttribution": "出典：IPA ITサービスマネージャ 2022年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

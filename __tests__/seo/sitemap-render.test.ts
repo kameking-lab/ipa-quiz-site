@@ -1,6 +1,8 @@
 /// <reference types="vite/client" />
 import { describe, expect, it } from "vitest";
 
+import { qualificationGroupPath } from "@/lib/qualifications/groups";
+import { getPublishedQualificationGroups } from "@/lib/qualifications/published-groups";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
@@ -234,11 +236,13 @@ describe("renderMainSitemapXml route contract", () => {
     }
   });
 
-  it("every entry carries a lastmod fallback", () => {
-    const xml = renderMainSitemapXml();
-    const urlCount = (xml.match(/<url>/g) ?? []).length;
-    const lastmodCount = (xml.match(/<lastmod>/g) ?? []).length;
-    expect(lastmodCount).toBe(urlCount);
+  it("stamps existing routes and omits lastmod for qualification groups without dates", () => {
+    const entries = [...renderMainSitemapXml().matchAll(/<url>[\s\S]*?<\/url>/g)];
+    expect(entries).toHaveLength(mainLocs.length);
+    const unstamped = entries.filter(([entry]) => !entry.includes("<lastmod>")).flatMap(([entry]) => locs(entry));
+    const groupPaths = getPublishedQualificationGroups().map(({ group }) => qualificationGroupPath(group.slug));
+    expect(groupPaths.length).toBeGreaterThan(0);
+    expect(unstamped.sort()).toEqual(groupPaths.sort());
   });
 });
 

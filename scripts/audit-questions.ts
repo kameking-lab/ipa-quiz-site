@@ -22,6 +22,7 @@ import { join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { auditQuestionAnswer } from "./audit-question-answer";
+import { officialScoringIssue } from "@/lib/questions/official-scoring";
 import { AP_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/ap";
 import { ALL_ESSAY_QUESTIONS } from "@/data/questions/essay";
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
@@ -178,7 +179,10 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
       }
       // (d) 正解
       const ans = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-      if (typeof ans !== "string") {
+      if (q.officialScoring) {
+        const issue = officialScoringIssue(q);
+        if (issue) add(q, "morning", downgrade("critical"), "answer-type", issue);
+      } else if (typeof ans !== "string") {
         add(q, "morning", downgrade("critical"), "answer-type", `answer 型不正: ${typeof ans}`);
       } else if (!filled.includes(ans as ChoiceKey)) {
         add(

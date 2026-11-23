@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
@@ -15,11 +16,11 @@ function resolve(params: Awaited<Props["params"]>) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const q = resolve(await params);
   if (!q) return { title: "問題が見つかりません", robots: { index: false } };
-  return {
+  return withCanonicalSocialMetadata({
     title: `電験二種 ${q.year}年度 二次 ${SECONDARY_SUBJECT_NAMES[q.subject]} 問${q.number}｜${q.topic}`,
     description: `${q.topic}の公式問題・標準解答と全小問の解説。図と数式を原本で読み、記述式の解答を保存しながら練習できます。`,
     alternates: { canonical: secondaryQuestionPath(q) },
-  };
+  });
 }
 export default async function Page({ params }: Props) {
   if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/denken2/secondary/${gatedParams.year}/${gatedParams.subject}/${gatedParams.number}`}/>; }

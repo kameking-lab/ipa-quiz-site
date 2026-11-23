@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "2進数・10進数・16進数の変換、基数の異なる数の計算、4ビットの2の補数で表現できる数の範囲について、①〜⑩を答えなさい。",
+    "answer": "① 202\n② 11.375\n③ 50\n④ FB\n⑤ 1011 0000\n⑥ 1001 1010.111\n⑦ 1101.11\n⑧ 3C2\n⑨ 8\n⑩ 7",
+    "explanation": "①②は重み付きの和で10進数に直す。③④は16で割った商と余り、⑤⑥は16進数の各桁を4ビットで書く。⑦は5.5×2.5＝13.75、⑧は767＋195＝962。4ビットの2の補数の範囲は－8〜＋7で、空欄⑨の前には負号がある。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p37-01.webp"
+    ],
+    "imageAltTexts": [
+      "基数変換・演算の各入力値と、4ビット2の補数の範囲の式。"
+    ],
+    "modelAnswer": "① 202\n② 11.375\n③ 50\n④ FB\n⑤ 1011 0000\n⑥ 1001 1010.111\n⑦ 1101.11\n⑧ 3C2\n⑨ 8\n⑩ 7",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の論理式と同じ結果になる論理式を選びなさい。\n\n① X＝A・(¬A＋B)\n② X＝A＋(A・B)\n③ X＝¬A＋¬B\n\n①に当てはまるものを選びなさい。",
+    "answer": "イ",
+    "explanation": "分配すると A・¬A＋A・B＝0＋A・B である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問2 問1 ①",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問2 問1 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "イ",
+    "choices": {
+      "ア": "X＝A＋B",
+      "イ": "X＝A・B",
+      "ウ": "X＝A",
+      "エ": "X＝B",
+      "オ": "X＝¬(A＋B)",
+      "カ": "X＝¬(A・B)"
+    },
+    "choiceExplanations": {
+      "ア": "どちらかが1なら1になるORである。この欄では、ANDに対応する式を選ぶ。",
+      "イ": "分配すると A・¬A＋A・B＝0＋A・B である。",
+      "ウ": "BにかかわらずAを出力する式である。この欄では、ANDに対応する式を選ぶ。",
+      "エ": "AにかかわらずBを出力する式である。この欄では、ANDに対応する式を選ぶ。",
+      "オ": "ORの出力を反転するNORである。この欄では、ANDに対応する式を選ぶ。",
+      "カ": "ANDの出力を反転するNANDである。この欄では、ANDに対応する式を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q02-03",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の論理式と同じ結果になる論理式を選びなさい。\n\n① X＝A・(¬A＋B)\n② X＝A＋(A・B)\n③ X＝¬A＋¬B\n\n②に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "吸収則 A＋A・B＝A を利用する。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問2 問1 ②",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問2 問1 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "X＝A＋B",
+      "イ": "X＝A・B",
+      "ウ": "X＝A",
+      "エ": "X＝B",
+      "オ": "X＝¬(A＋B)",
+      "カ": "X＝¬(A・B)"
+    },
+    "choiceExplanations": {
+      "ア": "どちらかが1なら1になるORである。この欄では、Aに等しい式を選ぶ。",
+      "イ": "両方1のときだけ1になるANDである。この欄では、Aに等しい式を選ぶ。",
+      "ウ": "吸収則 A＋A・B＝A を利用する。",
+      "エ": "AにかかわらずBを出力する式である。この欄では、Aに等しい式を選ぶ。",
+      "オ": "ORの出力を反転するNORである。この欄では、Aに等しい式を選ぶ。",
+      "カ": "ANDの出力を反転するNANDである。この欄では、Aに等しい式を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q02-04",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "次の論理式と同じ結果になる論理式を選びなさい。\n\n① X＝A・(¬A＋B)\n② X＝A＋(A・B)\n③ X＝¬A＋¬B\n\n③に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "ド・モルガンの法則により ¬A＋¬B＝¬(A・B) である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問2 問1 ③",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問2 問1 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "X＝A＋B",
+      "イ": "X＝A・B",
+      "ウ": "X＝A",
+      "エ": "X＝B",
+      "オ": "X＝¬(A＋B)",
+      "カ": "X＝¬(A・B)"
+    },
+    "choiceExplanations": {
+      "ア": "どちらかが1なら1になるORである。この欄では、NANDに対応する式を選ぶ。",
+      "イ": "両方1のときだけ1になるANDである。この欄では、NANDに対応する式を選ぶ。",
+      "ウ": "BにかかわらずAを出力する式である。この欄では、NANDに対応する式を選ぶ。",
+      "エ": "AにかかわらずBを出力する式である。この欄では、NANDに対応する式を選ぶ。",
+      "オ": "ORの出力を反転するNORである。この欄では、NANDに対応する式を選ぶ。",
+      "カ": "ド・モルガンの法則により ¬A＋¬B＝¬(A・B) である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q02-05",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の論理回路の真理値表の①〜④を完成させなさい。",
+    "answer": "① 1\n② 0\n③ 0\n④ 1",
+    "explanation": "上のANDはA・B、下のANDは¬A・¬Bを出力する。二つのORを取ると、入力が00または11のときだけ1になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2(1)",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問2 問2(1)。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p38-02.webp"
+    ],
+    "imageAltTexts": [
+      "2つのANDと2つのNOT、そのAND出力を結合するORの回路と、真理値表。"
+    ],
+    "modelAnswer": "① 1\n② 0\n③ 0\n④ 1",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q02-06",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図の論理回路の名称を選びなさい。",
+    "answer": "ウ",
+    "explanation": "AとBが同じときに1、異なるときに0を出力する一致回路である。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2(2)",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問2 問2(2)。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p38-02.webp"
+    ],
+    "imageAltTexts": [
+      "2つのANDと2つのNOT、そのAND出力を結合するORの回路と、真理値表。"
+    ],
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "半加算回路",
+      "イ": "全加算回路",
+      "ウ": "一致回路",
+      "エ": "不一致回路",
+      "オ": "デコーダ",
+      "カ": "エンコーダ"
+    },
+    "choiceExplanations": {
+      "ア": "半加算回路は和と桁上がりを出力する。図は出力Xだけで、入力の一致を判定する。",
+      "イ": "全加算回路は桁上がり入力を含む3入力を扱う。",
+      "ウ": "00と11のときにXが1となり、二つのビットの一致を検出する。",
+      "エ": "不一致回路は二つの入力が異なるときに1になり、図と逆である。",
+      "オ": "デコーダは符号に対応する複数の出力線などを選択する。図は単一の一致信号を出力する。",
+      "カ": "エンコーダは入力の状態を符号化する回路である。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q03-07",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "Tフリップフロップの回路の動作を示すタイムチャートを完成させなさい。",
+    "answer": "初期値は000。各クロック立下り直後のQ₃Q₂Q₁は、001、010、011、100、101、110、111、000。",
+    "explanation": "CKの立下りで第1段が反転し、各段のQが1から0に下がると次段が反転する。Q₃Q₂Q₁は8進むたびに000へ戻る。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問1",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問3 問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p39-03.webp"
+    ],
+    "imageAltTexts": [
+      "立下りで反転するTフリップフロップ3段と、CK・Q₁〜Q₃のタイムチャート。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-answer60-04.webp"
+    ],
+    "answerImageAltTexts": [
+      "大問3 問1の公式タイムチャート。"
+    ],
+    "modelAnswer": "初期値は000。各クロック立下り直後のQ₃Q₂Q₁は、001、010、011、100、101、110、111、000。",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q03-08",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "このTフリップフロップの回路の名称を選びなさい。",
+    "answer": "ア",
+    "explanation": "各クロックでQ₃Q₂Q₁の数値が1ずつ増えるため、アップカウンタである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問2",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問3 問2。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p39-03.webp"
+    ],
+    "imageAltTexts": [
+      "立下りで反転するTフリップフロップ3段と、CK・Q₁〜Q₃のタイムチャート。"
+    ],
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "アップカウンタ",
+      "イ": "ダウンカウンタ",
+      "ウ": "デマルチプレクサ",
+      "エ": "マルチプレクサ",
+      "オ": "シフトレジスタ",
+      "カ": "大小比較回路"
+    },
+    "choiceExplanations": {
+      "ア": "出力は000から001、010、011と増える。",
+      "イ": "ダウンカウンタはクロックごとに数値を減らす。",
+      "ウ": "デマルチプレクサは選択信号で入力を振り分ける。",
+      "エ": "マルチプレクサは複数入力の一つを選ぶ。",
+      "オ": "シフトレジスタは各段にビットを順に移す。図の各段は反転を繰り返す。",
+      "カ": "大小比較回路は複数の数値の大小関係を判定する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q04-09",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "URLの各部が示す意味を選びなさい。\n\nhttp://www.abcde.ed.jp/index.html\n\n① http　② abcde　③ ed　④ jp　⑤ index.html\n\n①に当てはまるものを選びなさい。",
+    "answer": "イ",
+    "explanation": "httpは通信で使うプロトコルを指定する。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ①",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問4 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "イ",
+    "choices": {
+      "ア": "ファイル名",
+      "イ": "プロトコル",
+      "ウ": "組織形態",
+      "エ": "組織名",
+      "オ": "国名",
+      "カ": "ディレクトリ名"
+    },
+    "choiceExplanations": {
+      "ア": "index.htmlのように取得するファイルを指定する。この欄では、通信手順を示す語を選ぶ。",
+      "イ": "httpは通信で使うプロトコルを指定する。",
+      "ウ": "edはこのドメインの組織区分を示す。この欄では、通信手順を示す語を選ぶ。",
+      "エ": "abcdeはこのURLで組織を識別する部分である。この欄では、通信手順を示す語を選ぶ。",
+      "オ": "jpは日本を示す国コードである。この欄では、通信手順を示す語を選ぶ。",
+      "カ": "ディレクトリはファイルが入る階層の名である。この欄では、通信手順を示す語を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q04-10",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "URLの各部が示す意味を選びなさい。\n\nhttp://www.abcde.ed.jp/index.html\n\n① http　② abcde　③ ed　④ jp　⑤ index.html\n\n②に当てはまるものを選びなさい。",
+    "answer": "エ",
+    "explanation": "abcdeはこのドメインの組織を識別する部分である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ②",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問4 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "エ",
+    "choices": {
+      "ア": "ファイル名",
+      "イ": "プロトコル",
+      "ウ": "組織形態",
+      "エ": "組織名",
+      "オ": "国名",
+      "カ": "ディレクトリ名"
+    },
+    "choiceExplanations": {
+      "ア": "index.htmlのように取得するファイルを指定する。この欄では、組織を識別する名前を選ぶ。",
+      "イ": "httpのようにやり取りの規約を示す。この欄では、組織を識別する名前を選ぶ。",
+      "ウ": "edはこのドメインの組織区分を示す。この欄では、組織を識別する名前を選ぶ。",
+      "エ": "abcdeはこのドメインの組織を識別する部分である。",
+      "オ": "jpは日本を示す国コードである。この欄では、組織を識別する名前を選ぶ。",
+      "カ": "ディレクトリはファイルが入る階層の名である。この欄では、組織を識別する名前を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q04-11",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "URLの各部が示す意味を選びなさい。\n\nhttp://www.abcde.ed.jp/index.html\n\n① http　② abcde　③ ed　④ jp　⑤ index.html\n\n③に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "edは教育機関の組織形態を示す部分である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ③",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問4 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "ファイル名",
+      "イ": "プロトコル",
+      "ウ": "組織形態",
+      "エ": "組織名",
+      "オ": "国名",
+      "カ": "ディレクトリ名"
+    },
+    "choiceExplanations": {
+      "ア": "index.htmlのように取得するファイルを指定する。この欄では、組織の種別を選ぶ。",
+      "イ": "httpのようにやり取りの規約を示す。この欄では、組織の種別を選ぶ。",
+      "ウ": "edは教育機関の組織形態を示す部分である。",
+      "エ": "abcdeはこのURLで組織を識別する部分である。この欄では、組織の種別を選ぶ。",
+      "オ": "jpは日本を示す国コードである。この欄では、組織の種別を選ぶ。",
+      "カ": "ディレクトリはファイルが入る階層の名である。この欄では、組織の種別を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q04-12",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "URLの各部が示す意味を選びなさい。\n\nhttp://www.abcde.ed.jp/index.html\n\n① http　② abcde　③ ed　④ jp　⑤ index.html\n\n④に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "jpは日本を表す国コードである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ④",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問4 ④。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "ファイル名",
+      "イ": "プロトコル",
+      "ウ": "組織形態",
+      "エ": "組織名",
+      "オ": "国名",
+      "カ": "ディレクトリ名"
+    },
+    "choiceExplanations": {
+      "ア": "index.htmlのように取得するファイルを指定する。この欄では、国を示す部分を選ぶ。",
+      "イ": "httpのようにやり取りの規約を示す。この欄では、国を示す部分を選ぶ。",
+      "ウ": "edはこのドメインの組織区分を示す。この欄では、国を示す部分を選ぶ。",
+      "エ": "abcdeはこのURLで組織を識別する部分である。この欄では、国を示す部分を選ぶ。",
+      "オ": "jpは日本を表す国コードである。",
+      "カ": "ディレクトリはファイルが入る階層の名である。この欄では、国を示す部分を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q04-13",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "URLの各部が示す意味を選びなさい。\n\nhttp://www.abcde.ed.jp/index.html\n\n① http　② abcde　③ ed　④ jp　⑤ index.html\n\n⑤に当てはまるものを選びなさい。",
+    "answer": "ア",
+    "explanation": "index.htmlはこのURLの最後にあるファイル名である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ⑤",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問4 ⑤。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "ファイル名",
+      "イ": "プロトコル",
+      "ウ": "組織形態",
+      "エ": "組織名",
+      "オ": "国名",
+      "カ": "ディレクトリ名"
+    },
+    "choiceExplanations": {
+      "ア": "index.htmlはこのURLの最後にあるファイル名である。",
+      "イ": "httpのようにやり取りの規約を示す。この欄では、取得するファイルの名前を選ぶ。",
+      "ウ": "edはこのドメインの組織区分を示す。この欄では、取得するファイルの名前を選ぶ。",
+      "エ": "abcdeはこのURLで組織を識別する部分である。この欄では、取得するファイルの名前を選ぶ。",
+      "オ": "jpは日本を示す国コードである。この欄では、取得するファイルの名前を選ぶ。",
+      "カ": "ディレクトリはファイルが入る階層の名である。この欄では、取得するファイルの名前を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q05-14",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "入力したエネルギーやコンピュータからの出力信号に応じて、回転運動や直線運動のような①的な動きを行う装置を②という。これはエネルギー源によっていくつかの種類に分類され、電磁力を利用して回転運動をもたらす③や直線運動をもたらす④があり、圧縮空気の圧力を利用して直線運動をもたらす⑤がある。\n\n①に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "回転や直線運動は物体の位置や姿勢の変化なので機械的な動きである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ①",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問5 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "モータ",
+      "イ": "アクチュエータ",
+      "ウ": "エアシリンダ",
+      "エ": "電子",
+      "オ": "機械",
+      "カ": "ソレノイド"
+    },
+    "choiceExplanations": {
+      "ア": "電磁力を利用して回転運動を生じさせる。この欄では、運動を表す「機械」を選ぶ。",
+      "イ": "入力エネルギーなどから機械的な動きを生じさせる装置の総称である。この欄では、運動を表す「機械」を選ぶ。",
+      "ウ": "圧縮空気の力でピストンを直線運動させる。この欄では、運動を表す「機械」を選ぶ。",
+      "エ": "電子に関する性質や電子的な動作を表す語である。この欄では、運動を表す「機械」を選ぶ。",
+      "オ": "回転や直線運動は物体の位置や姿勢の変化なので機械的な動きである。",
+      "カ": "コイルの磁力で可動鉄心を直線的に動かす。この欄では、運動を表す「機械」を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q05-15",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "入力したエネルギーやコンピュータからの出力信号に応じて、回転運動や直線運動のような①的な動きを行う装置を②という。これはエネルギー源によっていくつかの種類に分類され、電磁力を利用して回転運動をもたらす③や直線運動をもたらす④があり、圧縮空気の圧力を利用して直線運動をもたらす⑤がある。\n\n②に当てはまるものを選びなさい。",
+    "answer": "イ",
+    "explanation": "入力を機械的動きに変換する装置を総称してアクチュエータという。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ②",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問5 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "イ",
+    "choices": {
+      "ア": "モータ",
+      "イ": "アクチュエータ",
+      "ウ": "エアシリンダ",
+      "エ": "電子",
+      "オ": "機械",
+      "カ": "ソレノイド"
+    },
+    "choiceExplanations": {
+      "ア": "電磁力を利用して回転運動を生じさせる。この欄では、運動を生じさせる装置の総称を選ぶ。",
+      "イ": "入力を機械的動きに変換する装置を総称してアクチュエータという。",
+      "ウ": "圧縮空気の力でピストンを直線運動させる。この欄では、運動を生じさせる装置の総称を選ぶ。",
+      "エ": "電子に関する性質や電子的な動作を表す語である。この欄では、運動を生じさせる装置の総称を選ぶ。",
+      "オ": "回転や直線運動は機械的な動作である。この欄では、運動を生じさせる装置の総称を選ぶ。",
+      "カ": "コイルの磁力で可動鉄心を直線的に動かす。この欄では、運動を生じさせる装置の総称を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q05-16",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "入力したエネルギーやコンピュータからの出力信号に応じて、回転運動や直線運動のような①的な動きを行う装置を②という。これはエネルギー源によっていくつかの種類に分類され、電磁力を利用して回転運動をもたらす③や直線運動をもたらす④があり、圧縮空気の圧力を利用して直線運動をもたらす⑤がある。\n\n③に当てはまるものを選びなさい。",
+    "answer": "ア",
+    "explanation": "電磁力で回転運動を起こす装置はモータである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ③",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問5 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "モータ",
+      "イ": "アクチュエータ",
+      "ウ": "エアシリンダ",
+      "エ": "電子",
+      "オ": "機械",
+      "カ": "ソレノイド"
+    },
+    "choiceExplanations": {
+      "ア": "電磁力で回転運動を起こす装置はモータである。",
+      "イ": "入力エネルギーなどから機械的な動きを生じさせる装置の総称である。この欄では、電磁力で回転する機器を選ぶ。",
+      "ウ": "圧縮空気の力でピストンを直線運動させる。この欄では、電磁力で回転する機器を選ぶ。",
+      "エ": "電子に関する性質や電子的な動作を表す語である。この欄では、電磁力で回転する機器を選ぶ。",
+      "オ": "回転や直線運動は機械的な動作である。この欄では、電磁力で回転する機器を選ぶ。",
+      "カ": "コイルの磁力で可動鉄心を直線的に動かす。この欄では、電磁力で回転する機器を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q05-17",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "入力したエネルギーやコンピュータからの出力信号に応じて、回転運動や直線運動のような①的な動きを行う装置を②という。これはエネルギー源によっていくつかの種類に分類され、電磁力を利用して回転運動をもたらす③や直線運動をもたらす④があり、圧縮空気の圧力を利用して直線運動をもたらす⑤がある。\n\n④に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "コイルに電流を流して鉄心を直線的に引く装置はソレノイドである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ④",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問5 ④。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "モータ",
+      "イ": "アクチュエータ",
+      "ウ": "エアシリンダ",
+      "エ": "電子",
+      "オ": "機械",
+      "カ": "ソレノイド"
+    },
+    "choiceExplanations": {
+      "ア": "電磁力を利用して回転運動を生じさせる。この欄では、電磁力で直線運動を起こす機器を選ぶ。",
+      "イ": "入力エネルギーなどから機械的な動きを生じさせる装置の総称である。この欄では、電磁力で直線運動を起こす機器を選ぶ。",
+      "ウ": "圧縮空気の力でピストンを直線運動させる。この欄では、電磁力で直線運動を起こす機器を選ぶ。",
+      "エ": "電子に関する性質や電子的な動作を表す語である。この欄では、電磁力で直線運動を起こす機器を選ぶ。",
+      "オ": "回転や直線運動は機械的な動作である。この欄では、電磁力で直線運動を起こす機器を選ぶ。",
+      "カ": "コイルに電流を流して鉄心を直線的に引く装置はソレノイドである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q05-18",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "入力したエネルギーやコンピュータからの出力信号に応じて、回転運動や直線運動のような①的な動きを行う装置を②という。これはエネルギー源によっていくつかの種類に分類され、電磁力を利用して回転運動をもたらす③や直線運動をもたらす④があり、圧縮空気の圧力を利用して直線運動をもたらす⑤がある。\n\n⑤に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "圧縮空気を使ってピストンを移動させる装置はエアシリンダである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問5 ⑤",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問5 ⑤。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "モータ",
+      "イ": "アクチュエータ",
+      "ウ": "エアシリンダ",
+      "エ": "電子",
+      "オ": "機械",
+      "カ": "ソレノイド"
+    },
+    "choiceExplanations": {
+      "ア": "電磁力を利用して回転運動を生じさせる。この欄では、空気圧で動く直動機器を選ぶ。",
+      "イ": "入力エネルギーなどから機械的な動きを生じさせる装置の総称である。この欄では、空気圧で動く直動機器を選ぶ。",
+      "ウ": "圧縮空気を使ってピストンを移動させる装置はエアシリンダである。",
+      "エ": "電子に関する性質や電子的な動作を表す語である。この欄では、空気圧で動く直動機器を選ぶ。",
+      "オ": "回転や直線運動は機械的な動作である。この欄では、空気圧で動く直動機器を選ぶ。",
+      "カ": "コイルの磁力で可動鉄心を直線的に動かす。この欄では、空気圧で動く直動機器を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q06-19",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 19,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "流れ図を実行したときの点aの値をトレースした表の①〜③を埋めなさい。",
+    "answer": "① 21\n② 6\n③ 0",
+    "explanation": "36÷21の余り15から開始する。繰り返しごとの (M,N,R) は (21,15,6)、(15,6,3)、(6,3,0) となる。最後にNの3を出力する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問6。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p41-05.webp"
+    ],
+    "imageAltTexts": [
+      "MとNを余りで更新する流れ図と、3回分のトレース表。"
+    ],
+    "modelAnswer": "① 21\n② 6\n③ 0",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q07-20",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "1桁ずつの数字を格納した10個の配列Dが回文数であるかを流れ図で判定する。配列の添字は1から始まる。\n\n①に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "比較前はすべての組が一致する可能性があるので、FLGを数値1で初期化する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ①",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問7 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p42-06.webp"
+    ],
+    "imageAltTexts": [
+      "配列Dの例、回文の考え方と判定する流れ図。"
+    ],
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "FLG ← 0",
+      "イ": "FLG ← 1",
+      "ウ": "1",
+      "エ": "0",
+      "オ": "D(I＋1)",
+      "カ": "D(11－I)"
+    },
+    "choiceExplanations": {
+      "ア": "不一致を記録する代入である。この欄では、初期状態で代入する数値を選ぶ。",
+      "イ": "回文の可能性を示す1を代入する命令である。この欄では、初期状態で代入する数値を選ぶ。",
+      "ウ": "比較前はすべての組が一致する可能性があるので、FLGを数値1で初期化する。",
+      "エ": "最終判定で回文でないことを示す値である。この欄では、初期状態で代入する数値を選ぶ。",
+      "オ": "次の位置の要素で、列の中央を挟んだ対称位置とは一般に一致しない。この欄では、初期状態で代入する数値を選ぶ。",
+      "カ": "添字の和が11になり、両端から同じ距離の要素を表す。この欄では、初期状態で代入する数値を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q07-21",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "1桁ずつの数字を格納した10個の配列Dが回文数であるかを流れ図で判定する。配列の添字は1から始まる。\n\n②に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "10個の要素を両端から比べるため、Iと11－Iを組にする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ②",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問7 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p42-06.webp"
+    ],
+    "imageAltTexts": [
+      "配列Dの例、回文の考え方と判定する流れ図。"
+    ],
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "FLG ← 0",
+      "イ": "FLG ← 1",
+      "ウ": "1",
+      "エ": "0",
+      "オ": "D(I＋1)",
+      "カ": "D(11－I)"
+    },
+    "choiceExplanations": {
+      "ア": "不一致を記録する代入である。この欄では、左右対称位置の式を選ぶ。",
+      "イ": "回文の可能性を示す1を代入する命令である。この欄では、左右対称位置の式を選ぶ。",
+      "ウ": "最終判定で回文を示す初期値である。この欄では、左右対称位置の式を選ぶ。",
+      "エ": "最終判定で回文でないことを示す値である。この欄では、左右対称位置の式を選ぶ。",
+      "オ": "次の位置の要素で、列の中央を挟んだ対称位置とは一般に一致しない。この欄では、左右対称位置の式を選ぶ。",
+      "カ": "10個の要素を両端から比べるため、Iと11－Iを組にする。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q07-22",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "1桁ずつの数字を格納した10個の配列Dが回文数であるかを流れ図で判定する。配列の添字は1から始まる。\n\n③に当てはまるものを選びなさい。",
+    "answer": "ア",
+    "explanation": "D(I)とD(11－I)が異なる枝なので、FLGに0を代入して不一致を記録する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ③",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問7 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p42-06.webp"
+    ],
+    "imageAltTexts": [
+      "配列Dの例、回文の考え方と判定する流れ図。"
+    ],
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "FLG ← 0",
+      "イ": "FLG ← 1",
+      "ウ": "1",
+      "エ": "0",
+      "オ": "D(I＋1)",
+      "カ": "D(11－I)"
+    },
+    "choiceExplanations": {
+      "ア": "D(I)とD(11－I)が異なる枝なので、FLGに0を代入して不一致を記録する。",
+      "イ": "回文の可能性を示す1を代入する命令である。この欄では、不一致を記録する代入を選ぶ。",
+      "ウ": "最終判定で回文を示す初期値である。この欄では、不一致を記録する代入を選ぶ。",
+      "エ": "最終判定で回文でないことを示す値である。この欄では、不一致を記録する代入を選ぶ。",
+      "オ": "次の位置の要素で、列の中央を挟んだ対称位置とは一般に一致しない。この欄では、不一致を記録する代入を選ぶ。",
+      "カ": "添字の和が11になり、両端から同じ距離の要素を表す。この欄では、不一致を記録する代入を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q08-23",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 23,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "10個の整数を入力し、小さいものから順に出力するプログラムの空欄①〜⑤を埋めなさい。（JIS Full BASIC）",
+    "answer": "① INPUT\n② J\n③ K\n④ J\n⑤ TMP",
+    "explanation": "入力を配列へ格納し、外側の添字とそれより後の添字の要素を比較する。手前の要素のほうが大きければ、一時変数に退避して入れ替える。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 JIS Full BASIC",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問8 JIS Full BASIC。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p43-07.webp"
+    ],
+    "imageAltTexts": [
+      "大問8の原文とJIS Full BASICのプログラム。"
+    ],
+    "modelAnswer": "① INPUT\n② J\n③ K\n④ J\n⑤ TMP",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q08-24",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 24,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "10個の整数を入力し、小さいものから順に出力するプログラムの空欄①〜⑤を埋めなさい。（C言語）",
+    "answer": "① scanf\n② j\n③ k\n④ j\n⑤ tmp",
+    "explanation": "入力を配列へ格納し、外側の添字とそれより後の添字の要素を比較する。手前の要素のほうが大きければ、一時変数に退避して入れ替える。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 C言語",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=45",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問8 C言語。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p45-08.webp"
+    ],
+    "imageAltTexts": [
+      "大問8の原文とC言語のプログラム。"
+    ],
+    "modelAnswer": "① scanf\n② j\n③ k\n④ j\n⑤ tmp",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q09-25",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 25,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "1〜100の整数が素数かを試し割り法で調べるプログラムの空欄①〜⑤を埋めなさい。（JIS Full BASIC）",
+    "answer": "① OR\n② ELSEIF\n③ JUDGE\n④ A\n⑤ 0",
+    "explanation": "下限未満か上限超過なら範囲外とする。1は別に除外し、2から入力値の平方根まで試し割りして割り切れれば判定変数を0にする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 JIS Full BASIC",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=44",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問9 JIS Full BASIC。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p44-09.webp"
+    ],
+    "imageAltTexts": [
+      "大問9の原文とJIS Full BASICのプログラム。"
+    ],
+    "modelAnswer": "① OR\n② ELSEIF\n③ JUDGE\n④ A\n⑤ 0",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2026-early-joho-level2-q09-26",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2026,
+    "season": "early",
+    "qNumber": 26,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "1〜100の整数が素数かを試し割り法で調べるプログラムの空欄①〜⑤を埋めなさい。（C言語）",
+    "answer": "① ||\n② else if\n③ judge\n④ a\n⑤ 0",
+    "explanation": "下限未満か上限超過なら範囲外とする。1は別に除外し、2から入力値の平方根まで試し割りして割り切れれば判定変数を0にする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 C言語",
+    "sourceExamSession": "第76回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=46",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/76joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2026年度 第76回 2級・共通＋BASIC/Cの選択 大問9 C言語。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/76-joho-level2-p46-10.webp"
+    ],
+    "imageAltTexts": [
+      "大問9の原文とC言語のプログラム。"
+    ],
+    "modelAnswer": "① ||\n② else if\n③ judge\n④ a\n⑤ 0",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  }
+]

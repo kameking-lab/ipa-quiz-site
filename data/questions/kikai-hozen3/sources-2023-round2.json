@@ -1,0 +1,142 @@
+{
+  "candidate": "Q4-044",
+  "qualification": "機械保全技能検定 3級 機械系保全作業",
+  "year": 2023,
+  "season": "round2",
+  "examDate": "2024-01-14",
+  "questionCount": 30,
+  "officialSources": [
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2023/2023__3kyu_kikai_mondai_2.pdf",
+      "sha256": "5135bbc0cf052dd59c36eaa0c16d8bddd3a3828cecda95f7f709211c3bdf9803",
+      "size": 319385,
+      "pages": 3
+    },
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2023/2023__3kyu_kikai_kaitou_2.pdf",
+      "sha256": "bbbe2da971f79aed0c38afb47dae42aef658bbf42e0ecb8c6764b9dfcee8fcb0",
+      "size": 166844,
+      "pages": 1
+    }
+  ],
+  "officialAnswers": [
+    "○",
+    "○",
+    "○",
+    "×",
+    "○",
+    "○",
+    "○",
+    "×",
+    "×",
+    "○",
+    "×",
+    "○",
+    "×",
+    "×",
+    "×",
+    "○",
+    "○",
+    "○",
+    "○",
+    "×",
+    "○",
+    "×",
+    "○",
+    "×",
+    "×",
+    "×",
+    "○",
+    "○",
+    "×",
+    "○"
+  ],
+  "choiceMapping": {
+    "ア": "○",
+    "イ": "×"
+  },
+  "figures": [
+    {
+      "qNumber": 1,
+      "url": "/images/questions/kikai-hozen3/2023-round2-q01.webp",
+      "pdfPage": 1,
+      "cropPdfPoints": [
+        197,
+        92,
+        250,
+        193
+      ],
+      "sha256": "954a11ff7c3a1a5fb6a05860d810d02586ec7c6d11eac316e85c6a725b95c843",
+      "alt": "穴あけに用いるボール盤の全体図"
+    },
+    {
+      "qNumber": 3,
+      "url": "/images/questions/kikai-hozen3/2023-round2-q03.webp",
+      "pdfPage": 1,
+      "cropPdfPoints": [
+        141,
+        278,
+        309,
+        369
+      ],
+      "sha256": "d783b080d1ee06299d90331ba540b00bd8a2ad7cafbd8c31a2b9cf13ba4ec193",
+      "alt": "15Ωと10Ωの直列抵抗、100Vの電源と電流Iを示す回路"
+    },
+    {
+      "qNumber": 9,
+      "url": "/images/questions/kikai-hozen3/2023-round2-q09.webp",
+      "pdfPage": 1,
+      "cropPdfPoints": [
+        155,
+        616,
+        320,
+        716
+      ],
+      "sha256": "f9c0347fa69be179206de57ea85f04de47d595ada5184bda4b2ceee57556f6ae",
+      "alt": "人・機械・方法・材料の要因を結果へつなぐ特性要因図"
+    }
+  ],
+  "reusedQuestions": [
+    {
+      "qNumber": 10,
+      "sourceId": "kikai-hozen3-2024-round2-gakka-010"
+    },
+    {
+      "qNumber": 12,
+      "sourceId": "kikai-hozen3-2023-round1-gakka-012"
+    },
+    {
+      "qNumber": 18,
+      "sourceId": "kikai-hozen3-2023-round1-gakka-018"
+    },
+    {
+      "qNumber": 20,
+      "sourceId": "kikai-hozen3-2024-round2-gakka-020"
+    },
+    {
+      "qNumber": 21,
+      "sourceId": "kikai-hozen3-2023-round1-gakka-021"
+    },
+    {
+      "qNumber": 30,
+      "sourceId": "kikai-hozen3-2023-round1-gakka-030"
+    }
+  ],
+  "transcriptionMethod": "公式PDFのテキスト層と全ページ描画を照合。既存の同文・同正答の問題は自前解説を原本照合して再利用。",
+  "answerVerification": "公式正答表の全30記号を描画画像とテキスト層で照合。",
+  "missingQuestions": [],
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 30,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 30,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 3,
+    "correctedQuestionCount": 0,
+    "corrections": [],
+    "unavailableQuestionNumbers": [],
+    "publishableQuestionCount": 30
+  }
+}

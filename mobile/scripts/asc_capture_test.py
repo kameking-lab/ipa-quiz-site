@@ -74,6 +74,15 @@ class CaptureDiagnosticsTest(unittest.TestCase):
         for device in capture.CONFIG["devices"]:
             self.assertIn("Selected simulator for " + device["slug"], self.stdout.getvalue())
 
+    def test_smoke_captures_only_local_reminder_outside_listing_assets(self):
+        app = self.directory / "build/asc-simulator/Build/Products/Debug-iphonesimulator/App.app"
+        app.mkdir(parents=True)
+        with patch.object(capture, "ROOT", self.directory), patch.object(capture.platform, "system", return_value="Darwin"), \
+                patch.object(capture.sys, "argv", ["asc_capture.py", "--smoke"]), patch.object(capture, "capture_device") as device:
+            capture.main()
+        device.assert_called_once_with(capture.CONFIG["devices"][0], app, self.directory / "build/asc/smoke", {"05-reminder": "reminder"})
+        self.assertFalse((self.directory / "fastlane").exists())
+
 
     def test_redaction_covers_environment_auth_urls_and_source_values(self):
         with patch.dict(os.environ, {"ASC_REVIEW_CODE": "review-fixture-secret", "APP_STORE_CONNECT_PRIVATE_KEY": "private-fixture-secret"}):

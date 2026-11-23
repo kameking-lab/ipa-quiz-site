@@ -10,14 +10,18 @@ import checkedSource from "@/reports/sekou-2denki/source-check.json";
 import figures from "@/reports/sekou-2denki/figures.json";
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"];
-describe("sekou-2denki latest two official papers, staged", () => {
+const reviewedEditions = new Set(checkedSource.map(source => source.edition));
+const reviewed = DENKI2_QUESTIONS.filter(q => reviewedEditions.has(`${q.year}-${q.season}`));
+const late2025 = reviewed.filter(q => q.year === 2025 && q.season === "late");
+
+describe("sekou-2denki reviewed 2026 early and 2025 late official papers", () => {
   it("keeps 62 original questions per edition and all 504 choice explanations", () => {
-    expect(DENKI2_QUESTIONS).toHaveLength(124);
-    expect(new Set(DENKI2_QUESTIONS.map(q => q.id)).size).toBe(124);
+    expect(reviewed).toHaveLength(124);
+    expect(new Set(DENKI2_QUESTIONS.map(q => q.id)).size).toBe(DENKI2_QUESTIONS.length);
     let explanations = 0;
     for (const source of checkedSource) {
       const [year, season] = source.edition.split("-");
-      const rows = DENKI2_QUESTIONS.filter(q => q.year === Number(year) && q.season === season);
+      const rows = reviewed.filter(q => q.year === Number(year) && q.season === season);
       expect(rows.map(q => q.qNumber)).toEqual(Array.from({ length: 62 }, (_, i) => i + 1));
       for (const q of rows) {
         const officialAnswer = source.answerByNumber[String(q.qNumber) as keyof typeof source.answerByNumber];
@@ -38,10 +42,10 @@ describe("sekou-2denki latest two official papers, staged", () => {
   });
 
   it("retains all 21 necessary official figures with matching hashes", () => {
-    expect(DENKI2_QUESTIONS.filter(q => q.hasImage)).toHaveLength(21);
+    expect(reviewed.filter(q => q.hasImage)).toHaveLength(21);
     expect(figures).toHaveLength(21);
     for (const figure of figures) {
-      const q = DENKI2_QUESTIONS.find(q => `${q.year}-${q.season}` === figure.edition && q.qNumber === figure.number)!;
+      const q = reviewed.find(q => `${q.year}-${q.season}` === figure.edition && q.qNumber === figure.number)!;
       expect(q.hasImage).toBe(true);
       expect(q.imageUrls).toEqual([figure.imageUrl]);
       const bytes = readFileSync(`${process.cwd()}/public${figure.imageUrl}`);
@@ -50,7 +54,7 @@ describe("sekou-2denki latest two official papers, staged", () => {
   });
 
   it("distinguishes the 20 A and 15 A 250 V outlet figures in R7 late No.19", () => {
-    const q = DENKI2_QUESTIONS.find(q => q.year === 2025 && q.qNumber === 19)!;
+    const q = late2025.find(q => q.qNumber === 19)!;
     expect(q.answer).toBe("イ");
     expect(q.choiceExplanations?.イ).toContain("250 V・20 A");
     expect(q.choiceExplanations?.イ).toContain("単相200 V回路に使用できる");
@@ -61,7 +65,7 @@ describe("sekou-2denki latest two official papers, staged", () => {
   });
 
   it("explains why earth-fault current is least related in R7 late No.22", () => {
-    const q = DENKI2_QUESTIONS.find(q => q.year === 2025 && q.qNumber === 22)!;
+    const q = late2025.find(q => q.qNumber === 22)!;
     expect(q.answer).toBe("ウ");
     expect(q.choices?.ウ).toBe("地絡電流");
     expect(q.choiceExplanations?.ウ).toContain("中性点非接地");
@@ -72,9 +76,8 @@ describe("sekou-2denki latest two official papers, staged", () => {
   });
 
   it("preserves the reciprocal temperature unit and the answer insertion slot", () => {
-    const rows = DENKI2_QUESTIONS.filter(q => q.year === 2025);
-    expect(rows.find(q => q.qNumber === 1)!.question).toContain("0.004 ℃⁻¹");
-    const blank = rows.find(q => q.qNumber === 54)!;
+    expect(late2025.find(q => q.qNumber === 1)!.question).toContain("0.004 ℃⁻¹");
+    const blank = late2025.find(q => q.qNumber === 54)!;
     expect(blank.question).toMatch(/10 kW 以上\s*〔空欄〕未満/);
     const key = Array.isArray(blank.answer) ? blank.answer[0] : blank.answer;
     expect(key ? blank.choices?.[key as keyof NonNullable<typeof blank.choices>] : undefined).toBe("50 kW");

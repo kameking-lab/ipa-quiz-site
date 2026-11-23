@@ -1,0 +1,222 @@
+[
+  {
+    "id": "sc-2024h-pm-q1",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "APIセキュリティ",
+    "topicTags": [
+      "午後",
+      "APIセキュリティ"
+    ],
+    "difficulty": 4,
+    "question": "問1　APIセキュリティ\n\n原本の記述を読み、各設問に答えよ。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a ステートレス\n 設問２(1)  b  500\n         (2) データ   JWT ヘッダ内のalg に指定された値\n      内容     NONE でないことを検証する。\n         (3) JWT に含まれる利用者ID がmid の値と一致するかどうかを検証する処理\n         (4)  c 共通モジュールP\n         (5)  d 連続失敗回数がしきい値を超えたらアカウントをロックする処理\n 設問３(1) テストサーバのindex.html へのアクセスを記録し，確認する仕組み\n         (2)  e  Header\n              f  Header\n         (3) ・\\W[jJ][nN][dD][iI]\\W\n            ・\\W(j|J)(n|N)(d|D)(i|I)\\W\n         (4) 利点  誤検知による遮断を防ぐことができる。\n      内容  アラートを受信したら攻撃かどうかを精査する。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a ステートレス\n 設問２(1)  b  500\n         (2) データ   JWT ヘッダ内のalg に指定された値\n      内容     NONE でないことを検証する。\n         (3) JWT に含まれる利用者ID がmid の値と一致するかどうかを検証する処理\n         (4)  c 共通モジュールP\n         (5)  d 連続失敗回数がしきい値を超えたらアカウントをロックする処理\n 設問３(1) テストサーバのindex.html へのアクセスを記録し，確認する仕組み\n         (2)  e  Header\n              f  Header\n         (3) ・\\W[jJ][nN][dD][iI]\\W\n            ・\\W(j|J)(n|N)(d|D)(i|I)\\W\n         (4) 利点  誤検知による遮断を防ぐことができる。\n      内容  アラートを受信したら攻撃かどうかを精査する。\n```",
+    "explanation": "JWTの検証では、署名アルゴリズムの確認と、認証済み利用者が操作対象の会員を変更できるかという認可の確認を分けて考えます。利用者IDとmidの照合を欠くと、正しく認証された利用者でも他人のデータを操作できます。アカウントロックは共通処理へ置き、WAFは検知後に攻撃かどうかを精査する運用まで含めて整理します。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf)・[公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf)",
+    "scoringCriteria": "JWTの検証では、署名アルゴリズムの確認と、認証済み利用者が操作対象の会員を変更できるかという認可の確認を分けて考えます。利用者IDとmidの照合を欠くと、正しく認証された利用者でも他人のデータを操作できます。アカウントロックは共通処理へ置き、WAFは検知後に攻撃かどうかを精査する運用まで含めて整理します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p03.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p04.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p05.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p06.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p07.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p08.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p09.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p10.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p11.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-p12.webp"
+    ],
+    "imageAltTexts": [
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 3ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 4ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 5ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 6ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 7ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 8ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 9ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 10ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 11ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問1 原本PDF 12ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q1-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1 設問別の解答・解答の要点"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA「2024年度春期 情報処理安全確保支援士試験」午後 問1。解説は当サイト作成。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sc-2024h-pm-q2",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "サイバー攻撃への対策",
+    "topicTags": [
+      "午後",
+      "サイバー攻撃への対策"
+    ],
+    "difficulty": 4,
+    "question": "問2　サイバー攻撃への対策\n\n原本の記述を読み、各設問に答えよ。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1)  a 公開Web サーバ，取引先向けWeb サーバを攻撃対象に，HTTP GET リクエ\n         ストを繰返し送る。\n         (2) 正常な通信を異常として検知してしまう。\n         (3)  b  DNS-K\n              c  DNS-F\n 設問２(1)  d 攻撃者が，正規のVPN ダイアログに利用者ID とパスワードを入力する\n         と，正規利用者のスマートフォンにセキュリティコードが送信される。\n              e 正規利用者が受信したセキュリティコードを，罠のWeb サイトに入力する\n        と，攻撃者がそれを読み取り，正規のセキュリティコード入力画面に入力\n         することで認証される。\n         (2) 認証情報の入力は，受信したメール内のURL リンクをクリックして起動した画\n        面には行わず，VPN ダイアログにだけ行う。\n 設問３(1) 盗聴したパケットと同じ順番に通信要求を送信する。\n         (2) SPA パケットはユニークであり，同じパケットを再利用すると破棄されるから\n 設問４(1) ・DDoS 対策機能を有するCDN サービス\n      ・クラウド型ファイアウォールサービス\n          ・ISP が提供するDDoS 防御サービス\n         (2) ・取引専用PC 以外からの通信は取引先向けWeb サーバに到達しないから\n          ・UTM の設定変更によって，ボットネットからの通信が遮断されるから\n          ・UTM の設定変更に伴って，外部からの接続対象サーバではなくなったから",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1)  a 公開Web サーバ，取引先向けWeb サーバを攻撃対象に，HTTP GET リクエ\n         ストを繰返し送る。\n         (2) 正常な通信を異常として検知してしまう。\n         (3)  b  DNS-K\n              c  DNS-F\n 設問２(1)  d 攻撃者が，正規のVPN ダイアログに利用者ID とパスワードを入力する\n         と，正規利用者のスマートフォンにセキュリティコードが送信される。\n              e 正規利用者が受信したセキュリティコードを，罠のWeb サイトに入力する\n        と，攻撃者がそれを読み取り，正規のセキュリティコード入力画面に入力\n         することで認証される。\n         (2) 認証情報の入力は，受信したメール内のURL リンクをクリックして起動した画\n        面には行わず，VPN ダイアログにだけ行う。\n 設問３(1) 盗聴したパケットと同じ順番に通信要求を送信する。\n         (2) SPA パケットはユニークであり，同じパケットを再利用すると破棄されるから\n 設問４(1) ・DDoS 対策機能を有するCDN サービス\n      ・クラウド型ファイアウォールサービス\n          ・ISP が提供するDDoS 防御サービス\n         (2) ・取引専用PC 以外からの通信は取引先向けWeb サーバに到達しないから\n          ・UTM の設定変更によって，ボットネットからの通信が遮断されるから\n          ・UTM の設定変更に伴って，外部からの接続対象サーバではなくなったから\n```",
+    "explanation": "認証情報を入力する正規の画面と、メールから誘導される偽画面を区別して攻撃の流れを追います。SPAのパケットを再利用できないことと、通信要求の順番を知れば再現できる方式との違いが対策の根拠です。DDoS対策は回線やUTMの手前で遮断できるサービスと、取引専用PCだけが到達できる構成を対応させます。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf)・[公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf)",
+    "scoringCriteria": "認証情報を入力する正規の画面と、メールから誘導される偽画面を区別して攻撃の流れを追います。SPAのパケットを再利用できないことと、通信要求の順番を知れば再現できる方式との違いが対策の根拠です。DDoS対策は回線やUTMの手前で遮断できるサービスと、取引専用PCだけが到達できる構成を対応させます。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p13.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p14.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p15.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p16.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p17.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p18.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p19.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p20.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-p21.webp"
+    ],
+    "imageAltTexts": [
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 13ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 14ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 15ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 16ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 17ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 18ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 19ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 20ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問2 原本PDF 21ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q2-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2 設問別の解答・解答の要点"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA「2024年度春期 情報処理安全確保支援士試験」午後 問2。解説は当サイト作成。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sc-2024h-pm-q3",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "Webセキュリティ",
+    "topicTags": [
+      "午後",
+      "Webセキュリティ"
+    ],
+    "difficulty": 4,
+    "question": "問3　Webセキュリティ\n\n原本の記述を読み、各設問に答えよ。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1) 9\n         (2) 攻撃者がわなリンクを用意し，管理者にそのリンクを踏ませることで管理者権\n         限のcookie を攻撃者のWeb サイトに送信させ，その値を読み取って利用する\n       ことで管理者としてサイトX にアクセスし，利用者情報を取得する。\n 設問２(1) 攻撃者が自らのアカウントで取得したcsrf_token と一緒に利用者情報をサイ\n      トX に送るように構成したわなフォームに，詐欺メールなどで利用者を誘導\n      し，利用者情報を変更させる。\n         (2)  a ×\n              b ×\n              c ○\n              d ×\n 設問３(1) order-code の下6 桁を総当たりで試行する。\n         (2) cookie の値で利用者アカウントを特定し，order-code の値から特定したもの\n      と違っていれば，エラーにする。\n 設問４(1) 変更後のURL にPOST データは送ることができないから\n         (2) パラメータpage の値をIMDS のクレデンシャル情報を返すURL に変更する。\n         (3) トークンを発行するURL にPUT メソッドでアクセスしてトークンを入手し，そ\n       のトークンをリクエストヘッダに含めて，IMDS のクレデンシャル情報を返す\n             URL にアクセスする。\n         (4) パラメータpage の値がサイトP 以外のURL ならエラーにする。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1) 9\n         (2) 攻撃者がわなリンクを用意し，管理者にそのリンクを踏ませることで管理者権\n         限のcookie を攻撃者のWeb サイトに送信させ，その値を読み取って利用する\n       ことで管理者としてサイトX にアクセスし，利用者情報を取得する。\n 設問２(1) 攻撃者が自らのアカウントで取得したcsrf_token と一緒に利用者情報をサイ\n      トX に送るように構成したわなフォームに，詐欺メールなどで利用者を誘導\n      し，利用者情報を変更させる。\n         (2)  a ×\n              b ×\n              c ○\n              d ×\n 設問３(1) order-code の下6 桁を総当たりで試行する。\n         (2) cookie の値で利用者アカウントを特定し，order-code の値から特定したもの\n      と違っていれば，エラーにする。\n 設問４(1) 変更後のURL にPOST データは送ることができないから\n         (2) パラメータpage の値をIMDS のクレデンシャル情報を返すURL に変更する。\n         (3) トークンを発行するURL にPUT メソッドでアクセスしてトークンを入手し，そ\n       のトークンをリクエストヘッダに含めて，IMDS のクレデンシャル情報を返す\n             URL にアクセスする。\n         (4) パラメータpage の値がサイトP 以外のURL ならエラーにする。\n```",
+    "explanation": "各設問では、攻撃者が操作できる入力とサーバ側で照合すべき値を特定します。CSRFトークンは存在するだけでは足りず、利用者と結び付いた検証が必要です。注文コードだけでなくcookieから特定した利用者との一致を確認し、外部URLを取得する処理ではアクセス先を許可したサイトへ限定します。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf)・[公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf)",
+    "scoringCriteria": "各設問では、攻撃者が操作できる入力とサーバ側で照合すべき値を特定します。CSRFトークンは存在するだけでは足りず、利用者と結び付いた検証が必要です。注文コードだけでなくcookieから特定した利用者との一致を確認し、外部URLを取得する処理ではアクセス先を許可したサイトへ限定します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p22.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p23.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p24.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p25.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p26.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p27.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p28.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p29.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-p30.webp"
+    ],
+    "imageAltTexts": [
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 22ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 23ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 24ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 25ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 26ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 27ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 28ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 29ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問3 原本PDF 30ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q3-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問3 設問別の解答・解答の要点"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA「2024年度春期 情報処理安全確保支援士試験」午後 問3。解説は当サイト作成。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sc-2024h-pm-q4",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2024,
+    "season": "spring",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "Webアプリケーションプログラム",
+    "topicTags": [
+      "午後",
+      "Webアプリケーションプログラム"
+    ],
+    "difficulty": 4,
+    "question": "問4　Webアプリケーションプログラム\n\n原本の記述を読み、各設問に答えよ。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1)  a ア\n         (2)  b  personal\n         (3)  c  4\n 設問２(1)  d  5\n         (2)  e 例外\n         (3) システム運 アクセスできてしまう\n      用担当者  情報         不備により設問が成立しない。\n             出力される場所\n      システム開 アクセスできてしまう パスワード，氏名，住所，電話番号，\n      発者    情報         メールアドレス\n             出力される場所    オ\n         (4)  f  ・SHA-256\n               ・SHA-384\n               ・SHA-512\n         (5)  g  ・throw new RuntimeException(e)\n          ・ランタイムエラーを例外としてthrow する。\n         (6)  h  finally\n         (7) ア",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1)  a ア\n         (2)  b  personal\n         (3)  c  4\n 設問２(1)  d  5\n         (2)  e 例外\n         (3) システム運 アクセスできてしまう\n      用担当者  情報         不備により設問が成立しない。\n             出力される場所\n      システム開 アクセスできてしまう パスワード，氏名，住所，電話番号，\n      発者    情報         メールアドレス\n             出力される場所    オ\n         (4)  f  ・SHA-256\n               ・SHA-384\n               ・SHA-512\n         (5)  g  ・throw new RuntimeException(e)\n          ・ランタイムエラーを例外としてthrow する。\n         (6)  h  finally\n         (7) ア\n```",
+    "explanation": "例外処理、ログ出力、パスワードのハッシュ処理を別々に点検します。例外をそのまま出力すると個人情報をログ経由で開発者へ漏らすおそれがあり、例外の再送出とfinallyでの後処理も確認点です。設問2(3)のシステム運用担当者の欄は、公式解答例に「不備により設問が成立しない」と記載されています。原問と公式解答例をそのまま掲載しています。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf)・[公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf)",
+    "scoringCriteria": "例外処理、ログ出力、パスワードのハッシュ処理を別々に点検します。例外をそのまま出力すると個人情報をログ経由で開発者へ漏らすおそれがあり、例外の再送出とfinallyでの後処理も確認点です。設問2(3)のシステム運用担当者の欄は、公式解答例に「不備により設問が成立しない」と記載されています。原問と公式解答例をそのまま掲載しています。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p31.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p32.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p33.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p34.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p35.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p36.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p37.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p38.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p39.webp",
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-p40.webp"
+    ],
+    "imageAltTexts": [
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 31ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 32ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 33ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 34ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 35ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 36ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 37ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 38ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 39ページ（本文・図表・設問）",
+      "2024年度春期 情報処理安全確保支援士 午後 問4 原本PDF 40ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb4/sc-2024-spring-pm/q4-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問4 設問別の解答・解答の要点"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_sc_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA「2024年度春期 情報処理安全確保支援士試験」午後 問4。解説は当サイト作成。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

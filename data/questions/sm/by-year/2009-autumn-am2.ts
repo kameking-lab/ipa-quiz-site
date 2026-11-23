@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "重要性、需要変動、在庫コストという複数の観点から最適な発注方式を決定する問題は、多変数・多制約の最適化問題と捉えることができる。線形計画法は、これらの要素を数値モデルに落とし込み、総コスト最小化などの目的関数を設定して、最適な発注方式の組み合わせを定量的に導き出すことに適した手法である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ITIL v2における「ユーザ」は日常的にITサービスを利用する者を指し、「顧客」はITサービスの費用負担やサービスレベルの決定を行う責任者である。しかし、ITサービスの具体的な利用場面において、ユーザが自身の業務要件に基づきどのようなサービス（例：特定のアプリケーション機能の利用、データ形式の指定など）を求めるか、その「サービス要求の内容」を決定しIT部門に伝える場合がある。この解釈では、利用者の視点から具体的な要求事項を「決定」する主体がユーザであると見なせる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "各改善案の総合評価点は「効果の評価 - リスクの評価」で算出される。各評価項目は採点に重みを乗じて合算する。計算結果、案1:3点、案2:1点、案3:7点、案4:-13点となり、案3が最も高い総合評価点を示す。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "エージェント機能を利用した運用監視では、監視対象機器内に常駐する専用プログラム（エージェント）が、その機器のリソース使用状況を直接監視する。このエージェントが、しきい値を超過した際などに自律的に監視サーバへ通知することで、詳細かつリアルタイムな監視を実現する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ITサービスマネジメントのインシデント管理の達成目標は、ITサービスの中断や品質低下（インシデント）が発生した際に、その影響を最小限に抑えることである。具体的には、ユーザのビジネス活動へのインパクトを最小限に抑えるため、できるだけ早くSLAで定められた通常のサービスレベルに復帰させることを目指す。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ITILにおけるバーチャルサービスデスクは、物理的に拠点が複数あっても、利用者からは単一のサービスデスク窓口として機能する形態を指すのが一般的である。しかし、サービスデスク機能自体を組織の内部に持たず、外部の専門業者に委託する（アウトソーシングする）形態は、自社の物理的拠点外に「仮想的に」配置されたサービスデスクと見なせるため、この文脈でバーチャルサービスデスクと呼ばれることがある。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "構成管理を導入することで、ITサービスを構成するあらゆる構成品目（CI）に関する正確な情報を一元的に把握できるようになる。この信頼性の高いCI情報は、インシデント管理での影響範囲特定、変更管理でのリスク評価など、他のITサービスマネジメントプロセスの効果的かつ確実な実施を強力に支援する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ビジネスインパクト分析（BIA）は、ITサービスが停止または中断した場合にビジネス活動に与える影響を評価し、許容される停止時間や復旧目標時間などを明確にする重要な活動である。これは、災害などによるITサービスの中断から事業を保護し、サービスを復旧させる計画を策定する「ITサービス継続性管理」プロセスにおいて、計画の基礎情報として実施される。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "シングルサインオンは、利用者が一度の認証手続きを行うだけで、連携する複数のシステムやアプリケーションにアクセスできるようにする仕組みである。この実現には、LDAPなどのディレクトリサービスや認証サーバを中心とした集中管理された認証基盤を利用し、複数のサーバのIDとパスワードを統一して管理する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -241,6 +250,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ウが正解である理由は、逓減課金方式の定義に基づいています。逓減課金方式とは、利用量が増えるほど、単価が下がる課金方式です。グラフで表現すると、横軸（使用量）が増加するにつれて、縦軸（利用料金）の増加率が緩やかになり、最終的にはほぼ一定の傾きで増加していく曲線を描きます。これは、利用量が増えるほど単価が下がるため、総料金の増加ペースが鈍化することを示しています。\n\nアは、使用量に比例して一定の単価で料金が増加する比例課金方式のグラフに該当します。イは、使用量に応じて単価が上昇していく累進課金方式のグラフであり、これは通常、公共料金などで利用量が増えると単価が上がる場合に見られます。エは、利用量が増えても料金がほとんど増加しない、あるいは上限があるような課金方式、例えば定額課金方式や、一定量を超えると無料になるようなケースを表していると考えられます。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -265,6 +275,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "伝票からデータを入力する際に、入力漏れがないことを確認するためには、伝票の様式ごとに定められた必須項目の数と実際に入力された項目の数が一致しているかを検査するのが最も適切な処理である。これにより、本来入力されるべき項目が欠けている状態を検出できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -289,6 +300,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ウォームスタンバイは、障害発生時に備えてバックアップシステムを事前に一定の準備状態（OSやミドルウェアは導入済み、データは定期的に同期済み）に保つ復旧方式である。選択肢イの「緊急時にバックアップシステムを持ち込んでシステムを再開する」という表現は、コールドスタンバイのようにゼロから構築するのではなく、ある程度構成済みのシステムを必要な時に稼働させるという点で、ウォームスタンバイの一側面を指していると解釈できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -313,6 +325,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "現状の業務プロセスや運用方法をITILなどのベストプラクティスと比較し、その差異を特定する手法がギャップ分析である。この分析により、現状の課題点や改善が必要な領域が明確になり、効率的なITSM導入計画の立案が可能となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -337,6 +350,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "リスク対応策の一つであるリスク軽減（またはリスク低減）は、リスクの発生確率や、リスクが顕在化した場合の影響度を低減させるための対策を講じることである。指紋認証の採用は、不正アクセスや情報漏洩のリスクを低減させ、セキュリティレベルを向上させる効果があるため、リスク軽減策の具体例として適切である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -361,6 +375,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "床下空調方式は、床下の空間を冷気供給チャンバーとして利用し、熱源である機器の配置に応じて冷気の吹き出し口を調整できる。これにより、データセンター内の温度分布の偏りを効率的に軽減し、全体として均一な冷却環境を構築することが可能である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -385,6 +400,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "雷サージによって通信回線に誘起される異常電圧から通信機器を保護するための装置は、アレスタ（または避雷器）である。アレスタは、過電圧が発生した際に瞬時に導通して過電流を大地に逃がし、電圧を安全なレベルに抑えることで、接続されている通信機器の損傷を防ぐ。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -409,6 +425,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "「システム監査基準」の前文には、本基準がシステム監査人が行う監査業務の品質を確保し、その業務を有効かつ効率的に実施するための行為規範であることが明確に記述されている。これにより、監査結果の信頼性を高め、情報システムに関する統制と安全性の向上に貢献することを目的としている。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -433,6 +450,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ガントチャートはタスクの開始・終了日時を時系列で視覚的に示す。多くのプロジェクト管理ツールでは、ガントチャート機能に加えてタスク間の依存関係設定やクリティカルパスの自動計算機能が統合されているため、これらのツールを活用することで、ガントチャートを通じて作業の前後関係やクリティカルパスを把握することが可能となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -457,6 +475,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "複数の具体的な導入成功事例を先に提示し、それらの事実から「この製品を導入すれば大きな効果が期待できる」という共通の結論を導き出すアプローチは、帰納的構成法に該当する。この手法は、具体的な根拠に基づいて聞き手に納得感を与えやすいという特徴がある。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -481,6 +500,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "シリアルATA（SATA）は主にPC内部のストレージデバイス接続に用いられるシリアルインタフェース規格である。選択肢アは、キーボードやマウスなどUSBで接続される機器も含む「多岐にわたる周辺機器」を接続するシリアルインタフェースと記述しているが、CD-RWドライブのようにSATA接続が可能な周辺機器も存在するため、広範なシリアルインタフェースの一種として捉えることが可能である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -505,6 +525,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "Pの式にa=0.1を代入し、P = n / (1 + (n-1)0.1) = n / (0.1n + 0.9) を得る。nを無限大に近づけたときの極限値を求めるために、分母分子をnで割ると P = 1 / (0.1 + 0.9/n) となる。n → ∞ のとき 0.9/n → 0 であるため、Pの極限値は 1 / 0.1 = 10 となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -529,6 +550,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "データマイニングは、大量のデータの中から、統計的手法や機械学習などの発見型の手法を用いて、これまで知られていなかったパターン、トレンド、関連性、規則性などを抽出する分析プロセスです。選択肢エは、このデータマイニングの目的と手法を正確に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -553,6 +575,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ARP（Address Resolution Protocol）は、IPネットワークにおいて、目的のIPアドレスを持つデバイスのMACアドレス（物理アドレス）を解決するためのプロトコルです。これにより、IPパケットをデータリンク層で実際に転送できるようになります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -577,6 +600,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ソーシャルエンジニアリングは、情報セキュリティにおける脅威の一つで、人間の心理的な隙や信頼関係、知識の不足などを利用して、パスワードや機密情報などを不正に入手する手法です。緊急事態を装って相手を欺き情報を引き出す行為は、その典型的な手口に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -601,6 +625,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "労働者派遣法では、派遣労働者の保護を目的として、派遣期間に原則的な制限を設けていますが、無期雇用派遣労働者については、同一の派遣労働者に対する派遣期間の制限（3年）が適用されません。したがって、特定の条件を満たす場合には、3年を超えて同一人を派遣することが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2009h-9_2/2009h-9a_sm_am2_qs.pdf",
     "license": "IPA-public"

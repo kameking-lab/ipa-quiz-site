@@ -32,7 +32,7 @@ export async function GET(req: Request) {
   }
 
   const payload = await fetchFunnelData(range);
-  cache.set(cacheKey, { expiresAt: now + CACHE_TTL_MS, payload });
+  if (payload.configured && !payload.queryFailed) cache.set(cacheKey, { expiresAt: now + CACHE_TTL_MS, payload });
 
   if (cache.size > 8) {
     for (const [k, v] of cache) if (v.expiresAt <= now) cache.delete(k);

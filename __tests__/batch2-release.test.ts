@@ -25,19 +25,20 @@ describe("batch2 public release integration", () => {
     for (const [code, count] of Object.entries(counts)) {
       const exam = code as ExamCode;
       const eager = QUESTIONS_BY_EXAM[exam]!;
+      const ready = eager.filter(isPracticeReadyQuestion);
       expect(isExamPublished(exam), code).toBe(true);
       expect(getRegisteredExamCodes(), code).toContain(exam);
-      expect(eager, code).toHaveLength(count!);
+      expect(ready.length, code).toBeGreaterThanOrEqual(count!);
       expect(await getQuestionsForExam(exam), code).toEqual(eager);
-      expect(eager.every(isPracticeReadyQuestion), code).toBe(true);
-      expect(new Set(eager.map(questionPagePath)).size, code).toBe(count);
-      expect(home.find(item => item.key === exam)?.questionCount, code).toBe(count);
+      expect(new Set(eager.map(questionPagePath)).size, code).toBe(eager.length);
+      expect(home.find(item => item.key === exam)?.questionCount, code).toBe(ready.length);
       expect(sitemap, code).toContain(`/${exam}</loc>`);
       const response = await search(new Request(`http://localhost/api/search/questions?exam=${exam}&limit=1`));
       expect(response.status).toBe(200);
-      expect((await response.json()).total, code).toBe(count);
+      expect((await response.json()).total, code).toBe(ready.length);
       for (const q of eager) {
-        expect(findQuestionByRoute(eager, { exam, yearSeason: `${q.year}-${q.season}`, section: q.session, qnum: `q${q.qNumber}` })?.id).toBe(q.id);
+        const [, , , yearSeason, section, qnum] = questionPagePath(q).split("/");
+        expect(findQuestionByRoute(eager, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
       }
     }
   }, 120_000);
@@ -48,8 +49,9 @@ describe("batch2 public release integration", () => {
     const receipt = JSON.parse(readFileSync("reports/int5-20261104/projection-receipt.json", "utf8")) as {
       assets: Record<string, { url: string; sha256: string }>;
     };
-    for (const q of published) {
-      const original = KENCHIKUSHI1_CANDIDATES.find(source => source.id === q.id)!;
+    const byId = new Map(published.map(q => [q.id, q]));
+    for (const original of KENCHIKUSHI1_CANDIDATES.filter(source => !source.officialScoring)) {
+      const q = byId.get(original.id);
       expect(q).toEqual({ ...original, needsReview: false, publicAllowed: true,
         imageUrls: original.imageUrls?.map(path => receipt.assets[path].url),
         choiceImageUrls: original.choiceImageUrls && Object.fromEntries(Object.entries(original.choiceImageUrls).map(([key, path]) => [key, receipt.assets[path].url])),

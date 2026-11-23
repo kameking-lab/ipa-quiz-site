@@ -33,6 +33,19 @@ describe("/topics/[slug] resolves every linked topic and nothing else", () => {
     }
   });
 
+  it("resolves a topic whose decoded slug contains a literal percent sign", async () => {
+    const topic = getAllTopics().find(t => t.slug.includes("%"));
+    expect(topic).toBeDefined();
+    const decoded = topic!.slug;
+    const encoded = encodeURIComponent(decoded);
+    expect(encoded).toContain("%25");
+    for (const slug of [decoded, encoded]) {
+      const params = Promise.resolve({ slug });
+      expect((await generateMetadata({ params })).alternates?.canonical).toBe(`/topics/${encoded}`);
+      await expect(TopicHubPage({ params })).resolves.toBeTruthy();
+    }
+  });
+
   it("returns 404 for unknown, alias and malformed slugs", async () => {
     const spaced = getAllTopics().find((t) => t.slug.includes("-") && !t.tag.includes("-"));
     const bad = ["存在しないトピック名-xyz", "%zz", ...(spaced ? [spaced.tag] : [])];

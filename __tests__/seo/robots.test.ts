@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import robots from "@/app/robots";
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { getAvailableExams } from "@/lib/seo/exam-meta";
 import {
   renderBlogSitemapXml,
   renderBooksSitemapXml,
@@ -60,6 +61,53 @@ describe("robots()", () => {
 
   it("emits no non-standard Host directive (deprecated 2018)", () => {
     expect(robots().host).toBeUndefined();
+  });
+});
+
+describe("AI crawler policy (2026-11-17)", () => {
+  const emittedRules = robots().rules;
+  const rules = Array.isArray(emittedRules) ? emittedRules : [emittedRules];
+  const list = (value: string | string[] | undefined) => value ? [value].flat() : [];
+
+  // Evaluate group selection and longest-match, including REP's end anchor.
+  // In particular, a named group never inherits wildcard Allow: /.
+  function canCrawl(bot: string, path: string) {
+    const specific = rules.filter(rule => list(rule.userAgent).includes(bot));
+    const groups = specific.length ? specific : rules.filter(rule => list(rule.userAgent).includes("*"));
+    const matches = groups.flatMap(rule => [
+      ...list(rule.allow).map(pattern => ({ pattern, allow: true })),
+      ...list(rule.disallow).map(pattern => ({ pattern, allow: false })),
+    ]).filter(({ pattern }) => pattern.endsWith("$")
+      ? path === pattern.slice(0, -1) : path.startsWith(pattern));
+    matches.sort((a, b) => b.pattern.replace(/\$$/, "").length - a.pattern.replace(/\$$/, "").length || Number(b.allow) - Number(a.allow));
+    return matches[0]?.allow ?? true;
+  }
+
+  it.each(["GPTBot", "ClaudeBot", "Applebot-Extended"])("%s can read introductions but no question surfaces", bot => {
+    for (const path of ["/", "/ipa", "/qualifications", "/sc", "/fp2", "/denken1", "/ahaki-anma", "/e-learning/exams", "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/blog", "/blog/ipa-shiken-fukusuu-kubun-juken", "/about"]) {
+      expect(canCrawl(bot, path), `${bot} ${path}`).toBe(true);
+    }
+    for (const path of ["/q/ap/2009-autumn/am/q1", "/sc/2025-autumn", "/sc/topic/network", "/fp2/practical/2025-05/1", "/denken1/2025-primary/machine/q3", "/sharoushi/sentaku/2025/1", "/e-learning/exams/lc-example", "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha/question/1", "/quiz?mode=random", "/api/og", "/api/copilot", "/admin/", "/auth/signin", "/about-secret"]) {
+      expect(canCrawl(bot, path), `${bot} ${path}`).toBe(false);
+    }
+  });
+
+  it.each(["GPTBot", "ClaudeBot", "Applebot-Extended"])("%s covers every registered exam introduction without allowing its archives", bot => {
+    const exams = getAvailableExams();
+    expect(exams.length).toBeGreaterThan(300);
+    for (const exam of exams) {
+      expect(canCrawl(bot, `/${exam}`), exam).toBe(true);
+      expect(canCrawl(bot, `/${exam}/2026-annual`), exam).toBe(false);
+    }
+  });
+
+  it.each(["Googlebot", "Google-Extended", "OAI-SearchBot", "ChatGPT-User", "Claude-SearchBot", "Claude-User", "PerplexityBot"])("keeps %s on the public search policy", bot => {
+    for (const path of ["/", "/sc", "/blog/example", "/q/ap/2009-autumn/am/q1", "/fp2/practical/2025-05/1", "/api/og"]) expect(canCrawl(bot, path), path).toBe(true);
+    for (const path of ["/api/copilot", "/admin/", "/auth/signin"]) expect(canCrawl(bot, path), path).toBe(false);
+  });
+
+  it.each(["Amazonbot", "Bytespider", "CCBot"])("blocks %s throughout the site", bot => {
+    for (const path of ["/", "/sc", "/blog/example", "/q/ap/2009-autumn/am/q1"]) expect(canCrawl(bot, path), path).toBe(false);
   });
 });
 

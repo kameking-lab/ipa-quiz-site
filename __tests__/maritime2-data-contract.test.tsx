@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { restoreNichimuSourceUrls } from "./fixtures/nichimu-archive";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { existsSync } from "node:fs";
@@ -53,10 +54,11 @@ describe("maritime2 data-only original contract", () => {
     }
     expect(perfect).toBe(200);expect(partial).toBe(160);
   });
-  it("renders190 standard official-answer links, source images and attributed JSONLD without private source paths", () => {
+  it("renders190 official question links, source images and attributed JSONLD without private source paths", () => {
     for (const q of stored) {
-      expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.nichimu\.or\.jp\/.*-kaito\.pdf$/);
-      const html=renderToStaticMarkup(<ExplanationCard question={q} selected={undefined} isCorrect={true} starred={false} onToggleStar={()=>{}} onNext={()=>{}} onAskAI={()=>{}}/>);
+      expect(restoreNichimuSourceUrls([q])[0]?.sourceAnswerUrl).toMatch(/^https:\/\/www\.nichimu\.or\.jp\/.*-kaito\.pdf$/);
+      const html=renderToStaticMarkup(<ExplanationCard question={q} selected={undefined} isCorrect={true} onNext={()=>{}}/>);
+      expect(html).toContain(`href="${q.sourcePdfUrl}"`);
       expect(html).toContain(`href="${q.sourceAnswerUrl}"`);
       expect(q.imageUrls).toHaveLength(1);
       for (const url of q.imageUrls!) expect(existsSync(path.join(process.cwd(),"public",url.slice(1)))).toBe(true);

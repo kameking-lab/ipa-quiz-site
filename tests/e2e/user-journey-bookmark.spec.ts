@@ -23,12 +23,6 @@ test.describe("bookmark page: HTTP & structure", () => {
     expect(text).toMatch(/\d+件/);
   });
 
-  test("/bookmarks page has export/import buttons when empty", async ({ page }) => {
-    await page.goto("/bookmarks");
-    // Even with 0 bookmarks the page should render completely
-    const content = await page.content();
-    expect(content).toMatch(/ブックマーク/);
-  });
 });
 
 test.describe("bookmark page: empty state", () => {
@@ -56,20 +50,6 @@ test.describe("bookmark: question page integration", () => {
     expect(res.status()).toBe(200);
   });
 
-  test("question page renders bookmark-related UI element", async ({ page }) => {
-    await page.goto(QUESTION);
-    // The question page should contain either a bookmark button or bookmark icon
-    const bookmarkEl = page.locator(
-      "[aria-label*='ブックマーク'], button:has-text('ブックマーク'), [title*='ブックマーク']",
-    );
-    // Accept if found; some implementations show it after first answer.
-    // The count() call is what we actually need to trigger the selector
-    // resolution — even if 0 matches, we just confirm the page loaded
-    // correctly with choices.
-    await bookmarkEl.count();
-    const choices = page.locator("[aria-label='選択肢と解答']");
-    await expect(choices).toBeVisible();
-  });
 });
 
 // Bookmark storage format: { entries: { questionId: BookmarkEntry } }

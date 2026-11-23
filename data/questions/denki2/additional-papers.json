@@ -1,0 +1,949 @@
+[
+  {
+    "id": "denki2-2024-late-jitsumu-q1",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 1,
+    "officialQuestionLabel": "問題4-1",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "電気工事",
+    "topicTags": [
+      "直流回路網"
+    ],
+    "difficulty": 2,
+    "question": "図に示す直流回路網における起電力E〔V〕の値として，最も適当なものはどれか。",
+    "choices": {
+      "ア": "8 V",
+      "イ": "12 V",
+      "ウ": "16 V",
+      "エ": "24 V"
+    },
+    "answer": "イ",
+    "explanation": "左側を下向きにたどると1 Ωで2 V降下し、下側を右向きにたどると2 Ωで6 V上昇し、右側を上向きにたどると4 Ωで16 V降下する。従ってE＝2－6＋16＝12 Vである。",
+    "choiceExplanations": {
+      "ア": "8 Vは閉回路の起電力と電圧降下のつり合いを満たさない。各抵抗の電圧の向きもそろえて加算する。",
+      "イ": "左側を下向きにたどると1 Ωで2 V降下し、下側を右向きにたどると2 Ωで6 V上昇し、右側を上向きにたどると4 Ωで16 V降下する。従ってE＝2－6＋16＝12 Vである。",
+      "ウ": "16 Vは右側の4 Ωだけの電圧降下で、左側と下側の抵抗の電圧が入っていない。",
+      "エ": "各抵抗の電圧の大きさを同符号で足すと24 Vになるが、下側の電圧は他の二つと逆符号になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=5",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題4-1。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/denki2/2024-late-jitsumu/q1-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "縦の1 Ωに下向き2 A、下辺の2 Ωに左向き3 A、右側の4 Ωに上向き4 Aが流れる直流回路。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "denki2-2024-late-jitsumu-q2",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 2,
+    "officialQuestionLabel": "問題4-2",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気工事",
+    "topicTags": [
+      "変圧器の電流"
+    ],
+    "difficulty": 2,
+    "question": "図に示す配電線路の変圧器の一次電流I₁〔A〕の値として，最も適当なものはどれか。ただし，負荷はすべて抵抗負荷であり，変圧器と配電線路の損失及び変圧器の励磁電流は無視する。",
+    "choices": {
+      "ア": "2.5 A",
+      "イ": "3.5 A",
+      "ウ": "5.0 A",
+      "エ": "7.5 A"
+    },
+    "answer": "エ",
+    "explanation": "損失を無視すると一次側の電力は二次側の25＋20＝45 kWに等しい。抵抗負荷なので45 kW÷6 kV＝7.5 Aになる。",
+    "choiceExplanations": {
+      "ア": "一次電圧6 kVに2.5 Aを掛けると15 kWで、負荷の合計45 kWに届かない。",
+      "イ": "3.5 Aでは6 kVの一次側から21 kWしか入力されず、25 kWと20 kWの両負荷を賄えない。",
+      "ウ": "5.0 Aとすると一次側の電力は30 kWとなり、二次側の負荷合計と一致しない。",
+      "エ": "損失を無視すると一次側の電力は二次側の25＋20＝45 kWに等しい。抵抗負荷なので45 kW÷6 kV＝7.5 Aになる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=5",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題4-2。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/denki2/2024-late-jitsumu/q2-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "一次側6,000 V、二次側は100 Vずつの二つの区間に25 kWと20 kWの抵抗負荷を接続した変圧器の回路図。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "denki2-2024-late-jitsumu-q3",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 3,
+    "officialQuestionLabel": "問題5-1 ア",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "建設業法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n建設工事の主任技術者及び監理技術者の職務に関する次の記述の空欄に当てはまる語句として，「建設業法」上，定められているものはそれぞれどれか。\n「主任技術者及び監理技術者は，工事現場における建設工事を適正に実施するため，当該建設工事の施工計画の作成，工程管理，品質管理その他の技術上の管理及び当該建設工事の［ア］に従事する者の技術上の［イ］の職務を誠実に行わなければならない。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "計画",
+      "イ": "見積",
+      "ウ": "設計",
+      "エ": "施工"
+    },
+    "answer": "エ",
+    "explanation": "建設業法第26条の4は、当該工事の施工に従事する者への技術上の指導監督を定める。",
+    "choiceExplanations": {
+      "ア": "施工計画の作成は主任技術者等の職務に含まれるが、この空欄は指導監督を受ける者の従事対象を示す。",
+      "イ": "見積は費用の算定であり、条文が指導監督の対象とするのは施工の従事者である。",
+      "ウ": "設計は図面などを定める段階で、条文がここで対象とする現場の施工とは異なる。",
+      "エ": "建設業法第26条の4は、当該工事の施工に従事する者への技術上の指導監督を定める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題5-1 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2024-late-jitsumu-q4",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 4,
+    "officialQuestionLabel": "問題5-1 イ",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "建設業法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n建設工事の主任技術者及び監理技術者の職務に関する次の記述の空欄に当てはまる語句として，「建設業法」上，定められているものはそれぞれどれか。\n「主任技術者及び監理技術者は，工事現場における建設工事を適正に実施するため，当該建設工事の施工計画の作成，工程管理，品質管理その他の技術上の管理及び当該建設工事の［ア］に従事する者の技術上の［イ］の職務を誠実に行わなければならない。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "指導監督",
+      "イ": "現場教育",
+      "ウ": "工事管理",
+      "エ": "現場確認"
+    },
+    "answer": "ア",
+    "explanation": "主任技術者・監理技術者は、施工に従事する者を技術上指導監督する。",
+    "choiceExplanations": {
+      "ア": "主任技術者・監理技術者は、施工に従事する者を技術上指導監督する。",
+      "イ": "現場教育は技能や知識を教える行為だが、条文は施工従事者を対象とする職務を指導監督と定める。",
+      "ウ": "工程や品質などの工事の管理は、施工従事者に対する指導監督と別に列挙されている。",
+      "エ": "現場確認は施工状態の確認を指し、従事者への技術上の指導監督を表す法文の語句とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題5-1 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2024-late-jitsumu-q5",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 5,
+    "officialQuestionLabel": "問題5-2 ア",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "労働安全衛生法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n労働災害の防止に関する次の記述の空欄に当てはまる語句として，「労働安全衛生法」上，定められているものはそれぞれどれか。\n「労働者は，労働災害を防止するため必要な事項を守るほか，［ア］その他の関係者が実施する労働災害の防止に関する措置に［イ］するよう努めなければならない。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "元請",
+      "イ": "下請",
+      "ウ": "事業者",
+      "エ": "注文者"
+    },
+    "answer": "ウ",
+    "explanation": "労働安全衛生法第4条は、事業者その他の関係者の措置に対する労働者の協力努力を定める。",
+    "choiceExplanations": {
+      "ア": "元請に限らず、労働者を使用し事業を行う事業者等の実施する措置が対象になる。",
+      "イ": "下請という契約上の立場に限定する規定ではない。",
+      "ウ": "労働安全衛生法第4条は、事業者その他の関係者の措置に対する労働者の協力努力を定める。",
+      "エ": "工事の注文者に限定する条文ではなく、事業者その他の関係者を対象とする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題5-2 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2024-late-jitsumu-q6",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 6,
+    "officialQuestionLabel": "問題5-2 イ",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "労働安全衛生法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n労働災害の防止に関する次の記述の空欄に当てはまる語句として，「労働安全衛生法」上，定められているものはそれぞれどれか。\n「労働者は，労働災害を防止するため必要な事項を守るほか，［ア］その他の関係者が実施する労働災害の防止に関する措置に［イ］するよう努めなければならない。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "協力",
+      "イ": "理解",
+      "ウ": "対応",
+      "エ": "適合"
+    },
+    "answer": "ア",
+    "explanation": "労働者は必要な事項を守り、事業者等による労働災害防止措置に協力するよう努める。",
+    "choiceExplanations": {
+      "ア": "労働者は必要な事項を守り、事業者等による労働災害防止措置に協力するよう努める。",
+      "イ": "措置を理解するだけでなく、実施する措置に協力することが求められる。",
+      "ウ": "法文が求めるのは一般的な対応ではなく、措置への協力である。",
+      "エ": "適合は条件を満たすことを意味し、措置を実行する関係者への協力とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題5-2 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2024-late-jitsumu-q7",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 7,
+    "officialQuestionLabel": "問題5-3 ア",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "電気工事士法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n電気工事士に関する次の記述の空欄に当てはまる語句として，「電気工事士法」上，定められているものはそれぞれどれか。\n「第一種電気工事士は，経済産業省令で定めるやむを得ない事由がある場合を除き，第一種電気工事士免状の交付を受けた日から［ア］に，経済産業省令で定めるところにより，経済産業大臣の指定する者が行う［イ］電気工作物の保安に関する講習を受けなければならない。当該講習を受けた日以降についても同様とする。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "2 年以内",
+      "イ": "3 年以内",
+      "ウ": "4 年以内",
+      "エ": "5 年以内"
+    },
+    "answer": "エ",
+    "explanation": "第一種電気工事士の講習は免状交付日から5年以内に受け、その後も受講日を起点に同じ周期で受講する。",
+    "choiceExplanations": {
+      "ア": "2年は電気工事士法の規定する講習の期限より短い。",
+      "イ": "3年で区切る規定はなく、免状交付日から5年以内に受講する。",
+      "ウ": "4年を超えていても、免状交付日から5年以内であれば法定期間内である。",
+      "エ": "第一種電気工事士の講習は免状交付日から5年以内に受け、その後も受講日を起点に同じ周期で受講する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題5-3 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2024-late-jitsumu-q8",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 8,
+    "officialQuestionLabel": "問題5-3 イ",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "電気工事士法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n電気工事士に関する次の記述の空欄に当てはまる語句として，「電気工事士法」上，定められているものはそれぞれどれか。\n「第一種電気工事士は，経済産業省令で定めるやむを得ない事由がある場合を除き，第一種電気工事士免状の交付を受けた日から［ア］に，経済産業省令で定めるところにより，経済産業大臣の指定する者が行う［イ］電気工作物の保安に関する講習を受けなければならない。当該講習を受けた日以降についても同様とする。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "一般用",
+      "イ": "自家用",
+      "ウ": "事業用",
+      "エ": "特殊"
+    },
+    "answer": "イ",
+    "explanation": "電気工事士法第4条の3が定めるのは、自家用電気工作物の保安に関する講習である。",
+    "choiceExplanations": {
+      "ア": "一般用電気工作物は講習対象として条文に明記される自家用電気工作物とは別の区分である。",
+      "イ": "電気工事士法第4条の3が定めるのは、自家用電気工作物の保安に関する講習である。",
+      "ウ": "事業用は電気事業用を含む広い区分で、指定講習はそのうち自家用電気工作物の保安を扱う。",
+      "エ": "特殊電気工事は別に規定された工事の区分で、講習対象を示す語句ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和6年度2級電気工事施工管理技術検定 第二次検定 問題5-3 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q1",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 1,
+    "officialQuestionLabel": "問題4-1",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気工事",
+    "topicTags": [
+      "RLC直列回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示すRLC直列回路に交流電圧を加えたとき，Xₗの両端の電圧Vₗ〔V〕として，最も適当なものはどれか。",
+    "choices": {
+      "ア": "30 V",
+      "イ": "45 V",
+      "ウ": "60 V",
+      "エ": "90 V"
+    },
+    "answer": "エ",
+    "explanation": "インピーダンスは√(8²＋(9−3)²)＝10 Ωで、電流は100 V÷10 Ω＝10 A。コイル両端は10 A×9 Ω＝90 Vになる。",
+    "choiceExplanations": {
+      "ア": "30 Vは電流10 Aに容量性リアクタンス3 Ωを掛けたコンデンサの電圧である。",
+      "イ": "電圧45 Vはコイルのリアクタンス9 Ωに5 Aを流したときの値だが、回路電流は10 Aである。",
+      "ウ": "60 VはXL−XC＝6 Ωに10 Aを掛けたリアクタンス全体の電圧である。",
+      "エ": "インピーダンスは√(8²＋(9−3)²)＝10 Ωで、電流は100 V÷10 Ω＝10 A。コイル両端は10 A×9 Ω＝90 Vになる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=5",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題4-1。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/denki2/2023-late-jitsumu/q1-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "100 Vの交流電源と抵抗8 Ω、誘導性リアクタンス9 Ω、容量性リアクタンス3 Ωの直列回路。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q2",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 2,
+    "officialQuestionLabel": "問題4-2",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "電気工事",
+    "topicTags": [
+      "配電線路の電圧降下"
+    ],
+    "difficulty": 2,
+    "question": "図に示す配電線路において，C点の線間電圧〔V〕として，最も適当なものはどれか。ただし，電線1線あたりの抵抗は，A－B間で0.2 Ω，B－C間で0.1 Ω，負荷は抵抗負荷とし，線路リアクタンスは無視する。",
+    "choices": {
+      "ア": "198 V",
+      "イ": "200 V",
+      "ウ": "204 V",
+      "エ": "205 V"
+    },
+    "answer": "イ",
+    "explanation": "A－B間には両負荷の合計20 A、B－C間には10 Aが流れる。往復の電圧降下は2×(0.2×20＋0.1×10)＝10 Vなので、C点は210−10＝200 Vである。",
+    "choiceExplanations": {
+      "ア": "198 Vは降下を12 Vとした値だが、B－C間の往復電圧降下は2 Vで、全体は10 Vである。",
+      "イ": "A－B間には両負荷の合計20 A、B－C間には10 Aが流れる。往復の電圧降下は2×(0.2×20＋0.1×10)＝10 Vなので、C点は210−10＝200 Vである。",
+      "ウ": "204 Vに相当する6 Vの降下ではA－B間だけの降下8 Vよりも小さく、正しくない。",
+      "エ": "205 Vは往路1線分の降下を差し引いた値で、復路分も考慮する必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=5",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題4-2。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/denki2/2023-late-jitsumu/q2-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "単相2線式の210 V電源からA－B間0.2 Ω、B－C間0.1 Ωで配線し、B点とC点でそれぞれ10 Aの負荷を取る。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q3",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 3,
+    "officialQuestionLabel": "問題5-1 ア",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "建設業法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n建設工事の請負契約に関する次の記述の空欄に当てはまる語句として，「建設業法」上，定められているものはそれぞれどれか。\n「建設業者は，建設工事の［ア］から請求があったときは，請負契約が成立するまでの間に，建設工事の［イ］を交付しなければならない。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "下請負人",
+      "イ": "設計者",
+      "ウ": "注文者",
+      "エ": "発注者"
+    },
+    "answer": "ウ",
+    "explanation": "建設業法第20条が建設業者に見積書の交付を求めるのは、建設工事の注文者から請求があった場合である。",
+    "choiceExplanations": {
+      "ア": "下請負人は下請契約で工事を請ける側であり、条文がここで指す請求者の用語とは異なる。",
+      "イ": "設計者は図面等を作成する者であり、見積を請求する者としてこの規定に置かれる語句ではない。",
+      "ウ": "建設業法第20条が建設業者に見積書の交付を求めるのは、建設工事の注文者から請求があった場合である。",
+      "エ": "条文には発注者より広い「注文者」とあり、元請が下請へ注文する場面も含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題5-1 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q4",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 4,
+    "officialQuestionLabel": "問題5-1 イ",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "建設業法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n建設工事の請負契約に関する次の記述の空欄に当てはまる語句として，「建設業法」上，定められているものはそれぞれどれか。\n「建設業者は，建設工事の［ア］から請求があったときは，請負契約が成立するまでの間に，建設工事の［イ］を交付しなければならない。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "見積書",
+      "イ": "注文書",
+      "ウ": "契約書",
+      "エ": "請求書"
+    },
+    "answer": "ア",
+    "explanation": "注文者から請求を受けた建設業者は、請負契約成立前に工事の見積書を交付する。",
+    "choiceExplanations": {
+      "ア": "注文者から請求を受けた建設業者は、請負契約成立前に工事の見積書を交付する。",
+      "イ": "注文書は注文の意思等を示す書面で、請負を予定する建設業者が見積として交付する書面とは異なる。",
+      "ウ": "契約書は当事者の合意を記載する書面で、条文にある契約前の見積書とは異なる。",
+      "エ": "請求書は代金等の支払を求める書面で、契約成立前に工事の金額等を示す見積書とは用途が異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題5-1 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q5",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 5,
+    "officialQuestionLabel": "問題5-2 ア",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "労働安全衛生法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n労働者の危険等を防止するため，事業者等の講ずべき措置等に関する次の記述の空欄に当てはまる語句として，「労働安全衛生法」上，定められているものはそれぞれどれか。\n「事業者は，［ア］発生の急迫した危険があるときは，直ちに作業を中止し，労働者を［イ］から退避させる等必要な措置を講じなければならない。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "酸素欠乏",
+      "イ": "火災",
+      "ウ": "労働災害",
+      "エ": "感電"
+    },
+    "answer": "ウ",
+    "explanation": "労働安全衛生法第25条は「労働災害発生の急迫した危険」があるときの作業中止と退避を求める。",
+    "choiceExplanations": {
+      "ア": "酸素欠乏は災害原因の一つであり、この条文はそれに限定していない。",
+      "イ": "火災は急迫した危険の一例だが、第25条は労働災害全般に適用される。",
+      "ウ": "労働安全衛生法第25条は「労働災害発生の急迫した危険」があるときの作業中止と退避を求める。",
+      "エ": "感電の危険も含まれ得るが、ここで法文はより広い「労働災害」を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題5-2 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q6",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 6,
+    "officialQuestionLabel": "問題5-2 イ",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "労働安全衛生法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n労働者の危険等を防止するため，事業者等の講ずべき措置等に関する次の記述の空欄に当てはまる語句として，「労働安全衛生法」上，定められているものはそれぞれどれか。\n「事業者は，［ア］発生の急迫した危険があるときは，直ちに作業を中止し，労働者を［イ］から退避させる等必要な措置を講じなければならない。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "事業場",
+      "イ": "電気工作物",
+      "ウ": "現地",
+      "エ": "作業場"
+    },
+    "answer": "エ",
+    "explanation": "労働者を作業場から退避させるなど、急迫した危険に対応する措置を事業者がとる。",
+    "choiceExplanations": {
+      "ア": "事業場は企業活動の場所の単位を指す。この条文は危険のある作業場からの退避を定める。",
+      "イ": "退避義務の対象は電気工作物に限定されない。危険が迫った作業場から労働者を退避させる。",
+      "ウ": "現地は現場一般を意味する語で、法文で用いる表現は作業場である。",
+      "エ": "労働者を作業場から退避させるなど、急迫した危険に対応する措置を事業者がとる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題5-2 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q7",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 7,
+    "officialQuestionLabel": "問題5-3 ア",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "電気工事士法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n電気工事士免状に関する次の記述の空欄に当てはまる語句として，「電気工事士法」上，定められているものはそれぞれどれか。\n「第一種電気工事士免状は，次の各号の一に該当する者でなければ，その交付を受けることができない。\n一　第一種電気工事士試験に合格し，かつ，経済産業省で定める電気に関する［ア］に関し経済産業省令で定める［イ］の経験を有する者\n二　（省略）」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "作業",
+      "イ": "工事",
+      "ウ": "技術",
+      "エ": "知識"
+    },
+    "answer": "イ",
+    "explanation": "試験合格者の第一種免状には、省令で定める電気に関する工事についての実務経験が必要である。",
+    "choiceExplanations": {
+      "ア": "法文は電気に関する工事の経験を定める。電気に関連する作業一般が該当するわけではない。",
+      "イ": "試験合格者の第一種免状には、省令で定める電気に関する工事についての実務経験が必要である。",
+      "ウ": "技術一般の経験ではなく、電気に関する工事の実務経験が要件である。",
+      "エ": "電気に関する知識は試験で確認されるが、この空欄は経験の対象となる工事を示す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題5-3 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2023-late-jitsumu-q8",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2023,
+    "season": "late",
+    "qNumber": 8,
+    "officialQuestionLabel": "問題5-3 イ",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "電気工事士法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n電気工事士免状に関する次の記述の空欄に当てはまる語句として，「電気工事士法」上，定められているものはそれぞれどれか。\n「第一種電気工事士免状は，次の各号の一に該当する者でなければ，その交付を受けることができない。\n一　第一種電気工事士試験に合格し，かつ，経済産業省で定める電気に関する［ア］に関し経済産業省令で定める［イ］の経験を有する者\n二　（省略）」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "実務",
+      "イ": "施工",
+      "ウ": "管理",
+      "エ": "保安"
+    },
+    "answer": "ア",
+    "explanation": "法文は、対象となる電気に関する工事について省令で定める実務経験を求める。",
+    "choiceExplanations": {
+      "ア": "法文は、対象となる電気に関する工事について省令で定める実務経験を求める。",
+      "イ": "施工に携わることは実務になり得るが、条文の要件を表す語は実務である。",
+      "ウ": "法文は経験を工事の管理だけに限定せず、省令に定める実務の経験を要件とする。",
+      "エ": "法文は保安業務一般の経験とは定めず、規定の工事に関する実務の経験を求める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r05_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和5年度2級電気工事施工管理技術検定 第二次検定 問題5-3 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q1",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 1,
+    "officialQuestionLabel": "問題4-1",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "電気工事",
+    "topicTags": [
+      "RLC直列回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示すRLC直列回路に交流電圧を加えたとき，当該回路の有効電力の値〔W〕として，正しいものはどれか。",
+    "choices": {
+      "ア": "1 111 W",
+      "イ": "1 200 W",
+      "ウ": "1 600 W",
+      "エ": "2 000 W"
+    },
+    "answer": "ウ",
+    "explanation": "インピーダンスは√(4²＋(4−1)²)＝5 Ωなので電流は100÷5＝20 A。抵抗で消費する有効電力は20²×4＝1600 Wである。",
+    "choiceExplanations": {
+      "ア": "リアクタンスの差3 Ωだけから電力を計算すると、抵抗による有効電力を求められない。",
+      "イ": "電流20 Aの二乗に3 Ωを掛けた1200は、回路の無効電力の値である。",
+      "ウ": "インピーダンスは√(4²＋(4−1)²)＝5 Ωなので電流は100÷5＝20 A。抵抗で消費する有効電力は20²×4＝1600 Wである。",
+      "エ": "100 V×20 A＝2000 VAは皮相電力で、抵抗に消費される有効電力は1600 Wである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=5",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題4-1。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/denki2/2022-late-jitsumu/q1-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "100 Vの交流電源と抵抗4 Ω、誘導性リアクタンス4 Ω、容量性リアクタンス1 Ωの直列回路。"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q2",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 2,
+    "officialQuestionLabel": "問題4-2",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "電気工事",
+    "topicTags": [
+      "変圧器の効率"
+    ],
+    "difficulty": 2,
+    "question": "出力450 kWで運転している変圧器がある。そのときの無負荷損は20 kW，負荷損は30 kWであった。このときの変圧器の効率〔％〕として，正しいものはどれか。ただし，無負荷損，負荷損以外の損失はないものとし，小数第一位を四捨五入する。",
+    "choices": {
+      "ア": "90 ％",
+      "イ": "93 ％",
+      "ウ": "94 ％",
+      "エ": "96 ％"
+    },
+    "answer": "ア",
+    "explanation": "入力は出力に損失を足した450＋20＋30＝500 kWなので、効率は450÷500×100＝90％になる。",
+    "choiceExplanations": {
+      "ア": "入力は出力に損失を足した450＋20＋30＝500 kWなので、効率は450÷500×100＝90％になる。",
+      "イ": "50 kWの両損失を含めた入力は500 kWとなり、効率は93％より低い90％になる。",
+      "ウ": "無負荷損20 kWを見落として450÷480とすると約94％になる。無負荷損も入力に加える。",
+      "エ": "負荷損30 kWを除いて450÷470とすると約96％になる。負荷損も入力に加える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=5",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題4-2。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q3",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 3,
+    "officialQuestionLabel": "問題5-1 ア",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "建設業法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n建設工事に従事する者に関する次の記述の空欄に当てはまる語句として，「建設業法」上，定められているものはそれぞれどれか。\n「建設工事に従事する者は，建設工事を適正に実施するために必要な［ア］又は技能の［イ］に努めなければならない。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "知識及び経験",
+      "イ": "知識及び技術",
+      "ウ": "技術及び経験",
+      "エ": "技術及び実績"
+    },
+    "answer": "イ",
+    "explanation": "建設業法第25条の27は、建設工事の適正な実施に必要な知識及び技術又は技能の向上を求める。",
+    "choiceExplanations": {
+      "ア": "法文は「知識及び技術又は技能」と定めており、知識と経験の組合せではない。",
+      "イ": "建設業法第25条の27は、建設工事の適正な実施に必要な知識及び技術又は技能の向上を求める。",
+      "ウ": "経験は向上に役立つが、条文は知識と技術又は技能を挙げている。",
+      "エ": "施工実績はこの規定の向上の対象として挙げられていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題5-1 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q4",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 4,
+    "officialQuestionLabel": "問題5-1 イ",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "建設業法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n建設工事に従事する者に関する次の記述の空欄に当てはまる語句として，「建設業法」上，定められているものはそれぞれどれか。\n「建設工事に従事する者は，建設工事を適正に実施するために必要な［ア］又は技能の［イ］に努めなければならない。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "習得",
+      "イ": "進歩",
+      "ウ": "向上",
+      "エ": "継承"
+    },
+    "answer": "ウ",
+    "explanation": "建設工事に従事する者は、適正な施工に必要な知識、技術又は技能の向上に努める。",
+    "choiceExplanations": {
+      "ア": "新しい知識の習得だけでなく、既に持つ技術や技能も高める趣旨で、条文の語は向上である。",
+      "イ": "進歩は技術一般の発展にも使われる語で、この規定は従事者自身の能力の向上を求める。",
+      "ウ": "建設工事に従事する者は、適正な施工に必要な知識、技術又は技能の向上に努める。",
+      "エ": "他者に技能を伝える継承は、この条文の従事者自身の向上努力とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題5-1 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q5",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 5,
+    "officialQuestionLabel": "問題5-2 ア",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "労働安全衛生法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n事業者等の責務に関する次の記述の空欄に当てはまる語句として，「労働安全衛生法」上，定められているものはそれぞれどれか。\n「事業者は，単にこの法律で定める労働災害の防止のための［ア］を守るだけでなく，快適な職場環境の実現と労働条件の改善を通じて職場における労働者の［イ］を確保するようにしなければならない。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "作業環境",
+      "イ": "技術的事項",
+      "ウ": "最低基準",
+      "エ": "勧告及び規則"
+    },
+    "answer": "ウ",
+    "explanation": "労働安全衛生法第3条は事業者に対し、労働災害の防止のための最低基準を守るだけでなく、労働者の安全と健康を確保するよう求める。",
+    "choiceExplanations": {
+      "ア": "法律が守るよう求めるのは労働災害防止のための最低基準で、作業環境そのものを指す空欄ではない。",
+      "イ": "技術上の事項だけに限定せず、法定の最低基準を守ったうえで職場や労働条件を改善する責務である。",
+      "ウ": "労働安全衛生法第3条は事業者に対し、労働災害の防止のための最低基準を守るだけでなく、労働者の安全と健康を確保するよう求める。",
+      "エ": "勧告や規則という形式を指す語ではなく、条文では最低基準を守ると表現している。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題5-2 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q6",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 6,
+    "officialQuestionLabel": "問題5-2 イ",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "労働安全衛生法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n事業者等の責務に関する次の記述の空欄に当てはまる語句として，「労働安全衛生法」上，定められているものはそれぞれどれか。\n「事業者は，単にこの法律で定める労働災害の防止のための［ア］を守るだけでなく，快適な職場環境の実現と労働条件の改善を通じて職場における労働者の［イ］を確保するようにしなければならない。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "安全と健康",
+      "イ": "健康の保持",
+      "ウ": "労働災害の防止",
+      "エ": "安全又は衛生"
+    },
+    "answer": "ア",
+    "explanation": "職場環境と労働条件の改善を通じ、労働者の安全と健康の両方を確保することを求める。",
+    "choiceExplanations": {
+      "ア": "職場環境と労働条件の改善を通じ、労働者の安全と健康の両方を確保することを求める。",
+      "イ": "健康の保持だけでは安全の確保を含めた条文の趣旨を満たさない。",
+      "ウ": "労働災害の防止を目的とした最低基準を守るだけでなく、労働者の安全と健康を総合的に確保する。",
+      "エ": "安全又は衛生と択一的に記述するのではなく、法文は安全と健康の両方を挙げる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題5-2 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q7",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 7,
+    "officialQuestionLabel": "問題5-3 ア",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "電気工事士法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n電気工事士に関する次の記述の空欄に当てはまる語句として，「電気工事士法」上，定められているものはそれぞれどれか。\n「この法律は，電気工事の［ア］の資格及び義務を定め，もつて電気工事の欠陥による［イ］の防止に寄与することを目的とする。」\n［ア］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "作業に従事する者",
+      "イ": "作業の管理をする者",
+      "ウ": "現場に従事する者",
+      "エ": "現場の管理をする者"
+    },
+    "answer": "ア",
+    "explanation": "電気工事士法第1条は、電気工事の作業に従事する者の資格と義務を定めることを目的に掲げる。",
+    "choiceExplanations": {
+      "ア": "電気工事士法第1条は、電気工事の作業に従事する者の資格と義務を定めることを目的に掲げる。",
+      "イ": "管理を担当する立場だけを規律するのではなく、電気工事の作業に従事する者を対象とする。",
+      "ウ": "現場にいる者全般を対象とするのではなく、電気工事の作業に従事する者を対象とする。",
+      "エ": "この条文で資格と義務を定める対象は現場管理者に限らず、電気工事の作業に従事する者である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題5-3 ア。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denki2-2022-late-jitsumu-q8",
+    "exam": "denki2",
+    "session": "jitsumu",
+    "year": 2022,
+    "season": "late",
+    "qNumber": 8,
+    "officialQuestionLabel": "問題5-3 イ",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "法規",
+    "topicTags": [
+      "電気工事士法"
+    ],
+    "difficulty": 2,
+    "question": "「建設業法」，「労働安全衛生法」又は「電気工事士法」に関する次の問に答えなさい。\n電気工事士に関する次の記述の空欄に当てはまる語句として，「電気工事士法」上，定められているものはそれぞれどれか。\n「この法律は，電気工事の［ア］の資格及び義務を定め，もつて電気工事の欠陥による［イ］の防止に寄与することを目的とする。」\n［イ］に当てはまる語句を選びなさい。",
+    "choices": {
+      "ア": "施工不良",
+      "イ": "災害の発生",
+      "ウ": "感電事故",
+      "エ": "安全性の低下"
+    },
+    "answer": "イ",
+    "explanation": "電気工事の作業者の資格と義務を定め、電気工事の欠陥による災害の発生を防ぐことを目的とする。",
+    "choiceExplanations": {
+      "ア": "施工不良は電気工事の欠陥の例である。条文が防止するのはその欠陥による災害の発生である。",
+      "イ": "電気工事の作業者の資格と義務を定め、電気工事の欠陥による災害の発生を防ぐことを目的とする。",
+      "ウ": "感電は防止すべき災害の一例であり、条文は火災なども含む災害の発生全般を対象とする。",
+      "エ": "条文は欠陥による具体的な災害の発生を防止することを目的に掲げる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=6",
+    "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dj_mondai.pdf#page=7",
+    "sourceAttribution": "出典：一般財団法人建設業振興基金 令和4年度2級電気工事施工管理技術検定 第二次検定 問題5-3 イ。解説は過去問AI作成。",
+    "license": "FCIP-owner-confirmed",
+    "lastUpdated": "2026-11-19"
+  }
+]

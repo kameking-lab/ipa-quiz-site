@@ -20,6 +20,7 @@ export interface CitationMeta {
   /** 問題引用のときのみセットされるメタ。 */
   question?: {
     questionId: string;
+    archivedSource?: boolean;
     exam: ExamCode;
     examLabel: string;
     year: number;

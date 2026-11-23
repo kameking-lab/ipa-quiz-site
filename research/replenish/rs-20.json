@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "lane": "rs-20",
+  "branch": "cx/kako-restock-g17-20261117",
+  "checkedAt": "2026-11-17",
+  "integrationCommit": "3c46c2483",
+  "allocation": {
+    "rule": "PLAN3原順位からrs-4〜19の実補充資格を除き再採番。未処理の割当候補は先行班と同様に残し、1番目から4つおき。",
+    "remainingInPriorityOrder": [
+      "benrishi",
+      "shihoshoshi",
+      "denken2",
+      "gas-kou",
+      "zoen1",
+      "keiryoshi-nodo",
+      "kenchikushi1",
+      "rinsho-kensagishi",
+      "kanri-eiyoshi"
+    ],
+    "assigned": [
+      "benrishi",
+      "zoen1",
+      "kanri-eiyoshi"
+    ],
+    "assignedPositions": [
+      1,
+      5,
+      9
+    ]
+  },
+  "rows": [
+    {
+      "key": "zoen1|2025|annual|secondary",
+      "qualificationCode": "zoen1",
+      "qualification": "1級造園施工管理技術検定",
+      "year": 2025,
+      "sitting": "annual",
+      "session": "practical",
+      "status": "ブランチに有り（未公開）",
+      "originalQuestionCount": 4,
+      "questionCount": 4,
+      "leafPromptCount": 26,
+      "originalImageCount": 11,
+      "originalAnswerFigureCount": 1,
+      "answerKind": "独自解答例（自己確認）",
+      "questionIds": [
+        "zoen1-2025-annual-practical-q1",
+        "zoen1-2025-annual-practical-q2",
+        "zoen1-2025-annual-practical-q3",
+        "zoen1-2025-annual-practical-q4"
+      ],
+      "officialSourceUrls": [
+        "https://www.jctc.jp/mondai/",
+        "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/12/20251208z_mondai.pdf"
+      ],
+      "sourceRecord": "data/questions/zoen1/2025-secondary-sources.json",
+      "remainingOriginalQuestionsInThisPaper": 0,
+      "existingOfficialAnswersChanged": 0
+    }
+  ],
+  "unconfirmed": [
+    {
+      "exam": "benrishi",
+      "target": "2024年度短答式",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2024tanto/mondai.pdf",
+      "httpStatus": 403,
+      "action": "本文未取得のため追加なし"
+    },
+    {
+      "exam": "zoen1",
+      "target": "2025年度第一次A/B",
+      "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/09/20250908z_mondaia.pdf",
+      "httpStatus": 404,
+      "action": "一次の旧本文未取得。公式現行一覧の第二次を全問収録"
+    },
+    {
+      "exam": "kanri-eiyoshi",
+      "target": "第39回午前",
+      "url": "https://www.mhlw.go.jp/content/10900000/001428960.pdf",
+      "httpStatus": 404,
+      "action": "公式正答は取得。問題本文未取得のため追加なし"
+    }
+  ]
+}

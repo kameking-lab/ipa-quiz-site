@@ -1,6 +1,6 @@
 "use client";
 
-const SESSION_KEY = "ipa-quiz:session:current:v1";
+import { LS_KEYS } from "@/lib/storage/keys";
 
 export interface SessionAnswer {
   id: string;
@@ -27,7 +27,7 @@ export interface SessionSummary {
 function readMeta(): SessionMeta | null {
   if (typeof window === "undefined") return null;
   try {
-    const raw = window.sessionStorage.getItem(SESSION_KEY);
+    const raw = window.sessionStorage.getItem(LS_KEYS.quizSession);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Partial<SessionMeta>;
     if (typeof parsed.startedAt !== "number") return null;
@@ -44,7 +44,7 @@ function readMeta(): SessionMeta | null {
 function writeMeta(meta: SessionMeta): void {
   if (typeof window === "undefined") return;
   try {
-    window.sessionStorage.setItem(SESSION_KEY, JSON.stringify(meta));
+    window.sessionStorage.setItem(LS_KEYS.quizSession, JSON.stringify(meta));
   } catch {
     // ignore
   }
@@ -64,10 +64,15 @@ export function readSession(): SessionMeta | null {
   return readMeta();
 }
 
+export function sessionScore() {
+  const answers = readSession()?.answers ?? [];
+  return { answered: answers.length, correct: answers.filter(answer => answer.correct).length };
+}
+
 export function clearSession(): void {
   if (typeof window === "undefined") return;
   try {
-    window.sessionStorage.removeItem(SESSION_KEY);
+    window.sessionStorage.removeItem(LS_KEYS.quizSession);
   } catch {
     // ignore
   }

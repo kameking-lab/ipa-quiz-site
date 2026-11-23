@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "lane": "pc-8",
+  "checkedAt": "2026-11-18",
+  "plan": "plan4.json",
+  "assignment": "zero-based index % 14 == 7",
+  "branch": "cx/kako-pa8-20261118",
+  "previousManifest": "research/replenish/pb-8.json",
+  "rows": [
+    {
+      "key": "kouku-kanseikan|2026|annual",
+      "candidateId": "government-guide-2026-69cc4d3c5ff68f1b",
+      "planIndex": 63,
+      "qualificationCode": "kouku-kanseikan",
+      "qualification": "航空管制官・基礎能力",
+      "year": 2026,
+      "sitting": "annual",
+      "status": "ブランチに有り（未公開）",
+      "questionCount": 20,
+      "officialQuestionCount": 30,
+      "sourceBodyUnavailableQuestionNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "addedQuestionNumbers": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "officialSourceUrls": [
+        "https://www.jinji.go.jp/content/000018495.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pc-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 20,
+          "paths": [
+            "data/questions/kouku-kanseikan/2026-kiso.json",
+            "data/questions/kouku-kanseikan/index.ts",
+            "data/questions/kouku-kanseikan/2026-sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4 index 63。公式公開PDFで本文を確認できる問11〜30を対象に収録。問1〜10は原本の本文が空欄のため正答のみの問題を作らない。2025年度・適性・外国語は今回の候補sittings外。"
+    }
+  ],
+  "skipped": [
+    {
+      "candidateId": "dekyo-charge-5",
+      "planIndex": 7,
+      "sourceLedgerKey": "kojitan-sogo|unknown|前回記録・対象年度未特定",
+      "status": "記録上作業中だが成果なし",
+      "reason": "共有台帳の前回着手記録を優先し、重複作業を避けて追加しない。年度・成果は未特定。"
+    }
+  ],
+  "remaining": [
+    {
+      "planIndex": 77,
+      "candidateId": "javada-47035cd9bb44",
+      "name": "さく井(ロータリー式さく井工事作業)1級（学科）",
+      "status": "資料確認済み（未収録）",
+      "notes": "2025・2024年度の公式問題各8ページ・公式正解表各1ページを取得。表紙でA群25問+B群25問、両年度計100問を確認。問題PDFは画像主体で本文抽出不可。tools/pc-8/sakui1-source-check.jsonとPDF・PNG・OCRを保存。本文転記・全肢解説・アプリ登録は未実施。"
+    },
+    {
+      "planIndex": 91,
+      "candidateId": "javada-9f6ed9fcefbb",
+      "name": "テクニカルイラストレーション(テクニカルイラストレーション手書き作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 105,
+      "candidateId": "javada-1f3d6d9467f9",
+      "name": "半導体製品製造(集積回路組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 119,
+      "candidateId": "javada-9e282b4a3543",
+      "name": "時計修理(時計修理作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 133,
+      "candidateId": "javada-9aaef1d8ac99",
+      "name": "紳士服製造特級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 147,
+      "candidateId": "javada-6f3f5e0a9af7",
+      "name": "金属材料試験(機械試験作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 161,
+      "candidateId": "javada-b45640189df4",
+      "name": "ブロック建築(コンクリートブロック工事作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 175,
+      "candidateId": "javada-874e3184bee6",
+      "name": "内装仕上げ施工(化粧フィルム工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 189,
+      "candidateId": "javada-124a8c19d494",
+      "name": "塗装(鋼橋塗装作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 203,
+      "candidateId": "javada-6bb4dea4b0dd",
+      "name": "建具製作(木製建具手加工作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 217,
+      "candidateId": "javada-c97904722b6e",
+      "name": "機械加工(平面研削盤作業)3級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 231,
+      "candidateId": "javada-0dea6fa87c14",
+      "name": "産業車両整備(産業車両整備作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 245,
+      "candidateId": "javada-d2113dd3d4fb",
+      "name": "鉄筋施工(鉄筋組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 259,
+      "candidateId": "javada-a11084e16313",
+      "name": "鋳造(鋳鋼鋳物鋳造作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 273,
+      "candidateId": "javada-48aaec32438b",
+      "name": "防水施工(塩化ビニル系シート防水工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 287,
+      "candidateId": "javada-a2cfb78b6081",
+      "name": "非接触除去加工(ワイヤ放電加工作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    }
+  ],
+  "duplicateChecks": {
+    "mergedBranches": "指定37ブランチをgit merge。全てAlready up to date。",
+    "ledger": "共有台帳・取り込み済み台帳にcandidateId・原本URL・資格名の既存着手なし。",
+    "production": "新規区分URLはHTTP 404、資格一覧に航空管制官の登録なし。"
+  }
+}

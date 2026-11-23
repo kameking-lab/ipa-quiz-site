@@ -24,6 +24,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "プロパティグラフの主要な構成要素は、ノード（頂点）、リレーションシップ（辺）、そしてそれら両方が持つプロパティです。これら全てがデータモデルを表現するために使用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "概念データモデルは、特定のデータベース実装技術に依存せず、現実世界や業務に存在する情報（エンティティとその関連性）を抽象的に表現するものです。これにより、データ構造をビジネス要件に基づいて理解・設計できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -71,7 +73,14 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "出庫の実績がない在庫商品は存在しない。"
     },
     "answer": "ア",
-    "explanation": "アは、1種類の商品を二つの異なる倉庫に初めて入庫する場合、それぞれの商品と倉庫の組み合わせに対して「在庫商品」データが1件ずつ生成されることを示唆しており、これは正規化されたデータベース設計における多対多の関係（商品と倉庫の間に在庫という中間エンティティが存在する）の妥当な表現です。\n\nイは、2種類の商品を一つの倉庫に入庫する場合でも、「入庫」データが1件だけ追加されるという記述は、個々の商品の入庫を記録するというデータベースの基本原則に反しており、不適切です。ウは、商品と倉庫の関連が「在庫商品」エンティティで表現されている場合、商品がどこかの倉庫に「在庫」として存在しない状態はあり得ますが、格納先が確定していないという直接的な表現は、データモデルの設計意図と異なる可能性があります。エは、「出庫の実績がない」という条件は、在庫が存在する商品すべてに当てはまる可能性があり、「出庫の実績がない在庫商品は存在しない」と断定することは、在庫管理の一般的な運用とは異なります。",
+    "explanation": "商品と在庫商品の関連をたどると、商品一つに対して在庫商品は一つ以上、在庫商品一つに対して商品は一つです。また、在庫商品一つの格納先は倉庫一つです。そのため、同じ商品を二つの倉庫に初めて入庫すると、商品と倉庫の組合せごとに在庫商品が1件ずつ、合計2件追加されます。出庫は0件でも構いません。",
+    "choiceExplanations": {
+      "ア": "在庫商品1件に対応する商品と倉庫はそれぞれ一つです。同じ商品でも格納先が二つあり、どちらも初入庫なら倉庫ごとに1件を追加します。",
+      "イ": "入庫1件が結び付く在庫商品は一つです。同じ倉庫に入れても、商品が2種類なら異なる在庫商品に対する入庫が1件ずつ記録されます。",
+      "ウ": "商品一つには一つ以上の在庫商品が対応し、在庫商品には格納先の倉庫が一つ対応します。このモデルでは商品に少なくとも一つの格納先があります。",
+      "エ": "在庫商品側から見た出庫の多重度は0以上です。入庫済みで在庫商品に登録され、まだ一度も出庫していない状態も表せます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +104,14 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "プログラム言語(従業員番号,プログラム言語)"
     },
     "answer": "エ",
-    "explanation": "「プログラム言語を2種類以上使用できる従業員がいる」ため、従業員とプログラム言語の間は多対多の関係になります。これを表現するには、従業員番号とプログラム言語の両方を主キーとする結合表（中間テーブル）が必要です。これにより、一人の従業員が複数のプログラム言語を持つことを許可し、かつ一つの言語が複数の従業員に関連付けられるようになります。",
+    "explanation": "エは従業員番号とプログラム言語の組合せを主キーにします。同じ従業員番号でも言語が異なれば追加でき、使える言語がない従業員は従業員表だけに登録します。原本の下線は主キーを表し、アは氏名、イはプログラム言語、ウは従業員番号、エは従業員番号とプログラム言語の両方に付いています。",
+    "choiceExplanations": {
+      "ア": "原本では氏名だけに下線があります。同姓同名を識別できず、同じ氏名に対して二つの言語を別々の行に登録することもできません。",
+      "イ": "原本ではプログラム言語だけに下線があります。同じ言語の値が主キーで重複するので、複数の従業員が同じ言語を使えることを記録できません。",
+      "ウ": "原本では従業員番号だけに下線があります。従業員番号は一行にしか現れないため、一人が使える複数の言語を別々に登録できません。",
+      "エ": "原本では従業員番号とプログラム言語の両方に下線があります。組合せを主キーにすれば、一人の複数言語を複数行、使える言語がない従業員を0行で表せます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +136,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "「BとCの和集合がAに関数従属すれば、BとCはそれぞれがAに関数従属する」という記述は、関数従属の分解規則（Decomposition Rule）に相当します。AがBとCの両方を決定できるなら、Aは個別にBもCも決定できるという論理です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +160,14 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "5"
     },
     "answer": "ウ",
-    "explanation": "この問題は、提示された表を第3正規形まで正規化する際に、少なくとも幾つの表に分割されるかを問うています。正解はウの4です。正規化とは、データベースの冗長性を排除し、データの整合性を高めるための手法であり、第3正規形では、推移的関数従属を排除します。推移的関数従属とは、非キー属性が非キー属性を通じて主キーに従属している状態を指します。\n\nまず、元の表には顧客情報、注文情報、商品情報が含まれていると想定されます。顧客IDが注文を特定し、商品IDが注文明細を特定すると考えられます。顧客の1回の注文に対して一つの受注番号が割り当てられ、顧客は1回の注文で一つ以上の商品を注文できるという条件から、最低でも「顧客」「受注」「受注明細（商品）」の3つのエンティティ（実体）が存在します。さらに、商品自体の情報（商品名、単価など）を管理するための「商品」テーブルと、注文した顧客を管理する「顧客」テーブル、そして注文というトランザクションを管理する「受注」テーブルが必要となります。また、１つの受注に対して複数の商品が紐づくため、受注と商品の多対多関係を解消するための「受注明細」テーブルも必要になります。これにより、合計で少なくとも4つのテーブル（顧客、受注、商品、受注明細）に分割されると考えられます。\n\n選択肢アの2つでは、顧客、受注、商品の情報が十分に分離できず、冗長性が残る可能性が高いです。選択肢イの3つでは、受注明細のような中間的な情報を独立したテーブルとして扱えず、データの一貫性が損なわれる恐れがあります。選択肢エの5つでは、過剰な正規化によるテーブル分割の可能性も考えられますが、問題文の条件から最低限必要なテーブル数は4つと判断するのが妥当です。",
+    "explanation": "受注番号から受注日と顧客コードが決まり、顧客コードから顧客名が決まります。商品コードから商品名と単価が決まり、受注番号と商品コードの組合せから受注数が決まります。よって、受注・顧客・商品・受注明細の4表に分けます。受注金額は単価と受注数から計算できます。",
+    "choiceExplanations": {
+      "ア": "受注番号と商品コードの組合せで受注数が決まりますが、受注日や商品名などは一方の項目だけで決まります。2表では依存先の違いを分離し切れません。",
+      "イ": "受注、商品、受注明細の3表に分けても、受注表に顧客名を置くと受注番号→顧客コード→顧客名という推移的な関数従属が残ります。",
+      "ウ": "受注番号で決まる受注、顧客コードで決まる顧客、商品コードで決まる商品、受注番号と商品コードで決まる受注明細の4表に分けます。",
+      "エ": "受注金額は商品表の単価と受注明細の受注数から計算できます。受注金額のために独立した表を設けなくても、必要な値を得られます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +192,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SQLの3値論理において、AND演算は片方の条件が偽であれば全体が偽となり、片方の条件が真で他方が不定の場合は全体が不定となります。したがって、「真AND 不定」は不定、「偽AND 不定」は偽となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +217,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "トランザクション途中で担当者番号の一時的な重複が発生しますが、最終的にはユニーク制約が満たされます。`DEFERRABLE INITIALLY IMMEDIATE`と定義されたUK_担当者番号制約のチェックをトランザクションのコミット時まで遅延させるために、`SET CONSTRAINTS UK_担当者番号 DEFERRED;` を使用します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +242,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "二つの表が完全に等しいことを確認するには、両方の表のユニークな行を全て含む集合（UNION）から、両方に共通するユニークな行の集合（INTERSECT）を除外した結果が0行になることを確認します。これは、`SELECT * FROM 名簿1 UNION SELECT * FROM 名簿2` と `SELECT * FROM 名簿1 INTERSECT SELECT * FROM 名簿2` の差分を`EXCEPT`で確認することに相当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +267,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "関係演算における商演算は、特定の条件を「全て満たす」タプルを抽出する複雑な演算です。これは、直積演算（×）、射影演算（π）、および差演算（-）を組み合わせて表現することができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +292,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解の「CASCADE」は、参照整合性制約における削除規則の一つで、親テーブル（この場合は“注文”表）の行が削除された際に、子テーブル（“注文明細”表）の関連する行も連動して自動的に削除される動作を定義します。これにより、“注文”表の削除が“注文明細”表の孤立したデータを防ぎ、データの整合性を保つことができます。\n\n選択肢「INTERSECT」は、二つの集合（テーブル）の共通部分を取得するSQLの操作であり、削除規則とは関係ありません。選択肢「RESTRICT」は、親テーブルの行を削除しようとした際に、子テーブルに関連する行が存在すれば削除を拒否する動作です。これは、意図しないデータの削除を防ぐためのものですが、問題文の「自動的に削除されるようにしたい」という要件には合致しません。選択肢「UNIQUE」は、列の値が重複しないことを保証する制約であり、行の削除動作を制御するものではありません。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +316,14 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "ロールフォワード: T1, T2, T5, ロールバック: T3, T6"
     },
     "answer": "ア",
-    "explanation": "システム障害発生後のDBMS再起動時、トランザクションの整合性を保つためには、障害発生時点での状態によって処理を分ける必要があります。\n\nまず、ロールフォワード（Roll Forward）とは、障害発生前にコミット（Commit: 処理確定）されていたトランザクションのうち、障害によって処理が中断されたものを、ログファイルなどを用いて復旧処理し、再度コミット状態に戻すことです。これは、コミット済みであっても障害によって未反映となったデータ更新を確定させるために不可欠です。\n\n一方、ロールバック（Rollback）とは、障害発生時点でまだコミットされていなかった（つまり、実行中または準備段階だった）トランザクションを、そのトランザクション開始前の状態に戻すことです。これは、不完全な状態のままデータが更新されることを防ぎ、データの一貫性を維持するために行われます。\n\n問題文と選択肢から、T2とT5は障害発生前にコミットされていたトランザクションであり、障害により未反映となった部分をロールフォワードして復旧させるべきです。T6は障害発生時点でコミットされていないトランザクションであるため、ロールバックが必要です。したがって、ロールフォワードすべきトランザクションがT2, T5、ロールバックすべきトランザクションがT6である「ア」が最も適切です。\n\n選択肢イは、T3をロールバックすべきトランザクションに含めていますが、T3がコミット済みか否かに関する情報が選択肢だけでは不明確であり、T2, T5のロールフォワードとT6のロールバックという基本的な原則から外れるため不適切です。選択肢ウは、T1をロールフォワード対象に含めていますが、T1がコミット済みであるという前提を裏付ける情報が選択肢からは読み取れず、T2, T5のロールフォワードとT6のロールバックという組み合わせがより具体的かつ確実であるため、不十分です。選択肢エは、T1をロールフォワード対象に含め、T3もロールバック対象に含めていますが、T1のコミット状態が不明確であり、T3のロールバックも同様に、T2, T5のロールフォワードとT6のロールバックという核となる原則から判断すると、より限定的で不確実な要素を含んでいます。",
+    "explanation": "チェックポイントの後にコミットした更新ありのT2・T5をロールフォワードし、障害時に未コミットで更新ありのT6をロールバックします。T1はチェックポイント前にコミットしています。T3・T4は読取りだけで、取り消す更新がありません。",
+    "choiceExplanations": {
+      "ア": "チェックポイントの後にコミットした更新ありのT2・T5を再実行します。障害時に未コミットで更新のあるT6は、変更を取り消します。",
+      "イ": "T3は障害時に未コミットですが、処理内容はReadだけです。取り消すべき更新はなく、ロールバック対象に含めません。",
+      "ウ": "T1はチェックポイント前にコミット済みで、その更新はチェックポイントで反映済みです。再実行するのはその後に確定したT2とT5です。",
+      "エ": "T1はチェックポイントの前に確定しており、T3は読取り専用です。再実行にT1、取消しにT3を含めている点が不適切です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +348,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "クラスタ化インデックスは、テーブルの物理的なデータ格納順序を決定するインデックスです。データはインデックスキーの順に物理的に整列されるため、1つのテーブルに1つしか作成できません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +373,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "べき等性とは、ある操作を複数回実行しても、1回実行した場合と同じ結果が得られる性質です。REDO処理は途中で停止し再開される可能性があるため、同じログレコードを繰り返し適用しても最終的なデータベースの状態が常に一貫していることが不可欠です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +398,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "提示された異状「T1が読み込むデータが変わってしまう」は反復不能読み取り（Non-repeatable Read）と呼ばれます。この異状を防ぐ最も低い隔離性水準は、ダーティリードも防ぐREPEATABLE READです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +423,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "複数のトランザクションを並行して実行した結果が、それらのトランザクションを何らかの直列的な順序で実行した場合と同じになる性質を直列化可能性と呼びます。これはDBMSの同時実行制御の主要な目標の一つです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +448,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デッドロックが発生しているかを検出するために、DBMSはトランザクション間のリソースの待ち関係をグラフで表現する待ちグラフ（Wait-for Graph）を使用します。このグラフにサイクルが検出された場合、デッドロックが発生していると判断できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +473,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ブロックチェーンは、各ブロックがその直前のブロックのデータから計算されたハッシュ値を含んでいます。この連鎖構造により、過去のブロックの改ざんが困難になり、データの整合性と真正性が保証されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +498,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "サイドチャネル攻撃は、暗号化装置の消費電力、電磁波放出、処理時間などの物理的な副作用を測定・分析することで、暗号鍵などの秘密情報を推測する攻撃です。問題文の記述はまさにこの攻撃手法に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -479,7 +522,14 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "送信者の秘密鍵であり、送信者がメッセージダイジェストからデジタル署名を作成する際に使用する。"
     },
     "answer": "ウ",
-    "explanation": "デジタル署名では、送信者が自身の秘密鍵でメッセージダイジェストを暗号化して署名を作成し、受信者は送信者の公開鍵でその署名を復号して検証します。したがって、検証に使用する鍵は「送信者の公開鍵」となります。",
+    "explanation": "RSA署名は送信者の秘密鍵で作成し、受信者は送信者の公開鍵で検証します。IPAの原本のウは「デジタル署名からメッセージダイジェストを取り出す」と記載されており、掲載文ではこの順が逆になっています。",
+    "choiceExplanations": {
+      "ア": "署名は、送信者だけが保持する秘密鍵を使って作成します。受信者の公開鍵は、送信者のRSA署名を作成するときの鍵にはなりません。",
+      "イ": "検証に必要なのは署名を作った送信者に対応する公開鍵です。受信者自身の秘密鍵を使っても、送信者が作成した署名は検証できません。",
+      "ウ": "IPAの原本では、受信者が送信者の公開鍵を使い、デジタル署名からメッセージダイジェストを取り出すと記載されています。検証鍵は送信者の公開鍵です。",
+      "エ": "送信者が自分の秘密鍵を使うのは署名を作成するときです。署名を受け取った側が検証する際には、対応する送信者の公開鍵を使用します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +554,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "前方秘匿性（Perfect Forward Secrecy）とは、セッション鍵の導出に用いられた長期的な秘密鍵が将来的に漏えいしても、過去の通信から得られた暗号文を解読できない性質を指します。これにより、鍵の漏えいによる過去の通信の危険を軽減します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +579,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "システムの平均アクセス時間は、キャッシュヒット率とそのアクセス時間、およびキャッシュミス率と主記憶アクセス時間を考慮して計算されます。ミス率がrであるため、ヒット率は(1-r)となり、平均アクセス時間は(1-r)・x + r・yで表されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -551,7 +603,14 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "D1, Ap, Bv"
     },
     "answer": "ウ",
-    "explanation": "RAID6では、2つのディスクが故障してもデータを復旧できる冗長性を持っています。パリティ計算には、データブロックとパリティブロックの排他的論理和（XOR）が用いられます。磁気ディスク2と磁気ディスク3が故障した場合、復旧には残りのディスク（磁気ディスク1と磁気ディスク4）のデータとパリティ情報を使用します。\n\n選択肢ウが正しいのは、データブロックA1とA2を復元するには、磁気ディスク1にあるデータブロックD1（A1に相当するデータブロック）と、故障したディスク2、3に存在していたパリティブロックAp、Avが必要となるからです。RAID6の復旧ロジックでは、故障したディスクのパリティ情報と、残存するディスクのデータブロックを用いて、故障したディスクのデータを再構築します。\n\n選択肢アは、B1というデータブロックが復元に必要とされていますが、問題文からB1がA1またはA2と直接関連するデータブロックであるという情報がなく、故障したディスク2、3に依存するパリティAp, Avと組み合わさることで、A1, A2の復元に必要な情報となるかの根拠が不明確です。イはBvというデータブロックを挙げていますが、Avと同様にA1, A2の復元に直接寄与する情報であるという前提が不足しており、またBvが復元に必要となる特定の状況が示されていません。エはD1とApは復元に必要な情報となり得ますが、Bvが復元に必要とされる根拠が不明であり、Avが本来必要とされる復旧シナリオと異なります。",
+    "explanation": "故障した磁気ディスク2と3にあるA₁・A₂を、磁気ディスク1にあるD₁・Aₚと磁気ディスク4にあるAᵥから復元します。排他的論理和では同じ値を2回適用するともとの値に戻るので、Aᵥ＝D₁⊕A₂からA₂＝Aᵥ⊕D₁を求め、Aₚ＝A₁⊕A₂からA₁＝Aₚ⊕A₂を求めます。",
+    "choiceExplanations": {
+      "ア": "A₂を得るにはAᵥ＝D₁⊕A₂からD₁を排他的論理和で打ち消します。B₁はCᵥを計算する式に現れ、AᵥからA₂を得るのには使えません。",
+      "イ": "Bᵥ＝A₁⊕B₂ですが、B₂も故障した磁気ディスク3上にあります。この組合せにはB₂を得るためのBₚもなく、A₁は確定しません。",
+      "ウ": "無事な磁気ディスク上のD₁とAᵥからA₂＝Aᵥ⊕D₁を求めます。続いてAₚを使い、A₁＝Aₚ⊕A₂で復元できます。",
+      "エ": "D₁を使う式はAᵥ＝D₁⊕A₂です。Bᵥを代わりに使うと、Bᵥの式には故障したディスク上のB₂が含まれるため復元できません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +635,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "抽象クラスは、一部または全てのメソッドが抽象的（実装を持たない）であるため、不完全なクラスとみなされます。このため、抽象クラス単独でインスタンスを生成することはできません。必ず具象サブクラスがその抽象メソッドを実装してからインスタンス化する必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +660,7 @@ export const DB_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "エクストリームプログラミング（XP）のプラクティスの一つに「継続的インテグレーション」があります。これは、開発者がコードを頻繁に統合し、自動テストを行うことで、結合に関する問題を早期に発見し解決するものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_db_am2_qs.pdf",
     "license": "IPA-public"

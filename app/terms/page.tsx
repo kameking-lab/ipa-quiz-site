@@ -7,16 +7,14 @@ import {
   ArrowLeft,
   Ban,
   Bot,
-  FileText,
   Gavel,
   HandHeart,
   Link2,
   MessageSquare,
   Quote,
   RefreshCw,
-  Sparkles,
+  BookOpen,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 
@@ -30,17 +28,9 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <main className="relative flex-1">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
 
-      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4">
+      <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           <Link href="/">
             <ArrowLeft className="h-4 w-4" />
             戻る
@@ -48,18 +38,15 @@ export default function TermsPage() {
         </Button>
 
         <Breadcrumbs
+          className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
           items={[
             { name: "ホーム", href: "/" },
             { name: "利用規約", href: "/terms" },
           ]}
         />
 
-        <header className="mb-10 animate-fade-in">
-          <Badge variant="soft" className="mb-4">
-            <FileText className="h-3 w-3" />
-            利用規約
-          </Badge>
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <header className="mb-8">
+          <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             利用規約
           </h1>
           <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月28日</p>
@@ -69,10 +56,10 @@ export default function TermsPage() {
           </p>
         </header>
 
-        <div className="space-y-5">
+        <div className="space-y-0">
           <Section
             number="1"
-            icon={<Sparkles className="h-5 w-5" />}
+            icon={<BookOpen className="h-5 w-5" />}
             title="サービスの概要"
           >
             <p>
@@ -143,7 +130,7 @@ export default function TermsPage() {
             title="出典・著作権"
           >
             <p>
-              問題文・選択肢・模範解答は IPA（独立行政法人情報処理推進機構）が公開する公式過去問を使用しています。
+              IPA（独立行政法人情報処理推進機構）が実施する試験の問題文・選択肢・模範解答には、同機構が公開する公式過去問を使用しています。
               詳細は{" "}
               <Link
                 href="/about"
@@ -248,8 +235,9 @@ export default function TermsPage() {
                 本サービスは、IPA試験受験者への教育貢献を目的として、ボランティア有志により運営されています。
               </li>
               <li>個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、日本時間0時に更新されます。履歴の同期などは無料ログインで利用できます。月額プランの詳細は <Link href={PRICE_PAGE_LINK.href} className="underline underline-offset-2">{PRICE_PAGE_LINK.label}</Link> をご確認ください。</li>
-              <li>月額プランは税込980円で毎月自動更新されます。契約管理から次回更新を停止でき、期間末解約を予約した後も支払済み期間末まで利用できます。日割返金はありません。重複請求・誤請求や当社の障害で利用できなかった場合は個別に確認し返金します。法令上の権利は制限しません。</li>
-              <li>部分返金では利用権と自動更新は変わらず、全額返金では該当請求期間の利用権を終了します。返金と解約は別の手続きです。</li>
+              <li>ウェブで購入した月額プランは税込980円で毎月自動更新されます。契約管理から次回更新を停止でき、期間末解約を予約した後も支払済み期間末まで利用できます。日割返金はありません。重複請求・誤請求や当社の障害で利用できなかった場合は個別に確認し返金します。法令上の権利は制限しません。</li>
+              <li>App Storeで購入した月額プランはAppleの購入確認画面に表示された価格・条件が適用されます。管理・解約はApp Storeのサブスクリプション管理をご利用ください。返金は <a href="https://support.apple.com/118223" className="underline">Appleへ申請</a>し、可否はAppleが適用条件に基づいて判断します。法令上の権利は制限しません。</li>
+              <li>ウェブ購入の部分返金では利用権と自動更新は変わらず、全額返金では該当請求期間の利用権を終了します。返金と解約は別の手続きです。</li>
               <li>
                 運営継続のため、皆様のフィードバック投稿によるコンテンツ改善へのご協力をお願いいたします。
               </li>
@@ -277,10 +265,10 @@ export default function TermsPage() {
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Button asChild variant="gradient" size="lg">
+          <Button asChild variant="primary" size="lg" className="w-full sm:w-auto min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href="/">ホームに戻る</Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href="/privacy">プライバシーポリシー</Link>
           </Button>
         </div>
@@ -301,19 +289,19 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md sm:p-7">
+    <section className="border-b border-border py-6 first:pt-0 last:border-b-0">
       <div className="mb-4 flex items-center gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
           {icon}
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-            Article {number}
+            第{number}条
           </p>
           <h2 className="text-lg font-semibold text-foreground">{title}</h2>
         </div>
       </div>
-      <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+      <div className="space-y-4 text-sm leading-7 text-foreground/85 [overflow-wrap:anywhere]">
         {children}
       </div>
     </section>

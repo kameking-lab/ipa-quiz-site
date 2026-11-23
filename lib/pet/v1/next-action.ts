@@ -1,11 +1,10 @@
-import type { SrsCard } from "@/lib/learning/spaced-repetition";
 import type { PetProfile, PetProfileDocument } from "./profile";
 import { PET_STAGE_GOALS, petGrowthProgress } from "./growth";
 import { PET_REVIEW_INTERVAL_MS, petLearningDay } from "./learning";
 import { petMemoryPreview } from "./album";
 
-/** Advice from saved facts and the current SRS schedule; never grants progress. */
-export function petNextAction(profile: PetProfile, doc: PetProfileDocument, now: number, cards: readonly SrsCard[] = []) {
+/** Advice from saved learning facts; never grants progress. */
+export function petNextAction(profile: PetProfile, doc: PetProfileDocument, now: number) {
   const progress = petGrowthProgress(profile), exam = encodeURIComponent(profile.qualificationId);
   const learn = `/quiz?mode=unanswered&exam=${exam}`;
   if (!profile.unlockedStages.includes("partner")) return { label: `相棒まで あと${Math.max(0, PET_STAGE_GOALS.partner.questions - progress.uniqueQuestions)}問`, action: "新しい問題を解く", href: learn };
@@ -14,13 +13,11 @@ export function petNextAction(profile: PetProfile, doc: PetProfileDocument, now:
   if (progress.uniqueQuestions < goal.questions) return { label: petMemoryPreview(profile, doc, now).invitation, action: "新しい問題を解く", href: learn };
   if (progress.delayedAnswers < goal.spaced) {
     const candidates = profile.questions.filter(q => q.lastRewardedAt !== null).map(q => {
-      const card = cards.find(card => card.id === q.questionId);
       const revealedAt = Math.max(0, ...doc.events.filter(event => event.qualificationId === profile.qualificationId && event.canonicalQuestionId === q.questionId && event.attemptKind === "revealed").map(event => event.occurredAt));
-      // Match the existing 24h interval and SRS due-date requirements, including answer reveals.
+      // A reveal and an independent answer both start the existing reward interval.
       const availableAt = Math.max(q.lastRewardedAt! + PET_REVIEW_INTERVAL_MS,
         (q.independentCorrectAts.at(-1) ?? 0) + PET_REVIEW_INTERVAL_MS,
-        revealedAt ? revealedAt + PET_REVIEW_INTERVAL_MS : 0,
-        card ? Math.max(card.dueAt, card.lastReviewedAt + PET_REVIEW_INTERVAL_MS) : 0);
+        revealedAt ? revealedAt + PET_REVIEW_INTERVAL_MS : 0);
       return { id: q.questionId, availableAt };
     }).sort((a, b) => a.availableAt - b.availableAt);
     const candidate = candidates[0];

@@ -52,7 +52,6 @@ export async function POST(request: Request) {
   const guest = request.headers.get("cookie")?.split(";").map(x => x.trim()).find(x => x.startsWith("practice_guest="))?.slice(15).split(".")[0];
   const visitor = guest && /^[0-9a-f-]{36}$/.test(guest) ? `guest:${guest}` : `net:${ip}:${ua}`;
   const attribution = requestAttribution(request);
-  if (attribution) await recordFunnel(event, visitor, now, attribution);
-  else await recordFunnel(event, visitor, now);
-  return done;
+  const recorded = attribution ? await recordFunnel(event, visitor, now, attribution) : await recordFunnel(event, visitor, now);
+  return recorded ? done : new Response(null, { status: 503, headers: { "Cache-Control": "no-store" } });
 }

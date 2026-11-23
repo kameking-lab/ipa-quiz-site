@@ -1,0 +1,4744 @@
+{
+  "questions": [
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q01",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 1,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "大気の鉛直構造"
+        ],
+        "difficulty": 3,
+        "question": "地球大気の鉛直構造の一般的な特徴について述べた次の文(a)〜(d)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 国際標準大気では、対流圏内の気温減率と温位は高さ方向に一定である。\n(b) 対流圏界面の高さは、平均的には高緯度の地域より低緯度の地域のほうが高い。\n(c) 成層圏のオゾンの数密度は、太陽放射に含まれる紫外線の吸収により気温が極大となる成層圏界面付近で最大になる。\n(d) 中間圏では窒素分子や酸素分子が紫外線を吸収して光電離することにより、上空ほど気温が高くなっている。",
+        "explanation": "対流圏界面は平均的には低緯度で高い。オゾン数密度の極大は成層圏界面より低く、成層圏界面の気温極大とは高度が異なる。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p02.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問1の原典 PDF 2頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問1・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 誤 ／ (d) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 誤 ／ (d) 正",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤 ／ (d) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 正 ／ (d) 正"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "choiceExplanations": {
+          "ア": "(a)は誤。標準対流圏で一定なのは気温減率で、温位は高度とともに上がる。",
+          "イ": "(a)は誤。標準対流圏で一定なのは気温減率で、温位は高度とともに上がる。",
+          "ウ": "(c)は誤。オゾン数密度は成層圏界面より下のオゾン層で最大になる。",
+          "エ": "対流圏界面は平均的には低緯度で高い。オゾン数密度の極大は成層圏界面より低く、成層圏界面の気温極大とは高度が異なる。",
+          "オ": "(b)は正。熱帯の対流圏界面は極域より平均的に高い。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q01",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 1,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 2,
+            "assetId": "r64/question/ippan/p02.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p02.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q02",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 2,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "断熱下降と相対湿度"
+        ],
+        "difficulty": 3,
+        "question": "高度 1000m にある、気圧 900hPa、温度 18℃の水蒸気で飽和した空気塊を、気圧1013hPa の高度 0m まで、周囲の空気と混合することなく断熱的に下降させたときの相対湿度の値に最も近いものを、下記の①〜⑤の中から 1 つ選べ。ただし、空気塊は水滴を含んでおらず、水蒸気の混合比 w は水蒸気圧 e、気圧 p を用いて w = 0.622e /p で近似できるものとする。また、乾燥断熱減率は 10℃/km、湿潤断熱減率は 6℃/km とし、温度と飽和水蒸気圧の関係は次の表のとおりとする。\n表：温度と飽和水蒸気圧の関係温度（℃） 10 12 14 16 18 20 22 24 26 28 30飽和水蒸気圧(hPa） 12 14 16 18 21 23 26 30 34 38 42",
+        "explanation": "水滴を含まない空気塊は乾燥断熱的に28℃まで昇温する。混合比保存で水蒸気圧は21×1013÷900≒23.6 hPaとなり、23.6÷38≒62％。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p02.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問2の原典 PDF 2頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問2・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "55%",
+          "イ": "62%",
+          "ウ": "70%",
+          "エ": "79%",
+          "オ": "89%"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "choiceExplanations": {
+          "ア": "混合比保存で求める水蒸気圧は約23.6 hPa、28℃の飽和水蒸気圧は38 hPaなので、比は55%ではなく約62％となる。",
+          "イ": "23.6÷38×100≒62％となり、この選択肢が最も近い。",
+          "ウ": "混合比保存で求める水蒸気圧は約23.6 hPa、28℃の飽和水蒸気圧は38 hPaなので、比は70%ではなく約62％となる。",
+          "エ": "混合比保存で求める水蒸気圧は約23.6 hPa、28℃の飽和水蒸気圧は38 hPaなので、比は79%ではなく約62％となる。",
+          "オ": "混合比保存で求める水蒸気圧は約23.6 hPa、28℃の飽和水蒸気圧は38 hPaなので、比は89%ではなく約62％となる。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false,
+        "isCalculation": true
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q02",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 2,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 2,
+            "assetId": "r64/question/ippan/p02.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p02.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q03",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 3,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "湿球温度と露点温度"
+        ],
+        "difficulty": 3,
+        "question": "湿潤空気における温度、湿球温度、露点温度及び水蒸気の混合比の関係について述べた次の文章の空欄(a)、(b)に入る関係式の組み合わせとして正しいものを、下記の①〜\n⑤の中から 1 つ選べ。\n温度 T 、水蒸気の混合比 w の未飽和の空気の湿球温度が T 1 、露点温度が T 2 であった。このとき、この空気と同じ気圧で温度が T 1 、T 2 の空気の水蒸気の飽和混合比をそれぞれ w 1 、w 2 とすると (a) の関係がある。また、蒸発の潜熱を L 、定圧比熱を C pとすれば (b) の関係が成り立つ。",
+        "explanation": "露点まで冷やすと元の混合比のまま飽和するため w＝w₂＜w₁となる。湿球までの蒸発潜熱と顕熱の減少は L(w₁−w)＝Cₚ(T−T₁) で釣り合う。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p03.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問3の原典 PDF 3頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問3・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) w = w1 < w2 ／ (b) L (w 2−w ) = C p (T −T 1 )",
+          "イ": "(a) w = w1 < w2 ／ (b) L (w 2−w 1 ) = C p (T 1−T 2 )",
+          "ウ": "(a) w = w2 < w1 ／ (b) L (w 1−w ) = C p (T −T 1 )",
+          "エ": "(a) w = w2 < w1 ／ (b) L (w 1−w 2 ) = C p (T 1−T 2 )",
+          "オ": "(a) w1 < w2 < w ／ (b) L (w 2−w 1 ) = C p (T 1−T 2 )"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "choiceExplanations": {
+          "ア": "元の混合比に等しいのは湿球での飽和混合比ではなく露点での飽和混合比である。",
+          "イ": "露点での飽和混合比が元の混合比に等しく、湿球での値より小さい。",
+          "ウ": "露点で w＝w₂となり、湿球までの蒸発による混合比増分は w₁−w となる。",
+          "エ": "蒸発冷却の温度差は元の温度と湿球温度の差 T−T₁ である。",
+          "オ": "露点では元の混合比に等しく、湿球温度は露点より高いので w₁＞w₂ となる。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q03",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 3,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/question/ippan/p03.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p03.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q04",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 4,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "氷粒子と雪片"
+        ],
+        "difficulty": 3,
+        "question": "氷粒子や雪片について述べた次の文(a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 気温が 0℃以下で雪結晶どうしが衝突・付着して雪片ができるとき、気温が低いほど雪結晶は付着しやすく、大きな雪片ができやすい。\n(b) 氷粒子と過冷却水滴が共存する雲の中では、氷面に対する飽和水蒸気圧が水面に対する飽和水蒸気圧よりも低いことにより、昇華による氷粒子の成⻑が卓越する環境となっている。\n(c) 落下する雪片は、周囲の気温が 0℃以上の場合、湿度が低いほど融解して雨滴になりやすい。",
+        "explanation": "過冷却水滴と氷粒子が共存すると、氷面の飽和水蒸気圧が水面より低いため、水蒸気が氷粒子に付着して成長する。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p03.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問4の原典 PDF 3頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問4・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 正"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "choiceExplanations": {
+          "ア": "(a)は誤。雪結晶は融点に近く湿った状態のほうが付着しやすい。",
+          "イ": "(a)は誤。雪結晶は融点に近く湿った状態のほうが付着しやすい。",
+          "ウ": "(c)は誤。乾いた空気中では蒸発・昇華による冷却で雪片は融けにくくなる。",
+          "エ": "過冷却水滴と氷粒子が共存すると、氷面の飽和水蒸気圧が水面より低いため、水蒸気が氷粒子に付着して成長する。",
+          "オ": "(b)は正。氷面の飽和水蒸気圧が低いので、過冷却水滴が蒸発して氷粒子が成長する。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q04",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 4,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/question/ippan/p03.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p03.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q05",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 5,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "太陽放射"
+        ],
+        "difficulty": 3,
+        "question": "地球大気に入射する太陽放射に関する次の文(a)〜(d)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から１つ選べ。ただし、sin30°= 0.5、sin60°= 0.87 とする。\n(a) 大気上端に入射する太陽放射エネルギーには、可視光線域の放射エネルギーと赤外線域の放射エネルギーが同程度含まれている。\n(b) 6 月に大気上端の水平な単位面積に入射する 1 日あたりの太陽放射エネルギーは、赤道上の地点の方が北極点よりも多い。\n(c) 地球全体に入射する 1 日あたりの太陽放射エネルギーは、地球と太陽の距離が近い 7 月の方が、この距離が遠い 1 月よりも多い。\n(d) 春分の日の太陽の南中時に大気上端の水平な単位面積に入射する太陽放射エネルギーは、北緯 30°の地点では北緯 60°の地点の約 1.4 倍となっている。",
+        "explanation": "大気上端に入射する太陽放射には、可視と赤外のエネルギーが同程度含まれる。日積算の比較では太陽高度と日照時間の両方を考える。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p04.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問5の原典 PDF 4頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問5・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正 ／ (d) 誤",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤 ／ (d) 誤",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤 ／ (d) 正"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "choiceExplanations": {
+          "ア": "(b)は誤。6月の北極では白夜が続き、日積算の大気上端日射量は赤道より大きくなる。",
+          "イ": "(c)は誤。地球は1月ごろ近日点、7月ごろ遠日点を通るため、7月のほうが入射量は小さい。",
+          "ウ": "大気上端に入射する太陽放射には、可視と赤外のエネルギーが同程度含まれる。日積算の比較では太陽高度と日照時間の両方を考える。",
+          "エ": "(a)は正。太陽放射に含まれる可視域と赤外域のエネルギーの割合は同程度である。",
+          "オ": "(a)は正。太陽放射に含まれる可視域と赤外域のエネルギーの割合は同程度である。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q05",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 5,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/ippan/p04.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p04.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q06",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 6,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "温度風と温度移流"
+        ],
+        "difficulty": 3,
+        "question": "北半球の緯度の異なる 2 つの地点の温度と風の関係について述べた次の文章の空欄\n(a)〜(c)に入る語句の組み合わせとして正しいものを、下記の①〜⑤の中から1つ選べ。ただし、この 2 つの地点の上空では静力学平衡および地衡風平衡が成り立っているものとする。\n北半球の緯度 30° の地点 A と緯度 45° の地点 B において、1000hPa 等圧面上で風速5m/s の南風が吹いている。また、Ａ、Ｂ両地点では 1000hPa から 700hPa の層内の平均温度は、いずれも東⻄方向に一様で南から北に向かって低くなっており、その水平温度勾配は両地点で等しい。このとき 700hPa 等圧面における風速は (a) 。また、地点 A と地点 B の 1000hPa から 700hPa の層内ではともに (b) となっており、その大きさは (c) 。",
+        "explanation": "温度風で加わる西風成分はコリオリパラメータが小さいAで大きい。両地点の南風成分と南北温度勾配は等しく、暖気移流も等しい。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p04.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問6の原典 PDF 4頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問6・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 地点 A の方が大きい ／ (b) 暖気移流 ／ (c) 地点 A と地点 B で同じである",
+          "イ": "(a) 地点 A の方が大きい ／ (b) 暖気移流 ／ (c) 地点 A の方が大きい",
+          "ウ": "(a) 地点 A の方が大きい ／ (b) 寒気移流 ／ (c) 地点 A と地点 B で同じである",
+          "エ": "(a) 地点 B の方が大きい ／ (b) 暖気移流 ／ (c) 地点 A と地点 B で同じである",
+          "オ": "(a) 地点 B の方が大きい ／ (b) 寒気移流 ／ (c) 地点 B の方が大きい"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "choiceExplanations": {
+          "ア": "低緯度Aで西風成分の増加が大きく、暖気移流に効く南風成分は両地点で同じである。",
+          "イ": "Aで増えるのは南北の温度勾配に直交する西風成分なので、暖気移流の強さに差はつかない。",
+          "ウ": "南風が南側の暖かい空気を運ぶので暖気移流となる。",
+          "エ": "コリオリパラメータが小さいAのほうが、西風成分の鉛直変化が大きい。",
+          "オ": "南風による移流は暖気移流で、上層の風速は温度風が大きいAのほうが大きい。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q06",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 6,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/ippan/p04.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p04.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q07",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 7,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "地表摩擦と力のつり合い"
+        ],
+        "difficulty": 3,
+        "question": "大気における地表面の摩擦の効果について述べた次の文章の(a)～(d)に入る式と語句の組み合わせとして正しいものを、下記の①～⑤の中から 1 つ選べ。ただし、図の実線は等圧線を示し、コリオリパラメータを f とする。\n北半球のある地点の水平な地表面付近で、図のように矢印で示す風速 V の定常な風が等圧線と角度αをなす方向に吹いている。気圧傾度力の大きさを P 、コリオリ力の大きさを C 、摩擦力の大きさを F とし、摩擦力が風の向きと逆方向に働いているとすると、3 つの力のつり合いから\nF = (a)\nC = (b) = fV\nしたがって、摩擦力の大きさ F は\nF = (c)\nこれは、風速が同じであれば地表面の摩擦力が (d) ほど地表面付近の風が大きな角度で等圧線を横切って低圧部に向かって吹くことを示している。\n低圧部\nV\nα\n高圧部",
+        "explanation": "気圧傾度力を風向方向と直交方向に射影すると、F＝P sinα、fV＝P cosαとなる。両式の比より F＝fV tanα で、摩擦が強いほど横切る角度は大きい。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p05.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問7の原典 PDF 5頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問7・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) P cosα ／ (b) P ／ (c) f V cosα ／ (d) 小さい",
+          "イ": "(a) P sinα ／ (b) P cosα ／ (c) f V tanα ／ (d) 大きい",
+          "ウ": "(a) P sinα ／ (b) P cosα ／ (c) f V sinα ／ (d) 大きい",
+          "エ": "(a) P cosα ／ (b) P sinα ／ (c) f V tanα ／ (d) 大きい",
+          "オ": "(a) P cosα ／ (b) P sinα ／ (c) f V / tanα ／ (d) 小さい"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "choiceExplanations": {
+          "ア": "風向に平行な気圧傾度力の成分は P sinα である。",
+          "イ": "風向成分と直交成分の比は tanα であり、摩擦が増すほど角度も増す。",
+          "ウ": "P sinα を P cosα で割ると sinα ではなく tanα になる。",
+          "エ": "コリオリ力と釣り合うのは風向直交成分 P cosα である。",
+          "オ": "射影から F/(fV)＝tanα となり、摩擦が強いほどαは大きい。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false,
+        "isCalculation": true
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q07",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 7,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 5,
+            "assetId": "r64/question/ippan/p05.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p05.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q08",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 8,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "大気大循環と季節風"
+        ],
+        "difficulty": 3,
+        "question": "図に示す破線で囲まれた A～D の領域における風や降水量、熱輸送量の特徴について述べた次の文(a)～(c)の正誤の組み合わせとして正しいものを、下記の①～⑤の中から 1つ選べ。\n(a) 領域 A における地表面（陸面及び海面）全体からの年平均の蒸発量は、この領域の年平均の降水量よりも多い。\n(b) 顕熱輸送と潜熱輸送を合わせた大気の北向きの熱輸送量の年平均値を経度平均でみると、領域 B の緯度帯における最大値の方が領域 C の緯度帯における最大値よりも大きい。\n(c) 領域 D において夏季と冬季で卓越する地表付近の風の風向が大きく変わることには、大陸と海洋との熱的性質の違いが大きく影響している。\nD\nC\nB\nA",
+        "explanation": "赤道付近では降水が蒸発を上回り、大気の北向き熱輸送はより北の中緯度帯で大きい。東アジアの季節風には大陸と海洋の加熱・冷却の違いが効く。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p06.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問8の原典 PDF 6頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問8・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 正"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "choiceExplanations": {
+          "ア": "(a)は誤。赤道付近のAでは水蒸気が収束し、降水量が蒸発量を上回る。",
+          "イ": "(a)は誤。赤道付近のAでは水蒸気が収束し、降水量が蒸発量を上回る。",
+          "ウ": "(a)は誤。赤道付近のAでは水蒸気が収束し、降水量が蒸発量を上回る。",
+          "エ": "(b)は誤。大気の北向き熱輸送は亜熱帯のBより中緯度を含むCで大きくなる。",
+          "オ": "赤道付近では降水が蒸発を上回り、大気の北向き熱輸送はより北の中緯度帯で大きい。東アジアの季節風には大陸と海洋の加熱・冷却の違いが効く。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q08",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 8,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 6,
+            "assetId": "r64/question/ippan/p06.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p06.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q09",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 9,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "ガストフロント"
+        ],
+        "difficulty": 3,
+        "question": "積乱雲により形成されるガストフロントについて述べた次の文(a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) ガストフロントは、積乱雲内の上昇流が強まる成⻑期に発生する場合が多い。\n(b) 積乱雲直下からのガストフロントの到達距離は、最大で 3km 程度である。\n(c) ガストフロントが通過すると、地上の気温と気圧はともに下降し、相対湿度は上昇する。",
+        "explanation": "ガストフロントは積乱雲の冷たい下降気流が地面に達して広がる先端であり、通過時には通常、気圧が上昇する。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p07.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問9の原典 PDF 7頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問9・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "エ": "(a) 誤 ／ (b) 誤 ／ (c) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "choiceExplanations": {
+          "ア": "(a)は誤。主に強い下降流が形成される成熟期に発生する。",
+          "イ": "(a)は誤。主に強い下降流が形成される成熟期に発生する。",
+          "ウ": "(b)は誤。冷気外出流の先端は数十kmに達することがあり、3kmに限られない。",
+          "エ": "(c)は誤。冷気外出流に伴い、気温は低下する一方で地上気圧は上昇する。",
+          "オ": "ガストフロントは積乱雲の冷たい下降気流が地面に達して広がる先端であり、通過時には通常、気圧が上昇する。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q09",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 9,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/question/ippan/p07.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p07.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q10",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 10,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "成層圏突然昇温"
+        ],
+        "difficulty": 3,
+        "question": "北半球の成層圏について述べた次の文章の空欄(a)〜(c)に入る語句の組み合わせとして適切なものを、下記の①〜⑤の中から 1 つ選べ。\n北半球の成層圏では、寒候期には極夜渦と呼ばれる北極付近を中心とした循環が存在し、中高緯度では (a) が卓越している。この風の領域に対流圏内で発生したプラネタリー波が伝播してくると、高緯度側で大規模な下降流が発生し、これにともなう (b)により気温が短期間に急上昇することがある。この現象は成層圏突然昇温と呼ばれ、気温の上昇は (c) ほど早く始まる。",
+        "explanation": "冬の極夜渦では偏西風が卓越する。波と平均流の相互作用に伴う極域の下降は断熱圧縮による昇温をもたらし、上層で先に現れる。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p07.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問10の原典 PDF 7頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問10・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) ⻄風 ／ (b) 断熱圧縮 ／ (c) 上層",
+          "イ": "(a) ⻄風 ／ (b) 断熱圧縮 ／ (c) 下層",
+          "ウ": "(a) ⻄風 ／ (b) 断熱膨張 ／ (c) 下層",
+          "エ": "(a) 東風 ／ (b) 断熱圧縮 ／ (c) 上層",
+          "オ": "(a) 東風 ／ (b) 断熱膨張 ／ (c) 下層"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "choiceExplanations": {
+          "ア": "冬の成層圏では西風が卓越し、下降に伴う断熱圧縮で上層から昇温する。",
+          "イ": "突然昇温は上層で先に現れ、下層に及ぶ。",
+          "ウ": "下降する空気は周囲の圧力上昇を受けて断熱圧縮される。",
+          "エ": "寒候期の極夜渦を取り巻く中高緯度の卓越風は西風である。",
+          "オ": "冬の極夜渦周辺は西風で、下降による断熱圧縮の昇温が上層から始まる。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q10",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 10,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/question/ippan/p07.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p07.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q11",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 11,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "日本の気候の長期変動"
+        ],
+        "difficulty": 3,
+        "question": "気象庁が公表している日本域の気候の⻑期変動の評価結果について述べた次の文(a)〜\n(c)の下線部の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 日本国内の気象庁の観測点における大気中の二酸化炭素の濃度は 2010 年代に500ppm を超え、さらに上昇が続いている。\n(b) 1901年から2024年までの期間に観測された降水量の統計では、日降水量が100mm以上の日数と日降水量が 1mm 未満の日数はいずれも有意に増加している。\n(c) 1908年以降のデータによると、日本近海の全海域を平均した年平均海面水温は、100 年あたり 2℃以上の割合で上昇している。",
+        "explanation": "観測期間には大雨日と日降水量1 mm未満の日がともに増加している。CO₂濃度500 ppm超と日本近海の平均海面水温の上昇率2℃以上という記述は当時の評価と合わない。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p08.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問11の原典 PDF 8頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問11・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 誤",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "choiceExplanations": {
+          "ア": "(a)は誤。国内観測点で2010年代に超えた目安は400 ppmで、500 ppmではない。",
+          "イ": "(a)は誤。国内観測点で2010年代に超えた目安は400 ppmで、500 ppmではない。",
+          "ウ": "(c)は誤。試験時点の日本近海全域平均の上昇率は100年当たり2℃未満である。",
+          "エ": "観測期間には大雨日と日降水量1 mm未満の日がともに増加している。CO₂濃度500 ppm超と日本近海の平均海面水温の上昇率2℃以上という記述は当時の評価と合わない。",
+          "オ": "(b)は正。気象庁の長期統計では日降水量100 mm以上の日と1 mm未満の日がともに有意に増えている。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q11",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 11,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/question/ippan/p08.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p08.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q12",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 12,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "気象業務法の予報業務許可"
+        ],
+        "difficulty": 3,
+        "question": "気象等の予報業務を行おうとする者が気象庁⻑官の許可を受けようとする際に要件として求められる項目(a)〜(d)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 当該予報業務の目的及び範囲に係る気象庁の警報事項を迅速に受け取ることができる施設と要員を有すること。\n(b) 当該予報業務に必要な予報資料の収集のための施設と要員を有すること。\n(c) 当該予報業務で発表する予報について解説するための施設と要員を有すること。\n(d) 当該予報事項を迅速に利用者に伝達できる施設を有すること。",
+        "explanation": "警報事項の迅速な受信と予報資料の収集のための施設・要員が許可基準に含まれる。解説や利用者への迅速な伝達のための設備は設問の許可要件に含まれない。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p08.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問12の原典 PDF 8頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問12・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 正",
+          "イ": "(a) 正 ／ (b) 正 ／ (c) 誤 ／ (d) 誤",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤 ／ (d) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤 ／ (d) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 正 ／ (d) 誤"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "choiceExplanations": {
+          "ア": "(c)は誤。発表予報を解説するための施設と要員は許可基準に規定されていない。",
+          "イ": "警報事項の迅速な受信と予報資料の収集のための施設・要員が許可基準に含まれる。解説や利用者への迅速な伝達のための設備は設問の許可要件に含まれない。",
+          "ウ": "(b)は正。業務に必要な予報資料を収集できる施設と要員が必要である。",
+          "エ": "(a)は正。関係する気象庁の警報事項を速やかに受け取れる施設と要員が必要である。",
+          "オ": "(a)は正。関係する気象庁の警報事項を速やかに受け取れる施設と要員が必要である。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q12",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 12,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/question/ippan/p08.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p08.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q13",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 13,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "気象予報士の登録"
+        ],
+        "difficulty": 3,
+        "question": "気象予報士について述べた次の文(a)〜(d)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 気象庁⻑官は、不正な手段によって気象予報士試験を受けた者、又は受けようとした者に対して、試験の合格を取り消し、又はその試験を停止することができる。\n(b) 気象予報士試験に合格した者が気象予報士となるためには、合格発表の日から 1年以内に気象庁⻑官に申請し、気象予報士名簿に登録しなければならない。\n(c) 気象予報士名簿に登録された気象予報士は、5 年ごとに気象庁⻑官から登録更新の認可を得なければならない。\n(d) 気象予報士が気象業務法の規定により罰金以上の刑に処されたときには、当該気象予報士の登録は抹消される。",
+        "explanation": "不正受験に対する試験停止・合格取消しと、気象業務法違反による罰金以上の刑に伴う登録抹消が定められている。合格後1年以内の登録期限や5年ごとの更新はない。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p09.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問13の原典 PDF 9頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問13・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "イ": "(a) 正 ／ (b) 正 ／ (c) 誤 ／ (d) 正",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤 ／ (d) 正",
+          "エ": "(a) 誤 ／ (b) 誤 ／ (c) 正 ／ (d) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤 ／ (d) 誤"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "choiceExplanations": {
+          "ア": "(b)は誤。登録申請は必要だが、合格発表から1年以内という期限はない。",
+          "イ": "(b)は誤。登録申請は必要だが、合格発表から1年以内という期限はない。",
+          "ウ": "不正受験に対する試験停止・合格取消しと、気象業務法違反による罰金以上の刑に伴う登録抹消が定められている。合格後1年以内の登録期限や5年ごとの更新はない。",
+          "エ": "(a)は正。不正な手段による受験や受験の試みに対し、気象庁長官は合格取消し・試験停止を行える。",
+          "オ": "(a)は正。不正な手段による受験や受験の試みに対し、気象庁長官は合格取消し・試験停止を行える。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q13",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 13,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 9,
+            "assetId": "r64/question/ippan/p09.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p09.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q14",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 14,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "気象測器の検定"
+        ],
+        "difficulty": 3,
+        "question": "気象測器の検定について述べた次の文(a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 気象庁以外の政府機関又は地方公共団体が研究のために行う気象の観測に使用する温度計及び気圧計は、登録検定機関が行う検定に合格したものでなければならない。\n(b) 気象測器の検定の有効期間はすべて 5 年間である。\n(c) 登録検定機関に検定を申請するときは、その手続きは当該気象測器の製造者が行わなければならない。",
+        "explanation": "研究目的の観測は気象業務法上の検定済み測器の使用義務から除かれる。有効期間は測器によって異なり、申請者を製造者に限る規定もない。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p09.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問14の原典 PDF 9頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問14・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 正 ／ (c) 誤",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤",
+          "エ": "(a) 誤 ／ (b) 誤 ／ (c) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "choiceExplanations": {
+          "ア": "(a)は誤。単に研究のために行う観測は検定済み測器の使用義務の対象外である。",
+          "イ": "(a)は誤。単に研究のために行う観測は検定済み測器の使用義務の対象外である。",
+          "ウ": "(a)は誤。単に研究のために行う観測は検定済み測器の使用義務の対象外である。",
+          "エ": "(c)は誤。検定の申請は測器の製造者に限定されない。",
+          "オ": "研究目的の観測は気象業務法上の検定済み測器の使用義務から除かれる。有効期間は測器によって異なり、申請者を製造者に限る規定もない。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q14",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 14,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 9,
+            "assetId": "r64/question/ippan/p09.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p09.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-ippan-q15",
+        "exam": "kisho",
+        "session": "ippan",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 15,
+        "type": "multiple-choice",
+        "category": "学科一般",
+        "topicTags": [
+          "災害対策基本法"
+        ],
+        "difficulty": 3,
+        "question": "災害対策基本法における避難の指示等について述べた次の文章の空欄(a)〜(c)に入る語句の組み合わせとして適切なものを、下記の①〜⑤の中から 1 つ選べ。\n災害が発生し、又は発生するおそれがある場合において、人の生命又は身体を災害から保護し、その他災害の拡大を防止するため特に必要があると認めるときは、\n(a) は、必要と認める地域の必要と認める居住者等に対し、 避難のための (b) を指示することができる。また、避難のための (b) を行うことによりかえって人の生命又は身体に危険が及ぶおそれがあり、 事態に照らし緊急を要すると認めるときには、屋内の屋外に面する開口部から離れた場所での待避などの (c) を指示することができる。",
+        "explanation": "災害対策基本法第60条は、市町村長による避難のための立退きの指示と、緊急時の緊急安全確保措置の指示を定める。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/ippan/p10.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科一般 問15の原典 PDF 10頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科一般 問15・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 都道府県知事 ／ (b) 立退き ／ (c) 緊急安全確保措置",
+          "イ": "(a) 都道府県知事 ／ (b) 防災行動 ／ (c) 緊急退避措置",
+          "ウ": "(a) 市町村⻑ ／ (b) 立退き ／ (c) 緊急安全確保措置",
+          "エ": "(a) 市町村⻑ ／ (b) 立退き ／ (c) 緊急退避措置",
+          "オ": "(a) 市町村⻑ ／ (b) 防災行動 ／ (c) 緊急退避措置"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "choiceExplanations": {
+          "ア": "第60条で原則として指示を出すのは市町村長である。",
+          "イ": "指示主体は市町村長であり、法定用語は立退きと緊急安全確保措置である。",
+          "ウ": "市町村長は立退きの指示を出し、立退きがかえって危険な緊急時には緊急安全確保措置を指示できる。",
+          "エ": "緊急時の法定用語は緊急安全確保措置である。",
+          "オ": "避難のための立退きと緊急安全確保措置が第60条の用語である。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-ippan-q15",
+        "round": 64,
+        "session": "ippan",
+        "qNumber": 15,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(ippan_mondai).pdf",
+            "physicalPage": 10,
+            "assetId": "r64/question/ippan/p10.png",
+            "preparedPath": "/images/kisho/r64/question/ippan/p10.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q01",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 1,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "地上気象観測の統計"
+        ],
+        "difficulty": 3,
+        "question": "気象庁が行っている地上気象観測と観測結果の統計について述べた次の文 (a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 同一期間内に極値となる値が 2 つ以上現れた場合は、最初にその値が現れた起日（起時）の方を極値としている。\n(b) 降雪の深さや積雪の深さについて、年をまたいだ 1 年間(12 か月)の統計を行う場合、前年 10 月から当年 9 月までの 1 年間について行い、その期間を寒候年という。\n(c) 日最低気温が0℃以下の日を冬日、日最高気温が0℃以下の日を真冬日としている。",
+        "explanation": "同じ極値が複数現れると後の起日・起時を採用する。降雪・積雪の寒候年は前年8月から当年7月までで、冬日・真冬日はそれぞれ最低・最高気温が0℃未満の日である。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p02.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問1の原典 PDF 2頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問1・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "エ": "(a) 誤 ／ (b) 誤 ／ (c) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "choiceExplanations": {
+          "ア": "(a)は誤。同値の極値が複数出た場合、原則として最も遅い起日・起時を採用する。",
+          "イ": "(a)は誤。同値の極値が複数出た場合、原則として最も遅い起日・起時を採用する。",
+          "ウ": "(b)は誤。降雪・積雪についての寒候年は前年8月から当年7月までである。",
+          "エ": "(c)は誤。冬日・真冬日の0℃は未満で判定し、ちょうど0℃は含まない。",
+          "オ": "同じ極値が複数現れると後の起日・起時を採用する。降雪・積雪の寒候年は前年8月から当年7月までで、冬日・真冬日はそれぞれ最低・最高気温が0℃未満の日である。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q01",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 1,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 2,
+            "assetId": "r64/question/senmon/p02.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p02.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q02",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 2,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "気象レーダーの偽エコー"
+        ],
+        "difficulty": 3,
+        "question": "気象レーダーで観測されるエコーについて述べた次の文(a)〜(d)の正誤について、下記の①〜⑤の中から正しいものを 1 つ選べ。\n(a) シークラッタは、海上の波しぶきなどに電波が当たって、降水のないところにエコーが現れる現象であり、強風時に発生しやすい。\n(b) 二重偏波気象レーダーでは、電波を反射した物体の形状などを検出し、昆虫や鳥などによって生じる晴天時のエコーを降水と区別して除去することができる。\n(c) 気象レーダーからの電波が通常の伝搬経路から外れて伝搬する、いわゆる異常伝搬の発生する具体的な気象条件として、高気圧圏内の空気の沈降や夜間の放射冷却、海陸風による温度の異なる空気の移流などが考えられる。\n(d) 気象レーダーの送信波が巨大な発電用風車に当たると、風車およびその近傍の物体で散乱や反射が複数回生じる多重散乱が起き、偽エコーが発生することがある。",
+        "explanation": "海面、鳥や昆虫、異常伝搬、風車はいずれも降水と異なるエコーの要因になり得る。二重偏波はこうしたエコーの識別に役立つ。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p02.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問2の原典 PDF 2頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問2・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a)のみ誤り",
+          "イ": "(b)のみ誤り",
+          "ウ": "(c)のみ誤り",
+          "エ": "(d)のみ誤り",
+          "オ": "すべて正しい"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "choiceExplanations": {
+          "ア": "強風時の波しぶきなどでレーダー波が散乱されるため、シークラッタの説明は正しい。",
+          "イ": "二重偏波で得た散乱体の形状などの情報は、鳥や昆虫を含む非降水エコーの判別に使える。",
+          "ウ": "沈降や放射冷却などによる屈折率の鉛直変化で異常伝搬が起こり得る。",
+          "エ": "大型風車付近では多重反射・散乱によって偽エコーが出ることがある。",
+          "オ": "波しぶき、生物、屈折率の変化、風車による多重散乱はいずれも設問の説明に合う。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q02",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 2,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 2,
+            "assetId": "r64/question/senmon/p02.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p02.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q03",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 3,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "ラジオゾンデと鉛直分布"
+        ],
+        "difficulty": 3,
+        "question": "図は、春のある日の 9 時の天気図(上図)と、この天気図に示した A、B、C のいずれかの観測点におけるラジオゾンデで観測した気温、湿度、風速、風向の鉛直分布図(下図)である。\nこれらの鉛直分布図について述べた次の文(a)～(c)の下線部の正誤の組み合わせとして正しいものを、下記の①～⑤の中から 1 つ選べ。\n(a) 下図には800hPa付近に気温の逆転層がある。\nこれは、高気圧周辺で空気が沈降し、断熱的に昇温したことで生じる沈降性の逆転層であると推定される。\n(b) 下図から対流圏界面の高さを推定すると、気温の分布から80hPa付近に1つめの圏界面があり、風向風速の分布から40hPa付近に2つめの圏界面があると推定される。\n(c) 鉛直分布図の観測点は、天気図に示されたA、B、Cの内、C地点である。\nA\nB\nC気圧(hPa)\n気温(℃) 湿度(％) 風速(ｍ/ｓ) 風向(°)",
+        "explanation": "800 hPa付近に沈降性とみられる逆転があり、観測点は天気図のCに対応する。圏界面は気温減率を基に判定する。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p03.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問3の原典 PDF 3頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問3・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 正 ／ (c) 誤",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "エ": "(a) 誤 ／ (b) 誤 ／ (c) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "choiceExplanations": {
+          "ア": "(b)は誤。第2圏界面を含め、圏界面は風向風速の分布だけで判定できず、気温減率を使う。",
+          "イ": "(b)は誤。第2圏界面を含め、圏界面は風向風速の分布だけで判定できず、気温減率を使う。",
+          "ウ": "800 hPa付近に沈降性とみられる逆転があり、観測点は天気図のCに対応する。圏界面は気温減率を基に判定する。",
+          "エ": "(a)は正。高気圧域で沈降した空気の断熱昇温は、800 hPa付近の気温逆転に整合する。",
+          "オ": "(a)は正。高気圧域で沈降した空気の断熱昇温は、800 hPa付近の気温逆転に整合する。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q03",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 3,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/question/senmon/p03.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p03.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q04",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 4,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "数値予報のパラメタリゼーション"
+        ],
+        "difficulty": 3,
+        "question": "気象庁が現在運用している数値予報モデルのパラメタリゼーションについて述べた次の文(a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 全球モデルでは、積雲の効果をパラメタリゼーションにより取り込むことで、個々の積雲の発達、衰弱を予測している。\n(b) メソモデルは全球モデルに比べ解像度が高いが、大気境界層中の様々な渦の振る舞いを十分表現することができないため、大気境界層過程のパラメタリゼーションを用いている。\n(c) 局地モデルは水平格子間隔 2km の非静力学モデルであり、個々の積乱雲の予測ができるため、積雲対流パラメタリゼーションは用いていない。",
+        "explanation": "全球モデルの積雲対流は格子より小さい現象の平均効果を扱う。メソモデルの境界層過程、局地モデルの積雲対流にもパラメタリゼーションが使われる。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p04.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問4の原典 PDF 4頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問4・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "choiceExplanations": {
+          "ア": "(a)は誤。全球モデルの積雲パラメタリゼーションは格子平均への効果を表し、個々の雲の発達を追跡するものではない。",
+          "イ": "(a)は誤。全球モデルの積雲パラメタリゼーションは格子平均への効果を表し、個々の雲の発達を追跡するものではない。",
+          "ウ": "(c)は誤。局地モデルは2 km格子だが、試験時点では積雲対流パラメタリゼーションも用いている。",
+          "エ": "全球モデルの積雲対流は格子より小さい現象の平均効果を扱う。メソモデルの境界層過程、局地モデルの積雲対流にもパラメタリゼーションが使われる。",
+          "オ": "(b)は正。メソモデルでも境界層内の渦は十分に解像できないため、平均的な効果をパラメタライズする。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q04",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 4,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/senmon/p04.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p04.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q05",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 5,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "アンサンブル予報"
+        ],
+        "difficulty": 3,
+        "question": "気象庁のアンサンブル予報について述べた次の文(a)〜(d)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) アンサンブル予報の各メンバーそれぞれの予測精度は、統計的には、摂動を加えていないコントロールランの予測精度より劣る。\n(b) アンサンブル予報のスプレッドが大きい場合は、小さい場合に比べて予報の不確実性は小さく、予報の信頼度が高いと考えられる。\n(c) アンサンブル平均された予報結果は、各予報要素間で物理的に整合した値とはなっていない。\n(d) アンサンブル予報では、数値予報の不確実性を推定するため、初期値だけでなく、境界値や数値予報モデルのパラメータに揺らぎを与えたり、あるいはこれらを組み合わせたりすることで、複数の予測を行っている。",
+        "explanation": "摂動を与えた個々のメンバーはコントロールランより平均的に精度が劣り、スプレッドは不確実性の目安となる。平均場の物理的整合性は保証されず、初期値のほか境界値・モデルにも揺らぎを与え得る。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p04.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問5の原典 PDF 4頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問5・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 誤 ／ (d) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正 ／ (d) 正",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤 ／ (d) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤 ／ (d) 誤"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "choiceExplanations": {
+          "ア": "(b)は誤。スプレッドが大きければ予測メンバーのばらつきが大きく、一般に不確実性も大きい。",
+          "イ": "摂動を与えた個々のメンバーはコントロールランより平均的に精度が劣り、スプレッドは不確実性の目安となる。平均場の物理的整合性は保証されず、初期値のほか境界値・モデルにも揺らぎを与え得る。",
+          "ウ": "(c)は正。各メンバーで成立する非線形な物理関係が、要素ごとの平均にも成立するとは限らない。",
+          "エ": "(a)は正。解析に最も近い初期値を用いるコントロールランに対し、個々の摂動メンバーの精度は統計的には劣る。",
+          "オ": "(a)は正。解析に最も近い初期値を用いるコントロールランに対し、個々の摂動メンバーの精度は統計的には劣る。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q05",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 5,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/senmon/p04.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p04.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q06",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 6,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "ガイダンス"
+        ],
+        "difficulty": 3,
+        "question": "気象庁が作成している気温、風、発雷確率のガイダンスについて述べた次の文(a)〜\n(d)の正誤の組み合わせとして正しいものを、下記の①～⑤の中から 1 つ選べ。\n(a) 数値予報モデルは、季節によって予測誤差の傾向が変化することがある。気温ガイダンスはそのような場合にも気温の系統誤差を軽減することができる。\n(b) 風ガイダンスは、数値予報モデルに組み込まれている地形と実際の地形の違いによって生じる風向風速の予測誤差を軽減することができる。\n(c) 風は地形の影響を受けることや、日中と夜間で数値予報モデルの風の予測の誤差特性が異なることから、風ガイダンスの予測式は予報対象時刻や風向で層別化されている。\n(d) 発雷確率ガイダンスは、対象領域内での発雷数の多寡を予測するガイダンスである。",
+        "explanation": "気温と風のガイダンスはモデルの系統誤差を補正し、風の式では風向や予報対象時刻で誤差特性を分ける。発雷確率は対象範囲で雷が発生する可能性を示す。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p05.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問6の原典 PDF 5頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問6・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "イ": "(a) 正 ／ (b) 正 ／ (c) 誤 ／ (d) 誤",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 正 ／ (d) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤 ／ (d) 正"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "choiceExplanations": {
+          "ア": "気温と風のガイダンスはモデルの系統誤差を補正し、風の式では風向や予報対象時刻で誤差特性を分ける。発雷確率は対象範囲で雷が発生する可能性を示す。",
+          "イ": "(c)は正。時刻や風向を層別化することで、昼夜・地形の影響による誤差特性の違いを反映できる。",
+          "ウ": "(b)は正。地形の平滑化等による風の誤差は、観測に基づく補正で軽減できる。",
+          "エ": "(a)は正。観測とモデル予測の関係を統計的に補正し、季節によって変化する気温の系統誤差を軽減する。",
+          "オ": "(a)は正。観測とモデル予測の関係を統計的に補正し、季節によって変化する気温の系統誤差を軽減する。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q06",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 6,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 5,
+            "assetId": "r64/question/senmon/p05.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p05.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q07",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 7,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "降水短時間予報"
+        ],
+        "difficulty": 3,
+        "question": "気象庁が発表している降水短時間予報について述べた次の文(a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 降水短時間予報では、6 時間先までは 1km 四方の細かさで、7 時間先から 15 時間先までは 5km 四方の細かさで、1 時間毎の前１時間降水量を予測している。\n(b) 降水短時間予報の 6 時間先までの予測では、解析雨量により得られた降水分布の移動に基づいて降水を予測しており、降水の強弱の変化は計算していない。\n(c) 降水短時間予報の 7 時間先から 15 時間先までの予測では、メソモデルの予測結果だけでなく、局地モデルや全球モデルの予測結果を組み合わせて予測している。",
+        "explanation": "6時間先までは1 km格子、7～15時間先は5 km格子を用いる。短い時間でも移動だけでなく強度の変化を考慮し、7時間以降は複数の数値予報モデルの結果を利用する。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p05.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問7の原典 PDF 5頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問7・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "choiceExplanations": {
+          "ア": "(b)は誤。降水域の移動に加え、地形などによる降水強度の変化も考慮する。",
+          "イ": "(c)は誤。7～15時間先はメソモデルに加え、局地・全球モデルの予測も組み合わせる。",
+          "ウ": "6時間先までは1 km格子、7～15時間先は5 km格子を用いる。短い時間でも移動だけでなく強度の変化を考慮し、7時間以降は複数の数値予報モデルの結果を利用する。",
+          "エ": "(a)は正。各1時間の降水量を、6時間先までは1 km、7～15時間先は5 kmの解像度で予測する。",
+          "オ": "(a)は正。各1時間の降水量を、6時間先までは1 km、7～15時間先は5 kmの解像度で予測する。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q07",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 7,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 5,
+            "assetId": "r64/question/senmon/p05.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p05.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q08",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 8,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "水蒸気画像"
+        ],
+        "difficulty": 3,
+        "question": "図は 10 月のある日の気象衛星ひまわりの水蒸気画像である。図に破線や矢印で示したA～Fの各領域の現象について述べた次の文(a)～(d)の下線部の正誤の組み合わせとして正しいものを、下記の①～⑤の中から 1 つ選べ。\n(a) 破線で囲まれた領域 A、B、C に見られる渦は、いずれも台風や熱帯低気圧に伴うものと推定される。\n(b) 複数の矢印で示した D は、南西から北東方向にのびる暗域と明域の境界（バウンダリー）であり、これは上空の強風軸に対応するものと推定される。\n(c) 領域 E 内の東側には、上層の寒冷低気圧に伴う上・中層雲のみからなる雲域が見られる。\n(d) 領域 F には細かい縞状の上層雲が見られるが、これは台風の動きに影響を与えるジェット気流に対応したものと推定される。\nD\nA\nB\nE\nC F",
+        "explanation": "明域と暗域の境界Dは上層の強風軸の手掛かりになる。渦や縞状の雲の見た目だけから、熱帯低気圧や台風に影響するジェットと断定できない。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p06.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問8の原典 PDF 6頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問8・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正 ／ (d) 正",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤 ／ (d) 誤",
+          "オ": "(a) 誤 ／ (b) 正 ／ (c) 誤 ／ (d) 正"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "choiceExplanations": {
+          "ア": "(a)は誤。寒冷渦などでも渦状の明暗を示すため、三つの渦をいずれも熱帯起源とは判定できない。",
+          "イ": "(a)は誤。寒冷渦などでも渦状の明暗を示すため、三つの渦をいずれも熱帯起源とは判定できない。",
+          "ウ": "(c)は誤。水蒸気画像のE東側の明域を、上・中層雲だけからなる雲域とは特定できない。",
+          "エ": "明域と暗域の境界Dは上層の強風軸の手掛かりになる。渦や縞状の雲の見た目だけから、熱帯低気圧や台風に影響するジェットと断定できない。",
+          "オ": "(d)は誤。台風周辺の縞状上層雲だけでは、その台風の移動を左右するジェット気流を特定できない。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q08",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 8,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 6,
+            "assetId": "r64/question/senmon/p06.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p06.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q09",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 9,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "偏西風帯のジェット気流"
+        ],
+        "difficulty": 3,
+        "question": "北半球の偏⻄風帯におけるジェット気流について述べた次の文(a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 寒帯前線ジェット気流は、亜熱帯ジェット気流に比べて、一般に、風速が極大となる高度が低く、冬季に最も強くなる。\n(b) ジェット気流の風速が下流の方ほど大きくなっている領域では、ジェット気流は等圧面上で等高度線を高度の高い側から低い側に横切ることが多い。\n(c) ジェット気流の南北への蛇行が大きくなると、偏⻄風帯から低緯度側に切り離された上層の寒冷低気圧が形成されることがある。",
+        "explanation": "寒帯前線ジェットは亜熱帯ジェットより低い高度に現れ、冬に強まる。ジェット入口の加速と蛇行から推定できる現象も整理する。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p07.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問9の原典 PDF 7頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問9・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤"
+        },
+        "answer": "ア",
+        "officialAnswerNumber": "1",
+        "choiceExplanations": {
+          "ア": "寒帯前線ジェットは亜熱帯ジェットより低い高度に現れ、冬に強まる。ジェット入口の加速と蛇行から推定できる現象も整理する。",
+          "イ": "(b)は正。入口で流れが加速するには進行方向に気圧傾度力成分が必要で、等圧面上で高度の高い側から低い側へ横切る。",
+          "ウ": "(a)は正。寒帯前線ジェットの風速極大高度は比較的低く、南北の温度差が大きい冬に強まる。",
+          "エ": "(a)は正。寒帯前線ジェットの風速極大高度は比較的低く、南北の温度差が大きい冬に強まる。",
+          "オ": "(a)は正。寒帯前線ジェットの風速極大高度は比較的低く、南北の温度差が大きい冬に強まる。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q09",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 9,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/question/senmon/p07.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p07.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q10",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 10,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "台風の構造と移動"
+        ],
+        "difficulty": 3,
+        "question": "発達した台風の一般的な特徴について述べた次の文(a)〜(d)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 台風が速い速度で移動しているとき、進行方向の右側では、左側よりも下層の風速が大きい傾向がある。\n(b) 台風周辺の風を接線成分と動径成分に分け、接線成分の鉛直分布をみると、最も速度が大きいのは対流圏上層の圏界面に近い高度である。\n(c) 台風の眼の中には下降流があり、断熱圧縮により眼のまわりに比べて気温が高く、湿度は低くなっている。\n(d) 台風には、周囲にこれを流す大規模な流れがなければ、地球の自転の効果により南下する性質がある。",
+        "explanation": "進行右側では移動と循環の風が重なりやすく、眼の中は下降・断熱圧縮により暖かく乾く。下層で接線風が強く、ベータ効果による北西寄りの移動があり得る。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p07.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問10の原典 PDF 7頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問10・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正 ／ (d) 誤",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤 ／ (d) 誤",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤 ／ (d) 正"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "choiceExplanations": {
+          "ア": "(b)は誤。台風の接線風の最大は通常、圏界面付近ではなく対流圏下層にある。",
+          "イ": "進行右側では移動と循環の風が重なりやすく、眼の中は下降・断熱圧縮により暖かく乾く。下層で接線風が強く、ベータ効果による北西寄りの移動があり得る。",
+          "ウ": "(c)は正。眼内の空気は下降して断熱昇温し、相対湿度が低下する。",
+          "エ": "(a)は正。北半球の反時計回りの循環は進行方向右側で台風の移動による風と同じ向きに重なる。",
+          "オ": "(a)は正。北半球の反時計回りの循環は進行方向右側で台風の移動による風と同じ向きに重なる。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q10",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 10,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/question/senmon/p07.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p07.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q11",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 11,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "積乱雲の発達と維持"
+        ],
+        "difficulty": 3,
+        "question": "日本付近で発生する積乱雲について述べた次の文(a)〜(d)の下線部の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 積乱雲の成⻑期において雲が上方に発達していくとき、雲の内部は上昇流となっており、雲の中の温度はまわりより高くなっている。\n(b) 夏季に地表付近が高温となることにより発達する積乱雲では、降水過程に氷粒子が関わらない「暖かい雨」であることが多い。\n(c) 積乱雲からの降水粒子は落下する時に周囲の空気を引きずり降ろし、下降気流が生じる。落下途中に乾燥した気層があると降水粒子は蒸発し、空気が冷えて重くなり下向きの力が働くため、下降気流はより強化される。\n(d) マルチセル型あるいはスーパーセル型と呼ばれる積乱雲が数時間にわたって維持されるためには、環境場の風の鉛直シアーの存在が重要である。",
+        "explanation": "浮力による成長、降水による下降、乾燥層での蒸発冷却、鉛直シアーによる長寿命化を区別する。発達した積乱雲の降水には氷相も関わる。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p08.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問11の原典 PDF 8頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問11・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正 ／ (d) 正",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 正 ／ (d) 誤",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 誤 ／ (d) 誤"
+        },
+        "answer": "イ",
+        "officialAnswerNumber": "2",
+        "choiceExplanations": {
+          "ア": "(b)は誤。地面の加熱で発生した夏の積乱雲も氷点下に達し、氷粒子を伴う降水過程が働く。",
+          "イ": "浮力による成長、降水による下降、乾燥層での蒸発冷却、鉛直シアーによる長寿命化を区別する。発達した積乱雲の降水には氷相も関わる。",
+          "ウ": "(d)は正。鉛直シアーは上昇流と降水域を分けるなどして、組織化した対流の長寿命化を助ける。",
+          "エ": "(a)は正。成長期には周囲より暖かく浮力をもつ空気が雲内で上昇する。",
+          "オ": "(a)は正。成長期には周囲より暖かく浮力をもつ空気が雲内で上昇する。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q11",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 11,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/question/senmon/p08.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p08.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q12",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 12,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "予報の検証指標"
+        ],
+        "difficulty": 3,
+        "question": "ある民間気象会社が「日最大 1 時間降水量が 20mm 以上となる強い雨」の発生を予測するための指標（日最大 1 時間降水量と正の相関がある）を作成した。図は、夏のある10 日間における、翌日を対象とした指標の予測値と実況 （●：対象となる強い雨が発生、×：対象となる強い雨の発生なし）の経過を示したものである。この図について述べた次の文章の下線部(a)～(c)の正誤の組み合わせとして正しいものを、下記の①～⑤の中から 1つ選べ。ただし、空振り率、見逃し率は、全予報数に対する割合とする。\n図に示された 10 日間について、日最大 1 時間降水量が 20mm 以上となる強い雨が発生するか・しないかを、翌日を対象とした指標の予測値を判定に用いて予想することとし、判定基準を変更した場合の予想精度の変化について調べた。判定基準を指標の予測値 50 以上から 40 以上に変更した場合、変更前と比べて、スレットスコアは (a) 0.125 低くなり、空振り率は (b) 0.2 高くなる。また、見逃し率を下げることを期待するならば、判定基準を (c) 高くすればよい。\n100 90指 80 70標60 ＜実況＞の50 1時間降水量が20mm予 40 以上となる強い雨測 30 ● ： 発生値 20×： 発生なし10 0 1 2 3 4 5 6 7 8 9 10日にち",
+        "explanation": "判定基準を下げると発生の予測を増やすので、空振りが増える場合がある一方、見逃しは増えない。スレットスコアの分母には適中、空振り、見逃しを含める。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p09.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問12の原典 PDF 9頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問12・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "ウ": "(a) 正 ／ (b) 誤 ／ (c) 誤",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正",
+          "オ": "(a) 誤 ／ (b) 正 ／ (c) 誤"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "choiceExplanations": {
+          "ア": "(a)は誤。図の適中・空振り・見逃しをそれぞれ数えて適中／(適中＋空振り＋見逃し)を比較すると、低下幅は0.125にならない。",
+          "イ": "(a)は誤。図の適中・空振り・見逃しをそれぞれ数えて適中／(適中＋空振り＋見逃し)を比較すると、低下幅は0.125にならない。",
+          "ウ": "(a)は誤。図の適中・空振り・見逃しをそれぞれ数えて適中／(適中＋空振り＋見逃し)を比較すると、低下幅は0.125にならない。",
+          "エ": "(c)は誤。見逃しを減らすには、より多くの日を発生と判定できるよう閾値を下げる。",
+          "オ": "判定基準を下げると発生の予測を増やすので、空振りが増える場合がある一方、見逃しは増えない。スレットスコアの分母には適中、空振り、見逃しを含める。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false,
+        "isCalculation": true
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q12",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 12,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 9,
+            "assetId": "r64/question/senmon/p09.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p09.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q13",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 13,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "気温の予報と暑さの情報"
+        ],
+        "difficulty": 3,
+        "question": "気温や暑さに関する情報について述べた次の文(a)〜(d)の下線部の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 気象庁が発表している2週間気温予報では、 週間天気予報の先の2週目について、予報対象地域の日毎(8 日先から 14 日先)の日平均気温の階級を予報している。\n(b) 気象庁が発表している高温に関する早期天候情報は、その時期としては 10 年に 1 度程度しか起きないような著しい高温となる可能性がいつもより高まっているときに、6日前までに注意を呼びかける情報であり、5日間平均気温の予想に基づいて発表される。\n(c) 気象庁が発表している週間天気予報の 2 日目から 7 日目の最高気温・最低気温の予想値には、気温の予測範囲が示されており、実況の気温がこの範囲に入る確率はおよそ 80％である。\n(d) 環境省と気象庁が連携して熱中症への注意喚起を行う熱中症警戒アラートは、前日 17 時及び当日 5 時に、最新の予測値を基に対象地域で最高気温が基準値（一部地域を除き 35℃）以上になることが予測される場合に、発表される。",
+        "explanation": "2週目の気温は5日間平均で扱う。早期天候情報は著しい高温などの可能性を事前に知らせ、熱中症警戒アラートは暑さ指数を基準とする。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p10.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問13の原典 PDF 10頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問13・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 誤 ／ (d) 誤",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 正 ／ (d) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 正 ／ (d) 正"
+        },
+        "answer": "エ",
+        "officialAnswerNumber": "4",
+        "choiceExplanations": {
+          "ア": "(a)は誤。2週間気温予報の2週目は日単位で表示しても、対象は各日を中心にした5日間平均気温である。",
+          "イ": "(a)は誤。2週間気温予報の2週目は日単位で表示しても、対象は各日を中心にした5日間平均気温である。",
+          "ウ": "(d)は誤。アラートの基準は日最高気温35℃ではなく、暑さ指数WBGTの予測値である。",
+          "エ": "2週目の気温は5日間平均で扱う。早期天候情報は著しい高温などの可能性を事前に知らせ、熱中症警戒アラートは暑さ指数を基準とする。",
+          "オ": "(b)は正。高温に関する早期天候情報は著しい高温となる可能性が高いとき、5日間平均を基に6日前までに注意を呼びかける。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q13",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 13,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 10,
+            "assetId": "r64/question/senmon/p10.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p10.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q14",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 14,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "台風に伴う災害"
+        ],
+        "difficulty": 3,
+        "question": "台風によって発生する災害に関連する事項について述べた次の文(a)〜(c)の正誤の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\n(a) 台風に伴う強い風により、海水の飛沫が陸上の植物や送電施設に付着して塩害が発生することがある。このとき、一般に、降水量が多いほど塩害の被害も大きくなる。\n(b) 気象庁では、高潮による災害が発生するおそれがある場合には、天文潮位からの偏差を発表基準として高潮警報・注意報を発表している。\n(c) 台風が温帯低気圧に変わる過程では、中心から離れた地域で風が強くなったり、強風域が広がったりすることがある。",
+        "explanation": "降雨は付着した塩分を洗い流すことがあり、高潮の発表基準は潮位である。温帯低気圧化では風の強い範囲が広がることがある。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p10.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問14の原典 PDF 10頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問14・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 正 ／ (b) 誤 ／ (c) 正",
+          "イ": "(a) 正 ／ (b) 誤 ／ (c) 誤",
+          "ウ": "(a) 誤 ／ (b) 正 ／ (c) 正",
+          "エ": "(a) 誤 ／ (b) 正 ／ (c) 誤",
+          "オ": "(a) 誤 ／ (b) 誤 ／ (c) 正"
+        },
+        "answer": "オ",
+        "officialAnswerNumber": "5",
+        "choiceExplanations": {
+          "ア": "(a)は誤。雨は植物などに付いた塩分を洗い流すため、一般に少雨のほうが塩害が大きくなりやすい。",
+          "イ": "(a)は誤。雨は植物などに付いた塩分を洗い流すため、一般に少雨のほうが塩害が大きくなりやすい。",
+          "ウ": "(b)は誤。高潮警報・注意報の基準は予想潮位で、天文潮位からの偏差そのものではない。",
+          "エ": "(b)は誤。高潮警報・注意報の基準は予想潮位で、天文潮位からの偏差そのものではない。",
+          "オ": "降雨は付着した塩分を洗い流すことがあり、高潮の発表基準は潮位である。温帯低気圧化では風の強い範囲が広がることがある。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q14",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 14,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 10,
+            "assetId": "r64/question/senmon/p10.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p10.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-senmon-q15",
+        "exam": "kisho",
+        "session": "senmon",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 15,
+        "type": "multiple-choice",
+        "category": "学科専門",
+        "topicTags": [
+          "ENSOとインド洋"
+        ],
+        "difficulty": 3,
+        "question": "図 A は、エルニーニョ現象およびラニーニャ現象が発生していない平常時の太平洋とインド洋の熱帯域の海洋の東⻄断面と海上風の状態を示した模式図である。一方、図 Bは、エルニーニョ現象またはラニーニャ現象のいずれかが発生している時の同様の模式図である。これらの図から読み取ることができる大気と海洋の特徴について述べた次の文章の空欄(a)〜(d)に入る語句の組み合わせとして正しいものを、下記の①〜⑤の中から 1 つ選べ。\nインド洋赤道域ではインドモンスーンの影響で季節によって風向が変わるが、平常時には図 A に示されるように、平均的には弱い⻄風が吹いている。このため、インド洋熱帯域の (a) では海面下百数十メートルまでの表層に、暖かい海水がやや厚めに分布している。一方、図 B に示されるように、太平洋で (b) が発生すると、インド洋赤道域では弱い東風に転じ、 インド洋熱帯域の (a) にやや厚く蓄積されていた暖かい海水は、(c)に広がる。インド洋熱帯域の海面水温は、エルニーニョ監視海域の海面水温の上昇または低下に対して、３か月程度 (d) 変化し、夏季に⻄日本が低温傾向になるなど日本の天候へ影響を与える場合がある。\n図 A 平常時の海洋の東⻄断面と海上風の状態を示す模式図\n図 B エルニーニョ現象またはラニーニャ現象のいずれかが発生している時の海洋の東⻄断面と海上風の状態を示す模式図",
+        "explanation": "平常時の弱い西風はインド洋東部に暖水を寄せる。エルニーニョ時は弱い東風で暖水が西部にも広がり、インド洋の水温変化は約3か月遅れる。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/senmon/p11.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 学科専門 問15の原典 PDF 11頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 学科専門 問15・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "choices": {
+          "ア": "(a) 東部 ／ (b) エルニーニョ現象 ／ (c) ⻄部 ／ (d) 早く",
+          "イ": "(a) 東部 ／ (b) ラニーニャ現象 ／ (c) ⻄部 ／ (d) 遅れて",
+          "ウ": "(a) 東部 ／ (b) エルニーニョ現象 ／ (c) ⻄部 ／ (d) 遅れて",
+          "エ": "(a) ⻄部 ／ (b) ラニーニャ現象 ／ (c) 東部 ／ (d) 遅れて",
+          "オ": "(a) ⻄部 ／ (b) エルニーニョ現象 ／ (c) 東部 ／ (d) 早く"
+        },
+        "answer": "ウ",
+        "officialAnswerNumber": "3",
+        "choiceExplanations": {
+          "ア": "暖水は平常時に東部に厚く分布するが、水温応答は太平洋に先行せず遅れる。",
+          "イ": "図Bは太平洋の暖水が東に広がるエルニーニョ現象を表す。",
+          "ウ": "平常時は東部、エルニーニョ時は西部にも暖水が広がり、インド洋は約3か月遅れて応答する。",
+          "エ": "平常時の弱い西風は暖水を西部でなく東部に寄せ、図Bもラニーニャではない。",
+          "オ": "平常時の暖水の厚い側は東部で、インド洋の応答は太平洋より遅い。"
+        },
+        "explanationCoverage": "full",
+        "needsReview": false
+      },
+      "source": {
+        "questionId": "kisho-64-senmon-q15",
+        "round": 64,
+        "session": "senmon",
+        "qNumber": 15,
+        "questionPages": [
+          {
+            "sourcePdf": "gakka(senmon_mondai).pdf",
+            "physicalPage": 11,
+            "assetId": "r64/question/senmon/p11.png",
+            "preparedPath": "/images/kisho/r64/question/senmon/p11.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 1,
+            "assetId": "r64/official-answer/answers/p01.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+            "private": true
+          }
+        ],
+        "figurePages": [],
+        "drawingAnswers": [],
+        "imageAssetIds": [],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": []
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm1-q01",
+        "exam": "kisho",
+        "session": "pm1",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 1,
+        "type": "descriptive",
+        "category": "実技1",
+        "topicTags": [
+          "台風の実況と温帯低気圧化"
+        ],
+        "difficulty": 3,
+        "question": "図 1 は地上天気図、図 2 は気象衛星赤外画像、図 3(上)は 500hPa 解析図、図 3(下)は 850hPa と 700hPa の解析図で、時刻はいずれも 8 日 21 時である。\nこれらを用いて、以下の問いに答えよ。\n(1) 8 日 21 時の日本付近の気象概況について述べた次の文章の空欄(①)〜(⑧)に入る適切な語句または数値を答えよ。ただし、①は台風の強さを、③は 16 方位、⑤は漢字で、⑥は下の枠内から 1 つ選び答えよ。なお、①については、台風の強さを表現しない場合は「−」と答えよ。\n図 1 によると、九州南部には中心気圧 988hPa の(①)台風第 AA 号があって、(②)ノットの速さで(③)に進んでいる。この台風は今後 24 時間以内に温帯低気圧に変わる見込みで、 最大風速は今後 24 時間以内に(④)ノットに達すると予想され、(⑤)警報が発表されている。一方、関東の東にも中心気圧980hPa の台風第 BB 号がある。\n台風第 AA 号に近い鹿児島では(⑥)しゅう雨を観測し、台風第 AA 号の北⻄に位置するチェジュ島の天気は(⑦)となっている。また、名瀬の現在天気によると、名瀬では観測前(⑧)時間以内に雨があったが観測時には止んでいる。\n⑥ 弱い 並又は強い 激しい\n(2) 図 2 の気象衛星赤外画像を用いて、以下の問いに答えよ。\n① 8 日 21 時には、200hPa〜300hPa 付近を流れるジェット気流が朝鮮半島付近から千島近海にかけて解析されている。雲の分布から、このジェット気流の東経 130°線上での位置を推定し、その緯度を 1°刻みで答えよ。そして、何を根拠にその位置を推定したかを 30 字程度で述べよ。\n② 雲の分布から推定される上層トラフの位置は｛ ボッ海付近、 朝鮮半島⻄岸付近、朝鮮半島東岸付近、 日本海中部 ｝のうちどれか答えよ。\n(3) 台風第 AA 号は今後 24 時間以内に温帯低気圧に変わる見込みである。図 1〜3 を用いて、台風中心から概ね 400km の範囲内における気象衛星赤外画像、700hPa 鉛直流、850hPa気温の特徴のうち、 典型的な台風の構造と異なる点について、 数値は用いずに、それぞれ 35 字、45 字、35 字程度で述べよ。ただし、位置を記述する場合は、台風中心から概ね 100km の範囲内を「中心付近」 、それ以外は台風中心からの方角(8 方位)を基に「北側」等とし、広がりがある場合は「北〜南東側」等とせよ。\n(4) 図 1 と図 3 を用いて、台風第 AA 号に対応する 500hPa 面の渦度の極大値を正負の符号と単位を付して答えよ。また、地上の台風中心から見たこの 500hPa 面の渦度の極大点の方向を 8 方位で答えよ。ただし、方向は台風中心からの距離が 100km 未満の場合は「真上」と答えよ。",
+        "explanation": "(1) 地上天気図の台風情報、海上警報、観測点の記号を順に読む。\n(2) 強風軸の手掛かりになる上層雲の筋と、画像上の雲域の位置を区別して読む。\n(3) 雲、鉛直流、気温の分布が中心の周りで対称かを調べると、温帯低気圧化に伴う前線性の構造を捉えられる。\n(4) 地上天気図で台風中心を求め、500 hPa渦度図の極大値と中心からの方向を読む。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm1/p03.png",
+          "/images/kisho/r64/figure/pm1/p07.png",
+          "/images/kisho/r64/figure/pm1/p08.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技1 問1の原典 PDF 3頁",
+          "第64回 気象予報士 実技1 問1の原典 PDF 7頁",
+          "第64回 気象予報士 実技1 問1の原典 PDF 8頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技1 問1・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) ①－、②21、③東北東、④50、⑤海上暴風、⑥弱い、⑦晴れ、⑧1。\n(2) ①北緯43°（42°、44°も可）。雲域北縁の細長い筋状の上層雲（Ciストリーク）が根拠。②朝鮮半島西岸付近。\n(3) 赤外画像では発達した対流雲が中心付近から北～東側に偏る。700 hPaの上昇流極大は北東側で、南西～北西側は主に下降流。850 hPaでは高温域が東側、低温域が西～北側にある。\n(4) ＋195×10⁻⁶ s⁻¹、北西。",
+        "modelAnswer": "(1) ①－、②21、③東北東、④50、⑤海上暴風、⑥弱い、⑦晴れ、⑧1。\n(2) ①北緯43°（42°、44°も可）。雲域北縁の細長い筋状の上層雲（Ciストリーク）が根拠。②朝鮮半島西岸付近。\n(3) 赤外画像では発達した対流雲が中心付近から北～東側に偏る。700 hPaの上昇流極大は北東側で、南西～北西側は主に下降流。850 hPaでは高温域が東側、低温域が西～北側にある。\n(4) ＋195×10⁻⁶ s⁻¹、北西。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p02.png",
+          "/images/kisho/r64/official-answer/answers/p03.png"
+        ],
+        "answerImageAltTexts": [
+          "実技1 問1の公式解答例 PDF 2頁",
+          "実技1 問1の公式解答例 PDF 3頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm1-q01",
+        "round": 64,
+        "session": "pm1",
+        "qNumber": 1,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/question/pm1/p03.png",
+            "preparedPath": "/images/kisho/r64/question/pm1/p03.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 2,
+            "assetId": "r64/official-answer/answers/p02.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p02.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/official-answer/answers/p03.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/figure/pm1/p07.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p07.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/figure/pm1/p08.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p08.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm1/p07.png",
+          "r64/figure/pm1/p08.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(1)",
+            "officialAnswer": "①－、②21、③東北東、④50、⑤海上暴風、⑥弱い、⑦晴れ、⑧1。",
+            "explanation": "地上天気図の台風情報、海上警報、観測点の記号を順に読む。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(1)",
+            "officialAnswer": "①－、②21、③東北東、④50、⑤海上暴風、⑥弱い、⑦晴れ、⑧1。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 2,
+                "assetId": "r64/official-answer/answers/p02.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p02.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(2)",
+            "officialAnswer": "①北緯43°（42°、44°も可）。雲域北縁の細長い筋状の上層雲（Ciストリーク）が根拠。②朝鮮半島西岸付近。",
+            "explanation": "強風軸の手掛かりになる上層雲の筋と、画像上の雲域の位置を区別して読む。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(2)",
+            "officialAnswer": "①北緯43°（42°、44°も可）。雲域北縁の細長い筋状の上層雲（Ciストリーク）が根拠。②朝鮮半島西岸付近。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 2,
+                "assetId": "r64/official-answer/answers/p02.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p02.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(3)",
+            "officialAnswer": "赤外画像では発達した対流雲が中心付近から北～東側に偏る。700 hPaの上昇流極大は北東側で、南西～北西側は主に下降流。850 hPaでは高温域が東側、低温域が西～北側にある。",
+            "explanation": "雲、鉛直流、気温の分布が中心の周りで対称かを調べると、温帯低気圧化に伴う前線性の構造を捉えられる。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(3)",
+            "officialAnswer": "赤外画像では発達した対流雲が中心付近から北～東側に偏る。700 hPaの上昇流極大は北東側で、南西～北西側は主に下降流。850 hPaでは高温域が東側、低温域が西～北側にある。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 2,
+                "assetId": "r64/official-answer/answers/p02.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p02.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(4)",
+            "officialAnswer": "＋195×10⁻⁶ s⁻¹、北西。",
+            "explanation": "地上天気図で台風中心を求め、500 hPa渦度図の極大値と中心からの方向を読む。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q01",
+            "field": "(4)",
+            "officialAnswer": "＋195×10⁻⁶ s⁻¹、北西。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 3,
+                "assetId": "r64/official-answer/answers/p03.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        }
+      ]
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm1-q02",
+        "exam": "kisho",
+        "session": "pm1",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 2,
+        "type": "descriptive",
+        "category": "実技1",
+        "topicTags": [
+          "名瀬の安定度と雲"
+        ],
+        "difficulty": 3,
+        "question": "図 4 は 8 日 21 時の名瀬の状態曲線である。この図を用いて、名瀬の上空の大気状態に関する以下の問いに答えよ。\n(1) 図 4 で、最も下層にある逆転層の下端の高度を 10hPa 刻みで答えよ。\n(2) 図 4 の気温の鉛直分布を基に、(1)の逆転層の下端から 970hPa までの気層の成層状態を簡潔に答え、そのように判断した理由を 35 字程度で述べよ。\n(3) 図 4 で、970hPa にある空気塊が断熱的に上昇した時の持ち上げ凝結高度と、さらに自由対流高度を超えて上昇した時の浮力がなくなる高度をそれぞれ 10hPa 刻みで答えよ。また、上昇の過程で形成される可能性が最も高い雲の種類を十種雲形で答えよ。",
+        "explanation": "(1) 下から温度曲線をたどり、気温が高度とともに上昇し始める最下層の位置を読む。\n(2) 未飽和の空気塊と飽和した空気塊では断熱上昇時の気温減率が異なる。環境の減率が両者の間にある層を条件付き不安定という。\n(3) 乾燥断熱線と混合比一定線の交点が凝結高度となる。そこから湿潤断熱線をたどり、環境の気温曲線に再び交わる高度を読む。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm1/p04.png",
+          "/images/kisho/r64/figure/pm1/p09.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技1 問2の原典 PDF 4頁",
+          "第64回 気象予報士 実技1 問2の原典 PDF 9頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技1 問2・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) 860 hPa。\n(2) 条件付き不安定。気温減率は乾燥断熱減率より小さく、湿潤断熱減率より大きい。\n(3) 持ち上げ凝結高度950 hPa、浮力がなくなる高度850 hPa（860 hPaも可）、積雲（層積雲も可）。",
+        "modelAnswer": "(1) 860 hPa。\n(2) 条件付き不安定。気温減率は乾燥断熱減率より小さく、湿潤断熱減率より大きい。\n(3) 持ち上げ凝結高度950 hPa、浮力がなくなる高度850 hPa（860 hPaも可）、積雲（層積雲も可）。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p03.png"
+        ],
+        "answerImageAltTexts": [
+          "実技1 問2の公式解答例 PDF 3頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm1-q02",
+        "round": 64,
+        "session": "pm1",
+        "qNumber": 2,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/pm1/p04.png",
+            "preparedPath": "/images/kisho/r64/question/pm1/p04.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/official-answer/answers/p03.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 9,
+            "assetId": "r64/figure/pm1/p09.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p09.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm1/p09.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q02",
+            "field": "(1)",
+            "officialAnswer": "860 hPa。",
+            "explanation": "下から温度曲線をたどり、気温が高度とともに上昇し始める最下層の位置を読む。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q02",
+            "field": "(1)",
+            "officialAnswer": "860 hPa。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 3,
+                "assetId": "r64/official-answer/answers/p03.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q02",
+            "field": "(2)",
+            "officialAnswer": "条件付き不安定。気温減率は乾燥断熱減率より小さく、湿潤断熱減率より大きい。",
+            "explanation": "未飽和の空気塊と飽和した空気塊では断熱上昇時の気温減率が異なる。環境の減率が両者の間にある層を条件付き不安定という。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q02",
+            "field": "(2)",
+            "officialAnswer": "条件付き不安定。気温減率は乾燥断熱減率より小さく、湿潤断熱減率より大きい。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 3,
+                "assetId": "r64/official-answer/answers/p03.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q02",
+            "field": "(3)",
+            "officialAnswer": "持ち上げ凝結高度950 hPa、浮力がなくなる高度850 hPa（860 hPaも可）、積雲（層積雲も可）。",
+            "explanation": "乾燥断熱線と混合比一定線の交点が凝結高度となる。そこから湿潤断熱線をたどり、環境の気温曲線に再び交わる高度を読む。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q02",
+            "field": "(3)",
+            "officialAnswer": "持ち上げ凝結高度950 hPa、浮力がなくなる高度850 hPa（860 hPaも可）、積雲（層積雲も可）。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 3,
+                "assetId": "r64/official-answer/answers/p03.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        }
+      ]
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm1-q03",
+        "exam": "kisho",
+        "session": "pm1",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 3,
+        "type": "descriptive",
+        "category": "実技1",
+        "topicTags": [
+          "低気圧の移動と降水・強風"
+        ],
+        "difficulty": 3,
+        "question": "図 5 は⻄日本付近の地形図、図 6〜9 は 500hPa、700hPa、850hPa、および地上の12、24 時間予想図で、初期時刻はすべて 8 日 21 時(12UTC)である。これらと図 1 を用いて、以下の問いに答えよ。\n(1) 図 1 および図 6(右下)，図 8(右下)を用いて、8 日 21 時に九州南部にある台風第 AA号の 24 時間後までの移動に関する予想をまとめた次表の空欄(①)〜(④)に入る語句または整数値を答えよ。\n予想期間 項目 移動の方向(16 方位) 移動の速さ( 5 ノット刻み)初期時刻〜12 時間後 (&①&) (&②&)ノット12 時間後〜24 時間後 (&③&) (&④&)ノット\n(2) 図 6(右下)によると、九州北部から中国地方、日本海⻄部にかけて、前 12 時間降水量が 50 ミリを超えて最大で 141 ミリに達する大雨が予想されている。図 5〜7 を用いて、このことに関する以下の問いに答えよ。\n① 図 5〜7 によると、9 日 9 時の時点で降水強度が最も強いと予測される地域は、｛ 九州北部の陸上、 中国地方の陸上、 対馬海峡、 山陰沖 ｝のうちどれか答えよ。\n② ①の地域で降水強度が最も強いと予測する根拠として適切なものを、下の枠内からすべて選び、記号で答えよ。\n㋐ 500hPa の寒冷渦の影響で大気の状態が不安定となるため。㋑ 700hPa で強い上昇流となるため。 ㋒ 850hPa で風が収束するため。㋓ 地形の影響を受けるため。 ㋔ 台風の中心が位置するため。\n③ 12 時間降水量が 141 ミリに達するような大雨が陸上に予測される場合、3 種類のキキクル(警報の危険度分布)の監視が重要である。それぞれのキキクルについて、対象とする災害名と危険度の判定に用いる指数名を答えよ。\n(3) 8 日 21 時に九州南部にある台風第 AA 号は 24 時間後までに日本海で温帯低気圧に変わる見込みである。図 6〜9 を用いて以下の問いに答えよ。\n① 図 9 によると、700hPa では、九州の⻄の海上から関東の東の海上にかけて湿数が6℃以上の領域がのびている。この領域は 700hPa 鉛直流および 850hPa 相当温位の概ねどのような領域に対応しているか簡潔に答えよ。\n② ①の700hPa で九州の⻄の海上から関東の東の海上にかけてのびる湿数6℃以上の領域は、下の枠内に示す低気圧に伴う 3 つの流れのうち、どれに対応すると考えられるか記号で答えよ。\n㋐ 温暖コンベヤーベルト(WCB) ㋑ 寒冷コンベヤーベルト(CCB)㋒ 乾燥貫入(ドライイントルージョン)\n③ 24 時間後の地上低気圧に伴う地上前線を、解答図に前線記号を用いて記入せよ。ただし、前線は解答図の枠線までのびているものとする。\n④ 24 時間後の地上低気圧に伴う強風の範囲の 12 時間後からの変化について、それをもたらした気圧分布の変化にも言及して、45 字程度で述べよ。",
+        "explanation": "(1) 各予想時刻の中心位置の差から進行方位を求め、移動距離を経過時間で割ってノットで表す。\n(2) 前12時間降水量の極大域を読み、災害の種類ごとに土壌中の水分、地表への雨水のたまりやすさ、流域からの流入を表す指数を対応させる。\n(3) ①② 地上低気圧周辺を鉛直流と相当温位の両方で調べ、下降流と低相当温位空気の位置を対応させる。\n(3) ③ 24時間予想図の低気圧中心、相当温位の勾配と風向の変化を重ねて、前線の位置を決める。\n(3) ④ 等圧線が密になる場所を閉塞前線および低気圧中心に対する位置で答える。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm1/p04.png",
+          "/images/kisho/r64/figure/pm1/p07.png",
+          "/images/kisho/r64/figure/pm1/p09.png",
+          "/images/kisho/r64/figure/pm1/p10.png",
+          "/images/kisho/r64/figure/pm1/p11.png",
+          "/images/kisho/r64/figure/pm1/p12.png",
+          "/images/kisho/r64/figure/pm1/p13.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技1 問3の原典 PDF 4頁",
+          "第64回 気象予報士 実技1 問3の原典 PDF 7頁",
+          "第64回 気象予報士 実技1 問3の原典 PDF 9頁",
+          "第64回 気象予報士 実技1 問3の原典 PDF 10頁",
+          "第64回 気象予報士 実技1 問3の原典 PDF 11頁",
+          "第64回 気象予報士 実技1 問3の原典 PDF 12頁",
+          "第64回 気象予報士 実技1 問3の原典 PDF 13頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技1 問3・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) ①北北東、②20ノット（25ノットも可）、③北東、④15ノット。\n(2) ①山陰沖。②㋑、㋒。③土砂災害と土壌雨量指数、浸水害と表面雨量指数、洪水災害と流域雨量指数・表面雨量指数。\n(3) ①② ①700 hPaは下降流域、850 hPaは相対的な低相当温位域（低相当温位の移流域）。②㋒。\n(3) ③ PDF4頁の公式作図例を参照。\n(3) ④ 閉塞前線の北側の気圧傾度が強まり、地上低気圧の北東側に強風域が広がる。",
+        "modelAnswer": "(1) ①北北東、②20ノット（25ノットも可）、③北東、④15ノット。\n(2) ①山陰沖。②㋑、㋒。③土砂災害と土壌雨量指数、浸水害と表面雨量指数、洪水災害と流域雨量指数・表面雨量指数。\n(3) ①② ①700 hPaは下降流域、850 hPaは相対的な低相当温位域（低相当温位の移流域）。②㋒。\n(3) ③ PDF4頁の公式作図例を参照。\n(3) ④ 閉塞前線の北側の気圧傾度が強まり、地上低気圧の北東側に強風域が広がる。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p03.png",
+          "/images/kisho/r64/official-answer/answers/p04.png"
+        ],
+        "answerImageAltTexts": [
+          "実技1 問3の公式解答例 PDF 3頁",
+          "実技1 問3の公式解答例 PDF 4頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm1-q03",
+        "round": 64,
+        "session": "pm1",
+        "qNumber": 3,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/pm1/p04.png",
+            "preparedPath": "/images/kisho/r64/question/pm1/p04.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/official-answer/answers/p03.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/official-answer/answers/p04.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p04.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/figure/pm1/p07.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p07.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 9,
+            "assetId": "r64/figure/pm1/p09.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p09.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 10,
+            "assetId": "r64/figure/pm1/p10.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p10.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 11,
+            "assetId": "r64/figure/pm1/p11.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p11.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 12,
+            "assetId": "r64/figure/pm1/p12.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p12.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 13,
+            "assetId": "r64/figure/pm1/p13.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p13.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm1/p07.png",
+          "r64/figure/pm1/p09.png",
+          "r64/figure/pm1/p10.png",
+          "r64/figure/pm1/p11.png",
+          "r64/figure/pm1/p12.png",
+          "r64/figure/pm1/p13.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(1)",
+            "officialAnswer": "①北北東、②20ノット（25ノットも可）、③北東、④15ノット。",
+            "explanation": "各予想時刻の中心位置の差から進行方位を求め、移動距離を経過時間で割ってノットで表す。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(1)",
+            "officialAnswer": "①北北東、②20ノット（25ノットも可）、③北東、④15ノット。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 3,
+                "assetId": "r64/official-answer/answers/p03.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(2)",
+            "officialAnswer": "①山陰沖。②㋑、㋒。③土砂災害と土壌雨量指数、浸水害と表面雨量指数、洪水災害と流域雨量指数・表面雨量指数。",
+            "explanation": "前12時間降水量の極大域を読み、災害の種類ごとに土壌中の水分、地表への雨水のたまりやすさ、流域からの流入を表す指数を対応させる。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(2)",
+            "officialAnswer": "①山陰沖。②㋑、㋒。③土砂災害と土壌雨量指数、浸水害と表面雨量指数、洪水災害と流域雨量指数・表面雨量指数。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 3,
+                "assetId": "r64/official-answer/answers/p03.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(3) ①②",
+            "officialAnswer": "①700 hPaは下降流域、850 hPaは相対的な低相当温位域（低相当温位の移流域）。②㋒。",
+            "explanation": "地上低気圧周辺を鉛直流と相当温位の両方で調べ、下降流と低相当温位空気の位置を対応させる。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(3) ①②",
+            "officialAnswer": "①700 hPaは下降流域、850 hPaは相対的な低相当温位域（低相当温位の移流域）。②㋒。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 3,
+                "assetId": "r64/official-answer/answers/p03.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(3) ③",
+            "officialAnswer": "PDF4頁の公式作図例を参照。",
+            "explanation": "24時間予想図の低気圧中心、相当温位の勾配と風向の変化を重ねて、前線の位置を決める。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(3) ③",
+            "officialAnswer": "PDF4頁の公式作図例を参照。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 4,
+                "assetId": "r64/official-answer/answers/p04.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p04.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": "r64/official-answer/answers/p04.png",
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(3) ④",
+            "officialAnswer": "閉塞前線の北側の気圧傾度が強まり、地上低気圧の北東側に強風域が広がる。",
+            "explanation": "等圧線が密になる場所を閉塞前線および低気圧中心に対する位置で答える。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q03",
+            "field": "(3) ④",
+            "officialAnswer": "閉塞前線の北側の気圧傾度が強まり、地上低気圧の北東側に強風域が広がる。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 4,
+                "assetId": "r64/official-answer/answers/p04.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p04.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        }
+      ]
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm1-q04",
+        "exam": "kisho",
+        "session": "pm1",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 4,
+        "type": "descriptive",
+        "category": "実技1",
+        "topicTags": [
+          "シアーラインと対流"
+        ],
+        "difficulty": 3,
+        "question": "図 10 は 9 日 9 時の地上実況図、図 11 は同時刻のレーダーエコー合成図、図 12 は斐川(出雲空港)と松江における風と気温の時系列図、図 13 はメソモデルによる鉛直断面図である(断面の位置は図 10(下)の線分 AB)。図 10(下)には、隠岐諸島から島根県東部にかけてのびるシアーラインを灰色の太線で示してある。このシアーラインが形状を変えず、一定の速さで東へ進んだものとして、以下の問いに答えよ。\n(1) 図 10(上)には等温線が 2℃間隔で記入されているが、26℃の等温線は未記入である。解答図に 26℃の等温線を 1 本の実線で記入せよ。ただし、記入する 26℃の等温線の両端は、解答図の枠線または斜線域の境界までのびているものとする。\n(2) 図 10〜12 を用いて、シアーラインに関する以下の問いに答えよ。\n① シアーライン付近におけるエコー分布の特徴について、降水強度 20mm/h 以上のエコーに着目して、シアーラインとの位置関係を含めて 40 字程度で述べよ。\n② 山陰地方の沿岸部付近における、シアーラインを挟んだ地上風と地上気温の分布の特徴について、それぞれ 45 字、40 字程度で述べよ。\n③ 図 12 を用いて、斐川および松江をシアーラインが通過したと判断できる最初の時刻を10分刻みで答えよ。 また、その時刻を基にシアーラインの東に進む速さを1km/h刻みで答えよ。ただし、シアーラインは陸上では南北走向とみなし、斐川と松江の東⻄方向の距離は 15km とする。\n④ シアーライン周辺のレーダーエコーが、 シアーラインとの位置関係を保ったまま、形状と強さも変えずに東進したとする。その場合、境港に降水強度 20mm/h 以上のエコーが到達する時刻を 30 分刻みで答えよ。ただし、シアーラインの東に進む速さは③によって求められる速さを用い、境港の位置は図 11 に示された位置とする。\n(3) 図 13 を用いてシアーライン周辺の気象状況について説明した次の文章の空欄(①)〜(⑩)に入る適切な語句または数値を答えよ。ただし、①②③④⑤⑥⑧は漢字で、\n⑦は 50 刻みの整数で、⑨⑩は下の枠内から最も適切なものを 1 つ選び答えよ。\n図 13 によると、シアーラインは水平方向の相当温位傾度が大きい領域の東縁にあり、東側で相当温位が相対的に(①)い。相当温位傾度が大きい領域は⻄に傾きながら上空までのびており、 その東縁付近で強い(②)流となっている。相当温位傾度が大きい領域は、その周辺を含めて湿数が比較的一様であることから、(③)傾度も大きいと考えられる。そして、図 13 の風を地衡風とみなすと、800hPa〜950hPaの気層の温度移流は、シアーラインの東側は(④)移流、⻄側は相当温位傾度が大きい領域を除き(⑤)移流である。\n図 13 によると、対流不安定な気層はシアーラインの両側に見られるが、その厚さは東側の方が相対的に(⑥)い。対流不安定な気層の厚さを東経 134°と東経 132°で比較すると、その差は(⑦)hPa におよぶ。また、相当温位傾度が大きい領域の東縁付近の強い(②)流域では、 相当温位が周囲より(⑧)く、鉛直方向の相当温位の勾配が相対的に小さい。これは(⑨)によって大気が(⑩)したためと考えられる。\n⑨⑩ 安定 混合 蒸発 対流 沈降 乱流 融解\n(4) 図 10〜12 に示されるシアーラインと周辺の気象状況の関係は変化しないとすると、境港付近の陸上で 9 日昼前から昼過ぎにかけて警戒すべき、 気象警報の対象となる災害をもたらす雨以外の大気現象を、シアーラインとの関係を含めて 25 字程度で答えよ。ただし、現象の強さを記述する場合は予報用語を用いて答えよ。",
+        "explanation": "(1) 地点の気温を内挿し、同じ温度の位置を滑らかにつないで等温線を描く。\n(2) ①② エコー、風向の変化、気温勾配を図10と図11で照合し、シアーラインのどちら側かを明示する。\n(2) ③④ 時系列上の風向・気温の変化で通過を特定し、地点間距離と通過時刻差から移動の速さを求める。\n(3) 鉛直断面の相当温位の勾配と風から、上昇域、暖気・寒気の配置、対流による混合を対応させる。\n(4) 通過前後の風向と風速を比較して、通過後に警戒すべき風を選ぶ。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm1/p05.png",
+          "/images/kisho/r64/question/pm1/p06.png",
+          "/images/kisho/r64/figure/pm1/p14.png",
+          "/images/kisho/r64/figure/pm1/p15.png",
+          "/images/kisho/r64/figure/pm1/p16.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技1 問4の原典 PDF 5頁",
+          "第64回 気象予報士 実技1 問4の原典 PDF 6頁",
+          "第64回 気象予報士 実技1 問4の原典 PDF 14頁",
+          "第64回 気象予報士 実技1 問4の原典 PDF 15頁",
+          "第64回 気象予報士 実技1 問4の原典 PDF 16頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技1 問4・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) PDF4頁の公式作図例を参照。\n(2) ①② ①シアーラインの西側に沿って20 mm/h以上のエコーが分布。②東側は東寄り、西側は北寄りの風で収束する。東側が高温で、線付近の温度傾度が大きい。\n(2) ③④ ③斐川8時30分、松江9時50分、11 km/h。④11時30分。\n(3) ①高、②上昇、③温度（温位）、④暖気、⑤寒気、⑥厚、⑦300、⑧高、⑨対流、⑩混合。\n(4) シアーライン通過後の北寄りの非常に強い風（暴風）。",
+        "modelAnswer": "(1) PDF4頁の公式作図例を参照。\n(2) ①② ①シアーラインの西側に沿って20 mm/h以上のエコーが分布。②東側は東寄り、西側は北寄りの風で収束する。東側が高温で、線付近の温度傾度が大きい。\n(2) ③④ ③斐川8時30分、松江9時50分、11 km/h。④11時30分。\n(3) ①高、②上昇、③温度（温位）、④暖気、⑤寒気、⑥厚、⑦300、⑧高、⑨対流、⑩混合。\n(4) シアーライン通過後の北寄りの非常に強い風（暴風）。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p04.png",
+          "/images/kisho/r64/official-answer/answers/p05.png"
+        ],
+        "answerImageAltTexts": [
+          "実技1 問4の公式解答例 PDF 4頁",
+          "実技1 問4の公式解答例 PDF 5頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm1-q04",
+        "round": 64,
+        "session": "pm1",
+        "qNumber": 4,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 5,
+            "assetId": "r64/question/pm1/p05.png",
+            "preparedPath": "/images/kisho/r64/question/pm1/p05.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 6,
+            "assetId": "r64/question/pm1/p06.png",
+            "preparedPath": "/images/kisho/r64/question/pm1/p06.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/official-answer/answers/p04.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p04.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 5,
+            "assetId": "r64/official-answer/answers/p05.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p05.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 14,
+            "assetId": "r64/figure/pm1/p14.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p14.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 15,
+            "assetId": "r64/figure/pm1/p15.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p15.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi1(mondai).pdf",
+            "physicalPage": 16,
+            "assetId": "r64/figure/pm1/p16.png",
+            "preparedPath": "/images/kisho/r64/figure/pm1/p16.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm1/p14.png",
+          "r64/figure/pm1/p15.png",
+          "r64/figure/pm1/p16.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(1)",
+            "officialAnswer": "PDF4頁の公式作図例を参照。",
+            "explanation": "地点の気温を内挿し、同じ温度の位置を滑らかにつないで等温線を描く。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(1)",
+            "officialAnswer": "PDF4頁の公式作図例を参照。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 4,
+                "assetId": "r64/official-answer/answers/p04.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p04.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": "r64/official-answer/answers/p04.png",
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(2) ①②",
+            "officialAnswer": "①シアーラインの西側に沿って20 mm/h以上のエコーが分布。②東側は東寄り、西側は北寄りの風で収束する。東側が高温で、線付近の温度傾度が大きい。",
+            "explanation": "エコー、風向の変化、気温勾配を図10と図11で照合し、シアーラインのどちら側かを明示する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(2) ①②",
+            "officialAnswer": "①シアーラインの西側に沿って20 mm/h以上のエコーが分布。②東側は東寄り、西側は北寄りの風で収束する。東側が高温で、線付近の温度傾度が大きい。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 5,
+                "assetId": "r64/official-answer/answers/p05.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p05.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(2) ③④",
+            "officialAnswer": "③斐川8時30分、松江9時50分、11 km/h。④11時30分。",
+            "explanation": "時系列上の風向・気温の変化で通過を特定し、地点間距離と通過時刻差から移動の速さを求める。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(2) ③④",
+            "officialAnswer": "③斐川8時30分、松江9時50分、11 km/h。④11時30分。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 5,
+                "assetId": "r64/official-answer/answers/p05.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p05.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(3)",
+            "officialAnswer": "①高、②上昇、③温度（温位）、④暖気、⑤寒気、⑥厚、⑦300、⑧高、⑨対流、⑩混合。",
+            "explanation": "鉛直断面の相当温位の勾配と風から、上昇域、暖気・寒気の配置、対流による混合を対応させる。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(3)",
+            "officialAnswer": "①高、②上昇、③温度（温位）、④暖気、⑤寒気、⑥厚、⑦300、⑧高、⑨対流、⑩混合。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 5,
+                "assetId": "r64/official-answer/answers/p05.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p05.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(4)",
+            "officialAnswer": "シアーライン通過後の北寄りの非常に強い風（暴風）。",
+            "explanation": "通過前後の風向と風速を比較して、通過後に警戒すべき風を選ぶ。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm1-q04",
+            "field": "(4)",
+            "officialAnswer": "シアーライン通過後の北寄りの非常に強い風（暴風）。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 5,
+                "assetId": "r64/official-answer/answers/p05.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p05.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        }
+      ]
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm2-q01",
+        "exam": "kisho",
+        "session": "pm2",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 1,
+        "type": "descriptive",
+        "category": "実技2",
+        "topicTags": [
+          "停滞前線と総観場"
+        ],
+        "difficulty": 3,
+        "question": "図 1 は地上天気図、図 2 は 500hPa 解析図、図 3 は気象衛星画像であり、対象時刻はいずれも 10 日 21 時である。これらを用いて以下の問いに答えよ。\n(1) 10日21時の日本付近の気象概況について述べた次の文章の空欄(①)〜(⑪)に入る適切な数値または語句を答えよ。ただし、②は 16 方位を漢字で、⑥⑪は下枠の中から選んで、 ⑧⑨は十種雲形を漢字で、 ⑩は全般海上警報・予報で用いる地名を漢字で答えよ。\n図 1 の地上天気図によると、東シナ海には、東⻄にのびる停滞前線上に低気圧があり、 (①)ノットの速さで(②)へ進んでいる。\nこの低気圧に対して(③)警報が発表されており、風速(④)ノット以上(⑤)ノット未満の風が吹いているか、今後 24 時間以内に吹くと予想されている。停滞前線付近の名瀬では、現在天気は(⑥)雨、過去天気は(⑦)、また、停滞前線の北側の鹿児島では、下層で悪天候下にみられる(⑧)または(⑨)が観測されている。図 2 の 500hPa 解析図によると、(⑩)、中国東北区および華北に低気圧がある。華北の低気圧付近から四国の南にかけては正渦度域が広がっている。図 3 の気象衛星赤外画像によると、東シナ海の低気圧の東から南東にかけて活発な対流雲がみられる。 東シナ海の低気圧に伴う上層雲のバルジは(⑪)である。\n⑥ 弱い 並の 並又は強の 強い 激しい\n⑪ 明瞭 不明瞭\n(2) 図 3 の気象衛星画像において、北緯 34°東経 146°付近を中心に、北⻄から南東方向に晴天域がみられる。この範囲は、500hPa の渦度のどのようなところに対応しているかを、晴天をもたらす理由に着目して、15 字程度で述べよ。",
+        "explanation": "(1) 地上天気図の実況、500 hPa解析図の低気圧、衛星画像の雲域を順に対応させる。\n(2) 500 hPaの等高度線に沿う風が、渦度の小さい側から大きい側へ向かう位置を探す。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm2/p03.png",
+          "/images/kisho/r64/figure/pm2/p07.png",
+          "/images/kisho/r64/figure/pm2/p08.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技2 問1の原典 PDF 3頁",
+          "第64回 気象予報士 実技2 問1の原典 PDF 7頁",
+          "第64回 気象予報士 実技2 問1の原典 PDF 8頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技2 問1・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) ①15、②東北東、③海上強風、④34、⑤48、⑥弱い、⑦雨、⑧層雲・⑨積雲（順不同）、⑩沿海州、⑪不明瞭。\n(2) 負の渦度移流がみられるところ。",
+        "modelAnswer": "(1) ①15、②東北東、③海上強風、④34、⑤48、⑥弱い、⑦雨、⑧層雲・⑨積雲（順不同）、⑩沿海州、⑪不明瞭。\n(2) 負の渦度移流がみられるところ。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p06.png"
+        ],
+        "answerImageAltTexts": [
+          "実技2 問1の公式解答例 PDF 6頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm2-q01",
+        "round": 64,
+        "session": "pm2",
+        "qNumber": 1,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/question/pm2/p03.png",
+            "preparedPath": "/images/kisho/r64/question/pm2/p03.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 6,
+            "assetId": "r64/official-answer/answers/p06.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/figure/pm2/p07.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p07.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/figure/pm2/p08.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p08.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm2/p07.png",
+          "r64/figure/pm2/p08.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q01",
+            "field": "(1)",
+            "officialAnswer": "①15、②東北東、③海上強風、④34、⑤48、⑥弱い、⑦雨、⑧層雲・⑨積雲（順不同）、⑩沿海州、⑪不明瞭。",
+            "explanation": "地上天気図の実況、500 hPa解析図の低気圧、衛星画像の雲域を順に対応させる。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q01",
+            "field": "(1)",
+            "officialAnswer": "①15、②東北東、③海上強風、④34、⑤48、⑥弱い、⑦雨、⑧層雲・⑨積雲（順不同）、⑩沿海州、⑪不明瞭。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 6,
+                "assetId": "r64/official-answer/answers/p06.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q01",
+            "field": "(2)",
+            "officialAnswer": "負の渦度移流がみられるところ。",
+            "explanation": "500 hPaの等高度線に沿う風が、渦度の小さい側から大きい側へ向かう位置を探す。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q01",
+            "field": "(2)",
+            "officialAnswer": "負の渦度移流がみられるところ。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 6,
+                "assetId": "r64/official-answer/answers/p06.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        }
+      ]
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm2-q02",
+        "exam": "kisho",
+        "session": "pm2",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 2,
+        "type": "descriptive",
+        "category": "実技2",
+        "topicTags": [
+          "気圧変化と大気潮汐"
+        ],
+        "difficulty": 3,
+        "question": "表 1 は⻄日本・東日本の観測地点における 10 日 9 時および 10 日 21 時の海面気圧、図 4 は夏季の日本における大気潮汐の半日周期成分による地上気圧の平均的な日変化、図 5 は 9 時における大気潮汐の半日周期成分の平均的な地上気圧分布である。これらおよび図 1 を用いて、図 1 の東シナ海の低気圧の盛衰について、大気潮汐の気圧変化への影響を考慮しながら以下の問いに答えよ。\n(1) 図 1 の東シナ海の低気圧およびその周辺 600 海里の範囲において、気圧の分布が、過去 3時間、 東シナ海の低気圧と同じ移動方向と速さで移動したものとしたときに想定される、 10 日21 時の鹿児島における前3 時間の気圧変化量 ㋐ を、0.1hPa 刻みで符号を付して答えよ。ただし、ここでは大気潮汐の影響は考慮しない。\n(2) 表 1 で示された観測地点の海面気圧の変化と大気潮汐の影響について述べた次の文章の空欄(㋑)、(㋒)に入る適切な数値を、符号を付して、四捨五入により小数第 1位まで答えよ。\n図 1 によると、日本とその周辺の等圧線の間隔は広く、じょう乱の速い移動や急速に発達する低気圧はみられない。また、表 1 に示した 4 地点における前 12時間の気圧変化の平均は(㋑)hPa であり、変化は小さい。一方、表 1 の 4 地点の前 3 時間の気圧変化の平均は(㋒)hPa であり、後者が明らかに大きい。これは、主として図 5 のような気圧変動のパターンが、地球の自転に伴い、東から⻄に向かって 1 日で 1 周する「大気潮汐」の半日周期成分の影響によるもので、日本付近では図 4 のように 9 時頃と 21 時頃に気圧の極大が現れる。\n(3) (1)(2)に基づき、東シナ海の低気圧の盛衰に関する次の文章の空欄(㋓)、(㋔)に入る適切な数値を、符号を付して、四捨五入により小数第 1 位まで答えよ。\n10 日 21 時に鹿児島で観測した前 3 時間の気圧変化量は(㋓)hPa である。このうち、大気潮汐による前 3 時間の気圧変化量を、図 4 に基づき+0.7hPa とすると、低気圧が発達も衰弱もせずに移動すると仮定した場合の、鹿児島の前3時間の気圧変化量の推定値は ㋐ hPaであるので、 低気圧の盛衰のみによる、鹿児島の前 3 時間の気圧変化量は(㋔)hPa と推定される。",
+        "explanation": "(1) 圏内の前3時間気圧変化を図から読み、符号を含めて記入する。\n(2) 表の各観測点の海面気圧の差を求め、大気潮汐に伴う共通の変動と比較する。\n(3) 東シナ海の低気圧の気圧変化を評価する際は、大気潮汐で生じる背景の変化を考慮する。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm2/p03.png",
+          "/images/kisho/r64/question/pm2/p04.png",
+          "/images/kisho/r64/figure/pm2/p07.png",
+          "/images/kisho/r64/figure/pm2/p08.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技2 問2の原典 PDF 3頁",
+          "第64回 気象予報士 実技2 問2の原典 PDF 4頁",
+          "第64回 気象予報士 実技2 問2の原典 PDF 7頁",
+          "第64回 気象予報士 実技2 問2の原典 PDF 8頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技2 問2・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) ㋐－0.6 hPa（－0.5 hPaも可）。\n(2) ㋑＋0.2、㋒＋0.8。\n(3) ㋓＋0.9、㋔＋0.8（＋0.7も可）。",
+        "modelAnswer": "(1) ㋐－0.6 hPa（－0.5 hPaも可）。\n(2) ㋑＋0.2、㋒＋0.8。\n(3) ㋓＋0.9、㋔＋0.8（＋0.7も可）。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p06.png"
+        ],
+        "answerImageAltTexts": [
+          "実技2 問2の公式解答例 PDF 6頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm2-q02",
+        "round": 64,
+        "session": "pm2",
+        "qNumber": 2,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 3,
+            "assetId": "r64/question/pm2/p03.png",
+            "preparedPath": "/images/kisho/r64/question/pm2/p03.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/pm2/p04.png",
+            "preparedPath": "/images/kisho/r64/question/pm2/p04.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 6,
+            "assetId": "r64/official-answer/answers/p06.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/figure/pm2/p07.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p07.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/figure/pm2/p08.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p08.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm2/p07.png",
+          "r64/figure/pm2/p08.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q02",
+            "field": "(1)",
+            "officialAnswer": "㋐－0.6 hPa（－0.5 hPaも可）。",
+            "explanation": "圏内の前3時間気圧変化を図から読み、符号を含めて記入する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q02",
+            "field": "(1)",
+            "officialAnswer": "㋐－0.6 hPa（－0.5 hPaも可）。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 6,
+                "assetId": "r64/official-answer/answers/p06.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q02",
+            "field": "(2)",
+            "officialAnswer": "㋑＋0.2、㋒＋0.8。",
+            "explanation": "表の各観測点の海面気圧の差を求め、大気潮汐に伴う共通の変動と比較する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q02",
+            "field": "(2)",
+            "officialAnswer": "㋑＋0.2、㋒＋0.8。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 6,
+                "assetId": "r64/official-answer/answers/p06.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q02",
+            "field": "(3)",
+            "officialAnswer": "㋓＋0.9、㋔＋0.8（＋0.7も可）。",
+            "explanation": "東シナ海の低気圧の気圧変化を評価する際は、大気潮汐で生じる背景の変化を考慮する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q02",
+            "field": "(3)",
+            "officialAnswer": "㋓＋0.9、㋔＋0.8（＋0.7も可）。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 6,
+                "assetId": "r64/official-answer/answers/p06.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        }
+      ]
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm2-q03",
+        "exam": "kisho",
+        "session": "pm2",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 3,
+        "type": "descriptive",
+        "category": "実技2",
+        "topicTags": [
+          "名瀬・古仁屋の前線と降水"
+        ],
+        "difficulty": 3,
+        "question": "図 6 は 10 日 21 時の名瀬の状態曲線、図 7 は名瀬の高層風時系列図、図 8 は古仁屋(図1 に示した名瀬の南⻄約 30km。奄美大島の南端付近。標高 2m)の地上気象要素の時系列図であり、図 9、図10 は12 時間後の予想図である。これらおよび図 1 を用いて以下の問いに答えよ。\n(1) 図 6、図 7 および図 1 を用いて、名瀬における前線に関する以下の問いに答えよ。\n① 図 6 において、もっとも低い高度にある前線面の高度を、10hPa 刻みで答えよ。また、そのように答えた理由を 15 字程度で述べよ。\n② ①の前線面より低い高度における湿数の鉛直分布の特徴を 40 字程度で述べよ。\n③ 図 6 を用い①②に着目して、10 日 21 時において、名瀬と地上の前線との南北の位置関係を答えよ。ただし、前線面は等温位面に沿って分布しているものとする。\n④ 図 7 によると、10 日 21 時には下層で東風が吹いている。ここでは、停滞前線面の南側では東成分がみられないものとみなし、停滞前線面を、21 時からウィンドプロファイラで観測された最下層(300m)に達するまで、解答図に実線で記入せよ。\n⑤ ④で求めた前線面について、最下層に達する1 時間前からの時間変化がその後も続くものとして、停滞前線が名瀬の地表面(標高3m)を通過したと推定される時刻を20分刻みで答えよ。\n⑥ 図 7 を用いて、10 日 21 時から 11 日 9 時にかけての高度 300m から 4000m にかけての温度移流について、暖気移流の継続時間帯を時間順に答えよ。解答欄は 3 行あるが、この行数は解答する継続時間帯の数を示すものではない。\n(2) 図 8 の古仁屋の地上気象要素の時系列図および図 1、図 9、図 10(下)を用いて以下の問いに答えよ。\n① 図 8 および(1)③④⑤に着目すると、停滞前線が古仁屋を通過した時刻は、3 時 10分と推定される。図 8 において、この時刻に停滞前線が通過したと推定される根拠を 30 字程度で述べよ。\n② 図 8 に示した時間内に、最も顕著なシアーラインが通過した時刻を 10 分刻みで答えよ。また、その時刻における風向および、気温、露点温度の変化の特徴を 30 字程度で述べよ。ここで、 「通過した時刻」とは、図においてシアーラインが通過したと判断される最初の時刻とする。\n③ 図 8 に示した時間内における古仁屋の前 1 時間降水量の最大を 0.5mm 刻みで、その起時を 10 分刻みで答えよ。\n(3) 図10(下)では南⻄諸島付近に前12時間降水量の大きな領域がみられる。\n図9を用いて、その領域と周辺における 850hPa の風向・風速と温度移流の特徴を 45 字程度で述べよ。",
+        "explanation": "(1) ①②③ 気温の安定層上端を前線面とみなし、気温と露点温度の差から下層の湿数を追う。\n(1) ④ 高層風時系列図の風向の変化を時刻ごとに拾い、前線面の高度を追跡する。\n(1) ⑤⑥ 風向の時系列で転換時刻と、設問が指定する風向の継続時間帯を読み取る。\n(2) 地上前線の通過は風向の転換と気温・露点温度の変化で特定し、降水量とその時刻は観測時系列の降水欄から読む。\n(3) 850 hPaの風向が高温側から低温側へ等温線を横切ることから、暖気移流と判断する。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm2/p04.png",
+          "/images/kisho/r64/question/pm2/p05.png",
+          "/images/kisho/r64/figure/pm2/p07.png",
+          "/images/kisho/r64/figure/pm2/p09.png",
+          "/images/kisho/r64/figure/pm2/p10.png",
+          "/images/kisho/r64/figure/pm2/p11.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技2 問3の原典 PDF 4頁",
+          "第64回 気象予報士 実技2 問3の原典 PDF 5頁",
+          "第64回 気象予報士 実技2 問3の原典 PDF 7頁",
+          "第64回 気象予報士 実技2 問3の原典 PDF 9頁",
+          "第64回 気象予報士 実技2 問3の原典 PDF 10頁",
+          "第64回 気象予報士 実技2 問3の原典 PDF 11頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技2 問3・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) ①②③ ①850 hPa（840、860 hPaも可）。気温の安定層の上端に当たる。②湿数は前線面から920 hPaまで小さく、その下では低高度ほど大きい。③名瀬は地上前線の北側。\n(1) ④ PDF7頁の公式作図例を参照。\n(1) ⑤⑥ ⑤3時20分（3時40分も可）。⑥10日21時00分～11日5時40分、11日7時20分～9時00分。\n(2) ①露点温度がほぼ最大で風向が南東から南に変化。②5時30分に風向が南から南西に変わり、気温と露点温度が低下し始める。③38.5 mm、6時10分。\n(3) 領域の南側から西南西（南西も可）の35～40ノットの強い風が吹き、暖気移流となる。",
+        "modelAnswer": "(1) ①②③ ①850 hPa（840、860 hPaも可）。気温の安定層の上端に当たる。②湿数は前線面から920 hPaまで小さく、その下では低高度ほど大きい。③名瀬は地上前線の北側。\n(1) ④ PDF7頁の公式作図例を参照。\n(1) ⑤⑥ ⑤3時20分（3時40分も可）。⑥10日21時00分～11日5時40分、11日7時20分～9時00分。\n(2) ①露点温度がほぼ最大で風向が南東から南に変化。②5時30分に風向が南から南西に変わり、気温と露点温度が低下し始める。③38.5 mm、6時10分。\n(3) 領域の南側から西南西（南西も可）の35～40ノットの強い風が吹き、暖気移流となる。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p06.png",
+          "/images/kisho/r64/official-answer/answers/p07.png",
+          "/images/kisho/r64/official-answer/answers/p08.png"
+        ],
+        "answerImageAltTexts": [
+          "実技2 問3の公式解答例 PDF 6頁",
+          "実技2 問3の公式解答例 PDF 7頁",
+          "実技2 問3の公式解答例 PDF 8頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm2-q03",
+        "round": 64,
+        "session": "pm2",
+        "qNumber": 3,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 4,
+            "assetId": "r64/question/pm2/p04.png",
+            "preparedPath": "/images/kisho/r64/question/pm2/p04.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 5,
+            "assetId": "r64/question/pm2/p05.png",
+            "preparedPath": "/images/kisho/r64/question/pm2/p05.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 6,
+            "assetId": "r64/official-answer/answers/p06.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/official-answer/answers/p07.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p07.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/official-answer/answers/p08.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p08.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/figure/pm2/p07.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p07.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 9,
+            "assetId": "r64/figure/pm2/p09.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p09.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 10,
+            "assetId": "r64/figure/pm2/p10.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p10.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 11,
+            "assetId": "r64/figure/pm2/p11.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p11.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm2/p07.png",
+          "r64/figure/pm2/p09.png",
+          "r64/figure/pm2/p10.png",
+          "r64/figure/pm2/p11.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(1) ①②③",
+            "officialAnswer": "①850 hPa（840、860 hPaも可）。気温の安定層の上端に当たる。②湿数は前線面から920 hPaまで小さく、その下では低高度ほど大きい。③名瀬は地上前線の北側。",
+            "explanation": "気温の安定層上端を前線面とみなし、気温と露点温度の差から下層の湿数を追う。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(1) ①②③",
+            "officialAnswer": "①850 hPa（840、860 hPaも可）。気温の安定層の上端に当たる。②湿数は前線面から920 hPaまで小さく、その下では低高度ほど大きい。③名瀬は地上前線の北側。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 6,
+                "assetId": "r64/official-answer/answers/p06.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+                "private": true
+              },
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 7,
+                "assetId": "r64/official-answer/answers/p07.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p07.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(1) ④",
+            "officialAnswer": "PDF7頁の公式作図例を参照。",
+            "explanation": "高層風時系列図の風向の変化を時刻ごとに拾い、前線面の高度を追跡する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(1) ④",
+            "officialAnswer": "PDF7頁の公式作図例を参照。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 7,
+                "assetId": "r64/official-answer/answers/p07.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p07.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": "r64/official-answer/answers/p07.png",
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(1) ⑤⑥",
+            "officialAnswer": "⑤3時20分（3時40分も可）。⑥10日21時00分～11日5時40分、11日7時20分～9時00分。",
+            "explanation": "風向の時系列で転換時刻と、設問が指定する風向の継続時間帯を読み取る。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(1) ⑤⑥",
+            "officialAnswer": "⑤3時20分（3時40分も可）。⑥10日21時00分～11日5時40分、11日7時20分～9時00分。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 7,
+                "assetId": "r64/official-answer/answers/p07.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p07.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(2)",
+            "officialAnswer": "①露点温度がほぼ最大で風向が南東から南に変化。②5時30分に風向が南から南西に変わり、気温と露点温度が低下し始める。③38.5 mm、6時10分。",
+            "explanation": "地上前線の通過は風向の転換と気温・露点温度の変化で特定し、降水量とその時刻は観測時系列の降水欄から読む。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(2)",
+            "officialAnswer": "①露点温度がほぼ最大で風向が南東から南に変化。②5時30分に風向が南から南西に変わり、気温と露点温度が低下し始める。③38.5 mm、6時10分。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 7,
+                "assetId": "r64/official-answer/answers/p07.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p07.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(3)",
+            "officialAnswer": "領域の南側から西南西（南西も可）の35～40ノットの強い風が吹き、暖気移流となる。",
+            "explanation": "850 hPaの風向が高温側から低温側へ等温線を横切ることから、暖気移流と判断する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q03",
+            "field": "(3)",
+            "officialAnswer": "領域の南側から西南西（南西も可）の35～40ノットの強い風が吹き、暖気移流となる。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 8,
+                "assetId": "r64/official-answer/answers/p08.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p08.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        }
+      ]
+    },
+    {
+      "raw": {
+        "id": "kisho-64-pm2-q04",
+        "exam": "kisho",
+        "session": "pm2",
+        "year": 2025,
+        "fiscalYear": 2025,
+        "season": "first",
+        "examDate": "2025-08-24",
+        "sourceExamSession": "第64回（令和7年度第1回）",
+        "qNumber": 4,
+        "type": "descriptive",
+        "category": "実技2",
+        "topicTags": [
+          "低気圧とトラフの発達予想"
+        ],
+        "difficulty": 3,
+        "question": "図11〜図13 は、36 時間後から48 時間後にかけての予想図である。これらと図1、図9、図10 を用いて、以下の問いに答えよ。\n(1) 48時間後の図12(下)には日本の東に中心気圧988hPaの低気圧が予想されているが、これは図 1 の中心気圧 1004hPa の低気圧が移動し発達したものではない。これらの低気圧の盛衰に関する以下の問いに答えよ。\n① 図 10(上)を用いて、華北から東シナ海にかけての 2 つのトラフについて、トラフと5760m の等高度線との交点の緯度・経度を 1°刻みで答えよ。\n② 図 9 を用いて、地上気圧の低下が大きく前線活動が活発であると考えられる範囲の、中心付近の緯度・経度を、5°刻みで答えよ。また、そのように答えた理由を気温、風、温度移流、および上昇流に言及して 60 字程度で述べよ。\n③ ②の領域と①のトラフとの位置関係を 16 方位で答えよ。\n④ 図 1 および図 10 を用いて、図 1 で東シナ海にある低気圧の、12 時間後までの移動方向を 16 方位で、速さを 5 ノット刻みで答えよ。\n⑤ 図 11 および図 12 を用いて、図 12 で日本の東にある低気圧の、前 12 時間の移動方向を 16 方位で、速さを 5 ノット刻みで答えよ。\n⑥ 図 1 で東シナ海にある低気圧中心は、36 時間後の 12 日 9 時には、北緯 29°東経130°に達し衰弱する。この低気圧が衰弱する理由のうち、対応する 500hPa のトラフの、12 時間後から 36 時間後にかけての地上低気圧との位置関係について 25 字程度で述べよ。\n⑦ 図 12 で日本の東にある低気圧中心は、30 時間前の 11 日 15 時(図略)には低気圧循環として予想されているが、36 時間前の 11 日 9 時(図 10)には、L では示されていない。11 日 9 時の時点で、低気圧の中心として条件が最も整っている位置の緯度・経度を、次の㋐㋑の方法に従って求め 1°刻みで答えよ。\n㋐ ⑤の低気圧の移動速度に基づいて、11 日 9 時(図 10)における仮の推定位置を答えよ。\n㋑ ㋐の仮の推定位置を、図 9 の気象要素を参考にし、図 10 の気圧配置や風向に矛盾のないように、緯度・経度それぞれ 3°以内の範囲で最小限移動させた緯度・経度を答えよ。\n⑧ ⑦㋑で求めた位置の気圧から、12 日 9 時における低気圧中心の気圧を差し引いた値を、図中の等圧線の数値に基づき、符号を付して答えよ。\n(2) 図 11(下)で八丈島付近にある低気圧は、12 日 21 時にかけて発達している。さらにその 24 時間後の 13 日 21 時(図略)には低気圧の中心気圧が 980hPa と予想され、発達が続く。このことについて、以下の問いに答えよ。\n① 図11(上)において、12 日9時以降の地上低気圧の発達に対応する2つのトラフを、解答図に太実線で描画せよ。\n② ①で描画した 2 つの太実線それぞれの中心位置における 500hPa 面の高度を比較し、高いほうのトラフを A、低いほうを B として、それぞれのトラフの、12 日 9 時以降の低気圧の発達への寄与について、時間経過を示して 40 字程度で述べよ。\n(3) 図 12(上)、図 13 に着目して、図 12(下)の日本の東の低気圧に伴う前線を、枠内の範囲について、前線記号を用いて描画せよ。ただし、温暖前線、寒冷前線それぞれの一方の端は枠まで達しているものとする。",
+        "explanation": "(1) ①②③ 下層の気温傾度と南風から暖気移流、700 hPa図から上昇流、500 hPa図からトラフの位置を読み、それぞれの位置関係を整理する。\n(1) ④⑤⑥ 予想図の対応する時刻間でそれぞれの位置の変化を比較し、トラフと低気圧が近づくか離れるかを確認する。\n(1) ⑦⑧ 各時刻の位置を図の緯度経度から読み、気圧は指定された順序で差をとる。\n(2) ① 上層トラフAとBを別々に追い、各指定時刻の位置を解答欄に示す。\n(2) ② トラフと地上低気圧の位置関係を時系列で比較すると、発達を支えるトラフが途中で交代する。\n(3) 各予想図の湿潤域とトラフや地上低気圧の位置を対応させ、設問が指定する範囲を図に示す。",
+        "hasImage": true,
+        "imageUrls": [
+          "/images/kisho/r64/question/pm2/p05.png",
+          "/images/kisho/r64/question/pm2/p06.png",
+          "/images/kisho/r64/figure/pm2/p07.png",
+          "/images/kisho/r64/figure/pm2/p10.png",
+          "/images/kisho/r64/figure/pm2/p11.png",
+          "/images/kisho/r64/figure/pm2/p12.png",
+          "/images/kisho/r64/figure/pm2/p13.png",
+          "/images/kisho/r64/figure/pm2/p14.png"
+        ],
+        "imageAltTexts": [
+          "第64回 気象予報士 実技2 問4の原典 PDF 5頁",
+          "第64回 気象予報士 実技2 問4の原典 PDF 6頁",
+          "第64回 気象予報士 実技2 問4の原典 PDF 7頁",
+          "第64回 気象予報士 実技2 問4の原典 PDF 10頁",
+          "第64回 気象予報士 実技2 問4の原典 PDF 11頁",
+          "第64回 気象予報士 実技2 問4の原典 PDF 12頁",
+          "第64回 気象予報士 実技2 問4の原典 PDF 13頁",
+          "第64回 気象予報士 実技2 問4の原典 PDF 14頁"
+        ],
+        "sourcePdfUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAnswerUrl": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_64_z.zip",
+        "sourceAttribution": "出典：一般財団法人 気象業務支援センター 第64回気象予報士試験 実技2 問4・解答例。画像化・表記整理、解説は過去問AI作成。",
+        "license": "JMBSC-permission-required",
+        "answer": "(1) ①②③ ①北緯35°（34°）・東経120°（121°）と北緯33°・東経126°（125°、127°）、順不同。②北緯30°・東経135°。850 hPaの12～15℃の南北温度傾度が大きく、強い南風による暖気移流と700 hPaの強い上昇流がある。③西北西（北西も可）。\n(1) ④⑤⑥ ④東北東（東）・10（15）ノット。⑤北東（東北東）・25ノット。⑥トラフは低気圧中心の北から北東に離れていく。\n(1) ⑦⑧ ⑦㋐北緯28°（27°、29°）・東経132°（131°、133°）、㋑北緯31°（30°）・東経133°（132°、134°）。⑧＋8 hPa。\n(2) ① PDF9頁の公式作図例を参照。\n(2) ② トラフAは主に12日21時までの発達に、トラフBはその後の発達に寄与する。\n(3) PDF9頁の公式作図例を参照。",
+        "modelAnswer": "(1) ①②③ ①北緯35°（34°）・東経120°（121°）と北緯33°・東経126°（125°、127°）、順不同。②北緯30°・東経135°。850 hPaの12～15℃の南北温度傾度が大きく、強い南風による暖気移流と700 hPaの強い上昇流がある。③西北西（北西も可）。\n(1) ④⑤⑥ ④東北東（東）・10（15）ノット。⑤北東（東北東）・25ノット。⑥トラフは低気圧中心の北から北東に離れていく。\n(1) ⑦⑧ ⑦㋐北緯28°（27°、29°）・東経132°（131°、133°）、㋑北緯31°（30°）・東経133°（132°、134°）。⑧＋8 hPa。\n(2) ① PDF9頁の公式作図例を参照。\n(2) ② トラフAは主に12日21時までの発達に、トラフBはその後の発達に寄与する。\n(3) PDF9頁の公式作図例を参照。",
+        "scoringCriteria": "数値・単位・許容範囲を公式解答例と照合し、記述は設問が求める要素を、作図は公式解答例の位置と形を確認する。",
+        "answerImageUrls": [
+          "/images/kisho/r64/official-answer/answers/p08.png",
+          "/images/kisho/r64/official-answer/answers/p09.png"
+        ],
+        "answerImageAltTexts": [
+          "実技2 問4の公式解答例 PDF 8頁",
+          "実技2 問4の公式解答例 PDF 9頁"
+        ]
+      },
+      "source": {
+        "questionId": "kisho-64-pm2-q04",
+        "round": 64,
+        "session": "pm2",
+        "qNumber": 4,
+        "questionPages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 5,
+            "assetId": "r64/question/pm2/p05.png",
+            "preparedPath": "/images/kisho/r64/question/pm2/p05.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 6,
+            "assetId": "r64/question/pm2/p06.png",
+            "preparedPath": "/images/kisho/r64/question/pm2/p06.png",
+            "private": true
+          }
+        ],
+        "officialAnswerPages": [
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 8,
+            "assetId": "r64/official-answer/answers/p08.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p08.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+            "physicalPage": 9,
+            "assetId": "r64/official-answer/answers/p09.png",
+            "preparedPath": "/images/kisho/r64/official-answer/answers/p09.png",
+            "private": true
+          }
+        ],
+        "figurePages": [
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 7,
+            "assetId": "r64/figure/pm2/p07.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p07.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 10,
+            "assetId": "r64/figure/pm2/p10.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p10.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 11,
+            "assetId": "r64/figure/pm2/p11.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p11.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 12,
+            "assetId": "r64/figure/pm2/p12.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p12.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 13,
+            "assetId": "r64/figure/pm2/p13.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p13.png",
+            "private": true
+          },
+          {
+            "sourcePdf": "jitsugi2(mondai).pdf",
+            "physicalPage": 14,
+            "assetId": "r64/figure/pm2/p14.png",
+            "preparedPath": "/images/kisho/r64/figure/pm2/p14.png",
+            "private": true
+          }
+        ],
+        "drawingAnswers": [],
+        "imageAssetIds": [
+          "r64/figure/pm2/p07.png",
+          "r64/figure/pm2/p10.png",
+          "r64/figure/pm2/p11.png",
+          "r64/figure/pm2/p12.png",
+          "r64/figure/pm2/p13.png",
+          "r64/figure/pm2/p14.png"
+        ],
+        "private": true,
+        "rightsPermissionVerified": false
+      },
+      "fields": [
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(1) ①②③",
+            "officialAnswer": "①北緯35°（34°）・東経120°（121°）と北緯33°・東経126°（125°、127°）、順不同。②北緯30°・東経135°。850 hPaの12～15℃の南北温度傾度が大きく、強い南風による暖気移流と700 hPaの強い上昇流がある。③西北西（北西も可）。",
+            "explanation": "下層の気温傾度と南風から暖気移流、700 hPa図から上昇流、500 hPa図からトラフの位置を読み、それぞれの位置関係を整理する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(1) ①②③",
+            "officialAnswer": "①北緯35°（34°）・東経120°（121°）と北緯33°・東経126°（125°、127°）、順不同。②北緯30°・東経135°。850 hPaの12～15℃の南北温度傾度が大きく、強い南風による暖気移流と700 hPaの強い上昇流がある。③西北西（北西も可）。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 8,
+                "assetId": "r64/official-answer/answers/p08.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p08.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(1) ④⑤⑥",
+            "officialAnswer": "④東北東（東）・10（15）ノット。⑤北東（東北東）・25ノット。⑥トラフは低気圧中心の北から北東に離れていく。",
+            "explanation": "予想図の対応する時刻間でそれぞれの位置の変化を比較し、トラフと低気圧が近づくか離れるかを確認する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(1) ④⑤⑥",
+            "officialAnswer": "④東北東（東）・10（15）ノット。⑤北東（東北東）・25ノット。⑥トラフは低気圧中心の北から北東に離れていく。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 8,
+                "assetId": "r64/official-answer/answers/p08.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p08.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(1) ⑦⑧",
+            "officialAnswer": "⑦㋐北緯28°（27°、29°）・東経132°（131°、133°）、㋑北緯31°（30°）・東経133°（132°、134°）。⑧＋8 hPa。",
+            "explanation": "各時刻の位置を図の緯度経度から読み、気圧は指定された順序で差をとる。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(1) ⑦⑧",
+            "officialAnswer": "⑦㋐北緯28°（27°、29°）・東経132°（131°、133°）、㋑北緯31°（30°）・東経133°（132°、134°）。⑧＋8 hPa。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 9,
+                "assetId": "r64/official-answer/answers/p09.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p09.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(2) ①",
+            "officialAnswer": "PDF9頁の公式作図例を参照。",
+            "explanation": "上層トラフAとBを別々に追い、各指定時刻の位置を解答欄に示す。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(2) ①",
+            "officialAnswer": "PDF9頁の公式作図例を参照。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 9,
+                "assetId": "r64/official-answer/answers/p09.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p09.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": "r64/official-answer/answers/p09.png",
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(2) ②",
+            "officialAnswer": "トラフAは主に12日21時までの発達に、トラフBはその後の発達に寄与する。",
+            "explanation": "トラフと地上低気圧の位置関係を時系列で比較すると、発達を支えるトラフが途中で交代する。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(2) ②",
+            "officialAnswer": "トラフAは主に12日21時までの発達に、トラフBはその後の発達に寄与する。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 9,
+                "assetId": "r64/official-answer/answers/p09.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p09.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": null,
+            "private": true
+          }
+        },
+        {
+          "raw": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(3)",
+            "officialAnswer": "PDF9頁の公式作図例を参照。",
+            "explanation": "各予想図の湿潤域とトラフや地上低気圧の位置を対応させ、設問が指定する範囲を図に示す。"
+          },
+          "source": {
+            "questionId": "kisho-64-pm2-q04",
+            "field": "(3)",
+            "officialAnswer": "PDF9頁の公式作図例を参照。",
+            "officialAnswerPages": [
+              {
+                "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+                "physicalPage": 9,
+                "assetId": "r64/official-answer/answers/p09.png",
+                "preparedPath": "/images/kisho/r64/official-answer/answers/p09.png",
+                "private": true
+              }
+            ],
+            "officialAnswerImageAssetId": "r64/official-answer/answers/p09.png",
+            "private": true
+          }
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "r64/question/ippan/p02.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p02.png",
+      "sha256": "803de4c7c1faccb166c8d31f311dfe338cf2ff44a061724c9690c407b0a83251",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 2,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p01.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p01.png",
+      "sha256": "6db47a9e7985aa1cb86f54cc3adc419d384823fee4aa01c4243a2fc08013ba69",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 1,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p03.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p03.png",
+      "sha256": "d083cc5a6480efcf16e3d9108b4b9c9e6ef60c75d2b0b17c82634799528205e2",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 3,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p04.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p04.png",
+      "sha256": "1c83ca84160371dc66f402f3a1165fac3145cb54302b1357bd76cc90df5307f7",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 4,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p05.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p05.png",
+      "sha256": "18e7bec9dbfbebf310338f800e7a95494bdebffbb195934a7156af19f35c3f84",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 5,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p06.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p06.png",
+      "sha256": "723b9e811724cc02a94f7534d10528788b6c84eb82552e8aa7a98307c5e465e9",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 6,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p07.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p07.png",
+      "sha256": "1b908f639c47655bf5b78a0900d27ec5aa03729ea2a995dff7f1f43bd6c6d1ec",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 7,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p08.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p08.png",
+      "sha256": "fbbce96d9908767531b042c8a6f5d48f52e93731a518cf3c9caf1dc67ea34ccd",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 8,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p09.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p09.png",
+      "sha256": "004e653bc54af8aa23b5ddd1d86a3e96ef087e4f668a94731ded3460ec685393",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 9,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/ippan/p10.png",
+      "preparedPath": "/images/kisho/r64/question/ippan/p10.png",
+      "sha256": "7e6224b51d8b9862dea5518bdfbbba97fcf4415a12517e286df677186d64d959",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 10,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p02.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p02.png",
+      "sha256": "361d5e493f93b60fe53151db8cd07174fcfedb1cdc082036f80a38146eb52672",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 2,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p03.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p03.png",
+      "sha256": "67cf8cc3cf75f641791fd1e14e30083e2348fb46323ca977fe16b2e5795eed98",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 3,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p04.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p04.png",
+      "sha256": "083d646fb1b566d75b980ec2b277226551301dad7d954bb6c57bab9818efe167",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 4,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p05.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p05.png",
+      "sha256": "18acddefac7b8be36886931ab77bbf5ccc34755aacc5c2d82cc1465de49feeef",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 5,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p06.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p06.png",
+      "sha256": "d1edd29fae359206f7cfa6cdf317b7f0f4076dc4785cb1bcabde7ad41ff5e524",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 6,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p07.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p07.png",
+      "sha256": "db485732bfcfbd2952040245c16ba6ce9420dd1fa3ddb69e4bcb6e3c4592987b",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 7,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p08.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p08.png",
+      "sha256": "504fcd2fbede057173abf71a7ffc5e0ca5b911f45176a43785197a29acfd30c8",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 8,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p09.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p09.png",
+      "sha256": "f1665a6f231c94fe8c2ea0d83d56e5209d113f0e851e1f6d779a274be9f7b770",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 9,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p10.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p10.png",
+      "sha256": "45dad3c6e20e1e3a885966435e4d4d920337ad497fff23302d7742f06cae833e",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 10,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/senmon/p11.png",
+      "preparedPath": "/images/kisho/r64/question/senmon/p11.png",
+      "sha256": "e172dc8ce98edbafb29e165a621c0a75912a9dc6abd0a0ec500f34fc2140e2a2",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 11,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm1/p03.png",
+      "preparedPath": "/images/kisho/r64/question/pm1/p03.png",
+      "sha256": "87022e0e12bdb897a38b1f6634ac62917fccebeaf542fbfaedbc8bd7f1a704e1",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 3,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p07.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p07.png",
+      "sha256": "42c5ed487377c4861e33f4977501d5a923138c26d4b9f3dd6c007e3ac734dae7",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 7,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p08.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p08.png",
+      "sha256": "d463de628bbd121d5aa9afb3a4d0394e39c587aa8c1470ab3cba7bfed87e0a2b",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 8,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p02.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p02.png",
+      "sha256": "bb2c3f469358265f299a7d087bb03d270e64b37c1f4b7c0af75fa7602ab4b18d",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 2,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p03.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p03.png",
+      "sha256": "6fee72f26e85d7c5c4d9e885d5c578ac6b6de29217b8ac71ca8c3823886fc4e9",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 3,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm1/p04.png",
+      "preparedPath": "/images/kisho/r64/question/pm1/p04.png",
+      "sha256": "fcf69be5ef92e848cc8b3f99f5af408380f9174c36d1cc7ac71cc8768956bf9c",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 4,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p09.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p09.png",
+      "sha256": "0c0ad3e81d04a98a04250cc65e2cb99146a8502c5e699088fa5d77abd73d74c8",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 9,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p10.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p10.png",
+      "sha256": "54f57bfcacdb22a03df4968eea84df39b91f176845bb82ed4310941abc517968",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 10,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p11.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p11.png",
+      "sha256": "d29291a6e7eaf899765f792e89efe59059577828753b23ddf9472d2d43b7d482",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 11,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p12.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p12.png",
+      "sha256": "7c172822cfe4a3a5a41b7c8454574a39072111490250b0e7fc8f4ee92530b41b",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 12,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p13.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p13.png",
+      "sha256": "e16df7804c50ce82fed6e3b256ac1dafe816035e6cbdee03c01366427d782e69",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 13,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p04.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p04.png",
+      "sha256": "826fc76c66f654e8a7ce67d83019e659d04dcf62eb284db42420742da3bd3abb",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 4,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm1/p05.png",
+      "preparedPath": "/images/kisho/r64/question/pm1/p05.png",
+      "sha256": "402a1f281c6c0feff240bd5c63e1a1b17da7581ff70f87c5c83c3709e24ca391",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 5,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm1/p06.png",
+      "preparedPath": "/images/kisho/r64/question/pm1/p06.png",
+      "sha256": "c8c18746820587d4fd517bffd5543e3fae16f3f697b8ec7f57b31c1c56b5de5f",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 6,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p14.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p14.png",
+      "sha256": "b41f2ecaf8f012baa84562f2643324659afa2ca3a30d49c52748aea5fa14d660",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 14,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p15.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p15.png",
+      "sha256": "246241589d59552d2386e14758e8c7958926587e47ed958c3c2e851c090dbe0c",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 15,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm1/p16.png",
+      "preparedPath": "/images/kisho/r64/figure/pm1/p16.png",
+      "sha256": "5a771e7d9e3f7f1fe156d60413182c07713e099eb1a887649b96471a715564c2",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi1(mondai).pdf",
+      "physicalPage": 16,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p05.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p05.png",
+      "sha256": "909996604bd524b7bbb2dc11993980372f2e3c68007a122d3807878727bb97ab",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 5,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm2/p03.png",
+      "preparedPath": "/images/kisho/r64/question/pm2/p03.png",
+      "sha256": "c58f838e62f5ebb922bd271916149ae78161f4969822c270f063377745d03a39",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 3,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p07.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p07.png",
+      "sha256": "1c76bb77e672096041fdf526b025f0acdfba15650e201fa9da6024439e9e40e2",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 7,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p08.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p08.png",
+      "sha256": "d211c34cdb4975170fa9bec1f71bf8aa17a57f1b9c572197e73716636538b0f5",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 8,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p06.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p06.png",
+      "sha256": "b78ac2a472395dcf464b9f6da3cf72843ec60fd08a0db34bf61e1dd506ffc1cd",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 6,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm2/p04.png",
+      "preparedPath": "/images/kisho/r64/question/pm2/p04.png",
+      "sha256": "683bbee78ef8cffb82a17a3ce0bb2f4d278a389e779c5de604d6522e0798276e",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 4,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm2/p05.png",
+      "preparedPath": "/images/kisho/r64/question/pm2/p05.png",
+      "sha256": "3c37c6b5987ca885ead238ca87bd1e91c77bfd34e4dd50f96977065741b07957",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 5,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p09.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p09.png",
+      "sha256": "cbf7125568959853501522ad299fb0f9c8ec31a5e12973df8d16a243d7995af7",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 9,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p10.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p10.png",
+      "sha256": "b44a0ef0e9daed5c8f2080618efae1f7f8d05fa45aef7e772d513596f064cbaa",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 10,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p11.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p11.png",
+      "sha256": "c25dc51ae9f256d6290a7f0cae47b976327d102e428ee2010075b5f4c7977e48",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 11,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p07.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p07.png",
+      "sha256": "6ab012eed0f036f9b17646fd0c818c9ad3baa3eebdc762b682fe28aebb56f518",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 7,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p08.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p08.png",
+      "sha256": "3d774d60497d4189544ba043ce69b81ea3ac4e0455927456cffb2def053e059d",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 8,
+      "kind": "official-answer",
+      "private": true
+    },
+    {
+      "assetId": "r64/question/pm2/p06.png",
+      "preparedPath": "/images/kisho/r64/question/pm2/p06.png",
+      "sha256": "a85674c88f3ddf2243a8d61735662706b9b40bb59fbff0c1e88aaef3b37e8d26",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 6,
+      "kind": "question",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p12.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p12.png",
+      "sha256": "8511d42882778ce6ede04048fd82e0395c84413f14d0fe809a4af737926a0828",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 12,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p13.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p13.png",
+      "sha256": "94a74b8bdf35d544f413810ab0ebe3762ea1d0f6fb9f0b5b6955d2351c2d1c6b",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 13,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/figure/pm2/p14.png",
+      "preparedPath": "/images/kisho/r64/figure/pm2/p14.png",
+      "sha256": "ca188404595f41af9b519fd31f177f8ee1bb62613cf8198c57ea77123ef06c61",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "jitsugi2(mondai).pdf",
+      "physicalPage": 14,
+      "kind": "figure",
+      "private": true
+    },
+    {
+      "assetId": "r64/official-answer/answers/p09.png",
+      "preparedPath": "/images/kisho/r64/official-answer/answers/p09.png",
+      "sha256": "ffa924060ac1eb7312f73a214ed33694925bfb110d82cc6214b32a14ede5fc29",
+      "width": 983,
+      "height": 1390,
+      "sourcePdf": "cwfe_64_a(gakka jitsugi_kaitourei).pdf",
+      "physicalPage": 9,
+      "kind": "official-answer",
+      "private": true
+    }
+  ]
+}

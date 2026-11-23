@@ -87,17 +87,17 @@ describe("encodeRelatedHeader / decodeRelatedHeader", () => {
   });
 });
 
-describe("findRelatedQuestions", () => {
+describe("findRelatedQuestions", async () => {
   const emptyExclude = new Set<string>();
 
-  it("検索不能なクエリ（記号のみ）は空配列を返す", () => {
+  it("検索不能なクエリ（記号のみ）は空配列を返す", async () => {
     expect(
-      findRelatedQuestions({ userMessage: "?????", excludeDocIds: emptyExclude, source }),
+      await findRelatedQuestions({ userMessage: "?????", excludeDocIds: emptyExclude, source }),
     ).toEqual([]);
   });
 
-  it("有効なクエリは limit 件以下・スコア降順・question 種別のみを返す", () => {
-    const results = findRelatedQuestions({
+  it("有効なクエリは limit 件以下・スコア降順・question 種別のみを返す", async () => {
+    const results = await findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
       excludeDocIds: emptyExclude, source,
       limit: 3,
@@ -118,15 +118,15 @@ describe("findRelatedQuestions", () => {
     }
   });
 
-  it("excludeDocIds に入れた docId は結果から除外される", () => {
-    const baseline = findRelatedQuestions({
+  it("excludeDocIds に入れた docId は結果から除外される", async () => {
+    const baseline = await findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
       excludeDocIds: emptyExclude, source,
       limit: 4,
     });
     expect(baseline.length).toBeGreaterThan(0);
     const excludedId = `q:${baseline[0].questionId}`;
-    const filtered = findRelatedQuestions({
+    const filtered = await findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
       excludeDocIds: new Set([excludedId]), source,
       limit: 4,
@@ -136,15 +136,15 @@ describe("findRelatedQuestions", () => {
     );
   });
 
-  it("currentQuestionId に一致する自問題は結果に含めない", () => {
-    const baseline = findRelatedQuestions({
+  it("currentQuestionId に一致する自問題は結果に含めない", async () => {
+    const baseline = await findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
       excludeDocIds: emptyExclude, source,
       limit: 4,
     });
     expect(baseline.length).toBeGreaterThan(0);
     const selfId = baseline[0].questionId;
-    const filtered = findRelatedQuestions({
+    const filtered = await findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
       currentQuestionId: selfId,
       excludeDocIds: emptyExclude, source,

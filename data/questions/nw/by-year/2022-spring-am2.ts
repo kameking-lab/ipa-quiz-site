@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "電話機の総呼量は、1台あたりの呼量に総台数を乗じて算出します。呼量（アーラン）は（1時間あたりの呼数 × 平均保留時間（秒））／3600（秒）で計算されます。本問の正解である「4アーラン」が得られるためには、電話機1台あたりの呼の発生頻度を「1時間に1回」と解釈すると、(1回/時間 × 80秒)／3600秒 = 1/45アーランとなり、180台では4アーランとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "シングルモード光ファイバは、単一の光路で光を伝送するため、モード分散が発生せず、広帯域で高速な伝送が可能です。しかし、コア径が非常に細く接続がデリケートであるため、マルチモードと比較して許容される接続損失が厳しく、長距離での使用にはより高度な技術と設備が必要とされる場合があるため、短い距離に限定される用途もあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "BGP (Border Gateway Protocol) は、AS (Autonomous System) と呼ばれる自律的なネットワーク間の経路情報を交換するために設計された外部ゲートウェイプロトコルです。IS-IS, OSPF, RIPなどはAS内部の経路制御に用いられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スパニングツリープロトコルは、ブリッジやスイッチによるネットワークループを防ぎ、ブロードキャストストームを回避するデータリンク層のプロトコルです。ルートブリッジは、ブリッジの優先順位とMACアドレスを組み合わせたブリッジIDが最も小さいものが選出されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "MX (Mail Exchanger) レコードは、特定のドメイン宛ての電子メールを処理するメールサーバのホスト名と優先順位を指定するDNSリソースレコードです。電子メールの送信先を決定するために利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ICMP (Internet Control Message Protocol) のRedirectメッセージは、ルータが最適なルータを送信元ホストに通知し、経路の変更を要請するために使用されます。これにより、より効率的な通信経路へ誘導することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IGMP (Internet Group Management Protocol) は、ホストがマルチキャストグループへの参加や離脱をルータに通知したり、ルータがマルチキャストグループに参加しているホストの有無を確認したりするために用いられるプロトコルです。これにより、マルチキャストトラフィックが不要なセグメントに転送されるのを防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "SMTP (Simple Mail Transfer Protocol) のセッションを開始する際に、クライアントはEHLO (Extended HELO) コマンドをサーバに送信します。これにより、クライアントは自身のホスト名を通知し、サーバがサポートする拡張SMTP機能のリストを受け取ることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ネットワークアドレス192.168.10.0/24から192.168.58.0/24を包含する最小のネットワーク範囲を特定します。第3オクテットの10(00001010)と58(00111010)を包含するには、第3オクテットの先頭2ビットまでを共通部分とする192.168.0.0/18（範囲：192.168.0.0～192.168.63.255）が最もビット数の多い集約経路となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ウが正解です。IEEE 802.3イーサネットフレームにおける「タイプ」フィールドは、その後に続くデータ部分がどのプロトコル（例えばIPv4かIPv6か）でカプセル化されているかを示す識別子です。IPv4とIPv6は異なるネットワーク層プロトコルであるため、イーサネットフレームのタイプフィールドの値もそれぞれ異なります。\n\nアはSFD（Start Frame Delimiter）の値についてですが、SFDはフレームの開始位置を示すもので、IPv4とIPv6で値が変わることはありません。イはMACアドレスの長さについてですが、イーサネットのMACアドレスはIPv4、IPv6のいずれのパケットをカプセル化する場合でも、送信元と宛先の両方とも6バイト（48ビット）と固定長であり、変わりません。エはデータの最大長についてですが、イーサネットフレームのデータ部分（ペイロード）の最大長はMTU（Maximum Transmission Unit）として定義され、通常は1500バイトですが、これはIPv4でもIPv6でも基本的には同じであり、プロトコルによって直接的に最大長が変わるものではありません。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "RIP-1 (Routing Information Protocol Version 1) は、クラスフルルーティングプロトコルであり、経路情報を交換する際にサブネットマスク情報を含みません。そのため、ネットワークをクラス単位で管理する必要があり、異なるサブネットマスクを持つサブネットが存在する環境には対応できません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ホストのIPアドレスとして使用できるのは、ネットワークアドレス、ブロードキャストアドレス、およびループバックアドレスを除いたアドレスです。172.16.10.255/16は、ネットワークアドレス172.16.0.0/16のブロードキャストアドレス172.16.255.255でもなく、ループバックアドレスでもないため、ホストに割り当てることが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IPv4のマルチキャストでは、特定のグループに属するホストに対して同時にデータを送信するために、クラスDのアドレス範囲が使用されます。この範囲は224.0.0.0から239.255.255.255までです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "RMON (Remote MONitoring) は、ネットワークのトラフィックを測定・解析するための標準的な仕組みです。ネットワーク機器の特定のポートや回線からパケットをキャプチャし、その統計情報やイベントなどをSNMPを使って管理装置に送信します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "R値 (R-factor) は、IP電話における客観的な音声品質を評価する国際標準の指標であり、ITU-T G.107 (E-model) で定義されています。遅延、ジッタ、パケット損失、ノイズ、コーデックなどの様々な要因を総合的に考慮して算出されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RLO (Right-to-Left Override) は、Unicodeの制御文字の一種で、文字列の表示順序を右から左へと反転させる機能を持っています。この特性を悪用すると、ファイル名の拡張子を偽装し、ユーザーが悪意のあるファイルを開くよう誘い込むことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "サイドチャネル攻撃は、暗号化装置が秘密情報を処理する際に発生する物理的な現象（消費電力、電磁波、処理時間など）を観測・分析することで、内部の暗号鍵などの秘密情報を推定しようとする攻撃です。装置の外部から情報を収集するため、実装の脆弱性を突くものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DNSサーバのゾーン転送を許可するIPアドレスを限定することは、プライマリDNSサーバのセキュリティ強化に有効です。これにより、許可されたセカンダリDNSサーバ以外の不正なゾーン転送を防ぎ、外部に公開すべきでないゾーン情報が攻撃者によって読み出されるリスクを低減できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "VLAN機能によりスイッチのポートを複数のセグメントに分けると、ブロードキャストパケットの到達範囲がそれぞれのVLAN内に制限されます。これにより、本来不要な情報がVLAN外に流出するのを防ぎ、アドレス情報などの不要な流出リスクを低減できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デジタルフォレンジックスは、犯罪やセキュリティインシデントが発生した際に、コンピュータやネットワーク機器に残されたデジタルデータを法的な証拠として保全、収集、分析する一連のプロセスです。その目的は、事実関係の解明や証拠収集にあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "DNSリフレクタ攻撃の踏み台にされないための対策として、DNSキャッシュサーバと権威DNSサーバを分離し、インターネット側からDNSキャッシュサーバへの問合せを制限することが有効です。これにより、不特定多数からの再帰的な問い合わせを遮断し、オープンリゾルバとして悪用されることを防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "量子アニーリング方式の量子コンピュータは、特定の種類の最適化問題、特に組み合わせ最適化問題を高速に解くことに特化しています。これは「膨大な選択肢の中から最適な選択肢を探すアルゴリズム」に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "元の通信回線の停止率は1 - 0.9 = 0.1です。二重化後の全体の停止率は1 - 0.999 = 0.001となります。二重化されているため、全体の停止率は元の回線の停止率と新しい回線の停止率の積で表されるので、0.1 × (1 - x) = 0.001 を解くと、x = 0.99となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "フールプルーフとは、利用者が誤った操作をしてもシステムが異常終了せず、安全に操作を継続できるように設計することです。問題文のように、無効な入力に対してエラーメッセージを表示して正しい入力を促す設計は、利用者の誤操作を防ぎ、システムを安定稼働させるフールプルーフの典型例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ステージング環境とは、システムを本番環境にリリースする直前に、本番環境と可能な限り同様の環境で最終的な動作確認や性能テストを行うための環境です。これにより、本番環境での不具合発生のリスクを最小限に抑えることができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"

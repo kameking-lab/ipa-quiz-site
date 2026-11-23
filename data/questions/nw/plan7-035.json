@@ -1,0 +1,100 @@
+[
+  {
+    "id": "nw-2016a-pm2-q1",
+    "exam": "nw",
+    "session": "pm2",
+    "year": 2016,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ネットワークシステムの拡張",
+    "topicTags": [
+      "ネットワークシステムの拡張"
+    ],
+    "difficulty": 3,
+    "question": "問1　ネットワークシステムの拡張。原本の設問に答えよ。",
+    "answer": "設問１ ／ (1) ／ ア ／ ip1/29  \nイ ／ 10.0.9.0/24  \nウ ／ 送信元ポート番号  \n(2) ／ 131,072  \n(3) ／ ① ② ／ ・許可する通信を追加する。 ・宛先NAT に関する定義を追加する。  \n設問２ ／ (1) ／ 異なるISP から払い出されている。  \n(2) ／ 応答が行きの宛先IP アドレスとは異なる送信元IP アドレスから戻る。  \n設問３ ／ (1) ／ Binding レスポンス中のデータに含まれる IP アドレスと，自分の IP アドレスを比べる。  \n(2) ／ ① ② ／ ・〈p〉 ・〈g2〉  \n(3) ／ A ／ vlan1 ／ 順不同  \nB ／ vlan2  \n(4) ／ エ ／ ブラウザ2 のAP  \nオ ／ STUN サーバ  \n設問４ ／ (1) ／ カ ／ HTTP  \nキ ／ WebSocket  \n(2) ／ ISP1 とISP2 から払い出されたIP アドレスを一つずつ割り当てる。  \n(3) ／ C ／ vlan1 ／ 順不同  \nD ／ vlan2  \n(4) ／ ク ／ IP-PBX  \nケ ／ DNS  \nコ ／ LB  \n設問５ ／ (1) ／ サ ／ 切り戻し  \n(2) ／ FQDN 数 ／ 1  \nグローバルIP アドレス数 ／ 4  \n(3) ／ IP-PBX，STUN サーバ1，STUN サーバ２  \n(4) ／ FW  \n(5) ／ ① ② ③ ／ ・社外からWeb サーバへのアクセス・社内からWeb サーバへのアクセス・社内からインターネットへのアクセス  \n(6) ／ ISP2 を経由した外向きDNS 機能を確認する。  \n(7) ／ ①’，③，④",
+    "explanation": "機器の増設前後でネットワークの接続関係を追い、通信が継続できる条件と、経路が切り替わる条件を区別します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/nw-2016a-pm2-q1/question-p02.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p03.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p04.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p05.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p06.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p07.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p08.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p09.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p10.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p11.webp",
+      "/questions/plan7/nw-2016a-pm2-q1/question-p12.webp"
+    ],
+    "imageAltTexts": [
+      "問1の原本（問題冊子 2ページ）",
+      "問1の原本（問題冊子 3ページ）",
+      "問1の原本（問題冊子 4ページ）",
+      "問1の原本（問題冊子 5ページ）",
+      "問1の原本（問題冊子 6ページ）",
+      "問1の原本（問題冊子 7ページ）",
+      "問1の原本（問題冊子 8ページ）",
+      "問1の原本（問題冊子 9ページ）",
+      "問1の原本（問題冊子 10ページ）",
+      "問1の原本（問題冊子 11ページ）",
+      "問1の原本（問題冊子 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm2_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm2_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "nw-2016a-pm2-q2",
+    "exam": "nw",
+    "session": "pm2",
+    "year": 2016,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "WAN回線の冗長化設計",
+    "topicTags": [
+      "WAN回線の冗長化設計"
+    ],
+    "difficulty": 3,
+    "question": "問2　WAN回線の冗長化設計。原本の設問に答えよ。",
+    "answer": "設問１ ／ ア ／ 32  \nイ ／ セレクタ  \nウ ／ アグレッシブ  \nエ ／ 経路  \nオ ／ 断片化  \n設問２ ／ (1) ／ リキー（ReKey）  \n(2) ／ IPsec 通信で送受信されるメッセージが，通信中に改ざんされていないこと  \n(3) ／ OSPF のリンクステート情報交換は，IP マルチキャスト通信で行われるから  \n設問３ ／ (1) ／ あ ／ 1,436  \nい ／ 1,414  \n(2) ／ IP ヘッダ1 ／ 送信元IP アドレス ／ α.0.0.1  \n宛先IP アドレス ／ β.0.0.1  \nIP ヘッダ2 ／ 送信元IP アドレス ／ 192.168.0.100  \n宛先IP アドレス ／ 192.168.10.1  \n(3) ／ ①の通信でPC が取得するIPアドレスが格納されるヘッダ ／ IP ヘッダ1  \n②の通信でPC が取得するIPアドレスが格納されるヘッダ ／ IP ヘッダ2  \n(4) ／ カプセル化によるオーバヘッドが L2TP より小さいので，一つのパケットで転送できるデータ量が多い。  \n設問４ ／ (1) ／ GRE でトンネリングが行われるから  \n(2) ／ ESP 認証データ長は，使用する認証アルゴリズムによって変化するから  \n(3) ／ GRE ヘッダ，IP ヘッダ2，TCP/UDP ヘッダ，データ，ESP トレーラ  \n設問５ ／ (1) ／ 172.16.128.0/20，172.16.17.0/24  \n(2) ／ L2SWa とL2SWb を異なるサブネットにする。  \n(3) ／ 本社 ／ 2  \n営業所 ／ 1  \nデータセンタ ／ 2  \n(4) ／ どのサーバアクセスも，VRRP のマスタルータが稼働する機器に接続された WAN 回線を経由して行われる。  \n(5) ／ インターネット VPN 経由のコスト値が最小 230 であるのに対して，専用線経由のコスト値は200 で最も小さい。  \n(6) ／ う ／ 広域イーサ網→本社→専用線  \nえ ／ インターネットVPN→データセンタ→専用線",
+    "explanation": "通常時と回線障害時で拠点間の経路をそれぞれたどり、異なる回線種別を使った場合に変わる設定と動作を確認します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/nw-2016a-pm2-q2/question-p13.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p14.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p15.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p16.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p17.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p18.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p19.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p20.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p21.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p22.webp",
+      "/questions/plan7/nw-2016a-pm2-q2/question-p23.webp"
+    ],
+    "imageAltTexts": [
+      "問2の原本（問題冊子 13ページ）",
+      "問2の原本（問題冊子 14ページ）",
+      "問2の原本（問題冊子 15ページ）",
+      "問2の原本（問題冊子 16ページ）",
+      "問2の原本（問題冊子 17ページ）",
+      "問2の原本（問題冊子 18ページ）",
+      "問2の原本（問題冊子 19ページ）",
+      "問2の原本（問題冊子 20ページ）",
+      "問2の原本（問題冊子 21ページ）",
+      "問2の原本（問題冊子 22ページ）",
+      "問2の原本（問題冊子 23ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm2_ans.pdf#page=3",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  }
+]

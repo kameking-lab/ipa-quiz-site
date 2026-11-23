@@ -6,28 +6,16 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
   ArrowRight,
-  BookmarkPlus,
-  BookmarkCheck,
-  Clock,
-  History,
   Loader2,
-  Play,
-  Search as SearchIcon,
-  Star,
-  Trash2,
-  X,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { cn, examLabel, seasonLabel, formatYearSeason } from "@/lib/utils";
+import { StudySearchField } from "@/components/ui/StudySearchField";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
+import { examLabel, seasonLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { buildSearchPracticeUrl } from "@/lib/search/practice-url";
 import { extractRecentlyViewedIds } from "@/lib/search/recently-viewed";
-import {
-  encodeExplicitPoolIds,
-  MAX_EXPLICIT_POOL_IDS,
-} from "@/lib/questions/explicit-pool";
+import { MAX_EXPLICIT_POOL_IDS } from "@/lib/questions/explicit-pool";
 import type {
   ExamCode,
   QuestionPart,
@@ -41,14 +29,6 @@ type SearchSort = "relevance" | "year_desc" | "category" | "random";
 const EXAM_OPTIONS = ALL_QUIZ_EXAM_CODES;
 const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"];
 const DIFFICULTY_OPTIONS: Difficulty[] = [1, 2, 3, 4, 5];
-const SORT_OPTIONS: { value: SearchSort; label: string }[] = [
-  { value: "relevance", label: "関連度順" },
-  { value: "year_desc", label: "年度新しい順" },
-  { value: "category", label: "分野順" },
-  { value: "random", label: "ランダム" },
-];
-const MAX_HISTORY = 15;
-const MAX_SAVED = 20;
 const DEBOUNCE_MS = 300;
 
 interface SearchHit {
@@ -109,18 +89,7 @@ export interface SavedSearch {
   savedAt: number;
 }
 
-const EMPTY_QUERY: ActiveQuery = {
-  q: "",
-  exam: "",
-  year: "",
-  season: "",
-  category: "",
-  difficulty: "",
-  calculationOnly: false,
-  sort: "relevance",
-};
-
-function readFromParams(sp: URLSearchParams): ActiveQuery {
+function readFromParams(sp: Pick<URLSearchParams, "get">): ActiveQuery {
   return {
     q: sp.get("q") ?? "",
     exam: (sp.get("exam") as ExamCode) ?? "",
@@ -150,46 +119,6 @@ function hasAnyFilter(q: ActiveQuery): boolean {
   return Boolean(
     q.q.trim() || q.exam || q.year || q.season || q.category || q.difficulty || q.calculationOnly,
   );
-}
-
-function queryLabel(q: ActiveQuery): string {
-  const parts: string[] = [];
-  if (q.q.trim()) parts.push(`"${q.q.trim()}"`);
-  if (q.exam) parts.push(examLabel(q.exam));
-  if (q.year) parts.push(`${q.year}年`);
-  if (q.season) parts.push(seasonLabel(q.season));
-  if (q.category) parts.push(q.category);
-  if (q.difficulty) parts.push(`★${q.difficulty}`);
-  if (q.calculationOnly) parts.push("計算問題");
-  return parts.join(" · ") || "条件なし";
-}
-
-function loadSearchHistory(): SearchHistoryEntry[] {
-  if (typeof window === "undefined") return [];
-  try {
-    return JSON.parse(localStorage.getItem(LS_KEYS.searchHistory) ?? "[]");
-  } catch {
-    return [];
-  }
-}
-
-function saveSearchHistory(entries: SearchHistoryEntry[]): void {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(LS_KEYS.searchHistory, JSON.stringify(entries));
-}
-
-function loadSavedSearches(): SavedSearch[] {
-  if (typeof window === "undefined") return [];
-  try {
-    return JSON.parse(localStorage.getItem(LS_KEYS.savedSearches) ?? "[]");
-  } catch {
-    return [];
-  }
-}
-
-function saveSavedSearches(entries: SavedSearch[]): void {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(LS_KEYS.savedSearches, JSON.stringify(entries));
 }
 
 function loadRecentlyViewedIds(): Set<string> {
@@ -232,38 +161,25 @@ export function SearchClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [query, setQuery] = useState<ActiveQuery>(EMPTY_QUERY);
-  const [inputText, setInputText] = useState("");
+  const query = useMemo(() => readFromParams(searchParams), [searchParams]);
+  const [draft, setDraft] = useState({ query, text: query.q });
+  const inputText = draft.query === query ? draft.text : query.q;
   const [result, setResult] = useState<SearchResponse | null>(null);
   const [resultQueryKey, setResultQueryKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
 
-  // History & saved searches — client-only state
-  const [searchHistory, setSearchHistoryState] = useState<SearchHistoryEntry[]>([]);
-  const [savedSearches, setSavedSearchesState] = useState<SavedSearch[]>([]);
+  const [filterOpen, setFilterOpen] = useState(false);
   const [recentlyViewedIds, setRecentlyViewedIds] = useState<Set<string>>(new Set());
-  const [showHistory, setShowHistory] = useState(false);
-  const [showSaved, setShowSaved] = useState(false);
-  const [recentOnly, setRecentOnly] = useState(false);
+  const recentOnly = searchParams.get("recent") === "1";
 
   useEffect(() => {
-    setSearchHistoryState(loadSearchHistory());
-    setSavedSearchesState(loadSavedSearches());
-    setRecentlyViewedIds(loadRecentlyViewedIds());
-  }, []);
-
-  // Sync query from URL params
-  useEffect(() => {
-    const q = readFromParams(new URLSearchParams(searchParams.toString()));
-    setQuery(q);
-    setInputText(q.q);
-    setRecentOnly(searchParams.get("recent") === "1");
-  }, [searchParams]);
+    if (recentOnly) setRecentlyViewedIds(loadRecentlyViewedIds());
+  }, [recentOnly]);
 
   // Fetch results
-  const fetchResults = useCallback(async (q: ActiveQuery) => {
+  const fetchResults = useCallback(async (q: ActiveQuery, facetsOnly = false) => {
     abortRef.current?.abort();
     const ctrl = new AbortController();
     abortRef.current = ctrl;
@@ -272,7 +188,7 @@ export function SearchClient() {
     const queryKey = toParams(q).toString();
     try {
       const sp = toParams(q);
-      sp.set("limit", String(MAX_EXPLICIT_POOL_IDS));
+      sp.set("limit", facetsOnly ? "1" : String(MAX_EXPLICIT_POOL_IDS));
       const res = await fetch(`/api/search/questions?${sp.toString()}`, {
         signal: ctrl.signal,
       });
@@ -282,8 +198,8 @@ export function SearchClient() {
       setResult(data);
       setResultQueryKey(queryKey);
     } catch (err) {
-      if ((err as Error).name === "AbortError") return;
-      setError("検索に失敗しました。時間をおいて再度お試しください。");
+      if (abortRef.current !== ctrl || (err as Error).name === "AbortError") return;
+      setError("検索に失敗しました。もう一度「検索」を押してください。");
       setResult(null);
       setResultQueryKey(null);
     } finally {
@@ -291,9 +207,12 @@ export function SearchClient() {
     }
   }, []);
 
+  const showResults = hasAnyFilter(query) || recentOnly || query.sort !== "relevance";
+  const loadFacetsOnly = filterOpen && !showResults;
   useEffect(() => {
-    fetchResults(query);
-  }, [query, fetchResults]);
+    if (showResults || loadFacetsOnly) void fetchResults(query, loadFacetsOnly);
+    return () => abortRef.current?.abort();
+  }, [query, showResults, loadFacetsOnly, fetchResults]);
 
   const updateQuery = useCallback(
     (patch: Partial<ActiveQuery>) => {
@@ -315,84 +234,11 @@ export function SearchClient() {
     return () => clearTimeout(timer);
   }, [inputText, query.q, updateQuery]);
 
-  // Persist successful searches to history
-  useEffect(() => {
-    if (!result || result.total === 0 || !hasAnyFilter(query)) return;
-    const paramsStr = toParams(query).toString();
-    const label = queryLabel(query);
-    setSearchHistoryState((prev) => {
-      const deduped = prev.filter((e) => e.params !== paramsStr);
-      const next: SearchHistoryEntry[] = [
-        { id: Date.now().toString(), label, params: paramsStr, savedAt: Date.now() },
-        ...deduped,
-      ].slice(0, MAX_HISTORY);
-      saveSearchHistory(next);
-      return next;
-    });
-  }, [result]); // eslint-disable-line react-hooks/exhaustive-deps
-
   const clearAll = useCallback(() => {
+    setDraft({ query, text: "" });
     router.replace("/search", { scroll: false });
-  }, [router]);
+  }, [query, router]);
 
-  const applyHistoryEntry = useCallback(
-    (params: string) => {
-      router.replace(params ? `/search?${params}` : "/search", { scroll: false });
-      setShowHistory(false);
-      setShowSaved(false);
-    },
-    [router],
-  );
-
-  const deleteHistoryEntry = useCallback((id: string) => {
-    setSearchHistoryState((prev) => {
-      const next = prev.filter((e) => e.id !== id);
-      saveSearchHistory(next);
-      return next;
-    });
-  }, []);
-
-  const toggleSaveSearch = useCallback(() => {
-    const paramsStr = toParams(query).toString();
-    const existing = savedSearches.find((s) => s.params === paramsStr);
-    if (existing) {
-      setSavedSearchesState((prev) => {
-        const next = prev.filter((s) => s.id !== existing.id);
-        saveSavedSearches(next);
-        return next;
-      });
-    } else {
-      const entry: SavedSearch = {
-        id: Date.now().toString(),
-        label: queryLabel(query),
-        params: paramsStr,
-        savedAt: Date.now(),
-      };
-      setSavedSearchesState((prev) => {
-        const next = [entry, ...prev].slice(0, MAX_SAVED);
-        saveSavedSearches(next);
-        return next;
-      });
-    }
-  }, [query, savedSearches]);
-
-  const deleteSavedSearch = useCallback((id: string) => {
-    setSavedSearchesState((prev) => {
-      const next = prev.filter((s) => s.id !== id);
-      saveSavedSearches(next);
-      return next;
-    });
-  }, []);
-
-  const toggleRecentOnly = useCallback(() => {
-    const params = toParams(query);
-    if (!recentOnly) params.set("recent", "1");
-    const qs = params.toString();
-    router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
-  }, [query, recentOnly, router]);
-
-  const currentParamsStr = toParams(query).toString();
-  const isCurrentSaved = savedSearches.some((s) => s.params === currentParamsStr);
   const tokens = useMemo(
     () => query.q.trim().toLowerCase().split(/\s+/).filter(Boolean),
     [query.q],
@@ -407,82 +253,21 @@ export function SearchClient() {
     return { ...result, hits: filtered, total: filtered.length };
   }, [result, resultIsCurrent, recentOnly, recentlyViewedIds]);
 
-  const practiceHits = useMemo(() => {
-    const hits = filteredHits?.hits ?? [];
-    const encoded = encodeExplicitPoolIds(hits.map((hit) => hit.id));
-    if (!encoded) return [];
-    const included = new Set(encoded.split(","));
-    return hits.filter((hit) => included.has(hit.id));
-  }, [filteredHits]);
-  const practiceUrl = useMemo(
-    () => {
-      const params = toParams(query);
-      if (recentOnly) params.set("recent", "1");
-      return buildSearchPracticeUrl(params.toString(), practiceHits);
-    },
-    [query, practiceHits, recentOnly],
-  );
-
   return (
     <div className="space-y-4">
       {/* Search Form (full-width on every viewport) */}
       <SearchForm
         inputText={inputText}
-        query={query}
-        onInputChange={setInputText}
-        onSubmit={() => updateQuery({ q: inputText })}
+        onInputChange={(text) => setDraft({ query, text })}
+        onSubmit={() => { if (inputText !== query.q) updateQuery({ q: inputText }); else if (showResults) void fetchResults(query); }}
         onClear={clearAll}
-        onFilterChange={updateQuery}
       />
 
-      {/* History & Saved quick access */}
-      <HistoryBar
-        history={searchHistory}
-        saved={savedSearches}
-        showHistory={showHistory}
-        showSaved={showSaved}
-        onToggleHistory={() => { setShowHistory((v) => !v); setShowSaved(false); }}
-        onToggleSaved={() => { setShowSaved((v) => !v); setShowHistory(false); }}
-        onApply={applyHistoryEntry}
-        onDeleteHistory={deleteHistoryEntry}
-        onDeleteSaved={deleteSavedSearch}
-      />
-
-      {/* PC: facet panel sits in a left rail (≈18rem) while the right */}
-      {/* column carries toolbar + results; mobile keeps the prior stacked */}
-      {/* layout so the chip row never competes with vertical real-estate. */}
-      <div className="md:grid md:grid-cols-[18rem_minmax(0,1fr)] md:gap-6 md:items-start">
-        <div className="md:sticky md:top-4">
-          <FacetPanel
-            facets={result?.facets}
-            query={query}
-            onChange={updateQuery}
-          />
-        </div>
-        <div className="mt-4 md:mt-0">
-          <SearchToolbar
-            isCurrentSaved={isCurrentSaved}
-            onToggleSave={toggleSaveSearch}
-            recentOnly={recentOnly}
-            onToggleRecentOnly={toggleRecentOnly}
-            hasRecentlyViewed={recentlyViewedIds.size > 0}
-            sort={query.sort}
-            onSortChange={(sort) => updateQuery({ sort })}
-            practiceUrl={practiceUrl}
-            practiceCount={practiceHits.length}
-            searchTotal={filteredHits?.total ?? 0}
-            loading={loading || !resultIsCurrent}
-          />
-          <div className="mt-4">
-            <ResultsPanel
-              loading={loading}
-              error={error}
-              result={filteredHits}
-              tokens={tokens}
-            />
-          </div>
-        </div>
-      </div>
+      <details className="border-y border-hairline" onToggle={(event) => setFilterOpen(event.currentTarget.open)}>
+        <summary className="study-focus min-h-11 cursor-pointer py-3 text-sm font-medium">絞り込み</summary>
+        <FacetPanel facets={result?.facets} query={query} onChange={updateQuery} />
+      </details>
+      {showResults && <ResultsPanel loading={loading || (!resultIsCurrent && !error)} error={error} result={filteredHits} tokens={tokens} />}
     </div>
   );
 }
@@ -491,278 +276,40 @@ export function SearchClient() {
 
 interface SearchFormProps {
   inputText: string;
-  query: ActiveQuery;
   onInputChange: (text: string) => void;
   onSubmit: () => void;
   onClear: () => void;
-  onFilterChange: (patch: Partial<ActiveQuery>) => void;
 }
 
-function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilterChange }: SearchFormProps) {
+function SearchForm({ inputText, onInputChange, onSubmit, onClear }: SearchFormProps) {
   return (
     <form
       role="search"
       aria-label="問題検索"
-      className="rounded-2xl border border-border bg-card p-4 shadow-sm"
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit();
       }}
     >
-      <label htmlFor="search-input" className="sr-only">キーワード</label>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <div className="relative flex-1">
-          <SearchIcon
-            className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-            aria-hidden="true"
-          />
-          <input
-            id="search-input"
-            type="search"
-            inputMode="search"
-            placeholder="例) TCP/IP、正規化、SQLインジェクション"
-            className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-9 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12"
-            value={inputText}
-            onChange={(e) => onInputChange(e.target.value)}
-            enterKeyHint="search"
-          />
-          {inputText && (
-            <button
-              type="button"
-              aria-label="入力をクリア"
-              className="absolute right-2 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-md text-muted-foreground hover:bg-muted"
-              onClick={() => onInputChange("")}
-            >
-              <X className="h-4 w-4" aria-hidden="true" />
-            </button>
-          )}
-        </div>
-        <div className="flex gap-2">
-          <Button type="submit" variant="primary" size="md" className="flex-1 sm:flex-none">
-            検索
-          </Button>
-          <Button type="button" variant="ghost" size="md" onClick={onClear} aria-label="すべての条件をクリア">
-            クリア
-          </Button>
-        </div>
+      <StudySearchField
+        id="search-input"
+        aria-label="キーワード"
+        inputMode="search"
+        placeholder="キーワード"
+        value={inputText}
+        onChange={(e) => onInputChange(e.target.value)}
+        enterKeyHint="search"
+      />
+      <div className="mt-2 flex items-center gap-3">
+        <button type="submit" className="study-primary flex-1">
+          検索 <ArrowRight aria-hidden="true" className="size-5" />
+        </button>
+        <button type="button" className="study-link" onClick={onClear} aria-label="すべての条件をクリア">クリア</button>
       </div>
 
-      <div className="mt-3 flex items-center gap-2">
-        <label className="flex cursor-pointer items-center gap-2 text-xs text-muted-foreground">
-          <input
-            type="checkbox"
-            checked={query.calculationOnly}
-            onChange={(e) => onFilterChange({ calculationOnly: e.target.checked })}
-            className="h-4 w-4 rounded border-border accent-primary"
-          />
-          計算問題のみ
-        </label>
-      </div>
     </form>
   );
 }
-
-// ─── HistoryBar ───────────────────────────────────────────────────────────────
-
-interface HistoryBarProps {
-  history: SearchHistoryEntry[];
-  saved: SavedSearch[];
-  showHistory: boolean;
-  showSaved: boolean;
-  onToggleHistory: () => void;
-  onToggleSaved: () => void;
-  onApply: (params: string) => void;
-  onDeleteHistory: (id: string) => void;
-  onDeleteSaved: (id: string) => void;
-}
-
-function HistoryBar({
-  history, saved, showHistory, showSaved,
-  onToggleHistory, onToggleSaved, onApply, onDeleteHistory, onDeleteSaved,
-}: HistoryBarProps) {
-  if (history.length === 0 && saved.length === 0) return null;
-
-  return (
-    <div className="space-y-2">
-      <div className="flex gap-2">
-        {history.length > 0 && (
-          <button
-            type="button"
-            onClick={onToggleHistory}
-            aria-expanded={showHistory}
-            className={cn(
-              "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
-              showHistory
-                ? "border-primary bg-primary text-primary-foreground"
-                : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:bg-muted",
-            )}
-          >
-            <History className="h-3 w-3" aria-hidden="true" />
-            履歴 ({history.length}件)
-          </button>
-        )}
-        {saved.length > 0 && (
-          <button
-            type="button"
-            onClick={onToggleSaved}
-            aria-expanded={showSaved}
-            className={cn(
-              "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
-              showSaved
-                ? "border-primary bg-primary text-primary-foreground"
-                : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:bg-muted",
-            )}
-          >
-            <Star className="h-3 w-3" aria-hidden="true" />
-            保存済み ({saved.length})
-          </button>
-        )}
-      </div>
-
-      {showHistory && (
-        <HistoryList items={history} onApply={onApply} onDelete={onDeleteHistory} />
-      )}
-      {showSaved && (
-        <HistoryList items={saved} onApply={onApply} onDelete={onDeleteSaved} />
-      )}
-    </div>
-  );
-}
-
-function HistoryList({
-  items,
-  onApply,
-  onDelete,
-}: {
-  items: (SearchHistoryEntry | SavedSearch)[];
-  onApply: (params: string) => void;
-  onDelete: (id: string) => void;
-}) {
-  return (
-    <div
-      role="list"
-      aria-label="検索条件一覧"
-      className="rounded-xl border border-border bg-card/80 p-2 shadow-sm"
-    >
-      {items.map((item) => (
-        <div
-          key={item.id}
-          role="listitem"
-          className="group flex items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-muted"
-        >
-          <button
-            type="button"
-            className="min-w-0 flex-1 truncate text-left text-xs text-foreground"
-            onClick={() => onApply(item.params)}
-          >
-            {item.label}
-          </button>
-          <button
-            type="button"
-            aria-label={`${item.label}を削除`}
-            onClick={() => onDelete(item.id)}
-            className="grid min-h-11 min-w-11 shrink-0 place-items-center rounded text-muted-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          >
-            <Trash2 className="h-3 w-3" aria-hidden="true" />
-          </button>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ─── SearchToolbar ────────────────────────────────────────────────────────────
-
-interface SearchToolbarProps {
-  isCurrentSaved: boolean;
-  onToggleSave: () => void;
-  recentOnly: boolean;
-  onToggleRecentOnly: () => void;
-  hasRecentlyViewed: boolean;
-  sort: SearchSort;
-  onSortChange: (s: SearchSort) => void;
-  practiceUrl: string;
-  practiceCount: number;
-  searchTotal: number;
-  loading: boolean;
-}
-
-function SearchToolbar({
-  isCurrentSaved, onToggleSave,
-  recentOnly, onToggleRecentOnly, hasRecentlyViewed,
-  sort, onSortChange,
-  practiceUrl, practiceCount, searchTotal, loading,
-}: SearchToolbarProps) {
-  return (
-    <div className="flex flex-wrap items-center gap-2">
-      {/* Save current search */}
-      <button
-        type="button"
-        aria-pressed={isCurrentSaved}
-        aria-label={isCurrentSaved ? "検索条件の保存を解除" : "この検索条件を保存"}
-        onClick={onToggleSave}
-        className={cn(
-          "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
-          isCurrentSaved
-            ? "border-amber-400 bg-amber-50 text-amber-700 dark:border-amber-500 dark:bg-amber-950/30 dark:text-amber-400"
-            : "border-border bg-background text-muted-foreground hover:border-amber-400/60 hover:bg-muted",
-        )}
-      >
-        {isCurrentSaved ? (
-          <BookmarkCheck className="h-3 w-3" aria-hidden="true" />
-        ) : (
-          <BookmarkPlus className="h-3 w-3" aria-hidden="true" />
-        )}
-        {isCurrentSaved ? "条件保存済み" : "この検索条件を保存"}
-      </button>
-
-      {/* Recently viewed filter */}
-      {hasRecentlyViewed && (
-        <button
-          type="button"
-          aria-pressed={recentOnly}
-          onClick={onToggleRecentOnly}
-          className={cn(
-            "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
-            recentOnly
-              ? "border-primary bg-primary text-primary-foreground"
-              : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:bg-muted",
-          )}
-        >
-          <Clock className="h-3 w-3" aria-hidden="true" />
-          最近見た問題のみ
-        </button>
-      )}
-
-      {/* Sort selector */}
-      <label className="sr-only" htmlFor="sort-select">並び順</label>
-      <select
-        id="sort-select"
-        value={sort}
-        onChange={(e) => onSortChange(e.target.value as SearchSort)}
-        className="h-7 rounded-full border border-border bg-background px-3 text-xs text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/30"
-      >
-        {SORT_OPTIONS.map((o) => (
-          <option key={o.value} value={o.value}>{o.label}</option>
-        ))}
-      </select>
-
-      {/* Practice mode CTA */}
-      {practiceCount > 0 && !loading && (
-        <Link
-          href={practiceUrl}
-          className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-primary bg-primary px-3 py-1 text-xs text-primary-foreground transition-opacity hover:opacity-90"
-          aria-label={`${practiceCount.toLocaleString("ja-JP")}件の検索結果を連続演習する${searchTotal > practiceCount ? `（全${searchTotal.toLocaleString("ja-JP")}件中）` : ""}`}
-        >
-          <Play className="h-3 w-3 fill-current" aria-hidden="true" />
-          {loading ? "..." : `${practiceCount.toLocaleString("ja-JP")}件を演習`}
-        </Link>
-      )}
-    </div>
-  );
-}
-
-// ─── FacetPanel ───────────────────────────────────────────────────────────────
 
 interface FacetPanelProps {
   facets: FacetCounts | undefined;
@@ -771,181 +318,29 @@ interface FacetPanelProps {
 }
 
 function FacetPanel({ facets, query, onChange }: FacetPanelProps) {
-  const examEntries = useMemo(
-    () =>
-      EXAM_OPTIONS.map((code) => ({ code, count: facets?.exam[code] ?? 0 })).filter(
-        (e) => e.count > 0 || query.exam === e.code,
-      ),
-    [facets, query.exam],
-  );
-
-  const yearEntries = useMemo(() => {
-    const map = facets?.year ?? {};
-    return Object.keys(map)
-      .map((y) => ({ year: y, count: map[y] }))
-      .sort((a, b) => Number(b.year) - Number(a.year));
-  }, [facets]);
-
-  const seasonEntries = useMemo(
-    () =>
-      SEASON_OPTIONS.map((s) => ({ season: s, count: facets?.season[s] ?? 0 })).filter(
-        (e) => e.count > 0 || query.season === e.season,
-      ),
-    [facets, query.season],
-  );
-
-  const categoryEntries = useMemo(() => {
-    const map = facets?.category ?? {};
-    return Object.keys(map)
-      .map((c) => ({ category: c, count: map[c] }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 20);
-  }, [facets]);
-
-  const difficultyEntries = useMemo(
-    () =>
-      DIFFICULTY_OPTIONS.map((d) => ({
-        difficulty: d,
-        count: facets?.difficulty[String(d)] ?? 0,
-      })).filter(
-        (e) => e.count > 0 || String(query.difficulty) === String(e.difficulty),
-      ),
-    [facets, query.difficulty],
-  );
-
+  const fieldClass = "study-focus mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-input bg-background px-2 text-base text-foreground";
+  const exams = EXAM_OPTIONS.filter(code => (facets?.exam[code] ?? 0) > 0 || query.exam === code || !facets)
+    .map(code => ({ key: code, name: examLabel(code), count: facets?.exam[code] ?? 0 }));
+  const fields = [
+    {key: "year", label: "年度", options: Object.entries(facets?.year ?? {}).sort((a,b) => Number(b[0])-Number(a[0])).map(([v,n]) => [v, v+"年", n])},
+    {key: "season", label: "実施回", options: SEASON_OPTIONS.filter(v => (facets?.season[v] ?? 0) > 0 || query.season === v).map(v => [v, seasonLabel(v), facets?.season[v] ?? 0])},
+    {key: "category", label: "分野", options: Object.entries(facets?.category ?? {}).sort((a,b) => b[1]-a[1]).map(([v,n]) => [v,v,n])},
+    {key: "difficulty", label: "難度", options: DIFFICULTY_OPTIONS.filter(v => (facets?.difficulty[String(v)] ?? 0) > 0 || query.difficulty === String(v)).map(v => [String(v), "★".repeat(v), facets?.difficulty[String(v)] ?? 0])},
+  ] as const;
   return (
-    <section
-      aria-label="絞り込み"
-      className="rounded-2xl border border-border bg-card p-4 shadow-sm"
-    >
-      <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        絞り込み
-      </h2>
-      <div className="space-y-4">
-        <FacetGroup label="試験区分">
-          {examEntries.length === 0 ? (
-            <span className="text-xs text-muted-foreground">該当なし</span>
-          ) : (
-            examEntries.map(({ code, count }) => (
-              <FacetChip
-                key={code}
-                active={query.exam === code}
-                onClick={() => onChange({ exam: query.exam === code ? "" : code })}
-                label={examLabel(code)}
-                count={count}
-              />
-            ))
-          )}
-        </FacetGroup>
-
-        {yearEntries.length > 0 && (
-          <FacetGroup label="年度">
-            {yearEntries.map(({ year, count }) => (
-              <FacetChip
-                key={year}
-                active={query.year === year}
-                onClick={() => onChange({ year: query.year === year ? "" : year })}
-                label={`${year}年`}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
-
-        {seasonEntries.length > 0 && (
-          <FacetGroup label="季節">
-            {seasonEntries.map(({ season, count }) => (
-              <FacetChip
-                key={season}
-                active={query.season === season}
-                onClick={() => onChange({ season: query.season === season ? "" : season })}
-                label={seasonLabel(season)}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
-
-        {categoryEntries.length > 0 && (
-          <FacetGroup label="分野">
-            {categoryEntries.map(({ category, count }) => (
-              <FacetChip
-                key={category}
-                active={query.category === category}
-                onClick={() =>
-                  onChange({ category: query.category === category ? "" : category })
-                }
-                label={category}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
-
-        {difficultyEntries.length > 0 && (
-          <FacetGroup label="難度">
-            {difficultyEntries.map(({ difficulty, count }) => (
-              <FacetChip
-                key={difficulty}
-                active={String(query.difficulty) === String(difficulty)}
-                onClick={() =>
-                  onChange({
-                    difficulty:
-                      String(query.difficulty) === String(difficulty) ? "" : String(difficulty),
-                  })
-                }
-                label={`★${difficulty}`}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
+    <section aria-label="絞り込み" className="pb-4">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-1">
+        {(exams.length > 0 || query.exam) && <QualificationSelect items={exams} label="資格" emptyLabel="すべて" value={query.exam} onChange={value => onChange({ exam: EXAM_OPTIONS.find(code => code === value) ?? "" })} className="col-span-full min-w-0 text-xs font-medium text-muted-foreground" fieldClass={fieldClass} />}
+        {fields.filter(field => field.options.length > 0 || query[field.key]).map(field => <label key={field.key} className="min-w-0 text-xs font-medium text-muted-foreground">
+          {field.label}
+          <select value={query[field.key]} onChange={e => onChange({[field.key]:e.target.value})} className={fieldClass}>
+            <option value="">すべて</option>
+            {query[field.key] && !field.options.some(([v]) => v === query[field.key]) && <option value={query[field.key]}>{query[field.key]}</option>}
+            {field.options.map(([value,label,count]) => <option key={String(value)} value={value}>{label} ({count})</option>)}
+          </select>
+        </label>)}
       </div>
     </section>
-  );
-}
-
-function FacetGroup({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-        {label}
-      </div>
-      <div className="flex flex-wrap gap-1.5">{children}</div>
-    </div>
-  );
-}
-
-function FacetChip({
-  active, onClick, label, count,
-}: {
-  active: boolean;
-  onClick: () => void;
-  label: string;
-  count: number;
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={cn(
-        "inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs transition-colors",
-        active
-          ? "border-primary bg-primary text-primary-foreground"
-          : "border-border bg-background text-foreground hover:border-primary/40 hover:bg-muted",
-      )}
-    >
-      <span>{label}</span>
-      <span
-        className={cn(
-          "rounded-full px-1.5 py-0.5 text-[10px] font-bold",
-          active ? "bg-primary-foreground/20" : "bg-muted text-muted-foreground",
-        )}
-      >
-        {count.toLocaleString("ja-JP")}
-      </span>
-    </button>
   );
 }
 
@@ -1020,7 +415,7 @@ function ResultsPanel({ loading, error, result, tokens }: ResultsPanelProps) {
         )}
       </div>
 
-      <ul className="space-y-2">
+      <ul className="divide-y divide-hairline">
         {result.hits.map((hit) => (
           <li key={hit.id}>
             <ResultItem hit={hit} tokens={tokens} />
@@ -1042,7 +437,7 @@ function ResultItem({ hit, tokens }: { hit: SearchHit; tokens: string[] }) {
   return (
     <Link
       href={href}
-      className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+      className="study-focus group block py-3 hover:text-primary"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">

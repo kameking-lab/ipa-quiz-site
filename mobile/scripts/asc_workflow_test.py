@@ -15,6 +15,16 @@ RUBY = os.environ.get("ASC_TEST_RUBY") or shutil.which("ruby")
 
 
 class RepositoryWorkflowTest(unittest.TestCase):
+    def test_ios_build_captures_a_simulator_before_app_store_signing(self):
+        workflow = yaml.safe_load((ROOT.parent / "codemagic.yaml").read_text(encoding="utf-8"))["workflows"]["kakomon-ios-testflight"]
+        scripts = [step["script"] for step in workflow["scripts"]]
+        smoke = next(i for i, script in enumerate(scripts) if "asc_capture.sh --smoke" in script)
+        prepare = next(i for i, script in enumerate(scripts) if "npm run ios:prepare" in script)
+        sign = next(i for i, script in enumerate(scripts) if "xcode-project use-profiles" in script)
+        self.assertLess(prepare, smoke)
+        self.assertLess(smoke, sign)
+        self.assertIn("mobile/build/asc/smoke/*.jpg", workflow["artifacts"])
+
     def test_metadata_upload_requires_committed_images_and_never_captures(self):
         workflow = yaml.safe_load((ROOT.parent / "codemagic.yaml").read_text(encoding="utf-8"))["workflows"]["kakomon-asc-metadata"]
         self.assertEqual(workflow["triggering"]["events"], ["tag"])

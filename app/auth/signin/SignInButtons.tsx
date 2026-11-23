@@ -1,6 +1,7 @@
 "use client";
 
-import { signIn } from "next-auth/react";
+import { useState } from "react";
+import { signIn, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics/events";
 import { nativeClient } from "@/mobile/shared/contracts";
@@ -10,29 +11,46 @@ interface Props {
   hasGoogle: boolean;
   hasGitHub: boolean;
   hasApple?: boolean;
+  reauthenticate?: boolean;
+  clearSession?: boolean;
 }
 
-export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub, hasApple = false }: Props) {
+export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub, hasApple = false, reauthenticate = false, clearSession = false }: Props) {
   const redirectTo = callbackUrl || "/";
+  const [starting, setStarting] = useState(false);
+  const [error, setError] = useState(false);
 
   function start(provider: "google" | "github" | "apple") {
     if (nativeClient()) {
       if (!hasApple && provider !== "apple") return;
-      return import("@/mobile/src/login").then(m=>m.beginLogin(window.location.origin,redirectTo));
+      return import("@/mobile/src/login").then(m=>m.beginLogin(window.location.origin,redirectTo,reauthenticate));
     }
     trackEvent({ name: "signin_started", provider, source: redirectTo });
-    return signIn(provider, { callbackUrl: redirectTo });
+    // Google and GitHub document account selection; Apple uses its standard
+    // authorization flow and does not document prompt/max_age parameters.
+    // Only the completed server-side sign-in renews authenticatedAt.
+    const authorizationParams = reauthenticate && provider !== "apple" ? { prompt: "select_account" } : undefined;
+    if (!clearSession) return signIn(provider, { callbackUrl: redirectTo }, authorizationParams);
+    setStarting(true);
+    setError(false);
+    // With an active session Auth.js refuses switching to an OAuth account owned by a different user.
+    return signOut({ redirect: false })
+      .then(() => signIn(provider, { callbackUrl: redirectTo }, authorizationParams))
+      .catch(() => setError(true))
+      .finally(() => setStarting(false));
   }
 
   return (
     <div className="flex flex-col gap-2.5">
-      {hasApple && <Button type="button" variant="outline" size="lg" className="w-full gap-3 font-semibold" onClick={()=>start("apple")}>Appleでサインイン</Button>}
+      {error && <p role="alert" className="text-sm text-destructive">ログイン画面を開けませんでした。もう一度お試しください。</p>}
+      {hasApple && <Button type="button" variant="outline" size="lg" className="w-full gap-3 font-semibold" disabled={starting} onClick={()=>start("apple")}>Appleでサインイン</Button>}
       {hasGoogle && (
         <Button
           type="button"
           variant="outline"
           size="lg"
           className="w-full gap-3 font-semibold"
+          disabled={starting}
           onClick={() => start("google")}
         >
           <GoogleIcon /> Google でログイン
@@ -44,6 +62,7 @@ export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub, hasApple = fa
           variant="outline"
           size="lg"
           className="w-full gap-3 font-semibold"
+          disabled={starting}
           onClick={() => start("github")}
         >
           <GitHubIcon /> GitHub でログイン

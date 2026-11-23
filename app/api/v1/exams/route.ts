@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { getQuestionCountsByExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
+import { getQuestionCountsByExam, getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { buildRateLimitHeaders, checkApiRateLimit } from "@/lib/api/rate-limit";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { examLabel } from "@/lib/utils";
 
 export const runtime = "nodejs";
@@ -22,7 +23,8 @@ export async function GET(req: Request) {
     );
   }
 
-  const counts = await getQuestionCountsByExam();
+  const [counts, zenshoEnglish] = await Promise.all([getQuestionCountsByExam(), getQuestionsForExam("zensho-english")]);
+  counts["zensho-english"] = zenshoEnglish.filter(isPracticeReadyQuestion).length;
   const exams = getRegisteredExamCodes()
     .map((code) => ({
       code,

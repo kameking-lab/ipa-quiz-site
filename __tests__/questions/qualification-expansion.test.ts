@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 
-import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { DENKEN3_LAUNCH_QUESTIONS } from "@/data/questions/denken3";
 import { FP2_2026_MAY_QUESTIONS, FP2_QUESTIONS } from "@/data/questions/fp2";
 import { FP3_QUESTIONS } from "@/data/questions/fp3";
 import { DENKO2_2026_PILOT, DENKO2_QUESTIONS } from "@/data/questions/denko2";
@@ -13,7 +13,11 @@ import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
-const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKO2_QUESTIONS];
+const DENKO2_PILOT_PAPERS = DENKO2_QUESTIONS.filter((q) => q.session === "gakka" && (
+  ((q.year === 2024 || q.year === 2025) && (q.season === "first" || q.season === "second")) ||
+  (q.year === 2026 && q.season === "first")
+));
+const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_LAUNCH_QUESTIONS, ...DENKO2_PILOT_PAPERS];
 const FP2_PILOT = FP2_QUESTIONS.filter((q) => q.year === 2026);
 
 describe("official-source qualification pilot data", () => {
@@ -22,17 +26,17 @@ describe("official-source qualification pilot data", () => {
     expect(FP2_PILOT).toEqual(FP2_2026_MAY_QUESTIONS);
     expect(FP2_PILOT.length).toBeGreaterThanOrEqual(10);
     expect(FP3_QUESTIONS).toHaveLength(180);
-    expect(DENKEN3_QUESTIONS).toHaveLength(320);
-    expect(DENKO2_QUESTIONS).toHaveLength(250);
+    expect(DENKEN3_LAUNCH_QUESTIONS).toHaveLength(320);
+    expect(DENKO2_PILOT_PAPERS).toHaveLength(250);
   });
 
   it("publishes complete Denken3 and electrician papers", () => {
     expect(getQualificationByExamCode("denken3")?.status).toBe("live");
-    expect(QUESTIONS_BY_EXAM.denken3).toHaveLength(320);
+    expect(QUESTIONS_BY_EXAM.denken3).toEqual(expect.arrayContaining(DENKEN3_LAUNCH_QUESTIONS));
     expect(getQualificationByExamCode("denko2")?.status).toBe("live");
-    expect(QUESTIONS_BY_EXAM.denko2).toHaveLength(250);
-    expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(240 + FP2_2026_MAY_QUESTIONS.length);
-    expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(180);
+    expect(QUESTIONS_BY_EXAM.denko2).toEqual(expect.arrayContaining(DENKO2_PILOT_PAPERS));
+    expect(QUESTIONS_BY_EXAM.fp2).toEqual(expect.arrayContaining(FP2_QUESTIONS));
+    expect(QUESTIONS_BY_EXAM.fp3).toEqual(expect.arrayContaining(FP3_QUESTIONS));
   });
 
   it.each(EXTERNAL_QUESTIONS)("$id has 2–5 choices, one explanation per choice, and a valid answer", (q) => {
@@ -74,13 +78,13 @@ describe("official-source qualification pilot data", () => {
   it("holds 50 consecutive academic questions in each 2024–2025 sitting", () => {
     for (const year of [2024, 2025]) {
       for (const season of ["first", "second"]) {
-        const sitting = DENKO2_QUESTIONS.filter((q) => q.year === year && q.season === season);
+        const sitting = DENKO2_PILOT_PAPERS.filter((q) => q.year === year && q.season === season);
         expect(sitting.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
       }
     }
-    expect(DENKO2_QUESTIONS.every((q) => Object.keys(q.choices ?? {}).length === 4)).toBe(true);
-    expect(DENKO2_QUESTIONS.every((q) => Object.keys(q.choiceExplanations ?? {}).length === 4)).toBe(true);
-    expect(DENKO2_QUESTIONS.every((q) => !hasUnrenderableContent(q))).toBe(true);
+    expect(DENKO2_PILOT_PAPERS.every((q) => Object.keys(q.choices ?? {}).length === 4)).toBe(true);
+    expect(DENKO2_PILOT_PAPERS.every((q) => Object.keys(q.choiceExplanations ?? {}).length === 4)).toBe(true);
+    expect(DENKO2_PILOT_PAPERS.every((q) => !hasUnrenderableContent(q))).toBe(true);
   });
 
   it("preserves the original ten-question 2026 pilot source mappings for reuse", () => {
@@ -93,7 +97,7 @@ describe("official-source qualification pilot data", () => {
   });
 
   it("keeps each electrician choice image with its text and explanation after shuffling", () => {
-    const q = DENKO2_QUESTIONS[9]!;
+    const q = DENKO2_2026_PILOT[9]!;
     const before = new Map(getChoiceKeys(q.choices).map((key) => [q.choices?.[key], [q.choiceImageUrls?.[key], q.choiceExplanations?.[key]]]));
     const random = vi.spyOn(Math, "random").mockReturnValue(0);
     const shuffled = shuffleChoices(q);
@@ -104,7 +108,7 @@ describe("official-source qualification pilot data", () => {
   });
 
   it("uses the explicit official answer PDF URL when question and answer files differ", () => {
-    const q = DENKEN3_QUESTIONS[0]!;
+    const q = DENKEN3_LAUNCH_QUESTIONS[0]!;
     expect(getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)).toBe(q.sourceAnswerUrl);
     expect(q.sourceAnswerUrl).not.toBe(q.sourcePdfUrl);
   });
@@ -112,8 +116,8 @@ describe("official-source qualification pilot data", () => {
   it.each([
     [FP2_QUESTIONS[0]!, "日本ファイナンシャル・プランナーズ協会", "exam_riyou.pdf"],
     [FP3_QUESTIONS[0]!, "日本ファイナンシャル・プランナーズ協会", "exam_riyou.pdf"],
-    [DENKEN3_QUESTIONS[0]!, "一般財団法人 電気技術者試験センター", "faq08/000082.html"],
-    [DENKO2_QUESTIONS[0]!, "一般財団法人 電気技術者試験センター", "faq08/000082.html"],
+    [DENKEN3_LAUNCH_QUESTIONS[0]!, "一般財団法人 電気技術者試験センター", "faq08/000082.html"],
+    [DENKO2_PILOT_PAPERS[0]!, "一般財団法人 電気技術者試験センター", "faq08/000082.html"],
   ] as const)("$0.id identifies the official author and reuse terms in JSON-LD", (q, author, license) => {
     const graph = buildQuestionJsonLd({
       question: q,
@@ -128,7 +132,7 @@ describe("official-source qualification pilot data", () => {
     expect(String(resource.license)).toContain(license);
   });
 
-  it.each([FP2_QUESTIONS[0]!, FP3_QUESTIONS[0]!, DENKEN3_QUESTIONS[0]!, DENKO2_QUESTIONS[0]!])(
+  it.each([FP2_QUESTIONS[0]!, FP3_QUESTIONS[0]!, DENKEN3_LAUNCH_QUESTIONS[0]!, DENKO2_PILOT_PAPERS[0]!])(
     "$id keeps answer text and each-choice explanations aligned after shuffling",
     (q) => {
       const originalAnswer = (Array.isArray(q.answer) ? q.answer[0]! : q.answer) as ChoiceKey;

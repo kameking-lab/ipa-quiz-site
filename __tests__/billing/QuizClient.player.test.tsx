@@ -1,7 +1,7 @@
 import { setPostHogClient } from "@/lib/posthog";
 import type { PostHog } from "posthog-js";
 import { StrictMode } from "react";
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn(), back: vi.fn() }) }));
 import { QuizClient } from "@/app/quiz/QuizClient";
@@ -23,6 +23,42 @@ beforeEach(() => {
 afterEach(() => { setPostHogClient(null); cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("QuizClient with the real player and local learning stores", () => {
+  it("shows a prefetched question but grades it only after its grant, once and with an immediate explanation", async () => {
+    const [first, next] = FE_QUESTIONS_2009_AUTUMN_AM.slice(6, 8);
+    let confirmNext!: (response: Response) => void;
+    const nextGrant = new Promise<Response>(resolve => { confirmNext = resolve; });
+    const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url.startsWith("/api/questions/next?")) return Response.json(next);
+      if (url !== "/api/billing/question") return Response.json({});
+      const { id } = JSON.parse(options!.body as string);
+      return id === next.id ? nextGrant : Response.json({ question: first, access: baseAccess });
+    });
+    vi.stubGlobal("fetch", fetcher);
+    render(<StrictMode><QuizClient billingGateEnabled poolIds={[first.id, next.id]} mode="year" exam="fe" backHref="/fe" /></StrictMode>);
+
+    fireEvent.click((await screen.findAllByRole("radio"))[0]);
+    expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
+
+    const choice = screen.getAllByRole("radio")[0];
+    expect(choice).toBeDisabled();
+    fireEvent.click(choice);
+    fireEvent.keyDown(document.body, { key: "1" });
+    expect(screen.queryByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeNull();
+    expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([first.id]);
+
+    await act(async () => { confirmNext(Response.json({ question: next, access: baseAccess })); });
+    expect(choice).not.toBeDisabled();
+    act(() => {
+      fireEvent.click(choice);
+      fireEvent.keyDown(document.body, { key: "2" });
+    });
+    expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+    expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([first.id, next.id]);
+    expect(fetcher.mock.calls.filter(([url]) => url === "/api/billing/question")
+      .map(([, options]) => JSON.parse(options!.body as string).id)).toEqual([first.id, next.id]);
+  });
+
   it("answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh", async () => {
     window.history.replaceState({}, "", "/quiz?mode=year&exam=fe&utm_source=tsugino_shikaku&utm_content=fe.hero");
     const capture = vi.fn(); setPostHogClient({ capture } as unknown as PostHog);
@@ -32,6 +68,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     const started = new Set<string>();
     let cookie = false;
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url === "/api/funnel" || url === "/api/activity" || url === "/api/funnel/conversion") return new Response(null, { status: 204 });
       if (url === "/api/auth/session") return Response.json({});
       if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.startsWith("/api/questions/next?")) {
@@ -88,14 +125,13 @@ describe("QuizClient with the real player and local learning stores", () => {
     const reward = sessionStorage.getItem(LS_KEYS.studyReward);
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     const limit = await screen.findByRole("region", { name: "今日の無料10問はここまで" });
-    // Purchase first, one line of terms, the feedback bonus, a tiny "tomorrow" line: nothing else.
-    const plan = screen.getByRole("link", { name: "月額980円で続ける" });
+    const plan = screen.getByRole("link", { name: /月額プランに申し込む/ });
     const start = new URL(plan.getAttribute("href")!, window.location.origin);
     expect(start.pathname).toBe("/billing/start");
     const resume = start.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
-    expect(limit).toHaveTextContent("税込・毎月自動更新・いつでも解約可");
-    expect(limit).toHaveTextContent("明日また10問");
+    expect(limit).toHaveTextContent("毎月自動更新。解約は契約管理から。");
+    expect(limit).toHaveTextContent("月額プランは演習回数無制限。");
     expect(limit).not.toHaveTextContent("このボタンだけで課金は始まりません");
     expect(screen.queryByRole("link", { name: "保存済みの履歴を無料で復習する" })).toBeNull();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
@@ -105,13 +141,13 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session" || url === "/api/funnel" || url === "/api/activity" || url === "/api/funnel/conversion")).toBe(true);
     expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
     const limits = capture.mock.calls.filter(call => call[0] === "practice_free_limit_reached");
     expect(limits).toHaveLength(1);
     expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
     expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
-    const upgrade = screen.getByRole("link", { name: "月額980円で続ける" });
+    const upgrade = screen.getByRole("link", { name: /月額プランに申し込む/ });
     upgrade.addEventListener("click", event => event.preventDefault());
     fireEvent.click(upgrade);
     expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);
@@ -138,6 +174,8 @@ describe("QuizClient with the real player and local learning stores", () => {
   });
 });
 it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload", async () => {
+  // Compile the real lazy component before starting the UI wait for its link.
+  await import("@/components/quiz/FeedbackUnlock");
   const pool = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 21);
   const questions = new Map(pool.map(q => [q.id, q]));
   const ordinary = new Set(pool.slice(0, 10).map(q => q.id));

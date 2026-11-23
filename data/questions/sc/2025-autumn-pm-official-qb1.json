@@ -1,0 +1,216 @@
+[
+  {
+    "id": "sc-2025a-pm-q1",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "セキュアプログラミング",
+    "topicTags": [
+      "XSS",
+      "CSP",
+      "アクセス制御"
+    ],
+    "difficulty": 5,
+    "question": "問1　Webアプリケーションのインシデント対応\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a できない\n              b できない\n 設問２(1) ロール管理\n         (2)  c タスク名\n         (3)  d  個人タスク<script src=\"/files/F1234567890.xlsx\"></script>\n         (4)  e 管理者\n              f タスクの締切日を過ぎる。\n              g 利用者のロールを管理者に設定する。\n         (5) 図3 のスクリプトをS サービス内にアップロードする工夫\n 設問３(1)  h アップロードされたファイルの形式が拡張子と整合しているかをチェック\n        する。\n         (2)  i プロジェクト進捗管理\n         (3) 出力時にエスケープ処理を施す。\n  設問４     j  S サービスの仕様を理解した専門家による脆弱性検査",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a できない\n              b できない\n 設問２(1) ロール管理\n         (2)  c タスク名\n         (3)  d  個人タスク<script src=\"/files/F1234567890.xlsx\"></script>\n         (4)  e 管理者\n              f タスクの締切日を過ぎる。\n              g 利用者のロールを管理者に設定する。\n         (5) 図3 のスクリプトをS サービス内にアップロードする工夫\n 設問３(1)  h アップロードされたファイルの形式が拡張子と整合しているかをチェック\n        する。\n         (2)  i プロジェクト進捗管理\n         (3) 出力時にエスケープ処理を施す。\n  設問４     j  S サービスの仕様を理解した専門家による脆弱性検査\n```",
+    "explanation": "設問1はCSPの制約とスクリプトの取得元を対応させる。設問2では、認証済みであることとロール管理を実行できることを分けて考える。アップロードしたファイルが同一オリジンのスクリプトとして読まれると、許可された取得元だけに制限しても攻撃コードの実行を防げない。タスク名をHTMLとして扱う箇所から攻撃が入り、締切日を過ぎたときの処理で利用者のロールが管理者に変更される流れを追う。\n\n設問3は、アップロード時に拡張子だけでなく内容の形式を検査する対策と、画面への出力時にエスケープする対策を区別する。前者だけでは別の入力経路から入る文字列まで無害化できない。設問4では、サービス固有の権限と業務の仕様を理解した検査によって、機械的な検査だけでは捉えにくい問題を調べる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-2.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-3.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-4.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-5.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-6.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-7.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2025年秋 午後 問1 本文・図表・設問 原本2ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問1 本文・図表・設問 原本3ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問1 本文・図表・設問 原本4ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問1 本文・図表・設問 原本5ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問1 本文・図表・設問 原本6ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問1 本文・図表・設問 原本7ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/answer-q1-1.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問1 原本1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 情報処理安全確保支援士試験 午後」問1。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "sc-2025a-pm-q2",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "暗号技術",
+    "topicTags": [
+      "鍵管理",
+      "デジタル署名",
+      "メッセージ認証符号"
+    ],
+    "difficulty": 5,
+    "question": "問2　暗号資産交換業における暗号鍵の管理\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１  ウ，エ\n  設問２  施設K の外から，鍵管理PC の作動音や鍵管理PC から放出される電磁波を観測\n       し，署名鍵S を推測する。\n 設問３(1)  (i)と   B コインを攻撃者に移転する移転情報を記録したファイルを業務用\n          (ii)の間 メディア内に追加する。\n            (vi)と   B コインを攻撃者に移転する署名済みの移転情報を記録したファイ\n          (vii)の間 ルを攻撃者に送信するとともに，業務用メディアから削除する。\n         (2)   a  メッセージ認証符号\n         (3) 当日担当者を複数名とし，互いに確認しながら作業を実施するように手順を変\n      更する。\n 設問４(1) 作業2 において，パスワードで暗号化した署名鍵S と紙に書き留めたパスワー\n      ドを一緒に移送している点\n\n         (2)   b  ウ\n               c  ア\n               d  エ\n               e  ウ\n       あ オ\n       い ク\n         (3) 復号鍵D がないので，暗号化された署名鍵S は復号できない。\n         (4) 攻撃者の生成した鍵ペアの暗号鍵",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１  ウ，エ\n  設問２  施設K の外から，鍵管理PC の作動音や鍵管理PC から放出される電磁波を観測\n       し，署名鍵S を推測する。\n 設問３(1)  (i)と   B コインを攻撃者に移転する移転情報を記録したファイルを業務用\n          (ii)の間 メディア内に追加する。\n            (vi)と   B コインを攻撃者に移転する署名済みの移転情報を記録したファイ\n          (vii)の間 ルを攻撃者に送信するとともに，業務用メディアから削除する。\n         (2)   a  メッセージ認証符号\n         (3) 当日担当者を複数名とし，互いに確認しながら作業を実施するように手順を変\n      更する。\n 設問４(1) 作業2 において，パスワードで暗号化した署名鍵S と紙に書き留めたパスワー\n      ドを一緒に移送している点\n\n         (2)   b  ウ\n               c  ア\n               d  エ\n               e  ウ\n       あ オ\n       い ク\n         (3) 復号鍵D がないので，暗号化された署名鍵S は復号できない。\n         (4) 攻撃者の生成した鍵ペアの暗号鍵\n```",
+    "explanation": "署名鍵をネットワークから切り離しても、媒体によるデータの受渡しや、担当者が鍵を扱う手順は残る。設問2では、施設外から観測できる作動音や電磁波という側面に着目する。設問3の攻撃は、署名前の移転情報の追加と、署名後のファイルの持出し・削除を別のタイミングで行う。メッセージ認証符号でデータの改変を検知する対策と、複数担当者が互いに作業を確認する対策を使い分ける。\n\n設問4では、暗号化した署名鍵と、その復号に使うパスワードを同時に移送する点が問題になる。暗号鍵・復号鍵の役割と、誰がどの鍵を保有するかを処理ごとに追う。暗号化された署名鍵だけを入手しても復号鍵Dがなければ復号できない。一方、暗号鍵自体が攻撃者の鍵にすり替わると、暗号化が行われたという事実だけでは保護にならない。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-8.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-9.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-10.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-11.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-12.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-13.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-14.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2025年秋 午後 問2 本文・図表・設問 原本8ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問2 本文・図表・設問 原本9ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問2 本文・図表・設問 原本10ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問2 本文・図表・設問 原本11ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問2 本文・図表・設問 原本12ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問2 本文・図表・設問 原本13ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問2 本文・図表・設問 原本14ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/answer-q2-2.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問2 原本2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 情報処理安全確保支援士試験 午後」問2。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "sc-2025a-pm-q3",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "ネットワークセキュリティ",
+    "topicTags": [
+      "DNSSEC",
+      "DoH",
+      "VPN",
+      "多要素認証"
+    ],
+    "difficulty": 5,
+    "question": "問3　リモートワーク環境のセキュリティ対策\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n 設問１(1)  a  DNSSEC\n         (2)  b  DoH\n              c  TLS\n  設問２     d イ\n              e ア\n  設問３    K サービス設定サイトへのアクセスが許可される接続元IP アドレスを\n             a1.b1.c1.d1 に制限する。\n 設問４(1)  f 各取引先サービスへの接続を許可するIP アドレスとして，P 社専用のK サ\n         ービス用固定グローバルIP アドレスを登録してもらう\n         (2) Z-IB，OS ベンダーのOS アップデート配布サイト，認証基盤サービス及びK サ\n        ービス設定サイトへのHTTPS サービス\n 設問５(1)  g 認証方式1 の電話番号として，個人所有スマホの電話番号を登録する\n         (2) K サービス接続時のログからOS がバージョンX の社有PC を抽出し，アカウン\n      ト名から利用者を特定後，利用者の所属する部の情報セキュリティ推進者に報\n       告し，バージョンY への移行を促してもらう。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n 設問１(1)  a  DNSSEC\n         (2)  b  DoH\n              c  TLS\n  設問２     d イ\n              e ア\n  設問３    K サービス設定サイトへのアクセスが許可される接続元IP アドレスを\n             a1.b1.c1.d1 に制限する。\n 設問４(1)  f 各取引先サービスへの接続を許可するIP アドレスとして，P 社専用のK サ\n         ービス用固定グローバルIP アドレスを登録してもらう\n         (2) Z-IB，OS ベンダーのOS アップデート配布サイト，認証基盤サービス及びK サ\n        ービス設定サイトへのHTTPS サービス\n 設問５(1)  g 認証方式1 の電話番号として，個人所有スマホの電話番号を登録する\n         (2) K サービス接続時のログからOS がバージョンX の社有PC を抽出し，アカウン\n      ト名から利用者を特定後，利用者の所属する部の情報セキュリティ推進者に報\n       告し，バージョンY への移行を促してもらう。\n```",
+    "explanation": "DNSSECはDNS応答の真正性や完全性、DoHはHTTPSによるDNS通信という異なる側面を扱う。設問1では両者とTLSの役割を混同しない。設問3ではKサービスの設定サイトを操作できる接続元をa1.b1.c1.d1に絞る。設問4の取引先側の許可設定には、VPN接続後に外部から見えるP社専用の固定グローバルIPアドレスを使う。\n\n接続を制限する際にも、VPNを確立するための認証や設定、OS更新の通信は確保する必要がある。設問5では、接続するPCから独立した個人所有スマホの電話番号を登録する。移行状況の確認は、Kサービスの接続ログから旧OSのPCを抽出し、アカウント名で利用者を特定して各部の情報セキュリティ推進者につなぐ。単に更新を周知するだけでなく、未移行の利用者まで追う点が要点となる。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-15.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-16.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-17.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-18.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-19.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-20.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-21.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-22.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-23.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-24.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-25.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本15ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本16ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本17ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本18ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本19ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本20ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本21ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本22ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本23ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本24ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問3 本文・図表・設問 原本25ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/answer-q3-3.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問3 原本3ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 情報処理安全確保支援士試験 午後」問3。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  },
+  {
+    "id": "sc-2025a-pm-q4",
+    "exam": "sc",
+    "session": "pm",
+    "year": 2025,
+    "season": "autumn",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "セキュリティ管理",
+    "topicTags": [
+      "リスク対応",
+      "最小権限",
+      "SCADA",
+      "事業継続"
+    ],
+    "difficulty": 5,
+    "question": "問4　製造業のサイバー攻撃対策と事業継続\n\n次の問題文と図表を読み、各設問に答えてください。",
+    "answer": "設問                解答例・解答の要点                 備考\n  設問１     a 未知の\n              b 暗号化\n 設問２(1)  c 回避\n              d 移転                                順不同\n              e 保有\n         (2)\n          所属組織      読込権限     書込権限   権限変更権限\n\n      総務部総務課         ×        ×       ×\n      総務部情報システム課     ×        ×       ○\n      営業部            ○        ○       ×\n      製造部設計課         ○        ×       ×\n      製造部製造課         ○        ×       ×\n      製造部品質保証課       ○        ×       ×\n  設問３     f 図3 中の(け)の箇所に，追加でFW\n              g  USB メモリを接続したときの動きを確認するためのソフトウェアを導入し\n          た，社内LAN から切り離された検査用PC\n 設問４(1)  h                             左の例に限ら\n                 SCADA 内のNC プログラムをバックアップ／リストアするための媒体とソフ\n                                         ず，本文の状況\n        トウェア\n                                   に沿った仕組\n              i                                  み，手順が記述\n                 SCADA にNC プログラムをリストアする手順\n                                           されていること\n         (2)  j\n         マルウェアに感染した一般PC が，正常な通信を妨害するパケットを大量 左の例に限ら\n           に送信して，SCADA と工作機械の間の通信ができなくなる。       ず，本文の状況\n                                         に沿った被害の\n              k\n          SCADA，工作機械及び製造監視用PC だけの独立したLAN を構成するための シナリオが記述\n        ネットワーク機器                         されていて，有\n                                         効な仕組み，手\n              l\n          SCADA，工作機械及び製造監視用PC をL 社のネットワークから切り離す手 順が記述されて\n        順                                 いること",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                 備考\n  設問１     a 未知の\n              b 暗号化\n 設問２(1)  c 回避\n              d 移転                                順不同\n              e 保有\n         (2)\n          所属組織      読込権限     書込権限   権限変更権限\n\n      総務部総務課         ×        ×       ×\n      総務部情報システム課     ×        ×       ○\n      営業部            ○        ○       ×\n      製造部設計課         ○        ×       ×\n      製造部製造課         ○        ×       ×\n      製造部品質保証課       ○        ×       ×\n  設問３     f 図3 中の(け)の箇所に，追加でFW\n              g  USB メモリを接続したときの動きを確認するためのソフトウェアを導入し\n          た，社内LAN から切り離された検査用PC\n 設問４(1)  h                             左の例に限ら\n                 SCADA 内のNC プログラムをバックアップ／リストアするための媒体とソフ\n                                         ず，本文の状況\n        トウェア\n                                   に沿った仕組\n              i                                  み，手順が記述\n                 SCADA にNC プログラムをリストアする手順\n                                           されていること\n         (2)  j\n         マルウェアに感染した一般PC が，正常な通信を妨害するパケットを大量 左の例に限ら\n           に送信して，SCADA と工作機械の間の通信ができなくなる。       ず，本文の状況\n                                         に沿った被害の\n              k\n          SCADA，工作機械及び製造監視用PC だけの独立したLAN を構成するための シナリオが記述\n        ネットワーク機器                         されていて，有\n                                         効な仕組み，手\n              l\n          SCADA，工作機械及び製造監視用PC をL 社のネットワークから切り離す手 順が記述されて\n        順                                 いること\n```",
+    "explanation": "リスク対応は回避・移転・保有を、本文の採用済みの対応と重ならないように整理する。営業部共有フォルダの権限表は、業務で必要な利用権限と権限を変更する管理権限を分けて読む。情報システム課に権限変更の権限があっても、共有ファイルの読込・書込まで必要になるとは限らない。\n\nUSBメモリの検査には、社内LANから切り離した検査用PCを用いる。復旧対策は、バックアップ媒体やソフトウェアを用意するだけでなく、SCADAへNCプログラムをリストアする手順まで組み合わせる。設問4(2)の解答例は、感染した一般PCからの大量パケットで制御系の通信が妨害されるシナリオである。この被害に対して、SCADA・工作機械・製造監視用PCの独立したLANを構成する機器と、L社ネットワークから切り離す手順を一組として示す。\n\n??4?????????[?????4?????](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf#page=4)????????????\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf)・[公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-26.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-27.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-28.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-29.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-30.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-31.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-32.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-33.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-34.webp",
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/question-35.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本26ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本27ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本28ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本29ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本30ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本31ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本32ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本33ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本34ページ",
+      "情報処理安全確保支援士 2025年秋 午後 問4 本文・図表・設問 原本35ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-plan5-qb1/sc/2025-autumn-pm/answer-q4-4.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA 解答例・解答の要点 問4 原本4ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_ans.pdf",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "sourceAttribution": "出典：IPA「2025年度 秋期 情報処理安全確保支援士試験 午後」問4。問題・図表と解答例は原本ページ画像で掲載。解説は当サイトが独自に作成。"
+  }
+]

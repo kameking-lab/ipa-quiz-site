@@ -7,6 +7,7 @@ import { nurseNumericQuestion as question } from "@/__tests__/fixtures/nurse-num
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { getLearningActions } from "@/lib/study-plan/pace-storage";
 
 beforeEach(() => {
   cleanup();
@@ -43,7 +44,9 @@ describe("QuizPlayer numeric original", () => {
     expect(screen.getByRole("region", { name: "正解の解説" })).toHaveTextContent("42 滴/分");
     expect(createHistoryStore().getAllEntries()).toMatchObject([{ id: question.id, selected: "42", correct: true }]);
     expect(readLastQuestion()).toMatchObject({ exam: "kangoshi", year: 2025, qNumber: 90 });
-    expect(localStorage.getItem(LS_KEYS.spacedRepetition)).toContain(question.id);
+    expect(createHistoryStore().getWrongIds()).not.toContain(question.id);
+    expect(getLearningActions().filter(action => action.kind === "answer")).toMatchObject([{ questionId: question.id, correct: true }]);
+    expect(localStorage.getItem(LS_KEYS.spacedRepetition)).toBeNull();
     fireEvent.keyDown(input, { key: "Enter" });
     expect(onNext).not.toHaveBeenCalled();
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
@@ -65,14 +68,13 @@ describe("QuizPlayer numeric original", () => {
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   });
 
-  it("uses the completion screen after grading the final numeric original and permits rereading it", () => {
+  it("uses the completion screen after grading the final numeric original with one navigation action", () => {
     render(<QuizPlayer question={question} index={0} total={1} mode="year" onNext={vi.fn()} />);
     fireEvent.change(screen.getByRole("textbox", { name: "解答（滴/分）" }), { target: { value: "42" } });
     fireEvent.click(screen.getByRole("button", { name: "採点する" }));
     fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
     expect(screen.getByRole("heading", { name: "クイズ完了！" })).toBeTruthy();
-    fireEvent.click(screen.getByRole("button", { name: "最後の問題をAIに質問" }));
-    expect(screen.getByRole("region", { name: "正解の解説" })).toHaveTextContent(question.explanation);
+    expect(screen.queryByRole("button", { name: "最後の問題をAIに質問" })).toBeNull();
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   });
 

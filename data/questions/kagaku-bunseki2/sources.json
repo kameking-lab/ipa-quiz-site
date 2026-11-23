@@ -1,0 +1,638 @@
+{
+  "qualification": "化学分析技能士2級（化学分析作業）",
+  "fiscalYear": 2025,
+  "period": "前期",
+  "examDate": "2025-08-24",
+  "checkedAt": "2026-11-12T17:20:54.335161+09:00",
+  "officialLandingUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B82&v4=%E5%8C%96%E5%AD%A6%E5%88%86%E6%9E%90%EF%BC%88%E5%8C%96%E5%AD%A6%E5%88%86%E6%9E%90%E4%BD%9C%E6%A5%AD%EF%BC%89",
+  "sources": [
+    {
+      "kind": "questions",
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B82-%E5%8C%96%E5%AD%A6%E5%88%86%E6%9E%90%EF%BC%88%E5%8C%96%E5%AD%A6%E5%88%86%E6%9E%90%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "sha256": "c9c30276970fcb81c9a89092ff2c1bf4788ad202c4d31cd59c8a3b9ace455ff5",
+      "pages": 8,
+      "bytes": 518886
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B82-%E5%8C%96%E5%AD%A6%E5%88%86%E6%9E%90%EF%BC%88%E5%8C%96%E5%AD%A6%E5%88%86%E6%9E%90%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "sha256": "04aa03e17a565d7e495f993dddd7f51591b54d20253349c4cb5f25f5c40e5393",
+      "pages": 1,
+      "bytes": 59110
+    }
+  ],
+  "questionCount": 50,
+  "trueFalseCount": 25,
+  "multipleChoiceCount": 25,
+  "choiceExplanationCount": 150,
+  "figureCount": 0,
+  "transcription": "公式スキャン全8ページと公式正答表1ページを目視照合。字間・改行・英数字幅・句読点を正規化。化学式の上下付きはUnicodeで保持。B群13の反応式、B群19の分数式をテキスト転記。B群22の分類・名称表は印刷順の各選択肢に対応。問題・選択肢の補作なし。",
+  "answerMapping": {
+    "A": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "B": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "supplementalSources": [
+    {
+      "questions": [
+        "A群 1"
+      ],
+      "url": "https://www.sibata.co.jp/item/5636/",
+      "note": "製造元の体積計説明。20℃の水での体積表示。"
+    },
+    {
+      "questions": [
+        "A群 11"
+      ],
+      "url": "https://www.env.go.jp/hourei/05/000106.html",
+      "note": "環境省通知の分析法。よう素酸カリウムによるチオ硫酸ナトリウムの標定。"
+    },
+    {
+      "questions": [
+        "A群 15"
+      ],
+      "url": "https://www.jemima.or.jp/tech/5-02-09.html",
+      "note": "日本電気計測器工業会。電気加熱原子吸光法の高感度。"
+    },
+    {
+      "questions": [
+        "B群 15"
+      ],
+      "url": "https://www.an.shimadzu.co.jp/service-support/technical-support/analysis-basics/uv/application/liquid/absorbance-calibration_curve/index.html",
+      "note": "製造元の吸光度と濃度の比例関係。"
+    },
+    {
+      "questions": [
+        "B群 25"
+      ],
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+      "note": "厚生労働省。有機溶剤中毒予防規則第25条第2項の色分け。"
+    },
+    {
+      "questions": [
+        "B群 1"
+      ],
+      "url": "https://www.horiba.com/jpn/water-quality/support/electrochemistry/the-story-of-ph/ways-of-measuring-ph/",
+      "note": "製造元のpH測定解説。一般的測定のガラス電極と、他の電極法の区別。"
+    }
+  ],
+  "review": [
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-001",
+      "officialLabel": "A群 1",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-002",
+      "officialLabel": "A群 2",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-003",
+      "officialLabel": "A群 3",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-004",
+      "officialLabel": "A群 4",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-005",
+      "officialLabel": "A群 5",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-006",
+      "officialLabel": "A群 6",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-007",
+      "officialLabel": "A群 7",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-008",
+      "officialLabel": "A群 8",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-009",
+      "officialLabel": "A群 9",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-010",
+      "officialLabel": "A群 10",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-011",
+      "officialLabel": "A群 11",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-012",
+      "officialLabel": "A群 12",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-013",
+      "officialLabel": "A群 13",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-014",
+      "officialLabel": "A群 14",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-015",
+      "officialLabel": "A群 15",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-016",
+      "officialLabel": "A群 16",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-017",
+      "officialLabel": "A群 17",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-018",
+      "officialLabel": "A群 18",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-019",
+      "officialLabel": "A群 19",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-020",
+      "officialLabel": "A群 20",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-021",
+      "officialLabel": "A群 21",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-022",
+      "officialLabel": "A群 22",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-023",
+      "officialLabel": "A群 23",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-024",
+      "officialLabel": "A群 24",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-a-025",
+      "officialLabel": "A群 25",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-001",
+      "officialLabel": "B群 1",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-002",
+      "officialLabel": "B群 2",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-003",
+      "officialLabel": "B群 3",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-004",
+      "officialLabel": "B群 4",
+      "pdfPage": 4,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-005",
+      "officialLabel": "B群 5",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-006",
+      "officialLabel": "B群 6",
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-007",
+      "officialLabel": "B群 7",
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-008",
+      "officialLabel": "B群 8",
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-009",
+      "officialLabel": "B群 9",
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-010",
+      "officialLabel": "B群 10",
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-011",
+      "officialLabel": "B群 11",
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-012",
+      "officialLabel": "B群 12",
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-013",
+      "officialLabel": "B群 13",
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-014",
+      "officialLabel": "B群 14",
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-015",
+      "officialLabel": "B群 15",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-016",
+      "officialLabel": "B群 16",
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-017",
+      "officialLabel": "B群 17",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-018",
+      "officialLabel": "B群 18",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-019",
+      "officialLabel": "B群 19",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-020",
+      "officialLabel": "B群 20",
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-021",
+      "officialLabel": "B群 21",
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-022",
+      "officialLabel": "B群 22",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-023",
+      "officialLabel": "B群 23",
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-024",
+      "officialLabel": "B群 24",
+      "pdfPage": 8,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    },
+    {
+      "id": "kagaku-bunseki2-2025-early-gakka-b-025",
+      "officialLabel": "B群 25",
+      "pdfPage": 8,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "textChecked": true,
+      "choicesChecked": true,
+      "answerChecked": true,
+      "explanationChecked": true
+    }
+  ]
+}

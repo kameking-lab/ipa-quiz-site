@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "lane": "pa-8",
+  "checkedAt": "2026-11-18",
+  "plan": "plan4.json",
+  "assignment": "zero-based index % 14 == 7",
+  "branch": "cx/kako-pa8-20261118",
+  "rows": [
+    {
+      "key": "kogai-taiki-gairon|2026|annual",
+      "candidateId": "kogai-02",
+      "planIndex": 21,
+      "qualificationCode": "kogai-taiki-gairon",
+      "qualification": "公害防止管理者・大気概論",
+      "year": 2026,
+      "sitting": "annual",
+      "status": "ブランチ／PR に有り",
+      "questionCount": 10,
+      "officialSourceUrls": [
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_02.pdf",
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pa-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 10,
+          "paths": [
+            "data/questions/kogai-taiki-gairon/2026-annual.json",
+            "data/questions/kogai-taiki-gairon/index.ts",
+            "data/questions/kogai-taiki-gairon/sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4に指定された直近2年度までの公式公開学科問題。問題と正答の照合・独自解説済み。"
+    },
+    {
+      "key": "building-cleaning3|2025|annual",
+      "candidateId": "building-cleaning-3",
+      "planIndex": 49,
+      "qualificationCode": "building-cleaning3",
+      "qualification": "ビルクリーニング技能検定3級（学科）",
+      "year": 2025,
+      "sitting": "annual",
+      "status": "ブランチ／PR に有り",
+      "questionCount": 25,
+      "officialSourceUrls": [
+        "https://cdn.j-bma.or.jp/wp-content/uploads/2026/02/04100758/3%E7%B4%9A_%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pa-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 25,
+          "paths": [
+            "data/questions/building-cleaning3/2025-annual.json",
+            "data/questions/building-cleaning3/index.ts",
+            "data/questions/building-cleaning3/sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4に指定された直近2年度までの公式公開学科問題。問題と正答の照合・独自解説済み。"
+    },
+    {
+      "key": "building-cleaning3|2024|annual",
+      "candidateId": "building-cleaning-3",
+      "planIndex": 49,
+      "qualificationCode": "building-cleaning3",
+      "qualification": "ビルクリーニング技能検定3級（学科）",
+      "year": 2024,
+      "sitting": "annual",
+      "status": "ブランチ／PR に有り",
+      "questionCount": 25,
+      "officialSourceUrls": [
+        "https://cdn.j-bma.or.jp/wp-content/uploads/2025/02/12093031/2024%E5%B9%B4%E5%BA%A63%E7%B4%9A%E5%AD%A6%E7%A7%91%E6%9C%AC%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C%E3%81%A8%E6%AD%A3%E8%A7%A3_%E5%85%AC%E9%96%8B%E7%94%A8.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pa-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 25,
+          "paths": [
+            "data/questions/building-cleaning3/2024-annual.json",
+            "data/questions/building-cleaning3/index.ts",
+            "data/questions/building-cleaning3/sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4に指定された直近2年度までの公式公開学科問題。問題と正答の照合・独自解説済み。"
+    }
+  ],
+  "skipped": [
+    {
+      "candidateId": "dekyo-charge-5",
+      "planIndex": 7,
+      "sourceLedgerKey": "kojitan-sogo|unknown|前回記録・対象年度未特定",
+      "status": "記録上作業中だが成果なし",
+      "reason": "共有台帳の前回着手記録を優先し、重複作業を避けて追加しない。年度・成果は未特定。"
+    }
+  ],
+  "remaining": [
+    {
+      "planIndex": 35,
+      "candidateId": "cfp-2",
+      "name": "CFP・不動産運用設計",
+      "status": "未着手",
+      "notes": "2026年度2回分の公式PDF取得済み。不動産運用設計の本文・正答・設例・図表・独自解説の収録は未実施。金融資産運用設計と別課目。"
+    },
+    {
+      "planIndex": 63,
+      "candidateId": "government-guide-2026-69cc4d3c5ff68f1b",
+      "name": "航空管制官・基礎能力",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 77,
+      "candidateId": "javada-47035cd9bb44",
+      "name": "さく井(ロータリー式さく井工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 91,
+      "candidateId": "javada-9f6ed9fcefbb",
+      "name": "テクニカルイラストレーション(テクニカルイラストレーション手書き作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 105,
+      "candidateId": "javada-1f3d6d9467f9",
+      "name": "半導体製品製造(集積回路組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 119,
+      "candidateId": "javada-9e282b4a3543",
+      "name": "時計修理(時計修理作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 133,
+      "candidateId": "javada-9aaef1d8ac99",
+      "name": "紳士服製造特級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 147,
+      "candidateId": "javada-6f3f5e0a9af7",
+      "name": "金属材料試験(機械試験作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 161,
+      "candidateId": "javada-b45640189df4",
+      "name": "ブロック建築(コンクリートブロック工事作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 175,
+      "candidateId": "javada-874e3184bee6",
+      "name": "内装仕上げ施工(化粧フィルム工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 189,
+      "candidateId": "javada-124a8c19d494",
+      "name": "塗装(鋼橋塗装作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 203,
+      "candidateId": "javada-6bb4dea4b0dd",
+      "name": "建具製作(木製建具手加工作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 217,
+      "candidateId": "javada-c97904722b6e",
+      "name": "機械加工(平面研削盤作業)3級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 231,
+      "candidateId": "javada-0dea6fa87c14",
+      "name": "産業車両整備(産業車両整備作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 245,
+      "candidateId": "javada-d2113dd3d4fb",
+      "name": "鉄筋施工(鉄筋組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 259,
+      "candidateId": "javada-a11084e16313",
+      "name": "鋳造(鋳鋼鋳物鋳造作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 273,
+      "candidateId": "javada-48aaec32438b",
+      "name": "防水施工(塩化ビニル系シート防水工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 287,
+      "candidateId": "javada-a2cfb78b6081",
+      "name": "非接触除去加工(ワイヤ放電加工作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    }
+  ]
+}

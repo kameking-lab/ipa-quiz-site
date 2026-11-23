@@ -2,6 +2,7 @@ import { QuestionReportContextSchema, questionReportContextLines } from "@/lib/f
 import { NextResponse, after } from "next/server";
 import { z } from "zod";
 import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
+import { aiQuotaEnabled } from "@/lib/ai/access-config";
 import {
   FEEDBACK_COOKIE_NAME,
   feedbackCookieOptions,
@@ -193,8 +194,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true, receiptId, delivery: "delivered" });
   }
 
-  // Preserve the existing feedback/unlock path, including its best-effort
-  // notifications. This change does not alter AI access or its signed cookie.
+  // Feedback delivery and the separate practice bonus keep their existing paths.
   await forwardEmail();
 
   // Forward to Slack so inbound signals reach the team (the old admin/feedback
@@ -228,7 +228,7 @@ export async function POST(req: Request) {
 
   // フィードバックを実際に受理したときだけ、無料枠解除の署名済み証跡を発行する。
   // これがサーバ側で検証可能な唯一の解除根拠（クライアントの自己申告は不可）。
-  if (payload.kind === "feedback") {
+  if (!aiQuotaEnabled()) {
     const token = issueFeedbackToken();
     if (token) {
       res.cookies.set({

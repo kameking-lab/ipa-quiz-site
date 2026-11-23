@@ -9,6 +9,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
 import { EXAM_LABELS } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import {
@@ -102,12 +103,8 @@ export function OnboardingTour() {
     router.push(`/quiz?mode=random&exam=${exam}&limit=3`);
   };
 
-  const examsToShow: ExamCode[] = showAllExams
-    ? (Object.keys(EXAM_LABELS) as ExamCode[])
-    : POPULAR_EXAMS;
-
   const { getRadioProps: getExamRadioProps } = useRovingRadioGroup(
-    examsToShow,
+    POPULAR_EXAMS,
     selectedExam,
     handleSelectExam,
   );
@@ -153,12 +150,20 @@ export function OnboardingTour() {
             <DialogDescription>
               受験予定の試験を選んでください。あとから <strong className="text-foreground">/settings</strong> で変更できます。
             </DialogDescription>
-            <div
+            {showAllExams ? <QualificationSelect
+              items={Object.entries(EXAM_LABELS).map(([key, name]) => ({ key, name, detail: EXAM_DIFFICULTY[key]?.label ?? "中級" }))}
+              label="試験区分" emptyLabel="資格を選ぶ" value={selectedExam ?? ""}
+              fieldClass="mt-1 block min-h-11 w-full rounded-xl border border-border bg-card px-3"
+              onChange={key => {
+                if (key) handleSelectExam(key as ExamCode);
+                else setLocalSelectedExam(null);
+              }}
+            /> : <div
               role="radiogroup"
               aria-label="試験区分"
               className="grid grid-cols-1 gap-2 sm:grid-cols-2"
             >
-              {examsToShow.map((code, index) => {
+              {POPULAR_EXAMS.map((code, index) => {
                 const diff = EXAM_DIFFICULTY[code] ?? { level: 3, label: "中級" };
                 const isSelected = selectedExam === code;
                 return (
@@ -200,14 +205,14 @@ export function OnboardingTour() {
                   </button>
                 );
               })}
-            </div>
+            </div>}
             {!showAllExams && (
               <button
                 type="button"
                 onClick={() => setShowAllExams(true)}
                 className="w-full rounded-lg border border-dashed border-border px-3 py-2 text-xs text-muted-foreground hover:bg-muted"
               >
-                高度試験を含む全13区分を表示
+                すべての資格から選ぶ
               </button>
             )}
           </div>
@@ -274,6 +279,7 @@ export function OnboardingTour() {
               <Button
                 variant="primary"
                 size="md"
+                disabled={showAllExams && !selectedExam}
                 onClick={() => setStep((s) => Math.min(TOTAL_STEPS, s + 1))}
                 aria-label="次のステップへ"
               >

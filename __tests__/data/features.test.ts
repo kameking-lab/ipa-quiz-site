@@ -67,32 +67,8 @@ describe("FEATURE_LANDING_PAGES registry", () => {
   });
 });
 
-// Factuality / 誇大回避: the essay-grading feature hero must not claim the AI
-// references IPA's grading criteria ("採点基準") — those are non-public, and the
-// flagship /essay disclaimer + this page's own FAQ both frame the basis as
-// editorial practice and learning support, not official grading. Pin that so the
-// hero can't drift back into over-claiming. "崩れたら落ちる".
-describe("essay-grading feature hero honesty", () => {
-  const page = getFeatureBySlug("essay-grading");
-
-  it("does not claim the AI references IPA 採点基準 (non-public)", () => {
-    expect(page).toBeDefined();
-    expect(page!.hero.subhead).not.toContain("採点基準を参照");
-  });
-
-  it("distinguishes editorial learning feedback from official grading or calibrated pass probabilities", () => {
-    expect(page!.hero.subhead).toContain("編集部の確認観点");
-    expect(page!.hero.subhead).toContain("公式採点や合格率の予測ではありません");
-  });
-
-  // Hub→spoke: the grading feature page complements "what to write" (業種別
-  // 論述事例集) with "how to write" — link the writing-cotsu guide so the
-  // educational learning path from this indexable feature can't regress. The
-  // generic resolvability guard above already proves it's not a 404.
-  it("links to the 書き方コツ guide (hub→spoke learning path)", () => {
-    const hrefs = page!.relatedLinks.map((l) => l.href);
-    expect(hrefs).toContain("/blog/koudo-ronjutsu-kakikata-kotsu");
-  });
+it("omits the retired essay-grading feature", () => {
+  expect(getFeatureBySlug("essay-grading")).toBeUndefined();
 });
 
 describe("getFeatureBySlug", () => {

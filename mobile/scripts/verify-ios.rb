@@ -7,15 +7,18 @@ project = Xcodeproj::Project.open('ios/App/App.xcodeproj')
 target = project.targets.find { |item| item.name == 'App' }
 raise 'App target missing' unless target
 raise 'App build configurations missing' if target.build_configurations.empty?
+version = JSON.parse(File.read(File.expand_path('../package.json', __dir__))).fetch('version')
 target.build_configurations.each do |configuration|
   settings = configuration.build_settings
   raise "Bundle ID mismatch in #{configuration.name}" unless settings['PRODUCT_BUNDLE_IDENTIFIER'] == bundle_id
+  raise "Marketing version mismatch in #{configuration.name}" unless settings['MARKETING_VERSION'] == version
   if ENV.key?('BUILD_NUMBER')
     raise "Build number mismatch in #{configuration.name}" unless settings['CURRENT_PROJECT_VERSION'].to_s == ENV['BUILD_NUMBER']
   end
 end
 plist = Xcodeproj::Plist.read_from_path('ios/App/App/Info.plist')
 raise 'Info.plist Bundle ID mismatch' unless plist['CFBundleIdentifier'] == '$(PRODUCT_BUNDLE_IDENTIFIER)'
+raise 'Info.plist marketing version must use Xcode setting' unless plist['CFBundleShortVersionString'] == '$(MARKETING_VERSION)'
 raise 'Info.plist build number must use Xcode setting' unless plist['CFBundleVersion'] == '$(CURRENT_PROJECT_VERSION)'
 privacy = Xcodeproj::Plist.read_from_path('ios/App/App/PrivacyInfo.xcprivacy')
 if plist['KakomonAdsEnabled'] == true
@@ -50,6 +53,8 @@ urls = [{ 'CFBundleURLName' => "#{bundle_id}.auth", 'CFBundleURLSchemes' => ['ka
 raise 'Auth URL scheme mismatch' unless plist['CFBundleURLTypes'] == urls
 config = JSON.parse(File.read('ios/App/App/capacitor.config.json'))
 raise 'Native Capacitor runtime Bundle ID mismatch' unless config['appId'] == bundle_id
+raise 'Local Notifications pod missing from Podfile' unless podfile.match?(/^\s*pod 'CapacitorLocalNotifications'/)
+raise 'Local Notifications plugin missing from packageClassList' unless Array(config['packageClassList']).include?('LocalNotificationsPlugin')
 # The purchase UI calls the native RevenueCat plugin from the WebView. Without
 # the pod and its class in packageClassList, every call answers UNIMPLEMENTED
 # and the membership panel can never show a price.

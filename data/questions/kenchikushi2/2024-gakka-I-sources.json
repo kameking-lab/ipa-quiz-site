@@ -1,0 +1,304 @@
+{
+  "lane": "rs-9",
+  "checkedOn": "2026-11-17",
+  "lawReferenceDate": "2024-01-01",
+  "scope": {
+    "officialAnnualCount": 100,
+    "selected": 25,
+    "subject": "学科I（建築計画）",
+    "subjectRemaining": 0,
+    "remainingAnnual": 75
+  },
+  "sources": {
+    "kenchikushi2-2024-plan-law": {
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka1_2.pdf",
+      "sha256": "7a4c4576522ed11a3ee01c73c4ca7e32b2ce3a88727436b07de263b78d3a0b71",
+      "pages": 26
+    },
+    "kenchikushi2-2024-answer": {
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+      "sha256": "26cc40072d9a073e9d4fdbc6b0678846350df20353023ca90b51bd0a1461dc8f",
+      "pages": 1
+    }
+  },
+  "laws": {
+    "building-order": {
+      "revision": "325CO0000000338_20230526_504CO0000000393",
+      "url": "https://laws.e-gov.go.jp/law/325CO0000000338/20230526_504CO0000000393",
+      "sha256": "f9ac06166f800729fa253b529d8e1729cc7cc2e4fe0111c3d9bae3791a9ce561"
+    },
+    "fire-rules": {
+      "revision": "336M50000008006_20230531_505M60000008048",
+      "url": "https://laws.e-gov.go.jp/law/336M50000008006/20230531_505M60000008048",
+      "sha256": "182bd9d13e5fe62cf2a00b30bb351f0ca8c6e2d1bbc6c2bd0b52f5249f9ec19b"
+    }
+  },
+  "references": {
+    "izumo": {
+      "url": "https://online.bunka.go.jp/db/heritages/detail/146668",
+      "status": 200,
+      "sha256": "431daf7ad3183b74e34a140a06fe2b8accc1563ee9980876bb5f754d2432e750"
+    },
+    "hyuga": {
+      "url": "https://www.city.atami.lg.jp/shisetsu/bunka/1002036/1002047.html",
+      "status": 200,
+      "sha256": "7dd72d0b59300e39fae8b3955aec6dfa0d75a035a1a9c1d0ac1136d7d931e0e5"
+    },
+    "mrt": {
+      "url": "https://www.env.go.jp/content/900404649.pdf",
+      "status": 200,
+      "sha256": "08d9f8ab2ed68571e30a9f4571e070e1e6f7cc60d53dcb859e803ae73190b929"
+    },
+    "rgb": {
+      "url": "https://www.data.jma.go.jp/mscweb/ja/prod/rgb.html",
+      "status": 200,
+      "sha256": "1f3713502a6a208d4bbd482735efeea139ed4bd3676658c4b7a147a62191cd9a"
+    },
+    "windrose": {
+      "url": "https://www.data.jma.go.jp/kumagaya/shosai/chishiki/kaze.html",
+      "status": 200,
+      "sha256": "2fe68a9ae8db732dc478fceeca1ecb62b1dc7e6d70dddf24167266206bbe37b8"
+    },
+    "housing": {
+      "url": "https://www.mlit.go.jp/pri/houkoku/gaiyou/pdf/kkk104.pdf",
+      "status": 200,
+      "sha256": "f764c6b0ee7eb2a829e349e16157f82c8ad3ac4eb8319feb8ef4544eba9bad11"
+    },
+    "school": {
+      "url": "https://www.mext.go.jp/component/a_menu/education/detail/__icsFiles/afieldfile/2019/03/27/1414731_3.pdf",
+      "status": 200,
+      "sha256": "138e3aa11e48426ac9f8557754f7a47b37129dbbacf14b03ea59da4313051c3a"
+    },
+    "woonerf": {
+      "url": "https://www.kyutech.ac.jp/archives/015/202507/k_m_i_2_43_k.pdf",
+      "status": 200,
+      "sha256": "efd18145f413617d705984a305403f8c624ef2742531cec3a4ffdc1048b95036"
+    },
+    "water": {
+      "url": "https://www.pref.chiba.lg.jp/suidou/kyuusui/crossconnection.html",
+      "status": 200,
+      "sha256": "e1bcc5776980c9ad360c07e659784d4fd7d7cba09920dc5fa803b9af13609246"
+    },
+    "solar": {
+      "url": "https://www.env.go.jp/content/000288348.pdf",
+      "status": 200,
+      "sha256": "17051f76bf5123d217bb4904080050349b7d830691dd402626b75b1b3a1e15d0"
+    },
+    "lighting": {
+      "url": "https://www.env.go.jp/earth/ondanka/gel/ghg-guideline/search/index.html",
+      "status": 200,
+      "sha256": "afbc8ff94c54c3be08825bc4cbed33c5fd0314e30e7dbf0ec8da50f30eb854cc"
+    },
+    "housing-area": {
+      "url": "https://www.mlit.go.jp/common/001098415.pdf",
+      "status": 200,
+      "sha256": "7cdcdb58960ee53aeee2444667536f03f216d97a7662460d1cf5626a25ecf1d6"
+    }
+  },
+  "selectedQuestions": [
+    {
+      "id": "kenchikushi2-2024-annual-I-q1",
+      "qNumber": 1,
+      "officialAnswerNumber": 4,
+      "normalizedTextSha256": "64d23d42f262d7c46291231821b9f0205917f24b9f79e1858dc0c27a6b852a52",
+      "references": [
+        "izumo"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q2",
+      "qNumber": 2,
+      "officialAnswerNumber": 3,
+      "normalizedTextSha256": "3c34e29e46e96e5c401f702c26119a3af3464c333933398062fcb1e409a58cfa",
+      "references": [
+        "hyuga"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q3",
+      "qNumber": 3,
+      "officialAnswerNumber": 2,
+      "normalizedTextSha256": "013d013ab311a4394afc8f543385929679432adfa5194593852f031140671bcf",
+      "references": [
+        "mrt"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q4",
+      "qNumber": 4,
+      "officialAnswerNumber": 1,
+      "normalizedTextSha256": "4d88ac311b0958b95244b1ce184848c633dfa4de551f9dbaf2ea0ae93c518bc0",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q5",
+      "qNumber": 5,
+      "officialAnswerNumber": 4,
+      "normalizedTextSha256": "747dadadb1ab2416fa8ea5c0f657a1205b7519b9c9ea28af1d8cb280eefb3257",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q6",
+      "qNumber": 6,
+      "officialAnswerNumber": 3,
+      "normalizedTextSha256": "78b406a25e53eae03f59cdb2730d5479f6ea0a5dc38b1518be62d19a0d8be5c7",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q7",
+      "qNumber": 7,
+      "officialAnswerNumber": 1,
+      "normalizedTextSha256": "e5ad3b98e8641b0f914710c802ce7c050c5384e983d908289f10dfe614696078",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q8",
+      "qNumber": 8,
+      "officialAnswerNumber": 4,
+      "normalizedTextSha256": "b35f76f35d355fcc561a2192f3dec794b4e2e6f52b87101f1684a3ac14d3ca81",
+      "references": [
+        "rgb"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q9",
+      "qNumber": 9,
+      "officialAnswerNumber": 5,
+      "normalizedTextSha256": "fc1025349b7759b0f49d5c8ff0cfe74bc5376b42597f71e53d6206ab2cb3a9d9",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q10",
+      "qNumber": 10,
+      "officialAnswerNumber": 5,
+      "normalizedTextSha256": "d4bc7b056aa97f4de929e89d4fdaa44cae233d013e6d27eb4b7d2361c1be2a8d",
+      "references": [
+        "windrose"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q11",
+      "qNumber": 11,
+      "officialAnswerNumber": 2,
+      "normalizedTextSha256": "4ac0e833191399d9f98a09c9a6ca01cbbda173afbf55ef7767331de40889a03c",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q12",
+      "qNumber": 12,
+      "officialAnswerNumber": 3,
+      "normalizedTextSha256": "7a9443628bf33cf88fe6d2506373a95d3cb8a7afd3d72b63e8420bbaea6795d8",
+      "references": [
+        "housing",
+        "housing-area"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q13",
+      "qNumber": 13,
+      "officialAnswerNumber": 1,
+      "normalizedTextSha256": "22f09b093e03fad373ec5162c1269f3694a14d778555d4dddb3f9375e6cc3154",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q14",
+      "qNumber": 14,
+      "officialAnswerNumber": 1,
+      "normalizedTextSha256": "0c785cd36aa76581ba2ab914c872ea000768b763ce3c5369805a2552f9ea7250",
+      "references": [
+        "school"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q15",
+      "qNumber": 15,
+      "officialAnswerNumber": 3,
+      "normalizedTextSha256": "cd5ff5286f7f118a7842909b3779d50df3cce816190c3a63114b6ca219d35cb6",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q16",
+      "qNumber": 16,
+      "officialAnswerNumber": 4,
+      "normalizedTextSha256": "8a3308f2a441b405234db92ec251f6c5191776875bdbdc06f1c0284398bdf7ac",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q17",
+      "qNumber": 17,
+      "officialAnswerNumber": 4,
+      "normalizedTextSha256": "e56dfc3bd077333b8c1f1c54f34e5f82913f2ca1e3197fe86c60f638bcac85e9",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q18",
+      "qNumber": 18,
+      "officialAnswerNumber": 1,
+      "normalizedTextSha256": "9b958d0c90384d6ab74a7b999871d72588b6725feb65c30adbeb880e834bf5cf",
+      "references": [
+        "woonerf"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q19",
+      "qNumber": 19,
+      "officialAnswerNumber": 2,
+      "normalizedTextSha256": "1bd431e8dcac0c6d42a0cdb4d1b9c5ea29da5cf8e12f7e0f4c5d4a563bd812f7",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q20",
+      "qNumber": 20,
+      "officialAnswerNumber": 5,
+      "normalizedTextSha256": "541d0764d701a7e0d59000732c90a44de54b925db997dbd6cbc4baef3fe8f3ce",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q21",
+      "qNumber": 21,
+      "officialAnswerNumber": 2,
+      "normalizedTextSha256": "605b6586a9f7ce691037ec41ceb35edd536d63317de5dffcdc34a4984f884a3b",
+      "references": [
+        "water"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q22",
+      "qNumber": 22,
+      "officialAnswerNumber": 5,
+      "normalizedTextSha256": "87d2bb334a155a179241c2240ee8e3ef98b232e302535e4facd732d21d47cc00",
+      "references": [
+        "solar"
+      ]
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q23",
+      "qNumber": 23,
+      "officialAnswerNumber": 5,
+      "normalizedTextSha256": "b82c5cd21eb43490f9ea851ddb0fdaf7fbf06bd30d20b707654fdfdb10d4c19f",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q24",
+      "qNumber": 24,
+      "officialAnswerNumber": 2,
+      "normalizedTextSha256": "9738e402d6b1bf5200d7bd80b836475ebac87dd65c36267348492ebf2b48797a",
+      "references": []
+    },
+    {
+      "id": "kenchikushi2-2024-annual-I-q25",
+      "qNumber": 25,
+      "officialAnswerNumber": 3,
+      "normalizedTextSha256": "c500f6bf0ff30b755550e1f013d2095ea8df2224e7434a36df907fc3d70c3080",
+      "references": [
+        "lighting"
+      ]
+    }
+  ],
+  "transcriptionNotes": [
+    "本文と選択肢からルビ・強調の傍点・改行・余分な空白を整理。",
+    "No.5の大小記号は抽出字形2を原本画像で確認し＞に補正。",
+    "No.2は旧日向家熱海別邸の地下室内装設計を熱海市の公式説明で確認。",
+    "全25問は本文・選択肢で完結し、問題図の省略はない。"
+  ]
+}

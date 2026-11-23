@@ -27,7 +27,12 @@ describe('separate next166 local candidate integration',()=>{
  it('connects exactly166 original accepted questions through all current loaders and strict practice pools',async()=>{
   expect(all).toHaveLength(166);expect(new Set(all.map(q=>q.id)).size).toBe(166);expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));
   for(const [exam,qs] of Object.entries(pools)){
-   const code=exam as keyof typeof pools;expect(await getQuestionsForExam(code)).toEqual(qs);expect(QUESTIONS_BY_EXAM[code]).toEqual(qs);expect(getQuestionsByExamStrict(code)).toEqual(qs);expect(ALL_QUESTIONS.filter(q=>q.exam===code)).toEqual(qs);expect(qs.every(isPracticeReadyQuestion)).toBe(true);expect(ALL_EXAM_CODES).not.toContain(code);expect(getQualificationByExamCode(code)?.status).toBe('live');expect(defaultPracticeSession(code)).toBe('houki');
+   const code=exam as keyof typeof pools;
+   const current=await getQuestionsForExam(code);
+   expect(code === 'maritime3' ? current.filter(q => q.year === 2026) : current).toEqual(qs);
+   expect(QUESTIONS_BY_EXAM[code]).toEqual(current);
+   expect(getQuestionsByExamStrict(code)).toEqual(current);
+   expect(ALL_QUESTIONS.filter(q=>q.exam===code)).toEqual(current);expect(qs.every(isPracticeReadyQuestion)).toBe(true);expect(ALL_EXAM_CODES).not.toContain(code);expect(getQualificationByExamCode(code)?.status).toBe('live');expect(defaultPracticeSession(code)).toBe('houki');
   }
  });
  it('preserves the actual12 papers, original numbering and historical scope',()=>{
@@ -38,7 +43,7 @@ describe('separate next166 local candidate integration',()=>{
    }
    expect(getQualificationByExamCode(exam)?.reuseSummary).toContain('歴史筆記2回');expect(getQualificationByExamCode(exam)?.reuseSummary).toContain('現在のCBT例題は含みません');
   }
-  expect(EXAM_CONFIGS.maritime3.sessions.map(s=>s.expectedQuestions)).toEqual([15,20]);
+  expect(EXAM_CONFIGS.maritime3.sessions.map(s=>[s.session,s.expectedQuestions])).toEqual([['kogaku',15],['houki',20],['eigo',12],['eikaiwa',7]]);
   for(const season of ['march','september']){
    expect(MARITIME3_QUESTIONS.filter(q=>q.season===season)).toHaveLength(35);
    expect(MARITIME3_QUESTIONS.filter(q=>q.season===season&&q.session==='houki')).toHaveLength(20);expect(MARITIME3_QUESTIONS.filter(q=>q.season===season&&q.session==='kogaku')).toHaveLength(15);

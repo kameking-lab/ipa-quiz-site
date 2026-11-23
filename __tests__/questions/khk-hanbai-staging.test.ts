@@ -38,13 +38,25 @@ describe("KHK sales and equipment academic papers in isolated staging", () => {
     }
   });
 
-  it("keeps unpublished slugs out of configuration and all public question registries", () => {
+  it("keeps equipment staging unpublished and preserves released sales editions", () => {
     for (const entry of KHK_HANBAI_STAGING) {
       expect(entry.publicAllowed).toBe(false);
       expect(entry.questions.every(q => q.publicAllowed === false && q.needsReview === true)).toBe(true);
       const catalog = QUALIFICATION_CATALOG.find(q => q.slug === entry.slug);
-      // The catalog entry is applied by the parent from reports/khk-hanbai-registry.md; until then it may be absent.
-      if (catalog) expect(catalog.status).toBe("ready-to-ingest");
+      if (entry.slug === "khk-hanbai" || entry.slug === "khk-hanbai2") {
+        expect(catalog?.status).toBe("live");
+        expect(catalog?.examCode).toBe(entry.slug);
+        expect(ALL_QUIZ_EXAM_CODES).toContain(entry.slug);
+        for (const original of entry.questions) {
+          const question = QUESTIONS_BY_EXAM[entry.slug]?.find(q =>
+            q.year === original.year && q.session === original.session && q.qNumber === original.qNumber,
+          );
+          expect(question?.officialAnswerNumber, original.id).toBe(original.officialAnswerNumber);
+          expect(question?.sourcePdfUrl?.split("#")[0], original.id).toBe(original.sourcePdfUrl.split("#")[0]);
+        }
+        continue;
+      }
+      expect(catalog?.status).toBe("ready-to-ingest");
       expect(catalog?.examCode).toBeUndefined();
       expect(Object.keys(EXAM_CONFIGS)).not.toContain(entry.slug);
       expect(Object.keys(QUESTIONS_BY_EXAM)).not.toContain(entry.slug);

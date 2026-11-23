@@ -13,6 +13,18 @@ it("preserves literal BNF and code indentation without displaying fences", () =>
 
 afterEach(cleanup);
 
+it("renders named HTTPS references in explanations and leaves code and original text literal", () => {
+  const reference = "[公式正答表](https://example.jp/answer.pdf#page=2)";
+  render(<>
+    <QuestionBody text={reference} />
+    <QuestionBody text={`参照：${reference}\n\n\`${reference}\` と [例](javascript:alert(1))`} linkReferences />
+  </>);
+  expect(screen.getByRole("link", { name: "公式正答表" })).toHaveAttribute("href", "https://example.jp/answer.pdf#page=2");
+  expect(screen.getByText(reference, { selector: "p" })).toBeInTheDocument();
+  expect(screen.getByText(reference, { selector: "code" })).toBeInTheDocument();
+  expect(screen.queryByRole("link", { name: "例" })).not.toBeInTheDocument();
+});
+
 it.each(["| --- |", "| :---: |"])("renders a single-column table with separator %s", (separator) => {
   render(<QuestionBody text={`関係S\n| C |\n${separator}\n| x |\n| y |\n\n次の条件`} />);
   expect(screen.getAllByRole("table")).toHaveLength(1);

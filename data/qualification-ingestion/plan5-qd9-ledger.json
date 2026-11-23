@@ -1,0 +1,3657 @@
+{
+  "lane": "qd-9",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "branchAuditRefCount": 92,
+  "jobs": [
+    {
+      "jobId": "PLAN5-135",
+      "arrayIndex": 134,
+      "key": "shika-ishi|2023|annual|mondai-b|tp230524-02b_01.pdf",
+      "status": "completed",
+      "path": "data/questions/shika-ishi/2023-mondai-b.json",
+      "sourceAuditPath": "docs/question-sources/plan5-qd9/shika116-b-audit.json",
+      "officialYear": 2023,
+      "storedYear": 2023,
+      "round": 116,
+      "sourceQuestionCount": 90,
+      "existingQuestionCount": 0,
+      "addedQuestionCount": 89,
+      "practiceQuestionCount": 89,
+      "officiallyExcludedQuestionNumbers": [
+        50
+      ],
+      "addedChoiceExplanationCount": 448,
+      "orderingQuestionNumbers": [
+        76
+      ],
+      "questionNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-02.html",
+      "sources": [
+        {
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sha256": "477c416fc50621cfd5809c74475f0b03f1ab72bcff0ab829f4cb36682a94b355",
+          "bytes": 1322191
+        },
+        {
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "sha256": "5b8be8ea6515d2ad7850f0e66c981448dc4af3237ea5956c2a3c18fbab6707bd",
+          "bytes": 19973
+        },
+        {
+          "kind": "booklet",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_02.pdf",
+          "sha256": "f2a0c7471dd02b92d8350cc9a600f584d8c122fcb2d25d189fdb06fe5f3c7180",
+          "bytes": 10316223
+        },
+        {
+          "kind": "official-exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/B50.pdf",
+          "sha256": "3704ae76ef2c3313ffcd25b62451e865b53883e10ac32948daaddc01f8bc24c6",
+          "bytes": 44266
+        }
+      ],
+      "assets": [
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p005.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p005.webp",
+          "label": "第116回B問題 別冊No.1（PDF 5ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 1,
+          "pdfPage": 5,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 658,
+          "height": 1254,
+          "bytes": 49540,
+          "sha256": "7fd4f635c06e3a871152de975ff1b88905d15fce1b3bb0fa4edb3ab9f9fa114a"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p006.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p006.webp",
+          "label": "第116回B問題 別冊No.2（PDF 6ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 2,
+          "pdfPage": 6,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 710,
+          "height": 490,
+          "bytes": 41720,
+          "sha256": "00f8c6c6ed0e20a989ca3f01727e335cf4192f70c2b1fd9888ffe50d15882c34"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p007.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p007.webp",
+          "label": "第116回B問題 別冊No.3（PDF 7ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 3,
+          "pdfPage": 7,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 697,
+          "bytes": 82248,
+          "sha256": "274a12cf1b15391971ae7a8263bb5a8bdf0b9f35f25897d53400c2cc2e50b84f"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p008.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p008.webp",
+          "label": "第116回B問題 別冊No.4（PDF 8ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 4,
+          "pdfPage": 8,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 532,
+          "height": 1123,
+          "bytes": 50026,
+          "sha256": "8d575ebc63788cdffea03f99156b1eb3d20d8d5fad6975d6d77ed95fe68241dd"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p009.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p009.webp",
+          "label": "第116回B問題 別冊No.5（PDF 9ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 5,
+          "pdfPage": 9,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 687,
+          "height": 531,
+          "bytes": 16730,
+          "sha256": "5f953e4b51741de5952c63c2c300c402a0f8a4874199f5ccf040851b6b123f92"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p010.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p010.webp",
+          "label": "第116回B問題 別冊No.6（PDF 10ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 6,
+          "pdfPage": 10,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 790,
+          "height": 1070,
+          "bytes": 56654,
+          "sha256": "8490b78432f548a77abb40b56904f93368d5c3134cbb0aa20373178b62538c56"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p011.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p011.webp",
+          "label": "第116回B問題 別冊No.6（PDF 11ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 6,
+          "pdfPage": 11,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 570,
+          "height": 1163,
+          "bytes": 56694,
+          "sha256": "9cc0139c29926ceff90b1276eefa7ed452e9d7f5f46b6b4cb300d36002f601e5"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p012.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p012.webp",
+          "label": "第116回B問題 別冊No.6（PDF 12ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 6,
+          "pdfPage": 12,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 729,
+          "height": 643,
+          "bytes": 62864,
+          "sha256": "d4f2164ae117369bf27543209ce3f0c588b3a6b11c1a756f5f40e1f4b01b20b4"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p013.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p013.webp",
+          "label": "第116回B問題 別冊No.7（PDF 13ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 7,
+          "pdfPage": 13,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 698,
+          "height": 547,
+          "bytes": 35954,
+          "sha256": "bf4f36f8f9bc44078bcda009600702b71d477175f7d26650629754b5115c2bf4"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p014.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p014.webp",
+          "label": "第116回B問題 別冊No.8（PDF 14ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 8,
+          "pdfPage": 14,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 489,
+          "height": 1161,
+          "bytes": 36140,
+          "sha256": "7542faea6008069ef3be1683f5f15d7ca4d2673986a9d301377380ef7596ee3d"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p015.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p015.webp",
+          "label": "第116回B問題 別冊No.9（PDF 15ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 9,
+          "pdfPage": 15,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 726,
+          "height": 540,
+          "bytes": 18000,
+          "sha256": "f68613b6515c811f8538adb44eea386de804b2468e53dd1740a32c3eb8e24709"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p016.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p016.webp",
+          "label": "第116回B問題 別冊No.10（PDF 16ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 10,
+          "pdfPage": 16,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 668,
+          "height": 501,
+          "bytes": 38848,
+          "sha256": "5da03a44650bdc1305d16530f53fbf23278b77f6cb9a2d772aacff56483f24c9"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p017.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p017.webp",
+          "label": "第116回B問題 別冊No.11（PDF 17ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 11,
+          "pdfPage": 17,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 632,
+          "height": 1037,
+          "bytes": 30052,
+          "sha256": "48eeb4954fe13507cddd054c55f9534e6ffcf31b2136d3b98d6b247bdb69c32e"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p018.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p018.webp",
+          "label": "第116回B問題 別冊No.12（PDF 18ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 12,
+          "pdfPage": 18,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 711,
+          "height": 952,
+          "bytes": 52460,
+          "sha256": "fc3e46d1ba8be55b294444da3bea0a1b8d23054c196016f344502d25c3724526"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p019.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p019.webp",
+          "label": "第116回B問題 別冊No.13（PDF 19ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 13,
+          "pdfPage": 19,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 763,
+          "height": 1254,
+          "bytes": 64154,
+          "sha256": "4876b992e72f689296e4875dbcbad45b265ccc711d5c735a9210eccd9bc20d6b"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p020.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p020.webp",
+          "label": "第116回B問題 別冊No.14（PDF 20ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 14,
+          "pdfPage": 20,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 547,
+          "height": 1074,
+          "bytes": 45134,
+          "sha256": "e03c9cb2dbe18475792f5d1f4eb47964e967769cfa3fc2dc9f141177f0fa0c8a"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p021.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p021.webp",
+          "label": "第116回B問題 別冊No.14（PDF 21ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 14,
+          "pdfPage": 21,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 668,
+          "height": 1017,
+          "bytes": 31212,
+          "sha256": "2750d3d39cc68a30a1ef4caed8d90af058e6090d6a45387764e3f1d3470c0fc1"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p022.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p022.webp",
+          "label": "第116回B問題 別冊No.15（PDF 22ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 15,
+          "pdfPage": 22,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 784,
+          "height": 1108,
+          "bytes": 40662,
+          "sha256": "7a3a5cba96319ff6bf601cb5b9629082ee61f3a9338ef0524b663d87ae727668"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p023.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p023.webp",
+          "label": "第116回B問題 別冊No.16（PDF 23ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 16,
+          "pdfPage": 23,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 736,
+          "height": 665,
+          "bytes": 41804,
+          "sha256": "2016524041795f0d9c861b78bd30e5481307ae573173517a66ef64804f935678"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p024.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p024.webp",
+          "label": "第116回B問題 別冊No.17（PDF 24ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 17,
+          "pdfPage": 24,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 700,
+          "height": 1094,
+          "bytes": 31782,
+          "sha256": "b48956880febe07eec3412ae6f9dce096a7e02a418077169468c4060c45b2459"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p025.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p025.webp",
+          "label": "第116回B問題 別冊No.18（PDF 25ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 18,
+          "pdfPage": 25,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 903,
+          "bytes": 44612,
+          "sha256": "30749dd50ee2e72865e85b5e2c3348b30592fb2f421a9d6dc7f9e44c90f0094c"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p026.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p026.webp",
+          "label": "第116回B問題 別冊No.19（PDF 26ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 19,
+          "pdfPage": 26,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 711,
+          "height": 526,
+          "bytes": 27414,
+          "sha256": "32af5ac9d5fbdd8ee4dd20cacf3c4ab4fb0488856b0c5f0c30ba4b4012dcb972"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p027.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p027.webp",
+          "label": "第116回B問題 別冊No.19（PDF 27ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 19,
+          "pdfPage": 27,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 792,
+          "height": 1119,
+          "bytes": 71366,
+          "sha256": "5745b1747c7a22183c244ed97cfdbe4138529726c36a6137e1f3670990858caa"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p028.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p028.webp",
+          "label": "第116回B問題 別冊No.20（PDF 28ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 20,
+          "pdfPage": 28,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 674,
+          "height": 1107,
+          "bytes": 36672,
+          "sha256": "d461dc3f4910136b836411014fce1ab47a0b44969600303305987aa9c7cb2e3b"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p029.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p029.webp",
+          "label": "第116回B問題 別冊No.21（PDF 29ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 21,
+          "pdfPage": 29,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 769,
+          "height": 642,
+          "bytes": 35816,
+          "sha256": "054b7036748c336360d1231f7e22d99a9e99f4f33e080e67a9c269c857915cb3"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p030.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p030.webp",
+          "label": "第116回B問題 別冊No.22（PDF 30ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 22,
+          "pdfPage": 30,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 754,
+          "height": 587,
+          "bytes": 31592,
+          "sha256": "ed31acbf1141faf8f94cf7034b7483f2a584c4c910b136560f3575f279f9b907"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p031.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p031.webp",
+          "label": "第116回B問題 別冊No.22（PDF 31ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 22,
+          "pdfPage": 31,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 806,
+          "height": 1254,
+          "bytes": 46760,
+          "sha256": "24bbf74a5491724bba7fc9ec66fb898de2a3960600971cf3ea8c9a89d53ab4dd"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p032.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p032.webp",
+          "label": "第116回B問題 別冊No.23（PDF 32ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 23,
+          "pdfPage": 32,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 1254,
+          "bytes": 34550,
+          "sha256": "b915a60da06d13eb50da4c6b1de93cfaf9f0e541a2774bb3bb438e1a43d1cd50"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p033.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p033.webp",
+          "label": "第116回B問題 別冊No.24（PDF 33ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 24,
+          "pdfPage": 33,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 529,
+          "height": 1042,
+          "bytes": 28724,
+          "sha256": "aadec0303caabbdd3a1d9e87ea86085b9f6349fd8255a0313719eb1a6c516d6f"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p034.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p034.webp",
+          "label": "第116回B問題 別冊No.25（PDF 34ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 25,
+          "pdfPage": 34,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 632,
+          "height": 560,
+          "bytes": 27902,
+          "sha256": "2e3911d8ea95d2e65edc178304be150c0d60cda97cae0e37b66a453742409502"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p035.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p035.webp",
+          "label": "第116回B問題 別冊No.25（PDF 35ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 25,
+          "pdfPage": 35,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 1110,
+          "bytes": 95870,
+          "sha256": "53721040f3ae2b47fb2b4b8ca4dc56c2896b914fd81c6d489d394c2f6bebcb84"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p036.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p036.webp",
+          "label": "第116回B問題 別冊No.25（PDF 36ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 25,
+          "pdfPage": 36,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 699,
+          "height": 1188,
+          "bytes": 253344,
+          "sha256": "9edc284d714580d7d70c9b02a2a7e8e3545d24481941f19c065fe5072121bf46"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p038.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p038.webp",
+          "label": "第116回B問題 別冊No.26（PDF 38ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 26,
+          "pdfPage": 38,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 993,
+          "bytes": 42768,
+          "sha256": "7aecf762888ac7efa120d4f3b93dca8e22c0c2f2f5adf797d4d2add26d4b5636"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p039.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p039.webp",
+          "label": "第116回B問題 別冊No.26（PDF 39ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 26,
+          "pdfPage": 39,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 486,
+          "bytes": 29786,
+          "sha256": "950edc1eaa762d0ad1c185eb23e190f76331dc7cc5bb8c0ba544800cc345195d"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p040.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p040.webp",
+          "label": "第116回B問題 別冊No.27（PDF 40ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 27,
+          "pdfPage": 40,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 578,
+          "height": 1148,
+          "bytes": 40832,
+          "sha256": "8a290743a5958ca8deaf8df9f4d96e29b00208a2edd0cc4601e582b301f5e9bd"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p041.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p041.webp",
+          "label": "第116回B問題 別冊No.27（PDF 41ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 27,
+          "pdfPage": 41,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 544,
+          "bytes": 20396,
+          "sha256": "763267514d5dbe22d887f1750733d3226ab43782e0a33ca2ef69ec95fc7cb1d4"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p042.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p042.webp",
+          "label": "第116回B問題 別冊No.28（PDF 42ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 28,
+          "pdfPage": 42,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 565,
+          "height": 506,
+          "bytes": 22746,
+          "sha256": "9d34e32b746a405bd988966677317cb614b19714a7a9cd1627e40f447db8735c"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p043.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p043.webp",
+          "label": "第116回B問題 別冊No.29（PDF 43ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 29,
+          "pdfPage": 43,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 613,
+          "height": 1254,
+          "bytes": 54500,
+          "sha256": "48e09f9d7ca404d9d1689c2ededf80383774d43d7c4147f80eec1228c682b669"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p044.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p044.webp",
+          "label": "第116回B問題 別冊No.30（PDF 44ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 30,
+          "pdfPage": 44,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 575,
+          "height": 983,
+          "bytes": 56414,
+          "sha256": "ae61e98b1a6959d064efed7eed5653444f9aac47fcd60a0d33b37d482dedb523"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p045.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p045.webp",
+          "label": "第116回B問題 別冊No.30（PDF 45ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 30,
+          "pdfPage": 45,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 1150,
+          "bytes": 52698,
+          "sha256": "6931894186224eac0efdbdd85db268a836c7078ba4474cb6d272c4697afa8281"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p046.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p046.webp",
+          "label": "第116回B問題 別冊No.31（PDF 46ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 31,
+          "pdfPage": 46,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 686,
+          "height": 1075,
+          "bytes": 55146,
+          "sha256": "da03d4681d88d7601394a28b6032aa5d8895169a8dcfd30c896f58e958da43d7"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p047.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p047.webp",
+          "label": "第116回B問題 別冊No.31（PDF 47ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 31,
+          "pdfPage": 47,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 541,
+          "height": 621,
+          "bytes": 14598,
+          "sha256": "2f7f9477b0c4a180055166cec1724a48400132d7783526156771004f8010f29e"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p048.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p048.webp",
+          "label": "第116回B問題 別冊No.32（PDF 48ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 32,
+          "pdfPage": 48,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 632,
+          "height": 477,
+          "bytes": 44752,
+          "sha256": "f6f26e6805a459d651886f0f9e6dfca8e770fff5fe132048a802d9dca20ed9d8"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p049.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p049.webp",
+          "label": "第116回B問題 別冊No.33（PDF 49ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 33,
+          "pdfPage": 49,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 710,
+          "height": 587,
+          "bytes": 47636,
+          "sha256": "11a44b4d6e887861eed7d5f9e4469f02d72f18ad10f6183ac879715b5002c5ab"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p050.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p050.webp",
+          "label": "第116回B問題 別冊No.34（PDF 50ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 34,
+          "pdfPage": 50,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 737,
+          "bytes": 52794,
+          "sha256": "addb97b1f6ea62f548da8d272f4c733e1ac19280e43a9607b68e8c7d8827a7b1"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p052.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p052.webp",
+          "label": "第116回B問題 別冊No.35（PDF 52ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 35,
+          "pdfPage": 52,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 838,
+          "height": 944,
+          "bytes": 41544,
+          "sha256": "acc899507884073086fe027eb1ea7ffffcf8fd7402f07145afc2a260edd8d4b7"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p053.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p053.webp",
+          "label": "第116回B問題 別冊No.35（PDF 53ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 35,
+          "pdfPage": 53,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 562,
+          "bytes": 27906,
+          "sha256": "f6c4a372c174751c6cd657c4081cc9b8ab9d2330d1993211eb1d3fc3a7637fec"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p054.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p054.webp",
+          "label": "第116回B問題 別冊No.36（PDF 54ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 36,
+          "pdfPage": 54,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 692,
+          "height": 1103,
+          "bytes": 61782,
+          "sha256": "3f57a6a419505c873ff41c7cc0616aa3b47f0870f0eb64e2d9147ad86ebb8da6"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p055.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p055.webp",
+          "label": "第116回B問題 別冊No.37（PDF 55ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 37,
+          "pdfPage": 55,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 541,
+          "height": 967,
+          "bytes": 40130,
+          "sha256": "add40599bb17ef517f5cada44e59a2c53961300a490a1ec76d3505b8e40885e9"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p056.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p056.webp",
+          "label": "第116回B問題 別冊No.38（PDF 56ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 38,
+          "pdfPage": 56,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 754,
+          "height": 506,
+          "bytes": 31684,
+          "sha256": "984fd6b6d0cfe0f03ce894fb2f99b113ddc0af0a5fa0d02f3990fefa756c2038"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p058.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p058.webp",
+          "label": "第116回B問題 別冊No.39（PDF 58ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 39,
+          "pdfPage": 58,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 1019,
+          "bytes": 42170,
+          "sha256": "d0ac13e1d11e4d286a624fc512e0da28712ec2da68611786620dcef3fb5eca31"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-appendix-p059.webp",
+          "url": "/questions/shika-ishi/116-b-appendix-p059.webp",
+          "label": "第116回B問題 別冊No.39（PDF 59ページ、原本の各画像ラベルを含む）",
+          "kind": "booklet",
+          "number": 39,
+          "pdfPage": 59,
+          "clip": [
+            45,
+            65,
+            475,
+            635
+          ],
+          "width": 840,
+          "height": 594,
+          "bytes": 27700,
+          "sha256": "a3fa355c4e3d1e4389241498de8f5034ff20b9c5ec8bc8531c3c0e37481b45b0"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-q017-figure.webp",
+          "url": "/questions/shika-ishi/116-b-q017-figure.webp",
+          "label": "第116回B問題 問17 下顎の残存歯の歯式",
+          "kind": "question",
+          "number": 17,
+          "pdfPage": 18,
+          "clip": [
+            90,
+            409,
+            267,
+            434
+          ],
+          "width": 360,
+          "height": 46,
+          "bytes": 1130,
+          "sha256": "a1be3332d20466103c50859f23fbab0b2da349b04f4c7eeba389181d2a0e0747"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-q051-figure.webp",
+          "url": "/questions/shika-ishi/116-b-q051-figure.webp",
+          "label": "第116回B問題 問51 歯周組織検査結果と凡例",
+          "kind": "question",
+          "number": 51,
+          "pdfPage": 34,
+          "clip": [
+            75,
+            181,
+            330,
+            330
+          ],
+          "width": 528,
+          "height": 319,
+          "bytes": 13968,
+          "sha256": "dd117555e46fea2a04d5f11742ab645e6e932cdcd092be44fc7e3964c2e48a1d"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-q052-figure.webp",
+          "url": "/questions/shika-ishi/116-b-q052-figure.webp",
+          "label": "第116回B問題 問52 年齢階級別の抜歯原因の割合",
+          "kind": "question",
+          "number": 52,
+          "pdfPage": 35,
+          "clip": [
+            70,
+            119,
+            450,
+            371
+          ],
+          "width": 810,
+          "height": 516,
+          "bytes": 87492,
+          "sha256": "14eac3e66d512343b98fa0eac05c128c42775cd046466073c434c921b979e22e"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-q058-figure.webp",
+          "url": "/questions/shika-ishi/116-b-q058-figure.webp",
+          "label": "第116回B問題 問58 2級窩洞ア・イの模式図",
+          "kind": "question",
+          "number": 58,
+          "pdfPage": 38,
+          "clip": [
+            80,
+            322,
+            390,
+            489
+          ],
+          "width": 626,
+          "height": 336,
+          "bytes": 18624,
+          "sha256": "ad04b891b81c1a7a0416337cfb17e6d2462217d54697c4cd47932511db7ff0a1"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-q083-figure.webp",
+          "url": "/questions/shika-ishi/116-b-q083-figure.webp",
+          "label": "第116回B問題 問83 セファロ分析結果",
+          "kind": "question",
+          "number": 83,
+          "pdfPage": 52,
+          "clip": [
+            75,
+            138,
+            415,
+            429
+          ],
+          "width": 655,
+          "height": 599,
+          "bytes": 30074,
+          "sha256": "95f45fa01f1a63fbf40f7a030c5991b105955f9e47439bc343f5ce8034c7535f"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-q090-figure.webp",
+          "url": "/questions/shika-ishi/116-b-q090-figure.webp",
+          "label": "第116回B問題 問90 セファロ分析結果",
+          "kind": "question",
+          "number": 90,
+          "pdfPage": 56,
+          "clip": [
+            75,
+            138,
+            415,
+            429
+          ],
+          "width": 655,
+          "height": 599,
+          "bytes": 32452,
+          "sha256": "835f0b5c7dadda0a50d0b053c9ab80ccf4dd047fdcd4dd6baf946735d24fcb13"
+        },
+        {
+          "path": "public/questions/shika-ishi/116-b-q090-choices.webp",
+          "url": "/questions/shika-ishi/116-b-q090-choices.webp",
+          "label": "第116回B問題 問90 選択肢の抜歯部位の歯式",
+          "kind": "question",
+          "number": 90,
+          "pdfPage": 56,
+          "clip": [
+            85,
+            451,
+            449,
+            552
+          ],
+          "width": 646,
+          "height": 219,
+          "bytes": 21272,
+          "sha256": "a571235cae738955ee70891d1e076ceffee4c8fb1e66e348771f8e56ae5c36d6"
+        }
+      ],
+      "records": [
+        {
+          "qNumber": 1,
+          "sourceId": "116B001",
+          "id": "shika-ishi-2023-annual-mondai-b-q1",
+          "questionPdfPages": [
+            13
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "リンパ節腫脹の造影CT（別冊No. 1）を別に示す。矢印で示すのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "頰リンパ節",
+            "イ": "舌リンパ節",
+            "ウ": "顎下リンパ節",
+            "エ": "上内深頸リンパ節",
+            "オ": "オトガイ下リンパ節"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p005.webp"
+          ]
+        },
+        {
+          "qNumber": 2,
+          "sourceId": "116B002",
+          "id": "shika-ishi-2023-annual-mondai-b-q2",
+          "questionPdfPages": [
+            13
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "顎骨内に発生した囊胞のH-E 染色病理組織像（別冊No. 2）を別に示す。診断名はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "歯根囊胞",
+            "イ": "含歯性囊胞",
+            "ウ": "歯原性角化囊胞",
+            "エ": "側方性歯周囊胞",
+            "オ": "石灰化歯原性囊胞"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p006.webp"
+          ]
+        },
+        {
+          "qNumber": 3,
+          "sourceId": "116B003",
+          "id": "shika-ishi-2023-annual-mondai-b-q3",
+          "questionPdfPages": [
+            14
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "耐熱性が最も高いのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "芽胞",
+            "イ": "線毛",
+            "ウ": "鞭毛",
+            "エ": "細胞壁",
+            "オ": "細胞膜"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 4,
+          "sourceId": "116B004",
+          "id": "shika-ishi-2023-annual-mondai-b-q4",
+          "questionPdfPages": [
+            14
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "右側頸部郭清の術中写真（別冊No. 3）を別に示す。矢印で示すのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "舌神経",
+            "イ": "顔面神経",
+            "ウ": "舌下神経",
+            "エ": "大耳介神経",
+            "オ": "オトガイ神経"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p007.webp"
+          ]
+        },
+        {
+          "qNumber": 5,
+          "sourceId": "116B005",
+          "id": "shika-ishi-2023-annual-mondai-b-q5",
+          "questionPdfPages": [
+            14
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "横紋筋を構造に含むのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "胃",
+            "イ": "気管",
+            "ウ": "子宮",
+            "エ": "直腸",
+            "オ": "横隔膜"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 6,
+          "sourceId": "116B006",
+          "id": "shika-ishi-2023-annual-mondai-b-q6",
+          "questionPdfPages": [
+            15
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "アタッチメントロスがみられるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "類天疱瘡",
+            "イ": "二次性咬合性外傷",
+            "ウ": "遺伝性歯肉線維腫症",
+            "エ": "壊死性潰瘍性歯肉炎",
+            "オ": "アスコルビン酸欠乏性歯肉炎"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 7,
+          "sourceId": "116B007",
+          "id": "shika-ishi-2023-annual-mondai-b-q7",
+          "questionPdfPages": [
+            15
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "学校感染症に罹患している児童生徒の出席停止を決定するのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "学校医",
+            "イ": "学校長",
+            "ウ": "教育長",
+            "エ": "市町村長",
+            "オ": "養護教諭"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 8,
+          "sourceId": "116B008",
+          "id": "shika-ishi-2023-annual-mondai-b-q8",
+          "questionPdfPages": [
+            15
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "職業被曝の等価線量限度が、5年間で100mSv かつ1年間で50mSv である臓器はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "脳",
+            "イ": "肺",
+            "ウ": "唾液腺",
+            "エ": "赤色骨髄",
+            "オ": "眼の水晶体"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 9,
+          "sourceId": "116B009",
+          "id": "shika-ishi-2023-annual-mondai-b-q9",
+          "questionPdfPages": [
+            16
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "要介護高齢者の自宅療養において、身体介護や家事援助介護サービスを主業務とする職種はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "看護師",
+            "イ": "保健師",
+            "ウ": "訪問介護員",
+            "エ": "介護支援専門員",
+            "オ": "医療ソーシャルワーカー"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 10,
+          "sourceId": "116B010",
+          "id": "shika-ishi-2023-annual-mondai-b-q10",
+          "questionPdfPages": [
+            16
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "The（　）Development Goals, which consist of 17 goals and 169 targets, are a call for action by all countries to promote prosperity while protecting the planet.\n\n（　）に入るのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "Standardized",
+            "イ": "Successful",
+            "ウ": "Super",
+            "エ": "Sustainable",
+            "オ": "Systematic"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 11,
+          "sourceId": "116B011",
+          "id": "shika-ishi-2023-annual-mondai-b-q11",
+          "questionPdfPages": [
+            16
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "過蓋咬合を伴う骨格性Ⅲ級でみられるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "鼻唇角の開大",
+            "イ": "オトガイ部の後退",
+            "ウ": "上顎臼歯の舌側傾斜",
+            "エ": "下顎切歯の唇側傾斜",
+            "オ": "Spee 彎曲の深さの増大"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 12,
+          "sourceId": "116B012",
+          "id": "shika-ishi-2023-annual-mondai-b-q12",
+          "questionPdfPages": [
+            17
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "医療事故調査制度の主たる目的はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "医療監視",
+            "イ": "行政処分",
+            "ウ": "再発防止",
+            "エ": "情報収集",
+            "オ": "民事責任"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 13,
+          "sourceId": "116B013",
+          "id": "shika-ishi-2023-annual-mondai-b-q13",
+          "questionPdfPages": [
+            17
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "リスボン宣言で述べられているのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "死の判定",
+            "イ": "健康格差の縮小",
+            "ウ": "国民皆保険制度",
+            "エ": "倫理審査委員会の設置",
+            "オ": "患者が健康教育を受ける権利"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 14,
+          "sourceId": "116B014",
+          "id": "shika-ishi-2023-annual-mondai-b-q14",
+          "questionPdfPages": [
+            17
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "エナメル質より熱膨張係数が小さいのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "陶材",
+            "イ": "インレーワックス",
+            "ウ": "陶材焼付用金合金",
+            "エ": "コンポジットレジン",
+            "オ": "ポリメチルメタクリレート"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 15,
+          "sourceId": "116B015",
+          "id": "shika-ishi-2023-annual-mondai-b-q15",
+          "questionPdfPages": [
+            18
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "一次救命処置〈BLS〉で最初に行うのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "応援要請",
+            "イ": "胸骨圧迫",
+            "ウ": "人工呼吸",
+            "エ": "心停止の判断",
+            "オ": "周囲の安全確認"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 16,
+          "sourceId": "116B016",
+          "id": "shika-ishi-2023-annual-mondai-b-q16",
+          "questionPdfPages": [
+            18
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "レーザー齲蝕診断装置に使用されるレーザーの波長はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "455nm",
+            "イ": "655nm",
+            "ウ": "1.064 μm",
+            "エ": "2.94 μm",
+            "オ": "10.6 μm"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 17,
+          "sourceId": "116B017",
+          "id": "shika-ishi-2023-annual-mondai-b-q17",
+          "questionPdfPages": [
+            18
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "下顎の残存歯の歯式を示す。Kennedy の分類はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "Ⅰ級2類",
+            "イ": "Ⅱ級1類",
+            "ウ": "Ⅱ級2類",
+            "エ": "Ⅲ級2類",
+            "オ": "Ⅳ級"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-q017-figure.webp"
+          ]
+        },
+        {
+          "qNumber": 18,
+          "sourceId": "116B018",
+          "id": "shika-ishi-2023-annual-mondai-b-q18",
+          "questionPdfPages": [
+            19
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "軟骨内骨化で形成されるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "口蓋骨の垂直板",
+            "イ": "後頭骨の後頭鱗",
+            "ウ": "下顎骨の関節突起",
+            "エ": "上顎骨の前頭突起",
+            "オ": "前頭骨の眼窩上縁"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 19,
+          "sourceId": "116B019",
+          "id": "shika-ishi-2023-annual-mondai-b-q19",
+          "questionPdfPages": [
+            19
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "血栓形成の原因はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "線溶の亢進",
+            "イ": "血小板数の減少",
+            "ウ": "血液粘稠度の低下",
+            "エ": "血液凝固因子の減少",
+            "オ": "血管内皮細胞の傷害"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 20,
+          "sourceId": "116B020",
+          "id": "shika-ishi-2023-annual-mondai-b-q20",
+          "questionPdfPages": [
+            19
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "MRI（別冊No. 4Ａ、Ｂ）を別に示す。矢印で示すのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "顎舌骨筋",
+            "イ": "顎二腹筋",
+            "ウ": "茎突舌骨筋",
+            "エ": "オトガイ舌筋",
+            "オ": "オトガイ舌骨筋"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p008.webp"
+          ]
+        },
+        {
+          "qNumber": 21,
+          "sourceId": "116B021",
+          "id": "shika-ishi-2023-annual-mondai-b-q21",
+          "questionPdfPages": [
+            20
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "オーバーバイトが小さく、ハイアングルを伴う成長期の骨格性上顎前突に対して上顎顎外固定装置を用いた矯正歯科治療を行うこととした。牽引方向の写真（別冊No. 5）を別に示す。適切な牽引方向はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "ア",
+            "イ": "イ",
+            "ウ": "ウ",
+            "エ": "エ",
+            "オ": "オ"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p009.webp"
+          ]
+        },
+        {
+          "qNumber": 22,
+          "sourceId": "116B022",
+          "id": "shika-ishi-2023-annual-mondai-b-q22",
+          "questionPdfPages": [
+            20
+          ],
+          "officialAnswerCells": [
+            "BD"
+          ],
+          "originalQuestionText": "Eichner の分類C1症例の咬合高径決定で考慮すべきなのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "顎堤形態",
+            "イ": "下顎安静位",
+            "ウ": "舌背の高さ",
+            "エ": "残存歯の歯冠高径",
+            "オ": "レトロモラーパッド"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "e1db4de9499f1298d5b49bae1f9d3f166e901c5f60f8a5785faf8ffb518f538d",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 23,
+          "sourceId": "116B023",
+          "id": "shika-ishi-2023-annual-mondai-b-q23",
+          "questionPdfPages": [
+            21
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "20歳の女性。下顎右側大臼歯部の腫脹を主訴として来院した。3か月前から徐々に増大してきたという。同部は骨様硬で軽度の圧痛を認める。初診時の口腔内写真（別冊No. 6Ａ）、エックス線画像（別冊No. 6Ｂ）、CT（別冊No. 6Ｃ）、MRI（別冊No. 6Ｄ）及び生検時のH-E 染色病理組織像（別冊No. 6Ｅ）を別に示す。適切な治療はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "開窓後摘出",
+            "イ": "皮質骨除去術",
+            "ウ": "下顎辺縁切除術",
+            "エ": "下顎区域切除術",
+            "オ": "放射線療法"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p010.webp",
+            "/questions/shika-ishi/116-b-appendix-p011.webp",
+            "/questions/shika-ishi/116-b-appendix-p012.webp"
+          ]
+        },
+        {
+          "qNumber": 24,
+          "sourceId": "116B024",
+          "id": "shika-ishi-2023-annual-mondai-b-q24",
+          "questionPdfPages": [
+            21
+          ],
+          "officialAnswerCells": [
+            "AE"
+          ],
+          "originalQuestionText": "矯正装置の写真（別冊No. 7）を別に示す。治療により増加するのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "FMIA",
+            "イ": "下顎角",
+            "ウ": "SNA 角",
+            "エ": "SNB 角",
+            "オ": "上下顎中切歯歯軸傾斜角"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "ba0a457fa1bcab979378d83b6c26b2e46ef2ba698e7055dadc8e44900c93e528",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p013.webp"
+          ]
+        },
+        {
+          "qNumber": 25,
+          "sourceId": "116B025",
+          "id": "shika-ishi-2023-annual-mondai-b-q25",
+          "questionPdfPages": [
+            22
+          ],
+          "officialAnswerCells": [
+            "BCE"
+          ],
+          "originalQuestionText": "45歳の女性。下顎右側第一大臼歯が欠けたことを主訴として来院した。約10年前に修復処置を受け症状なく経過していたが、昨日、食事中に破折したという。歯髄電気診で軽度の閾値低下を認めるが冷温痛はない。診察の結果、IPC 法を行うこととした。初診時の口腔内写真（別冊No. 8Ａ）、エックス線画像（別冊No. 8Ｂ）及び覆髄剤貼付直後の写真（別冊No. 8Ｃ）を別に示す。使用する材料の略号を表に示す。\n\n| 材料 | 略号 |\n| --- | --- |\n| 酸化亜鉛ユージノールセメント | Ez |\n| コンポジットレジン | CR |\n| 従来型グラスアイオノマーセメント | 従GIC |\n| 光硬化型グラスアイオノマーセメント | 光GIC |\n| 水硬性仮封セメント | TC |\n\n裏層と封鎖に用いる材料の組合せで正しいのはどれか。3つ選べ。\n\n選択肢は「裏層 — 封鎖」の順に示す。",
+          "originalChoices": {
+            "ア": "Ez — CR",
+            "イ": "Ez — 従GIC",
+            "ウ": "従GIC — CR",
+            "エ": "光GIC — TC",
+            "オ": "Ezの上に従GIC — CR"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "00e084ef91c042196f1b84e8e7b4955a4fd99c49ae626097f1cef64fc0d0f698",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p014.webp"
+          ]
+        },
+        {
+          "qNumber": 26,
+          "sourceId": "116B026",
+          "id": "shika-ishi-2023-annual-mondai-b-q26",
+          "questionPdfPages": [
+            23
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "耳下腺管が貫く筋はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "頰筋",
+            "イ": "咬筋",
+            "ウ": "口輪筋",
+            "エ": "外側翼突筋",
+            "オ": "内側翼突筋"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 27,
+          "sourceId": "116B027",
+          "id": "shika-ishi-2023-annual-mondai-b-q27",
+          "questionPdfPages": [
+            23
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "2019年度における我が国の歯科診療医療費と国民医療費全体に占める割合の組合せで正しいのはどれか。1つ選べ。\n\n選択肢は「医療費（億円） — 割合（％）」の順に示す。",
+          "originalChoices": {
+            "ア": "30,150 — 6.8",
+            "イ": "65,027 — 14.6",
+            "ウ": "78,411 — 17.7",
+            "エ": "85,564 — 19.3",
+            "オ": "165,209 — 37.2"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 28,
+          "sourceId": "116B028",
+          "id": "shika-ishi-2023-annual-mondai-b-q28",
+          "questionPdfPages": [
+            24
+          ],
+          "officialAnswerCells": [
+            "BCD"
+          ],
+          "originalQuestionText": "84歳の女性。上顎義歯の人工歯脱落による審美不良を主訴として来院した。義歯は約8年前に装着しており、咀嚼時に上顎右側側切歯と犬歯の人工歯が脱落したが、それ以外に問題はないという。診察の結果、義歯修理を行うこととした。修理前の義歯の写真（別冊No. 9）を別に示す。義歯修理で行う処置はどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "補強線の埋入",
+            "イ": "偏心位での咬合調整",
+            "ウ": "脱落した人工歯の再使用",
+            "エ": "ピックアップ印象の採得",
+            "オ": "デンチャースペースの記録"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "f889229d619737c83dc494ba38f31db54169082327fc9462112525addc0d8e73",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p015.webp"
+          ]
+        },
+        {
+          "qNumber": 29,
+          "sourceId": "116B029",
+          "id": "shika-ishi-2023-annual-mondai-b-q29",
+          "questionPdfPages": [
+            24
+          ],
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "originalQuestionText": "前歯部開咬を呈するのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "顎放線菌症",
+            "イ": "茎状突起過長症",
+            "ウ": "痛風性顎関節炎",
+            "エ": "進行性下顎頭吸収",
+            "オ": "両側関節突起骨折"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "31f2b85ea46093eb99704c98730124286cc2990b55eed153a81d8e57a35e6c3e",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 30,
+          "sourceId": "116B030",
+          "id": "shika-ishi-2023-annual-mondai-b-q30",
+          "questionPdfPages": [
+            24
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "Ⅲ型アレルギーはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "気管支喘息",
+            "イ": "接触性皮膚炎",
+            "ウ": "アナフィラキシー",
+            "エ": "自己免疫性溶血性貧血",
+            "オ": "全身性エリテマトーデス"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 31,
+          "sourceId": "116B031",
+          "id": "shika-ishi-2023-annual-mondai-b-q31",
+          "questionPdfPages": [
+            25
+          ],
+          "officialAnswerCells": [
+            "AB"
+          ],
+          "originalQuestionText": "臼歯部交叉咬合の原因となるのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "吸指癖",
+            "イ": "口呼吸",
+            "ウ": "咬爪癖",
+            "エ": "弄唇癖",
+            "オ": "舌突出癖"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "f22025d8538dc08cb8dbe24e6920fb44192755ab3088e595cd83746553433a13",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 32,
+          "sourceId": "116B032",
+          "id": "shika-ishi-2023-annual-mondai-b-q32",
+          "questionPdfPages": [
+            25
+          ],
+          "officialAnswerCells": [
+            "ABDE"
+          ],
+          "originalQuestionText": "抗血小板療法中の患者の抜歯において、内科主治医との医療連携に必要なのはどれか。4つ選べ。",
+          "originalChoices": {
+            "ア": "原疾患の状態",
+            "イ": "服用薬の種類",
+            "ウ": "PT-INR の確認",
+            "エ": "抜歯の侵襲程度",
+            "オ": "局所麻酔薬の種類"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 4,
+          "answerSha256": "ab20f74201d8f5f92065de09fc726e72de87e1d7acd3d3f6dbac57d92e353c43",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 33,
+          "sourceId": "116B033",
+          "id": "shika-ishi-2023-annual-mondai-b-q33",
+          "questionPdfPages": [
+            26
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "生活歯の漂白処置中の口腔内写真（別冊No. 10）を別に示す。矢印で示す薬剤の主成分はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "過酸化水素",
+            "イ": "過酸化尿素",
+            "ウ": "ポリリン酸",
+            "エ": "過ホウ酸ナトリウム",
+            "オ": "エチレンジアミン四酢酸〈EDTA〉"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p016.webp"
+          ]
+        },
+        {
+          "qNumber": 34,
+          "sourceId": "116B034",
+          "id": "shika-ishi-2023-annual-mondai-b-q34",
+          "questionPdfPages": [
+            26
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "生活歯の漂白処置中の口腔内写真（別冊No. 10）を別に示す。矢印で示した薬剤の作用機序はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "緩衝作用",
+            "イ": "酸化作用",
+            "ウ": "清掃作用",
+            "エ": "極性化作用",
+            "オ": "キレート作用"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p016.webp"
+          ]
+        },
+        {
+          "qNumber": 35,
+          "sourceId": "116B035",
+          "id": "shika-ishi-2023-annual-mondai-b-q35",
+          "questionPdfPages": [
+            27
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "暫間固定を行う下顎前歯部の口腔内写真（別冊No. 11Ａ）とエックス線画像（別冊No. 11Ｂ）を別に示す。適切な方法はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "連結前装冠",
+            "イ": "舌面板接着固定",
+            "ウ": "プロビジョナル固定",
+            "エ": "ワイヤーレジン固定",
+            "オ": "エナメルボンディングレジン固定"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p017.webp"
+          ]
+        },
+        {
+          "qNumber": 36,
+          "sourceId": "116B036",
+          "id": "shika-ishi-2023-annual-mondai-b-q36",
+          "questionPdfPages": [
+            27
+          ],
+          "officialAnswerCells": [
+            "CE"
+          ],
+          "originalQuestionText": "2級メタルインレーの基本的保持形態はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "階段",
+            "イ": "小窩",
+            "ウ": "箱型",
+            "エ": "鳩尾形",
+            "オ": "外開き形態"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "33001ddf9ddf4881d417f972f3e64cd339cf2b975569cd20c75fab89476fb985",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 37,
+          "sourceId": "116B037",
+          "id": "shika-ishi-2023-annual-mondai-b-q37",
+          "questionPdfPages": [
+            28
+          ],
+          "officialAnswerCells": [
+            "AB"
+          ],
+          "originalQuestionText": "齲蝕のため抜歯を行った5歳の男児の口腔内写真（別冊No. 12）を別に示す。エックス線画像では永久歯の歯数異常はみられない。適切な装置はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "可撤保隙装置",
+            "イ": "バンドループ",
+            "ウ": "リンガルアーチ",
+            "エ": "ディスタルシュー",
+            "オ": "Nance のホールディングアーチ"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "f22025d8538dc08cb8dbe24e6920fb44192755ab3088e595cd83746553433a13",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p018.webp"
+          ]
+        },
+        {
+          "qNumber": 38,
+          "sourceId": "116B038",
+          "id": "shika-ishi-2023-annual-mondai-b-q38",
+          "questionPdfPages": [
+            28
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "79歳の女性。上顎義歯の不安定による咀嚼困難を主訴として来院した。義歯は15年前に装着したが、数年前から義歯の動揺を認めるようになったという。診察の結果、上顎義歯を製作することとした。初診時の口腔内写真（別冊No. 13Ａ）と個人トレーの写真（別冊No. 13Ｂ、Ｃ）を別に示す。矢印が示す構造の目的はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "動的印象の採得",
+            "イ": "印象材の硬化促進",
+            "ウ": "印象材の変形防止",
+            "エ": "顎堤粘膜の変形防止",
+            "オ": "個人トレーの位置決め"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p019.webp"
+          ]
+        },
+        {
+          "qNumber": 39,
+          "sourceId": "116B039",
+          "id": "shika-ishi-2023-annual-mondai-b-q39",
+          "questionPdfPages": [
+            29
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "91歳の男性。家族からの希望があり、歯科訪問診療を行った。高齢者施設に入所中である。意思の疎通は可能で歯科治療に協力的であるが、すべてのBDR 指標は全介助である。食形態はミキサー食であり、むせることはなく全量を摂取しているという。初診時の口腔内写真（別冊No. 14Ａ）と使用中の義歯の写真（別冊No. 14Ｂ）を別に示す。まず行うのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "粘膜調整",
+            "イ": "きざみ食への変更",
+            "ウ": "義歯の適合性改善",
+            "エ": "上顎前歯部の歯冠補綴",
+            "オ": "介護者への口腔清掃指導"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p020.webp",
+            "/questions/shika-ishi/116-b-appendix-p021.webp"
+          ]
+        },
+        {
+          "qNumber": 40,
+          "sourceId": "116B040",
+          "id": "shika-ishi-2023-annual-mondai-b-q40",
+          "questionPdfPages": [
+            29
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "口腔内装置と治療対象の組合せで適切なのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "保定装置 — 閉塞性睡眠時無呼吸症",
+            "イ": "舌接触補助床 — 摂食嚥下障害",
+            "ウ": "ナイトガード — 睡眠障害",
+            "エ": "軟口蓋挙上装置 — 顎関節症",
+            "オ": "スタビライゼーションスプリント — 構音障害"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 41,
+          "sourceId": "116B041",
+          "id": "shika-ishi-2023-annual-mondai-b-q41",
+          "questionPdfPages": [
+            30
+          ],
+          "officialAnswerCells": [
+            "ACD"
+          ],
+          "originalQuestionText": "歯肉縁下にある下顎第一大臼歯の残根抜去時に、挺子を使用するために行うのはどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "歯根の分割",
+            "イ": "皮質骨の骨切り",
+            "ウ": "歯根周囲の骨削除",
+            "エ": "粘膜骨膜弁の剝離",
+            "オ": "Partsch の歯肉切開"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "048b2e310498d6103f51e1432f8a3686622c7a38b7ecfe825cdcd5b9fd92f16e",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 42,
+          "sourceId": "116B042",
+          "id": "shika-ishi-2023-annual-mondai-b-q42",
+          "questionPdfPages": [
+            30
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "右側口底部の違和感を主訴として来院した患者の、初診時の口腔内写真（別冊No. 15Ａ）とエックス線画像（別冊No. 15Ｂ）を別に示す。インフォームドコンセントにおいて、治療を行わない場合の説明で適切なのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "「口が乾く可能性があります」",
+            "イ": "「顎の下が腫れる可能性があります」",
+            "ウ": "「口が開かなくなる可能性があります」",
+            "エ": "「舌が動きにくくなる可能性があります」",
+            "オ": "「舌の感覚が鈍くなる可能性があります」"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p022.webp"
+          ]
+        },
+        {
+          "qNumber": 43,
+          "sourceId": "116B043",
+          "id": "shika-ishi-2023-annual-mondai-b-q43",
+          "questionPdfPages": [
+            30
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "小球性低色素性貧血に分類されるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "溶血性貧血",
+            "イ": "鉄欠乏性貧血",
+            "ウ": "巨赤芽球性貧血",
+            "エ": "再生不良性貧血",
+            "オ": "骨髄異形成症候群"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 44,
+          "sourceId": "116B044",
+          "id": "shika-ishi-2023-annual-mondai-b-q44",
+          "questionPdfPages": [
+            31
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "正常な構音が可能な無歯顎患者における、全部床義歯製作過程のある検査の標準的な結果の写真（別冊No. 16）を別に示す。発音したのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "/k/",
+            "イ": "/p/",
+            "ウ": "/s/",
+            "エ": "/t/",
+            "オ": "/v/"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p023.webp"
+          ]
+        },
+        {
+          "qNumber": 45,
+          "sourceId": "116B045",
+          "id": "shika-ishi-2023-annual-mondai-b-q45",
+          "questionPdfPages": [
+            31
+          ],
+          "officialAnswerCells": [
+            "BCE"
+          ],
+          "originalQuestionText": "成分に石膏を含んでいる材料はどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "歯科用陶材",
+            "イ": "水硬性セメント",
+            "ウ": "アルジネート印象材",
+            "エ": "ガッタパーチャポイント",
+            "オ": "クリストバライト埋没材"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "00e084ef91c042196f1b84e8e7b4955a4fd99c49ae626097f1cef64fc0d0f698",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 46,
+          "sourceId": "116B046",
+          "id": "shika-ishi-2023-annual-mondai-b-q46",
+          "questionPdfPages": [
+            31
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "早期癒合により舟状頭を生じるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "冠状縫合",
+            "イ": "矢状縫合",
+            "ウ": "前頭縫合",
+            "エ": "鱗状縫合",
+            "オ": "ラムダ縫合"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 47,
+          "sourceId": "116B047",
+          "id": "shika-ishi-2023-annual-mondai-b-q47",
+          "questionPdfPages": [
+            32
+          ],
+          "officialAnswerCells": [
+            "BCE"
+          ],
+          "originalQuestionText": "35歳の女性。上顎右側第一小臼歯の咬合時の違和感を主訴として来院した。10年前にかかりつけ歯科医で処置を受けたが、2週前から自覚するようになったという。自発痛はないが、打診に反応がある。プロービング深さは全周3mm 以下であった。診察の結果、慢性根尖性歯周炎と診断した。初診時の口腔内写真（別冊No. 17Ａ）とエックス線画像（別冊No. 17Ｂ）を別に示す。原因として考えられるのはどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "前装部の破損",
+            "イ": "不良な根管充塡",
+            "ウ": "不適合な補綴装置",
+            "エ": "辺縁歯槽骨の吸収",
+            "オ": "コロナルリーケージ"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "00e084ef91c042196f1b84e8e7b4955a4fd99c49ae626097f1cef64fc0d0f698",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p024.webp"
+          ]
+        },
+        {
+          "qNumber": 48,
+          "sourceId": "116B048",
+          "id": "shika-ishi-2023-annual-mondai-b-q48",
+          "questionPdfPages": [
+            32
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "小児に対する口内法エックス線撮影において、患児の重要臓器の被曝軽減に有効な方法はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "円形絞りの使用",
+            "イ": "高管電圧の設定",
+            "ウ": "ポケット線量計の使用",
+            "エ": "甲状腺プロテクターの着用",
+            "オ": "最小サイズのセンサーの使用"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 49,
+          "sourceId": "116B049",
+          "id": "shika-ishi-2023-annual-mondai-b-q49",
+          "questionPdfPages": [
+            33
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "運動神経終末から分泌される神経伝達物質を分解するのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "コリンエステラーゼ",
+            "イ": "アデニル酸シクラーゼ",
+            "ウ": "シクロオキシゲナーゼ",
+            "エ": "モノアミンオキシダーゼ",
+            "オ": "コリンアセチルトランスフェラーゼ"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 50,
+          "sourceId": "116B050",
+          "id": "shika-ishi-2023-annual-mondai-b-q50",
+          "questionPdfPages": [
+            33
+          ],
+          "officialAnswerCells": [],
+          "originalQuestionText": "可撤性ブリッジに用いるのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "根面板",
+            "イ": "キーアンドキーウェイ",
+            "ウ": "歯冠外アタッチメント",
+            "エ": "テレスコープクラウン",
+            "オ": "プロキシマルハーフクラウン"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "OFFICIAL_EXCLUDED",
+          "officialAnswerNumber": null,
+          "annotation": "厚生労働省は「選択肢において正解を得ることが困難なため」として採点対象から除外しています。",
+          "officialNoticeUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/B50.pdf"
+        },
+        {
+          "qNumber": 51,
+          "sourceId": "116B051",
+          "id": "shika-ishi-2023-annual-mondai-b-q51",
+          "questionPdfPages": [
+            34
+          ],
+          "officialAnswerCells": [
+            "BC"
+          ],
+          "originalQuestionText": "53歳の男性。上顎右側第一小臼歯の違和感を主訴として来院した。3か月前から自覚していたがそのままにしていたという。上顎右側第一小臼歯は歯髄電気診で生活反応を示さなかった。検査の結果、慢性歯周炎と診断し、歯周基本治療を行うこととした。初診時の口腔内写真（別冊No. 18Ａ）とエックス線画像（別冊No. 18Ｂ）を別に示す。歯周組織検査結果の一部を表に示す。\n\nまず行うのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "暫間固定",
+            "イ": "感染根管治療",
+            "ウ": "口腔清掃指導",
+            "エ": "フッ化物歯面塗布",
+            "オ": "スケーリング・ルートプレーニング"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "65cffdb210d85660f2e749e75f2d9185da5e8aa36f44f544e0628ec0804205be",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p025.webp",
+            "/questions/shika-ishi/116-b-q051-figure.webp"
+          ]
+        },
+        {
+          "qNumber": 52,
+          "sourceId": "116B052",
+          "id": "shika-ishi-2023-annual-mondai-b-q52",
+          "questionPdfPages": [
+            35
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "年齢階級別抜歯の主原因別にみた抜歯数の割合（永久歯の抜歯原因調査、2018年）を図に示す。エはどれか。1つ選べ。ただし、ア～オはａ～ｅのいずれかに該当する。",
+          "originalChoices": {
+            "ア": "齲蝕",
+            "イ": "矯正",
+            "ウ": "破折",
+            "エ": "歯周病",
+            "オ": "埋伏歯"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-q052-figure.webp"
+          ]
+        },
+        {
+          "qNumber": 53,
+          "sourceId": "116B053",
+          "id": "shika-ishi-2023-annual-mondai-b-q53",
+          "questionPdfPages": [
+            36
+          ],
+          "officialAnswerCells": [
+            "ABCD"
+          ],
+          "originalQuestionText": "平成28年歯科疾患実態調査で歯列・咬合の状況についての調査項目はどれか。4つ選べ。",
+          "originalChoices": {
+            "ア": "空隙",
+            "イ": "叢生",
+            "ウ": "オーバーバイト",
+            "エ": "オーバージェット",
+            "オ": "上下顎第一大臼歯の近遠心的関係"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 4,
+          "answerSha256": "00baf29b00d651c09d420b21d3ca76e20cef81de311964941d14e702fafa3bcd",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 54,
+          "sourceId": "116B054",
+          "id": "shika-ishi-2023-annual-mondai-b-q54",
+          "questionPdfPages": [
+            36
+          ],
+          "officialAnswerCells": [
+            "BCD"
+          ],
+          "originalQuestionText": "印象採得時における嘔吐反射への対応はどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "口呼吸",
+            "イ": "表面麻酔",
+            "ウ": "不安軽減",
+            "エ": "静脈内鎮静",
+            "オ": "頭部後傾姿勢"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "f889229d619737c83dc494ba38f31db54169082327fc9462112525addc0d8e73",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 55,
+          "sourceId": "116B055",
+          "id": "shika-ishi-2023-annual-mondai-b-q55",
+          "questionPdfPages": [
+            37
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "9歳の男児。開口障害を主訴として来院した。4年前から口が開きにくいことに気付いていたがそのままにしていたところ、3日前にかかりつけ歯科医で精査を勧められたという。開口量は15mm で、開口時に疼痛はない。初診時のエックス線画像（別冊No. 19Ａ）、CT（別冊No. 19Ｂ）及び3D-CT（別冊No. 19Ｃ）を別に示す。原因として考えられるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "咬筋の肥大",
+            "イ": "下顎頭の骨折",
+            "ウ": "下顎頭の腫瘍",
+            "エ": "筋突起の過長",
+            "オ": "顎関節の骨性癒着"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p026.webp",
+            "/questions/shika-ishi/116-b-appendix-p027.webp"
+          ]
+        },
+        {
+          "qNumber": 56,
+          "sourceId": "116B056",
+          "id": "shika-ishi-2023-annual-mondai-b-q56",
+          "questionPdfPages": [
+            37
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "循環器内科から86歳の女性の口腔管理の依頼を受けた。診察の結果、口腔カンジダ症が疑われ、イトラコナゾールの処方を考えた。併用禁忌の薬物はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "ループ利尿薬",
+            "イ": "第Xa 因子阻害薬",
+            "ウ": "アセトアミノフェン",
+            "エ": "ペニシリン系抗菌薬",
+            "オ": "アンジオテンシン変換酵素〈ACE〉阻害薬"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 57,
+          "sourceId": "116B057",
+          "id": "shika-ishi-2023-annual-mondai-b-q57",
+          "questionPdfPages": [
+            38
+          ],
+          "officialAnswerCells": [
+            "B"
+          ],
+          "originalQuestionText": "安静時のヘモグロビン酸素飽和度と予想される血液酸素分圧〈PO₂〉の組合せで正しいのはどれか。1つ選べ。\n\n選択肢は「酸素飽和度（％） — 酸素分圧〈PO₂〉（mmHg）」の順に示す。",
+          "originalChoices": {
+            "ア": "100 — 90",
+            "イ": "90 — 60",
+            "ウ": "75 — 30",
+            "エ": "60 — 20",
+            "オ": "50 — 10"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "ff03d136c4ebb7347082faa7ecd4275df63bc0937d3b98a84de07b4ec83eb9e7",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 58,
+          "sourceId": "116B058",
+          "id": "shika-ishi-2023-annual-mondai-b-q58",
+          "questionPdfPages": [
+            38
+          ],
+          "officialAnswerCells": [
+            "AC"
+          ],
+          "originalQuestionText": "メタルインレーの2級窩洞の模式図を示す。アの窩洞形態がイと比較して優れているのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "審美性",
+            "イ": "辺縁封鎖性",
+            "ウ": "健全歯質の保存",
+            "エ": "修復物の適合性",
+            "オ": "短い歯間距離への対応"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "3032d08f88700270bb55bf88bb5ac57472d67c34b42bd5ce277aa58933917d80",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-q058-figure.webp"
+          ]
+        },
+        {
+          "qNumber": 59,
+          "sourceId": "116B059",
+          "id": "shika-ishi-2023-annual-mondai-b-q59",
+          "questionPdfPages": [
+            39
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "58歳の女性。上顎右側第一小臼歯の一過性の冷水痛を主訴として来院した。検査の結果、グラスアイオノマーセメント修復を行うこととした。初診時（別冊No. 20Ａ）と窩洞形成後の口腔内写真（別冊No. 20Ｂ）を別に示す。次に行うのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "歯間分離",
+            "イ": "ブロットドライ",
+            "ウ": "バーニッシュ塗布",
+            "エ": "シェードテイキング",
+            "オ": "サービカルマトリックス試適"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p028.webp"
+          ]
+        },
+        {
+          "qNumber": 60,
+          "sourceId": "116B060",
+          "id": "shika-ishi-2023-annual-mondai-b-q60",
+          "questionPdfPages": [
+            39
+          ],
+          "officialAnswerCells": [
+            "ABE"
+          ],
+          "originalQuestionText": "78歳の男性。右側舌縁部の疼痛を主訴として来院した。6か月前に自覚し、かかりつけ歯科医で副腎皮質ステロイド軟膏の処方を受けているが、再発を繰り返しているという。50年間毎日20本以上喫煙しており、飲酒歴はない。初診時の舌縁の写真（別冊No. 21）を別に示す。適切な対応はどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "細胞診",
+            "イ": "禁煙支援",
+            "ウ": "舌部分切除",
+            "エ": "抗菌薬の投与",
+            "オ": "歯の鋭縁の確認"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "6361f42f16a0c80607a93956303f1d22b43e4ddb81c9d44ff8e515762171ef5f",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p029.webp"
+          ]
+        },
+        {
+          "qNumber": 61,
+          "sourceId": "116B061",
+          "id": "shika-ishi-2023-annual-mondai-b-q61",
+          "questionPdfPages": [
+            40
+          ],
+          "officialAnswerCells": [
+            "ACE"
+          ],
+          "originalQuestionText": "母子保健法に規定されているのはどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "母子健康手帳の交付",
+            "イ": "出生証明書の交付",
+            "ウ": "低出生体重児の届出",
+            "エ": "乳幼児の定期予防接種",
+            "オ": "1歳6か月児健康診査"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "6d202e96fc39795ae51c1e5f5cac9264803f3a4c4fdfcf5131195181b3f3e5d5",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 62,
+          "sourceId": "116B062",
+          "id": "shika-ishi-2023-annual-mondai-b-q62",
+          "questionPdfPages": [
+            40
+          ],
+          "officialAnswerCells": [
+            "ABE"
+          ],
+          "originalQuestionText": "歯石の探知で有効なのはどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "視診",
+            "イ": "触診",
+            "ウ": "打診",
+            "エ": "透照診",
+            "オ": "エックス線撮影"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "6361f42f16a0c80607a93956303f1d22b43e4ddb81c9d44ff8e515762171ef5f",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 63,
+          "sourceId": "116B063",
+          "id": "shika-ishi-2023-annual-mondai-b-q63",
+          "questionPdfPages": [
+            41
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "46歳の女性。固定性ブリッジが脱離したことによる咀嚼困難を主訴として来院した。脱落したブリッジは20年前に装着したという。診察の結果、新たにブリッジを製作することとした。初診時の口腔内写真（別冊No. 22Ａ）、装着したプロビジョナルブリッジの咬合関係を反映させるためのブリッジ製作過程の写真（別冊No. 22Ｂ、Ｃ）を別に示す。矢印の部分を調整した次に行う操作はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "上顎模型の交換",
+            "イ": "下顎模型の交換",
+            "ウ": "側方顆路角の調節",
+            "エ": "矢状顆路傾斜角の調節",
+            "オ": "インサイザルピンの調節"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p030.webp",
+            "/questions/shika-ishi/116-b-appendix-p031.webp"
+          ]
+        },
+        {
+          "qNumber": 64,
+          "sourceId": "116B064",
+          "id": "shika-ishi-2023-annual-mondai-b-q64",
+          "questionPdfPages": [
+            41
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "16歳の女子。上顎左側側切歯の違和感を主訴として来院した。歯髄電気診に生活反応を示した。初診時のエックス線画像（別冊No. 23Ａ）と 上顎左側側切歯部の歯科用コーンビームCT（別冊No. 23Ｂ）を別に示す。適切な対応はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "経過観察",
+            "イ": "歯髄鎮痛消炎療法",
+            "ウ": "直接覆髄",
+            "エ": "抜髄",
+            "オ": "歯根尖切除"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p032.webp"
+          ]
+        },
+        {
+          "qNumber": 65,
+          "sourceId": "116B065",
+          "id": "shika-ishi-2023-annual-mondai-b-q65",
+          "questionPdfPages": [
+            42
+          ],
+          "officialAnswerCells": [
+            "ABC"
+          ],
+          "originalQuestionText": "歯周形成手術の術前と術中の口腔内写真（別冊No. 24）を別に示す。この術式が遊離歯肉移植術と比較して優れているのはどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "移植片の生着",
+            "イ": "歯肉色の調和",
+            "ウ": "採取部位の治癒",
+            "エ": "口腔前庭の拡張",
+            "オ": "歯間乳頭歯肉の増大"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "cf811bb4f5d148600ea4972e581d3500c87a20c50033f1c6fc136be364402bac",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p033.webp"
+          ]
+        },
+        {
+          "qNumber": 66,
+          "sourceId": "116B066",
+          "id": "shika-ishi-2023-annual-mondai-b-q66",
+          "questionPdfPages": [
+            42
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "44歳の女性。口蓋の腫脹部の精査を希望して来院した。かかりつけ歯科医で指摘されたという。口蓋に弾性軟から中等度、無痛性の腫瘤を認める。初診時の口腔内写真（別冊No. 25Ａ）、CT（別冊No. 25Ｂ）、MRI（別冊No. 25Ｃ）及びH-E 染色病理組織像（別冊No. 25Ｄ）を別に示す。診断名はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "血管腫",
+            "イ": "線維腫",
+            "ウ": "乳頭腫",
+            "エ": "多形腺腫",
+            "オ": "粘表皮癌",
+            "カ": "腺様囊胞癌",
+            "キ": "扁平上皮癌",
+            "ク": "Warthin 腫瘍"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p034.webp",
+            "/questions/shika-ishi/116-b-appendix-p035.webp",
+            "/questions/shika-ishi/116-b-appendix-p036.webp"
+          ]
+        },
+        {
+          "qNumber": 67,
+          "sourceId": "116B067",
+          "id": "shika-ishi-2023-annual-mondai-b-q67",
+          "questionPdfPages": [
+            43
+          ],
+          "officialAnswerCells": [
+            "E"
+          ],
+          "originalQuestionText": "慢性腎臓病〈CKD〉の重症度の評価に用いるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "AST",
+            "イ": "BNP",
+            "ウ": "BUN",
+            "エ": "CRP",
+            "オ": "eGFR"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "c3560c6952ec4c243a1d04e6998e158354562b32d76b40185ec4de50d9a3a3e9",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 68,
+          "sourceId": "116B068",
+          "id": "shika-ishi-2023-annual-mondai-b-q68",
+          "questionPdfPages": [
+            44
+          ],
+          "officialAnswerCells": [
+            "CE"
+          ],
+          "originalQuestionText": "7歳の女児。前歯で物が咬み切れないことを主訴として来院した。下顎後退位で切端咬合はとれない。診断をした結果、矯正歯科治療を行うこととした。初診時の顔面写真（別冊No. 26Ａ）、口腔内写真（別冊No. 26Ｂ）及びエックス線画像（別冊No. 26Ｃ）を別に示す。セファロ分析の結果を図に示す。適切な矯正装置はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "咬合斜面板",
+            "イ": "舌側弧線装置",
+            "ウ": "チンキャップ",
+            "エ": "リップバンパー",
+            "オ": "スライディングプレート"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "33001ddf9ddf4881d417f972f3e64cd339cf2b975569cd20c75fab89476fb985",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p038.webp",
+            "/questions/shika-ishi/116-b-appendix-p039.webp"
+          ]
+        },
+        {
+          "qNumber": 69,
+          "sourceId": "116B069",
+          "id": "shika-ishi-2023-annual-mondai-b-q69",
+          "questionPdfPages": [
+            45
+          ],
+          "officialAnswerCells": [
+            "AE"
+          ],
+          "originalQuestionText": "8歳の男児。歯が生えてこないことを主訴として来院した。毛髪の異常と皮膚の乾燥がみられる。初診時の口腔内写真（別冊No. 27Ａ）とエックス線画像（別冊No. 27Ｂ）を別に示す。適切な治療方針はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "義歯の装着",
+            "イ": "乳歯の早期抜去",
+            "ウ": "歯根吸収歯の固定",
+            "エ": "未萌出永久歯の牽引",
+            "オ": "歯冠の形態異常歯の修復"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "ba0a457fa1bcab979378d83b6c26b2e46ef2ba698e7055dadc8e44900c93e528",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p040.webp",
+            "/questions/shika-ishi/116-b-appendix-p041.webp"
+          ]
+        },
+        {
+          "qNumber": 70,
+          "sourceId": "116B070",
+          "id": "shika-ishi-2023-annual-mondai-b-q70",
+          "questionPdfPages": [
+            45
+          ],
+          "officialAnswerCells": [
+            "ACD"
+          ],
+          "originalQuestionText": "部分床義歯のフレームワークに用いるのはどれか。3つ選べ。",
+          "originalChoices": {
+            "ア": "チタン合金",
+            "イ": "ステンレス鋼",
+            "ウ": "タイプ4金合金",
+            "エ": "コバルトクロム合金",
+            "オ": "ニッケルチタン合金"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 3,
+          "answerSha256": "048b2e310498d6103f51e1432f8a3686622c7a38b7ecfe825cdcd5b9fd92f16e",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 71,
+          "sourceId": "116B071",
+          "id": "shika-ishi-2023-annual-mondai-b-q71",
+          "questionPdfPages": [
+            46
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "49歳の女性。下顎左側第一大臼歯のブラッシング時の出血と痛みを主訴として来院した。4か月前から自覚していたがそのままにしていたという。歯周基本治療後の再評価の結果、プロービング深さが全周3mm 以下となり、補綴処置を行うこととした。初診時の口腔内写真（別冊No. 28）を別に示す。下顎左側第一大臼歯に行う補綴前処置で適切なのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "新付着術",
+            "イ": "フラップ手術",
+            "ウ": "遊離歯肉移植術",
+            "エ": "歯肉弁側方移動術",
+            "オ": "歯肉弁歯冠側移動術"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p042.webp"
+          ]
+        },
+        {
+          "qNumber": 72,
+          "sourceId": "116B072",
+          "id": "shika-ishi-2023-annual-mondai-b-q72",
+          "questionPdfPages": [
+            46
+          ],
+          "officialAnswerCells": [
+            "AB"
+          ],
+          "originalQuestionText": "前歯部ブリッジの形態不良を主訴に来院した50歳の女性の、初診時の口元の写真（別冊No. 29Ａ）、診察中に治療の参考となる補助線を記入した写真（別冊No. 29Ｂ）及び治療後の口腔内写真（別冊No. 29Ｃ）を別に示す。治療の参考としたのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "瞳孔線",
+            "イ": "顔面正中",
+            "ウ": "Spee 彎曲",
+            "エ": "Balkwill 角",
+            "オ": "Bonwill 三角"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "f22025d8538dc08cb8dbe24e6920fb44192755ab3088e595cd83746553433a13",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p043.webp"
+          ]
+        },
+        {
+          "qNumber": 73,
+          "sourceId": "116B073",
+          "id": "shika-ishi-2023-annual-mondai-b-q73",
+          "questionPdfPages": [
+            47
+          ],
+          "officialAnswerCells": [
+            "AB"
+          ],
+          "originalQuestionText": "先天性心疾患を併発しやすいのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "Down 症候群",
+            "イ": "Marfan 症候群",
+            "ウ": "先天性表皮水疱症",
+            "エ": "先天性外胚葉異形成症",
+            "オ": "Beckwith-Wiedemann 症候群"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "f22025d8538dc08cb8dbe24e6920fb44192755ab3088e595cd83746553433a13",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 74,
+          "sourceId": "116B074",
+          "id": "shika-ishi-2023-annual-mondai-b-q74",
+          "questionPdfPages": [
+            47
+          ],
+          "officialAnswerCells": [
+            "BD"
+          ],
+          "originalQuestionText": "グラム染色で青紫色に染まるのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "Vibrio cholerae",
+            "イ": "Clostridium tetani",
+            "ウ": "Helicobacter pylori",
+            "エ": "Staphylococcus aureus",
+            "オ": "Haemophilus influenzae"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "e1db4de9499f1298d5b49bae1f9d3f166e901c5f60f8a5785faf8ffb518f538d",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 75,
+          "sourceId": "116B075",
+          "id": "shika-ishi-2023-annual-mondai-b-q75",
+          "questionPdfPages": [
+            47
+          ],
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "originalQuestionText": "Parkinson 病に特徴的にみられる症状はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "出血傾向",
+            "イ": "視力障害",
+            "ウ": "呼吸筋麻痺",
+            "エ": "筋固縮〈筋強剛〉",
+            "オ": "静止時振戦〈安静時振戦〉"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "31f2b85ea46093eb99704c98730124286cc2990b55eed153a81d8e57a35e6c3e",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 76,
+          "sourceId": "116B076",
+          "id": "shika-ishi-2023-annual-mondai-b-q76",
+          "questionPdfPages": [
+            48
+          ],
+          "officialAnswerCells": [
+            "ECDBA"
+          ],
+          "originalQuestionText": "72歳の男性。食事中に上顎右側顎堤が痛むことを主訴として来院した。上顎義歯は2年前に製作し、これまで疼痛はなかったが、数日前から症状を自覚したという。診察の結果、義歯の修理を行うこととした。来院時の義歯の写真（別冊No. 30Ａ）、別日に修理した後の義歯の写真（別冊No. 30Ｂ）及び義歯修理時における一連の操作の写真（別冊No. 30Ｃ）を別に示す。処置を実施の順番に並べよ。解答：①→②→③→④→⑤",
+          "originalChoices": {
+            "ア": "写真ア",
+            "イ": "写真イ",
+            "ウ": "写真ウ",
+            "エ": "写真エ",
+            "オ": "写真オ"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "ordering",
+          "requiredSelections": null,
+          "answerSha256": "c186fd190c073c806fc936f743e2632323a391a3643712aa6abc152b134e357e",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p044.webp",
+            "/questions/shika-ishi/116-b-appendix-p045.webp"
+          ]
+        },
+        {
+          "qNumber": 77,
+          "sourceId": "116B077",
+          "id": "shika-ishi-2023-annual-mondai-b-q77",
+          "questionPdfPages": [
+            49
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "56歳の女性。下顎左側臼歯部の痛みと歯の動揺を主訴として来院した。2か月前から疼痛を自覚し、次第に動揺してきたという。下顎左側臼歯部に42 × 20mm大の腫瘤を認め、生検の結果は扁平上皮癌であった。FDG-PET/CT で遠隔転移を認めなかった。初診時の口腔内写真（別冊No. 31Ａ）、エックス線画像（別冊No. 31Ｂ）及びFDG-PET/CT（別冊No. 31Ｃ）を別に示す。TNM 分類（UICC2017）はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "T1N2bM0",
+            "イ": "T2N1M1",
+            "ウ": "T3N2aM1",
+            "エ": "T4aN2bM0",
+            "オ": "T4bN3aM0"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p046.webp",
+            "/questions/shika-ishi/116-b-appendix-p047.webp"
+          ]
+        },
+        {
+          "qNumber": 78,
+          "sourceId": "116B078",
+          "id": "shika-ishi-2023-annual-mondai-b-q78",
+          "questionPdfPages": [
+            49
+          ],
+          "officialAnswerCells": [
+            "A"
+          ],
+          "originalQuestionText": "舌尖が生じるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "第一鰓弓",
+            "イ": "第二鰓弓",
+            "ウ": "第三鰓弓",
+            "エ": "第四鰓弓",
+            "オ": "第五鰓弓"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "4f05f006af32ad954f231c4c7ef5c5a32209d89700310076e09962ffe4e72b68",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 79,
+          "sourceId": "116B079",
+          "id": "shika-ishi-2023-annual-mondai-b-q79",
+          "questionPdfPages": [
+            50
+          ],
+          "officialAnswerCells": [
+            "CD"
+          ],
+          "originalQuestionText": "定型発達の4歳児の歯髄疾患において温度診への反応があるのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "歯髄壊死",
+            "イ": "歯髄壊疽",
+            "ウ": "歯髄充血",
+            "エ": "急性化膿性歯髄炎",
+            "オ": "慢性化膿性根尖性歯周炎"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "b5e66d9f8babef5308780414a02a3054217566bfbb585ce75c50b25560ec1662",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 80,
+          "sourceId": "116B080",
+          "id": "shika-ishi-2023-annual-mondai-b-q80",
+          "questionPdfPages": [
+            50
+          ],
+          "officialAnswerCells": [
+            "AB"
+          ],
+          "originalQuestionText": "下顎骨骨折の観血的整復固定術後の口腔内写真（別冊No. 32）を別に示す。この処置の目的はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "咬合の緊密化",
+            "イ": "異常癒着の防止",
+            "ウ": "術後感染の予防",
+            "エ": "術後腫脹の軽減",
+            "オ": "顎関節脱臼の予防"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "f22025d8538dc08cb8dbe24e6920fb44192755ab3088e595cd83746553433a13",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p048.webp"
+          ]
+        },
+        {
+          "qNumber": 81,
+          "sourceId": "116B081",
+          "id": "shika-ishi-2023-annual-mondai-b-q81",
+          "questionPdfPages": [
+            51
+          ],
+          "officialAnswerCells": [
+            "BE"
+          ],
+          "originalQuestionText": "下唇の異常を主訴として来院した女性の口唇の写真（別冊No. 33）を別に示す。2か月前からしみるような接触痛の出現と消退を繰り返しているという。診断の確定に必要なのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "抗CCP 抗体",
+            "イ": "抗BP180抗体",
+            "ウ": "好中球機能検査",
+            "エ": "マイコプラズマ抗体",
+            "オ": "抗デスモグレイン抗体"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "c316efc0c2aea385d597663a88aa82dbd79d3023f6f3ac3badce93ba3978cbd0",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p049.webp"
+          ]
+        },
+        {
+          "qNumber": 82,
+          "sourceId": "116B082",
+          "id": "shika-ishi-2023-annual-mondai-b-q82",
+          "questionPdfPages": [
+            51
+          ],
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "originalQuestionText": "56歳の女性。咀嚼困難を主訴として来院した。上顎左側と下顎右側欠損部にインプラント義歯による治療を行うこととした。上顎左側に製作した上部構造と模型の写真（別冊No. 34Ａ）、下顎右側に製作した上部構造と模型の写真（別冊No. 34Ｂ）を別に示す。Ａに比べてＢの構造が有利なのはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "審美性",
+            "イ": "被圧変位性",
+            "ウ": "咬合接触状態",
+            "エ": "着脱時の粘膜刺激",
+            "オ": "インプラント体の保護"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "31f2b85ea46093eb99704c98730124286cc2990b55eed153a81d8e57a35e6c3e",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p050.webp"
+          ]
+        },
+        {
+          "qNumber": 83,
+          "sourceId": "116B083",
+          "id": "shika-ishi-2023-annual-mondai-b-q83",
+          "questionPdfPages": [
+            52
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "8歳の女児。前歯の隙間を主訴として来院した。初診時の顔面写真（別冊No. 35Ａ）、口腔内写真（別冊No. 35Ｂ）及びエックス線画像（別冊No. 35Ｃ）を別に示す。セファロ分析の結果を図に示す。まず行う処置はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "正中離開の閉鎖",
+            "イ": "下顎左側乳犬歯の抜去",
+            "ウ": "上顎右側第一大臼歯の開窓",
+            "エ": "上顎右側第二乳臼歯の抜去",
+            "オ": "左側乳犬歯交叉咬合の改善"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p052.webp",
+            "/questions/shika-ishi/116-b-appendix-p053.webp",
+            "/questions/shika-ishi/116-b-q083-figure.webp"
+          ]
+        },
+        {
+          "qNumber": 84,
+          "sourceId": "116B084",
+          "id": "shika-ishi-2023-annual-mondai-b-q84",
+          "questionPdfPages": [
+            53
+          ],
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "originalQuestionText": "80歳の男性。下顎義歯の維持安定不良を主訴として来院した。診察の結果、下顎義歯を再製作することとした。加熱重合レジンを用いて新義歯を製作したが、矢印のような表面状態が観察された。下顎全部床義歯の写真（別冊No. 36Ａ）と矢印の部分を拡大した写真（別冊No. 36Ｂ）を別に示す。矢印で示す状態に至った原因はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "70℃で徐々にフラスクを加熱した。",
+            "イ": "レジンの粉と液の混和時に振動させた。",
+            "ウ": "レジンを一塊としてフラスクに塡入した。",
+            "エ": "レジンが餅状になる前にフラスクに塡入した。",
+            "オ": "フラスクへのレジン塡入時、十分に加圧しなかった。"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "31f2b85ea46093eb99704c98730124286cc2990b55eed153a81d8e57a35e6c3e",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p054.webp"
+          ]
+        },
+        {
+          "qNumber": 85,
+          "sourceId": "116B085",
+          "id": "shika-ishi-2023-annual-mondai-b-q85",
+          "questionPdfPages": [
+            54
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "72歳の男性。食事時のむせを主訴として来院した。脳梗塞の既往があり、脳神経内科に通院中であるという。口腔機能検査では異常が認められなかったものの、嗄声を生じていたので耳鼻咽喉科医に精査を依頼した。嚥下内視鏡検査の結果、液体摂取時に誤嚥が認められたため、機能改善を目指した訓練を行うこととした。安静時と「イ」発声時の嚥下内視鏡画像（別冊No. 37）を別に示す。推奨されるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "咀嚼訓練",
+            "イ": "舌抵抗訓練",
+            "ウ": "プッシング訓練",
+            "エ": "バルーン拡張訓練",
+            "オ": "ブローイング訓練"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p055.webp"
+          ]
+        },
+        {
+          "qNumber": 86,
+          "sourceId": "116B086",
+          "id": "shika-ishi-2023-annual-mondai-b-q86",
+          "questionPdfPages": [
+            54
+          ],
+          "officialAnswerCells": [
+            "D"
+          ],
+          "originalQuestionText": "57歳の男性。上顎右側大臼歯部の疼痛を主訴として来院した。歯科治療に対する恐怖心が強いという。5年前から慢性腎不全のため血液透析を受けている。診察の結果、静脈内鎮静法下に 上顎右側第一大臼歯の抜歯を行うこととした。初診時の左前腕の写真（別冊No. 38）を別に示す。処置時の対応で正しいのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "静脈路は左前腕に確保する。",
+            "イ": "抜歯は血液透析の直後に行う。",
+            "ウ": "カリウムを含有する輸液製剤を投与する。",
+            "エ": "血圧計のマンシェットは右上腕に装着する。",
+            "オ": "抗菌薬は血液透析の直前に服用するよう指示する。"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "0f69ae7ea237251f1ae2c989dc36821a7e9b728b0524400f491db27c3c8efb94",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p056.webp"
+          ]
+        },
+        {
+          "qNumber": 87,
+          "sourceId": "116B087",
+          "id": "shika-ishi-2023-annual-mondai-b-q87",
+          "questionPdfPages": [
+            55
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "顎関節と上顎歯列の位置関係を咬合器に再現する目的で用いるのはどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "FGPテーブル",
+            "イ": "パントグラフ",
+            "ウ": "フェイスボウ",
+            "エ": "チェックバイト",
+            "オ": "ゴシックアーチトレーサー"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 88,
+          "sourceId": "116B088",
+          "id": "shika-ishi-2023-annual-mondai-b-q88",
+          "questionPdfPages": [
+            55
+          ],
+          "officialAnswerCells": [
+            "AC"
+          ],
+          "originalQuestionText": "我が国において口腔癌に対する組織内照射に現在用いられている線源はどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "¹⁹⁸Au",
+            "イ": "⁶⁰Co",
+            "ウ": "¹⁹²Ir",
+            "エ": "²²⁶Ra",
+            "オ": "²²²Rn"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "3032d08f88700270bb55bf88bb5ac57472d67c34b42bd5ce277aa58933917d80",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 89,
+          "sourceId": "116B089",
+          "id": "shika-ishi-2023-annual-mondai-b-q89",
+          "questionPdfPages": [
+            55
+          ],
+          "officialAnswerCells": [
+            "CE"
+          ],
+          "originalQuestionText": "練和開始から30分程度で酸性から中性に近づく合着用セメントはどれか。2つ選べ。",
+          "originalChoices": {
+            "ア": "リン酸亜鉛セメント",
+            "イ": "MMA 系レジンセメント",
+            "ウ": "グラスアイオノマーセメント",
+            "エ": "コンポジット系レジンセメント",
+            "オ": "ポリカルボキシレートセメント"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 2,
+          "answerSha256": "33001ddf9ddf4881d417f972f3e64cd339cf2b975569cd20c75fab89476fb985",
+          "assetUrls": []
+        },
+        {
+          "qNumber": 90,
+          "sourceId": "116B090",
+          "id": "shika-ishi-2023-annual-mondai-b-q90",
+          "questionPdfPages": [
+            56
+          ],
+          "officialAnswerCells": [
+            "C"
+          ],
+          "originalQuestionText": "21歳の女性。下顎の前突感と前歯の咬み合わせが悪いことを主訴として来院した。初診時の顔面写真（別冊No. 39Ａ）、口腔内写真（別冊No. 39Ｂ）及びエックス線画像（別冊No. 39Ｃ）を別に示す。セファロ分析の結果を図に示す。適切な治療方針はどれか。1つ選べ。",
+          "originalChoices": {
+            "ア": "上顎両側第一小臼歯の抜歯、下顎枝矢状分割術",
+            "イ": "上顎両側第二小臼歯の抜歯、下顎枝矢状分割術",
+            "ウ": "上顎両側第一小臼歯の抜歯、Le FortⅠ型骨切り術、下顎枝矢状分割術",
+            "エ": "上顎両側第二小臼歯の抜歯、Le FortⅠ型骨切り術、下顎枝矢状分割術",
+            "オ": "上下顎両側第一小臼歯の抜歯、Le FortⅠ型骨切り術、下顎枝矢状分割術"
+          },
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "status": "COMPLETE",
+          "payloadType": "multiple-choice",
+          "requiredSelections": 1,
+          "answerSha256": "2a0c58f20c7e088ac7f7b5496c5a9412cff4a484025aaa72049af00ee8c81bec",
+          "assetUrls": [
+            "/questions/shika-ishi/116-b-appendix-p058.webp",
+            "/questions/shika-ishi/116-b-appendix-p059.webp",
+            "/questions/shika-ishi/116-b-q090-figure.webp",
+            "/questions/shika-ishi/116-b-q090-choices.webp"
+          ]
+        }
+      ]
+    }
+  ]
+}

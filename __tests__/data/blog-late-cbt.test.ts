@@ -27,7 +27,7 @@ describe("late CBT editorial refresh", () => {
       expect(post, slug).toBeDefined();
       expect(post.sourceUrls, slug).toContain(LATE_CBT_SOURCE);
       expect(post.body).toContain(`](${LATE_CBT_SOURCE})`);
-      expect(post.editorialDates?.lastEditedAt).toBe("2026-11-10");
+      expect(post.editorialDates?.lastEditedAt).toBe(slug === "db-hinnshutsu-ronten-toppu10" ? "2026-11-17" : "2026-11-10");
       const links = [...post.body.matchAll(/\]\((\/[^)]+)\)/g)].map(m => m[1]);
       expect(links.some(link => /^\/(ap|pm|db|es|au|sc)\/2025-autumn$/.test(link)), slug).toBe(true);
       for (const link of links) {

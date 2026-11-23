@@ -1,0 +1,935 @@
+[
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q01",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 1,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "基数変換と2の補数"
+    ],
+    "difficulty": 2,
+    "question": "次の各問に答えなさい。①～⑩について、図の指定に従い数値を書きなさい。",
+    "explanation": "①は4＋1/8＝4.125。②は8ビットがすべて1で255。③は128＝8×16、④は207＝12×16＋15なので80、CF。⑤の4と6は0100と0110、⑥のB、8、Aは1011、1000、1010で末尾の0を省略できる。⑦は43×10＝430で、2進の位256＋128＋32＋8＋4＋2を立てる。⑧は155−256＝−101。8ビットの2の補数では最上位の重みが−128、下7ビットの合計の上限が127なので⑨⑩の範囲になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=36",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p36-q01.webp"
+    ],
+    "imageAltTexts": [
+      "2進数・10進数・16進数の変換、2進数の乗算、8ビットの2の補数に関する大問1。"
+    ],
+    "type": "descriptive",
+    "answer": "① 4.125\n② 255\n③ 80\n④ CF\n⑤ 100 0110\n⑥ 1011 1000.101\n⑦ 1 1010 1110\n⑧ −101\n⑨ 128\n⑩ 127",
+    "modelAnswer": "① 4.125\n② 255\n③ 80\n④ CF\n⑤ 100 0110\n⑥ 1011 1000.101\n⑦ 1 1010 1110\n⑧ −101\n⑨ 128\n⑩ 127",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q02",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 2,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "エンコーダの真理値表"
+    ],
+    "difficulty": 2,
+    "question": "以下の真理値表を完成させなさい。",
+    "explanation": "上のOR回路はY₃とY₁からX₁を、下はY₃とY₂からX₂を作る。したがって、1である入力がY₀、Y₁、Y₂、Y₃の順に移ると、出力X₂X₁は00、01、10、11になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問2 問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p37-q02.webp"
+    ],
+    "imageAltTexts": [
+      "4入力Y₃～Y₀を2出力X₂、X₁に変換する論理回路と真理値表。"
+    ],
+    "type": "descriptive",
+    "answer": "① 0\n② 0\n③ 0\n④ 1\n⑤ 1\n⑥ 0\n⑦ 1\n⑧ 1",
+    "modelAnswer": "① 0\n② 0\n③ 0\n④ 1\n⑤ 1\n⑥ 0\n⑦ 1\n⑧ 1",
+    "scoringCriteria": "①②、③④、⑤⑥、⑦⑧の組ごとに全て正しければ各2点。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q03",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 3,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "エンコーダ"
+    ],
+    "difficulty": 2,
+    "question": "この回路の名称を解答群から選びなさい。",
+    "explanation": "Y₀～Y₃のいずれか1本に来た1を、その線の番号を表す2ビットに変換するエンコーダ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問2",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=37",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問2 問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p37-q02.webp"
+    ],
+    "imageAltTexts": [
+      "4入力Y₃～Y₀を2出力X₂、X₁に変換する論理回路と真理値表。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "大小比較回路",
+      "イ": "半加算器",
+      "ウ": "全加算器",
+      "エ": "デコーダ",
+      "オ": "エンコーダ",
+      "カ": "一致回路"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "オ",
+    "choiceExplanations": {
+      "ア": "数値の大小を判定する回路なら「大きい・等しい・小さい」の情報を生成する。この図は有効な入力線の番号を表す。",
+      "イ": "半加算器は1ビット2入力の和と桁上がりを計算する。ここでは加算対象の2ビットが与えられていない。",
+      "ウ": "全加算器は下位から来る桁上がりを含めて3入力を足す。この回路に桁上がり入力はない。",
+      "エ": "デコーダは例えば2ビットのコードを4本に展開し、該当の1本を選ぶ。この図の変換方向と逆。",
+      "オ": "Y₀～Y₃のいずれか1本に来た1を、その線の番号を表す2ビットに変換するエンコーダ。",
+      "カ": "一致回路は2組の値が等しいかを検出するが、この回路では入力のうちどの線が有効かを符号化する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q04",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 4,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "Tフリップフロップ"
+    ],
+    "difficulty": 2,
+    "question": "回路の動作を示すタイムチャートを完成させなさい。",
+    "explanation": "CKの立上りでQ₁が反転する。Q₁が0から1に変わるたび次段Q₂が反転し、Q₂が0から1に変わるたびQ₃も反転する。例えば最初のCKの立上りでは000から3段すべてが反転して111へ移り、次はQ₁だけが0になって110。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問1",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問3 問1。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p38-q03.webp"
+    ],
+    "imageAltTexts": [
+      "3段のTフリップフロップと番号1～8のクロック立上りを示した空欄のタイムチャート。"
+    ],
+    "type": "descriptive",
+    "answer": "クロック立上り後に順次伝搬した値（初期値000、左からQ₃Q₂Q₁）。\n\n| 回 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Q₃Q₂Q₁ | 111 | 110 | 101 | 100 | 011 | 010 | 001 | 000 |",
+    "modelAnswer": "クロック立上り後に順次伝搬した値（初期値000、左からQ₃Q₂Q₁）。\n\n| 回 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Q₃Q₂Q₁ | 111 | 110 | 101 | 100 | 011 | 010 | 001 | 000 |",
+    "scoringCriteria": "Q₁～Q₃の波形につき各2点。",
+    "answerImageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p60-q03-answer.webp"
+    ],
+    "answerImageAltTexts": [
+      "??????????Q??Q????????????"
+    ],
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q05",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 5,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "ダウンカウンタ"
+    ],
+    "difficulty": 2,
+    "question": "この回路の名称を解答群から選びなさい。",
+    "explanation": "Q₃Q₂Q₁は000の次に111、110、101と1ずつ減るため、3ビットのダウンカウンタ。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問2",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問3 問2。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p38-q03.webp"
+    ],
+    "imageAltTexts": [
+      "3段のTフリップフロップと番号1～8のクロック立上りを示した空欄のタイムチャート。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "シフトレジスタ",
+      "イ": "マルチプレクサ",
+      "ウ": "デマルチプレクサ",
+      "エ": "アップカウンタ",
+      "オ": "ダウンカウンタ",
+      "カ": "一致回路"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "オ",
+    "choiceExplanations": {
+      "ア": "シフトレジスタは入力データを毎クロック次段へ送る。図では前段の出力が次段を反転させるクロックになっている。",
+      "イ": "マルチプレクサは複数の入力の中から1つを出力へ選ぶ。図に選択信号は見当たらない。",
+      "ウ": "デマルチプレクサは入力1本を選択信号で出力のいずれかへ振り分ける。この図の3出力は計数値の各ビットである。",
+      "エ": "アップカウンタなら000から001、010と増える。図の最初の遷移は000から111。",
+      "オ": "Q₃Q₂Q₁は000の次に111、110、101と1ずつ減るため、3ビットのダウンカウンタ。",
+      "カ": "一致回路は2組の入力を比較して等しいかを出力する。この図ではクロックで内部状態が変わる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q06",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 6,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "入出力インタフェース"
+    ],
+    "difficulty": 2,
+    "question": "次に示す①～⑤の入出力インタフェースにおいて、シリアルインタフェースには「S」を、パラレルインタフェースには「P」を解答欄に書きなさい。",
+    "explanation": "①の従来型SCSI、③の従来型PCI、⑤のEIDEはいずれも複数の信号線でデータのビットを並列に転送する。②のUSBと④のRS-232Cはビットを順に送るシリアル方式。ここで公式解答が指すPCIは、名称が似たPCI Expressとは区別する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問4。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p39-q04.webp"
+    ],
+    "imageAltTexts": [
+      "SCSI、USB、PCI、RS-232C、EIDEをSまたはPで分類する大問4。"
+    ],
+    "type": "descriptive",
+    "answer": "① P\n② S\n③ P\n④ S\n⑤ P",
+    "modelAnswer": "① P\n② S\n③ P\n④ S\n⑤ P",
+    "scoringCriteria": "公式の標準解答で自己採点する。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q07",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 7,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "プログラム言語の特徴"
+    ],
+    "difficulty": 2,
+    "question": "次の①～⑤の文章に関連の深いプログラム言語を解答群から選びなさい。\n\n①に当てはまる答えを選びなさい。",
+    "explanation": "①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ①",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問5 ①。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p39-q05.webp"
+    ],
+    "imageAltTexts": [
+      "5種類の言語の用途、動作方式、由来を問う説明と7つの解答候補。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Python",
+      "イ": "COBOL",
+      "ウ": "Java",
+      "エ": "C言語",
+      "オ": "BASIC",
+      "カ": "機械語",
+      "キ": "Perl"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "イ",
+    "choiceExplanations": {
+      "ア": "ライブラリが豊富な汎用インタプリタ型言語。1991年に初期版が公開された。 ①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。",
+      "イ": "①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。",
+      "ウ": "仮想マシンでバイトコードを実行するオブジェクト指向言語。 ①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。",
+      "エ": "ベル研究所で開発され、UNIXの実装に使われた言語。 ①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。",
+      "オ": "初学者がプログラムを学びやすいように作られた言語。 ①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。",
+      "カ": "CPUが直接解釈する命令コード。CPUの種類に依存する。 ①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。",
+      "キ": "テキスト処理に強く、CGIとして動的なWebページの生成にも使われてきた言語。 ①は金融・行政の事務処理で用いられるCOBOL。業務の大量データを扱うために設計された。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q08",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 8,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "プログラム言語の特徴"
+    ],
+    "difficulty": 2,
+    "question": "次の①～⑤の文章に関連の深いプログラム言語を解答群から選びなさい。\n\n②に当てはまる答えを選びなさい。",
+    "explanation": "②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ②",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問5 ②。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p39-q05.webp"
+    ],
+    "imageAltTexts": [
+      "5種類の言語の用途、動作方式、由来を問う説明と7つの解答候補。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Python",
+      "イ": "COBOL",
+      "ウ": "Java",
+      "エ": "C言語",
+      "オ": "BASIC",
+      "カ": "機械語",
+      "キ": "Perl"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "エ",
+    "choiceExplanations": {
+      "ア": "ライブラリが豊富な汎用インタプリタ型言語。1991年に初期版が公開された。 ②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。",
+      "イ": "帳票など大量の事務データ処理向けに発展した言語。 ②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。",
+      "ウ": "仮想マシンでバイトコードを実行するオブジェクト指向言語。 ②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。",
+      "エ": "②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。",
+      "オ": "初学者がプログラムを学びやすいように作られた言語。 ②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。",
+      "カ": "CPUが直接解釈する命令コード。CPUの種類に依存する。 ②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。",
+      "キ": "テキスト処理に強く、CGIとして動的なWebページの生成にも使われてきた言語。 ②ではベル研究所とUNIXが目印。UNIXの実装に用いられた高水準言語はC言語。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q09",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 9,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "プログラム言語の特徴"
+    ],
+    "difficulty": 2,
+    "question": "次の①～⑤の文章に関連の深いプログラム言語を解答群から選びなさい。\n\n③に当てはまる答えを選びなさい。",
+    "explanation": "③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ③",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問5 ③。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p39-q05.webp"
+    ],
+    "imageAltTexts": [
+      "5種類の言語の用途、動作方式、由来を問う説明と7つの解答候補。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Python",
+      "イ": "COBOL",
+      "ウ": "Java",
+      "エ": "C言語",
+      "オ": "BASIC",
+      "カ": "機械語",
+      "キ": "Perl"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "choiceExplanations": {
+      "ア": "ライブラリが豊富な汎用インタプリタ型言語。1991年に初期版が公開された。 ③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。",
+      "イ": "帳票など大量の事務データ処理向けに発展した言語。 ③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。",
+      "ウ": "③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。",
+      "エ": "ベル研究所で開発され、UNIXの実装に使われた言語。 ③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。",
+      "オ": "初学者がプログラムを学びやすいように作られた言語。 ③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。",
+      "カ": "CPUが直接解釈する命令コード。CPUの種類に依存する。 ③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。",
+      "キ": "テキスト処理に強く、CGIとして動的なWebページの生成にも使われてきた言語。 ③で仮想マシンを介して実行するのはJava。仮想マシンが各環境の差を吸収する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q10",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 10,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "プログラム言語の特徴"
+    ],
+    "difficulty": 2,
+    "question": "次の①～⑤の文章に関連の深いプログラム言語を解答群から選びなさい。\n\n④に当てはまる答えを選びなさい。",
+    "explanation": "④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ④",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問5 ④。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p39-q05.webp"
+    ],
+    "imageAltTexts": [
+      "5種類の言語の用途、動作方式、由来を問う説明と7つの解答候補。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Python",
+      "イ": "COBOL",
+      "ウ": "Java",
+      "エ": "C言語",
+      "オ": "BASIC",
+      "カ": "機械語",
+      "キ": "Perl"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": "キ",
+    "choiceExplanations": {
+      "ア": "ライブラリが豊富な汎用インタプリタ型言語。1991年に初期版が公開された。 ④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。",
+      "イ": "帳票など大量の事務データ処理向けに発展した言語。 ④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。",
+      "ウ": "仮想マシンでバイトコードを実行するオブジェクト指向言語。 ④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。",
+      "エ": "ベル研究所で開発され、UNIXの実装に使われた言語。 ④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。",
+      "オ": "初学者がプログラムを学びやすいように作られた言語。 ④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。",
+      "カ": "CPUが直接解釈する命令コード。CPUの種類に依存する。 ④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。",
+      "キ": "④は提示された候補ではPerl。文字列を扱いやすく、CGIなどでWebサーバ側の処理を実装できる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q11",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 11,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "プログラム言語の特徴"
+    ],
+    "difficulty": 2,
+    "question": "次の①～⑤の文章に関連の深いプログラム言語を解答群から選びなさい。\n\n⑤に当てはまる答えを選びなさい。",
+    "explanation": "⑤の1991年と汎用のライブラリが示すのはPython。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑤",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問5 ⑤。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p39-q05.webp"
+    ],
+    "imageAltTexts": [
+      "5種類の言語の用途、動作方式、由来を問う説明と7つの解答候補。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "Python",
+      "イ": "COBOL",
+      "ウ": "Java",
+      "エ": "C言語",
+      "オ": "BASIC",
+      "カ": "機械語",
+      "キ": "Perl"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "choiceExplanations": {
+      "ア": "⑤の1991年と汎用のライブラリが示すのはPython。",
+      "イ": "帳票など大量の事務データ処理向けに発展した言語。 ⑤の1991年と汎用のライブラリが示すのはPython。",
+      "ウ": "仮想マシンでバイトコードを実行するオブジェクト指向言語。 ⑤の1991年と汎用のライブラリが示すのはPython。",
+      "エ": "ベル研究所で開発され、UNIXの実装に使われた言語。 ⑤の1991年と汎用のライブラリが示すのはPython。",
+      "オ": "初学者がプログラムを学びやすいように作られた言語。 ⑤の1991年と汎用のライブラリが示すのはPython。",
+      "カ": "CPUが直接解釈する命令コード。CPUの種類に依存する。 ⑤の1991年と汎用のライブラリが示すのはPython。",
+      "キ": "テキスト処理に強く、CGIとして動的なWebページの生成にも使われてきた言語。 ⑤の1991年と汎用のライブラリが示すのはPython。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q12",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 12,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "二重ループと横棒グラフ"
+    ],
+    "difficulty": 2,
+    "question": "配列Xに格納された5個のデータを横棒グラフに表示する流れ図の空欄①～③を埋めなさい。\n\n①に当てはまる答えを選びなさい。",
+    "explanation": "①は外側のMループで、配列の添字1～5をすべて取り出す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ①",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問6 ①。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p40-q06.webp"
+    ],
+    "imageAltTexts": [
+      "外側M・内側Nの流れ図、配列Xの5要素、横棒の実行例、および解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "改行",
+      "イ": "“　”を出力",
+      "ウ": "M = 1, X(N), 1",
+      "エ": "M = 1, 5, 1",
+      "オ": "N = 1, X(M), 1",
+      "カ": "N = 1, M, 1"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "エ",
+    "choiceExplanations": {
+      "ア": "改行は次のデータの棒を次の行へ送る処理。 ①は外側のMループで、配列の添字1～5をすべて取り出す。",
+      "イ": "空白の出力には改行の効果がない。 ①は外側のMループで、配列の添字1～5をすべて取り出す。",
+      "ウ": "外側の回数をX(N)にすると、未設定のNに依存し、処理するデータが5個で一定にならない。 ①は外側のMループで、配列の添字1～5をすべて取り出す。",
+      "エ": "①は外側のMループで、配列の添字1～5をすべて取り出す。",
+      "オ": "Nを1～X(M)にすれば現在のデータ値と同じ回数だけ黒い四角を出せる。 ①は外側のMループで、配列の添字1～5をすべて取り出す。",
+      "カ": "上限Mの場合、黒い四角は1、2、3、4、5個になり、必要な8、3、12、5、7個にならない。 ①は外側のMループで、配列の添字1～5をすべて取り出す。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q13",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 13,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "二重ループと横棒グラフ"
+    ],
+    "difficulty": 2,
+    "question": "配列Xに格納された5個のデータを横棒グラフに表示する流れ図の空欄①～③を埋めなさい。\n\n②に当てはまる答えを選びなさい。",
+    "explanation": "②は行内で黒い四角を描く内側のNループで、その行に対応する配列の値X(M)を上限にする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ②",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問6 ②。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p40-q06.webp"
+    ],
+    "imageAltTexts": [
+      "外側M・内側Nの流れ図、配列Xの5要素、横棒の実行例、および解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "改行",
+      "イ": "“　”を出力",
+      "ウ": "M = 1, X(N), 1",
+      "エ": "M = 1, 5, 1",
+      "オ": "N = 1, X(M), 1",
+      "カ": "N = 1, M, 1"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "オ",
+    "choiceExplanations": {
+      "ア": "改行は次のデータの棒を次の行へ送る処理。 ②は行内で黒い四角を描く内側のNループで、その行に対応する配列の値X(M)を上限にする。",
+      "イ": "空白の出力には改行の効果がない。 ②は行内で黒い四角を描く内側のNループで、その行に対応する配列の値X(M)を上限にする。",
+      "ウ": "外側の回数をX(N)にすると、未設定のNに依存し、処理するデータが5個で一定にならない。 ②は行内で黒い四角を描く内側のNループで、その行に対応する配列の値X(M)を上限にする。",
+      "エ": "Mを1～5にすれば配列中の5データを順に処理できる。 ②は行内で黒い四角を描く内側のNループで、その行に対応する配列の値X(M)を上限にする。",
+      "オ": "②は行内で黒い四角を描く内側のNループで、その行に対応する配列の値X(M)を上限にする。",
+      "カ": "上限Mの場合、黒い四角は1、2、3、4、5個になり、必要な8、3、12、5、7個にならない。 ②は行内で黒い四角を描く内側のNループで、その行に対応する配列の値X(M)を上限にする。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q14",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 14,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "二重ループと横棒グラフ"
+    ],
+    "difficulty": 2,
+    "question": "配列Xに格納された5個のデータを横棒グラフに表示する流れ図の空欄①～③を埋めなさい。\n\n③に当てはまる答えを選びなさい。",
+    "explanation": "③は黒い四角をN回出力した後、次の棒が別の行から始まるように改行する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ③",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問6 ③。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p40-q06.webp"
+    ],
+    "imageAltTexts": [
+      "外側M・内側Nの流れ図、配列Xの5要素、横棒の実行例、および解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "改行",
+      "イ": "“　”を出力",
+      "ウ": "M = 1, X(N), 1",
+      "エ": "M = 1, 5, 1",
+      "オ": "N = 1, X(M), 1",
+      "カ": "N = 1, M, 1"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "ア",
+    "choiceExplanations": {
+      "ア": "③は黒い四角をN回出力した後、次の棒が別の行から始まるように改行する。",
+      "イ": "空白の出力には改行の効果がない。 ③は黒い四角をN回出力した後、次の棒が別の行から始まるように改行する。",
+      "ウ": "外側の回数をX(N)にすると、未設定のNに依存し、処理するデータが5個で一定にならない。 ③は黒い四角をN回出力した後、次の棒が別の行から始まるように改行する。",
+      "エ": "Mを1～5にすれば配列中の5データを順に処理できる。 ③は黒い四角をN回出力した後、次の棒が別の行から始まるように改行する。",
+      "オ": "Nを1～X(M)にすれば現在のデータ値と同じ回数だけ黒い四角を出せる。 ③は黒い四角をN回出力した後、次の棒が別の行から始まるように改行する。",
+      "カ": "上限Mの場合、黒い四角は1、2、3、4、5個になり、必要な8、3、12、5、7個にならない。 ③は黒い四角をN回出力した後、次の棒が別の行から始まるように改行する。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q15",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 15,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "配列要素の差の絶対値"
+    ],
+    "difficulty": 2,
+    "question": "配列AとBの大きい値から小さい値を引き、結果をCに格納して出力する流れ図の空欄①～③を埋めなさい。\n\n①に当てはまる答えを選びなさい。",
+    "explanation": "①はNループの終値で、添字1から5までを対象にするため5。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ①",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問7 ①。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p41-q07.webp"
+    ],
+    "imageAltTexts": [
+      "5組の配列要素の差を分岐で求める流れ図と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "A(N)",
+      "イ": "B(N) > A(N)",
+      "ウ": "C(N)",
+      "エ": "A(N) > B(N)",
+      "オ": "5",
+      "カ": "B(N)"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "オ",
+    "choiceExplanations": {
+      "ア": "処理前のA側の値。 ①はNループの終値で、添字1から5までを対象にするため5。",
+      "イ": "B側の値が大きい場合に真になる比較。 ①はNループの終値で、添字1から5までを対象にするため5。",
+      "ウ": "引き算の結果を格納する配列Cの現在の要素。 ①はNループの終値で、添字1から5までを対象にするため5。",
+      "エ": "A側の値が大きい場合に真になる比較。 ①はNループの終値で、添字1から5までを対象にするため5。",
+      "オ": "①はNループの終値で、添字1から5までを対象にするため5。",
+      "カ": "処理前のB側の値。 ①はNループの終値で、添字1から5までを対象にするため5。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q16",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 16,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "配列要素の差の絶対値"
+    ],
+    "difficulty": 2,
+    "question": "配列AとBの大きい値から小さい値を引き、結果をCに格納して出力する流れ図の空欄①～③を埋めなさい。\n\n②に当てはまる答えを選びなさい。",
+    "explanation": "②が真の側ではA(N)−B(N)を計算している。A(N)>B(N)なら結果は正。同値のときは偽側でも0になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ②",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問7 ②。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p41-q07.webp"
+    ],
+    "imageAltTexts": [
+      "5組の配列要素の差を分岐で求める流れ図と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "A(N)",
+      "イ": "B(N) > A(N)",
+      "ウ": "C(N)",
+      "エ": "A(N) > B(N)",
+      "オ": "5",
+      "カ": "B(N)"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "エ",
+    "choiceExplanations": {
+      "ア": "処理前のA側の値。 ②が真の側ではA(N)−B(N)を計算している。A(N)>B(N)なら結果は正。同値のときは偽側でも0になる。",
+      "イ": "B側の値が大きい場合に真になる比較。 ②が真の側ではA(N)−B(N)を計算している。A(N)>B(N)なら結果は正。同値のときは偽側でも0になる。",
+      "ウ": "引き算の結果を格納する配列Cの現在の要素。 ②が真の側ではA(N)−B(N)を計算している。A(N)>B(N)なら結果は正。同値のときは偽側でも0になる。",
+      "エ": "②が真の側ではA(N)−B(N)を計算している。A(N)>B(N)なら結果は正。同値のときは偽側でも0になる。",
+      "オ": "A、B、Cそれぞれの要素数。 ②が真の側ではA(N)−B(N)を計算している。A(N)>B(N)なら結果は正。同値のときは偽側でも0になる。",
+      "カ": "処理前のB側の値。 ②が真の側ではA(N)−B(N)を計算している。A(N)>B(N)なら結果は正。同値のときは偽側でも0になる。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q17",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 17,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "配列要素の差の絶対値"
+    ],
+    "difficulty": 2,
+    "question": "配列AとBの大きい値から小さい値を引き、結果をCに格納して出力する流れ図の空欄①～③を埋めなさい。\n\n③に当てはまる答えを選びなさい。",
+    "explanation": "③は分岐を合流してから出力する。どちらで計算しても差はC(N)に入っている。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ③",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問7 ③。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p41-q07.webp"
+    ],
+    "imageAltTexts": [
+      "5組の配列要素の差を分岐で求める流れ図と解答群。"
+    ],
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "A(N)",
+      "イ": "B(N) > A(N)",
+      "ウ": "C(N)",
+      "エ": "A(N) > B(N)",
+      "オ": "5",
+      "カ": "B(N)"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "ウ",
+    "choiceExplanations": {
+      "ア": "処理前のA側の値。 ③は分岐を合流してから出力する。どちらで計算しても差はC(N)に入っている。",
+      "イ": "B側の値が大きい場合に真になる比較。 ③は分岐を合流してから出力する。どちらで計算しても差はC(N)に入っている。",
+      "ウ": "③は分岐を合流してから出力する。どちらで計算しても差はC(N)に入っている。",
+      "エ": "A側の値が大きい場合に真になる比較。 ③は分岐を合流してから出力する。どちらで計算しても差はC(N)に入っている。",
+      "オ": "A、B、Cそれぞれの要素数。 ③は分岐を合流してから出力する。どちらで計算しても差はC(N)に入っている。",
+      "カ": "処理前のB側の値。 ③は分岐を合流してから出力する。どちらで計算しても差はC(N)に入っている。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q18",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 18,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "複利の反復計算"
+    ],
+    "difficulty": 2,
+    "question": "次のプログラムの①～⑤に適するものを答えなさい。",
+    "explanation": "入力した年利をINTERESTに保存する。FOR YEAR=1 TO 10 STEP 1で10回繰り返し、毎回MONEYに利息を足してINTで小数部分を落とす。次の年は更新済みのMONEYを使い、年数表示にはYEARを渡す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 JIS Full BASIC",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問8 JIS Full BASIC。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p42-q08.webp"
+    ],
+    "imageAltTexts": [
+      "JIS Full BASIC選択用。複利の元利合計を1年ごとに表示するプログラムと実行例。"
+    ],
+    "type": "descriptive",
+    "answer": "① INTEREST\n② FOR\n③ TO 10\n④ MONEY\n⑤ YEAR",
+    "modelAnswer": "① INTEREST\n② FOR\n③ TO 10\n④ MONEY\n⑤ YEAR",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がないものは正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q19",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 19,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "複利の反復計算"
+    ],
+    "difficulty": 2,
+    "question": "次のプログラムの①～⑤に適するものを答えなさい。",
+    "explanation": "scanfでfloatに値を書き込むには&interestを渡す。forのyearを0～9にすると更新は10回。前年の残高moneyに倍率を掛けてintへ代入すると円未満が切り捨てられる。表示上の年数は1～10なのでyear+1にする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 C言語",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=44",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問8 C言語。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p44-q08.webp"
+    ],
+    "imageAltTexts": [
+      "C言語選択用。複利の元利合計を1年ごとに表示するプログラムと実行例。"
+    ],
+    "type": "descriptive",
+    "answer": "① &interest\n② for\n③ year < 10\n④ money\n⑤ year + 1",
+    "modelAnswer": "① &interest\n② for\n③ year < 10\n④ money\n⑤ year + 1",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がないものは正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q20",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 20,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "立方体と四角すいの体積"
+    ],
+    "difficulty": 2,
+    "question": "次のプログラムの①～⑤に適するものを答えなさい。",
+    "explanation": "入力したAを両関数へ渡す。立方体のCUBE(A)と四角すいのPYRAMID(A)の合計をVに代入して表示する。立方体側の関数名はCUBE、四角すい側の外部関数の終わりはEND FUNCTION。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 JIS Full BASIC",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問9 JIS Full BASIC。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p43-q09.webp"
+    ],
+    "imageAltTexts": [
+      "JIS Full BASIC選択用。立方体に四角すいを載せた立体の図と、2本の外部関数を含むプログラム。"
+    ],
+    "type": "descriptive",
+    "answer": "① A\n② PYRAMID\n③ V\n④ CUBE\n⑤ FUNCTION",
+    "modelAnswer": "① A\n② PYRAMID\n③ V\n④ CUBE\n⑤ FUNCTION",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がないものは正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  },
+  {
+    "id": "zenkou-joho-2023-early-joho-level2-q21",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2023,
+    "season": "early",
+    "qNumber": 21,
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "立方体と四角すいの体積"
+    ],
+    "difficulty": 2,
+    "question": "次のプログラムの①～⑤に適するものを答えなさい。",
+    "explanation": "scanfには整数aのアドレス&aを渡す。cube(a)とpyramid(a)を合わせた結果vを表示する。x*x*xを返す関数名はcubeで、四角すい側は3.0で割った結果を変数taisekiに入れ、その値を返す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 C言語",
+    "sourceExamSession": "第70回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=45",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/70joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2023年度 第70回 2級・共通＋BASIC/Cの選択 大問9 C言語。解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-21",
+    "imageUrls": [
+      "/question-assets/zenkou-joho/70-joho-level2-p45-q09.webp"
+    ],
+    "imageAltTexts": [
+      "C言語選択用。立方体に四角すいを載せた立体の図と、体積を求める2本の関数。"
+    ],
+    "type": "descriptive",
+    "answer": "① &a\n② pyramid\n③ v\n④ cube\n⑤ taiseki",
+    "modelAnswer": "① &a\n② pyramid\n③ v\n④ cube\n⑤ taiseki",
+    "scoringCriteria": "標準解答以外でも論理的に正しく、無駄な繰り返しや意味のない代入がないものは正解。",
+    "modelAnswerAuthority": "official",
+    "officialAnswerExample": true
+  }
+]

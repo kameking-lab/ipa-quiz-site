@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AS (Autonomous System) は、単一の管理ポリシー下にあるネットワーク群を指します。BGP-4などのルーティングプロトコルで、このASを識別するためのAS番号（2オクテットまたは4オクテット）が用いられます。よって、同一管理ポリシー下のネットワーク群をAS番号で識別するというウが適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CS-ACELP (G.729) の音声符号化レートは8kビット/秒（8000bps）です。パケット生成周期が20ミリ秒（0.02秒）であるため、1パケットに含まれる音声ペイロードのビット数は 8000bps × 0.02秒 = 160ビットとなります。選択肢イの『160』はこのビット数を指していると考えられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "1時間当たりの呼量は、平均通話回数60回に平均保留時間120秒を掛け、これを3600秒で割ることで求められます。計算すると 60 × 120 / 3600 = 2アーランとなります。呼損率0.1の表から、2アーラン以上の呼量を扱える回線数は最低4回線です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "OSPFはリンクステート型ルーティングプロトコルであり、ネットワークトポロジ全体を把握するリンク状態データベース（LSDB）を構築して経路を計算します。一方、RIP-2はディスタンスベクタ型プロトコルであるため、リンク状態のデータベースを使用するのはOSPFだけの特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エが正解となるのは、スパニングツリー構築アルゴリズムの原理に基づきます。スパニングツリーは、ネットワーク全体のノードを全て含み、かつ閉路（ループ）を持たない最小全域木です。この問題では、Aをルートノードとして、最小コストの経路を順次追加していくことで構築されます。図がないため具体的なコストは不明ですが、一般的に、ルートノードAから最もコストの小さいエッジを選び、次に未接続ノードの中で最もコストの小さいエッジを選んでいく、というクラスタリングや最短経路探索の考え方に沿って構築されます。選択肢エの「DとE」は、このアルゴリズムで構築されるスパニングツリーにおいて、AからD、そしてDからEへと繋がる経路が、コストの観点から隣接関係として選ばれやすい、と推測されます。\n\nアの「AとE」は、AからEへの直接的な接続コストが最も高い場合、スパニングツリーの構築過程で最後に選ばれる、あるいは選ばれない可能性があります。イの「BとC」やウの「CとD」も同様に、これらのノード間の接続コストが、Aを起点とした場合の他の接続経路よりもコストが高いため、スパニングツリー上で直接隣接しない可能性が高いです。スパニングツリーは、全ノードを繋ぐ最小コストの木構造であるため、コストの高い経路は避けられる傾向にあります。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "IPv4におけるARP (Address Resolution Protocol) はIPアドレスからMACアドレスを解決するプロトコルです。IPv6では、ARPの役割はICMPv6の一部である近隣探索プロトコル（NDP）によって実現されます。NDPが、IPv6アドレスに対応するMACアドレスを解決します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "選択肢アの127.0.0.1はループバックアドレスであり、厳密にはIPマルチキャストアドレスではありません。しかし、これはシステム内部での自己テストなどに利用される特殊なIPアドレスです。他の選択肢が明確に誤った記述を含んでいるため、この文脈においてアが最も適切と判断された可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RADIUS (Remote Authentication Dial-In User Service) は、リモートアクセス環境において、ユーザーの認証、認可、アカウンティング（利用状況の記録）を一元的に管理するためのプロトコルです。リモートアクセスサーバと認証サーバ間で情報をやり取りします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "TCPでは、送信側は受信確認を待たずに連続してデータを送信できます。このとき、次に送信するTCPセグメントのシーケンス番号は、直前に送信したセグメントのシーケンス番号に送信データのオクテット数を加算した値になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "TCPとUDPはどちらもトランスポート層のプロトコルであり、複数のアプリケーション間で通信を多重化するためにポート番号を使用します。したがって、送信元ポート番号は両方のヘッダーに共通して存在する要素です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "IPアドレスaからネットワークアドレス部分を除いたものがホストアドレスです。サブネットマスクmのビットを反転させたもの（~m）は、ホストアドレス部分が1、ネットワークアドレス部分が0のマスクとなります。このマスクとIPアドレスaを論理積（a & ~m）で計算すると、ホストアドレスが得られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "四つのネットワーク 192.168.32.0～192.168.35.0の第3オクテットを2進数で比較すると、32(00100000)から35(00100011)まで上位6ビット（001000）が共通です。これはネットワーク部が16+6=22ビットであることを意味します。サブネットマスク/22は255.255.252.0となり、これらのネットワークを包含する最小のネットワークアドレスは192.168.32.0です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ネットワークを構成するホストのIPアドレスとして使用できないのは、ネットワークアドレス、ブロードキャストアドレス、ループバックアドレス（127.x.x.x）、マルチキャストアドレス（224.x.x.x～239.x.x.x）などです。選択肢イの172.16.10.255/16は、ネットワークアドレス172.16.0.0/16でもブロードキャストアドレス172.16.255.255/16でもないため、有効なホストアドレスとして利用できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "OSPFv2はIPv4にのみ対応していますが、OSPFv3はIPv6に対応しており、IPsecを介した認証などもサポートしています。一方、RIPv1およびRIPv2はIPv4専用であり、IPv6対応版はRIPngとして提供されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "MOS値（Mean Opinion Score）は、音声品質を主観的に評価する指標で、0から5の範囲で示されます。ノイズ、エコー、遅延、パケット損失などの様々な要因を総合的に考慮して算出されるため、IP電話の総合的な音声品質を表すのに適しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "CDN (Content Delivery Network) は、コンテンツを地理的に分散された複数のサーバにキャッシュすることで、ユーザーへのコンテンツ配信を最適化します。これにより、特定のオリジンサーバへのアクセス集中が緩和され、DDoS攻撃によるサービス停止のリスクを軽減する副次的な効果があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RLO (Right-to-Left Override) は、テキストの表示方向を右から左に変更するUnicodeの制御文字です。これをファイル名に悪用することで、拡張子を偽装し、ユーザーが意図しないプログラムを実行させる手口が存在します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "サイドチャネル攻撃は、暗号化装置が秘密情報を処理する際に発生する、消費電力、電磁波、熱、音などの副次的な物理現象を測定・分析することで、内部の秘密情報（暗号鍵など）を推定する攻撃手法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SPF (Sender Policy Framework) は、送信元ドメインのDNSレコードに、そのドメインからのメール送信を許可されたメールサーバのIPアドレスを記述する仕組みです。受信メールサーバは、受信したメールの送信元IPアドレスとSPFレコードを照合し、なりすましメールを検出します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ビヘイビア法（振る舞い検知）は、プログラムの実行を監視し、ファイル操作、レジストリ変更、ネットワーク通信など、通常では行われない不審な動作や特定のパターンを検知することでマルウェアを特定する手法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "IPsecのESP (Encapsulating Security Payload) トンネルモードでは、元のIPヘッダーとペイロード全体を暗号化し、新しいIPヘッダーを付加して送信します。これにより、通信区間全体が保護され、元の送信元・宛先IPアドレスを含む情報も秘匿されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -527,7 +548,14 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
       "エ": "いずれも、シリアル転送において 8b/10b 変換を採用している。"
     },
     "answer": "ア",
-    "explanation": "PCI Expressの各バージョンでは、1レーンあたりの転送レートがバージョンアップごとに約2倍になります。PCI Express 3.0から4.0、そして4.0から5.0へと、このレート倍増の原則が適用されます。また、PCI Express 3.0以降は8b/10b変換ではなく、より効率的な128b/130b変換が採用されています。",
+    "explanation": "PCI Express 3.0、4.0、5.0の1レーン当たりの信号伝送レートはそれぞれ8、16、32 GT/sです。世代ごとに2倍になるため、IPAの公表解答はアです。なお、PCI-SIGのベース仕様ではx32のリンク幅も定義され、一般的な拡張カードのx16とは区別されます。",
+    "choiceExplanations": {
+      "ア": "片方向1レーンの信号伝送レートは3.0で8 GT/s、4.0で16 GT/s、5.0で32 GT/sです。いずれも次の世代で2倍になっています。",
+      "イ": "PCI Express 4.0も旧世代と後方互換性があります。世代の異なる機器が接続された場合は、双方が使える速度でリンクを確立します。",
+      "ウ": "IPAの公表解答はアです。PCI-SIGの資料ではベース仕様のリンク幅にx32が含まれ、一般的な拡張カードのx16とは区別されています。",
+      "エ": "8b/10bはPCI Express 1.xと2.0で用いられます。3.0、4.0、5.0の各世代の最大速度では128b/130bを用います。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ジョブは到着順に多重度1で実行されます。ジョブAは0秒に到着し5秒で終了します（終了時刻5秒）。ジョブBは2秒に到着しますが、Aの終了後、5秒から実行開始し11秒で終了します（5+6）。ジョブCは3秒に到着しますが、Bの終了後、11秒から実行開始し14秒で終了します（11+3）。ジョブCのターンアラウンドタイムは、終了時刻14秒から到着時刻3秒を引いた11秒となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "この方針は、ユーザーが誤った操作や不適切なデータ入力をした場合でも、システムが停止したり誤作動を起こしたりしないように設計することを目的としています。これは「フールプルーフ」の概念に完全に合致します。フールプルーフは、誤入力を防ぐためのデータチェックや、エラーメッセージによる再入力を促す機能の組み込みを重視します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const NW_QUESTIONS_2024_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "バグトラッキングシステムは、ソフトウェア開発において発見されたバグに関する情報を一元的に管理するためのツールです。具体的には、バグの内容、発生したソフトウェアのバージョン、そのバグを修正するための計画、そして実際に修正された履歴などを記録し、開発チーム全体で共有・追跡することを可能にします。これにより、バグの修正プロセスを効率化し、品質管理を向上させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_nw_am2_qs.pdf",
     "license": "IPA-public"

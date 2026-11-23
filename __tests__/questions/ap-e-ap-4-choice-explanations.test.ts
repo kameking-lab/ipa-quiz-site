@@ -1,3 +1,4 @@
+import parallelOverlay from "@/data/questions/ap/choice-explanations-cx-k4.json";
 import { describe, expect, it } from "vitest";
 import { AP_QUESTIONS } from "@/data/questions/ap";
 import { AP_BY_YEAR_QUESTIONS } from "@/data/questions/ap/by-year";
@@ -12,12 +13,14 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 describe("AP e-ap-4 choice explanations", () => {
   it("adds reviewed reasons while retaining all previous content and official answers", () => {
-    const before = [originalOverlay, firstOverlay, secondOverlay, thirdOverlay].reduce(
+    const before = [parallelOverlay, originalOverlay, firstOverlay, secondOverlay, thirdOverlay].reduce(
       (questions, previous) => applyChoiceExplanationOverlay(questions, previous),
       applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS),
     );
     const loaded = new Map(AP_QUESTIONS.map(question => [question.id, question]));
-    expect(AP_QUESTIONS).toHaveLength(before.length);
+    const originalIds = new Set(before.map(q => q.id));
+    const publishedOriginals = AP_QUESTIONS.filter(q => originalIds.has(q.id));
+    expect(publishedOriginals).toHaveLength(before.length);
     expect(Object.keys(overlay)).toHaveLength(2);
     for (const oldQuestion of before) {
       const question = loaded.get(oldQuestion.id)!;

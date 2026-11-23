@@ -1,0 +1,53 @@
+[
+  {
+    "id": "sc-2018h-pm1-q3",
+    "exam": "sc",
+    "year": 2018,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "ネットワークセキュリティ",
+    "topicTags": [
+      "ネットワーク分離",
+      "ファイアウォール",
+      "ファイル転送"
+    ],
+    "difficulty": 4,
+    "question": "問3 LAN分離",
+    "answer": "**設問1**\n(1) a　ウ、b　エ  \n(2) c　ア、d　ウ（順不同）\n\n**設問2**\n(1) ファイル転送サーバから研究開発 PC への通信は FW2 で禁止されているから  \n(2) e　利用者 ID、f　パスワード、g　アップロード用 URL（順不同）  \n方法　事務 PC の HTTP リクエストを監視する。  \n(3) 研究開発 PC からファイル転送サーバにアクセスして，ファイルをダウンロードする必要があるから\n\n**設問3**\nh　高い  \ni　通信経路上に感染活動を遮断する機器が存在しないから  \nj　低い  \nk　FW2 によって感染活動を遮断できるから\n\n**設問4**\nl　上長による承認",
+    "modelAnswer": "**設問1**\n(1) a　ウ、b　エ  \n(2) c　ア、d　ウ（順不同）\n\n**設問2**\n(1) ファイル転送サーバから研究開発 PC への通信は FW2 で禁止されているから  \n(2) e　利用者 ID、f　パスワード、g　アップロード用 URL（順不同）  \n方法　事務 PC の HTTP リクエストを監視する。  \n(3) 研究開発 PC からファイル転送サーバにアクセスして，ファイルをダウンロードする必要があるから\n\n**設問3**\nh　高い  \ni　通信経路上に感染活動を遮断する機器が存在しないから  \nj　低い  \nk　FW2 によって感染活動を遮断できるから\n\n**設問4**\nl　上長による承認",
+    "explanation": "ファイル転送で接続を開始する端末と、データが移動する向きを区別する。通信経路ごとに、感染活動を遮断できる機器を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sc/2018-spring-pm1/page-15.webp",
+      "/questions/ipa/sc/2018-spring-pm1/page-16.webp",
+      "/questions/ipa/sc/2018-spring-pm1/page-17.webp",
+      "/questions/ipa/sc/2018-spring-pm1/page-18.webp",
+      "/questions/ipa/sc/2018-spring-pm1/page-19.webp",
+      "/questions/ipa/sc/2018-spring-pm1/page-20.webp",
+      "/questions/ipa/sc/2018-spring-pm1/page-21.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の本文・設問（公式問題PDF 15ページ）",
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の本文・設問（公式問題PDF 16ページ）",
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の本文・設問（公式問題PDF 17ページ）",
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の本文・設問（公式問題PDF 18ページ）",
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の本文・設問（公式問題PDF 19ページ）",
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の本文・設問（公式問題PDF 20ページ）",
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の本文・設問（公式問題PDF 21ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sc/2018-spring-pm1/answer-q03.webp"
+    ],
+    "answerImageAltTexts": [
+      "情報処理安全確保支援士試験 平成30年度春期 午後I 問3の公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sc_pm1_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_sc_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：IPA 情報処理安全確保支援士試験 平成30年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

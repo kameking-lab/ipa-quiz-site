@@ -12,14 +12,19 @@ const skipped = new Set([
   "nw-2023h-am2-q5", "nw-2024h-am2-q22", "nw-2025h-am2-q8",
 ]);
 const corrected = applyIpaCorrections("nw", BY_YEAR_QUESTIONS);
+const reviewedIds = new Set([...Object.keys(overlay), ...skipped]);
 
 describe("NW CX k8 morning II explanations", () => {
   it("covers every reviewed question and leaves the documented exclusions intact", () => {
-    const morningII = NW_QUESTIONS.filter((q) => q.session === "am2");
+    const morningII = NW_QUESTIONS.filter(q => q.session === "am2" && reviewedIds.has(q.id));
     expect(morningII).toHaveLength(200);
     expect(Object.keys(overlay)).toHaveLength(187);
-    expect(morningII.filter((q) => !q.choiceExplanations).map((q) => q.id).sort())
+    expect(morningII.filter(q => !Object.hasOwn(overlay, q.id)).map(q => q.id).sort())
       .toEqual([...skipped].sort());
+    const originals = new Map(corrected.map(q => [q.id, q]));
+    for (const q of morningII.filter(q => skipped.has(q.id))) {
+      expect(q.choiceExplanations, q.id).toEqual(originals.get(q.id)?.choiceExplanations);
+    }
   });
 
   it("has readable Japanese reasons for all four choices with the effective answer marked correct", () => {
@@ -46,9 +51,12 @@ describe("NW CX k8 morning II explanations", () => {
       delete originalFields.choiceExplanations;
       return originalFields;
     };
-    expect(NW_QUESTIONS.map(withoutReasons)).toEqual(corrected.map(withoutReasons));
-    for (const q of NW_QUESTIONS.filter((q) => q.session !== "am2")) {
-      expect(q).toEqual(corrected.find((original) => original.id === q.id));
+    const current = new Map(NW_QUESTIONS.map(q => [q.id, q]));
+    for (const original of corrected) {
+      const q = current.get(original.id)!;
+      expect(q, original.id).toBeDefined();
+      expect(withoutReasons(q), original.id).toEqual(withoutReasons(original));
+      if (original.session !== "am2") expect(q, original.id).toEqual(original);
     }
   });
 });

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import { createHistoryStore } from "@/lib/storage/history";
-import { recordStudyToday } from "./storage";
+import { recordStudyToday, STREAK_100_DAY_EVENT } from "./storage";
 import { jstDateString } from "./core";
 import { MilestoneToast } from "./MilestoneToast";
 import type { StreakMilestone } from "./core";
@@ -27,10 +27,13 @@ export function StreakTracker() {
     poll();
     const interval = window.setInterval(poll, 5_000);
     const onFocus = () => poll();
+    const on100Days = () => setToast(100);
     window.addEventListener("focus", onFocus);
+    window.addEventListener(STREAK_100_DAY_EVENT, on100Days);
     return () => {
       window.clearInterval(interval);
       window.removeEventListener("focus", onFocus);
+      window.removeEventListener(STREAK_100_DAY_EVENT, on100Days);
     };
   }, []);
 

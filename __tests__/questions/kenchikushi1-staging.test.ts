@@ -6,6 +6,7 @@ import { filterQuestions, isPracticeReadyQuestion } from "@/lib/questions/filter
 import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import manifest from "@/data/questions/kenchikushi1/source-manifest.json";
+import approvedProjection from "@/data/questions/batch2/kenchikushi1.json";
 import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
@@ -14,6 +15,7 @@ import { defaultPracticeSession, parsePracticeSession, practiceSessionLabel } fr
 import { evaluateOfficialScore, officialScoringIssue } from "@/lib/questions/official-scoring";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { isAcceptedAnswer } from "@/lib/questions/answers";
+import type { Question } from "@/lib/questions/types";
 
 // Publication boundaries must keep working when real candidate questions are added.
 describe("一級建築士（学科）の公開前登録", () => {
@@ -22,14 +24,16 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(isExamPublished("kenchikushi1")).toBe(true);
     expect(ALL_QUIZ_EXAM_CODES).toContain("kenchikushi1");
     expect(ALL_EXAM_CODES).not.toContain("kenchikushi1");
-    expect(QUESTIONS_BY_EXAM.kenchikushi1).toHaveLength(249);
-    expect(ALL_QUESTIONS.some(q => q.exam === "kenchikushi1")).toBe(true);
-    expect(await getQuestionsForExam("kenchikushi1")).toEqual(KENCHIKUSHI1_QUESTIONS);
+    const published = await getQuestionsForExam("kenchikushi1");
+    expect(published).toEqual(expect.arrayContaining(approvedProjection));
+    expect(QUESTIONS_BY_EXAM.kenchikushi1).toEqual(published);
+    expect(ALL_QUESTIONS.filter(q => q.exam === "kenchikushi1")).toEqual(published);
     expect(JSON.stringify(getHomeDirectory())).toContain("kenchikushi1");
   });
 
   it("does not count a source manifest as completed past questions", () => {
-    expect(KENCHIKUSHI1_QUESTIONS).toHaveLength(249);
+    expect(approvedProjection).toHaveLength(249);
+    expect(KENCHIKUSHI1_QUESTIONS).toEqual(expect.arrayContaining(approvedProjection as Question[]));
     expect(manifest.publicationGo).toBe(false);
     expect(manifest.publicAllowed).toBe(false);
     expect(manifest.ingestionBlocked).toBe(false);
@@ -266,13 +270,16 @@ describe("一級建築士（学科）の公開前登録", () => {
     expect(manifest.rounds[1].lawReferenceNote).toContain("2025-04-01");
   });
 
-  it("routes five subjects independently without design drafting", () => {
+  it("routes the five reviewed academic subjects independently", () => {
     const config = EXAM_CONFIGS.kenchikushi1;
-    expect(config.yearRange).toEqual({ start: 2025, end: 2026 });
-    expect(config.sessions.map(s => s.session)).toEqual(manifest.rounds[0].subjects.map(s => s.session));
-    expect(config.sessions.reduce((n, s) => n + s.expectedQuestions, 0)).toBe(125);
+    expect(config.yearRange.start).toBeLessThanOrEqual(2025);
+    expect(config.yearRange.end).toBeGreaterThanOrEqual(2026);
+    const academic = manifest.rounds[0].subjects.map(s => s.session);
+    const academicSessions = config.sessions.filter(s => academic.includes(s.session));
+    expect(academicSessions.map(s => s.session)).toEqual(academic);
+    expect(academicSessions.reduce((n, s) => n + s.expectedQuestions, 0)).toBe(125);
     expect(defaultPracticeSession("kenchikushi1")).toBe("keikaku");
-    for (const subject of config.sessions) {
+    for (const subject of academicSessions) {
       expect(parsePracticeSession(subject.urlSlug)).toBe(subject.session);
       expect(practiceSessionLabel(subject.session)).toBeTruthy();
     }

@@ -35,6 +35,7 @@ async function hogql(env: PosthogEnv, query: string): Promise<HogQlResult | null
       },
       body: JSON.stringify({ query: { kind: "HogQLQuery", query } }),
       cache: "no-store",
+      signal: AbortSignal.timeout(5000),
     });
     if (!res.ok) return null;
     return (await res.json()) as HogQlResult;
@@ -59,6 +60,7 @@ export interface FunnelData {
 
 export interface FunnelResponse {
   configured: boolean;
+  queryFailed?: boolean;
   range_days: RangeDays;
   funnels: FunnelData[];
   event_counts: Record<string, number>;
@@ -69,23 +71,29 @@ async function fetchEventCounts(
   env: PosthogEnv,
   events: string[],
   rangeDays: RangeDays,
-): Promise<Record<string, number>> {
+  dayStart?: Date,
+): Promise<Record<string, number> | null> {
   const eventList = events.map((e) => `'${e}'`).join(", ");
+  const sqlTime = (date: Date) => "toDateTime('" + date.toISOString().slice(0, 19).replace("T", " ") + "', 'UTC')";
+  const period = dayStart
+    ? "timestamp >= " + sqlTime(dayStart) + " AND timestamp < " + sqlTime(new Date(dayStart.getTime() + 86_400_000))
+    : "timestamp >= now() - INTERVAL " + rangeDays + " DAY";
   const q = `
     SELECT event, count() AS cnt
     FROM events
     WHERE event IN (${eventList})
-      AND timestamp >= now() - INTERVAL ${rangeDays} DAY
+      AND ${period}
     GROUP BY event
     ORDER BY cnt DESC
   `;
   const data = await hogql(env, q);
   const counts: Record<string, number> = {};
-  if (!data?.results) return counts;
+  if (!Array.isArray(data?.results)) return null;
   for (const row of data.results) {
     const name = String(row[0] ?? "");
     const cnt = Number(row[1] ?? 0);
-    if (name) counts[name] = cnt;
+    if (!Number.isSafeInteger(cnt) || cnt < 0) return null;
+    if (events.includes(name)) counts[name] = cnt;
   }
   return counts;
 }
@@ -137,7 +145,7 @@ const ALL_EVENTS = Array.from(
   ]),
 );
 
-export async function fetchFunnelData(rangeDays: RangeDays): Promise<FunnelResponse> {
+export async function fetchFunnelData(rangeDays: RangeDays, dayStart?: Date): Promise<FunnelResponse> {
   const env = readEnv();
   if (!env) {
     return {
@@ -149,7 +157,8 @@ export async function fetchFunnelData(rangeDays: RangeDays): Promise<FunnelRespo
     };
   }
 
-  const counts = await fetchEventCounts(env, ALL_EVENTS, rangeDays);
+  const counts = await fetchEventCounts(env, ALL_EVENTS, rangeDays, dayStart);
+  if (!counts) return { configured: true, queryFailed: true, range_days: rangeDays, funnels: [], event_counts: {}, cachedAt: new Date().toISOString() };
 
   const funnels: FunnelData[] = [
     {

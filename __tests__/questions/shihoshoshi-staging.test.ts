@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SHIHOSHOSHI_QUESTIONS } from "@/data/questions/shihoshoshi";
+import { SHIHOSHOSHI_QUESTIONS as corpus } from "@/data/questions/shihoshoshi";
 import excluded from "@/data/questions/shihoshoshi/excluded.json";
 import holds from "@/data/questions/shihoshoshi/editorial/holds.json";
 import legalSources from "@/data/questions/shihoshoshi/editorial/legal-sources.json";
@@ -9,6 +9,8 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { readFileSync } from "node:fs";
+
+const SHIHOSHOSHI_QUESTIONS = corpus.filter(q => q.year === 2025 || q.year === 2026);
 
 describe("司法書士公式2回分の未公開登録", () => {
   it("batch1公開後: keeps synchronous, lazy and public exam registries closed", async () => {

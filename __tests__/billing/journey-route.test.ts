@@ -15,6 +15,10 @@ function request(body: unknown, headers: Record<string, string> = {}) {
 beforeEach(() => { vi.clearAllMocks(); mocks.identity.mockResolvedValue("fixture-user"); });
 afterEach(() => { vi.unstubAllEnvs(); });
 describe("aggregate journey beacon", () => {
+  it("does not acknowledge a failed aggregate write", async () => {
+    mocks.record.mockResolvedValueOnce(false);
+    expect((await POST(request({ changes: [row] }))).status).toBe(503);
+  });
   it("awaits aggregate writes and accepts no user or question identifiers", async () => {
     expect((await POST(request({ changes: [row] }))).status).toBe(204);
     expect(mocks.record).toHaveBeenCalledWith({ changes: [row] }, expect.any(Number));

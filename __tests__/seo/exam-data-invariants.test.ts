@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { EXAM_STATS } from "@/lib/seo/exam-stats";
+import { EXAM_STATS, type ExamStats } from "@/lib/seo/exam-stats";
 import { EXAM_OFFICIAL_LINKS, EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 import { EXAM_DEEP_CONTENT } from "@/lib/seo/exam-content";
 import { EXAM_PROFILES } from "@/data/blog/exam-data";
@@ -25,12 +25,20 @@ describe("EXAM_STATS の値不変条件", () => {
     }
   });
 
-  it("合格率レンジは NN-NN 形式で low <= high", () => {
+  it("合格率は順序の正しい範囲か公式出典付きの確定値で0〜100に収まる", () => {
     for (const code of EXAM_CODES) {
-      const recent = EXAM_STATS[code].passRateRecent;
-      expect(recent, code).toMatch(/^\d+-\d+$/);
-      const [lo, hi] = recent.split("-").map(Number);
+      const stats: ExamStats = EXAM_STATS[code];
+      const recent = stats.passRateRecent;
+      expect(recent, code).toMatch(/^\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?$/);
+      const [lo, hi = lo] = recent.split("-").map(Number);
+      expect(lo, code).toBeGreaterThanOrEqual(0);
       expect(hi, code).toBeGreaterThanOrEqual(lo);
+      expect(hi, code).toBeLessThanOrEqual(100);
+      if (!recent.includes("-")) {
+        expect(stats.passRateSourceUrl, code).toMatch(/^https:\/\/www\.ipa\.go\.jp\/shiken\//);
+        expect(stats.passRatePeriod?.trim().length, code).toBeGreaterThan(0);
+        expect(stats.passRateVerifiedAt, code).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      }
     }
   });
 

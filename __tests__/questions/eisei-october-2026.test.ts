@@ -64,7 +64,7 @@ describe("衛生管理者2026年10月公表版の労働生理", () => {
       expect(october).toHaveLength(10);
       expect(filterQuestions(sync, { mode: "year", exam, year: 2026, season: "published" })).toHaveLength(exam === "eisei1" ? 44 : 30);
       expect(EXAM_CONFIGS[exam].seasons).toContain("october");
-      expect(groupByYearSeason(sync).map(g => g.label)).toEqual([
+      expect(groupByYearSeason(sync).slice(0, 3).map(g => g.label)).toEqual([
         "2026年10月公表問題", "2026年4月公表問題", "2025年10月公表問題",
       ]);
       expect(new Set(sync.map(questionPagePath)).size).toBe(sync.length);

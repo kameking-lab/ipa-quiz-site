@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "マルチコアプロセッサにおけるスヌープキャッシュは、共有バス上のメモリアクセスを各コアのキャッシュコントローラが監視（スヌープ）することで機能します。他のコアが自身のキャッシュデータを更新した際に、その変更を検知し、必要に応じて自身のキャッシュ内の該当ブロックを無効化または更新することでキャッシュコヒーレンシ（一貫性）を保ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和4年度秋期 午前II 問2）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "BLE (Bluetooth Low Energy) は、低消費電力で近距離無線通信を行う技術であり、IoTデバイスで広く利用されています。BLEデバイスは、自らの存在を知らせるビーコン信号を発信することができ、その電波強度（RSSI）を測定することで、おおよその位置測位に利用することが可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "磁気ディスク装置の平均回転待ち時間は、1回転にかかる時間の半分です。回転数が4,200回/分なので、1回転にかかる時間は60秒 / 4,200回 = 約14.28ミリ秒です。したがって、平均回転待ち時間は約14.28ミリ秒 / 2 = 約7.14ミリ秒となり、平均待ち時間は平均位置決め時間5ミリ秒と合計して約12.14ミリ秒、選択肢では12ミリ秒が適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ページフォールトは50万回の主記憶アクセス中に1回発生し、その際の通常のアクセス時間として50万回 × 200ナノ秒 = 0.1秒（100ミリ秒）がかかります。これにページフォールトによるオーバーヘッド100ミリ秒を加えると、1回のページフォールトイベント全体で200ミリ秒が必要となります。したがって、1秒間（1000ミリ秒）には、最大で1000ミリ秒 / 200ミリ秒 = 5回のページフォールトが発生します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ハプティックデバイスとは、触覚（Haptic）フィードバックを提供する装置を指します。ユーザーに対して力、振動、動きなどを与えることで、物理的な感覚を再現し、より直感的な操作体験や情報伝達を可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "アムダールの法則において、並列化可能部の割合が0.5 (P=0.5) の場合、性能向上比 = 1 / ( (1-0.5) + 0.5/プロセッサ数 ) となります。プロセッサ数Nを無限大に増やしても、0.5/Nは0に近づくため、性能向上比は1 / 0.5 = 2に収束し、2を超えることはありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "動的再配置とは、プログラムの実行中にモジュールを主記憶上の任意のアドレスにロードし、そのロードされたアドレスに合わせてモジュール内のアドレス参照を修正する機能です。この機能は、必要になった時点でモジュールをロードする動的ロードと密接に関連しており、プログラムの柔軟なメモリ配置を可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "eMMC (embedded MultiMediaCard) は、NANDフラッシュメモリとコントローラーを一つのBGA（Ball Grid Array）パッケージに統合した補助記憶装置です。マルチメディアカード（MMC）規格を基盤とし、小型で高性能な特性から携帯電話やタブレットなどの組込み機器に広く搭載されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "MPUが持つウェイト機能とレディ機能は、アクセス速度の異なるデバイス間でデータ転送を確実に行うための同期メカニズムです。I/Oデバイスがデータの準備ができていない場合、ウェイト信号によってMPUの動作を一時停止させ、デバイスが準備完了をレディ信号で知らせることで、MPUはデータ転送を続行し、両者の速度差を吸収します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "仮想記憶とは、物理的な主記憶（RAM）の容量を超えた記憶空間をプログラムに提供する機能です。これにより、OSはプログラムに対して広大な仮想アドレス空間を与え、必要に応じて主記憶と補助記憶（ディスク）の間でデータを入れ替えることで、あたかも主記憶が無限にあるかのように見せかけます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和4年度秋期 午前II 問12）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "シリアル通信速度57.6kビット/秒は、分周後のクロック周波数に相当します。選択肢のクロック周波数60MHzを2の10乗（1024）で分周すると、60,000,000 Hz / 1024 = 約58,593.75 Hz（約58.6 kHz）となります。この値は、目標の57.6kビット/秒に対する5%の許容誤差（54.72 kHz～60.48 kHz）の範囲内に収まるため、60MHzが適切なクロック周波数です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和4年度秋期 午前II 問14）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "FTP (File Transfer Protocol) は、データ転送を効率的に行うために、制御用コネクションとデータ転送用コネクションという二つの独立したTCPコネクションを使用します。これにより、ファイルデータの転送中でも制御コネクションを使ってコマンド（例えば、次のファイル転送指示など）を送信でき、高い柔軟性と効率性を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "NOTICE (National Operation Towards IoT Clean Environment) は、総務省、NICT、ISPが連携し、インターネット上のIoT機器のセキュリティ向上を目指す取り組みです。NICTがインターネットを巡回し、安易なパスワードなど脆弱性を持つIoT機器を特定した後、ISPを通じてその機器の利用者に注意喚起を行います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "Wi-Fi Alliance が Enhanced Open で規定した仕様は、従来のオープンネットワークが暗号化されていない問題を解決するため、パスワード入力が不要な接続でありながらも、通信経路が自動的に暗号化される機能です。これにより、公衆無線LANなどのオープンなWi-Fi環境でも、盗聴のリスクを低減し、利用者のプライバシーを保護することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "IPsec (IP Security Architecture) は、TCP/IPプロトコルスタックのネットワーク層（IP層）で動作し、IPパケットの認証、完全性、機密性（暗号化）を提供する標準的なセキュリティプロトコル群です。IPv6ではIPsecのサポートが必須となっており、ネットワーク層での通信暗号化に利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "シーケンス図は、UML（Unified Modeling Language）のダイアグラムの一種で、システム内のオブジェクトがどのように互いにメッセージを交換し、時系列に沿って協調動作するかを表現します。特にイベント駆動型のアプリケーションにおいて、特定のイベント発生後の処理の流れやオブジェクト間の相互作用を設計・分析する際に有用です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "マイクロサービスアーキテクチャは、システムを独立した小さなサービスの集合として構築する手法です。これにより、各サービスは独立して開発、デプロイ、スケールが可能となり、あるサービスに変更があっても他のサービスへの影響を最小限に抑えられるため、システム全体の変更のしやすさが大きな利点となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "プログラム全体で使用されるスタックフレームの最大サイズを検証するには、各関数が使用するスタックフレームのサイズ情報に加え、プログラム内の関数の呼び出し関係（呼出しツリー）が必要です。これにより、最も深くネストされた関数呼び出し経路を特定し、その経路上の全関数のスタックフレームサイズの合計から最大スタック使用量を算出できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和4年度秋期 午前II 問22）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "専用実施権とは、特許権者が自らも特許の実施を禁じられるほどの強力な実施権であり、特許原簿に登録されることで対抗力も持ちます。したがって、A社はB社に専用実施権を許諾した範囲においては、たとえ自身の特許であっても、その特許を実施することができなくなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ドキュメンテーションジェネレーターとは、ソースコード中に特定のフォーマットで記述されたコメント文やコード構造（関数名、引数など）を解析し、プログラムの設計書やリファレンスドキュメントを自動的に生成するソフトウェアです。これにより、開発者はコードとドキュメントの一貫性を保ちつつ、効率的にドキュメントを作成できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const ES_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "PLM (Product Lifecycle Management) は、製品の企画、設計、開発から製造、販売、保守、そして廃棄・リサイクルに至るまでの製品ライフサイクル全体にわたる情報を一元的に管理し、活用する取り組みです。選択肢イは、設計図や部品表などの製品データを全工程で共有し、製品開発力の強化や効率化を目指すという、PLMの中核的な概念を正確に説明しています。これにより、製品の市場投入期間の短縮や品質向上が期待されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_es_am2_qs.pdf",
     "license": "IPA-public"

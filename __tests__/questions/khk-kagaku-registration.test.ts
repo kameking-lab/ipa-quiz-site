@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { KHK_KAGAKU_QUESTIONS } from "@/data/questions/khk-kagaku";
 import { PUBLIC_KHK_KAGAKU_QUESTIONS } from "@/data/questions/khk-kagaku/public";
+import published2026 from "@/data/questions/khk-kagaku/2026.json";
 import drafts from "@/data/questions/khk-kagaku/staging-drafts.json";
 import assetFiles from "@/data/questions/khk-kagaku/image-assets.json";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -19,7 +20,7 @@ import { GET as assetGET } from "@/app/api/qualification-assets/khk-kagaku/[file
 
 afterEach(() => vi.restoreAllMocks());
 
-describe("KHK complete but unpublished practice registration", () => {
+describe("KHK official-source and practice registration", () => {
   it("maps every original, subject, official choice and independent rationale without renumbering", () => {
     expect(KHK_KAGAKU_QUESTIONS).toHaveLength(422);
     expect(new Set(KHK_KAGAKU_QUESTIONS.map((q) => q.id)).size).toBe(422);
@@ -63,18 +64,23 @@ describe("KHK complete but unpublished practice registration", () => {
 
   it("publishes the approved corpus through synchronous, discovery and lazy registries", async () => {
     expect(catalog.isExamPublished("khk-kagaku")).toBe(true);
-    expect(QUESTIONS_BY_EXAM["khk-kagaku"]).toEqual(KHK_KAGAKU_QUESTIONS);
     expect(PUBLIC_KHK_KAGAKU_QUESTIONS).toEqual(KHK_KAGAKU_QUESTIONS);
+    expect(published2026).toHaveLength(205);
+    expect(published2026.every(q => q.year === 2026 && q.publicAllowed && !q.needsReview)).toBe(true);
+    const approved = [...PUBLIC_KHK_KAGAKU_QUESTIONS, ...published2026];
+    expect(QUESTIONS_BY_EXAM["khk-kagaku"]).toEqual(approved);
     expect(ALL_QUIZ_EXAM_CODES).toContain("khk-kagaku");
     expect(getRegisteredExamCodes()).toContain("khk-kagaku");
     expect(getAvailableExams()).toContain("khk-kagaku");
-    expect(await getQuestionsForExam("khk-kagaku")).toEqual(KHK_KAGAKU_QUESTIONS);
+    expect(await getQuestionsForExam("khk-kagaku")).toEqual(approved);
   });
 
   it("references all 49 original images and blocks every image when publication is closed", async () => {
     vi.spyOn(catalog, "isExamPublished").mockReturnValue(false);
     const urls = KHK_KAGAKU_QUESTIONS.flatMap((q) => [...(q.imageUrls ?? []), ...(q.modelAnswer?.match(/\/api\/qualification-assets\/khk-kagaku\/[^)]+\.png/g) ?? [])]);
-    expect(new Set(urls.map((url) => `images/${url.split("/").at(-1)}`))).toEqual(new Set(assetFiles));
+    expect(new Set(urls.map((url) => `images/${url.split("/").at(-1)}`))).toEqual(new Set(assetFiles.filter(path => !path.startsWith("images/2026-"))));
+    const publishedFiles = published2026.flatMap(q => q.imageUrls?.map(url => `images/${url.split("/").at(-1)}`) ?? []);
+    expect(new Set(assetFiles.filter(path => path.startsWith("images/2026-")))).toEqual(new Set(publishedFiles));
     for (const asset of assetFiles) {
       const file = asset.split("/").at(-1)!;
       const response = await assetGET(new Request(`http://localhost/assets/${file}`), { params: Promise.resolve({ file }) });

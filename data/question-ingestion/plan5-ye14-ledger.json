@@ -1,0 +1,108 @@
+{
+  "lane": "ye-14",
+  "checkedAgainst": "0729ff7b145fef184fff95856d4de6313d577f4f",
+  "jobs": [
+    {
+      "jobId": "PLAN5-350",
+      "dataset": "data/questions/denken2/native-2024-machine.json",
+      "questionUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q03.pdf",
+      "answerUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_a01.pdf",
+      "questionSha256": "638c7347bc9f960501a2dab93dd5c4006280e8cb848a6bc8c76aa7ec874cb9b7",
+      "answerSha256": "22629ab78519128d5280f6f0a2f40e129514f870affe23f0aaef5be4bc636d29",
+      "checkedQuestionNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "officialAnswerFieldsVerified": 40,
+      "officialAnswerMismatches": 0,
+      "officialImagesVerified": 14,
+      "revisions": [
+        {
+          "number": 4,
+          "fields": [
+            "choiceGroups",
+            "figures"
+          ],
+          "officialPage": 9,
+          "summary": "原図のダイオードの向き、電圧と電流の矢印を区別"
+        },
+        {
+          "number": 6,
+          "fields": [
+            "choiceGroups"
+          ],
+          "officialPage": 13,
+          "summary": "グラフ3肢の波長範囲と最大値を記載"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-336",
+      "dataset": "data/questions/kenchikushi2/2023-gakka-III-IV.json",
+      "questionUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2023-1st-gakka3_4-r.pdf",
+      "answerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2023-1st-gokakukijun-r.pdf",
+      "questionSha256": "ba634ce6b582641cbf645ea226a6d61f3e55421e49aaf0fadb66ad0db8d10f74",
+      "answerSha256": "aff03613e832e76bdfde622f1b43e01f6f888e87c0f5d37f78c598d7d19c2b62",
+      "checkedSessions": [
+        "gakka-III",
+        "gakka-IV"
+      ],
+      "checkedQuestionNumbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "officialAnswerFieldsVerified": 50,
+      "officialAnswerMismatches": 0,
+      "officialImagesVerified": 7,
+      "revisions": [
+        {
+          "session": "gakka-III",
+          "number": 5,
+          "fields": [
+            "imageAltTexts"
+          ],
+          "officialPage": 4,
+          "summary": "節点と支点の配置、対象部材の両端を記載"
+        },
+        {
+          "session": "gakka-III",
+          "number": 15,
+          "fields": [
+            "imageAltTexts"
+          ],
+          "officialPage": 9,
+          "summary": "梁と柱の継手候補を図の寸法で記載"
+        }
+      ]
+    }
+  ]
+}

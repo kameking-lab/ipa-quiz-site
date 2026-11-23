@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "lane": "pd-5",
+  "checkedOn": "2026-11-18",
+  "baseline": "729bff5db",
+  "allocation": "配列の1始まり位置4,18,...,284（pa-5～pc-5の割当を継続）",
+  "completedRows": 2,
+  "addedQuestionCount": 150,
+  "addedChoiceExplanationCount": 450,
+  "rows": [
+    {
+      "planId": "javada-ef489b887c4e",
+      "lane": "pc-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete",
+      "addedQuestionCount": 100,
+      "remainingVerifiedAnswerUnits": 0,
+      "years": [
+        2025,
+        2024
+      ],
+      "paths": [
+        "data/questions/kawarabuki2/2025-late.json",
+        "data/questions/kawarabuki2/2024-late.json"
+      ],
+      "sourceUrls": [
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験正解表.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R06-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R06-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験正解表.pdf"
+      ],
+      "notes": [
+        "公式原本で全100問を校正。A群25問・B群25問ずつ、公式正答と独自解説・全300肢解説・原図8点を収録。",
+        "ローカルコミットのみ。push・PR・公開なし。"
+      ],
+      "completedBy": "pd-5"
+    },
+    {
+      "planId": "javada-54da858e355b",
+      "lane": "pd-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete-for-listed-sittings",
+      "addedQuestionCount": 50,
+      "years": [
+        2025
+      ],
+      "remainingVerifiedAnswerUnits": 0,
+      "paths": [
+        "data/questions/technical-illustration-cad1/2025-late.json"
+      ],
+      "sourceUrls": [
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B57B58-テクニカルイラストレーション（テクニカルイラストレーション手書き作業）（テクニカルイラストレーションCAD作業）-1級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B58-テクニカルイラストレーション（テクニカルイラストレーションCAD作業）-1級-学科試験正解表.pdf"
+      ],
+      "notes": [
+        "計画にある2025年度後期の全50問・全150肢の解説・原図10点を収録。2024年度は計画のsittingsに資料がないため未収録。",
+        "共通の問題冊子とCAD作業用の正解表を対応させ、手書き作業の別資格を重複登録しない。",
+        "ローカルコミットのみ。push・PR・公開なし。"
+      ]
+    },
+    {
+      "planId": "bridal-2",
+      "lane": "pd-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "着手中",
+      "coverageStatus": "prepared",
+      "addedQuestionCount": 0,
+      "remainingVerifiedAnswerUnits": 50,
+      "years": [
+        2025
+      ],
+      "paths": [],
+      "sourceUrls": [
+        "https://www.bia.or.jp/geFCJC3aAnLN/wp-content/uploads/2026/09/2025_2_ques.pdf",
+        "https://www.bia.or.jp/geFCJC3aAnLN/wp-content/uploads/2026/09/2025_2_ans.pdf"
+      ],
+      "notes": [
+        "公式の2025年度第8回2級学科の問題・正答を取得し表紙を確認。四肢択一40問・単語記述10問の計50問。",
+        "PDFのSHA-256、本文抽出、表紙画像をtools/pd-5に保存。本文校正・独自解説・記述入力・資格登録は未実施。"
+      ]
+    }
+  ],
+  "preparedRows": 1
+}

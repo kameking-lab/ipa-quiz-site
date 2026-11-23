@@ -5,6 +5,8 @@ import { StreamQuizPlayer } from "@/components/quiz/stream/StreamQuizPlayer";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
 import khkData from "@/data/questions/khk-reito-1/latest-two.json";
+import pcData from "@/data/questions/zenkou-pc/2024-first.json";
+import keisanData from "@/data/questions/zenkou-keisan-gijutsu/round-86.json";
 import type { Question } from "@/lib/questions/types";
 
 const question: Question = {
@@ -18,14 +20,36 @@ const question: Question = {
 beforeEach(() => { cleanup(); window.localStorage.clear(); createHistoryStore().reset(); });
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 
+it("パソコン利用技術検定の実技で公式解答の入力形式と独自解説を表示する", () => {
+  const practical = (pcData as Question[]).find(q => q.session === "pc-practical-1" && q.qNumber === 1)!;
+  render(<QuizPlayer question={practical} index={0} total={1} mode="random" onNext={() => {}} />);
+  fireEvent.click(screen.getByText("公式解答と解説を確認する"));
+  expect(screen.getByText(">id, gakuseki")).toBeTruthy();
+  expect(screen.getByRole("heading", { name: "独自解説" })).toBeTruthy();
+  expect(screen.getByText(practical.explanation)).toBeTruthy();
+});
+
+it("公式解答の改行を保ち、独自解説と分けて表示する", () => {
+  const officialQuestion = keisanData[0] as Question;
+  render(
+    <QuizPlayer question={officialQuestion} index={0} total={1} mode="random" onNext={() => {}} />,
+  );
+  const details = screen.getByText("公式解答と解説を確認する").closest("details")!;
+  details.open = true;
+  fireEvent(details, new Event("toggle"));
+  expect(details.querySelector("p")?.textContent).toBe(officialQuestion.modelAnswer);
+  expect(screen.getByRole("heading", { name: "独自解説" })).toBeTruthy();
+  expect(screen.getByText(officialQuestion.explanation)).toBeTruthy();
+});
+
 describe.each([question, (khkData as Question[]).find(q => q.type === "descriptive")!])("$exam の記述演習", (question) => {
 describe("記述問題の操作", () => {
   it("解答例の開閉時にEnter/Spaceが次問へ進んだり成績を記録したりしない", () => {
     const onNext = vi.fn();
     const { container } = render(<QuizPlayer question={question} index={0} total={2} mode="random" onNext={onNext} />);
     if (question.exam === "khk-reito-1") {
-      expect(screen.getByRole("link", { name: "高圧ガス保安協会の公式問題PDF" }).getAttribute("href")).toBe(question.sourcePdfUrl);
-      expect(screen.getByRole("link", { name: "高圧ガス保安協会の公式解答例PDF" }).getAttribute("href")).toBe(question.sourceAnswerUrl);
+      expect(screen.getByRole("link", { name: /公式問題PDF/ }).getAttribute("href")).toBe(question.sourcePdfUrl);
+      expect(screen.queryByRole("link", { name: /公式解答例PDF/ })).toBeNull();
       expect(screen.queryByText(/法務省/)).toBeNull();
     }
     const details = container.querySelector("details")!;

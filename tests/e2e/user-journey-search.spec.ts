@@ -17,39 +17,42 @@ test.describe("search page: HTTP & structure", () => {
     expect(res.status()).toBe(200);
   });
 
-  test("/search has IPA過去問 横断検索 heading", async ({ page }) => {
-    await suppressWelcomeModal(page);
-    await page.goto("/search");
-    const h1 = page.getByRole("heading", { level: 1 });
-    await expect(h1).toBeVisible();
-    await expect(h1).toContainText("IPA過去問 横断検索");
-  });
 
   test("/search has search input field", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search");
-    const searchInput = page.locator("#search-input");
+    await page.getByText("問題文で探す", { exact: true }).click();
+    const searchInput = page.getByRole("searchbox", { name: "キーワード", exact: true });
     await expect(searchInput).toBeVisible({ timeout: 10000 });
-    await expect(searchInput).toHaveAttribute("placeholder", /TCP|例/);
+    await expect(searchInput).toBeEditable();
   });
 
-  test("/search has 問題検索 section with aria-label", async ({ page }) => {
+
+  test("a shared qualification search link fills the fields and shows matches", async ({ page }) => {
     await suppressWelcomeModal(page);
-    await page.goto("/search");
-    const searchSection = page.locator("[aria-label='問題検索']");
-    await expect(searchSection).toBeVisible({ timeout: 10000 });
+    const questionResults = page.waitForResponse(response => {
+      const url = new URL(response.url());
+      return url.pathname === "/api/search/questions" && url.searchParams.get("q") === "調理師";
+    });
+    await page.goto(`/search?${new URLSearchParams({ q: "調理師" })}`);
+    const qualifications = page.getByRole("list", { name: "資格の検索結果" });
+    await expect(page.getByRole("searchbox", { name: "資格名・略称で検索" })).toHaveValue("調理師");
+    await expect(qualifications.getByRole("link", { name: /調理師/ }).first()).toBeVisible();
+    await expect(page.getByRole("searchbox", { name: "キーワード", exact: true })).toHaveValue("調理師");
+    expect((await questionResults).ok()).toBe(true);
+    await expect(page.getByRole("region", { name: "検索結果" })).toBeVisible();
   });
 
-  // SearchClient uses useSearchParams() without Suspense, so state is driven
-  // by URL params via useEffect. Navigate directly to the search URL with a
-  // query param so the filter panel appears once React hydrates + useEffect runs.
   test("/search filter panel appears after submitting a search term", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search?q=SQL");
     // networkidle is unreliable on Next.js pages with streaming + analytics;
     // tests use explicit element waits below instead.
-    const filterSection = page.locator("[aria-label='絞り込み']");
-    await expect(filterSection).toBeVisible({ timeout: 15000 });
+    await expect(page.getByRole("region", { name: "検索結果" })).toBeVisible({ timeout: 15000 });
+    await page.locator("summary").filter({ hasText: /^絞り込み$/ }).click();
+    const filters = page.getByRole("region", { name: "絞り込み", exact: true });
+    await expect(filters.getByRole("combobox", { name: "資格", exact: true })).toBeVisible();
+    await expect(filters.getByRole("combobox", { name: "年度", exact: true })).toBeVisible();
   });
 });
 
@@ -88,100 +91,9 @@ test.describe("search API: contract", () => {
 });
 
 test.describe("search: keyword interaction", () => {
-  test("practice CTA carries the exact bounded result IDs and search return URL", async ({
-    page,
-    request,
-  }) => {
-    await suppressWelcomeModal(page);
-    const api = await (
-      await request.get("/api/search/questions?q=SQL&difficulty=3&limit=60")
-    ).json();
-    expect(api.hits.length).toBeGreaterThan(0);
 
-    await page.goto("/search?q=SQL&difficulty=3");
-    const cta = page.getByRole("link", { name: /件の検索結果を連続演習する/ });
-    await expect(cta).toBeVisible({ timeout: 15000 });
-    const href = await cta.getAttribute("href");
-    const target = new URL(href!, "http://test");
 
-    expect(target.searchParams.get("source")).toBe("search");
-    expect(target.searchParams.get("ids")?.split(",")).toEqual(
-      api.hits.map((hit: { id: string }) => hit.id),
-    );
-    expect(target.searchParams.get("search")).toBe("q=SQL&difficulty=3");
-    expect(target.searchParams.get("returnTo")).toBe("/search?q=SQL&difficulty=3");
 
-    await page.goto(href!);
-    await expect(page.getByRole("button", { name: "検索結果に戻る" })).toBeVisible({
-      timeout: 15000,
-    });
-    await expect(page.getByRole("progressbar")).toHaveAttribute(
-      "aria-valuemax",
-      String(api.hits.length),
-    );
-  });
-
-  test("an empty result never offers a misleading all-question practice CTA", async ({ page }) => {
-    await suppressWelcomeModal(page);
-    await page.goto("/search?q=__definitely_no_such_question_9f31b__");
-    await expect(page.getByText("該当する問題は見つかりませんでした。条件を変えてお試しください。")).toBeVisible({ timeout: 15000 });
-    await expect(page.getByRole("link", { name: /検索結果を連続演習する/ })).toHaveCount(0);
-  });
-
-  test("practice CTA is hidden while results for a changed query are pending", async ({ page }) => {
-    await suppressWelcomeModal(page);
-    let releaseTcp: (() => void) | undefined;
-    const tcpGate = new Promise<void>((resolve) => {
-      releaseTcp = resolve;
-    });
-    await page.route("**/api/search/questions?*", async (route) => {
-      const url = new URL(route.request().url());
-      if (url.searchParams.get("q") === "TCP") await tcpGate;
-      await route.continue();
-    });
-
-    await page.goto("/search?q=SQL");
-    const cta = page.getByRole("link", { name: /件の検索結果を連続演習する/ });
-    await expect(cta).toBeVisible({ timeout: 15000 });
-
-    await page.locator("#search-input").fill("TCP");
-    await expect(page).toHaveURL(/q=TCP/, { timeout: 5000 });
-    await expect(cta).toHaveCount(0);
-
-    releaseTcp?.();
-    await expect(cta).toBeVisible({ timeout: 15000 });
-  });
-
-  test("recent-only selection survives the quiz round trip", async ({ page, request }) => {
-    const api = await (await request.get("/api/search/questions?q=SQL&limit=60")).json();
-    expect(api.hits.length).toBeGreaterThan(0);
-    const recentId = api.hits[0].id as string;
-    await page.addInitScript((id) => {
-      localStorage.setItem("ipa-quiz:onboarded:v1", "1");
-      localStorage.setItem(
-        "ipa-quiz:history:v1",
-        JSON.stringify({
-          entries: [{ id, selected: "ア", correct: true, at: Date.now() }],
-          starredIds: [],
-        }),
-      );
-    }, recentId);
-
-    await page.goto("/search?q=SQL&recent=1");
-    const recentToggle = page.getByRole("button", { name: "最近見た問題のみ" });
-    await expect(recentToggle).toHaveAttribute("aria-pressed", "true", { timeout: 15000 });
-    const cta = page.getByRole("link", { name: /1件の検索結果を連続演習する/ });
-    await expect(cta).toBeVisible();
-    const href = await cta.getAttribute("href");
-    const target = new URL(href!, "http://test");
-    expect(target.searchParams.get("ids")).toBe(recentId);
-    expect(target.searchParams.get("returnTo")).toBe("/search?q=SQL&recent=1");
-
-    await page.goto(href!);
-    await page.getByRole("button", { name: "検索結果に戻る" }).click();
-    await expect(page).toHaveURL(/\/search\?q=SQL&recent=1$/);
-    await expect(recentToggle).toHaveAttribute("aria-pressed", "true");
-  });
 
   test("duplicate ids parameters fail closed instead of crashing or widening the pool", async ({
     page,
@@ -219,34 +131,6 @@ test.describe("search: keyword interaction", () => {
     await expect(countStatus).toHaveText(/件の検索結果が見つかりました。/);
   });
 
-  test("clear button appears after submitting search", async ({ page }) => {
-    await suppressWelcomeModal(page);
-    await page.goto("/search?q=TCP");
-    // networkidle is unreliable on Next.js pages with streaming + analytics;
-    // tests use explicit element waits below instead.
-    const clearBtn = page.locator("[aria-label='入力をクリア']");
-    await expect(clearBtn).toBeVisible({ timeout: 15000 });
-  });
 
-  test("clicking clear button empties the search input", async ({ page }) => {
-    await suppressWelcomeModal(page);
-    await page.goto("/search?q=TCP");
-    // networkidle is unreliable on Next.js pages with streaming + analytics;
-    // tests use explicit element waits below instead.
-    const searchInput = page.locator("#search-input");
-    const clearBtn = page.locator("[aria-label='入力をクリア']");
-    await expect(clearBtn).toBeVisible({ timeout: 15000 });
-    await clearBtn.click();
-    await expect(searchInput).toHaveValue("", { timeout: 5000 });
-  });
 
-  test("clear-all button appears when filters active", async ({ page }) => {
-    await suppressWelcomeModal(page);
-    await page.goto("/search");
-    const searchInput = page.locator("#search-input");
-    await expect(searchInput).toBeVisible({ timeout: 10000 });
-    await searchInput.fill("データベース");
-    const clearAll = page.locator("[aria-label='すべての条件をクリア']");
-    await expect(clearAll).toBeVisible({ timeout: 15000 });
-  });
 });

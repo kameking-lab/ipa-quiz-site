@@ -1,0 +1,654 @@
+[
+  {
+    "id": "fe-2016h-pm-q1",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "Webサーバに対する不正侵入とその対策"
+    ],
+    "difficulty": 4,
+    "question": "問1 Webサーバに対する不正侵入とその対策",
+    "answer": "問1       ａ  イ\n         ｂ  イ\n         ｃ  ア\n         ｄ  カ\n         ｅ  オ",
+    "modelAnswer": "```text\n問1       ａ  イ\n         ｂ  イ\n         ｃ  ア\n         ｄ  カ\n         ｅ  オ\n```",
+    "explanation": "発覚後の原因調査と再発防止の対策を区別する。パスワードの候補数は使える文字種を長さの回数だけ掛けて比べる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-06.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-07.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-08.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-09.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問1の本文・設問（公式問題冊子 6ページ）",
+      "基本情報技術者 午後 問1の本文・設問（公式問題冊子 7ページ）",
+      "基本情報技術者 午後 問1の本文・設問（公式問題冊子 8ページ）",
+      "基本情報技術者 午後 問1の本文・設問（公式問題冊子 9ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問1の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q2",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ソフトウェア",
+    "topicTags": [
+      "マークアンドスイープ方式のガーベジコレクション"
+    ],
+    "difficulty": 4,
+    "question": "問2 マークアンドスイープ方式のガーベジコレクション",
+    "answer": "問2   設問1  ａ  ア\n         ｂ  ウ\n         ｃ  オ\n         ｄ  ウ\n     設問2     イ",
+    "modelAnswer": "```text\n問2   設問1  ａ  ア\n         ｂ  ウ\n         ｃ  オ\n         ｄ  ウ\n     設問2     イ\n```",
+    "explanation": "マーク段階では到達可能なセルをたどり、スイープ段階では領域全体を走査する。処理量の違いはそれぞれが調べるセル数から求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-10.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-11.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-12.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-13.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問2の本文・設問（公式問題冊子 10ページ）",
+      "基本情報技術者 午後 問2の本文・設問（公式問題冊子 11ページ）",
+      "基本情報技術者 午後 問2の本文・設問（公式問題冊子 12ページ）",
+      "基本情報技術者 午後 問2の本文・設問（公式問題冊子 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問2の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q3",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "データベース",
+    "topicTags": [
+      "遊園地の入園者情報を管理する関係データベース"
+    ],
+    "difficulty": 4,
+    "question": "問3 遊園地の入園者情報を管理する関係データベース",
+    "answer": "問3   設問1  ａ  オ\n         ｂ  エ\n     設問2  ｃ  イ\n     設問3  ｄ  ウ\n     設問4     エ",
+    "modelAnswer": "```text\n問3   設問1  ａ  オ\n         ｂ  エ\n     設問2  ｃ  イ\n     設問3  ｄ  ウ\n     設問4     エ\n```",
+    "explanation": "入園者とアトラクションの利用記録を別の表として扱う。集計の単位と、結合で保持すべき行を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-14.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-15.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-16.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-17.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問3の本文・設問（公式問題冊子 14ページ）",
+      "基本情報技術者 午後 問3の本文・設問（公式問題冊子 15ページ）",
+      "基本情報技術者 午後 問3の本文・設問（公式問題冊子 16ページ）",
+      "基本情報技術者 午後 問3の本文・設問（公式問題冊子 17ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q03-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問3の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q4",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "ネットワーク",
+    "topicTags": [
+      "イーサネットを介した通信"
+    ],
+    "difficulty": 4,
+    "question": "問4 イーサネットを介した通信",
+    "answer": "問4   設問1  ａ  ウ\n         ｂ  オ\n         ｃ  ウ\n     設問2  ｄ  ウ\n         ｅ  オ",
+    "modelAnswer": "```text\n問4   設問1  ａ  ウ\n         ｂ  オ\n         ｃ  ウ\n     設問2  ｄ  ウ\n         ｅ  オ\n```",
+    "explanation": "通信相手が同じネットワーク内かを最初に判断する。ARPで調べるMACアドレスが、相手端末とルータのどちらのものかを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-18.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-19.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-20.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問4の本文・設問（公式問題冊子 18ページ）",
+      "基本情報技術者 午後 問4の本文・設問（公式問題冊子 19ページ）",
+      "基本情報技術者 午後 問4の本文・設問（公式問題冊子 20ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q04-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問4の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=18",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問4",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q5",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "システム設計",
+    "topicTags": [
+      "スマートフォンを用いた店舗検索システム"
+    ],
+    "difficulty": 4,
+    "question": "問5 スマートフォンを用いた店舗検索システム",
+    "answer": "問5   設問1  ａ  ウ\n         ｂ  ア\n         ｃ  ア\n         ｄ  ウ\n               順不同\n         ｅ  ア\n     設問2     ア\n     設問3     イ",
+    "modelAnswer": "```text\n問5   設問1  ａ  ウ\n         ｂ  ア\n         ｃ  ア\n         ｄ  ウ\n               順不同\n         ｅ  ア\n     設問2     ア\n     設問3     イ\n```",
+    "explanation": "Web方式とアプリケーション方式で、データを取得して表示する担当がどう変わるかをシーケンス図でたどる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-21.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-22.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-23.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-24.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-25.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問5の本文・設問（公式問題冊子 21ページ）",
+      "基本情報技術者 午後 問5の本文・設問（公式問題冊子 22ページ）",
+      "基本情報技術者 午後 問5の本文・設問（公式問題冊子 23ページ）",
+      "基本情報技術者 午後 問5の本文・設問（公式問題冊子 24ページ）",
+      "基本情報技術者 午後 問5の本文・設問（公式問題冊子 25ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q05-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問5の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=21",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問5",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q6",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "プロジェクトマネジメント",
+    "topicTags": [
+      "ソフトウェアパッケージ導入時の調達先選定"
+    ],
+    "difficulty": 4,
+    "question": "問6 ソフトウェアパッケージ導入時の調達先選定",
+    "answer": "問6   設問1  ａ  ウ\n         ｂ  ア\n     設問2  ｃ  エ\n         ｄ  イ\n         ｅ  イ",
+    "modelAnswer": "```text\n問6   設問1  ａ  ウ\n         ｂ  ア\n     設問2  ｃ  エ\n         ｄ  イ\n         ｅ  イ\n```",
+    "explanation": "各社の提案の評価と、採用後に発生し得るリスクの評価を分ける。リスクに対する予防策を選定条件と照らし合わせる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-26.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-27.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-28.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-29.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問6の本文・設問（公式問題冊子 26ページ）",
+      "基本情報技術者 午後 問6の本文・設問（公式問題冊子 27ページ）",
+      "基本情報技術者 午後 問6の本文・設問（公式問題冊子 28ページ）",
+      "基本情報技術者 午後 問6の本文・設問（公式問題冊子 29ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q06-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問6の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=26",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問6",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q7",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "経営戦略",
+    "topicTags": [
+      "販売データの分析"
+    ],
+    "difficulty": 4,
+    "question": "問7 販売データの分析",
+    "answer": "問7   設問1  ａ  ア\n         ｂ  ウ\n         ｃ  イ\n         ｄ  ウ\n         ｅ  イ\n     設問2  ｆ  エ\n         ｇ  ア",
+    "modelAnswer": "```text\n問7   設問1  ａ  ア\n         ｂ  ウ\n         ｃ  イ\n         ｄ  ウ\n         ｅ  イ\n     設問2  ｆ  エ\n         ｇ  ア\n```",
+    "explanation": "購入人数と延べ購入回数の違いを押さえる。リピート率は、延べ購入のうち初回を除いた購入が占める割合である。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-30.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-31.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-32.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-33.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-34.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問7の本文・設問（公式問題冊子 30ページ）",
+      "基本情報技術者 午後 問7の本文・設問（公式問題冊子 31ページ）",
+      "基本情報技術者 午後 問7の本文・設問（公式問題冊子 32ページ）",
+      "基本情報技術者 午後 問7の本文・設問（公式問題冊子 33ページ）",
+      "基本情報技術者 午後 問7の本文・設問（公式問題冊子 34ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q07-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問7の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=30",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問7",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q8",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "アルゴリズム",
+    "topicTags": [
+      "携帯端末の簡易メモ帳"
+    ],
+    "difficulty": 4,
+    "question": "問8 携帯端末の簡易メモ帳",
+    "answer": "問8   設問1  ａ  ア\n         ｂ  ウ\n         ｃ  エ\n         ｄ  イ\n     設問2  ｅ  ウ\n         ｆ  カ\n         ｇ  ケ",
+    "modelAnswer": "```text\n問8   設問1  ａ  ア\n         ｂ  ウ\n         ｃ  エ\n         ｄ  イ\n     設問2  ｅ  ウ\n         ｆ  カ\n         ｇ  ケ\n```",
+    "explanation": "メモ本文の格納位置と表示順を管理する配列を分けて追う。削除や移動で、どの要素を書き換えるかを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-35.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-36.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-37.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-38.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-39.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-40.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-04.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-05.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 35ページ）",
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 36ページ）",
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 37ページ）",
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 38ページ）",
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 39ページ）",
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 40ページ）",
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 4ページ）",
+      "基本情報技術者 午後 問8の本文・設問（公式問題冊子 5ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q08-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問8の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=35",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問8",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q9",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "C",
+    "topicTags": [
+      "再帰で図形を描くCプログラム"
+    ],
+    "difficulty": 4,
+    "question": "問9 再帰で図形を描くCプログラム",
+    "answer": "問9   設問1     ウ\n     設問2     イ\n     設問3  ａ  エ\n         ｂ  イ\n         ｃ  ア\n         ｄ  カ",
+    "modelAnswer": "```text\n問9   設問1     ウ\n     設問2     イ\n     設問3  ａ  エ\n         ｂ  イ\n         ｃ  ア\n         ｄ  カ\n```",
+    "explanation": "一段浅い図形を組み合わせて次の図形を作る。再帰を止める条件と、各部分を描画する座標を順にたどる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-41.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-42.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-43.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-44.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-45.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問9の本文・設問（公式問題冊子 41ページ）",
+      "基本情報技術者 午後 問9の本文・設問（公式問題冊子 42ページ）",
+      "基本情報技術者 午後 問9の本文・設問（公式問題冊子 43ページ）",
+      "基本情報技術者 午後 問9の本文・設問（公式問題冊子 44ページ）",
+      "基本情報技術者 午後 問9の本文・設問（公式問題冊子 45ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q09-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問9の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=41",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問9",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q10",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "COBOL",
+    "topicTags": [
+      "予約状況を管理するCOBOLプログラム"
+    ],
+    "difficulty": 4,
+    "question": "問10 予約状況を管理するCOBOLプログラム",
+    "answer": "問10  設問1  ａ  ウ\n         ｂ  ア\n         ｃ  オ\n     設問2  ｄ  ア\n         ｅ  ウ\n         ｆ  ウ",
+    "modelAnswer": "```text\n問10  設問1  ａ  ウ\n         ｂ  ア\n         ｃ  オ\n     設問2  ｄ  ア\n         ｅ  ウ\n         ｆ  ウ\n```",
+    "explanation": "日付をキーに予約レコードを読み、予約済みかどうかを判定する。登録・取消の処理ごとに変更するデータを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-46.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-47.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-48.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-49.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-50.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問10の本文・設問（公式問題冊子 46ページ）",
+      "基本情報技術者 午後 問10の本文・設問（公式問題冊子 47ページ）",
+      "基本情報技術者 午後 問10の本文・設問（公式問題冊子 48ページ）",
+      "基本情報技術者 午後 問10の本文・設問（公式問題冊子 49ページ）",
+      "基本情報技術者 午後 問10の本文・設問（公式問題冊子 50ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q10-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問10の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=46",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問10",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q11",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "Java",
+    "topicTags": [
+      "TODOを管理するJavaプログラム"
+    ],
+    "difficulty": 4,
+    "question": "問11 TODOを管理するJavaプログラム",
+    "answer": "問11  設問1  ａ  ア\n         ｂ  ア\n         ｃ  ア\n         ｄ  イ\n         ｅ  イ\n     設問2  ｆ  カ\n         ｇ  エ",
+    "modelAnswer": "```text\n問11  設問1  ａ  ア\n         ｂ  ア\n         ｃ  ア\n         ｄ  イ\n         ｅ  イ\n     設問2  ｆ  カ\n         ｇ  エ\n```",
+    "explanation": "TODOを判定するときに参照する識別子と、条件に合う要素を抽出する処理の両方をたどる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-51.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-52.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-53.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-54.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-55.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-56.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-69.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-70.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 51ページ）",
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 52ページ）",
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 53ページ）",
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 54ページ）",
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 55ページ）",
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 56ページ）",
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 69ページ）",
+      "基本情報技術者 午後 問11の本文・設問（公式問題冊子 70ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q11-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問11の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=51",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問11",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q12",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 12,
+    "type": "descriptive",
+    "category": "アセンブラ",
+    "topicTags": [
+      "チームの競走成績を集計するアセンブラプログラム"
+    ],
+    "difficulty": 4,
+    "question": "問12 チームの競走成績を集計するアセンブラプログラム",
+    "answer": "問12  設問1  ａ  エ\n         ｂ  ウ\n     設問2  ｃ  イ\n     設問3  ｄ  オ\n         ｅ  イ\n     設問4  ｆ  ア",
+    "modelAnswer": "```text\n問12  設問1  ａ  エ\n         ｂ  ウ\n     設問2  ｃ  イ\n     設問3  ｄ  オ\n         ｅ  イ\n     設問4  ｆ  ア\n```",
+    "explanation": "各チームのタイムを集計してから順位を比較する。同タイム時の扱いは、比較結果と分岐条件を順に確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-57.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-58.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-59.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-60.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-71.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-72.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-73.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-74.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-75.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-76.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 57ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 58ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 59ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 60ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 71ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 72ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 73ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 74ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 75ページ）",
+      "基本情報技術者 午後 問12の本文・設問（公式問題冊子 76ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q12-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問12の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=57",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問12",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "fe-2016h-pm-q13",
+    "exam": "fe",
+    "session": "pm",
+    "year": 2016,
+    "season": "spring",
+    "qNumber": 13,
+    "type": "descriptive",
+    "category": "表計算",
+    "topicTags": [
+      "販売分析のワークシートとマクロ"
+    ],
+    "difficulty": 4,
+    "question": "問13 販売分析のワークシートとマクロ",
+    "answer": "問13  設問1  ａ  イ\n         ｂ  ア\n         ｃ  ア\n         ｄ  エ\n     設問2  ｅ  ア\n         ｆ  ウ\n         ｇ  カ",
+    "modelAnswer": "```text\n問13  設問1  ａ  イ\n         ｂ  ア\n         ｃ  ア\n         ｄ  エ\n     設問2  ｅ  ア\n         ｆ  ウ\n         ｇ  カ\n```",
+    "explanation": "売上高順の構成比率累計が管理区分を決める。複写される数式では、移動させる参照と固定する参照を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/page-61.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-62.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-63.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-64.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-65.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-66.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-67.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-68.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-77.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-78.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-79.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-80.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-81.webp",
+      "/questions/ipa/fe/2016-spring-pm/page-82.webp"
+    ],
+    "imageAltTexts": [
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 61ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 62ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 63ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 64ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 65ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 66ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 67ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 68ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 77ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 78ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 79ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 80ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 81ページ）",
+      "基本情報技術者 午後 問13の本文・設問（公式問題冊子 82ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/fe/2016-spring-pm/answer-q13-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "基本情報技術者 午後 問13の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_qs.pdf#page=61",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000gn5o-att/2016h28h_fe_pm_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度春期 基本情報技術者 午後 問13",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

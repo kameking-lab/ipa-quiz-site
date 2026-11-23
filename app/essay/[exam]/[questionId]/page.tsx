@@ -12,7 +12,6 @@ import {
 } from "@/lib/essay/load";
 import type { EssayExamCode } from "@/lib/essay/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
-import { EssayEditor } from "@/components/essay/EssayEditor";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -43,8 +42,8 @@ export async function generateMetadata({
   const { questionId } = await params;
   const q = findEssayQuestion(questionId);
   if (!q) return { title: "論述問題が見つかりません", robots: { index: false } };
-  const title = `${examLabel(q.exam)} 独自練習 ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`;
-  const description = `${q.title} — AI が学習用の4観点で論述を評価します。`;
+  const title = `${examLabel(q.exam)} 独自論述練習 ${formatYearSeason(q.year, q.season)} 問${q.qNumber}`;
+  const description = `${q.title} — 論述の練習問題と設問ア・イ・ウの解答骨子。`;
   const canonical = `/essay/${q.exam}/${q.id}`;
   const ogImage = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "essay",
@@ -73,7 +72,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function EssayEditorPage({
+export default async function EssayPracticePage({
   params,
 }: {
   params: Promise<RouteParams>;
@@ -97,8 +96,8 @@ export default async function EssayEditorPage({
         name: `${label} 独自論述練習 ${formatYearSeason(question.year, question.season)} 問${question.qNumber} ── ${question.title}`,
         url,
         inLanguage: "ja",
-        description: `${question.title} — AI が学習用の4観点で論述を評価します（参考評価）。`,
-        learningResourceType: "AI 採点・添削",
+        description: `${question.title} — 論述の練習問題と解答骨子。`,
+        learningResourceType: "練習問題",
         educationalLevel: "Professional",
         educationalUse: "Self-assessment",
         audience: STUDENT_AUDIENCE,
@@ -118,7 +117,7 @@ export default async function EssayEditorPage({
           {
             "@type": "ListItem",
             position: 2,
-            name: "AI 論述添削（午後II）",
+            name: "IPA 論文対策",
             item: `${SITE_BASE_URL}/essay`,
           },
           { "@type": "ListItem", position: 3, name: question.title, item: url },
@@ -134,7 +133,7 @@ export default async function EssayEditorPage({
         href="/essay"
         className="mb-4 inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
       >
-        <ChevronLeft className="h-3 w-3" /> AI 論述添削トップ
+        <ChevronLeft className="h-3 w-3" /> IPA 論文対策
       </Link>
 
       <header className="mb-6">
@@ -153,11 +152,7 @@ export default async function EssayEditorPage({
       >
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
         <p>
-          <strong>編集者作成の練習用オリジナル問題です。</strong>
-          実際の試験で出題された問題ではありません。年度・季節は教材整理用のラベルです。
-          解答骨子・評価観点も編集者作成で、AI 添削は学習用の参考評価です。
-          IPA 公式の採点基準とは異なる場合があります。合否判定の根拠としてはご利用にならず、
-          学習の参考としてご活用ください。
+          <strong>編集者作成の練習問題です。</strong> 年度・季節は教材整理用のラベルです。
         </p>
       </div>
 
@@ -182,7 +177,18 @@ export default async function EssayEditorPage({
         </Link>
       </p>
 
-      <EssayEditor question={question} />
+      <div className="space-y-3">
+        {question.subPrompts.map((section) => (
+          <section key={section.key} className="rounded-xl border border-border p-4">
+            <h2 className="mb-2 font-semibold">設問{section.key}</h2>
+            <p className="text-sm leading-relaxed">{section.prompt}</p>
+            <details className="mt-3 text-sm">
+              <summary className="cursor-pointer font-medium">解答骨子</summary>
+              <p className="mt-2 whitespace-pre-wrap text-muted-foreground">{section.modelOutline}</p>
+            </details>
+          </section>
+        ))}
+      </div>
 
       <InlineBookHint exam={question.exam} category="論文" />
 

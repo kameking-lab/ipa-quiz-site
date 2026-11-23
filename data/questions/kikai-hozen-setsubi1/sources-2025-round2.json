@@ -1,0 +1,260 @@
+{
+  "candidate": "Q4-027",
+  "qualification": "機械保全技能検定 1級 設備診断作業",
+  "year": 2025,
+  "season": "round2",
+  "questionCount": 50,
+  "officialSources": [
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_1kyu_setubi_mondai.pdf",
+      "sha256": "ce3fc2d586955f69441b184d16c812543befaa33582ffc2e64dddb1862a550b5",
+      "size": 1040926,
+      "pages": 11
+    },
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_1kyu_setubi_kaitou.pdf",
+      "sha256": "1495e2765efe0ce99e6e5cdcbcdf8092d0d16410e841c8c61ebb1dcf6c428ea1",
+      "size": 172587,
+      "pages": 1
+    }
+  ],
+  "officialAnswers": [
+    "×",
+    "×",
+    "〇",
+    "〇",
+    "〇",
+    "×",
+    "〇",
+    "〇",
+    "×",
+    "×",
+    "×",
+    "×",
+    "〇",
+    "〇",
+    "〇",
+    "×",
+    "×",
+    "〇",
+    "×",
+    "〇",
+    "×",
+    "〇",
+    "×",
+    "〇",
+    "×",
+    "エ",
+    "イ",
+    "ウ",
+    "ウ",
+    "ウ",
+    "イ",
+    "イ",
+    "ア",
+    "ア",
+    "エ",
+    "ア",
+    "イ",
+    "イ",
+    "エ",
+    "ウ",
+    "ア",
+    "ウ",
+    "ウ",
+    "ア",
+    "イ",
+    "イ",
+    "イ",
+    "エ",
+    "イ",
+    "ア"
+  ],
+  "choiceMapping": {
+    "trueFalse": {
+      "ア": "〇",
+      "イ": "×"
+    },
+    "multipleChoice": {
+      "ア": "ア",
+      "イ": "イ",
+      "ウ": "ウ",
+      "エ": "エ"
+    }
+  },
+  "figures": [
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q03.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        76,
+        184,
+        200,
+        291
+      ],
+      "sha256": "569a3e16cb487164388ffcd2a90a196a4d88f601854536cf3e8b2ac8617f5a50",
+      "reusedFrom": "kikai-hozen-denki1"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q05.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        79,
+        371,
+        183,
+        496
+      ],
+      "sha256": "feac9a7d35733b9007b1f4d7b25d1987d573a741fb829b3caba8d9f44a840952",
+      "reusedFrom": "kikai-hozen-denki1"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-denki1/2025-round2-q14.webp",
+      "pdfPage": 3,
+      "cropPdfPoints": [
+        83,
+        177,
+        185,
+        266
+      ],
+      "sha256": "43aa450b9a2d7e382137b39b1673eb8e58dc0d8483b416b797defbae77c766b4",
+      "reusedFrom": "kikai-hozen-denki1"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-setsubi1/2025-round2-q29.webp",
+      "pdfPage": 4,
+      "cropPdfPoints": [
+        80,
+        487,
+        154,
+        555
+      ],
+      "sha256": "7703c1079dd78661242cb49d90f89f5e79cc78b0e2ef13cf24c6d5ec603830c9"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-setsubi1/2025-round2-q43.webp",
+      "pdfPage": 8,
+      "cropPdfPoints": [
+        72,
+        327,
+        300,
+        449
+      ],
+      "sha256": "6bb960f24a4cde63e18d7c76d98ea0eb7691b6dacfb17b9d91f1a2fd6b76b3ff"
+    },
+    {
+      "url": "/images/questions/kikai-hozen-setsubi1/2025-round2-q46.webp",
+      "pdfPage": 9,
+      "cropPdfPoints": [
+        72,
+        126,
+        290,
+        300
+      ],
+      "sha256": "bd7dec1d6396df63b7b325d5e91c606aaa4f57a789c5a0795111f1aff1100ef2"
+    }
+  ],
+  "transcriptionMethod": "公式PDFのテキスト層を座標順に読み、本文とア〜エを分離。改行を結合し全角英数字を正規化。原本ページ画像で全問照合。原図はPDFから切り出し。",
+  "answerVerification": "公式正解表の画像から転記した50記号とPDFテキスト層を全問照合。",
+  "sharedQuestions": [
+    {
+      "qNumber": 1,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-001"
+    },
+    {
+      "qNumber": 2,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-002"
+    },
+    {
+      "qNumber": 3,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-003"
+    },
+    {
+      "qNumber": 4,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-004"
+    },
+    {
+      "qNumber": 5,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-005"
+    },
+    {
+      "qNumber": 6,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-006"
+    },
+    {
+      "qNumber": 7,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-007"
+    },
+    {
+      "qNumber": 8,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-008"
+    },
+    {
+      "qNumber": 9,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-009"
+    },
+    {
+      "qNumber": 10,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-010"
+    },
+    {
+      "qNumber": 11,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-011"
+    },
+    {
+      "qNumber": 12,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-012"
+    },
+    {
+      "qNumber": 13,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-013"
+    },
+    {
+      "qNumber": 14,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-014"
+    },
+    {
+      "qNumber": 15,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-015"
+    },
+    {
+      "qNumber": 16,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-016"
+    },
+    {
+      "qNumber": 17,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-017"
+    },
+    {
+      "qNumber": 18,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-018"
+    },
+    {
+      "qNumber": 19,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-019"
+    },
+    {
+      "qNumber": 20,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-020"
+    },
+    {
+      "qNumber": 21,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-021"
+    },
+    {
+      "qNumber": 22,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-022"
+    },
+    {
+      "qNumber": 23,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-023"
+    },
+    {
+      "qNumber": 24,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-024"
+    },
+    {
+      "qNumber": 25,
+      "sourceQuestionId": "kikai-hozen-denki1-2025-round2-gakka-025"
+    }
+  ]
+}

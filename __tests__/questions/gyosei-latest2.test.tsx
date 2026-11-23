@@ -14,9 +14,10 @@ import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import { QuestionCard } from "@/components/quiz/QuestionCard";
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"];
+const latestTwo = GYOSEI_QUESTIONS.filter(q => q.year === 2024 || q.year === 2025);
 describe("行政書士 令和7・6年度の公式公開分", () => {
   it("retains 56 originals per year, including all four-slot originals and official descriptive examples", () => {
-    expect(GYOSEI_QUESTIONS).toHaveLength(112);
+    expect(latestTwo).toHaveLength(112);
     for (const year of [2024, 2025]) {
       const questions = GYOSEI_QUESTIONS.filter(q => q.year === year);
       expect(questions.map(q => q.qNumber)).toEqual(Array.from({length:56}, (_,i) => i+2));
@@ -24,7 +25,7 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
       expect(questions.filter(q => q.type === "native-b")).toHaveLength(3);
       expect(questions.filter(q => q.type === "descriptive")).toHaveLength(3);
     }
-    for (const q of GYOSEI_QUESTIONS) {
+    for (const q of latestTwo) {
       const expected = evidence.questions.find(e => e.id === q.id)!;
       expect(q.officialAnswerNumber).toBe(expected.officialAnswer ?? undefined);
       expect(q.sourcePdfUrl).toBe(`https://gyosei-shiken.or.jp/pdf/r${q.year-2018}_mondai.pdf`);
@@ -48,7 +49,7 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
   });
   it("matches all official cloze answer banks and grades four slots without changing the original question count", () => {
     const answers: Record<string, number[]> = {"2024-41":[8,2,4,10],"2024-42":[13,18,4,10],"2024-43":[16,7,13,3],"2025-41":[5,10,19,13],"2025-42":[3,6,19,16],"2025-43":[4,11,20,15]};
-    for (const q of GYOSEI_QUESTIONS.filter(q => q.nativeB)) {
+    for (const q of latestTwo.filter(q => q.nativeB)) {
       const bank = q.nativeB!;
       expect(NativeBDataSchema.safeParse(bank).success).toBe(true);
       expect(bank.candidates.map(c => Number(c.id))).toEqual(Array.from({length:20},(_,i)=>i+1));
@@ -78,16 +79,18 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
     expect(choiceDisplayLabel("gyosei","オ")).toBe("5");
   });
   it("publishes reviewed questions through both registries and routing", async () => {
-    expect(EXAM_CONFIGS.gyosei.yearRange).toEqual({start:2024,end:2025});
+    expect(EXAM_CONFIGS.gyosei.yearRange).toEqual({start:2020,end:2025});
     expect(isExamPublished("gyosei")).toBe(true);
     expect(QUALIFICATION_CATALOG.filter(q => q.shortName === "行政書士")).toHaveLength(1);
     expect(getAvailableExams()).toContain("gyosei");
     expect(ALL_QUIZ_EXAM_CODES).toContain("gyosei");
     // ALL_EXAM_CODES is the legacy IPA-only list; external exams use ALL_QUIZ_EXAM_CODES.
     expect(ALL_EXAM_CODES).not.toContain("gyosei");
-    expect(ALL_QUESTIONS.filter(q=>q.exam === "gyosei")).toHaveLength(112);
-    expect(await getQuestionsForExam("gyosei")).toHaveLength(112);
-    expect(GYOSEI_QUESTIONS.every(q=>!q.needsReview && q.license === "GYOSEI-owner-cleared")).toBe(true);
+    expect(GYOSEI_QUESTIONS).toHaveLength(332);
+    expect(new Set(GYOSEI_QUESTIONS.map(q => q.id)).size).toBe(332);
+    expect(ALL_QUESTIONS.filter(q=>q.exam === "gyosei")).toEqual(GYOSEI_QUESTIONS);
+    expect(await getQuestionsForExam("gyosei")).toEqual(GYOSEI_QUESTIONS);
+    expect(latestTwo.every(q=>!q.needsReview && q.license === "GYOSEI-owner-cleared")).toBe(true);
   });
   it("preserves the four underlined statements as visible bold text", () => {
     const q = GYOSEI_QUESTIONS.find(q=>q.year===2025 && q.qNumber===15)!;
@@ -99,7 +102,7 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
     const q = GYOSEI_QUESTIONS.find(q=>q.year===2024 && q.qNumber===45)!;
     render(<DescriptiveAnswerCard question={q} defaultOpen />);
     expect(screen.getByText("行政書士試験研究センターの公式正解例")).toBeTruthy();
-    expect(screen.getByText("公式正解例の出典").getAttribute("href")).toBe(q.sourceAnswerUrl);
+    expect(screen.getByRole("link", { name: /公式問題/ })).toHaveAttribute("href", q.sourcePdfUrl);
     expect(q.modelAnswer!.split("\n\n")).toHaveLength(3);
     expect(screen.queryByText(/法務省の公式解答ではありません/)).toBeNull();
   });

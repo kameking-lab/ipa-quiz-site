@@ -1,0 +1,251 @@
+{
+  "exam": "sa",
+  "year": 2018,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sa_am2_qs.pdf",
+      "sha256": "95c5907e97f1771e23ba9646eabbd729da6304990b86e69638c5f3f3e7937b0a"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000f01f-att/2018h30a_sa_am2_ans.pdf",
+      "sha256": "4ec0ae2eaf907a61092b74da6e71b74f605ed01b7d8d02c3875c6e11b42f5aff"
+    }
+  },
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "イエエエアアアウウアエイイエウイウウイエイエアウイ",
+  "verification": "公式問題冊子の全問題ページを画像で読み，本文・選択肢を転記。別の公式解答PDFをpdftotextで抽出して25件照合。本文ハッシュ・原本ページ・原図の切出し座標を記録。",
+  "duplicateCheck": "共有台帳2026-11-11のSA 2018行はspring am1のみ。yr-1と指定10ブランチ取り込み後，追加前のgit log --all -- data/questions/sa/by-year/2018-autumn-am2.tsに履歴なし。",
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "イ",
+      "printedPage": 3,
+      "normalizedTextSha256": "e7710cdf543038106e3af62e7e38ab238ded2244f88096775019c777d3da7b38"
+    },
+    {
+      "qNumber": 2,
+      "answer": "エ",
+      "printedPage": 3,
+      "normalizedTextSha256": "8ce147610b1d3fc42b8df921e18d09ad0911effe7f724c324fcda0af663535b8",
+      "referenceUrls": [
+        "https://www.ipa.go.jp/archive/files/000029060.pdf"
+      ]
+    },
+    {
+      "qNumber": 3,
+      "answer": "エ",
+      "printedPage": 3,
+      "normalizedTextSha256": "2829e96ff77a0bb624f4495b034ff002095c88c52eca691d9469aa4004bb3af3",
+      "referenceUrls": [
+        "https://www.ipa.go.jp/archive/publish/qv6pgp0000000wrt-att/000079352.pdf"
+      ]
+    },
+    {
+      "qNumber": 4,
+      "answer": "エ",
+      "printedPage": 4,
+      "normalizedTextSha256": "c5a69cae6078a53ddfad55f2b44a6cc7387ec17ded5443a1b6d37f7d69d66b3b",
+      "referenceUrls": [
+        "https://www.ipa.go.jp/archive/files/000049842.pdf"
+      ]
+    },
+    {
+      "qNumber": 5,
+      "answer": "ア",
+      "printedPage": 4,
+      "normalizedTextSha256": "d9f32b81b639b7a8c1e75444e7b8ffbf62311af7f64c78fba20c7a74e479fb4d"
+    },
+    {
+      "qNumber": 6,
+      "answer": "ア",
+      "printedPage": 5,
+      "normalizedTextSha256": "9eab851a7156ff49ee3ec9fd172c46796b9519449d0d0a09c3776c0533fabc38"
+    },
+    {
+      "qNumber": 7,
+      "answer": "ア",
+      "printedPage": 5,
+      "normalizedTextSha256": "592621718bb3554bb15ebc15b81cd0017be73b816ac40c4442e487f71fb43a2c"
+    },
+    {
+      "qNumber": 8,
+      "answer": "ウ",
+      "printedPage": 6,
+      "normalizedTextSha256": "9dd1c5067265b619f20616c8be80ae37438d01b21fbe44b6effeba2c0cd0f584"
+    },
+    {
+      "qNumber": 9,
+      "answer": "ウ",
+      "printedPage": 6,
+      "normalizedTextSha256": "a881099ef7836c0e46535c0bedd332b0e4189378592fffd1213937c8c0319471"
+    },
+    {
+      "qNumber": 10,
+      "answer": "ア",
+      "printedPage": 7,
+      "normalizedTextSha256": "cc2e371c6a0bf152bc9f85021909421e6fa48e81b1ae7706605d1b1623d8877f"
+    },
+    {
+      "qNumber": 11,
+      "answer": "エ",
+      "printedPage": 8,
+      "normalizedTextSha256": "cc99652f94959c1367723920db28a0a76cdceeb272c52a9f9d3cf0383bdc0d66",
+      "figure": {
+        "path": "/images/questions/sa/2018-autumn-am2-q11.png",
+        "sha256": "f2f96b48bc35a9725407d419b9fe56df2599128be004696a2a822e612a04e34a",
+        "page": 8,
+        "cropPdfPoints": [
+          135,
+          155,
+          470,
+          372
+        ]
+      }
+    },
+    {
+      "qNumber": 12,
+      "answer": "イ",
+      "printedPage": 8,
+      "normalizedTextSha256": "1ddf93f44ab016860793107a844a2bcf661005b8af7db6e7f3fd47f649bb8f28"
+    },
+    {
+      "qNumber": 13,
+      "answer": "イ",
+      "printedPage": 9,
+      "normalizedTextSha256": "ecd46d3cce84461625ee72263ee00703db411a9eab9fd62d44ae0c333e0bc58c",
+      "referenceUrls": [
+        "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Japanese.pdf"
+      ]
+    },
+    {
+      "qNumber": 14,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "761f7a9cb1da3808c081d9fe86d803ec11e124e4d9c7ca572bb22a10ff729880",
+      "referenceUrls": [
+        "https://www.ipa.go.jp/archive/files/000029060.pdf"
+      ]
+    },
+    {
+      "qNumber": 15,
+      "answer": "ウ",
+      "printedPage": 10,
+      "normalizedTextSha256": "514721f73c8d95be13d03f57ae2c6da81745cac94f7754991cf797071c46a48d",
+      "referenceUrls": [
+        "https://www.mofa.go.jp/mofaj/gaiko/wto/chotatu.html"
+      ]
+    },
+    {
+      "qNumber": 16,
+      "answer": "イ",
+      "printedPage": 10,
+      "normalizedTextSha256": "b90991ca3220d4eaf0b7267bda6e02180722b7d6311a1a9cd1fb110e1fae2fc5"
+    },
+    {
+      "qNumber": 17,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "41316dafb7b33f56f2bb316d5c7a71030869a6a30f71be172aa30ff7e1ed80e8"
+    },
+    {
+      "qNumber": 18,
+      "answer": "ウ",
+      "printedPage": 11,
+      "normalizedTextSha256": "39ecf7877be85641e1a1500e52c5aa16bc3fbcc9074900822ad66eab4bfee972"
+    },
+    {
+      "qNumber": 19,
+      "answer": "イ",
+      "printedPage": 12,
+      "normalizedTextSha256": "574c378ba0419e2abac8da0171455d713832bdf977b4d2409834f9e0451fe233"
+    },
+    {
+      "qNumber": 20,
+      "answer": "エ",
+      "printedPage": 12,
+      "normalizedTextSha256": "9fe83c0a1fb0a025481126ea84f4276e21f7e1ff00abe28e063ceb317576fcdd"
+    },
+    {
+      "qNumber": 21,
+      "answer": "イ",
+      "printedPage": 13,
+      "normalizedTextSha256": "8fb84422ff63cf505bd62e61f502f78a1dc541a58c7236bf86aa6c2a26f685bd"
+    },
+    {
+      "qNumber": 22,
+      "answer": "エ",
+      "printedPage": 13,
+      "normalizedTextSha256": "89bbe8bee6e4a5d976ab9cbf15ac580031005e96d55f101aa8fd3db8da7dcb1c"
+    },
+    {
+      "qNumber": 23,
+      "answer": "ア",
+      "printedPage": 13,
+      "normalizedTextSha256": "052b8725faa88670e18fbdecd60f405bde5d18e006bd58519805ff6988a6f17c"
+    },
+    {
+      "qNumber": 24,
+      "answer": "ウ",
+      "printedPage": 14,
+      "normalizedTextSha256": "b5d0cb05ec229f2d0575b0caaee79dad0720fe7be57f7b17ff73496d8bb86c21",
+      "referenceUrls": [
+        "https://www.ipa.go.jp/security/jisec/cc/index.html"
+      ]
+    },
+    {
+      "qNumber": 25,
+      "answer": "イ",
+      "printedPage": 14,
+      "normalizedTextSha256": "37b086759faf5f639fb5d4d78265de8b0fe2ba8283399466ac4245485a648584"
+    }
+  ],
+  "referenceChecks": {
+    "requirements-guide": {
+      "url": "https://www.ipa.go.jp/archive/publish/qv6pgp0000000wrt-att/000079352.pdf",
+      "sha256": "0be7de0e6c0e3111bbbb76791feaf9e919a9f305b17b02fbb77e1e8197940b14",
+      "matches": {
+        "運用の考え方": [
+          492
+        ],
+        "要件開発": [
+          491,
+          492
+        ]
+      },
+      "printedPage": 481
+    },
+    "assurance": {
+      "url": "https://www.ipa.go.jp/archive/files/000049842.pdf",
+      "sha256": "a5d0a90c11f58813cde1c7d33912094bd05aabe4de94e082b7f9dd4589dfbcfb",
+      "matches": {
+        "証拠": [
+          5,
+          19
+        ],
+        "主張": [
+          19
+        ]
+      }
+    },
+    "scrum": {
+      "url": "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Japanese.pdf",
+      "sha256": "02ddfb2920565cdafa723167ea960ba1d800cde4aa0b3a31c5ce5c9bb65e4389",
+      "matches": {
+        "スプリントレトロスペクティブ": [
+          3,
+          9,
+          12,
+          16
+        ],
+        "品質と効果": [
+          12
+        ]
+      }
+    }
+  }
+}

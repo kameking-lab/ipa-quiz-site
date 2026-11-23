@@ -5,7 +5,7 @@ test.beforeEach(async ({ baseURL }) => {
   expect(baseURL).toBe("http://127.0.0.1:3000");
 });
 
-test("qualification finder has direct-load styles and both sharoushi discovery contexts", async ({ page }) => {
+test("qualification finder has direct-load styles and finds sharoushi by name and abbreviation", async ({ page }) => {
   for (const width of [320, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/qualifications");
@@ -13,13 +13,17 @@ test("qualification finder has direct-load styles and both sharoushi discovery c
     await expect(search).toBeVisible();
     expect(await search.evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
-    await expect(page.getByRole("link", { name: "IT・情報処理の資格一覧はこちら" })).toHaveAttribute("href", "/ipa");
-    for (const context of ["法律から探す方へ", "労務・社会保険から探す方へ"]) {
-      const group = page.getByRole("region", { name: context, exact: true });
-      await expect(group.getByRole("link", { name: "社会保険労務士試験" })).toHaveAttribute("href", "/sharoushi");
+    for (const term of ["社会保険労務士", "社労士"]) {
+      await search.fill(term);
+      const results = page.locator("#qualification-results");
+      const result = results.getByRole("link", { name: /^社会保険労務士/ });
+      await expect(result).toHaveCount(1);
+      await expect(result).toHaveAttribute("href", "/sharoushi");
     }
-    await page.getByRole("link", { name: /収録している全資格・区分を見る/ }).click();
-    await expect(page.locator("#qualification-coverage")).toHaveAttribute("open", "");
+    await page.locator("summary").filter({ hasText: "資格ごとの収録範囲・公式資料を見る" }).click();
+    const coverage = page.locator("details#qualification-coverage");
+    await expect(coverage).toHaveJSProperty("open", true);
+    await expect(coverage.getByRole("heading", { name: /社会保険労務士/ })).toBeVisible();
   }
 });
 
@@ -56,7 +60,9 @@ test("unverified difficulty is not shown and the existing inline draft is retain
   // Stored difficulty has no verified basis, so the header shows nothing about it.
   await expect(page.getByText("難度表示の意味", { exact: true })).toHaveCount(0);
   await expect(page.getByText("根拠未確認")).toHaveCount(0);
-  const editor = page.locator("textarea");
+  await page.locator("summary").filter({ hasText: /^AIに質問$/ }).click();
+  const copilot = page.getByRole("region", { name: "この問題についてAIに質問", exact: true });
+  const editor = copilot.getByRole("textbox", { name: /^AIへの質問を入力/ });
   await expect(editor).toHaveCount(1);
   await editor.fill("公開候補CI専用・送信しない下書き");
   await page.setViewportSize({ width: 1280, height: 900 });
@@ -65,13 +71,22 @@ test("unverified difficulty is not shown and the existing inline draft is retain
   await editor.clear();
 });
 
-test("only the recognized article notice is upright on the existing article route", async ({ page }) => {
-  for (const route of ["/blog/ipa-gozen1-menjo-jouken", "/blog/fe-goukaku-benkyouhou"]) {
-    await page.goto(route);
-    const notice = page.locator('blockquote[data-article-notice="true"]');
-    await expect(notice).toHaveCount(1);
-    await expect(notice).toContainText("学習ガイド");
-    await expect(notice).toHaveCSS("font-style", "normal");
-    await expect(notice.getByRole("link", { name: "IPA 公式ページ" })).toHaveAttribute("href", /https:\/\/www\.ipa\.go\.jp\//);
-  }
+test("updated CBT exemption article keeps its official source without the retired notice", async ({ page }) => {
+  await page.goto("/blog/ipa-gozen1-menjo-jouken");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("高度試験の午前I免除は後期CBTでも使える？科目A-1の対象回と確認手順");
+  const body = page.locator("#article-body");
+  await expect(body.getByRole("link", { name: "IPA公式の後期免除対象一覧", exact: true })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html");
+  await expect(body.locator('blockquote[data-article-notice="true"]')).toHaveCount(0);
+  await expect(body).not.toContainText("独自にまとめた学習ガイドです");
+});
+
+test("updated FE study guide links its official exam format without the retired notice", async ({ page }) => {
+  await page.goto("/blog/fe-goukaku-benkyouhou");
+  const body = page.locator("#article-body");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("基本情報技術者試験の勉強法｜未経験からの学習順と到達確認");
+  const official = body.getByRole("link", { name: "IPAの基本情報技術者試験案内", exact: true });
+  await expect(official).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/kubun/fe.html");
+  await expect(official).toHaveCSS("font-style", "normal");
+  await expect(body.locator('blockquote[data-article-notice="true"]')).toHaveCount(0);
+  await expect(body).not.toContainText("独自にまとめた学習ガイドです");
 });

@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { recordReview } from "@/lib/learning/spaced-repetition";
 import type { Question } from "@/lib/questions/types";
 import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
 import type { PetAttempt, PetOwnerLease, PetV1Context } from "@/lib/pet/v1/runtime";
@@ -9,11 +8,13 @@ import type { SlimMockQuestion } from "@/lib/mock-exam/types";
 import type { ChoiceKey } from "@/lib/questions/types";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { browserPetSubmissions, petSubmissionPaintDelay } from "@/lib/pet/v1/submission-order";
+import { SYNC_SESSION_CHANGED, useObservedSyncAccount } from "@/lib/sync/session-observation";
 
 type Answer = Extract<PetLearningSubmission, { source: "question" }>["answer"];
 /** A study session has one owner lease and no UI state. Closing the decoration
  * does not stop submissions. Auth failures/loading never become guest rewards. */
 export function usePetLearning() {
+  const readAccount = useObservedSyncAccount();
   const state = useRef<{ sessionId: string; owner: Promise<PetOwnerLease | null>; revoke(): void } | null>(null);
   useEffect(() => {
     if (typeof globalThis.crypto?.randomUUID !== "function") return;
@@ -21,7 +22,7 @@ export function usePetLearning() {
     const runtime = import("@/lib/pet/v1/runtime");
     const candidate = () => {
       let revoked = false;
-      const owner = runtime.then(module => module.preparePetOwner(() => !revoked)).catch(() => null);
+      const owner = runtime.then(module => module.preparePetOwner(() => !revoked, readAccount ?? undefined)).catch(() => null);
       return { sessionId: crypto.randomUUID(), owner, revoke: () => { revoked = true; } };
     };
     const prepare = () => {
@@ -45,6 +46,8 @@ export function usePetLearning() {
     window.addEventListener("online", prepare);
     window.addEventListener("storage", storage);
     window.addEventListener("pet-v1:owner-changed", prepare);
+    window.addEventListener(SYNC_SESSION_CHANGED, prepare);
+    window.addEventListener("mobile:entitlement-changed", prepare);
     document.addEventListener("visibilitychange", visible);
     return () => {
       // Pending submissions may finish across route changes; each one checks
@@ -53,15 +56,16 @@ export function usePetLearning() {
       window.removeEventListener("online", prepare);
       window.removeEventListener("storage", storage);
       window.removeEventListener("pet-v1:owner-changed", prepare);
+      window.removeEventListener(SYNC_SESSION_CHANGED, prepare);
+      window.removeEventListener("mobile:entitlement-changed", prepare);
       document.removeEventListener("visibilitychange", visible);
     };
-  }, []);
-  const submit = useCallback((input: PetLearningSubmission | null, context: PetV1Context,
-    reviewBefore: PetAttempt["reviewBefore"] = null) => {
+  }, [readAccount]);
+  const submit = useCallback((input: PetLearningSubmission | null, context: PetV1Context) => {
     try {
       const session = state.current;
       if (!session) return;
-      const attempt = { eventId: crypto.randomUUID(), sessionId: session.sessionId, occurredAt: Date.now(), reviewBefore };
+      const attempt = { eventId: crypto.randomUUID(), sessionId: session.sessionId, occurredAt: Date.now(), reviewBefore: null } satisfies PetAttempt;
       // The timeout begins outside the answer's paint and input budget. No JSON
       // parsing, validation, network, storage or model calculation in this call.
       const ready = petSubmissionPaintDelay();
@@ -77,19 +81,12 @@ export function usePetLearning() {
   }, []);
   return useMemo(() => ({
     submit,
-    record(question: Question, answer: Answer, correct: boolean) {
-      let before: PetAttempt["reviewBefore"] = null;
-      recordReview(question.id, correct, undefined, snapshot => { before = snapshot; });
-      submit({ source: "question", questionId: question.id, answer }, { source: "question", question }, before);
-    },
     answer(question: Question, answer: Answer) {
       submit({ source: "question", questionId: question.id, answer }, { source: "question", question });
     },
-    mock(question: SlimMockQuestion, selected: ChoiceKey | undefined, correct: boolean) {
-      let before: PetAttempt["reviewBefore"] = null;
-      recordReview(question.id, correct, undefined, snapshot => { before = snapshot; });
+    mock(question: SlimMockQuestion, selected: ChoiceKey | undefined) {
       if (selected !== undefined) submit({ source: "question", questionId: question.id,
-        answer: { kind: "multiple-choice", selected: [selected] } }, { source: "mock", question }, before);
+        answer: { kind: "multiple-choice", selected: [selected] } }, { source: "mock", question });
     },
     reveal(question: Question) { submit(null, { source: "question", question }); },
   }), [submit]);

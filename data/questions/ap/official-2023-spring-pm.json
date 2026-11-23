@@ -1,0 +1,506 @@
+[
+  {
+    "id": "ap-2023h-pm-q1",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "ランサムウェア",
+      "CSIRT",
+      "EDR"
+    ],
+    "difficulty": 5,
+    "question": "問1 マルウェア対策",
+    "answer": "問１\n\n                       出題趣旨\n 昨今，ランサムウェアによるサイバーインシデントが多発しており，予防対策に加えてインシデント対応を\n含めたインシデントハンドリングの高度化に向けた取組が，多くの企業で進められている。\n 本問では，インシデント発生を想定したマルウェア対策を題材に，サイバーセキュリティ対策としてのイン\nシデント対応と社員教育に関する基本的な理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ウ\n         (2)  a  5\n 設問２(1) 5\n         (2) イ\n 設問３(1) イ\n         (2)  b  3\n                                           順不同\n              c  6\n              d  5\n         (3) ア，ウ\n 設問４(1) ア\n         (2) PC から切り離して保管する。",
+    "modelAnswer": "問１\n\n                       出題趣旨\n 昨今，ランサムウェアによるサイバーインシデントが多発しており，予防対策に加えてインシデント対応を\n含めたインシデントハンドリングの高度化に向けた取組が，多くの企業で進められている。\n 本問では，インシデント発生を想定したマルウェア対策を題材に，サイバーセキュリティ対策としてのイン\nシデント対応と社員教育に関する基本的な理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ウ\n         (2)  a  5\n 設問２(1) 5\n         (2) イ\n 設問３(1) イ\n         (2)  b  3\n                                           順不同\n              c  6\n              d  5\n         (3) ア，ウ\n 設問４(1) ア\n         (2) PC から切り離して保管する。",
+    "explanation": "ランサムウェア感染時は、被害を広げないために端末をネットワークから切り離す対応を優先する。攻撃段階は、暗号化による被害とC&C通信・外部への持出しを区別して判定する。端末上の不審な振る舞いを監視するEDRと、組織として対応を進めるCSIRTの役割を混同しない。対応手順の整備だけでなく、社員への周知と訓練、端末から切り離したバックアップの保管まで含めて再発・被害拡大に備える。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=4) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-04.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-05.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-06.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-07.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-08.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問1 マルウェア対策（公式問題PDF 4ページ）",
+      "応用情報技術者 2023年度春期 午後 問1 マルウェア対策（公式問題PDF 5ページ）",
+      "応用情報技術者 2023年度春期 午後 問1 マルウェア対策（公式問題PDF 6ページ）",
+      "応用情報技術者 2023年度春期 午後 問1 マルウェア対策（公式問題PDF 7ページ）",
+      "応用情報技術者 2023年度春期 午後 問1 マルウェア対策（公式問題PDF 8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q1-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q2",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "ブルーオーシャン戦略",
+      "収益モデル",
+      "予防保守"
+    ],
+    "difficulty": 5,
+    "question": "問2 中堅の電子機器製造販売会社の経営戦略",
+    "answer": "問２\n\n                       出題趣旨\n 昨今，今まで均衡していた市場に他業界の企業が新規参入してくることがあり，その場合には，競争が激化\nすることが予想されるので，事業環境の変化を適切に認識し，その対応のための経営戦略を策定する必要があ\nる。\n 本問では，電子機器製造販売会社におけるブルーオーシャン戦略策定を題材に，経営戦略策定に関する基本\n的な知識，及び理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n設問１  (1) エ\n         (2) 設定スキルの習得に人手を割けないこと\n         (3)  a イ\n設問２  (1)  b イ\n         (2) リピート受注率を高めること\n         (3) 可能となること ① ・タイムリーな予防保守\n               ② ・詳細な故障部位の把握\n         メリット   要員が計画的に作業できる。\n         (4) 値引き価格を印字したバーコードラベルを貼る適切な時刻を通知する機能",
+    "modelAnswer": "問２\n\n                       出題趣旨\n 昨今，今まで均衡していた市場に他業界の企業が新規参入してくることがあり，その場合には，競争が激化\nすることが予想されるので，事業環境の変化を適切に認識し，その対応のための経営戦略を策定する必要があ\nる。\n 本問では，電子機器製造販売会社におけるブルーオーシャン戦略策定を題材に，経営戦略策定に関する基本\n的な知識，及び理解を問う。\n\n\n  設問                解答例・解答の要点                備考\n設問１  (1) エ\n         (2) 設定スキルの習得に人手を割けないこと\n         (3)  a イ\n設問２  (1)  b イ\n         (2) リピート受注率を高めること\n         (3) 可能となること ① ・タイムリーな予防保守\n               ② ・詳細な故障部位の把握\n         メリット   要員が計画的に作業できる。\n         (4) 値引き価格を印字したバーコードラベルを貼る適切な時刻を通知する機能",
+    "explanation": "競合のない市場を開く方針と、顧客の負担を軽くする価値を結び付けて読む。プリンター本体だけでなく消耗品や保守、情報システムの機能まで含めた収益の仕組みが重要になる。故障データを事前に取得すると、必要な部品や訪問時期を判断でき、予防保守と計画的な要員配置につながる。製品開発・メンテナンス・情報提供への資源配分を戦略キャンバスと照合し、食品廃棄削減を支援する機能も顧客価値として整理する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=10) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-10.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-11.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-12.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-13.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-14.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問2 中堅の電子機器製造販売会社の経営戦略（公式問題PDF 10ページ）",
+      "応用情報技術者 2023年度春期 午後 問2 中堅の電子機器製造販売会社の経営戦略（公式問題PDF 11ページ）",
+      "応用情報技術者 2023年度春期 午後 問2 中堅の電子機器製造販売会社の経営戦略（公式問題PDF 12ページ）",
+      "応用情報技術者 2023年度春期 午後 問2 中堅の電子機器製造販売会社の経営戦略（公式問題PDF 13ページ）",
+      "応用情報技術者 2023年度春期 午後 問2 中堅の電子機器製造販売会社の経営戦略（公式問題PDF 14ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q2-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問2 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q3",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "カラツバ法",
+      "配列",
+      "再帰"
+    ],
+    "difficulty": 5,
+    "question": "問3 多倍長整数の演算",
+    "answer": "問３\n\n                       出題趣旨\n 桁数が非常に大きい整数の演算は，数学における学問的な用途のほか，暗号処理の分野などで実用化されて\nいるアルゴリズムである。\n 本問では，任意桁数の整数の乗算処理を題材に，多倍長整数の演算のアルゴリズムの一つであるカラツバ法\nに関するアルゴリズムの理解と実装について問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ア 3×7\n       イ 4×12\n  設問２  ①  48 ②  260 ③  48 ④  84\n  設問３  ウ  pow(3, i － 1)\n       エ  3*(i － 1)\n       オ  pe.val1\n                                           順不同\n       カ  pe.val2\n  設問４  キ  mod(mul, 10)\n       ク  elements[cidx ＋ 2]\n       ケ  elements[cidx]\n  設問５    2 × N",
+    "modelAnswer": "問３\n\n                       出題趣旨\n 桁数が非常に大きい整数の演算は，数学における学問的な用途のほか，暗号処理の分野などで実用化されて\nいるアルゴリズムである。\n 本問では，任意桁数の整数の乗算処理を題材に，多倍長整数の演算のアルゴリズムの一つであるカラツバ法\nに関するアルゴリズムの理解と実装について問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ア 3×7\n       イ 4×12\n  設問２  ①  48 ②  260 ③  48 ④  84\n  設問３  ウ  pow(3, i － 1)\n       エ  3*(i － 1)\n       オ  pe.val1\n                                           順不同\n       カ  pe.val2\n  設問４  キ  mod(mul, 10)\n       ク  elements[cidx ＋ 2]\n       ケ  elements[cidx]\n  設問５    2 × N",
+    "explanation": "多倍長整数は1の位から配列に格納するので、数の上位・下位と配列の左右を混同しない。カラツバ法では四つの半分サイズの積をそのまま計算する代わりに、上位同士・下位同士・和同士の三つの積から交差項を求める。ツリー構築では次の層の開始位置と三つの子ノードの位置、演算では下層の結果を使える順序を追う。桁ごとの加算と、最後の繰り上がり処理を分けて確認すると、添字や10の累乗の誤りを防げる。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=16) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-16.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-17.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-18.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-19.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-20.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問3 多倍長整数の演算（公式問題PDF 16ページ）",
+      "応用情報技術者 2023年度春期 午後 問3 多倍長整数の演算（公式問題PDF 17ページ）",
+      "応用情報技術者 2023年度春期 午後 問3 多倍長整数の演算（公式問題PDF 18ページ）",
+      "応用情報技術者 2023年度春期 午後 問3 多倍長整数の演算（公式問題PDF 19ページ）",
+      "応用情報技術者 2023年度春期 午後 問3 多倍長整数の演算（公式問題PDF 20ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q3-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問3 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q4",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "SPA",
+      "Web API",
+      "キャッシュ"
+    ],
+    "difficulty": 5,
+    "question": "問4 ITニュース配信サービスの再構築",
+    "answer": "問４\n\n                       出題趣旨\n  近年，Web ブラウザ上で実行されるスクリプトライブラリの充実に伴い，SPA（Single Page Application）構\n成のレスポンシブWeb デザインを採用したWeb システムが増えつつある。\n  本問では，IT ニュース配信サービスの再構築を題材に，SPA 構成の基本的な理解，キャッシュサーバを導入\nしたシステム方式設計の理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a ア\n         (2)  b  JSON\n         (3) 参照回数の多い記事\n  設問２     c  280\n              d  200\n              e  138\n              f  246\n 設問３(1)  g  ITNewsDetail\n              h  ITNewsHeadline\n         (2) IT ニュース一覧と各記事に関連する記事の一覧が更新されない。\n         (3) 記事間の遷移がWeb サーバのアクセスログのURL では解析できないから",
+    "modelAnswer": "問４\n\n                       出題趣旨\n  近年，Web ブラウザ上で実行されるスクリプトライブラリの充実に伴い，SPA（Single Page Application）構\n成のレスポンシブWeb デザインを採用したWeb システムが増えつつある。\n  本問では，IT ニュース配信サービスの再構築を題材に，SPA 構成の基本的な理解，キャッシュサーバを導入\nしたシステム方式設計の理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1)  a ア\n         (2)  b  JSON\n         (3) 参照回数の多い記事\n  設問２     c  280\n              d  200\n              e  138\n              f  246\n 設問３(1)  g  ITNewsDetail\n              h  ITNewsHeadline\n         (2) IT ニュース一覧と各記事に関連する記事の一覧が更新されない。\n         (3) 記事間の遷移がWeb サーバのアクセスログのURL では解析できないから",
+    "explanation": "端末ごとの表示はCSSで調整し、動的データをWeb API経由で受け取るSPAの役割を整理する。平均応答時間は、キャッシュ命中時と未命中時の時間をそれぞれの割合で重み付けし、画面表示までに必要なAPIの呼出し時間を加算する。API呼出しの順序はブラウザとの往復回数にも影響する。CPU負荷によって更新処理を見送る場合はキャッシュ内容が古くなり、SPAでは記事表示がAPへ記録されない点にも注意して、更新とアクセス解析の方式を考える。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=22) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-22.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-23.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-24.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-25.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-26.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問4 ITニュース配信サービスの再構築（公式問題PDF 22ページ）",
+      "応用情報技術者 2023年度春期 午後 問4 ITニュース配信サービスの再構築（公式問題PDF 23ページ）",
+      "応用情報技術者 2023年度春期 午後 問4 ITニュース配信サービスの再構築（公式問題PDF 24ページ）",
+      "応用情報技術者 2023年度春期 午後 問4 ITニュース配信サービスの再構築（公式問題PDF 25ページ）",
+      "応用情報技術者 2023年度春期 午後 問4 ITニュース配信サービスの再構築（公式問題PDF 26ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q4-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問4 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問4。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q5",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "DNS",
+      "NAT",
+      "DNSラウンドロビン"
+    ],
+    "difficulty": 5,
+    "question": "問5 Webサイトの増設",
+    "answer": "問５\n\n                       出題趣旨\n 情報の活用が企業活動に不可欠となっていることから，インターネット上で情報を提供するシステムには安\n定したサービスの提供が求められる。そこで，利用状況の変化に合わせたシステム構成の見直しは必須となっ\nている。\n  本問では，DNS ラウンドロビンを利用したWeb サイトの負荷分散を題材に，インターネットの利用において不\n可欠の役割をもつDNS の仕組みや動作について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) FWf\n         (2) L3SW，FWb，L2SWb\n 設問２(1)  a  miap.example.jp\n         (2) apb.f-sha.example.lan\n 設問３(1)  b  DNS サーバc\n              c ゾーン\n              d  TTL\n         (2) M システムの応答速度が低下することがある。\n         (3) ログイン中の利用者がいないこと",
+    "modelAnswer": "問５\n\n                       出題趣旨\n 情報の活用が企業活動に不可欠となっていることから，インターネット上で情報を提供するシステムには安\n定したサービスの提供が求められる。そこで，利用状況の変化に合わせたシステム構成の見直しは必須となっ\nている。\n  本問では，DNS ラウンドロビンを利用したWeb サイトの負荷分散を題材に，インターネットの利用において不\n可欠の役割をもつDNS の仕組みや動作について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) FWf\n         (2) L3SW，FWb，L2SWb\n 設問２(1)  a  miap.example.jp\n         (2) apb.f-sha.example.lan\n 設問３(1)  b  DNS サーバc\n              c ゾーン\n              d  TTL\n         (2) M システムの応答速度が低下することがある。\n         (3) ログイン中の利用者がいないこと",
+    "explanation": "内部のプライベートIPと外部公開用グローバルIPを分け、DNSの名前解決と実際のパケット経路を追う。DNSラウンドロビンでは同じ名前に複数のAレコードを対応させ、二つのサイトへアクセスを分散する。プライマリとセカンダリの情報同期はゾーン転送の役割である。メンテナンス前にTTLを短くしても、既にキャッシュされた情報は直ちに消えないため、Aレコードを無効にした後にアクセスが停止したことを確認して作業を始める。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=28) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=3)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-28.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-29.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-30.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-31.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問5 Webサイトの増設（公式問題PDF 28ページ）",
+      "応用情報技術者 2023年度春期 午後 問5 Webサイトの増設（公式問題PDF 29ページ）",
+      "応用情報技術者 2023年度春期 午後 問5 Webサイトの増設（公式問題PDF 30ページ）",
+      "応用情報技術者 2023年度春期 午後 問5 Webサイトの増設（公式問題PDF 31ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q5-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問5 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問5。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q6",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "SQL",
+      "外部結合",
+      "KPI"
+    ],
+    "difficulty": 5,
+    "question": "問6 KPI達成状況集計システムの開発",
+    "answer": "問６\n\n                       出題趣旨\n 正規化された表を扱う処理では，複数のシンプルな処理への機能分割や，機能分割した処理結果の統合，再\n利用によって，構築工数の削減を図れることがある。\n  本問では，KPI 達成状況集計システムの開発を題材に，集合関数，表結合などによる関係データベースのデー\nタ操作に関する知識，技能を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a →\n              b 従業員コード\n\n 設問２(1)  c  INNER JOIN\n              d  LEFT OUTER JOIN\n              e  BETWEEN\n              f B.職務区分 = '02'\n              g  GROUP BY 従業員コード, KPI コード\n              h 組織ごと_目標実績集計_一時\n              i  COUNT(*)\n         (2) 該当従業員のKPI 項目に対する実績データが，1 件も存在しない場合",
+    "modelAnswer": "問６\n\n                       出題趣旨\n 正規化された表を扱う処理では，複数のシンプルな処理への機能分割や，機能分割した処理結果の統合，再\n利用によって，構築工数の削減を図れることがある。\n  本問では，KPI 達成状況集計システムの開発を題材に，集合関数，表結合などによる関係データベースのデー\nタ操作に関する知識，技能を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a →\n              b 従業員コード\n\n 設問２(1)  c  INNER JOIN\n              d  LEFT OUTER JOIN\n              e  BETWEEN\n              f B.職務区分 = '02'\n              g  GROUP BY 従業員コード, KPI コード\n              h 組織ごと_目標実績集計_一時\n              i  COUNT(*)\n         (2) 該当従業員のKPI 項目に対する実績データが，1 件も存在しない場合",
+    "explanation": "集計対象は集計日現在の組織・所属と一般職の従業員であり、年度途中の入社・退職や所属期間を条件へ反映する。年度開始月に作られた目標のない従業員を除く結合と、実績のない従業員も残す結合は目的が異なる。月別目標と日別実績を先に従業員・KPI単位へ集計してから結合し、実績がNULLのときはCOALESCEで0を使う。組織集計では目標・実績の合計に加え、対象従業員数を正しく数える。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=32) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=3)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-32.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-33.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-34.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-35.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-36.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問6 KPI達成状況集計システムの開発（公式問題PDF 32ページ）",
+      "応用情報技術者 2023年度春期 午後 問6 KPI達成状況集計システムの開発（公式問題PDF 33ページ）",
+      "応用情報技術者 2023年度春期 午後 問6 KPI達成状況集計システムの開発（公式問題PDF 34ページ）",
+      "応用情報技術者 2023年度春期 午後 問6 KPI達成状況集計システムの開発（公式問題PDF 35ページ）",
+      "応用情報技術者 2023年度春期 午後 問6 KPI達成状況集計システムの開発（公式問題PDF 36ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q6-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問6 公式解答例（公式PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問6。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q7",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "組込みシステム",
+      "タイマー",
+      "消費電力"
+    ],
+    "difficulty": 5,
+    "question": "問7 位置通知タグの設計",
+    "answer": "問７\n\n                       出題趣旨\n  近年，移動中でも通信可能なIoT 向けの通信方式が実用化されており，低消費電力で稼働する測位モジュー\nルも市販されている。\n 本問では，低消費電力であることで長時間使用できる位置通知タグを題材に，構成する各モジュールの消費\n電流から使用可能な時間を計算する能力，間欠動作することで消費電力が少なくなることへの理解，各ハード\nウェアモジュール間のメッセージのやり取りを考察する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１    39\n  設問２     a  246\n 設問３(1)  b 前回の送信から600 秒経過又は位置通知要求あり\n         (2)  c メッセージ名   受信要求\n        メッセージの方向 ←\n              d メッセージ名   測位可能通知\n        メッセージの方向 →\n              e メッセージ名   通信可能通知\n        メッセージの方向 →\n  設問4  通信モジュールとの通信と測位モジュールとの通信が同時に発生した。",
+    "modelAnswer": "問７\n\n                       出題趣旨\n  近年，移動中でも通信可能なIoT 向けの通信方式が実用化されており，低消費電力で稼働する測位モジュー\nルも市販されている。\n 本問では，低消費電力であることで長時間使用できる位置通知タグを題材に，構成する各モジュールの消費\n電流から使用可能な時間を計算する能力，間欠動作することで消費電力が少なくなることへの理解，各ハード\nウェアモジュール間のメッセージのやり取りを考察する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１    39\n  設問２     a  246\n 設問３(1)  b 前回の送信から600 秒経過又は位置通知要求あり\n         (2)  c メッセージ名   受信要求\n        メッセージの方向 ←\n              d メッセージ名   測位可能通知\n        メッセージの方向 →\n              e メッセージ名   通信可能通知\n        メッセージの方向 →\n  設問4  通信モジュールとの通信と測位モジュールとの通信が同時に発生した。",
+    "explanation": "周期処理の平均消費電流は、各処理の電流に動作時間と周期の比を掛けて合計し、常時消費する電流も加える。電池容量を平均消費電流で割れば使用可能時間を求められる。シーケンス図は、要求を確認する40秒周期と、測位する120秒周期、送信する600秒周期の条件を切り分けて追う。二つのタイマーによる通知がずれると処理が重なって要求確認を逃すため、単一周期を基準に経過時間で各処理の実行を判断する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=38) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=4)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-38.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-39.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-40.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-41.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-42.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問7 位置通知タグの設計（公式問題PDF 38ページ）",
+      "応用情報技術者 2023年度春期 午後 問7 位置通知タグの設計（公式問題PDF 39ページ）",
+      "応用情報技術者 2023年度春期 午後 問7 位置通知タグの設計（公式問題PDF 40ページ）",
+      "応用情報技術者 2023年度春期 午後 問7 位置通知タグの設計（公式問題PDF 41ページ）",
+      "応用情報技術者 2023年度春期 午後 問7 位置通知タグの設計（公式問題PDF 42ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q7-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問7 公式解答例（公式PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問7。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q8",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "Git",
+      "ブランチ",
+      "リバート"
+    ],
+    "difficulty": 5,
+    "question": "問8 バージョン管理ツールの運用",
+    "answer": "問８\n\n                       出題趣旨\n システムを開発するに当たって，ソースコードの構成管理を適切に行うことは非常に重要である。\n 本問では，バージョン管理ツールのブランチ運用ルールを題材に，バージョン管理ツールの機能や特徴につ\nいての基本的な理解と応用力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ロックの解除\n  設問２     a  develop\n              b  main\n              c コミット\n  設問３  (オ)のコミットをリバートし，次に(ウ)のコミットをリバートする。\n  設問４   下線③ ウ\n       下線④ エ\n  設問５    develop ブランチの内容をfeature ブランチにマージする。",
+    "modelAnswer": "問８\n\n                       出題趣旨\n システムを開発するに当たって，ソースコードの構成管理を適切に行うことは非常に重要である。\n 本問では，バージョン管理ツールのブランチ運用ルールを題材に，バージョン管理ツールの機能や特徴につ\nいての基本的な理解と応用力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１  ロックの解除\n  設問２     a  develop\n              b  main\n              c コミット\n  設問３  (オ)のコミットをリバートし，次に(ウ)のコミットをリバートする。\n  設問４   下線③ ウ\n       下線④ エ\n  設問５    develop ブランチの内容をfeature ブランチにマージする。",
+    "explanation": "mainは運用版、developは開発全体、featureは各機能、releaseはリリース前の確認という役割を踏まえて図を追う。変更を取り消すリバートは履歴を削除する操作ではなく、逆の変更を追加する操作なので、後のコミットから順に打ち消す。単体テストと、変更箇所以外を含むリグレッションテストの目的も分ける。長期間残るfeatureではdevelopとの差が広がるため、developを適宜featureへマージして、最後にまとめて競合が生じる負担を減らす。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=44) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=4)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-44.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-45.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-46.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-47.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-48.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問8 バージョン管理ツールの運用（公式問題PDF 44ページ）",
+      "応用情報技術者 2023年度春期 午後 問8 バージョン管理ツールの運用（公式問題PDF 45ページ）",
+      "応用情報技術者 2023年度春期 午後 問8 バージョン管理ツールの運用（公式問題PDF 46ページ）",
+      "応用情報技術者 2023年度春期 午後 問8 バージョン管理ツールの運用（公式問題PDF 47ページ）",
+      "応用情報技術者 2023年度春期 午後 問8 バージョン管理ツールの運用（公式問題PDF 48ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q8-p04.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問8 公式解答例（公式PDF 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問8。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q9",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 9,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "移行計画",
+      "リスクマネジメント",
+      "IaaS"
+    ],
+    "difficulty": 5,
+    "question": "問9 金融機関システムの移行プロジェクト",
+    "answer": "問９\n\n                       出題趣旨\n 多くの情報システムで，システム更改の際に，旧システムから新システムへの移行が発生する。このため，\n移行作業を計画的に推進し，円滑にサービスインを行うことがプロジェクトマネージャには求められる。\n 本問では，金融機関の既存システムのクラウドサービスへの移行を題材に，プロジェクト計画の作成，ステ\nークホルダマネジメント，リスクマネジメントに関する理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) 営業日に業務の停止が不要\n         (2) エ\n         (3) IaaS 利用による構築期間とコスト\n 設問２(1) ステアリングコミッティで本番データを用いたテストの承認を得る。\n         (2) エスカレーション対応の開発課リソースの拡充\n         (3) 移行判定基準書\n 設問３(1)  a オ\n              b ア\n         (2) 追加発生する保守費用の確保",
+    "modelAnswer": "問９\n\n                       出題趣旨\n 多くの情報システムで，システム更改の際に，旧システムから新システムへの移行が発生する。このため，\n移行作業を計画的に推進し，円滑にサービスインを行うことがプロジェクトマネージャには求められる。\n 本問では，金融機関の既存システムのクラウドサービスへの移行を題材に，プロジェクト計画の作成，ステ\nークホルダマネジメント，リスクマネジメントに関する理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) 営業日に業務の停止が不要\n         (2) エ\n         (3) IaaS 利用による構築期間とコスト\n 設問２(1) ステアリングコミッティで本番データを用いたテストの承認を得る。\n         (2) エスカレーション対応の開発課リソースの拡充\n         (3) 移行判定基準書\n 設問３(1)  a オ\n              b ア\n         (2) 追加発生する保守費用の確保",
+    "explanation": "一括移行は拠点間の日程調整や並行運用の負担を抑え、営業日を避けることで業務への影響も抑える。IaaSの選定では構築期間・コストだけでなく、利用者側と提供者側のセキュリティ責任を明確にする。本番データによるテストなど重要なリスク判断は、ステアリングコミッティの承認を得る。定性的な発生確率・影響度の評価と定量的な分析を区別し、期限に遅れる場合の保守費用確保まで計画に含める。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=50) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=5)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-50.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-51.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-52.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-53.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-54.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問9 金融機関システムの移行プロジェクト（公式問題PDF 50ページ）",
+      "応用情報技術者 2023年度春期 午後 問9 金融機関システムの移行プロジェクト（公式問題PDF 51ページ）",
+      "応用情報技術者 2023年度春期 午後 問9 金融機関システムの移行プロジェクト（公式問題PDF 52ページ）",
+      "応用情報技術者 2023年度春期 午後 問9 金融機関システムの移行プロジェクト（公式問題PDF 53ページ）",
+      "応用情報技術者 2023年度春期 午後 問9 金融機関システムの移行プロジェクト（公式問題PDF 54ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q9-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問9 公式解答例（公式PDF 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問9。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q10",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 10,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "SLA",
+      "可用性",
+      "事業継続"
+    ],
+    "difficulty": 5,
+    "question": "問10 クラウドサービスのサービス可用性管理",
+    "answer": "問10\n\n                       出題趣旨\n 従来，低コストや導入のしやすさの点でメリットがあると評価されていたクラウドサービスだが，昨今は可\n用性の高さにも着目され，その利用が急速に進んでいる。\n 本問では，自動車部品製造販売会社のクラウドサービスの利用を題材に，クラウドサービスを利用した場合\nのサービス可用性管理，及び可用性の向上策の理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ア\n         (2)  a 信頼\n 設問２(1)  b  180\n         (2) サービス回復までの最大時間\n         (3) 計画停止時間を考慮して経理部の勤務時間を定めること\n 設問３(1) イ，エ\n         (2) バックアップの遠隔地保管を廃止すること\n         (3) ア\n         (4) 重要事業機能の支援度合い",
+    "modelAnswer": "問10\n\n                       出題趣旨\n 従来，低コストや導入のしやすさの点でメリットがあると評価されていたクラウドサービスだが，昨今は可\n用性の高さにも着目され，その利用が急速に進んでいる。\n 本問では，自動車部品製造販売会社のクラウドサービスの利用を題材に，クラウドサービスを利用した場合\nのサービス可用性管理，及び可用性の向上策の理解について問う。\n\n\n  設問                解答例・解答の要点                 備考\n 設問１(1) ア\n         (2)  a 信頼\n 設問２(1)  b  180\n         (2) サービス回復までの最大時間\n         (3) 計画停止時間を考慮して経理部の勤務時間を定めること\n 設問３(1) イ，エ\n         (2) バックアップの遠隔地保管を廃止すること\n         (3) ア\n         (4) 重要事業機能の支援度合い",
+    "explanation": "MTBFは長く、MTRSは短い方が、サービスを安定して提供しやすい。稼働率は合意したサービス時間を分母にして計算するため、計画停止や営業時間の扱いをそろえる。月間の稼働率目標を達成しても重要な支払日に停止すれば業務影響は大きく、復旧までの最大時間を別の指標として定める意味がある。遠隔地への同期は、誤削除やマルウェアによる破壊も反映し得るので、独立したバックアップの代わりにはならない。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=56) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=5)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-56.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-57.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-58.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-59.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-60.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-61.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問10 クラウドサービスのサービス可用性管理（公式問題PDF 56ページ）",
+      "応用情報技術者 2023年度春期 午後 問10 クラウドサービスのサービス可用性管理（公式問題PDF 57ページ）",
+      "応用情報技術者 2023年度春期 午後 問10 クラウドサービスのサービス可用性管理（公式問題PDF 58ページ）",
+      "応用情報技術者 2023年度春期 午後 問10 クラウドサービスのサービス可用性管理（公式問題PDF 59ページ）",
+      "応用情報技術者 2023年度春期 午後 問10 クラウドサービスのサービス可用性管理（公式問題PDF 60ページ）",
+      "応用情報技術者 2023年度春期 午後 問10 クラウドサービスのサービス可用性管理（公式問題PDF 61ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q10-p05.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問10 公式解答例（公式PDF 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問10。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "ap-2023h-pm-q11",
+    "exam": "ap",
+    "year": 2023,
+    "season": "spring",
+    "session": "pm",
+    "qNumber": 11,
+    "type": "descriptive",
+    "category": "午後記述",
+    "topicTags": [
+      "システム監査",
+      "在庫管理",
+      "アクセス管理"
+    ],
+    "difficulty": 5,
+    "question": "問11 工場在庫管理システムの監査",
+    "answer": "問11\n\n                       出題趣旨\n 業務プロセスを支援するシステムは，不正リスクに対応した機能・コントロールを組み込むことが求められ\nる。システム監査において，業務プロセスを理解した上で不正リスクを識別し，これに対応したIT の機能及び\nコントロールを評価する監査手続を実施する必要がある。\n 本問では，工場在庫管理システムを事例として，不正リスクを想定しながらシステムの運用状況を確かめる\nための監査手続を検討する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a ログイン\n  設問２  カ\n  設問３     d イ\n  設問４     e ア\n  設問５     f 実地棚卸リスト\n              g 在庫データ\n              h 他人の利用者ID",
+    "modelAnswer": "問11\n\n                       出題趣旨\n 業務プロセスを支援するシステムは，不正リスクに対応した機能・コントロールを組み込むことが求められ\nる。システム監査において，業務プロセスを理解した上で不正リスクを識別し，これに対応したIT の機能及び\nコントロールを評価する監査手続を実施する必要がある。\n 本問では，工場在庫管理システムを事例として，不正リスクを想定しながらシステムの運用状況を確かめる\nための監査手続を検討する能力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a ログイン\n  設問２  カ\n  設問３     d イ\n  設問４     e ア\n  設問５     f 実地棚卸リスト\n              g 在庫データ\n              h 他人の利用者ID",
+    "explanation": "監査では、正常に処理されたかを確認する手続と、不正を防ぐ統制が有効かを確かめる手続を区別する。原料の入庫はアップロードした購買管理側のデータと照合し、正確性と網羅性を調べる。出庫の自動計算は原料標準使用量の設定と実在庫の差異に着目する。実地棚卸では、差異がない品目への不正な在庫調整も確認対象になる。共用端末に他人のIDでログインしたまま使う運用は、利用者リストの点検だけでは捉えられない。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf#page=62) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf#page=6)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/page-62.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-63.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-64.webp",
+      "/questions/ipa/ap/2023-spring-pm/page-65.webp"
+    ],
+    "imageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問11 工場在庫管理システムの監査（公式問題PDF 62ページ）",
+      "応用情報技術者 2023年度春期 午後 問11 工場在庫管理システムの監査（公式問題PDF 63ページ）",
+      "応用情報技術者 2023年度春期 午後 問11 工場在庫管理システムの監査（公式問題PDF 64ページ）",
+      "応用情報技術者 2023年度春期 午後 問11 工場在庫管理システムの監査（公式問題PDF 65ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/ap/2023-spring-pm/answer-q11-p06.webp"
+    ],
+    "answerImageAltTexts": [
+      "応用情報技術者 2023年度春期 午後 問11 公式解答例（公式PDF 6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_ap_pm_ans.pdf",
+    "sourceAttribution": "出典：IPA 応用情報技術者 2023年度春期 午後 問11。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

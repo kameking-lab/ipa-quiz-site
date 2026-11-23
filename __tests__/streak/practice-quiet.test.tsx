@@ -5,7 +5,10 @@ import { StreakTracker } from "@/lib/streak/StreakTracker";
 const mock = vi.hoisted(() => ({ pathname: "/quiz", record: vi.fn() }));
 vi.mock("next/navigation", () => ({ usePathname: () => mock.pathname }));
 vi.mock("@/lib/storage/history", () => ({ createHistoryStore: () => ({ getAllEntries: () => [{ at: Date.now() }] }) }));
-vi.mock("@/lib/streak/storage", () => ({ recordStudyToday: mock.record }));
+vi.mock("@/lib/streak/storage", async importOriginal => ({
+  ...await importOriginal<typeof import("@/lib/streak/storage")>(),
+  recordStudyToday: mock.record,
+}));
 beforeEach(() => {
   localStorage.clear();
   mock.record.mockReset().mockReturnValue({ reachedMilestone: 7 });

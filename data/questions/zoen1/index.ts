@@ -7,6 +7,7 @@ import supplement8Json from "./2026-september-supplement8.json";
 import supplement9Json from "./2026-september-supplement9.json";
 import supplement10Json from "./2026-september-supplement10.json";
 import supplement11Json from "./2026-september-supplement11.json";
+import secondary2025Json from "./2025-secondary.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -94,7 +95,7 @@ function toQuestions(source: Source, lastUpdated = "2026-09-27"): Question[] {
   });
 }
 
-/** 令和8年度第一次検定。公式の全65問（問題A36問・問題B29問）を収録。 */
+/** 令和8年度第一次65問と令和7年度第二次4原問（独自解答例）。 */
 export const ZOEN1_QUESTIONS = [
   ...toQuestions(sourceJson as Source),
   ...toQuestions(supplementJson as Source, "2026-10-11"),
@@ -104,7 +105,8 @@ export const ZOEN1_QUESTIONS = [
   ...toQuestions(supplement9Json as Source, "2026-10-11"),
   ...toQuestions(supplement10Json as Source, "2026-10-11"),
   ...toQuestions(supplement11Json as Source, "2026-11-06"),
-].sort((a, b) => a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
+  ...(secondary2025Json as Question[]),
+].sort((a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber);
 
 if (new Set(ZOEN1_QUESTIONS.map((question) => question.id)).size !== ZOEN1_QUESTIONS.length) {
   throw new Error("Duplicate zoen1 question IDs");

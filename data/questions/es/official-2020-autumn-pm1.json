@@ -1,0 +1,151 @@
+[
+  {
+    "id": "es-2020a-pm1-q1",
+    "exam": "es",
+    "year": 2020,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "日本円紙幣整理機"
+    ],
+    "difficulty": 5,
+    "question": "問1 日本円紙幣整理機",
+    "answer": "問１\n                       出題趣旨\n   2024 年に新紙幣発行が予定されており，紙幣に注目が集まっている。日本の金融機関は，金種ごとに紙幣を\n束にして整理するために，紙幣整理機を導入している。\n 本問では，日本円紙幣整理機を題材として，組込みシステム技術者に必要とされる基本的なシステム設計能\n力，リアルタイムOS を用いたシステムについての理解力，及び仕様変更要求への対応能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 紙幣の裏表と向き\n        (2) ㋑，㋓\n        (3) 7\n 設問２(1)  a 束タスク\n             b 投入口のモータ\n                                           順不同\n             c 搬送路のモータ\n             d 停止して\n             e 管理番号の取得依頼\n        (2)  f 紙幣タスクの生成\n             g 搬送完了通知\n                                           順不同\n             h 返却完了通知\n 設問３(1)  i 指定された通貨及び金種の紙幣鑑別用データを紙幣鑑別ユニットに送信する\n        (2)  j 紙幣検出をセンサタスクに依頼する場合は，指定された通貨及び金種に合わ\n        せた該当するセンサの計測時間",
+    "modelAnswer": "問１\n                       出題趣旨\n   2024 年に新紙幣発行が予定されており，紙幣に注目が集まっている。日本の金融機関は，金種ごとに紙幣を\n束にして整理するために，紙幣整理機を導入している。\n 本問では，日本円紙幣整理機を題材として，組込みシステム技術者に必要とされる基本的なシステム設計能\n力，リアルタイムOS を用いたシステムについての理解力，及び仕様変更要求への対応能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) 紙幣の裏表と向き\n        (2) ㋑，㋓\n        (3) 7\n 設問２(1)  a 束タスク\n             b 投入口のモータ\n                                           順不同\n             c 搬送路のモータ\n             d 停止して\n             e 管理番号の取得依頼\n        (2)  f 紙幣タスクの生成\n             g 搬送完了通知\n                                           順不同\n             h 返却完了通知\n 設問３(1)  i 指定された通貨及び金種の紙幣鑑別用データを紙幣鑑別ユニットに送信する\n        (2)  j 紙幣検出をセンサタスクに依頼する場合は，指定された通貨及び金種に合わ\n        せた該当するセンサの計測時間",
+    "explanation": "紙幣の向き、経路、各センサの検出を工程ごとに追う。停止後に残った紙幣を処理する条件を起動時の制御と区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2020-autumn-pm1/page-02.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-03.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-04.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-05.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-06.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-07.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-08.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 本文・設問（PDF 2ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 本文・設問（PDF 3ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 本文・設問（PDF 4ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 本文・設問（PDF 5ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 本文・設問（PDF 6ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 本文・設問（PDF 7ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 本文・設問（PDF 8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2020-autumn-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1 公式解答例（PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm1_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2020a-pm1-q2",
+    "exam": "es",
+    "year": 2020,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "組込みシステム",
+    "topicTags": [
+      "所有者を追尾するスーツケース"
+    ],
+    "difficulty": 5,
+    "question": "問2 所有者を追尾するスーツケース",
+    "answer": "問２\n                       出題趣旨\n 掃除ロボットに代表される自走ロボットが生活の様々な場面で登場してきた。自走するスーツケースも既に\n製品化されている状況である。近年では，カメラやセンサの高度化に加え，AI の進化によって，より精度の高\nい自動走行が可能になっている。\n 本問では，所有者の後方を自動的に追尾するスーツケースを題材として，追尾方法に関する仕様の理解力，\n自動的に追尾するための機能を実現するタスク設計能力，及び盗難防止のための機能追加を通じて応用力を問\nう。\n\n\n  設問                解答例・解答の要点                備考\n 設問１  (1) ① ・異常な加速度の検出\n       ② ・スマホからの指示\n         (2) 最後に測位が成功したときの目標位置まで移動し，その位置で停止する。\n 設問２  (1) スマホに測位情報を送信する。\n         (2) 8\n         (3) 57\n         (4) スーツケースが段差まで走行してしまう。\n 設問３  (1) 測位ユニット，加速度センサ，施錠・解錠ユニット\n         (2)  a 測位情報\n              b 加速度異常\n         (3) ブレスレットからの距離が，2 メートル未満から2 メートル以上に変化した。",
+    "modelAnswer": "問２\n                       出題趣旨\n 掃除ロボットに代表される自走ロボットが生活の様々な場面で登場してきた。自走するスーツケースも既に\n製品化されている状況である。近年では，カメラやセンサの高度化に加え，AI の進化によって，より精度の高\nい自動走行が可能になっている。\n 本問では，所有者の後方を自動的に追尾するスーツケースを題材として，追尾方法に関する仕様の理解力，\n自動的に追尾するための機能を実現するタスク設計能力，及び盗難防止のための機能追加を通じて応用力を問\nう。\n\n\n  設問                解答例・解答の要点                備考\n 設問１  (1) ① ・異常な加速度の検出\n       ② ・スマホからの指示\n         (2) 最後に測位が成功したときの目標位置まで移動し，その位置で停止する。\n 設問２  (1) スマホに測位情報を送信する。\n         (2) 8\n         (3) 57\n         (4) スーツケースが段差まで走行してしまう。\n 設問３  (1) 測位ユニット，加速度センサ，施錠・解錠ユニット\n         (2)  a 測位情報\n              b 加速度異常\n         (3) ブレスレットからの距離が，2 メートル未満から2 メートル以上に変化した。",
+    "explanation": "追尾と衝突回避を別の制御として捉え、各モードで有効にするセンサや動作を状態遷移に沿って確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2020-autumn-pm1/page-09.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-10.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-11.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-12.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-13.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-14.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2 本文・設問（PDF 9ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2 本文・設問（PDF 10ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2 本文・設問（PDF 11ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2 本文・設問（PDF 12ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2 本文・設問（PDF 13ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2 本文・設問（PDF 14ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2020-autumn-pm1/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2 公式解答例（PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm1_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm1_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2020a-pm1-q3",
+    "exam": "es",
+    "year": 2020,
+    "season": "autumn",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "IoT",
+    "topicTags": [
+      "IoTを利用した遊具のシステム"
+    ],
+    "difficulty": 5,
+    "question": "問3 IoTを利用した遊具のシステム",
+    "answer": "問３\n                       出題趣旨\n  近年，アミューズメントにおいても，IoT を利用した多様なサービスが提供されている。\n 本問では，アミューズメント施設で使用する，IoT を利用した遊具のシステムを題材として，組込みシステ\nム技術者に求められるリアルタイム制御についての理解力，各種センサの制御方法を検討する能力，及び特性\nの異なるセンサを使い分ける能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) (a) 50,000\n             (b) 16\n         (2)  a 位置情報を読み取れない\n         (3) 帯域幅が50 M ビット／秒しかないから\n 設問２(1) (a) 4\n             (b) 3\n         (2) LED が中央になるように進行方向を右に曲げる。\n 設問３(1) 参加乗り物の位置\n         (2) ・LED 検出カメラは，乗り物の四つの車輪外を撮影しないから\n      ・管理サーバは乗り物の位置を常に把握しているから\n         (3) 隣り合うLED の座標情報が混信することを防止したいから",
+    "modelAnswer": "問３\n                       出題趣旨\n  近年，アミューズメントにおいても，IoT を利用した多様なサービスが提供されている。\n 本問では，アミューズメント施設で使用する，IoT を利用した遊具のシステムを題材として，組込みシステ\nム技術者に求められるリアルタイム制御についての理解力，各種センサの制御方法を検討する能力，及び特性\nの異なるセンサを使い分ける能力を問う。\n\n\n  設問                解答例・解答の要点                備考\n 設問１(1) (a) 50,000\n             (b) 16\n         (2)  a 位置情報を読み取れない\n         (3) 帯域幅が50 M ビット／秒しかないから\n 設問２(1) (a) 4\n             (b) 3\n         (2) LED が中央になるように進行方向を右に曲げる。\n 設問３(1) 参加乗り物の位置\n         (2) ・LED 検出カメラは，乗り物の四つの車輪外を撮影しないから\n      ・管理サーバは乗り物の位置を常に把握しているから\n         (3) 隣り合うLED の座標情報が混信することを防止したいから",
+    "explanation": "座標を読み取る周期、カメラの撮影周期、無線の通信量を分けて計算し、自動走行と位置検出に必要な条件を整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2020-autumn-pm1/page-15.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-16.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-17.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-18.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-19.webp",
+      "/questions/ipa/es/2020-autumn-pm1/page-20.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3 本文・設問（PDF 15ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3 本文・設問（PDF 16ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3 本文・設問（PDF 17ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3 本文・設問（PDF 18ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3 本文・設問（PDF 19ページ）",
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3 本文・設問（PDF 20ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/es/2020-autumn-pm1/answer-q03-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3 公式解答例（PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm1_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_es_pm1_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2020年度秋期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

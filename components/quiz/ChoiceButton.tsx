@@ -26,6 +26,7 @@ interface Props {
   onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
   /** 「二つとも答えなさい」形式。押すたびに選択を切り替えるチェックボックスとして振る舞う。 */
   multiSelect?: boolean;
+  paper?: boolean;
 }
 
 const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4, オ: 5, カ: 6, キ: 7, ク: 8, ケ: 9, コ: 0 };
@@ -46,6 +47,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     tabIndex,
     onKeyDown,
     multiSelect = false,
+    paper = false,
   },
   ref,
 ) {
@@ -85,42 +87,41 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       aria-keyshortcuts={!revealed && numberKey !== null ? String(numberKey) : undefined}
       data-state={state}
       className={cn(
-        "group relative w-full rounded-2xl border-2 px-4 py-4 text-left transition-colors",
-        "flex items-start gap-3 sm:gap-4",
-        "min-h-[64px]",
-        "touch-manipulation",
-        "disabled:cursor-default",
-        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-sky-300",
+        "p3-choice group relative flex w-full items-start gap-3 text-left transition-colors touch-manipulation disabled:cursor-default",
+        paper
+          ? "study-focus min-h-[52px] rounded-lg border px-3 py-[11px]"
+          : "min-h-[64px] rounded-xl border-2 px-4 py-4 sm:gap-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         !revealed &&
           !disabled &&
-          "border-zinc-200 bg-white hover:border-sky-400 hover:bg-sky-50 active:bg-sky-100 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-sky-500 dark:hover:bg-zinc-800",
+          (paper ? "border-input bg-card hover:border-primary hover:bg-primary-soft active:bg-muted" : "border-border bg-card hover:border-primary hover:bg-primary-soft active:bg-muted"),
         state === "selected" &&
-          "border-sky-500 bg-sky-50 dark:border-sky-400 dark:bg-sky-950/40",
+          "border-primary bg-primary-soft",
         state === "revealed-correct" &&
-          "border-emerald-500 bg-emerald-50 text-emerald-950 dark:border-emerald-400 dark:bg-emerald-950/50 dark:text-emerald-100",
+          (paper ? "border-success-soft-foreground bg-success-soft text-success-soft-foreground" : "border-emerald-500 bg-emerald-50 text-emerald-950 dark:border-emerald-400 dark:bg-emerald-950/50 dark:text-emerald-100"),
         state === "wrong" &&
-          "border-red-500 bg-red-50 text-red-950 dark:border-red-400 dark:bg-red-950/50 dark:text-red-100",
+          (paper ? "border-danger-soft-foreground bg-danger-soft text-danger-soft-foreground" : "border-red-500 bg-red-50 text-red-950 dark:border-red-400 dark:bg-red-950/50 dark:text-red-100"),
         revealed &&
           state === "idle" &&
-          "border-zinc-200 bg-white opacity-60 dark:border-zinc-800 dark:bg-zinc-950",
+          (paper ? "border-hairline bg-card text-muted-foreground" : "border-border bg-card opacity-60"),
       )}
     >
       <span
         aria-hidden="true"
         className={cn(
-          "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold",
+          "p3-choice-number flex shrink-0 items-center justify-center rounded-full text-sm font-bold",
+          paper ? "size-7" : "size-8",
           state === "revealed-correct"
-            ? "bg-emerald-700 text-white dark:bg-emerald-400 dark:text-emerald-950"
+            ? paper ? "bg-success-soft-foreground text-success-soft" : "bg-emerald-700 text-white dark:bg-emerald-400 dark:text-emerald-950"
             : state === "wrong"
-              ? "bg-red-700 text-white dark:bg-red-400 dark:text-red-950"
+              ? paper ? "bg-danger-soft-foreground text-danger-soft" : "bg-red-700 text-white dark:bg-red-400 dark:text-red-950"
               : state === "selected"
-                ? "bg-sky-700 text-white dark:bg-sky-400 dark:text-sky-950"
-                : "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50",
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-foreground",
         )}
       >
         {displayLabel ?? choiceKey}
       </span>
-      <div className="min-w-0 flex-1 pt-1 text-base leading-relaxed">
+      <div className={cn("min-w-0 flex-1 text-base", paper ? "leading-[1.7]" : "pt-1 leading-relaxed")}>
         <QuestionBody text={text} />
         {(state === "selected" || state === "revealed-correct" || state === "wrong") && (
           <span aria-hidden="true" className="mt-2 block text-sm font-semibold">
@@ -136,11 +137,11 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       {state === "revealed-correct" && (
         <Check
           aria-hidden="true"
-          className="h-5 w-5 shrink-0 text-emerald-700 dark:text-emerald-300"
+          className={cn("size-5 shrink-0", paper ? "text-success-soft-foreground" : "text-emerald-700 dark:text-emerald-300")}
         />
       )}
       {state === "wrong" && (
-        <X aria-hidden="true" className="h-5 w-5 shrink-0 text-red-700 dark:text-red-300" />
+        <X aria-hidden="true" className={cn("size-5 shrink-0", paper ? "text-danger-soft-foreground" : "text-red-700 dark:text-red-300")} />
       )}
     </button>
   );

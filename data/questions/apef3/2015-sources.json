@@ -1,0 +1,122 @@
+{
+  "exam": "apef3",
+  "year": 2015,
+  "season": "autumn",
+  "checkedAt": "2026-11-17",
+  "officialPageUrl": "https://apefdapf.org/dapf/presentation/exemples",
+  "sources": [
+    {
+      "url": "https://apefdapf.org/wp-content/uploads/2022/09/DAPF2015A30.pdf",
+      "sha256": "81f5b946f555a431b7127a415286fd83917c35749e7f4ba931d7e254b3b33a8e",
+      "pages": 16
+    },
+    {
+      "url": "https://apefdapf.org/wp-content/uploads/2022/09/DAPF2015A30corriges-transcription.pdf",
+      "sha256": "1f8ddae34449e1169f47af37ba338e249b4fb47e9562cf944b276d0ea61237cf",
+      "pages": 2
+    },
+    {
+      "url": "https://eduscol.education.gouv.fr/sites/default/files/document/guide-la-grammaire-du-francais-terminologie-grammaticale-67998.pdf",
+      "sha256": "b6f16a5e36845085697f068967b63928c9dda4479f572529080200a6704f7fd9",
+      "pages": 213
+    }
+  ],
+  "coverage": {
+    "originalGroups": [
+      3,
+      4,
+      6
+    ],
+    "originalGroupCount": 3,
+    "addedResponseCount": 12,
+    "writtenOriginalGroupCount": 9,
+    "writtenResponseCount": 41,
+    "remainingWrittenResponseCount": 29,
+    "listeningOriginalGroupCount": 3,
+    "listeningResponseCount": 15
+  },
+  "verification": {
+    "independentReaders": [
+      "PyMuPDF",
+      "pdfplumber"
+    ],
+    "stems": 12,
+    "choices": 48,
+    "officialAnswers": 12,
+    "officialAnswersChanged": 0
+  },
+  "questions": [
+    {
+      "id": "apef3-2015-autumn-gakka-q1",
+      "officialQuestionLabel": "3(1)",
+      "officialAnswerNumber": 2,
+      "problemPdfPage": 4
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q2",
+      "officialQuestionLabel": "3(2)",
+      "officialAnswerNumber": 2,
+      "problemPdfPage": 4
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q3",
+      "officialQuestionLabel": "3(3)",
+      "officialAnswerNumber": 3,
+      "problemPdfPage": 4
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q4",
+      "officialQuestionLabel": "3(4)",
+      "officialAnswerNumber": 1,
+      "problemPdfPage": 4
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q5",
+      "officialQuestionLabel": "4(1)",
+      "officialAnswerNumber": 3,
+      "problemPdfPage": 5
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q6",
+      "officialQuestionLabel": "4(2)",
+      "officialAnswerNumber": 4,
+      "problemPdfPage": 5
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q7",
+      "officialQuestionLabel": "4(3)",
+      "officialAnswerNumber": 1,
+      "problemPdfPage": 5
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q8",
+      "officialQuestionLabel": "4(4)",
+      "officialAnswerNumber": 5,
+      "problemPdfPage": 5
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q9",
+      "officialQuestionLabel": "6(1)",
+      "officialAnswerNumber": 1,
+      "problemPdfPage": 7
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q10",
+      "officialQuestionLabel": "6(2)",
+      "officialAnswerNumber": 2,
+      "problemPdfPage": 7
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q11",
+      "officialQuestionLabel": "6(3)",
+      "officialAnswerNumber": 3,
+      "problemPdfPage": 7
+    },
+    {
+      "id": "apef3-2015-autumn-gakka-q12",
+      "officialQuestionLabel": "6(4)",
+      "officialAnswerNumber": 3,
+      "problemPdfPage": 7
+    }
+  ]
+}

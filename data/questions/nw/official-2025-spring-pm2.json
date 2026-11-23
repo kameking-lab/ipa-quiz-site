@@ -1,0 +1,124 @@
+[
+  {
+    "id": "nw-2025h-pm2-q1",
+    "exam": "nw",
+    "session": "pm2",
+    "year": 2025,
+    "season": "spring",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ネットワーク設計",
+    "topicTags": [
+      "IPv6",
+      "DNS",
+      "ルーティング"
+    ],
+    "difficulty": 4,
+    "question": "問1 社内ネットワークのIPv6対応に関する次の記述を読んで，設問に答えよ。",
+    "answer": "令和7 年度 春期 ネットワークスペシャリスト試験 解答例\n\n午後Ⅱ試験\n\n問１\n\n                       出題趣旨\n 企業で利用されているインターネット上のクラウドサービスやWeb サイトは，IPv6 に対応したものが増えて\nいる。また，世界的にもIPv6 の普及率が向上している。\n  このような背景から，ネットワーク技術者にとって，IPv6 アドレスの割当て，PC がSaaS 及びWeb サイトと\n IPv6 で通信する前に行うDNS 通信の流れや，IPv6 の経路制御設計など，IPv6 に関する基本的な知識は，今後\nより重要になってくる。\n  本問では，IPv6 の調査と社内ネットワークのIPv6 対応の検討を題材として，IPv4 及びIPv6 に関する知識\n及び理解力を問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a 宛先IP アドレス\n              b ブロード\n              c リプライ\n 設問２(1)  d  16\n              e  48\n              f  64\n         (2) データリンク層で通信可能な範囲\n         (3) 同じデータリンク層上に同じIPv6 アドレスを使用しているノードがいないこ\n      とを確認するため\n         (4)        GUA        2001:db8:aabb:1:8:800:200c:417a\n       プレフィックス長  64\n         (5)  g デフォルトルータ 又は デフォルトゲートウェイ\n         (6) PC を特定しづらくなるから\n 設問３(1)  h  TCP\n         (2)  IPv6 アドレス  2001:db8:xxxx::10，2001:db8:xxxx::20\n                  FQDN      ns1.example.net.，ns2.example.net.\n         (3) IPv4 にフォールバックしてSaaS の同じWeb ページにアクセスするから\n 設問４(1) インターネットからルータA，ルータB 及びFW にアクセスできないようにする\n      ため\n         (2) traceroute6 を利用して調べるときに各機器を識別しやすくする。\n         (3) PC が送信したRS メッセージに対してRA メッセージを応答する。\n         (4) ア  fe80::1\n       イ  b\n       ウ  fe80::2\n       エ  c\n       オ  fe80::1\n       カ  d\n       キ  fe80::2\n       ク  f\n       ケ  fe80::1\n         (5) ホップリミットが0 になるまで相互に転送し合い，廃棄する。\n         (6) ロンゲストマッチによって選択されるから\n         (7)  i  NAPT\n         (8) 通信経路における最小のMTU\n\n                                                1/2\n\n                                                                        ©2025 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "設問1〜4の全欄を公式解答例と比較する。IPv6アドレスの省略表記とプレフィックス長、DNSサーバのIPv6アドレス・FQDN、経路表のア〜ケを確認する。理由の設問では指定された字数と用語を守る。",
+    "explanation": "IPv6対応はアドレスの割当て、名前解決、経路制御を順に分けて検討する。リンクローカルアドレスはデータリンク層で通信可能な範囲で用い、生成後は同じアドレスを使うノードがいないことを確認する。GUAの生成では、RAで通知されるサブネットプレフィックスとインタフェースIDを組み合わせ、プレフィックス長も併記する。設問3ではAAAAレコードまでの名前解決を追い、IPv6側で失敗してもIPv4へのフォールバックでWebページが表示される点を押さえる。設問4の経路表は宛先プレフィックス長を比較してロンゲストマッチを判定する。未使用GUA宛てのループはホップリミットが0になるまで続くこと、PMTUDが検出するのは経路全体で最小のMTUであることを区別する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/nw/2025-spring-pm2/question-p03.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p04.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p05.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p06.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p07.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p08.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p09.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p10.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p11.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p12.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p13.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p14.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子3ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子4ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子5ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子6ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子7ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子8ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子9ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子10ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子11ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子12ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子13ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問1：公式問題冊子14ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/nw/2025-spring-pm2/answer-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問1：1ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2025年度春期 ネットワークスペシャリスト 午後II 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問1"
+  },
+  {
+    "id": "nw-2025h-pm2-q2",
+    "exam": "nw",
+    "session": "pm2",
+    "year": 2025,
+    "season": "spring",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ネットワーク設計",
+    "topicTags": [
+      "LPWA",
+      "CoAP",
+      "IoT"
+    ],
+    "difficulty": 4,
+    "question": "問2 IoTシステムの設計に関する次の記述を読んで，設問に答えよ。",
+    "answer": "問２\n\n                       出題趣旨\n 様々なものをインターネットに繋げるIoT が普及してきている。IoT では，無線通信，通信プロトコル及び\n情報セキュリティに関する技術などについて，IoT 向けの技術の理解がネットワーク技術者に求められる。\n  本問では，LP ガス消費量の遠隔検針を題材として，ネットワークの設計，構築，運用に関わる受験者が，実\n務や学習などを通して蓄積したネットワーク及びネットワークセキュリティ技術が，LPWA（Low Power Wide\n Area）を利用する無線回線の選択，CoAP（Constrained Application Protocol）の利用検討，及びIoT システ\nムの情報セキュリティ対策の検討などに活用できるかどうかを問う。\n\n\n  設問                解答例・解答の要点                 備考\n  設問１     a 消費\n              b 非セルラー\n              c セルラー\n              d  ISM\n              e 干渉\n              f  3GPP\n  設問２     g  2\n              h  G メーター管理サーバ\n              i  SIM\n              j  372\n              k  RESTful\n 設問３(1)  l トランスポート\n              m 順不同\n              n 重複\n              o 同期\n              p バックオフ\n         (2) メッセージ ⅷ\n        理由  トークン値が一致するから\n         (3)     ACK   ⅴ\n         (4) 理由 二つのパケットのメッセージID が同じだから\n       処理  受信した(ⅶ)のACK は処理済みなので無視する。\n         (5) 内容  送信元IP アドレスを，攻撃対象のホストのIP アドレスに偽装する。\n       攻撃名 リフレクション\n         (6) 判断できること (ⅰ)の送信元が，偽装されたものでないこと\n         対応    (ⅳ)を送信せず，ハンドシェークを終了する。\n 設問４(1) G メーター管理サーバやネットワークへの負荷の集中が避けられる。\n         (2) G メーターの消費電力を抑えることができる。\n         (3) TCP コネクション確立とコネクション切断の処理が行われるから\n         (4) CoAP 通信は，Y 社向けの閉域網の中で行われるから\n         (5) 測定と送信が誤った時刻に行われることになる。\n         (6) G メーター管理サーバから現在時刻を取得して，G メーターの時刻を更新す\n      る。\n\n\n\n\n\n                                                2/2\n\n                                                                        ©2025 独立行政法人情報処理推進機構",
+    "modelAnswer": "",
+    "scoringCriteria": "設問1のa〜f、設問2のg〜k、設問3・4の全小問を照合する。通信図のローマ数字、トークン値とメッセージID、攻撃の内容と名称を別々に確認する。通信方式の理由は電力・負荷・接続範囲のどの要件に対応するかを示す。",
+    "explanation": "遠隔検針の要件である広い提供地域と電池による長期稼働を、無線回線と通信方式の選択に結び付ける。LPWAはセルラー系と非セルラー系を分け、LTE-Mなどの標準化主体も整理する。CoAPの通信図では、応答をリクエストに結び付けるトークン値と、再送・重複の識別に使うメッセージIDを混同しない。受信済みACKの重複処理と、送信元の偽装によるリフレクション攻撃の検討もこの区別が出発点になる。設問4では、送信時刻を分散させることによる負荷集中の回避、通信手順の削減による省電力、閉域網内での通信という前提をそれぞれ確認する。機器の時計のずれは測定時刻と送信時刻に影響するため、管理サーバから時刻を取得して更新する処理まで記述する。\n\n[公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_qs.pdf) ／ [公式解答例](https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_ans.pdf)",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/nw/2025-spring-pm2/question-p15.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p16.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p17.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p18.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p19.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p20.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p21.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p22.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p23.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p24.webp",
+      "/images/questions/nw/2025-spring-pm2/question-p25.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子15ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子16ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子17ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子18ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子19ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子20ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子21ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子22ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子23ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子24ページ（本文・図表・設問）",
+      "ネットワークスペシャリスト 2025年春 午後II 問2：公式問題冊子25ページ（本文・図表・設問）"
+    ],
+    "answerImageUrls": [
+      "/images/questions/nw/2025-spring-pm2/answer-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "IPA公式解答例 問2：2ページ"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm2_ans.pdf",
+    "sourceAttribution": "出典：IPA（独立行政法人情報処理推進機構） 2025年度春期 ネットワークスペシャリスト 午後II 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "officialQuestionLabel": "問2"
+  }
+]

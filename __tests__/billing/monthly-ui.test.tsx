@@ -4,26 +4,41 @@ import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/re
 import { PurchaseStatus } from "@/app/billing/PurchaseStatus";
 import { AutoCheckout } from "@/app/billing/start/AutoCheckout";
 import { readQuizReturn } from "@/lib/billing/quiz-return";
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); sessionStorage.clear(); });
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); sessionStorage.clear(); localStorage.clear(); });
 describe("monthly purchase copy and status", () => {
-  it("opens Stripe Checkout once, without another tap, and remembers the question to return to", async () => {
+  it("opens Stripe Checkout once after submitting the exam date and remembers the question to return to", async () => {
     const fetchMock = vi.fn(async () => Response.json({ url: "https://checkout.stripe.com/c/pay/cs_test_fixture", orderId: "order-1" }));
     vi.stubGlobal("fetch", fetchMock);
     const replace = vi.fn();
     vi.stubGlobal("location", { ...window.location, replace });
-    const view = render(<AutoCheckout terms={"a".repeat(64)} returnTo="/q/ap/2023-spring/am/1" fallback="/billing" />);
-    view.rerender(<AutoCheckout terms={"a".repeat(64)} returnTo="/q/ap/2023-spring/am/1" fallback="/billing" />);
+    render(<AutoCheckout terms={"a".repeat(64)} returnTo="/q/ap/2023-spring/am/1" fallback="/billing" today="2026-11-19" />);
+    expect(screen.getByRole("radio", { name: "試験日の翌日に自動で終わる" })).toBeChecked();
+    expect(fetchMock).not.toHaveBeenCalled();
+    fireEvent.change(screen.getByLabelText("受験日"), { target: { value: "2026-12-06" } });
+    expect(screen.getByText(/12月6日まで利用可/)).toBeInTheDocument();
+    expect(screen.queryByText(/毎月自動更新/)).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "決済へ進む" }));
     await waitFor(() => expect(replace).toHaveBeenCalledWith("https://checkout.stripe.com/c/pay/cs_test_fixture"));
     expect(fetchMock).toHaveBeenCalledTimes(1);
-    expect(fetchMock).toHaveBeenCalledWith("/api/billing/checkout", expect.objectContaining({ method: "POST", body: JSON.stringify({ terms: "a".repeat(64) }) }));
+    expect(fetchMock).toHaveBeenCalledWith("/api/billing/checkout", expect.objectContaining({ method: "POST",
+      body: JSON.stringify({ terms: "a".repeat(64), examDate: "2026-12-06", returnTo: "/q/ap/2023-spring/am/1" }) }));
     expect(readQuizReturn(sessionStorage, Date.now(), "order-1")).toBe("/q/ap/2023-spring/am/1");
     expect(readQuizReturn(sessionStorage)).toBe("/q/ap/2023-spring/am/1");
   });
   it("shows one short error and a way to the plan page when checkout cannot open", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Response.json({ error: "subscription_exists" }, { status: 409 })));
-    render(<AutoCheckout terms={"a".repeat(64)} returnTo={null} fallback="/billing" />);
+    render(<AutoCheckout terms={"a".repeat(64)} returnTo={null} fallback="/billing" today="2026-11-19" />);
+    fireEvent.click(screen.getByRole("radio", { name: "自動で終わらせない" }));
+    fireEvent.click(screen.getByRole("button", { name: "決済へ進む" }));
     expect(await screen.findByRole("alert")).toHaveTextContent("契約済みか、支払確認中の申込があります。");
     expect(screen.getByRole("link", { name: "料金・契約の画面へ" })).toHaveAttribute("href", "/billing");
+  });
+  it.each([["duplicate_purchase_google","Google"],["duplicate_purchase_apple","Apple"],["duplicate_purchase_google_apple","Google / Apple"]])("shows only the other login method for %s", async (code,provider) => {
+    vi.stubGlobal("fetch", vi.fn(async()=>Response.json({error:code},{status:409})));
+    render(<AutoCheckout terms={"a".repeat(64)} returnTo={null} fallback="/billing" today="2026-11-19" />);
+    fireEvent.click(screen.getByRole("radio", { name: "自動で終わらせない" }));
+    fireEvent.click(screen.getByRole("button", { name: "決済へ進む" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(`このメールアドレスの別のアカウント（${provider}）で購入済みです。そちらでログインしてください。`);
   });
   it("shows period-end cancellation and management without claiming no auto-renewal", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Response.json({ billingModel: "subscription", entitled: true, canManage: true,

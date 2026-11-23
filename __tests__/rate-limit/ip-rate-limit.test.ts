@@ -41,6 +41,58 @@ function disableKv() {
   vi.stubEnv("KV_REST_API_TOKEN", "");
 }
 
+it("applies the same service limit to scoring when the shared AI policy is active", async () => {
+  enableKv();
+  const { checkIpRateLimit, COPILOT_GLOBAL_LIMITS } = await import("@/lib/rate-limit");
+  const transport = vi.fn<typeof fetch>()
+    .mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]]))
+    .mockResolvedValueOnce(kvResponse([[COPILOT_GLOBAL_LIMITS.hour + 1, 700]]));
+  vi.stubGlobal("fetch", transport);
+  expect(await checkIpRateLimit(req(), "scoring", { requireKv: true, sharedAiGlobal: true })).toMatchObject({ ok: false, reason: "hour" });
+  const keys = JSON.parse(String(transport.mock.calls[1][1]?.body))[0].slice(3, 5);
+  expect(keys).toEqual([expect.stringMatching(/^rl:global:copilot:h:/), expect.stringMatching(/^rl:global:copilot:d:/)]);
+});
+
+it("keeps Copilot free sends in the IP counters until generation is admitted", async () => {
+  enableKv();
+  const { checkAiNormalUse, checkFreeAiServiceUse, normalUseWindows } = await import("@/lib/ai/normal-use-server");
+  const { aiAccessPolicy, aiNormalUsePolicy } = await import("@/lib/ai/access-config");
+  vi.stubEnv("AI_QUOTA_ROLLOUT", "true");
+  const now = Date.now(), policy = aiNormalUsePolicy();
+  const context = { legacy: false, headers: {}, access: { kind: "free", subject: "guest:fixture" } as const, policy: aiAccessPolicy() };
+  const admit = vi.fn().mockResolvedValue({ allowed: true });
+  const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]]));
+  vi.stubGlobal("fetch", transport);
+  expect(await checkAiNormalUse(req(), "copilot", context, {}, policy, { admit }, now)).toEqual({ ok: true });
+  expect(transport).toHaveBeenCalledTimes(1);
+  expect(admit).not.toHaveBeenCalled();
+  const [, init] = transport.mock.calls[0];
+  expect(String(init?.body)).not.toContain("rl:global:copilot:");
+  expect(await checkFreeAiServiceUse(context, { admit }, now)).toEqual({ ok: true });
+  expect(admit).toHaveBeenCalledExactlyOnceWith(
+    normalUseWindows("paid-member", "copilot", policy, now).filter(window => window.key.startsWith("rl:global:")),
+  );
+});
+
+it("uses the same IP and service buckets when the practice cookie changes between free endpoints", async () => {
+  enableKv();
+  const { checkIpRateLimit } = await import("@/lib/rate-limit");
+  const transport = vi.fn<typeof fetch>()
+    .mockResolvedValueOnce(kvResponse([[1, 1, 1, 1]])).mockResolvedValueOnce(kvResponse([[1, 1]]))
+    .mockResolvedValueOnce(kvResponse([[2, 2, 2, 1]])).mockResolvedValueOnce(kvResponse([[2, 2]]));
+  vi.stubGlobal("fetch", transport);
+  const clock = vi.spyOn(Date, "now").mockReturnValue(Date.UTC(2026, 10, 22));
+  try {
+    for (const endpoint of ["copilot", "scoring"]) {
+      const request = new Request(req(), { headers: { "x-forwarded-for": "192.0.2.1", cookie: "practice_guest=" + endpoint } });
+      expect(await checkIpRateLimit(request, endpoint, { requireKv: true, sharedAiGlobal: true })).toEqual({ ok: true });
+    }
+    const commands = transport.mock.calls.map(([, init]) => JSON.parse(String(init?.body))[0]);
+    expect(commands[0].slice(3, 6)).toEqual(commands[2].slice(3, 6));
+    expect(commands[1].slice(3, 5)).toEqual(commands[3].slice(3, 5));
+  } finally { clock.mockRestore(); }
+});
+
 beforeEach(() => {
   vi.resetModules();
   vi.unstubAllEnvs();
@@ -63,8 +115,8 @@ describe("lib/rate-limit constants (SSOT)", () => {
     expect(mod.TRACKED_ENDPOINTS).toEqual([
       "copilot",
       "essay-grade",
-      "generate-question",
       "scoring",
+      "weakness-advice",
     ]);
   });
 });
@@ -88,10 +140,9 @@ describe("checkIpRateLimit — KV disabled (fail open)", () => {
 });
 
 describe("checkIpRateLimit — KV enabled", () => {
-  // pipeline order: INCR min, EXPIRE, INCR hr, EXPIRE, INCR day, EXPIRE, INCR stats,
-  // EXPIRE, ZINCRBY topips, EXPIRE  → counts read at positions 0 (min), 2 (hr), 4 (day).
+  // One EVAL returns minute/hour/day/stats counts as its nested result.
   function counts(min: number, hr: number, day: number): unknown[] {
-    return [min, 1, hr, 1, day, 1, 1, 1, 1, 1];
+    return [[min, hr, day, 1]];
   }
 
   it("allows when all counts are within limits", async () => {
@@ -159,7 +210,7 @@ describe("checkIpRateLimit — KV enabled", () => {
     enableKv();
     vi.stubGlobal("fetch", vi.fn()
       .mockResolvedValueOnce(kvResponse(counts(1, 1, 1)))
-      .mockResolvedValueOnce(kvResponse([501, 1, 501, 1])));
+      .mockResolvedValueOnce(kvResponse([[501, 501]])));
     const mod = await import("@/lib/rate-limit");
     const result = await mod.checkIpRateLimit(req(), "copilot", { requireKv: true });
     expect(result).toMatchObject({ ok: false, reason: "hour" });
@@ -173,6 +224,58 @@ describe("checkIpRateLimit — KV enabled", () => {
     const mod = await import("@/lib/rate-limit");
     const result = await mod.checkIpRateLimit(req(), "copilot", { requireKv: true });
     expect(result).toMatchObject({ ok: false, reason: "unavailable" });
+  });
+
+  it("retains the shared daily cap and sends both original global bucket keys", async () => {
+    enableKv();
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(kvResponse(counts(1, 1, 1)))
+      .mockResolvedValueOnce(kvResponse([[100, 5001]]));
+    vi.stubGlobal("fetch", fetchMock);
+    const mod = await import("@/lib/rate-limit");
+    expect(await mod.checkIpRateLimit(req(), "copilot", { requireKv: true }))
+      .toMatchObject({ ok: false, reason: "daily" });
+    const commands = JSON.parse(fetchMock.mock.calls[1][1].body) as unknown[][];
+    expect(commands).toHaveLength(1);
+    expect(commands[0]).toEqual([
+      "EVAL", expect.any(String), 2,
+      expect.stringMatching(/^rl:global:copilot:h:/),
+      expect.stringMatching(/^rl:global:copilot:d:/), 7200, 172800,
+    ]);
+  });
+
+  it("fails closed on a failed individual admission counter, but tolerates stats failure", async () => {
+    enableKv();
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(kvResponse([[1, null, 1, 1]]))
+      .mockResolvedValueOnce(kvResponse([[1, 1, 1, null]]))
+      .mockResolvedValueOnce(kvResponse([[1, 1]]));
+    vi.stubGlobal("fetch", fetchMock);
+    const mod = await import("@/lib/rate-limit");
+    expect(await mod.checkIpRateLimit(req(), "copilot", { requireKv: true }))
+      .toMatchObject({ ok: false, reason: "unavailable" });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(await mod.checkIpRateLimit(req(), "copilot", { requireKv: true })).toEqual({ ok: true });
+  });
+
+  it("sends original IP/statistics keys and TTLs in one atomic script", async () => {
+    enableKv();
+    const fetchMock = vi.fn().mockResolvedValue(kvResponse(counts(1, 1, 1)));
+    vi.stubGlobal("fetch", fetchMock);
+    const mod = await import("@/lib/rate-limit");
+    expect(await mod.checkIpRateLimit(req(), "scoring")).toEqual({ ok: true });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const commands = JSON.parse(fetchMock.mock.calls[0][1].body) as unknown[][];
+    expect(commands).toHaveLength(1);
+    expect(commands[0]).toEqual([
+      "EVAL", expect.any(String), 5,
+      expect.stringMatching(/^rl:ip:1\.2\.3\.4:m:/),
+      expect.stringMatching(/^rl:ip:1\.2\.3\.4:h:/),
+      expect.stringMatching(/^rl:ip:1\.2\.3\.4:d:/),
+      expect.stringMatching(/^rl:stats:scoring:h:/),
+      expect.stringMatching(/^rl:topips:h:/),
+      120, 7200, 172800, 90_000, "1.2.3.4",
+    ]);
   });
 
   it("fails closed for paid copilot when the KV pipeline fails", async () => {
@@ -206,15 +309,15 @@ describe("getApiUsageStats", () => {
 
   it("KV enabled → sums hourly buckets, derives cost, merges top-IP sets", async () => {
     enableKv();
-    // 4 endpoints × 24 hourly GETs = 96, then 2 ZREVRANGE WITHSCORES = 98 entries.
-    const values: unknown[] = new Array(98).fill(null);
+    // MGET returns all 96 endpoint/hour counts in one command.
+    const values: unknown[] = new Array(96).fill(null);
     // copilot (endpoint index 0 → positions 0..23): newest hour 5, one earlier hour 3.
     values[0] = 5;
     values[1] = 3;
     // top-IP sorted sets: [ip, score, ip, score, ...]
-    values[96] = ["1.2.3.4", "7"];
-    values[97] = ["1.2.3.4", "3", "5.6.7.8", "2"];
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(values)));
+    const newestTopIps = ["1.2.3.4", "7"];
+    const earlierTopIps = ["1.2.3.4", "3", "5.6.7.8", "2"];
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse([values, newestTopIps, earlierTopIps])));
 
     const mod = await import("@/lib/rate-limit");
     const stats = await mod.getApiUsageStats();
@@ -246,14 +349,14 @@ describe("getApiCallsHourlySeries", () => {
 
   it("KV enabled → index 0 newest hour, each hour summed across endpoints", async () => {
     enableKv();
-    // command order: hour i (outer) × endpoint j (inner) → position i*4 + j.
+    // Shared MGET order: endpoint j (outer) × hour i (inner).
     const values: unknown[] = new Array(96).fill(null);
     values[0] = 1; // hour0, copilot
-    values[1] = 2; // hour0, essay-grade
-    values[2] = 3; // hour0, generate-question
-    values[3] = 4; // hour0, scoring  → series[0] = 10
-    values[8] = 5; // hour2, copilot  → series[2] = 5
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse(values)));
+    values[24] = 2; // hour0, essay-grade
+    values[48] = 3; // hour0, scoring
+    values[72] = 4; // hour0, weakness-advice  → series[0] = 10
+    values[2] = 5; // hour2, copilot  → series[2] = 5
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(kvResponse([values, [], []])));
 
     const mod = await import("@/lib/rate-limit");
     const series = await mod.getApiCallsHourlySeries();

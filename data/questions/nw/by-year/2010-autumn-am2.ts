@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ZigBeeは、低消費電力無線通信の国際標準規格であるIEEE 802.15.4を物理層およびMAC層のベースとする。主にセンサネットワークやIoTデバイス間通信での応用が進められており、その低消費電力性が大きな特徴である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +48,14 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
       "エ": "11"
     },
     "answer": "ウ",
-    "explanation": "この問題は、ネットワークにおける論理回線の最大同時使用数を問うもので、これはネットワーク設計における帯域幅の最大化やボトルネックの特定に関連します。各地点間の接続に示された数字は、その区間が同時に処理できる論理回線の最大数（多重度）を表しています。X地点からY地点まで同時に使用できる論理回線の最大数は、XからYへの経路全体で最も多重度が低い区間の値（ボトルネック）によって決定されます。つまり、経路上のすべての区間がその多重度で通信できる必要があります。\n\n正解のウ（10）となる根拠は、図に示されているXからYへの経路上で、最も多重度が低い区間の値が10であるためです。他の区間は10以上の多重度を持っていると考えられます。\n\nア（8）は、経路上のいずれかの区間の多重度が8である場合、その区間がボトルネックとなり、最大でも8回線しか使用できなくなるため、正解とはなりません。イ（9）も同様に、経路上のいずれかの区間の多重度が9であれば、最大使用可能回線数は9となり、10回線を使用できないため不適切です。エ（11）は、経路上のすべての区間の多重度が11以上である場合にのみ可能となりますが、図の制約から、いずれかの区間の多重度が10であるため、11回線は使用できません。",
+    "explanation": "X・Aとその他の地点を分けると、境界のX→B、X→C、A→B、A→Dで合計10本までです。実際にXからAへ3本、Bへ4本、Cへ3本を送り、AからBへ2本とDへ1本、BからD・E・Cへ順に2・3・1本、CからFへ4本を通せます。FからEへ1本、Gへ3本、EからGへ1本を回すと、D・E・GからYへ合計10本を通せます。",
+    "choiceExplanations": {
+      "ア": "X・A側からB・C・D側へ抜ける4本の容量を合計すると10です。例えばD→Yを3本、E→Yを3本、G→Yを4本使えます。",
+      "イ": "D→YとE→Yの各3本に加え、G→YはFからの3本とEからの1本を通せます。Gを経由する分を3本で止めると不足します。",
+      "ウ": "XとAを一つの側とすると外へ出る回線は合計4＋3＋2＋1＝10です。D→Yに3本、E→Yに3本、G→Yに4本通せるので10が上限です。",
+      "エ": "Xから直接出る回線容量だけなら4＋4＋3＝11です。ただしAから先に進めるのはA→Bの2本とA→Dの1本までです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "OFDM (Orthogonal Frequency Division Multiplexing) は、広帯域のデータ信号を多数の直交する狭帯帯域のサブキャリアに分割して伝送する多重化方式である。各サブキャリアが互いに干渉しないように配置されるため、高速無線通信における周波数選択性フェージング耐性に優れている。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +105,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "1000BASE-Tは、ギガビットイーサネットの標準規格の一つで、カテゴリ5e以上の4対のUTP (Unshielded Twisted Pair) ケーブルを使用する。最大通信距離は100mである。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +130,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "無線LAN (IEEE 802.11) で使用される多重アクセス方式はCSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) である。有線LANのCSMA/CDと異なり、無線環境では衝突の検出が困難なため、送信前に衝突を回避するためのメカニズムを用いる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "FDDI (Fiber Distributed Data Interface) は、トークンリング方式を採用した高速LAN規格である。トークンと呼ばれる特殊な電文がリング状に巡回し、このトークンを捕捉したノードのみがデータ送信権を得ることで、送信競合を制御する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リンクアグリゲーションは、複数の物理的なネットワークインターフェースやポートを論理的に束ねて、あたかも一本の高速な回線のように扱う技術である。これにより、通信帯域の拡大と、物理回線の冗長化による可用性の向上が実現できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "BGP-4 (Border Gateway Protocol Version 4) は、異なる自律システム (AS) 間で経路情報を交換するための外部ルーティングプロトコルである。経路情報に付加されたパス属性や設定されたポリシに基づいて、最適な経路を選択するパスベクタ方式を採用している。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CHAP (Challenge Handshake Authentication Protocol) は、PPP (Point-to-Point Protocol) で利用される認証プロトコルである。サーバーが送るチャレンジメッセージと共有鍵を基にハッシュ値を計算して返信することで、パスワード自体をネットワーク上に流さずに認証を行う、より安全な方式である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DNS (Domain Name System) においては、一つのホスト名に複数のIPアドレスを対応させること（例: ラウンドロビンDNSによる負荷分散）も、複数のホスト名に同一のIPアドレスを対応させること（例: 仮想ホスト）も可能である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "IPv6では、IPレベルのセキュリティ機能であるIPsec (IP Security) の実装が必須とされている。これにより、パケットの認証、改ざん検出、暗号化などのセキュリティ機能が標準でサポートされ、エンドツーエンドの通信の安全性が強化される。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "IPアドレスのクラスDは、224.0.0.0から239.255.255.255までの範囲が割り当てられており、マルチキャスト通信専用に使用される。マルチキャストは、特定のグループに属する複数のホストに対して同時にデータを送信する際に用いられる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "RSVP (Resource ReSerVation Protocol) は、IPネットワークにおいて、特定の通信フローに対してネットワークリソース（例: 帯域幅）を予約するためのプロトコルである。QoS (Quality of Service) を保証する目的で利用され、音声や映像などのリアルタイム通信の品質確保に寄与する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA ネットワークスペシャリスト試験 2010年度秋期 午前II 問14）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "クラスCのIPアドレス（/24）から10個のサブネットを作成するには、ネットワーク部を最低4ビット拡張する必要がある（2^3=8では足りず、2^4=16で充足）。これによりネットワーク部は24+4=28ビットとなり、サブネットマスクは255.255.255.240となる。この場合、各サブネットでホストに割り当てられるアドレス数は2^(32-28)-2 = 14個となる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "SDP (Session Description Protocol) は、IP電話やストリーミングなどのマルチメディアセッションを記述するためのプロトコルである。メディアの種類（音声、映像など）、使用するプロトコル、ポート番号、コーデックなどのセッション情報を定義し、セッション参加者間で交換するために用いられる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SNMP (Simple Network Management Protocol) のtrapメッセージは、管理対象デバイス (エージェント) が、自身の異常や特定のイベント発生時に、自発的にネットワーク管理システム (マネージャ) へ通知するために使用される。これにより、マネージャはリアルタイムでネットワークの状態変化を把握できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リバースプロキシを使ったシングルサインオンでは、リバースプロキシが利用者の認証を一元的に代行するため、パスワードだけでなく、ディジタル証明書などのより高度な認証方式を適用できる。これにより、セキュリティレベルの高い認証を実現することが可能である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA ネットワークスペシャリスト試験 2010年度秋期 午前II 問19）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "IPスプーフィング攻撃は、送信元IPアドレスを詐称してパケットを送信する攻撃である。この攻撃に有効な対策として、外部ネットワークから到着したパケットの送信元IPアドレスが、本来内部ネットワークで使用されるはずのアドレスである場合に、そのパケットをファイアウォールで破棄する、という方法がある。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SPF (Sender Policy Framework) は、電子メールの送信元詐称対策技術の一つである。受信側メールサーバーは、SMTP通信中のMAIL FROMコマンドで指定された送信ドメインのDNSレコードに公開されているSPFレコードを確認し、送信元IPアドレスがそのドメインからの正規の送信サーバーであるかどうかを検証する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "表示解像度1,000×800ドットで65,536色（2^16色）を表示するには、1ドットあたり16ビットが必要となる。したがって、必要なビデオメモリ容量は (1,000 × 800 ドット) × 16 ビット = 12,800,000 ビットである。これをバイトに換算すると12,800,000ビット / 8 = 1,600,000バイトとなり、1,000バイト=1kバイト、1,000kバイト=1Mバイトの計算では1.6Mバイトとなる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA ネットワークスペシャリスト試験 2010年度秋期 午前II 問23）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA ネットワークスペシャリスト試験 2010年度秋期 午前II 問24）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const NW_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SOA (Service Oriented Architecture) におけるサービス設計では、サービス間の関係を疎結合にすることが重要である。これにより、個々のサービスが独立して変更・再利用可能となり、システムの柔軟性や保守性が向上し、業務の変化への対応が容易になる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_nw_am2_qs.pdf",
     "license": "IPA-public"

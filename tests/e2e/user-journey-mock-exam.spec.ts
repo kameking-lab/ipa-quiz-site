@@ -23,11 +23,11 @@ test.describe("mock exam: HTTP & structure", () => {
     expect(res.status()).toBe(200);
   });
 
-  test("/mock-exam has 模試モード heading", async ({ page }) => {
+  test("/mock-exam has 模試 heading", async ({ page }) => {
     await page.goto("/mock-exam");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
-    await expect(h1).toContainText("模試モード");
+    await expect(h1).toHaveText("模試");
   });
 
   test("/mock-exam page contains exam selection UI", async ({ page }) => {
@@ -48,7 +48,7 @@ test.describe("mock exam: HTTP & structure", () => {
 
 test.describe("mock exam: API", () => {
   test("GET /api/mock-exam/ap returns 200 or correct error", async ({ request }) => {
-    const res = await request.get("/api/mock-exam/ap");
+    const res = await request.get("/api/mock-exam/ap", { maxRetries: 1 });
     // 200 with questions, or 404 if not enough questions available
     expect([200, 404]).toContain(res.status());
   });

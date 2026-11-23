@@ -14,14 +14,15 @@ describe("learner-facing qualification coverage", () => {
   it("includes both restored table questions in the current exercise count", () => {
     const excluded = KANRI_QUESTIONS.filter((question) => !isPracticeReadyQuestion(question));
     expect(excluded).toEqual([]);
-    expect(playable).toHaveLength(100);
+    expect(playable.filter(q => q.year === 2024 || q.year === 2025)).toHaveLength(100);
     expect(playable.filter((question) => question.year === 2024 && [10, 29].includes(question.qNumber))).toHaveLength(2);
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<QualificationsPage />), "text/html");
     const card = Array.from(doc.querySelectorAll("article")).find((article) => article.querySelector("h2")?.textContent === "管理業務主任者");
-    expect(card?.textContent).toContain("収録 100問");
+    expect(card?.textContent).toContain(`収録 ${playable.length}問`);
     expect(card?.textContent).not.toContain("収録 98問");
     expect(card?.textContent).not.toContain("16問");
-    expect(card?.querySelector('a[href="/kanri"]')).not.toBeNull();
+    const source = QUALIFICATION_CATALOG.find(entry => entry.examCode === "kanri")!.officialQuestionsUrl;
+    expect(card?.querySelector(`a[href="${source}"]`)).not.toBeNull();
   });
 
   it("identifies both complete official papers and their legal dates", () => {
@@ -55,16 +56,15 @@ describe("管理業務主任者 hub metadata matches the playable two-paper cove
     const pool = getQuestionsByExamStrict("kanri");
     expect(pool.filter((q) => q.year === 2024)).toHaveLength(50);
     expect(pool.filter((q) => q.year === 2025)).toHaveLength(50);
-    expect(pool).toHaveLength(100);
     const metadata = await generateMetadata({ params: Promise.resolve({ exam: "kanri" }) });
     const description = String(metadata.description);
-    expect(description).toContain("2024・2025年度公式問題");
-    expect(description).toContain(`${pool.length}問を2回分`);
-    expect(description).toContain("年度ごとの掲載範囲と法令基準日");
+    const years = new Set(pool.map(q => q.year)).size;
+    expect(description).toContain(years + "年分" + pool.length + "問");
+    expect(description).toContain("各年度の法令基準日");
     expect(description).not.toContain("2025年度公式50問から");
     expect(metadata.openGraph?.description).toBe(description);
     expect(metadata.twitter?.description).toBe(description);
-    expect(metadata.title).toBe("管理業務主任者 過去問一覧・AI解説");
+    expect(metadata.openGraph?.title).toBe("管理業務主任者 過去問 " + years + "年分" + pool.length + "問｜解説つき・無料");
     expect(metadata.alternates?.canonical).toBe("/kanri");
     expect(metadata.robots).toBeUndefined();
   });
@@ -75,18 +75,18 @@ describe("zoen2 hub metadata describes both complete official papers", () => {
     const pool = getQuestionsByExamStrict("zoen2");
     expect(pool.filter((q) => q.year === 2026 && q.season === "early")).toHaveLength(40);
     expect(pool.filter((q) => q.year === 2025 && q.season === "late")).toHaveLength(40);
-    expect(pool).toHaveLength(80);
+    expect(pool.filter(q => q.year === 2026 && q.season === "late")).toHaveLength(40);
     expect(new Set(pool.map((q) => q.session))).toEqual(new Set(["gakka"]));
     const metadata = await generateMetadata({ params: Promise.resolve({ exam: "zoen2" }) });
     const description = String(metadata.description);
-    expect(description).toContain("令和8年度前期・令和7年度後期の第一次検定");
-    expect(description).toContain("80問を2回分");
-    expect(description).toContain("各回の公式全40問");
+    const years = new Set(pool.map(q => q.year)).size;
+    expect(description).toContain(years + "年分" + pool.length + "問");
+    expect(description).toContain("第一次検定を各回40問");
     expect(description).not.toContain("未収録の設問");
     expect(description).not.toContain("令和8年度前期第一次検定から37問");
     expect(metadata.openGraph?.description).toBe(description);
     expect(metadata.twitter?.description).toBe(description);
-    expect(metadata.title).toBe("2級造園施工管理技士 過去問一覧・AI解説");
+    expect(metadata.openGraph?.title).toBe("2級造園施工管理技士 過去問 " + years + "年分" + pool.length + "問｜解説つき・無料");
     expect(metadata.alternates?.canonical).toBe("/zoen2");
     expect(metadata.robots).toBeUndefined();
   });

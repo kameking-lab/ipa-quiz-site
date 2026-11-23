@@ -21,8 +21,8 @@ const source = JSON.parse(readFileSync(
 };
 
 describe("RETIO 2024 takken paper", () => {
-  it("describes both available years without assigning one law date to both", () => {
-    expect(EXAM_CONFIGS.takken.yearRange).toEqual({ start: 2024, end: 2025 });
+  it("describes the expanded collection with a law date for each year", () => {
+    expect(EXAM_CONFIGS.takken.yearRange).toEqual({ start: 2016, end: 2025 });
     const description = examMetaDescription("takken", TAKKEN_QUESTIONS.length);
     expect(description).toContain("2024・2025年度");
     expect(description).toContain("年度ごとの法令基準日");
@@ -33,8 +33,8 @@ describe("RETIO 2024 takken paper", () => {
     expect(source.sourceSha256).toBe("82a95815f991567ebc4982b05a15a71f6ec942bd6794c3bafe3bcf9c2e985bae");
     expect(source.lawReferenceDate).toBe("2024-04-01");
     expect(TAKKEN_2024_QUESTIONS).toHaveLength(50);
-    expect(TAKKEN_QUESTIONS).toHaveLength(100);
-    expect(new Set(TAKKEN_QUESTIONS.map((question) => question.id)).size).toBe(100);
+    expect(TAKKEN_QUESTIONS).toHaveLength(600);
+    expect(new Set(TAKKEN_QUESTIONS.map((question) => question.id)).size).toBe(600);
     expect(TAKKEN_2024_QUESTIONS.map((question) => question.qNumber)).toEqual(
       Array.from({ length: 50 }, (_, index) => index + 1),
     );

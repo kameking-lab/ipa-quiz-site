@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ActivitySummary } from "@/components/admin/ActivitySummary";
 import Link from "next/link";
 import { Gauge, Lock, Shield, Trophy, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -150,6 +151,7 @@ export default async function AdminExamUsagePage({ searchParams }: PageProps) {
         </div>
       </header>
 
+      <ActivitySummary days={range === "all" ? 95 : range} />
       <nav aria-label="期間切替" className="mb-6 flex flex-wrap gap-2">
         {EXAM_USAGE_RANGE_OPTIONS.map((opt) => (
           <Link

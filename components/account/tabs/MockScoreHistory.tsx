@@ -8,33 +8,27 @@ import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { examLabel } from "@/lib/utils";
 import {
   getMockScores,
-  getNickname,
-  setNickname,
 } from "@/lib/learning/mock-scores";
 import type { MockScore } from "@/lib/learning/mock-scores";
 import type { ExamCode } from "@/lib/questions/types";
 import { getMockExamHistory, type MockExamResult } from "@/lib/mock-exam/storage";
 import { mockReviewHref } from "@/lib/mock-exam/review";
+import { QualificationSelect } from "@/components/qualifications/QualificationSelect";
+
+const examOptions = ALL_QUIZ_EXAM_CODES.map(key => ({ key, name: examLabel(key) }));
 
 export function MockScoreHistory() {
-  const [exam, setExam] = React.useState<ExamCode>("ap");
-  const [nickname, setNicknameState] = React.useState("");
+  const [exam, setExam] = React.useState<ExamCode | "">("ap");
   const [scores, setScores] = React.useState<MockScore[]>([]);
   const [results, setResults] = React.useState<MockExamResult[]>([]);
 
   React.useEffect(() => {
-    setNicknameState(getNickname());
     setScores(getMockScores());
     const saved = getMockExamHistory();
     setResults(saved);
     const latest = saved.at(-1);
     if (latest) setExam(latest.exam);
   }, []);
-
-  function persistNickname(value: string) {
-    setNicknameState(value);
-    setNickname(value);
-  }
 
   const examScores = scores.filter((s) => s.exam === exam);
   const latest = examScores[examScores.length - 1];
@@ -48,31 +42,9 @@ export function MockScoreHistory() {
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <label className="flex-1">
-              <span className="text-xs text-zinc-500 dark:text-zinc-400">表示名（匿名OK）</span>
-              <input
-                type="text"
-                value={nickname}
-                placeholder="名無しの受験者"
-                maxLength={20}
-                onChange={(e) => persistNickname(e.target.value)}
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
-              />
-            </label>
-            <label className="flex-1">
-              <span className="text-xs text-zinc-500 dark:text-zinc-400">対象試験</span>
-              <select
-                value={exam}
-                onChange={(e) => setExam(e.target.value as ExamCode)}
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
-              >
-                {ALL_QUIZ_EXAM_CODES.map((c) => (
-                  <option key={c} value={c}>
-                    {examLabel(c)}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <QualificationSelect items={examOptions} value={exam} onChange={value => setExam(value as ExamCode | "")}
+              label="対象試験" emptyLabel="資格を選ぶ" className="flex-1 text-xs text-zinc-500 dark:text-zinc-400"
+              fieldClass="mt-1 block min-h-11 w-full min-w-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-zinc-700 dark:bg-zinc-900" />
           </div>
         </CardContent>
       </Card>
@@ -94,7 +66,7 @@ export function MockScoreHistory() {
             </div>
           ) : (
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              この試験の模試スコアはまだ記録されていません。模試モードを完了するとここに反映されます。
+              この試験の模試スコアはまだありません。
             </p>
           )}
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
@@ -136,10 +108,10 @@ export function MockScoreHistory() {
               })}
             </ul>
           )}
-          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-            ※ 模試スコアはこの端末に保存されます。
-          </p>
-          <Link href={`/mock-exam?exam=${exam}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline">模試を受ける</Link>
+          {exam && <details className="mt-2">
+            <summary className="min-h-11 cursor-pointer py-3 text-sm">模試を始める</summary>
+            <Link href={`/mock-exam?exam=${exam}`} className="inline-flex min-h-11 items-center text-sm text-primary underline">模試を受ける</Link>
+          </details>}
         </CardContent>
       </Card>
 
@@ -155,7 +127,6 @@ function MockResultDetails({ result }: { result?: MockExamResult }) {
     <p>重点分野: {weak.map(([category]) => category).join("・") || "今回の模試ではありません"}</p>
     <div className="flex flex-wrap gap-3">
       {result.wrongQuestionIds?.length ? <Link href={mockReviewHref(result)} className="inline-flex min-h-11 items-center font-semibold text-primary underline">今回の間違い・未回答を復習</Link> : null}
-      <Link href={`/mock-exam?exam=${result.exam}`} className="inline-flex min-h-11 items-center underline">同じ資格の模試に再挑戦</Link>
     </div>
   </div>;
 }

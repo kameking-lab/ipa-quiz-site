@@ -1,9 +1,10 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NativeReader } from "@/components/denken2/NativeReader";
-import { DENKEN3_NATIVE_QUESTIONS, denken3NativeQuestionPath, getDenken3NativePart, getDenken3NativeQuestion } from "@/lib/denken3/native";
+import { DENKEN3_NATIVE_QUESTIONS, denken3NativeQuestionPath, denken3NativeSittingLabel, getDenken3NativePart, getDenken3NativeQuestion } from "@/lib/denken3/native";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => DENKEN3_NATIVE_QUESTIONS.map(q => ({ edition: q.sitting, subject: q.subject, number: `q${q.number}` }));
@@ -16,11 +17,11 @@ function resolve(edition: string, subject: string, number: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition, subject, number } = await params;
   const q = resolve(edition, subject, number);
-  return q ? {
-    title: `電験三種 ${q.sitting === "2026-upper" ? "2026年度上期" : "2025年度下期"} ${names[q.subject]} 問${q.number}｜公式問題と解説`,
+  return q ? withCanonicalSocialMetadata({
+    title: `電験三種 ${denken3NativeSittingLabel(q.sitting)} ${names[q.subject]} 問${q.number}｜公式問題と解説`,
     description: `原問1題・${q.slots.length}回答欄。公式問題の図・表と5選択肢の理由を確認できます。`,
     alternates: { canonical: denken3NativeQuestionPath(q.sitting, q.subject, q.number) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/denken3/${gatedParams.edition}/${gatedParams.subject}/${gatedParams.number}`}/>; }
@@ -32,7 +33,7 @@ export default async function Page({ params }: Props) {
   if (!part) notFound();
   return <NativeReader question={q} readerConfig={{
     examName: "電験三種", examPath: "/denken3", editionSlug: q.sitting,
-    editionLabel: q.sitting === "2026-upper" ? "2026年度上期 一次試験" : "2025年度下期 一次試験",
+    editionLabel: `${denken3NativeSittingLabel(q.sitting)} 一次試験`,
     sourceAnswerUrl: part.sourceAnswerUrl, sourceIndexUrl: part.sourceIndexUrl,
     lawReferenceDate: q.subject === "law" ? `${q.year}-04-01` : undefined,
   }} />;

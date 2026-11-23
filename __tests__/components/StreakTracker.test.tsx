@@ -1,6 +1,7 @@
 import { afterEach, expect, it, vi } from "vitest";
 import { act, cleanup, render, screen } from "@testing-library/react";
 import { StreakTracker } from "@/lib/streak/StreakTracker";
+import { STREAK_100_DAY_EVENT } from "@/lib/streak/storage";
 import { LS_KEYS } from "@/lib/storage/keys";
 const mocks = vi.hoisted(() => ({ pathname: "/" }));
 vi.mock("next/navigation", () => ({ usePathname: () => mocks.pathname }));
@@ -25,4 +26,10 @@ it("keeps a milestone from covering article or quiz choices", () => {
   expect(JSON.parse(localStorage.getItem("ipa-quiz:streak:v1")!).currentStreak).toBe(3);
   expect(screen.queryByRole("status")).toBeNull();
   mocks.pathname = "/";
+});
+
+it("keeps the 100-day toast when a graded answer updates the streak directly", () => {
+  render(<StreakTracker />);
+  act(() => window.dispatchEvent(new Event(STREAK_100_DAY_EVENT)));
+  expect(screen.getByRole("status")).toHaveTextContent("100日の猛者");
 });

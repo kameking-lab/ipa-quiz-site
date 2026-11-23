@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "lane": "qc-1",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedRefs": 91,
+  "checkedUniqueCommits": 87,
+  "rows": [
+    {
+      "jobId": "PLAN5-113",
+      "planIndex": 112,
+      "key": "kangoshi|2026|annual|am|tp260424-05a_01.pdf",
+      "branch": "cx/kako-5y1-20261118",
+      "status": "既存2問を取り込み、公式採点除外1問を確認",
+      "importedQuestionCount": 2,
+      "newQuestionCount": 0,
+      "questionIds": [
+        "kangoshi-2025-annual-am-q79",
+        "kangoshi-2025-annual-am-q103"
+      ],
+      "expectedPrintedCount": 120,
+      "practiceQuestionCount": 119,
+      "officialExcludedQuestionNumbers": [
+        32
+      ],
+      "missingUnresolvedQuestionNumbers": [],
+      "importedFrom": {
+        "commit": "2a34c6ffc4e2b826dcabb96c05deadf36622330a",
+        "paths": [
+          "data/questions/kangoshi/source-recheck-20261011.json",
+          "data/questions/kangoshi/followup-20261011.json"
+        ]
+      },
+      "dataPath": "data/questions/kangoshi/plan5-qc1-imported.json",
+      "exclusionArchivePath": "data/question-ingestion/plan5-qc1-official-exclusions.json",
+      "sourceReceipts": [
+        {
+          "jobId": "PLAN5-113",
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05a_01.pdf",
+          "file": "tp260424-05a_01.pdf",
+          "sha256": "24ee4a497b9d4b04035f5feed2cac0242bfc95b2cae00e2df69ad31e44994ef1",
+          "pages": 60
+        },
+        {
+          "jobId": "PLAN5-113",
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05seitou.pdf",
+          "file": "tp260424-05seitou.pdf",
+          "sha256": "cd006ca5e9ef8d327a5e9415fd948817c6b572699c57ecfdfa86904569895d66",
+          "pages": 2
+        },
+        {
+          "jobId": "PLAN5-113",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/dl/kangoshi_am32.pdf",
+          "file": "kangoshi_am32.pdf",
+          "sha256": "ecf67723e0e2b48ce1f86a77f08311e20b9a6d06c923872c3d30ea20dd8e98dd",
+          "pages": 1
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-127",
+      "planIndex": 126,
+      "key": "shika-ishi|2025|annual|mondai-b|tp250428-02b_01.pdf",
+      "branch": "cx/kako-5y1-20261118",
+      "status": "不足候補1問は公式採点除外と確認",
+      "importedQuestionCount": 0,
+      "newQuestionCount": 0,
+      "questionIds": [],
+      "expectedPrintedCount": 90,
+      "practiceQuestionCount": 89,
+      "officialExcludedQuestionNumbers": [
+        35
+      ],
+      "missingUnresolvedQuestionNumbers": [],
+      "importedFrom": null,
+      "dataPath": null,
+      "exclusionArchivePath": "data/question-ingestion/plan5-qc1-official-exclusions.json",
+      "sourceReceipts": [
+        {
+          "jobId": "PLAN5-127",
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02b_01.pdf",
+          "file": "tp250428-02b_01.pdf",
+          "sha256": "02886e1bfc96dedf26e909885e292fd16a3dfd4d5667cab30342f715e543758d",
+          "pages": 60
+        },
+        {
+          "jobId": "PLAN5-127",
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-02seitou.pdf",
+          "file": "tp250428-02seitou.pdf",
+          "sha256": "78a3b990c3bf01948fbeb0af86284d7547ee61b76f40ce8aa3e304752240bb00",
+          "pages": 2
+        },
+        {
+          "jobId": "PLAN5-127",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken02/dl/B35.pdf",
+          "file": "B35.pdf",
+          "sha256": "d970825ddd5c7837a55053ed57dedf69cddf371e78526286364815b4cf1d5a7e",
+          "pages": 1
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-141",
+      "planIndex": 140,
+      "key": "shika-ishi|2022|annual|mondai-d|tp220421-02d_01.pdf",
+      "branch": "cx/kako-5y1-20261118",
+      "status": "公式90原問を照合し87問を新規収録・採点除外3問を記録",
+      "importedQuestionCount": 0,
+      "newQuestionCount": 87,
+      "questionIds": [
+        "shika-ishi-2022-annual-mondai-d-q1",
+        "shika-ishi-2022-annual-mondai-d-q2",
+        "shika-ishi-2022-annual-mondai-d-q3",
+        "shika-ishi-2022-annual-mondai-d-q4",
+        "shika-ishi-2022-annual-mondai-d-q5",
+        "shika-ishi-2022-annual-mondai-d-q6",
+        "shika-ishi-2022-annual-mondai-d-q7",
+        "shika-ishi-2022-annual-mondai-d-q8",
+        "shika-ishi-2022-annual-mondai-d-q9",
+        "shika-ishi-2022-annual-mondai-d-q10",
+        "shika-ishi-2022-annual-mondai-d-q11",
+        "shika-ishi-2022-annual-mondai-d-q12",
+        "shika-ishi-2022-annual-mondai-d-q13",
+        "shika-ishi-2022-annual-mondai-d-q14",
+        "shika-ishi-2022-annual-mondai-d-q15",
+        "shika-ishi-2022-annual-mondai-d-q16",
+        "shika-ishi-2022-annual-mondai-d-q17",
+        "shika-ishi-2022-annual-mondai-d-q18",
+        "shika-ishi-2022-annual-mondai-d-q19",
+        "shika-ishi-2022-annual-mondai-d-q20",
+        "shika-ishi-2022-annual-mondai-d-q21",
+        "shika-ishi-2022-annual-mondai-d-q22",
+        "shika-ishi-2022-annual-mondai-d-q23",
+        "shika-ishi-2022-annual-mondai-d-q24",
+        "shika-ishi-2022-annual-mondai-d-q25",
+        "shika-ishi-2022-annual-mondai-d-q26",
+        "shika-ishi-2022-annual-mondai-d-q27",
+        "shika-ishi-2022-annual-mondai-d-q28",
+        "shika-ishi-2022-annual-mondai-d-q29",
+        "shika-ishi-2022-annual-mondai-d-q30",
+        "shika-ishi-2022-annual-mondai-d-q31",
+        "shika-ishi-2022-annual-mondai-d-q32",
+        "shika-ishi-2022-annual-mondai-d-q33",
+        "shika-ishi-2022-annual-mondai-d-q34",
+        "shika-ishi-2022-annual-mondai-d-q35",
+        "shika-ishi-2022-annual-mondai-d-q36",
+        "shika-ishi-2022-annual-mondai-d-q37",
+        "shika-ishi-2022-annual-mondai-d-q38",
+        "shika-ishi-2022-annual-mondai-d-q39",
+        "shika-ishi-2022-annual-mondai-d-q40",
+        "shika-ishi-2022-annual-mondai-d-q41",
+        "shika-ishi-2022-annual-mondai-d-q42",
+        "shika-ishi-2022-annual-mondai-d-q43",
+        "shika-ishi-2022-annual-mondai-d-q44",
+        "shika-ishi-2022-annual-mondai-d-q45",
+        "shika-ishi-2022-annual-mondai-d-q46",
+        "shika-ishi-2022-annual-mondai-d-q47",
+        "shika-ishi-2022-annual-mondai-d-q48",
+        "shika-ishi-2022-annual-mondai-d-q49",
+        "shika-ishi-2022-annual-mondai-d-q50",
+        "shika-ishi-2022-annual-mondai-d-q51",
+        "shika-ishi-2022-annual-mondai-d-q52",
+        "shika-ishi-2022-annual-mondai-d-q53",
+        "shika-ishi-2022-annual-mondai-d-q54",
+        "shika-ishi-2022-annual-mondai-d-q55",
+        "shika-ishi-2022-annual-mondai-d-q56",
+        "shika-ishi-2022-annual-mondai-d-q57",
+        "shika-ishi-2022-annual-mondai-d-q58",
+        "shika-ishi-2022-annual-mondai-d-q60",
+        "shika-ishi-2022-annual-mondai-d-q61",
+        "shika-ishi-2022-annual-mondai-d-q62",
+        "shika-ishi-2022-annual-mondai-d-q63",
+        "shika-ishi-2022-annual-mondai-d-q64",
+        "shika-ishi-2022-annual-mondai-d-q65",
+        "shika-ishi-2022-annual-mondai-d-q66",
+        "shika-ishi-2022-annual-mondai-d-q67",
+        "shika-ishi-2022-annual-mondai-d-q68",
+        "shika-ishi-2022-annual-mondai-d-q69",
+        "shika-ishi-2022-annual-mondai-d-q71",
+        "shika-ishi-2022-annual-mondai-d-q72",
+        "shika-ishi-2022-annual-mondai-d-q73",
+        "shika-ishi-2022-annual-mondai-d-q74",
+        "shika-ishi-2022-annual-mondai-d-q75",
+        "shika-ishi-2022-annual-mondai-d-q76",
+        "shika-ishi-2022-annual-mondai-d-q77",
+        "shika-ishi-2022-annual-mondai-d-q79",
+        "shika-ishi-2022-annual-mondai-d-q80",
+        "shika-ishi-2022-annual-mondai-d-q81",
+        "shika-ishi-2022-annual-mondai-d-q82",
+        "shika-ishi-2022-annual-mondai-d-q83",
+        "shika-ishi-2022-annual-mondai-d-q84",
+        "shika-ishi-2022-annual-mondai-d-q85",
+        "shika-ishi-2022-annual-mondai-d-q86",
+        "shika-ishi-2022-annual-mondai-d-q87",
+        "shika-ishi-2022-annual-mondai-d-q88",
+        "shika-ishi-2022-annual-mondai-d-q89",
+        "shika-ishi-2022-annual-mondai-d-q90"
+      ],
+      "expectedPrintedCount": 90,
+      "practiceQuestionCount": 87,
+      "officialExcludedQuestionNumbers": [
+        59,
+        70,
+        78
+      ],
+      "missingUnresolvedQuestionNumbers": [],
+      "dataPath": "data/questions/shika-ishi/2022-mondai-d-official-qc1.json",
+      "exclusionArchivePath": "data/question-ingestion/plan5-qc1-official-exclusions.json",
+      "sourceReceipts": [
+        {
+          "jobId": "PLAN5-141",
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-02d_01.pdf",
+          "file": "tp220421-02d_01.pdf",
+          "sha256": "9fea4aec50ffa56e270bf4de9ac366c3a5c16821f4ff866defe50dc20adc813f",
+          "pages": 60
+        },
+        {
+          "jobId": "PLAN5-141",
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-02seitou.pdf",
+          "file": "tp220421-02seitou.pdf",
+          "sha256": "a1ec436748585edf8a7b590f312b44676f7b34077846f8564ee8bc0df65d96d4",
+          "pages": 2
+        },
+        {
+          "jobId": "PLAN5-141",
+          "kind": "appendix",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-02d_02.pdf",
+          "file": "tp220421-02d_02.pdf",
+          "sha256": "7d0592f4027dd7bfaf8183516a8f2a6de9307bc217f810d1914fc71a07eec74d",
+          "pages": 52
+        },
+        {
+          "jobId": "PLAN5-141",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken02/dl/D59.pdf",
+          "file": "D59.pdf",
+          "sha256": "68973766262e631983e5c06cec7fe3397dff484d5087eeb2993cd9a446471d4e",
+          "pages": 1
+        },
+        {
+          "jobId": "PLAN5-141",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken02/dl/D70.pdf",
+          "file": "D70.pdf",
+          "sha256": "efa1fa241a33ca732158a28a13f2e4661489063456730d2fee5e8a2fe47a347a",
+          "pages": 1
+        },
+        {
+          "jobId": "PLAN5-141",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken02/dl/D78.pdf",
+          "file": "D78.pdf",
+          "sha256": "d6262703148a2f414273eafe4de2130ee28fa310b2a839cc422328cae71a2535",
+          "pages": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,927 @@
+{
+  "exam": "rinsho-kogishi",
+  "year": 2025,
+  "storedYear": 2024,
+  "edition": 38,
+  "session": "pm",
+  "officialIndexUrl": "https://www.jaame.or.jp/ce/past-test.html",
+  "originalQuestionCount": 90,
+  "loadedScoredQuestionCount": 90,
+  "retainedExistingRecords": 59,
+  "importedRecords": 30,
+  "newlyAuthoredRecords": 1,
+  "sourceFiles": [
+    {
+      "kind": "questions",
+      "url": "https://www.jaame.or.jp/ce/pdf/38pm.pdf",
+      "sha256": "3fbdce75943c99da6dc6f9c6a166122ee0e97d0486ceb1bec3aa0fe1bea7b136",
+      "pages": 38
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.jaame.or.jp/ce/pdf/38ans.pdf",
+      "sha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee",
+      "pages": 1
+    }
+  ],
+  "branchSources": [
+    {
+      "commit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "path": "data/questions/rinsho-kogishi/phase16-recovered-drafts.json",
+      "sha256": "0bf33ad092344b32527b189292573496ce21c2d9656293b197228abcacb16363",
+      "selectedQuestionNumbers": [
+        12,
+        26,
+        29,
+        38,
+        40,
+        41,
+        42,
+        47,
+        48,
+        51,
+        52,
+        54,
+        55,
+        57,
+        59,
+        60,
+        67,
+        68,
+        70,
+        73,
+        74,
+        80,
+        81,
+        82,
+        83,
+        85,
+        87,
+        90
+      ]
+    },
+    {
+      "commit": "7dab5fb0c77b70d69feb4829f79a74d4523315b9",
+      "path": "data/questions/rinsho-kogishi/original-layout-figure-followup.json",
+      "sha256": "14823fe5b099b34258de9e7e5852b761559f1eab875f74996a3f0d19da461d48",
+      "selectedQuestionNumbers": [
+        49,
+        50
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/questions/rinsho-kogishi/38-pm/q54-choice-1.webp",
+      "sourcePage": 23,
+      "clip": [
+        87.0,
+        243.0,
+        246.0,
+        370.0
+      ],
+      "scale": 2,
+      "sha256": "b829a513c702480a11dab25e8cafe58b2802e8661d4e409542ebc0511eeb4808"
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/38-pm/q54-choice-2.webp",
+      "sourcePage": 23,
+      "clip": [
+        263.0,
+        243.0,
+        417.0,
+        370.0
+      ],
+      "scale": 2,
+      "sha256": "3c047cb3c7ccfc741fe8c5bad62db57ad4ba1a9224d76f15ffc105e2f7182782"
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/38-pm/q54-choice-3.webp",
+      "sourcePage": 23,
+      "clip": [
+        87.0,
+        385.0,
+        246.0,
+        513.0
+      ],
+      "scale": 2,
+      "sha256": "d03eafeda92d64a1cd034f83f1f0028f6e09e9ed9a606ff8222c30a769d28007"
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/38-pm/q54-choice-4.webp",
+      "sourcePage": 23,
+      "clip": [
+        263.0,
+        385.0,
+        417.0,
+        513.0
+      ],
+      "scale": 2,
+      "sha256": "2d3430bdd5a05f6546a7196d1f5c32437844dd0d7eefacea68b3794ed3d42e66"
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/38-pm/q54-choice-5.webp",
+      "sourcePage": 23,
+      "clip": [
+        87.0,
+        530.0,
+        246.0,
+        658.0
+      ],
+      "scale": 2,
+      "sha256": "a86cec16f58a855dd2af03a5a2ed4a1d23e74d6772f9543f7fc957441442e9a0"
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q26-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 10,
+      "sha256": "80f66b589fef2e231ab7ccd877b468cf0fd9a4248aaf51dc10a13187691c2233",
+      "size": [
+        908,
+        543
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q38-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 14,
+      "sha256": "ec667ae8cc1133474de96b982b795458d3cea17becafa1a6335e38ef5a416f4e",
+      "size": [
+        908,
+        533
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q40-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 15,
+      "sha256": "ef9529338ac4cf32e5694a96e6acf4e19f91ae3db5726b68658dd075ed249f30",
+      "size": [
+        908,
+        592
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q47-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 18,
+      "sha256": "511b80969260c42faac0cf350b35afc7276827ec7b2b0474d30be0fc865f3141",
+      "size": [
+        908,
+        513
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q51-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 21,
+      "sha256": "5b9fbace0cceed22ae1bbc71774d57e661137631457878dd2cdab84d04409e40",
+      "size": [
+        908,
+        1194
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q52-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 22,
+      "sha256": "3c718d555d3ddcdd9881c2cfcac77f3c4c7668aedb3edbf6b82ad82e692b25ed",
+      "size": [
+        908,
+        754
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q54-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 23,
+      "sha256": "bca3c6b577e1ca2cec6cbe9543d97e6d7bf06da5325baffde02994184854a514",
+      "size": [
+        908,
+        1194
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q55-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 24,
+      "sha256": "07ae56698bcaad88a73c8c854a8475cb9e2f902ffbc45598f4bf5caccab46b1f",
+      "size": [
+        908,
+        323
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q59-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 25,
+      "sha256": "9dcd61e467730448d09a231181421e6445a9e3e64d95edc58b21d23dd1a32aba",
+      "size": [
+        908,
+        873
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q74-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 31,
+      "sha256": "c6cedaca49bf7da2b3f63616996a98e73ff0b8296be5a203bf5a343bfde24c8a",
+      "size": [
+        908,
+        732
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q80-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 33,
+      "sha256": "2f63e6ca666dde6dd52f046187d6006b690b0638ff929d428297e6dd1a293f87",
+      "size": [
+        908,
+        793
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q82-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 34,
+      "sha256": "a6df96da775470d35f3b00f18b568bbb93be7aad96dc9ee4476a436b1deb77d2",
+      "size": [
+        908,
+        754
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q83-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 35,
+      "sha256": "c38eb096615e046a9fa5c9450977a918f107265c4f66f44d60043c5a97782e28",
+      "size": [
+        908,
+        579
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/phase16/rinsho-kogishi-2024-annual-pm-q85-original.png",
+      "sourceCommit": "2cd980e37c48d088a5d9a00168a7724e03173d32",
+      "sourcePage": 36,
+      "sha256": "5329c1d2f041db2fc4a7b4a8547d4b2439dc3797c54216399dd4db0d3a3a7d25",
+      "size": [
+        908,
+        444
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/round38-pm-q49-original-figure.png",
+      "sourceCommit": "7dab5fb0c77b70d69feb4829f79a74d4523315b9",
+      "sourcePage": 19,
+      "sha256": "92369b58e0d063bf07e0e514631042f554a3e1d9fb35329adffd5531f8d44663",
+      "size": [
+        430,
+        420
+      ]
+    },
+    {
+      "path": "public/questions/rinsho-kogishi/round38-pm-q50-original-figure.png",
+      "sourceCommit": "7dab5fb0c77b70d69feb4829f79a74d4523315b9",
+      "sourcePage": 20,
+      "sha256": "10aa488e6762c6031539e977e102f882e01e93b8dfd7be7ff646080250ccc862",
+      "size": [
+        845,
+        460
+      ]
+    }
+  ],
+  "receipts": [
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q1",
+      "qNumber": 1,
+      "officialAnswerCell": "2",
+      "questionPage": 2,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q2",
+      "qNumber": 2,
+      "officialAnswerCell": "3",
+      "questionPage": 2,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q3",
+      "qNumber": 3,
+      "officialAnswerCell": "2",
+      "questionPage": 2,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q4",
+      "qNumber": 4,
+      "officialAnswerCell": "5",
+      "questionPage": 3,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q5",
+      "qNumber": 5,
+      "officialAnswerCell": "5",
+      "questionPage": 3,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q6",
+      "qNumber": 6,
+      "officialAnswerCell": "4",
+      "questionPage": 3,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q7",
+      "qNumber": 7,
+      "officialAnswerCell": "4",
+      "questionPage": 4,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q8",
+      "qNumber": 8,
+      "officialAnswerCell": "1",
+      "questionPage": 4,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q9",
+      "qNumber": 9,
+      "officialAnswerCell": "1",
+      "questionPage": 4,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q10",
+      "qNumber": 10,
+      "officialAnswerCell": "1",
+      "questionPage": 5,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q11",
+      "qNumber": 11,
+      "officialAnswerCell": "4",
+      "questionPage": 5,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q12",
+      "qNumber": 12,
+      "officialAnswerCell": "3",
+      "questionPage": 5,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q13",
+      "qNumber": 13,
+      "officialAnswerCell": "3",
+      "questionPage": 6,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q14",
+      "qNumber": 14,
+      "officialAnswerCell": "1",
+      "questionPage": 6,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q15",
+      "qNumber": 15,
+      "officialAnswerCell": "5",
+      "questionPage": 6,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q16",
+      "qNumber": 16,
+      "officialAnswerCell": "4",
+      "questionPage": 7,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q17",
+      "qNumber": 17,
+      "officialAnswerCell": "4",
+      "questionPage": 7,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q18",
+      "qNumber": 18,
+      "officialAnswerCell": "5",
+      "questionPage": 7,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q19",
+      "qNumber": 19,
+      "officialAnswerCell": "5",
+      "questionPage": 8,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q20",
+      "qNumber": 20,
+      "officialAnswerCell": "2",
+      "questionPage": 8,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q21",
+      "qNumber": 21,
+      "officialAnswerCell": "1",
+      "questionPage": 8,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q22",
+      "qNumber": 22,
+      "officialAnswerCell": "1",
+      "questionPage": 9,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q23",
+      "qNumber": 23,
+      "officialAnswerCell": "3",
+      "questionPage": 9,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q24",
+      "qNumber": 24,
+      "officialAnswerCell": "4",
+      "questionPage": 9,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q25",
+      "qNumber": 25,
+      "officialAnswerCell": "3",
+      "questionPage": 10,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q26",
+      "qNumber": 26,
+      "officialAnswerCell": "1",
+      "questionPage": 10,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q27",
+      "qNumber": 27,
+      "officialAnswerCell": "5",
+      "questionPage": 10,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q28",
+      "qNumber": 28,
+      "officialAnswerCell": "5",
+      "questionPage": 11,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q29",
+      "qNumber": 29,
+      "officialAnswerCell": "3",
+      "questionPage": 11,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q30",
+      "qNumber": 30,
+      "officialAnswerCell": "5",
+      "questionPage": 11,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q31",
+      "qNumber": 31,
+      "officialAnswerCell": "1",
+      "questionPage": 12,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q32",
+      "qNumber": 32,
+      "officialAnswerCell": "4",
+      "questionPage": 12,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q33",
+      "qNumber": 33,
+      "officialAnswerCell": "4",
+      "questionPage": 12,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q34",
+      "qNumber": 34,
+      "officialAnswerCell": "2",
+      "questionPage": 13,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q35",
+      "qNumber": 35,
+      "officialAnswerCell": "5",
+      "questionPage": 13,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q36",
+      "qNumber": 36,
+      "officialAnswerCell": "1",
+      "questionPage": 13,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q37",
+      "qNumber": 37,
+      "officialAnswerCell": "3",
+      "questionPage": 14,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q38",
+      "qNumber": 38,
+      "officialAnswerCell": "3",
+      "questionPage": 14,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q39",
+      "qNumber": 39,
+      "officialAnswerCell": "5",
+      "questionPage": 14,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q40",
+      "qNumber": 40,
+      "officialAnswerCell": "2",
+      "questionPage": 15,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q41",
+      "qNumber": 41,
+      "officialAnswerCell": "2",
+      "questionPage": 15,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q42",
+      "qNumber": 42,
+      "officialAnswerCell": "1",
+      "questionPage": 16,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q43",
+      "qNumber": 43,
+      "officialAnswerCell": "5",
+      "questionPage": 16,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q44",
+      "qNumber": 44,
+      "officialAnswerCell": "2",
+      "questionPage": 16,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q45",
+      "qNumber": 45,
+      "officialAnswerCell": "1",
+      "questionPage": 17,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q46",
+      "qNumber": 46,
+      "officialAnswerCell": "4",
+      "questionPage": 17,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q47",
+      "qNumber": 47,
+      "officialAnswerCell": "3",
+      "questionPage": 18,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q48",
+      "qNumber": 48,
+      "officialAnswerCell": "4",
+      "questionPage": 18,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q49",
+      "qNumber": 49,
+      "officialAnswerCell": "4",
+      "questionPage": 19,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q50",
+      "qNumber": 50,
+      "officialAnswerCell": "3",
+      "questionPage": 20,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q51",
+      "qNumber": 51,
+      "officialAnswerCell": "3",
+      "questionPage": 21,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q52",
+      "qNumber": 52,
+      "officialAnswerCell": "1",
+      "questionPage": 22,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q53",
+      "qNumber": 53,
+      "officialAnswerCell": "2",
+      "questionPage": 22,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q54",
+      "qNumber": 54,
+      "officialAnswerCell": "3",
+      "questionPage": 23,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q55",
+      "qNumber": 55,
+      "officialAnswerCell": "5",
+      "questionPage": 24,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q56",
+      "qNumber": 56,
+      "officialAnswerCell": "5",
+      "questionPage": 24,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q57",
+      "qNumber": 57,
+      "officialAnswerCell": "1",
+      "questionPage": 24,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q58",
+      "qNumber": 58,
+      "officialAnswerCell": "2",
+      "questionPage": 25,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q59",
+      "qNumber": 59,
+      "officialAnswerCell": "3",
+      "questionPage": 25,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q60",
+      "qNumber": 60,
+      "officialAnswerCell": "5",
+      "questionPage": 26,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q61",
+      "qNumber": 61,
+      "officialAnswerCell": "2",
+      "questionPage": 26,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q62",
+      "qNumber": 62,
+      "officialAnswerCell": "4",
+      "questionPage": 26,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q63",
+      "qNumber": 63,
+      "officialAnswerCell": "3",
+      "questionPage": 27,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q64",
+      "qNumber": 64,
+      "officialAnswerCell": "5",
+      "questionPage": 27,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q65",
+      "qNumber": 65,
+      "officialAnswerCell": "5",
+      "questionPage": 27,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q66",
+      "qNumber": 66,
+      "officialAnswerCell": "2",
+      "questionPage": 28,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q67",
+      "qNumber": 67,
+      "officialAnswerCell": "1",
+      "questionPage": 28,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q68",
+      "qNumber": 68,
+      "officialAnswerCell": "5",
+      "questionPage": 28,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q69",
+      "qNumber": 69,
+      "officialAnswerCell": "3",
+      "questionPage": 29,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q70",
+      "qNumber": 70,
+      "officialAnswerCell": "1",
+      "questionPage": 29,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q71",
+      "qNumber": 71,
+      "officialAnswerCell": "3",
+      "questionPage": 29,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q72",
+      "qNumber": 72,
+      "officialAnswerCell": "4",
+      "questionPage": 30,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q73",
+      "qNumber": 73,
+      "officialAnswerCell": "2",
+      "questionPage": 30,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q74",
+      "qNumber": 74,
+      "officialAnswerCell": "5",
+      "questionPage": 31,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q75",
+      "qNumber": 75,
+      "officialAnswerCell": "2",
+      "questionPage": 31,
+      "status": "new"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q76",
+      "qNumber": 76,
+      "officialAnswerCell": "5",
+      "questionPage": 32,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q77",
+      "qNumber": 77,
+      "officialAnswerCell": "4",
+      "questionPage": 32,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q78",
+      "qNumber": 78,
+      "officialAnswerCell": "1",
+      "questionPage": 32,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q79",
+      "qNumber": 79,
+      "officialAnswerCell": "1",
+      "questionPage": 33,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q80",
+      "qNumber": 80,
+      "officialAnswerCell": "4",
+      "questionPage": 33,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q81",
+      "qNumber": 81,
+      "officialAnswerCell": "4",
+      "questionPage": 34,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q82",
+      "qNumber": 82,
+      "officialAnswerCell": "2",
+      "questionPage": 34,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q83",
+      "qNumber": 83,
+      "officialAnswerCell": "4",
+      "questionPage": 35,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q84",
+      "qNumber": 84,
+      "officialAnswerCell": "1",
+      "questionPage": 35,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q85",
+      "qNumber": 85,
+      "officialAnswerCell": "5",
+      "questionPage": 36,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q86",
+      "qNumber": 86,
+      "officialAnswerCell": "5",
+      "questionPage": 36,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q87",
+      "qNumber": 87,
+      "officialAnswerCell": "3",
+      "questionPage": 36,
+      "status": "imported"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q88",
+      "qNumber": 88,
+      "officialAnswerCell": "2",
+      "questionPage": 37,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q89",
+      "qNumber": 89,
+      "officialAnswerCell": "3",
+      "questionPage": 37,
+      "status": "existing-retained"
+    },
+    {
+      "id": "rinsho-kogishi-2024-annual-pm-q90",
+      "qNumber": 90,
+      "officialAnswerCell": "2",
+      "questionPage": 37,
+      "status": "imported"
+    }
+  ]
+}

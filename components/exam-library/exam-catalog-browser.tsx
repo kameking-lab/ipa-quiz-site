@@ -33,9 +33,10 @@ interface ExamCatalogBrowserProps {
   initialGroup: ExamGroupId;
   initialSubject: string | null;
   initialYear?: string;
+  groupLinks?: readonly { id: string; href: string; label: string }[];
 }
 
-export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject, initialYear }: ExamCatalogBrowserProps) {
+export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject, initialYear, groupLinks = [] }: ExamCatalogBrowserProps) {
   const group = initialGroup;
   const subject = initialSubject;
   const activeItems = items.filter((item) => item.group === group);
@@ -59,9 +60,13 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
     {!subject ? <section aria-labelledby="safety-exam-select">
       <h2 id="safety-exam-select" className="mb-3 text-lg font-semibold">資格を選ぶ</h2>
       <nav aria-label="資格一覧" className="mb-6 flex flex-wrap gap-2">
-        {sections.map((section) => <Link key={section.id} href={`#${section.id}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-3 text-sm hover:bg-muted">{section.title}</Link>)}
+        {sections.map((section) => {
+          const parent = groupLinks.find(link => link.id === section.id);
+          return <Link key={section.id} id={parent ? section.id : undefined} href={parent?.href ?? `#${section.id}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-3 text-sm hover:bg-muted">{parent?.label ?? section.title}</Link>;
+        })}
       </nav>
       {sections.map((section) => {
+        if (groupLinks.some(link => link.id === section.id)) return null;
         const sectionItems = items.filter((item) => item.group === section.group && section.filter(item.subject));
         const subjects = [...new Set(sectionItems.map((item) => item.subject))];
         if (!subjects.length) return null;

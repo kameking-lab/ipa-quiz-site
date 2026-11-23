@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
 import { BadgeWall } from "@/app/account/badges/BadgeWall";
 import { readXp, xpProgress, type XpProgress } from "@/lib/gamification/xp";
 
@@ -19,11 +18,11 @@ export function DashboardBadges() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50 via-fuchsia-50 to-pink-50 p-5 dark:border-violet-900/60 dark:from-violet-950/40 dark:via-fuchsia-950/40 dark:to-pink-950/40">
+      <div className="rounded-2xl border border-border bg-card p-5">
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <p className="mb-1 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-violet-700 dark:text-violet-300">
-              <Sparkles className="h-3 w-3" /> レベル
+              レベル
             </p>
             <p className="text-3xl font-bold text-violet-950 dark:text-violet-50 sm:text-4xl">
               Lv. {xp?.level ?? "—"}
@@ -53,7 +52,7 @@ export function DashboardBadges() {
         )}
       </div>
 
-      <p className="text-sm text-muted-foreground">以前に案内された特典については、<Link href="/contact#legacy-benefits" className="underline">お問い合わせください</Link>。</p>
+      <p className="text-sm text-muted-foreground">以前に案内された特典については、<Link href="/contact#legacy-benefits" className="inline-flex min-h-11 items-center underline underline-offset-4">お問い合わせください</Link>。</p>
 
       <BadgeWall />
     </div>

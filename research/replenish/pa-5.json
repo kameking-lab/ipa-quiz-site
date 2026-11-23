@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "lane": "pa-5",
+  "checkedOn": "2026-11-18",
+  "allocation": "配列の1始まり位置で position % 14 == 4（4,18,...,284）",
+  "baseline": "716498b54",
+  "addedQuestionCount": 121,
+  "addedOriginalQuestionCount": 70,
+  "independentAnswerUnits": 121,
+  "rows": [
+    {
+      "planId": "dekyo-charge-1",
+      "lane": "pa-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "partial",
+      "addedQuestionCount": 66,
+      "remainingVerifiedAnswerUnits": 150,
+      "years": [
+        2026,
+        2025
+      ],
+      "paths": [
+        "data/questions/dekyo-charge-1/index.ts",
+        "data/questions/dekyo-charge-1/sources.json"
+      ],
+      "sourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf"
+      ],
+      "notes": [
+        "ローカルブランチのみ。push・PR・公開なし。",
+        "電気通信技術の基礎のみ。各回の技術及び理論・法規は未収録。"
+      ]
+    },
+    {
+      "planId": "kogai-15",
+      "lane": "pa-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete",
+      "addedQuestionCount": 25,
+      "remainingVerifiedAnswerUnits": 0,
+      "years": [
+        2026
+      ],
+      "paths": [
+        "data/questions/kogai-15/index.ts",
+        "data/questions/kogai-15/sources.json"
+      ],
+      "sourceUrls": [
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_15.pdf",
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf"
+      ],
+      "notes": [
+        "ローカルブランチのみ。push・PR・公開なし。"
+      ]
+    },
+    {
+      "planId": "kogai-12",
+      "lane": "pa-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete",
+      "addedQuestionCount": 30,
+      "remainingVerifiedAnswerUnits": 0,
+      "years": [
+        2026
+      ],
+      "paths": [
+        "data/questions/kogai-12/index.ts",
+        "data/questions/kogai-12/sources.json"
+      ],
+      "sourceUrls": [
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_12.pdf",
+        "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf"
+      ],
+      "notes": [
+        "ローカルブランチのみ。push・PR・公開なし。"
+      ]
+    }
+  ],
+  "assignmentAudit": [
+    {
+      "order": 4,
+      "planId": "dekyo-charge-1",
+      "name": "電気通信設備工事担任者・第一級アナログ通信",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 18,
+      "planId": "kogai-15",
+      "name": "公害防止管理者・ダイオキシン類特論",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 32,
+      "planId": "kogai-12",
+      "name": "公害防止管理者・騒音・振動特論",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 46,
+      "planId": "career-gino-1",
+      "name": "キャリアコンサルティング技能検定1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 60,
+      "planId": "zensho-eco-79",
+      "name": "商業経済検定・商品開発と流通",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 74,
+      "planId": "javada-ef489b887c4e",
+      "name": "かわらぶき(かわらぶき作業)2級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 88,
+      "planId": "javada-54da858e355b",
+      "name": "テクニカルイラストレーション(テクニカルイラストレーションCAD作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 102,
+      "planId": "bridal-2",
+      "name": "ブライダルコーディネート技能検定2級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 116,
+      "planId": "javada-da4ce450fe55",
+      "name": "帆布製品製造(帆布製品製造作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 130,
+      "planId": "javada-f81c9da33c91",
+      "name": "紙器・段ボール箱製造(段ボール箱製造作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 144,
+      "planId": "javada-02936603ce0c",
+      "name": "金属ばね製造(線ばね製造作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 158,
+      "planId": "javada-997ab7eab516",
+      "name": "電気製図(配電盤・制御盤製図作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 172,
+      "planId": "javada-727fb14f75fe",
+      "name": "仕上げ(金型仕上げ作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 186,
+      "planId": "javada-b812923d9b16",
+      "name": "塗装(金属塗装作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 200,
+      "planId": "javada-a97fd094c304",
+      "name": "工場板金(数値制御タレットパンチプレス板金作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 214,
+      "planId": "javada-02c596f53273",
+      "name": "機械加工(円筒研削盤作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 228,
+      "planId": "javada-1299648118a6",
+      "name": "機械加工(普通旋盤作業)2級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 242,
+      "planId": "javada-6b1396a5b60f",
+      "name": "菓子製造(和菓子製造作業)2級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 256,
+      "planId": "javada-c806df910373",
+      "name": "鉄道車両製造・整備(鉄道車両現図作業)2級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 270,
+      "planId": "javada-d828e7f15eb4",
+      "name": "防水施工(セメント系防水工事作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    },
+    {
+      "order": 284,
+      "planId": "javada-19b30a746aa4",
+      "name": "電気機器組立て(開閉制御器具組立て作業)1級（学科）",
+      "existingSourcePaths": [],
+      "sharedLedgerContainsPlanId": false,
+      "status": "未着手"
+    }
+  ],
+  "nextPlanIds": [
+    "career-gino-1",
+    "zensho-eco-79",
+    "javada-ef489b887c4e",
+    "javada-54da858e355b",
+    "bridal-2",
+    "javada-da4ce450fe55",
+    "javada-f81c9da33c91",
+    "javada-02936603ce0c",
+    "javada-997ab7eab516",
+    "javada-727fb14f75fe",
+    "javada-b812923d9b16",
+    "javada-a97fd094c304",
+    "javada-02c596f53273",
+    "javada-1299648118a6",
+    "javada-6b1396a5b60f",
+    "javada-c806df910373",
+    "javada-d828e7f15eb4",
+    "javada-19b30a746aa4"
+  ],
+  "unconfirmed": [
+    "本番の対象3URLは2026-11-18にHTTP404を確認。別URL・別名による掲載の網羅確認は行っていない。origin/main・統合37参照・共有台帳・PLAN4も照合。",
+    "公害防止管理者2025年度はPLAN4に公式公開資料なし。追加していない。"
+  ],
+  "humanJudgmentRequired": [],
+  "choiceExplanationCount": 594,
+  "sourceImageCount": 151,
+  "verification": {
+    "officialAnswerMismatches": 0,
+    "schemaValidation": {
+      "ok": 121,
+      "fail": 0,
+      "warn": 0
+    },
+    "officialAnswerExtraction": "PyMuPDFで収録し、pdfplumberの別方式で全121解答単位を照合。",
+    "typecheck": "PASS（NODE_OPTIONS=--max-old-space-size=8192）",
+    "lint": "PASS（変更TS/TSX 21ファイル）",
+    "targetedTests": {
+      "files": 8,
+      "passed": 49,
+      "failed": 0
+    },
+    "mergedRefCount": 37,
+    "productionUrls": [
+      {
+        "exam": "dekyo-charge-1",
+        "url": "https://www.kakomon-ai.jp/dekyo-charge-1",
+        "status": 404,
+        "finalUrl": "https://www.kakomon-ai.jp/dekyo-charge-1",
+        "title": "過去問AI — AIネイティブ過去問学習",
+        "checkedAt": "2026-11-17T16:16:03.914995+00:00"
+      },
+      {
+        "exam": "kogai-15",
+        "url": "https://www.kakomon-ai.jp/kogai-15",
+        "status": 404,
+        "finalUrl": "https://www.kakomon-ai.jp/kogai-15",
+        "title": "過去問AI — AIネイティブ過去問学習",
+        "checkedAt": "2026-11-17T16:16:05.335529+00:00"
+      },
+      {
+        "exam": "kogai-12",
+        "url": "https://www.kakomon-ai.jp/kogai-12",
+        "status": 404,
+        "finalUrl": "https://www.kakomon-ai.jp/kogai-12",
+        "title": "過去問AI — AIネイティブ過去問学習",
+        "checkedAt": "2026-11-17T16:16:06.769755+00:00"
+      }
+    ]
+  }
+}

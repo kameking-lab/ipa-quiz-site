@@ -10,8 +10,7 @@ import { join } from "node:path";
 const read = (p: string) => readFileSync(join(process.cwd(), p), "utf8");
 
 describe.each([
-  ["essay-grade（論文採点）", "app/api/essay-grade/route.ts"],
-  ["scoring（午後記述採点）", "app/api/scoring/route.ts"],
+  ["essay-grade（論文採点）", "lib/essay/legacy-grade.ts"],
 ])("採点プロンプトの専門範囲・injectionガード — %s", (_label, path) => {
   const source = read(path);
 

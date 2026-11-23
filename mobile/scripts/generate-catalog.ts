@@ -9,6 +9,7 @@ process.chdir(root);
 // loader cannot reliably infer named exports across this boundary.
 const require = createRequire(import.meta.url);
 const {examCatalog,examContent,catalogCodes}=require("../shared/catalog-source.ts") as typeof import("../shared/catalog-source");
+const { qualificationTargets } = require("../shared/qualification-schedules.ts") as typeof import("../shared/qualification-schedules");
 const {getAllEssayQuestions}=require("../../lib/essay/load.ts") as typeof import("../../lib/essay/load");
 await writeFile(resolve(root,"lib/essay/catalog.generated.json"),JSON.stringify(getAllEssayQuestions().map(({id,title,exam,year,season,qNumber})=>({id,title,exam,year,season,qNumber})),null,2)+"\n");
 async function files(dir:string):Promise<string[]> { const result:string[]=[]; for (const item of await readdir(dir,{ withFileTypes:true })) { const path=resolve(dir,item.name); if(item.isDirectory()) result.push(...await files(path)); else result.push(path); } return result; }
@@ -23,6 +24,13 @@ for(const code of catalogCodes()) { const entry=await examCatalog(code); if(entr
 } }
 await mkdir(resolve(root,"mobile/src/generated"),{recursive:true});
 await writeFile(resolve(root,"mobile/src/generated/catalog.json"),JSON.stringify({ schema:2,exams },null,2)+"\n");
+const qualifications = [...new Set(exams.map(entry => entry.qualification ?? entry.code))]
+  .filter(code => qualificationTargets(code).length === 0)
+  .sort();
+await writeFile(resolve(root, "mobile/shared/qualification-source-gaps.json"), JSON.stringify({
+  scope: "Generated from the published catalog by pnpm --dir mobile run catalog. These qualification IDs have no verified native schedule mapping yet.",
+  qualifications,
+}, null, 2) + "\n");
 const routes=(await files(resolve(root,"app"))).filter(p=>/[\\/]page\.tsx$/.test(p)&&!relative(resolve(root,"app"),p).split(/[\\/]/).some(part=>part.startsWith("_"))).map(path=>{
   const web=relative(resolve(root,"app"),path).replace(/\\/g,"/").replace(/\/?page\.tsx$/,"")||"/";
   return { web:web.startsWith("/")?web:"/"+web,source:relative(root,path).replace(/\\/g,"/"),app:"同一Next.jsページ・Reactコンポーネント・APIをオンラインで共通実行",status:web.startsWith("admin")?"管理者用（同一権限を維持）":"実装・オンライン共通利用" };

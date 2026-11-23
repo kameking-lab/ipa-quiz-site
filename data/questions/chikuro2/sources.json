@@ -1,0 +1,675 @@
+{
+  "qualification": "築炉技能士2級（築炉作業）",
+  "fiscalYear": 2025,
+  "period": "前期",
+  "examDate": "2025-08-24",
+  "checkedAt": "2026-11-12T17:36:08.792866+09:00",
+  "officialLandingUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B64&v4=%E7%AF%89%E7%82%89%EF%BC%88%E7%AF%89%E7%82%89%E4%BD%9C%E6%A5%AD%EF%BC%89",
+  "sources": [
+    {
+      "kind": "questions",
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B64-%E7%AF%89%E7%82%89%EF%BC%88%E7%AF%89%E7%82%89%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "sha256": "2328bce3715423b11226359bc7cde11aa74d76fc3b787d3e3f656000f576202a",
+      "pages": 8,
+      "bytes": 494106
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B64-%E7%AF%89%E7%82%89%EF%BC%88%E7%AF%89%E7%82%89%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "sha256": "e696fd961bc6870c15eb236641deaf300230558e26d6b774cf39c58438a96955",
+      "pages": 1,
+      "bytes": 58742
+    }
+  ],
+  "questionCount": 50,
+  "trueFalseCount": 25,
+  "multipleChoiceCount": 25,
+  "choiceExplanationCount": 150,
+  "figureCount": 2,
+  "transcription": "公式問題PDF全8ページ・公式正答表1ページを目視照合。字間・改行・英数字幅・句読点を正規化。B群17の寸法表は長さ×幅×厚さの順でテキスト化。B群4の墨印・B群22の線種は公式原図を切り出して保持。問題・選択肢の補作なし。",
+  "answerMapping": {
+    "A": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "B": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "supplementalSources": [
+    {
+      "questions": [
+        "A群24"
+      ],
+      "url": "https://www.mhlw.go.jp/content/11300000/001395566.pdf",
+      "note": "高さ5m以上の足場、足場の組立て等作業主任者。"
+    },
+    {
+      "questions": [
+        "A群25"
+      ],
+      "url": "https://www.pref.miyazaki.lg.jp/documents/9694/9694_20241028134125-1.pdf",
+      "note": "労働安全衛生規則第582条、注水等の粉じん飛散防止。"
+    },
+    {
+      "questions": [
+        "B群24",
+        "B群25"
+      ],
+      "url": "https://www.mhlw.go.jp/content/11300000/001115670.pdf",
+      "note": "労働安全衛生規則第527条（幅30cm以上）・第528条（角度75度以下）。"
+    },
+    {
+      "questions": [
+        "A群18"
+      ],
+      "url": "https://www.jfe-21st-cf.or.jp/jpn/chapter_2/2f_1.html",
+      "note": "JFE21世紀財団。転炉の能力は1回に精錬できる粗鋼の重量。"
+    }
+  ],
+  "review": [
+    {
+      "id": "chikuro2-2025-early-gakka-a-001",
+      "pdfPage": 2,
+      "officialLabel": "A群 1",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-002",
+      "pdfPage": 2,
+      "officialLabel": "A群 2",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-003",
+      "pdfPage": 2,
+      "officialLabel": "A群 3",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-004",
+      "pdfPage": 2,
+      "officialLabel": "A群 4",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-005",
+      "pdfPage": 2,
+      "officialLabel": "A群 5",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-006",
+      "pdfPage": 2,
+      "officialLabel": "A群 6",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-007",
+      "pdfPage": 2,
+      "officialLabel": "A群 7",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-008",
+      "pdfPage": 2,
+      "officialLabel": "A群 8",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-009",
+      "pdfPage": 2,
+      "officialLabel": "A群 9",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-010",
+      "pdfPage": 2,
+      "officialLabel": "A群 10",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-011",
+      "pdfPage": 2,
+      "officialLabel": "A群 11",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-012",
+      "pdfPage": 2,
+      "officialLabel": "A群 12",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-013",
+      "pdfPage": 2,
+      "officialLabel": "A群 13",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-014",
+      "pdfPage": 2,
+      "officialLabel": "A群 14",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-015",
+      "pdfPage": 2,
+      "officialLabel": "A群 15",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-016",
+      "pdfPage": 2,
+      "officialLabel": "A群 16",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-017",
+      "pdfPage": 2,
+      "officialLabel": "A群 17",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-018",
+      "pdfPage": 3,
+      "officialLabel": "A群 18",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-019",
+      "pdfPage": 3,
+      "officialLabel": "A群 19",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-020",
+      "pdfPage": 3,
+      "officialLabel": "A群 20",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-021",
+      "pdfPage": 3,
+      "officialLabel": "A群 21",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-022",
+      "pdfPage": 3,
+      "officialLabel": "A群 22",
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-023",
+      "pdfPage": 3,
+      "officialLabel": "A群 23",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-024",
+      "pdfPage": 3,
+      "officialLabel": "A群 24",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-a-025",
+      "pdfPage": 3,
+      "officialLabel": "A群 25",
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-001",
+      "pdfPage": 4,
+      "officialLabel": "B群 1",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-002",
+      "pdfPage": 4,
+      "officialLabel": "B群 2",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-003",
+      "pdfPage": 4,
+      "officialLabel": "B群 3",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-004",
+      "pdfPage": 4,
+      "officialLabel": "B群 4",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-005",
+      "pdfPage": 4,
+      "officialLabel": "B群 5",
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-006",
+      "pdfPage": 4,
+      "officialLabel": "B群 6",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-007",
+      "pdfPage": 5,
+      "officialLabel": "B群 7",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-008",
+      "pdfPage": 5,
+      "officialLabel": "B群 8",
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-009",
+      "pdfPage": 5,
+      "officialLabel": "B群 9",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-010",
+      "pdfPage": 5,
+      "officialLabel": "B群 10",
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-011",
+      "pdfPage": 5,
+      "officialLabel": "B群 11",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-012",
+      "pdfPage": 6,
+      "officialLabel": "B群 12",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-013",
+      "pdfPage": 6,
+      "officialLabel": "B群 13",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-014",
+      "pdfPage": 6,
+      "officialLabel": "B群 14",
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-015",
+      "pdfPage": 6,
+      "officialLabel": "B群 15",
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-016",
+      "pdfPage": 6,
+      "officialLabel": "B群 16",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-017",
+      "pdfPage": 6,
+      "officialLabel": "B群 17",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-018",
+      "pdfPage": 7,
+      "officialLabel": "B群 18",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-019",
+      "pdfPage": 7,
+      "officialLabel": "B群 19",
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-020",
+      "pdfPage": 7,
+      "officialLabel": "B群 20",
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-021",
+      "pdfPage": 7,
+      "officialLabel": "B群 21",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-022",
+      "pdfPage": 7,
+      "officialLabel": "B群 22",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-023",
+      "pdfPage": 7,
+      "officialLabel": "B群 23",
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-024",
+      "pdfPage": 8,
+      "officialLabel": "B群 24",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    },
+    {
+      "id": "chikuro2-2025-early-gakka-b-025",
+      "pdfPage": 8,
+      "officialLabel": "B群 25",
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "checked": [
+        "原本の問番号・本文・全選択肢",
+        "公式正答表",
+        "独自解説"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+import type { ExamCode } from "@/lib/questions/types";
+import { examLabel } from "@/lib/utils";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
+import { examMetaDescription, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+
+export function examSearchMetadata(exam: ExamCode, count: number, coverageDescription = examMetaDescription(exam, count)) {
+  const years = getQuestionsByExamStrict(exam).map(q => q.year);
+  const facts = exam === "kanri" ? "各年度の法令基準日も確認できます。"
+    : exam === "zoen2" ? "前期・後期の第一次検定を各回40問収録しています。"
+    : exam === "denko1" && years.length > 0
+      ? "収録は" + Math.min(...years) + "〜" + Math.max(...years) + "年度で、高圧受電設備の配線図も確認できます。"
+      : null;
+  const name = exam.startsWith("shobo-setsubishi-") ? getQualificationByExamCode(exam)?.shortName : undefined;
+  return formatExamSearchMetadata(name ?? examLabel(exam), count, years, facts ?? coverageDescription, facts !== null);
+}
+
+/** Count distinct years represented in the corpus, including gaps between editions. */
+export function formatExamSearchMetadata(name: string, count: number, years: readonly number[], coverage = "", useCoverage = false) {
+  const yearCount = new Set(years).size;
+  const size = (yearCount ? yearCount + "年分" : "") + count.toLocaleString("ja-JP") + "問";
+  const title = name + " 過去問 " + size + "｜解説つき・無料";
+  const lead = name + "の過去問を" + size + "収録。答えと解説つきで、1日" + PLAN_OFFER.freeDaily + "問まで無料です。";
+  const partial = /(?:部分|一部)収録|原問|公表版/.test(coverage);
+  const scope = partial || useCoverage ? coverage.split("。")[0] + "。" : "";
+  const browse = "年度別・分野別の一覧から過去問を選び、間違えた問題や苦手な分野の問題を繰り返し解いて復習できます。";
+  const description = lead + scope + browse;
+  return { title, description: description.length > 110 ? description.slice(0, 109) + "…" : description };
+}

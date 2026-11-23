@@ -45,7 +45,7 @@ test.describe("home SERP snippet", () => {
     expect(metaContent(html, "name", "twitter:description")).toBe(desc);
   });
 
-  test("qualification catalog replaces the demo while preserving IPA structured data", async ({ page }) => {
+  test("qualification catalog replaces the demo while preserving IPA structured data", async ({ page, request }) => {
     await page.goto("/ipa");
     await expect(page.locator(".hero-ai-demo")).toHaveCount(0);
     await expect(page.getByRole("heading", { name: "資格を選ぶ", exact: true })).toBeVisible();
@@ -59,10 +59,18 @@ test.describe("home SERP snippet", () => {
     for (const code of ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"]) {
       expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith(`/${code}`))).toBe(true);
     }
-    // The all-qualification catalog lives at the root; /ipa retains its IPA list.
-    await page.goto("/");
-    for (const code of ["fp3", "denko2", "denken3", "denken2", "takken", "civil2", "kankoji2", "zoen2", "tsushin2", "kaigo", "civil1", "denko1", "shakai", "seishin", "tohan", "benrishi", "junkango-kansai"]) {
-      await expect(page.locator(`a[href="/${code}"]`).first()).toBeAttached();
+    const home = await request.get("/");
+    await expect(home).toBeOK();
+    const hrefs = [...(await home.text()).matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)].map(match => match[1]);
+    await page.goto("/search");
+    const directory = page.locator("#home-directory-title");
+    for (const href of ["/fp3", "/denko2", "/denken3", "/denken2", "/takken", "/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/civil1", "/denko1", "/shakai", "/seishin", "/benrishi", "/qualifications/tohan", "/qualifications/junkango"]) {
+      expect(hrefs).toContain(href);
+      await expect(directory.locator(`a[href="${href}"]`).first()).toBeAttached();
+    }
+    for (const href of ["/tohan", "/junkango-kansai"]) {
+      expect(hrefs).not.toContain(href);
+      await expect(directory.locator(`a[href="${href}"]`)).toHaveCount(0);
     }
   });
 });

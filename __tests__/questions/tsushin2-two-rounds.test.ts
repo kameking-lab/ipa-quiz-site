@@ -11,6 +11,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { recordReview, getDueCards } from "@/lib/learning/spaced-repetition";
 
 const keys = ["ア", "イ", "ウ", "エ"] as const;
+const reviewed = TSUSHIN2_QUESTIONS.filter(q => Object.hasOwn(official, `${q.year}-${q.season}`));
 describe("tsushin2 latest two separate sittings", () => {
   it.each(Object.entries(official))("%s has all 65 original question numbers and fixed official keys", (round, answers) => {
     const questions = TSUSHIN2_QUESTIONS.filter(q => `${q.year}-${q.season}` === round).sort((a,b) => a.qNumber-b.qNumber);
@@ -30,7 +31,8 @@ describe("tsushin2 latest two separate sittings", () => {
     });
   });
   it("binds inherited source blocks and all 16 figures to their accepted bytes", () => {
-    expect(new Set(TSUSHIN2_QUESTIONS.map(q => q.id)).size).toBe(130);
+    expect(new Set(reviewed.map(q => q.id)).size).toBe(130);
+    expect(new Set(TSUSHIN2_QUESTIONS.map(q => q.id)).size).toBe(TSUSHIN2_QUESTIONS.length);
     for (const file of receipt.files) expect(createHash("sha256").update(readFileSync(join(process.cwd(),file.path),"utf8").replace(/\r\n/g,"\n")).digest("hex")).toBe(file.normalizedLfSha256);
     expect(receipt.images).toHaveLength(16);
     for (const figure of receipt.images) {
@@ -40,8 +42,9 @@ describe("tsushin2 latest two separate sittings", () => {
     }
   });
   it("keeps 129 graded materials and one reference outside ordinary and review pools/storage", () => {
-    expect(TSUSHIN2_ASSESSMENT_COUNTS).toEqual({materials:130,scored:129,referenceOnly:1});
-    expect(filterQuestions(TSUSHIN2_QUESTIONS,{exam:"tsushin2",mode:"random"})).toHaveLength(129);
+    expect(filterQuestions(reviewed, {exam:"tsushin2",mode:"random"})).toHaveLength(129);
+    const scored = filterQuestions(TSUSHIN2_QUESTIONS, {exam:"tsushin2",mode:"random"});
+    expect(TSUSHIN2_ASSESSMENT_COUNTS).toEqual({materials:TSUSHIN2_QUESTIONS.length,scored:scored.length,referenceOnly:1});
     const ref = TSUSHIN2_QUESTIONS.find(q=>q.id==="tsushin2-2025-late-gakka-q21")!;
     expect(ref.answer).toBe("エ");
     expect(ref.questionNotice).toContain("正答率には算入しません");
@@ -56,7 +59,7 @@ describe("tsushin2 latest two separate sittings", () => {
     expect(filterQuestions([ref],{mode:"review"},history)).toEqual([]);
   });
   it("corrects R2 without altering the printed compiler proposition or official key", () => {
-    const q=TSUSHIN2_QUESTIONS.find(q=>q.year===2026 && q.qNumber===9)!;
+    const q=reviewed.find(q=>q.year===2026 && q.season==="early" && q.qNumber===9)!;
     expect(q.choices?.イ).toContain("コンパイラ");
     expect(q.answer).toBe("エ");
     expect(q.choiceExplanations?.イ).toContain("翻訳先は機械語に限らず");

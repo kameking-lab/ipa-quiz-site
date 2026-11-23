@@ -1,0 +1,518 @@
+{
+  "method": "公式原本の本文全32ページと正答表1ページを画像確認。PyMuPDFの転記をpdfplumberで問番号・本文・選択肢ごとに独立照合。数式の指数・ギリシャ文字と表の列を等価な文字表記で保持。",
+  "questions": [
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q1",
+      "sourceContentSha256": "98f65d5bd0216cb1bb06f57e808cf60ed3d35af74efd8ca329aa5f9a45900ebf",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q2",
+      "sourceContentSha256": "47936edefa1e1aff0db5b7692b310ef7d3e3ba193cc2c18c7156d45a690b8f47",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q3",
+      "sourceContentSha256": "b5f3bf5b87fddbc573501b71f4051d97b08589bed39aa18d8d2088682d330f63",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q4",
+      "sourceContentSha256": "5278019bd49ed07058b921404b1386ac67ba6b8d270e21608587cf01d4925c7a",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q5",
+      "sourceContentSha256": "3a7d0581041f1798c1016cada4406be6d1c5dc8446d6a2949f13516b94443ec4",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q6",
+      "sourceContentSha256": "0ec74a0dda0b56224686d8462334d725050c405308ff4f06ca64f5f41465d1e3",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q7",
+      "sourceContentSha256": "50e94fb6cf1f218ef9aea0c764161d35f6dac0b096a280970ac4dd7b1c455ee8",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q8",
+      "sourceContentSha256": "2b81f98ee31b4c6c20f4d0396e7adb23356f2e2900df0c5d5de22a4d414c4e26",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q9",
+      "sourceContentSha256": "0bd8472243f0a08fd1e76b1dd2f7bf842b4d0848e91e06bfe80919d68f39df25",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q10",
+      "sourceContentSha256": "60e316032497a70c33348623ddc6f00f56c4080793cc8b6cacfd83d2905f67fc",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q11",
+      "sourceContentSha256": "af4db5c33faca5f9abc35ae2321d7000d277d18244a99240bb98184c48f5f31c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q12",
+      "sourceContentSha256": "fdb07c0fec703e13f47bafa44dad2861295a4229523e1d41fdbb5a0f78771e63",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q13",
+      "sourceContentSha256": "1eac290c6ae591e5b56f49386106a05882fd7e8797d8af02b8f73ef22cd1c8b7",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q14",
+      "sourceContentSha256": "18ae3bf15f0c0d6de431ae8988a801ccf1c35c2f1828d67773eab8de87d02da0",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q15",
+      "sourceContentSha256": "b4cc0059a892956921581e1d057b72b46f2c84dae8491948ef2e54636fe7353c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q16",
+      "sourceContentSha256": "e0171b989ada3bd973e93ecac1f3984a077fb0cf2755211b888ef782ad79b4f4",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q17",
+      "sourceContentSha256": "437dcbf8013b512874ae771845e4dbac6e514fc798643554ca1aebadf1412b0c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q18",
+      "sourceContentSha256": "570b3fd3294053789aa1a68884b828d3c35b23079f9db2bd9b0bc7ef4dc4d682",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q19",
+      "sourceContentSha256": "d1f21e508e71cc204bc023c74ea82c9545e6ac06abe829011db055009c0f10ef",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoki-q20",
+      "sourceContentSha256": "fdecbccf69f9ee682d45be2863648668621a6ff8707b371022501e8c40cbb771",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q1",
+      "sourceContentSha256": "c645aa0667fbbf7b5e4725dae1103f819baa583dd10c7e92ce777a80d2aef9c3",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q2",
+      "sourceContentSha256": "39fa919956c5d504152715130fbacb53c3e32dd588c2246da09354cc6b95f6e5",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q3",
+      "sourceContentSha256": "3b3e7ad0718bf84b1ddd748252fe2befc55183be277addd6ca3bf35a1dc45607",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q4",
+      "sourceContentSha256": "ff785112f0b915cafad4db14cc0b2b028d5ed4bca13467a9a0e86711f42000cc",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q5",
+      "sourceContentSha256": "269c15210b087e302e09a387f8ab1938e6bba503bd089b0c626f4c8b12d7c07e",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q6",
+      "sourceContentSha256": "0475711257f375125d9ec81a9ac2c989c0a22e31b41084e0bc2cc038d0497023",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q7",
+      "sourceContentSha256": "bb7ffa953963a59fef4734d3baa6ab70f492259d023809c35cac8cefa97dff1c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q8",
+      "sourceContentSha256": "04afe02fcb6f407dcfcadd8deef34f597438d171769f24a05e2ab359e26ae892",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q9",
+      "sourceContentSha256": "612f2f9d80a0a1745c92fcf9adfe2d5810e4174394a2b9e05efc07cd6e4226cd",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q10",
+      "sourceContentSha256": "c3f3b1ed73841c3a8dff93f62adc166177b5dafa1b49273d7fff59831d355bf2",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q11",
+      "sourceContentSha256": "113acf0e3285a5e1f1d5710a9500689ed011732729c5882f66c3e3751a3334ba",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q12",
+      "sourceContentSha256": "acb35a01cc4c2fe1f33035ae00c77e2a6136ab84d3362b982a3c5ac5766edd0c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q13",
+      "sourceContentSha256": "f9075da4e4927c38ae05a1add980ac86e93af48663d97c08c68e3a56fc94985c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q14",
+      "sourceContentSha256": "34ed8e61a864637ec8cf419849654155004394ef25d2d0d16e900e573b68459a",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-hoan-q15",
+      "sourceContentSha256": "7a6be4695992ee1fa32e615ccad78ffc7f6115b5d569fd1f7d7e754d5d1d5d6c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q1",
+      "sourceContentSha256": "dfa7e7a4d850557746a3f61f60e4153d0e6813a84d8acca22a57c89101fda8a9",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q2",
+      "sourceContentSha256": "da5fd181ab3300c402ea08a3172a532c8225f7a8ac342039693811ae2ef1f63a",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q3",
+      "sourceContentSha256": "8be844a4faa707568873f87135a0ee6eae697ce2c97ab501136a10b18199fe6a",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q4",
+      "sourceContentSha256": "0412498839ab58ce5925626c48536a25507dad5cabe549df1c6edecbd9752868",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q5",
+      "sourceContentSha256": "e223b5331f672fe266486d9b7c887702ecea657330956c0669d04986d1aa1adc",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q6",
+      "sourceContentSha256": "4263cb133f930287e010a3d6a16fbd3c9a95b014255c0c3f99f64ab9aa173134",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q7",
+      "sourceContentSha256": "3a3ad534ae2f556f2d1a7390105a89932a06144624c8650279ee807d7dd468e4",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q8",
+      "sourceContentSha256": "4d32c8cfc42387300d2543f54d68b4ec3cf0039b521b85cd8a5b1e3da2e94a21",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q9",
+      "sourceContentSha256": "23b98827aaca9b3c5a049c9ecf9d4aeac1065f41d0aece74ccb5c787aec024fb",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q10",
+      "sourceContentSha256": "35bf6fce9a24186b4fb9afc8f39d7c04f668ee42b16dc40dd179bee928417c81",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q11",
+      "sourceContentSha256": "ba25221e64e789f4d6b31554a924a79d59f6b05e591d6cb64a3f9b1d918f8cbb",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q12",
+      "sourceContentSha256": "560802af267dfb903d483a363531b931207d86d64c26dc53c25784b412f8c802",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q13",
+      "sourceContentSha256": "ed9edfc0b1e8f81fa0a5b577f5ac2fbf094b69617066b9341150948f97ccfd5c",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q14",
+      "sourceContentSha256": "e09fc9ec85a702ead079f4339f32af9eb86abb66a4680b15cef4d4f480efeed5",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kikai-otsu-2026-annual-gakushiki-q15",
+      "sourceContentSha256": "f832955a5951915ff1aa2c13b9324eb930fb7123a78cc53d15c864829cb17027",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    }
+  ],
+  "assets": [
+    {
+      "file": "images/2026-FX-q6-formula.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FX.pdf",
+      "sourceSha256": "5e28e2bd72e58316093b943f8c6deba67eb58ce76f499c83938fe79cc9ed1b7a",
+      "pdfPage": 3,
+      "clipPoints": [
+        75,
+        551,
+        440,
+        675
+      ],
+      "scale": 2,
+      "sha256": "e7a16411d657177c85b5d9eda842ad23d546dca991697d49d06aca2c29785bd0",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FX-q6-formula.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FX-shared-1.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FX.pdf",
+      "sourceSha256": "5e28e2bd72e58316093b943f8c6deba67eb58ce76f499c83938fe79cc9ed1b7a",
+      "pdfPage": 4,
+      "clipPoints": [
+        54,
+        286,
+        537,
+        527
+      ],
+      "scale": 2,
+      "sha256": "93dff20dabf38ed6b57730a99c1638a9046b587658184d6cbc4e3cc0a41a1d70",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FX-shared-1.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FX-shared-2.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FX.pdf",
+      "sourceSha256": "5e28e2bd72e58316093b943f8c6deba67eb58ce76f499c83938fe79cc9ed1b7a",
+      "pdfPage": 6,
+      "clipPoints": [
+        54,
+        265,
+        537,
+        570
+      ],
+      "scale": 2,
+      "sha256": "18938ac5816b4957e9126f4bd3def8b3246fa78b56aee4b56fbb20aaa4c433f8",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FX-shared-2.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FZ-q1.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FZ.pdf",
+      "sourceSha256": "3517432499812a1f2fb8f3d18d4c41f1d443fba53406b4e35fac4a2cee35d6d5",
+      "pdfPage": 2,
+      "clipPoints": [
+        54,
+        41,
+        550,
+        219
+      ],
+      "scale": 2,
+      "sha256": "c37e97a33bc6d3d7d8b5003099411db415486c75c7e87b1bb38123f1c84e1620",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FZ-q1.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FZ-q2.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FZ.pdf",
+      "sourceSha256": "3517432499812a1f2fb8f3d18d4c41f1d443fba53406b4e35fac4a2cee35d6d5",
+      "pdfPage": 2,
+      "clipPoints": [
+        54,
+        219,
+        550,
+        344
+      ],
+      "scale": 2,
+      "sha256": "bd71dae9bf3e464e9e51fd344c8150a4c066de4ec0c059089c66bbc8dff6a334",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FZ-q2.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FZ-q4.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FZ.pdf",
+      "sourceSha256": "3517432499812a1f2fb8f3d18d4c41f1d443fba53406b4e35fac4a2cee35d6d5",
+      "pdfPage": 2,
+      "clipPoints": [
+        54,
+        575,
+        550,
+        791
+      ],
+      "scale": 2,
+      "sha256": "c975aa9fbae2998fdfde4bfd501dfbc16e8b94cfb78952c37c5d5b261bd75d0d",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FZ-q4.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FZ-q6.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FZ.pdf",
+      "sourceSha256": "3517432499812a1f2fb8f3d18d4c41f1d443fba53406b4e35fac4a2cee35d6d5",
+      "pdfPage": 3,
+      "clipPoints": [
+        54,
+        272,
+        550,
+        379
+      ],
+      "scale": 2,
+      "sha256": "b81a287b92f7d7c3e06839c71ea476f46be08bec0515f5e194a5d6849854c440",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FZ-q6.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FZ-q7.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FZ.pdf",
+      "sourceSha256": "3517432499812a1f2fb8f3d18d4c41f1d443fba53406b4e35fac4a2cee35d6d5",
+      "pdfPage": 3,
+      "clipPoints": [
+        54,
+        379,
+        550,
+        791
+      ],
+      "scale": 2,
+      "sha256": "e1208f59f06be0c16eb88466640df9b15c0e1d6c751180dc48b1c8836c4f061e",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FZ-q7.png",
+      "visualVerified": true
+    },
+    {
+      "file": "images/2026-FZ-q9.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8FZ.pdf",
+      "sourceSha256": "3517432499812a1f2fb8f3d18d4c41f1d443fba53406b4e35fac4a2cee35d6d5",
+      "pdfPage": 4,
+      "clipPoints": [
+        54,
+        290,
+        550,
+        508
+      ],
+      "scale": 2,
+      "sha256": "91c92889e2d56274abce347c769a86aaf38220dc1c7b4169a13f8f0b6939e741",
+      "futureImageUrl": "/api/qualification-assets/khk-kikai-otsu/2026-FZ-q9.png",
+      "visualVerified": true
+    }
+  ],
+  "normalization": {
+    "FZ1": "μと10の上付き指数を明示。",
+    "FZ2": "モル質量の10⁻³と選択肢のm³を明示。",
+    "FZ4": "pV^γの指数を明示。",
+    "FZ6": "粘度・レイノルズ数選択肢の指数を上付き文字で保持。",
+    "FZ7": "ΦをUnicodeに置換、原本の平面壁の図を併記。",
+    "FZ9": "周方向・軸方向の列見出しとMPaを各選択肢に付与。",
+    "FZ12": "汚れ係数のm²を上付きで保持。"
+  },
+  "reviewedOn": "2026-11-12",
+  "reviewScope": {
+    "bodyOccurrences": 50,
+    "choiceExplanations": 250,
+    "allBodyPdfPagesVisuallyVerified": true,
+    "officialAnswerTableVisuallyVerified": true,
+    "examDateLawVersionVerified": true
+  }
+}

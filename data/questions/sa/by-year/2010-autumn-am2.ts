@@ -24,6 +24,13 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "イが正解となるのは、在庫管理業務におけるデータフロー図（DFD）の一般的な要素として、aに「検査」が、bに「入庫」が配置されるのが自然だからです。DFDでは、データがどのように生成、変換、保存、利用されるかをプロセスとデータの流れで表現します。在庫管理では、商品が入荷した際に「検査」を経て、問題がなければ「入庫」処理が行われ、在庫データが更新されるという一連の流れが典型的なデータフローとなります。\n\nアは「欠品確認」は在庫の照会や問合せに関するプロセスであり、入庫処理とは直接関連しないため不適切です。「在庫引当」は出荷指示などに関連するプロセスで、入荷時の処理とは異なります。イの「納期確認」は発注や出荷に関するプロセスであり、入荷時の「入庫」とは役割が異なります。エの「与信限度確認」は販売取引における与信管理のプロセスであり、在庫管理の入荷処理とは無関係です。",
+    "choiceExplanations": {
+      "ア": "欠品の有無は上流の在庫確認で判断します。図のbは納品データに基づいて在庫台帳を更新し、経理へ買掛データも渡します。",
+      "イ": "aは購買注文書と納品データを照合する検査です。bは検査後の納品に基づいて在庫を増やし、買掛データを送る入庫です。",
+      "ウ": "bの入庫は合っていますが、aは納品データを受けて発注データと照合します。予定日の確認だけでなく納品の内容を検査します。",
+      "エ": "与信限度の確認なら顧客の取引額などが必要です。aに入るのは購買と納品のデータで、bは納品後に在庫と帳簿を更新します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +55,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "DFD作成の手順は、まず現状を把握するために現物理モデルと現論理モデルを作成します。次に、将来のシステム像として新論理モデルを設計し、最後にそれを具体的な実装に落とし込んだ新物理モデルを作成するという順序が適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +80,13 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ストラテジパターンは、アルゴリズムファミリーを定義し、それぞれをカプセル化して、それらを交換可能にするデザインパターンです。これにより、アルゴリズムをクライアントから独立して変更できるようになります。\n\nイは、ストラテジパターンの主要な利点である、アルゴリズムの交換可能性と拡張性の容易さを的確に表しています。新規フォーマット用のアルゴリズム（＝ストラテジ）を追加する際は、新しいストラテジクラスを作成し、それをコンテキストクラスに渡すだけで済みます。既存のコードを変更することなく、機能拡張が可能です。\n\nアは、ストラテジパターンの目的とは異なります。クライアントは、どのストラテジ（＝帳票出力フォーマット）を利用するかを選択・設定する必要があります。ストラテジパターンは、コンテキストクラスがどのストラテジを選択するかを決定することはありますが、クライアントがそれを意識せずに済むわけではありません。\n\nウは、ストラテジパターンの振る舞いとは異なります。振分けのロジックは、コンテキストクラス（＝帳票出力クラス）が、どのストラテジインスタンスを利用するかを決定する際に含まれることはありますが、帳票出力ストラテジクラス自身が振分けを行うわけではありません。各ストラテジクラスは、特定のフォーマット出力アルゴリズムのみを担当します。\n\nエは、ストラテジパターンの設計原則に反します。帳票出力のアルゴリズムは、各ストラテジクラス（＝各フォーマットに対応するクラス）の中に記述されるべきです。コンテキストクラスは、抽象的なストラテジインターフェースを通じて、具象的なストラテジクラスのインスタンスを利用します。",
+    "choiceExplanations": {
+      "ア": "コンテキストは共通のインタフェースを使って出力します。出力形式を指定する側では、対応する具象ストラテジを選ぶ必要があります。",
+      "イ": "帳票出力の共通操作を実装するサブクラスを追加すれば、新しい形式を扱えます。各形式のアルゴリズムが別のクラスにまとまっています。",
+      "ウ": "図ではPDF用とHTML用のアルゴリズムがそれぞれのサブクラスにあります。抽象側の帳票出力ストラテジは共通の操作を定めます。",
+      "エ": "コンテキストは選ばれたストラテジに帳票出力を委譲します。PDFやHTMLの具体的な出力処理は、それぞれのサブクラスに置きます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +111,13 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "オブジェクト指向における「is-a」関係は継承を表し、「part-of」関係は集約（コンポジション）を表します。is-aは「〜は〜の一種である」という包含関係を示し、part-ofは「〜は〜の一部である」という全体と部分の関係を示します。表の左から順に、この二つの関係の適切な組合せを選ぶ問題です。\n\n正解はウです。「Vehicle」と「Car」は「CarはVehicleの一種である」というis-a関係、「Car」と「Engine」は「CarはEngineを部品として持つ」というpart-of関係、「Engine」と「Piston」は「EngineはPistonを部品として持つ」というpart-of関係と解釈するのが自然です。したがって、表の左から「part-of, is-a, part-of」という並びが適切となります。\n\nアは、最初の関係がis-aとなっており、「Car」が「Vehicle」の一種であるのは正しいですが、その後の関係が誤っています。イは、最後の関係がis-aとなっており、「Engine」と「Piston」の間には「〜の一種である」という関係は成立しません。エは、二番目の関係がpart-ofとなっており、「Car」と「Engine」の間は部品としての関係ですが、「Engine」と「Piston」の間も部品としての関係であり、is-aとは異なります。",
+    "choiceExplanations": {
+      "ア": "タイヤは自動車の部品でpart-of、人間は動物の一種でis-aです。辞書を書物の一種とする最後の判定だけが合っています。",
+      "イ": "タイヤは自動車の構成要素、人間と辞書はそれぞれ動物と書物の一種です。この肢では三組とも関係の種類が逆です。",
+      "ウ": "タイヤは自動車を構成するのでpart-ofです。人間は動物の一種、辞書は書物の一種なので、後の二組はともにis-aです。",
+      "エ": "最初の二組は合っていますが、辞書は書物を構成する部品ではありません。辞書は書物の一種なのでis-aです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +142,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "STS（Source-Transform-Sink）分割は、プログラムをデータの流れ（入力、変換、出力）に着目して三つの部分に分割する技法です。これにより、各モジュールが独立した機能を持つようになり、保守性や再利用性が向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +167,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "インヘリタンス（継承）は、オブジェクト指向において、親クラスの属性やメソッドを子クラスが引き継ぎ、再利用できる仕組みを指します。これにより、コードの重複を避け、効率的な開発が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +192,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "静的テストは、プログラムを実際に実行することなく、ソースコードのレビューや静的解析ツールを用いて欠陥を検出する手法です。これにより、開発の早い段階で問題を発見し、手戻りのコストを削減できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +217,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "同値分割法では、有効同値クラスと無効同値クラスから代表値を一つずつ選択します。有効な条件を全て満たすテストケース1つと、各無効条件を個別に満たすテストケース3つ（A無効、B無効、C無効）の計4つの組合せが、最小限かつ網羅的です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +241,14 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
       "エ": "存在する, 存在する, 数字以外の文字も含む"
     },
     "answer": "エ",
-    "explanation": "エが正解である理由は、実験計画法における直交表を用いたテストケース作成の考え方に基づきます。直交表は、要因間の交互作用を効率的に調べつつ、全体のテストケース数を削減するための手法です。本問では、受注処理の入力データチェックという機能に対して、複数の要因（a, b, c）が設定され、それぞれの水準（「存在する」「存在しない」「数字だけ」「数字以外の文字も含む」など）の組み合わせでテストケースを作成します。直交表では、各要因の水準が均等に組み合わされるため、全ての水準の組み合わせを網羅するのではなく、代表的な組み合わせを選ぶことで、効率的なテストが実現されます。選択肢エは、各要因（a, b, c）がそれぞれ「存在する」または「「数字以外の文字も含む」という具体的な水準を持っており、これらが直交表の原則に沿って組み合わせられていると想定されます。\n\nアは、aとbが「存在しない」とされている点が不適切です。テストケース作成において、入力データが存在しないという条件は本来考慮されるべきですが、通常は「存在する」場合との比較や、存在しない場合の例外処理の確認も重要になります。\n\nイは、「数字以外の文字も含む」というcの水準は適切ですが、bが「存在する」という設定は、aが「存在しない」という設定と組み合わさっており、直交表による網羅的なテストケース作成の観点から、より多くの組み合わせを考慮すべき状況を示唆しています。\n\nウは、「数字以外の文字も含む」というcの水準は適切ですが、aが「存在する」に対してbが「存在しない」となっており、これもaとbの主要な効果を効率的に捉えるには、よりバランスの取れた組み合わせが望まれます。",
+    "explanation": "既に示された3行から、得意先・商品コードの1は「存在する」、受注数量の0は「数字以外の文字も含む」と読み取れます。直交表の第4行が1・1・0なので、これらを順に当てはめたエです。",
+    "choiceExplanations": {
+      "ア": "第4行の先頭二列は1・1なので、二つのコードはいずれも存在します。数量の列は0で、数字以外の文字を含みます。",
+      "イ": "商品コードと数量は第4行の水準に合います。得意先コードの列は1なので、既にあるコードを入力する必要があります。",
+      "ウ": "得意先コードと数量は第4行の水準に合います。商品コードの列は1なので、商品DBに存在するコードを入力します。",
+      "エ": "第4行の水準は1・1・0です。先頭二列の1は存在するコード、数量の0は数字以外の文字を含む入力に対応します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +273,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "カバレージモニタは、プログラムを実際に実行しながら、テストケースがソースコードのどの部分を網羅しているか（実行された行、分岐など）を測定・監視するツールです。これはプログラムの実行を伴う動的テストに用いられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -263,7 +297,14 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
       "エ": "3a = 2b"
     },
     "answer": "エ",
-    "explanation": "エは3a = 2bであり、これが正解となる。問題文の実行順序①→②→③→⑤→②→③→④→②→⑥を理解するためには、流れ図における各記号（①～⑥）の役割と、変数m, nの遷移を追う必要がある。具体的には、③でmが2倍、nが3倍になる処理が繰り返され、⑤でmがnより大きくなるか、④でmがnより小さくなることでループを抜け、最終的に⑥に進むという流れが推測される。この条件を満たすためには、初期値aとbの関係が3a = 2bである必要がある。\n\nアはa=2bであり、この場合、初期のm=a, n=bから③の処理を繰り返すと、m, nの値が③の処理（m←2m, n←3n）の倍率と合わず、指定された実行順序にならない。イは2a=bであり、この初期値では、③の処理でm, nが増加するにつれて、mがnより先に条件を満たしてしまう、あるいは満たさないといった不都合が生じ、実行順序が崩れる。ウは2a=3bであり、これも同様に、③でのm, nの増加率と初期値の関係が整合せず、指定された実行順序の⑤や④の条件分岐を正しく通過できない。",
+    "explanation": "①直後はm＝a、n＝bです。先に⑤を通るとn＝b－a、次に④を通るとm＝a－（b－a）＝2a－bです。最後に②から⑥へ進むにはm＝nなので、2a－b＝b－aより3a＝2bです。この比では最初にm＜n、次にm＞nとなり、分岐も指定どおりです。",
+    "choiceExplanations": {
+      "ア": "a＝2bなら開始時点でmがnより大きいので、③から最初に④へ進みます。指定の経路は最初に⑤へ進むため合いません。",
+      "イ": "b＝2aなら⑤でnがb－a＝aになります。その時点でmとnは等しく、二度目の③や④を通らず⑥へ進みます。",
+      "ウ": "2a＝3bなら、正の整数という条件からa＞bです。開始時点のmがnより大きいので、最初の③は④へ分岐します。",
+      "エ": "最初の⑤でnはb－a、次の④でmは2a－bになります。これらが等しくなる条件は3a＝2bで、分岐に必要なa＜b＜2aも満たします。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +329,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "共通フレーム2007（ISO/IEC 12207）におけるシステム結合テストの評価基準の一つとして、システム要件がテストによってどれだけ網羅されているかを確認する「システム要件のテスト網羅性」が挙げられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +354,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "チェックアウトは、構成管理システムのリポジトリから、特定のファイルやディレクトリをその履歴やバージョン情報（構成情報）を保持したまま作業領域にコピーする操作です。これにより、開発者は最新版や特定の過去のリビジョンのコードを取得し、変更作業を行うことができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +379,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "NPV（Net Present Value：正味現在価値）は、投資から得られる将来のキャッシュフローを現在価値に割引いて合計し、初期投資額と比較することで投資効果を評価する指標です。将来の貨幣価値の変動を考慮に入れるため、より正確な投資判断に用いられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +404,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "E-Rモデルで全社データモデルを作成する場合、まず企業全体の主要なエンティティとリレーションシップを抽出し、高レベルの鳥瞰図を作成します。その後、各エンティティを詳細化し、属性や詳細なリレーションシップを定義していくことで、段階的にモデルを構築します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +429,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム管理基準において、企画業務で立案する開発計画では、システム化に伴うユーザ部門と情報システム部門それぞれの責任と役割分担を明確にすることが求められています。これにより、プロジェクトにおける責任の所在を明確にし、円滑な推進を図ります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +454,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "UML（Unified Modeling Language）は、ソフトウェアシステムの設計を様々な観点から視覚的に表現するための標準的なモデリング言語です。ユースケース図やアクティビティ図など、目的に応じた複数の図法を用いて、業務プロセスやシステム構造を多角的に表現できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +479,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スーパコンピュータは、ベクトル命令処理能力を持つプロセッサや、多数のマイクロプロセッサを大規模に並列結合することで、極めて高い計算性能を実現します。これにより、科学技術計算やシミュレーションなどの高度な処理を高速に実行します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +504,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ロードバランサによるアプリケーションレベルの稼働監視は、単にサーバの生死確認だけでなく、Webアプリケーション自体が正常に応答しているかを確認するものです。具体的には、特定のURLにアクセスし、その応答内容（含まれる文字列など）が期待値と一致するかをチェックします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +529,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールソフト（Fail-soft）とは、システムの一部に故障や異常が発生した場合でも、システム全体が停止することなく、機能を縮退させながら運転を継続する設計思想です。これにより、完全に停止するよりもサービス提供を維持し、システム全体の可用性を高めます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +554,13 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アが正解となるのは、概念データモデルが現実世界の事象や概念の関係性を表現するものであるためです。選択肢アは、「在庫取引」という1つのイベントが発生した際に、「在庫品」という関連するエンティティ（実体）が複数（この場合は2件）更新されるという、典型的なデータ操作のシナリオを示しています。これは、データモデルにおけるエンティティ間の関係性や、トランザクション処理におけるデータの整合性を考慮した結果であり、概念データモデルの解釈として適切です。\n\nイが不適切なのは、概念データモデルは通常、現在の状態や関係性を表現するものであり、過去の履歴保持までを必須の要素として定義しないからです。過去の履歴は、別途履歴管理の仕組みで対応することが一般的です。ウは、概念データモデルが表現するエンティティや属性の定義によって、倉庫別、品目別の把握が可能かどうかが決まるため、一般的に「できない」と断定することはできません。エは、異なる「在庫品」データ間で直接「在庫取引」データを記録するという関係性は、通常考えにくく、在庫取引は特定の在庫品に対して行われると解釈するのが自然です。",
+    "choiceExplanations": {
+      "ア": "各在庫取引は移動元と移動先の在庫品を一件ずつ指します。移動数量だけ移動元を減らし、同じ数量を移動先に加えます。",
+      "イ": "在庫品には現在の在庫数量を格納する属性があります。過去の移動数量と日付は、別の在庫取引に記録します。",
+      "ウ": "在庫品は倉庫と品目に関連付けられています。取引から移動元・移動先の在庫品をたどると、倉庫別・品目別に把握できます。",
+      "エ": "図の制約は同一品目間の移動だけを許します。在庫品が異なっても、移動元と移動先が参照する品目は同じである必要があります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +585,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "OLAP（オンライン分析処理）におけるダイス（Dice）操作は、多次元データキューブから特定の次元や範囲を指定して部分キューブを切り出すことです。この操作により、分析の軸（商品、販売チャネル、顧客タイプなど）を切り替えてデータを柔軟に分析できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +610,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "2.4GHz帯は、ISMバンド（Industrial, Scientific and Medical band）の一つで、無線LAN（IEEE 802.11b/g/n）やBluetoothなどに広く利用されています。この周波数帯は、低電力であれば無線局の免許が不要であり、普及しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +635,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CSMA/CD方式では、送信中に衝突（コリジョン）が発生した場合、送信を中断して再送を試みます。衝突の頻度が増加すると、再送処理によるオーバーヘッドが増えるため、データ転送の効率（スループット）が低下します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +660,7 @@ export const SA_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ディジタル署名は、公開鍵暗号技術を利用して、メッセージの送信者が間違いなく本人であること（送信者の認証）を保証し、メッセージが途中で改ざんされていないこと（メッセージの完全性）を確認するために利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sa_am2_qs.pdf",
     "license": "IPA-public"

@@ -49,9 +49,13 @@ function isConcreteStatic(path: string): boolean {
   return !DYNAMIC_PREFIXES.some((re) => re.test(path));
 }
 
-// route path -> import.meta.glob key（ルートグループ無し・1:1 マッピング）
+function qualificationGroupSlug(path: string): string | undefined {
+  return /^\/qualifications\/([^/]+)$/.exec(path)?.[1];
+}
+
+// 資格の親ページは公開済み slug を同じモジュールで静的生成する。
 function moduleKeyForRoute(path: string): string {
-  const sub = path === "/" ? "" : path;
+  const sub = qualificationGroupSlug(path) ? "/qualifications/[slug]" : path === "/" ? "" : path;
   return `../../app${sub}/page.tsx`;
 }
 
@@ -65,14 +69,16 @@ type PageModule = {
 
 async function resolvePageMetadata(
   loader: () => Promise<unknown>,
+  path: string,
 ): Promise<Metadata | undefined> {
   const mod = (await loader()) as PageModule;
   if (mod.metadata) return mod.metadata;
   if (mod.generateMetadata) {
     // 具象 static ページの generateMetadata は引数不要 or {searchParams}/{params} のみ。
     // 余分なキーを渡しても no-arg 関数は無視するので両対応できる。
+    const slug = qualificationGroupSlug(path);
     return mod.generateMetadata({
-      params: Promise.resolve({}),
+      params: Promise.resolve(slug ? { slug } : {}),
       searchParams: Promise.resolve({}),
     });
   }
@@ -122,11 +128,11 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
     for (const p of staticLocs) {
       const loader = pageModules[moduleKeyForRoute(p)];
       if (!loader) continue; // 上の解決テストが拾う
-      const md = await resolvePageMetadata(loader);
+      const md = await resolvePageMetadata(loader, p);
       if (isNoindex(md?.robots)) bad.push(p);
     }
     expect(bad).toEqual([]);
-  }, 30_000); // Cold page imports take about 20s on the Windows development host.
+  }, 300_000); // Cold imports load the real page modules and question data on shared workers.
 
   // canonical が別URLを指すと、そのページは「自分でなく別ページが正規」と宣言し、
   // sitemap に載せていても deindex され crawl 資産が無駄になる（激辛レビュー: /quiz の
@@ -137,7 +143,7 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
     for (const p of staticLocs) {
       const loader = pageModules[moduleKeyForRoute(p)];
       if (!loader) continue;
-      const md = await resolvePageMetadata(loader);
+      const md = await resolvePageMetadata(loader, p);
       const canonical = canonicalOf(md);
       if (canonical === undefined) continue; // 明示なし=自己参照フォールバック（許容）
       const selfRoute = p === "" ? "/" : p; // sitemap の home loc は "" だが canonical は "/"
@@ -157,7 +163,7 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
     for (const p of staticLocs) {
       const loader = pageModules[moduleKeyForRoute(p)];
       if (!loader) continue;
-      const md = await resolvePageMetadata(loader);
+      const md = await resolvePageMetadata(loader, p);
       const og = ogUrlOf(md);
       if (og === undefined) continue; // og:url 未設定=継承（許容）
       withOg += 1;

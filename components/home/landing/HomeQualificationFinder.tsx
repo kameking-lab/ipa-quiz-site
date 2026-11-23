@@ -4,20 +4,21 @@ import { useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode }
 
 import { ArrowRight, Search, X } from "lucide-react";
 import type { HomeDirectoryDomain, HomeDomainId } from "@/lib/home/home-directory";
-import { qualificationStudyArt } from "@/lib/home/study-room";
+import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
+import { searchQualifications } from "@/lib/qualifications/search";
+import { HomeFeaturedExams, QualificationCard } from "./HomeFeaturedExams";
 
 function normalize(value: string): string {
   return value.normalize("NFKC").toLowerCase().replace(/\s/g, "");
 }
 
-export function HomeQualificationFinder({ domains, directoryHref = "#home-directory-title", preview, auxiliaryLink, showHeading = false }: { domains: readonly HomeDirectoryDomain[]; directoryHref?: string; preview?: ReactNode; auxiliaryLink?: ReactNode; showHeading?: boolean }) {
+export function HomeQualificationFinder({ domains, directoryHref = "#home-directory-title", preview, auxiliaryLink, showHeading = false, showDirectoryLink = true, homeDirectory }: { domains: readonly HomeDirectoryDomain[]; directoryHref?: string; preview?: ReactNode; auxiliaryLink?: ReactNode; showHeading?: boolean; showDirectoryLink?: boolean; homeDirectory?: ReactNode }) {
   const [query, setQuery] = useState("");
   const [domainId, setDomainId] = useState<HomeDomainId | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
-  function clearSearch(resetDomain = false) {
+  function clearSearch() {
     setQuery("");
-    if (resetDomain) setDomainId(null);
-    rememberFilters("", resetDomain ? null : domainId);
+    rememberFilters("", domainId);
     searchRef.current?.focus();
   }
   useEffect(() => {
@@ -60,16 +61,25 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
     summary?.focus();
     summary?.scrollIntoView?.({ block: "start" });
   }
-  const items = useMemo(() => domains.flatMap((domain) =>
+  const rawItems = useMemo(() => domains.flatMap((domain) =>
     [...domain.featured, ...domain.compact].map((item) => ({ ...item, domainId: domain.id, domainTitle: domain.title }))), [domains]);
+  const items = useMemo(() => groupHomeDirectoryItems(rawItems), [rawItems]);
   const term = normalize(query);
-  const matching = items.filter((item) => (!domainId || item.domainId === domainId) &&
-    (!term || normalize([item.name, item.abbr, item.sub, item.domainTitle].join(" ")).includes(term)));
+  const inDomain = useMemo(() => {
+    if (!domainId) return items;
+    const keys = new Set(rawItems.filter(item => item.domainId === domainId).map(item => item.key));
+    return items.flatMap(item => {
+      if (!item.children) return keys.has(item.key) ? [item] : [];
+      const children = item.children.filter(child => keys.has(child.key));
+      return children.length ? [{ ...item, children }] : [];
+    });
+  }, [rawItems, items, domainId]);
+  const matching = term ? searchQualifications(inDomain, query, "directory") : inDomain;
   const browsing = !term && !domainId;
   const visible = browsing ? items.filter((item) => ["ip", "fe", "denko2", "fp3"].includes(item.key)) : matching;
 
   return (
-    <section id="choose-qualification" tabIndex={-1} aria-labelledby="qualification-search-title" className="study-finder scroll-mt-24">
+    <section id="choose-qualification" tabIndex={-1} aria-labelledby="qualification-search-title" className={`study-finder scroll-mt-24${homeDirectory ? " study-finder-home" : ""}`}>
       <div className="study-finder-main">
       {showHeading && <header className="study-heading"><h1>解く過去問は、<br />受ける資格から。</h1></header>}
       <div className="study-finder-heading">
@@ -77,28 +87,22 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
       {auxiliaryLink ? <div className="study-finder-auxiliary">{auxiliaryLink}</div> : null}
       </div>
       <label htmlFor="qualification-search" className="sr-only">資格名・略称で検索</label>
-      <div className="study-search">
+      <div className="study-search-row"><div className="study-search">
         <Search aria-hidden="true" className="h-5 w-5 shrink-0" />
-        <input ref={searchRef} id="qualification-search" type="search" value={query} aria-describedby="qualification-result-count" aria-controls="qualification-results" onChange={(event) => setQuery(event.target.value)} placeholder="資格名・略称（例：宅建、FP3級、電験三種）" />
+        <input ref={searchRef} id="qualification-search" type="search" value={query} aria-describedby="qualification-result-count" aria-controls="qualification-results" onChange={(event) => setQuery(event.target.value)} placeholder={homeDirectory ? "資格名・略称で検索" : "資格名・略称（例：宅建、FP3級、電験三種）"} />
         {query && <button type="button" aria-label="検索をクリア" onClick={() => clearSearch()}><X aria-hidden="true" className="h-4 w-4" /></button>}
       </div>
-      <div aria-label="資格の分野で絞り込む" className="study-filters">
-        <button type="button" aria-pressed={!domainId} onClick={() => setDomainId(null)}>すべて</button>
-        {domains.map((domain) => <button key={domain.id} type="button" aria-pressed={domainId === domain.id} onClick={() => setDomainId(domain.id)}>{domain.title}</button>)}
+      <select aria-label="資格の分野で絞り込む" value={domainId ?? ""} onChange={event => setDomainId(domains.find(domain => domain.id === event.target.value)?.id ?? null)}>
+        <option value="">全分野</option>
+        {domains.map(domain => <option key={domain.id} value={domain.id}>{domain.title}</option>)}
+      </select></div>
+      <p id="qualification-result-count" role="status" aria-live="polite" className="sr-only">{browsing ? "資格を選ぶ" : matching.length + "資格・区分"}</p>
+      {homeDirectory && browsing ? <div id="qualification-results"><HomeFeaturedExams items={rawItems} onChoose={() => rememberFilters(query, domainId)} /></div> : visible.length > 0 ? <ul id="qualification-results" className="study-results">
+        {visible.map((item) => <li key={item.key}><QualificationCard item={item} onChoose={() => rememberFilters(query, domainId)} /></li>)}
+      </ul> : <div id="qualification-results" className="study-empty"><p>該当する資格が見つかりませんでした。</p></div>}
+      {homeDirectory ? <div hidden={!browsing}>{homeDirectory}</div> : showDirectoryLink ? <a href={directoryHref} onClick={openDirectory} className="study-text-link">収録している全資格・区分を見る<ArrowRight aria-hidden="true" className="h-4 w-4" /></a> : null}
       </div>
-      <p id="qualification-result-count" role="status" aria-live="polite" className="study-results-label">{browsing ? "まずは、ここから" : `${matching.length}資格・区分`}</p>
-      {visible.length > 0 ? <ul id="qualification-results" className="study-results">
-        {visible.map((item) => <li key={item.key}><a href={item.href} className={`study-qualification study-card-${item.domainId}`} onClick={() => rememberFilters(query, domainId)}>
-          <span className="min-w-0"><span className="study-qualification-name">{item.name}</span><span className="study-qualification-meta">{item.questionCount.toLocaleString("ja-JP")}問 · {item.periodLabel}</span></span>
-          {/* The qualification's own study-room chihuahua (never the old headband atlas poses). */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img aria-hidden="true" alt="" className="study-mascot study-card-mascot" src={qualificationStudyArt(item.key)} width={256} height={256} loading="lazy" decoding="async" />
-          <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0" />
-        </a></li>)}
-      </ul> : <div id="qualification-results" className="study-empty"><p>該当する資格が見つかりませんでした。</p><button type="button" onClick={() => clearSearch(true)} className="min-h-11 underline underline-offset-4">検索をクリアして選び直す</button></div>}
-      <a href={directoryHref} onClick={openDirectory} className="study-text-link">収録している全資格・区分を見る<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
-      </div>
-      <aside className="study-aside">{preview}</aside>
+      {preview && <aside className="study-aside">{preview}</aside>}
     </section>
   );
 }

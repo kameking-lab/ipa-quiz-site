@@ -18,10 +18,17 @@ import { test, expect } from "@playwright/test";
 const Q = "/q/ap/2024-autumn/am/q1";
 
 test.describe("no FOUC on /q/*", () => {
+  // A cold production server initializes the question corpus on the first request.
+  test.describe.configure({ timeout: 90_000 });
+  test.use({ javaScriptEnabled: false, serviceWorkers: "block" });
+
   test("head ships render-blocking, same-origin stylesheets (no async swap)", async ({ request }) => {
-    const html = await (await request.get(Q)).text();
+    const response = await request.get(Q);
+    await expect(response).toBeOK();
+    const html = await response.text();
+    const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] ?? "";
     const links = [...html.matchAll(/<link[^>]*rel="stylesheet"[^>]*>/gi)].map((m) => m[0]);
-    expect(links.length, "at least one render-blocking stylesheet in <head>").toBeGreaterThan(0);
+    expect(head).toMatch(/<link[^>]*rel="stylesheet"[^>]*>/i);
     for (const link of links) {
       // Same-origin Next-managed CSS (not a cross-origin/CORS-restricted sheet).
       expect(link).toMatch(/href="\/_next\/static\//);
@@ -34,12 +41,11 @@ test.describe("no FOUC on /q/*", () => {
 
   test("Tailwind is applied on first render (no unstyled flash)", async ({ page }) => {
     await page.goto(Q);
-    const main = page.locator("main").first();
+    const main = page.getByRole("main");
     await expect(main).toBeVisible();
-    // The /q main has `max-w-3xl` (48rem = 768px). If Tailwind never applied
-    // (FOUC), computed max-width would be "none".
+    // The server-rendered study-column uses a 640px Tailwind width cap.
     const maxWidth = await main.evaluate((el) => getComputedStyle(el).maxWidth);
-    expect(maxWidth).toBe("768px");
+    expect(maxWidth).toBe("640px");
     // And at least one stylesheet is actually attached.
     const sheetCount = await page.evaluate(() => document.styleSheets.length);
     expect(sheetCount).toBeGreaterThan(0);

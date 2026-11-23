@@ -59,10 +59,13 @@ describe("saved orthoptist originals: literal source and accepted review contrac
   it("keeps explicit source exclusions and unresolved drafts outside the runtime", () => {
     const ids = new Set(SHINO_KUNRENSHI_QUESTIONS.map(q => q.id));
     for (const id of [
-      "shino-kunrenshi-2024-annual-am-q73", "shino-kunrenshi-2024-annual-pm-q52",
-      "shino-kunrenshi-2025-annual-am-q1", "shino-kunrenshi-2025-annual-am-q37",
-      "shino-kunrenshi-2025-annual-pm-q69", "shino-kunrenshi-2025-annual-pm-q58",
+      "shino-kunrenshi-2024-annual-pm-q52", "shino-kunrenshi-2025-annual-am-q1", "shino-kunrenshi-2025-annual-am-q37",
     ]) expect(ids.has(id)).toBe(false);
+    for (const [id, key] of [
+      ["shino-kunrenshi-2024-annual-am-q73", "1"],
+      ["shino-kunrenshi-2025-annual-pm-q58", "3"],
+      ["shino-kunrenshi-2025-annual-pm-q69", "3"],
+    ]) expect(SHINO_KUNRENSHI_QUESTIONS.find(q => q.id === id), id).toMatchObject({ officialAnswerNumber: key, needsReview: false });
   });
 
 

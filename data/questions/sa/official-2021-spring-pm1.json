@@ -1,0 +1,194 @@
+[
+  {
+    "id": "sa-2021h-pm1-q1",
+    "exam": "sa",
+    "year": 2021,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "システム開発技術",
+    "topicTags": [
+      "マスタ設計",
+      "法人番号",
+      "利用者管理"
+    ],
+    "difficulty": 4,
+    "question": "試験研究機関の企業・利用者情報の管理運用の見直し",
+    "answer": "設問１  情報 利用者カード番号\n       理由 再発行の際，古い利用者カードを使用できないようにしたいから\n 設問２(1) 報告書の送付先として利用すること\n         (2) 適用料金区分を判断するための情報は，法人情報には含まれないから\n         (3) 個人事業者が利用するケース\n 設問３(1) 利用者が，仮登録か本登録かを識別する情報\n         (2)  a 法人番号\n         (3) 他の利用者の利用者カードを借りて利用することの禁止",
+    "modelAnswer": "```text\n設問１  情報 利用者カード番号\n       理由 再発行の際，古い利用者カードを使用できないようにしたいから\n 設問２(1) 報告書の送付先として利用すること\n         (2) 適用料金区分を判断するための情報は，法人情報には含まれないから\n         (3) 個人事業者が利用するケース\n 設問３(1) 利用者が，仮登録か本登録かを識別する情報\n         (2)  a 法人番号\n         (3) 他の利用者の利用者カードを借りて利用することの禁止\n```",
+    "explanation": "公開されている法人情報と、その機関が独自に管理する利用者情報を分離して考える。法人番号で企業情報を対応付けても、適用料金の判断に必要な情報や個人事業者の扱いまでは補えない。利用者カード番号を再発行時に変えるのは、旧カードを無効にするためである。仮登録と本登録の区別、利用者本人とカードの対応を保つ運用も、データ設計と一緒に確認する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=2) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/p02.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p03.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p04.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p05.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p06.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p07.webp"
+    ],
+    "imageAltTexts": [
+      "2021年午後I 問1：試験研究機関の企業・利用者情報の管理運用の見直し（公式問題PDF 2ページ）",
+      "2021年午後I 問1：試験研究機関の企業・利用者情報の管理運用の見直し（公式問題PDF 3ページ）",
+      "2021年午後I 問1：試験研究機関の企業・利用者情報の管理運用の見直し（公式問題PDF 4ページ）",
+      "2021年午後I 問1：試験研究機関の企業・利用者情報の管理運用の見直し（公式問題PDF 5ページ）",
+      "2021年午後I 問1：試験研究機関の企業・利用者情報の管理運用の見直し（公式問題PDF 6ページ）",
+      "2021年午後I 問1：試験研究機関の企業・利用者情報の管理運用の見直し（公式問題PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/q1-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2021年度春期 システムアーキテクト 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sa-2021h-pm1-q2",
+    "exam": "sa",
+    "year": 2021,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "システム開発技術",
+    "topicTags": [
+      "業務プロセス",
+      "要件定義",
+      "宅配便"
+    ],
+    "difficulty": 4,
+    "question": "宅配便サービスの業務プロセスと情報システムの改善",
+    "answer": "設問１(1) ① あらかじめ決めた配達順序\n       ② 配達時に使用する配達車両\n         (2) ① 配達員の氏名\n       ② 依頼主名\n         (3)  a 配達希望日が当日\n              b 配達希望時間帯の受付締切時刻経過後\n 設問２(1) 不在連絡票を確認しなくとも再配達依頼ができること\n         (2) 各配達員の担当区域は配達システムに登録されていないから\n         (3)  c 営業所倉庫保管\n       作業内容 当日の配達業務完了前に荷物を降ろし，営業所倉庫に保管する作業",
+    "modelAnswer": "```text\n設問１(1) ① あらかじめ決めた配達順序\n       ② 配達時に使用する配達車両\n         (2) ① 配達員の氏名\n       ② 依頼主名\n         (3)  a 配達希望日が当日\n              b 配達希望時間帯の受付締切時刻経過後\n 設問２(1) 不在連絡票を確認しなくとも再配達依頼ができること\n         (2) 各配達員の担当区域は配達システムに登録されていないから\n         (3)  c 営業所倉庫保管\n       作業内容 当日の配達業務完了前に荷物を降ろし，営業所倉庫に保管する作業\n```",
+    "explanation": "新機能を考える前に、現行の配達順序、配達車両、受付締切、荷物の保管場所がどの情報で決まるかを整理する。利用者の利便性という目的と、現行システムに登録されている情報の範囲を対応付けると、実現可能な再配達依頼の方式を判断できる。営業所倉庫保管という状態は単なる表示名ではなく、配達業務の完了前に荷物を降ろす実作業と対応させて説明する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=8) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=1)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/p08.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p09.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p10.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p11.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p12.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p13.webp"
+    ],
+    "imageAltTexts": [
+      "2021年午後I 問2：宅配便サービスの業務プロセスと情報システムの改善（公式問題PDF 8ページ）",
+      "2021年午後I 問2：宅配便サービスの業務プロセスと情報システムの改善（公式問題PDF 9ページ）",
+      "2021年午後I 問2：宅配便サービスの業務プロセスと情報システムの改善（公式問題PDF 10ページ）",
+      "2021年午後I 問2：宅配便サービスの業務プロセスと情報システムの改善（公式問題PDF 11ページ）",
+      "2021年午後I 問2：宅配便サービスの業務プロセスと情報システムの改善（公式問題PDF 12ページ）",
+      "2021年午後I 問2：宅配便サービスの業務プロセスと情報システムの改善（公式問題PDF 13ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/q2-answer-p1.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=1",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2021年度春期 システムアーキテクト 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sa-2021h-pm1-q3",
+    "exam": "sa",
+    "year": 2021,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "システム開発技術",
+    "topicTags": [
+      "ワークフロー",
+      "業務改善",
+      "データ連携"
+    ],
+    "difficulty": 4,
+    "question": "銀行の融資りん議業務のペーパレス化",
+    "answer": "設問１  りん議書を作成するために複数のシステムを操作する作業\n 設問２(1) 案件ファイルの融資希望金額が店ファイルの決裁可能金額を超えている場合\n         (2) 担保評価ファイルの評価日より担保評価システムにある評価日が新しい場合\n         (3) 目標期日の到来に気付かず期限を超過すること\n         (4)  a 基幹システム\n  設問３  ① 顧客番号が当該案件の顧客番号と同一であること\n       ② 案件ステータスが“受付”，“作成中”又は“回付中”であること",
+    "modelAnswer": "```text\n設問１  りん議書を作成するために複数のシステムを操作する作業\n 設問２(1) 案件ファイルの融資希望金額が店ファイルの決裁可能金額を超えている場合\n         (2) 担保評価ファイルの評価日より担保評価システムにある評価日が新しい場合\n         (3) 目標期日の到来に気付かず期限を超過すること\n         (4)  a 基幹システム\n  設問３  ① 顧客番号が当該案件の顧客番号と同一であること\n       ② 案件ステータスが“受付”，“作成中”又は“回付中”であること\n```",
+    "explanation": "紙を電子化するだけでなく、複数システムへの重複操作と決裁判断の情報連携を減らすことが中心課題である。融資希望金額と店の決裁可能金額、担保の評価日を、それぞれ比較すべきファイルの組として整理する。既存案件の候補を検索するときは顧客番号だけでなく案件の進行状態も条件となる。期限管理は、担当者が期日の到来に気付ける仕組みとして考える。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=14) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/p14.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p15.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p16.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p17.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p18.webp"
+    ],
+    "imageAltTexts": [
+      "2021年午後I 問3：銀行の融資りん議業務のペーパレス化（公式問題PDF 14ページ）",
+      "2021年午後I 問3：銀行の融資りん議業務のペーパレス化（公式問題PDF 15ページ）",
+      "2021年午後I 問3：銀行の融資りん議業務のペーパレス化（公式問題PDF 16ページ）",
+      "2021年午後I 問3：銀行の融資りん議業務のペーパレス化（公式問題PDF 17ページ）",
+      "2021年午後I 問3：銀行の融資りん議業務のペーパレス化（公式問題PDF 18ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/q3-answer-p2.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=2",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2021年度春期 システムアーキテクト 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "sa-2021h-pm1-q4",
+    "exam": "sa",
+    "year": 2021,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "システム開発技術",
+    "topicTags": [
+      "IoT",
+      "ロボット制御",
+      "システムアーキテクチャ"
+    ],
+    "difficulty": 4,
+    "question": "大規模火災に対応する消火放水システム",
+    "answer": "設問１(1)  a 飛行型監視ロボット\n              b 放水位置 又は 注水目標\n         (2) 1 台の搬送指令車で複数のロボットを操作できるようになること\n         (3) 消火方法を決定するため\n 設問２(1) 消火対象施設周辺の飛行可能な場所の情報\n         (2) 適切な放水位置，注水目標による効果的な消火活動\n         (3) 継続監視飛行だけでなく，周回飛行も併せて行う。\n 設問３(1) ① 時刻情報\n       ② 位置情報\n         (2) ホースの敷設ルートの長さ，及び各ロボットの走行に支障がないこと",
+    "modelAnswer": "```text\n設問１(1)  a 飛行型監視ロボット\n              b 放水位置 又は 注水目標\n         (2) 1 台の搬送指令車で複数のロボットを操作できるようになること\n         (3) 消火方法を決定するため\n 設問２(1) 消火対象施設周辺の飛行可能な場所の情報\n         (2) 適切な放水位置，注水目標による効果的な消火活動\n         (3) 継続監視飛行だけでなく，周回飛行も併せて行う。\n 設問３(1) ① 時刻情報\n       ② 位置情報\n         (2) ホースの敷設ルートの長さ，及び各ロボットの走行に支障がないこと\n```",
+    "explanation": "ロボットの台数や操作範囲を増やすには、監視、消火判断、移動、放水をどの装置が担うかを整理する。飛行可能な場所の情報と、放水位置・注水目標は役割が異なる。複数のロボットから受けた情報をまとめるには時刻と位置をそろえる必要がある。移動経路の妥当性はロボットの走行だけでなく、ホースの長さや敷設ルートも含めて判断する。\n\n[公式問題PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=19) / [公式解答例PDF](https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=2)",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/p19.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p20.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p21.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p22.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p23.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p24.webp",
+      "/questions/ipa-official/sa/2021-spring-pm1/p25.webp"
+    ],
+    "imageAltTexts": [
+      "2021年午後I 問4：大規模火災に対応する消火放水システム（公式問題PDF 19ページ）",
+      "2021年午後I 問4：大規模火災に対応する消火放水システム（公式問題PDF 20ページ）",
+      "2021年午後I 問4：大規模火災に対応する消火放水システム（公式問題PDF 21ページ）",
+      "2021年午後I 問4：大規模火災に対応する消火放水システム（公式問題PDF 22ページ）",
+      "2021年午後I 問4：大規模火災に対応する消火放水システム（公式問題PDF 23ページ）",
+      "2021年午後I 問4：大規模火災に対応する消火放水システム（公式問題PDF 24ページ）",
+      "2021年午後I 問4：大規模火災に対応する消火放水システム（公式問題PDF 25ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa-official/sa/2021-spring-pm1/q4-answer-p2.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4の公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_qs.pdf#page=19",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d5ru-att/2021r03h_sa_pm1_ans.pdf#page=2",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2021年度春期 システムアーキテクト 午後I。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  }
+]

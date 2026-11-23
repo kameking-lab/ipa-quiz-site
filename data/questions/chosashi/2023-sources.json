@@ -1,0 +1,163 @@
+{
+  "checkedOn": "2026-11-17",
+  "qualification": "chosashi",
+  "year": 2023,
+  "season": "autumn",
+  "officialListingUrl": "https://www.moj.go.jp/MINJI/minji05_00568.html",
+  "officialCorrectionUrl": "https://www.moj.go.jp/MINJI/minji05_00576.html",
+  "correction": "午後第22問の小数点以下の表記に訂正あり。午前択一10問は訂正対象外。",
+  "documents": [
+    {
+      "name": "2023-am",
+      "url": "https://www.moj.go.jp/content/001408935.pdf",
+      "retrievedUrl": "https://www.moj.go.jp/content/001408935.pdf?rs7=20261117",
+      "sha256": "169a59ba74696f19ec129e4acf97be3b3929ff5e97618b08640d520eef21428e",
+      "pages": 15
+    },
+    {
+      "name": "2023-pm",
+      "url": "https://www.moj.go.jp/content/001408936.pdf",
+      "retrievedUrl": "https://www.moj.go.jp/content/001408936.pdf?rs7=20261117",
+      "sha256": "30e8955bb1b0ed70b6f5d37084242d000958b75d30a9f2e69c9d9ec804772da2",
+      "pages": 40
+    },
+    {
+      "name": "2023-answer",
+      "url": "https://www.moj.go.jp/content/001406404.pdf",
+      "retrievedUrl": "https://www.moj.go.jp/content/001406404.pdf?rs7=20261117",
+      "sha256": "608059db36e15b81c4d43fb76319919059486dd255d7e1b2c2c4739b836c706a",
+      "pages": 1
+    }
+  ],
+  "officialAnswers": {
+    "am": {
+      "1": 4,
+      "2": 2,
+      "3": 2,
+      "4": 5,
+      "5": 3,
+      "6": 4,
+      "7": 1,
+      "8": 1,
+      "9": 4,
+      "10": 3
+    },
+    "pm": {
+      "1": 2,
+      "2": 1,
+      "3": 4,
+      "4": 3,
+      "5": 5,
+      "6": 2,
+      "7": 3,
+      "8": 1,
+      "9": 4,
+      "10": 1,
+      "11": 4,
+      "12": 4,
+      "13": 4,
+      "14": 2,
+      "15": 3,
+      "16": 5,
+      "17": 2,
+      "18": 5,
+      "19": 3,
+      "20": 1
+    }
+  },
+  "explanationReferences": [
+    {
+      "url": "https://www.moj.go.jp/content/001408930.pdf",
+      "usedFor": "記述式の出題趣旨。独自解答例の設問範囲を照合",
+      "sha256": "0fc289a94b7662d40d5d97dd1af63c45c507ba5814016dc699985986c38e807c"
+    },
+    {
+      "url": "https://www.moj.go.jp/content/001408937.pdf",
+      "usedFor": "午前第11問の公式答案用紙",
+      "sha256": "c91d07c0264afeec5c1ef0be227788727809a3d35edc81c0e5821494ab1be54f"
+    },
+    {
+      "url": "https://www.gsi.go.jp/sokuchikijun/datum-main.html",
+      "usedFor": "午前1の平面直角座標系・地心座標系",
+      "sha256": "a902c708b4722e16fb9b3cfd979592500236d4f59fcd75db4fc9297cf616052d"
+    },
+    {
+      "url": "https://www.gsi.go.jp/common/000098805.pdf",
+      "usedFor": "午前1の2011年改定時のITRF94/ITRF2008併用",
+      "sha256": "45eb331fe94339fd3de67eff14cfbe0d3ba96024ba31841ae2ba66d616626fe4"
+    },
+    {
+      "url": "https://web1.gsi.go.jp/common/000258764.pdf",
+      "usedFor": "午前4の出題当時の撮影計画。右列が令和5年3月31日版",
+      "sha256": "b19d02ac660843700b2fd887832470067646eb362dfe00ca8e11fbcfb505c3bb"
+    },
+    {
+      "url": "https://www.gsi.go.jp/common/000256487.pdf",
+      "usedFor": "午前9の等高線・尾根と谷",
+      "sha256": "dbb2204c24d41616557a13291d4f1d883bfe95fce86fdbca0dc57f8f2c1cd59e"
+    },
+    {
+      "url": "https://www.gsi.go.jp/kohokocho/map-sign-tizukigou-2022-itiran.html",
+      "usedFor": "午前10の電子地形図25000の地図記号",
+      "sha256": "b98287f62dacf63d553704cd66d85ec0a4212ae3982c91f31f9e2c686566a599"
+    },
+    {
+      "url": "https://www.gsi.go.jp/common/000248794.pdf",
+      "usedFor": "午前10の地図記号一覧と形状の照合",
+      "sha256": "3e1e500f63312b0a9984c6c476f40d60d1508fe6c21858c8b902acc690a3d122"
+    }
+  ],
+  "workedAnswerVerification": {
+    "qNumber": 11,
+    "constructionMethods": [
+      "trapezoid quadratic",
+      "similar triangles HBF/HAG"
+    ],
+    "c": [
+      "111.09",
+      "83.04"
+    ],
+    "b": [
+      "111.09",
+      "70.90"
+    ],
+    "f": [
+      "90.07",
+      "70.90"
+    ],
+    "h": [
+      "111.09",
+      "-1126.53"
+    ],
+    "angle": "99°43′",
+    "distance": "24.35",
+    "land1Exact": "300.26115",
+    "land2Exact": "297.85315",
+    "land2Answer": "297.85",
+    "sides": {
+      "AB": "14.37",
+      "BC": "12.14",
+      "CD": "3.01",
+      "DE": "19.14",
+      "EF": "14.11",
+      "FG": "14.37",
+      "GA": "20.77",
+      "BF": "21.02"
+    },
+    "vectorScaleGroundMetersToMillimeters": 4,
+    "svgSha256": "b51ce3b183289cd2ac98e1fb4c515b764629bcdeaf51e1c86a96617727cf8516"
+  },
+  "normalizedTextSha256": {
+    "1": "90cace54815acd17daf8986e3fab4d55e15840ba5f7a57b40a306b1d37268f84",
+    "2": "d8eb9c5f1f8df5c4cab84ab5aa4899a6e14f4c95e14ccc6cb6f7d91b31fde657",
+    "3": "c28b36c5a14db92370071cdca0b950b038ea6ca496dc5cb72c4c39efb7ef54b4",
+    "4": "350e4fb7648ea66fcd746527b7e5ffd29bcc5c754eae8241260736133d5d908e",
+    "5": "ad4551b9fba72911cddcc7e3bf808d6cf004d1d2a5748f182bea1c833ca64e9a",
+    "6": "9b6518296223e4e1fd77c979f7e8dc075be2382764433363b33c33af5f903e5c",
+    "7": "d4700370ea070d30f1384f7290dfaf74d345fcd3aa0e2969d531c1e825fbdeb2",
+    "8": "fc0b8c7dd6847deceadebdf54669d0a9a4fe8eed6c077708500c2b8b569a3da8",
+    "9": "b20631664d6a3791c809b3582fe9e630e28d650b50da896f8c4174f68c8fc896",
+    "10": "08f9cca4de5906914f941a7545a27506a7dd00555d5a08b6011ef1f0f170bddb",
+    "11": "89496c223e780331d3359a5864655d2eb1aafbcb311b062bedd236f7ec6a2aec"
+  }
+}

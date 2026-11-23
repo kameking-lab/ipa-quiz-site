@@ -1,0 +1,157 @@
+{
+  "stepId": "yd-12",
+  "baseCommit": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-446",
+      "index": 445,
+      "status": "source_review_completed",
+      "dataPath": "data/questions/sekou-kenchiku2/2023-early.json",
+      "reviewedQuestionNumbers": [
+        4,
+        9,
+        10,
+        11,
+        16,
+        36,
+        50
+      ],
+      "reviewedQuestionCount": 7,
+      "officialAnswerEntriesVerified": 50,
+      "addedQuestionCount": 0,
+      "changedQuestionNumbers": [],
+      "summary": "選択肢画像、梁の反力と曲げモーメント、原本の数値・分数・記号を照合。",
+      "sources": [
+        {
+          "url": "https://www.fcip-shiken.jp/pdf/r05_2kgz_mondai.pdf",
+          "sha256": "8f7eed9fa5a35d66315c67066651f8ad9f7912180b222a854deb57c1253ce4be"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-418",
+      "index": 417,
+      "status": "source_review_completed",
+      "dataPath": "data/questions/fp1/applied-2024-may.json",
+      "reviewedQuestionNumbers": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "reviewedQuestionCount": 15,
+      "officialAnswerEntriesVerified": 62,
+      "addedQuestionCount": 0,
+      "changedQuestionNumbers": [
+        53,
+        58,
+        64
+      ],
+      "summary": "5設例を含め、設問・条件・表・数式・原図と62回答欄を照合。問53の条件見出し、問58の資料見出し、問64の表の境界を補正。",
+      "sources": [
+        {
+          "url": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_oyo_202405.pdf",
+          "sha256": "d9013f2247b92b144bb80878524f9755a7ca7ab4567d6753077b331d16595b38"
+        },
+        {
+          "url": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_202405.pdf",
+          "sha256": "cea15bb4d1d2f3fd89156ced36303ef900c92c1cb2f9b272a385152bc134b41b"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-404",
+      "index": 403,
+      "status": "source_review_completed",
+      "dataPath": "data/questions/denki2/2022-late.json",
+      "reviewedQuestionNumbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        12,
+        13,
+        16,
+        18,
+        23,
+        28,
+        38,
+        41,
+        56,
+        62
+      ],
+      "reviewedQuestionCount": 15,
+      "officialAnswerEntriesVerified": 64,
+      "addedQuestionCount": 0,
+      "changedQuestionNumbers": [],
+      "summary": "結線、配線図記号、PSE・PSC図、工程表、数式・単位、法令引用の空欄位置を照合。",
+      "sources": [
+        {
+          "url": "https://www.fcip-shiken.jp/pdf/r04_2dg_mondai.pdf",
+          "sha256": "3aa3f069bfcbf76a03ef5d24d2995c693b5ca66bd51daff604f41861d1c5ea0a"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-390",
+      "index": 389,
+      "status": "source_review_completed",
+      "dataPath": "data/questions/mokuzo-kenchikushi/2021-gakka-III-IV.json",
+      "reviewedQuestionNumbers": {
+        "III": [
+          3,
+          7,
+          8,
+          9,
+          10,
+          11,
+          15,
+          19,
+          20,
+          21
+        ],
+        "IV": [
+          3,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          18,
+          23
+        ]
+      },
+      "reviewedQuestionCount": 22,
+      "officialAnswerEntriesVerified": 50,
+      "addedQuestionCount": 0,
+      "changedQuestionNumbers": [],
+      "summary": "梁・耐力壁・仕口・床伏図・規矩基準勾配図、選択肢と分数・単位を照合。",
+      "sources": [
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2021-1st-gakka3_4.pdf",
+          "sha256": "d0f93b4a39ced9b528d2c5ad6455c5328671b27256508e885527a2fd55931d34"
+        },
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2021-1st-gokakukijun.pdf",
+          "sha256": "79884d407da73b2a7cfc543b45cc37661159cf2debee3e1354f2e2f50c00d004"
+        }
+      ]
+    }
+  ]
+}

@@ -3,6 +3,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { KISHO_QUESTIONS as questions } from "@/data/questions/kisho";
 import type { Question } from "@/lib/questions/types";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const access = vi.hoisted(() => ({ entitled: true, gate: false, query: "exam=kisho" }));
 vi.mock("@/lib/billing/stream-access", () => ({ streamAccess: async () => access.entitled }));
@@ -60,13 +62,16 @@ describe("weather learning routes retain exam and official subject", () => {
   it.each(["ippan", "senmon"])("keeps %s in normal and stream player pools", async session => {
     const params = { exam: "kisho", session, mode: "random" };
     const normal = await QuizPage({ searchParams: Promise.resolve(params) });
-    assertIds(playerProps(normal).poolIds, questions.filter(q => q.session === session));
+    const current = await getQuestionsForExam("kisho");
+    const eligible = current.filter(q => q.session === session && isPracticeReadyQuestion(q));
+    assertIds(playerProps(normal).poolIds, eligible);
     const stream = await StreamQuizPage({ searchParams: Promise.resolve(params) });
     const pool = elements(stream).find(node => node.type === StreamQuizLoader)!.props.pool!;
-    expect(pool).toHaveLength(30);
+    expect(pool).toHaveLength(Math.min(60, eligible.filter(q => (q.requiredSelections ?? 1) === 1).length));
     expect(pool.every(q => q.exam === "kisho" && q.session === session)).toBe(true);
   });
-  it("retains all 60 academic originals through year and topic links", async () => {
+  it("retains all 60 initial academic originals through year and topic links", async () => {
+    const current = new Set((await getQuestionsForExam("kisho")).map(q => q.id));
     for (const Page of [YearModePage, TopicModePage]) {
       const trees = Page === TopicModePage
         ? await Promise.all(["ippan", "senmon"].map(session => Page({ searchParams: Promise.resolve({ exam: "kisho", session }) })))
@@ -79,7 +84,9 @@ describe("weather learning routes retain exam and official subject", () => {
         const quiz = await QuizPage({ searchParams: Promise.resolve(Object.fromEntries(link.searchParams)) });
         ids.push(...playerProps(quiz).poolIds!);
       }
-      expect(new Set(ids)).toEqual(new Set(questions.map(q => q.id)));
+      const found = new Set(ids);
+      expect(questions.every(q => found.has(q.id))).toBe(true);
+      expect(ids.every(id => current.has(id))).toBe(true);
     }
     const year = await YearModePage({ searchParams: Promise.resolve({ exam: "kisho" }) });
     const html = renderToStaticMarkup(year);

@@ -84,7 +84,7 @@ function Inner({ categoryById }: Props) {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">合格まであと正答率 {gapPct}%</CardTitle>
+          <CardTitle className="text-base">目標まであと {gapPct}pt</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 gap-4 text-sm sm:grid-cols-4">
@@ -137,9 +137,9 @@ function Inner({ categoryById }: Props) {
               {weakest.map((s) => (
                 <li
                   key={s.category}
-                  className="flex items-center justify-between rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 dark:border-rose-900/60 dark:bg-rose-950/30"
+                  className="flex items-center justify-between gap-3 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 dark:border-rose-900/60 dark:bg-rose-950/30"
                 >
-                  <span className="font-medium">{s.category}</span>
+                  <span className="min-w-0 flex-1 break-words font-medium">{s.category}</span>
                   <Badge variant="outline">
                     {Math.round(s.accuracy * 100)}% ({s.attempts}問)
                   </Badge>
@@ -158,9 +158,9 @@ function Inner({ categoryById }: Props) {
               {strongest.map((s) => (
                 <li
                   key={s.category}
-                  className="flex items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 dark:border-emerald-900/60 dark:bg-emerald-950/30"
+                  className="flex items-center justify-between gap-3 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 dark:border-emerald-900/60 dark:bg-emerald-950/30"
                 >
-                  <span className="font-medium">{s.category}</span>
+                  <span className="min-w-0 flex-1 break-words font-medium">{s.category}</span>
                   <Badge variant="outline">
                     {Math.round(s.accuracy * 100)}% ({s.attempts}問)
                   </Badge>

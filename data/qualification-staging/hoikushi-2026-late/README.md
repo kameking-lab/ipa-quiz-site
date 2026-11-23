@@ -7,15 +7,18 @@
 - 試験日: 2026-10-24・25（公式試験案内ページ）
 - `questions.json`: 9科目160問の原文（PDFテキスト層から転記し、表・下線・組合せ表・楽譜・図のページは画像で確認）。各科目に PDF の SHA-256。
   - 科目別問数: 保育原理20・教育原理10・社会的養護10・子ども家庭福祉20・社会福祉20・保育の心理学20・子どもの保健20・子どもの食と栄養20・保育実習理論20
-  - `hold: true`（5問・保育実習理論 問1・3・4・5・12）: 楽譜が「著作権の関係により公表できません。」に差し替え、または図・五線譜でしか示されずテキストに忠実に起こせないもの。前期と同じ扱いで出題プールに入れない。
+  - 保育実習理論の問1・4・5は、解答に必要な楽譜を公式問題PDFから確認できない。本文・選択肢は保存している。
   - `underlinedSegments`（任意）: 下線部の範囲を画像で確認した記録。前期ファイルにはないキーなので、公開データ化の際は問題文表記へ反映するか削除する。
   - 保育原理 問20・子どもの食と栄養 問6 の表は markdown 表で転記（後者のセル内改行は `<br>`、見出し行「グループ／主な食品」は転記者の補い）。公開時は前期ファイルの表の書き方に合わせて整える。
 - `official-answers.json`: 正答の空テンプレート。**推測で埋めないこと。**
+- `figure-assets.json` と `figures/`: 保育実習理論の問3の五線譜、問4の鍵盤図、問12の図1と選択肢1〜5の計8点。公式PDFの物理ページ、切り出し座標、ファイルのSHA-256を記録した。
 
 ## 11/30 以降の仕上げ手順
 
 1. 08-2.html の公式正答（前期はPDFでなくHTML表）を取得し、URL・取得日時・SHA-256 を記録して `official-answers.json` を埋める。各問の `requiredSelections` と正答数の一致を確認する。
 2. 全問・全肢の独自解説を作成する（前期 `data/questions/hoikushi/2026-early.json` と同じ形式: `officialAnswer`, `choiceExplanations`, `topicTags`, `lawSensitive`, `reviewStatus`, `evidenceUrls`）。`lawReferenceDate` は `2026-10-24`。
+   保育実習理論の問3・7〜10・12〜20は、[解説の下書きと根拠資料](ap9-explanation-notes.md)を参照する。
+   問3・4・12の設問図は `imageUrls` に対応する。問12の選択肢図は `officialChoiceNumber` の1〜5をア〜オに対応させて `choiceImageUrls` に設定する。
 3. 別エージェントで公式PDF・公式正答と照合する独立レビューを行い、PASS するまで直す。結果を `reports/hoikushi-review.md` に保存する。
 4. `data/questions/hoikushi/2026-late.json` を書き出し（`season: "late"`, `examLabel: "令和8年度後期・地域限定保育士試験"`, 各科目の `sourceAnswerUrl` は 08-2.html）、`data/questions/hoikushi/index.ts` に
    `HOIKUSHI_2026_LATE_QUESTIONS = buildRound(source2026late as HoikushiSource)` を追加して `HOIKUSHI_QUESTIONS` に連結する。

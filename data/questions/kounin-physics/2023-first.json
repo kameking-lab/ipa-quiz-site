@@ -1,0 +1,794 @@
+[
+  {
+    "id": "kounin-physics-2023-first-gakka-q1",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 1,
+    "officialQuestionLabel": "解答番号 1",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "有効数字と測定値"
+    ],
+    "difficulty": 2,
+    "question": "テレビのリモコンの小さなボタンの長さを目盛り付き定規で測定したら，横7.8 mm，縦3.8 mmであった。ボタンの長さは，それぞれ有効数字［ア］桁で測定されている。面積を電卓で計算すると7.8×3.8＝29.64となる。有効数字を考えて示すと［イ］mm²となる。ただし，測定値どうしの掛け算では有効数字の桁数の最も小さいものと計算結果の桁数をそろえる。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "1・29.64",
+      "イ": "2・30",
+      "ウ": "2・29.6",
+      "エ": "3・30",
+      "オ": "3・29.64"
+    },
+    "answer": "イ",
+    "explanation": "両測定値は有効数字2桁です。29.64を有効数字2桁に丸めると30 mm²（3.0×10 mm²）です。",
+    "choiceExplanations": {
+      "ア": "7.8と3.8はいずれも二つの有効な数字からなります。29.64のままでは有効数字が4桁になります。",
+      "イ": "両測定値は有効数字2桁です。29.64を有効数字2桁に丸めると30 mm²（3.0×10 mm²）です。",
+      "ウ": "測定値は2桁ですが、29.6は3桁なので桁数がそろいません。",
+      "エ": "面積を30とするのは合っていますが、7.8や3.8の有効数字は2桁です。",
+      "オ": "7.8と3.8は2桁で、29.64は4桁です。積は測定値に合わせて2桁に丸めます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号1）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q2",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 2,
+    "officialQuestionLabel": "解答番号 2",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "慣性の法則"
+    ],
+    "difficulty": 2,
+    "question": "摩擦のない水平な面の上で，物体を手で押してすべらせて，手をはなした。手をはなした後の物体の運動の説明として正しいものはどれか。ただし，空気抵抗は無視できるものとする。",
+    "choices": {
+      "ア": "手をはなすと物体を押す力がなくなるので，物体は何かにぶつからなくても急に静止する。",
+      "イ": "手をはなすと物体を押す力はなくなるが，物体は何かにぶつかるまで一直線上を一定の速さのまま進み続ける。",
+      "ウ": "手をはなすと物体を押した力が徐々に減っていくので，物体は何かにぶつからなくても減速してやがて静止する。",
+      "エ": "物体から手をはなしても物体を押した力が残っているうえに，面に摩擦がないので，物体は何かにぶつかるまでどんどん加速していく。"
+    },
+    "answer": "イ",
+    "explanation": "摩擦や空気抵抗がなく、鉛直の力もつり合うので、物体は慣性の法則に従って等速直線運動を続けます。",
+    "choiceExplanations": {
+      "ア": "手を離すと水平の合力は0になります。合力0は加速度が0という意味で、速度はそのままです。",
+      "イ": "摩擦や空気抵抗がなく、鉛直の力もつり合うので、物体は慣性の法則に従って等速直線運動を続けます。",
+      "ウ": "手を離した時点で手の力はなくなり、減速させる摩擦や空気抵抗もありません。",
+      "エ": "手を離した後に押す力は残りません。水平の合力が0なら加速しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号2）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q3",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 3,
+    "officialQuestionLabel": "解答番号 3",
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "加速度の意味"
+    ],
+    "difficulty": 2,
+    "question": "斜面上に力学台車を置き，初速度0 m/sで手をはなしたところ，力学台車は一定の加速度の大きさ2.0 m/s²で斜面に沿っておりた。この加速度の大きさの説明として最も適当なものはどれか。",
+    "choices": {
+      "ア": "速さが1.0 m/s大きくなるごとに，2.0 sかかることを表している。",
+      "イ": "1.0 m進むごとに，2.0 sかかることを表している。",
+      "ウ": "1.0 m進むごとに，速さが2.0 m/s大きくなることを表している。",
+      "エ": "1.0 s間あたりに，2.0 m進むことを表している。",
+      "オ": "1.0 s間あたりに，速さが2.0 m/s大きくなることを表している。"
+    },
+    "answer": "オ",
+    "explanation": "進行方向と加速度の向きが同じなので、速さは1秒ごとに2.0 m/sずつ大きくなります。",
+    "choiceExplanations": {
+      "ア": "速さが1.0 m/s増すのに2.0 sなら、加速度は0.50 m/s²です。",
+      "イ": "移動距離を時間で割った量は平均の速さです。加速度は速度変化を時間で割ります。",
+      "ウ": "速さの変化を移動距離で割っても、加速度の単位m/s²にはなりません。",
+      "エ": "1秒間に2.0 m進むという説明は速さについて述べています。",
+      "オ": "進行方向と加速度の向きが同じなので、速さは1秒ごとに2.0 m/sずつ大きくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号3）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q4",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 4,
+    "officialQuestionLabel": "解答番号 4",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "等加速度運動の速さと距離"
+    ],
+    "difficulty": 2,
+    "question": "初速度0 m/sの力学台車が，一定の加速度の大きさ2.0 m/s²で斜面に沿っておりる。手をはなしたところから斜面に沿って4.0 mだけおりたときの速さは何 m/s か。",
+    "choices": {
+      "ア": "1.0",
+      "イ": "2.0",
+      "ウ": "4.0",
+      "エ": "8.0",
+      "オ": "16"
+    },
+    "answer": "ウ",
+    "explanation": "v²−v₀²＝2axに2.0 m/s²と4.0 mを代入するとv²＝16なので、v＝4.0 m/sです。",
+    "choiceExplanations": {
+      "ア": "vが1.0 m/sなら、v²＝2axから移動距離は0.25 mです。",
+      "イ": "2.0 m/sの速さになる距離はv²/(2a)＝1.0 mです。",
+      "ウ": "v²−v₀²＝2axに2.0 m/s²と4.0 mを代入するとv²＝16なので、v＝4.0 m/sです。",
+      "エ": "8.0 m/sに達するには、v²/(2a)より16 m進む必要があります。",
+      "オ": "16はv²であり、速さを求めるには平方根を取ります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号4）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q5",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 5,
+    "officialQuestionLabel": "解答番号 5",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "摩擦のない斜面にはたらく力"
+    ],
+    "difficulty": 2,
+    "question": "小物体が摩擦のない斜面に沿って一定の加速度で下っている。この小物体にはたらくすべての力を表した図として最も適当なものはどれか。ただし，空気抵抗は無視できるとする。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3",
+      "エ": "図の4"
+    },
+    "answer": "ウ",
+    "explanation": "物体には鉛直下向きの重力と、斜面に垂直で面から離れる向きの垂直抗力だけがはたらきます。",
+    "choiceExplanations": {
+      "ア": "斜面から受ける垂直抗力は鉛直上向きではありません。斜面方向の重力成分を独立の力としても扱いません。",
+      "イ": "重力は鉛直下向きですが、面から受ける抗力は斜面に垂直で、鉛直上向きではありません。",
+      "ウ": "物体には鉛直下向きの重力と、斜面に垂直で面から離れる向きの垂直抗力だけがはたらきます。",
+      "エ": "斜面方向の下向きの矢印は重力の分力です。実際の重力を表す矢印は鉛直下向きです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号5）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2023-1-q05.webp"
+    ],
+    "imageAltTexts": [
+      "摩擦のない斜面にはたらく力の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q6",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 6,
+    "officialQuestionLabel": "解答番号 6",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "斜面方向の運動方程式"
+    ],
+    "difficulty": 2,
+    "question": "傾斜 θ の雪面でスキーをしている質量50 kgの人が，初速度0 m/s，加速度3.4 m/s²ですべり始めた。この人の雪面に対して平行な方向の運動方程式による計算式として正しいものはどれか。ただし，重力加速度の大きさを9.8 m/s²とし，スキー用具の質量や摩擦力，空気抵抗は無視する。",
+    "choices": {
+      "ア": "50×3.4＝50×9.8×sin θ",
+      "イ": "50×3.4＝50×9.8×cos θ",
+      "ウ": "50×9.8＝50×3.4×sin θ",
+      "エ": "50×9.8＝50×3.4×cos θ"
+    },
+    "answer": "ア",
+    "explanation": "斜面方向の加速度は3.4 m/s²です。その方向の重力の分力 mg sin θ と ma が等しくなります。",
+    "choiceExplanations": {
+      "ア": "斜面方向の加速度は3.4 m/s²です。その方向の重力の分力 mg sin θ と ma が等しくなります。",
+      "イ": "mg cos θ は雪面に垂直な重力成分です。雪面に沿う方向にはsin θを使います。",
+      "ウ": "左辺は重力全体の大きさです。sin θを掛けて分解するのは重力であり、斜面方向の加速度ではありません。",
+      "エ": "3.4 m/s²はすでに斜面方向の加速度なので、cos θを掛けて分解しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号6）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q7",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 7,
+    "officialQuestionLabel": "解答番号 7",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "最大静止摩擦力"
+    ],
+    "difficulty": 2,
+    "question": "摩擦のある水平な床に置かれた重さ98 Nの小物体に床と平行な力 F を加えた。F の大きさを0 Nから徐々に大きくすると，49 Nをこえたときに小物体は動きはじめた。小物体と床の間の静止摩擦係数はいくらか。",
+    "choices": {
+      "ア": "0",
+      "イ": "0.3",
+      "ウ": "0.5",
+      "エ": "1"
+    },
+    "answer": "ウ",
+    "explanation": "最大静止摩擦力は49 N、垂直抗力は98 Nです。係数は49÷98＝0.5です。",
+    "choiceExplanations": {
+      "ア": "係数が0なら最大静止摩擦力は0 Nで、ごく小さい水平力でも動き始めます。",
+      "イ": "垂直抗力98 Nに0.3を掛けると29.4 Nで、動き始めた条件と一致しません。",
+      "ウ": "最大静止摩擦力は49 N、垂直抗力は98 Nです。係数は49÷98＝0.5です。",
+      "エ": "係数1なら最大静止摩擦力は98 Nになり、49 Nを超えた段階では動きません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号7）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q8",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 8,
+    "officialQuestionLabel": "解答番号 8",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "垂直抗力と静止摩擦"
+    ],
+    "difficulty": 2,
+    "question": "重さ98 Nの小物体を摩擦のある水平な床に置いた。床と平行な力 F を徐々に大きくすると，49 Nをこえたときに動きはじめた。鉛直上向きに大きさ10 Nの力を新たに加えながら同様の操作を行った。垂直抗力の大きさは［ア］なり，小物体が動きはじめるときの F の大きさは49 Nより［イ］なる。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "大きく・大きく",
+      "イ": "大きく・小さく",
+      "ウ": "小さく・大きく",
+      "エ": "小さく・小さく"
+    },
+    "answer": "エ",
+    "explanation": "鉛直のつり合いから垂直抗力は98−10＝88 Nです。最大静止摩擦力は0.5×88＝44 Nに下がります。",
+    "choiceExplanations": {
+      "ア": "上向きの力を別に加えるため、鉛直方向のつり合いに必要な垂直抗力は増えません。",
+      "イ": "必要な水平力は小さくなります。その理由は垂直抗力が小さくなり最大静止摩擦力も減るためです。",
+      "ウ": "垂直抗力は小さくなりますが、最大静止摩擦力は垂直抗力に比例するので、必要な水平力も小さくなります。",
+      "エ": "鉛直のつり合いから垂直抗力は98−10＝88 Nです。最大静止摩擦力は0.5×88＝44 Nに下がります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号8）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q9",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 9,
+    "officialQuestionLabel": "解答番号 9",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "仕事の正負"
+    ],
+    "difficulty": 2,
+    "question": "図のように，Aさんは台車を押して運び，Bさんは台車を引いて運んだ。AさんとBさんが台車に加えた力がした仕事に関する文として正しいものはどれか。",
+    "choices": {
+      "ア": "AさんもBさんも台車に加えた力がした仕事は，正の仕事である。",
+      "イ": "AさんもBさんも台車に加えた力がした仕事は，負の仕事である。",
+      "ウ": "Aさんの力が台車にした仕事は正で，Bさんの力が台車にした仕事は負の仕事である。",
+      "エ": "Aさんの力が台車にした仕事は負で，Bさんの力が台車にした仕事は正の仕事である。"
+    },
+    "answer": "ア",
+    "explanation": "押す場合も引く場合も、力には台車の移動と同じ向きの成分があります。その成分と移動距離の積は正です。",
+    "choiceExplanations": {
+      "ア": "押す場合も引く場合も、力には台車の移動と同じ向きの成分があります。その成分と移動距離の積は正です。",
+      "イ": "負の仕事になるのは移動と反対向きの力成分がある場合です。図の2人はいずれも台車を進む方向へ動かしています。",
+      "ウ": "Bさんが引く力にも移動と同じ向きの成分があり、仕事は正です。",
+      "エ": "Aさんが押す力も移動と同じ向きに成分を持つので、正の仕事をします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号9）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2023-1-q09.webp"
+    ],
+    "imageAltTexts": [
+      "仕事の正負の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q10",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 10,
+    "officialQuestionLabel": "解答番号 10",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "熱",
+    "topicTags": [
+      "真空断熱"
+    ],
+    "difficulty": 2,
+    "question": "コップに熱いお湯を満たして1時間放置したら冷めてしまった。しかし，保温ボトルであれば，お湯を熱いまま保つことができた。この理由を述べた文として正しいものはどれか。ただし，保温ボトルは二重構造で，外びんと内びんの間は真空である。",
+    "choices": {
+      "ア": "外びんで周囲の熱を吸収し，内びん側へ熱が伝わるから。",
+      "イ": "真空の空間が100 ℃以上の高温に保たれているから。",
+      "ウ": "真空の空間で発熱反応を起こし，中のお湯を温めているから。",
+      "エ": "真空の空間では，熱運動による熱の移動がおこらないから。"
+    },
+    "answer": "エ",
+    "explanation": "真空層では熱運動を担う粒子がほとんどなく、伝導・対流による熱移動が抑えられます。放射による熱移動は真空中でも起こります。",
+    "choiceExplanations": {
+      "ア": "熱いお湯と周囲では、熱は温度の高いお湯側から低い周囲へ移動します。",
+      "イ": "真空層を高温に保つ仕組みではありません。真空層は物質を介した熱の移動を抑えます。",
+      "ウ": "真空層には化学反応で熱をつくる物質がほとんどありません。お湯が持っていた熱が逃げにくくなっています。",
+      "エ": "真空層では熱運動を担う粒子がほとんどなく、伝導・対流による熱移動が抑えられます。放射による熱移動は真空中でも起こります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号10）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q11",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 11,
+    "officialQuestionLabel": "解答番号 11",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "運動エネルギー"
+    ],
+    "difficulty": 2,
+    "question": "質量0.50 kgの力学台車を，摩擦のない水平面になめらかにつながる摩擦のない斜面から初速度0 m/sではなし，壁に一端を固定した軽いばねに衝突させた。ばねに衝突する直前の力学台車の速さを測定すると2.0 m/sであった。このとき，力学台車の運動エネルギーは何 J か。",
+    "choices": {
+      "ア": "0.50",
+      "イ": "1.0",
+      "ウ": "2.0",
+      "エ": "4.0"
+    },
+    "answer": "イ",
+    "explanation": "運動エネルギーは mv²/2 です。0.50×2.0²÷2＝1.0 Jです。",
+    "choiceExplanations": {
+      "ア": "0.50は質量の数値です。運動エネルギーではその質量に速さの2乗と1/2を掛けます。",
+      "イ": "運動エネルギーは mv²/2 です。0.50×2.0²÷2＝1.0 Jです。",
+      "ウ": "0.50×2.0²は2.0になりますが、運動エネルギーには係数1/2があります。",
+      "エ": "4.0は速さの2乗の数値です。質量と1/2を掛けないと運動エネルギーになりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号11）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q12",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 12,
+    "officialQuestionLabel": "解答番号 12",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "ばねの弾性エネルギーと保存則"
+    ],
+    "difficulty": 2,
+    "question": "摩擦のない斜面上の点 A から質量0.50 kgの力学台車を初速度0 m/sではなすと，摩擦のない水平面に設置されたばねに衝突してばねを縮めた。いくつかの条件を変えて実験を行う。ばねが最も縮んだときの弾性力による位置エネルギーが変化しないものはどれか。",
+    "choices": {
+      "ア": "質量の大きい力学台車に変える。",
+      "イ": "ばね定数の大きいばねに変える。",
+      "ウ": "点 A よりもさらに高い位置から力学台車をはなす。",
+      "エ": "斜面に沿って下向きに初速度を与えて力学台車をはなす。"
+    },
+    "answer": "イ",
+    "explanation": "摩擦がないので、初めの台車の力学的エネルギーがそのまま最大圧縮時のばねのエネルギーになります。ばね定数を変えると縮む長さが変わります。",
+    "choiceExplanations": {
+      "ア": "高さが同じでも質量が増えると初めの位置エネルギー mgh が増え、ばねが蓄えるエネルギーも大きくなります。",
+      "イ": "摩擦がないので、初めの台車の力学的エネルギーがそのまま最大圧縮時のばねのエネルギーになります。ばね定数を変えると縮む長さが変わります。",
+      "ウ": "高い位置から始めると初めの重力による位置エネルギーが増えます。",
+      "エ": "初めから運動エネルギーが加わるため、ばねに移るエネルギーが増えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号12）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q13",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 13,
+    "officialQuestionLabel": "解答番号 13",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "音速と伝わる距離"
+    ],
+    "difficulty": 2,
+    "question": "打ち上げ花火が上空で開いて輝いてから，ドーンという音が聞こえるまでに3 sかかった。音が聞こえたところから花火が開いて輝いたところまでの距離は何 m か。ただし，音速は340 m/sとする。",
+    "choices": {
+      "ア": "340",
+      "イ": "680",
+      "ウ": "1020",
+      "エ": "1360"
+    },
+    "answer": "ウ",
+    "explanation": "光が伝わる時間を音に比べて無視すると、距離は音速×時間です。340×3＝1020 mです。",
+    "choiceExplanations": {
+      "ア": "340 mは音が1 sに進む距離です。実際の時間差は3 sです。",
+      "イ": "680 mは2 s分です。花火の音は3 sかけて伝わりました。",
+      "ウ": "光が伝わる時間を音に比べて無視すると、距離は音速×時間です。340×3＝1020 mです。",
+      "エ": "1360 mは音が4 sに進む距離です。設問の時間差は3 sです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号13）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q14",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 14,
+    "officialQuestionLabel": "解答番号 14",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "定在波の節間距離"
+    ],
+    "difficulty": 2,
+    "question": "振幅，波長，振動数の等しい2つの互いに逆向きに進む進行波が重なり，2 mごとに節のある定常波（定在波）ができた。この進行波の波長は何 m か。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "explanation": "隣り合う節の間隔はλ/2です。λ/2＝2 mからλ＝4 mになります。",
+    "choiceExplanations": {
+      "ア": "波長が1 mなら節の間隔は0.5 mとなり、与えられた2 mより短くなります。",
+      "イ": "隣り合う節の間隔2 mは、進行波の波長の半分です。",
+      "ウ": "波長3 mでは節どうしの間隔は1.5 mとなります。",
+      "エ": "隣り合う節の間隔はλ/2です。λ/2＝2 mからλ＝4 mになります。",
+      "オ": "波長を5 mとすると、節の間隔が2.5 mとなり、図の条件と合いません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号14）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q15",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 15,
+    "officialQuestionLabel": "解答番号 15",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "固体中の縦波と横波"
+    ],
+    "difficulty": 2,
+    "question": "固体を伝わる波について説明した文として正しいものはどれか。",
+    "choices": {
+      "ア": "縦波も横波も伝わる。",
+      "イ": "縦波は伝わるが，横波は伝わらない。",
+      "ウ": "横波は伝わるが，縦波は伝わらない。",
+      "エ": "縦波も横波も伝わらない。"
+    },
+    "answer": "ア",
+    "explanation": "固体は体積の変化にもせん断変形にも復元力がはたらくので、縦波と横波の両方が伝わります。",
+    "choiceExplanations": {
+      "ア": "固体は体積の変化にもせん断変形にも復元力がはたらくので、縦波と横波の両方が伝わります。",
+      "イ": "固体にはせん断変形を元に戻す力があるため、横波も伝わります。",
+      "ウ": "固体には圧縮された部分を元に戻す力もあるので、縦波も伝わります。",
+      "エ": "岩石を伝わる地震のP波とS波は、固体内を伝わる縦波と横波の例です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号15）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q16",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 16,
+    "officialQuestionLabel": "解答番号 16",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "水面波の自由端反射"
+    ],
+    "difficulty": 2,
+    "question": "深さ120 cmに設計されたプールに水深100 cmになるよう水をはった。プールで波を起こしたところ，高さ20 cmの水波が壁まで伝わった。このとき壁でみられる現象の説明として正しいものはどれか。ただし，水波は水面を横波として伝わるものとする。",
+    "choices": {
+      "ア": "プールの壁は水波にとって固定端なので，水の一部はプールの壁をこえる。",
+      "イ": "プールの壁は水波にとって自由端なので，水の一部はプールの壁をこえる。",
+      "ウ": "プールの壁は水波にとって固定端なので，水はプールの壁をこえることなく反射して戻る。",
+      "エ": "プールの壁は水波にとって自由端なので，水はプールの壁をこえることなく反射して戻る。"
+    },
+    "answer": "イ",
+    "explanation": "壁でも水面の上下は自由なので反射で位相が反転せず、入射波と反射波の山が加わります。壁上端までの余裕20 cmを超えます。",
+    "choiceExplanations": {
+      "ア": "固定端なら入射波と反射波の位相が逆になり、端の変位は0です。この水波の上下振動は壁で固定されていません。",
+      "イ": "壁でも水面の上下は自由なので反射で位相が反転せず、入射波と反射波の山が加わります。壁上端までの余裕20 cmを超えます。",
+      "ウ": "水面は壁に沿って上下できるため、上下方向の変位が固定された端ではありません。",
+      "エ": "自由端で山同士が重なると上下変位が増します。静止水面と壁上端の差は20 cmなので、水の一部は壁を越えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号16）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2023-1-q16.webp"
+    ],
+    "imageAltTexts": [
+      "水面波の自由端反射の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q17",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 17,
+    "officialQuestionLabel": "解答番号 17",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "電気",
+    "topicTags": [
+      "抵抗の直列・並列と断面積"
+    ],
+    "difficulty": 2,
+    "question": "抵抗率と長さの等しい抵抗 A，B，C がある。抵抗 A，B の断面積は等しく，抵抗 C の断面積は A，B の2倍である。図の接続のうち，PQ間の合成抵抗が最も小さくなるものはどれか。",
+    "choices": {
+      "ア": "図の1（3本を並列）",
+      "イ": "図の2（3本を直列）",
+      "ウ": "図の3（A・Bの並列にCを直列）",
+      "エ": "図の4（A・Bの直列とCを並列）"
+    },
+    "answer": "ア",
+    "explanation": "AとBを R、Cを R/2 とすると、合成抵抗の逆数は 1/R＋1/R＋2/R＝4/R です。合成抵抗は R/4 になります。",
+    "choiceExplanations": {
+      "ア": "AとBを R、Cを R/2 とすると、合成抵抗の逆数は 1/R＋1/R＋2/R＝4/R です。合成抵抗は R/4 になります。",
+      "イ": "直列では R＋R＋R/2＝5R/2 となります。抵抗が加算されるため並列より大きくなります。",
+      "ウ": "AとBを並列にすると R/2 です。そこへCの R/2 が直列につながるので合計は R です。",
+      "エ": "2RとR/2の並列なので逆数の和は 1/(2R)＋2/R＝5/(2R) です。合成抵抗2R/5はR/4より大きくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号17）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2023-1-q17.webp"
+    ],
+    "imageAltTexts": [
+      "抵抗の直列・並列と断面積の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q18",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 18,
+    "officialQuestionLabel": "解答番号 18",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "電気",
+    "topicTags": [
+      "電力・電圧・電流"
+    ],
+    "difficulty": 2,
+    "question": "100 Vの電圧で使用したとき，消費電力が6 WになるLED電球がある。このLED電球を100 Vの電圧で使用するとき，流れる電流は何 A か。",
+    "choices": {
+      "ア": "0.06",
+      "イ": "0.6",
+      "ウ": "6",
+      "エ": "60"
+    },
+    "answer": "ア",
+    "explanation": "電力 P＝VI なので、電流は6 W÷100 V＝0.06 Aです。",
+    "choiceExplanations": {
+      "ア": "電力 P＝VI なので、電流は6 W÷100 V＝0.06 Aです。",
+      "イ": "0.6 Aなら100 Vで60 Wになり、定格の6 Wの10倍です。",
+      "ウ": "6は電力の数値です。電流を得るには電力を電圧で割ります。",
+      "エ": "60 Aを100 Vで流すと6000 Wになり、与えられた消費電力とは一致しません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号18）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q19",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 19,
+    "officialQuestionLabel": "解答番号 19",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "電磁波と粒子線"
+    ],
+    "difficulty": 2,
+    "question": "電磁波とは，電気的・磁気的な振動が空間を伝わる波である。電磁波の一種であるものはどれか。",
+    "choices": {
+      "ア": "α線",
+      "イ": "β線",
+      "ウ": "陰極線",
+      "エ": "可視光線"
+    },
+    "answer": "エ",
+    "explanation": "可視光線は目で感じられる波長の範囲の電磁波です。",
+    "choiceExplanations": {
+      "ア": "α線はヘリウム原子核の流れであり、粒子線です。",
+      "イ": "β線は電子または陽電子の流れであり、電磁波ではありません。",
+      "ウ": "陰極から放出される電子の流れを陰極線といいます。",
+      "エ": "可視光線は目で感じられる波長の範囲の電磁波です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号19）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2023-first-gakka-q20",
+    "exam": "kounin-physics",
+    "year": 2023,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 20,
+    "officialQuestionLabel": "解答番号 20",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気",
+    "topicTags": [
+      "電磁誘導と発電機の負荷"
+    ],
+    "difficulty": 2,
+    "question": "手回し発電機の端子に何もつながずにハンドルを回したところ，手ごたえは軽かった。抵抗値 R の抵抗をつなぎ，一定の電圧 V を発生させるように回すと，手ごたえが重くなった。電力 P＝V²/R が大きいほど手ごたえは重い。電圧が発生するのは［ア］によって説明できる。抵抗値を大きいものに変え，一定の電圧 V を発生させるようにすると，以前に比べて手ごたえは［イ］。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "電離作用・重くなる",
+      "イ": "電離作用・軽くなる",
+      "ウ": "電磁誘導・重くなる",
+      "エ": "電磁誘導・軽くなる"
+    },
+    "answer": "エ",
+    "explanation": "発電機で磁束の変化が起こると電磁誘導で電圧が生まれます。同じ電圧で抵抗値を上げると消費電力が減り、手ごたえが軽くなります。",
+    "choiceExplanations": {
+      "ア": "コイルを貫く磁束の変化で電圧が発生します。電圧一定で抵抗値を上げると電力は小さくなります。",
+      "イ": "手ごたえは軽くなりますが、電圧を生むのは原子などをイオンにする電離作用ではなく電磁誘導です。",
+      "ウ": "電圧発生の原理は合っています。一定電圧では抵抗値を大きくするほど負荷に渡す電力 V²/R は小さくなります。",
+      "エ": "発電機で磁束の変化が起こると電磁誘導で電圧が生まれます。同じ電圧で抵抗値を上げると消費電力が減り、手ごたえが軽くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240523-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20230804-mxt_syogai02-mext_000031286_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和5年度第1回高等学校卒業程度認定試験 物理基礎（解答番号20）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  }
+]

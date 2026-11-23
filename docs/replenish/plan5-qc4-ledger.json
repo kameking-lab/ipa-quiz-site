@@ -1,0 +1,218 @@
+{
+  "lane": "qc-4",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "auditedRefCount": 93,
+  "matchingExistingSourcesForTheseJobs": [],
+  "jobs": [
+    {
+      "jobId": "PLAN5-088",
+      "lane": "qc-4",
+      "branch": "cx/kako-5y4-20261118",
+      "status": "completed",
+      "exam": "pm",
+      "year": 2021,
+      "season": "autumn",
+      "session": "pm2",
+      "format": "essay",
+      "addedCount": 2,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_pm_pm2_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_pm_pm2_ans.pdf",
+      "answerKind": "official-purpose",
+      "dataPath": "data/questions/pm/2021-autumn-pm2-plan5-qc4.json",
+      "questions": [
+        {
+          "id": "pm-2021a-pm2-q1",
+          "questionPages": [
+            3
+          ],
+          "purposePage": 1,
+          "purposeCrop": [
+            35.0,
+            102.04480743408203,
+            560.2760009765625,
+            244.11056518554688
+          ],
+          "purposeSha256": "e13548c0eff0b88f71046af5045b7400b99926090b6bf14fdedf37f1edcc14b1",
+          "promptLimits": [
+            {
+              "maxChars": 800
+            },
+            {
+              "minChars": 800,
+              "maxChars": 1600
+            },
+            {
+              "minChars": 600,
+              "maxChars": 1200
+            }
+          ]
+        },
+        {
+          "id": "pm-2021a-pm2-q2",
+          "questionPages": [
+            4
+          ],
+          "purposePage": 1,
+          "purposeCrop": [
+            35.0,
+            254.204833984375,
+            560.2760009765625,
+            412.6721496582031
+          ],
+          "purposeSha256": "9c05aa4489b2db71a2a403c5ea0a9e8918cc20c82495983ebff237508c6510cc",
+          "promptLimits": [
+            {
+              "maxChars": 800
+            },
+            {
+              "minChars": 800,
+              "maxChars": 1600
+            },
+            {
+              "minChars": 600,
+              "maxChars": 1200
+            }
+          ]
+        }
+      ],
+      "sourceFiles": [
+        {
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_pm_pm2_qs.pdf",
+          "sha256": "168b28f42ec6701ee8340a8972429551434f109391e3ee31f2db67a70ac6dc86"
+        },
+        {
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_pm_pm2_ans.pdf",
+          "sha256": "9bc3ae990e98285c91267de675ca1e5e6f482329e1b35151715bc293ba2ef38b"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-102",
+      "lane": "qc-4",
+      "branch": "cx/kako-5y4-20261118",
+      "status": "completed",
+      "exam": "es",
+      "year": 2024,
+      "season": "autumn",
+      "session": "pm2",
+      "format": "essay",
+      "addedCount": 3,
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm2_qs.pdf",
+      "answerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm2_ans.pdf",
+      "answerKind": "official-purpose",
+      "dataPath": "data/questions/es/2024-autumn-pm2-plan5-qc4.json",
+      "questions": [
+        {
+          "id": "es-2024a-pm2-q1",
+          "questionPages": [
+            4,
+            5
+          ],
+          "purposePage": 1,
+          "purposeCrop": [
+            35.0,
+            94.00482940673828,
+            560.2760009765625,
+            234.23219299316406
+          ],
+          "purposeSha256": "5857963ed5558ad8e0be1ac01d43bb0a7b421827626e1bcce4eab10f49a38cd7",
+          "promptLimits": [
+            {
+              "maxPages": 2,
+              "equivalentMaxChars": 800
+            },
+            {
+              "minPages": 2,
+              "maxPages": 4,
+              "equivalentMinChars": 800,
+              "equivalentMaxChars": 1600
+            },
+            {
+              "minPages": 1.5,
+              "maxPages": 3,
+              "equivalentMinChars": 600,
+              "equivalentMaxChars": 1200
+            }
+          ]
+        },
+        {
+          "id": "es-2024a-pm2-q2",
+          "questionPages": [
+            6,
+            7
+          ],
+          "purposePage": 1,
+          "purposeCrop": [
+            35.0,
+            244.8448028564453,
+            560.2760009765625,
+            385.0721740722656
+          ],
+          "purposeSha256": "5a73cb99ba848ad3fe59e380f05ebacec7cba92b2f88c93362ac4012702cc185",
+          "promptLimits": [
+            {
+              "maxPages": 2,
+              "equivalentMaxChars": 800
+            },
+            {
+              "minPages": 2,
+              "maxPages": 4,
+              "equivalentMinChars": 800,
+              "equivalentMaxChars": 1600
+            },
+            {
+              "minPages": 1.5,
+              "maxPages": 3,
+              "equivalentMinChars": 600,
+              "equivalentMaxChars": 1200
+            }
+          ]
+        },
+        {
+          "id": "es-2024a-pm2-q3",
+          "questionPages": [
+            8,
+            9
+          ],
+          "purposePage": 1,
+          "purposeCrop": [
+            35.0,
+            395.684814453125,
+            560.2760009765625,
+            553.40380859375
+          ],
+          "purposeSha256": "58be5e16823e2e99aae539d59579a84e3577877ab57e6bb57a8bac2101d5a428",
+          "promptLimits": [
+            {
+              "maxPages": 2,
+              "equivalentMaxChars": 800
+            },
+            {
+              "minPages": 2,
+              "maxPages": 4,
+              "equivalentMinChars": 800,
+              "equivalentMaxChars": 1600
+            },
+            {
+              "minPages": 1.5,
+              "maxPages": 3,
+              "equivalentMinChars": 600,
+              "equivalentMaxChars": 1200
+            }
+          ]
+        }
+      ],
+      "sourceFiles": [
+        {
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm2_qs.pdf",
+          "sha256": "3bb7e7ad0fd2b3e11dcd05afd2f45512c211989dc194b97396d251fc723bb3e1"
+        },
+        {
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_es_pm2_ans.pdf",
+          "sha256": "c01ce00f4df2824fa3d96756357f02c2d453f4ae48e4e768f5cbc85ba25c24d9"
+        }
+      ]
+    }
+  ]
+}

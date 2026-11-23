@@ -53,7 +53,7 @@ describe("AP official-PDF transcription restorations", () => {
     };
     expect(Object.keys(AP_TRANSCRIPTION_RESTORATIONS).sort()).toEqual(Object.keys(official).sort());
     const originalAnswers = new Map(AP_BY_YEAR_QUESTIONS.map(q => [q.id, q.answer]));
-    expect(AP_QUESTIONS).toHaveLength(AP_BY_YEAR_QUESTIONS.length);
+    expect(AP_QUESTIONS.filter(q => originalAnswers.has(q.id))).toHaveLength(AP_BY_YEAR_QUESTIONS.length);
     for (const [id, answer] of Object.entries(official)) {
       const q = question(id);
       expect(q.answer, id).toEqual(originalAnswers.get(id));

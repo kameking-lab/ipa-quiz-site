@@ -1,0 +1,171 @@
+{
+  "lane": "yr-10",
+  "branch": "cx/kako-year-10-20261117",
+  "checkedAt": "2026-11-17",
+  "rows": [
+    {
+      "key": "denko2|2026|second",
+      "qualificationCode": "denko2",
+      "qualification": "第二種電気工事士",
+      "year": 2026,
+      "sitting": "second",
+      "session": "gakka",
+      "status": "completed",
+      "plannedQuestionCount": 50,
+      "questionCount": 50,
+      "officialSourceUrls": [
+        "https://www.shiken.or.jp/construction/second/qa/",
+        "https://www.shiken.or.jp/construction/upload/20261025_co_second_q01.pdf",
+        "https://www.shiken.or.jp/construction/upload/20261025_co_second_a01.pdf"
+      ],
+      "duplicateCheck": "共有台帳・先行10ブランチ・全Git参照のdenko2履歴と20261025のファイル履歴を照合。2026年度下期は未収録。",
+      "priority": "Search Console 28日12クリック・223表示。管工事2級・土木2級・電気通信2級の最新回は先行班が補充済み。管工事2025前期の公式PDFは404。",
+      "choiceExplanationCount": 200,
+      "figureCount": 80,
+      "paths": [
+        "data/questions/denko2/2026-second.json",
+        "data/questions/denko2/2026-second-sources.json",
+        "data/questions/denko2/index.ts"
+      ],
+      "questionIds": [
+        "denko2-2026-second-gakka-q1",
+        "denko2-2026-second-gakka-q2",
+        "denko2-2026-second-gakka-q3",
+        "denko2-2026-second-gakka-q4",
+        "denko2-2026-second-gakka-q5",
+        "denko2-2026-second-gakka-q6",
+        "denko2-2026-second-gakka-q7",
+        "denko2-2026-second-gakka-q8",
+        "denko2-2026-second-gakka-q9",
+        "denko2-2026-second-gakka-q10",
+        "denko2-2026-second-gakka-q11",
+        "denko2-2026-second-gakka-q12",
+        "denko2-2026-second-gakka-q13",
+        "denko2-2026-second-gakka-q14",
+        "denko2-2026-second-gakka-q15",
+        "denko2-2026-second-gakka-q16",
+        "denko2-2026-second-gakka-q17",
+        "denko2-2026-second-gakka-q18",
+        "denko2-2026-second-gakka-q19",
+        "denko2-2026-second-gakka-q20",
+        "denko2-2026-second-gakka-q21",
+        "denko2-2026-second-gakka-q22",
+        "denko2-2026-second-gakka-q23",
+        "denko2-2026-second-gakka-q24",
+        "denko2-2026-second-gakka-q25",
+        "denko2-2026-second-gakka-q26",
+        "denko2-2026-second-gakka-q27",
+        "denko2-2026-second-gakka-q28",
+        "denko2-2026-second-gakka-q29",
+        "denko2-2026-second-gakka-q30",
+        "denko2-2026-second-gakka-q31",
+        "denko2-2026-second-gakka-q32",
+        "denko2-2026-second-gakka-q33",
+        "denko2-2026-second-gakka-q34",
+        "denko2-2026-second-gakka-q35",
+        "denko2-2026-second-gakka-q36",
+        "denko2-2026-second-gakka-q37",
+        "denko2-2026-second-gakka-q38",
+        "denko2-2026-second-gakka-q39",
+        "denko2-2026-second-gakka-q40",
+        "denko2-2026-second-gakka-q41",
+        "denko2-2026-second-gakka-q42",
+        "denko2-2026-second-gakka-q43",
+        "denko2-2026-second-gakka-q44",
+        "denko2-2026-second-gakka-q45",
+        "denko2-2026-second-gakka-q46",
+        "denko2-2026-second-gakka-q47",
+        "denko2-2026-second-gakka-q48",
+        "denko2-2026-second-gakka-q49",
+        "denko2-2026-second-gakka-q50"
+      ],
+      "validation": {
+        "typecheck": {
+          "command": "$env:NODE_OPTIONS='--max-old-space-size=6144'; npx --yes --package=node@22 -- pnpm typecheck",
+          "exitCode": 0,
+          "log": "typecheck-final.log"
+        },
+        "tests": {
+          "command": "pnpm exec vitest run __tests__/questions/denko2-2026-second.test.tsx __tests__/denko2-latest-two.test.ts __tests__/seo/denko2-meta-context.test.ts __tests__/questions/civil2-2026-late.test.ts __tests__/questions/tsushin2-2026-late.test.ts __tests__/search/search-route.test.ts --maxWorkers=1",
+          "files": 6,
+          "passed": 52,
+          "exitCode": 0,
+          "log": "tests-final.log"
+        },
+        "validate": {
+          "command": "pnpm validate:questions '--exam=denko2,civil2,tsushin2,kankoji2'",
+          "passed": 849,
+          "failed": 0,
+          "existingWarnings": 6,
+          "newWarnings": 0,
+          "exitCode": 0,
+          "log": "validate-final.log"
+        },
+        "lint": {
+          "command": "pnpm lint",
+          "errors": 0,
+          "existingWarnings": 10,
+          "exitCode": 0,
+          "log": "lint.log"
+        },
+        "changedLint": {
+          "command": "pnpm exec eslint data/questions/denko2/index.ts __tests__/questions/denko2-2026-second.test.tsx __tests__/denko2-latest-two.test.ts lib/seo/exam-meta.ts --max-warnings=0",
+          "errors": 0,
+          "warnings": 0,
+          "exitCode": 0
+        },
+        "diff": {
+          "command": "git diff 9e3182117..HEAD --check",
+          "exitCode": 0
+        },
+        "sourceCheck": {
+          "command": "python tools/yr-10/finalize.py",
+          "officialAnswerMatches": 50,
+          "independentBodyMatches": 40,
+          "independentTextChoiceSets": 30,
+          "unchangedInheritedFiles": 44,
+          "originalCrops": 80
+        },
+        "nextBuildExecuted": false,
+        "nextDirectoryExists": false
+      }
+    },
+    {
+      "key": "denko2|2026|second",
+      "qualificationCode": "denko2",
+      "qualification": "第二種電気工事士",
+      "year": 2026,
+      "sitting": "second",
+      "session": "gakka",
+      "status": "着手中",
+      "plannedQuestionCount": 50,
+      "questionCount": 0,
+      "officialSourceUrls": [
+        "https://www.shiken.or.jp/construction/second/qa/",
+        "https://www.shiken.or.jp/construction/upload/20261025_co_second_q01.pdf",
+        "https://www.shiken.or.jp/construction/upload/20261025_co_second_a01.pdf"
+      ],
+      "duplicateCheck": "共有台帳・先行10ブランチ・全Git参照のdenko2履歴と20261025のファイル履歴を照合。2026年度下期は未収録。",
+      "priority": "Search Console 28日12クリック・223表示。管工事2級・土木2級・電気通信2級の最新回は先行班が補充済み。管工事2025前期の公式PDFは404。"
+    }
+  ],
+  "inheritedRounds": [
+    "civil2|2026|late",
+    "tsushin2|2026|late",
+    "kankoji2|2026|late"
+  ],
+  "nextCandidates": [
+    {
+      "key": "denko1|2026|second",
+      "status": "公式公開確認済・未着手候補",
+      "questionCount": 50,
+      "checkedAt": "2026-11-17",
+      "officialSourceUrls": [
+        "https://www.shiken.or.jp/construction/first/qa/",
+        "https://www.shiken.or.jp/construction/upload/20261004_co_first_q01.pdf",
+        "https://www.shiken.or.jp/construction/upload/20261004_co_first_a01.pdf"
+      ],
+      "duplicateCheck": "手元のdenko1全Git履歴は2026上期出題例と2025下期のみ。20261004のファイル履歴なし。着手時に共有台帳・各レーンの最新状況・検索流入を再照合する。"
+    }
+  ]
+}

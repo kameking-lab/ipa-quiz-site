@@ -3,15 +3,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { authConfig } from "@/lib/auth/config";
-import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import { redirect } from "next/navigation";
-import {
-  AlertCircle,
-  Cloud,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { AlertCircle } from "lucide-react";
 import { SignInButtons } from "./SignInButtons";
 import { EmailSignInForm } from "./EmailSignInForm";
 import { AppReviewSignInForm } from "./AppReviewSignInForm";
@@ -25,7 +18,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-type SearchParams = { callbackUrl?: string; error?: string };
+type SearchParams = { callbackUrl?: string; error?: string; reauth?: string; switchAccount?: string };
 
 const KNOWN_AUTH_ERRORS: Record<string, string> = {
   OAuthSignin: "外部プロバイダへの接続に失敗しました。",
@@ -55,7 +48,10 @@ export default async function SignInPage({
   const sp = await searchParams;
   const callbackUrl = safeAuthCallback(sp.callbackUrl);
   const session = await auth();
-  if (session?.user) redirect(callbackUrl);
+  const switchAccount = sp.switchAccount === "1";
+  const reauthenticate = sp.reauth === "1" || switchAccount;
+  const clearSession = switchAccount && !!session?.user;
+  if (session?.user && !reauthenticate) redirect(callbackUrl);
 
   const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
   // On the way to Checkout: the provider buttons only, then straight on to payment.
@@ -63,49 +59,32 @@ export default async function SignInPage({
   const nativeLogin=callbackUrl.startsWith("/api/mobile/auth/complete?");
 
   const providerIds = new Set(
-    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)).filter(id => id !== "app-review"),
+    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id))
+      .filter(id => id !== "app-review" && id !== "credentials"),
   );
 
   return (
-    <NativeSignInBoundary returnTo={callbackUrl}>
-    <main className="relative flex flex-1 items-center justify-center px-4 py-10 sm:py-16">
-      {/* Decorative background */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
+    <NativeSignInBoundary returnTo={callbackUrl} switchAccount={switchAccount}>
+    <main className="relative flex flex-1 items-center justify-center px-4 py-8 sm:py-12">
 
       <div className="relative w-full max-w-md">
         {/* Hero */}
         <div className="mb-8 text-center">
-          {forPurchase ? <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></> : <Badge variant="success" className="mb-4">
-            無料の学習機能と月額プラン
-          </Badge>}
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {forPurchase ? "ログインして決済へ" : <><span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              過去問AI
-            </span>
-            {" "}にログイン</>}
+          {forPurchase && <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></>}
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            {switchAccount ? "もう一度ログイン" : forPurchase ? "ログインして決済へ" : reauthenticate ? "もう一度ログイン" : "過去問AIにログイン"}
           </h1>
-          {!forPurchase && <p className="mx-auto mt-3 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            <>無料の連続演習はログインなしでも1日{MONTHLY_PUBLIC_OFFER.freeDaily}問まで利用できます。履歴のクラウド同期などにはログインをご利用ください。
-            月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。</>
-          </p>}
+
         </div>
 
         {/* Card */}
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-lg sm:p-7">
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7">
           {errorMessage && (
-            <div className="mb-4 flex items-start gap-2.5 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+            <div role="alert" className="mb-4 flex items-start gap-2.5 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
               <div>
-                <p className="font-semibold">ログインに失敗しました</p>
-                <p className="mt-0.5 text-xs opacity-90">
-                  {errorMessage} 時間をおいて再度お試しください。
+                <p className="text-sm leading-relaxed">
+                  {errorMessage}
                 </p>
               </div>
             </div>
@@ -114,6 +93,8 @@ export default async function SignInPage({
           {providerIds.size > 0 || appReviewConfig() ? (
             <>
               <SignInButtons
+                reauthenticate={reauthenticate}
+                clearSession={clearSession}
                 callbackUrl={callbackUrl}
                 hasGoogle={providerIds.has("google") && (!nativeLogin || providerIds.has("apple"))}
                 hasGitHub={providerIds.has("github") && (!nativeLogin || providerIds.has("apple"))}
@@ -121,60 +102,42 @@ export default async function SignInPage({
               />
               {nativeLogin&&!providerIds.has("apple")&&<p className="text-sm">アプリの通常ログインはAppleログインの設定後に利用できます。審査担当者は下の審査用ログインをご利用ください。</p>}
 
-              {providerIds.has("nodemailer") && !forPurchase && (
+              {providerIds.has("nodemailer") && (!forPurchase || switchAccount) && (
                 <>
                   <div className="my-5 flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
                     <span className="h-px flex-1 bg-border" />
                     または
                     <span className="h-px flex-1 bg-border" />
                   </div>
-                  <EmailSignInForm callbackUrl={callbackUrl} />
+                  <EmailSignInForm callbackUrl={callbackUrl} clearSession={clearSession} />
                 </>
               )}
-              {appReviewConfig() && <AppReviewSignInForm callbackUrl={callbackUrl} />}
+              {/* Review access is for App Review inside the iOS app only; ordinary web visitors never see it. */}
+              {appReviewConfig() && <div className={nativeLogin ? undefined : "hidden [.native-app_&]:block"}><AppReviewSignInForm callbackUrl={callbackUrl} /></div>}
             </>
           ) : (
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">
               <p className="mb-1">
                 <strong className="font-semibold text-foreground">
-                  ログインの準備中です
+                  現在ログインを利用できません
                 </strong>
               </p>
-              <p className="text-xs">
-                現在、月額プランの購入は開始していません。
-              </p>
               <Link
-                href="/about"
-                className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
+                href={forPurchase ? "/billing" : callbackUrl.startsWith("/quiz") || callbackUrl.startsWith("/q/") ? callbackUrl : "/search"}
+                className="mt-4 inline-flex min-h-11 items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
               >
-                プロジェクトについて →
+                {forPurchase ? "月額プランに戻る" : "学習に戻る"}
               </Link>
             </div>
           )}
         </div>
 
-        {/* Benefit pills */}
-        {!forPurchase && <div className="mt-6 grid grid-cols-1 gap-2 text-xs sm:grid-cols-3">
-          <BenefitPill
-            icon={<Cloud className="h-3.5 w-3.5" />}
-            label="履歴クラウド同期"
-          />
-          <BenefitPill
-            icon={<Sparkles className="h-3.5 w-3.5" />}
-            label="無料枠と月額プランをご用意"
-          />
-          <BenefitPill
-            icon={<ShieldCheck className="h-3.5 w-3.5" />}
-            label="アカウントで学習を管理"
-          />
-        </div>}
-
         {/* Legal */}
-        <p className="mt-6 text-center text-[11px] leading-relaxed text-muted-foreground">
+        <p className="mt-5 text-center text-xs leading-6 text-muted-foreground">
           続行すると{" "}
           <Link
             href="/terms"
-            className="underline decoration-border underline-offset-2 hover:text-foreground"
+            className="rounded-sm underline underline-offset-4 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
           >
             利用規約
           </Link>{" "}
@@ -189,20 +152,5 @@ export default async function SignInPage({
         </p>
       </div>
     </main></NativeSignInBoundary>
-  );
-}
-
-function BenefitPill({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <div className="flex items-center justify-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-muted-foreground shadow-sm">
-      <span className="text-primary">{icon}</span>
-      <span>{label}</span>
-    </div>
   );
 }

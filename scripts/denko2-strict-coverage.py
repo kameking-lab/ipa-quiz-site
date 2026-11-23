@@ -98,16 +98,19 @@ def current_direct_reviews(stem: str, source_items: dict[int, dict], candidates:
 
 
 def main() -> None:
+    required = sorted(path for path in BATCHES.glob("*-q??-??.json") if path.name[:4] in {"2024", "2025"})
+    required_papers = {path.name[:8] for path in required}
     candidates = {}
     for path in sorted(REVIEWED.glob("*.json")):
         paper = path.name[:8]
+        if paper not in required_papers:
+            continue
         for item in json.loads(path.read_text(encoding="utf-8")):
             key = (paper, item["number"])
             if key in candidates:
                 raise ValueError(f"Duplicate reviewed question: {key}")
             candidates[key] = item
 
-    required = sorted(path for path in BATCHES.glob("*-q??-??.json") if path.name[:4] in {"2024", "2025"})
     clean, pending, unfinished = [], [], []
     for batch_path in required:
         batch = json.loads(batch_path.read_text(encoding="utf-8"))

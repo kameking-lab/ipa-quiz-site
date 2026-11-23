@@ -50,21 +50,31 @@ describe("recovered automotive release", () => {
   it("connects all 11 separate qualifications through eager and lazy registries", async () => {
     expect(metadata).toHaveLength(11);
     const directory = getHomeDirectory().find((domain) => domain.id === "automotive")!;
-    expect(directory.qualificationCount).toBe(11);
-    expect(directory.totalQuestions).toBe(recovery.releaseOriginals + priorSittings.length);
+    const recoveredCodes = new Set(metadata.map(row => row.exam));
+    const recoveredCards = [...directory.featured, ...directory.compact].filter(card => recoveredCodes.has(card.key));
+    expect(recoveredCards).toHaveLength(11);
     for (const row of metadata) {
       const exam = row.exam as AutomotiveExamCode;
-      const questions = getAutomotiveQuestions(exam);
+      const originalRelease = getAutomotiveQuestions(exam);
+      const questions = await getQuestionsForExam(exam);
+      const ready = questions.filter(isPracticeReadyQuestion);
+      const card = recoveredCards.find(item => item.key === exam);
       expect(isExamPublished(exam), exam).toBe(true);
       expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(row.questionsPerPaper);
       expect(ALL_EXAM_CODES as string[]).not.toContain(exam);
-      expect(questions, exam).toHaveLength(row.reviewed);
+      expect(questions.length, exam).toBeGreaterThanOrEqual(row.reviewed);
+      expect(questions, exam).toEqual(expect.arrayContaining(originalRelease));
+      expect(new Set(questions.map(q => q.id)).size, exam).toBe(questions.length);
+      expect(card?.questionCount, exam).toBe(ready.length);
       expect(QUESTIONS_BY_EXAM[exam], exam).toEqual(questions);
-      expect(await getQuestionsForExam(exam), exam).toEqual(questions);
-      expect(questions.every(isPracticeReadyQuestion), exam).toBe(true);
+      expect(originalRelease.every(isPracticeReadyQuestion), exam).toBe(true);
+      for (const reference of questions.filter(q => !isPracticeReadyQuestion(q))) {
+        expect(reference.officialScoring?.kind, reference.id).toBe("credit-for-all");
+        expect(reference.answer, reference.id).toEqual([]);
+      }
       expect(defaultPracticeSession(exam), exam).toBe("gakka");
-      expect(await getPoolIds({ exam, mode: "random", session: defaultPracticeSession(exam) }), exam).toEqual(questions.map((q) => q.id));
-      expect(await findQuestionById(questions[0].id), exam).toEqual(questions[0]);
+      expect(await getPoolIds({ exam, mode: "random", session: defaultPracticeSession(exam) }), exam).toEqual(ready.map((q) => q.id));
+      expect(await findQuestionById(originalRelease[0].id), exam).toEqual(originalRelease[0]);
     }
   });
 

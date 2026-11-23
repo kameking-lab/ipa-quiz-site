@@ -2,11 +2,10 @@
   "status": "LOCAL_CANDIDATE_NOT_RELEASED",
   "sourceMechanicalQaSha256": "85c3a784856652014ee594ff841d5e27f7f2946ad016e302609d881b61a55561",
   "officialPaperOriginals": 680,
-  "localCandidateOriginals": 678,
-  "heldOriginals": 2,
+  "localCandidateOriginals": 679,
+  "heldOriginals": 1,
   "heldIds": [
-    "33-anma-massage-shiatsushi-124",
-    "34-anma-massage-shiatsushi-147"
+    "33-anma-massage-shiatsushi-124"
   ],
   "files": {
     "ahaki-anma-2025.json": {
@@ -24,6 +23,14 @@
     "ahaki-hari-kyu-2026.json": {
       "count": 180,
       "sha256": "1ccfa55460a3228324e90053064535c1ae44b432de2a8e7b86d7b753f8db7896"
+    },
+    "ahaki-anma-2026-q147.json": {
+      "count": 1,
+      "sha256": "48a9ee0c3dee76166099e2f9c49d90df705c053458725a54b530d40d57119476"
+    },
+    "ahaki-anma-2025-q124.json": {
+      "count": 1,
+      "sha256": "06542e9bb295e5d8f599d05630fffeee821d0c13277304f4672c66c8c589f42d"
     }
   },
   "sourceReceipts": {
@@ -4780,6 +4787,23 @@
       "examTrack": "common",
       "officialQuestionPdfSha256": "a1beb8986d6c5cca6cd1ab2c19863f1087a039f68eb024df049e9b017179e9eb",
       "officialAnswerHtmlSha256": "78c3a63e9efe838c144d4deed0edf3dd27a31c323ed54dacfeb038055ac9bdfd"
+    },
+    "ahaki-anma-2026-annual-pm-q147": {
+      "sourcePacketSha256": "1f68e527792184b2aa234129e2b0617b534ffae0c84adc21bbe78a66d10e37a1",
+      "savedDraftSha256": "9e59515b828d857bc2f8577bdb2cf5d6abc39ce440b69bd7ff7b96d8e1f420fa",
+      "examTrack": "anma",
+      "officialQuestionPdfSha256": "4b9195a58318a23a6d7479188f9700bb3cfc20c049a72163077135fb85836478",
+      "officialAnswerHtmlSha256": "15d67ce82f84bdb0f4339d1fd7df48d0e7811cc867344b4dd397a5004ed48113",
+      "questionPageImageSha256": "145b6a29de73b24f97581d05a42284562fe6861ccea0a35411f2416104ac98d8",
+      "localDeltaCandidateSha256": "aea80508848c80f6308d3856dc5c2475df279ef9bbcad196c403b86c9cea6faf",
+      "primaryEvidenceScope": "EWGSOP2 2018 consensus Table 1/2; official any-one-of-four answer retained"
+    },
+    "ahaki-anma-2025-annual-pm-q124": {
+      "examTrack": "anma",
+      "officialQuestionPdfSha256": "3a89acc310913a99dbb0ead7cd4e4f4d756d58f7e08eedb5219272c0c0ed06d0",
+      "officialAnswerHtmlSha256": "4b647d3fd889d56353b61d2576991ba0e42c4161112f47b467eac181d0cd9fd1",
+      "officialQuestionPdfPage": 13,
+      "officialAnswerNumber": "2"
     }
   },
   "publicationCompleteTwoRounds": false,
@@ -4800,5 +4824,16 @@
     "evidence": "docs/evidence/hari-kyu-q156-20261023/INTEGRATION.json",
     "candidateOnly": true,
     "published": false
+  },
+  "q147LocalDelta": {
+    "adoptedId": "ahaki-anma-2026-annual-pm-q147",
+    "sourceCommit": "40cf3651e1c3f42f89b8514edcf82f415d62bde0",
+    "officialQuestionPdfPage": 22,
+    "acceptedOfficialChoices": [
+      1,
+      2,
+      3,
+      4
+    ]
   }
 }

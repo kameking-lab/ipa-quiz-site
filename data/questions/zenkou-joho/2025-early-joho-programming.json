@@ -1,0 +1,169 @@
+[
+  {
+    "id": "zenkou-joho-2025-early-joho-programming-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "0〜100点のn個の整数を10点刻みと100点の11区分に分け、度数分布を表示する流れ図の空欄①〜⑤を埋めなさい。",
+    "answer": "① f(j) ← 0\n② r\n③ a(j)\n④ f(r)＋1\n⑤ 10",
+    "explanation": "すべての度数をゼロで初期化する。各得点a(j)を10で割った整数の商rでランクを決め、f(r)を1増やす。ランク0〜10を表示する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第74回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=29",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 1級・プログラミングの基礎知識 大問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-programming-p29-01.webp"
+    ],
+    "imageAltTexts": [
+      "大問1の公式問題。流れ図、参考図またはプログラムの掲載ページ29。"
+    ],
+    "modelAnswer": "① f(j) ← 0\n② r\n③ a(j)\n④ f(r)＋1\n⑤ 10",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-programming-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "小さい円盤の上に大きい円盤を置けない条件で、ハノイの塔の円盤を棒Aから棒Cに最少手順で移すときの手数を求める。流れ図の空欄①〜⑤を埋めなさい。",
+    "answer": "① f ← 1\n② ＜\n③ ＞\n④ ＝\n⑤ 2×f＋1",
+    "explanation": "1層を移す手数は1回。n層では上のn－1層を作業棒へ移し、最大の円盤を1回動かし、上のn－1層を移し戻すため、直前の2倍に1を足す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2",
+    "sourceExamSession": "第74回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=30",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 1級・プログラミングの基礎知識 大問2。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-programming-p30-02.webp"
+    ],
+    "imageAltTexts": [
+      "大問2の公式問題。流れ図、参考図またはプログラムの掲載ページ30。"
+    ],
+    "modelAnswer": "① f ← 1\n② ＜\n③ ＞\n④ ＝\n⑤ 2×f＋1",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-programming-q03-03",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "半径1の円の第1象限の面積を台形近似で計算し、円周率の近似値を求める流れ図の空欄①〜⑤を埋めなさい。",
+    "answer": "① x＋dx\n② 0\n③ (y1＋y2)×dx\n④ s＋ds\n⑤ 4×s",
+    "explanation": "xとx＋dxでの高さを求めて台形の寄与を計算し、sへ足し込む。yは円周上の高さで、xが1に達する右端では0になる。第1象限の面積を4倍すると円の面積すなわちπの近似になる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3",
+    "sourceExamSession": "第74回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=31",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 1級・プログラミングの基礎知識 大問3。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-programming-p31-03.webp"
+    ],
+    "imageAltTexts": [
+      "大問3の公式問題。流れ図、参考図またはプログラムの掲載ページ31。"
+    ],
+    "modelAnswer": "① x＋dx\n② 0\n③ (y1＋y2)×dx\n④ s＋ds\n⑤ 4×s",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-programming-q04-04",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "配列に入れた6個のデータをクイックソート法で昇順に並べる。プログラムの空欄①〜⑤を埋めなさい。",
+    "answer": "① &&\n② d_swap\n③ left\n④ right\n⑤ *buf2",
+    "explanation": "左右の探索位置の関係と要素の大小を論理積で確認する。必要ならd_swapで要素を交換し、分割位置の左右について再帰する。交換関数では先に退避した値と二つのポインタの参照先を入れ替える。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問4",
+    "sourceExamSession": "第74回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=32",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 1級・プログラミングの基礎知識 大問4。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-programming-p32-04.webp",
+      "/images/questions/zenkou-joho/74-joho-programming-p33-05.webp"
+    ],
+    "imageAltTexts": [
+      "大問4の公式問題。流れ図、参考図またはプログラムの掲載ページ32。",
+      "大問4の公式問題。流れ図、参考図またはプログラムの掲載ページ33。"
+    ],
+    "modelAnswer": "① &&\n② d_swap\n③ left\n④ right\n⑤ *buf2",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-early-joho-programming-q05-05",
+    "exam": "zenkou-joho",
+    "session": "joho-programming",
+    "year": 2025,
+    "season": "early",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "1級・プログラミングの基礎知識",
+    "topicTags": [
+      "1級・プログラミングの基礎知識"
+    ],
+    "difficulty": 2,
+    "question": "0より大きく1より小さい既約分数を、それを超えない最大の単位分数を選ぶ操作の繰返しで展開する。プログラムの空欄①〜⑤を埋めなさい。",
+    "answer": "① !=\n② n\n③ p\n④ m * p\n⑤ m / n",
+    "explanation": "残りをn/mとすると、mがnで割り切れないときはm/nの整数商に1を足し、単位分数1/pを得る。差の分母はm×pで、最後に割り切れたときの分母はm/nになる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5",
+    "sourceExamSession": "第74回 1級・プログラミングの基礎知識",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=34",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/74joho_kekka.pdf#page=60",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第74回 1級・プログラミングの基礎知識 大問5。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/74-joho-programming-p34-06.webp"
+    ],
+    "imageAltTexts": [
+      "大問5の公式問題。流れ図、参考図またはプログラムの掲載ページ34。"
+    ],
+    "modelAnswer": "① !=\n② n\n③ p\n④ m * p\n⑤ m / n",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  }
+]

@@ -9,6 +9,7 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 const KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
+const restoredFigures = new Set([3, 8, 12]);
 
 const report = path.join(process.cwd(), "reports/hoikushi-2rounds-20260929");
 const readJson = <T,>(...segments: string[]): T => JSON.parse(readFileSync(path.join(report, ...segments), "utf8")) as T;
@@ -70,7 +71,7 @@ describe("保育士試験 令和8年度前期・地域限定保育士試験（�
     for (const slug of SUBJECT_SLUGS) {
       const source = finals.get(slug)!;
       expect(source.questions.length, slug).toBe(EXPECTED_COUNTS[slug]);
-      const holds = source.questions.filter((q) => q.hold);
+      const holds = source.questions.filter((q) => q.hold && !(slug === "hoiku-jisshu-riron" && restoredFigures.has(q.number)));
       const published = round1.filter((q) => q.session === slug);
       expect(published.length, slug).toBe(source.questions.length - holds.length);
       publishedTotal += published.length;
@@ -80,9 +81,9 @@ describe("保育士試験 令和8年度前期・地域限定保育士試験（�
         expect(round1.some((q) => q.session === slug && q.qNumber === held.number), `${slug} q${held.number} excluded`).toBe(false);
       }
     }
-    expect(publishedTotal).toBe(155);
-    expect(holdTotal).toBe(5); // 保育実習理論: 楽譜4問・図版1問
-    expect(round1.length).toBe(155);
+    expect(publishedTotal).toBe(157);
+    expect(holdTotal).toBe(3);
+    expect(round1.length).toBe(157);
     expect(new Set(round1.map((q) => q.id)).size).toBe(round1.length);
     expect(EXAM_CONFIGS.hoikushi.sessions.map((s) => s.session).sort()).toEqual([...SUBJECT_SLUGS].sort());
     expect(getQualificationByExamCode("hoikushi")?.status).toBe("live");
@@ -141,19 +142,24 @@ describe("保育士試験 令和8年度前期・地域限定保育士試験（�
     for (const q of round1) {
       const source = finals.get(q.session as string)!;
       const item = source.questions.find((x) => x.number === q.qNumber)!;
-      expect(item.hold, `${q.session} q${q.qNumber}`).not.toBe(true);
+      const restored = q.session === "hoiku-jisshu-riron" && restoredFigures.has(q.qNumber);
+      if (restored) {
+        const asset = `/images/questions/hoikushi/2026-early/hoiku-jisshu-riron-q${String(q.qNumber).padStart(2, "0")}.webp`;
+        expect(q.imageUrls).toEqual([asset]);
+        expect(q.imageAltTexts?.[0]).toBeTruthy();
+        expect(readFileSync(path.join(process.cwd(), "public", asset)).subarray(8, 12).toString("ascii")).toBe("WEBP");
+        expect(q.needsReview).toBe(false);
+      } else {
+        expect(item.hold, `${q.session} q${q.qNumber}`).not.toBe(true);
+        expect(q.needsReview, `${q.session} q${q.qNumber}`).toBe(item.reviewStatus !== "PASS");
+      }
       expect(q.explanationCoverage).toBe("full");
       const choiceKeys = Object.keys(q.choices ?? {});
       expect(choiceKeys.length, `${q.session} q${q.qNumber}`).toBe(item.choices.length);
       for (const key of choiceKeys) {
         expect((q.choiceExplanations as Record<string, string>)[key]?.length ?? 0, `${q.session} q${q.qNumber} ${key}`).toBeGreaterThan(5);
       }
-      expect(q.needsReview, `${q.session} q${q.qNumber}`).toBe(item.reviewStatus !== "PASS");
-      // 保育実習理論 問8: HOLDにはしないが、原文が「次の図1・図2の…」で始まる（コーディネーター承認の
-      // 描画説明付き設問）。hasUnrenderableContent() は文面の「次の図」表現だけで画像依存と判定するため、
-      // 実際の画像アセットが無い以上、演習プールからは意図的に除外される（サイト側の既存ゲートで安全側）。
-      const isDescribedFigureException = q.session === "hoiku-jisshu-riron" && q.qNumber === 8;
-      if (item.reviewStatus === "PASS" && !isDescribedFigureException) {
+      if (restored || item.reviewStatus === "PASS") {
         expect(isPracticeReadyQuestion(q), `${q.session} q${q.qNumber}`).toBe(true);
       }
     }

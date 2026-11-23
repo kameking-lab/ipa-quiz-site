@@ -9,7 +9,6 @@ const { historyStore } = vi.hoisted(() => ({ historyStore: {
 } }));
 vi.mock("@/lib/storage/history", () => ({ createHistoryStore: () => historyStore }));
 vi.mock("@/lib/motivation/session", () => ({ startSession: vi.fn() }));
-vi.mock("@/lib/learning/spaced-repetition", () => ({ getDueCards: () => [], orderByPriority: (ids: string[]) => [...ids].reverse() }));
 vi.mock("@/components/quiz/QuizPlayer", () => ({
   QuizPlayer: ({ question, index, total, onNext }: { question: Question | null; index: number; total: number; onNext: () => void }) => (
     <div><output data-testid="position">{index + 1}/{total}</output>
@@ -135,11 +134,11 @@ describe("annual original session completeness", () => {
     expect(JSON.parse(sessionStorage.getItem(sessionKey(base))!)).toEqual(saved);
   });
 
-  it("preserves review filtering, priority order, and the existing shorter limit", async () => {
+  it("preserves review filtering and the shorter limit in source order", async () => {
     historyStore.getWrongIds.mockReturnValue(fullPool.slice(10));
     window.history.replaceState(null, "", "/quiz?exam=kangoshi&mode=review");
     render(<QuizClient poolIds={fullPool} mode="review" exam="kangoshi" backHref="/kangoshi" />);
-    await expectQuestion(fullPool[119], "1/80");
-    expect(JSON.parse(sessionStorage.getItem(sessionKey("/quiz?exam=kangoshi&mode=review"))!)).toEqual(fullPool.slice(10).reverse().slice(0, 80));
+    await expectQuestion(fullPool[10], "1/80");
+    expect(JSON.parse(sessionStorage.getItem(sessionKey("/quiz?exam=kangoshi&mode=review"))!)).toEqual(fullPool.slice(10, 90));
   });
 });

@@ -65,6 +65,12 @@ describe("findQuestionByRoute (indexed lookup)", () => {
     }
   });
 
+  it("resolves the numbered blanks in replenished qualifications", () => {
+    const question = q({ exam: "dekyo-charge-1", season: "round1", session: "houki", part: "2" });
+    const [, , exam, yearSeason, section, qnum] = questionPagePath(question).split("/");
+    expect(findQuestionByRoute([question], { exam, yearSeason, section, qnum })).toBe(question);
+  });
+
   it("returns undefined for malformed or missing routes", () => {
     expect(
       findQuestionByRoute(pool, {
@@ -90,7 +96,7 @@ describe("findQuestionByRoute (indexed lookup)", () => {
 // (部分カバレッジgap)。/q/* ルーティングの URL→構造化パラメータ変換の正。
 describe("parseQuestionRoute (route → structured params)", () => {
   it("parses each valid season token and the qNumber", () => {
-    for (const season of ["spring", "autumn", "cbt"] as const) {
+    for (const season of ["spring", "autumn", "cbt", "tokyo", "november", "december", "round3", "round4", "session2"] as const) {
       expect(
         parseQuestionRoute({
           exam: "ap",

@@ -1,0 +1,798 @@
+{
+  "step": "yb-12",
+  "base": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-404",
+      "index": 403,
+      "exam": "denki2",
+      "year": 2022,
+      "season": "late",
+      "session": "gakka",
+      "status": "added",
+      "officialCount": 64,
+      "addedCount": 64,
+      "choiceExplanationCount": 260,
+      "planExtractedCount": 16,
+      "officialPdfUrl": "https://www.fcip-shiken.jp/pdf/r04_2dg_mondai.pdf",
+      "officialAnswerUrl": "https://www.fcip-shiken.jp/pdf/r04_2dg_mondai.pdf",
+      "officialPdfSha256": "3aa3f069bfcbf76a03ef5d24d2995c693b5ca66bd51daff604f41861d1c5ea0a",
+      "officialAnswerPdfPage": 30,
+      "officialAnswerByNumber": {
+        "1": 2,
+        "2": 4,
+        "3": 1,
+        "4": 2,
+        "5": 3,
+        "6": 3,
+        "7": 2,
+        "8": 1,
+        "9": 2,
+        "10": 3,
+        "11": 2,
+        "12": 1,
+        "13": 3,
+        "14": 2,
+        "15": 4,
+        "16": 3,
+        "17": 1,
+        "18": 2,
+        "19": 4,
+        "20": 4,
+        "21": 3,
+        "22": 3,
+        "23": 3,
+        "24": 2,
+        "25": 1,
+        "26": 3,
+        "27": 4,
+        "28": 2,
+        "29": 1,
+        "30": 2,
+        "31": 4,
+        "32": 1,
+        "33": 4,
+        "34": 3,
+        "35": 1,
+        "36": 4,
+        "37": 2,
+        "38": 4,
+        "39": 3,
+        "40": 3,
+        "41": 4,
+        "42": 2,
+        "43": 3,
+        "44": 2,
+        "45": 4,
+        "46": 1,
+        "47": 3,
+        "48": 1,
+        "49": 3,
+        "50": 4,
+        "51": 1,
+        "52": 1,
+        "53": 4,
+        "54": 2,
+        "55": 1,
+        "56": 1,
+        "57": 1,
+        "58": 1,
+        "59": 4,
+        "60": 4,
+        "61": 2,
+        "62": 4,
+        "63": 2,
+        "64": 3
+      },
+      "figures": {
+        "/questions/denki2/2022-late/q02-figure.webp": {
+          "pdfPage": 2,
+          "rectanglePoints": [
+            217.4194,
+            426.4516,
+            416.129,
+            617.4194
+          ],
+          "sha256": "d5796aad79f306a73005866c81d199049e5ecfca51c7704a7fae5fcd94fcef2c"
+        },
+        "/questions/denki2/2022-late/q03-figure.webp": {
+          "pdfPage": 3,
+          "rectanglePoints": [
+            265.1613,
+            158.7097,
+            505.8065,
+            317.4194
+          ],
+          "sha256": "4b20683f44eff9f2b7b95cb68d371982b9401536fd5fce92df69068d4eddeba6"
+        },
+        "/questions/denki2/2022-late/q04-figure.webp": {
+          "pdfPage": 3,
+          "rectanglePoints": [
+            307.0968,
+            434.8387,
+            466.4516,
+            653.5484
+          ],
+          "sha256": "13cd08cea0ebcd3373ef0c766f9849c97a2ca47150380fe30ed4d3ca597dfe0a"
+        },
+        "/questions/denki2/2022-late/q13-figure.webp": {
+          "pdfPage": 7,
+          "rectanglePoints": [
+            196.129,
+            147.7419,
+            440.0,
+            348.3871
+          ],
+          "sha256": "bb60011b41c1da751a55dc0d57b7b3e44d2b835cb63d507e2b71f392e13992f3"
+        },
+        "/questions/denki2/2022-late/q18-figure.webp": {
+          "pdfPage": 9,
+          "rectanglePoints": [
+            232.2581,
+            250.3226,
+            401.2903,
+            338.0645
+          ],
+          "sha256": "02bd6d4a738da8ab2791b5bca8723063ad2ab0eacf37c078102cb43da907fc27"
+        },
+        "/questions/denki2/2022-late/q38-choice-1.webp": {
+          "pdfPage": 17,
+          "rectanglePoints": [
+            160.6452,
+            187.0968,
+            184.5161,
+            210.3226
+          ],
+          "sha256": "0be8f2e723b2583a35164e9b44a89e155c6e85d7386b7f5be279f962f7becf59"
+        },
+        "/questions/denki2/2022-late/q38-choice-2.webp": {
+          "pdfPage": 17,
+          "rectanglePoints": [
+            160.6452,
+            211.6129,
+            184.5161,
+            234.8387
+          ],
+          "sha256": "b86b684bc889a952684b9d00dc811bb5865a8464e3f56892ea999046b6a8548d"
+        },
+        "/questions/denki2/2022-late/q38-choice-3.webp": {
+          "pdfPage": 17,
+          "rectanglePoints": [
+            160.6452,
+            236.7742,
+            184.5161,
+            260.0
+          ],
+          "sha256": "2841bf634ec7d59edf853bd80d20edd7a5e375525dab8c4095b0e542c9994ef9"
+        },
+        "/questions/denki2/2022-late/q38-choice-4.webp": {
+          "pdfPage": 17,
+          "rectanglePoints": [
+            160.6452,
+            261.2903,
+            184.5161,
+            284.5161
+          ],
+          "sha256": "1d9d757bfbea2a6861249adf9e89f9caa6e6070680809c652689f99f92fd0f9b"
+        },
+        "/questions/denki2/2022-late/q40-figure.webp": {
+          "pdfPage": 18,
+          "rectanglePoints": [
+            181.2903,
+            147.0968,
+            454.1935,
+            363.2258
+          ],
+          "sha256": "dcdca40adce877ba033ac9e293cbecde19b35aebf5fb4c5562ffc737304b8518"
+        },
+        "/questions/denki2/2022-late/q41-figure.webp": {
+          "pdfPage": 19,
+          "rectanglePoints": [
+            83.2258,
+            150.9677,
+            527.7419,
+            323.2258
+          ],
+          "sha256": "be39746ca219b03189df3957b84549294a31ea1fb6b70e9f9b85fa2588856b05"
+        },
+        "/questions/denki2/2022-late/q42-figure.webp": {
+          "pdfPage": 20,
+          "rectanglePoints": [
+            185.1613,
+            148.3871,
+            450.3226,
+            387.0968
+          ],
+          "sha256": "a049a37cf66f0d1fc01da3541c91bfc14a3f5fcb8460a606d372548fa119dca6"
+        },
+        "/questions/denki2/2022-late/q52-figure.webp": {
+          "pdfPage": 24,
+          "rectanglePoints": [
+            221.2903,
+            129.6774,
+            413.5484,
+            295.4839
+          ],
+          "sha256": "1128ffc6f7fa81178046ff9e120b0217021281d3446805ecddb9b4ce27735b93"
+        },
+        "/questions/denki2/2022-late/q56-choice-1.webp": {
+          "pdfPage": 26,
+          "rectanglePoints": [
+            134.1935,
+            160.0,
+            216.7742,
+            228.3871
+          ],
+          "sha256": "f23a7d85ffed7e4d068bd0e4be7f4938a54c5a45c94d47fd80fc2e1981b7d41d"
+        },
+        "/questions/denki2/2022-late/q56-choice-2.webp": {
+          "pdfPage": 26,
+          "rectanglePoints": [
+            323.871,
+            160.0,
+            383.871,
+            228.3871
+          ],
+          "sha256": "b8670cc27c609eb163fa213bde2819c79ccb1918ae4476593c378a6b0a4f330e"
+        },
+        "/questions/denki2/2022-late/q56-choice-3.webp": {
+          "pdfPage": 26,
+          "rectanglePoints": [
+            134.1935,
+            250.3226,
+            216.7742,
+            317.4194
+          ],
+          "sha256": "d66948ab59cdda32b17802940b5132ba9998baf90f5b52093368ad4c062488fb"
+        },
+        "/questions/denki2/2022-late/q56-choice-4.webp": {
+          "pdfPage": 26,
+          "rectanglePoints": [
+            323.871,
+            250.3226,
+            383.871,
+            317.4194
+          ],
+          "sha256": "2ce7b348656648ae56b8dbeade652fff27be325cd953f12255bf3d87f1e7c2a8"
+        }
+      }
+    },
+    {
+      "jobId": "PLAN5-390",
+      "index": 389,
+      "exam": "mokuzo-kenchikushi",
+      "year": 2021,
+      "season": "annual",
+      "session": "gakka-3_4",
+      "status": "added",
+      "officialCount": 50,
+      "addedCount": 50,
+      "choiceExplanationCount": 250,
+      "officialPdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2021-1st-gakka3_4.pdf",
+      "officialAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2021-1st-gokakukijun.pdf",
+      "officialPdfSha256": "d0f93b4a39ced9b528d2c5ad6455c5328671b27256508e885527a2fd55931d34",
+      "officialAnswerPdfSha256": "79884d407da73b2a7cfc543b45cc37661159cf2debee3e1354f2e2f50c00d004",
+      "officialAnswerBySubject": {
+        "III": [
+          3,
+          1,
+          1,
+          4,
+          2,
+          2,
+          4,
+          4,
+          4,
+          5,
+          4,
+          3,
+          5,
+          2,
+          2,
+          5,
+          3,
+          5,
+          3,
+          3,
+          5,
+          1,
+          5,
+          4,
+          1
+        ],
+        "IV": [
+          5,
+          2,
+          1,
+          5,
+          4,
+          1,
+          2,
+          2,
+          4,
+          3,
+          5,
+          4,
+          3,
+          2,
+          1,
+          3,
+          3,
+          3,
+          2,
+          4,
+          2,
+          3,
+          1,
+          5,
+          1
+        ]
+      },
+      "questionPdfPages": {
+        "III:1": 2,
+        "III:2": 2,
+        "III:3": 2,
+        "III:4": 3,
+        "III:5": 3,
+        "III:6": 4,
+        "III:7": 4,
+        "III:8": 5,
+        "III:9": 6,
+        "III:10": 7,
+        "III:11": 7,
+        "III:12": 8,
+        "III:13": 8,
+        "III:14": 9,
+        "III:15": 9,
+        "III:16": 10,
+        "III:17": 10,
+        "III:18": 11,
+        "III:19": 11,
+        "III:20": 11,
+        "III:21": 12,
+        "III:22": 12,
+        "III:23": 12,
+        "III:24": 13,
+        "III:25": 13,
+        "IV:1": 14,
+        "IV:2": 14,
+        "IV:3": 14,
+        "IV:4": 15,
+        "IV:5": 15,
+        "IV:6": 16,
+        "IV:7": 16,
+        "IV:8": 16,
+        "IV:9": 17,
+        "IV:10": 17,
+        "IV:11": 17,
+        "IV:12": 18,
+        "IV:13": 18,
+        "IV:14": 19,
+        "IV:15": 20,
+        "IV:16": 21,
+        "IV:17": 22,
+        "IV:18": 23,
+        "IV:19": 23,
+        "IV:20": 23,
+        "IV:21": 24,
+        "IV:22": 24,
+        "IV:23": 24,
+        "IV:24": 25,
+        "IV:25": 25
+      },
+      "questionDataSha256": "81263809e87c8930e6c8f190287c872bb649982d5d837549a55c2d1f77280f42",
+      "questionIds": [
+        "mokuzo-kenchikushi-2021-annual-III-q1",
+        "mokuzo-kenchikushi-2021-annual-III-q2",
+        "mokuzo-kenchikushi-2021-annual-III-q3",
+        "mokuzo-kenchikushi-2021-annual-III-q4",
+        "mokuzo-kenchikushi-2021-annual-III-q5",
+        "mokuzo-kenchikushi-2021-annual-III-q6",
+        "mokuzo-kenchikushi-2021-annual-III-q7",
+        "mokuzo-kenchikushi-2021-annual-III-q8",
+        "mokuzo-kenchikushi-2021-annual-III-q9",
+        "mokuzo-kenchikushi-2021-annual-III-q10",
+        "mokuzo-kenchikushi-2021-annual-III-q11",
+        "mokuzo-kenchikushi-2021-annual-III-q12",
+        "mokuzo-kenchikushi-2021-annual-III-q13",
+        "mokuzo-kenchikushi-2021-annual-III-q14",
+        "mokuzo-kenchikushi-2021-annual-III-q15",
+        "mokuzo-kenchikushi-2021-annual-III-q16",
+        "mokuzo-kenchikushi-2021-annual-III-q17",
+        "mokuzo-kenchikushi-2021-annual-III-q18",
+        "mokuzo-kenchikushi-2021-annual-III-q19",
+        "mokuzo-kenchikushi-2021-annual-III-q20",
+        "mokuzo-kenchikushi-2021-annual-III-q21",
+        "mokuzo-kenchikushi-2021-annual-III-q22",
+        "mokuzo-kenchikushi-2021-annual-III-q23",
+        "mokuzo-kenchikushi-2021-annual-III-q24",
+        "mokuzo-kenchikushi-2021-annual-III-q25",
+        "mokuzo-kenchikushi-2021-annual-IV-q1",
+        "mokuzo-kenchikushi-2021-annual-IV-q2",
+        "mokuzo-kenchikushi-2021-annual-IV-q3",
+        "mokuzo-kenchikushi-2021-annual-IV-q4",
+        "mokuzo-kenchikushi-2021-annual-IV-q5",
+        "mokuzo-kenchikushi-2021-annual-IV-q6",
+        "mokuzo-kenchikushi-2021-annual-IV-q7",
+        "mokuzo-kenchikushi-2021-annual-IV-q8",
+        "mokuzo-kenchikushi-2021-annual-IV-q9",
+        "mokuzo-kenchikushi-2021-annual-IV-q10",
+        "mokuzo-kenchikushi-2021-annual-IV-q11",
+        "mokuzo-kenchikushi-2021-annual-IV-q12",
+        "mokuzo-kenchikushi-2021-annual-IV-q13",
+        "mokuzo-kenchikushi-2021-annual-IV-q14",
+        "mokuzo-kenchikushi-2021-annual-IV-q15",
+        "mokuzo-kenchikushi-2021-annual-IV-q16",
+        "mokuzo-kenchikushi-2021-annual-IV-q17",
+        "mokuzo-kenchikushi-2021-annual-IV-q18",
+        "mokuzo-kenchikushi-2021-annual-IV-q19",
+        "mokuzo-kenchikushi-2021-annual-IV-q20",
+        "mokuzo-kenchikushi-2021-annual-IV-q21",
+        "mokuzo-kenchikushi-2021-annual-IV-q22",
+        "mokuzo-kenchikushi-2021-annual-IV-q23",
+        "mokuzo-kenchikushi-2021-annual-IV-q24",
+        "mokuzo-kenchikushi-2021-annual-IV-q25"
+      ],
+      "assets": {
+        "/questions/mokuzo-kenchikushi/2021/iii-07.webp": {
+          "pdfPage": 4,
+          "rectanglePoints": [
+            132.4364434814453,
+            343.64310954063603,
+            495.52062561035154,
+            532.5724381625441
+          ],
+          "sha256": "bec32cc815a720d5fc521790de55f21c4627a461a53dc8423b3f3b15b9d0b96c"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-08.webp": {
+          "pdfPage": 5,
+          "rectanglePoints": [
+            249.9923876953125,
+            138.34982332155477,
+            480.64012634277344,
+            612.904593639576
+          ],
+          "sha256": "602ae8041a7358794629883cc2660befdf2bb808e32d96f19ee9cff9c5f934af"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-09-1.webp": {
+          "pdfPage": 6,
+          "rectanglePoints": [
+            89.28299560546874,
+            120.4982332155477,
+            293.14583557128907,
+            291.57597173144876
+          ],
+          "sha256": "1ab847231eb124e3f68e99c815b13aaa6899e7e6206c364ac1056c7b2dc45cd5"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-09-2.webp": {
+          "pdfPage": 6,
+          "rectanglePoints": [
+            315.4665844726562,
+            120.4982332155477,
+            516.3533245849609,
+            291.57597173144876
+          ],
+          "sha256": "d766f6872647724745ea3105ee38e79cbacc99a8e99bf120745ced52afb06225"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-09-3.webp": {
+          "pdfPage": 6,
+          "rectanglePoints": [
+            89.28299560546874,
+            331.7420494699646,
+            293.14583557128907,
+            501.3321554770318
+          ],
+          "sha256": "4158ad62965917bdf10534c076280a6ff31c6385963cb9188d8f84b694d3a758"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-09-4.webp": {
+          "pdfPage": 6,
+          "rectanglePoints": [
+            315.4665844726562,
+            331.7420494699646,
+            516.3533245849609,
+            501.3321554770318
+          ],
+          "sha256": "a96545a65beeea39d66b2ca3d27eef64487d89c13319445b11037c02ebcace9a"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-09-5.webp": {
+          "pdfPage": 6,
+          "rectanglePoints": [
+            89.28299560546874,
+            537.035335689046,
+            293.14583557128907,
+            708.113074204947
+          ],
+          "sha256": "76c2742cefe56d24387f8da2e4321c69b4c260e0b5cbae850d9d8ba37066f0e8"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-11.webp": {
+          "pdfPage": 7,
+          "rectanglePoints": [
+            181.54209106445313,
+            391.24734982332154,
+            520.8174743652344,
+            758.6925795053003
+          ],
+          "sha256": "5169f2341e5a23c3dbd34f09998c1c9bacaa86bc036fde523f14546776d52d68"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-12.webp": {
+          "pdfPage": 8,
+          "rectanglePoints": [
+            224.69553894042969,
+            89.25795053003533,
+            373.50053161621094,
+            349.59363957597174
+          ],
+          "sha256": "c7fca4705b26efa8c04cf63a3f06caaeca108849ae747884b024256e152c1ee6"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iii-14.webp": {
+          "pdfPage": 9,
+          "rectanglePoints": [
+            129.4603436279297,
+            93.7208480565371,
+            468.7357269287109,
+            252.89752650176678
+          ],
+          "sha256": "912442f63f28d14658c985320fba03814be79b69dd115a1450ed687978b10830"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-05.webp": {
+          "pdfPage": 15,
+          "rectanglePoints": [
+            166.661591796875,
+            345.13074204947,
+            453.8552276611328,
+            615.8798586572437
+          ],
+          "sha256": "cb4a9f465a1d6f313e430bcc2469d909bde3654db77904579104771316554525"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-13.webp": {
+          "pdfPage": 18,
+          "rectanglePoints": [
+            148.80499267578125,
+            322.8162544169611,
+            505.9369750976562,
+            535.547703180212
+          ],
+          "sha256": "ca0f6d6cdd361c712e75fbd7f7ac1e09d1abec118abd0e6469a5a2c2e4b6c6a0"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-14.webp": {
+          "pdfPage": 19,
+          "rectanglePoints": [
+            130.9483935546875,
+            92.23321554770317,
+            471.7118267822265,
+            333.22968197879857
+          ],
+          "sha256": "541327b94cf67f0671ff9365f364d57d2ae4be10f86d0e905c7857ac2b5cde98"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-15.webp": {
+          "pdfPage": 20,
+          "rectanglePoints": [
+            53.569797363281246,
+            127.9363957597173,
+            555.0426226806641,
+            623.3180212014134
+          ],
+          "sha256": "19929e9a8f5b718f280846999e86b8d00bafd129871295e0651a240e446bf9b8"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-16.webp": {
+          "pdfPage": 21,
+          "rectanglePoints": [
+            183.03014099121094,
+            92.23321554770317,
+            431.5344787597656,
+            452.24028268551234
+          ],
+          "sha256": "766c390bffd662e6225e00e58ae341dd553df11176188d531cc5ce8b92063ed9"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-17-1.webp": {
+          "pdfPage": 22,
+          "rectanglePoints": [
+            119.04399414062499,
+            130.91166077738515,
+            208.32698974609374,
+            211.24381625441694
+          ],
+          "sha256": "bb7693a96a666d4c71681a2fff219e7fd94ed145cb9597a04dc3921350ef25b5"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-17-2.webp": {
+          "pdfPage": 22,
+          "rectanglePoints": [
+            119.04399414062499,
+            232.07067137809184,
+            211.30308959960936,
+            310.91519434628975
+          ],
+          "sha256": "3bc519184edfc133390d2fdf29f73dd13e54f2b65825ab40e90042672189a7ff"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-17-3.webp": {
+          "pdfPage": 22,
+          "rectanglePoints": [
+            119.04399414062499,
+            331.7420494699646,
+            211.30308959960936,
+            413.56183745583036
+          ],
+          "sha256": "410c3f556dd96c07864df2b364c430ba7b83b8b13317c9c67e8127fcf93b40c4"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-17-4.webp": {
+          "pdfPage": 22,
+          "rectanglePoints": [
+            119.04399414062499,
+            425.46289752650176,
+            212.79113952636717,
+            511.7455830388692
+          ],
+          "sha256": "159cfcb52af4b34e2681d2f4fb2e0ea0c84be3f95b280d3c8fd8e953697f367d"
+        },
+        "/questions/mokuzo-kenchikushi/2021/iv-17-5.webp": {
+          "pdfPage": 22,
+          "rectanglePoints": [
+            119.04399414062499,
+            534.0600706713781,
+            212.79113952636717,
+            608.4416961130742
+          ],
+          "sha256": "27f6eb9d922d9035f7a4d8792fa70f3410ee5f1b6ab1d5b89f21853870e811b2"
+        }
+      }
+    },
+    {
+      "jobId": "PLAN5-376",
+      "index": 375,
+      "exam": "denken1",
+      "year": 2022,
+      "season": "primary",
+      "session": "houki",
+      "status": "existing-work-verified",
+      "officialCount": 6,
+      "addedCount": 0,
+      "existingCommit": "be5af41ba",
+      "existingBranch": "cx/kako-5yh3-20261118",
+      "officialPdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_first_q04.pdf",
+      "officialAnswerUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_first_a01.pdf"
+    },
+    {
+      "jobId": "PLAN5-362",
+      "index": 361,
+      "exam": "denken2",
+      "year": 2021,
+      "season": "primary",
+      "session": "kikai",
+      "status": "added",
+      "officialCount": 8,
+      "addedCount": 8,
+      "answerFieldCount": 40,
+      "officialPdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q03.pdf",
+      "officialAnswerUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_a01.pdf",
+      "officialPdfSha256": "3c4549d80adf9dbc43579a1ebb06eaeb0496ad6e622ddd128a4a239e99108130",
+      "officialAnswerPdfSha256": "595888e2402a71ab1055f07b5a3f3b8a0e9f89917058c9d12a1cc0e7730c047c",
+      "officialAnswerByOriginal": {
+        "1": [
+          "ル",
+          "ホ",
+          "カ",
+          "ロ",
+          "チ"
+        ],
+        "2": [
+          "リ",
+          "ヘ",
+          "ト",
+          "ワ",
+          "イ"
+        ],
+        "3": [
+          "イ",
+          "ロ",
+          "ヲ",
+          "ル",
+          "ワ"
+        ],
+        "4": [
+          "ヌ",
+          "ヘ",
+          "カ",
+          "ホ",
+          "ワ"
+        ],
+        "5": [
+          "ロ",
+          "ヌ",
+          "ニ",
+          "チ",
+          "ヨ"
+        ],
+        "6": [
+          "ヲ",
+          "ホ",
+          "チ",
+          "ワ",
+          "ヌ"
+        ],
+        "7": [
+          "ヌ",
+          "ヘ",
+          "ワ",
+          "ヲ",
+          "ハ"
+        ],
+        "8": [
+          "チ",
+          "ト",
+          "カ",
+          "ヌ",
+          "ヘ"
+        ]
+      },
+      "questionDataSha256": "583c4cc53d946da5612165ca198490e6b5a6c8227bf726689a7038aed053f96b",
+      "questionIds": [
+        "denken2-2021-primary-machine-q01",
+        "denken2-2021-primary-machine-q02",
+        "denken2-2021-primary-machine-q03",
+        "denken2-2021-primary-machine-q04",
+        "denken2-2021-primary-machine-q05",
+        "denken2-2021-primary-machine-q06",
+        "denken2-2021-primary-machine-q07",
+        "denken2-2021-primary-machine-q08"
+      ],
+      "assets": {
+        "/images/denken2/2021-native/machine-p04.jpg": {
+          "physicalPage": 4,
+          "sha256": "39092bcaaba0c5755fd8658483ad4ed38e915cabaf64088b9babb97e7cf3c773"
+        },
+        "/images/denken2/2021-native/machine-p05.jpg": {
+          "physicalPage": 5,
+          "sha256": "3db1aa404b49be63f62f776554c7c0dc6d2f2d92aedee30186a3fdca50491edb"
+        },
+        "/images/denken2/2021-native/machine-p06.jpg": {
+          "physicalPage": 6,
+          "sha256": "43fabb3609c795268824cc3ba5908dad6c891dab48797d27302fb058268638bc"
+        },
+        "/images/denken2/2021-native/machine-p07.jpg": {
+          "physicalPage": 7,
+          "sha256": "213e75ad99795fb4fff401c540bfed14e9bcad7e398f8d24d2011548bdba8daa"
+        },
+        "/images/denken2/2021-native/machine-p08.jpg": {
+          "physicalPage": 8,
+          "sha256": "a4bfb24b2787d5849b144b8e94813a0d04ca3930ee841de5a8af3d0ab09d0dc4"
+        },
+        "/images/denken2/2021-native/machine-p09.jpg": {
+          "physicalPage": 9,
+          "sha256": "effd540dc6b6d1d3ff95bdf4a0a3c5bf9d8177dbd78918c7c8124c6c6d0bedf2"
+        },
+        "/images/denken2/2021-native/machine-p10.jpg": {
+          "physicalPage": 10,
+          "sha256": "0c228284d8ccf7f43b10f6da9707b9799ea2fafa24c35ffaacefc65488a2ac2e"
+        },
+        "/images/denken2/2021-native/machine-p11.jpg": {
+          "physicalPage": 11,
+          "sha256": "357be3f033e549e03c10d974bb8017186d4afc8672b410f1f8ff7817194fd0bc"
+        },
+        "/images/denken2/2021-native/machine-p12.jpg": {
+          "physicalPage": 12,
+          "sha256": "be0844ae150063bf54408d54ebd146696021a629a242b299e480c0eeca7bfb2e"
+        },
+        "/images/denken2/2021-native/machine-p13.jpg": {
+          "physicalPage": 13,
+          "sha256": "55a8702308eadcbe2e6eb725d90a56fdd82b0327d0a8007d159f039baa9664e9"
+        },
+        "/images/denken2/2021-native/machine-p14.jpg": {
+          "physicalPage": 14,
+          "sha256": "2955fb4ad243dcbaaac9fbfec6995bbcf18dc8e772fdf4ece7c1f411d065ef33"
+        },
+        "/images/denken2/2021-native/machine-p15.jpg": {
+          "physicalPage": 15,
+          "sha256": "f0a702241b124b7d8de9b46ff13ab5524ff4240c35cba7e359531967444e0cff"
+        },
+        "/images/denken2/2021-native/machine-p16.jpg": {
+          "physicalPage": 16,
+          "sha256": "7c0939b4004a51e4a97bb60ec798a340e3aece7f96609bd6e980eba24316b1e8"
+        },
+        "/images/denken2/2021-native/machine-p17.jpg": {
+          "physicalPage": 17,
+          "sha256": "5168f3df4c2077b0fe02c2048a4c7b6dcfefb691318c488cfd93c7307642ab67"
+        }
+      }
+    }
+  ]
+}

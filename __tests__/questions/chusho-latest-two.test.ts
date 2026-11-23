@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { CHUSHO_KIGYO_SHINDANSHI_QUESTIONS as questions } from "@/data/questions/chusho-kigyo-shindanshi";
+import { CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } from "@/data/questions/chusho-kigyo-shindanshi";
 import officialKeys from "@/docs/evidence/chusho-latest-two-20261011/official-answer-keys.json";
 import { EXAM_CONFIGS, ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -9,6 +9,10 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { isAcceptedAnswer } from "@/lib/questions/answers";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
+import type { Question } from "@/lib/questions/types";
+
+const isReviewedEdition = (question: Question) => question.year === 2025 || question.year === 2026;
+const questions = CHUSHO_KIGYO_SHINDANSHI_QUESTIONS.filter(isReviewedEdition);
 
 describe("SME consultant first-stage latest two official papers", () => {
   it("covers every official answer row and original without duplicating subjects or parts", () => {
@@ -74,6 +78,6 @@ describe("SME consultant first-stage latest two official papers", () => {
     expect(ALL_EXAM_CODES as string[]).not.toContain("chusho-kigyo-shindanshi");
     expect(ALL_QUIZ_EXAM_CODES).toContain("chusho-kigyo-shindanshi");
     expect(getQualificationByExamCode("chusho-kigyo-shindanshi")?.administrator).toContain("診断士");
-    expect(await getQuestionsForExam("chusho-kigyo-shindanshi")).toHaveLength(454);
+    expect((await getQuestionsForExam("chusho-kigyo-shindanshi")).filter(isReviewedEdition)).toEqual(questions);
   });
 });

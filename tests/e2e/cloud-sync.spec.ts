@@ -2,23 +2,25 @@ import { test, expect } from "@playwright/test";
 
 // Cloud sync is opt-in. The CI environment has no DATABASE_URL and the default
 // storageState is signed-out, so these tests verify the LocalStorage-first
-// contract holds: the settings panel renders, signed-out users see a sign-in
-// CTA (not a sync action), and core local features keep working without any
+// contract holds: the settings panel renders, signed-out users cannot sync,
+// and core local features keep working without any
 // auth. Full multi-device / authenticated sync needs a provisioned DB and is
 // exercised manually (see logs/data-portability-2026-05-23.md).
 
 test.describe("cloud sync: opt-in, non-intrusive", () => {
   test("/settings renders the クラウド同期 section", async ({ page }) => {
     await page.goto("/settings");
-    await expect(page.getByRole("heading", { name: "クラウド同期" })).toBeVisible();
+    const panel = page.locator("#cloud-sync");
+    await panel.getByText("クラウド同期", { exact: true }).click();
+    await expect(panel.getByText("学習履歴", { exact: true })).toBeVisible();
   });
 
-  test("signed-out user sees a sign-in CTA, not a destructive action", async ({ page }) => {
+  test("signed-out user can read the sync settings without an enabled sync action", async ({ page }) => {
     await page.goto("/settings");
-    // The panel checks /api/auth/session; signed-out → sign-in link to /auth/signin.
-    const signInLink = page.getByRole("link", { name: /サインインして同期/ });
-    await expect(signInLink).toBeVisible();
-    await expect(signInLink).toHaveAttribute("href", /\/auth\/signin/);
+    const panel = page.locator("#cloud-sync");
+    await panel.getByText("クラウド同期", { exact: true }).click();
+    await expect(panel.getByText("ブックマーク", { exact: true })).toBeVisible();
+    await expect(panel.locator("button:enabled")).toHaveCount(0);
   });
 
   test("home page shows no account-creation banner (LocalStorage-first)", async ({ page }) => {

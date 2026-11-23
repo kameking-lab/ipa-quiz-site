@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "lane": "pc-5",
+  "checkedOn": "2026-11-18",
+  "baseline": "1e3f3c951",
+  "allocation": "配列の1始まり位置4,18,...,284（pa-5・pb-5から継続）",
+  "addedQuestionCount": 200,
+  "rows": [
+    {
+      "planId": "zensho-eco-79",
+      "lane": "pc-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete",
+      "addedQuestionCount": 100,
+      "years": [
+        2025,
+        2024
+      ],
+      "remainingVerifiedAnswerUnits": 0,
+      "paths": [
+        "data/questions/zensho-eco-79/2025-annual.json",
+        "data/questions/zensho-eco-79/2024-annual.json"
+      ],
+      "sourceUrls": [
+        "https://zensho.or.jp/puf/download/exam/pastexam/2025/eco_39_shouhin.pdf",
+        "https://zensho.or.jp/puf/download/exam/pastexam/2026/eco_40_shouhin.pdf"
+      ],
+      "notes": [
+        "公式本文・模範解答の記号と補記範囲を保持。記述は公式解答との照合、数値は既存の数値入力で演習。",
+        "ローカルコミットのみ。push・PR・公開なし。"
+      ],
+      "addedOriginalQuestionCount": 28
+    },
+    {
+      "planId": "javada-ef489b887c4e",
+      "lane": "pc-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete",
+      "addedQuestionCount": 100,
+      "remainingVerifiedAnswerUnits": 0,
+      "years": [
+        2025,
+        2024
+      ],
+      "paths": [
+        "data/questions/kawarabuki2/2025-late.json",
+        "data/questions/kawarabuki2/2024-late.json"
+      ],
+      "sourceUrls": [
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験正解表.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R06-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R06-2-B43-かわらぶき（かわらぶき作業）-2級-学科試験正解表.pdf"
+      ],
+      "notes": [
+        "公式原本で全100問を校正。A群25問・B群25問ずつ、公式正答と独自解説・全300肢解説・原図8点を収録。",
+        "ローカルコミットのみ。push・PR・公開なし。"
+      ],
+      "completedBy": "pd-5"
+    }
+  ],
+  "completedRows": 2,
+  "preparedRows": 0,
+  "addedOriginalQuestionCount": 128,
+  "addedChoiceExplanationCount": 548
+}

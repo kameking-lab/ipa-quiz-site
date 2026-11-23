@@ -25,7 +25,7 @@ export function MobileInstallControl() {
   const statusHeading = useRef<HTMLParagraphElement>(null);
   const restoreAfterCompletion = useRef(false);
   const mounted = useRef(false);
-  const done = standalone || phase === "installed";
+  const done = standalone || state.native || phase === "installed";
   const device = selectedOs ?? (os === "android" ? "android" : "iphone");
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export function MobileInstallControl() {
     if (mounted.current && (result === "error" || result === "unavailable")) setGuideOpen(true);
   }
 
-  if (!ready) return null;
+  if (!ready || state.native) return null;
   return (
     <div ref={root} onKeyDown={(event) => {
       if (guideOpen && event.key === "Escape") { event.preventDefault(); closeGuide(); }
@@ -76,13 +76,6 @@ export function MobileInstallControl() {
             aria-expanded={available ? undefined : guideOpen} aria-controls={available ? undefined : guideId}>
             ホーム画面に追加
           </Button>
-          {available && <Button type="button" variant="ghost" className="min-h-11 whitespace-normal"
-            aria-expanded={guideOpen} aria-controls={guideId} onClick={(event) => {
-              guideOrigin.current = event.currentTarget;
-              setGuideOpen(true);
-            }}>
-            追加方法を見る
-          </Button>}
         </div>
         <p role="status" className="mt-2 text-sm text-muted-foreground">{MESSAGES[phase]}</p>
         {guideOpen && <div id={guideId} className="mt-3 space-y-3 rounded-xl border border-border bg-background p-4">

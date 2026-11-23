@@ -24,6 +24,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "IPv6ネットワークでは、IPv6アドレスに対応するMACアドレスを解決するために近隣探索プロトコル (NDP) が使用されます。このNDPは、ICMPv6のメッセージタイプを利用して、近隣要請 (Neighbor Solicitation) や近隣広告 (Neighbor Advertisement) などの通信を行います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "OFDM (直交周波数分割多重) は、データ信号を多数の直交するサブキャリアに分割して送信する多重化方式です。これにより、マルチパスによる干渉の影響を低減し、高速で信頼性の高い無線通信を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "OSPF (Open Shortest Path First) は、リンクステート型ルーティングプロトコルであり、各ルータが自身のリンク状態情報をネットワーク全体に共有します。大規模なネットワークでは「エリア」という概念を導入し、ルーティング情報の交換を効率化することでスケーラビリティを向上させています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "BBR (Bottleneck Bandwidth and Round-trip propagation time) は、Googleによって開発されたTCPの輻輳制御アルゴリズムの一つです。これはネットワークのボトルネック帯域と往復遅延時間を推定し、これに基づいて送信レートを調整することで、輻輳を効率的に回避し、スループットを最大化します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +123,14 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "1,480"
     },
     "answer": "ウ",
-    "explanation": "IPv4ネットワークでTCPを使用する際、フラグメント化されずに送信できるデータの最大長は、MTU（Maximum Transmission Unit：最大転送単位）からIPヘッダとTCPヘッダの長さを差し引いた値となります。MTUは1,500オクテットです。TCPパケットはIPヘッダ（通常20オクテット）とTCPヘッダ（通常20オクテット）を含んでいます。したがって、フラグメント化されない最大データ長は、1,500 - 20（IPヘッダ）- 20（TCPヘッダ）= 1,460オクテットとなります。\n\nアの1,446オクテットは、TCPヘッダのオプションフィールドを考慮した場合などに相当する可能性がありますが、標準的なヘッダ長を前提とする問題では不適切です。イの1,456オクテットは、TCPのウィンドウサイズなどのフィールド長と混同しやすいですが、データ長とは直接関係ありません。エの1,480オクテットは、IPヘッダ長を無視した場合の値であり、フラグメント化を防ぐための計算としては誤りです。",
+    "explanation": "MTUの1,500オクテットはIPパケットの上限です。図のMACヘッダー14オクテットとFCSの4オクテットはその外側です。IPとTCPのヘッダーがそれぞれ20オクテットなので、データの最大長は1,500－20－20＝1,460オクテットです。",
+    "choiceExplanations": {
+      "ア": "1,446はIPとTCPのヘッダーだけでなく、MACヘッダーの14オクテットも引いた値です。MACヘッダーはIPパケットの外側に付きます。",
+      "イ": "1,456はIPとTCPの各ヘッダーのほか、末尾のFCSの4オクテットも引いた値です。FCSもMTUの対象外です。",
+      "ウ": "MTUの1,500オクテットに収まるのはIPヘッダー、TCPヘッダー、データです。1,500－20－20＝1,460です。",
+      "エ": "1,480はMTUからヘッダーを一つ分だけ引いた値です。IPヘッダーに加え、TCPヘッダーの20オクテットも差し引きます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "100バイトの電文は800ビットであり、ビット誤り率1×10⁻⁵であるため、1電文あたりに誤りが発生する確率は約800×10⁻⁵ = 0.008です。総データ量200,000バイトを100バイトの電文に分けると2,000個の電文となるため、平均して誤りが発生する電文の個数は2,000 × 0.008 = 16個となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +180,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "BGP-4は、経路選択においてASパス長（経由する自律システムの数）を考慮しますが、これはルータのホップ数とは異なります。その複雑なポリシー制御や設定の難しさから、ルーティングポリシーを持たない小規模なネットワーク環境には適用しにくいという側面を持つことがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "CoAP (Constrained Application Protocol) は、制約の多いIoTデバイスやネットワーク環境向けに設計された軽量なアプリケーション層プロトコルです。UDPをベースとしながらも、再送制御などの信頼性メカニズムを備え、パケット損失が発生しやすい環境や小電力デバイスでの効率的な通信に適しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ESP トンネルモードでは、元の IP パケット全体をカプセル化し、その上に新しい IP ヘッダーを付加します。暗号化の対象は、この新しい IP ヘッダー以外の、元の IP パケット（オリジナル IP ヘッダー、IPペイロード）と、ESP ヘッダー、ESP トレーラ、ESP 認証データを含む部分です。ただし、ESP 認証データは認証のために使用されるもので、暗号化の対象外となります。したがって、オリジナル IP ヘッダーから ESP トレーラまでの範囲が暗号化されます。\n\nアはESPヘッダーからESPトレーラまでとしていますが、オリジナルIPヘッダーとIPペイロードが含まれないため不適切です。イはTCPヘッダーからESP認証データまでとしていますが、IPsecではIPペイロード全体が保護対象であり、TCPヘッダーのみを対象とするわけではないため誤りです。エは新IPヘッダーからESP認証データまでとしていますが、トンネルモードでは新しいIPヘッダーは暗号化されず、元のIPパケットを保護するために使用されるため誤りです。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "MSTP (Multiple Spanning Tree Protocol) は、IEEE 802.1sとして標準化されたスパニングツリープロトコルです。複数のVLANを特定のインスタンスに割り当て、各インスタンスで独立したスパニングツリーを計算することで、VLANごとに異なる経路を設定し、ネットワーク資源の効率的な利用や負荷分散を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "IEEE 802.1Qで定義されるVLANタグは、イーサネットフレームのヘッダ部分に挿入されます。具体的には、MACアドレスとEtherTypeフィールドの間に位置する、元のイーサネットフレームのタイプフィールド（EtherType）の代わりに挿入されるのが一般的です。このVLANタグは、フレームにVLAN識別子（VID）を付与し、ネットワーク機器がフレームをどのVLANに属するかを判断するために使用されます。\n\nアは①に該当し、VLANタグが挿入される位置として正しいです。\n\nイは②に該当し、これは通常、MACアドレスを格納する部分であり、VLANタグが挿入される場所ではありません。\n\nウは③に該当し、ここはEtherTypeフィールドやペイロードの開始部分であり、VLANタグの挿入位置とは異なります。\n\nエは④に該当し、これはイーサネットフレームのペイロード（データ部）であり、VLANタグはフレームの制御情報としてヘッダ部分に付与されます。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "与えられた四つのサブネットは10.8.64.0/20、10.8.80.0/20、10.8.96.0/20、10.8.112.0/20です。これらを全て包含する集約アドレスを求めると、共通のプレフィックスは10.8.0.0/17 (10.8.0.0～10.8.127.255) となります。この範囲は全てのサブネットを包含し、選択肢の中で指定されたサブネットを包含するアドレスの中で最も集約範囲が狭いものです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "WebDAVは、HTTPを拡張してWebサーバ上のファイル操作やバージョン管理を行うプロトコルです。選択肢ウは「WebアプリケーションからIMAPサーバにアクセスして、Webブラウザから添付ファイルを含む電子メールの操作ができる」と記述しており、これはWebメールクライアントとIMAPサーバの連携による電子メール操作を指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ローカル5Gは、特定のエリアで独自の5Gネットワークを構築するものであり、一般の携帯電話事業者によるサービスとは異なります。ただし、5G技術の一つであるビームフォーミングは、電波の指向性を高め、特定の場所や利用者に効率的にサービスを提供するために用いられます。そのため、ローカル5Gにおいても、このような技術が特定のエリアでの高品質な通信サービス提供に応用されることがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "IEEE 802.11n は、2.4 GHz帯と5 GHz帯の両方で動作可能ですが、IEEE 802.11ac は5 GHz帯のみで動作するように規格化されています。したがって、両規格が使用できる周波数帯の組合せとして最も適切なのは、IEEE 802.11n が2.4 GHz帯と5 GHz帯、IEEE 802.11ac が5 GHz帯となるエです。\n\nアはIEEE 802.11ac が5 GHz帯のみという点を誤っており、イはIEEE 802.11ac が2.4 GHz帯でも動作するという誤解を生じさせるため不適切です。ウはIEEE 802.11n が2.4 GHz帯と5 GHz帯で利用できる事実を考慮しておらず、IEEE 802.11ac の使用帯域のみに限定しているため不十分です。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ポリモーフィック型マルウェアは、感染するたびに自身のコードを暗号化したり、変形させたりすることで、静的なシグネチャによる検出を回避しようとします。これにより、同じマルウェアであっても、以前に発見されたパターンとは異なる姿で存在するため、セキュリティソフトウェアによる検知が困難になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "NTP増幅型DDoS攻撃は、不正なNTPリクエストを悪用してNTPサーバを踏み台とします。対策として、ファイアウォールで自ネットワーク外からのUDPサービスへのアクセスをNTP (UDPポート123) のみに限定することは、他の不必要なUDPサービスへの攻撃経路を塞ぎ、全体的な攻撃対象領域を減らす上で重要です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "インラインモードで動作するシグネチャ型IPSは、ネットワークの通信経路に直接配置され、通過する全ての通信パケットをリアルタイムで検査します。定義された異常な通信パターン（シグネチャ）と合致する通信を不正と判断すると、その通信を即座に遮断し、攻撃の侵入を阻止します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "EAP-TLS (Extensible Authentication Protocol - Transport Layer Security) は、相互認証にX.509クライアント証明書とサーバ証明書の両方を必須とする認証プロトコルです。強固なセキュリティを提供し、デバイスとサーバ間の厳格な本人確認を実現します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "OP25B (Outbound Port 25 Blocking) は、スパムメール対策としてISPが実施するもので、ISP管理下の動的IPアドレスを持つユーザからのTCPポート25番（SMTP）宛の直接通信を遮断する措置です。これにより、マルウェアに感染したPCなどが勝手にスパムメールを送信することを防ぎ、正規のメール送信にはISPが提供するメールサーバの利用を促します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "IEEE 802.1Xは、無線LANにおいてアクセスポイントがEAP (Extensible Authentication Protocol) を用いてクライアントを認証するための枠組みを定めています。選択肢ウのWPS (Wi-Fi Protected Setup) は、無線LAN機器のセキュリティ設定を容易にするための規格であり、広義の「無線LANに接続する機器のセキュリティ対策」に関連する技術です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "メモリインタリーブは、主記憶を複数のバンクに分割し、並列アクセスにより高速化を図る技術です。選択肢イの「主記憶と磁気ディスク装置との間にバッファメモリを置いて、双方のアクセス速度の差を補う」は、ディスクキャッシュの機能であり、データ転送効率を向上させ、システム全体の性能を高める点で重要な役割を果たします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "FaaS (Function as a Service) は、サーバーレスアーキテクチャの一種であり、利用者は個々の関数コードをクラウドにデプロイするだけで済みます。基盤となるサーバーのプロビジョニング、スケーリング、メンテナンスといった管理作業は全てクラウドサービスプロバイダが行うため、利用者はコードの実行環境を意識することなくアプリケーションを開発・運用できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SysML (Systems Modeling Language) は、システムの設計や検証に特化したUMLの拡張モデリング言語です。選択肢エは「論理合成してFPGAで動作させるハードウェア論理の記述に用いられる、ハードウェア記述言語」と記述しており、これはVHDLやVerilogといったハードウェア記述言語(HDL)の説明に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "マッシュアップとは、複数の異なるWebサービスやデータを組み合わせて、新しいコンテンツやサービスを作り出す技術です。選択肢エは、店舗案内のWebページ（自サイトのコンテンツ）と、他のサイトが提供する地図検索機能（他社のWebサービス）を連携させ、新しい情報（地図上の店舗位置）を表示しています。これは異なるWebサービスを組み合わせたマッシュアップの典型的な例であり、最も適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"

@@ -1,13 +1,17 @@
-import { parseStudyPresence, PRESENCE_POLL_MS, PRESENCE_WINDOW_MS, type StudyPresenceSnapshot } from "@/lib/study-presence";
+import { parseStudyPresence, parseStudyPresenceToday, PRESENCE_POLL_MS, PRESENCE_WINDOW_MS, type StudyPresenceSnapshot, type StudyPresenceToday } from "@/lib/study-presence";
 
 export const PRESENCE_STATE_EVENT = "study-presence-state";
+/** A newly mounted room/summary asks the existing publisher to replay its state without fetching. */
+export const PRESENCE_REPLAY_EVENT = "study-presence-replay";
 export const PRESENCE_RETRY_MS = [90_000, 180_000, 300_000, 900_000] as const;
 export const presenceRetryDelay = (failures: number) => PRESENCE_RETRY_MS[Math.min(Math.max(failures - 1, 0), PRESENCE_RETRY_MS.length - 1)];
 
 export interface MeasuredPresence extends StudyPresenceSnapshot {
   status: "measured";
-  /** count is retained for old clients; total is the room UI contract. */
+  /** The top-level totals and exams retain the rolling five-minute window. */
   total: number;
+  today?: StudyPresenceToday;
+  yesterdayCount?: number;
   measuredAt: string;
   validUntil: string;
   windowSeconds: number;
@@ -33,9 +37,9 @@ export type PresenceViewState =
 // Demo is an explicit UI-only mode. Neither API responses nor failures create it.
 export type PresenceRoomMode = PresenceViewState["mode"] | "demo";
 
-export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number): MeasuredPresence {
-  return { ...snapshot, status: "measured", total: snapshot.count,
-    measuredAt: new Date(measuredAt).toISOString(), validUntil: new Date(measuredAt + PRESENCE_POLL_MS).toISOString(),
+export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number, expiresAt = Infinity, today?: StudyPresenceToday, yesterdayCount?: number): MeasuredPresence {
+  return { ...snapshot, ...(today && { today }), ...(yesterdayCount !== undefined && { yesterdayCount }), status: "measured", total: snapshot.count,
+    measuredAt: new Date(measuredAt).toISOString(), validUntil: new Date(Math.min(measuredAt + PRESENCE_POLL_MS, expiresAt)).toISOString(),
     windowSeconds: PRESENCE_WINDOW_MS / 1000 };
 }
 
@@ -48,9 +52,13 @@ export function parseMeasuredPresence(value: unknown, now = Date.now()): Measure
       typeof data.measuredAt !== "string" || typeof data.validUntil !== "string") return null;
   const measuredAt = Date.parse(data.measuredAt), validUntil = Date.parse(data.validUntil);
   if (!Number.isFinite(measuredAt) || !Number.isFinite(validUntil) || measuredAt > now + 5_000 ||
-      validUntil - measuredAt !== PRESENCE_POLL_MS) return null;
+      validUntil <= measuredAt || validUntil - measuredAt > PRESENCE_POLL_MS) return null;
   if (new Date(measuredAt).toISOString() !== data.measuredAt || new Date(validUntil).toISOString() !== data.validUntil) return null;
-  return { ...snapshot, status: "measured", total: snapshot.count, measuredAt: data.measuredAt,
+  const today = parseStudyPresenceToday(data.today);
+  const yesterday = data.yesterdayCount;
+  const yesterdayCount = typeof yesterday === "number" && Number.isSafeInteger(yesterday) && yesterday >= 0 ? yesterday : undefined;
+  return { ...snapshot, ...(today && { today }), ...(yesterdayCount !== undefined && { yesterdayCount }),
+    status: "measured", total: snapshot.count, measuredAt: data.measuredAt,
     validUntil: data.validUntil, windowSeconds: PRESENCE_WINDOW_MS / 1000 };
 }
 

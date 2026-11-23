@@ -1,8 +1,25 @@
+import { QUALIFICATION_GROUPS, qualificationGroupPath } from "./lib/qualifications/groups";
 import type { NextConfig } from "next";
 import { resolve } from "node:path";
+import { randomUUID } from "node:crypto";
 import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
+import { EXAM_CODE_ALIASES } from "./lib/questions/exam-aliases";
+import { QUESTION_CORPUS_DIR, STATIC_CORPUS_FILE } from "./lib/questions/corpus-files";
 
 const isDev = process.env.NODE_ENV === "development";
+// Inlined into both the client and the prerendered worker on every build.
+const pwaBuildId = randomUUID();
+const useQuestionCorpus = process.env.NODE_ENV === "production";
+const questionAliases: Record<string, string> = useQuestionCorpus ? {
+  "@/data/questions": "./lib/questions/runtime-registry.ts",
+  "@/lib/questions/get-questions": "./lib/questions/runtime-loaders.ts",
+} : {};
+const gatedAliases: Record<string, string> = process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
+  "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
+  "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
+  "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
+  "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
+} : {};
 
 const cspDirectives = [
   "default-src 'self'",
@@ -61,7 +78,22 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
+  env: { NEXT_PUBLIC_PWA_BUILD_ID: pwaBuildId },
   webpack(config, { webpack }) {
+    for (const [source, target] of Object.entries(questionAliases)) {
+      config.resolve.alias[`${source}$`] = resolve(process.cwd(), target);
+    }
+    if (useQuestionCorpus) {
+      // Also cover imports already resolved by Next's TypeScript path plugin.
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /[\\/]data[\\/]questions[\\/]index\.ts$/,
+        resolve(process.cwd(), "lib/questions/runtime-registry.ts"),
+      ));
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /[\\/]lib[\\/]questions[\\/]get-questions\.ts$/,
+        resolve(process.cwd(), "lib/questions/runtime-loaders.ts"),
+      ));
+    }
     if (process.env.WEB_STRICT_CONTENT_GATE === "true") {
       config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
       config.plugins.push(new webpack.NormalModuleReplacementPlugin(
@@ -80,12 +112,10 @@ const nextConfig: NextConfig = {
     return config;
   },
   turbopack: {
-    resolveAlias: process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
-      "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
-      "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
-      "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
-      "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
-    } : {},
+    resolveAlias: {
+      ...questionAliases,
+      ...gatedAliases,
+    },
   },
   // Prisma uses the Node-API library engine here (engineType "library"), which loads
   // runtime/library.js + the native .so engine. The per-database WASM query engines /
@@ -97,15 +127,31 @@ const nextConfig: NextConfig = {
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.js",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
       "**/node_modules/@prisma/client/runtime/*.map",
+      // Node functions load the native library engine (.so.node); the WebAssembly
+      // engine is only for edge/driver-adapter clients and is not used here.
+      "**/node_modules/.prisma/client/query_engine_bg.wasm",
+      "**/node_modules/.prisma/client/query_engine_bg.js",
+      "**/node_modules/.prisma/client/query_engine-windows.dll.node",
     ],
+    "/api/copilot": [`./${QUESTION_CORPUS_DIR}/${STATIC_CORPUS_FILE}`],
+    // The exam-library copilot answers from the official paper only (no RAG), so the
+    // copilot search index and local audit logs are not needed and pushed the function
+    // past Vercel's 250MB limit (265MB) once the question corpus grew.
+    "/api/copilot/exam-library": ["./generated/copilot/**/*"],
   },
   outputFileTracingIncludes: {
+    "/sw.js": ["./lib/pwa/sw.js"],
+    // OG images are generated from their own assets and have no question corpus dependency.
+    "!/api/og": [`./${QUESTION_CORPUS_DIR}/**/*`],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
-    // Prebuilt copilot index, search docs and sharded questions (pnpm copilot:index:write,
-    // run by pnpm build). /api/copilot reads only these in production, not data/questions.
+    "/api/study-plan/catalog/*": ["./data/exam-library/papers/*.json", "./data/exam-library/pe-first/*.json", "./data/exam-library/presentation/*.json"],
+    // Prebuilt copilot index, search docs and question locations (pnpm copilot:index:write).
+    // Question bodies are shared with the per-exam files from question-corpus.
     "/api/copilot": ["./generated/copilot/**/*"],
     "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
+    "/api/og": ["./public/fonts/noto-sans-jp-700.woff", "./public/fonts/noto-sans-jp-OFL.txt", "./app/api/og/default.png",
+      "./public/images/home/study-room-mascots/*-study.webp", "./public/images/home/study-room-mascots/generic-8.webp"],
     "/e-learning/search": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/mobile/catalog": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
@@ -115,6 +161,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...QUALIFICATION_GROUPS.filter(group => !Object.hasOwn(group.members, group.slug)).map(group => ({
+        source: "/" + group.slug, destination: qualificationGroupPath(group.slug), permanent: true as const,
+      })),
+      ...Object.entries(EXAM_CODE_ALIASES).flatMap(([alias, canonical]) => [
+        { source: `/${alias}/:path*`, destination: `/${canonical}/:path*`, permanent: true },
+        { source: `/q/${alias}/:path*`, destination: `/q/${canonical}/:path*`, permanent: true },
+      ]),
       ...Object.entries(BLOG_ARTICLE_ALIASES).map(([alias, canonical]) => ({
         source: `/blog/${alias}`,
         destination: `/blog/${canonical}`,
@@ -127,6 +180,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      { source: "/features/ai-explanation", destination: "/features/copilot", statusCode: 301 },
+      { source: "/features/essay-grading", destination: "/essay", statusCode: 301 },
+      // Retired duplicate entry points; query values are preserved by Next.
+      { source: "/account/study-plan", destination: "/study-plan", statusCode: 301 },
+      { source: "/quiz/review", destination: "/review", statusCode: 301 },
       // Consolidated account sub-pages → dashboard
       // (no query string in destination; tabs default to 'overview' and the dashboard's
       // hashchange listener handles deep linking via #tab=...)
@@ -191,9 +249,13 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: {
-    // Large static question corpus: bound prerender workers so Windows CI does
-    // not exhaust memory while generating thousands of /q pages.
-    cpus: 4,
+    // Restoring Turbopack's old corpus graph can retain several GB even after
+    // its imports have been replaced. Compile the small runtime graph fresh;
+    // development caching and the application's ISR caches remain enabled.
+    turbopackFileSystemCacheForBuild: false,
+    // Keep two page workers alongside the compiler on the 8 GB build machine.
+    // /q already uses on-demand ISR; this limits the other prerendered routes.
+    cpus: 2,
     optimizePackageImports: [
       "lucide-react",
       "@radix-ui/react-dialog",
@@ -233,7 +295,7 @@ const nextConfig: NextConfig = {
       {
         source: "/sw.js",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+          { key: "Cache-Control", value: "no-cache, max-age=0, must-revalidate" },
           { key: "Service-Worker-Allowed", value: "/" },
         ],
       },

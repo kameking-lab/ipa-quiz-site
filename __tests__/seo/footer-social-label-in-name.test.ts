@@ -8,8 +8,6 @@ describe("フッター SNS リンク", () => {
   it("凍結したXアカウントへのリンクやメタ情報を表示しない", () => {
     expect(source).not.toContain("kakomon_ai_jp");
     expect(source).not.toMatch(/https:\/\/(?:x|twitter)\.com\//);
-    expect(source).toContain("https://www.instagram.com/kakomon_ipa_jp/");
-    expect(source).toContain("https://www.youtube.com/channel/UCrR65J1ZQ6Zzr0Gs70YPHNA");
   });
 
   it("廃止したnoteの記事導線を表示しない", () => {

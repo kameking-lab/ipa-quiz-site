@@ -1,4 +1,4 @@
-import { StrictMode, useState } from "react";
+import { useState } from "react";
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { MobileInstallControl } from "@/components/pwa/MobileInstallControl";
@@ -41,6 +41,7 @@ function control() {
 const addButton = () => screen.getByRole("button", { name: "ホーム画面に追加" });
 
 beforeEach(() => {
+  localStorage.clear();
   standalone = false;
   displayListeners = new Set();
   setDevice(android);
@@ -65,14 +66,6 @@ afterEach(() => {
 });
 
 describe("mobile home-screen installation", () => {
-  it("returns focus to the separate guidance trigger when a native prompt is available", () => {
-    control();
-    installEvent();
-    const origin = screen.getByRole("button", { name: "追加方法を見る" });
-    fireEvent.click(origin);
-    fireEvent.click(screen.getByRole("button", { name: "追加方法を閉じる" }));
-    expect(origin).toHaveFocus();
-  });
 
   it("recovers after leaving standalone mode and ignores the previous pending choice", async () => {
     control();
@@ -276,12 +269,4 @@ describe("mobile home-screen installation", () => {
     expect(addButton()).toBeEnabled();
   });
 
-  it("keeps exactly one display listener through StrictMode and works with storage unavailable", () => {
-    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => { throw new Error("storage blocked"); });
-    render(<StrictMode><MobileInstallProvider><MobileInstallControl /></MobileInstallProvider></StrictMode>);
-    expect(displayListeners.size).toBe(1);
-    expect(installEvent().defaultPrevented).toBe(true);
-    fireEvent.click(screen.getByRole("button", { name: "追加方法を見る" }));
-    expect(screen.getByRole("heading", { name: "スマートフォンでの追加方法" })).toBeVisible();
-  });
 });

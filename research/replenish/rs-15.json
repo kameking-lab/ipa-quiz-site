@@ -1,0 +1,64 @@
+{
+  "lane": "rs-15",
+  "branch": "cx/kako-restock-g12-20261117",
+  "allocationRule": "rs-4〜13の実補充資格を除きPLAN3の元順位で再採番、偶数番目を担当。未処理割当だけで全除外しない先行班の解釈を継続。",
+  "remainingPriority": [
+    "denken1",
+    "benrishi",
+    "shihoshoshi",
+    "denken2",
+    "tsukanshi",
+    "gas-kou",
+    "zoen1",
+    "keiryoshi-nodo",
+    "kenchikushi1",
+    "rinsho-kensagishi",
+    "kanri-eiyoshi",
+    "kenchiku-setsubishi",
+    "mokuzo-kenchikushi"
+  ],
+  "allocated": [
+    "benrishi",
+    "denken2",
+    "gas-kou",
+    "keiryoshi-nodo",
+    "rinsho-kensagishi",
+    "kenchiku-setsubishi"
+  ],
+  "selected": {
+    "exam": "kenchiku-setsubishi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am1",
+    "questionCount": 27,
+    "status": "completed",
+    "remainingOtherSubjects": 78,
+    "choiceExplanationCount": 108,
+    "figureCount": 4,
+    "sourceManifest": "data/questions/kenchiku-setsubishi/2024-am1-sources.json"
+  },
+  "skipped": {
+    "benrishi": "2024公式サイト403",
+    "denken2": "2025・2026年度の既存原稿を台帳branchInventoryと照合、重複作成しない。2024年度は未調査",
+    "gas-kou": "2024公式PDFは小文字r6・大文字R6とも404。公式現行一覧は2025・2026のみ",
+    "keiryoshi-nodo": "2024年度は既存原稿あり。2023公式一覧・正答は403",
+    "rinsho-kensagishi": "2025・2026既存原稿あり。2024年度の医学根拠は未調査。原典取得済みの建築設備士を先に実装"
+  },
+  "mergedBranches": [
+    "cx/kako-restock-20261117",
+    "cx/kako-restock-g1-20261117",
+    "cx/kako-restock-g2-20261117",
+    "cx/kako-restock-g3-20261117",
+    "cx/kako-restock-g4-20261117",
+    "cx/kako-restock-g5-20261117",
+    "cx/kako-restock-g6-20261117",
+    "cx/kako-restock-g7-20261117",
+    "cx/kako-restock-g8-20261117",
+    "cx/kako-restock-g9-20261117",
+    "cx/kako-restock-g10-20261117",
+    "cx/kako-restock-g11-20261117",
+    "cx/kako-restock-g12-20261117",
+    "cx/kako-year-it2-20261117",
+    "cx/kako-year-nonit2-20261117"
+  ]
+}

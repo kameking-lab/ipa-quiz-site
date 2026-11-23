@@ -1,0 +1,1454 @@
+[
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q1",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 1,
+    "officialQuestionLabel": "Ⅰ−1−1",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "設計・計画",
+    "topicTags": [
+      "設計・計画",
+      "金属材料の性質"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−1−1　金属材料の疲労、クリープ、縦弾性係数と応力集中について、空欄アからエに入る組合せを選んでください。",
+    "choices": {
+      "ア": "① 引張・高温・小さい・大きく",
+      "イ": "② 引張・高温・大きい・小さく",
+      "ウ": "③ 圧縮・高温・小さい・小さく",
+      "エ": "④ 圧縮・引張強さが大きい材料・小さい・大きく",
+      "オ": "⑤ 引張・引張強さが大きい材料・大きい・大きく"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "同じ応力振幅なら、平均応力が引張側に寄ると疲労破壊までの繰返し回数は減る傾向があります。高温ではクリープが顕著になり、同じ応力では縦弾性係数が小さいほどひずみが大きくなります。断面の急変部では応力が集中します。",
+    "choiceExplanations": {
+      "ア": "引張側の平均応力、高温でのクリープ、小さい縦弾性係数、形状急変部での応力増大の全てが対応します。",
+      "イ": "同じ応力では縦弾性係数が大きいほどひずみは小さくなります。急な形状変化は等価応力を局所的に増やします。",
+      "ウ": "平均応力の変化は引張方向です。また形状の急変部では応力が集中します。",
+      "エ": "疲労破壊を早めるのは引張側です。クリープが顕著になる条件として問われているのは高温です。",
+      "オ": "クリープを促す条件は温度の上昇で、弾性変形しやすいのは縦弾性係数が小さい場合です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q01.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−1−1の原本と選択肢。金属材料の性質。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=1",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−1−1（問題PDF 1ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q2",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 2,
+    "officialQuestionLabel": "Ⅰ−1−2",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "設計・計画",
+    "topicTags": [
+      "設計・計画",
+      "確率分布の使い分け"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−1−2　確率分布とその適用例の組合せのうち、不適切なものを選んでください。",
+    "choices": {
+      "ア": "① サイコロの出目：一様分布",
+      "イ": "② 大量生産での不良品数：ポアソン分布で近似",
+      "ウ": "③ 次の災害までの期間：指数分布で近似",
+      "エ": "④ 交差点での5年間の事故件数：正規分布で近似",
+      "オ": "⑤ コインを5回投げて表が出る回数：二項分布"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "設問の交差点での事故件数は非負整数の計数データです。まれな事象が概ね一定の率で独立に発生すると仮定するモデルではポアソン分布を用います。発生件数が十分大きいなどの条件が示されないこの設問では、正規分布で近似するとした④が不適切です。",
+    "choiceExplanations": {
+      "ア": "公平なサイコロの各面は同確率で出るため、離散一様分布で表せます。",
+      "イ": "試行回数が多く不良確率が小さければ、二項分布の不良数をポアソン分布で近似できます。",
+      "ウ": "発生率を一定としたポアソン過程では、隣り合う発生の待ち時間が指数分布になります。",
+      "エ": "事故件数のような離散的な値に、十分大きな期待件数などを確かめず正規近似を当てはめるのは不適切です。",
+      "オ": "各投げ方を独立、表が出る確率を一定とすれば、表の回数は試行数5の二項分布に従います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q02.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−1−2の原本と選択肢。確率分布の使い分け。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=2",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−1−2（問題PDF 2ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q3",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 3,
+    "officialQuestionLabel": "Ⅰ−1−3",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "設計・計画",
+    "topicTags": [
+      "設計・計画",
+      "独立な力の合成"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−1−3　独立な引張力と圧縮力が棒に作用するとき、合力が200 N以上の引張力になる確率の範囲を、上側確率表から選んでください。",
+    "choices": {
+      "ア": "① 0.2%未満",
+      "イ": "② 0.2%以上1%未満",
+      "ウ": "③ 1%以上5%未満",
+      "エ": "④ 5%以上10%未満",
+      "オ": "⑤ 10%以上"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "引張を正とすると合力の平均は300−200＝100 Nです。独立なので分散は30²＋40²＝2500で、標準偏差は50 Nです。200 Nを標準化すると2となり、表から上側確率は2.28%です。",
+    "choiceExplanations": {
+      "ア": "この範囲は表のz＝3.0での0.13%に相当する小ささです。200 Nに対応するzは2.0です。",
+      "イ": "z＝2.5などに対応する範囲です。独立な力の分散を足すと、本問のzは2.0になります。",
+      "ウ": "表でz＝2.0の行に当たる上側確率2.28%はこの範囲に入ります。",
+      "エ": "z＝1.5であれば6.68%ですが、200 Nは平均より標準偏差二つ分だけ上です。",
+      "オ": "例えばz＝1.0であれば15.9%です。本問の200 Nは平均からさらに遠く、上側確率は小さくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q03.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−1−3の原本と選択肢。独立な力の合成。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=2",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−1−3（問題PDF 2ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q4",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 4,
+    "officialQuestionLabel": "Ⅰ−1−4",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "設計・計画",
+    "topicTags": [
+      "設計・計画",
+      "総コストの最小化"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−1−4　安全率をxとし、損傷確率1/(1＋x)、損失9億円、製造費x億円のとき、期待損失を含む総コストを最小にするx（x＞1）を求めてください。",
+    "choices": {
+      "ア": "① 2.0",
+      "イ": "② 2.5",
+      "ウ": "③ 3.0",
+      "エ": "④ 3.5",
+      "オ": "⑤ 4.0"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "総コストはx＋9/(1＋x)億円です。xで微分すると1−9/(1＋x)²となり、x＝2でゼロになります。x＞1ではこの点より左で負、右で正なので、x＝2が最小点です。",
+    "choiceExplanations": {
+      "ア": "x＝2では限界製造費1と、期待損失を減らす効果9/(1＋x)²が等しくなり、総コストは5億円です。",
+      "イ": "x＝2.5では微分値が正で、総コストは2.5＋9/3.5で5億円を上回ります。",
+      "ウ": "x＝3では総コストは3＋9/4＝5.25億円で、最小値より大きくなります。",
+      "エ": "x＝3.5では期待損失が2億円でも、製造費との合計は5.5億円です。",
+      "オ": "x＝4では期待損失が1.8億円まで下がりますが、合計は5.8億円に増えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q04.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−1−4の原本と選択肢。総コストの最小化。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=3",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−1−4（問題PDF 3ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q5",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 5,
+    "officialQuestionLabel": "Ⅰ−1−5",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "設計・計画",
+    "topicTags": [
+      "設計・計画",
+      "はりの曲げ応力とたわみ"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−1−5　等分布荷重を受ける片持ばりについて、円形断面の直径と最大曲げ応力・最大たわみの関係、および長方形断面の高さと最大曲げ応力の関係を選んでください。",
+    "choices": {
+      "ア": "① 3乗・比例・4乗・3乗",
+      "イ": "② 4乗・比例・3乗・2乗",
+      "ウ": "③ 3乗・反比例・4乗・2乗",
+      "エ": "④ 4乗・反比例・3乗・3乗",
+      "オ": "⑤ 3乗・反比例・4乗・3乗"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "最大曲げ応力は曲げモーメントを断面係数Zで割り、最大たわみは断面二次モーメントIに反比例します。円形ではI∝d⁴、Z＝I/(d/2)∝d³です。長方形ではI＝bh³/12、Z＝I/(h/2)＝bh²/6となります。",
+    "choiceExplanations": {
+      "ア": "円形の指数は合っていますが、断面が大きいほど曲げ応力とたわみは小さくなります。長方形で応力を決めるZの高さの指数も2です。",
+      "イ": "円形断面の4乗は断面二次モーメント、3乗は断面係数に対応します。いずれも応力・たわみの分母です。",
+      "ウ": "円形応力はd³、円形たわみはd⁴、長方形応力はh²に対してそれぞれ反比例します。",
+      "エ": "円形の指数を曲げ応力とたわみの間で取り違えています。長方形の3乗はIで、Zではありません。",
+      "オ": "円形の場合は合っています。長方形では断面二次モーメントを外縁までの距離h/2で割るため、応力を決める指数は2です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q05.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−1−5の原本と選択肢。はりの曲げ応力とたわみ。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=3",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−1−5（問題PDF 3ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q6",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 6,
+    "officialQuestionLabel": "Ⅰ−1−6",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "設計・計画",
+    "topicTags": [
+      "設計・計画",
+      "期待価値での案の比較"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−1−6　表の社会条件a・b・cがそれぞれ70%・20%・10%で発生するとき、期待便益から建設費を引いた値が最大となる施設計画を選んでください。",
+    "choices": {
+      "ア": "① 計画案ア",
+      "イ": "② 計画案イ",
+      "ウ": "③ 計画案ウ",
+      "エ": "④ 計画案エ",
+      "オ": "⑤ 計画案オ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "社会条件ごとの便益を確率で加重平均し、各案の建設費を差し引きます。案イは0.7×5＋0.2×4＋0.1×7−3＝2.0億円となり、五案中で最も大きくなります。",
+    "choiceExplanations": {
+      "ア": "案アは3.5＋0.8＋0.4−3＝1.7億円です。条件cでの便益が案イより3億円小さく、期待値では0.3億円の差となります。",
+      "イ": "案イは5.0億円の期待便益に対して建設費が3億円で、差引き2.0億円です。",
+      "ウ": "案ウは2.1＋1.2＋0.7−3＝1.0億円です。確率の高い条件aでの便益が小さくなります。",
+      "エ": "案エは4.2＋1.0＋0.3−4＝1.5億円です。期待便益は高いものの、建設費も案イより高くなります。",
+      "オ": "案オは4.9＋0.8＋0.5−6＝0.2億円です。期待便益は最大ですが、差し引く建設費が6億円です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q06.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−1−6の原本と選択肢。期待価値での案の比較。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−1−6（問題PDF 4ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q7",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 7,
+    "officialQuestionLabel": "Ⅰ−2−1",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "情報・論理",
+    "topicTags": [
+      "情報・論理",
+      "テレワークの安全対策"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−2−1　テレワークにおける情報セキュリティ対策について、最も不適切な記述を選んでください。",
+    "choices": {
+      "ア": "① Web会議URLを安全な通信路で送付すれば、意図しない参加者を防げる",
+      "イ": "② VPN機器などの脆弱性情報を継続して集める",
+      "ウ": "③ テレワークではフィッシング被害のリスクが高まる",
+      "エ": "④ 第三者の出入りが多い場所で業務をしない",
+      "オ": "⑤ インシデント発生時の連絡先が分からないと被害が拡大し得る"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "会議URLを安全に送っても、転送などによって第三者がURLを入手する可能性は残ります。会議サービス側で本人認証、待機室、参加許可などを組み合わせて入室を管理します。",
+    "choiceExplanations": {
+      "ア": "通信経路の保護はURLの送付時に有効ですが、入室者の本人確認や参加権限の確認までは行いません。",
+      "イ": "VPN機器は外部から接続を受けるため、脆弱性情報を集めて更新などの対応を判断します。",
+      "ウ": "対面で確認しづらくなると、不審な依頼や連絡を見分けにくくなります。連絡元の確認手段を用意します。",
+      "エ": "他人の出入りが多い場所では画面や会話を見聞きされる恐れがあり、場所の選択は対策になります。",
+      "オ": "連絡先や初動手順を周知しておけば、発見から隔離や調査を始めるまでの遅れを抑えられます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q07.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−2−1の原本と選択肢。テレワークの安全対策。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=5",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−2−1（問題PDF 5ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.soumu.go.jp/main_sosiki/cybersecurity/telework/",
+      "https://www.ipa.go.jp/security/anshin/measures/telework.html",
+      "https://security-portal.cyber.go.jp/curriculum/torikumi/mic_telework.html"
+    ]
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q8",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 8,
+    "officialQuestionLabel": "Ⅰ−2−2",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "情報・論理",
+    "topicTags": [
+      "情報・論理",
+      "四つの集合の包除原理"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−2−2　4集合の要素数が各11、任意の2集合の共通要素数が7、任意の3集合の共通要素数が4、和集合の要素数が16のとき、4集合すべての共通要素数を求めてください。",
+    "choices": {
+      "ア": "① 8",
+      "イ": "② 4",
+      "ウ": "③ 2",
+      "エ": "④ 1",
+      "オ": "⑤ 0"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "包除原理では各集合の総和から2集合の交差を引き、3集合の交差を足し、4集合の交差xを引きます。組の数はそれぞれ4、6、4なので、16＝4×11−6×7＋4×4−x＝18−xです。",
+    "choiceExplanations": {
+      "ア": "4集合共通の要素は各3集合共通の要素にも含まれるため、4を超える8はあり得ません。",
+      "イ": "x＝4の場合、包除原理の式で和集合は18−4＝14となり、条件の16に合いません。",
+      "ウ": "18から16を引くと2になり、各3集合の共通要素数4以下という条件にも合います。",
+      "エ": "x＝1なら和集合は17になります。",
+      "オ": "4集合共通の要素がなければ、最終項を引かず和集合は18になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q08.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−2−2の原本と選択肢。四つの集合の包除原理。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=5",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−2−2（問題PDF 5ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q9",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 9,
+    "officialQuestionLabel": "Ⅰ−2−3",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "情報・論理",
+    "topicTags": [
+      "情報・論理",
+      "LRUページ置換"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−2−3　主記憶に3ページを保持するLRU方式で、空の状態から2→1→1→2→3→4→1→3→4と参照します。外部記憶のアクセスをM秒、主記憶をH秒として総時間を求めてください。",
+    "choices": {
+      "ア": "① 7M＋2H 秒",
+      "イ": "② 6M＋3H 秒",
+      "ウ": "③ 5M＋4H 秒",
+      "エ": "④ 4M＋5H 秒",
+      "オ": "⑤ 3M＋6H 秒"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "1・2回目は初回参照なので外部記憶、3・4回目は主記憶です。5回目に3を格納し、6回目に4を格納するとき最も長く参照されていない1を追い出します。7回目の1で2を追い出し、最後の3と4は主記憶に残っています。",
+    "choiceExplanations": {
+      "ア": "3・4・8・9回目の四つでヒットするため、主記憶アクセス2回では少なすぎます。",
+      "イ": "4を取り込んだ際は古い1だけが出るので、最後の3と4は両方ともヒットします。",
+      "ウ": "外部記憶は1・2・5・6・7回目、主記憶は3・4・8・9回目です。",
+      "エ": "異なる4ページの初回読込みに加え、6回目に外された1を7回目に読み直します。",
+      "オ": "最初に参照するページが4種類あるだけでも外部記憶が4回必要です。3回では足りません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q09.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−2−3の原本と選択肢。LRUページ置換。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=6",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−2−3（問題PDF 6ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q10",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 10,
+    "officialQuestionLabel": "Ⅰ−2−4",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "情報・論理",
+    "topicTags": [
+      "情報・論理",
+      "ハミング距離と誤り訂正"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−2−4　1110101と1001111のハミング距離、および図の三つの付加ビットの規則で1000010を受信したときの送信列を選んでください。通信誤りは高々1ビットとします。",
+    "choices": {
+      "ア": "① 4・0000010",
+      "イ": "② 5・1100010",
+      "ウ": "③ 4・1001010",
+      "エ": "④ 5・1000110",
+      "オ": "⑤ 4・1000011"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "最初の二列は2、3、4、6番目が異なるので距離は4です。受信列の先頭4ビット1000から、規則どおり付加ビットを計算すると011になります。受信の付加部010とは最後の1ビットだけが違うため、送信列は1000011です。",
+    "choiceExplanations": {
+      "ア": "0000の付加部は000です。末尾が010のままでは符号の条件を満たしません。",
+      "イ": "二列の異なる位置は四つです。また1100の付加部は110となり、この候補の010とは一致しません。",
+      "ウ": "1001の付加部は100になります。候補の010では三つの規則に合いません。",
+      "エ": "距離は5ではなく4です。1000の付加部は011なので、候補の110も一致しません。",
+      "オ": "距離は4です。最後のビットだけを反転すると先頭1000に対応する付加部011となり、全条件を満たします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q10.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−2−4の原本と選択肢。ハミング距離と誤り訂正。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=7",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−2−4（問題PDF 7ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q11",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 11,
+    "officialQuestionLabel": "Ⅰ−2−5",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "情報・論理",
+    "topicTags": [
+      "情報・論理",
+      "2進数を10進数に変換"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−2−5　図のアルゴリズムで2進数11001011を10進数に変換するとき、途中の値6と最後の203の間に入る四つの値を求めてください。",
+    "choices": {
+      "ア": "① 12・25・51・102",
+      "イ": "② 13・26・50・102",
+      "ウ": "③ 13・26・52・101",
+      "エ": "④ 13・25・50・101",
+      "オ": "⑤ 12・25・50・101"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "上位桁から順に読み、現在値を2倍して次のビットを足します。6の次に読むビットは0、1、0、1、1の順です。したがって6→12→25→50→101→203となります。",
+    "choiceExplanations": {
+      "ア": "25の次のビットは0なので、次は51ではなく50です。",
+      "イ": "6の次のビットは0で、13ではなく12になります。",
+      "ウ": "13、26、52という前半の並びは、実際と異なるビットを読んだ結果です。6の次は12、次いで25です。",
+      "エ": "後ろの25、50、101は正しいものの、6の直後は2×6＋0＝12です。",
+      "オ": "各段階で2倍して順に0、1、0、1を足しています。最後の1を足すと203になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q11.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−2−5の原本と選択肢。2進数を10進数に変換。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=8",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−2−5（問題PDF 8ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q12",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 12,
+    "officialQuestionLabel": "Ⅰ−2−6",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "情報・論理",
+    "topicTags": [
+      "情報・論理",
+      "IPアドレス空間"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−2−6　32ビットのIPv4に対し、128ビットのIPv6で表現できるアドレス数は何倍ですか。",
+    "choices": {
+      "ア": "① 2⁴倍",
+      "イ": "② 2¹⁶倍",
+      "ウ": "③ 2³²倍",
+      "エ": "④ 2⁹⁶倍",
+      "オ": "⑤ 2¹²⁸倍"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "ビット列がnビットなら表現できる組合せは2ⁿ通りです。IPv6の2¹²⁸をIPv4の2³²で割ると、比は2の128−32乗、すなわち2⁹⁶です。",
+    "choiceExplanations": {
+      "ア": "128÷32＝4はビット長の比です。アドレス空間の比では、指数の差を取ります。",
+      "イ": "IPv6の一つのフィールドは16ビットですが、ここではアドレス全体の組合せを比較します。",
+      "ウ": "2³²はIPv4そのもののアドレス数です。",
+      "エ": "ビット長が96ビット増えるので、組合せは2⁹⁶倍になります。",
+      "オ": "2¹²⁸はIPv6そのもののアドレス数で、IPv4の組合せ数でまだ割っていません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q12.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−2−6の原本と選択肢。IPアドレス空間。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=9",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−2−6（問題PDF 9ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.rfc-editor.org/rfc/rfc791",
+      "https://www.rfc-editor.org/rfc/rfc8200"
+    ]
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q13",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 13,
+    "officialQuestionLabel": "Ⅰ−3−1",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "解析",
+    "topicTags": [
+      "解析",
+      "導関数の差分表現"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−3−1　格子点xᵢでの一次導関数df/dxの差分表現として誤っているものを選んでください。格子幅はΔです。",
+    "choices": {
+      "ア": "① (fᵢ₊₁−fᵢ)/Δ",
+      "イ": "② (3fᵢ−4fᵢ₋₁＋fᵢ₋₂)/(2Δ)",
+      "ウ": "③ (fᵢ₊₁−fᵢ₋₁)/(2Δ)",
+      "エ": "④ (fᵢ₊₁−2fᵢ＋fᵢ₋₁)/Δ²",
+      "オ": "⑤ (fᵢ−fᵢ₋₁)/Δ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "④では中央点の両側を使って二階差分を取り、格子幅の二乗で割っています。テイラー展開で一次の項が相殺され、二次導関数が残ります。一次導関数に対する近似は、格子上の値の差を格子間隔で割ります。",
+    "choiceExplanations": {
+      "ア": "現在点と一つ先の点による前進差分で、一次導関数を近似します。",
+      "イ": "以前の2点を組み合わせた後退差分です。展開すると二次の項が消え、一次の項が残ります。",
+      "ウ": "前後の点の値の差を2Δで割る中心差分で、一次導関数を近似します。",
+      "エ": "前進側と後退側の傾きをさらに差分しており、近似するのは二次導関数です。",
+      "オ": "現在点と一つ前の点による後退差分で、一次導関数を近似します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q13.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−3−1の原本と選択肢。導関数の差分表現。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=10",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−3−1（問題PDF 10ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q14",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 14,
+    "officialQuestionLabel": "Ⅰ−3−2",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "解析",
+    "topicTags": [
+      "解析",
+      "ベクトルの外積"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−3−2　三次元の任意のベクトルa、bについて、必ずしも成立しない式を選んでください。",
+    "choices": {
+      "ア": "① (a×b)·a＝0",
+      "イ": "② a×b＝b×a",
+      "ウ": "③ a·b＝b·a",
+      "エ": "④ b·(a×b)＝0",
+      "オ": "⑤ a×a＝0"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "外積は反交換的で、順序を逆にするとa×b＝−(b×a)となります。例えばaがx軸、bがy軸の単位ベクトルなら、a×bとb×aはz軸の正負の向きに分かれます。",
+    "choiceExplanations": {
+      "ア": "a×bはaに垂直なので、その内積はゼロです。",
+      "イ": "平行でないベクトルの外積では、順序を入れ替えると向きが逆になります。",
+      "ウ": "成分ごとの積の総和は順序を替えても同じなので、内積は可換です。",
+      "エ": "a×bはbにも垂直であるため、内積はゼロです。",
+      "オ": "同一のベクトルが張る平行四辺形の面積はゼロで、外積は零ベクトルになります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q14.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−3−2の原本と選択肢。ベクトルの外積。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=10",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−3−2（問題PDF 10ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q15",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 15,
+    "officialQuestionLabel": "Ⅰ−3−3",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "解析",
+    "topicTags": [
+      "解析",
+      "数値解析の精度"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−3−3　数値解析の精度を高める処置として、最も不適切なものを選んでください。",
+    "choices": {
+      "ア": "① 浮動小数点演算を単精度から倍精度へ変更",
+      "イ": "② 有限要素解析で高次要素を使う",
+      "ウ": "③ ゆがみの少ない有限要素を用いる",
+      "エ": "④ 反復回数を減らすため収束判定条件を緩める",
+      "オ": "⑤ 解の変化が大きい箇所を細かく要素分割する"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "収束判定を緩めると、まだ残差などが大きい時点で反復を打ち切る場合があります。計算時間は短くなり得ますが、より精度の高い解が得られる理由にはなりません。",
+    "choiceExplanations": {
+      "ア": "仮数部の精度を上げると、同じ演算で生じる丸め誤差を小さくできます。",
+      "イ": "高次要素はより高次の関数で場を近似でき、滑らかな解の変化を表現しやすくなります。",
+      "ウ": "形状のゆがみを抑えると、要素内の補間や数値積分に悪影響が出にくくなります。",
+      "エ": "例えば残差の許容値を大きくすると、十分に小さくなる前に収束と判定するため、精度が下がり得ます。",
+      "オ": "勾配が大きい領域の要素を細かくすると、局所的な変化を近似しやすくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q15.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−3−3の原本と選択肢。数値解析の精度。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=11",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−3−3（問題PDF 11ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q16",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 16,
+    "officialQuestionLabel": "Ⅰ−3−4",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "解析",
+    "topicTags": [
+      "解析",
+      "棒部材に働く力"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−3−4　図の2本の棒部材ACとBCが節点Cで鉛直荷重Pを受けるとき、ACの軸力N₁とBCの軸力N₂の比N₁/N₂を求めてください。",
+    "choices": {
+      "ア": "① 1/2",
+      "イ": "② 1/√3",
+      "ウ": "③ 1",
+      "エ": "④ √3",
+      "オ": "⑤ 2"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "節点Cには外部からの水平荷重がないため、水平成分はN₁cos30°＝N₂cos60°です。cos30°＝√3/2、cos60°＝1/2を代入して、N₁/N₂＝1/√3となります。",
+    "choiceExplanations": {
+      "ア": "cos60°は1/2ですが、比を求めるにはさらにcos30°で割ります。",
+      "イ": "図の角を水平線から測り、N₂側の余弦をN₁側の余弦で割ると1/√3です。",
+      "ウ": "二つの角度は異なるため、同じ軸力では水平成分が釣り合いません。",
+      "エ": "√3は余弦の順序を逆に割った値で、N₂/N₁に当たります。",
+      "オ": "30°側の棒は同じ軸力でも水平成分が大きいので、N₁/N₂が1より大きくなることはありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q16.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−3−4の原本と選択肢。棒部材に働く力。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=11",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−3−4（問題PDF 11ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q17",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 17,
+    "officialQuestionLabel": "Ⅰ−3−5",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "解析",
+    "topicTags": [
+      "解析",
+      "回転運動のトルク"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−3−5　慣性モーメントIの円盤を、時間Tで角速度ω₁からω₂へ一定の角加速度で増速するために必要なトルクτを求めてください。",
+    "choices": {
+      "ア": "① I(ω₂−ω₁)",
+      "イ": "② I(ω₂−ω₁)T",
+      "ウ": "③ I(ω₂−ω₁)/T",
+      "エ": "④ I(ω₂²−ω₁²)/2",
+      "オ": "⑤ I(ω₂²−ω₁²)T"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "回転運動の式はτ＝Iαです。角速度の差を所要時間で割った角加速度α＝(ω₂−ω₁)/Tを代入します。",
+    "choiceExplanations": {
+      "ア": "I(ω₂−ω₁)は角運動量の変化です。時間で割ってその変化率を求めるとトルクになります。",
+      "イ": "角速度差に時間を掛けても角加速度にはなりません。同じ増速なら、時間が長いほど必要なトルクは小さくなります。",
+      "ウ": "角運動量の変化をTで割っており、単位もkg·m²/s²＝N·mになります。",
+      "エ": "角速度の二乗差から求まるこの式は回転運動エネルギーの増加量です。",
+      "オ": "回転運動エネルギーに比例する量に時間を掛けても、トルクτ＝Iαは得られません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q17.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−3−5の原本と選択肢。回転運動のトルク。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=12",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−3−5（問題PDF 12ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q18",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 18,
+    "officialQuestionLabel": "Ⅰ−3−6",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "解析",
+    "topicTags": [
+      "解析",
+      "糸の横振動"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−3−6　張力Tの糸の中央に物体を付けた図(a)と(b)を比べ、横振動の固有振動数の比 f(a)：f(b) を求めてください。",
+    "choices": {
+      "ア": "① 1：1",
+      "イ": "② 1：√2",
+      "ウ": "③ 1：2",
+      "エ": "④ √2：1",
+      "オ": "⑤ 2：1"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "微小変位xに対して片側の糸の傾きはsinθ≈x/ℓです。半長ℓの両側からの復元力は約2Tx/ℓなので、ばね定数に当たる量は2T/ℓです。(b)は半長と質量がともに2倍で、k/mは(a)の1/4、振動数はその平方根の1/2です。",
+    "choiceExplanations": {
+      "ア": "同じ張力でも半長が異なるため復元力の係数が変わり、質量の違いも振動数に影響します。",
+      "イ": "(b)は質量が増えて復元力の係数も下がるので、(b)の方が高い振動数になることはありません。",
+      "ウ": "(b)が(a)の2倍となる向きの比です。半長と質量が増えると(b)は低い振動数になります。",
+      "エ": "質量だけを2倍にしたときに出る比ですが、図(b)では半長も2倍になります。",
+      "オ": "(b)では復元力の係数が1/2、質量が2倍で、振動数は(a)の1/2となります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q18.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−3−6の原本と選択肢。糸の横振動。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=13",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−3−6（問題PDF 13ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q19",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 19,
+    "officialQuestionLabel": "Ⅰ−4−1",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "材料・化学・バイオ",
+    "topicTags": [
+      "材料・化学・バイオ",
+      "酸と塩基"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−4−1　常温・常圧での酸・塩基と反応について、最も不適切な記述を選んでください。",
+    "choices": {
+      "ア": "① 酸性の強さは酢酸、炭酸、フェノールの順に弱くなる",
+      "イ": "② 0.1 mol/Lの塩酸と酢酸は同じpH",
+      "ウ": "③ NaOH、KOH、Ca(OH)₂、Ba(OH)₂は水に溶けて強塩基性を示す",
+      "エ": "④ 炭酸カルシウムに希塩酸を加えるとCO₂が生じる",
+      "オ": "⑤ 塩化アンモニウムと水酸化カルシウムの混合物を加熱するとアンモニアが生じる"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "塩酸は強酸で水中でほぼ完全に解離し、酢酸は弱酸で一部しか解離しません。濃度を揃えても水素イオン濃度に差があるため、酢酸水溶液の方がpHは高くなります。",
+    "choiceExplanations": {
+      "ア": "水中での酸の強さの比較では、酢酸が炭酸より強く、フェノールはさらに弱い酸です。",
+      "イ": "同じ0.1 mol/Lでも、弱酸の酢酸は塩酸ほど水素イオンを放出しないので同じpHにはなりません。",
+      "ウ": "水に溶けた部分は解離して水酸化物イオンを生じます。溶けやすさと塩基の強さは別の性質です。",
+      "エ": "炭酸塩が酸と反応して生じる炭酸は、水と二酸化炭素に分かれます。",
+      "オ": "アンモニウムイオンが塩基にプロトンを渡すとアンモニアになり、加熱によって気体として放出されます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q19.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−4−1の原本と選択肢。酸と塩基。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=14",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−4−1（問題PDF 14ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q20",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 20,
+    "officialQuestionLabel": "Ⅰ−4−2",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "材料・化学・バイオ",
+    "topicTags": [
+      "材料・化学・バイオ",
+      "酸化数"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−4−2　H₂SのS、単体MnのMn、MnO₄⁻のMn、NH₃のN、HNO₃のNのうち、酸化数が最も小さい原子を選んでください。",
+    "choices": {
+      "ア": "① H₂SのS",
+      "イ": "② 単体MnのMn",
+      "ウ": "③ MnO₄⁻のMn",
+      "エ": "④ NH₃のN",
+      "オ": "⑤ HNO₃のN"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "化合物では各原子の酸化数の和を分子やイオンの電荷に等しくします。Hを＋1、ここでのOを−2として計算すると、順に−2、0、＋7、−3、＋5です。",
+    "choiceExplanations": {
+      "ア": "二つのHの合計が＋2なのでSは−2です。NH₃のNは−3で、Sより小さくなります。",
+      "イ": "単体の原子の酸化数は0です。負の酸化数を持つSやNの方が小さくなります。",
+      "ウ": "x＋4×(−2)＝−1なのでMnは＋7です。イオン全体の負電荷をMnの酸化数とはできません。",
+      "エ": "NH₃は中性でHが3個あるため、Nの酸化数は0−3＝−3です。",
+      "オ": "＋1＋x＋3×(−2)＝0なのでNは＋5です。酸素を含まないNH₃での酸化数とは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q20.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−4−2の原本と選択肢。酸化数。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=14",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−4−2（問題PDF 14ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q21",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 21,
+    "officialQuestionLabel": "Ⅰ−4−3",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "材料・化学・バイオ",
+    "topicTags": [
+      "材料・化学・バイオ",
+      "ニッケルめっき"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−4−3　ニッケルの資源分類と、設問の鋼板への片面めっきに必要なニッケル質量およびめっき後の質量百分率を選んでください。",
+    "choices": {
+      "ア": "① レアメタル・4.5×10⁻² kg・1.8%",
+      "イ": "② ベースメタル・4.5×10⁻² kg・0.18%",
+      "ウ": "③ レアメタル・4.5×10⁻² kg・0.18%",
+      "エ": "④ ベースメタル・8.9×10⁻² kg・0.18%",
+      "オ": "⑤ レアメタル・8.9×10⁻² kg・1.8%"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "ニッケルは日本の鉱物資源の分類ではレアメタルに含まれます。片面の面積は0.50 m²なので、めっき質量は0.50×10⁻⁵×8.9×10³＝0.0445 kgです。鋼板は0.50×0.00060×7.9×10³＝2.37 kgで、割合は0.0445/(2.37＋0.0445)×100≈1.8%です。",
+    "choiceExplanations": {
+      "ア": "分類はレアメタルで、片面の体積から計算するニッケル質量と、めっき後の全体に対する割合も一致します。",
+      "イ": "質量は合っていますが、分類はレアメタルです。また0.0445 kgは全体約2.41 kgの約1.8%です。",
+      "ウ": "分類と質量は合っています。0.18%は、質量比から百分率への計算で桁が一つ小さい値です。",
+      "エ": "8.9×10⁻² kgは両面にめっきした場合に相当します。問題では片面に限っています。",
+      "オ": "割合と分類は合っていますが、面積は片面0.50 m²で、質量は8.9×10⁻² kgの半分です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q21.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−4−3の原本と選択肢。ニッケルめっき。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=14",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−4−3（問題PDF 14ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.jogmec.go.jp/activities/stockpiling/metal/rare-meta.html",
+      "https://www.meti.go.jp/policy/newmiti/mission/2021/2_2_1_3.pdf"
+    ]
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q22",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 22,
+    "officialQuestionLabel": "Ⅰ−4−4",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "材料・化学・バイオ",
+    "topicTags": [
+      "材料・化学・バイオ",
+      "引張試験の公称値"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−4−4　一軸引張試験について、荷重と変位を割る基準寸法、得られる応力とひずみ、初期の直線領域の組合せを選んでください。",
+    "choices": {
+      "ア": "① 変形前・公称応力・公称ひずみ・弾性",
+      "イ": "② 変形後・真応力・公称ひずみ・弾性",
+      "ウ": "③ 変形前・公称応力・真ひずみ・塑性",
+      "エ": "④ 変形後・真応力・真ひずみ・塑性",
+      "オ": "⑤ 変形前・公称応力・公称ひずみ・塑性"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "荷重を初期断面積で割ったものが公称応力、変位を初期長さで割ったものが公称ひずみです。試験開始直後に応力とひずみが比例する直線部は弾性変形領域です。",
+    "choiceExplanations": {
+      "ア": "割る基準をどちらも初期寸法に揃え、公称値として扱い、初期の直線部を弾性としています。",
+      "イ": "真応力はその時点の断面積を使いますが、公称ひずみには変形前の長さが必要です。",
+      "ウ": "初期長さに対する変位の比は公称ひずみです。真ひずみはその時々の長さを基準にして積分します。",
+      "エ": "初期の直線は弾性域です。また変位を変形後の長さで単純に割っても真ひずみにはなりません。",
+      "オ": "二つの公称値と基準寸法は合っていますが、初期の直線部を塑性とする点が誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q22.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−4−4の原本と選択肢。引張試験の公称値。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=15",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−4−4（問題PDF 15ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q23",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 23,
+    "officialQuestionLabel": "Ⅰ−4−5",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "材料・化学・バイオ",
+    "topicTags": [
+      "材料・化学・バイオ",
+      "酵素の触媒作用"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−4−5　酵素の構造、至適温度、反応における役割に関する記述から、最も適切なものを選んでください。",
+    "choices": {
+      "ア": "① 非極性アミノ酸の側鎖は酵素の外表面に存在しやすい",
+      "イ": "② 至適温度が20℃以下または100℃以上の酵素は存在しない",
+      "ウ": "③ 酵素はタンパク質を主成分とする無機触媒",
+      "エ": "④ 酵素は活性化エネルギーを増加させる",
+      "オ": "⑤ リパーゼはトリグリセリドのエステル結合を加水分解する"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "リパーゼは油脂を構成するトリグリセリドのエステル結合の加水分解を触媒します。酵素は反応を進める際の活性化エネルギーを下げます。至適温度は酵素の種類や由来によって異なります。",
+    "choiceExplanations": {
+      "ア": "水溶性のタンパク質では、非極性の側鎖は水を避けて内部に集まる傾向があります。",
+      "イ": "低温適応や高温適応した生物の酵素もあります。すべての酵素に一律の至適温度範囲は当てはまりません。",
+      "ウ": "タンパク質は有機物であり、タンパク質性の酵素は無機触媒には分類されません。",
+      "エ": "酵素は別の反応経路を与えて活性化エネルギーを下げ、反応速度を上げます。",
+      "オ": "リパーゼはトリグリセリドの脂肪酸とグリセロールをつなぐエステル結合を、水を使って切る反応を促進します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q23.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−4−5の原本と選択肢。酵素の触媒作用。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=15",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−4−5（問題PDF 15ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q24",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 24,
+    "officialQuestionLabel": "Ⅰ−4−6",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "材料・化学・バイオ",
+    "topicTags": [
+      "材料・化学・バイオ",
+      "DNAの相補性"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−4−6　二本鎖DNAの一方の鎖でGが25%、Aが15%のとき、同じ鎖または相補鎖の塩基組成について最も適切な記述を選んでください。",
+    "choices": {
+      "ア": "① 同じ鎖のC＋Tは40%",
+      "イ": "② 同じ鎖のG＋Cは90%",
+      "ウ": "③ 相補鎖のTは25%",
+      "エ": "④ 相補鎖のC＋Tは50%",
+      "オ": "⑤ 相補鎖のG＋Aは60%"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "元の鎖でG＋Aは25＋15＝40%なので、C＋Tは60%です。相補鎖では元のCにG、TにAが対応するため、相補鎖のG＋Aは60%になります。",
+    "choiceExplanations": {
+      "ア": "40%は元の鎖のG＋Aです。残りのC＋Tは100−40＝60%です。",
+      "イ": "元の鎖のCは最大でも60%なので、Gを足して90%にはなりません。Cの個別割合は条件から一意に決まりません。",
+      "ウ": "相補鎖のTは元の鎖のAと対になり、15%です。",
+      "エ": "相補鎖のC＋Tは元の鎖のG＋Aに対応するので、40%です。",
+      "オ": "相補鎖のGとAは元の鎖のCとTに対応し、両者を合計した割合は60%です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q24.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−4−6の原本と選択肢。DNAの相補性。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=16",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−4−6（問題PDF 16ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q25",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 25,
+    "officialQuestionLabel": "Ⅰ−5−1",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "環境・エネルギー・技術",
+    "topicTags": [
+      "環境・エネルギー・技術",
+      "気候変動の評価"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−5−1　IPCC第6次評価報告書の第1〜3作業部会の政策決定者向け要約について、不適切な記述を選んでください。",
+    "choices": {
+      "ア": "① 人間の影響が大気・海洋・陸域を温暖化させたことに疑う余地はない",
+      "イ": "② 2011〜2020年の世界平均気温は1850〜1900年より約3℃高かった",
+      "ウ": "③ 極端現象、生物多様性の損失、陸域の劣化、海洋酸性化や海面上昇などの影響がある",
+      "エ": "④ 生態系と人の脆弱性には地域間・地域内で大きな差がある",
+      "オ": "⑤ 2010〜2019年の正味の人為的温室効果ガス排出量の年平均は過去のどの10年よりも高い"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "第1作業部会は2011〜2020年の世界平均地表気温を、1850〜1900年より1.09℃高いと評価しました。約3℃とする②が不適切です。比較に用いる期間を揃えることが重要です。",
+    "choiceExplanations": {
+      "ア": "第1作業部会は、人間の影響による大気・海洋・陸域の温暖化について明確な結論を示しています。",
+      "イ": "設問の二期間の差は約1.1℃と評価されており、約3℃ではありません。",
+      "ウ": "各部会の要約では、極端現象や生態系への影響に加え、海洋の酸性化や海面上昇も扱っています。",
+      "エ": "第2作業部会は、開発や資源へのアクセスの違いなどにより脆弱性の差が大きいことを示しています。",
+      "オ": "第3作業部会の要約は、2010〜2019年平均の排出量がそれ以前のどの10年より高かったことを示しています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q25.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−5−1の原本と選択肢。気候変動の評価。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=17",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−5−1（問題PDF 17ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/",
+      "https://www.ipcc.ch/site/assets/uploads/2021/09/Doc_4_Rev_2_AR6_WGI_Approved_Summary_for_Policymarkers.pdf",
+      "https://www.ipcc.ch/report/ar6/wg2/resources/spm-headline-statements/",
+      "https://www.ipcc.ch/report/ar6/wg3/chapter/summary-for-policymakers/"
+    ]
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q26",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 26,
+    "officialQuestionLabel": "Ⅰ−5−2",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "環境・エネルギー・技術",
+    "topicTags": [
+      "環境・エネルギー・技術",
+      "廃棄物の排出量"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−5−2　一般廃棄物・産業廃棄物と資源循環について、不適切な記述を選んでください。",
+    "choices": {
+      "ア": "① 近年の総排出量は一般廃棄物が産業廃棄物を上回る",
+      "イ": "② 特別管理産業廃棄物は爆発性・毒性・感染性などのある産業廃棄物",
+      "ウ": "③ 廃棄物系バイオマスには建設発生木材・食品廃棄物・下水汚泥などが含まれる",
+      "エ": "④ RPFは廃棄物由来の紙やプラスチックなどを主原料とする固形燃料",
+      "オ": "⑤ 東京2020大会のメダルには使用済み小型家電由来の金属が使われた"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "設問時点の環境省の公表値では、産業廃棄物の総排出量が一般廃棄物を上回っていました。比較には、一般廃棄物と産業廃棄物の同じ年度の総排出量を使います。",
+    "choiceExplanations": {
+      "ア": "環境省の集計では産業廃棄物の総排出量の方が多く、記述は大小関係が逆です。",
+      "イ": "廃棄物処理法は、爆発性・毒性・感染性などにより人の健康や生活環境に被害を生じるおそれのあるもののうち、政令で定めるものを特別管理産業廃棄物としています。",
+      "ウ": "木材、食品残さ、下水汚泥などに含まれる生物由来の資源は、廃棄物系バイオマスに当たります。",
+      "エ": "RPFは古紙や廃プラスチックを主原料に成形した固形燃料で、燃料として資源化する例です。",
+      "オ": "東京2020大会のメダル事業は、使用済みの携帯電話や小型家電などから回収した金属を活用しました。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q26.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−5−2の原本と選択肢。廃棄物の排出量。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=17",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−5−2（問題PDF 17ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/345AC0000000137/20220617_504AC0000000068",
+      "https://laws.e-gov.go.jp/law/345AC0000000137/20260916_508AC0000000043",
+      "https://www.env.go.jp/recycle/waste_tech/ippan/",
+      "https://www.env.go.jp/press/110498-print.html",
+      "https://www.env.go.jp/council/content/03recycle03/000294418.pdf"
+    ]
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q27",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 27,
+    "officialQuestionLabel": "Ⅰ−5−3",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "環境・エネルギー・技術",
+    "topicTags": [
+      "環境・エネルギー・技術",
+      "2019年度の原油輸入"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−5−3　エネルギー白書2021に基づき、2019年度の原油の中東依存度、主な通過海峡、最大輸入相手国と、総輸入額に占める石油・石油製品の輸入額の割合の組合せを選んでください。",
+    "choices": {
+      "ア": "① 約90%・ホルムズ・サウジアラビア・約10%",
+      "イ": "② 約90%・マラッカ・クウェート・約32%",
+      "ウ": "③ 約90%・ホルムズ・クウェート・約10%",
+      "エ": "④ 約67%・マラッカ・クウェート・約10%",
+      "オ": "⑤ 約67%・ホルムズ・サウジアラビア・約32%"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "白書では2019年度の数量ベースの中東依存度は89.6%で、最大の輸入相手はサウジアラビアです。中東から運ぶ原油の多くはホルムズ海峡を通ります。金額の空欄は約10%で、白書脚注14の10.3%は原油のみの集計です。設問のように石油製品も含め、財務省の確定値で原油・粗油と石油製品を合算すると約12.4%です。",
+    "choiceExplanations": {
+      "ア": "数量ベースの中東依存度、ペルシャ湾の出口に当たる海峡、輸入先と金額比の四つが対応します。",
+      "イ": "マラッカ海峡は東南アジアにあり、設問が尋ねる中東地域の海峡はホルムズです。最大の相手国もクウェートではありません。",
+      "ウ": "中東依存度、海峡、金額の割合は合っていますが、最大の輸入相手はサウジアラビアです。",
+      "エ": "約67%は2019年度の中東依存度ではありません。海峡と最大輸入国も、白書の記述に対応しません。",
+      "オ": "海峡と最大の相手国は合いますが、依存度は約90%、金額の割合は約10%です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q27.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−5−3の原本と選択肢。2019年度の原油輸入。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=18",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−5−3（問題PDF 18ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.enecho.meti.go.jp/about/whitepaper/2021/html/2-1-3.html",
+      "https://www.enecho.meti.go.jp/about/whitepaper/2021/pdf/2_1.pdf",
+      "https://www.customs.go.jp/toukei/shinbun/trade-st/2019/2019_217.pdf#page=4"
+    ]
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q28",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 28,
+    "officialQuestionLabel": "Ⅰ−5−4",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "環境・エネルギー・技術",
+    "topicTags": [
+      "環境・エネルギー・技術",
+      "水素の物性と製鉄"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−5−4　1気圧での水素の液化温度、液体体積の気体に対する比、ガソリンと発熱量を比べる基準、水素による鉄鉱石還元の反応熱を選んでください。",
+    "choices": {
+      "ア": "① −162℃・1/600・重量・吸熱",
+      "イ": "② −162℃・1/800・重量・発熱",
+      "ウ": "③ −253℃・1/600・体積・発熱",
+      "エ": "④ −253℃・1/800・体積・発熱",
+      "オ": "⑤ −253℃・1/800・重量・吸熱"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "水素を1気圧で液化する温度は約−253℃で、液体の体積は常温の気体のおよそ1/800です。水素はガソリンより質量当たりの発熱量が大きく、鉄鉱石を水素で還元する反応では熱の供給が必要になります。",
+    "choiceExplanations": {
+      "ア": "−162℃と約1/600は液化天然ガスを説明する際に使われる目安です。水素はさらに低い温度で液化します。",
+      "イ": "液体水素の体積比と重量を基準とする点は合っていますが、液化温度は約−253℃で、鉄鉱石の還元は吸熱です。",
+      "ウ": "約−253℃は正しいものの、液化による体積は約1/800です。発熱量の比較は質量当たりで行います。",
+      "エ": "温度と体積比は合っています。水素の発熱量をガソリンと比べる基準は質量当たりで、還元は吸熱です。",
+      "オ": "温度、体積比、発熱量を比べる基準および反応熱の四つが水素の性質と対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q28.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−5−4の原本と選択肢。水素の物性と製鉄。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=19",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−5−4（問題PDF 19ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.jbic.go.jp/ja/information/reference/image/china2019_01.pdf",
+      "https://www.nipponsteel.com/ir/library/annual_report/pdf/nsc_jp_ir_2025_18_58.pdf"
+    ]
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q29",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 29,
+    "officialQuestionLabel": "Ⅰ−5−5",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "環境・エネルギー・技術",
+    "topicTags": [
+      "環境・エネルギー・技術",
+      "リスクコミュニケーション"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−5−5　科学技術のリスク評価、リスク管理、リスクコミュニケーションについて、不適切な記述を選んでください。",
+    "choices": {
+      "ア": "① リスク管理では科学的評価と技術的可能性・費用対効果などを考慮する",
+      "イ": "② レギュラトリーサイエンスは規制を巡る社会的合意形成を支える",
+      "ウ": "③ リスクコミュニケーションは関係者間の情報と意見の相互交換",
+      "エ": "④ 科学的に評価したリスクと人が認識するリスクには隔たりがあり得る",
+      "オ": "⑤ 受け手の混乱を防ぐため評価過程の開示を避ける"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "リスクコミュニケーションでは、評価結果とともに、判断に使った方法、根拠、不確実性を理解できる形で説明します。評価過程を隠すことは、関係者が判断の根拠を理解し、意見を交換する妨げになります。",
+    "choiceExplanations": {
+      "ア": "科学的評価でリスクの大きさを見積もり、管理では対策の実行可能性や費用も考慮します。",
+      "イ": "科学的知見を規制や対策の判断につなげ、社会と技術の調整に役立てる考え方です。",
+      "ウ": "関係者が疑問や懸念を伝え、情報提供側がそれに応じる双方向のやり取りです。",
+      "エ": "同じ推計値を示しても、経験や制御できると感じる程度などによって受け止め方は変わります。",
+      "オ": "評価の過程や不確実性を分かりやすく明らかにしてこそ、評価結果の意味や限界を共有できます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q29.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−5−5の原本と選択肢。リスクコミュニケーション。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=20",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−5−5（問題PDF 20ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed"
+  },
+  {
+    "id": "gijutsushi1-kiso-2022-annual-kiso-q30",
+    "exam": "gijutsushi1-kiso",
+    "year": 2022,
+    "season": "annual",
+    "session": "kiso",
+    "qNumber": 30,
+    "officialQuestionLabel": "Ⅰ−5−6",
+    "type": "multiple-choice",
+    "subject": "基礎科目",
+    "category": "環境・エネルギー・技術",
+    "topicTags": [
+      "環境・エネルギー・技術",
+      "科学史と技術史"
+    ],
+    "difficulty": 3,
+    "question": "Ⅰ−5−6　ベッセマーの転炉法（ア）、本多光太郎のKS鋼（イ）、カロザースのナイロン（ウ）、ヴェーラーの尿素合成（エ）、志賀潔による赤痢菌発見（オ）を、古い順に並べてください。",
+    "choices": {
+      "ア": "① ア→エ→イ→オ→ウ",
+      "イ": "② ア→エ→オ→イ→ウ",
+      "ウ": "③ エ→ア→オ→イ→ウ",
+      "エ": "④ エ→オ→ア→ウ→イ",
+      "オ": "⑤ オ→エ→ア→ウ→イ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "最も古いのは19世紀前半の尿素合成で、続いて19世紀半ばの転炉法、19世紀末の赤痢菌発見が来ます。20世紀にはKS鋼が開発され、その後にナイロンが開発されました。",
+    "choiceExplanations": {
+      "ア": "尿素合成は転炉法より前です。また、赤痢菌の発見はKS鋼より前です。",
+      "イ": "後半の赤痢菌発見、KS鋼、ナイロンの順は合っていますが、最初は尿素合成です。",
+      "ウ": "有機化合物の人工合成、近代製鋼法、赤痢菌発見、磁石鋼、合成繊維の順です。",
+      "エ": "赤痢菌の発見は転炉法に後れます。ナイロンもKS鋼が開発された後です。",
+      "オ": "赤痢菌発見より先に尿素合成と転炉法があり、20世紀の二つはKS鋼、ナイロンの順です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/gijutsushi1-kiso/2022-annual/q30.webp"
+    ],
+    "imageAltTexts": [
+      "令和4年度 技術士第一次試験 基礎科目 Ⅰ−5−6の原本と選択肢。科学史と技術史。"
+    ],
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9126_1.pdf#page=20",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=1",
+    "sourceAttribution": "出典：日本技術士会「令和4年度 技術士第一次試験 基礎科目」Ⅰ−5−6（問題PDF 20ページ、正答PDF 1ページ）。",
+    "license": "IPEJ-attributed",
+    "officialReferenceUrls": [
+      "https://www.acs.org/molecule-of-the-week/archive/u/urea.html",
+      "https://www.jisf.or.jp/knowledge/mini/index.html",
+      "https://www.kitasato-u.ac.jp/jp/noui/spread/newsletter/no21-30/noui_no27.html",
+      "https://www.imr.tohoku.ac.jp/ja/about/successive_directors.html",
+      "https://www.acs.org/education/whatischemistry/landmarks/carotherspolymers.html"
+    ]
+  }
+]

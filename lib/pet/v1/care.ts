@@ -6,12 +6,15 @@ export type PetCareAction =
   | { type: "stage"; stage: "puppy" | "partner" | "expert" }
   | { type: "path"; path: PetProfile["selectedPath"] }
   | { type: "autoFeed"; enabled: boolean }
+  | { type: "appearance"; costume: "qualification" | "formal"; accessory: "none" | "bandana" | "bow" | "scarf" | "star" }
   | { type: "feed"; rewardId: string };
 /** Store.update supplies an exclusive, detached document and revalidates ownership. */
 export function applyPetCare(document: PetProfileDocument, qualificationId: string, action: PetCareAction, now: number) {
   const profile = document.profiles.find(item => item.qualificationId === qualificationId);
   if (!profile) throw new Error("pet_not_found");
   switch (action.type) {
+    case "appearance":
+      profile.care.appearance = { costume: action.costume, accessory: action.accessory, updatedAt: now }; break;
     case "name": {
       const result = normalizePetName(action.name);
       if (!result.ok) throw new Error("pet_name_invalid");

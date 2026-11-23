@@ -1,7 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
-// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
-const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
+import { KANGOSHI_BEFORE_COMPLETION as KANGOSHI_QUESTIONS, beforeNurseSourceLineBreak } from "../fixtures/kangoshi-before-completion";
 import proof from "@/docs/evidence/nurse-pm-q107-primary-20261010/INTEGRATION.json";
 import { nurseObjectHash } from "./nurse-pm-category-hash";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -15,7 +13,7 @@ describe("114th nursing PM Q107 primary-source adoption", () => {
     expect(
       KANGOSHI_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0),
     ).toBe(proof.newChoices);
-    expect(nurseObjectHash(KANGOSHI_QUESTIONS.filter(q => q.id !== proof.identity))).toBe(
+    expect(nurseObjectHash(KANGOSHI_QUESTIONS.filter(q => q.id !== proof.identity).map(beforeNurseSourceLineBreak))).toBe(
       proof.oldCorpusCanonicalSha256,
     );
     for (const id of proof.individualStopsRetained) {

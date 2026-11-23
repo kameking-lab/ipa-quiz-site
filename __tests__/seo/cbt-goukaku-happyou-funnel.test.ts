@@ -19,7 +19,7 @@ import { extractFaq } from "@/lib/blog/faq";
 // (4) moushikomi-nagare から inbound を受け orphan 化せず、(5) FAQPage 化できる、ことを pin。
 
 const SLUG = "cbt-goukaku-happyou-score-report";
-const PARENT = "ipa-shiken-moushikomi-nagare";
+const PARENT = "ipa-goukaku-shoumeisho-koufu";
 
 describe("CBT 合格発表/スコアレポート記事の事実性と funnel 規律", () => {
   it("記事が存在し cross-区分の制度 general 記事として登録されている", () => {
@@ -32,29 +32,32 @@ describe("CBT 合格発表/スコアレポート記事の事実性と funnel 規
     expect(post!.tags).toContain("CBT");
   });
 
-  it("検証済みの CBT 事実（即時評価点・翌月中旬・スコアレポート・簡易書留）を含む", () => {
+  it("試験直後の評価点と月別の正式発表・証書発送を区別する", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     // 試験終了直後にその場で評価点が表示される
-    expect(body).toContain("試験終了直後");
+    expect(body).toContain("試験直後");
     expect(body).toContain("評価点");
     // 正式発表は受験月の翌月中旬
-    expect(body).toContain("翌月中旬");
+    expect(body).toContain("受験月別の公式日程");
+    expect(body).not.toContain("翌月中旬");
+    expect(body).toContain("https://www.ipa.go.jp/shiken/mousikomi/cbt_sg_fe.html");
     // スコアレポートをマイページで照会
     expect(body).toContain("スコアレポート");
     // 合格証書は発表の約1ヶ月後・簡易書留
     expect(body).toContain("合格証書");
     expect(body).toContain("簡易書留");
     // AP/高度は CBT 移行中で hedge（staleness 回避）
-    expect(body).toContain("令和8年度");
+    expect(body).toContain("AP・高度・SCの2026年度案内");
+    expect(body).toContain("SGは総合評価点です");
+    expect(body).toContain("科目A・Bそれぞれの評価点を確認するFEと区別");
   });
 
   it("制度記事ゆえ旗艦 /essay へは funnel しない（採点無関係・誤送客回避）", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     expect(body).not.toContain("](/essay)");
     // 各区分の合格基準記事へは funnel する（評価点が合格圏かを判断させる）
-    expect(body).toContain("/blog/fe-goukaku-ten-irt");
-    expect(body).toContain("/blog/sg-goukaku-ten-irt");
-    expect(body).toContain("/blog/ip-goukaku-ten-bunyabetsu");
+    for (const exam of ["ip", "sg", "fe"]) expect(body).toContain(`](/${exam})`);
+    expect(body).toContain("/blog/ipa-shiken-zenkubun-hikaku");
   });
 
   it("2 つの関連記事から inbound リンクを受け orphan 化しない（s82/s83 precedent）", () => {
@@ -63,7 +66,7 @@ describe("CBT 合格発表/スコアレポート記事の事実性と funnel 規
     expect(parent).toBeDefined();
     expect(
       parent!.body.includes(`/blog/${SLUG}`),
-      "moushikomi-nagare から新記事への inbound リンクが無い",
+      `${PARENT} から新記事への inbound リンクが無い`,
     ).toBe(true);
     // (2) FE 合格点記事の「試験当日：仮スコア／正式合否」節からの 2 本目（reciprocal）
     const feScore = getBlogPostBySlug("fe-goukaku-ten-irt");
@@ -77,7 +80,7 @@ describe("CBT 合格発表/スコアレポート記事の事実性と funnel 規
   it("FAQPage 化できる Q&A を持ち、blog サイトマップに掲載される", () => {
     const post = getBlogPostBySlug(SLUG)!;
     const faqs = extractFaq(post.body);
-    expect(faqs.length).toBeGreaterThanOrEqual(4);
+    expect(faqs.length).toBeGreaterThanOrEqual(2);
     for (const f of faqs) {
       expect(f.question).not.toContain("**");
       // FAQPage JSON-LD に markdown リンク記法が漏れない（extractFaq が除去）

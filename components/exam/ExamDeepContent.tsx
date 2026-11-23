@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck, GraduationCap, Layers } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Layers } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_DEEP_CONTENT } from "@/lib/seo/exam-content";
@@ -74,21 +74,9 @@ export function ExamRelatedExams({ exam }: Props) {
   const content = EXAM_DEEP_CONTENT[exam];
   if (!content || content.relatedExams.length === 0) return null;
   return (
-    <section
-      aria-label="関連する試験区分"
-      className="mb-8 rounded-2xl border border-border bg-card p-5 shadow-sm"
-    >
-      <div className="mb-3 flex items-center gap-2.5">
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400">
-          <GraduationCap className="h-4 w-4" />
-        </span>
-        <div className="leading-tight">
-          <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
-            関連する試験区分
-          </h2>
-        </div>
-      </div>
-      <ul className="space-y-2">
+    <details className="mb-8 rounded-2xl border border-border bg-card px-5">
+      <summary className="min-h-11 cursor-pointer py-3 font-semibold">関連する試験区分</summary>
+      <ul className="space-y-2 pb-4">
         {content.relatedExams.map((r) => (
           <li key={r.exam}>
             <Link
@@ -110,6 +98,6 @@ export function ExamRelatedExams({ exam }: Props) {
           </li>
         ))}
       </ul>
-    </section>
+    </details>
   );
 }

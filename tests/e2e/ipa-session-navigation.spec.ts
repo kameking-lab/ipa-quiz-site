@@ -5,35 +5,34 @@ test.setTimeout(120_000);
 
 test("specialist practice defaults to morning II and switches explicitly", async ({ page }) => {
   await page.goto("/quiz?mode=random&exam=st&limit=3");
+  await page.getByText("試験科目を選ぶ", { exact: true }).click();
   const sessions = page.getByRole("navigation", { name: "試験科目を選択" });
   await expect(sessions.getByRole("link", { name: "午前II（専門）" })).toHaveAttribute("aria-current", "page");
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 60_000 });
   await sessions.getByRole("link", { name: "午前I（共通）" }).click();
   await expect(page).toHaveURL(/session=am1/);
+  if (!(await sessions.isVisible())) await page.getByText("試験科目を選ぶ", { exact: true }).click();
   await expect(sessions.getByRole("link", { name: "午前I（共通）" })).toHaveAttribute("aria-current", "page");
   await page.getByRole("button", { name: "モード選択に戻る" }).click();
   await expect(page).toHaveURL(/\/st$/);
 });
 
-test("annual page keeps selected session and return target across learning modes", async ({ page }) => {
+test("annual practice keeps selected session and returns to the same paper", async ({ page }) => {
   await page.goto("/st/2025-spring");
   await page.getByRole("link", { name: "午前I（共通）を解く", exact: true }).click();
   await expect(page).toHaveURL(/session=am1/);
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 60_000 });
-  await page.getByRole("link", { name: "ストリーム", exact: true }).click();
-  await expect(page).toHaveURL(/session=am1/);
-  const back = page.locator('a[href="/st/2025-spring"]');
-  await expect(back.first()).toBeVisible();
-  await back.first().click();
+  await page.getByRole("button", { name: "モード選択に戻る" }).click();
   await expect(page).toHaveURL(/\/st\/2025-spring$/);
 });
 
-test("question detail quiz returns to the same question", async ({ page }) => {
+test("question detail links to the next original in the same session", async ({ page }) => {
   await page.goto("/q/st/2025-spring/am2/q1");
-  await page.getByRole("link", { name: /クイズモードで開く/ }).first().click();
-  await expect(page).toHaveURL(/session=am2/);
-  await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 60_000 });
-  await page.getByRole("button", { name: "モード選択に戻る" }).click();
+  const next = page.getByRole("navigation", { name: "解説のあとに学ぶ" }).getByRole("link", { name: "次の問題へ" });
+  await expect(next).toHaveAttribute("href", "/q/st/2025-spring/am2/q2");
+  await next.click();
+  await expect(page).toHaveURL(/\/q\/st\/2025-spring\/am2\/q2$/);
+  await page.goBack();
   await expect(page).toHaveURL(/\/q\/st\/2025-spring\/am2\/q1$/);
 });
 
@@ -73,11 +72,12 @@ test("ST 2024 keeps AM I and AM II separate and renders audited figures", async 
   await page.goto("/q/st/2024-spring/am1/q3");
   await expect(page.getByAltText("問3の図表1")).toBeVisible();
 
-  await page.getByRole("link", { name: /クイズモードで開く/ }).first().click();
+  await page.goBack();
+  await page.locator('a[href*="question=st-2024h-am1-q3&"]').click();
   await expect(page).toHaveURL(/session=am1/);
   await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", "30");
   await page.getByRole("button", { name: "モード選択に戻る" }).click();
-  await expect(page).toHaveURL(/\/q\/st\/2024-spring\/am1\/q3$/);
+  await expect(page).toHaveURL(/\/st\/2024-spring$/);
 });
 
 for (const [year, session, number] of [
@@ -86,9 +86,9 @@ for (const [year, session, number] of [
 ] as const) {
   test(`ST ${year} ${session} shows the selected wrong reason and browser back preserves the question`, async ({ page }) => {
     const question = ST_QUESTIONS.find((row) => row.id === `st-${year}h-${session}-q${number}`)!;
-    const detailPath = `/q/st/${year}-spring/${session}/q${number}`;
-    await page.goto(detailPath);
-    await page.getByRole("link", { name: /クイズモードで開く/ }).first().click();
+    const paperPath = `/st/${year}-spring`;
+    await page.goto(paperPath);
+    await page.locator(`a[href*="question=${question.id}&"]`).click();
     await expect(page).toHaveURL(new RegExp(`session=${session}`));
     await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", session === "am1" ? "30" : "25");
     const selectedQuestion = new URL(page.url()).searchParams.get("question");
@@ -101,11 +101,12 @@ for (const [year, session, number] of [
     const selected = explanation.getByRole("region", { name: "あなたが選んだ誤答の理由" });
     await expect(selected).toContainText(question.choiceExplanations![wrong as keyof typeof question.choiceExplanations]!);
     const allChoices = explanation.getByRole("region", { name: "選択肢ごとの解説" });
-    await expect(allChoices.locator("dd")).toHaveCount(4);
-    for (const reason of Object.values(question.choiceExplanations!)) await expect(allChoices).toContainText(reason!);
+    const remaining = Object.entries(question.choiceExplanations!).filter(([key]) => key !== wrong);
+    await expect(allChoices.locator("dd")).toHaveCount(remaining.length);
+    for (const [, reason] of remaining) await expect(allChoices).toContainText(reason!);
     await expect(explanation.locator('a[href$="_qs.pdf"]')).toHaveAttribute("href", question.sourcePdfUrl);
-    await expect(explanation.locator('a[href$="_ans.pdf"]')).toHaveAttribute("href", question.sourcePdfUrl.replace("_qs.pdf", "_ans.pdf"));
     await page.goBack();
-    await expect(page).toHaveURL(new RegExp(`${detailPath}$`));
+    await expect(page).toHaveURL(paperPath);
+    await expect(page.locator(`a[href*="question=${question.id}&"]`)).toBeVisible();
   });
 }

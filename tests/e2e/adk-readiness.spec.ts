@@ -12,8 +12,9 @@ test("singleton category stays readable without JavaScript and points to an expl
   await expect(question).toBeVisible();
   await question.click();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
-  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
-  expect((await page.locator('#explanation').innerText()).length).toBeGreaterThan(30);
+  const explanation = page.getByRole("region", { name: "解説", exact: true });
+  await expect(explanation).toBeVisible();
+  expect((await explanation.innerText()).length).toBeGreaterThan(30);
   expect(await page.getByRole("dialog").count()).toBe(0);
   const sitemap = await request.get("/sitemap/exams.xml");
   expect(sitemap.status()).toBe(200);
@@ -21,19 +22,22 @@ test("singleton category stays readable without JavaScript and points to an expl
   await context.close();
 });
 
-test("search and mode selection are noindex across query variants", async ({ page, request }) => {
-  await page.route("**/*", route => {
-    const request = route.request();
-    if (request.method() !== "GET" || /googlesyndication|doubleclick|generativelanguage/.test(request.url())) return route.abort();
-    return route.continue();
-  });
-  for (const path of ["/search", "/search?q=TLS", "/modes/topic", "/modes/topic?exam=fe"]) {
-    expect((await page.goto(path))?.status()).toBe(200);
+for (const path of ["/search", "/search?q=TLS", "/modes/topic", "/modes/topic?exam=fe"]) {
+  test(`${path} is noindex and exposes its heading without ads or a dialog`, async ({ page }) => {
+    await page.route("**/*", route => {
+      const request = route.request();
+      if (request.method() !== "GET" || /googlesyndication|doubleclick|generativelanguage/.test(request.url())) return route.abort();
+      return route.continue();
+    });
+    expect((await page.goto(path, { waitUntil: "domcontentloaded" }))?.status()).toBe(200);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
     await expect(page.locator("main h1")).toBeVisible();
     await expect(page.getByRole("dialog")).toHaveCount(0);
     await expect(page.locator('script[src*="adsbygoogle"], ins.adsbygoogle')).toHaveCount(0);
-  }
+  });
+}
+
+test("the main sitemap excludes search and mode selection", async ({ request }) => {
   const sitemap = await request.get("/sitemap/main.xml");
   expect(sitemap.status()).toBe(200);
   const xml = await sitemap.text();
@@ -50,9 +54,10 @@ test("fresh visitors can read the problem, reasoning and privacy contact without
   const page = await context.newPage();
   expect((await page.goto("/q/fe/2025-cbt/kamoku-b/q1"))?.status()).toBe(200);
   await expect(page.locator("main h1")).toBeVisible();
-  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
+  const explanation = page.getByRole("region", { name: "解説", exact: true });
+  await expect(explanation).toBeVisible();
   await expect(page.getByRole("dialog")).toHaveCount(0);
-  await page.locator('#explanation').scrollIntoViewIfNeeded();
+  await explanation.scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath("visible-explanation-mobile.png") });
   await page.goto("/privacy");
   await expect(page.getByRole("link", { name: "お問い合わせフォーム", exact: true })).toBeVisible();

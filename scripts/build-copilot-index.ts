@@ -1,10 +1,10 @@
 // Copilot RAG インデックスの構築・統計ダンプ用スクリプト。
 //
-// `--write` を付けると generated/copilot/ に索引・検索文書・問題（分割）を書き出す。
+// `--write` を付けると generated/copilot/ に索引・検索文書・問題の位置を書き出す。
 // `pnpm build` はこれを next build の前に実行し、Vercel の /api/copilot 関数に
 // 同梱する（next.config.ts の outputFileTracingIncludes）。実行時はこれを読むだけなので、
 // 冷えたサーバでも全問題データの読み込みと索引の組み立て（合わせて十数秒）を待たずに済む。
-// ファイルが無い場合、実行時は従来どおりデータ本体から組み立てる（結果は同じ）。
+// 開発・テストではデータ本体から組み立てる（結果は同じ）。
 //
 // 使い方:
 //   pnpm copilot:index            # 統計だけ表示
@@ -12,6 +12,7 @@
 
 import { rmSync } from "node:fs";
 import { join } from "node:path";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getCorpus, resetCorpusCache } from "@/lib/copilot/corpus";
 import { buildIndex } from "@/lib/copilot/retriever";
 import { corpusFingerprint } from "@/lib/copilot/index-artifact";
@@ -28,7 +29,7 @@ function fmtDur(ms: number): string {
   return `${(ms / 1000).toFixed(2)}s`;
 }
 
-function main(): void {
+async function main(): Promise<void> {
   const write = process.argv.includes("--write");
   resetCorpusCache();
   const t0 = performance.now();
@@ -60,15 +61,15 @@ function main(): void {
   const fingerprint = corpusFingerprint(docs);
   const root = process.cwd();
   rmSync(join(root, COPILOT_PREBUILT_DIR), { recursive: true, force: true });
-  const { bytes } = writePrebuiltCopilotFiles(root, questions, index, fingerprint);
+  const { bytes } = writePrebuiltCopilotFiles(root, QUESTIONS_BY_EXAM, index, fingerprint);
   const t4 = performance.now();
 
   // 書いた物を本番と同じ経路で読み戻し、データ本体からの組み立てと一致することを確かめる。
-  // 一致しなければ消して失敗させる（ビルドを止める）。消した場合でも実行時は従来の経路で動く。
+  // 一致しなければ成果物を消してビルドを止める。
   try {
     const source = openPrebuiltCopilotSource(root);
     if (!source) throw new Error("prebuilt manifest unreadable");
-    const restored = source.index();
+    const restored = await source.index();
     if (!sameIndex(index, restored)) throw new Error("index mismatch");
     for (let i = 0; i < docs.length; i++) {
       const a = docs[i];
@@ -100,4 +101,7 @@ function sameIndex(a: ReturnType<typeof buildIndex>, b: ReturnType<typeof buildI
     eq(a.postingTfs, b.postingTfs) && eq(a.docLen, b.docLen);
 }
 
-main();
+void main().catch((error: unknown) => {
+  console.error(error);
+  process.exitCode = 1;
+});

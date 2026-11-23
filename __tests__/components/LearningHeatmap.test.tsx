@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, within } from "@testing-library/react";
+import { LS_KEYS } from "@/lib/storage/keys";
 
 import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
 
@@ -22,5 +23,26 @@ describe("LearningHeatmap — コンテナの ARIA ロール", () => {
         name: "過去365日の学習ヒートマップ",
       }),
     ).toBeInTheDocument();
+  });
+
+  it("12週間の記録は日付と件数を読み上げ、操作のないセルをボタンにしない", async () => {
+    render(<LearningHeatmap days={84} interactive={false} />);
+    const calendar = await screen.findByRole("group", { name: "過去84日の学習ヒートマップ" });
+    expect(within(calendar).getAllByRole("img")).toHaveLength(84);
+    expect(within(calendar).queryByRole("button")).toBeNull();
+    expect(within(calendar).getAllByRole("img")[0]).toHaveAccessibleName(/学習なし/);
+  });
+
+  it("カレンダーの件数に表示期間外の履歴を混ぜない", async () => {
+    localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [
+      { id: "q1", selected: "ア", correct: true, at: Date.now() },
+      { id: "q2", selected: "イ", correct: false, at: Date.now() },
+      { id: "q3", selected: "ア", correct: true, at: Date.now() - 100 * 86400000 },
+    ], starredIds: [] }));
+    render(<LearningHeatmap days={84} interactive={false} />);
+    await screen.findByRole("group", { name: "過去84日の学習ヒートマップ" });
+    expect(screen.getByText("1", { selector: "strong" })).toBeInTheDocument();
+    expect(screen.getByText("2", { selector: "strong" })).toBeInTheDocument();
+    expect(screen.queryByText("3", { selector: "strong" })).toBeNull();
   });
 });

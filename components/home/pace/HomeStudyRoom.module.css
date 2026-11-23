@@ -1,0 +1,53 @@
+.card {
+  display: grid;
+  min-width: 0;
+  gap: 7px;
+  padding: 10px;
+  border: 1px solid color-mix(in srgb, var(--primary) 26%, var(--p3-field));
+  border-radius: 16px;
+  background: var(--p3-field);
+  color: var(--foreground);
+}
+
+.header, .attendance { display: flex; align-items: center; gap: 8px; }
+.header h2 { font-size: 1rem; font-weight: 700; line-height: 1.35; }
+.roomName { margin-inline-start: auto; color: var(--muted-foreground); font-size: .75rem; text-align: end; }
+.arrow { flex: none; width: 16px; height: 16px; color: var(--muted-foreground); }
+.card:hover .header h2 { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.attendance { flex-wrap: wrap; color: var(--muted-foreground); font-size: .75rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.attendance strong, .overflow { color: var(--foreground); }
+.timestamp, .overflow { margin-inline-start: auto; }
+.overflow { white-space: nowrap; font-weight: 700; }
+
+.groups {
+  display: flex;
+  min-width: 0;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.group {
+  display: flex;
+  flex: none;
+  align-items: baseline;
+  gap: 4px;
+  max-width: 100%;
+  border-radius: 8px;
+  padding: 3px 6px;
+  background: color-mix(in srgb, var(--p3-path) 34%, var(--card));
+  font-size: .75rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.group:nth-child(even) { background: color-mix(in srgb, var(--p3-sky) 55%, var(--card)); }
+.group strong { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 32rem) {
+  .card[data-long-list] { gap: 3px; padding: 6px; }
+  .card[data-long-list] .group {
+    max-width: none;
+    padding: 1px 3px;
+    white-space: nowrap;
+    letter-spacing: -.02em;
+  }
+}

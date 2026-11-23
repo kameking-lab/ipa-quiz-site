@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "lane": "pd-8",
+  "checkedAt": "2026-11-18",
+  "plan": "plan4.json",
+  "assignment": "zero-based index % 14 == 7",
+  "branch": "cx/kako-pa8-20261118",
+  "previousManifest": "research/replenish/pc-8.json",
+  "rows": [
+    {
+      "key": "sakui-rotary1|2025|late",
+      "candidateId": "javada-47035cd9bb44",
+      "planIndex": 77,
+      "qualificationCode": "sakui-rotary1",
+      "qualification": "さく井(ロータリー式さく井工事作業)1級（学科）",
+      "year": 2025,
+      "sitting": "late",
+      "status": "ブランチに有り（未公開）",
+      "questionCount": 50,
+      "officialQuestionCount": 50,
+      "officialSourceUrls": [
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B02-さく井（ロータリー式さく井工事作業）-1級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B02-さく井（ロータリー式さく井工事作業）-1級-学科試験正解表.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pd-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 50,
+          "paths": [
+            "data/questions/sakui-rotary1/2025-late.json",
+            "data/questions/sakui-rotary1/2025-sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4 index 77。A群真偽法25問とB群多肢択一法25問の全50問。公式本文・公式正答を保持し、総合解説と全肢解説を追加。"
+    },
+    {
+      "key": "sakui-rotary1|2024|late",
+      "candidateId": "javada-47035cd9bb44",
+      "planIndex": 77,
+      "qualificationCode": "sakui-rotary1",
+      "qualification": "さく井(ロータリー式さく井工事作業)1級（学科）",
+      "year": 2024,
+      "sitting": "late",
+      "status": "ブランチに有り（未公開）",
+      "questionCount": 50,
+      "officialQuestionCount": 50,
+      "officialSourceUrls": [
+        "https://www.kentei.javada.or.jp/pdf/R06-2-B02-さく井（ロータリー式さく井工事作業）-1級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R06-2-B02-さく井（ロータリー式さく井工事作業）-1級-学科試験正解表.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pd-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 50,
+          "paths": [
+            "data/questions/sakui-rotary1/2024-late.json",
+            "data/questions/sakui-rotary1/2024-sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4 index 77。A群真偽法25問とB群多肢択一法25問の全50問。公式本文・公式正答を保持し、総合解説と全肢解説を追加。"
+    }
+  ],
+  "skipped": [
+    {
+      "candidateId": "dekyo-charge-5",
+      "planIndex": 7,
+      "sourceLedgerKey": "kojitan-sogo|unknown|前回記録・対象年度未特定",
+      "status": "記録上作業中だが成果なし",
+      "reason": "共有台帳の前回着手記録を優先し、重複作業を避けて追加しない。年度・成果は未特定。"
+    }
+  ],
+  "remaining": [
+    {
+      "planIndex": 91,
+      "candidateId": "javada-9f6ed9fcefbb",
+      "name": "テクニカルイラストレーション(テクニカルイラストレーション手書き作業)2級（学科）",
+      "status": "資料取得済み（未収録）",
+      "notes": "tools/pd-8に2025年度後期の公式問題8ページ・正答表1ページ・PNG・OCRを保存。A群25問・B群25問を表紙と正答表で確認。本文・図表・解説の収録は次回。"
+    },
+    {
+      "planIndex": 105,
+      "candidateId": "javada-1f3d6d9467f9",
+      "name": "半導体製品製造(集積回路組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 119,
+      "candidateId": "javada-9e282b4a3543",
+      "name": "時計修理(時計修理作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 133,
+      "candidateId": "javada-9aaef1d8ac99",
+      "name": "紳士服製造特級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 147,
+      "candidateId": "javada-6f3f5e0a9af7",
+      "name": "金属材料試験(機械試験作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 161,
+      "candidateId": "javada-b45640189df4",
+      "name": "ブロック建築(コンクリートブロック工事作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 175,
+      "candidateId": "javada-874e3184bee6",
+      "name": "内装仕上げ施工(化粧フィルム工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 189,
+      "candidateId": "javada-124a8c19d494",
+      "name": "塗装(鋼橋塗装作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 203,
+      "candidateId": "javada-6bb4dea4b0dd",
+      "name": "建具製作(木製建具手加工作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 217,
+      "candidateId": "javada-c97904722b6e",
+      "name": "機械加工(平面研削盤作業)3級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 231,
+      "candidateId": "javada-0dea6fa87c14",
+      "name": "産業車両整備(産業車両整備作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 245,
+      "candidateId": "javada-d2113dd3d4fb",
+      "name": "鉄筋施工(鉄筋組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 259,
+      "candidateId": "javada-a11084e16313",
+      "name": "鋳造(鋳鋼鋳物鋳造作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 273,
+      "candidateId": "javada-48aaec32438b",
+      "name": "防水施工(塩化ビニル系シート防水工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 287,
+      "candidateId": "javada-a2cfb78b6081",
+      "name": "非接触除去加工(ワイヤ放電加工作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    }
+  ],
+  "preparedNext": [
+    {
+      "key": "tech-illustration-tegaki2|2025|late",
+      "candidateId": "javada-9f6ed9fcefbb",
+      "planIndex": 91,
+      "qualification": "テクニカルイラストレーション(テクニカルイラストレーション手書き作業)2級（学科）",
+      "year": 2025,
+      "sitting": "late",
+      "status": "資料取得済み（未収録）",
+      "questionCount": 0,
+      "officialQuestionCount": 50,
+      "officialSourceUrls": [
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B57B58-テクニカルイラストレーション（テクニカルイラストレーション手書き作業）（テクニカルイラストレーションCAD作業）-2級-学科試験問題.pdf",
+        "https://www.kentei.javada.or.jp/pdf/R07-2-B57-テクニカルイラストレーション（テクニカルイラストレーション手書き作業）-2級-学科試験正解表.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pd-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 0,
+          "paths": [
+            "research/replenish/pd-8.json"
+          ]
+        }
+      ],
+      "scope": "公式問題・正答表の取得と表紙・正答表の画像照合、OCR保存まで。data/questionsには未収録。原本・ハッシュは実行フォルダ tools/pd-8/next-source-check.json。"
+    }
+  ],
+  "duplicateChecks": {
+    "mergedBranches": "指定37ブランチをgit merge。すべてAlready up to date。",
+    "ledger": "共有台帳・取り込み済み台帳にcandidateId・原本URL・資格名の既存着手なし。",
+    "production": "新規区分URLはHTTP 404。資格一覧にさく井の登録なし。"
+  }
+}

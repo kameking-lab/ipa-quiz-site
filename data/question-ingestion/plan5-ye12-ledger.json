@@ -1,0 +1,63 @@
+{
+  "stepId": "ye-12",
+  "baseCommit": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "rows": [
+    {
+      "jobId": "PLAN5-390",
+      "index": 389,
+      "status": "exercise_categories_registered",
+      "existingCommit": "ef05d415e",
+      "dataPath": "data/questions/mokuzo-kenchikushi/2021-gakka-III-IV.json",
+      "registeredCategoryCounts": {
+        "gakka-III": 23,
+        "gakka-IV": 25
+      },
+      "addedQuestionCount": 0
+    },
+    {
+      "jobId": "PLAN5-348",
+      "index": 347,
+      "status": "skipped-existing-branch",
+      "existingBranch": "cx/kako-explain3-20261117",
+      "existingCommit": "03b7a5f895cf2f528a669cc3c3a033df5200ab57",
+      "dataPath": "data/questions/denken2/2024-power.json",
+      "originalQuestionsVerified": 7,
+      "officialAnswerEntriesVerified": 35,
+      "duplicateIds": 0,
+      "addedQuestionCount": 0,
+      "officialProblemUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_q02.pdf",
+      "officialAnswerUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_second_a01.pdf",
+      "officialAnswerSha256": "22629ab78519128d5280f6f0a2f40e129514f870affe23f0aaef5be4bc636d29"
+    },
+    {
+      "jobId": "PLAN5-334",
+      "index": 333,
+      "status": "source_review_completed",
+      "existingCommit": "40bbadd9a",
+      "dataPath": "data/questions/kenchikushi2/2024-gakka-III-IV.json",
+      "officialAnswerEntriesVerified": 50,
+      "addedQuestionCount": 0,
+      "officialProblemUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gakka3_4.pdf",
+      "officialAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/2k/2k-mondai/2k-2024-1st-gokakukijun.pdf",
+      "officialAnswerSha256": "26cc40072d9a073e9d4fdbc6b0678846350df20353023ca90b51bd0a1461dc8f",
+      "registeredCategoryCounts": {
+        "gakka-III": 7,
+        "gakka-IV": 9
+      },
+      "integrationCheck": {
+        "companionJobId": "PLAN5-333",
+        "companionCommit": "bcc90952b58ccd01d4f3e3723cae40e5aa24fb6e",
+        "expected2024QuestionCounts": {
+          "gakka-I": 25,
+          "gakka-II": 25,
+          "gakka-III": 25,
+          "gakka-IV": 25
+        },
+        "expectedAllYearsQuestionCount": 300,
+        "officialAnswerEntriesVerified": 100,
+        "duplicateIds": 0,
+        "duplicateYearSessionNumberKeys": 0
+      }
+    }
+  ]
+}

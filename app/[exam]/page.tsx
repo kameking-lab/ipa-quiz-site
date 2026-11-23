@@ -1,3 +1,6 @@
+import { NextExamSchedule } from "@/components/exam/NextExamSchedule";
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
+import { ReferralPracticeLink } from "@/components/analytics/ReferralPracticeLink";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
@@ -5,7 +8,7 @@ import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ChevronRight, Clock, Code2, PenLine, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, ChevronRight, Clock, Code2, PenLine, TrendingUp } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
@@ -26,6 +29,7 @@ import {
   groupByYearSeason,
 } from "@/lib/seo/exam-meta";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { P3Mascot } from "@/components/ui/P3Mascot";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
@@ -36,6 +40,7 @@ import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
 import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
 import { isExamEntryCode } from "@/lib/seo/exam-entry";
 import { isIpaTop } from "@/lib/seo/ipa-top";
+import { examSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -94,10 +99,10 @@ export async function generateMetadata({
   }
   const code = exam as ExamCode;
   const count = getQuestionsByExamStrict(code).length;
-  const title = examTopTitle(code);
-  const description = code === "sharoushi"
+  const coverageDescription = code === "sharoushi"
     ? `第58・57回の全156原問から、択一式${count}原問と選択式${PUBLISHED_SENTAKU.length}原問、計${count + PUBLISHED_SENTAKU.length}原問を部分収録。選択式は1原問5空欄の原形で、公式正答と解説を確認できます。`
     : examMetaDescription(code, count);
+  const { title, description } = examSearchMetadata(code, count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0), coverageDescription);
   const ogParams = new URLSearchParams({
     type: "exam",
     title: examLabel(code),
@@ -107,7 +112,7 @@ export async function generateMetadata({
   });
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
-    title,
+    title: { absolute: title + "｜" + SITE_NAME },
     description,
     alternates: { canonical: `/${exam}` },
     openGraph: {
@@ -245,25 +250,18 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
-  const summary = isIpaTop(code) ? examTopDescription(code, publishedOriginalCount) : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
-    ? examMetaDescription(code, publishedOriginalCount)
-    : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
+
 
   return (
-    <main className="relative flex-1">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-
-      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+    <main className="p3-page p3-exam flex-1">
+      <div className="study-column pb-12">
         <JsonLd data={jsonLd} />
-      <TsuginoWelcome href={referralPracticeHref(questions, `/${exam}`)} qualification={examLabel(code)} />
+      {!isExamEntryCode(code) && code !== "takken" && <TsuginoWelcome href={referralPracticeHref(questions, '/' + exam)} qualification={examLabel(code)} />}
 
-        <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
+        <nav aria-label="パンくずリスト" className="mb-1 text-xs text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -271,7 +269,7 @@ export default async function ExamTopPage({
             <li>
               <Link
                 href={externalQualification ? "/qualifications" : "/ipa"}
-                className="inline-block py-1.5 hover:underline"
+                className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:underline"
               >
                 {externalQualification ? "その他資格" : "IPA"}
               </Link>
@@ -283,17 +281,76 @@ export default async function ExamTopPage({
           </ol>
         </nav>
 
-        <header className="mb-6">
-          <Badge variant="soft" className="mb-3">
-            <Sparkles className="h-3 w-3" />
-            {examLabel(code)}
-          </Badge>
-          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
-          </h1>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
+        <header className="mb-4">
+          <div className="p3-landscape p3-hero p3-exam-hero">
+            <div className="min-w-0 self-center">
+              <h1 className="text-[clamp(1.35rem,5.65vw,1.625rem)] font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
+                <span className="block text-balance">{examLabel(code)}</span>{" "}
+                <span className="block text-xl">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
+              </h1>
+              <p className="mt-2 text-sm leading-relaxed">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
+            </div>
+            <P3Mascot exam={code} />
+          </div>
+          {isExamEntryCode(code) && <FirstPracticeEntry exam={code} referralHref={referralPracticeHref(questions, "/" + exam)} qualification={examLabel(code)} />}
+        {/* Big CTA */}
+        {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mt-2">
+          {code === "fp2" || code === "fp3" ? (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Button asChild variant="gradient" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
+                <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
+                <Link href={`/${code}/practical`}>
+                  実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
+                </Link>
+              </Button>
+            </div>
+          ) : code === "kenchiku-setsubishi" ? (
+            <div className="rounded-xl border border-hairline bg-card p-3">
+              <h2 className="mb-2 text-sm font-semibold text-foreground">出題する科目を選択</h2>
+              <div className="grid gap-2 sm:grid-cols-3">
+                {(["am1", "am2", "pm"] as const).map(session => (
+                  <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" key={session} asChild variant="outline" size="lg">
+                    <Link href={`/quiz?mode=random&exam=${code}&session=${session}`}>
+                      {practiceSessionLabel(session, code)}
+                    </Link>
+                  </Button>
+                ))}
+              </div>
+            </div>
+          ) : isHighLevel ? (
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <h2 className="mb-3 text-sm font-semibold text-foreground">
+                ランダム出題の範囲を選択
+              </h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                <Button asChild variant="gradient" size="lg" className="font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
+                    科目A-2（旧午前II）
+                  </Link>
+                </Button>
+                <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="lg">
+                  <Link prefetch={false} href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <Button
+              asChild
+              variant="gradient"
+              size="xl"
+              className="w-full font-semibold shadow-md hover:shadow-lg min-h-14 min-w-11 h-auto whitespace-normal py-2.5"
+            >
+              <ReferralPracticeLink href={'/quiz?mode=random&exam=' + exam} referralHref={code === "takken" ? referralPracticeHref(questions, "/" + exam) : null} qualification={examLabel(code)}>
+                今すぐ解く
+                <ChevronRight className="h-4 w-4" />
+              </ReferralPracticeLink>
+            </Button>
+          )}
+        </section>}
+          <NextExamSchedule exam={code} />
           {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
-          {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
             <Badge variant="outline">{years.length} 期分</Badge>
@@ -308,9 +365,9 @@ export default async function ExamTopPage({
           </p>}
           {code === "fp1" && <p className="mt-2 text-sm"><Link href="/fp1/applied/202609" className="inline-flex min-h-[44px] items-center text-primary underline">2026年9月 学科応用編を解く（問51–65・15原問57回答欄）</Link></p>}
           {code === "denko1" && <p className="mt-3 text-sm text-muted-foreground">令和7年度下期の学科試験50問と、令和8年度上期CBT方式で試験センターが公表した出題例50問を収録しています。いずれも一般問題40問・配線図問題10問です。</p>}
-          {code === "shakai" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第37回・第38回（令和6・7年度）社会福祉士国家試験の計255問（第38回129問、第37回は掲載保留3問を除く126問）を収録しています。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "shakai" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第36回〜第38回（令和5〜7年度）の社会福祉士国家試験を収録しています。第37回は掲載保留3問を除く126問です。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "seishin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第27回・第28回（令和6・7年度）精神保健福祉士国家試験の専門科目（各48問）と、社会福祉士と同じ共通科目（第28回84問、第27回は掲載保留3問を除く81問）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
-          {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第37回・第38回（令和6・7年度）介護福祉士国家試験の全250問（各125問、総合問題を含む）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第36回〜第38回（令和5〜7年度）介護福祉士国家試験の過去問を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "tohan" && <p className="mt-3 text-sm text-muted-foreground">令和6年度（2024年8月31日）・令和7年度（2025年8月23日）の試験を各120問、計240問収録しています。出典は関西広域連合の公式問題・正答です。解説は厚生労働省「試験問題の作成に関する手引き（令和7年4月）」に沿って作成しています。</p>}
           {code === "kanri" && <KanriCoverageNote questions={questions} />}
           {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では全問を自由に解けます。</p>}
@@ -325,7 +382,7 @@ export default async function ExamTopPage({
           {code === "kashikin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">一般社団法人日本貸金業協会が公表した第20回（令和7年度）・第19回（令和6年度）の貸金業務取扱主任者資格試験問題（各回50問・四肢択一）から{questions.length}問を収録。法令・制度は各回の試験実施日時点です。出典：一般社団法人日本貸金業協会。解説は過去問AIの独自作成で、日本貸金業協会とは関係ありません。</p>}
           {code === "sharoushi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第58・57回の全156原問のうち、択一式{questions.length}原問と選択式{PUBLISHED_SENTAKU.length}原問、計{questions.length + PUBLISHED_SENTAKU.length}原問を部分収録しています。選択式は1原問に5空欄あり、空欄を原問数に加算しません。労基安衛は両回で16問、労災保険法・雇用保険法・健康保険法・一般常識は一次根拠を確認できた問題だけを収録しています。択一式は各回7科目70問で、科目ごとに問1〜10があります。このサイトでは科目別に番号を保持し、選択式とは分けて表示します。選択肢は原本どおりA〜Eで表示します。法令・行政解釈は第58回が2026年4月10日、第57回が2025年4月11日時点です。統計問題は各問題文が指定する調査年度の原表に基づきます。出典：全国社会保険労務士会連合会 試験センター（問題・正答）。解説は過去問AIの独自作成です。</p>}
           {code === "sharoushi" && <p className="mt-3 text-sm"><Link href="/sharoushi/sentaku" className="inline-flex min-h-[44px] items-center text-primary underline">選択式の問題一覧（{PUBLISHED_SENTAKU.length}原問・{PUBLISHED_SENTAKU.length * 5}空欄）</Link></p>}
-          {code === "kangoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">午前235問と午後229問、計{questions.length}原問を部分収録しています。第115・114回 午前 問1〜90のうち178問収録。午前 問91〜120の確認済み57原問と午後229原問を加え、計464原問を部分収録。第115回は午前117問・午後115問、第114回は午前118問・午後114問です。全1918肢の正誤理由と数値記入2問の計算過程を確認できます。第115回午前 問32は厚生労働省が採点対象から除外したため収録していません。第115回午前 問79と未確認問題・未整備図は未収録です。共通症例は各原問に保持し、図のある問は原本画像を表示します。出典：厚生労働省。問題文は改行・空白・番号整理のみ調整し、解説は過去問AIが独自に作成しています。</p>}
+          {code === "kangoshi" && externalQualification && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{externalQualification.reuseSummary}</p>}
           {rigakuCoverage && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第61・60回の午前・午後、計400原問のうち、原文・公式正答・五肢の解説を照合した{questions.length}原問を部分収録しています。第61回は午前{rigakuCoverage.sixtyFirstAm}問・午後{rigakuCoverage.sixtyFirstPm}問、第60回は午前{rigakuCoverage.sixtiethAm}問・午後{rigakuCoverage.sixtiethPm}問です。未収録{rigakuCoverage.remaining}原問には図表、公式正答の代替記載、説明根拠の確認待ちがあり、両回の完備ではありません。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
           {code === "sagyo-ryohoshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第61・60回の午前・午後問題から、原文・公式正答・全五肢の解説を確認した{questions.length}原問を部分収録しています。図・専門根拠・代替正答を確認中の問は未収録で、最新2回の午前・午後全体は未完備です。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
           {code === "shino-kunrenshi" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第56・55回の午前・午後問題から、原文・公式正答・全五肢の解説を確認した{questions.length}原問を部分収録しています。別冊図・専門根拠を確認中の問は未収録で、最新2回の午前・午後全体は未完備です。出典：厚生労働省。解説は過去問AIの独自作成です。</p>}
@@ -336,7 +393,7 @@ export default async function ExamTopPage({
           {code === "ahaki-hari-kyu" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全360原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回180問・第33回179問）。午後問161〜170ははり師専用、問171〜180はきゅう師専用で、共通問題とともに一冊の原問として数え、二つの試験へ重複計上していません。未収録1原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
           {(code === "ahaki-anma" || code === "ahaki-hari-kyu") && (
             <details className="mt-3 rounded-xl border border-border p-3 text-sm text-muted-foreground">
-              <summary className="cursor-pointer text-foreground">未収録の原問番号</summary>
+              <summary className="min-h-11 cursor-pointer py-2 text-foreground">未収録の原問番号</summary>
               <ul className="mt-2 space-y-1">
                 {ahakiCoverage.sections.filter((section) => section.exam === code).map((section) => (
                   <li key={`${section.exam}-${section.year}-${section.session}`}>
@@ -355,7 +412,7 @@ export default async function ExamTopPage({
               href="https://tsugino-shikaku.jp/shikaku/gijutsushi-second?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=soukan_two_rounds"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline"
+              className="mt-3 inline-flex min-h-11 min-w-11 items-center font-medium text-primary underline-offset-4 hover:underline"
             >
               次の資格で技術士第二次試験の日程を見る ↗
             </a>
@@ -369,90 +426,36 @@ export default async function ExamTopPage({
               href="https://tsugino-shikaku.jp/shikaku/eisei-kanrisha-2shu?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=eisei2_two_editions"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline"
+              className="mt-3 inline-flex min-h-11 min-w-11 items-center font-medium text-primary underline-offset-4 hover:underline"
             >
               次の資格で第二種衛生管理者の日程を見る ↗
             </a>
           </section>
         )}
 
-        {/* Big CTA */}
-        {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mb-8">
-          {code === "fp2" || code === "fp3" ? (
-            <div className="grid gap-3 sm:grid-cols-2">
-              <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
-                <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full font-semibold">
-                <Link href={`/${code}/practical`}>
-                  実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
-                </Link>
-              </Button>
-            </div>
-          ) : code === "kenchiku-setsubishi" ? (
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <h2 className="mb-3 text-sm font-semibold text-foreground">出題する科目を選択</h2>
-              <div className="grid gap-2 sm:grid-cols-3">
-                {(["am1", "am2", "pm"] as const).map(session => (
-                  <Button key={session} asChild variant="outline" size="lg">
-                    <Link href={`/quiz?mode=random&exam=${code}&session=${session}`}>
-                      {practiceSessionLabel(session, code)}
-                    </Link>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          ) : isHighLevel ? (
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <h2 className="mb-3 text-sm font-semibold text-foreground">
-                ランダム出題の範囲を選択
-              </h2>
-              <div className="grid gap-2 sm:grid-cols-2">
-                <Button asChild variant="gradient" size="lg" className="font-semibold">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
-                    科目A-2（旧午前II）
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <Button
-              asChild
-              variant="gradient"
-              size="xl"
-              className="w-full font-semibold shadow-md hover:shadow-lg"
-            >
-              <Link href={`/quiz?mode=random&exam=${exam}`}>
-                今すぐ解く
-                <ChevronRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          )}
-        </section>}
+
 
         {code === "denko2" && (
           <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">
             <h2 className="text-lg font-bold text-slate-950">技能試験の問題図・完成例</h2>
-            <Button asChild variant="outline" className="mt-4 bg-white">
+            <Button asChild variant="outline" className="mt-4 bg-white min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
               <Link href="/denko2/skill">技能試験を探す <ChevronRight className="h-4 w-4" /></Link>
             </Button>
           </section>
         )}
 
         {/* Browse tabs */}
-        {isExamEntryCode(code) && <ExamPastQuestionGuide exam={code} questions={questions} />}
         {isExamEntryCode(code) ? <ExamTopBrowse exam={code} years={years} categories={categories} /> : <section aria-label="問題を探す" className="mb-8">
-          {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
-              ExamBrowseTabs reads the hash to pre-select the matching tab. */}
-          <span id="years" aria-hidden className="block scroll-mt-20" />
-          <span id="topics" aria-hidden className="block scroll-mt-20" />
           <ExamBrowseTabs exam={code} years={years} categories={categories} />
         </section>}
 
-        {isExamEntryCode(code) && <ExamTopGuide exam={code} />}
+        {isExamEntryCode(code) && <>
+          <ExamTopGuide exam={code} />
+          <details className="mb-6 rounded-xl border border-border px-4">
+            <summary className="min-h-11 cursor-pointer py-3 font-semibold">科目・収録範囲</summary>
+            <ExamPastQuestionGuide exam={code} questions={questions} />
+          </details>
+        </>}
 
         {/* Progress */}
         <section aria-label="進捗" className="mb-8 empty:hidden">
@@ -474,7 +477,7 @@ export default async function ExamTopPage({
                 <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
                   <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                     <TrendingUp className="h-3 w-3" />
-                    合格率（直近）
+                    合格率（{stats.passRatePeriod ?? "直近"}）
                   </div>
                   <p className="text-2xl font-bold text-foreground">
                     {stats.passRateRecent}
@@ -482,6 +485,7 @@ export default async function ExamTopPage({
                   </p>
                   <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
                     {stats.passRateTrend}
+                    {stats.passRateSourceUrl && <><br /><a href={stats.passRateSourceUrl} className="underline">出典: IPA公式統計</a>（確認日: {stats.passRateVerifiedAt}）</>}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
@@ -496,7 +500,6 @@ export default async function ExamTopPage({
                 </div>
                 <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
                   <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                    <Sparkles className="h-3 w-3" />
                     出題傾向
                   </div>
                   <p className="text-[13px] leading-relaxed text-foreground">
@@ -527,7 +530,10 @@ export default async function ExamTopPage({
         <ExamMainTopics exam={code} />
 
         {/* Official IPA resources — E-E-A-T */}
-        <ExamOfficialResources exam={code} />
+        <details className="mb-6 rounded-xl border border-border px-4">
+          <summary className="min-h-11 cursor-pointer py-3 font-semibold">公式資料</summary>
+          <ExamOfficialResources exam={code} />
+        </details>
 
         {/* High-level exam: AI essay / description grading CTA */}
         {!isExamEntryCode(code) && (["pm", "sm", "au"] as ExamCode[]).includes(code) && (
@@ -543,13 +549,13 @@ export default async function ExamTopPage({
               オリジナル論述教材で午後II対策
             </h2>
             <div className="mt-3 flex flex-wrap gap-2">
-              <Button asChild variant="primary" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary" size="sm">
                 <Link href="/essay">
-                  オリジナル論述教材で AI 添削
+                  論述の練習問題を見る
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="sm">
                 {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
                 <Link href={`/essays/${code}`}>業種別 練習答案サンプル</Link>
               </Button>
@@ -574,13 +580,13 @@ export default async function ExamTopPage({
               科目B（擬似言語）を AI と体系的に攻略
             </h2>
             <div className="mt-3 flex flex-wrap gap-2">
-              <Button asChild variant="primary" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary" size="sm">
                 <Link href="/blog/fe-kamoku-b-taisaku">
                   科目B 完全対策を読む
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="sm">
                 <Link href="/fe/topic/アルゴリズムとプログラミング">
                   アルゴリズム問題で演習
                 </Link>

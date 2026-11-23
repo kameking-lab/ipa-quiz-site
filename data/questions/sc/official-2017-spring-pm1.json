@@ -1,0 +1,49 @@
+[
+  {
+    "id": "sc-2017h-pm1-q3",
+    "exam": "sc",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "認証技術",
+    "topicTags": [
+      "クラウドサービスの認証連携"
+    ],
+    "difficulty": 5,
+    "question": "問3 クラウドサービスの認証連携",
+    "answer": "問３\n                       出題趣旨\n 近年，企業においても外部のクラウドサービスの利用が増加しており，企業が保有する情報資産もクラウド\nサービスへの移行が進んでいる。クラウドサービス上の情報資産を保護する上では，クラウドサービスでの認\n証とアクセス制限が重要である。\n 本問では，クラウドサービス側での対応が拡大しつつあるSAML を用いた認証連携を題材とし，認証とアク\nセス制限を設計する能力について問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  接続元IP アドレスがF 社のグローバルIP アドレスではないこと\n 設問２  (1)  a ウ\n              b エ\n              c ア\n              d イ\n         (2)  e 処理1\n              f 処理4\n         (3)  g ウ\n         (4)  h  IdP\n              i 改ざん\n         (5) 認証に関する情報を利用者端末のWeb ブラウザが中継するから\n  設問３   交通費精算  番号(3)\n        サービス   理由社外からIdP への通信がファイアウォールによって遮\n                 断されるから\n       グループウェア 番号(1)\n        サービス  理由クラウドサービス側で接続元IP アドレスの制限が行\n                 われているから",
+    "modelAnswer": "問３\n                       出題趣旨\n 近年，企業においても外部のクラウドサービスの利用が増加しており，企業が保有する情報資産もクラウド\nサービスへの移行が進んでいる。クラウドサービス上の情報資産を保護する上では，クラウドサービスでの認\n証とアクセス制限が重要である。\n 本問では，クラウドサービス側での対応が拡大しつつあるSAML を用いた認証連携を題材とし，認証とアク\nセス制限を設計する能力について問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  接続元IP アドレスがF 社のグローバルIP アドレスではないこと\n 設問２  (1)  a ウ\n              b エ\n              c ア\n              d イ\n         (2)  e 処理1\n              f 処理4\n         (3)  g ウ\n         (4)  h  IdP\n              i 改ざん\n         (5) 認証に関する情報を利用者端末のWeb ブラウザが中継するから\n  設問３   交通費精算  番号(3)\n        サービス   理由社外からIdP への通信がファイアウォールによって遮\n                 断されるから\n       グループウェア 番号(1)\n        サービス  理由クラウドサービス側で接続元IP アドレスの制限が行\n                 われているから",
+    "explanation": "SAMLの認証情報を発行する側と利用する側を区別する。接続元の制限をどの処理で適用できるか、認証の流れに沿って確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/sc/2017-spring-pm1/page-14.webp",
+      "/questions/ipa/sc/2017-spring-pm1/page-15.webp",
+      "/questions/ipa/sc/2017-spring-pm1/page-16.webp",
+      "/questions/ipa/sc/2017-spring-pm1/page-17.webp",
+      "/questions/ipa/sc/2017-spring-pm1/page-18.webp"
+    ],
+    "imageAltTexts": [
+      "情報処理安全確保支援士 2017年度春期 午後I 問3 本文・設問（PDF 14ページ）",
+      "情報処理安全確保支援士 2017年度春期 午後I 問3 本文・設問（PDF 15ページ）",
+      "情報処理安全確保支援士 2017年度春期 午後I 問3 本文・設問（PDF 16ページ）",
+      "情報処理安全確保支援士 2017年度春期 午後I 問3 本文・設問（PDF 17ページ）",
+      "情報処理安全確保支援士 2017年度春期 午後I 問3 本文・設問（PDF 18ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/sc/2017-spring-pm1/answer-q03-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "情報処理安全確保支援士 2017年度春期 午後I 問3 公式解答例（PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sc_pm1_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_sc_pm1_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA 情報処理安全確保支援士 2017年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

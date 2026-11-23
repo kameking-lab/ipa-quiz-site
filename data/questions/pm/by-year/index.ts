@@ -1,5 +1,6 @@
 // Auto-generated barrel — do not edit manually.
 import type { Question } from "@/lib/questions/types";
+import { PM_QUESTIONS_2025_AUTUMN_PM1 } from "./2025-autumn-pm1";
 import { PM_QUESTIONS_2009_SPRING_AM1 } from "./2009-spring-am1";
 import { PM_QUESTIONS_2009_SPRING_AM2 } from "./2009-spring-am2";
 import { PM_QUESTIONS_2010_SPRING_AM1 } from "./2010-spring-am1";
@@ -12,6 +13,7 @@ import { PM_QUESTIONS_2016_AUTUMN_AM1 } from "./2016-autumn-am1";
 import { PM_QUESTIONS_2017_AUTUMN_AM1 } from "./2017-autumn-am1";
 import { PM_QUESTIONS_2018_AUTUMN_AM1 } from "./2018-autumn-am1";
 import { PM_QUESTIONS_2019_AUTUMN_AM1 } from "./2019-autumn-am1";
+import { PM_QUESTIONS_2019_SPRING_AM2 } from "./2019-spring-am2";
 import { PM_QUESTIONS_2020_AUTUMN_AM1 } from "./2020-autumn-am1";
 import { PM_QUESTIONS_2020_AUTUMN_AM2 } from "./2020-autumn-am2";
 import { PM_QUESTIONS_2021_AUTUMN_AM1 } from "./2021-autumn-am1";
@@ -26,6 +28,7 @@ import { PM_QUESTIONS_2025_AUTUMN_AM1 } from "./2025-autumn-am1";
 import { PM_QUESTIONS_2025_AUTUMN_AM2 } from "./2025-autumn-am2";
 
 export const BY_YEAR_QUESTIONS: Question[] = [
+  ...PM_QUESTIONS_2025_AUTUMN_PM1,
   ...PM_QUESTIONS_2009_SPRING_AM1,
   ...PM_QUESTIONS_2009_SPRING_AM2,
   ...PM_QUESTIONS_2010_SPRING_AM1,
@@ -38,6 +41,7 @@ export const BY_YEAR_QUESTIONS: Question[] = [
   ...PM_QUESTIONS_2017_AUTUMN_AM1,
   ...PM_QUESTIONS_2018_AUTUMN_AM1,
   ...PM_QUESTIONS_2019_AUTUMN_AM1,
+  ...PM_QUESTIONS_2019_SPRING_AM2,
   ...PM_QUESTIONS_2020_AUTUMN_AM1,
   ...PM_QUESTIONS_2020_AUTUMN_AM2,
   ...PM_QUESTIONS_2021_AUTUMN_AM1,

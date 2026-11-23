@@ -1,7 +1,7 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -40,7 +40,7 @@ function isExamCode(s: unknown): s is ExamCode {
 
 function sessionLabel(session: Session, exam: ExamCode): string {
   if (exam === "kisho" || exam === "kenchiku-setsubishi" || exam === "chizai2" || exam === "kanteishi" || exam === "kaikeishi") return practiceSessionLabel(session, exam);
-  if (exam.startsWith("khk-reito-")) return practiceSessionLabel(session, exam);
+  if (exam === "gijutsushi1-kikai" || exam.startsWith("khk-reito-")) return practiceSessionLabel(session, exam);
   if (session === "houki" || session === "hoki" || session === "kogaku" || session === "kiso" || session === "kogaku-a" || session === "kogaku-b") return practiceSessionLabel(session);
   if (["keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku"].includes(session)) return practiceSessionLabel(session);
   if (session === "rousai" || session === "koyou" || session === "kenpo" || session === "kounen" || session === "kokunen" || session === "ippan" || session === "sentaku") return practiceSessionLabel(session);
@@ -119,7 +119,7 @@ export default async function YearModePage({
       />
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4">
+        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           <Link href={`/${exam}`}>
             <ArrowLeft className="h-4 w-4" />
             試験ページに戻る
@@ -127,18 +127,9 @@ export default async function YearModePage({
         </Button>
 
         <header className="mb-8 animate-fade-in">
-          <Badge variant="soft" className="mb-3">
-            <Calendar className="h-3 w-3" />
-            年度別 / {label}
-          </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              {label} 年度別出題
-            </span>
+            {label} 年度別出題
           </h1>
-          <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
-            {label}の過去問を年度・科目ごとに選んで学習できます。
-          </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{items.length} 期分</Badge>
             <Badge variant="outline">合計 {total.toLocaleString("ja-JP")} 問</Badge>
@@ -153,6 +144,7 @@ export default async function YearModePage({
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {items.map((item, idx) => (
               <Link
+                prefetch={false}
                 key={`${item.year}-${item.season}-${item.session}`}
                 href={`/quiz?mode=year&exam=${exam}&year=${item.year}&season=${item.season}&session=${item.session}&order=1`}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"

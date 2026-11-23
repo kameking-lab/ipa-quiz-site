@@ -8,7 +8,7 @@ import { buildQuestionJsonLd, withQuotaPaywall } from "@/lib/seo/question-jsonld
 import { ALL_QUESTIONS } from "@/data/questions";
 
 const access = { kind: "guest", freeDaily: 10, remaining: 0, resetAt: "2026-11-07T15:00:00.000Z", retryAfter: null };
-const beacon = vi.fn(() => true);
+const beacon = vi.fn<(url: string, data: Blob) => boolean>(() => true);
 beforeEach(() => {
   window.history.replaceState({}, "", "/q/ap/2023-spring/am/1");
   resetFunnelEventsForTest();
@@ -17,7 +17,8 @@ beforeEach(() => {
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); sessionStorage.clear(); vi.restoreAllMocks(); });
 const read = (blob: Blob) => new Promise<string>(resolve => { const reader = new FileReader(); reader.onload = () => resolve(String(reader.result)); reader.readAsText(blob); });
-const events = () => beacon.mock.calls.map(call => ({ text: () => read((call as unknown as [string, Blob])[1]) }));
+const funnelCalls = () => beacon.mock.calls.filter(([url]) => url === "/api/funnel");
+const events = () => funnelCalls().map(call => ({ text: () => read(call[1]) }));
 
 describe("individual question pages count toward the shared daily free 10", () => {
   it("replaces the question with the limit screen past the quota and counts free_limit_reached", async () => {
@@ -26,10 +27,13 @@ describe("individual question pages count toward the shared daily free 10", () =
     render(<QuestionPracticeGate id="ap-2023h-am-q1" enabled><p>問題文テキスト</p></QuestionPracticeGate>);
     expect(await screen.findByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
     expect(screen.getByText("問題文テキスト").closest(".paywalled-question")).toHaveAttribute("hidden");
-    expect(screen.getByRole("link", { name: "月額980円で続ける" })).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/q/ap/2023-spring/am/1"));
+    expect(screen.getByRole("link", { name: /月額プランに申し込む/ })).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/q/ap/2023-spring/am/1"));
     expect(fetcher).toHaveBeenCalledWith("/api/billing/question", expect.objectContaining({ method: "POST", body: JSON.stringify({ id: "ap-2023h-am-q1", shuffle: false }) }));
-    await waitFor(() => expect(beacon).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(funnelCalls()).toHaveLength(1));
     expect(await events()[0].text()).toBe(JSON.stringify({ event: "free_limit_reached" }));
+    const conversions = beacon.mock.calls.filter(([url]) => url === "/api/funnel/conversion");
+    expect(conversions).toHaveLength(1);
+    expect(await read(conversions[0][1])).toBe(JSON.stringify({ event: "offer_viewed" }));
   });
   it("leaves the page open while within the quota, for members, and on errors", async () => {
     for (const response of [

@@ -1,3 +1,4 @@
+import { restoreNichimuSourceUrls } from "./fixtures/nichimu-archive";
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
@@ -30,10 +31,11 @@ describe("three qualification native338 integration", () => {
       const code = exam as keyof typeof pools;
       expect(getRegisteredExamCodes()).toContain(code);
       expect(ALL_EXAM_CODES).not.toContain(code);
-      expect(await getQuestionsForExam(code)).toEqual(questions);
-      expect(QUESTIONS_BY_EXAM[code]).toEqual(questions);
-      expect(getQuestionsByExamStrict(code)).toEqual(questions);
-      expect(ALL_QUESTIONS.filter(q => q.exam === code)).toEqual(questions);
+      const current = await getQuestionsForExam(code);
+      expect(current.filter(q => q.year === 2026)).toEqual(questions);
+      expect(QUESTIONS_BY_EXAM[code]).toEqual(current);
+      expect(getQuestionsByExamStrict(code)).toEqual(current);
+      expect(ALL_QUESTIONS.filter(q => q.exam === code)).toEqual(current);
       expect(questions.every(isPracticeReadyQuestion)).toBe(true);
       expect(getQualificationByExamCode(code)?.status).toBe("live");
     }
@@ -89,7 +91,7 @@ describe("three qualification native338 integration", () => {
   });
 
   it("keeps candidate order and numbered choices during shuffled practice", () => {
-    for (const q of combined) {
+    for (const q of restoreNichimuSourceUrls(combined)) {
       expect(shuffleChoices(q)).toBe(q);
       expect(usesNumberedChoices(q.exam)).toBe(true);
       expect(choiceDisplayLabel(q.exam,"ア")).toBe("1");

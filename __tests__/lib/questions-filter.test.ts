@@ -60,6 +60,16 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
+describe("表面処理と表への参照の区別", () => {
+  it.each(["次の", "以下の", "下の"])("%s表面処理は画像なしでも出題できる", (prefix) => {
+    expect(isPracticeReadyQuestion(q({ question: `${prefix}表面処理のうち、最も膜厚が薄いものはどれか。` }))).toBe(true);
+  });
+
+  it.each(["次の", "以下の", "下の"])("%s表への参照は表がなければ出題しない", (prefix) => {
+    expect(isPracticeReadyQuestion(q({ question: `${prefix}表の数値から求めよ。` }))).toBe(false);
+  });
+});
+
 describe("isPlaceholderExplanation", () => {
   it("「正解はアです。」型と空文字をプレースホルダと判定する", () => {
     expect(isPlaceholderExplanation(q({ explanation: "正解はアです。" }))).toBe(true);
@@ -120,7 +130,7 @@ describe("filterQuestions — フィルタ条件", () => {
   });
 
   it("復習モードは誤答 ∪ スター、履歴なしでは絞り込まない", () => {
-    const all = [q({ id: "a" }), q({ id: "b" }), q({ id: "c" })];
+    const all = ["a", "b", "c"].map(id => q({ id, choices: { ア: "選択肢1", イ: "選択肢2" } }));
     const hist = makeHistory({ wrong: ["a"], starred: ["c"] });
     const out = filterQuestions(all, { mode: "review" }, hist);
     expect(out.map((x) => x.id).sort()).toEqual(["a", "c"]);

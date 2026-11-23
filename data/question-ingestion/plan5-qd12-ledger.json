@@ -1,0 +1,4726 @@
+{
+  "schemaVersion": 1,
+  "lane": "qd-12",
+  "checkedAt": "2026-11-18",
+  "branch": "cx/kako-5y12-20261118",
+  "baselineCommit": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-qc12-ledger.json",
+  "duplicateAudit": {
+    "refsChecked": 92,
+    "changedBlobsChecked": 878,
+    "ledger": "research/replenish/ledger.json",
+    "result": "origin/main・cx/kako-*・rel/kako-*の自前差分878 blob・共有台帳を照合。歯科医師115回Aの既存10問、保健師109回午前の保存年2022の既存10問、助産師109回午後の保存年2025の既存54問を保持し、同じ原問を新規生成しない。"
+  },
+  "rows": [
+    {
+      "jobId": "PLAN5-138",
+      "planIndex": 137,
+      "key": "shika-ishi|2022|annual|mondai-a|tp220421-02a_01.pdf",
+      "status": "収録・照合完了",
+      "officialQuestionCount": 90,
+      "existingScoredRecordCount": 10,
+      "addedScoredRecordCount": 79,
+      "officialExcludedQuestionNumbers": [
+        23
+      ],
+      "dataPath": "data/questions/shika-ishi/official-2022-a-qd12.json",
+      "sources": [
+        {
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-02a_01.pdf",
+          "sha256": "1e3e77877cd2300bebdbe077ca170754c406d067b52c62dba76cc4fa43ea57ca",
+          "pages": 56
+        },
+        {
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-02seitou.pdf",
+          "sha256": "a1ec436748585edf8a7b590f312b44676f7b34077846f8564ee8bc0df65d96d4",
+          "pages": 2
+        },
+        {
+          "kind": "figures",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-02a_02.pdf",
+          "sha256": "002ff5af33d02de282517a1ac18354a10f8df7d1d85ed6682236a13858db3b3f",
+          "pages": 60
+        },
+        {
+          "kind": "handling-A23",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken02/dl/A23.pdf",
+          "sha256": "56581d9c2d7dcd87f9add42bd6a2e7fb177215d9c327c839e7fd6ab4384ae32b",
+          "pages": 1
+        },
+        {
+          "kind": "handling-A80",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken02/dl/A80.pdf",
+          "sha256": "8dbb330fd11677ae28efa5e8c4792976a5b17912c553143bdda752e24bc16edd",
+          "pages": 1
+        }
+      ],
+      "records": [
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q3",
+          "qNumber": 3,
+          "officialAnswerCells": [
+            "E"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            13
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q4",
+          "qNumber": 4,
+          "officialAnswerCells": [
+            "E"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            14
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q6",
+          "qNumber": 6,
+          "officialAnswerCells": [
+            "E"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            14
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q8",
+          "qNumber": 8,
+          "officialAnswerCells": [
+            "E"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            15
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q13",
+          "qNumber": 13,
+          "officialAnswerCells": [
+            "A"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            17
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q15",
+          "qNumber": 15,
+          "officialAnswerCells": [
+            "B"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            17
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q17",
+          "qNumber": 17,
+          "officialAnswerCells": [
+            "A"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            18
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q18",
+          "qNumber": 18,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            18
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q19",
+          "qNumber": 19,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            19
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q20",
+          "qNumber": 20,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            19
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q21",
+          "qNumber": 21,
+          "officialAnswerCells": [
+            "AB"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            19
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q22",
+          "qNumber": 22,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            20
+          ],
+          "figureNumber": 1,
+          "figurePdfPages": [
+            5
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q24",
+          "qNumber": 24,
+          "officialAnswerCells": [
+            "BC"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            21
+          ],
+          "figureNumber": 3,
+          "figurePdfPages": [
+            8
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q25",
+          "qNumber": 25,
+          "officialAnswerCells": [
+            "BC"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            21
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q26",
+          "qNumber": 26,
+          "officialAnswerCells": [
+            "A"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            22
+          ],
+          "figureNumber": 4,
+          "figurePdfPages": [
+            10,
+            11
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q27",
+          "qNumber": 27,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            22
+          ],
+          "figureNumber": 5,
+          "figurePdfPages": [
+            12
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q28",
+          "qNumber": 28,
+          "officialAnswerCells": [
+            "CD"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            23
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q29",
+          "qNumber": 29,
+          "officialAnswerCells": [
+            "AC"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            23
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q30",
+          "qNumber": 30,
+          "officialAnswerCells": [
+            "ABDE"
+          ],
+          "requiredSelections": 4,
+          "questionPdfPages": [
+            23
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q31",
+          "qNumber": 31,
+          "officialAnswerCells": [
+            "ABC"
+          ],
+          "requiredSelections": 3,
+          "questionPdfPages": [
+            24
+          ],
+          "figureNumber": 6,
+          "figurePdfPages": [
+            13
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q32",
+          "qNumber": 32,
+          "officialAnswerCells": [
+            "CE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            24
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q33",
+          "qNumber": 33,
+          "officialAnswerCells": [
+            "BE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            25
+          ],
+          "figureNumber": 7,
+          "figurePdfPages": [
+            14
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q34",
+          "qNumber": 34,
+          "officialAnswerCells": [
+            "E"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            25
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q35",
+          "qNumber": 35,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            26
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q36",
+          "qNumber": 36,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            27
+          ],
+          "figureNumber": 8,
+          "figurePdfPages": [
+            16,
+            17
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q37",
+          "qNumber": 37,
+          "officialAnswerCells": [
+            "B"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            27
+          ],
+          "figureNumber": 9,
+          "figurePdfPages": [
+            18
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q38",
+          "qNumber": 38,
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            28
+          ],
+          "figureNumber": 10,
+          "figurePdfPages": [
+            19
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q39",
+          "qNumber": 39,
+          "officialAnswerCells": [
+            "BDE"
+          ],
+          "requiredSelections": 3,
+          "questionPdfPages": [
+            29
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q40",
+          "qNumber": 40,
+          "officialAnswerCells": [
+            "E"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            29
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q41",
+          "qNumber": 41,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            29
+          ],
+          "figureNumber": 11,
+          "figurePdfPages": [
+            20,
+            21
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q42",
+          "qNumber": 42,
+          "officialAnswerCells": [
+            "BD"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            30
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q43",
+          "qNumber": 43,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            30
+          ],
+          "figureNumber": 12,
+          "figurePdfPages": [
+            22,
+            23
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q44",
+          "qNumber": 44,
+          "officialAnswerCells": [
+            "B"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            31
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q45",
+          "qNumber": 45,
+          "officialAnswerCells": [
+            "BC"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            31
+          ],
+          "figureNumber": 13,
+          "figurePdfPages": [
+            24
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q46",
+          "qNumber": 46,
+          "officialAnswerCells": [
+            "A"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            31
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q47",
+          "qNumber": 47,
+          "officialAnswerCells": [
+            "CE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            32
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q48",
+          "qNumber": 48,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            32
+          ],
+          "figureNumber": 14,
+          "figurePdfPages": [
+            25
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q49",
+          "qNumber": 49,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            33
+          ],
+          "figureNumber": 15,
+          "figurePdfPages": [
+            26,
+            27
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q50",
+          "qNumber": 50,
+          "officialAnswerCells": [
+            "E"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            33
+          ],
+          "figureNumber": 16,
+          "figurePdfPages": [
+            28,
+            29
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q51",
+          "qNumber": 51,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            34
+          ],
+          "figureNumber": 17,
+          "figurePdfPages": [
+            30
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q52",
+          "qNumber": 52,
+          "officialAnswerCells": [
+            "BD"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            34
+          ],
+          "figureNumber": 18,
+          "figurePdfPages": [
+            31
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q53",
+          "qNumber": 53,
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            35
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q54",
+          "qNumber": 54,
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            35
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q55",
+          "qNumber": 55,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            35
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q56",
+          "qNumber": 56,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            36
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q57",
+          "qNumber": 57,
+          "officialAnswerCells": [
+            "BE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            36
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q58",
+          "qNumber": 58,
+          "officialAnswerCells": [
+            "AE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            37
+          ],
+          "figureNumber": 19,
+          "figurePdfPages": [
+            32,
+            33
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q59",
+          "qNumber": 59,
+          "officialAnswerCells": [
+            "AE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            38
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q60",
+          "qNumber": 60,
+          "officialAnswerCells": [
+            "AE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            38
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q61",
+          "qNumber": 61,
+          "officialAnswerCells": [
+            "BCE"
+          ],
+          "requiredSelections": 3,
+          "questionPdfPages": [
+            38
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q62",
+          "qNumber": 62,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            39
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q63",
+          "qNumber": 63,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            39
+          ],
+          "figureNumber": 20,
+          "figurePdfPages": [
+            34
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q64",
+          "qNumber": 64,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            40
+          ],
+          "figureNumber": 21,
+          "figurePdfPages": [
+            35
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q65",
+          "qNumber": 65,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            40
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q66",
+          "qNumber": 66,
+          "officialAnswerCells": [
+            "B"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            41
+          ],
+          "figureNumber": 22,
+          "figurePdfPages": [
+            36
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q67",
+          "qNumber": 67,
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            41
+          ],
+          "figureNumber": 23,
+          "figurePdfPages": [
+            37
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q68",
+          "qNumber": 68,
+          "officialAnswerCells": [
+            "AD"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            42
+          ],
+          "figureNumber": 24,
+          "figurePdfPages": [
+            39
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q69",
+          "qNumber": 69,
+          "officialAnswerCells": [
+            "B"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            42
+          ],
+          "figureNumber": 25,
+          "figurePdfPages": [
+            40
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q70",
+          "qNumber": 70,
+          "officialAnswerCells": [
+            "ABCD"
+          ],
+          "requiredSelections": 4,
+          "questionPdfPages": [
+            43
+          ],
+          "figureNumber": 26,
+          "figurePdfPages": [
+            41
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q71",
+          "qNumber": 71,
+          "officialAnswerCells": [
+            "DE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            43
+          ],
+          "figureNumber": 27,
+          "figurePdfPages": [
+            42
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q72",
+          "qNumber": 72,
+          "officialAnswerCells": [
+            "ABC"
+          ],
+          "requiredSelections": 3,
+          "questionPdfPages": [
+            44
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q73",
+          "qNumber": 73,
+          "officialAnswerCells": [
+            "AE"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            44
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q74",
+          "qNumber": 74,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            45
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q75",
+          "qNumber": 75,
+          "officialAnswerCells": [
+            "B"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            45
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q76",
+          "qNumber": 76,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            46
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q77",
+          "qNumber": 77,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            46
+          ],
+          "figureNumber": 28,
+          "figurePdfPages": [
+            43
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q78",
+          "qNumber": 78,
+          "officialAnswerCells": [
+            "ABD"
+          ],
+          "requiredSelections": 3,
+          "questionPdfPages": [
+            47
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q79",
+          "qNumber": 79,
+          "officialAnswerCells": [
+            "ABD"
+          ],
+          "requiredSelections": 3,
+          "questionPdfPages": [
+            47
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q80",
+          "qNumber": 80,
+          "officialAnswerCells": [
+            "ADE",
+            "ACD",
+            "ACE",
+            "CDE"
+          ],
+          "requiredSelections": 3,
+          "questionPdfPages": [
+            47
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q81",
+          "qNumber": 81,
+          "officialAnswerCells": [
+            "CD"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            48
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q82",
+          "qNumber": 82,
+          "officialAnswerCells": [
+            "C"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            48
+          ],
+          "figureNumber": 29,
+          "figurePdfPages": [
+            44
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q83",
+          "qNumber": 83,
+          "officialAnswerCells": [
+            "AB"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            49
+          ],
+          "figureNumber": 30,
+          "figurePdfPages": [
+            45
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q84",
+          "qNumber": 84,
+          "officialAnswerCells": [
+            "D"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            49
+          ],
+          "figureNumber": null,
+          "figurePdfPages": []
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q85",
+          "qNumber": 85,
+          "officialAnswerCells": [
+            "A"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            50
+          ],
+          "figureNumber": 31,
+          "figurePdfPages": [
+            46
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q86",
+          "qNumber": 86,
+          "officialAnswerCells": [
+            "B"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            50
+          ],
+          "figureNumber": 32,
+          "figurePdfPages": [
+            47
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q87",
+          "qNumber": 87,
+          "officialAnswerCells": [
+            "AC"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            51
+          ],
+          "figureNumber": 33,
+          "figurePdfPages": [
+            48
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q88",
+          "qNumber": 88,
+          "officialAnswerCells": [
+            "A"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            52
+          ],
+          "figureNumber": 34,
+          "figurePdfPages": [
+            50,
+            51
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q89",
+          "qNumber": 89,
+          "officialAnswerCells": [
+            "A"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            52
+          ],
+          "figureNumber": 35,
+          "figurePdfPages": [
+            52
+          ]
+        },
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q90",
+          "qNumber": 90,
+          "officialAnswerCells": [
+            "EDBAC"
+          ],
+          "requiredSelections": null,
+          "questionPdfPages": [
+            53
+          ],
+          "figureNumber": 36,
+          "figurePdfPages": [
+            53
+          ]
+        }
+      ],
+      "excludedRecords": [
+        {
+          "id": "shika-ishi-2022-annual-mondai-a-q23",
+          "sourceQuestionNumber": 23,
+          "originalText": "23\n55 歳の女性。下顎右側第一小臼歯と第二小臼歯の金属冠を白くしたいことを主\n訴として来院した。10 年前に齲蝕治療のためにクラウンを装着したという。診察\nの結果、54 のクラウンを除去し、コンポジットレジンクラウンを装着すること\nとした。製作したクラウンの写真（別冊No. 2Ａ と装着直前までの一連の過程の写\n真（別冊No. 2Ｂ を別に示す。\n一連の過程で4番目に行うのはどれか。1つ選べ。\nａ\nア\nｂ\nイ\nｃ\nウ\nｄ\nエ\nｅ\nオ\n別\n冊\nNo. 2\nＡ、Ｂ\n",
+          "officialAnswerCells": [],
+          "officialHandlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken02/dl/A23.pdf",
+          "officialHandling": "採点対象から除外する。",
+          "officialReason": "設問の状況設定が不十分で正解が得られないため。",
+          "imageUrls": [
+            "/questions/shika-ishi/2022/a/qd12/q023-1.webp",
+            "/questions/shika-ishi/2022/a/qd12/figure-02-1.webp",
+            "/questions/shika-ishi/2022/a/qd12/figure-02-2.webp"
+          ],
+          "note": "公式本文と空の正答欄を保持。通常の採点対象の不足に数えない。"
+        }
+      ],
+      "assets": [
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-01-1.webp",
+          "kind": "figure",
+          "number": 1,
+          "pdfPage": 5,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "d347ebad2227bd5bd18054c18c160e686c2098103dbb23d3c4fa05c01544d955"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-02-1.webp",
+          "kind": "figure",
+          "number": 2,
+          "pdfPage": 6,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "dc06571b868f65145d0c6ec26d487ff5feba70e8c5af4d71255249dd8c9999df"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-02-2.webp",
+          "kind": "figure",
+          "number": 2,
+          "pdfPage": 7,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "02561f22b356e2b7c2d4bbab63d6bc5dfd8d93540556de799ac356b13451d6ad"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-03-1.webp",
+          "kind": "figure",
+          "number": 3,
+          "pdfPage": 8,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "69a07fc1993db4deee44a1b02ffe5fbe8b8fa6d4a7da4598fad9b08f331431f5"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-04-1.webp",
+          "kind": "figure",
+          "number": 4,
+          "pdfPage": 10,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "d93756af9d2f4952ef1bbd8c6329eb156677a8e22f5c4b1288053126ff9b522c"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-04-2.webp",
+          "kind": "figure",
+          "number": 4,
+          "pdfPage": 11,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "98161abb059733707c9ef5b7dd9516d417dc2493f3d7a845824ab262ba75f82b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-05-1.webp",
+          "kind": "figure",
+          "number": 5,
+          "pdfPage": 12,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "78e659111aa81257e200f288e48b6319f4c910d3aec8ec11103d38e02a26ff9b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-06-1.webp",
+          "kind": "figure",
+          "number": 6,
+          "pdfPage": 13,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "7f173f8eb40f7c82855f713f058c19c13bf92f1648bfeedc3bb937213bea391d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-07-1.webp",
+          "kind": "figure",
+          "number": 7,
+          "pdfPage": 14,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "78000347e8628a69994e159c8744135fe9d507299f90edf1aee6bc1b930ab0eb"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-08-1.webp",
+          "kind": "figure",
+          "number": 8,
+          "pdfPage": 16,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "ef50910d20edbd3a95a01a1db3350bfad1f852dcefb2af5a3ffb95289a4741bb"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-08-2.webp",
+          "kind": "figure",
+          "number": 8,
+          "pdfPage": 17,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "5b63acf0d1e5e7cc84a9cc8d10ddfe34d5cad506ebae5428096097c6b0b1337d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-09-1.webp",
+          "kind": "figure",
+          "number": 9,
+          "pdfPage": 18,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "bbe946c3bfc3a017aa20433ef1c600fcfb342a697d053554b0c09fc0c1e777e2"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-10-1.webp",
+          "kind": "figure",
+          "number": 10,
+          "pdfPage": 19,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "39ce1e712339f6bfbc03b54c736294bc66ba5b00444a5f3a3bf29216a01e180f"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-11-1.webp",
+          "kind": "figure",
+          "number": 11,
+          "pdfPage": 20,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "3356823fa9fb0351ec4f4b3b01bca834599dbde5d34653e0216c8dc01039131f"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-11-2.webp",
+          "kind": "figure",
+          "number": 11,
+          "pdfPage": 21,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "6b89b13f02cc867b0bbcd1f5311daabf5986f22892f27483b8564571fa74e7cc"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-12-1.webp",
+          "kind": "figure",
+          "number": 12,
+          "pdfPage": 22,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "6c651bcfc87a0909842b266120c9c90584d8b9e4c7402cd0e4073325cdf3ef94"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-12-2.webp",
+          "kind": "figure",
+          "number": 12,
+          "pdfPage": 23,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "b7d3a31fcb20213eab934dce1a9cc8353766df02713dfcf2698920ace84bfb25"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-13-1.webp",
+          "kind": "figure",
+          "number": 13,
+          "pdfPage": 24,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "f3ad803daf3cffa3efc0c1ede966fb265f63d920ae98b3c927c3b0ae1529830d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-14-1.webp",
+          "kind": "figure",
+          "number": 14,
+          "pdfPage": 25,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "020c03025ec502bf6fcca3e23ea1aa35421f0f5b74da59976c0f486d3bfbc5fc"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-15-1.webp",
+          "kind": "figure",
+          "number": 15,
+          "pdfPage": 26,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "85bcf8ef08f40a334c9879f4ae71f7575557382ee29160bbb6f72ff2ee8b70cc"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-15-2.webp",
+          "kind": "figure",
+          "number": 15,
+          "pdfPage": 27,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "28fc6dea64916ed97eedebdeab6f0cfd2f58ed05747bb262b584e3fdf4a7211a"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-16-1.webp",
+          "kind": "figure",
+          "number": 16,
+          "pdfPage": 28,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "a3bcb1eb19c8d83fdd00ab22d45338c425bc379cb7f7abbbacdf8f2005622275"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-16-2.webp",
+          "kind": "figure",
+          "number": 16,
+          "pdfPage": 29,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "3da69fce31864e13a69add0ff332fbdda594354cc3d703a5296ece32a6911348"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-17-1.webp",
+          "kind": "figure",
+          "number": 17,
+          "pdfPage": 30,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "a91aa7a5ce094162131e05e6a2ff551ef0fb481a0e1a958eb185ce6693a88766"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-18-1.webp",
+          "kind": "figure",
+          "number": 18,
+          "pdfPage": 31,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "bceb30acc111a0bc6ae2f97eba4fe4e6e917f678012d7ce81ec36b85e92d9cf3"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-19-1.webp",
+          "kind": "figure",
+          "number": 19,
+          "pdfPage": 32,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "f875270a564ad393b291a61ab90dec135a78ac3d262213089dbc7f26a0928252"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-19-2.webp",
+          "kind": "figure",
+          "number": 19,
+          "pdfPage": 33,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "0671815eb0dc7198ef9163922435e84c947056b4694911b2d5cfaae474ff43af"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-20-1.webp",
+          "kind": "figure",
+          "number": 20,
+          "pdfPage": 34,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "b3cdae3cbdc70ab746d2ecdd37a4c3b972594fc7fbd7203471575356ff20bc4a"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-21-1.webp",
+          "kind": "figure",
+          "number": 21,
+          "pdfPage": 35,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "0cfaaa40cdb53a3b4c56eab82c6c72850088c865b631c4b6f4fdbd58956eae5c"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-22-1.webp",
+          "kind": "figure",
+          "number": 22,
+          "pdfPage": 36,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "e85e0fee543569c76116135d3c3a74dbb7219c79264a094fe4b55b4276b139bf"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-23-1.webp",
+          "kind": "figure",
+          "number": 23,
+          "pdfPage": 37,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "b28b6ff6ea4872166c73bd71ca7e6c12f5b6107c29aaa378469e2eece2e2a3fe"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-24-1.webp",
+          "kind": "figure",
+          "number": 24,
+          "pdfPage": 39,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "688872606e0677a4d77fc90b7f9ed4e813706eea72b4fa0f137d6a07d6bc9fdf"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-25-1.webp",
+          "kind": "figure",
+          "number": 25,
+          "pdfPage": 40,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "25959e3681d64c69338c311f2a293586b10add5fc2a573d05c9e718142b8664e"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-26-1.webp",
+          "kind": "figure",
+          "number": 26,
+          "pdfPage": 41,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "788499aff1f7fa9346cf73d90773a423740501ed0c011ee2db284a49f5f23bea"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-27-1.webp",
+          "kind": "figure",
+          "number": 27,
+          "pdfPage": 42,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "c3a02adf5cd2a7fed564cb8bda2ecfaa0a7583d728df7a2c2825b8e055b0d9d0"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-28-1.webp",
+          "kind": "figure",
+          "number": 28,
+          "pdfPage": 43,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "c870276620e4594f40fa58eea99c2a0c720caf94aa4f2674f8e1b9cac876d609"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-29-1.webp",
+          "kind": "figure",
+          "number": 29,
+          "pdfPage": 44,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "38e840d6a8a6d3b2665477a0e7ebb2365ed295e5dbdb10401646a3af68d24d88"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-30-1.webp",
+          "kind": "figure",
+          "number": 30,
+          "pdfPage": 45,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "411accd201577d4ff7c1b5c7051a39a651f329caf677f45639e1283832e29696"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-31-1.webp",
+          "kind": "figure",
+          "number": 31,
+          "pdfPage": 46,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "64c0f8308af67ca5ef6fb1c2dc78b1bf4ff5d7252014bb281b65fe992517ccc1"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-32-1.webp",
+          "kind": "figure",
+          "number": 32,
+          "pdfPage": 47,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "a9ab7e5b4eb45dd21dab731e6ab7b14fecf1459833e81fed0bfda135079c76bf"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-33-1.webp",
+          "kind": "figure",
+          "number": 33,
+          "pdfPage": 48,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "d2faa88f0a53d53f38c7e289a5bb6bea14872a6759a70296edcb7f2aaa82385a"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-34-1.webp",
+          "kind": "figure",
+          "number": 34,
+          "pdfPage": 50,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "f6806eba04bc599c32f564b834ef9cbc6255da865bd60f15379b0a0b94828d3f"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-34-2.webp",
+          "kind": "figure",
+          "number": 34,
+          "pdfPage": 51,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "878f01f1b1c1ec4634b1e0b04bd7c0da21683834c07d7d398da2cee79b0cf758"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-35-1.webp",
+          "kind": "figure",
+          "number": 35,
+          "pdfPage": 52,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "8fec99493ab12339b7775c191fa90fb788aaf08f16e592027c27a42dc0706210"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/figure-36-1.webp",
+          "kind": "figure",
+          "number": 36,
+          "pdfPage": 53,
+          "clip": null,
+          "scale": 2,
+          "width": 1021,
+          "height": 1480,
+          "sha256": "e9a6061fb6c950227a2548398736f973e651b1b8112da79017e7c382c5c6d6c4"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q003-1.webp",
+          "kind": "question",
+          "number": 3,
+          "pdfPage": 13,
+          "clip": [
+            68.0,
+            394.442138671875,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 737,
+          "sha256": "417e24eba1aa8f93a5c06b1e660b963d1237a69d60f72f805f753f9acf981473"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q004-1.webp",
+          "kind": "question",
+          "number": 4,
+          "pdfPage": 14,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            254.54391479492188
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 534,
+          "sha256": "83fc3e4d32383b35d854bb90745fc741cf10073a432d4f1cccbfec92cca22e9b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q006-1.webp",
+          "kind": "question",
+          "number": 6,
+          "pdfPage": 14,
+          "clip": [
+            68.0,
+            414.28466796875,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 678,
+          "sha256": "e5d341a1137a863dc3a7d805ebad1b14d2d028991768b063580a50975e1f49f8"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q008-1.webp",
+          "kind": "question",
+          "number": 8,
+          "pdfPage": 15,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            393.442138671875
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 474,
+          "sha256": "1dcf0136af104f8122f8bc2e421cab9e1b8fc8a3e45f733b2c368b6edb9a6c5b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q013-1.webp",
+          "kind": "question",
+          "number": 13,
+          "pdfPage": 17,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "c10ddfaba7f8b46239163ac21087b561b4a1fbcbee5e7a404ccca92671879521"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q015-1.webp",
+          "kind": "question",
+          "number": 15,
+          "pdfPage": 17,
+          "clip": [
+            68.0,
+            394.442138671875,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 737,
+          "sha256": "e15c987c60b9255e50b5b139229968871d507c5fc67f6d93bfebacf66089a7ee"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q017-1.webp",
+          "kind": "question",
+          "number": 17,
+          "pdfPage": 18,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            393.442138671875
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 474,
+          "sha256": "118ab9402875b2b91fe83884c1eab027d2683c99852e821888123063294e3446"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q018-1.webp",
+          "kind": "question",
+          "number": 18,
+          "pdfPage": 18,
+          "clip": [
+            68.0,
+            394.442138671875,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 737,
+          "sha256": "1ce9b710c344e96c5cc5cb722d3327b1548797996376405a4470fa5cbd68b115"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q019-1.webp",
+          "kind": "question",
+          "number": 19,
+          "pdfPage": 19,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "055c565a0d01c9f5488b7ad065bfb0db2315cfd9be2ad3d4f00d539c9dabd828"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q020-1.webp",
+          "kind": "question",
+          "number": 20,
+          "pdfPage": 19,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            393.442138671875
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 474,
+          "sha256": "813fdbf41fec088c96c2eafb49d61359b9eb8fd0b77db2c05b3c3a6a63b2f57d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q021-1.webp",
+          "kind": "question",
+          "number": 21,
+          "pdfPage": 19,
+          "clip": [
+            68.0,
+            394.442138671875,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 737,
+          "sha256": "62103c63923f9810f4da7cb3e472e763ac308df47deb292d5c7e44c777df55d2"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q022-1.webp",
+          "kind": "question",
+          "number": 22,
+          "pdfPage": 20,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            373.5982971191406
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 891,
+          "sha256": "ce11441050c7a038c3a04731aff1626eae341dca6b0d69d216ac61cf6f7000b8"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q023-1.webp",
+          "kind": "question",
+          "number": 23,
+          "pdfPage": 20,
+          "clip": [
+            68.0,
+            374.5982971191406,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 797,
+          "sha256": "fd8dea2d9e7035218709ef11cea7ecfafa300bbd6f944c1e93d6dbc40a70f481"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q024-1.webp",
+          "kind": "question",
+          "number": 24,
+          "pdfPage": 21,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            353.7557678222656
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 832,
+          "sha256": "7a64a1bef3da2a7b2da6bca7d6b70ae320d1bc1c56db86e555ff82bb5fc48175"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q025-1.webp",
+          "kind": "question",
+          "number": 25,
+          "pdfPage": 21,
+          "clip": [
+            68.0,
+            354.7557678222656,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 856,
+          "sha256": "0dedfd39097258f06375dbf73e7ce998221100ed3d11b9fcb25396e25ba798e3"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q026-1.webp",
+          "kind": "question",
+          "number": 26,
+          "pdfPage": 22,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            373.5982971191406
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 891,
+          "sha256": "b44fa15f3528582dd6919b5e5fde2875040d45f86e5c23c0e93f1153a680a41e"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q027-1.webp",
+          "kind": "question",
+          "number": 27,
+          "pdfPage": 22,
+          "clip": [
+            68.0,
+            374.5982971191406,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 797,
+          "sha256": "8b13232f38efdeb8a16146941626c0efc89e144adbacedfa25352e1885ee4b04"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q028-1.webp",
+          "kind": "question",
+          "number": 28,
+          "pdfPage": 23,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70071411132812
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "a8988aa88be0cccaf70df19dab7f4fb81a45914470454673a058f792b9dce902"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q029-1.webp",
+          "kind": "question",
+          "number": 29,
+          "pdfPage": 23,
+          "clip": [
+            68.0,
+            235.70071411132812,
+            465.0,
+            393.44146728515625
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 474,
+          "sha256": "9345456e74cb307413e6feafeee7c5b36c730ba866ddba38c1b41659a0e3933d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q030-1.webp",
+          "kind": "question",
+          "number": 30,
+          "pdfPage": 23,
+          "clip": [
+            68.0,
+            394.44146728515625,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 737,
+          "sha256": "7c69196e825d86cd980f37a4375e4b9596ea31784691c6df0980b3c516324b7b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q031-1.webp",
+          "kind": "question",
+          "number": 31,
+          "pdfPage": 24,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            333.9132995605469
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 772,
+          "sha256": "05bfe1b1b85f3be9ac2b474d79609e592a3d43dd8cf292027104145fc62f8338"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q032-1.webp",
+          "kind": "question",
+          "number": 32,
+          "pdfPage": 24,
+          "clip": [
+            68.0,
+            334.9132995605469,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 916,
+          "sha256": "96ab348e9f8d3eb59efe3a34e7af40f886c707d9c1760605dcb027099454432d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q033-1.webp",
+          "kind": "question",
+          "number": 33,
+          "pdfPage": 25,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            353.7557678222656
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 832,
+          "sha256": "208b2b5a3661aeea39630cd9dd010fac6ed099acf5e5e2b6e2e5d999ffdfe8c8"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q034-1.webp",
+          "kind": "question",
+          "number": 34,
+          "pdfPage": 25,
+          "clip": [
+            68.0,
+            354.7557678222656,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 856,
+          "sha256": "2d42b2312cb1fc9f116fd93f30b16f827d04bf5c70c0a78e1b1b31df6c5f7fe7"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q035-1.webp",
+          "kind": "question",
+          "number": 35,
+          "pdfPage": 26,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1690,
+          "sha256": "d57b72345bf940dc9b098a7dae88013f0d6a338b586725e2e636a60e5ab232b7"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q036-1.webp",
+          "kind": "question",
+          "number": 36,
+          "pdfPage": 27,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            373.5982971191406
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 891,
+          "sha256": "dfb84cf365f035f4d4cc850c70eddf56d3ae173f695e98a8c92623217d6810a7"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q037-1.webp",
+          "kind": "question",
+          "number": 37,
+          "pdfPage": 27,
+          "clip": [
+            68.0,
+            374.5982971191406,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 797,
+          "sha256": "7ee4d43b8245fe421f6cc08b571ce19df2100dfe1e5cfab4904f0bc258819573"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q038-1.webp",
+          "kind": "question",
+          "number": 38,
+          "pdfPage": 28,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1690,
+          "sha256": "daf7fc0b96459929868f60632a2016aeccaa8c3656b567d03f6915bf5d8ef3c7"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q039-1.webp",
+          "kind": "question",
+          "number": 39,
+          "pdfPage": 29,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            254.54391479492188
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 534,
+          "sha256": "e2cfeb1dac6b992c37680e69a576a4eac81e860d8c1c1f7864e96a26a2abc8b9"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q040-1.webp",
+          "kind": "question",
+          "number": 40,
+          "pdfPage": 29,
+          "clip": [
+            68.0,
+            255.54391479492188,
+            465.0,
+            413.28466796875
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 474,
+          "sha256": "ab3bfbae29aa35ed45894b714748b7c86b3f67db63ec82ff13c2271e63db4d07"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q041-1.webp",
+          "kind": "question",
+          "number": 41,
+          "pdfPage": 29,
+          "clip": [
+            68.0,
+            414.28466796875,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 678,
+          "sha256": "22b88de5cf63966afe141275c8daf63d5bc0ada83e0a4177d6e267fb633da8e7"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q042-1.webp",
+          "kind": "question",
+          "number": 42,
+          "pdfPage": 30,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "5a67545058dafffb371ab5e8f53e56a2564ae8f68e92a4702d4669b25865869d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q043-1.webp",
+          "kind": "question",
+          "number": 43,
+          "pdfPage": 30,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1213,
+          "sha256": "30b0af1a95d9990aa9d662b654776aace2429105ee7e57b22ba2dda38627ae02"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q044-1.webp",
+          "kind": "question",
+          "number": 44,
+          "pdfPage": 31,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            254.54391479492188
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 534,
+          "sha256": "d82f5f29671753e0d4c6feb5cb1fdba03716f7cf4ec4d4990df8f02fd046816f"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q045-1.webp",
+          "kind": "question",
+          "number": 45,
+          "pdfPage": 31,
+          "clip": [
+            68.0,
+            255.54391479492188,
+            465.0,
+            532.3385009765625
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 832,
+          "sha256": "34c3c6fac0d486701ddac9b24f5788a0a398b9535b64435554573e13d44513d5"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q045-choice-1.webp",
+          "kind": "choice",
+          "number": 45,
+          "pdfPage": 31,
+          "clip": [
+            88,
+            335.9134826660156,
+            460,
+            355.9134826660156
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "6c7e826321780f80d93eeabbb544766f0b1cc0475a5a45ae55857ae06803344b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q045-choice-2.webp",
+          "kind": "choice",
+          "number": 45,
+          "pdfPage": 31,
+          "clip": [
+            88,
+            355.7557678222656,
+            460,
+            375.7557678222656
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "62e52296c08013db9c6923e1e07c83984e8a2374a83375508f0ab399072dbeed"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q045-choice-3.webp",
+          "kind": "choice",
+          "number": 45,
+          "pdfPage": 31,
+          "clip": [
+            88,
+            375.5982971191406,
+            460,
+            395.5982971191406
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "671a001f5a347c3238ea71513d181ad64aeaf676ed7d725888be1b74bd516038"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q045-choice-4.webp",
+          "kind": "choice",
+          "number": 45,
+          "pdfPage": 31,
+          "clip": [
+            88,
+            395.4407958984375,
+            460,
+            415.4407958984375
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "60dbe58404e7e0b83af6e902c1d425ab4ae0a212ccd76ee7bbcc3b882bec8b99"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q045-choice-5.webp",
+          "kind": "choice",
+          "number": 45,
+          "pdfPage": 31,
+          "clip": [
+            88,
+            415.28338623046875,
+            460,
+            435.28338623046875
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "8972bd195c35b869ee38f073eb9bfd7ff51bd17f6f3848afbad6ee107b000fb5"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q046-1.webp",
+          "kind": "question",
+          "number": 46,
+          "pdfPage": 31,
+          "clip": [
+            68.0,
+            533.3385009765625,
+            465.0,
+            653
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 359,
+          "sha256": "8a27e7e486655abe2bb1e4c74dc5616b85cfee6109413f227f68f549e09fb3ed"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q047-1.webp",
+          "kind": "question",
+          "number": 47,
+          "pdfPage": 32,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "13e521864322fb289a2ba2cf441dc935d643fa3a00ed2a4ded9fd3103537c856"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q048-1.webp",
+          "kind": "question",
+          "number": 48,
+          "pdfPage": 32,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1213,
+          "sha256": "8054d98e24d0253bb461cea87e89bc76083b04f4a027bcf5ff2e88116fd0b04b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q049-1.webp",
+          "kind": "question",
+          "number": 49,
+          "pdfPage": 33,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            353.7557678222656
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 832,
+          "sha256": "3bbabb4e392009e2e9a147ff7290a28cff1f822067cf9fd073d2249c1b7f7e2c"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q050-1.webp",
+          "kind": "question",
+          "number": 50,
+          "pdfPage": 33,
+          "clip": [
+            68.0,
+            354.7557678222656,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 856,
+          "sha256": "29c03ae20a5b500013a2839ff28f298c8e05ada0bd0c5f7f3d460a02816faa89"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q051-1.webp",
+          "kind": "question",
+          "number": 51,
+          "pdfPage": 34,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            333.9132995605469
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 772,
+          "sha256": "0c7342c8324960d898ac78ed68dcc4a97eca1e51115dd3dd9d9efba6a6d3c322"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q052-1.webp",
+          "kind": "question",
+          "number": 52,
+          "pdfPage": 34,
+          "clip": [
+            68.0,
+            334.9132995605469,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 916,
+          "sha256": "1be28291a9f705e4416a313bf47091e5cf6d0523651cd8819a196d35e2ed2dd4"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q053-1.webp",
+          "kind": "question",
+          "number": 53,
+          "pdfPage": 35,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            254.54391479492188
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 534,
+          "sha256": "f161da352c58cb346d96a56e5371d9dd7ebda02b5a2f6be4904836ccb9ea082b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q054-1.webp",
+          "kind": "question",
+          "number": 54,
+          "pdfPage": 35,
+          "clip": [
+            68.0,
+            255.54391479492188,
+            465.0,
+            433.12725830078125
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 534,
+          "sha256": "cee1bb8820e48e5290b71494ca731545130bb44a3c780acb85888a48ec5e0bcf"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q055-1.webp",
+          "kind": "question",
+          "number": 55,
+          "pdfPage": 35,
+          "clip": [
+            68.0,
+            434.12725830078125,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 618,
+          "sha256": "806d978a3e656501d86101e98fdb2569cafc8ca657c89579dc2fae6d6ff89952"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q056-1.webp",
+          "kind": "question",
+          "number": 56,
+          "pdfPage": 36,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            274.3865661621094
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 594,
+          "sha256": "7b5b30f3315b11bd844127db2312b1cd79a406d93c452aea8294552cac466f6b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q057-1.webp",
+          "kind": "question",
+          "number": 57,
+          "pdfPage": 36,
+          "clip": [
+            68.0,
+            275.3865661621094,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1094,
+          "sha256": "bf208ca815992884fb17d01035d4146b8c2f996020b86c3055df1d5caf269c0d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q058-1.webp",
+          "kind": "question",
+          "number": 58,
+          "pdfPage": 37,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1690,
+          "sha256": "7d7856ec69b59c7188a8804fe970291b4f174786d61de2b7ae01ef814904971c"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q059-1.webp",
+          "kind": "question",
+          "number": 59,
+          "pdfPage": 38,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "fef74ab8ce601dd7a13f3368f9849567bc36b38b2557f94c5f883f794b0915fe"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q060-1.webp",
+          "kind": "question",
+          "number": 60,
+          "pdfPage": 38,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            393.442138671875
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 474,
+          "sha256": "effd51a03962260234cafaaa02bd98425f9388b708325a92f3e6d85532d5b381"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q061-1.webp",
+          "kind": "question",
+          "number": 61,
+          "pdfPage": 38,
+          "clip": [
+            68.0,
+            394.442138671875,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 737,
+          "sha256": "73cc71964f41992b15bbe393400eb831a95394bbb51484f13905b90110b24d50"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q062-1.webp",
+          "kind": "question",
+          "number": 62,
+          "pdfPage": 39,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "a71755056113bf0975198feb46274616c875239e58f8ee615fe322471082f193"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q063-1.webp",
+          "kind": "question",
+          "number": 63,
+          "pdfPage": 39,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1213,
+          "sha256": "7ac54fb5c4a30a13e9519fa3d7bf145b4af331bb8c35a146e9406b35e6f4f591"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q063-choice-1.webp",
+          "kind": "choice",
+          "number": 63,
+          "pdfPage": 39,
+          "clip": [
+            88,
+            355.7557678222656,
+            460,
+            375.7557678222656
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "d9213119fbb161af883c1b327844fff934e430ac719fac8d23d5e3852172d761"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q063-choice-2.webp",
+          "kind": "choice",
+          "number": 63,
+          "pdfPage": 39,
+          "clip": [
+            88,
+            375.5982971191406,
+            460,
+            395.5982971191406
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "eae97b7d4d9889d6037882678810a9d004ae1dad876e0de5148b2a9cc5da832e"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q063-choice-3.webp",
+          "kind": "choice",
+          "number": 63,
+          "pdfPage": 39,
+          "clip": [
+            88,
+            395.4407958984375,
+            460,
+            415.4407958984375
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "effc17c02b7f8f6f6e18925beffce53c33556ca0b488c3083e49ae4b920563e3"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q063-choice-4.webp",
+          "kind": "choice",
+          "number": 63,
+          "pdfPage": 39,
+          "clip": [
+            88,
+            415.28338623046875,
+            460,
+            435.28338623046875
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "207eca0aff3b681c942b5991651f5ced44fd62ff34fa06724cb05352eed8d498"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q063-choice-5.webp",
+          "kind": "choice",
+          "number": 63,
+          "pdfPage": 39,
+          "clip": [
+            88,
+            435.1258850097656,
+            460,
+            455.1258850097656
+          ],
+          "scale": 3,
+          "width": 1116,
+          "height": 61,
+          "sha256": "2f43cc4006a006b6e8032da3463d792f512b6491cd55562abe37b690566ac843"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q064-1.webp",
+          "kind": "question",
+          "number": 64,
+          "pdfPage": 40,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            333.9132995605469
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 772,
+          "sha256": "59f2bf8978c476ac419b293c5ff46144c578232057a18496b9c7b2bd54ba8e2e"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q065-1.webp",
+          "kind": "question",
+          "number": 65,
+          "pdfPage": 40,
+          "clip": [
+            68.0,
+            334.9132995605469,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 916,
+          "sha256": "f7d76027efac0821471e4e0b76a075b6cf9a1f273538ebe5ef500f7adfb3c08b"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q066-1.webp",
+          "kind": "question",
+          "number": 66,
+          "pdfPage": 41,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            314.0707702636719
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 713,
+          "sha256": "3bdbe6ce4f5a9e2cf2ef088ab7c117c0c844260fe5467aa6b64d5833d938ff0e"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q067-1.webp",
+          "kind": "question",
+          "number": 67,
+          "pdfPage": 41,
+          "clip": [
+            68.0,
+            315.0707702636719,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 975,
+          "sha256": "b316fa0bd3ecdbf99ac059db800ef18dd0dc71cce6b0f103e48e0b3a1f9f8035"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q068-1.webp",
+          "kind": "question",
+          "number": 68,
+          "pdfPage": 42,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            373.5982971191406
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 891,
+          "sha256": "381dfd29c4674cd037215a279327d1dd55bc5c2639e02d10c61028aeea9fbb9e"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q069-1.webp",
+          "kind": "question",
+          "number": 69,
+          "pdfPage": 42,
+          "clip": [
+            68.0,
+            374.5982971191406,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 797,
+          "sha256": "d83c62bd7d3cc948865666c72335888c0dd86f5a5a23693b17e3a3fec51ee99d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q070-1.webp",
+          "kind": "question",
+          "number": 70,
+          "pdfPage": 43,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            373.5982971191406
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 891,
+          "sha256": "309b6d61e78b4f6de1262943d389aae23086e03ed6860090d448f797a3740f85"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q071-1.webp",
+          "kind": "question",
+          "number": 71,
+          "pdfPage": 43,
+          "clip": [
+            68.0,
+            374.5982971191406,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 797,
+          "sha256": "2ecbb1eec71079c038f62dc68c64d228d9928a361ad3a9650e1fae715721bd65"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q072-1.webp",
+          "kind": "question",
+          "number": 72,
+          "pdfPage": 44,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "961ec2f708728f1173cc72b9d0b3a7d81643eba0a2eb0b093839056cd698a01d"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q073-1.webp",
+          "kind": "question",
+          "number": 73,
+          "pdfPage": 44,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1213,
+          "sha256": "e2e6f723fea2e34da8da8f9365c37fa90d00c68dd88af09113303d57864b76b1"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q074-1.webp",
+          "kind": "question",
+          "number": 74,
+          "pdfPage": 45,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            462.89068603515625
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1159,
+          "sha256": "766e542a871965fe96e4c1708e22b4f13effb4ec46585c1f3274ff9e0db66816"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q075-1.webp",
+          "kind": "question",
+          "number": 75,
+          "pdfPage": 45,
+          "clip": [
+            68.0,
+            463.89068603515625,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 529,
+          "sha256": "22cf1a50b7039ca24c574a3c096e6900d7092b5be937885ae2d0786ca7b34d35"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q076-1.webp",
+          "kind": "question",
+          "number": 76,
+          "pdfPage": 46,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "e08a08dc85a2aab9a7511dc85c51421ffba2dbbe8a465bd41708a46ce38f4415"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q077-1.webp",
+          "kind": "question",
+          "number": 77,
+          "pdfPage": 46,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1213,
+          "sha256": "435f11dbc2a7d87f122df589380e04e41d55b937ee52270f0d9b11fbad77cea1"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q078-1.webp",
+          "kind": "question",
+          "number": 78,
+          "pdfPage": 47,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            254.54391479492188
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 534,
+          "sha256": "b288c36a33ed0d618584378518e62f1237a5ad9ee0f4706205f669c2249424a5"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q079-1.webp",
+          "kind": "question",
+          "number": 79,
+          "pdfPage": 47,
+          "clip": [
+            68.0,
+            255.54391479492188,
+            465.0,
+            413.28369140625
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 474,
+          "sha256": "64b52cfd50f584ecaab8010c48cb7400f999c3f64744480598e339123f057dab"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q080-1.webp",
+          "kind": "question",
+          "number": 80,
+          "pdfPage": 47,
+          "clip": [
+            68.0,
+            414.28369140625,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 678,
+          "sha256": "f4cb42eb4182ab02d33c8e4dc598bdea94b3a93c427ec4e4a25077e0c9fde863"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q081-1.webp",
+          "kind": "question",
+          "number": 81,
+          "pdfPage": 48,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            234.70138549804688
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 475,
+          "sha256": "0fd3e87ebbbed33025af28f3742aab86d9650ae3cd54c566799b25ed6f642883"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q082-1.webp",
+          "kind": "question",
+          "number": 82,
+          "pdfPage": 48,
+          "clip": [
+            68.0,
+            235.70138549804688,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1213,
+          "sha256": "59dee916aae139f07b150d09a0eeb6c51a2794bec455830747ab2eacb14000ad"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q083-1.webp",
+          "kind": "question",
+          "number": 83,
+          "pdfPage": 49,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            373.5982971191406
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 891,
+          "sha256": "39136d54d42ec4d44e88d864174a44ae706633c5ab35815a00b0715eef530651"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q084-1.webp",
+          "kind": "question",
+          "number": 84,
+          "pdfPage": 49,
+          "clip": [
+            68.0,
+            374.5982971191406,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 797,
+          "sha256": "fc8feb009acdf02da3c9ddd50d40fe9f837e1a67757ae56a0c7e82e15777723e"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q085-1.webp",
+          "kind": "question",
+          "number": 85,
+          "pdfPage": 50,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            333.9132995605469
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 772,
+          "sha256": "cf2fc001765f6c9bcae5bde226480da36d75620594653aef9b10c6baf0c79f46"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q086-1.webp",
+          "kind": "question",
+          "number": 86,
+          "pdfPage": 50,
+          "clip": [
+            68.0,
+            334.9132995605469,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 916,
+          "sha256": "1c3ed8675bbc3cf16da990796051ad2f446b0ce1d6038db2c572077c008e7d9a"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q087-1.webp",
+          "kind": "question",
+          "number": 87,
+          "pdfPage": 51,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1690,
+          "sha256": "a34def419f03c3b096ccc009a2afcc6c59d977d9f3938cc04387b7a7ad918eb7"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q088-1.webp",
+          "kind": "question",
+          "number": 88,
+          "pdfPage": 52,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            373.5982971191406
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 891,
+          "sha256": "831c5189513f06b1975e650493e4a8f815214d53c2aeaa279435c9e33b0789a7"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q089-1.webp",
+          "kind": "question",
+          "number": 89,
+          "pdfPage": 52,
+          "clip": [
+            68.0,
+            374.5982971191406,
+            465.0,
+            640.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 797,
+          "sha256": "10732602647636f4b753d5a033617f32a2674bb1927d008b9fe78dee3fdc5584"
+        },
+        {
+          "url": "/questions/shika-ishi/2022/a/qd12/q090-1.webp",
+          "kind": "question",
+          "number": 90,
+          "pdfPage": 53,
+          "clip": [
+            68.0,
+            76.96060180664062,
+            465.0,
+            635.0
+          ],
+          "scale": 3,
+          "width": 1191,
+          "height": 1675,
+          "sha256": "f5c0d13f7c409dec0f930d66bad3517897866daae62b5a60da228e930b69ae15"
+        }
+      ],
+      "notes": [
+        "90原問＝既存採点対象10問＋追加採点対象79問＋公式採点除外1問。",
+        "問80は公式指定の4通りの正答組合せを保持。問90は既存ordering形式で公式順序を保持。",
+        "本文・表・歯式・別冊図版は公式PDFの画像を保持。歯式・表形式の選択肢は個別原本画像でも保持。"
+      ],
+      "recordCount": 79
+    },
+    {
+      "jobId": "PLAN5-152",
+      "planIndex": 151,
+      "key": "hokenshi|2023|annual|am|tp230524-03a_01.pdf",
+      "status": "収録・照合完了",
+      "officialQuestionCount": 55,
+      "existingScoredRecordCount": 10,
+      "addedScoredRecordCount": 44,
+      "officialExcludedQuestionNumbers": [
+        20
+      ],
+      "dataPath": "data/questions/hokenshi/official-2023-am-qd12.json",
+      "sources": [
+        {
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03a_01.pdf",
+          "sha256": "23f49035e8935f268ee9ebb67687f1b9e6b0b1cb9a36c1661b65fea668273d32",
+          "pages": 36
+        },
+        {
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03seitou.pdf",
+          "sha256": "3f69e967f350871ba9b1425d1103e8b8bf14e99ac8ccacf036e3765c08d01d21",
+          "pages": 1
+        },
+        {
+          "kind": "handling",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken03_04_05/dl/hokenshi_am20.pdf",
+          "sha256": "ba4a3229c5edc4d3191eb3a646a69d1f30bfe21c42068839b1117949847c21cb",
+          "pages": 1
+        }
+      ],
+      "records": [
+        {
+          "id": "hokenshi-2022-annual-am-q1",
+          "qNumber": 1,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            7
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q3",
+          "qNumber": 3,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            7
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q4",
+          "qNumber": 4,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            7
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q9",
+          "qNumber": 9,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            9
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q10",
+          "qNumber": 10,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            10
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q12",
+          "qNumber": 12,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            11
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q13",
+          "qNumber": 13,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            11
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q18",
+          "qNumber": 18,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            12
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q19",
+          "qNumber": 19,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            12
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q21",
+          "qNumber": 21,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            13
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q22",
+          "qNumber": 22,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            13
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q23",
+          "qNumber": 23,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            14
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q24",
+          "qNumber": 24,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            14
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q25",
+          "qNumber": 25,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            14
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q26",
+          "qNumber": 26,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            15
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q27",
+          "qNumber": 27,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            15
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q28",
+          "qNumber": 28,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            15
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q29",
+          "qNumber": 29,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            16
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q30",
+          "qNumber": 30,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            16
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q31",
+          "qNumber": 31,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            16
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q32",
+          "qNumber": 32,
+          "officialAnswerCells": [
+            "25"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            17
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q33",
+          "qNumber": 33,
+          "officialAnswerCells": [
+            "25"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            17
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q34",
+          "qNumber": 34,
+          "officialAnswerCells": [
+            "12"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            18
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q35",
+          "qNumber": 35,
+          "officialAnswerCells": [
+            "15"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            18
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q36",
+          "qNumber": 36,
+          "officialAnswerCells": [
+            "13"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            19
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q37",
+          "qNumber": 37,
+          "officialAnswerCells": [
+            "34"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            19
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q38",
+          "qNumber": 38,
+          "officialAnswerCells": [
+            "35"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            20
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q39",
+          "qNumber": 39,
+          "officialAnswerCells": [
+            "12"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            20
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q40",
+          "qNumber": 40,
+          "officialAnswerCells": [
+            "50"
+          ],
+          "requiredSelections": null,
+          "questionPdfPages": [
+            21
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": []
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q41",
+          "qNumber": 41,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            22
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            22
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q42",
+          "qNumber": 42,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            22
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            22
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q43",
+          "qNumber": 43,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            23
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            22
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q44",
+          "qNumber": 44,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            24
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            24
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q45",
+          "qNumber": 45,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            24
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            24
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q46",
+          "qNumber": 46,
+          "officialAnswerCells": [
+            "5"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            25
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            24
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q47",
+          "qNumber": 47,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            26
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            26
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q48",
+          "qNumber": 48,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            26
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            26
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q49",
+          "qNumber": 49,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            27
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            26
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q50",
+          "qNumber": 50,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            28
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            28
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q51",
+          "qNumber": 51,
+          "officialAnswerCells": [
+            "4"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            28
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            28
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q52",
+          "qNumber": 52,
+          "officialAnswerCells": [
+            "3"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            29
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            28
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q53",
+          "qNumber": 53,
+          "officialAnswerCells": [
+            "1"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            30
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            30
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q54",
+          "qNumber": 54,
+          "officialAnswerCells": [
+            "2"
+          ],
+          "requiredSelections": 1,
+          "questionPdfPages": [
+            30
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            30
+          ]
+        },
+        {
+          "id": "hokenshi-2022-annual-am-q55",
+          "qNumber": 55,
+          "officialAnswerCells": [
+            "15"
+          ],
+          "requiredSelections": 2,
+          "questionPdfPages": [
+            31
+          ],
+          "figureNumber": null,
+          "figurePdfPages": [],
+          "contextPdfPages": [
+            31
+          ]
+        }
+      ],
+      "excludedRecords": [
+        {
+          "id": "hokenshi-2022-annual-am-q20",
+          "sourceQuestionNumber": 20,
+          "originalText": "20　児童虐待について正しいのはどれか。\n 1．児童虐待を疑われて通告された者は通告した者を知ることができる。\n 2．令和2 年度（2020 年度）福祉行政報告例における虐待相談の主な虐待者は実\n父が1 番多い。\n 3．令和2 年（2020 年）の児童相談所における児童虐待の内容別相談件数は身体\n的虐待が最多である。\n 4．親権者が児童のしつけに際して体罰を加えてはならないことが、令和元年\n（2019 年）に改正された児童福祉法に定められている。\n",
+          "officialAnswerCells": [],
+          "officialHandlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken03_04_05/dl/hokenshi_am20.pdf",
+          "officialHandling": "採点対象から除外する。",
+          "officialReason": "選択肢に誤りがあり正解が得られないため。",
+          "imageUrls": [
+            "/questions/hokenshi/2023/am/qd12/q020-1.webp"
+          ],
+          "note": "公式本文と空の正答欄を保持。通常の採点対象の不足に数えない。"
+        }
+      ],
+      "assets": [
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q001-1.webp",
+          "kind": "question",
+          "number": 1,
+          "pdfPage": 7,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            255.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "a31dc3abc47b8dd69f1cec3ec935323a144a74940f65ccd15dad61853a2d138a"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q003-1.webp",
+          "kind": "question",
+          "number": 3,
+          "pdfPage": 7,
+          "clip": [
+            68.0,
+            424.69232177734375,
+            535.0,
+            592.3530883789062
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 420,
+          "sha256": "60982298d614c8112268004289459d9277c6341482cfed7c02db5aec5aa36b76"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q004-1.webp",
+          "kind": "question",
+          "number": 4,
+          "pdfPage": 7,
+          "clip": [
+            68.0,
+            593.3530883789062,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 392,
+          "sha256": "409fd8014cd808893be62198db619a229875bf5a7ea35617835c1a3cf19c7ebe"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q009-1.webp",
+          "kind": "question",
+          "number": 9,
+          "pdfPage": 9,
+          "clip": [
+            68.0,
+            280.1258544921875,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1175,
+          "sha256": "05b3e4bfe113dd1b3b37a91dfa48b48b36f2f96157bc85bf3f7b9d3d04e4d396"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q010-1.webp",
+          "kind": "question",
+          "number": 10,
+          "pdfPage": 10,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            640.5431518554688
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1444,
+          "sha256": "5b04a80a34b5fa0533a5a2ebd037cdab23c0cde55733a32d3150834e5be2de08"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q012-1.webp",
+          "kind": "question",
+          "number": 12,
+          "pdfPage": 11,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            230.93699645996094
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 420,
+          "sha256": "d76b4a0387a23ff0f2a7d946acd3270823eda8eb59856b8fda24ba86773b7d0a"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q013-1.webp",
+          "kind": "question",
+          "number": 13,
+          "pdfPage": 11,
+          "clip": [
+            68.0,
+            231.93699645996094,
+            535.0,
+            399.597900390625
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 420,
+          "sha256": "6394c18738ab97ca956d2199d0f3d6be8fe38b83bc0cd537e2349aa82ce272ec"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q018-1.webp",
+          "kind": "question",
+          "number": 18,
+          "pdfPage": 12,
+          "clip": [
+            68.0,
+            400.59820556640625,
+            535.0,
+            568.2589721679688
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 420,
+          "sha256": "2095b4afc0cc21493ad9101f6cd56b54fec433f138a118fcfe51c3e5e37471d1"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q019-1.webp",
+          "kind": "question",
+          "number": 19,
+          "pdfPage": 12,
+          "clip": [
+            68.0,
+            569.2589721679688,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 452,
+          "sha256": "3b066778ad4b9e45bddecff221983d4480cf3a8e7a78deb39ee06f31a33ff639"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q020-1.webp",
+          "kind": "question",
+          "number": 20,
+          "pdfPage": 13,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            303.22027587890625
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 601,
+          "sha256": "a6066935348f0f5ca34bd3362b9e6f785c4eebe509d53ebccd09a206127af8c6"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q021-1.webp",
+          "kind": "question",
+          "number": 21,
+          "pdfPage": 13,
+          "clip": [
+            68.0,
+            304.22027587890625,
+            535.0,
+            495.97552490234375
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "9666ba627c3a7e0dc51bb265bdd9a1f412d3254b1b04446ecfdf9825c1714c5c"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q022-1.webp",
+          "kind": "question",
+          "number": 22,
+          "pdfPage": 13,
+          "clip": [
+            68.0,
+            496.97552490234375,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 633,
+          "sha256": "b07b73a09c60206dddbcfb98f89eea3fc36fc45d3a77f098275bf1fd3ce8da61"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q023-1.webp",
+          "kind": "question",
+          "number": 23,
+          "pdfPage": 14,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            279.1258544921875
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 540,
+          "sha256": "b8b7215df67ee458182840b46c750ccf4f47334c571b4c9828380fc88c4b0e2f"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q024-1.webp",
+          "kind": "question",
+          "number": 24,
+          "pdfPage": 14,
+          "clip": [
+            68.0,
+            280.1258544921875,
+            535.0,
+            495.97552490234375
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 540,
+          "sha256": "767b5d44261abe676bb5be10ee44f3568a15dca9d52a9e1896f657908cde3bf9"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q025-1.webp",
+          "kind": "question",
+          "number": 25,
+          "pdfPage": 14,
+          "clip": [
+            68.0,
+            496.97552490234375,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 633,
+          "sha256": "1a3a84015f9fd90491cb91671ddff512166d572dcb8c9b60ce31234ea1ee6b7b"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q026-1.webp",
+          "kind": "question",
+          "number": 26,
+          "pdfPage": 15,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            255.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "232589e11617dfa5ad3b0c958d43c9a8a08eb71677fd56edfe2ad134ca84c59e"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q027-1.webp",
+          "kind": "question",
+          "number": 27,
+          "pdfPage": 15,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            447.7877197265625
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "553c6e598b57e918a7d1765f539d3cf5b7306071ceea044f06ed0d012ceb4c24"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q028-1.webp",
+          "kind": "question",
+          "number": 28,
+          "pdfPage": 15,
+          "clip": [
+            68.0,
+            448.7877197265625,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 754,
+          "sha256": "cbc11e5128cde60f563b233444f4272007338f13f23791143ff479165203480b"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q029-1.webp",
+          "kind": "question",
+          "number": 29,
+          "pdfPage": 16,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            255.03173828125
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "cdb8aec1d53478396063e7fb0710a56336499b74947a2a69e76d1527be5bbd97"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q030-1.webp",
+          "kind": "question",
+          "number": 30,
+          "pdfPage": 16,
+          "clip": [
+            68.0,
+            256.03173828125,
+            535.0,
+            471.88140869140625
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 540,
+          "sha256": "1aba97d59d8ec24a421fd1b1b761f6af16195f625576f369cb635feb6650db59"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q031-1.webp",
+          "kind": "question",
+          "number": 31,
+          "pdfPage": 16,
+          "clip": [
+            68.0,
+            472.88140869140625,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 693,
+          "sha256": "b2d769b22118457395d3573c8dac49a0a05d9596f10a44ae02e44bf586699c98"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q032-1.webp",
+          "kind": "question",
+          "number": 32,
+          "pdfPage": 17,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            255.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "97d47ad897364215eec3459ae6cc704ead0a8e201ea801f32a62d89127873129"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q033-1.webp",
+          "kind": "question",
+          "number": 33,
+          "pdfPage": 17,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1235,
+          "sha256": "c107d9f625de249f35f3824bc130b2b438f3c443941ef45e40cc77cbfec744bd"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q034-1.webp",
+          "kind": "question",
+          "number": 34,
+          "pdfPage": 18,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            255.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "8141ff46b866ac36edcf65af7b1b815905c5d6ce1c2a66b0b1bd6e9dd9c24f7c"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q035-1.webp",
+          "kind": "question",
+          "number": 35,
+          "pdfPage": 18,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1235,
+          "sha256": "9075b1922b8e96c5b7848626feeffc3cc7bb8ab8cb630e9d5849b5fdf0354e40"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q036-1.webp",
+          "kind": "question",
+          "number": 36,
+          "pdfPage": 19,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            255.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "4ca1a08bc59c4bace68d891264384a1b249634e56f76b8e7e045375cfcb13c8a"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q037-1.webp",
+          "kind": "question",
+          "number": 37,
+          "pdfPage": 19,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1235,
+          "sha256": "940995c418f7d6d9135daa50d30c647a42cc2126eb6da54415b3e2a19ff39978"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q038-1.webp",
+          "kind": "question",
+          "number": 38,
+          "pdfPage": 20,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            255.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 480,
+          "sha256": "3e5f759a604dffd85ff6f28c8e634edf217a33ac402d0d5d0733d0c73f0fb9b4"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q039-1.webp",
+          "kind": "question",
+          "number": 39,
+          "pdfPage": 20,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1235,
+          "sha256": "d61283ac0b9b59bac29882b4d0acb7357f35d65823be3f022a872c74e8ac3fd4"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q040-1.webp",
+          "kind": "question",
+          "number": 40,
+          "pdfPage": 21,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1717,
+          "sha256": "624bf902137d8eef883cdcc065ca0c9467c4ab4e0a4be20a61071e09e4ea5789"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/context-p22-1.webp",
+          "kind": "context",
+          "number": 41,
+          "pdfPage": 22,
+          "clip": [
+            65,
+            63.27610778808594,
+            535,
+            326.314697265625
+          ],
+          "scale": 2.5,
+          "width": 1176,
+          "height": 658,
+          "sha256": "8f945c4ecfc85cc77e1d525f411f378a31ec338c42acc3b9e2e31235a9416403"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q041-1.webp",
+          "kind": "question",
+          "number": 41,
+          "pdfPage": 22,
+          "clip": [
+            68.0,
+            328.314697265625,
+            535.0,
+            495.97552490234375
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 420,
+          "sha256": "b2b1e9d515cc8f8f508140e0c1d4b649d801531d3c3ac93fdce196d2866cb575"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q042-1.webp",
+          "kind": "question",
+          "number": 42,
+          "pdfPage": 22,
+          "clip": [
+            68.0,
+            496.97552490234375,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 633,
+          "sha256": "9637e2755a239be6c6487a90c67d14008691bf02a935e0609043cf4460ed4839"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q043-1.webp",
+          "kind": "question",
+          "number": 43,
+          "pdfPage": 23,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1717,
+          "sha256": "5ecc3f717a31bcfa7492e803aa9beccfb28c5cf6a98b8529c750a600b7b5c371"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/context-p24-1.webp",
+          "kind": "context",
+          "number": 44,
+          "pdfPage": 24,
+          "clip": [
+            65,
+            63.27610778808594,
+            535,
+            326.314697265625
+          ],
+          "scale": 2.5,
+          "width": 1176,
+          "height": 658,
+          "sha256": "1beefb09943f982d03e7f934ef48c75d4024d186235ab1150c165a5cd6cb7cdd"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q044-1.webp",
+          "kind": "question",
+          "number": 44,
+          "pdfPage": 24,
+          "clip": [
+            68.0,
+            328.314697265625,
+            535.0,
+            520.0698852539062
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 481,
+          "sha256": "6b01efc7d12493e67fb2553aff69d2a552d290b536b180e95956c7df29ab1348"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q045-1.webp",
+          "kind": "question",
+          "number": 45,
+          "pdfPage": 24,
+          "clip": [
+            68.0,
+            521.0698852539062,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 573,
+          "sha256": "ef6401c643d7896ba299e5c195f53ccc4cd75f840953b3d5ae69afc98a59083a"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q046-1.webp",
+          "kind": "question",
+          "number": 46,
+          "pdfPage": 25,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1717,
+          "sha256": "1f936c6890487d53cd86e15c17248db3a915f851c1590b0c352d6c6f1378b7f0"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/context-p26-1.webp",
+          "kind": "context",
+          "number": 47,
+          "pdfPage": 26,
+          "clip": [
+            65,
+            63.27610778808594,
+            535,
+            302.22027587890625
+          ],
+          "scale": 2.5,
+          "width": 1176,
+          "height": 598,
+          "sha256": "4302d4365187adb215bf588a257e955d7a571decc3c722996f98e879e27e7d32"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q047-1.webp",
+          "kind": "question",
+          "number": 47,
+          "pdfPage": 26,
+          "clip": [
+            68.0,
+            304.22027587890625,
+            535.0,
+            471.881103515625
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 420,
+          "sha256": "ccead982aa7abe13e6a7f3f8dab1087e91a6e8d7e571c8da6e556ca56436a79b"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q048-1.webp",
+          "kind": "question",
+          "number": 48,
+          "pdfPage": 26,
+          "clip": [
+            68.0,
+            472.881103515625,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 693,
+          "sha256": "cfb0fec09cb842a55bd72dcd69bac31665896e6004a1bd8a0ef4d6c1fc38409d"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q049-1.webp",
+          "kind": "question",
+          "number": 49,
+          "pdfPage": 27,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1717,
+          "sha256": "35a0a957e8506439eb37ee540fd67b486aa1cb3d214a7d552b16dc58d371ef3a"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/context-p28-1.webp",
+          "kind": "context",
+          "number": 50,
+          "pdfPage": 28,
+          "clip": [
+            65,
+            63.27610778808594,
+            535,
+            254.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1176,
+          "height": 478,
+          "sha256": "d4b1ae07b148c81a4106e5d02928494f86f093516a5416ecb671be43a0b585c0"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q050-1.webp",
+          "kind": "question",
+          "number": 50,
+          "pdfPage": 28,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            520.0698852539062
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 661,
+          "sha256": "5e3b18ebedb5eb2ed67ce555516388efc1be335108d05cb78676f71147b8480b"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q051-1.webp",
+          "kind": "question",
+          "number": 51,
+          "pdfPage": 28,
+          "clip": [
+            68.0,
+            521.0698852539062,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 573,
+          "sha256": "7ea7e0c878bd66442a297af1d6021d09b58ad51fa580d4fa917031726185d57a"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q052-1.webp",
+          "kind": "question",
+          "number": 52,
+          "pdfPage": 29,
+          "clip": [
+            68.0,
+            63.27610778808594,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1717,
+          "sha256": "695d0f7071a6ebade5c79eb4f79df27a5a68cc8430c38eb2ab22908ea0cac1ca"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/context-p30-1.webp",
+          "kind": "context",
+          "number": 53,
+          "pdfPage": 30,
+          "clip": [
+            65,
+            63.27610778808594,
+            535,
+            254.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1176,
+          "height": 478,
+          "sha256": "274b81a811597010b95e7c587a3afd65a91c866abcf25056dadfac966b81ab47"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q053-1.webp",
+          "kind": "question",
+          "number": 53,
+          "pdfPage": 30,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            423.69232177734375
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 420,
+          "sha256": "2141c052a34642ee570b4cd9f119b2d29fb9aa852d62081ddb7266a277a5c3b5"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q054-1.webp",
+          "kind": "question",
+          "number": 54,
+          "pdfPage": 30,
+          "clip": [
+            68.0,
+            424.69232177734375,
+            535.0,
+            750.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 814,
+          "sha256": "cf8bf7c1f02032873ab0002a788ab3c2e9278a254b61423f3d01e08459914335"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/context-p31-1.webp",
+          "kind": "context",
+          "number": 55,
+          "pdfPage": 31,
+          "clip": [
+            65,
+            63.27610778808594,
+            535,
+            254.03143310546875
+          ],
+          "scale": 2.5,
+          "width": 1176,
+          "height": 478,
+          "sha256": "2bc088227c9265cb243e6d69cc99fda78f354187e566818177dcd8b5a495d905"
+        },
+        {
+          "url": "/questions/hokenshi/2023/am/qd12/q055-1.webp",
+          "kind": "question",
+          "number": 55,
+          "pdfPage": 31,
+          "clip": [
+            68.0,
+            256.03143310546875,
+            535.0,
+            745.0
+          ],
+          "scale": 2.5,
+          "width": 1168,
+          "height": 1223,
+          "sha256": "c2c4ea75267770e6a9477a8ad3ce731b11402cde012703192c3fd7e3d01de754"
+        }
+      ],
+      "notes": [
+        "55原問＝既存採点対象10問＋追加採点対象44問＋公式採点除外1問。",
+        "公式実施年2023年（第109回）。既存10問の保存年2022・ID体系を維持し、追加分も保存年2022、sourceExamYear=2023。",
+        "問41～43・44～46・47～49・50～52・53～54・55は共通事例を各問から参照。",
+        "問40は既存numeric形式で公式値50％を保持。"
+      ],
+      "recordCount": 44
+    }
+  ],
+  "remainingJobIds": [
+    "PLAN5-180",
+    "PLAN5-194",
+    "PLAN5-208",
+    "PLAN5-222",
+    "PLAN5-236",
+    "PLAN5-250",
+    "PLAN5-264",
+    "PLAN5-278",
+    "PLAN5-292",
+    "PLAN5-306",
+    "PLAN5-320",
+    "PLAN5-334",
+    "PLAN5-348",
+    "PLAN5-362",
+    "PLAN5-376",
+    "PLAN5-390",
+    "PLAN5-404",
+    "PLAN5-418",
+    "PLAN5-432",
+    "PLAN5-446"
+  ],
+  "verificationRows": [
+    {
+      "jobId": "PLAN5-166",
+      "planIndex": 165,
+      "key": "josanshi|2026|annual|pm|tp260424-04b_01.pdf",
+      "status": "照合完了（既存採点対象54問・公式採点除外1問）",
+      "recordCount": 0,
+      "existingScoredRecordCount": 54,
+      "officialQuestionCount": 55,
+      "officialExcludedQuestionNumbers": [
+        31
+      ],
+      "sources": [
+        {
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04b_01.pdf",
+          "sha256": "30a129ca5b4ddcc18104bf3fcfca1d5559a94da2741ff9a45fd5eb02bb2241ea",
+          "pages": 36
+        },
+        {
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-04seitou.pdf",
+          "sha256": "120d2e5144b2139eadde20e246b91df3cbcfdd7d664b1536ec7f47486c445f50",
+          "pages": 1
+        },
+        {
+          "kind": "handling",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/dl/josanshi_pm31.pdf",
+          "sha256": "e06f4f986257c7670ebeca9a39c004d9d07ca424b49089705607d661e39e9d49",
+          "pages": 1
+        }
+      ],
+      "existingDataPath": "data/questions/josanshi/latest-two-additions.json",
+      "officialExcludedRecords": [
+        {
+          "id": "josanshi-2025-annual-pm-q31",
+          "sourceQuestionNumber": 31,
+          "questionPdfPage": 17,
+          "originalText": "てんかん合併妊娠について正しいのはどれか。2 つ選べ。\n 1．妊娠によって、てんかん発作の頻度は減少する。\n 2．妊娠中は抗てんかん薬の血中濃度を測定する。\n 3．妊娠中期から葉酸を補充する。\n 4．妊娠末期に母体にビタミンＫを投与する。\n 5．分娩様式は帝王切開術となる。",
+          "officialAnswerCells": [],
+          "officialHandlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/dl/josanshi_pm31.pdf",
+          "officialHandling": "採点対象から除外する。",
+          "officialReason": "選択肢において正解を得ることが困難なため。",
+          "note": "公式本文・空の正答欄を記録。独自に正答を作らない。"
+        }
+      ],
+      "notes": [
+        "公式実施年2026年（第109回）。既存54問の保存年2025・ID体系・本文・正答を変更していない。",
+        "計画で不足とされた問31は公式採点除外。55原問すべてを照合。"
+      ]
+    }
+  ]
+}

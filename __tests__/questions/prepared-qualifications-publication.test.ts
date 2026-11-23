@@ -8,6 +8,7 @@ import { ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
+import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { getHomeDirectory } from "@/lib/home/home-directory";
@@ -22,6 +23,7 @@ import { defaultPracticeSession, practiceSessionLabel } from "@/lib/questions/pr
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 const exams: ExamCode[] = ["unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
+const officialAnswerEvidence = join(process.cwd(), "data/replenishment-ledgers/annual-supplements-20261122");
 
 describe("eight prepared qualifications are published", () => {
   const counts: Record<string, number> = {
@@ -38,9 +40,12 @@ describe("eight prepared qualifications are published", () => {
     const directory = getHomeDirectory().flatMap(domain => [...domain.featured, ...domain.compact]);
     for (const exam of exams) {
       expect(params).toContainEqual({ exam });
-      expect(directory.find(item => item.key === exam)).toMatchObject({ href: `/${exam}`, questionCount: counts[exam] });
-      const card = [...doc.querySelectorAll("article")].find(article => article.querySelector(`a[href="/${exam}"]`));
-      expect(card?.textContent).toContain(`収録 ${counts[exam]}問`);
+      const publicCount = getQuestionsByExamStrict(exam).length;
+      expect(directory.find(item => item.key === exam)).toMatchObject({ href: `/${exam}`, questionCount: publicCount });
+      const qualification = getQualificationByExamCode(exam)!;
+      const card = [...doc.querySelectorAll("article")].find(article => article.querySelector("h2")?.textContent === qualification.shortName);
+      expect(card?.textContent).toContain(`収録 ${publicCount}問`);
+      expect(card?.querySelector(`a[href="${qualification.officialQuestionsUrl}"]`)).not.toBeNull();
       expect(card?.textContent).not.toMatch(/非公開で保管|許可待ち/);
       const metadata = await generateMetadata({ params: Promise.resolve({ exam }) });
       expect(metadata.alternates?.canonical).toBe(`/${exam}`);
@@ -50,17 +55,35 @@ describe("eight prepared qualifications are published", () => {
 
   for (const exam of exams) {
     const dir = join(process.cwd(), "data/questions", exam);
-    const questions: Question[] = readdirSync(dir)
-      .filter(name => /^(published-|20\d\d)/.test(name) && name.endsWith(".json"))
+    const isTransport = exam === "unko-kanrisha-ryokaku" || exam === "unko-kanrisha-kamotsu";
+    const files = readdirSync(dir).filter(name =>
+      (/^(published-|20\d\d)/.test(name) && name.endsWith(".json")) ||
+      (isTransport && name === "additional-papers.json"),
+    );
+    const isInitialFile = (name: string) => (
+      (!isTransport || (name !== "2022.json" && name !== "additional-papers.json"))
+      && (exam !== "kikenbutsu-otsu4" || name === "published-202606.json")
+    );
+    const questions = files.flatMap(name => {
+      const rows: Question[] = JSON.parse(readFileSync(join(dir, name), "utf8"));
+      // The additional-papers file also contains the already registered 2022 rows.
+      return name === "additional-papers.json" ? rows.filter(q => q.year < 2022) : rows;
+    });
+    const original: Question[] = files.filter(isInitialFile)
       .flatMap(name => JSON.parse(readFileSync(join(dir, name), "utf8")));
+    const byId = (items: Question[]) => [...items].sort((a, b) => a.id.localeCompare(b.id));
 
     it(`${exam}: exposes the same complete corpus to lists, pages, search and practice`, async () => {
       expect(getQualificationByExamCode(exam)?.status).toBe("live");
       expect(isExamPublished(exam)).toBe(true);
-      expect(questions).toHaveLength(counts[exam]);
-      expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);
-      expect(await getQuestionsForExam(exam)).toEqual(questions);
-      expect(getQuestionsByExamStrict(exam)).toEqual(questions);
+      expect(original).toHaveLength(counts[exam]);
+      if (isTransport) expect(questions).toHaveLength(exam === "unko-kanrisha-ryokaku" ? 228 : 221);
+      const current = getQuestionsByExamStrict(exam);
+      const originalIds = new Set(original.map(q => q.id));
+      expect(byId(current.filter(q => originalIds.has(q.id)))).toEqual(byId(original));
+      expect(byId(QUESTIONS_BY_EXAM[exam] ?? [])).toEqual(byId(questions));
+      expect(byId(await getQuestionsForExam(exam))).toEqual(byId(questions));
+      expect(byId(current)).toEqual(byId(questions));
       expect(getRegisteredExamCodes()).toContain(exam);
       expect(ALL_QUIZ_EXAM_CODES).toContain(exam);
       expect(getAvailableExams()).toContain(exam);
@@ -91,7 +114,11 @@ describe("eight prepared qualifications are published", () => {
         expect(q.exam).toBe(exam);
         expect(q.sourceAnswerUrl).toMatch(/^https:\/\//);
         expect(q.sourcePdfUrl).toMatch(/^https:\/\//);
-        expect(q.sourceAttribution).toContain("独自作成");
+        if (isTransport && q.year <= 2021) {
+          expect(q.sourceAttribution).toBe("出典：公益財団法人運行管理者試験センター。");
+        } else {
+          expect(q.sourceAttribution).toContain("独自作成");
+        }
         if (q.season === "published") expect(questionSourceEdition(q)).toContain("2026年6月公表版");
         expect(EXAM_CONFIGS[q.exam].seasons).toContain(q.season);
         expect(EXAM_CONFIGS[q.exam].sessions.find(s => s.session === q.session)?.categories).toContain(q.category);
@@ -106,7 +133,16 @@ describe("eight prepared qualifications are published", () => {
         expect(Object.keys(q.choiceExplanations!).sort()).toEqual(keys.sort());
         for (const reason of Object.values(q.choiceExplanations!)) expect(reason!.length).toBeGreaterThan(12);
         for (const key of Array.isArray(q.answer) ? q.answer : [q.answer]) expect(keys).toContain(key);
-        if (Array.isArray(q.answer)) expect(q.requiredSelections).toBe(q.answer.length);
+        if (Array.isArray(q.answer)) {
+          if (q.id === "kikenbutsu-otsu4-2025-published-q24") {
+            expect(q.officialAnswerNumber).toBe("3,5");
+            expect(q.requiredSelections).toBe(1);
+            for (const key of q.answer) expect(isCompleteSelectionCorrect(q.answer, [key], q.requiredSelections)).toBe(true);
+            expect(isCompleteSelectionCorrect(q.answer, q.answer, q.requiredSelections)).toBe(false);
+          } else {
+            expect(q.requiredSelections).toBe(q.answer.length);
+          }
+        }
         expect(choiceDisplayLabel(exam, "ア")).toBe("1");
         expect(shuffleChoices(q)).toBe(q);
       }
@@ -169,7 +205,7 @@ describe("eight prepared qualifications are published", () => {
 
   it("貨物 preserves every answer slot and exact multiple-selection sets in both official tables", () => {
     const dir = join(process.cwd(), "data/questions/unko-kanrisha-kamotsu");
-    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(dir, "official-answers.json"), "utf8"));
+    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(officialAnswerEvidence, "unko-kanrisha-kamotsu", "official-answers.json"), "utf8"));
     for (const year of ["2024", "2023"]) {
       if (!existsSync(join(dir, `${year}.json`))) continue;
       const questions: Question[] = JSON.parse(readFileSync(join(dir, `${year}.json`), "utf8"));
@@ -194,7 +230,7 @@ describe("eight prepared qualifications are published", () => {
 
   it("旅客 preserves every answer slot and exact multiple-selection sets in both official tables", () => {
     const dir = join(process.cwd(), "data/questions/unko-kanrisha-ryokaku");
-    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(dir, "official-answers.json"), "utf8"));
+    const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(officialAnswerEvidence, "unko-kanrisha-ryokaku", "official-answers.json"), "utf8"));
     for (const year of ["2024", "2023"]) {
       if (!existsSync(join(dir, `${year}.json`))) continue;
       const questions: Question[] = JSON.parse(readFileSync(join(dir, `${year}.json`), "utf8"));
