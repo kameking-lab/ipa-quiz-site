@@ -13,7 +13,7 @@ import { calculatePace, weakQuestions, type AnswerAttempt, type PacePlan } from 
 import { listPacePlans, savePacePlan, deletePacePlan } from "@/lib/study-plan/pace-storage";
 import { answersToday, homeCalendar } from "@/lib/study-plan/home";
 import { loadPlanSchedule, paceAttempts } from "@/lib/study-plan/client";
-import { planCountdownDates, withConfirmedExamDay } from "@/lib/study-plan/countdown";
+import { isProvisionalExamDate, planCountdownDates, withConfirmedExamDay } from "@/lib/study-plan/countdown";
 import { historyExamLookup, japanDate, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { readHomeStudy, relativeStudyDate } from "@/lib/home/recent-study";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -135,8 +135,9 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   }, [resumeQuery]);
   const savedPlan = plans.find(p => p.id === active) ?? plans[0];
   const { questions: catalog, reload } = usePlanCatalog(savedPlan?.exam ?? "");
+  const provisional = isProvisionalExamDate(savedPlan?.examDateSource);
   const scheduleExam = !createOnLoad && !savedPlan?.result && savedPlan?.sessionId &&
-    (!savedPlan.examDate || savedPlan.examDate >= today) && qualificationIdsForExam(savedPlan.exam).length ? savedPlan.exam : null;
+    (!savedPlan.examDate || provisional || savedPlan.examDate >= today) && qualificationIdsForExam(savedPlan.exam).length ? savedPlan.exam : null;
   const [schedule, setSchedule] = useState<{ exam: string; data: ExamSchedule | null }>();
   useEffect(() => {
     if (!scheduleExam) return;
@@ -148,16 +149,17 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   }, [scheduleExam]);
   const scheduleSessions = schedule?.exam === scheduleExam ? schedule?.data?.sessions : undefined;
   const selectedSession = scheduleSessions?.find(session => session.id === savedPlan?.sessionId);
-  const plan = savedPlan && withConfirmedExamDay(savedPlan, today, selectedSession);
+  const plan = useMemo(() => savedPlan && withConfirmedExamDay(savedPlan, today, selectedSession), [savedPlan, today, selectedSession]);
   const pace = plan && catalog ? calculatePace(plan, catalog, attempts, today) : null;
   const weakCount = plan && catalog ? weakQuestions(catalog, plan.exam, attempts, stars).length : null;
-  const postExam = !!plan?.examDate && plan.examDate < today;
-  const examToday = plan?.examDate === today;
+  const scheduleLoading = !!scheduleExam && schedule?.exam !== scheduleExam;
+  const checkingExamDay = scheduleLoading && provisional;
+  const postExam = !checkingExamDay && !!plan?.examDate && plan.examDate < today;
+  const examToday = !checkingExamDay && plan?.examDate === today;
   // A date restored after first paint keeps the same rows on the day of the exam.
   const examDayLayout = examToday && savedPlan?.examDate !== null;
-  const scheduleLoading = !!scheduleExam && schedule?.exam !== scheduleExam;
   // Wait for the registration dates before choosing the first visible countdown.
-  const calendar = plan && !(scheduleLoading && plan.registration?.estimated)
+  const calendar = plan && !checkingExamDay && !(scheduleLoading && plan.registration?.estimated)
     ? homeCalendar(plan, today, scheduleSessions)
     : null;
   const calendarPending = scheduleLoading && !calendar;
@@ -192,7 +194,8 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
     : picks.map(pick => directoryItems.find(i => i.key === pick.key)!).filter(Boolean);
   function updatePlan(patch: Partial<PacePlan>) {
     if (!savedPlan) return;
-    if (!savePacePlan({ ...savedPlan, ...patch, updatedAt: new Date().toISOString() })) setError("保存できませんでした。");
+    const base = patch.result ? plan ?? savedPlan : savedPlan;
+    if (!savePacePlan({ ...base, ...patch, updatedAt: new Date().toISOString() })) setError("保存できませんでした。");
     else {
       setError(""); setSheet(null);
       if (patch.result === "passed" && !savedPlan.result) {

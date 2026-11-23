@@ -439,6 +439,107 @@ test.describe("home flip calendar", () => {
   ] as const;
   const screenshotDir = process.env.HOME_COUNTDOWN_SCREENSHOTS;
 
+  test("uses the confirmed day for a tentative plan across home, editing, and practice", async ({ page }) => {
+    const provisionalDate = "2026-11-28";
+    const officialDate = "2026-12-05";
+    const base = fixturePlan();
+    const registration = { ...base.registration, label: "2026年度第1回", start: null, deadline: null, resultDate: null, estimated: true };
+    const undated = { ...base, examDate: null, examDateSource: undefined, registration };
+    const session = { id: base.sessionId, label: registration.label, examDate: provisionalDate, datePrecision: "date",
+      scheduleStatus: "tentative", sourceUrl: registration.sourceUrl, applicationStart: null, applicationDeadline: null, resultDate: null };
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.emulateMedia({ reducedMotion: "reduce", colorScheme: "light" });
+    await page.clock.setFixedTime(new Date("2026-11-27T12:10:00+09:00"));
+    await page.addInitScript(({ key, value }) => {
+      if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify([value]));
+    }, { key: LS_KEYS.pacePlans, value: undated });
+    await page.route("**/api/home/weather", route => route.fulfill({ json: { weather: "clear" } }));
+    await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
+    await page.route("**/api/study-plan/catalog/ip", route => route.fulfill({ json: { questions: catalog } }));
+    let scheduleGate: Promise<void> | undefined;
+    await page.route("**/api/exam-schedule/ip", async route => {
+      await scheduleGate;
+      await route.fulfill({ json: { exam: "ip", source: "tsugino", sessions: [session] } });
+    });
+    const hero = page.locator(".p3-home-scene");
+    const calendar = hero.locator("[data-home-calendar]");
+    const edit = hero.getByRole("button", { name: "計画を変更", exact: true });
+    const dialog = page.getByRole("dialog");
+    const savedDate = () => page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0], LS_KEYS.pacePlans);
+    await page.goto("/");
+    await edit.click();
+    await dialog.getByRole("radio", { name: /2026年度第1回.*予定/ }).check();
+    await expect(dialog.locator(`time[datetime="${provisionalDate}"]`)).toBeVisible();
+    await expect(dialog.locator('input[type="date"]')).toHaveCount(0);
+    await dialog.getByRole("button", { name: "変更を保存" }).click();
+    await expect(dialog).toHaveCount(0);
+    expect(await savedDate()).toMatchObject({ examDate: provisionalDate, examDateSource: "tentative" });
+    await expect(calendar.getByRole("heading", { name: "試験まで（予定） あと 1 日" })).toBeVisible();
+
+    Object.assign(session, { examDate: officialDate, scheduleStatus: "official" });
+    for (const [day, stage, days, target] of [
+      [provisionalDate, "old-day", 7, 29],
+      ["2026-11-29", "after-old-day", 6, 34],
+    ] as const) {
+      await page.clock.setFixedTime(new Date(`${day}T12:10:00+09:00`));
+      const gate = Promise.withResolvers<void>();
+      scheduleGate = gate.promise;
+      try {
+        await page.goto("/", { waitUntil: "domcontentloaded" });
+        await expect(hero.getByText("日程を読み込み中…")).toBeVisible();
+        await expect(hero.getByText("正解済み 0 / 200問")).toBeAttached();
+        await expect(hero.getByRole("group", { name: "結果を記録" })).toHaveCount(0);
+        const shifts = await page.evaluateHandle(async () => {
+          await document.fonts.ready;
+          await new Promise(requestAnimationFrame);
+          const entries: Array<PerformanceEntry & { value?: number; hadRecentInput?: boolean }> = [];
+          const observer = new PerformanceObserver(list => entries.push(...list.getEntries()));
+          observer.observe({ type: "layout-shift" });
+          return { entries, observer };
+        });
+        gate.resolve();
+        await expect(calendar.getByRole("heading", { name: `試験まで あと ${days} 日`, exact: true })).toBeVisible();
+        await expect(calendar.locator(`time[datetime="${officialDate}"]`)).toBeVisible();
+        await expect(hero.getByText(`残り200問・勉強日あと${days}日`)).toBeVisible();
+        await expect(hero.getByText(`1回の目安 ${target}問正解`)).toBeVisible();
+        await expect(hero.getByRole("group", { name: "結果を記録" })).toHaveCount(0);
+        expect(await shifts.evaluate(async ({ entries, observer }) => {
+          await new Promise(requestAnimationFrame);
+          await new Promise(requestAnimationFrame);
+          const records = [...entries, ...observer.takeRecords()] as typeof entries;
+          observer.disconnect();
+          return records.reduce((sum, entry) => sum + (entry.hadRecentInput ? 0 : entry.value ?? 0), 0);
+        })).toBe(0);
+        await shifts.dispose();
+        expect(await calendarContrast(calendar)).toBeGreaterThanOrEqual(4.5);
+        if (screenshotDir) await screenshotHero(hero, `${screenshotDir}/published-${stage}-home-390.png`);
+
+        await edit.click();
+        const confirmedDate = dialog.locator(`time[datetime="${officialDate}"]`);
+        await expect(confirmedDate).toBeVisible();
+        await expect(dialog.locator('input[type="date"]')).toHaveCount(0);
+        if (screenshotDir) {
+          await dialog.locator("fieldset").first().scrollIntoViewIfNeeded();
+          await page.screenshot({ path: `${screenshotDir}/published-${stage}-schedule-390.png`, animations: "disabled" });
+        }
+        await page.keyboard.press("Escape");
+        await expect(dialog).toHaveCount(0);
+        expect(await savedDate()).toMatchObject({ examDate: provisionalDate, examDateSource: "tentative" });
+        await hero.getByRole("link", { name: "計画の問題を解く" }).click();
+        await expect(page).toHaveURL(/\/quiz\/today\?plan=e2e-pace/);
+        await expect(page.getByRole("heading", { name: `計画の問題 · ${target}問` })).toBeVisible();
+      } finally {
+        gate.resolve();
+      }
+    }
+
+    await page.clock.setFixedTime(new Date("2026-12-06T12:10:00+09:00"));
+    await page.goto("/");
+    await expect(hero.locator(`time[datetime="${officialDate}"]`)).toBeVisible();
+    await hero.getByRole("button", { name: "合格", exact: true }).click();
+    expect(await savedDate()).toMatchObject({ examDate: officialDate, examDateSource: "official", result: "passed" });
+  });
+
   for (const state of states) {
     for (const scene of scenes) {
       const alternateWidth = ["before-opening", "closed", "registered", "estimated"].includes(state.name);

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { QuizClient } from "../QuizClient";
 import { listPacePlans } from "@/lib/study-plan/pace-storage";
 import { clearBatchQuestion, loadPlanCatalog, loadPlanSchedule, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
-import { withConfirmedExamDay } from "@/lib/study-plan/countdown";
+import { isProvisionalExamDate, withConfirmedExamDay } from "@/lib/study-plan/countdown";
 import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { calculatePace, weakQuestions } from "@/lib/study-plan/pace";
 import { createHistoryStore } from "@/lib/storage/history";
@@ -37,7 +37,7 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
       if (!exam) throw new Error("学習計画が見つかりませんでした。");
       const [catalog, schedule] = await Promise.all([
         loadPlanCatalog(exam, controller.signal),
-        savedPlan?.sessionId && !savedPlan.examDate && !savedPlan.result && qualificationIdsForExam(exam).length
+        savedPlan?.sessionId && !savedPlan.result && (!savedPlan.examDate || isProvisionalExamDate(savedPlan.examDateSource)) && qualificationIdsForExam(exam).length
           ? loadPlanSchedule(exam, controller.signal) : null,
       ]);
       if (controller.signal.aborted) return;
