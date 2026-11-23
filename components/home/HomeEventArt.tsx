@@ -56,8 +56,9 @@ export function HomeEventArt({ event, assetBase = "" }: EventProps) {
 
 function EventArtImage({ event, assetBase }: { event: HomeEventId; assetBase: string }) {
   const [ready, setReady] = useState(false);
+  const { file, position } = HOME_EVENT_ART[event];
   return <picture className="p3-event-art" data-home-event-art={event} data-home-event-ready={ready || undefined}>
-    <img src={`${assetBase}/${HOME_EVENT_ART_DIR}/${HOME_EVENT_ART[event]}`} alt="" aria-hidden="true"
+    <img src={`${assetBase}/${HOME_EVENT_ART_DIR}/${file}`} alt="" style={{ objectPosition: position }}
       fetchPriority="low" decoding="async"
       onLoad={event => { void event.currentTarget.decode().then(() => setReady(true), () => {}); }}
       onError={() => setReady(false)} />

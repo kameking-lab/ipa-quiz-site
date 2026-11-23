@@ -27,7 +27,11 @@ body { padding-left:var(--safe-left); padding-right:var(--safe-right); overflow-
   padding: 12px var(--p3-native-orb-gutter) 16px 16px;
   margin-inline: -16px;
 }
-.native-home-hero > .p3-event-art-slot { margin-inline-end: calc(-1 * var(--p3-native-orb-gutter)); }
+[data-home-event-layout] .native-home-hero {
+  min-height: 310px;
+  padding-inline-end: 16px;
+}
+[data-home-event-layout] .native-main:has(> .native-home-hero) { padding-block-start: 0; }
 /* Keep the bright stars in the open sky beside the bundled home's text. */
 [data-home-scene="night"] .native-home-hero {
   --p3-sky-detail:

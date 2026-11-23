@@ -190,39 +190,47 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
       {plan ? (
         <div className={`${styles.hero} p3-landscape p3-home-scene`}>
           <HomeWeather />
-          <div className="flex items-start justify-between gap-2">
-            <button className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 p3-scene-muted" /></button>
-            {plan.examDate && <span className="shrink-0 pt-3 text-[13px] p3-scene-muted tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
-          </div>
-          {plan.registration && <p className="text-[13px] p3-scene-muted">{plan.registration.label}</p>}
-          {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
-          {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
-          {examToday && <h1 className="mt-2 text-xl font-bold">試験は今日です</h1>}
           <HomeEventArt event={event} />
-          {pace?.total ? <>
-            <p className="mt-2 text-sm p3-scene-muted">{pace.oldestYear}年度以降</p>
-            <p className="mt-1 text-xl font-bold tabular-nums">正解済み {pace.mastered} / {pace.total}問</p>
-            <div className="p3-event-track">
-              <PaceTrack runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} />
+          <div className="p3-event-panel" data-event-panel="intro">
+            <div className="flex items-start justify-between gap-2">
+              <button className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 p3-scene-muted" /></button>
+              {plan.examDate && <span className="shrink-0 pt-3 text-[13px] p3-scene-muted tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
             </div>
-            {!postExam && !examToday && !pace.complete && <>
-              <p className="mt-2 text-sm p3-scene-muted">残り{pace.remaining}問{plan.examDate ? "・勉強日あと" + pace.studyDays + "日" : ""}</p>
-              {pace.target !== null && <p className="mt-1 font-semibold">1回の目安　{pace.target}問正解</p>}
-              {pace.nextWeekday !== null && !pace.scheduledToday && <p className="mt-1 text-sm">次の勉強日は{weekdayLabels[pace.nextWeekday]}曜日です</p>}
+            {plan.registration && <p className="text-[13px] p3-scene-muted">{plan.registration.label}</p>}
+            {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
+            {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
+            {examToday && <h1 className="mt-2 text-xl font-bold">試験は今日です</h1>}
+            {!!pace?.total && <>
+              <p className="mt-2 text-sm p3-scene-muted">{pace.oldestYear}年度以降</p>
+              <p className="mt-1 text-xl font-bold tabular-nums">正解済み {pace.mastered} / {pace.total}問</p>
             </>}
-            {pace.complete && <p className="mt-2 font-semibold">全{pace.total}問に正解しました</p>}
-          </> : catalog === undefined ? <p role="status" className="py-4 text-sm">問題を読み込み中…</p> : catalog === null ? <>
-            <p role="alert" className="py-2 text-sm">問題を読み込めませんでした</p>
-            <button type="button" onClick={reload} className="study-link">再読み込み</button>
-          </> : <>
-            <p className="py-2 text-sm">{pace?.oldestYear === null && catalog.length ? "解く範囲を設定してください" : "計画に使える問題がありません"}</p>
-            {catalog.length === 0 && <Link href="/search" className="study-link">資格を選ぶ</Link>}
-          </>}
-          {!postExam && !examToday && pace && !pace.complete && pace.total > 0 && (plan.examDate === null ?
-            <><p className="mt-2 text-sm">受験日を設定してください</p><button type="button" onClick={() => setSheet("edit")} className="study-link">受験日を設定</button></> : pace.studyDays === 0 ?
-            <><p className="mt-2 text-sm">試験前に勉強日がありません</p><button type="button" onClick={() => setSheet("edit")} className="study-link">勉強する日を変更</button></> : null)}
-          {pace?.target != null && <Link className="study-primary mt-2" href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>計画の問題を解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>}
-          {postExam && <>
+          </div>
+          <div className="p3-event-track">
+            {!!pace?.total && <PaceTrack runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} />}
+          </div>
+          <div className="p3-event-panel" data-event-panel="progress">
+            {pace?.total ? <>
+              {!postExam && !examToday && !pace.complete && <>
+                <p className="mt-2 text-sm p3-scene-muted">残り{pace.remaining}問{plan.examDate ? "・勉強日あと" + pace.studyDays + "日" : ""}</p>
+                {pace.target !== null && <p className="mt-1 font-semibold">1回の目安　{pace.target}問正解</p>}
+                {pace.nextWeekday !== null && !pace.scheduledToday && <p className="mt-1 text-sm">次の勉強日は{weekdayLabels[pace.nextWeekday]}曜日です</p>}
+              </>}
+              {pace.complete && <p className="mt-2 font-semibold">全{pace.total}問に正解しました</p>}
+            </> : catalog === undefined ? <p role="status" className="py-4 text-sm">問題を読み込み中…</p> : catalog === null ? <>
+              <p role="alert" className="py-2 text-sm">問題を読み込めませんでした</p>
+              <button type="button" onClick={reload} className="study-link">再読み込み</button>
+            </> : <>
+              <p className="py-2 text-sm">{pace?.oldestYear === null && catalog.length ? "解く範囲を設定してください" : "計画に使える問題がありません"}</p>
+              {catalog.length === 0 && <Link href="/search" className="study-link">資格を選ぶ</Link>}
+            </>}
+            {!postExam && !examToday && pace && !pace.complete && pace.total > 0 && (plan.examDate === null ?
+              <><p className="mt-2 text-sm">受験日を設定してください</p><button type="button" onClick={() => setSheet("edit")} className="study-link">受験日を設定</button></> : pace.studyDays === 0 ?
+              <><p className="mt-2 text-sm">試験前に勉強日がありません</p><button type="button" onClick={() => setSheet("edit")} className="study-link">勉強する日を変更</button></> : null)}
+          </div>
+          {pace?.target != null && <div className="p3-event-panel" data-event-panel="primary">
+            <Link className="study-primary mt-2" href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>計画の問題を解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
+          </div>}
+          {postExam && <div className="p3-event-panel" data-event-panel="results">
             {plan.result === "passed" && passMoment?.planId === plan.id && <StudyAchievement moment={passMoment.moment} />}
             {!plan.result && <div aria-label="結果を記録" role="group" className="mt-2 grid grid-cols-3 gap-2">
               {([["passed", "合格"], ["failed", "不合格"], ["absent", "受けなかった"]] as const).map(([result, label]) => (
@@ -230,44 +238,54 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
               ))}
             </div>}
             <PostExamQualifications key={plan.exam} plan={plan} items={items} today={today} onRetry={retryPlan} />
-          </>}
-          <div className="mt-2 flex flex-wrap gap-x-4">
-            <Link className="study-link" href={`/review?mode=weak&exam=${encodeURIComponent(plan.exam)}`}>苦手リスト{weakCount !== null && `（${weakCount}問）`}</Link>
-            <Link className="study-link" href={item?.href ?? "/search"}>年度を選んで解く</Link>
-            <button type="button" className="study-link" onClick={() => setSheet("edit")}>計画を変更</button>
+          </div>}
+          <div className="p3-event-panel" data-event-panel="actions">
+            <div className="mt-2 flex flex-wrap gap-x-4">
+              <Link className="study-link" href={`/review?mode=weak&exam=${encodeURIComponent(plan.exam)}`}>苦手リスト{weakCount !== null && `（${weakCount}問）`}</Link>
+              <Link className="study-link" href={item?.href ?? "/search"}>年度を選んで解く</Link>
+              <button type="button" className="study-link" onClick={() => setSheet("edit")}>計画を変更</button>
+            </div>
+            <button type="button" onClick={() => setSheet("detail")} className="study-link">
+              学習計画の詳細{warning ? '（申込締切 ' + (plan.registration?.deadline ? shortDate(plan.registration.deadline) : '') + '）' : ''}
+            </button>
+            {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
           </div>
-          <button type="button" onClick={() => setSheet("detail")} className="study-link">
-            学習計画の詳細{warning ? '（申込締切 ' + (plan.registration?.deadline ? shortDate(plan.registration.deadline) : '') + '）' : ''}
-          </button>
-          {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
         </div>
       ) : returning ? <div className={`${styles.hero} p3-landscape p3-home-scene`}>
         <HomeWeather />
-        <p className="text-[13px] p3-scene-muted">おかえりなさい</p>
-        <h1 className="mt-1 text-[26px] leading-tight font-bold wrap-anywhere">{resume?.name ?? previousItem?.name}</h1>
-        <div className="mt-2 flex flex-wrap items-baseline gap-x-3 text-[13px] p3-scene-muted tabular-nums">
-          {resume?.caption && <p>前回 {resume.caption}</p>}
-          <p>今日 {completedToday}問</p>
-        </div>
         <HomeEventArt event={event} />
+        <div className="p3-event-panel" data-event-panel="intro">
+          <p className="text-[13px] p3-scene-muted">おかえりなさい</p>
+          <h1 className="mt-1 text-[26px] leading-tight font-bold wrap-anywhere">{resume?.name ?? previousItem?.name}</h1>
+          <div className="mt-2 flex flex-wrap items-baseline gap-x-3 text-[13px] p3-scene-muted tabular-nums">
+            {resume?.caption && <p>前回 {resume.caption}</p>}
+            <p>今日 {completedToday}問</p>
+          </div>
+        </div>
         <div className="p3-event-track">
           <StartTrack runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
         </div>
-        <Link className="study-primary mt-2" href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
-        <button type="button" className="study-link" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作る</button>
+        <div className="p3-event-panel" data-event-panel="actions">
+          <Link className="study-primary mt-2" href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
+          <button type="button" className="study-link" aria-haspopup="dialog" onClick={() => setSheet("create")}>学習計画を作る</button>
+        </div>
       </div> : (
         <div className={`${styles.hero} ${styles.first} p3-landscape p3-home-scene`}>
           <HomeWeather />
-          <h1 aria-label="今日も、ひと問ずつ。" className="text-[34px] leading-[1.18] font-bold">今日も、<br />ひと問ずつ。</h1>
-          <div className="mt-3">{search}</div>
           <HomeEventArt event={event} />
+          <div className="p3-event-panel" data-event-panel="intro">
+            <h1 aria-label="今日も、ひと問ずつ。" className="text-[34px] leading-[1.18] font-bold">今日も、<br />ひと問ずつ。</h1>
+            <div className="mt-3">{search}</div>
+          </div>
           <div className="p3-event-track mt-2">
             <button type="button" disabled={!ready} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="study-focus block w-full rounded-xl px-1" onClick={() => setSheet("create")}>
               <StartTrack runArt={qualificationRunArt(initialExam)} />
-              <span id="home-start-track-description" className="block text-[13px] font-semibold underline underline-offset-4">学習計画を作る</span>
+              <span id="home-start-track-description" className="p3-event-inline-panel block text-[13px] font-semibold underline underline-offset-4" data-event-panel="actions">学習計画を作る</span>
             </button>
           </div>
-          <p className="mt-2 text-center text-xs leading-relaxed tabular-nums">{domains.reduce((n, d) => n + d.qualificationCount, 0)}資格・{domains.reduce((n, d) => n + d.totalQuestions, 0).toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料</p>
+          <div className="p3-event-panel" data-event-panel="summary">
+            <p className="mt-2 text-center text-xs leading-relaxed tabular-nums">{domains.reduce((n, d) => n + d.qualificationCount, 0)}資格・{domains.reduce((n, d) => n + d.totalQuestions, 0).toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料</p>
+          </div>
         </div>
       )}
       {!firstVisit && <div className="mt-3">{search}</div>}

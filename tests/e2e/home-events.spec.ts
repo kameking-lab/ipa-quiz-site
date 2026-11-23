@@ -2,12 +2,14 @@ import { expect, test } from "@playwright/test";
 
 test.use({ viewport: { width: 390, height: 844 }, timezoneId: "Asia/Tokyo", serviceWorkers: "block" });
 
-test("reserves space for the event painting from the local calendar before hydration", async ({ page }) => {
+test("lays out the event panels from the local calendar before hydration", async ({ page }) => {
   await page.clock.setFixedTime(new Date("2026-12-25T09:00:00+09:00"));
   await page.route("**/_next/static/**/*.js", route => route.abort());
   await page.goto("/");
   const hero = page.locator(".p3-home-scene");
-  await expect(hero.locator(".p3-event-art-slot")).toBeVisible();
+  await expect(hero.locator("[data-event-panel='intro']")).toHaveCSS("display", "flow-root");
+  await expect(hero).toHaveCSS("background-image", "none");
+  await expect(hero.locator(".p3-event-art-slot")).toHaveCSS("position", "absolute");
   await expect(hero.locator("[data-home-event-art]")).toHaveCount(0);
 });
 
@@ -41,6 +43,7 @@ test("loads the Halloween scene after window load and keeps the weather on top",
   await expect(weather).toHaveAttribute("data-home-weather", "snow");
   await expect(hero.locator(".p3-event-art-slot")).toHaveCSS("z-index", "-4");
   await expect(weather).toHaveCSS("z-index", "-2");
+  expect(await hero.evaluate(element => getComputedStyle(element, "::before").visibility)).toBe("hidden");
   await expect(page.locator("html")).toHaveAttribute("data-home-scene", "evening");
   expect(assets).toEqual(["/images/home/event-scenes/halloween.webp"]);
   expect(await page.evaluate(() =>
@@ -71,6 +74,7 @@ for (const { width, file, motion } of [
     const hero = page.locator(".p3-home-scene");
     const art = hero.locator("[data-home-event-art]");
     const trail = hero.locator(".p3-pace-track");
+    const intro = hero.locator("[data-event-panel='intro']");
     try {
       await expect(art).toHaveAttribute("data-home-event-art", "christmas");
       await expect(art).toHaveCSS("opacity", "0");
@@ -83,13 +87,17 @@ for (const { width, file, motion } of [
       await page.evaluate(() => document.fonts.ready.then(() => undefined));
       const before = await hero.boundingBox();
       const trailBefore = await trail.boundingBox();
+      const introBefore = await intro.boundingBox();
       releaseImage();
       await expect(art).toHaveAttribute("data-home-event-ready", "true");
       await expect(art).toHaveCSS("opacity", "1");
       expect(await hero.boundingBox()).toEqual(before);
       expect(await trail.boundingBox()).toEqual(trailBefore);
-      const artBox = (await art.boundingBox())!;
-      expect(trailBefore!.y).toBeGreaterThanOrEqual(artBox.y + artBox.height);
+      expect(await intro.boundingBox()).toEqual(introBefore);
+      expect(await art.boundingBox()).toEqual(before);
+      await expect(art.locator("img")).toHaveCSS("object-fit", "cover");
+      await expect(art.locator("img")).toHaveCSS("object-position", "98% 43%");
+      await expect(art.locator("img")).toHaveCSS("filter", "brightness(0.48) saturate(0.86)");
       expect(imageRequests).toEqual([`/images/home/event-scenes/${file}`]);
     } finally {
       releaseImage();
@@ -97,7 +105,7 @@ for (const { width, file, motion } of [
   });
 }
 
-test("keeps the CSS landscape when event art fails to load", async ({ page }) => {
+test("keeps the event panels readable when the image fails to load", async ({ page }) => {
   await page.clock.setFixedTime(new Date("2026-04-01T12:00:00+09:00"));
   await page.route("**/api/home/weather", route => route.fulfill({ json: { weather: "clear" } }));
   await page.route("**/api/auth/session", route => route.fulfill({ json: null }));
@@ -108,6 +116,8 @@ test("keeps the CSS landscape when event art fails to load", async ({ page }) =>
   const hero = page.locator(".p3-home-scene");
   await expect(hero.locator("[data-home-event-art='sakura']")).toHaveCSS("opacity", "0");
   await expect(hero.locator("[data-home-event-ready], [data-home-event]")).toHaveCount(0);
+  await expect(hero).toHaveCSS("background-image", "none");
+  await expect(hero.locator("[data-event-panel='intro']")).toHaveCSS("display", "flow-root");
   await expect(hero.getByRole("heading", { name: "今日も、ひと問ずつ。" })).toBeVisible();
 });
 
@@ -127,6 +137,9 @@ test("switches backgrounds at midnight and clears on ordinary dates", async ({ p
   await page.evaluate(() => window.dispatchEvent(new Event("pageshow")));
   await expect(art).toHaveCount(0);
   await expect(page.locator("html")).not.toHaveAttribute("data-home-event-layout", "");
+  const hero = page.locator(".p3-home-scene");
+  await expect(hero.locator("[data-event-panel='intro']")).toHaveCSS("display", "contents");
+  await expect(hero).not.toHaveCSS("background-image", "none");
 });
 
 for (const colorScheme of ["light", "dark"] as const) {

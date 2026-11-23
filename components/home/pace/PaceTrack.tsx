@@ -87,9 +87,19 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
       strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
     <FinishFlag lineY={lineY} height={70} />
     <RunningChihuahua key={runArt} src={runArt} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
-    <text x={START_X} y="97" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">0問</text>
-    <text x={trackX(100)} y="97" textAnchor="end" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">{total}問</text>
+    <TrackLabel x={START_X} y={97}>0問</TrackLabel>
+    <TrackLabel x={trackX(100)} y={97} end>{`${total}問`}</TrackLabel>
   </svg>;
+}
+
+function TrackLabel({ x, y, end = false, children }: { x: number; y: number; end?: boolean; children: string }) {
+  const width = children.length * 14 + 8;
+  return <g>
+    <rect className="p3-event-tick-panel" data-event-panel="ticks" aria-hidden="true"
+      x={end ? x - width + 4 : x - 4} y={y - 14} width={width} height={19} rx={5} />
+    <text x={x} y={y} textAnchor={end ? "end" : "start"} fontSize="14"
+      className="fill-muted-foreground p3-scene-tick-label">{children}</text>
+  </g>;
 }
 
 function Trail({ lineY }: { lineY: number }) {
@@ -117,7 +127,7 @@ export function StartTrack({ runArt }: { runArt: string }) {
       <image href={runArt} width={FRAME_SIZE * 4} height={FRAME_SIZE} />
     </svg>
     <FinishFlag lineY={lineY} />
-    <text x={START_X} y="94" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">スタート</text>
-    <text x={finish} y="94" textAnchor="end" fontSize="14" className="fill-muted-foreground p3-scene-tick-label">ゴール</text>
+    <TrackLabel x={START_X} y={94}>スタート</TrackLabel>
+    <TrackLabel x={finish} y={94} end>ゴール</TrackLabel>
   </svg>;
 }
