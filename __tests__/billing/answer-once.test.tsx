@@ -119,7 +119,9 @@ describe("one graded answer per question visit", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     await waitFor(() => expect(grant.mock.calls).toEqual([[single.id], [next.id]]));
-    fireEvent.click((await screen.findAllByRole("radio"))[0]);
+    const [nextChoice] = await screen.findAllByRole("radio");
+    await waitFor(() => expect(nextChoice).toBeEnabled());
+    fireEvent.click(nextChoice);
     expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([single.id, next.id]);
     expect(reward).toHaveBeenCalledTimes(2);
     expect(grant.mock.calls).toEqual([[single.id], [next.id]]);
