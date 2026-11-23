@@ -234,7 +234,7 @@ describe("question archive legacy redirects", () => {
     expect(middleware(archiveReq(path)).headers.get("x-middleware-rewrite")).toBeNull();
   });
 
-  it.each(["/sc/2024/fall", "/q/sc/2024/fall/am-i/08", "/kaigo/第37回"])(
+  it.each(["/sc/2024/fall", "/q/sc/2024/fall/am-i/08", "/kaigo/第37回", "/kikenbutsu-otsu4/2025/published"])(
     "still rewrites %s", path => {
       expect(new URL(middleware(archiveReq(path)).headers.get("x-middleware-rewrite")!).pathname)
         .toBe("/api/legacy-exam" + new URL(path, "https://www.kakomon-ai.jp").pathname);

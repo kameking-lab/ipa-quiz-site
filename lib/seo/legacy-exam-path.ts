@@ -1,6 +1,7 @@
 import { QUESTION_SEASONS } from "@/lib/questions/types";
-import { EXAM_LABELS } from "@/lib/utils";
+import { JOURNEY_EXAM_CODES } from "@/lib/billing/journey-exam-codes";
 
+const legacyExams = new Set<string>(JOURNEY_EXAM_CODES);
 const canonicalSeasons = new Set<string>(QUESTION_SEASONS);
 const seasonNames: Record<string, readonly string[]> = {
   spring: ["spring"], autumn: ["autumn"], fall: ["autumn"], "春": ["spring"], "春期": ["spring"],
@@ -20,7 +21,7 @@ export function legacyExamPath(path: string) {
   if (questionPath) parts.shift();
   if (parts.length < (questionPath ? 4 : 2) || parts.length > (questionPath ? 5 : 3)) return null;
   const [exam, ...rest] = parts;
-  if (!Object.hasOwn(EXAM_LABELS, exam.toLowerCase())) return null;
+  if (!legacyExams.has(exam.toLowerCase())) return null;
   const editionParts = rest.slice(0, questionPath ? -2 : undefined);
   const editionRaw = editionParts.join("-");
   const edition = editionRaw.normalize("NFKC").toLowerCase();
