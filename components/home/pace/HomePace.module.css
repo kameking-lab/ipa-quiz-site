@@ -1,7 +1,7 @@
 .stack {
   --hero-padding: .75rem;
   --hero-gap: .5rem;
-  --plan-intro: 9rem;
+  --plan-intro: 14.5rem;
   --plan-progress: 8rem;
   --plan-actions: 7rem;
   --return-intro: 6.75rem;
@@ -211,18 +211,33 @@
   overflow-wrap: anywhere;
 }
 .qualification > span { min-width: 0; text-wrap: pretty; }
+.countdowns {
+  width: fit-content;
+  max-width: 100%;
+  margin-block-start: .375rem;
+  padding: .375rem .75rem;
+  border-radius: 12px;
+  background: #fffbf3;
+  color: #332418;
+  font-variant-numeric: tabular-nums;
+}
 .countdown {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-top: 8px;
-  font-size: 15px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.countdown > strong {
+  margin-inline: .125em;
+  font-size: 1.875rem;
+  line-height: 1;
+}
+.registrationCountdown {
+  font-size: .875rem;
   font-weight: 600;
 }
-.countdown > span {
-  font-size: 44px;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
+.countdownBasis {
+  font-size: .75rem;
+  color: #5a4031;
 }
 .sheet > button:last-child {
   display: flex;

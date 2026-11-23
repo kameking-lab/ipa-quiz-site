@@ -57,3 +57,46 @@ export function fallbackSessions(exam: string, fallback: OfficialFallback): Exam
       verifiedDate: entry?.checkedAt ?? fallback.checkedAt, applicationEstimated: false, unannounced: false }];
   });
 }
+
+function sessionYear(session: ExamScheduleSession): number | null {
+  const year = session.fiscalYear ?? session.label.normalize("NFKC").match(/\b(20\d{2})\s*年/)?.[1] ?? session.examDate?.slice(0, 4);
+  return year && /^20\d{2}$/.test(year) ? Number(year) : null;
+}
+
+function sessionRound(session: ExamScheduleSession): string {
+  const label = session.label.normalize("NFKC");
+  const number = label.match(/第\s*(\d+)\s*回/)?.[1];
+  const term = label.match(/前期|後期|上期|下期|春期|秋期|春季|秋季/)?.[0];
+  return [term?.replace(/春季|上期/g, "前期").replace(/秋季|下期/g, "後期").replace("春期", "前期").replace("秋期", "後期"), number]
+    .filter(Boolean).join("/");
+}
+
+/** Project dates only when the same qualification and round are identifiable in adjacent years. */
+export function estimateFromPreviousSession(session: ExamScheduleSession, sessions: readonly ExamScheduleSession[]) {
+  const year = sessionYear(session);
+  if (year === null || !session.qualificationId || session.scheduleStatus === "ondemand") return null;
+  const round = sessionRound(session);
+  const sameRound = sessions.filter(candidate => candidate.qualificationId === session.qualificationId && sessionRound(candidate) === round);
+  // A generated annual summary can accompany the one actual upcoming annual session.
+  const current = sameRound.filter(candidate => sessionYear(candidate) === year && !candidate.id.includes(":estimate-"));
+  const previous = sameRound.filter(candidate => sessionYear(candidate) === year - 1 && candidate.scheduleStatus === "official");
+  if (current.length > 1 || previous.length !== 1) return null;
+  if (!round && sessions.some(candidate => candidate.qualificationId === session.qualificationId &&
+    (sessionYear(candidate) === year || sessionYear(candidate) === year - 1) && sessionRound(candidate))) return null;
+
+  const basis = previous[0];
+  if (!basis.sourceUrl) return null;
+  const nextYear = (date: string | null) => {
+    if (!date) return null;
+    const shifted = `${Number(date.slice(0, 4)) + 1}${date.slice(4)}`;
+    return dayNumber(shifted) === null ? null : shifted;
+  };
+  const singleDay = basis.datePrecision !== "month" && basis.datePrecision !== "unknown" &&
+    !basis.examPhaseWindows?.length && (!basis.examDateEnd || basis.examDateEnd === basis.examDate);
+  return {
+    basisYear: year - 1,
+    examDate: singleDay ? nextYear(basis.examDate) : null,
+    applicationStart: basis.applicationEstimated ? null : nextYear(basis.applicationStart),
+    applicationDeadline: basis.applicationEstimated ? null : nextYear(basis.applicationDeadline),
+  };
+}

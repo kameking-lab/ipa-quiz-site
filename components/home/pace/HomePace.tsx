@@ -11,7 +11,7 @@ import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
 import { groupHomeDirectoryItems } from "@/lib/home/grouped-directory";
 import { calculatePace, weakQuestions, type AnswerAttempt, type PacePlan } from "@/lib/study-plan/pace";
 import { listPacePlans, savePacePlan, deletePacePlan } from "@/lib/study-plan/pace-storage";
-import { answersToday, deadlineWarning } from "@/lib/study-plan/home";
+import { answersToday, deadlineWarning, homeCountdowns } from "@/lib/study-plan/home";
 import { paceAttempts } from "@/lib/study-plan/client";
 import { historyExamLookup, japanDate, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { readHomeStudy, relativeStudyDate } from "@/lib/home/recent-study";
@@ -22,7 +22,7 @@ import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { searchQualifications } from "@/lib/qualifications/search";
 import { groupQualifications, qualificationDisplayKey, qualificationGroupLabel } from "@/lib/qualifications/groups";
 import { planCreatedHref, planReferral } from "@/lib/study-plan/next-qualification";
-import type { ExamScheduleSession } from "@/lib/study-plan/schedule";
+import type { ExamSchedule, ExamScheduleSession } from "@/lib/study-plan/schedule";
 import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { StudyAchievement, type StudyMoment } from "@/components/StudyAchievements";
 import { HomeWeather } from "@/components/home/HomeWeather";
@@ -137,7 +137,22 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
   const weakCount = plan && catalog ? weakQuestions(catalog, plan.exam, attempts, stars).length : null;
   const postExam = !!plan?.examDate && plan.examDate < today;
   const examToday = plan?.examDate === today;
-  const warning = plan && !plan.result && !postExam ? deadlineWarning(plan, today) : null;
+  const scheduleExam = !createOnLoad && !postExam && !plan?.result && plan?.sessionId && qualificationIdsForExam(plan.exam).length ? plan.exam : null;
+  const [schedule, setSchedule] = useState<ExamSchedule | null>(null);
+  useEffect(() => {
+    if (!scheduleExam) return;
+    const controller = new AbortController();
+    void fetch(`/api/exam-schedule/${encodeURIComponent(scheduleExam)}`, { signal: controller.signal })
+      .then(async response => response.ok ? await response.json() as ExamSchedule : null)
+      .then(data => { if (!controller.signal.aborted && data?.exam === scheduleExam) setSchedule(data); })
+      .catch(() => {});
+    return () => controller.abort();
+  }, [scheduleExam]);
+  const { exam: examCountdown, registration: registrationCountdown } = plan && !postExam
+    ? homeCountdowns(plan, today, schedule?.exam === scheduleExam ? schedule.sessions : undefined)
+    : { exam: null, registration: null };
+  const warning = plan && registrationCountdown?.kind === "deadline" && !registrationCountdown.basisYear &&
+    registrationCountdown.date === plan.registration?.deadline ? deadlineWarning(plan, today) : null;
   const item = items.find(i => i.key === plan?.exam);
   const currentResume = resolvedResume?.query === resumeQuery ? resolvedResume : null;
   const resume = currentResume?.entry;
@@ -202,12 +217,26 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           <div className="p3-event-panel" data-event-panel="intro">
             <div className="flex items-start justify-between gap-2">
               <button className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 p3-scene-muted" /></button>
-              {plan.examDate && <span className="shrink-0 pt-3 text-[13px] p3-scene-muted tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
+              {plan.examDate && (postExam || (examCountdown && !examCountdown.basisYear)) && <span className="shrink-0 pt-3 text-[13px] p3-scene-muted tabular-nums"><time dateTime={plan.examDate}>{shortDate(plan.examDate)}</time> 受験</span>}
             </div>
             {plan.registration && <p className="text-[13px] p3-scene-muted">{plan.registration.label}</p>}
             {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
             {postExam && <h1 className="mt-2 text-2xl leading-tight font-bold">試験、おつかれさまでした</h1>}
-            {examToday && <h1 className="mt-2 text-xl font-bold">試験は今日です</h1>}
+            {(examCountdown || registrationCountdown) && <div className={styles.countdowns} data-home-countdowns>
+              {examCountdown && <div>
+                <h1 className={styles.countdown}>
+                  {examCountdown.days === 0 && !examCountdown.basisYear ? "試験は今日です" : <>
+                    <span>試験まであと</span><strong>{examCountdown.days}</strong><span>日{examCountdown.basisYear && "（見込み）"}</span>
+                  </>}
+                </h1>
+                {examCountdown.basisYear && <p className={styles.countdownBasis}>{examCountdown.basisYear}年度の同じ回をもとに推定</p>}
+              </div>}
+              {registrationCountdown && <p className={styles.registrationCountdown}>
+                {registrationCountdown.kind === "start" ? `あと${registrationCountdown.days}日で申込開始` :
+                  `申込締切まであと${registrationCountdown.days}日`}
+                {registrationCountdown.basisYear && `（見込み・${registrationCountdown.basisYear}年度の日程から推定）`}
+              </p>}
+            </div>}
             <div className={styles.planCount}>
               {pace?.total ? <>
                 <p className="text-sm p3-scene-muted">{pace.oldestYear}年度以降</p>

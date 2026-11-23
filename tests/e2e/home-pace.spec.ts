@@ -272,3 +272,52 @@ for (const width of [390, 1280]) {
     });
   });
 }
+
+for (const scenario of [
+  { name: "01-confirmed", deadline: "2026-12-27", registration: "申込締切まであと2日" },
+  { name: "02-estimated", deadline: "2026-12-27", estimated: true, registration: "申込締切まであと2日（見込み・2025年度の日程から推定）" },
+  { name: "03-before-opening", start: "2026-12-28", deadline: "2026-12-31", registration: "あと3日で申込開始" },
+  { name: "04-after-closing", deadline: "2026-12-24" },
+  { name: "05-exam-day", deadline: "2026-12-24", examDay: true },
+] as const) {
+  test(`home countdown ${scenario.name} on an illustrated night hero`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    const estimated = "estimated" in scenario;
+    const examDay = "examDay" in scenario;
+    const plan = fixturePlan();
+    plan.examDate = examDay ? "2026-12-25" : estimated ? "2027-01-06" : "2027-01-05";
+    plan.registration = { ...plan.registration, label: "受験回", estimated,
+      start: "start" in scenario ? scenario.start : "2026-12-01", deadline: scenario.deadline };
+    await fixtures(page, plan, 100);
+    await page.clock.setFixedTime(new Date("2026-12-25T21:10:00+09:00"));
+    await page.route("**/api/home/weather", route => route.fulfill({ json: { weather: "snow" } }));
+    await page.route("**/api/exam-schedule/ip", route => route.fulfill({ json: { exam: "ip", source: "tsugino",
+      sessions: estimated ? [
+        { id: plan.sessionId, qualificationId: "itpassport", label: "2026年度第1回", fiscalYear: "2026",
+          scheduleStatus: "tentative", unannounced: true, examDate: null, datePrecision: "unknown" },
+        { id: "previous", qualificationId: "itpassport", label: "2025年度第1回", fiscalYear: "2025",
+          scheduleStatus: "official", examDate: "2026-01-05", datePrecision: "date",
+          applicationStart: "2025-12-01", applicationDeadline: "2025-12-27", sourceUrl: plan.registration.sourceUrl },
+      ] : [],
+    } }));
+    await page.goto("/");
+    const hero = page.locator(".p3-home-scene");
+    const countdown = hero.locator("[data-home-countdowns]");
+    const title = examDay ? /試験は今日です/ : estimated ? /試験まであと\s*11\s*日（見込み）/ : /試験まであと\s*11\s*日$/;
+    await expect(countdown.getByRole("heading", { name: title })).toBeVisible();
+    if (estimated) await expect(countdown.getByText("2025年度の同じ回をもとに推定", { exact: true })).toBeVisible();
+    if ("registration" in scenario) await expect(countdown.getByText(scenario.registration, { exact: true })).toBeVisible();
+    else await expect(countdown.getByText(/申込締切まで|申込開始/)).toHaveCount(0);
+    await expect(countdown).toHaveCSS("background-color", "rgb(255, 251, 243)");
+    await expect(countdown).toHaveCSS("color", "rgb(51, 36, 24)");
+    await expect(hero.locator("[data-home-event-art='christmas']")).toHaveAttribute("data-home-event-ready", "true");
+    await expect(hero.locator("[data-home-weather]")).toHaveAttribute("data-home-weather", "snow");
+    await expect(hero.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
+    const dir = process.env.HOME_COUNTDOWN_SCREENSHOTS;
+    if (dir) {
+      await page.evaluate(() => document.fonts.ready.then(() => undefined));
+      await hero.screenshot({ path: `${dir}/countdown-${scenario.name}.png`, animations: "disabled" });
+    }
+  });
+}
