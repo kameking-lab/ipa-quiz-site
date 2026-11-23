@@ -1,23 +1,40 @@
 workflows:
   asc-review-status:
-    name: App Store review status (read only)
+    name: iOS release candidates - App Store Connect status
     instance_type: mac_mini_m2
     max_build_duration: 10
     triggering:
       events:
         - tag
       tag_patterns:
-        - pattern: "asc-status-*"
+        - pattern: "asc-status-iosrel24-*"
           include: true
       cancel_previous_builds: false
     integrations:
       app_store_connect: App Store Key
     scripts:
-      - name: Read review status of all apps (no writes)
+      - name: Prepare existing App Store Connect integration
         script: |
           set -euo pipefail
           python3 -m venv .venv
           .venv/bin/pip install --disable-pip-version-check -q codemagic-cli-tools==0.70.2 cryptography==48.0.1
-          .venv/bin/python asc_status.py
+      - name: Verify Kakomon AI 1.0.3 (21) processing or review status
+        script: |
+          set -euo pipefail
+          case "$CM_TAG" in
+            asc-status-iosrel24-both-processing-*) .venv/bin/python release_status.py kakomon processing ;;
+            asc-status-iosrel24-kakomon-review-*) .venv/bin/python release_status.py kakomon review ;;
+            asc-status-iosrel24-tsugino-review-*) echo "Only Tsugino requested" ;;
+            *) exit 2 ;;
+          esac
+      - name: Verify Tsugino Shikaku 1.1.2 (12) processing or review status
+        script: |
+          set -euo pipefail
+          case "$CM_TAG" in
+            asc-status-iosrel24-both-processing-*) .venv/bin/python release_status.py tsugino processing ;;
+            asc-status-iosrel24-tsugino-review-*) .venv/bin/python release_status.py tsugino review ;;
+            asc-status-iosrel24-kakomon-review-*) echo "Only Kakomon requested" ;;
+            *) exit 2 ;;
+          esac
     artifacts:
-      - build/asc-status.json
+      - build/*.json
