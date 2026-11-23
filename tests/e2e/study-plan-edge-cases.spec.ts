@@ -95,31 +95,37 @@ for (const suspension of ["hidden", "offscreen"] as const) {
     await setup(page, makePlan(), 100);
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.addInitScript(mode => {
-      const poses = new Set<string>();
-      new MutationObserver(records => {
-        for (const { target } of records) {
-          if (!(target instanceof SVGImageElement) || !target.closest('[data-pace-sprite="v2"]')) continue;
-          const offset = target.getAttribute("x");
-          if (!offset || offset === "0") continue;
-          poses.add(offset);
-          if (poses.size < 3) continue;
-          document.documentElement.dataset.runnerAnimated = "true";
+      const poses = new Set<number>();
+      const observer = new MutationObserver(() => {
+        const image = document.querySelector('[data-pace-sprite="v2"][data-pace-running] image');
+        if (!image) return;
+        observer.disconnect();
+        function observePose() {
+          if (!image?.closest("[data-pace-running]")) return;
+          const transform = getComputedStyle(image).transform;
+          if (transform !== "none") poses.add(new DOMMatrixReadOnly(transform).m41);
+          if (poses.size < 3) {
+            requestAnimationFrame(observePose);
+            return;
+          }
+          document.documentElement.dataset.runnerAnimated = String([...poses].every(x => x % 72 === 0));
           if (mode === "hidden") {
             Object.defineProperty(document, "hidden", { value: true, configurable: true });
             document.dispatchEvent(new Event("visibilitychange"));
           } else {
             window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" });
           }
-          break;
         }
-      }).observe(document, { attributes: true, subtree: true, attributeFilter: ["x"] });
+        requestAnimationFrame(observePose);
+      });
+      observer.observe(document, { attributes: true, subtree: true, attributeFilter: ["data-pace-running"] });
     }, suspension);
     await page.goto("/");
     const track = page.getByRole("img", { name: "正解済み 100 / 200問" });
     await expect(track.locator("image")).toHaveAttribute("href", "/images/home/pace-run/v2/ip.webp");
     await expect(page.locator("html")).toHaveAttribute("data-runner-animated", "true");
     if (suspension === "offscreen") await expect(track).not.toBeInViewport();
-    await expect(track.locator("image")).toHaveAttribute("x", "0");
+    await expect(track.locator("image")).toHaveCSS("transform", "none");
     await expect(track.locator("line.p3-trail-progress")).toHaveAttribute("x2", "161");
   });
 }

@@ -40,6 +40,7 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
     const sprite = strip.current;
     const fill = fillRef.current;
     if (!dog || !viewport || !sprite || !fill) return;
+    const usesCssAnimation = frames > 4;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const from = progress.current;
     const distance = trackX(percent) - trackX(from);
@@ -51,11 +52,12 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
       fill.setAttribute("x2", String(x));
       dog.setAttribute("transform", `translate(${x} ${-lift})`);
       viewport.setAttribute("x", String(runnerFrameX(x)));
-      sprite.setAttribute("x", String(-frameIndex * FRAME_SIZE));
+      if (!usesCssAnimation) sprite.setAttribute("x", String(-frameIndex * FRAME_SIZE));
     };
     function finish() {
       cancelAnimationFrame(request);
       request = 0;
+      dog?.removeAttribute("data-pace-running");
       draw(percent, 0, 0);
     }
     if (stopped || motion.matches || document.hidden || distance === 0) {
@@ -71,15 +73,20 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
       if (document.hidden || motion.matches) return finish();
       const elapsed = Math.max(0, now - start);
       if (elapsed >= duration) return finish();
-      const stride = (elapsed % STRIDE_MS) / STRIDE_MS;
-      draw(from + (percent - from) * elapsed / duration,
-        frames === 4 ? BOUNCE_HEIGHT * Math.sin(Math.PI * stride) : 0, Math.floor(stride * frames));
+      const value = from + (percent - from) * elapsed / duration;
+      if (usesCssAnimation) {
+        draw(value, 0, 0);
+      } else {
+        const stride = (elapsed % STRIDE_MS) / STRIDE_MS;
+        draw(value, BOUNCE_HEIGHT * Math.sin(Math.PI * stride), Math.floor(stride * frames));
+      }
       request = requestAnimationFrame(advance);
     }
     function updateVisibility(inView: boolean) {
       if (!inView || document.hidden || motion.matches) return finish();
       if (request || progress.current === percent) return;
       start = performance.now();
+      if (usesCssAnimation) dog?.setAttribute("data-pace-running", "");
       request = requestAnimationFrame(advance);
     }
     const suspend = () => { if (document.hidden || motion.matches) finish(); };
@@ -92,6 +99,7 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
     motion.addEventListener("change", suspend);
     return () => {
       cancelAnimationFrame(request);
+      dog.removeAttribute("data-pace-running");
       observer?.disconnect();
       document.removeEventListener("visibilitychange", suspend);
       motion.removeEventListener("change", suspend);

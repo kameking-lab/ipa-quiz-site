@@ -56,6 +56,15 @@
 .hero > [data-pace-track="progress"] { min-block-size: calc(var(--track-space) + var(--progress-track)); }
 .hero :global(.p3-pace-track) { height: auto; max-block-size: 9.5rem; }
 .hero[data-pace-view="new"] :global(.p3-pace-track) { max-block-size: 8rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero :global(.p3-track-runner[data-pace-running] image) {
+    transform-box: fill-box;
+    animation: runnerStride 320ms steps(8) infinite;
+  }
+}
+@keyframes runnerStride {
+  to { transform: translateX(-100%); }
+}
 .planCount { min-block-size: 4rem; margin-block-start: .375rem; }
 .planActions { display: flex; flex-wrap: wrap; column-gap: .75rem; }
 .planDetails {
