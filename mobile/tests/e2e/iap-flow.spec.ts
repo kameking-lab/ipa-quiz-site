@@ -59,6 +59,7 @@ test("signed out: price is visible, 登録 opens sign-in, and the purchase conti
   await open(page,"success");
   const buy=page.getByRole("button",{name:"¥980 / 月で登録",exact:true});
   await expect(buy).toBeEnabled();
+  await expect(page.getByText("演習は無料で1日10問、月額プランでは回数無制限になり、広告も出なくなります。",{exact:true})).toBeVisible();
   await expect(page.getByText(/購入時にApple IDに請求/)).toBeVisible();
   await page.screenshot({path:info.outputPath("1-signed-out-price.png")});
   await buy.click();

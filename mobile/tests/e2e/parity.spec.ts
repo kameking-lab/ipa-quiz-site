@@ -34,6 +34,69 @@ async function seed(page:Page,questions:Array<{id:string}>=qs,metadata=entry){
   await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);
   await page.evaluate(async({questions,entry,access})=>window.mobileTest.seed(questions,entry,access),{questions,entry:metadata,access});
 }
+declare global {
+  interface Window {
+    speechTest: {
+      spoken: { id: string; text: string; lang: string; rate: number }[];
+      stopped: string[];
+    };
+  }
+}
+
+async function mockNativeSpeech(page: Page) {
+  await page.evaluate(() => {
+    const bridge = (window as Window & {
+      Capacitor: { getPlatform: () => string; Plugins: Record<string, unknown> };
+    }).Capacitor;
+    const calls: Window["speechTest"] = { spoken: [], stopped: [] };
+    window.speechTest = calls;
+    // Set up the speech bridge after startup so storage and network remain browser mocks.
+    bridge.getPlatform = () => "ios";
+    bridge.Plugins.KakomonSpeech = {
+      available: async ({ lang }: { lang: string }) => ({ available: lang === "ja-JP" }),
+      speak: (options: Window["speechTest"]["spoken"][number], callback: (event: { state: "started" }) => void) => {
+        calls.spoken.push(options);
+        callback({ state: "started" });
+      },
+      stop: async ({ id }: { id: string }) => { calls.stopped.push(id); },
+    };
+  });
+}
+
+async function expectNativeReadAloud(page: Page, text: string) {
+  await page.locator("summary").filter({ hasText: "陦ｨ遉ｺ縺ｨ隱ｭ縺ｿ荳翫￡" }).click();
+  await page.getByRole("button", { name: "隱ｭ縺ｿ荳翫￡", exact: true }).click();
+  const stop = page.getByRole("button", { name: "隱ｭ縺ｿ荳翫￡繧貞●豁｢" });
+  await expect(stop).toHaveAttribute("aria-pressed", "true");
+  const { spoken } = await page.evaluate(() => window.speechTest);
+  expect(spoken).toEqual([{ id: expect.any(String), text, lang: "ja-JP", rate: 1 }]);
+  await stop.click();
+  await expect(page.getByRole("button", { name: "隱ｭ縺ｿ荳翫￡", exact: true })).toHaveAttribute("aria-pressed", "false");
+  expect(await page.evaluate(() => window.speechTest.stopped)).toEqual([spoken[0].id]);
+}
+
+test("online quiz sends its question text to the iOS speech bridge", async ({ page, context }) => {
+  await routeLocal(context);
+  await page.goto(ORIGIN + "/tests/e2e/harness.html");
+  await page.waitForFunction(() => !!window.mobileTest);
+  await mockNativeSpeech(page);
+  await page.evaluate(question => window.mobileTest.showOnlinePage(question), qs[0]);
+  await expectNativeReadAloud(page, qs[0].question);
+});
+
+test("saved quiz sends its question text to the iOS speech bridge in airplane mode", async ({ page, context }) => {
+  await routeLocal(context);
+  const rows = qs.slice(0, 1);
+  const payload = JSON.stringify(rows);
+  await seed(page, rows, { ...entry, count: rows.length, bytes: Buffer.byteLength(payload), revision: createHash("sha256").update(payload).digest("hex") });
+  await context.setOffline(true);
+  await page.goto(ORIGIN + "/index.html");
+  await page.locator(".native-exam").filter({ hasText: "IT繝代せ繝昴・繝・ }).first().click();
+  await mockNativeSpeech(page);
+  await page.getByRole("button", { name: "菫晏ｭ伜撫鬘後〒蟄ｦ鄙・ }).click();
+  await expectNativeReadAloud(page, rows[0].question);
+});
+
 test("bundled full catalog works at first offline launch without a free question pack",async({page,context})=>{
   const errors:string[]=[];page.on("pageerror",e=>errors.push(e.message));const requests=await routeLocal(context);await context.setOffline(true);await page.goto(ORIGIN+"/index.html");
   await expect(page.getByRole("heading",{name:"全資格の過去問を、いつでも。"})).toBeVisible();await expect(page.getByText("オフライン",{exact:true})).toBeVisible();
