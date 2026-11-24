@@ -8,12 +8,17 @@ const catalog = Array.from({ length: 200 }, (_, i) => ({ id: `ip-2026h-am-q${i +
 const makePlan = () => createPacePlan({ id: "edge-plan", exam: "ip", sessionId: null,
   startDate: "2026-11-07", examDate: "2026-11-27" }, catalog, "2026-11-07T12:00:00+09:00");
 
-async function setup(page: Page, plan?: PacePlan, count = 0) {
-  await page.clock.setFixedTime(new Date(`${today}T12:00:00+09:00`));
-  await page.route("https://**", r => r.abort());
+async function setup(page: Page, plan?: PacePlan, count = 0, clockMode: "fixed" | "advancing" = "fixed") {
+  const time = new Date(`${today}T12:00:00+09:00`);
+  if (clockMode === "advancing") await page.clock.install({ time });
+  else await page.clock.setFixedTime(time);
+  const baseURL = test.info().project.use.baseURL;
+  const appOrigin = baseURL && new URL(baseURL).origin;
+  await page.route(url => url.protocol === "https:" && url.origin !== appOrigin, r => r.abort());
   await page.route("**/api/billing/status", r => r.fulfill({ json: { entitled: false } }));
   await page.route("**/api/study-plan/catalog/ip", r => r.fulfill({ json: { questions: catalog } }));
   await page.addInitScript(({ keys, plan, catalog, count }) => {
+    if (window !== window.top) return;
     localStorage.setItem("ipa-quiz:onboarded:v1", "1");
     if (plan) localStorage.setItem(keys.pacePlans, JSON.stringify([plan]));
     localStorage.setItem(keys.history, JSON.stringify({ entries: catalog.slice(0, count).map(q => ({
@@ -134,8 +139,7 @@ for (const suspension of ["hidden", "offscreen"] as const) {
 }
 
 test("idle refresh does not change mastery or learning points, failed confirmation lowers mastery", async ({ page }) => {
-  await setup(page, makePlan(), 100);
-  await page.clock.install({ time: new Date(`${today}T12:00:00+09:00`) });
+  await setup(page, makePlan(), 100, "advancing");
   await page.goto("/");
   await expect(page.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
   const before = await page.evaluate(key => localStorage.getItem(key), LS_KEYS.learningPoints);
@@ -148,8 +152,10 @@ test("idle refresh does not change mastery or learning points, failed confirmati
     localStorage.setItem(key, JSON.stringify(state));
     window.dispatchEvent(new Event("study-plan:changed"));
   }, { key: LS_KEYS.history, id: catalog[0].id });
-  await expect(page.getByRole("img", { name: "正解済み 99 / 200問" })).toBeVisible();
-  await expect.poll(async () => Number(await page.locator('svg line.stroke-primary').getAttribute("x2"))).toBeCloseTo(159.78);
+  const track = page.getByRole("img", { name: "正解済み 99 / 200問" });
+  await expect(track).toBeVisible();
+  await page.clock.runFor(1000);
+  await expect.poll(async () => Number(await track.locator("line.p3-trail-progress").getAttribute("x2"))).toBeCloseTo(159.78);
 });
 
 for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] as const) {
