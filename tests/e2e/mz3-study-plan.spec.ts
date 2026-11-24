@@ -109,7 +109,7 @@ test("empty list works without a saved plan", async ({ page }) => {
   await boot(page);
   await page.goto("/review?mode=weak&exam=ip");
   await expect(page.getByText("苦手リストは空です")).toBeVisible();
-  await expect(page.getByRole("link", { name: "年度を選ぶ" })).toHaveAttribute("href", "/ip");
+  await expect(page.getByRole("link", { name: "年度を選んで解く", exact: true })).toHaveAttribute("href", "/ip");
   await shot(page, "09-weak-empty");
 });
 

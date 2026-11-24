@@ -8,6 +8,10 @@ import { AI_QUOTA_COPY } from "@/lib/constants/ai-quota";
 
 // Keep both real pages and the published directory. Provide browser routing and
 // billing fixtures for the interactive home without requesting external services.
+vi.mock("next/server", async importOriginal => ({
+  ...await importOriginal<typeof import("next/server")>(),
+  connection: async () => undefined,
+}));
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ replace: vi.fn() }),
   useSearchParams: () => new URLSearchParams(window.location.search),
@@ -41,7 +45,7 @@ describe("transparency published counts", () => {
     // must fail even though the common IPA catalog has thirteen exam codes.
     expect(qualifications).toBeGreaterThan(13);
 
-    const home = render(<HomePage />);
+    const home = render(await HomePage());
     expect(within(home.container).getByText(`${qualifications}資格・${questions.toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料`)).toBeInTheDocument();
 
     const transparency = render(await TransparencyPage());

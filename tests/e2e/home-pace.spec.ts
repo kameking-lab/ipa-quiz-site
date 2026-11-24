@@ -613,7 +613,11 @@ test.describe("home flip calendar", () => {
 
       await page.clock.setFixedTime(new Date("2026-12-06T12:10:00+09:00"));
       await page.goto("/");
-      await expect(hero.locator(`time[datetime="${officialDate}"]`)).toBeVisible();
+      await expect(hero.getByRole("heading", { name: "試験、おつかれさまでした" })).toBeVisible();
+      await expect(hero.locator(`time[datetime="${officialDate}"]`)).toHaveCount(0);
+      await hero.getByRole("button", { name: "計画の確認", exact: true }).click();
+      await expect(dialog.locator(`time[datetime="${officialDate}"]`)).toBeVisible();
+      await page.keyboard.press("Escape");
       await hero.getByRole("button", { name: "合格", exact: true }).click();
       expect(await savedDate()).toMatchObject({ examDate: officialDate, examDateSource: "official", result: "passed" });
     });

@@ -51,18 +51,23 @@ function receipt(expiry: string, billingIssue?: string) {
 
 function subscriber(userId: string, failAudit = false) {
   const appUserId = appUserIdentity(userId, testState.config.identitySecret);
-  let row = { userId, appUserId, expiresAt: null as Date | null, checkedAt: null as Date | null };
+  let row = { userId, appUserId, expiresAt: null as Date | null, checkedAt: null as Date | null,
+    productionExpiresAt: null as Date | null, sandboxExpiresAt: null as Date | null };
   testState.query.mockImplementation(async (sql: string, ...values: unknown[]) => {
     if (sql.startsWith('SELECT * FROM "MobileRevenueCatAccount"') || sql.startsWith('SELECT "appUserId"')) return [row];
     if (sql.startsWith('UPDATE "MobileRevenueCatAccount"')) {
-      row = { ...row, expiresAt: values[1] as Date | null, checkedAt: values[2] as Date };
+      row = { ...row, expiresAt: values[1] as Date | null, checkedAt: values[2] as Date,
+        productionExpiresAt: values[3] as Date | null, sandboxExpiresAt: values[4] as Date | null };
       return [row];
     }
     if (sql.startsWith('SELECT email,')) {
       if (failAudit) throw Error("simulated audit read failure");
       return [{ email: null }];
     }
-    if (sql.includes('"sandboxExpiresAt" END > NOW()')) return [{ active: (row.expiresAt?.getTime() ?? 0) > Date.now() }];
+    if (sql.includes('"sandboxExpiresAt" END > NOW()')) {
+      const expiresAt = values[1] ? row.productionExpiresAt : row.sandboxExpiresAt;
+      return [{ active: (expiresAt?.getTime() ?? 0) > Date.now() }];
+    }
     throw Error("unexpected test query");
   });
   return (eventId: string, type: "INITIAL_PURCHASE" | "BILLING_ISSUE" | "RENEWAL") => POST(new Request("https://fixture.invalid/api/mobile/revenuecat", {
@@ -180,9 +185,10 @@ it("serves an App Store-only buyer immediately while the webhook audit keeps fai
   vi.stubGlobal("fetch", transport);
   expect((await webhook("evt_app_only", "INITIAL_PURCHASE")).status).toBe(503);
   const expected = { entitled: true, source: "app-store", expiresAt: expiry };
-  expect(await mobileEntitlement("bob")).toMatchObject(expected);
+  expect(await mobileEntitlement("bob")).toMatchObject({ entitled: false, source: "free" });
+  expect(await mobileEntitlement("bob", false, "app")).toMatchObject(expected);
   expect(transport).toHaveBeenCalledTimes(1);
   vi.setSystemTime(new Date("2026-02-01T00:02:00Z"));
-  expect(await mobileEntitlement("bob", true)).toMatchObject(expected);
+  expect(await mobileEntitlement("bob", true, "app")).toMatchObject(expected);
   expect(transport).toHaveBeenCalledTimes(2);
 });
