@@ -54,23 +54,37 @@ const registrations = files("src").filter(path => /\.tsx?$/.test(path)).flatMap(
 });
 
 it("inventories every custom native plugin and matches both sides of the bridge", () => {
-  expect(nativeFiles).toHaveLength(3);
-  expect(plugins.map(plugin => plugin.className).sort()).toEqual(["NativeBannerAds", "QualificationBridgePlugin", "StudyReviewPlugin", "TrackingTransparencyPlugin"]);
+  expect(nativeFiles).toHaveLength(4);
+  expect(plugins.map(plugin => plugin.className).sort()).toEqual(["KakomonSpeech", "NativeBannerAds", "QualificationBridgePlugin", "StudyReviewPlugin", "TrackingTransparencyPlugin"]);
   expect(new Set(plugins.map(plugin => plugin.identifier)).size).toBe(plugins.length);
   expect(new Set(plugins.map(plugin => plugin.jsName)).size).toBe(plugins.length);
-  expect(registrations.map(registration => registration.name).sort()).toEqual(plugins.map(plugin => plugin.jsName).sort());
+  // The shared reader uses the injected Capacitor proxy so it also works in a browser.
+  const speechClient = read("../components/quiz/read-aloud.ts");
+  expect(speechClient).toContain("cap.Plugins?.KakomonSpeech");
+  const speechMethods = [
+    { name: "available", returnType: "CAPPluginReturnPromise" },
+    { name: "speak", returnType: "CAPPluginReturnCallback" },
+    { name: "stop", returnType: "CAPPluginReturnPromise" },
+  ];
+  for (const { name } of speechMethods) expect(speechClient).toContain(`native.${name}(`);
+  const contracts = new Map(registrations.map(({ name, methods }) => [
+    name, methods.map(method => ({ name: method, returnType: "CAPPluginReturnPromise" })),
+  ]));
+  expect(contracts.size).toBe(registrations.length);
+  expect(contracts.has("KakomonSpeech")).toBe(false);
+  contracts.set("KakomonSpeech", speechMethods);
+  expect([...contracts.keys()].sort()).toEqual(plugins.map(plugin => plugin.jsName).sort());
   const controller = read("ios-assets/QualificationBridgeViewController.swift");
   expect(controller).toMatch(/override func capacitorDidLoad\(\)/);
+  const byName = (a: { name: string }, b: { name: string }) => a.name.localeCompare(b.name);
   for (const plugin of plugins) {
     expect(plugin.protocols).toMatch(/\bCAPBridgedPlugin\b/);
     expect(plugin.identifier).toBe(plugin.className);
     expect(plugin.source).toContain(`@objc(${plugin.className})`);
     expect(controller).toContain(`bridge?.registerPluginInstance(${plugin.className}())`);
-    const registration = registrations.find(item => item.name === plugin.jsName)!;
-    expect(plugin.methods.map(method => method.name).sort()).toEqual([...registration.methods].sort());
+    expect([...plugin.methods].sort(byName)).toEqual([...contracts.get(plugin.jsName!)!].sort(byName));
     expect(new Set(plugin.methods.map(method => method.name)).size).toBe(plugin.methods.length);
     for (const method of plugin.methods) {
-      expect(method.returnType).toBe("CAPPluginReturnPromise");
       expect(plugin.body).toMatch(new RegExp(`@objc\\s+(?:public\\s+)?func ${method.name}\\(_ call: CAPPluginCall\\)`));
     }
   }
