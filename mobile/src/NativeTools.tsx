@@ -8,6 +8,8 @@ import { Capacitor } from "@capacitor/core";
 import { Purchases, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
 import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { hideNativeBanner, useAdPrivacyOptions, useNativeBanner } from "./native-banner";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
 import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase, startNativePurchase, recoverNativePurchase } from "./purchases";
@@ -67,6 +69,9 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   // The last failed membership check (server code included). Separate from
   // `notice` so a later success removes it instead of leaving a stale banner.
   const [statusError,setStatusError]=useState("");
+  const pathname = usePathname();
+  useNativeBanner(access, config?.productId ?? "", !membershipOnly && !open && !busy && !statusError && !purchasePending, pathname);
+  const adPrivacyOptions = useAdPrivacyOptions(open);
   // Bumped whenever something other than the 「会員・設定」 button opens the panel
   // (a /billing link, a blocked web checkout, returning from sign-in). The panel
   // sits above the site header, so without scrolling to it the tap looked dead.
@@ -92,6 +97,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const task=refreshing.current.then(async()=>{
     const response = await fetch("/api/mobile/entitlement", { method: fresh ? "POST" : "GET", cache: "no-store" }).catch(()=>null);
     if (!response?.ok) {
+      hideNativeBanner();
       // Keep what we last knew (signed in / member): replacing it with a login
       // button made a signed-in buyer look signed out right after paying.
       setOffer(null);
@@ -103,6 +109,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     }
     setStatusError("");
     const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration; requiresAppLogin?: boolean };
+    if (result.entitlement.entitled || result.entitlement.userId !== user.current) hideNativeBanner();
     result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
     if (signingOut.current) throw new StatusError("ログアウト中です。");
     if (studyReady.current && result.entitlement.userId !== user.current) {
@@ -180,7 +187,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
     void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(report); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
     const interval = window.setInterval(()=>{ void refresh().catch(report); },60000);
-    const deleted=()=>{studyReady.current=false;user.current=null;abort.current?.abort();setAccess(null);setOffer(null);clearInterval(interval);};
+    const deleted=()=>{hideNativeBanner();studyReady.current=false;user.current=null;abort.current?.abort();setAccess(null);setOffer(null);clearInterval(interval);};
     window.addEventListener("mobile:account-deleted",deleted);
     const signingOutNow=()=>{signingOut.current=true;deleted();};
     window.addEventListener("mobile:signing-out",signingOutNow);
@@ -265,6 +272,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     setNotice(action==="buy"?"ログインが終わると、そのまま購入画面に進みます。":"ログインが終わると、そのまま購入を復元します。");
   };
   const purchase = (expectedOwner?: string)=>void run(async()=>{
+    hideNativeBanner();
     const r=await refresh(true);
     if (expectedOwner && expectedOwner !== r.entitlement.userId) return;
     if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
@@ -351,6 +359,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (state && !confirmed.entitlement.entitled) setNotice("App Storeの購入を確認中です。反映までお待ちください。");
   });
   const restore = (expectedOwner?: string)=>void run(async()=>{
+    hideNativeBanner();
     storeKitRunning.current = true;
     try {
       const r=await refresh(true);
@@ -396,12 +405,13 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     {notice && !open && <p role="status" className="mx-auto mt-2 max-w-2xl break-words">{notice}</p>}
     {open && <section id="native-settings" className="mx-auto max-w-2xl space-y-4 py-4 text-base">
       <div className="flex items-center justify-between gap-3"><h1 ref={heading} tabIndex={-1} className="text-xl font-bold outline-none">会員・設定</h1>{!membershipOnly && <button className={secondary} onClick={()=>setOpen(false)}>閉じる</button>}</div>
+      {adPrivacyOptions && <button type="button" className={secondary} onClick={adPrivacyOptions}>広告のプライバシー設定</button>}
       {statusError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{statusError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></div>}
       {notice && <p role="status" className="break-words rounded-xl bg-muted p-3 text-sm">{notice}</p>}
       {purchaseSignIn && <button type="button" className={secondary} disabled={busy || !!signingIn} onClick={()=>startLogin(true)}>ログインし直す</button>}
       <section aria-labelledby="native-plan" className={card}>
         <h2 id="native-plan" className="font-bold">{!access?.entitled && purchaseHeading ? purchaseHeading : "月額プラン"}</h2>
-        <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額で回数無制限。</p>
+        <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額プランでは回数無制限になり、広告も出なくなります。</p>
         {!access ? <>{!statusError && <><p role="status">会員状態を確認しています…</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
           {(access.source === "web" || manageWebPurchase) && <ManageSubscriptionButton label="ウェブ契約の管理・解約"/>}

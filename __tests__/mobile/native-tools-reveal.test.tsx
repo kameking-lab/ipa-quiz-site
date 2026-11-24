@@ -15,7 +15,7 @@ const nativePurchase = vi.hoisted(() => ({
   preferences: new Map<string, string>(),
 }));
 
-vi.mock("@capacitor/core", () => ({ Capacitor: { isNativePlatform: () => true, getPlatform: () => "ios" } }));
+vi.mock("@capacitor/core", () => ({ Capacitor: { isNativePlatform: () => true, getPlatform: () => "ios", isPluginAvailable: () => false }, registerPlugin: () => ({}) }));
 vi.mock("@capacitor/app", () => ({ App: { addListener: () => Promise.resolve({ remove: () => Promise.resolve() }) } }));
 vi.mock("@capacitor/browser", () => ({ Browser: { open: vi.fn(() => Promise.resolve()) } }));
 vi.mock("@capacitor/share", () => ({ Share: { share: vi.fn(() => Promise.resolve()) } }));

@@ -26,7 +26,7 @@ export default function ErrorPage({
   }, [error, digest]);
 
   return (
-    <main id={WEB_ADS_ERROR_PAGE_ID} className="relative flex flex-1 items-center justify-center px-4 py-16">
+    <main id={WEB_ADS_ERROR_PAGE_ID} data-native-banner-exclude className="relative flex flex-1 items-center justify-center px-4 py-16">
 
       <div className="relative w-full max-w-md text-center">
         <div className="overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
