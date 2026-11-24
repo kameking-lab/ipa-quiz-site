@@ -27,7 +27,8 @@ runs:
         . /etc/os-release
         echo "distribution=$ID-$VERSION_ID" >> "$GITHUB_OUTPUT"
 
-    - uses: actions/cache@v4
+    - uses: actions/cache/restore@v4
+      id: pnpm-cache
       with:
         path: ${{ steps.runtime.outputs.store }}
         key: pnpm-store-${{ runner.os }}-${{ runner.arch }}-${{ steps.runtime.outputs.distribution }}-${{ steps.runtime.outputs.node }}-${{ steps.runtime.outputs.pnpm }}-${{ hashFiles('pnpm-lock.yaml') }}
@@ -35,3 +36,10 @@ runs:
     - name: Install dependencies
       shell: bash
       run: pnpm install --frozen-lockfile --prefer-offline
+
+    - name: Save the dependency store before build and test steps
+      if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ steps.runtime.outputs.store }}
+        key: ${{ steps.pnpm-cache.outputs.cache-primary-key }}

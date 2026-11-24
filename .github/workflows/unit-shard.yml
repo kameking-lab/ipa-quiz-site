@@ -30,4 +30,4 @@ jobs:
           ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
           ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
           SHARD: ${{ inputs.shard }}
-        run: pnpm test --shard="$SHARD" --sequence.sequencer=.github/scripts/unit-sequencer.mjs
+        run: pnpm test --shard="$SHARD" --sequence.sequencer=./.github/scripts/unit-sequencer.mjs
