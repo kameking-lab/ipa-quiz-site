@@ -46,8 +46,9 @@ declare global {
 async function mockNativeSpeech(page: Page) {
   await page.evaluate(() => {
     const bridge = (window as Window & {
-      Capacitor: { getPlatform: () => string; Plugins: Record<string, unknown> };
+      Capacitor?: { getPlatform: () => string; Plugins: Record<string, unknown> };
     }).Capacitor;
+    if (!bridge) throw new Error("Capacitor bridge is missing from the test page");
     const calls: Window["speechTest"] = { spoken: [], stopped: [] };
     window.speechTest = calls;
     // Set up the speech bridge after startup so storage and network remain browser mocks.
