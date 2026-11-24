@@ -130,6 +130,25 @@ it.each(["native-user", "different-user"])("binds a pending restore to the accou
   expect(nativePurchase.preferences.has("kakomon:purchase-intent:v1")).toBe(false);
 });
 
+it.each(["buy", "restore"])("rechecks the account immediately before resuming %s", async action => {
+  const key = "kakomon:purchase-intent:v1";
+  nativePurchase.preferences.set(key, JSON.stringify({ action, owner: "first-user", createdAt: Date.now() }));
+  const buy = vi.fn(), restore = vi.fn(), switched = vi.fn();
+  const membership = { ...deviceMembership, buy, restore } as unknown as typeof deviceMembership;
+  vi.stubGlobal("fetch", vi.fn(async input => {
+    if (String(input).includes("/api/mobile/catalog")) return Response.json({ exams: [] });
+    const userId = nativePurchase.preferences.has(key) ? "first-user" : "second-user";
+    if (userId === "second-user") switched();
+    return Response.json({ configuration: { sdkKey: "configured" }, entitlement: { userId, entitled: false } });
+  }));
+  render(<NativeTools membershipOnly membership={membership} />);
+  await waitFor(() => expect(switched).toHaveBeenCalled());
+  await waitFor(() => expect(screen.getByRole("button", { name: "購入を復元" })).toBeEnabled());
+  expect(buy).not.toHaveBeenCalled();
+  expect(restore).not.toHaveBeenCalled();
+  expect(nativePurchase.reserve).not.toHaveBeenCalled();
+});
+
 it("preserves the AI offer click handler while opening native checkout", async () => {
   const saveDraft = vi.fn();
   render(<><NativeTools /><MonthlyPlanLink returnTo="/q" label="AI質問を続ける" keepClickInApp onClick={saveDraft} /></>);
