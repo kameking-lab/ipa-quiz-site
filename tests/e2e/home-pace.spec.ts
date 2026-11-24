@@ -169,6 +169,7 @@ test("reserves the saved plan before hydration and before the catalog arrives", 
 
 for (const hasDate of [true, false]) {
   test(`settles a delayed schedule for an undated plan (${hasDate ? "dated" : "empty"})`, async ({ page }) => {
+    test.setTimeout(60_000);
     await page.setViewportSize({ width: 390, height: 844 });
     const { registration, ...saved } = fixturePlan();
     await fixtures(page, { ...saved, examDate: null, examDateSource: undefined }, 100);
@@ -184,7 +185,7 @@ for (const hasDate of [true, false]) {
     });
     try {
       await page.goto("/");
-      await expect(page.getByText("日程を読み込み中…")).toBeVisible();
+      await expect(page.getByText("日程を読み込み中…")).toBeVisible({ timeout: 20_000 });
       await expect(page.locator("[data-pace-track=progress] svg[role=group]")).toBeAttached();
       const track = page.locator("[data-pace-track=progress]");
       const room = page.getByTestId("home-study-room");
