@@ -15,10 +15,17 @@ export function validWebhookAuthorization(actual: string | null, expected: strin
   return expected.length >= 32 && actual !== null && Buffer.byteLength(actual) === Buffer.byteLength(expected)
     && timingSafeEqual(Buffer.from(actual), Buffer.from(expected));
 }
+const storeDate = z.iso.datetime({ offset: true });
+const optionalStoreDate = storeDate.nullable().optional();
 const subscriberSchema = z.object({ subscriber: z.object({
-  entitlements: z.record(z.string(), z.object({ product_identifier: z.string(), expires_date: z.string().nullable(), purchase_date: z.string(), grace_period_expires_date:z.string().nullable().optional() })),
-  subscriptions: z.record(z.string(), z.object({ store: z.string(), is_sandbox: z.boolean(), expires_date: z.string().nullable(), refunded_at: z.string().nullable().optional(), grace_period_expires_date:z.string().nullable().optional(),
-    billing_issues_detected_at: z.string().nullable().optional(), unsubscribe_detected_at: z.string().nullable().optional(),
+  entitlements: z.record(z.string(), z.object({
+    product_identifier: z.string(), expires_date: storeDate.nullable(),
+    purchase_date: storeDate, grace_period_expires_date: optionalStoreDate,
+  })),
+  subscriptions: z.record(z.string(), z.object({
+    store: z.string(), is_sandbox: z.boolean(), expires_date: storeDate.nullable(),
+    refunded_at: optionalStoreDate, grace_period_expires_date: optionalStoreDate,
+    billing_issues_detected_at: optionalStoreDate, unsubscribe_detected_at: optionalStoreDate,
   })),
 }) });
 type StoreConfig = { entitlement: string; productId: string; environment: string };

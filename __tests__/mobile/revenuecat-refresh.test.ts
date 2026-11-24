@@ -148,6 +148,9 @@ it("persists snapshots only for verified subscriber documents or a 404", async (
       () => Response.json(null),
       () => Response.json(false),
       () => Response.json({ subscriber: { entitlements: {} } }),
+      () => Response.json({ subscriber: { ...paid.subscriber, subscriptions: {
+        monthly: { ...paid.subscriber.subscriptions.monthly, expires_date: "unparseable expiry" },
+      } } }),
       () => new Response("{", { status: 200 }),
       () => new Response(null, { status: 204 }),
     ]) {
