@@ -40,6 +40,7 @@
 :global([data-home-study-calendar]) .stack[data-home-state="loading"] :is(.secondarySearch, .room, .directory) {
   visibility: hidden;
 }
+body:has(.stack[data-home-calendar-layout="pending"]) :global(.site-footer) { visibility: hidden; }
 
 .hero {
   margin-inline: -16px;

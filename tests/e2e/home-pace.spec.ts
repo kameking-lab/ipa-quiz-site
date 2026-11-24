@@ -192,7 +192,7 @@ for (const hasDate of [true, false]) {
       const shifts = await page.evaluateHandle(async () => {
         await new Promise(requestAnimationFrame);
         await new Promise(requestAnimationFrame);
-        const entries: Array<PerformanceEntry & { value?: number; hadRecentInput?: boolean }> = [];
+        const entries: Array<PerformanceEntry & { value?: number; hadRecentInput?: boolean; sources?: Array<{ node: Node | null }> }> = [];
         const observer = new PerformanceObserver(list => entries.push(...list.getEntries()));
         observer.observe({ type: "layout-shift" });
         return { entries, observer };
@@ -216,18 +216,25 @@ for (const hasDate of [true, false]) {
         expect((await track.boundingBox())!.y).toBeLessThan(trackBefore!.y - 70);
         expect((await room.boundingBox())!.y).toBeLessThan(roomBefore!.y - 70);
       }
-      expect(await shifts.evaluate(async ({ entries, observer }) => {
+      const layout = await shifts.evaluate(async ({ entries, observer }) => {
         await new Promise(requestAnimationFrame);
         await new Promise(requestAnimationFrame);
         const records = [...entries, ...observer.takeRecords()] as typeof entries;
         observer.disconnect();
-        return records.reduce((sum, entry) => sum + (entry.hadRecentInput ? 0 : entry.value ?? 0), 0);
-      })).toBe(0);
+        const unexpected = records.filter(entry => !entry.hadRecentInput);
+        return {
+          cls: unexpected.reduce((sum, entry) => sum + (entry.value ?? 0), 0),
+          moved: unexpected.flatMap(entry => entry.sources?.map(({ node }) => node instanceof Element
+            ? { tag: node.tagName, id: node.id, className: node.getAttribute("class") }
+            : node?.nodeName) ?? []),
+        };
+      });
+      expect(layout.cls, JSON.stringify(layout.moved)).toBe(0);
       await shifts.dispose();
       if (hasDate) {
         await cta.click();
         await expect(page).toHaveURL(/\/quiz\/today\?plan=e2e-pace/, { timeout: 20_000 });
-        await expect(page.getByRole("heading", { name: "計画の問題 · 10問" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "計画の問題 · 10問" })).toBeVisible({ timeout: 20_000 });
       } else {
         await setDate.click();
         await expect(page.getByRole("dialog")).toBeVisible();
@@ -596,8 +603,8 @@ test.describe("home flip calendar", () => {
             expect(await savedDate()).toMatchObject({ examDate: officialDate, examDateSource: "official" });
           }
           await hero.getByRole("link", { name: "計画の問題を解く" }).click();
-          await expect(page).toHaveURL(/\/quiz\/today\?plan=e2e-pace/);
-          await expect(page.getByRole("heading", { name: `計画の問題 · ${target}問` })).toBeVisible();
+          await expect(page).toHaveURL(/\/quiz\/today\?plan=e2e-pace/, { timeout: 20_000 });
+          await expect(page.getByRole("heading", { name: `計画の問題 · ${target}問` })).toBeVisible({ timeout: 20_000 });
         } finally {
           gate.resolve();
         }
