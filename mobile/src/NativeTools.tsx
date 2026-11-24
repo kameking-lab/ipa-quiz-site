@@ -404,7 +404,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       {purchaseSignIn && <button type="button" className={secondary} disabled={busy || !!signingIn} onClick={()=>startLogin(true)}>ログインし直す</button>}
       <section aria-labelledby="native-plan" className={card}>
         <h2 id="native-plan" className="font-bold">{!access?.entitled && purchaseHeading ? purchaseHeading : "月額プラン"}</h2>
-        <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額で回数無制限。</p>
+        <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額プランでは回数無制限になり、広告も出なくなります。</p>
         {!access ? <>{!statusError && <><p role="status">会員状態を確認しています…</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
           {(access.source === "web" || manageWebPurchase) && <ManageSubscriptionButton label="ウェブ契約の管理・解約"/>}
