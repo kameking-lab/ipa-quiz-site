@@ -49,7 +49,7 @@ describe("history merge and account ownership", () => {
     post.mockReturnValueOnce(flight.promise);
     const result = syncHistory();
     await vi.waitFor(() => expect(post).toHaveBeenCalledTimes(1));
-    expect(JSON.parse(post.mock.calls[0][1].body)).toEqual({ entries: [entry], expectedUserId: "A" });
+    expect(JSON.parse(post.mock.calls[0][1].body)).toEqual({ historyPage: {}, entries: [{ id: entry.id, at: entry.at, correct: true }], expectedUserId: "A" });
     localStorage.setItem(LS_KEYS.history, JSON.stringify({
       entries: [entry, { id: "q1", at: 2000, selected: "イ", correct: false }],
       starredIds: ["new-star"], customField: "kept",
@@ -101,6 +101,37 @@ describe("history merge and account ownership", () => {
     expect((await syncAll({ expectedUserId: "B", confirmUnowned: true })).overall).toBe("deferred");
     expect(readOwnership("A")).toBe("matching");
     expect(post).not.toHaveBeenCalled();
+  });
+  it("uploads at most 256 answers and restores ties only after the last same-time batch", async () => {
+    const local = Array.from({ length: 513 }, (_, i) => ({ id: String(i), at: i === 512 ? 300 : 100, correct: true }));
+    localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: local, starredIds: [] }));
+    post.mockImplementation(async (_url, options) => {
+      const { historyPage, entries } = JSON.parse(options.body);
+      expect(entries.length).toBeLessThanOrEqual(256);
+      const scanned = local.filter(e => e.at > (historyPage.after ?? -Infinity) && e.at <= (historyPage.through ?? Infinity));
+      const offset = historyPage.cursor ? 256 : 0;
+      const page = scanned.slice(offset, offset + 256);
+      const nextCursor = scanned.length > offset + 256 ? { at: 100, rowId: "row255" } : null;
+      return { ok: true, status: 200, json: async () => ({ merged: 0, total: page.length, entries: [], nextCursor }) };
+    });
+    expect(await syncHistory()).toEqual({ state: "ok", merged: 0, total: 513 });
+    const windows = post.mock.calls.map(([, opt]) => JSON.parse(opt.body).historyPage);
+    expect(windows).toEqual([{ through: 99 }, { after: 99, through: 100 },
+      { after: 99, through: 100, cursor: { at: 100, rowId: "row255" } }, { after: 100 }]);
+  });
+
+  it("keeps the original snapshot on a later page failure and restores all pages on retry", async () => {
+    const original = localStorage.getItem(LS_KEYS.history);
+    const first = { ok: true, status: 200, json: async () => ({ merged: 1, total: 1,
+      entries: [{ id: "p1", at: 1, correct: true }], nextCursor: { at: 1, rowId: "x" }, limitReached: true }) };
+    post.mockResolvedValueOnce(first).mockRejectedValueOnce(new Error("offline"));
+    expect((await syncHistory()).state).toBe("error");
+    expect(localStorage.getItem(LS_KEYS.history)).toBe(original);
+    post.mockResolvedValueOnce(first).mockResolvedValueOnce({ ok: true, status: 200, json: async () => ({
+      merged: 0, total: 1, entries: [{ id: "p2", at: 2, correct: false }], nextCursor: null,
+    }) });
+    expect(await syncHistory()).toEqual({ state: "ok", merged: 1, total: 2, limitReached: true });
+    expect(data().entries.map((e: typeof entry) => e.id)).toEqual(["p1", "p2", "q1"]);
   });
   it.each(["network", "bad-json", "bad-entries", "bad-counter"])("keeps local history on %s and permits retry", async (failure) => {
     const original = localStorage.getItem(LS_KEYS.history);

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { HISTORY_LIMIT_MESSAGE } from "@/lib/sync/history-protocol";
 import { Cloud, CloudUpload, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { syncAll, readSyncMeta, type SyncAllResult } from "@/lib/sync";
@@ -108,7 +109,8 @@ export function CloudSyncPanel() {
               aria-live="polite"
             >
               <Cloud className="h-3.5 w-3.5" aria-hidden="true" />
-              最終同期: {formatRelative(lastSyncedAt)}
+              {result?.byType.history.state === "ok" && result.byType.history.limitReached
+                ? HISTORY_LIMIT_MESSAGE : `最終同期: ${formatRelative(lastSyncedAt)}`}
             </span>
           </div>
         )}

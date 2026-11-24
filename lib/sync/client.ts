@@ -1,10 +1,11 @@
 "use client";
 
+import { isHistoryCursor, type HistoryCursor, type HistoryWindow } from "./history-protocol";
 import type { SyncResponse } from "./types";
 import { isSyncContextCurrent, ownsSyncContext, type SyncContext } from "./ownership";
 
 export type SyncStatus =
-  | { state: "ok"; merged: number; total: number }
+  | { state: "ok"; merged: number; total: number; limitReached?: boolean }
   | { state: "unauthenticated" } // 401 — not signed in, stay local-only
   | { state: "unavailable" } // 503 — DB not provisioned
   | { state: "deferred"; reason: "owner_unknown" | "owner_mismatch" | "account_changed" }
@@ -20,8 +21,8 @@ export async function postSync<T>(
   endpoint: string,
   entries: T[],
   context: SyncContext,
-  options: { includePace?: boolean } = {},
-): Promise<{ status: SyncStatus; entries: T[] }> {
+  options: { includePace?: boolean; historyPage?: HistoryWindow } = {},
+): Promise<{ status: SyncStatus; entries: T[]; nextCursor?: HistoryCursor; fullHistory?: boolean }> {
   try {
     if (!ownsSyncContext(context)) return { status: { state: "deferred", reason: "account_changed" }, entries };
     const res = await fetch(endpoint, {
@@ -36,17 +37,20 @@ export async function postSync<T>(
     if (!res.ok) {
       return { status: { state: "error", message: `HTTP ${res.status}` }, entries };
     }
-    const json = (await res.json()) as SyncResponse<T>;
+    const json = (await res.json()) as SyncResponse<T> & { nextCursor?: unknown; limitReached?: boolean };
     if (!json || !Array.isArray(json.entries) ||
       !Number.isFinite(json.merged) || json.merged < 0 ||
-      !Number.isFinite(json.total) || json.total < 0) {
+      !Number.isFinite(json.total) || json.total < 0 ||
+      (options.historyPage && json.nextCursor != null && !isHistoryCursor(json.nextCursor))) {
       return { status: { state: "error", message: "invalid_sync_response" }, entries };
     }
     if (!(await isSyncContextCurrent(context))) {
       return { status: { state: "deferred", reason: "account_changed" }, entries };
     }
     return {
-      status: { state: "ok", merged: json.merged, total: json.total },
+      status: { state: "ok", merged: json.merged, total: json.total, ...(json.limitReached && { limitReached: true }) },
+      ...(options.historyPage && !("nextCursor" in json) && { fullHistory: true }),
+      ...(isHistoryCursor(json.nextCursor) && { nextCursor: json.nextCursor }),
       entries: json.entries,
     };
   } catch (err) {

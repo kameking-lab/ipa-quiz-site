@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { CloudUpload, Download, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HISTORY_LIMIT_MESSAGE } from "@/lib/sync/history-protocol";
 import { syncHistory } from "@/lib/sync/history-sync";
 import { useSyncIdentity } from "@/lib/sync/use-sync-identity";
 import { SyncOwnershipNotice } from "@/components/sync/SyncOwnershipNotice";
@@ -10,6 +11,7 @@ import { SyncOwnershipNotice } from "@/components/sync/SyncOwnershipNotice";
 interface SyncResult {
   merged: number;
   total: number;
+  limitReached?: boolean;
 }
 
 export function HistorySyncPanel() {
@@ -29,7 +31,7 @@ export function HistorySyncPanel() {
         confirmUnowned: identity.confirmedFor === identity.account.id,
       });
       if (status.state === "ok") {
-        setResult({ merged: status.merged, total: status.total });
+        setResult(status);
       } else {
         setError(status.state === "deferred"
           ? "保存先の確認が必要なため、履歴の同期を保留しました。端末の記録は残っています。"
@@ -116,8 +118,8 @@ export function HistorySyncPanel() {
         >
           <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
           <span>
-            同期完了: <strong>{result.merged}</strong> 件を追加、合計{" "}
-            <strong>{result.total}</strong> 件をこのブラウザに反映しました。
+            {result.limitReached ? HISTORY_LIMIT_MESSAGE : <>同期完了: <strong>{result.merged}</strong> 件を追加、合計{" "}
+            <strong>{result.total}</strong> 件をこのブラウザに反映しました。</>}
           </span>
         </div>
       )}
