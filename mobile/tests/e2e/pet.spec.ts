@@ -34,12 +34,15 @@ for(const width of [320,390])test(`bundled pet persists before background/restar
   await expect.poll(()=>sheet.evaluate(el=>getComputedStyle(el).opacity)).toBe("1");
   await page.screenshot({path:`test-results/pet-v1/${process.env.PET_EVIDENCE_PHASE??"regression"}-bundled-care-${width}-${browserName}.png`});
   expect(await sheet.evaluate(el=>el.scrollWidth<=el.clientWidth)).toBe(true);
-  await sheet.getByLabel("名前",{exact:true}).fill("W".repeat(24));
-  await sheet.getByRole("button",{name:"名前を保存",exact:true}).tap();
+  const longName="W".repeat(10), nameField=sheet.getByLabel("名前",{exact:true});
+  const saveName=sheet.getByRole("button",{name:"名前を保存",exact:true});
+  await nameField.fill(`${longName}W`);await saveName.tap();
+  await expect(sheet.getByRole("status")).toHaveText("10文字までにしてください。");
+  await nameField.fill(longName);await saveName.tap();
   await expect(sheet.getByRole("status")).toHaveText("保存しました。");
   await sheet.getByRole("button",{name:"育成の記録"}).tap();
   const growth=page.getByRole("dialog",{name:"チワワの育成"});
-  await expect(growth.getByText(/^W{24}・/)).toBeVisible();
+  await expect(growth.getByText(new RegExp(`^${longName}・`))).toBeVisible();
   await growth.evaluate(element=>{
     const items=[element,...element.querySelectorAll("*")].map(node=>({node:node as HTMLElement,size:parseFloat(getComputedStyle(node).fontSize)}));
     for(const {node,size}of items)node.style.fontSize=`${size*2}px`;
@@ -51,9 +54,9 @@ for(const width of [320,390])test(`bundled pet persists before background/restar
   expect(await close.evaluate(el=>{const r=el.getBoundingClientRect();return el.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));})).toBe(true);
   await page.screenshot({path:`test-results/pet-v1/${process.env.PET_EVIDENCE_PHASE??"regression"}-bundled-unbroken-name-${width}-${browserName}.png`});
   const renamed=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)!),guest);
-  expect(renamed.profiles[0].name).toBe("W".repeat(24));expect(renamed.profiles[0].growth).toBe(saved.profiles[0].growth);expect(renamed.events).toEqual(saved.events);
+  expect(renamed.profiles[0].name).toBe(longName);expect(renamed.profiles[0].growth).toBe(saved.profiles[0].growth);expect(renamed.events).toEqual(saved.events);
   await close.tap();await expect(growth).toHaveCount(0);
-  await expect(room.getByText("W".repeat(24),{exact:true})).toBeVisible();await expect(settings).toBeFocused();
+  await expect(room.getByText(longName,{exact:true})).toBeVisible();await expect(settings).toBeFocused();
   await settings.press("Enter");await expect(sheet.getByRole("heading",{name:"チワワの設定"})).toBeFocused();
   expect(apis).not.toContain("/api/auth/session");expect(apis.some(path=>/copilot|generate|essay|\/ai\//.test(path))).toBe(false);
 });

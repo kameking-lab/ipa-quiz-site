@@ -163,7 +163,8 @@ test("cancelled purchases allow retry while pending approval survives a reload a
   await page.reload();await page.waitForFunction(()=>!!window.mobileTest);
   await page.evaluate(()=>{window.mobileTest.mockStore("pending");window.mobileTest.showMembership();});
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeDisabled();
-  await expect(page.getByText("購入内容をサーバーで確認中です。",{exact:false})).toBeVisible();
+  await expect(page.getByRole("status").first()).toContainText("購入の承認待ち");
+  await expect(page.getByRole("button",{name:"承認状況を確認"})).toBeVisible();
   expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
 });
 test("restore with no verified entitlement explains the missing purchase instead of reporting success",async({page,context})=>{
