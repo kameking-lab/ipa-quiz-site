@@ -23,6 +23,8 @@ reference = group.files.find { |file| file.path == 'PrivacyInfo.xcprivacy' } || 
 target.resources_build_phase.add_file_reference(reference, true)
 native_source = group.files.find { |file| file.path == 'QualificationBridgeViewController.swift' } || group.new_file('QualificationBridgeViewController.swift')
 target.source_build_phase.add_file_reference(native_source, true)
+speech_source = group.files.find { |file| file.path == 'KakomonSpeech.swift' } || group.new_file('KakomonSpeech.swift')
+target.source_build_phase.add_file_reference(speech_source, true)
 tracking_source = group.files.find { |file| file.path == 'TrackingTransparencyPlugin.swift' } || group.new_file('TrackingTransparencyPlugin.swift')
 target.source_build_phase.add_file_reference(tracking_source, true)
 banner_source = group.files.find { |file| file.path == 'NativeBannerAds.swift' } || group.new_file('NativeBannerAds.swift')

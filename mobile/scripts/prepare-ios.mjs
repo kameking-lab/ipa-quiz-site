@@ -30,6 +30,7 @@ run(process.execPath, ["scripts/configure-ads-pods.mjs"]);
 cap("sync", "ios");
 // configure-ios.rb generates the privacy manifest for the effective ads setting.
 await copyFile(new URL("../ios-assets/QualificationBridgeViewController.swift", import.meta.url), new URL("../ios/App/App/QualificationBridgeViewController.swift", import.meta.url));
+await copyFile(new URL("../ios-assets/KakomonSpeech.swift", import.meta.url), new URL("../ios/App/App/KakomonSpeech.swift", import.meta.url));
 await copyFile(new URL("../ios-assets/TrackingTransparencyPlugin.swift", import.meta.url), new URL("../ios/App/App/TrackingTransparencyPlugin.swift", import.meta.url));
 await copyFile(new URL("../ios-assets/NativeBannerAds.swift", import.meta.url), new URL("../ios/App/App/NativeBannerAds.swift", import.meta.url));
 await cp(new URL("../ios-assets/AppIcon.appiconset/", import.meta.url),

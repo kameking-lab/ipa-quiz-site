@@ -110,6 +110,7 @@ class QualificationBridgeViewController: CAPBridgeViewController {
 
     override func capacitorDidLoad() {
         bridge?.registerPluginInstance(QualificationBridgePlugin())
+        bridge?.registerPluginInstance(KakomonSpeech())
         bridge?.registerPluginInstance(TrackingTransparencyPlugin())
         #if canImport(GoogleMobileAds) && canImport(UserMessagingPlatform)
         if NativeBannerAds.configured { bridge?.registerPluginInstance(NativeBannerAds()) }

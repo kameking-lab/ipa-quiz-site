@@ -49,3 +49,19 @@ it("the custom bridge controller keeps Capacitor's automatic plugin registration
   expect(configure).toMatch(/config = JSON\.parse\(File\.read\(config_path\)\)\r?\nconfig\['appId'\] = bundle_id\r?\nFile\.write/);
   expect(configure).toMatch(/com\.apple\.InAppPurchase/);
 });
+
+it("includes the device speech plugin in the generated App target and registers its bridge", () => {
+  const asset = "KakomonSpeech.swift";
+  const source = readFileSync(join(mobile, "ios-assets", asset), "utf8");
+  const prepare = readFileSync(join(mobile, "scripts/prepare-ios.mjs"), "utf8");
+  const configure = readFileSync(join(mobile, "scripts/configure-ios.rb"), "utf8");
+  const controller = readFileSync(join(mobile, "ios-assets/QualificationBridgeViewController.swift"), "utf8");
+  expect(prepare).toContain(`new URL("../ios/App/App/${asset}", import.meta.url)`);
+  expect(configure).toContain("group.new_file('KakomonSpeech.swift')");
+  expect(configure).toContain("source_build_phase.add_file_reference(speech_source, true)");
+  expect(controller).toContain("registerPluginInstance(KakomonSpeech())");
+  expect(source).toContain('jsName = "KakomonSpeech"');
+  for (const [method, result] of [["available", "Promise"], ["speak", "Callback"], ["stop", "Promise"]]) {
+    expect(source).toContain(`CAPPluginMethod(name: "${method}", returnType: CAPPluginReturn${result})`);
+  }
+});

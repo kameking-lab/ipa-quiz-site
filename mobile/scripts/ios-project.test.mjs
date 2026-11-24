@@ -58,7 +58,7 @@ const rejects = (cwd, message, ...args) => {
 };
 
 test("generated native sources match the checked plugin contracts and are compiled by App", () => {
-  const sources = ["QualificationBridgeViewController.swift", "TrackingTransparencyPlugin.swift", "NativeBannerAds.swift"];
+  const sources = ["QualificationBridgeViewController.swift", "TrackingTransparencyPlugin.swift", "NativeBannerAds.swift", "KakomonSpeech.swift"];
   for (const source of sources) {
     assert.equal(readFileSync(join(mobile, "ios/App/App", source), "utf8"),
       readFileSync(join(mobile, "ios-assets", source), "utf8"), `${source}: rerun ios:prepare`);
