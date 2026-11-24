@@ -55,12 +55,6 @@ function wire(f: Fixture, store: MonthlyStore = f.store, audit?: () => Promise<v
   return service;
 }
 
-function invoiceEvent(f: Fixture, eventId = "evt_monthly") {
-  const event = f.event("invoice.paid", f.invoice.id, eventId);
-  Object.assign(event.data.object, { customer: f.customer.id });
-  return event;
-}
-
 function account(f: Fixture) { return f.store.accounts.get("stripe-test:alice")!; }
 
 function fixtureFetch(f: Fixture) {
@@ -99,14 +93,13 @@ async function measure(kind: Case, injectDelay: boolean) {
   };
   wiring.telemetry.mockClear().mockImplementation(async () => { metrics.kv++; if (injectDelay) await delay(5); });
   const service = wire(f, store, async () => { metrics.audit++; if (injectDelay) await delay(5); });
-  let event = invoiceEvent(f);
+  let event = f.event();
   if (kind === "checkout") {
     event = f.event("checkout.session.completed", f.session.id);
-    Object.assign(event.data.object, { customer: f.customer.id, mode: "subscription", status: "complete",
+    Object.assign(event.data.object, { mode: "subscription", status: "complete",
       payment_status: "paid", client_reference_id: f.result.orderId });
   } else if (kind === "subscription") {
     event = f.event("customer.subscription.updated", f.sub.id);
-    Object.assign(event.data.object, { customer: f.customer.id });
   } else if (kind === "refund" || kind === "unallocated") {
     f.refunds.push(refund);
     f.allocationsVisible(kind !== "unallocated");
@@ -181,7 +174,7 @@ it.each([
   const { fetch } = fixtureFetch(f);
   const owner = vi.spyOn(f.store, "owner");
   const tx = vi.spyOn(f.store, "transaction");
-  const response = await POST(signedRequest(invoiceEvent(f), options));
+  const response = await POST(signedRequest(f.event(), options));
   expect(response.status).toBe(status);
   expect(await response.json()).toEqual({ error: code });
   expect(fetch).not.toHaveBeenCalled();
@@ -197,7 +190,7 @@ it.each(["different customer", "different event", "old policy"] as const)("check
   if (wrongHint === "old policy") bob.renewalStopJobs.sub_legacy = { token: "evt_legacy" };
   f.store.accounts.set("stripe-test:bob", bob);
   wire(f);
-  const event = invoiceEvent(f);
+  const event = f.event();
   Object.assign(event.data.object, { customer: bob.customer.id });
   const response = await POST(signedRequest(event));
   expect(response.status).toBe(200);
@@ -210,7 +203,7 @@ it.each(["expanded", "unknown"] as const)("uses canonical resolution for an %s c
   const f = await monthlyStripeFixture();
   wire(f);
   const { fetch } = fixtureFetch(f);
-  const event = invoiceEvent(f);
+  const event = f.event();
   if (shape === "unknown") f.invoice.customer = "cus_unknown";
   Object.assign(event.data.object, { customer: shape === "expanded" ? { id: f.customer.id } : f.invoice.customer });
   const response = await POST(signedRequest(event));
@@ -225,16 +218,33 @@ it("does not use signed paid claims to grant access", async () => {
   const f = await monthlyStripeFixture();
   const service = wire(f);
   Object.assign(f.invoice, { status: "open", amount_paid: 0, amount_remaining: f.invoice.total });
-  const event = invoiceEvent(f);
+  const event = f.event();
   Object.assign(event.data.object, { status: "paid", amount_paid: f.invoice.total });
   expect((await POST(signedRequest(event))).status).toBe(200);
   expect(account(f).invoices[f.invoice.id].paid).toBe(false);
   expect((await service.status("alice")).entitled).toBe(false);
 });
 
+it.each([
+  [{ livemode: true }, 400, "payment_mode_mismatch"],
+  [{ id: "cs_test_other" }, 503, "checkout_owner_mismatch"],
+  [{ amount_subtotal: 1 }, 503, "checkout_total_mismatch"],
+] as const)("checks the fetched Checkout before using it for observation", async (patch, status, code) => {
+  const f = await monthlyStripeFixture();
+  wire(f);
+  const before = structuredClone(account(f));
+  const { fetch, original } = fixtureFetch(f);
+  fetch.mockImplementation(async (input, init) => new URL(String(input)).pathname === `/v1/checkout/sessions/${f.session.id}`
+    ? Response.json({ ...f.session, ...patch }) : original(input, init));
+  const response = await POST(signedRequest(f.event("checkout.session.completed", f.session.id)));
+  expect(response.status).toBe(status);
+  expect(await response.json()).toEqual({ error: code });
+  expect(account(f)).toEqual(before);
+});
+
 it.each(["provider", "commit", "audit"] as const)("recovers after a %s failure using a new service", async failure => {
   const f = await monthlyStripeFixture();
-  const event = invoiceEvent(f);
+  const event = f.event();
   if (failure === "provider") f.fail(`invoices/${f.invoice.id}`);
   if (failure === "commit") f.store.fail = true;
   wire(f, f.store, async () => { if (failure === "audit") throw new Error("Fixture audit failure"); });
@@ -275,7 +285,7 @@ function pauseResponse(f: Fixture, path: string) {
 it("commits a single copy of overlapping deliveries and checks a real digest conflict", async () => {
   const f = await monthlyStripeFixture();
   wire(f);
-  const event = invoiceEvent(f);
+  const event = f.event();
   const barrier = pauseResponse(f, `/v1/invoices/${f.invoice.id}`);
   const first = POST(signedRequest({ ...event, pending_webhooks: 2 }));
   await barrier.captured;
@@ -335,7 +345,7 @@ it("refetches a stale entry after a newer cancellation commits", async () => {
 
 it("returns a retryable failure if all four revisions change during observation", async () => {
   const f = await monthlyStripeFixture();
-  const event = invoiceEvent(f);
+  const event = f.event();
   wire(f);
   const { fetch, original } = fixtureFetch(f);
   let competingWrites = 0;

@@ -132,8 +132,12 @@ export async function monthlyStripeFixture(options: { trialDays?: number; examEn
   const provider = new StripeMonthlyProvider(config, "rk_test_public_fixture_not_a_key", fetcher);
   const service = new MonthlyService(store, config, () => clock, undefined, options.reviewExamCharge, options.reviewPurchase);
   const result = await service.checkout("alice", monthlyTerms(config), provider, undefined, undefined, undefined, options.examEndAt, options.exam, options.returnTo); visible = true;
-  const event = (type = "invoice.paid", objectId = invoice.id, eventId = "evt_monthly") => ({ id: eventId, type, livemode: false,
-    data: { object: { ...(type.startsWith("refund.") ? refundDetails.get(objectId) ?? refunds.find(r => r.id === objectId) : {}), id: objectId, payment_intent: payment.id } } });
+  const event = (type = "invoice.paid", objectId = invoice.id, eventId = "evt_monthly") => {
+    const customerScoped = /^(checkout\.session\.|customer\.subscription\.|invoice\.)/.test(type);
+    const refund = type.startsWith("refund.") ? refundDetails.get(objectId) ?? refunds.find(r => r.id === objectId) : undefined;
+    return { id: eventId, type, livemode: false,
+      data: { object: { ...(customerScoped ? { customer: customer.id } : {}), ...refund, id: objectId, payment_intent: payment.id } } };
+  };
   return { card, trialEnds, config, store, provider, service, result, fetcher, price, sub, session, invoice, line, allocation, payment, refunds, disputes, portalConfiguration, event,
     refundDetails, customer, addBalance, ledger, adjustments, earlierInvoices, allocationsVisible: (value: boolean) => allocationsVisible = value,
     fail: (path: string) => failPath = path, visible: (value: boolean) => visible = value, setClock: (date: Date) => { clock = date; } };
