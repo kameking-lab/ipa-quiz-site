@@ -142,6 +142,52 @@ describe.each([false, true])("App Store study membership (AI quota rollout: %s)"
     expect((await aiUsage()).access.kind).toBe(rollout ? "membership_check_pending" : "legacy");
   });
 
+  it("keeps a verified member ad-free and out of the free quotas when a successful lookup has no subscriber", async () => {
+    mocks.storeLookup.mockImplementation(() => storeReceipt());
+    expect(await (await GET(statusRequest)).json()).toMatchObject({ entitled: true, appStore: true });
+    const snapshot = { ...mocks.account };
+    vi.mocked(Date.now).mockReturnValue(now + 61_000);
+    mocks.storeLookup.mockImplementationOnce(() => Response.json(null));
+
+    const status = await GET(statusRequest);
+    expect.soft(status.status).toBe(200);
+    expect.soft(await status.json()).toMatchObject({ entitled: true, expiresAt: snapshot.expiresAt?.toISOString() });
+    expect.soft(mocks.account).toEqual(snapshot);
+    expect.soft(await adsAllowed()).toBe(false);
+    const usage = await aiUsage();
+    expect.soft(usage.access.kind).toBe(rollout ? "paid" : "legacy");
+    const quota = { read: vi.fn(), claimGuest: vi.fn(), reserve: vi.fn(), settle: vi.fn() };
+    expect.soft(await consumeAiUsage(usage, "fixture-provider", { id: "fixture-question-11" }, quota)).toBeNull();
+    expect.soft(quota.reserve).not.toHaveBeenCalled();
+    for (let i = 1; i <= 11; i++) {
+      const response = await practice(i);
+      expect.soft(response.status).toBe(200);
+      expect.soft(await response.json()).toMatchObject({ access: { kind: "pass", remaining: null } });
+    }
+    expect.soft(store.accounts.size).toBe(0);
+
+    // Without a usable snapshot, the same response cannot allocate a free quota.
+    mocks.storeLookup.mockImplementation(() => Response.json(null));
+    vi.mocked(Date.now).mockReturnValue(now + 86_400_000);
+    for (const expiry of [snapshot.expiresAt, null]) {
+      Object.assign(mocks.account, { expiresAt: expiry, checkedAt: expiry ? snapshot.checkedAt : null });
+      const unverified = { ...mocks.account };
+      const pending = await GET(statusRequest);
+      expect.soft(pending.status).toBe(503);
+      expect.soft(await pending.json()).toEqual({ error: "membership_check_pending" });
+      expect.soft(await adsAllowed()).toBe(false);
+      const pendingUsage = await aiUsage();
+      expect.soft(pendingUsage.access.kind).toBe(rollout ? "membership_check_pending" : "legacy");
+      expect.soft((await consumeAiUsage(pendingUsage, "fixture-provider", {}, quota))?.status).toBe(rollout ? 503 : undefined);
+      expect.soft(quota.reserve).not.toHaveBeenCalled();
+      const response = await practice(11);
+      expect.soft(response.status).toBe(503);
+      expect.soft(await response.json()).toMatchObject({ access: { kind: "unavailable", remaining: null } });
+      expect.soft(mocks.account).toEqual(unverified);
+      expect.soft(store.accounts.size).toBe(0);
+    }
+  });
+
   it.each(["expired", "refunded"])("classifies a confirmed %s purchase as free", async method => {
     Object.assign(mocks.account, { expiresAt: new Date(now - 1000), checkedAt: new Date(now - 5000) });
     mocks.storeLookup.mockImplementation(() => method === "expired" ? storeReceipt(now - 1000) : storeReceipt(now + 10_000, true));
