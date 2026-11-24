@@ -64,14 +64,14 @@ async function mockNativeSpeech(page: Page) {
 }
 
 async function expectNativeReadAloud(page: Page, text: string) {
-  await page.locator("summary").filter({ hasText: "陦ｨ遉ｺ縺ｨ隱ｭ縺ｿ荳翫￡" }).click();
-  await page.getByRole("button", { name: "隱ｭ縺ｿ荳翫￡", exact: true }).click();
-  const stop = page.getByRole("button", { name: "隱ｭ縺ｿ荳翫￡繧貞●豁｢" });
+  await page.locator("summary").filter({ hasText: "表示と読み上げ" }).click();
+  await page.getByRole("button", { name: "読み上げ", exact: true }).click();
+  const stop = page.getByRole("button", { name: "読み上げを停止" });
   await expect(stop).toHaveAttribute("aria-pressed", "true");
   const { spoken } = await page.evaluate(() => window.speechTest);
   expect(spoken).toEqual([{ id: expect.any(String), text, lang: "ja-JP", rate: 1 }]);
   await stop.click();
-  await expect(page.getByRole("button", { name: "隱ｭ縺ｿ荳翫￡", exact: true })).toHaveAttribute("aria-pressed", "false");
+  await expect(page.getByRole("button", { name: "読み上げ", exact: true })).toHaveAttribute("aria-pressed", "false");
   expect(await page.evaluate(() => window.speechTest.stopped)).toEqual([spoken[0].id]);
 }
 
@@ -91,9 +91,9 @@ test("saved quiz sends its question text to the iOS speech bridge in airplane mo
   await seed(page, rows, { ...entry, count: rows.length, bytes: Buffer.byteLength(payload), revision: createHash("sha256").update(payload).digest("hex") });
   await context.setOffline(true);
   await page.goto(ORIGIN + "/index.html");
-  await page.locator(".native-exam").filter({ hasText: "IT繝代せ繝昴・繝・ }).first().click();
+  await page.locator(".native-exam").filter({ hasText: "ITパスポート" }).first().click();
   await mockNativeSpeech(page);
-  await page.getByRole("button", { name: "菫晏ｭ伜撫鬘後〒蟄ｦ鄙・ }).click();
+  await page.getByRole("button", { name: "保存問題で学習" }).click();
   await expectNativeReadAloud(page, rows[0].question);
 });
 
