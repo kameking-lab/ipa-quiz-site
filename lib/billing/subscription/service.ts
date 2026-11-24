@@ -5,7 +5,7 @@ import { refundState } from "../finance";
 import { examDateBeforeEnd, examEndCanBeBooked } from "../exam-end";
 import { safeQuizReturn } from "../quiz-return";
 import { sameEventDigest } from "../event-identity";
-import { invoiceCashDue, stripeMinimumYenCharge, terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type Contract, type EndingChange, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Realm, type Signup, type SubscriptionManagement, type Target } from "./domain";
+import { invoiceCashDue, stripeMinimumYenCharge, terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type Contract, type EndingChange, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Realm, type Signup, type SubscriptionManagement, type Target, type WebhookObservationHint } from "./domain";
 
 type ReadAppStorePurchaseStatus = (userId: string, mode: Realm) => Promise<AppStorePurchaseState>;
 
@@ -85,12 +85,15 @@ export function fullyRefunded(a: Account, invoice: Invoice) {
         && Object.values(facts.refunds).reduce((sum, r) => sum + (r.state === "succeeded" ? r.amount : 0), 0) === facts.amount;
     });
 }
-function assertPolicyReady(a: Account) {
+function needsPolicyReview(a: Account) {
   // The old implementation persisted refund/dispute flags without their cause. Never
   // silently clear them or replay an old refund cancellation under the new policy.
-  if (Object.values(a.contracts).some(s => s.renewalBlocked && s.renewalBlockReason !== "dispute")
+  return Object.values(a.contracts).some(s => s.renewalBlocked && s.renewalBlockReason !== "dispute")
     || Object.entries(a.renewalStopJobs).some(([id, job]) => job.reason !== "dispute"
-      || !a.contracts[id]?.renewalBlocked || a.contracts[id]?.renewalBlockReason !== "dispute")) problem("billing_policy_review_required");
+      || !a.contracts[id]?.renewalBlocked || a.contracts[id]?.renewalBlockReason !== "dispute");
+}
+function assertPolicyReady(a: Account) {
+  if (needsPolicyReview(a)) problem("billing_policy_review_required");
 }
 function held(a: Account, invoice: Invoice) {
   return invoice.payments.some(p => {
@@ -531,14 +534,20 @@ export class MonthlyService {
     return { management: (await this.status(userId, orderId)).management };
   }
   async receive(event: { id: string }, digest: string, provider: MonthlyProvider) {
-    const target = await provider.resolve(event);
-    if (!target) return "ignored";
-    const userId = await this.store.owner(target.customerId, this.config.mode);
-    // An affirmative absence of this customer in our identity store is unrelated.
-    // Lookup failures still propagate; we never create an account from a refund.
-    if (!userId && target.unallocatedRefund) return "ignored";
-    if (!userId) problem("subscription_customer_missing");
-    const result = await this.observeCustomer(userId, provider, target, { id: event.id, digest });
+    const receipt = { id: event.id, digest };
+    const hint = provider.webhookObservationHint?.(event);
+    let userId = hint && await this.store.owner(hint.customerId, this.config.mode);
+    let result = userId && hint ? await this.observeCustomer(userId, provider, hint, receipt) : undefined;
+    if (!userId || !result) {
+      const target = await provider.resolve(event);
+      if (!target) return "ignored";
+      userId = await this.store.owner(target.customerId, this.config.mode);
+      // An affirmative absence of this customer in our identity store is unrelated.
+      // Lookup failures still propagate; we never create an account from a refund.
+      if (!userId && target.unallocatedRefund) return "ignored";
+      if (!userId) problem("subscription_customer_missing");
+      result = await this.observeCustomer(userId, provider, target, receipt);
+    }
     await this.finishObservation(userId, provider, true);
     return result;
   }
@@ -697,10 +706,14 @@ export class MonthlyService {
     return this.status(userId, orderId);
   }
 
-  private async observeCustomer(userId: string, provider: MonthlyProvider, target: Target, event?: { id: string; digest: string }) {
+  private observeCustomer(userId: string, provider: MonthlyProvider, target: Target, event?: { id: string; digest: string }): Promise<"duplicate" | "processed">;
+  private observeCustomer(userId: string, provider: MonthlyProvider, target: WebhookObservationHint, event: { id: string; digest: string }): Promise<"duplicate" | "processed" | undefined>;
+  private async observeCustomer(userId: string, provider: MonthlyProvider, target: Target | WebhookObservationHint, event?: { id: string; digest: string }) {
+    const hinted = "prepare" in target;
+    const { customerId } = target;
     const revision = (a: Account) => JSON.stringify([a.events, a.signups, a.contracts, a.invoices, a.payments, a.renewalStopJobs, a.trialEndJobs]);
     const alreadyProcessed = (a: Account) => {
-      if (a.customer?.id !== target.customerId) problem("customer_conflict");
+      if (a.customer?.id !== customerId) problem("customer_conflict");
       assertPolicyReady(a);
       if (!event || !a.events[event.id]) return false;
       if (!sameEventDigest(a.events[event.id], event.digest)) throw new BillingError("event_conflict", 400);
@@ -708,15 +721,33 @@ export class MonthlyService {
     };
     let result: "duplicate" | "processed" | undefined;
     for (let attempt = 0; attempt < 4 && !result; attempt++) {
-      const before = await this.tx(userId, async a => alreadyProcessed(a) ? null : revision(a), true);
+      const before = await this.tx(userId, async a => {
+        if (hinted) {
+          // A guessed account cannot decide an ownership, policy or digest error.
+          if (a.customer?.id !== customerId || needsPolicyReview(a) || event && a.events[event.id]) return undefined;
+        } else if (alreadyProcessed(a)) return null;
+        return revision(a);
+      }, true).catch(error => {
+        // The candidate can disappear or fail the store's account identity check.
+        // Database failures remain retryable.
+        if (hinted && error instanceof BillingError
+          && (error.code === "sign_in_required" || error.code === "subscription_account_mismatch")) return undefined;
+        throw error;
+      });
+      if (before === undefined) return undefined;
       if (before === null) { result = "duplicate"; break; }
-      const observation = await provider.observe(target);
+      let observation: Observation;
+      if (hinted) {
+        const prepared = await target.prepare();
+        if (prepared.target.customerId !== customerId) return undefined;
+        observation = await prepared.observe();
+      } else observation = await provider.observe(target);
       result = await this.tx(userId, async a => {
         if (alreadyProcessed(a)) return "duplicate";
         // Re-fetch after a concurrent commit so an old Stripe response cannot
         // overwrite a newer contract snapshot.
         if (revision(a) !== before) return undefined;
-        return this.applyObservation(a, observation, target.customerId, event);
+        return this.applyObservation(a, observation, customerId, event);
       });
     }
     if (!result) problem("subscription_observation_conflict");

@@ -4,7 +4,7 @@ import { z } from "zod";
 import { BillingError } from "../domain";
 import { refundState } from "../finance";
 import { examDateBeforeEnd, examDateLabel, nextJstDate } from "../exam-end";
-import { stripeMinimumYenCharge, terminal, type EndingChange, type Invoice, type MemberEnding, type MonthlyConfig, type MonthlyProvider, type Observation, type Payment, type Signup, type Target } from "./domain";
+import { stripeMinimumYenCharge, terminal, type EndingChange, type Invoice, type MemberEnding, type MonthlyConfig, type MonthlyProvider, type Observation, type Payment, type Signup, type Target, type WebhookObservationHint } from "./domain";
 
 const id = z.string().regex(/^[a-z]+_[A-Za-z0-9_]+$/);
 const money = z.number().int().nonnegative();
@@ -51,6 +51,18 @@ const customerBalanceSchema = z.object({ id, livemode: z.boolean(), balance: z.n
 const balanceTransactionSchema = z.object({ id, livemode: z.boolean(), customer: ref, invoice: ref.nullable(),
   amount: z.number().int(), ending_balance: z.number().int().optional(), created: seconds, currency: z.literal("jpy"), type: z.string(),
   metadata: z.record(z.string(), z.string()).nullable().optional() });
+
+const webhookEventSchema = z.object({ id, type: z.string(), livemode: z.boolean(),
+  data: z.object({ object: z.object({ id }).passthrough() }) });
+function webhookEntryKind(type: string) {
+  if (["checkout.session.completed", "checkout.session.expired", "checkout.session.async_payment_succeeded", "checkout.session.async_payment_failed"].includes(type)) return "session";
+  if (["customer.subscription.created", "customer.subscription.updated", "customer.subscription.deleted", "customer.subscription.paused", "customer.subscription.resumed"].includes(type)) return "subscription";
+  if (["invoice.paid", "invoice.payment_failed", "invoice.payment_action_required", "invoice.finalization_failed", "invoice.voided", "invoice.marked_uncollectible"].includes(type)) return "invoice";
+}
+type WebhookEntry =
+  | { kind: "session"; value: z.infer<typeof sessionSchema> }
+  | { kind: "subscription"; value: z.infer<typeof subscriptionSchema> }
+  | { kind: "invoice"; value: z.infer<typeof invoiceSchema> };
 
 /** Fixed-price, one-item monthly subscription adapter. Only the first-contract free trial is supported. */
 export class StripeMonthlyProvider implements MonthlyProvider {
@@ -221,18 +233,40 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     if (s.amount_subtotal !== s.amount_total || ![this.c.priceYen, ...(this.c.trialDays > 0 ? [0] : [])].includes(s.amount_total)) throw new BillingError("checkout_total_mismatch", 503);
     return s;
   }
+  private async readWebhookEntry(kind: WebhookEntry["kind"], objectId: string): Promise<{ target: Target; entry: WebhookEntry }> {
+    if (kind === "session") {
+      const s = await this.session(objectId);
+      return { target: { customerId: s.customer, subscriptionIds: s.subscription ? [s.subscription] : [], invoiceIds: [], sessionId: s.id },
+        entry: { kind, value: s } };
+    }
+    if (kind === "subscription") {
+      const s = await this.subscription(objectId);
+      return { target: { customerId: s.customer, subscriptionIds: [s.id], invoiceIds: [] }, entry: { kind, value: s } };
+    }
+    const i = await this.invoice(objectId);
+    return { target: { customerId: i.customer, subscriptionIds: [i.parent.subscription_details.subscription], invoiceIds: [i.id] },
+      entry: { kind, value: i } };
+  }
+  webhookObservationHint(raw: unknown): WebhookObservationHint | undefined {
+    const e = webhookEventSchema.parse(raw);
+    this.mode(e);
+    const kind = webhookEntryKind(e.type), object = e.data.object;
+    if (!kind) return undefined;
+    const customerId = id.safeParse(object.customer);
+    if (!customerId.success || !customerId.data.startsWith("cus_")) return undefined;
+    return {
+      customerId: customerId.data,
+      prepare: async () => {
+        const { target, entry } = await this.readWebhookEntry(kind, object.id);
+        return { target, observe: () => this.observeTarget(target, entry) };
+      },
+    };
+  }
   async resolve(raw: unknown): Promise<Target | null> {
-    const e = z.object({ id: id, type: z.string(), livemode: z.boolean(), data: z.object({ object: z.object({ id }).passthrough() }) }).parse(raw); this.mode(e);
+    const e = webhookEventSchema.parse(raw); this.mode(e);
     const object = e.data.object;
-    if (["checkout.session.completed", "checkout.session.expired", "checkout.session.async_payment_succeeded", "checkout.session.async_payment_failed"].includes(e.type)) {
-      const s = await this.session(object.id); return { customerId: s.customer, subscriptionIds: s.subscription ? [s.subscription] : [], invoiceIds: [], sessionId: s.id };
-    }
-    if (["customer.subscription.created", "customer.subscription.updated", "customer.subscription.deleted", "customer.subscription.paused", "customer.subscription.resumed"].includes(e.type)) {
-      const s = await this.subscription(object.id); return { customerId: s.customer, subscriptionIds: [s.id], invoiceIds: [] };
-    }
-    if (["invoice.paid", "invoice.payment_failed", "invoice.payment_action_required", "invoice.finalization_failed", "invoice.voided", "invoice.marked_uncollectible"].includes(e.type)) {
-      const i = await this.invoice(object.id); return { customerId: i.customer, subscriptionIds: [i.parent.subscription_details.subscription], invoiceIds: [i.id] };
-    }
+    const kindOfEntry = webhookEntryKind(e.type);
+    if (kindOfEntry) return (await this.readWebhookEntry(kindOfEntry, object.id)).target;
     if (!["charge.refunded", "refund.created", "refund.updated", "refund.failed", "charge.dispute.created", "charge.dispute.updated", "charge.dispute.closed"].includes(e.type)) return null;
     let paymentId = typeof object.payment_intent === "string" ? object.payment_intent : null;
     if (!paymentId) {
@@ -309,7 +343,10 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     }
     return payment;
   }
-  async observe(target: Target): Promise<Observation> {
+  observe(target: Target): Promise<Observation> {
+    return this.observeTarget(target);
+  }
+  private async observeTarget(target: Target, entry?: WebhookEntry): Promise<Observation> {
     const result: Observation = { contracts: [], invoices: [], payments: [] }, invoiceIds = new Set(target.invoiceIds);
     const subscriptionIds = new Set(target.subscriptionIds);
     const examEnds = new Map<string, number>();
@@ -320,13 +357,14 @@ export class StripeMonthlyProvider implements MonthlyProvider {
       return result;
     }
     if (target.sessionId) {
-      const s = await this.session(target.sessionId);
+      const s = entry?.kind === "session" && entry.value.id === target.sessionId ? entry.value : await this.session(target.sessionId);
       if (s.customer !== target.customerId) throw new BillingError("customer_mismatch", 503);
       if (s.subscription) subscriptionIds.add(s.subscription);
       result.session = { id: s.id, signupId: s.metadata.signup_id, customerId: s.customer, terms: s.metadata.terms_hash, state: s.status, subscriptionId: s.subscription };
     }
     for (const subId of subscriptionIds) {
-      const s = await this.subscription(subId), item = s.items.data[0];
+      const s = entry?.kind === "subscription" && entry.value.id === subId ? entry.value : await this.subscription(subId);
+      const item = s.items.data[0];
       if (s.customer !== target.customerId || item.current_period_start >= item.current_period_end) throw new BillingError("subscription_mismatch", 503);
       const ending = memberEnding(s);
       const examEnd = ending ? undefined : confirmedExamEnd(s);
@@ -349,7 +387,8 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     let ledger: ReturnType<StripeMonthlyProvider["balanceLedger"]> | undefined;
     const balanceLedger = () => ledger ??= this.balanceLedger(target.customerId);
     for (const invoiceId of invoiceIds) {
-      const i = await this.invoice(invoiceId), subId = i.parent.subscription_details.subscription;
+      const i = entry?.kind === "invoice" && entry.value.id === invoiceId ? entry.value : await this.invoice(invoiceId);
+      const subId = i.parent.subscription_details.subscription;
       if (i.customer !== target.customerId || !subscriptionIds.has(subId)) throw new BillingError("invoice_owner_mismatch", 503);
       // The zero-yen invoice that opens a trial is not a payment and grants nothing; trial access comes from the contract.
       if (this.c.trialDays > 0 && i.billing_reason === "subscription_create" && i.total === 0 && i.starting_balance === 0 && i.amount_due === 0 && i.amount_paid === 0) continue;
