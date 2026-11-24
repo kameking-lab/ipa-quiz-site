@@ -4,6 +4,7 @@ import { BillingError, jstDay } from "../domain";
 import { refundState } from "../finance";
 import { examDateBeforeEnd, examEndCanBeBooked } from "../exam-end";
 import { safeQuizReturn } from "../quiz-return";
+import { sameEventDigest } from "../signature";
 import { invoiceCashDue, stripeMinimumYenCharge, terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type Contract, type EndingChange, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Realm, type Signup, type SubscriptionManagement, type Target } from "./domain";
 
 type ReadAppStorePurchaseStatus = (userId: string, mode: Realm) => Promise<AppStorePurchaseState>;
@@ -702,7 +703,7 @@ export class MonthlyService {
       if (a.customer?.id !== target.customerId) problem("customer_conflict");
       assertPolicyReady(a);
       if (!event || !a.events[event.id]) return false;
-      if (a.events[event.id] !== event.digest) throw new BillingError("event_conflict", 400);
+      if (!sameEventDigest(a.events[event.id], event.digest)) throw new BillingError("event_conflict", 400);
       return true;
     };
     let result: "duplicate" | "processed" | undefined;
