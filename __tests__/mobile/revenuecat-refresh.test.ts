@@ -101,14 +101,18 @@ it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase 
     transport.mockResolvedValueOnce(new Response(null, { status: 401 }));
     await expect(revenueCatAccess("alice", false, true)).rejects.toThrow();
     transport.mockImplementationOnce(async () => {
-      await pg.exec('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=NULL');
+      await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=NULL, "checkedAt"=$1', [new Date()]);
       return new Response(null, { status: 503 });
     });
     await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
-    // A first-time free account has no verified snapshot at all.
+    // An old negative snapshot cannot stand in for a failed recheck.
+    await setChecked(86_400_000);
+    transport.mockResolvedValueOnce(new Response(null, { status: 503 }));
+    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    // A first-time account has no verified snapshot at all.
     await pg.exec('DELETE FROM "MobileRevenueCatAccount" WHERE "userId"=\'alice\'');
     transport.mockResolvedValueOnce(new Response(null, { status: 429 }));
-    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
     // The checked snapshot can still be recent when a paid period turns over.
     await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1, "checkedAt"=$2',
       [new Date(Date.now() - 1_000), new Date()]);

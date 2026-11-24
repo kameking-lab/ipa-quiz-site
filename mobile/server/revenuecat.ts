@@ -148,23 +148,29 @@ export async function refreshRevenueCat(appUserId: string, { transport = fetch, 
 }
 export async function revenueCatAccess(userId: string, fresh = false, allowStoredStudyAccess = false) {
   if (!mobileConfig().enabled) return null;
-  const a = await ensureRevenueCatAccount(userId);
+  const account = await ensureRevenueCatAccount(userId);
   const now = Date.now();
-  let row: AccountRow | null = a;
-  const expiredStudyPeriod = allowStoredStudyAccess && a.expiresAt && a.expiresAt.getTime() <= now;
-  if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod) {
-    try {
-      row = await refreshRevenueCat(a.appUserId);
-    } catch (error) {
-      const temporary = error instanceof TypeError || (error instanceof Error && error.name === "TimeoutError")
-        || (error instanceof BillingError && /^mobile_verification_unavailable_(429|5\d\d)$/.test(error.code));
-      if (fresh || !allowStoredStudyAccess || !temporary) throw error;
-      // A concurrent webhook may already have revoked the old snapshot.
-      row = await ensureRevenueCatAccount(userId);
-      if (row.expiresAt && row.expiresAt.getTime() <= Date.now()) {
-        throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
-      }
+  const checkedAt = account.checkedAt?.getTime() ?? 0;
+  if (!fresh && account.checkedAt && now - checkedAt <= 60_000
+    && (!account.expiresAt || account.expiresAt.getTime() > now)) {
+    return account.expiresAt ? account : null;
+  }
+
+  let row: AccountRow | null;
+  try {
+    row = await refreshRevenueCat(account.appUserId);
+  } catch (error) {
+    const temporary = error instanceof TypeError || (error instanceof Error && error.name === "TimeoutError")
+      || (error instanceof BillingError && /^mobile_verification_unavailable_(429|5\d\d)$/.test(error.code));
+    if (fresh || !allowStoredStudyAccess || !temporary) throw error;
+    // Re-read after the failure. A concurrent webhook may have renewed or revoked access.
+    row = await ensureRevenueCatAccount(userId);
+    if (!row.checkedAt || (!row.expiresAt && row.checkedAt.getTime() <= checkedAt)) {
+      throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
     }
   }
-  return row && row.expiresAt && row.expiresAt.getTime() > Date.now() ? row : null;
+  if (!row || (row.expiresAt && row.expiresAt.getTime() <= Date.now())) {
+    throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
+  }
+  return row.expiresAt ? row : null;
 }
