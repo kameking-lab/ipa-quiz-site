@@ -31,7 +31,7 @@ it("waits for a matching voice and speaks with the best Japanese voice in the cl
   voices = [];
   render(<TTSButton text="一問。" label="Read" />);
   expect(screen.queryByText("表示と読み上げ")).toBeNull();
-  voices = [voice("Premium English", "en-US")];
+  voices = [voice("Premium English", "en-US"), { ...voice("Japanese Natural"), localService: false }];
   act(() => engine.dispatchEvent(new Event("voiceschanged")));
   expect(screen.queryByText("Read")).toBeNull();
   const enhanced = voice("Kyoko（拡張）");
@@ -45,6 +45,20 @@ it("waits for a matching voice and speaks with the best Japanese voice in the cl
 it("does not render the disclosure without the utterance constructor", () => {
   vi.stubGlobal("SpeechSynthesisUtterance", undefined);
   render(<TTSButton text="one" />);
+  expect(screen.queryByText("表示と読み上げ")).toBeNull();
+});
+
+it("shows the iPhone notice only after a press and removes it if speech never starts", () => {
+  vi.useFakeTimers();
+  vi.stubGlobal("navigator", { userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X)" });
+  render(<TTSButton text="一問。" label="Read" />);
+  const notice = "消音モードでは鳴りません";
+  expect(screen.queryByText(notice)).toBeNull();
+  play();
+  expect(engine.speak).toHaveBeenCalledOnce();
+  expect(screen.getByRole("status")).toHaveTextContent(notice);
+  act(() => vi.advanceTimersByTime(4000));
+  expect(screen.queryByText(notice)).toBeNull();
   expect(screen.queryByText("表示と読み上げ")).toBeNull();
 });
 

@@ -7,6 +7,7 @@ interface NativeSpeech {
 
 export interface SpeechOutput {
   engine: object;
+  needsSilentModeNotice?: boolean;
   chunks: (text: string, rate: number) => string[];
   speak: (text: string, rate: number, callbacks: SpeechCallbacks) => void;
   stop: () => void;
@@ -21,14 +22,14 @@ interface SpeechCallbacks {
 
 function quality(voice: SpeechSynthesisVoice) {
   const name = voice.name;
-  const tier = /natural|premium|enhanced|neural|online|拡張|高品質|プレミアム|siri/i.test(name) ? 3
+  const tier = /natural|premium|enhanced|neural|拡張|高品質|プレミアム|siri/i.test(name) ? 3
     : /google|o-ren|kyoko|kyōko|きょうこ/i.test(name) ? 2 : 1;
-  return tier * 4 + Number(voice.localService) * 2 + Number(voice.default);
+  return tier * 2 + Number(voice.default);
 }
 
 function chooseVoice(voices: SpeechSynthesisVoice[], lang: string) {
   const language = lang.toLowerCase().split(/[-_]/)[0];
-  return voices.filter(v => v.lang.toLowerCase().split(/[-_]/)[0] === language)
+  return voices.filter(v => v.localService && v.lang.toLowerCase().split(/[-_]/)[0] === language)
     .sort((a, b) => quality(b) - quality(a))[0];
 }
 
@@ -86,6 +87,7 @@ export function observeSpeech(lang: string, update: (output: SpeechOutput | null
 
   const synth = window.speechSynthesis;
   if (!synth || typeof window.SpeechSynthesisUtterance !== "function") return;
+  const needsSilentModeNotice = /\biPhone\b/i.test(window.navigator.userAgent);
   const refresh = () => {
     let voice: SpeechSynthesisVoice | undefined;
     try { voice = chooseVoice(synth.getVoices(), lang); } catch { update(null); return; }
@@ -95,7 +97,7 @@ export function observeSpeech(lang: string, update: (output: SpeechOutput | null
     let current: SpeechSynthesisUtterance | null = null;
     let retryTimer: number;
     update({
-      engine: synth, chunks: speechChunks,
+      engine: synth, needsSilentModeNotice, chunks: speechChunks,
       speak(text, rate, callbacks) {
         // Some engines discard the first request following a recent cancellation.
         // Submit in the gesture first; retry once only if the queue reports it was dropped.

@@ -24,6 +24,7 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
   const [rate, setRate] = React.useState(1);
   const [showRate, setShowRate] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [showSilentModeNotice, setShowSilentModeNotice] = React.useState(false);
   const stopOwn = React.useRef<(() => void) | null>(null);
 
   React.useEffect(() => {
@@ -51,6 +52,7 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
 
   React.useEffect(() => {
     setError(null);
+    setShowSilentModeNotice(false);
     const stop = () => stopOwn.current?.();
     window.addEventListener("pagehide", stop);
     return () => {
@@ -124,7 +126,10 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
   const speaking = phase !== "idle";
   const handleClick = () => {
     if (stopOwn.current) stopOwn.current();
-    else startReading(rate);
+    else {
+      setShowSilentModeNotice(output?.needsSilentModeNotice === true);
+      startReading(rate);
+    }
   };
   const updateRate = (r: number) => {
     setRate(r);
@@ -137,7 +142,7 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
   return (
     <details className="mt-2 text-sm text-muted-foreground">
       <summary className="min-h-11 cursor-pointer py-3">表示と読み上げ</summary>
-      <div className={cn("relative inline-flex items-center gap-1", className)}>
+      <div className={cn("relative inline-flex flex-wrap items-center gap-1", className)}>
         <button
           type="button"
           onClick={handleClick}
@@ -162,7 +167,8 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
         >
           ×{rate.toFixed(2)}
         </button>
-        {error && <span role="status" className="text-xs text-red-700 dark:text-red-300">{error}</span>}
+        {error ? <span role="status" className="text-xs text-red-700 dark:text-red-300">{error}</span>
+          : showSilentModeNotice && <span role="status" className="whitespace-nowrap text-xs">消音モードでは鳴りません</span>}
         {showRate && (
           <div className="absolute right-0 top-full z-30 mt-2 flex flex-col gap-1 rounded-lg border border-zinc-200 bg-white p-2 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
             <span className="text-[10px] text-zinc-500">速度</span>
