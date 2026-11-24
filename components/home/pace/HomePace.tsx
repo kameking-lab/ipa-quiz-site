@@ -240,7 +240,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             <div className={styles.planHeader}>
               <h1 className="min-w-0" aria-labelledby="home-qualification"><button type="button" className={`${styles.qualification} study-focus`} onClick={() => setSheet("switch")} aria-label="資格を切り替える" aria-describedby="home-qualification" aria-haspopup="dialog" aria-expanded={sheet === "switch"}><span id="home-qualification">{item?.name ?? plan.exam}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 p3-scene-muted" /></button></h1>
               {headerExamDate && <p className={styles.headerExamDate}>受験日 <CountdownDate date={headerExamDate}
-                qualifier={countdownQualifier(plan.examDateSource ?? examCountdown?.examDateSource, examCountdown?.basisYear)} /></p>}
+                qualifier={countdownQualifier(examCountdown?.examDateSource ?? plan.examDateSource, examCountdown?.basisYear)} /></p>}
             </div>
             {created?.id === plan.id && passMoment?.planId !== plan.id && calendarConfirmation}
             {postExam && <h2 className="mt-2 text-xl leading-tight font-bold">試験、おつかれさまでした</h2>}

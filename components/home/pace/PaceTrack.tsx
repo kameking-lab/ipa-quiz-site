@@ -10,7 +10,6 @@ const FRAME_SIZE = 72;
 const RUNNER_SIZE = 84;
 const BOUNCE_HEIGHT = 1.25;
 const STRIDE_MS = 320;
-const BUBBLE_WIDTH = 132;
 
 function trackX(percent: number) {
   return START_X + Math.max(0, Math.min(100, percent)) * TRACK_LENGTH / 100;
@@ -21,8 +20,9 @@ function runnerFrameX(center: number) {
   return left - center;
 }
 
-function bubbleX(center: number) {
-  return Math.max(1 - center, -BUBBLE_WIDTH / 2);
+function bubbleX(center: number, width: number) {
+  const left = Math.max(1, Math.min(TRACK_WIDTH - width - 1, center - width / 2));
+  return left - center;
 }
 
 function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped, mastery }: {
@@ -44,6 +44,7 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped, maste
   const [startPercent] = useState(() => frames > 4 && !stopped ? 0 : percent);
   const progress = useRef(startPercent);
   const [imageReady, setImageReady] = useState(false);
+  const bubbleWidth = 12 + mastery.length * 9;
 
   useEffect(() => {
     if (!open) return;
@@ -83,7 +84,7 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped, maste
       const spriteLeft = runnerFrameX(x);
       viewport.setAttribute("x", String(spriteLeft));
       buttonBox.setAttribute("x", String(spriteLeft + 10));
-      speech.setAttribute("x", String(bubbleX(x)));
+      speech.setAttribute("x", String(bubbleX(x, bubbleWidth)));
       if (!usesCssAnimation) sprite.setAttribute("x", String(-frameIndex * FRAME_SIZE));
     };
     function finish() {
@@ -136,7 +137,7 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped, maste
       document.removeEventListener("visibilitychange", suspend);
       motion.removeEventListener("change", suspend);
     };
-  }, [fillRef, frames, imageReady, percent, stopped]);
+  }, [bubbleWidth, fillRef, frames, imageReady, percent, stopped]);
 
   const startX = trackX(startPercent);
   return <g ref={runner} transform={`translate(${startX} 0)`} className="p3-track-runner" data-pace-sprite={frames > 4 ? "v2" : undefined}>
@@ -149,7 +150,7 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped, maste
         aria-expanded={open} aria-controls={bubbleId} onClick={() => setOpen(value => !value)} onBlur={() => setOpen(false)} />
     </foreignObject>
     {open && <path className={styles.runnerBubbleTail} d="M-5 1h10L0 8Z" aria-hidden="true" />}
-    <foreignObject ref={bubble} x={bubbleX(startX)} y="-24" width={BUBBLE_WIDTH} height="28" pointerEvents="none">
+    <foreignObject ref={bubble} x={bubbleX(startX, bubbleWidth)} y="-24" width={bubbleWidth} height="28" pointerEvents="none">
       <div id={bubbleId} role="status" className={open ? styles.runnerBubble : undefined}>{open && mastery}</div>
     </foreignObject>
   </g>;
