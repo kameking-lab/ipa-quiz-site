@@ -95,6 +95,16 @@ test('the PWA suite follows the browser gate and keeps its dedicated two-browser
   assert.match(pwaConfig, /name: "webkit-iphone"/);
 });
 
+test('the ID-based build download extracts to the directory that restore reads', () => {
+  const shard = readFileSync(new URL('../workflows/browser-shard.yml', import.meta.url), 'utf8');
+  const download = shard.match(/uses: actions\/download-artifact@v4\r?\n[\s\S]*?(?=^      - name:)/m)?.[0];
+  assert.ok(download);
+  assert.match(download, /artifact-ids: \$\{\{ inputs\.artifact-id \}\}/);
+  assert.match(download, /path: \$\{\{ runner\.temp \}\}\/browser-build/);
+  assert.match(download, /merge-multiple: true/);
+  assert.match(shard, /browser-build\.sh restore "\$RUNNER_TEMP\/browser-build"/);
+});
+
 test('quality runs all three data validations after its unit and static checks pass', () => {
   let section = job('quality');
   for (const command of [

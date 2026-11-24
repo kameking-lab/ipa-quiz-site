@@ -50,6 +50,8 @@ jobs:
         with:
           artifact-ids: ${{ inputs.artifact-id }}
           path: ${{ runner.temp }}/browser-build
+          # v4 nests ID-based downloads even when given just one artifact ID.
+          merge-multiple: true
 
       - name: Verify and restore browser build
         run: bash .github/scripts/browser-build.sh restore "$RUNNER_TEMP/browser-build" "$GITHUB_SHA"
