@@ -1,10 +1,14 @@
 import {writeFile,mkdir} from "node:fs/promises";
 import {fileURLToPath} from "node:url";
+import { createRequire } from "node:module";
 process.chdir(fileURLToPath(new URL("../../",import.meta.url)));
-const {getQuestionsForExam}=await import("../../lib/questions/get-questions");
-const {isPracticeReadyQuestion}=await import("../../lib/questions/filter");
-const {materialGroups}=await import("../shared/material-source");
-const {examContent,examCatalog}=await import("../shared/catalog-source");
+// Use the same tsx require hook as generate-catalog so the shared graph stays
+// in CommonJS, including when a mobile module imports a root TypeScript module.
+const require = createRequire(import.meta.url);
+const { getQuestionsForExam } = require("../../lib/questions/get-questions.ts") as typeof import("../../lib/questions/get-questions");
+const { isPracticeReadyQuestion } = require("../../lib/questions/filter.ts") as typeof import("../../lib/questions/filter");
+const { materialGroups } = require("../shared/material-source.ts") as typeof import("../shared/material-source");
+const { examContent, examCatalog } = require("../shared/catalog-source.ts") as typeof import("../shared/catalog-source");
 const questions=(await getQuestionsForExam("ip")).filter(q=>isPracticeReadyQuestion(q)&&q.type==="multiple-choice"&&!q.hasImage&&!q.requiredSelections).slice(0,2);
 await mkdir(new URL("../.cache/",import.meta.url),{recursive:true});
 await writeFile(new URL("../.cache/e2e-questions.json",import.meta.url),JSON.stringify(questions));
