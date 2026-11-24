@@ -153,6 +153,10 @@ export async function refreshRevenueCat(appUserId: string, { transport = fetch, 
 }
 type AccessOptions = { scope?: AppStoreAccessScope; fresh?: boolean; allowStoredStudyAccess?: boolean };
 
+function needsStoreClassification(row: AccountRow, scope: AppStoreAccessScope) {
+  return scope === "web" && !!row.expiresAt && !row.productionExpiresAt && !row.sandboxExpiresAt;
+}
+
 export async function revenueCatAccess(userId: string, { scope = "web", fresh = false, allowStoredStudyAccess = false }: AccessOptions = {}) {
   const config = mobileConfig();
   if (!config.enabled || (scope === "web" && config.environment === "SANDBOX")) return null;
@@ -162,17 +166,20 @@ export async function revenueCatAccess(userId: string, { scope = "web", fresh = 
   const expiresForScope = (account: AccountRow) => scope === "app" ? account.expiresAt : account.productionExpiresAt;
   const expiredStudyPeriod = allowStoredStudyAccess && (expiresForScope(a)?.getTime() ?? Infinity) <= now;
   // Verify legacy aggregate-only rows before deciding Web access.
-  const unclassified = scope === "web" && a.expiresAt && !a.productionExpiresAt && !a.sandboxExpiresAt;
-  if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod || unclassified) {
+  if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod || needsStoreClassification(a, scope)) {
     try {
       row = await refreshRevenueCat(a.appUserId);
     } catch (error) {
       const temporary = error instanceof TypeError || (error instanceof Error && error.name === "TimeoutError")
         || (error instanceof BillingError && /^mobile_verification_unavailable_(429|5\d\d)$/.test(error.code));
-      if (fresh || !allowStoredStudyAccess || !temporary) throw error;
+      if (fresh || !temporary) throw error;
+      if (!allowStoredStudyAccess) {
+        if (needsStoreClassification(a, scope)) throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
+        throw error;
+      }
       // A concurrent webhook may already have revoked the old snapshot.
       row = await ensureRevenueCatAccount(userId);
-      if ((expiresForScope(row)?.getTime() ?? Infinity) <= Date.now()) {
+      if (needsStoreClassification(row, scope) || (expiresForScope(row)?.getTime() ?? Infinity) <= Date.now()) {
         throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
       }
     }

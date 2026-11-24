@@ -105,25 +105,27 @@ it("keeps the selected exam for weekly review when a native buyer needs to sign 
   expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "buy", returnTo: target });
 });
 
-it("resumes a pending restore after a legacy app session has been renewed", async () => {
+it.each(["native-user", "different-user"])("binds a pending restore to the account when %s finishes app login", async renewedUser => {
   let requiresAppLogin = true;
   const signIn = vi.fn(async () => {});
   const restore = vi.fn(async () => {});
   const membership = { ...deviceMembership, restore } as unknown as typeof deviceMembership;
   vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] })
-    : Response.json({ requiresAppLogin, configuration: { sdkKey: "configured" }, entitlement: { userId: "native-user", entitled: false } })));
+    : Response.json({ requiresAppLogin, configuration: { sdkKey: "configured" }, entitlement: { userId: requiresAppLogin ? "native-user" : renewedUser, entitled: false } })));
   const first = render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
   const button = await screen.findByRole("button", { name: "購入を復元" });
   await waitFor(() => expect(button).toBeEnabled());
   fireEvent.click(button);
   await waitFor(() => expect(signIn).toHaveBeenCalledTimes(1));
   expect(restore).not.toHaveBeenCalled();
-  expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "restore" });
+  expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "restore", owner: "native-user" });
 
   first.unmount();
   requiresAppLogin = false;
   render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
-  await waitFor(() => expect(restore).toHaveBeenCalledTimes(1));
+  await waitFor(() => expect(nativePurchase.preferences.has("kakomon:purchase-intent:v1")).toBe(false));
+  if (renewedUser === "native-user") await waitFor(() => expect(restore).toHaveBeenCalledTimes(1));
+  else expect(restore).not.toHaveBeenCalled();
   expect(signIn).toHaveBeenCalledTimes(1);
   expect(nativePurchase.preferences.has("kakomon:purchase-intent:v1")).toBe(false);
 });

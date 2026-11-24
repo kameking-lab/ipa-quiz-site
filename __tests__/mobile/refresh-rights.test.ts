@@ -35,6 +35,16 @@ it.each([{userId:"owner",entitled:false},{userId:"other",entitled:true}])("revok
   m.get.mockResolvedValue({status:200,data:{entitlement}});
   await expect(refreshDeviceRights()).rejects.toThrow(); expect(m.invalidate).toHaveBeenCalledOnce();
 });
+it("preserves only the current owner's existing lease during app login renewal", async () => {
+  const response = (userId: string) => ({ status: 200, data: { requiresAppLogin: true, entitlement: { userId, entitled: false } } });
+  m.get.mockResolvedValue(response("owner"));
+  await refreshDeviceRights();
+  expect(m.invalidate).not.toHaveBeenCalled();
+  expect(m.updateRights).not.toHaveBeenCalled();
+  m.get.mockResolvedValue(response("other"));
+  await expect(refreshDeviceRights()).rejects.toThrow();
+  expect(m.invalidate).toHaveBeenCalledOnce();
+});
 it.each([401,403])("invalidates a rejected session (%i)", async status => {
   m.get.mockResolvedValue({status}); await expect(refreshDeviceRights()).rejects.toThrow(); expect(m.invalidate).toHaveBeenCalledOnce();
 });

@@ -20,7 +20,9 @@ export async function refreshDeviceRights() {
   if (!access || typeof access !== "object" || !("entitled" in access) || typeof access.entitled !== "boolean"
     || !("userId" in access) || !(access.userId === null || typeof access.userId === "string" && access.userId.length > 0)) return;
   if ("lease" in access && access.lease !== null && typeof access.lease !== "string") return;
-  const result=data as {entitlement:MobileEntitlement;configuration?:MobileConfiguration};
+  const result=data as {entitlement:MobileEntitlement;configuration?:MobileConfiguration;requiresAppLogin?:boolean};
+  // Re-linking an existing account neither revokes nor extends its signed offline lease.
+  if (!result.entitlement.entitled && result.requiresAppLogin === true && result.entitlement.userId === r.access.userId) return;
   if(!result.entitlement.entitled||result.entitlement.userId!==r.access.userId){await downloads.invalidate();throw new Error("会員権利を確認できないため保存問題を無効にしました。オンライン画面でログインしてください。");}
   if(result.entitlement.lease && typeof result.configuration?.leasePublicKey === "string" && result.configuration.leasePublicKey)
     await downloads.updateRights(result.entitlement,result.configuration.leasePublicKey);

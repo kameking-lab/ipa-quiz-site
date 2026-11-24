@@ -12,7 +12,7 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock("@/lib/billing/runtime", () => ({
-  optionalBillingIdentity: mocks.identity,
+  optionalBillingSession: mocks.identity,
   billingRuntime: () => ({ service: { status: mocks.passStatus } }),
 }));
 vi.mock("@/lib/billing/subscription/config", () => ({ monthlySelected: mocks.monthlySelected }));
@@ -34,7 +34,7 @@ function request(requestOrigin = origin) {
 
 beforeEach(() => {
   vi.resetAllMocks();
-  mocks.identity.mockResolvedValue("member");
+  mocks.identity.mockResolvedValue({ user: { id: "member" } });
   mocks.monthlySelected.mockReturnValue(true);
   mocks.monthlyStatus.mockResolvedValue({ entitled: false });
   mocks.passStatus.mockResolvedValue({ entitled: false });
@@ -75,4 +75,17 @@ it("does not look up questions for anonymous, free, or cross-origin requests", a
   expect((await POST(request())).status).toBe(403);
   expect((await POST(request("https://other.test"))).status).toBe(403);
   expect(mocks.questions).not.toHaveBeenCalled();
+});
+
+it("honors a Sandbox subscription in the signed-in app's weekly review", async () => {
+  mocks.appAccess.mockImplementation(async (_id, { scope }) => scope === "app" ? { entitled: true } : null);
+  const nativeRequest = () => {
+    const req = request();
+    req.headers.set("X-Kakomon-Native", "ios");
+    return req;
+  };
+  expect((await POST(nativeRequest())).status).toBe(403);
+  mocks.identity.mockResolvedValue({ user: { id: "member" }, mobileSession: true });
+  expect((await POST(nativeRequest())).status).toBe(200);
+  expect((await POST(request())).status).toBe(403);
 });

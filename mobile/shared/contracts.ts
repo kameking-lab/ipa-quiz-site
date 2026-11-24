@@ -26,3 +26,7 @@ export const NATIVE_HEADER = "X-Kakomon-Native";
 export function nativeClient(): boolean {
   return typeof window !== "undefined" && !!(window as unknown as { Capacitor?: { isNativePlatform?: () => boolean } }).Capacitor?.isNativePlatform?.();
 }
+
+export function nativeRequestHeaders(): Record<string, string> {
+  return nativeClient() ? { [NATIVE_HEADER]: "ios" } : {};
+}

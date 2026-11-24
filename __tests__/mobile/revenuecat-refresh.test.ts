@@ -110,6 +110,22 @@ it.each([true, false])("isolates a verified is_sandbox=%s purchase on fresh, cac
   } finally { await pg.close(); }
 });
 
+it("keeps unclassified legacy purchases pending until the store confirms their environment", async () => {
+  const pg = new PGlite();
+  try {
+    await setupAccounts(pg);
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 404 })));
+    await revenueCatAccess("alice", { fresh: true });
+    await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1', [new Date(Date.now() + 60_000)]);
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 503 })));
+    await expect(revenueCatAccess("alice")).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    await expect(revenueCatAccess("alice", { allowStoredStudyAccess: true }))
+      .rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 404 })));
+    await expect(revenueCatAccess("alice", { allowStoredStudyAccess: true })).resolves.toBeNull();
+  } finally { await pg.close(); }
+});
+
 it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase verification strict", async () => {
   const pg = new PGlite();
   try {

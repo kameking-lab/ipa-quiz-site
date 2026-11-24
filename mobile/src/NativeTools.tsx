@@ -127,7 +127,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (signingOut.current) throw new StatusError("ログアウト中です。");
     setAccess(result.entitlement); setConfig(result.configuration);
     if (result.entitlement.entitled && result.entitlement.lease) await downloads.updateRights(result.entitlement, result.configuration.leasePublicKey).catch(()=>{setNotice("オフライン用の検証キーは配布設定待ちです。オンラインの学習・会員権利は利用できます。");});
-    else if (!result.entitlement.entitled) await downloads.invalidate();
+    else if (!result.entitlement.entitled && !result.requiresAppLogin) await downloads.invalidate();
     else {
       const cached = await downloads.rights();
       if (cached && cached.access.userId !== result.entitlement.userId) await downloads.invalidate();
@@ -234,8 +234,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       const raw=(await Preferences.get({key:INTENT_KEY})).value;
       if (raw) {
         await Preferences.remove({key:INTENT_KEY});
-        const intent=JSON.parse(raw) as {action?:Intent;createdAt?:number;returnTo?:string};
-        if ((intent.action==="buy"||intent.action==="restore") && Date.now()-(intent.createdAt??0)<15*60000 && !cancelled) {
+        const intent=JSON.parse(raw) as {action?:Intent;createdAt?:number;returnTo?:string;owner?:string|null};
+        if ((!intent.owner || intent.owner === r.entitlement.userId) && (intent.action==="buy"||intent.action==="restore") && Date.now()-(intent.createdAt??0)<15*60000 && !cancelled) {
           setPurchaseReturn(safeQuizReturn(intent.returnTo) ?? purchaseReturn.current);
           setResume(intent.action);
         }
@@ -257,9 +257,9 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (offerVisible && !offerWasVisible.current) sendConversion("offer_viewed");
     offerWasVisible.current = offerVisible;
   }, [offerVisible]);
-  const loginFor = async (action: Intent)=>{
+  const loginFor = async (action: Intent, owner: string | null)=>{
     if (action === "buy") sendConversion("signin_viewed");
-    await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,createdAt:Date.now(),returnTo:purchaseReturn.current})});
+    await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,owner,createdAt:Date.now(),returnTo:purchaseReturn.current})});
     setSigningIn("opening");
     try { await signIn(returnHere()); } finally { setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500); }
     setNotice(action==="buy"?"ログインが終わると、そのまま購入画面に進みます。":"ログインが終わると、そのまま購入を復元します。");
@@ -267,7 +267,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const purchase = ()=>void run(async()=>{
     const r=await refresh(true);
     if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
-    if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("buy"); return; }
+    if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("buy", r.entitlement.userId); return; }
     if(r.pending) return;
     await Preferences.remove({key:INTENT_KEY});
     const selected=offer??await loadOffer(r);
@@ -353,7 +353,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     storeKitRunning.current = true;
     try {
       const r=await refresh(true);
-      if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("restore"); return; }
+      if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("restore", r.entitlement.userId); return; }
       await Preferences.remove({key:INTENT_KEY});
       await membership.restore(r.configuration,r.entitlement);
     } finally {

@@ -12,7 +12,7 @@ import type { ExamSchedule } from "@/lib/study-plan/schedule";
 import type { HistoryEntry } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { examLabel } from "@/lib/utils";
-import { nativeClient } from "@/mobile/shared/contracts";
+import { nativeClient, nativeRequestHeaders } from "@/mobile/shared/contracts";
 import { billingHref, planStartHref } from "@/lib/billing/quiz-return";
 import { encodeExplicitPoolIds } from "@/lib/questions/explicit-pool";
 import { readSyncAccount } from "@/lib/sync/ownership";
@@ -116,7 +116,7 @@ export function WeaknessReport({ history, meta, exam: recentExam, requestedExam,
         if (owner !== account?.id) setMembership(undefined);
         owner = account?.id;
         if (!account) { setMembership({ paid: false, appStore: false, examPlan: null }); return; }
-        const response = await fetch("/api/billing/status", { cache: "no-store", signal });
+        const response = await fetch("/api/billing/status", { cache: "no-store", signal, headers: nativeRequestHeaders() });
         if (!response.ok) throw new Error("membership_unavailable");
         const status: { entitled?: boolean; appStore?: boolean; examPlan?: CheckoutPlan | null } = await response.json();
         if (typeof status.entitled !== "boolean") throw new Error("membership_unavailable");
@@ -168,7 +168,7 @@ export function WeaknessReport({ history, meta, exam: recentExam, requestedExam,
     const body = JSON.stringify({ exam, topics, answered, limit: practiceLimit });
     function load(attempt: number) {
       const signal = AbortSignal.any([controller.signal, AbortSignal.timeout(8_000)]);
-      void fetch("/api/me/weakness-practice", { method: "POST", headers: { "Content-Type": "application/json" }, body, signal }).then(async response => {
+      void fetch("/api/me/weakness-practice", { method: "POST", headers: { "Content-Type": "application/json", ...nativeRequestHeaders() }, body, signal }).then(async response => {
         if (!response.ok) throw new Error("practice_unavailable");
         const result = z.object({ questions: z.array(z.object({ id: z.string(), topic: z.string() })) }).parse(await response.json());
         if (!controller.signal.aborted && weekKey && examDate) setPractice({ key: weekKey, date: examDate, questions: result.questions });
