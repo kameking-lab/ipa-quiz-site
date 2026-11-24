@@ -40,7 +40,14 @@
 :global([data-home-study-calendar]) .stack[data-home-state="loading"] :is(.secondarySearch, .room, .directory) {
   visibility: hidden;
 }
-body:has(.stack[data-home-calendar-layout="pending"]) :global(.site-footer) { visibility: hidden; }
+
+@media (max-width: 639px) {
+  /* Keep the footer below the viewport when an undated plan loses its calendar slot. */
+  .stack:is([data-home-calendar-layout="pending"], [data-home-calendar-layout="empty"]) {
+    min-block-size: calc(100svh - 3.5rem);
+    align-content: start;
+  }
+}
 
 .hero {
   margin-inline: -16px;
