@@ -11,110 +11,270 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+permissions:
+  contents: read
+
 # 55k+ question JSON imports exceed Node's default heap in tsc and next build.
 env:
   NODE_OPTIONS: --max-old-space-size=8192
 
 jobs:
-  quality:
+  quality-checks:
     runs-on: ubuntu-latest
     timeout-minutes: 75
-
-    env:
-      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
-      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
-
     steps:
       - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: pnpm
+          persist-credentials: false
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/setup-ci
 
       - name: Validate E2E workflow gate
         run: node --test .github/scripts/e2e-workflow.test.mjs
 
       - name: Lint
         run: pnpm lint
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
 
       - name: Typecheck
         run: pnpm typecheck
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
 
-      - name: Unit tests
-        run: pnpm test
+  unit-1:
+    uses: ./.github/workflows/unit-shard.yml
+    with:
+      shard: 1/4
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  unit-2:
+    uses: ./.github/workflows/unit-shard.yml
+    with:
+      shard: 2/4
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  unit-3:
+    uses: ./.github/workflows/unit-shard.yml
+    with:
+      shard: 3/4
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  unit-4:
+    uses: ./.github/workflows/unit-shard.yml
+    with:
+      shard: 4/4
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  quality:
+    needs: [quality-checks, unit-1, unit-2, unit-3, unit-4]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Require all quality checks and unit shards to pass
+        if: >-
+          ${{
+            always() && (
+            needs.quality-checks.result != 'success'
+            || needs.unit-1.result != 'success'
+            || needs.unit-2.result != 'success'
+            || needs.unit-3.result != 'success'
+            || needs.unit-4.result != 'success'
+            )
+          }}
+        run: exit 1
+
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: ./.github/actions/setup-ci
 
       - name: Check study plan metadata (advisory)
         run: pnpm exec tsx --tsconfig scripts/tsconfig.question-corpus.json scripts/check-study-plan-policy.ts
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
 
       - name: Validate safety exam sources and contracted coverage
         run: node scripts/validate-safety-exams.mjs --require-consultant-five-years --require-explanations
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
 
       - name: Validate government-only explanation links
         run: node scripts/validate-government-source-links.mjs --skip-live
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
 
-  browser:
+  browser-build:
     runs-on: ubuntu-24.04
     timeout-minutes: 35
-    # Keep this image aligned with pnpm-lock.yaml; browsers and OS deps are preinstalled.
+    # Keep the image aligned with pnpm-lock.yaml and with browser-shard.yml.
     container:
       image: mcr.microsoft.com/playwright:v1.60.0-noble@sha256:9bd26ad900bb5e0f4dee75839e957a89ae89c2b7ab1e76050e559790e946b948
       options: --init --ipc=host
     defaults:
       run:
         shell: bash
-
-    env:
-      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
-      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
-      # AUTH_SECRET / DATABASE_URL / STRIPE_* は意図的に未設定。
-      # graceful degradation を E2E で検証する。
-
+    outputs:
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
+      node-version: ${{ steps.setup.outputs.node-version }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: pnpm
+          persist-credentials: false
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/setup-ci
+        id: setup
 
+      # This build and its artifact run without repository secrets.
       - name: Build
         run: pnpm build
 
-      - name: Verify preinstalled Playwright browsers
-        run: |
-          node <<'NODE'
-          const { accessSync, constants } = require('node:fs');
-          const version = require('@playwright/test/package.json').version;
-          if (version !== '1.60.0') {
-            throw new Error(`Update the Playwright container to match installed version ${version}.`);
-          }
-          const { chromium } = require('@playwright/test');
-          accessSync(chromium.executablePath(), constants.X_OK);
-          console.log(`Playwright ${version}: preinstalled Chromium is available.`);
-          NODE
+      - name: Package browser build
+        run: bash .github/scripts/browser-build.sh pack "$RUNNER_TEMP/browser-build" "$GITHUB_SHA"
 
-      - name: Run E2E
-        run: pnpm e2e
+      - name: Upload browser build
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-build-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/browser-build
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+
+  browser-1:
+    needs: browser-build
+    uses: ./.github/workflows/browser-shard.yml
+    with:
+      shard: 1
+      artifact-id: ${{ needs.browser-build.outputs.artifact-id }}
+      node-version: ${{ needs.browser-build.outputs.node-version }}
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  browser-2:
+    needs: browser-build
+    uses: ./.github/workflows/browser-shard.yml
+    with:
+      shard: 2
+      artifact-id: ${{ needs.browser-build.outputs.artifact-id }}
+      node-version: ${{ needs.browser-build.outputs.node-version }}
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  browser-3:
+    needs: browser-build
+    uses: ./.github/workflows/browser-shard.yml
+    with:
+      shard: 3
+      artifact-id: ${{ needs.browser-build.outputs.artifact-id }}
+      node-version: ${{ needs.browser-build.outputs.node-version }}
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  browser-4:
+    needs: browser-build
+    uses: ./.github/workflows/browser-shard.yml
+    with:
+      shard: 4
+      artifact-id: ${{ needs.browser-build.outputs.artifact-id }}
+      node-version: ${{ needs.browser-build.outputs.node-version }}
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  browser-5:
+    needs: browser-build
+    uses: ./.github/workflows/browser-shard.yml
+    with:
+      shard: 5
+      artifact-id: ${{ needs.browser-build.outputs.artifact-id }}
+      node-version: ${{ needs.browser-build.outputs.node-version }}
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  browser-6:
+    needs: browser-build
+    uses: ./.github/workflows/browser-shard.yml
+    with:
+      shard: 6
+      artifact-id: ${{ needs.browser-build.outputs.artifact-id }}
+      node-version: ${{ needs.browser-build.outputs.node-version }}
+    secrets:
+      ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+      ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+
+  browser:
+    needs: [browser-build, browser-1, browser-2, browser-3, browser-4, browser-5, browser-6]
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    # Keep the image aligned with pnpm-lock.yaml and with browser-shard.yml.
+    container:
+      image: mcr.microsoft.com/playwright:v1.60.0-noble@sha256:9bd26ad900bb5e0f4dee75839e957a89ae89c2b7ab1e76050e559790e946b948
+      options: --init --ipc=host
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Require the build and all browser shards to pass
+        if: >-
+          ${{
+            always() && (
+            needs.browser-build.result != 'success'
+            || needs.browser-1.result != 'success'
+            || needs.browser-2.result != 'success'
+            || needs.browser-3.result != 'success'
+            || needs.browser-4.result != 'success'
+            || needs.browser-5.result != 'success'
+            || needs.browser-6.result != 'success'
+            )
+          }}
+        run: exit 1
+
+      # The dedicated PWA suite starts its own fixture servers.
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            .github/actions/setup-ci
+            lib/pwa
+            lib/storage
+            prisma
+            tests
+
+      - uses: ./.github/actions/setup-ci
 
       - name: Preserve PWA data across updates in Chromium and WebKit
         run: pnpm exec playwright test --config tests/pwa-update.config.ts
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
 
-      - name: Upload Playwright report
+      - name: Upload PWA Playwright report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-pwa-${{ github.run_attempt }}
           path: playwright-report
           retention-days: 7
 
@@ -136,7 +296,7 @@ jobs:
           for (const [name, job] of entries) {
             console.log(`${name}: ${job.result ?? 'missing'}`);
           }
-          if (entries.length !== 2 || entries.some(([, job]) => job.result !== 'success')) {
+          if (entries.length !== 2 || ['quality', 'browser'].some(name => jobs[name]?.result !== 'success')) {
             console.error('Every required job must succeed for this run.');
             process.exit(1);
           }

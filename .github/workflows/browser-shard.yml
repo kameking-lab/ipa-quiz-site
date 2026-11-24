@@ -1,0 +1,85 @@
+name: Browser shard
+
+on:
+  workflow_call:
+    inputs:
+      shard:
+        required: true
+        type: number
+      artifact-id:
+        required: true
+        type: string
+      node-version:
+        required: true
+        type: string
+    secrets:
+      ADMIN_BASIC_USER:
+        required: false
+      ADMIN_BASIC_PASS:
+        required: false
+
+jobs:
+  playwright:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    # Keep the image aligned with pnpm-lock.yaml and with e2e.yml.
+    container:
+      image: mcr.microsoft.com/playwright:v1.60.0-noble@sha256:9bd26ad900bb5e0f4dee75839e957a89ae89c2b7ab1e76050e559790e946b948
+      options: --init --ipc=host
+    defaults:
+      run:
+        shell: bash
+    env:
+      NODE_OPTIONS: --max-old-space-size=8192
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: ./.github/actions/setup-ci
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Require the producer's artifact ID
+        env:
+          ARTIFACT_ID: ${{ inputs.artifact-id }}
+        run: test -n "$ARTIFACT_ID"
+
+      - name: Download this run's browser build
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ inputs.artifact-id }}
+          path: ${{ runner.temp }}/browser-build
+
+      - name: Verify and restore browser build
+        run: bash .github/scripts/browser-build.sh restore "$RUNNER_TEMP/browser-build" "$GITHUB_SHA"
+
+      - name: Verify preinstalled Playwright browsers
+        run: |
+          node <<'NODE'
+          const { accessSync, constants } = require('node:fs');
+          const version = require('@playwright/test/package.json').version;
+          if (version !== '1.60.0') {
+            throw new Error(`Update the Playwright container to match installed version ${version}.`);
+          }
+          const { chromium } = require('@playwright/test');
+          accessSync(chromium.executablePath(), constants.X_OK);
+          console.log(`Playwright ${version}: preinstalled Chromium is available.`);
+          NODE
+
+      # AUTH_SECRET / DATABASE_URL / STRIPE_* は意図的に未設定。
+      # graceful degradation を E2E で検証する。
+      - name: Run E2E
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+          SHARD: ${{ inputs.shard }}
+        run: pnpm e2e --shard="$SHARD/6"
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ inputs.shard }}-${{ github.run_attempt }}
+          path: playwright-report
+          retention-days: 7
