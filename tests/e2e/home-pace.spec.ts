@@ -42,7 +42,8 @@ async function layout(page: Page) {
   ]);
   expect(main!.width).toBe(width === 1280 ? 1024 : width);
   expect(header!.width).toBe(main!.width);
-  if (width === 1280) expect(track!.x).toBeGreaterThanOrEqual(intro!.x + intro!.width);
+  if (await hero.locator("[data-pace-track=progress]").count()) expect(track!.y).toBeGreaterThanOrEqual(intro!.y + intro!.height);
+  else if (width === 1280) expect(track!.x).toBeGreaterThanOrEqual(intro!.x + intro!.width);
 }
 async function expectHomeNavGap(page: Page) {
   const directory = page.locator("#home-qualification-directory > summary");
@@ -70,7 +71,7 @@ async function screenshotHero(hero: Locator, path: string) {
 }
 
 async function calendarContrast(calendar: Locator) {
-  const ratios = await calendar.locator("h1 span, strong, p, small").evaluateAll(elements => {
+  const ratios = await calendar.locator("[data-countdown] h2 span, [data-countdown] strong, [data-countdown] p").evaluateAll(elements => {
     function luminance(rgb: string) {
       const channels = rgb.match(/\d+(?:\.\d+)?/g)!.slice(0, 3).map(channel => {
         const value = Number(channel) / 255;
@@ -132,7 +133,7 @@ test("reserves the saved plan before hydration and before the catalog arrives", 
     await expect(page.getByText("学習計画を読み込み中…")).toHaveCount(0);
     const pending = await roomY();
     releaseCatalog();
-    await expect(page.getByText("正解済み 62 / 200問", { exact: true })).toBeAttached();
+    await expect(page.locator("[data-pace-track=progress] svg[role=group]")).toBeAttached();
     const loaded = await roomY();
     await expect(page.locator("[data-home-calendar]")).toHaveCount(0);
     const track = page.locator("[data-pace-track=progress]");
@@ -184,7 +185,7 @@ for (const hasDate of [true, false]) {
     try {
       await page.goto("/");
       await expect(page.getByText("日程を読み込み中…")).toBeVisible();
-      await expect(page.getByText("正解済み 100 / 200問", { exact: true })).toBeAttached();
+      await expect(page.locator("[data-pace-track=progress] svg[role=group]")).toBeAttached();
       const track = page.locator("[data-pace-track=progress]");
       const room = page.getByTestId("home-study-room");
       const [trackBefore, roomBefore] = await Promise.all([track.boundingBox(), room.boundingBox()]);
@@ -202,14 +203,14 @@ for (const hasDate of [true, false]) {
       const setDate = page.getByRole("button", { name: "自分の受験日を設定" });
       if (hasDate) {
         await expect(page.locator(`[data-home-calendar] time[datetime="${examDate}"]`)).toBeVisible();
-        await expect(page.getByText("1回の目安 10問正解")).toBeVisible();
+        await expect(page.getByText("1日の目安 10問正解")).toBeVisible();
         await expect(setDate).toHaveCount(0);
         expect(await track.boundingBox()).toEqual(trackBefore);
         expect((await room.boundingBox())!.y).toBe(roomBefore!.y);
       } else {
         const intro = page.locator('[data-event-panel="intro"]');
         await expect(page.locator("[data-home-calendar]")).toHaveCount(0);
-        await expect(intro.getByText("正解済み 100 / 200問")).toBeVisible();
+        await expect(track.getByRole("button", { name: "チワワの進み具合" })).toBeVisible();
         await expect(intro.getByRole("button", { name: "自分の受験日を設定" })).toBeVisible();
         await expect(cta).toHaveCount(0);
         expect((await track.boundingBox())!.y).toBeLessThan(trackBefore!.y - 100);
@@ -258,10 +259,10 @@ for (const width of [390, 1280]) {
     test.use({ viewport: { width, height: 844 } });
     test("① large target: one CTA with no monthly offer", async ({ page }) => {
       await fixtures(page, fixturePlan(), 62); await page.goto("/");
-      await expect(page.getByText("1回の目安　46問正解")).toBeVisible();
+      await expect(page.getByText("1日の目安 46問正解")).toBeVisible();
       await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toHaveCount(1);
       await expect(page.getByPlaceholder("ほかの資格をさがす")).toBeVisible();
-      await expect(page.getByRole("img", { name: "正解済み 62 / 200問" })).toBeVisible();
+      await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
       await expect(page.getByRole("heading", { name: "試験が近い資格" })).toHaveCount(0);
       await expect(page.getByRole("link", { name: /追いつけます/ })).toHaveCount(0);
       await layout(page); await screenshot(page, "01-planned", width);
@@ -271,18 +272,57 @@ for (const width of [390, 1280]) {
     });
     test("② deadline sheet registers once", async ({ page }) => {
       await fixtures(page, fixturePlan(), 190); await page.goto("/");
-      await expect(page.getByText("1回の目安　4問正解")).toBeVisible();
+      await expect(page.getByText("1日の目安 4問正解")).toBeVisible();
       await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
       await layout(page); await screenshot(page, "02-ahead", width);
       const calendar = page.locator("[data-home-calendar]");
-      await expect(calendar.getByRole("heading")).toHaveText(/申込締切まで\s*あと\s*1\s*日/);
-      await page.getByRole("button", { name: "学習計画の詳細" }).click();
+      await expect(calendar.getByRole("heading").first()).toHaveText(/申込締切まで\s*あと\s*1\s*日/);
+      await page.getByRole("button", { name: "計画の確認・変更" }).click();
       const details = page.getByRole("dialog", { name: "学習計画", exact: true });
       await expect(details.getByRole("link", { name: /申込ページを開く/ })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/");
       await details.getByText("申し込み・計画の変更", { exact: true }).click();
       await details.getByRole("button", { name: "申込済みにする" }).click();
       await expect(calendar.getByRole("heading")).toHaveText(/試験まで\s*あと\s*3\s*日/);
-      await expect(page.getByRole("button", { name: "学習計画の詳細", exact: true })).toBeVisible();
+      await expect(page.getByRole("button", { name: "計画の確認・変更", exact: true })).toBeVisible();
+    });
+    test("the chihuahua discloses mastery and the same practice link retries after the first pass", async ({ page }) => {
+      await fixtures(page, fixturePlan(), 198);
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      await page.goto("/");
+      const hero = page.locator(".p3-home-scene");
+      const track = hero.getByRole("group", { name: "学習の進み具合" });
+      const dog = track.getByRole("button", { name: "チワワの進み具合" });
+      const bubble = track.getByRole("status");
+      await expect(hero.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(1);
+      await expect(dog).toHaveAttribute("aria-expanded", "false");
+      await dog.focus();
+      await page.keyboard.press("Enter");
+      await expect(dog).toHaveAttribute("aria-expanded", "true");
+      await expect(bubble).toHaveText("198問 / 200問クリア");
+      await page.keyboard.press("Escape");
+      await expect(dog).toBeFocused();
+      await expect(bubble).toBeEmpty();
+      await dog.click();
+      await dog.click();
+      await expect(bubble).toBeEmpty();
+      await dog.click();
+      await hero.locator("[data-countdown=exam] h2").click();
+      await expect(bubble).toBeEmpty();
+
+      await page.evaluate(({ key, ids }) => {
+        const history = JSON.parse(localStorage.getItem(key)!);
+        history.entries.push(...ids.map(id => ({ id, correct: false, selected: "イ", at: Date.now() })));
+        localStorage.setItem(key, JSON.stringify(history));
+        window.dispatchEvent(new Event("study-plan:changed"));
+      }, { key: LS_KEYS.history, ids: catalog.slice(-2).map(q => q.id) });
+      await expect(hero.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
+      const retry = hero.getByRole("link", { name: "間違えた問題を解き直す" });
+      await expect(retry).toHaveAttribute("href", "/quiz/today?plan=e2e-pace");
+      await retry.click();
+      await expect(page).toHaveURL(/\/quiz\/today\?plan=e2e-pace/);
+      await expect(page.getByRole("heading", { name: "計画の問題 · 1問" })).toBeVisible();
+      const batch = await page.evaluate(key => JSON.parse(sessionStorage.getItem(key)!).ids, LS_KEYS.paceBatchPrefix + "e2e-pace");
+      expect(batch).toEqual([catalog[198].id]);
     });
     test("③ returning: one resume action, start track, search, and up to three recent qualifications", async ({ page }) => {
       await fixtures(page, undefined, 0, true, true); await page.goto("/");
@@ -346,7 +386,7 @@ for (const width of [390, 1280]) {
       await fixtures(page, { ...fixturePlan(), examDate: "2026-11-16" }, 62); await page.goto("/");
       await expect(page.locator('[data-home-state="post-exam"]')).toBeVisible();
       const search = page.getByRole("searchbox");
-      const track = page.getByRole("img", { name: "正解済み 62 / 200問" });
+      const track = page.getByRole("group", { name: "学習の進み具合" });
       await expect(search).toHaveCount(1);
       await expect(track).toHaveCount(1);
       await expect(track.getByText("今日の目標")).toHaveCount(0);
@@ -437,9 +477,9 @@ test.describe("home flip calendar", () => {
     { name: "before-opening", starts: 3, closes: 6, primary: "申込開始まで", days: 3, secondary: "試験" },
     { name: "open", closes: 2, primary: "申込締切まで", days: 2, secondary: "試験" },
     { name: "deadline-day", closes: 0, primary: "申込締切まで", days: 0, secondary: "試験" },
-    { name: "closed", closes: -1, primary: "試験まで", days: 11, secondary: "申込締切" },
+    { name: "closed", closes: -1, primary: "試験まで", days: 11, secondary: null },
     { name: "registered", closes: 2, registered: true, primary: "試験まで", days: 11, secondary: "申込済み" },
-    { name: "exam-day", closes: -1, exam: 0, primary: "今日が受験日", secondary: "申込締切" },
+    { name: "exam-day", closes: -1, exam: 0, primary: "今日が受験日", secondary: null },
     { name: "after-exam", closes: -2, exam: -1 },
     { name: "estimated", closes: 2, estimated: true, primary: "申込締切まで", days: 2, secondary: "試験" },
     { name: "no-dates", noDates: true },
@@ -473,11 +513,14 @@ test.describe("home flip calendar", () => {
       });
       const hero = page.locator(".p3-home-scene");
       const calendar = hero.locator("[data-home-calendar]");
-      const edit = hero.getByRole("button", { name: "計画を変更", exact: true });
       const dialog = page.getByRole("dialog");
+      const edit = async () => {
+        await hero.getByRole("button", { name: "計画の確認・変更" }).click();
+        await dialog.getByRole("button", { name: "計画を変更", exact: true }).click();
+      };
       const savedDate = () => page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0], LS_KEYS.pacePlans);
       await page.goto("/");
-      await edit.click();
+      await edit();
       await dialog.getByRole("radio", { name: /2026年度第1回/ }).check();
       await expect(dialog.locator(`time[datetime="${provisionalDate}"]`)).toBeVisible();
       await expect(dialog.locator('input[type="date"]')).toHaveCount(0);
@@ -501,7 +544,7 @@ test.describe("home flip calendar", () => {
         try {
           await page.goto("/", { waitUntil: "domcontentloaded" });
           await expect(hero.getByText("日程を読み込み中…")).toBeVisible();
-          await expect(hero.getByText("正解済み 0 / 200問")).toBeAttached();
+          await expect(hero.locator("[data-pace-track=progress] svg[role=group]")).toBeAttached();
           await expect(hero.getByRole("group", { name: "結果を記録" })).toHaveCount(0);
           const shifts = await page.evaluateHandle(async () => {
             await document.fonts.ready;
@@ -514,8 +557,7 @@ test.describe("home flip calendar", () => {
           gate.resolve();
           await expect(calendar.getByRole("heading", { name: `試験まで あと ${days} 日`, exact: true })).toBeVisible();
           await expect(calendar.locator(`time[datetime="${officialDate}"]`)).toBeVisible();
-          await expect(hero.getByText(`残り200問・勉強日あと${days}日`)).toBeVisible();
-          await expect(hero.getByText(`1回の目安 ${target}問正解`)).toBeVisible();
+          await expect(hero.getByText(`1日の目安 ${target}問正解`)).toBeVisible();
           await expect(hero.getByRole("group", { name: "結果を記録" })).toHaveCount(0);
           expect(await shifts.evaluate(async ({ entries, observer }) => {
             await new Promise(requestAnimationFrame);
@@ -529,7 +571,7 @@ test.describe("home flip calendar", () => {
           const screenshot = `${screenshotDir}/${initialSource}-${stage}`;
           if (screenshotDir) await screenshotHero(hero, `${screenshot}-home-390.png`);
 
-          await edit.click();
+          await edit();
           const confirmedDate = dialog.locator(`time[datetime="${officialDate}"]`);
           await expect(confirmedDate).toBeVisible();
           await expect(dialog.locator('input[type="date"]')).toHaveCount(0);
@@ -544,7 +586,7 @@ test.describe("home flip calendar", () => {
             fallback = true;
             await page.reload();
             await expect(calendar.getByRole("heading", { name: "試験まで あと 6 日", exact: true })).toBeVisible();
-            await expect(hero.getByText("1回の目安 34問正解")).toBeVisible();
+            await expect(hero.getByText("1日の目安 34問正解")).toBeVisible();
             await expect(hero.getByRole("group", { name: "結果を記録" })).toHaveCount(0);
             if (screenshotDir) await screenshotHero(hero, `${screenshot}-fallback-390.png`);
             await hero.getByRole("button", { name: "資格を切り替える" }).click();
@@ -613,7 +655,7 @@ test.describe("home flip calendar", () => {
         await page.goto("/");
         const hero = page.locator(".p3-home-scene");
         const calendar = hero.locator("[data-home-calendar]");
-        await expect(hero.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
+        await expect(hero.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
         await expect(page.locator("html")).toHaveAttribute("data-home-scene", sceneName.split("-")[0]);
         if ("event" in scene) {
           await expect(hero.locator(`[data-home-event-art="${scene.event}"]`)).toHaveAttribute("data-home-event-ready", "true");
@@ -624,22 +666,26 @@ test.describe("home flip calendar", () => {
 
         if ("primary" in state) {
           await expect(calendar).toHaveCount(1);
-          const heading = calendar.getByRole("heading");
+          const heading = calendar.getByRole("heading").first();
           const label = estimated ? `${state.primary}（見込み）` : state.primary;
           await expect(heading).toHaveAccessibleName("days" in state ? `${label} あと ${state.days} 日` : label);
           const primaryDate = state.primary === "申込開始まで" ? plan.registration?.start
             : state.primary === "申込締切まで" ? plan.registration?.deadline : plan.examDate;
-          const secondaryDate = state.secondary === "試験" ? scheduledExamDate : plan.registration?.deadline;
           await expect(calendar.locator("time").first()).toHaveAttribute("datetime", primaryDate!);
-          await expect(calendar.locator(":scope > p")).toContainText(state.secondary);
-          if (state.secondary === "申込済み") await expect(calendar.locator("time")).toHaveCount(1);
-          else await expect(calendar.locator("time").last()).toHaveAttribute("datetime", secondaryDate!);
-          await expect(calendar.getByText("（見込み）", { exact: true })).toHaveCount(estimated ? 1 : 0);
+          if (state.secondary === "試験") {
+            await expect(calendar.locator("[data-countdown]")).toHaveCount(2);
+            await expect(calendar.locator("[data-countdown=exam] time")).toHaveAttribute("datetime", scheduledExamDate);
+            await expect(calendar.locator("[data-countdown=exam] h2")).toContainText(/試験まで.*あと\s*11\s*日/);
+          } else {
+            await expect(calendar.locator("[data-countdown]")).toHaveCount(1);
+            if (state.secondary === "申込済み") await expect(calendar.locator(":scope > p")).toHaveText("申込済み");
+            else await expect(calendar.locator(":scope > p")).toHaveCount(0);
+          }
+          await expect(calendar.locator("h2").getByText(/見込み/)).toHaveCount(estimated ? 2 : 0);
           expect(await calendarContrast(calendar)).toBeGreaterThanOrEqual(4.5);
           const calendarBox = (await calendar.boundingBox())!;
           const trackBox = (await hero.locator("[data-pace-track=progress]").boundingBox())!;
-          expect(width === 390 ? calendarBox.y + calendarBox.height <= trackBox.y
-            : calendarBox.x + calendarBox.width <= trackBox.x).toBe(true);
+          expect(calendarBox.y + calendarBox.height).toBeLessThanOrEqual(trackBox.y);
           const cta = hero.getByRole("link", { name: "計画の問題を解く" });
           if (await cta.count()) {
             expect(calendarBox.y + calendarBox.height).toBeLessThanOrEqual((await cta.boundingBox())!.y);
@@ -654,9 +700,9 @@ test.describe("home flip calendar", () => {
           await screenshotHero(hero, `${screenshotDir}/${state.name}-${sceneName}-${colorScheme}-${width}.png`);
         }
         if (estimated || "noDates" in state) {
-          await hero.getByRole("button", { name: "学習計画の詳細" }).click();
+          await hero.getByRole("button", { name: "計画の確認・変更" }).click();
           const dialog = page.getByRole("dialog");
-          const examDate = dialog.locator("dl > div").filter({ hasText: "試験日" }).locator("dd");
+          const examDate = dialog.locator("dl > div").filter({ hasText: "受験日" }).locator("dd");
           if (estimated) {
             await expect(examDate.locator("time")).toHaveAttribute("datetime", scheduledExamDate);
             await expect(examDate).toHaveText(await calendar.locator("time").last().textContent() + "（見込み）");
@@ -673,7 +719,7 @@ test.describe("home flip calendar", () => {
     { source: "tentative", history: "with-history", eve: "試験まで（予定） あと 1 日", today: "今日が試験予定日", image: "tentative" },
     { source: "tentative", history: "no-history", eve: "試験まで（予定） あと 1 日", today: "今日が試験予定日", image: "tentative" },
     { source: "official", history: "with-history", eve: "試験まで あと 1 日", today: "今日が受験日", image: "official" },
-    { source: undefined, history: "no-history", eve: "計画の受験日まで あと 1 日", today: "計画の受験日", image: "legacy" },
+    { source: undefined, history: "no-history", eve: "試験まで あと 1 日", today: "今日が受験日", image: "legacy" },
   ] as const;
   for (const { source, history, eve: eveHeading, today: todayHeading, image } of savedDateCases) {
     test(`uses the saved ${image} exam date on the eve and exam day (${history})`, async ({ page }) => {
@@ -712,12 +758,13 @@ test.describe("home flip calendar", () => {
       await page.goto("/");
       const hero = page.locator(".p3-home-scene");
       const calendar = hero.locator("[data-home-calendar]");
-      const solved = hero.getByText("正解済み 0 / 200問", { exact: true });
+      const solved = hero.locator("[data-pace-track=progress] svg[role=group]");
       await expect(solved).toBeVisible();
       if (source === "manual" && history === "with-history") {
         await expect(calendar.getByRole("heading", { name: "試験まで（見込み） あと 11 日" })).toBeVisible();
       }
-      await hero.getByRole("button", { name: "計画を変更", exact: true }).click();
+      await page.getByRole("button", { name: "計画の確認・変更", exact: true }).click();
+      await page.getByRole("dialog").getByRole("button", { name: "計画を変更", exact: true }).click();
       const dialog = page.getByRole("dialog");
       if (source === "manual") await dialog.locator('input[type="date"]').fill(appointment);
       else {
@@ -768,14 +815,12 @@ test.describe("home flip calendar", () => {
         }
         expect(cls).toBe(0);
         expect(await calendarContrast(calendar)).toBeGreaterThanOrEqual(4.5);
-        await expect(calendar.getByText("（見込み）", { exact: true }))
-          .toHaveCount(history === "with-history" ? 1 : 0);
-        if (state === "eve") await expect(hero.getByText("勉強日あと1日", { exact: false })).toBeVisible();
+        await expect(calendar.locator(":scope > p")).toHaveCount(0);
+        if (state === "eve") await expect(hero.getByText("1日の目安 200問正解")).toBeVisible();
         if (screenshotDir) await screenshotHero(hero, `${screenshotDir}/${image}-${state}-${history}-390.png`);
-        await hero.getByRole("button", { name: "学習計画の詳細" }).click();
+        await hero.getByRole("button", { name: "計画の確認・変更" }).click();
         const details = (label: string) => dialog.locator("dl > div").filter({ has: page.getByText(label, { exact: true }) }).locator("dd");
-        const examLabel = source ? "試験日" : "計画の受験日";
-        await expect(details(examLabel)).toHaveText(appointment + (source === "tentative" ? "（予定）" : ""));
+        await expect(details("受験日")).toHaveText(appointment + (source === "tentative" ? "（予定）" : ""));
         await expect(details("申込開始")).toHaveText(history === "with-history" ? "11/19（木）（見込み）" : "未発表");
         await expect(details("申込締切")).toHaveText(history === "with-history" ? "11/25（水）（見込み）" : "未発表");
         if (screenshotDir) await page.screenshot({ path: `${screenshotDir}/${image}-${state}-${history}-detail-390.png`, animations: "disabled" });

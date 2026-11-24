@@ -1,14 +1,16 @@
-import { useLayoutEffect, useRef, useState, type RefObject } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState, type RefObject } from "react";
 
 import { paceRunSprite } from "@/lib/home/pace-run";
+import styles from "./HomePace.module.css";
 
 const START_X = 39;
-const TRACK_LENGTH = 244;
+const TRACK_LENGTH = 212;
 const TRACK_WIDTH = 320;
 const FRAME_SIZE = 72;
 const RUNNER_SIZE = 84;
 const BOUNCE_HEIGHT = 1.25;
 const STRIDE_MS = 320;
+const BUBBLE_WIDTH = 132;
 
 function trackX(percent: number) {
   return START_X + Math.max(0, Math.min(100, percent)) * TRACK_LENGTH / 100;
@@ -19,27 +21,54 @@ function runnerFrameX(center: number) {
   return left - center;
 }
 
-function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
+function bubbleX(center: number) {
+  return Math.max(1 - center, -BUBBLE_WIDTH / 2);
+}
+
+function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped, mastery }: {
   src: string;
   frames: number;
   percent: number;
   lineY: number;
   fillRef: RefObject<SVGLineElement | null>;
   stopped?: boolean;
+  mastery: string;
 }) {
   const runner = useRef<SVGGElement>(null);
   const frame = useRef<SVGSVGElement>(null);
   const strip = useRef<SVGImageElement>(null);
+  const hitArea = useRef<SVGForeignObjectElement>(null);
+  const bubble = useRef<SVGForeignObjectElement>(null);
+  const bubbleId = useId();
+  const [open, setOpen] = useState(false);
   const [startPercent] = useState(() => frames > 4 && !stopped ? 0 : percent);
   const progress = useRef(startPercent);
   const [imageReady, setImageReady] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    function dismissOutside(event: PointerEvent) {
+      if (event.target instanceof Node && !runner.current?.contains(event.target)) setOpen(false);
+    }
+    function dismissOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("pointerdown", dismissOutside);
+    document.addEventListener("keydown", dismissOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", dismissOutside);
+      document.removeEventListener("keydown", dismissOnEscape);
+    };
+  }, [open]);
 
   useLayoutEffect(() => {
     const dog = runner.current;
     const viewport = frame.current;
     const sprite = strip.current;
     const fill = fillRef.current;
-    if (!dog || !viewport || !sprite || !fill) return;
+    const buttonBox = hitArea.current;
+    const speech = bubble.current;
+    if (!dog || !viewport || !sprite || !fill || !buttonBox || !speech) return;
     const usesCssAnimation = frames > 4;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const from = progress.current;
@@ -51,7 +80,10 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
       const x = trackX(value);
       fill.setAttribute("x2", String(x));
       dog.setAttribute("transform", `translate(${x} ${-lift})`);
-      viewport.setAttribute("x", String(runnerFrameX(x)));
+      const spriteLeft = runnerFrameX(x);
+      viewport.setAttribute("x", String(spriteLeft));
+      buttonBox.setAttribute("x", String(spriteLeft + 10));
+      speech.setAttribute("x", String(bubbleX(x)));
       if (!usesCssAnimation) sprite.setAttribute("x", String(-frameIndex * FRAME_SIZE));
     };
     function finish() {
@@ -107,11 +139,19 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped }: {
   }, [fillRef, frames, imageReady, percent, stopped]);
 
   const startX = trackX(startPercent);
-  return <g ref={runner} transform={`translate(${startX} 0)`} aria-hidden="true" className="p3-track-runner" data-pace-sprite={frames > 4 ? "v2" : undefined}>
+  return <g ref={runner} transform={`translate(${startX} 0)`} className="p3-track-runner" data-pace-sprite={frames > 4 ? "v2" : undefined}>
     <svg ref={frame} x={runnerFrameX(startX)} y={lineY - RUNNER_SIZE + 1} width={RUNNER_SIZE} height={RUNNER_SIZE}
-      viewBox={`0 0 ${FRAME_SIZE} ${FRAME_SIZE}`} className="overflow-hidden">
+      viewBox={`0 0 ${FRAME_SIZE} ${FRAME_SIZE}`} className="overflow-hidden" aria-hidden="true">
       <image ref={strip} href={src} width={FRAME_SIZE * frames} height={FRAME_SIZE} x="0" onLoad={() => setImageReady(true)} onError={() => setImageReady(true)} />
     </svg>
+    <foreignObject ref={hitArea} x={runnerFrameX(startX) + 10} y={lineY - 70} width="64" height="64">
+      <button type="button" className={styles.runnerButton} aria-label="チワワの進み具合"
+        aria-expanded={open} aria-controls={bubbleId} onClick={() => setOpen(value => !value)} onBlur={() => setOpen(false)} />
+    </foreignObject>
+    {open && <path className={styles.runnerBubbleTail} d="M-5 1h10L0 8Z" aria-hidden="true" />}
+    <foreignObject ref={bubble} x={bubbleX(startX)} y="-24" width={BUBBLE_WIDTH} height="28" pointerEvents="none">
+      <div id={bubbleId} role="status" className={open ? styles.runnerBubble : undefined}>{open && mastery}</div>
+    </foreignObject>
   </g>;
 }
 
@@ -122,23 +162,24 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
   const sprite = paceRunSprite(runArt);
   const percent = total ? 100 * mastered / total : 0;
   const lineY = 75;
-  return <svg viewBox={`0 -10 ${TRACK_WIDTH} 111`} className="p3-pace-track block w-full" role="img" aria-label={`正解済み ${mastered} / ${total}問`}>
+  return <svg viewBox={`0 -26 ${TRACK_WIDTH} 127`} className="p3-pace-track block w-full" role="group" aria-label="学習の進み具合">
     <Trail lineY={lineY} />
     <line ref={fillRef} x1={START_X} y1={lineY} x2={trackX(percent)} y2={lineY}
       strokeWidth="8" strokeLinecap="round" className="p3-trail-progress stroke-primary" />
-    <FinishFlag lineY={lineY} height={70} />
-    <RunningChihuahua key={sprite.src} {...sprite} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped} />
+    <FinishFlag lineY={lineY} />
+    <RunningChihuahua key={sprite.src} {...sprite} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped}
+      mastery={`${mastered}問 / ${total}問クリア`} />
     <TrackLabel x={START_X} y={97}>0問</TrackLabel>
     <TrackLabel x={trackX(100)} y={97} end>{`${total}問`}</TrackLabel>
   </svg>;
 }
 
 function TrackLabel({ x, y, end = false, children }: { x: number; y: number; end?: boolean; children: string }) {
-  const width = children.length * 14 + 8;
+  const width = children.length * 15 + 8;
   return <g>
     <rect className="p3-event-tick-panel" data-event-panel="ticks" aria-hidden="true"
-      x={end ? x - width + 4 : x - 4} y={y - 14} width={width} height={19} rx={5} />
-    <text x={x} y={y} textAnchor={end ? "end" : "start"} fontSize="14"
+      x={end ? x - width + 4 : x - 4} y={y - 15} width={width} height={20} rx={5} />
+    <text x={x} y={y} textAnchor={end ? "end" : "start"} fontSize="15"
       className="fill-muted-foreground p3-scene-tick-label">{children}</text>
   </g>;
 }
@@ -153,9 +194,29 @@ function Trail({ lineY }: { lineY: number }) {
   </g>;
 }
 
-function FinishFlag({ lineY, height = 56 }: { lineY: number; height?: number }) {
-  const x = trackX(100) + 11;
-  return <path aria-hidden="true" d={`M${x} ${lineY}v-${height}l11 4-11 5`} strokeWidth="1.5" className="p3-trail-flag" />;
+function FinishFlag({ lineY }: { lineY: number }) {
+  const gold = useId();
+  return <g transform={`translate(275 ${lineY})`} aria-hidden="true" data-pace-finish>
+    <defs>
+      <linearGradient id={gold} x2="0" y2="1">
+        <stop stopColor="#fff4ad" />
+        <stop offset=".53" stopColor="#f4cd52" />
+        <stop offset="1" stopColor="#e8ab38" />
+      </linearGradient>
+    </defs>
+    <path d="M-13-56l2 3m2 11-4 1M40-49l2-3m-1 13 3 1" stroke="#f7bd51" strokeWidth="2" strokeLinecap="round" />
+    <path d="M-4-67l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5ZM37-35l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5Z" fill="#fff3a4" stroke="#9b601d" strokeWidth=".65" />
+    <path d="M0 0v-65" stroke="#68421e" strokeWidth="4" strokeLinecap="round" />
+    <path d="M0-1v-64" stroke="#ffde74" strokeWidth="1.5" />
+    <circle cy="-66" r="3.4" fill="#fff1a5" stroke="#94601d" />
+    <path d="M0-61Q10-65 20-62T43-62l-6 11 6 10q-12 4-23 0T0-39Z" fill={`url(#${gold})`} stroke="#94601d" strokeLinejoin="round" />
+    <text x="19" y="-47" textAnchor="middle" fontSize="13" fontWeight="800" fill="#492709">合格</text>
+    <path d="M-8-15h17l3 4h-23Z" fill="#fff0a4" stroke="#94601d" strokeLinejoin="round" />
+    <path d="M-15-11h30v9h-30z" fill={`url(#${gold})`} stroke="#94601d" />
+    <rect x="-20" y="-3" width="40" height="7" rx="2" fill="#e3a739" stroke="#94601d" />
+    <path d="M-5-19q-9-4-9-14m19 14q9-4 9-14" fill="none" stroke="#a8691b" strokeLinecap="round" />
+    <path d="M-7-20q-8 0-8-5 6-1 8 5Zm-4-4q-7-2-5-7 5 1 5 7Zm18 4q8 0 8-5-6-1-8 5Zm4-4q7-2 5-7-5 1-5 7Z" fill="#ffde74" stroke="#a8691b" strokeWidth=".75" />
+  </g>;
 }
 
 /** The track before a plan exists: the chihuahua waits at the start line. */

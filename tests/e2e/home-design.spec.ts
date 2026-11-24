@@ -107,7 +107,7 @@ test("long qualification and no appointment fit at 320px without an invented dat
   await fixture(page, "member", longPlan);
   await page.goto("/");
   await expect(page.getByRole("button", { name: "資格を切り替える" })).toContainText("1級電気通信工事施工管理");
-  await expect(page.getByRole("img", { name: "正解済み 0 / 200問" })).toBeVisible();
+  await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(320);
   await expect(page.getByRole("button", { name: "自分の受験日を設定" })).toBeVisible();
 });
@@ -116,7 +116,7 @@ for (const state of ["member", "paid"] as const) {
   test(`${state}: the same large target is shown without a monthly offer`, async ({ page }) => {
     await fixture(page, state, { ...plan(), examDate: "2026-11-18" });
     await page.goto("/");
-    await expect(page.getByText("1回の目安　138問正解")).toBeVisible();
+    await expect(page.getByText("1日の目安 138問正解")).toBeVisible();
     await expect(page.getByRole("link", { name: /月額プランなら回数無制限で追いつけます/ })).toHaveCount(0);
     await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(1);
   });

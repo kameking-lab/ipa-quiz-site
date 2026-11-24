@@ -140,7 +140,8 @@ export function calculatePace(plan: PacePlan, catalog: readonly PlanQuestion[], 
       if (offset < daysRemaining % 7) studyDays++;
     }
   }
-  return { oldestYear, total, mastered, remaining, remainingIds, daysRemaining, studyDays, nextWeekday,
+  return { oldestYear, total, mastered, remaining, remainingIds, incorrect: incorrect.length, unanswered: unanswered.length,
+    daysRemaining, studyDays, nextWeekday,
     scheduledToday: weekdays.includes(weekday(day)), complete: total > 0 && remaining === 0,
     target: remaining > 0 && studyDays > 0 ? Math.ceil(remaining / studyDays) : null };
 }

@@ -43,12 +43,13 @@ describe("home study plan calendar", () => {
     [today, "start", "2026-11-20", 3, "exam", "2026-12-17"],
     ["2026-11-20", "deadline", "2026-12-10", 20, "exam", "2026-12-17"],
     ["2026-12-10", "deadline", "2026-12-10", 0, "exam", "2026-12-17"],
-    ["2026-12-11", "exam", "2026-12-17", 6, "deadline", "2026-12-10"],
-    ["2026-12-17", "exam", "2026-12-17", 0, "deadline", "2026-12-10"],
-  ])("prioritizes the relevant date on %s and labels the other date separately", (date, kind, primaryDate, days, otherKind, otherDate) => {
+  ])("shows application and exam countdowns together on %s", (date, kind, primaryDate, days, otherKind, otherDate) => {
     expect(homeCalendar(plan, date)).toMatchObject({
-      primary: { kind, date: primaryDate, days }, secondary: { kind: otherKind, date: otherDate },
+      primary: { kind, date: primaryDate, days }, secondary: { kind: otherKind, date: otherDate, days: expect.any(Number) },
     });
+  });
+  it.each([["2026-12-11", 6], ["2026-12-17", 0]])("hides the past deadline on %s", (date, days) => {
+    expect(homeCalendar(plan, date)).toMatchObject({ primary: { kind: "exam", days }, secondary: null });
   });
   it("switches to the exam and marks registration complete", () => {
     expect(homeCalendar({ ...plan, registered: true }, today)).toMatchObject({

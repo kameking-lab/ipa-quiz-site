@@ -14,7 +14,8 @@ test("the qualification referral opens a prefilled plan that can be exported", a
     page.getByRole("button", { name: "カレンダーに追加（.ics）" }).click(),
   ]);
   expect(download.suggestedFilename()).toBe("kakomon-study-plan.ics");
-  await page.getByRole("button", { name: "計画を変更" }).click();
+  await page.getByRole("button", { name: "計画の確認・変更", exact: true }).click();
+  await page.getByRole("dialog").getByRole("button", { name: "計画を変更", exact: true }).click();
   await expect(page.getByRole("dialog").getByRole("button", { name: "カレンダーに追加（.ics）" })).toBeVisible();
 });
 

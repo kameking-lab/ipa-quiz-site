@@ -77,6 +77,7 @@ describe("one calculation for mastery, weakness and pace", () => {
     const attempts = [answer("q0", true), answer("spring", false), answer("q4", false), answer("q8", false), answer("foreign", false)];
     const pace = calculatePace(build(bank), bank, attempts, today, now);
     expect(pace.remainingIds).toEqual(["spring", "q4", "q1", "q2", "q3"]);
+    expect(pace).toMatchObject({ incorrect: 2, unanswered: 3 });
     expect(weakQuestions(bank, exam, attempts, [], now).map(row => row.question.id)).toEqual(["spring", "q4", "q8"]);
   });
   it("counts actual weekdays and recalculates the current goal after answers and missed days", () => {

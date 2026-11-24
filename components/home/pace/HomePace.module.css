@@ -1,15 +1,18 @@
 .stack {
   --hero-padding: .75rem;
   --hero-gap: .5rem;
-  --plan-intro: 19.75rem;
-  --plan-progress: 8rem;
-  --plan-actions: 7rem;
+  --plan-calendar: 8rem;
+  --plan-intro: calc(2.75rem + var(--plan-calendar));
+  --plan-progress: 5.5rem;
+  --plan-actions: 2.75rem;
+  --plan-padding: .75rem;
+  --plan-space: clamp(1rem, 5vw, 2.75rem);
   --return-intro: 6.75rem;
   --return-actions: 7rem;
-  --post-exam-floor: calc(38rem + var(--track-space));
+  --post-exam-floor: 29rem;
   --track-space: 0px;
   --track-width: calc(100vw - 2rem);
-  --progress-track: min(9.5rem, calc(var(--track-width) * 111 / 320));
+  --progress-track: min(9.5rem, calc((var(--track-width) - 2 * var(--plan-padding)) * 127 / 320));
   --start-track: min(9.5rem, calc(var(--track-width) * 96 / 320));
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -23,17 +26,17 @@
 }
 .stack:has([data-pace-view="post-exam"]),
 :global([data-home-study-layout="post-exam"]) .stack[data-home-state="loading"] {
-  --plan-intro: 11.5rem;
+  --plan-intro: 5rem;
 }
 .stack[data-home-calendar-layout="empty"],
 :global([data-home-study-calendar="empty"]) .stack[data-home-state="loading"] {
-  --plan-intro: 9rem;
+  --plan-intro: 2.75rem;
+  --plan-progress: 0px;
 }
 
 /* Content below the title stays out of view until the missing schedule settles.
    Keep the full calendar layout reserved for a response that includes dates. */
-.stack[data-home-calendar-layout="pending"] :is(.planCount, .hero > [data-event-panel]:not([data-event-panel="intro"]),
-  .hero > :global(.p3-event-track), .secondarySearch, .room, .directory, .upcoming),
+.stack[data-home-calendar-layout="pending"] :is(.planCard > :not([data-event-panel="intro"]), .secondarySearch, .room, .directory, .upcoming),
 :global([data-home-study-calendar]) .stack[data-home-state="loading"] :is(.secondarySearch, .room, .directory) {
   visibility: hidden;
 }
@@ -53,14 +56,6 @@
 .hero > :not(svg, [data-home-weather], :global(.p3-event-art-slot)) { position: relative; }
 
 .hero > :global(.p3-event-panel) { display: flow-root; margin: 0; }
-.hero[data-pace-view="planned"] > [data-event-panel="progress"] {
-  min-block-size: var(--plan-progress);
-  align-content: center;
-}
-.hero[data-pace-view="planned"] > [data-event-panel="progress"]:empty { background: none; }
-.stack[data-home-calendar-layout="empty"] .hero > [data-event-panel="progress"] { min-block-size: 1.5rem; }
-.hero:is([data-pace-view="planned"], [data-pace-view="exam-day"], [data-pace-view="post-exam"]) > [data-event-panel="intro"] { min-block-size: var(--plan-intro); }
-.hero:is([data-pace-view="planned"], [data-pace-view="exam-day"], [data-pace-view="post-exam"]) > [data-event-panel="actions"] { min-block-size: var(--plan-actions); }
 .hero[data-pace-view="returning"] > [data-event-panel="intro"] { min-block-size: var(--return-intro); }
 .hero[data-pace-view="returning"] > [data-event-panel="actions"] { min-block-size: var(--return-actions); }
 .hero > :global(.p3-event-track) {
@@ -69,7 +64,6 @@
   min-block-size: calc(var(--track-space) + var(--start-track));
   padding: var(--track-space) 0 0;
 }
-.hero > [data-pace-track="progress"] { min-block-size: calc(var(--track-space) + var(--progress-track)); }
 .hero :global(.p3-pace-track) { height: auto; max-block-size: 9.5rem; }
 .hero[data-pace-view="new"] :global(.p3-pace-track) { max-block-size: 8rem; }
 @media (prefers-reduced-motion: no-preference) {
@@ -81,14 +75,69 @@
 @keyframes runnerStride {
   to { transform: translateX(-100%); }
 }
-.planCount { min-block-size: 4rem; margin-block-start: .375rem; }
-/* Keep the solved count in place when the schedule arrives after the catalog. */
-.planCalendarSlot { display: flow-root; min-block-size: 10.375rem; }
-.planActions { display: flex; flex-wrap: wrap; column-gap: .75rem; }
-.planDetails {
-  width: 100%;
-  border-top: 1px solid color-mix(in srgb, var(--p3-ink) 22%, transparent);
+.hero:has(.planCard) { padding-block-end: var(--plan-space); }
+.planCard {
+  display: grid;
+  gap: var(--hero-gap);
+  width: min(100%, 34rem);
+  justify-self: center;
+  padding: var(--plan-padding);
+  border-radius: 1.125rem;
+  background: var(--p3-event-panel, #fffdf2f2);
+  box-shadow: 0 3px 16px #172f2324;
 }
+:global(:is(.dark, [data-home-scene="night"])) .planCard { background: var(--p3-event-panel, #142a32f2); }
+.planCard > :global(.p3-event-panel) { display: flow-root; }
+.planCard > [data-event-panel="intro"] { min-block-size: var(--plan-intro); }
+.planCard > [data-event-panel="progress"] { min-block-size: var(--plan-progress); }
+.planCard > [data-event-panel="actions"] { min-block-size: var(--plan-actions); }
+.planCard > [data-pace-track="progress"] {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-block-size: var(--progress-track);
+  place-items: center;
+}
+.planCard :global(.p3-pace-track) { width: min(100%, calc(9.5rem * 320 / 127)); }
+.planCount { padding: .5rem; text-align: center; }
+.planCalendarSlot { min-block-size: var(--plan-calendar); }
+.planHeader { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+.headerExamDate {
+  max-inline-size: 49%;
+  flex: 0 0 auto;
+  color: var(--p3-scene-muted, inherit);
+  text-align: end;
+  font-size: .8125rem;
+  font-variant-numeric: tabular-nums;
+}
+.headerExamDate time { white-space: nowrap; }
+.dailyTarget { font-size: .9375rem; }
+.dailyTarget strong { margin-inline-start: .15em; font-size: 1.125rem; font-variant-numeric: tabular-nums; }
+.planCard :global(.study-primary) { width: 100%; justify-content: space-between; }
+.planActions { display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: .5rem; }
+.planActions > :global(.study-link) { margin: 0; }
+.runnerButton {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.runnerButton:focus-visible { outline: 2px solid currentColor; outline-offset: -3px; }
+.runnerBubble {
+  border: 1px solid #9d7036;
+  border-radius: 8px;
+  padding: 4px 2px;
+  background: #fff9e7;
+  color: #422c17;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.runnerBubbleTail { fill: #fff9e7; stroke: #9d7036; stroke-width: 1; }
 
 .secondarySearch { margin-top: 12px; }
 .stack[data-home-state="loading"] .secondarySearch { display: none; }
@@ -138,11 +187,11 @@
 }
 
 :global(:is([data-home-study-layout="planned"], [data-home-study-layout="exam-day"], [data-home-study-layout="post-exam"])) .stack[data-home-state="loading"] {
-  .hero { min-block-size: calc(2 * var(--hero-padding) + 3 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions) + var(--track-space) + var(--progress-track)); }
+  .hero { min-block-size: calc(var(--hero-padding) + var(--plan-space) + 2 * var(--plan-padding) + 3 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions) + var(--progress-track)); }
   .planLoading { display: grid; }
 }
 :global([data-home-study-layout="exam-day"]) .stack[data-home-state="loading"] .hero {
-  min-block-size: calc(2 * var(--hero-padding) + 2 * var(--hero-gap) + var(--plan-intro) + var(--plan-actions) + var(--track-space) + var(--progress-track));
+  min-block-size: calc(var(--hero-padding) + var(--plan-space) + 2 * var(--plan-padding) + 2 * var(--hero-gap) + var(--plan-intro) + var(--plan-actions) + var(--progress-track));
 }
 .hero[data-pace-view="post-exam"],
 :global([data-home-study-layout="post-exam"]) .stack[data-home-state="loading"] .hero { min-block-size: var(--post-exam-floor); }
@@ -172,18 +221,9 @@
   .hero { margin-inline: -24px; --p3-hero-gutter: 24px; }
 }
 
-@media (max-width: 639px) {
-  .stack:not([data-home-calendar-layout="empty"]) .hero:is([data-pace-view="planned"], [data-pace-view="exam-day"])
-    :global([data-home-event-art]:is([data-home-event-art="christmas"], [data-home-event-art="new-year"])) {
-    inset-block-start: calc(var(--hero-padding) + var(--plan-intro) - 2.5rem);
-    mask-image: linear-gradient(transparent, black 2.5rem);
-  }
-}
-
 @media (min-width: 960px) {
   .stack {
-    --track-width: 26rem;
-    --post-exam-floor: 35rem;
+    --track-width: 34rem;
     --hero-columns: minmax(0, 25rem) minmax(0, 1fr);
     --hero-column-gap: clamp(1rem, 4vw, 3rem);
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -205,6 +245,7 @@
     column-gap: var(--hero-column-gap);
   }
   .hero > :global(.p3-event-panel) { grid-column: 1; }
+  .planCard { grid-column: 1 / -1; }
   .hero > :global(.p3-event-track) {
     grid-column: 2;
     grid-row: 1 / span 3;
@@ -218,19 +259,6 @@
   .hero[data-pace-view="returning"] { align-content: end; }
   .hero[data-pace-view="returning"] > :global(.p3-event-track),
   .hero[data-pace-view="new"] > :global(.p3-event-track) { grid-row-end: span 2; }
-  .hero[data-pace-view="post-exam"] > :global(.p3-event-track) { align-self: center; }
-  .hero[data-pace-view="exam-day"] > :global(.p3-event-track) { grid-row-end: span 2; }
-  :global(html:not([data-home-event-layout])) .hero[data-pace-view="planned"] > :global(.p3-event-track) {
-    grid-row: 1;
-    align-self: end;
-  }
-
-  :global(:is([data-home-study-layout="planned"], [data-home-study-layout="exam-day"])) .stack[data-home-state="loading"] .hero {
-    min-block-size: calc(2 * var(--hero-padding) + 2 * var(--hero-gap) + var(--plan-intro) + var(--plan-progress) + var(--plan-actions));
-  }
-  :global([data-home-study-layout="exam-day"]) .stack[data-home-state="loading"] .hero {
-    min-block-size: calc(2 * var(--hero-padding) + var(--hero-gap) + var(--plan-intro) + var(--plan-actions));
-  }
   .secondarySearch, .recent, .upcoming, .directory { grid-column: 1; }
   .secondarySearch { grid-row: 2; }
   .recent { grid-row: 3; }
@@ -257,6 +285,11 @@
 }
 .qualification > span { min-width: 0; text-wrap: pretty; }
 .calendar {
+  padding-block: .5rem .25rem;
+  font-variant-numeric: tabular-nums;
+}
+.calendarCards { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: .75rem; }
+.calendarPaper {
   --paper: #fff9ed;
   --paper-ink: #3c2920;
   --paper-muted: #664939;
@@ -265,12 +298,27 @@
   --tab: #f4d2ab;
   --fold: #ead1b1;
   --sheets: #e6bc91;
-  width: min(100%, 14rem);
-  margin-block-start: .75rem;
-  font-variant-numeric: tabular-nums;
+  position: relative;
+  display: grid;
+  justify-items: stretch;
+  border: 1px solid var(--paper-edge);
+  border-radius: 14px 14px 6px 12px;
+  background: var(--paper);
   color: var(--paper-ink);
+  box-shadow: 0 3px 0 -1px var(--sheets), 0 4px 0 -1px var(--paper-edge), 0 6px 9px #21170e2b;
+  text-align: center;
 }
-:global(:is(.dark, [data-home-scene="night"])) .calendar {
+.calendarPaper[data-countdown="exam"] {
+  --paper: #eaf8f0;
+  --paper-ink: #134b39;
+  --paper-muted: #285745;
+  --paper-edge: #5e9a80;
+  --binding: #39745d;
+  --tab: #bee4d4;
+  --fold: #c8e8dc;
+  --sheets: #97c6b3;
+}
+:global(:is(.dark, [data-home-scene="night"])) .calendarPaper {
   --paper: #3f3029;
   --paper-ink: #fff2e0;
   --paper-muted: #f3cdae;
@@ -280,15 +328,15 @@
   --fold: #765540;
   --sheets: #936449;
 }
-.calendarPaper {
-  position: relative;
-  display: grid;
-  justify-items: stretch;
-  border: 1px solid var(--paper-edge);
-  border-radius: 14px 14px 6px 12px;
-  background: var(--paper);
-  box-shadow: 0 3px 0 -1px var(--sheets), 0 4px 0 -1px var(--paper-edge), 0 6px 9px #21170e2b;
-  text-align: center;
+:global(:is(.dark, [data-home-scene="night"])) .calendarPaper[data-countdown="exam"] {
+  --paper: #17372f;
+  --paper-ink: #e3fbec;
+  --paper-muted: #c3ebd9;
+  --paper-edge: #6fa78d;
+  --binding: #b8dfcd;
+  --tab: #265447;
+  --fold: #436d5f;
+  --sheets: #4e836f;
 }
 .calendarPaper::after {
   position: absolute;
@@ -320,7 +368,7 @@
   display: grid;
   grid-template-rows: auto 1fr;
   margin: 0;
-  min-block-size: 5.5rem;
+  min-block-size: 4.875rem;
 }
 .calendarLabel {
   padding: .45rem .5rem .2rem;
@@ -340,7 +388,7 @@
 }
 .calendarCount > strong {
   margin-inline: .1em;
-  font-size: clamp(2.25rem, 10vw, 2.875rem);
+  font-size: clamp(1.875rem, 8vw, 2.5rem);
   font-weight: 800;
   letter-spacing: -.035em;
 }
@@ -362,12 +410,12 @@
   justify-content: center;
   column-gap: .25rem;
   margin: 0;
-  color: var(--paper-muted);
   font-size: .875rem;
   font-weight: 600;
   line-height: 1.4;
 }
 .calendarPrimaryDate {
+  color: var(--paper-muted);
   margin-inline: .75rem;
   padding: .25rem 0 .4rem;
   border-block-start: 1px solid color-mix(in srgb, var(--paper-edge) 45%, var(--paper));
@@ -375,10 +423,10 @@
 .calendarSecondaryDate {
   width: fit-content;
   max-width: 100%;
-  margin: .5rem auto 0;
+  margin: .5rem 0 0;
   padding: .125rem .5rem;
   border-radius: 6px;
-  background: var(--paper);
+  color: var(--p3-scene-muted, inherit);
 }
 .calendarEstimate {
   font-size: .75rem;
