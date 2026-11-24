@@ -100,7 +100,7 @@
 }
 .planCard :global(.p3-pace-track) { width: min(100%, calc(9.5rem * 320 / 127)); }
 .planCount { padding: .5rem; text-align: center; }
-.planCalendarSlot { min-block-size: var(--plan-calendar); }
+.planCalendarSlot { display: flow-root; min-block-size: var(--plan-calendar); }
 .planHeader { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
 .headerExamDate {
   max-inline-size: 49%;
@@ -257,6 +257,9 @@
   .hero[data-pace-view="returning"],
   :global([data-home-study-layout="returning"]) .stack[data-home-state="loading"] .hero { min-block-size: 20rem; }
   .hero[data-pace-view="returning"] { align-content: end; }
+  :global([data-home-scene="night"][data-home-event-layout]) .hero:is([data-pace-view="new"], [data-pace-view="returning"]) {
+    --p3-orb-top: 4rem;
+  }
   .hero[data-pace-view="returning"] > :global(.p3-event-track),
   .hero[data-pace-view="new"] > :global(.p3-event-track) { grid-row-end: span 2; }
   .secondarySearch, .recent, .upcoming, .directory { grid-column: 1; }

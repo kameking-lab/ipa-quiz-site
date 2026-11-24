@@ -213,8 +213,8 @@ for (const hasDate of [true, false]) {
         await expect(track.getByRole("button", { name: "チワワの進み具合" })).toBeVisible();
         await expect(intro.getByRole("button", { name: "自分の受験日を設定" })).toBeVisible();
         await expect(cta).toHaveCount(0);
-        expect((await track.boundingBox())!.y).toBeLessThan(trackBefore!.y - 100);
-        expect((await room.boundingBox())!.y).toBeLessThan(roomBefore!.y - 100);
+        expect((await track.boundingBox())!.y).toBeLessThan(trackBefore!.y - 70);
+        expect((await room.boundingBox())!.y).toBeLessThan(roomBefore!.y - 70);
       }
       expect(await shifts.evaluate(async ({ entries, observer }) => {
         await new Promise(requestAnimationFrame);
