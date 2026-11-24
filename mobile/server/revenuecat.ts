@@ -16,7 +16,7 @@ export function validWebhookAuthorization(actual: string | null, expected: strin
     && timingSafeEqual(Buffer.from(actual), Buffer.from(expected));
 }
 const storeDate = z.iso.datetime({ offset: true });
-const optionalStoreDate = storeDate.nullable().optional();
+const optionalStoreDate = z.string().nullable().optional();
 const subscriberSchema = z.object({ subscriber: z.object({
   entitlements: z.record(z.string(), z.object({
     product_identifier: z.string(), expires_date: storeDate.nullable(),

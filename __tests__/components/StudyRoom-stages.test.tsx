@@ -13,7 +13,8 @@ it.each([0, 3, 12, 25, 45, 60, 120, 130])("renders up to 12 occupants for %i lea
   const scene = screen.getByTestId("study-room-scene");
   expect(scene).toHaveAttribute("data-room", "p2");
   expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(Math.min(12, count));
-  expect(screen.getByText("本棚のブックカフェ")).toBeInTheDocument();
+  expect(scene).toHaveAttribute("aria-label", "本棚のブックカフェ");
+  expect(screen.queryByText("本棚のブックカフェ")).not.toBeInTheDocument();
   if (count > 0) expect(screen.getByTestId("study-room-total")).toHaveTextContent(`いま${count}人`);
   else expect(screen.getByTestId("study-room-sleeper")).toHaveTextContent("");
   if (count > 12) expect(screen.getByText(`＋${count - 12}人`)).toBeInTheDocument();
