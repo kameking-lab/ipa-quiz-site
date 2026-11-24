@@ -113,7 +113,7 @@ it("resumes a pending restore after a legacy app session has been renewed", asyn
   vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] })
     : Response.json({ requiresAppLogin, configuration: { sdkKey: "configured" }, entitlement: { userId: "native-user", entitled: false } })));
   const first = render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
-  const button = screen.getByRole("button", { name: "購入を復元" });
+  const button = await screen.findByRole("button", { name: "購入を復元" });
   await waitFor(() => expect(button).toBeEnabled());
   fireEvent.click(button);
   await waitFor(() => expect(signIn).toHaveBeenCalledTimes(1));
