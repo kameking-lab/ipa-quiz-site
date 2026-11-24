@@ -93,9 +93,10 @@ export function useNativeBanner(access: MobileEntitlement | null, productId: str
       const result = await fetch("/api/mobile/entitlement", { method: "POST", cache: "no-store", signal: abort.signal })
         .then(response => response.ok ? response.json() : null).finally(() => clearTimeout(timeout)) as {
         entitlement?: MobileEntitlement;
+        requiresAppLogin?: boolean;
         configuration?: { sdkKey?: string; productId?: string };
       } | null;
-      if (!result) return false;
+      if (!result || result.requiresAppLogin) return false;
       const { entitlement, configuration } = result;
       return entitlement?.userId === userId && entitlement.entitled === false && entitlement.source === "free" &&
         (userId === null || !!entitlement.appUserId) && !!configuration?.sdkKey && configuration.productId === productId;
