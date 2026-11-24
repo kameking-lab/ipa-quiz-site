@@ -4,7 +4,7 @@ import { BillingError, jstDay } from "../domain";
 import { refundState } from "../finance";
 import { examDateBeforeEnd, examEndCanBeBooked } from "../exam-end";
 import { safeQuizReturn } from "../quiz-return";
-import { sameEventDigest } from "../signature";
+import { sameEventDigest } from "../event-identity";
 import { invoiceCashDue, stripeMinimumYenCharge, terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type Contract, type EndingChange, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Realm, type Signup, type SubscriptionManagement, type Target } from "./domain";
 
 type ReadAppStorePurchaseStatus = (userId: string, mode: Realm) => Promise<AppStorePurchaseState>;

@@ -1,8 +1,11 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+
+// Walks every IPA paper (about 70s alone); the full CI run is several times slower.
+vi.setConfig({ testTimeout: 300_000 });
 import { ST_QUESTIONS_2025_SPRING_AM2 } from "@/data/questions/st/by-year/2025-spring-am2";
 import {
   filterQuestions,
