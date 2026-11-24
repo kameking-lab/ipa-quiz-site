@@ -33,7 +33,4 @@ export function eventDigest(raw: Uint8Array) {
   } catch { /* Not JSON: fall back to the raw body. */ }
   return createHash("sha256").update(raw).digest("hex");
 }
-/** A stored pre-v2 raw digest cannot be compared with a v2 digest of the same event. */
-export function sameEventDigest(stored: string, incoming: string) {
-  return stored === incoming || (incoming.startsWith("v2:") && !stored.startsWith("v2:"));
-}
+export { sameEventDigest } from "./event-identity";
