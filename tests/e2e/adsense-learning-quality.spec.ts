@@ -38,6 +38,8 @@ for (const paper of [
 }
 
 test("worked guide contains its problem, comparison, and check and the old URL is a 301", async ({ page, request }, testInfo) => {
+  // Auto ads may inject their own slots on eligible pages; stub Google so only page-authored ad units are counted.
+  await page.route("https://pagead2.googlesyndication.com/**", route => route.fulfill({ contentType: "text/javascript", body: "" }));
   const redirect = await request.get("/blog/fe-jisseki-mondai-bunseki", { maxRedirects: 0 });
   expect(redirect.status()).toBe(301);
   expect(redirect.headers().location).toBe("/blog/fe-hinnshutsu-ronten-toppu10");
