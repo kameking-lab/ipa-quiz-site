@@ -341,7 +341,7 @@ for (const width of [390, 1280]) {
       await expect(page.getByText("今日 1問", { exact: true })).toBeVisible();
       const track = page.getByRole("img", { name: "チワワがスタートで待機中" });
       await expect(track.getByText("ゴール")).toBeVisible();
-      await expect(track.locator("image")).toHaveAttribute("href", "/images/home/pace-run/ip.webp");
+      await expect(track.locator('image[href^="/images/home/pace-run/"]')).toHaveAttribute("href", "/images/home/pace-run/ip.webp");
       await expect(page.getByRole("button", { name: "学習計画を作る", exact: true })).toBeVisible();
       await expect(page.locator('[data-home-state="returning"]')).toBeVisible();
       const search = page.getByPlaceholder("ほかの資格をさがす");

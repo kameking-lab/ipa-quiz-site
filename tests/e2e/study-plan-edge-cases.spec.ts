@@ -180,10 +180,11 @@ for (const suspension of ["hidden", "offscreen"] as const) {
     }, suspension);
     await page.goto("/");
     const track = page.getByRole("group", { name: "学習の進み具合" });
-    await expect(track.locator("image")).toHaveAttribute("href", "/images/home/pace-run/v2/ip.webp");
+    const runner = track.locator(".p3-track-runner image");
+    await expect(runner).toHaveAttribute("href", "/images/home/pace-run/v2/ip.webp");
     await expect(page.locator("html")).toHaveAttribute("data-runner-animated", "true");
     if (suspension === "offscreen") await expect(track).not.toBeInViewport();
-    await expect(track.locator("image")).toHaveCSS("transform", "none");
+    await expect(runner).toHaveCSS("transform", "none");
     await expect(track.locator("line.p3-trail-progress")).toHaveAttribute("x2", "145");
   });
 }
