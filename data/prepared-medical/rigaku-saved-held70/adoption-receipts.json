@@ -1,0 +1,1981 @@
+{
+  "baseCommit": "d2880a45aece9952bbeab85e0eeed8fb47d8d23f",
+  "candidatePath": "adoption-candidates.json",
+  "initialSixIds": [
+    "rigaku-ryohoshi-2025-annual-am-q82",
+    "rigaku-ryohoshi-2025-annual-am-q94",
+    "rigaku-ryohoshi-2025-annual-pm-q21",
+    "rigaku-ryohoshi-2025-annual-pm-q22",
+    "rigaku-ryohoshi-2025-annual-pm-q30",
+    "rigaku-ryohoshi-2026-annual-pm-q26"
+  ],
+  "additionalBoundedReviewCandidateIds": [
+    "rigaku-ryohoshi-2026-annual-am-q4",
+    "rigaku-ryohoshi-2026-annual-am-q11"
+  ],
+  "counts": {
+    "questions": 8,
+    "choiceReasons": 40,
+    "figureQuestions": 3,
+    "reusedOriginalPageAssets": 9,
+    "priorScopeDecisionQuestions": 2,
+    "otherExplanationRequirementQuestions": 17,
+    "unchangedClinicalHoldQuestions": 43
+  },
+  "meaning": "Integration-ready private subset for individual specialist acceptance judgment; this is not acceptance or publication approval.",
+  "initialSixUnchanged": true,
+  "imageBinding": "Same bundle-root relative sources paths; reuse existing assets, do not copy PNGs.",
+  "servedModelPolicy": "Retain actual Sonnet/Opus receipt; no relabeling or expert acceptance implied by saved generation model.",
+  "rows": [
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q82",
+      "shortId": "60AM82",
+      "group": "EXISTING_SIX_REVIEW_CANDIDATES",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://mn.gov/mnddc/parallels2/two/003.html",
+          "issuer": "Minnesota Governor's Council on Developmental Disabilities・歴史資料",
+          "evidence": "デンマークで1959年の法にnormalization原理が盛り込まれたと記す。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        },
+        {
+          "url": "https://www.oregon.gov/odhs/agency/Committee-Documents/silc-history-philosophy.pdf",
+          "issuer": "Oregon State Independent Living Council・運動史",
+          "evidence": "バークレーの自立生活センターは1970年代前半に成立し、1975年にはカリフォルニア州知事が訪問。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        },
+        {
+          "url": "https://www.un.org/development/desa/disabilities/the-international-year-of-disabled-persons-1981.html",
+          "issuer": "United Nations・International Year of Disabled Persons",
+          "evidence": "国連総会は1981年を国際障害者年と宣言した。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-am-p40-66da8151dfa7.png",
+        "sha256": "66da8151dfa760f8547e6565e5bf2173f83f348dc33693a6b08b34ed91de6d45",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 40,
+        "bytes": 68124,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "年代順の5肢を州政府資料・国連資料で支持。個別の追加原典要求は記録なし。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "回答ページPNGは提供されておらず、正答キーはSOURCE-PACKETの文字情報に依拠している。",
+        "各取り組みの開始年代(1950年代、1960~70年代、1981年)は一般的な知識に基づく記載であり、一次資料での確認は未実施。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "9c0aebd1a1663237945a7725484f6145b43acc0a7dbe2300de2573a57265da0f",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2025-annual-am-q82",
+        "edition": 60,
+        "year": 2025,
+        "session": "am",
+        "number": 82,
+        "sourcePacketIdentity": "rigaku-60-am-82",
+        "canonicalIdentity": "rigaku-ryohoshi-2025-annual-am-q82",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "4",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ],
+        "requiredSelections": 1,
+        "rawOfficialQuestionTextBlock": " 82 取り組みが始まった時期の年代順で正しいのはどれか。\n　①国際障害者年、②ノーマライゼーション、③自立生活運動〈IL 運動〉\n1．①→②→③\n2．①→③→②\n3．②→①→③\n4．②→③→①\n5．③→①→②\n\nDKIX-0８-前H-41\n　　　　\n35\n",
+        "sharedCase": null,
+        "physicalPage": 40,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+            "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+            "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+          }
+        ],
+        "questionImage": "sources/2025-question-am-p40-66da8151dfa7.png",
+        "answerImage": "sources/2025-answer-p01-6cac1557105f.png",
+        "figureImage": null,
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "3feeeb593f6d4d62e09057dd7910f44e6841accb2384a5fa6d3f1f9d6853eec9",
+        "sourcePacketSha256": "bc3cc0ec7323725d38e5e9fdfd800e8b175f950055da078dcf6158f68759421d",
+        "originalExplanationsDigest": "9e93d2e5cf31431e8d98dc461a564e778d4910aabc7633d7293a634433476301",
+        "savedTask": "author-rigaku-60-am-q081-088-new",
+        "sourceTask": "rigaku-60-am-q081-088-new",
+        "savedFilename": "STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 8,
+            "outputTokens": 6013,
+            "cacheReadInputTokens": 26445,
+            "cacheCreationInputTokens": 13172,
+            "webSearchRequests": 0,
+            "costUSD": 0.1154785,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 416,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "f2e4eede5634b97cac071bcaafd06c1bb55c9aa814547c64668527b421c3caa8",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "source identity disagrees with official packet session"
+        ],
+        "oldNeedsReviewReasons": [
+          "回答ページPNGは提供されておらず、正答キーはSOURCE-PACKETの文字情報に依拠している。",
+          "各取り組みの開始年代(1950年代、1960~70年代、1981年)は一般的な知識に基づく記載であり、一次資料での確認は未実施。"
+        ],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q94",
+      "shortId": "60AM94",
+      "group": "EXISTING_SIX_REVIEW_CANDIDATES",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/nessho2023.pdf",
+          "issuer": "日本皮膚科学会・熱傷診療ガイドライン第3版",
+          "evidence": "解説2.1は成人20% TBSA以上に輸液療法を行うと明記。15%以上は初期輸液を必要と考えるとの説明もある。",
+          "choices": [
+            "エ"
+          ]
+        },
+        {
+          "url": "https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/1380006822_3.pdf",
+          "issuer": "日本皮膚科学会・熱傷診療ガイドライン2011",
+          "evidence": "成人15% TBSA程度以上の輸液療法を推奨。20%は両版の閾値を満たす。",
+          "choices": [
+            "エ"
+          ]
+        },
+        {
+          "url": "https://www.jsbi-burn.org/members/guideline/pdf/guideline3.pdf",
+          "issuer": "日本熱傷学会・熱傷診療ガイドライン第3版",
+          "evidence": "CQ8-3は化学損傷への可及的早期の洗浄を強く推奨。CQ5冒頭は広範囲熱傷の壊死組織の早期除去・創閉鎖を求める。",
+          "choices": [
+            "ア",
+            "オ"
+          ]
+        },
+        {
+          "url": "https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/nessho2023.pdf",
+          "issuer": "日本皮膚科学会・熱傷診療ガイドライン第3版",
+          "evidence": "CQ2はⅡ度熱傷にドレッシング材の使用を提案。受傷後早期に一律不使用とはいえない。",
+          "choices": [
+            "ウ"
+          ]
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34117171/",
+          "issuer": "Martini et al. 2021・重症熱傷成人の前向き観察研究",
+          "evidence": "重症熱傷成人の入院後早期の筋蛋白分解を観察し、重症熱傷による異化の亢進を報告。",
+          "choices": [
+            "イ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-am-p44-ff880dedf26e.png",
+        "sha256": "ff880dedf26e396af85b54faf5bc8aac340df087bac7ad1e93007a3dd94197fe",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 44,
+        "bytes": 93490,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "5肢を熱傷学会/皮膚科学会指針・原著で支持。成人20%と旧15%閾値を区別した有限修正済み。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "初期輸液の適応となる熱傷面積の閾値（成人でⅡ度以上、約15%）は専門的な数値のため、追加の一次文献（熱傷診療ガイドライン等）で確認が必要です。",
+        "創傷被覆材と早期手術に関する記述は、診療ガイドラインでの確認が必要です。",
+        "正答ページの画像は提供ファイルに含まれていないため、キーはパケット記載の公式キー文字列に依拠しています。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "e6e978a840c4d65263f72afc001795878e888e32ec86738649d844bdcf380c14",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2025-annual-am-q94",
+        "edition": 60,
+        "year": 2025,
+        "session": "am",
+        "number": 94,
+        "sourcePacketIdentity": "rigaku-60-am-94",
+        "canonicalIdentity": "rigaku-ryohoshi-2025-annual-am-q94",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "4",
+        "oneBasedAcceptedChoices": [
+          "4"
+        ],
+        "requiredSelections": 1,
+        "rawOfficialQuestionTextBlock": " 94 成人の熱傷で正しいのはどれか。\n1．化学損傷には洗浄は避ける。\n2．重症熱傷では蛋白質の異化は低下する。\n3．受傷後早期には創傷被覆材は使用しない。\n4．Ⅱ度20 % の熱傷には初期輸液が行われる。\n5．広範囲熱傷の壊死組織に対して早期手術は行わない。\n\nDKIX-0８-前H-45\n　　　　\n39\n",
+        "sharedCase": null,
+        "physicalPage": 44,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+            "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+            "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+          }
+        ],
+        "questionImage": "sources/2025-question-am-p44-ff880dedf26e.png",
+        "answerImage": "sources/2025-answer-p01-6cac1557105f.png",
+        "figureImage": null,
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "e554227fffa1edc48d850e096ebcc5e63290f8115ec2e0c371aaad7d0d016d4f",
+        "sourcePacketSha256": "55ef35ca8b47e1d39f8c7267c7894deefc1ff705a936c78f76f57fa455a45996",
+        "originalExplanationsDigest": "5a41e0d920fc967ae46df2a6d3ae847d998e805571e22822cdb024d9e25788b2",
+        "savedTask": "author-rigaku-60-am-q089-096-new",
+        "sourceTask": "rigaku-60-am-q089-096-new",
+        "savedFilename": "STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 6,
+            "outputTokens": 6511,
+            "cacheReadInputTokens": 12607,
+            "cacheCreationInputTokens": 13089,
+            "webSearchRequests": 0,
+            "costUSD": 0.1187387,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 302,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "5f42283a2cb5c0cabf6bf87d13003e9b0c719ee38ea334e7200d5ddfb0878583",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "source identity disagrees with official packet session"
+        ],
+        "oldNeedsReviewReasons": [
+          "初期輸液の適応となる熱傷面積の閾値（成人でⅡ度以上、約15%）は専門的な数値のため、追加の一次文献（熱傷診療ガイドライン等）で確認が必要です。",
+          "創傷被覆材と早期手術に関する記述は、診療ガイドラインでの確認が必要です。",
+          "正答ページの画像は提供ファイルに含まれていないため、キーはパケット記載の公式キー文字列に依拠しています。"
+        ],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q21",
+      "shortId": "60PM21",
+      "group": "EXISTING_SIX_REVIEW_CANDIDATES",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK310947/",
+          "issuer": "WHO, Community-Based Rehabilitation: CBR Guidelines (2010), Management",
+          "evidence": "CBR matrixはHealth, Education, Livelihood, Social, Empowermentの5構成要素。残る3選択肢はこの列挙にない。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+        "sha256": "bfa96e9e1be1cdc1ac1d1ee9e42f28b619a34d56d17ca6283ef68d3c7b46414a",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 21,
+        "bytes": 101867,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "WHOのCBR構成要素一覧で5肢を支持。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "公式解答PDFの画像ページが供給されていないため、キーはパケット記載の公式キー文字列のみで確認した。",
+        "CBRマトリクスの構成要素（WHO CBRガイドライン）は、解説作成時に一次資料で再確認していない。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "eb035e885a560f096e75b48966d5f657dccbad9485803167e445820832bd6e70",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2025-annual-pm-q21",
+        "edition": 60,
+        "year": 2025,
+        "session": "pm",
+        "number": 21,
+        "sourcePacketIdentity": "rigaku-60-pm-21",
+        "canonicalIdentity": "rigaku-ryohoshi-2025-annual-pm-q21",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "14",
+        "oneBasedAcceptedChoices": [
+          "1",
+          "4"
+        ],
+        "requiredSelections": 2,
+        "rawOfficialQuestionTextBlock": " 21 CBR マトリクスに含まれる項目はどれか。2 つ選べ。\n1．教　育\n2．人生の質\n3．バリアフリー\n4．エンパワメント\n5．ユニバーサルデザイン\n",
+        "sharedCase": null,
+        "physicalPage": 21,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+            "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+            "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+          }
+        ],
+        "questionImage": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+        "answerImage": "sources/2025-answer-p01-6cac1557105f.png",
+        "figureImage": null,
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "db86650ff01e63df01600c492b01a21ce36f5555185fc79831506ad4b53acbef",
+        "sourcePacketSha256": "747ce20dec65b004ea3c7403f11853c4e9cfdd25d77dcee1af2e3db8d1dc2033",
+        "originalExplanationsDigest": "fa535292a269458fb90f801712d0682ce457e12dc7bece1a40db117ffc0700d2",
+        "savedTask": "author-rigaku-60-pm-q021-028-new",
+        "sourceTask": "rigaku-60-pm-q021-028-new",
+        "savedFilename": "OFFLINE-STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 8,
+            "outputTokens": 6532,
+            "cacheReadInputTokens": 27790,
+            "cacheCreationInputTokens": 12390,
+            "webSearchRequests": 0,
+            "costUSD": 0.117675,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 498,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "eb0702c4e01a77f1f1add2c0b720629d159f052ffefbcf24712657f2cde58280",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "source identity disagrees with official packet session"
+        ],
+        "oldNeedsReviewReasons": [
+          "公式解答PDFの画像ページが供給されていないため、キーはパケット記載の公式キー文字列のみで確認した。",
+          "CBRマトリクスの構成要素（WHO CBRガイドライン）は、解説作成時に一次資料で再確認していない。"
+        ],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q22",
+      "shortId": "60PM22",
+      "group": "EXISTING_SIX_REVIEW_CANDIDATES",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/content/000764680.pdf",
+          "issuer": "厚生労働省・居宅サービス計画書標準様式及び記載要領",
+          "evidence": "第1表に総合的な援助の方針、第2表に生活全般の解決すべき課題、第3表に週間サービス計画、第4表にサービス担当者会議の要点、第5表に居宅介護支援経過。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+        "sha256": "bfa96e9e1be1cdc1ac1d1ee9e42f28b619a34d56d17ca6283ef68d3c7b46414a",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 21,
+        "bytes": 101867,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "厚労省の標準様式第1〜5表で5肢を支持。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "公式解答PDFの画像ページが供給されていないため、キーはパケット記載の公式キー文字列のみで確認した。",
+        "ケアプラン各表の記載項目（標準様式）は、解説作成時に一次資料で再確認していない。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "1e0aa285a409552d3cfe6e000660eae999d066d29dd11e0439446f472ab9ecd7",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2025-annual-pm-q22",
+        "edition": 60,
+        "year": 2025,
+        "session": "pm",
+        "number": 22,
+        "sourcePacketIdentity": "rigaku-60-pm-22",
+        "canonicalIdentity": "rigaku-ryohoshi-2025-annual-pm-q22",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "1",
+        "oneBasedAcceptedChoices": [
+          "1"
+        ],
+        "requiredSelections": 1,
+        "rawOfficialQuestionTextBlock": " 22 要介護者を対象としたケアプラン第1 表に記載される項目はどれか。\n1．総合的な援助の方針\n2．生活全般の解決すべき課題〈ニーズ〉\n3．週間サービスの内容\n4．サービス担当者会議の要点\n5．支援経過\n\nDKIX-0８-後H-22\n　　　　\n16\n",
+        "sharedCase": null,
+        "physicalPage": 21,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+            "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+            "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+          }
+        ],
+        "questionImage": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+        "answerImage": "sources/2025-answer-p01-6cac1557105f.png",
+        "figureImage": null,
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "db86650ff01e63df01600c492b01a21ce36f5555185fc79831506ad4b53acbef",
+        "sourcePacketSha256": "747ce20dec65b004ea3c7403f11853c4e9cfdd25d77dcee1af2e3db8d1dc2033",
+        "originalExplanationsDigest": "cc0327d2e272bb1bd2278c3d66e305a58db43d19e47ceee724a4c05a298b1290",
+        "savedTask": "author-rigaku-60-pm-q021-028-new",
+        "sourceTask": "rigaku-60-pm-q021-028-new",
+        "savedFilename": "OFFLINE-STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 8,
+            "outputTokens": 6532,
+            "cacheReadInputTokens": 27790,
+            "cacheCreationInputTokens": 12390,
+            "webSearchRequests": 0,
+            "costUSD": 0.117675,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 498,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "eb0702c4e01a77f1f1add2c0b720629d159f052ffefbcf24712657f2cde58280",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "source identity disagrees with official packet session"
+        ],
+        "oldNeedsReviewReasons": [
+          "公式解答PDFの画像ページが供給されていないため、キーはパケット記載の公式キー文字列のみで確認した。",
+          "ケアプラン各表の記載項目（標準様式）は、解説作成時に一次資料で再確認していない。"
+        ],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q30",
+      "shortId": "60PM30",
+      "group": "EXISTING_SIX_REVIEW_CANDIDATES",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "supported",
+        "イ": "supported",
+        "ウ": "supported",
+        "エ": "supported",
+        "オ": "supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-b.json",
+      "qaSha256": "1d4b1d619056e66ccdafeb9153be32e1d64cb7850dcb93f970b8abab57885890",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.qualitest.jp/qol/sf36.html",
+          "sourceEvidence": "日本語版尺度提供元の「SF-36の構成」は8尺度を列挙し、活力・体の痛み・社会生活機能・全体的健康感を含むが栄養状態を含まない。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p24-fe674983eb45.png",
+        "sha256": "fe674983eb458cf4ccf12baf790cff8a66082d88bcd57db6dc56504fa532d966",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 24,
+        "bytes": 70228,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "日本語版提供元の8下位尺度一覧で5肢を支持。原マニュアル全文の新規取得はしていない。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "公式解答PNG（answer page PNG）は supplied files に含まれていない。key はパケットのリテラルに依拠している。",
+        "SF-36 の8下位尺度名は一般的な知識に基づいて記載した。一次資料（公式マニュアル）での確認は未実施。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "0511c1edef11a0648657692c36564510ec124a3362bacc71357cba1ff8a47c54",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2025-annual-pm-q30",
+        "edition": 60,
+        "year": 2025,
+        "session": "pm",
+        "number": 30,
+        "sourcePacketIdentity": "rigaku-60-pm-30",
+        "canonicalIdentity": "rigaku-ryohoshi-2025-annual-pm-q30",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "2",
+        "oneBasedAcceptedChoices": [
+          "2"
+        ],
+        "requiredSelections": 1,
+        "rawOfficialQuestionTextBlock": " 30 SF-36 の下位尺度に含まれないのはどれか。\n1．活　力\n2．栄養状態\n3．体の痛み\n4．社会生活機能\n5．全体的健康観\n",
+        "sharedCase": null,
+        "physicalPage": 24,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+            "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+            "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+          }
+        ],
+        "questionImage": "sources/2025-question-pm-p24-fe674983eb45.png",
+        "answerImage": "sources/2025-answer-p01-6cac1557105f.png",
+        "figureImage": null,
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "c2b3f5eacffc64c73bdae5d019491432a0f7cbc145af160ad77a5f94e5e7fba0",
+        "sourcePacketSha256": "7304ae3df97af247059990052753fa2e20eea07959cf95baacff6d4250888129",
+        "originalExplanationsDigest": "e567ad424e9f8f9bfe670c858077d7624a0637ca5447e4d16839d8dc03095aa2",
+        "savedTask": "author-rigaku-60-pm-q029-036-new",
+        "sourceTask": "rigaku-60-pm-q029-036-new",
+        "savedFilename": "STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 6,
+            "outputTokens": 6173,
+            "cacheReadInputTokens": 12229,
+            "cacheCreationInputTokens": 12684,
+            "webSearchRequests": 0,
+            "costUSD": 0.11370090000000001,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 656,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "7aafb42f14765d5f22c03fbb037af2e4026fd41daa951ea0d3ab0eeb912ae0eb",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "source identity disagrees with official packet session"
+        ],
+        "oldNeedsReviewReasons": [
+          "公式解答PNG（answer page PNG）は supplied files に含まれていない。key はパケットのリテラルに依拠している。",
+          "SF-36 の8下位尺度名は一般的な知識に基づいて記載した。一次資料（公式マニュアル）での確認は未実施。"
+        ],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+      "shortId": "61PM26",
+      "group": "EXISTING_SIX_REVIEW_CANDIDATES",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [
+        {
+          "number": "1",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "30/(30+70)=0.30は感度。LR+ではない。"
+        },
+        {
+          "number": "2",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "LR+算式からは0.42にならない。表からどの算式でも導けないという広すぎる旧表現は限定。"
+        },
+        {
+          "number": "3",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "LR+は0.75で0.50ではない。表の総数等から0.50を導けるため広い否定を限定。"
+        },
+        {
+          "number": "4",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "60/(40+60)=0.60は特異度。"
+        },
+        {
+          "number": "5",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "(30/100)/(40/100)=0.75。選択肢5・公式キー一致。"
+        }
+      ],
+      "qaPath": "qa/helper-pt61-review.json",
+      "qaSha256": "c2d0e92a1cbafdb54740ac5a851ad6dc9e270f49c2fdbe6ee031229a2c21e644",
+      "sourcesAsRecorded": [
+        {
+          "id": "tableArithmetic",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+          "type": "原表に基づく再計算",
+          "scope": "TP30/FP40/FN70/TN60、感度0.30、特異度0.60、LR+=0.75。",
+          "locator": "PM26 original official table"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-pm-p22-173b5987b6b0.png",
+        "sha256": "173b5987b6b06a8b8e25582f45ad969ef1f566b6d9ee2784a1b2e82352df9dbc",
+        "year": 2026,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 22,
+        "bytes": 107773,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2026-question-pm-p22-173b5987b6b0.png",
+        "sha256": "173b5987b6b06a8b8e25582f45ad969ef1f566b6d9ee2784a1b2e82352df9dbc",
+        "year": 2026,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 22,
+        "bytes": 107773,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "原表の30/40/70/60をPNGと照合し、Pythonの有理数で独立再計算。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+          "sha256": "3b9293fdaa366011c232f607e0b98d74d1a1f993814c0033c9c1fbc0c31dcaf3"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        }
+      ],
+      "remainingRequirement": "原表30/40/70/60とLR+=0.75を5肢それぞれ再計算済み。肢2/3の否定を計算対象へ限定済み。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA",
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "解答PNGは供給されていません。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "cf2192433929dd8f6cb91866e0e7851f003616e55d1721f44f844b2a9add7b70",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+        "edition": 61,
+        "year": 2026,
+        "session": "pm",
+        "number": 26,
+        "sourcePacketIdentity": "rigaku-61-pm-26",
+        "canonicalIdentity": "rigaku-ryohoshi-2026-annual-pm-q26",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "5",
+        "oneBasedAcceptedChoices": [
+          "5"
+        ],
+        "requiredSelections": 1,
+        "rawOfficialQuestionTextBlock": " 26 疾患の症状と検査結果を図に示す。\n　陽性尤度比で正しいのはどれか。\n症状あり\n症状なし\n検査陽性\n30 人\n40 人\n検査陰性\n70 人\n60 人\n1．0.30\n2．0.42\n3．0.50\n4．0.60\n5．0.75\n",
+        "sharedCase": null,
+        "physicalPage": 22,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+            "sha256": "3b9293fdaa366011c232f607e0b98d74d1a1f993814c0033c9c1fbc0c31dcaf3"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+            "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+          }
+        ],
+        "questionImage": "sources/2026-question-pm-p22-173b5987b6b0.png",
+        "answerImage": "sources/2026-answer-p01-81abb0786971.png",
+        "figureImage": "sources/2026-question-pm-p22-173b5987b6b0.png",
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "222f6519e952c2a15e407b95bbed05b6b04a2f6718f2a738b7a2ba4ddc8dd399",
+        "sourcePacketSha256": "38058c84e68263daf3694b95528c253dcdc0f704b6610f394d36d0c2cc73902b",
+        "originalExplanationsDigest": "a90d5227a78e328e882bfb7176d02823bdd25c09f7fb0fc8f3458ae8826181a5",
+        "savedTask": "author-rigaku-61-pm-q021-028-new",
+        "sourceTask": "rigaku-61-pm-q021-028-new",
+        "savedFilename": "OFFLINE-STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 6,
+            "outputTokens": 5457,
+            "cacheReadInputTokens": 13827,
+            "cacheCreationInputTokens": 11357,
+            "webSearchRequests": 0,
+            "costUSD": 0.1013927,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 422,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "8dcf8b43d5b61dc7da95646dcdc33420dc69f010ee793e61bdce9248cfa94755",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "figure/supplement requires local original-page QA",
+          "source identity disagrees with official packet session"
+        ],
+        "oldNeedsReviewReasons": [
+          "解答PNGは供給されていません。"
+        ],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q4",
+      "shortId": "61AM4",
+      "group": "ADDITIONAL_BOUNDED_REVIEW_CANDIDATE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [
+        {
+          "number": "1",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "scp"
+          ],
+          "note": "SCP原尺度ガイドの3項目に一致。"
+        },
+        {
+          "number": "2",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "slta",
+            "scp"
+          ],
+          "note": "失語症評価を作成学会資料で確認。症例文に失語の記載がないことと、右病変から失語を絶対否定することを区別。"
+        },
+        {
+          "number": "3",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "tmt",
+            "scp"
+          ],
+          "note": "注意・処理速度等を作成学会資料で確認。姿勢の押し出しはSCPの評価内容。"
+        },
+        {
+          "number": "4",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "wais",
+            "scp"
+          ],
+          "note": "成人認知能力検査を原出版社資料で確認。"
+        },
+        {
+          "number": "5",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "wcst",
+            "scp"
+          ],
+          "note": "遂行機能・保続・セット変換を原出版社資料で確認。"
+        }
+      ],
+      "qaPath": "qa/helper-pt61-review.json",
+      "qaSha256": "c2d0e92a1cbafdb54740ac5a851ad6dc9e270f49c2fdbe6ee031229a2c21e644",
+      "sourcesAsRecorded": [
+        {
+          "id": "scp",
+          "url": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+          "type": "rehabilitation hospital original instrument guide",
+          "scope": "姿勢、非麻痺側上下肢の外転伸展、他動修正への抵抗を座位立位で評価。",
+          "localReceipts": [
+            {
+              "id": "scp",
+              "url": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+              "retrievedAt": "2026-10-11T07:22:39.046746+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "status": 200,
+              "finalUrl": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+              "contentType": "text/html; charset=UTF-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\scp.html",
+              "sha256": "1de9caa4ca57f8ad4f2b97ada170356868aa9cc6013f524cebb696719358d2b5"
+            }
+          ]
+        },
+        {
+          "id": "slta",
+          "url": "https://www.higherbrain.or.jp/publication/test/slta/",
+          "type": "検査作成学会の原ガイド",
+          "scope": "失語症評価の目的。",
+          "localReceipts": [
+            {
+              "id": "slta",
+              "url": "https://www.higherbrain.or.jp/publication/test/slta/",
+              "retrievedAt": "2026-10-11T07:36:40.835763+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.higherbrain.or.jp/publication/test/slta/",
+              "contentType": "text/html; charset=UTF-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\slta.html",
+              "sha256": "c35958b6be88b1865b6f80da08debde8f930adaa099329a5b0c33cc9323428f4"
+            }
+          ]
+        },
+        {
+          "id": "tmt",
+          "url": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+          "type": "検査作成学会の原ガイド",
+          "scope": "視覚性・空間性注意、処理速度など。",
+          "localReceipts": [
+            {
+              "id": "tmt",
+              "url": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+              "retrievedAt": "2026-10-11T07:36:40.835763+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+              "contentType": "text/html; charset=UTF-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\tmt.html",
+              "sha256": "9f633e6c13c00eba4569fe232d44a4c893fe4fc5fdeb1d0171fffedd70b9b336"
+            }
+          ]
+        },
+        {
+          "id": "wais",
+          "url": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+          "type": "原出版社発行資料",
+          "scope": "成人の認知能力・知能検査。米国版資料を日本版の全実施手順と数えない。",
+          "locator": "physical pages 2–3",
+          "localReceipts": [
+            {
+              "id": "wais",
+              "url": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+              "retrievedAt": "2026-10-11T07:34:34.594744+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+              "contentType": "application/pdf",
+              "pages": 6,
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\wais.pdf",
+              "sha256": "d3aa1b64689ae953d4e555cff3638ddc159c1450f04e16ef2091345542613ee8"
+            }
+          ]
+        },
+        {
+          "id": "wcst",
+          "url": "https://www.parinc.com/products/WCST",
+          "type": "原出版社発行資料",
+          "scope": "保続、抽象推論、遂行機能・セット変換。",
+          "localReceipts": [
+            {
+              "id": "wcst",
+              "url": "https://www.parinc.com/products/WCST",
+              "retrievedAt": "2026-10-11T07:34:35.292350+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.parinc.com/products/WCST",
+              "contentType": "text/html; charset=utf-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\wcst.html",
+              "sha256": "e94a9d99d45687b3b657889905d913ce710521e53a8c913791d2610d54aa930f"
+            }
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-am-p10-d59634645a40.png",
+        "sha256": "d59634645a403d610e350d2baef6c2144115e20db145d15f71bf10ef2a0a718f",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 10,
+        "bytes": 174401,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2026-question-am-p10-d59634645a40.png",
+        "sha256": "d59634645a403d610e350d2baef6c2144115e20db145d15f71bf10ef2a0a718f",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 10,
+        "bytes": 174401,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "共通症例に右上下肢で押す、左傾斜、修正への抵抗が印刷される。SCPの3評価内容と対応。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+          "sha256": "1ceb1e7d6a8f5f6c5c7fbadce400a14d2fac590ebc766a308bf59b87bcfd8ce4"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_02.pdf",
+          "sha256": "06bb8d5f729500efd573331ddefd70334aff53977072154d30c7f69943da0a31"
+        }
+      ],
+      "remainingRequirement": "専門受入れ・独立公開査読のreceipt。症例からの優先順位判断。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "ce1ef42ce2c536a6d5e7da871b6878318c4acf9e5b624b21be9d26fc0600fe24",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2026-annual-am-q4",
+        "edition": 61,
+        "year": 2026,
+        "session": "am",
+        "number": 4,
+        "sourcePacketIdentity": "rigaku-ryohoshi-61-am-4",
+        "canonicalIdentity": "rigaku-ryohoshi-2026-annual-am-q4",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "1",
+        "oneBasedAcceptedChoices": [
+          "1"
+        ],
+        "requiredSelections": 1,
+        "rawOfficialQuestionTextBlock": "4 理学療法を行う上で最も優先する検査はどれか。\n1．SCP\n2．SLTA\n3．TMT\n4．WAIS-Ⅳ\n5．WCST\n\nDKIX-0８-前H-11\n　　　　\n5\n \n",
+        "sharedCase": "次の文により、4、5の問いに答えよ。\n70歳の男性。右利き。右脳出血による左片麻痺。発症後2週。運動麻痺は左上下肢ともBrunnstrom法ステージⅢ、感覚障害は中等度。座位では、右上下肢で座面や床面を押し、図のような姿勢となる。転倒の危険があり、理学療法士が正中位に修正を試みるが抵抗する。平行棒内立位でも同様に右上下肢で押すため身体は左に傾斜し、立位保持要介助である。",
+        "physicalPage": 10,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+            "sha256": "1ceb1e7d6a8f5f6c5c7fbadce400a14d2fac590ebc766a308bf59b87bcfd8ce4"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+            "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+          },
+          {
+            "role": "officialSupplementPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_02.pdf",
+            "sha256": "06bb8d5f729500efd573331ddefd70334aff53977072154d30c7f69943da0a31"
+          }
+        ],
+        "questionImage": "sources/2026-question-am-p10-d59634645a40.png",
+        "answerImage": "sources/2026-answer-p01-81abb0786971.png",
+        "figureImage": "sources/2026-question-am-p10-d59634645a40.png",
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "fffba583b6d23107439e3dd3cca6144ee20c4c6504188c733490e669b905dde8",
+        "sourcePacketSha256": "b1a0d4f718bcb3d4ea82e47a765cf0e9d84017c49b624bf2838ccc08b92762ab",
+        "originalExplanationsDigest": "46fd70c7477495e39944716d1c298362ef68e7889320a63fe021118e21d09a9e",
+        "savedTask": "author-rigaku-61-am-q001-006-original-heading-first-draft",
+        "sourceTask": "rigaku-61-am-q001-006-original-heading-first-draft",
+        "savedFilename": "STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 6,
+            "outputTokens": 6024,
+            "cacheReadInputTokens": 15285,
+            "cacheCreationInputTokens": 19242,
+            "webSearchRequests": 0,
+            "costUSD": 0.1387485,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 1476,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "4bf710211c0db0caae4f31722efec1f7a21d074088bed7b1a4c5cbbbd955c150",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "figure/supplement requires local original-page QA"
+        ],
+        "oldNeedsReviewReasons": [],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      },
+      "followupChoiceChecks": [
+        {
+          "choice": "ア",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "scp",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "イ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "slta",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "ウ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "tmt",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "エ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "wais",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        },
+        {
+          "choice": "オ",
+          "status": "PRIMARY_SUPPORTED_PURPOSE_WITH_OFFICIAL_CASE",
+          "sourceIds": [
+            "wcst",
+            "scp"
+          ],
+          "scope": "検査目的と公式症例の対応。尺度のcutoffや全実施手順を受入れた記録ではない。"
+        }
+      ],
+      "followupQaPath": "qa/incremental-source-review.json"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q11",
+      "shortId": "61AM11",
+      "group": "ADDITIONAL_BOUNDED_REVIEW_CANDIDATE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [
+        {
+          "number": "1",
+          "status": "VERIFIED_FINITE_CORRECTION",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "頭頸部過伸展を避ける。腹臥位は気道確保の回旋が必要で、完全な正中位を一律に指示しない。"
+        },
+        {
+          "number": "2",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "生理的屈曲を保持する基準と照合。過伸展肢位を推奨しない。"
+        },
+        {
+          "number": "3",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "肩を前方に丸め手を顔・正中へ近づける腹臥位手順を直接確認。"
+        },
+        {
+          "number": "4",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "上肢内転・屈曲でW肢位を避ける手順を直接確認。"
+        },
+        {
+          "number": "5",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "股・骨盤軽屈曲と下肢整列、過剰な外転外旋を防ぐ基準を確認。中間位の数値角度までは示さない。"
+        }
+      ],
+      "qaPath": "qa/helper-pt61-review.json",
+      "qaSha256": "c2d0e92a1cbafdb54740ac5a851ad6dc9e270f49c2fdbe6ee031229a2c21e644",
+      "sourcesAsRecorded": [
+        {
+          "id": "neonatal",
+          "url": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+          "type": "NWNODN病院ネットワーク発行の臨床ガイド",
+          "scope": "NICU内の監視下での生理的屈曲・肩前方・四肢内転支持・腹臥位気道確保。家庭睡眠への適用をしない。",
+          "locator": "physical page 3 core principles / physical pages 10–11 prone guide",
+          "localReceipts": [
+            {
+              "id": "neonatal",
+              "url": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+              "retrievedAt": "2026-10-11T07:34:33.630017+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+              "contentType": "application/pdf",
+              "pages": 30,
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\neonatal.pdf",
+              "sha256": "8ad8608080ce9f0b14c6a10b4a38c9739e7428914c6b23cf4531496460661d83"
+            }
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-am-p15-9a30cdfd723d.png",
+        "sha256": "9a30cdfd723deaed6aa99af866f7ab083044613aca6fd66a1a8e2fa5618ab071",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 15,
+        "bytes": 115396,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2026-question-am-p15-9a30cdfd723d.png",
+        "sha256": "9a30cdfd723deaed6aa99af866f7ab083044613aca6fd66a1a8e2fa5618ab071",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 15,
+        "bytes": 115396,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "監視下NICU腹臥位の図と症例条件を保持。家庭での睡眠姿勢へ一般化しない。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+          "sha256": "1ceb1e7d6a8f5f6c5c7fbadce400a14d2fac590ebc766a308bf59b87bcfd8ce4"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_02.pdf",
+          "sha256": "06bb8d5f729500efd573331ddefd70334aff53977072154d30c7f69943da0a31"
+        }
+      ],
+      "remainingRequirement": "専門受入れ・独立公開査読のreceipt。肢5の中間位と原ガイドの配列支持の対応の判断。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true,
+      "candidateDigest": "d97b4e8cb561455742eefbab2b4ba08584b633327cc2274ce24191ab1ad553e1",
+      "fullSavedSourceReceipt": {
+        "id": "rigaku-ryohoshi-2026-annual-am-q11",
+        "edition": 61,
+        "year": 2026,
+        "session": "am",
+        "number": 11,
+        "sourcePacketIdentity": "rigaku-ryohoshi-61-am-11",
+        "canonicalIdentity": "rigaku-ryohoshi-2026-annual-am-q11",
+        "editionAndSessionUnchanged": true,
+        "officialKeyCellLiteral": "35",
+        "oneBasedAcceptedChoices": [
+          "3",
+          "5"
+        ],
+        "requiredSelections": 2,
+        "rawOfficialQuestionTextBlock": " 11 NICU に入院中の低出生体重児。在胎週数30 週。腹臥位での姿勢を図に示す。\n　この児に対する適切なポジショニングはどれか。2 つ選べ。\n1．頭部伸展位\n2．体幹伸展位\n3．肩甲帯前方突出位\n4．肩関節外転位\n5．股関節内外転中間位\n\nDKIX-0８-前H-16\n　　　　\n10\n",
+        "sharedCase": null,
+        "physicalPage": 15,
+        "officialPdfs": [
+          {
+            "role": "officialQuestionPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+            "sha256": "1ceb1e7d6a8f5f6c5c7fbadce400a14d2fac590ebc766a308bf59b87bcfd8ce4"
+          },
+          {
+            "role": "officialAnswerPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+            "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+          },
+          {
+            "role": "officialSupplementPdf",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_02.pdf",
+            "sha256": "06bb8d5f729500efd573331ddefd70334aff53977072154d30c7f69943da0a31"
+          }
+        ],
+        "questionImage": "sources/2026-question-am-p15-9a30cdfd723d.png",
+        "answerImage": "sources/2026-answer-p01-81abb0786971.png",
+        "figureImage": "sources/2026-question-am-p15-9a30cdfd723d.png",
+        "falseAdjacentFigureCueExcluded": false,
+        "choiceRepresentation": "Printed text; PDF line breaks and spacing are normalized.",
+        "sourceFiveChoiceLiteralMatches": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        },
+        "literalCorrection": null,
+        "savedDraftSha256": "890663f4f84088962e78a84cb918f260f9792ad211ef8c5cb7544a6d29bd1255",
+        "sourcePacketSha256": "215877c2d36cbe9967b4ad6b2e46782eed633691ebaa458c4872e593a96143e7",
+        "originalExplanationsDigest": "cc8437db5e1d130993b95e1554760d28c9107bf5aa08c77ac9dbae20b2f69c4e",
+        "savedTask": "author-rigaku-61-am-q007-012-remaining-source-isolated-uncreated",
+        "sourceTask": "rigaku-61-am-q007-012-remaining-source-isolated-uncreated",
+        "savedFilename": "STRUCTURED-RESULT.json",
+        "savedModel": "claude-sonnet-5-5",
+        "actualModelUsage": {
+          "claude-sonnet-5-5": {
+            "inputTokens": 6,
+            "outputTokens": 2641,
+            "cacheReadInputTokens": 13965,
+            "cacheCreationInputTokens": 11963,
+            "webSearchRequests": 0,
+            "costUSD": 0.0756705,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 161,
+            "canonicalModel": "claude-sonnet-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "provider": "firstParty",
+        "receiptSha256": "0968291985aff58030f13c9fa5e63c6e49750341f0a50357a398231e91a17672",
+        "servedModelMatches": true,
+        "regenerationCount": 0,
+        "oldHoldReasons": [
+          "figure/supplement requires local original-page QA"
+        ],
+        "oldNeedsReviewReasons": [],
+        "priorHoldsUnchanged": true,
+        "publicGo": false,
+        "independentContentAcceptance": null
+      },
+      "followupChoiceChecks": [
+        {
+          "choice": "ア",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "イ",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "ウ",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "エ",
+          "status": "PRIMARY_SUPPORTED_BOUNDED_POSITIONING",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "physical page 11; individualized considerations page 12"
+        },
+        {
+          "choice": "オ",
+          "status": "EXAM_CONTEXT_INFERENCE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "scope": "NICU監視下の支持。中間位の数値角度を指定せず、選択肢5への対応は専門受入れ判断を要する。"
+        }
+      ],
+      "followupQaPath": "qa/incremental-source-review.json"
+    }
+  ],
+  "assets": [
+    {
+      "path": "sources/2025-answer-p01-6cac1557105f.png",
+      "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+      "year": 2025,
+      "role": "answer",
+      "session": "am-and-pm",
+      "physicalPage": 1,
+      "bytes": 284080,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2025-question-am-p40-66da8151dfa7.png",
+      "sha256": "66da8151dfa760f8547e6565e5bf2173f83f348dc33693a6b08b34ed91de6d45",
+      "year": 2025,
+      "role": "question",
+      "session": "am",
+      "physicalPage": 40,
+      "bytes": 68124,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2025-question-am-p44-ff880dedf26e.png",
+      "sha256": "ff880dedf26e396af85b54faf5bc8aac340df087bac7ad1e93007a3dd94197fe",
+      "year": 2025,
+      "role": "question",
+      "session": "am",
+      "physicalPage": 44,
+      "bytes": 93490,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+      "sha256": "bfa96e9e1be1cdc1ac1d1ee9e42f28b619a34d56d17ca6283ef68d3c7b46414a",
+      "year": 2025,
+      "role": "question",
+      "session": "pm",
+      "physicalPage": 21,
+      "bytes": 101867,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2025-question-pm-p24-fe674983eb45.png",
+      "sha256": "fe674983eb458cf4ccf12baf790cff8a66082d88bcd57db6dc56504fa532d966",
+      "year": 2025,
+      "role": "question",
+      "session": "pm",
+      "physicalPage": 24,
+      "bytes": 70228,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2026-answer-p01-81abb0786971.png",
+      "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+      "year": 2026,
+      "role": "answer",
+      "session": "am-and-pm",
+      "physicalPage": 1,
+      "bytes": 287078,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2026-question-am-p10-d59634645a40.png",
+      "sha256": "d59634645a403d610e350d2baef6c2144115e20db145d15f71bf10ef2a0a718f",
+      "year": 2026,
+      "role": "question",
+      "session": "am",
+      "physicalPage": 10,
+      "bytes": 174401,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2026-question-am-p15-9a30cdfd723d.png",
+      "sha256": "9a30cdfd723deaed6aa99af866f7ab083044613aca6fd66a1a8e2fa5618ab071",
+      "year": 2026,
+      "role": "question",
+      "session": "am",
+      "physicalPage": 15,
+      "bytes": 115396,
+      "unchangedOriginalPage": true
+    },
+    {
+      "path": "sources/2026-question-pm-p22-173b5987b6b0.png",
+      "sha256": "173b5987b6b06a8b8e25582f45ad969ef1f566b6d9ee2784a1b2e82352df9dbc",
+      "year": 2026,
+      "role": "question",
+      "session": "pm",
+      "physicalPage": 22,
+      "bytes": 107773,
+      "unchangedOriginalPage": true
+    }
+  ],
+  "priorScopeDecisionIds": [
+    "rigaku-ryohoshi-2025-annual-pm-q33",
+    "rigaku-ryohoshi-2026-annual-am-q88"
+  ],
+  "otherExplanationRequirementIds": [
+    "rigaku-ryohoshi-2025-annual-am-q1",
+    "rigaku-ryohoshi-2025-annual-am-q7",
+    "rigaku-ryohoshi-2025-annual-am-q9",
+    "rigaku-ryohoshi-2025-annual-pm-q2",
+    "rigaku-ryohoshi-2025-annual-pm-q3",
+    "rigaku-ryohoshi-2025-annual-pm-q5",
+    "rigaku-ryohoshi-2025-annual-pm-q6",
+    "rigaku-ryohoshi-2025-annual-pm-q7",
+    "rigaku-ryohoshi-2025-annual-pm-q9",
+    "rigaku-ryohoshi-2025-annual-pm-q13",
+    "rigaku-ryohoshi-2025-annual-pm-q15",
+    "rigaku-ryohoshi-2025-annual-pm-q17",
+    "rigaku-ryohoshi-2025-annual-pm-q20",
+    "rigaku-ryohoshi-2025-annual-pm-q44",
+    "rigaku-ryohoshi-2025-annual-pm-q56",
+    "rigaku-ryohoshi-2025-annual-pm-q71",
+    "rigaku-ryohoshi-2026-annual-pm-q35"
+  ],
+  "originalContentHeldQuestionIdsUnchanged": [
+    "rigaku-ryohoshi-2025-annual-am-q15",
+    "rigaku-ryohoshi-2025-annual-am-q19",
+    "rigaku-ryohoshi-2025-annual-am-q84",
+    "rigaku-ryohoshi-2025-annual-am-q89",
+    "rigaku-ryohoshi-2025-annual-pm-q1",
+    "rigaku-ryohoshi-2025-annual-pm-q24",
+    "rigaku-ryohoshi-2025-annual-pm-q25",
+    "rigaku-ryohoshi-2025-annual-pm-q27",
+    "rigaku-ryohoshi-2025-annual-pm-q28",
+    "rigaku-ryohoshi-2025-annual-pm-q34",
+    "rigaku-ryohoshi-2025-annual-pm-q35",
+    "rigaku-ryohoshi-2025-annual-pm-q36",
+    "rigaku-ryohoshi-2025-annual-pm-q8",
+    "rigaku-ryohoshi-2026-annual-am-q1",
+    "rigaku-ryohoshi-2026-annual-am-q10",
+    "rigaku-ryohoshi-2026-annual-am-q12",
+    "rigaku-ryohoshi-2026-annual-am-q2",
+    "rigaku-ryohoshi-2026-annual-am-q3",
+    "rigaku-ryohoshi-2026-annual-am-q5",
+    "rigaku-ryohoshi-2026-annual-am-q7",
+    "rigaku-ryohoshi-2026-annual-am-q81",
+    "rigaku-ryohoshi-2026-annual-am-q83",
+    "rigaku-ryohoshi-2026-annual-am-q85",
+    "rigaku-ryohoshi-2026-annual-am-q89",
+    "rigaku-ryohoshi-2026-annual-am-q90",
+    "rigaku-ryohoshi-2026-annual-am-q94",
+    "rigaku-ryohoshi-2026-annual-am-q95",
+    "rigaku-ryohoshi-2026-annual-am-q96",
+    "rigaku-ryohoshi-2026-annual-pm-q1",
+    "rigaku-ryohoshi-2026-annual-pm-q10",
+    "rigaku-ryohoshi-2026-annual-pm-q12",
+    "rigaku-ryohoshi-2026-annual-pm-q15",
+    "rigaku-ryohoshi-2026-annual-pm-q21",
+    "rigaku-ryohoshi-2026-annual-pm-q22",
+    "rigaku-ryohoshi-2026-annual-pm-q23",
+    "rigaku-ryohoshi-2026-annual-pm-q25",
+    "rigaku-ryohoshi-2026-annual-pm-q3",
+    "rigaku-ryohoshi-2026-annual-pm-q33",
+    "rigaku-ryohoshi-2026-annual-pm-q34",
+    "rigaku-ryohoshi-2026-annual-pm-q36",
+    "rigaku-ryohoshi-2026-annual-pm-q4",
+    "rigaku-ryohoshi-2026-annual-pm-q5",
+    "rigaku-ryohoshi-2026-annual-pm-q7"
+  ],
+  "expertAcceptance": null,
+  "publicationReview": null,
+  "needsReview": true,
+  "publicGo": false,
+  "productionImported": false
+}

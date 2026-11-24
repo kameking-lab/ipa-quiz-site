@@ -1,0 +1,810 @@
+{
+  "candidateCount": 70,
+  "choiceReasonCount": 350,
+  "originalPageAssetCount": 65,
+  "officialKeyIndependentMatches": 70,
+  "officialKeyTableDenominator": 400,
+  "textQaQuestionCount": 31,
+  "figureOriginalVisualQaQuestionCount": 39,
+  "additional61ClinicalQaQuestions": 19,
+  "additional61ClinicalQaPendingIds": [],
+  "qaSnapshots": [
+    {
+      "owner": "source-qa-a",
+      "path": "qa/source-qa-a.json",
+      "sha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "ids": [
+        "rigaku-ryohoshi-2025-annual-am-q82",
+        "rigaku-ryohoshi-2025-annual-am-q84",
+        "rigaku-ryohoshi-2025-annual-am-q89",
+        "rigaku-ryohoshi-2025-annual-am-q94",
+        "rigaku-ryohoshi-2025-annual-pm-q21",
+        "rigaku-ryohoshi-2025-annual-pm-q22",
+        "rigaku-ryohoshi-2025-annual-pm-q24",
+        "rigaku-ryohoshi-2025-annual-pm-q25",
+        "rigaku-ryohoshi-2025-annual-pm-q27",
+        "rigaku-ryohoshi-2025-annual-pm-q28"
+      ],
+      "questionCount": 10
+    },
+    {
+      "owner": "source-qa-b",
+      "path": "qa/source-qa-b.json",
+      "sha256": "1d4b1d619056e66ccdafeb9153be32e1d64cb7850dcb93f970b8abab57885890",
+      "ids": [
+        "rigaku-ryohoshi-2025-annual-pm-q30",
+        "rigaku-ryohoshi-2025-annual-pm-q33",
+        "rigaku-ryohoshi-2025-annual-pm-q34",
+        "rigaku-ryohoshi-2025-annual-pm-q35",
+        "rigaku-ryohoshi-2025-annual-pm-q36",
+        "rigaku-ryohoshi-2026-annual-am-q81",
+        "rigaku-ryohoshi-2026-annual-am-q83",
+        "rigaku-ryohoshi-2026-annual-am-q85",
+        "rigaku-ryohoshi-2026-annual-am-q88",
+        "rigaku-ryohoshi-2026-annual-am-q89"
+      ],
+      "questionCount": 10
+    },
+    {
+      "owner": "source-qa-c",
+      "path": "qa/source-qa-c.json",
+      "sha256": "5f30d50310884721426413d91b27d1d3e70931ec312ebdbb96ad0a05caed2f17",
+      "ids": [
+        "rigaku-ryohoshi-2026-annual-am-q90",
+        "rigaku-ryohoshi-2026-annual-am-q94",
+        "rigaku-ryohoshi-2026-annual-am-q95",
+        "rigaku-ryohoshi-2026-annual-am-q96",
+        "rigaku-ryohoshi-2026-annual-pm-q21",
+        "rigaku-ryohoshi-2026-annual-pm-q22",
+        "rigaku-ryohoshi-2026-annual-pm-q23",
+        "rigaku-ryohoshi-2026-annual-pm-q25",
+        "rigaku-ryohoshi-2026-annual-pm-q33",
+        "rigaku-ryohoshi-2026-annual-pm-q35",
+        "rigaku-ryohoshi-2026-annual-pm-q36"
+      ],
+      "questionCount": 11
+    },
+    {
+      "owner": "figure-qa-2025",
+      "path": "qa/figure-qa-2025.json",
+      "sha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "ids": [
+        "rigaku-ryohoshi-2025-annual-am-q1",
+        "rigaku-ryohoshi-2025-annual-am-q7",
+        "rigaku-ryohoshi-2025-annual-am-q9",
+        "rigaku-ryohoshi-2025-annual-am-q15",
+        "rigaku-ryohoshi-2025-annual-am-q19",
+        "rigaku-ryohoshi-2025-annual-pm-q1",
+        "rigaku-ryohoshi-2025-annual-pm-q2",
+        "rigaku-ryohoshi-2025-annual-pm-q3",
+        "rigaku-ryohoshi-2025-annual-pm-q5",
+        "rigaku-ryohoshi-2025-annual-pm-q6",
+        "rigaku-ryohoshi-2025-annual-pm-q7",
+        "rigaku-ryohoshi-2025-annual-pm-q8",
+        "rigaku-ryohoshi-2025-annual-pm-q9",
+        "rigaku-ryohoshi-2025-annual-pm-q13",
+        "rigaku-ryohoshi-2025-annual-pm-q15",
+        "rigaku-ryohoshi-2025-annual-pm-q17",
+        "rigaku-ryohoshi-2025-annual-pm-q20",
+        "rigaku-ryohoshi-2025-annual-pm-q44",
+        "rigaku-ryohoshi-2025-annual-pm-q56",
+        "rigaku-ryohoshi-2025-annual-pm-q71"
+      ],
+      "questionCount": 20
+    },
+    {
+      "owner": "figure-qa-2026",
+      "path": "qa/figure-qa-2026.json",
+      "sha256": "66ca5a5d50aca9ee98c65a7374ff4931898a09a64fac8fe29140f04889bc4d27",
+      "ids": [
+        "rigaku-ryohoshi-2026-annual-am-q1",
+        "rigaku-ryohoshi-2026-annual-am-q2",
+        "rigaku-ryohoshi-2026-annual-am-q3",
+        "rigaku-ryohoshi-2026-annual-am-q4",
+        "rigaku-ryohoshi-2026-annual-am-q5",
+        "rigaku-ryohoshi-2026-annual-am-q7",
+        "rigaku-ryohoshi-2026-annual-am-q10",
+        "rigaku-ryohoshi-2026-annual-am-q11",
+        "rigaku-ryohoshi-2026-annual-am-q12",
+        "rigaku-ryohoshi-2026-annual-pm-q1",
+        "rigaku-ryohoshi-2026-annual-pm-q3",
+        "rigaku-ryohoshi-2026-annual-pm-q4",
+        "rigaku-ryohoshi-2026-annual-pm-q5",
+        "rigaku-ryohoshi-2026-annual-pm-q7",
+        "rigaku-ryohoshi-2026-annual-pm-q10",
+        "rigaku-ryohoshi-2026-annual-pm-q12",
+        "rigaku-ryohoshi-2026-annual-pm-q15",
+        "rigaku-ryohoshi-2026-annual-pm-q26",
+        "rigaku-ryohoshi-2026-annual-pm-q34"
+      ],
+      "questionCount": 19
+    }
+  ],
+  "appliedFiniteCorrectionCount": 85,
+  "contentHoldRecords": [
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q84",
+      "owner": "source-qa-a",
+      "hold": "Steinbrocker 1949原著または学会ガイドライン本文とStage I-IVの個別定義を照合できていない。全肢保留。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q89",
+      "owner": "source-qa-a",
+      "hold": "アの『10～20代に多い』という年齢範囲全体は今回の10～12歳検診原著だけでは確認できない。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q24",
+      "owner": "source-qa-a",
+      "hold": "旧稿の介護報酬3年・医療計画6年という傍証は今回の一次資料で未照合のため説明から削除。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q25",
+      "owner": "source-qa-a",
+      "hold": "S1に関する指針の記述は仙髄レベル一般で、S1単独の歩行可能性の直接測定値ではない。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q27",
+      "owner": "source-qa-a",
+      "hold": "Bragardの今回の診断原著はmodified手技であり、旧稿の細かな手順と完全同一とは扱わない。5テストの鑑別先は原著で照合済み。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q28",
+      "owner": "source-qa-a",
+      "hold": "2022年の改訂基準と混同せず1995年基準表そのものの数値を未照合。全肢保留。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q34",
+      "owner": "source-qa-b",
+      "hold": "腕橈関節を球関節・多軸性と断定した保存稿はOpenStaxの「球関節は肩・股関節のみ」と整合せず、分類差の解決待ち。椎間関節は平面関節だが平面関節を一律多軸とみなすのも不正確。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q34",
+      "owner": "source-qa-b",
+      "hold": "公式問題・正答PNGの独立照合は親担当待ち。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q35",
+      "owner": "source-qa-b",
+      "hold": "性差は母集団・PAD定義に依存し、保存稿の「一般に男性に多い」は一律断定として採用しない。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q35",
+      "owner": "source-qa-b",
+      "hold": "AHA原文はHTTP 403。独立したESC原文でABI・跛行・切断は確認した。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q35",
+      "owner": "source-qa-b",
+      "hold": "公式問題・正答PNGの独立照合は親担当待ち。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q36",
+      "owner": "source-qa-b",
+      "hold": "Borg 11～13の数値目安およびシックデイの厳密な運動制限条件を一次資料で個別照合できていない。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q81",
+      "owner": "source-qa-b",
+      "hold": "他の4つの心理療法の全技法に絶対臥褥が無いことを個別原典で網羅確認していない。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q81",
+      "owner": "source-qa-b",
+      "hold": "公式問題・正答PNGの独立照合は親担当待ち。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q83",
+      "owner": "source-qa-b",
+      "hold": "MS Trustは重錘を場合により有用とするが、Johns Hopkinsの小脳失調原著は一律の効果を示さない。一般的効果の断定を避ける。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q83",
+      "owner": "source-qa-b",
+      "hold": "視野欠損への照明調整は視覚障害支援団体の一般助言で確認したが、MS特異的試験と装具導入時期の一次資料は未確認。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q83",
+      "owner": "source-qa-b",
+      "hold": "公式問題・正答PNGの独立照合は親担当待ち。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q85",
+      "owner": "source-qa-b",
+      "hold": "遠城寺式乳幼児分析的発達検査の原検査表を確認できず、5項目の厳密な月齢と順序は未確定。一般発達月齢を検査表の月齢と同一視しない。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q89",
+      "owner": "source-qa-b",
+      "hold": "公式設問の「Ferinberg」は保持する。Freiberg病との同定は推定であり、公式訂正を未確認。Freiberg病の疫学資料を原問表記の直接証明と扱わない。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q89",
+      "owner": "source-qa-b",
+      "hold": "公式問題・正答PNGの独立照合は親担当待ち。"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q90",
+      "owner": "source-qa-c",
+      "hold": "エ: 労災受傷の増減を示す時系列一次統計未取得"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q90",
+      "owner": "source-qa-c",
+      "hold": "ア: 全国性比の具体値未照合"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q94",
+      "owner": "source-qa-c",
+      "hold": "ア〜オ: がんリハビリテーションの専門ガイドライン本文未取得"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q94",
+      "owner": "source-qa-c",
+      "hold": "イ: 温熱療法の適応・禁忌を原資料で未確認"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q95",
+      "owner": "source-qa-c",
+      "hold": "エ・オ: 引用疫学原著で独立した頻度数値未確認"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q95",
+      "owner": "source-qa-c",
+      "hold": "全肢: 調査標本の順位を全国一律の順位としない"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q95",
+      "owner": "source-qa-c",
+      "hold": "イ: 原問のLevy表記は改変禁止"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q96",
+      "owner": "source-qa-c",
+      "hold": "イ: 年齢別発症頻度の一次資料未取得"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q96",
+      "owner": "source-qa-c",
+      "hold": "ウ: 罹病期間と予後の病型別原著未取得"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q96",
+      "owner": "source-qa-c",
+      "hold": "エ: 診断受容そのものと予後の因果は未確認。近接概念の疾病信念と予後の関連原著のみ"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q96",
+      "owner": "source-qa-c",
+      "hold": "オ: パーソナリティー症併存と予後の原著未取得"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q21",
+      "owner": "source-qa-c",
+      "hold": "ア・イ・エ: 床反力波形の原著図と位相別値を未照合"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q21",
+      "owner": "source-qa-c",
+      "hold": "ウ: 左右分力の座標系・位相別方向を一次資料で未確認"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q22",
+      "owner": "source-qa-c",
+      "hold": "イ: 大転子の骨指標を明示する専門一次資料未取得。整形外科学会の「腰上縁」で近似確認"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q22",
+      "owner": "source-qa-c",
+      "hold": "エ: 身長−40cmという別の固定式の一次根拠未取得。保存稿の具体値を採用しない"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q22",
+      "owner": "source-qa-c",
+      "hold": "オ: 前外方15cmという保存稿の具体値の一次根拠未取得"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q23",
+      "owner": "source-qa-c",
+      "hold": "イ: サルコペニアを一因と明示する学会一次資料未照合"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q23",
+      "owner": "source-qa-c",
+      "hold": "オ: 公式ロコトレ手順の当該ページ未取得"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q25",
+      "owner": "source-qa-c",
+      "hold": "エ: 感覚障害の部位分布を示す一次資料未確認"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q25",
+      "owner": "source-qa-c",
+      "hold": "オ: 保存稿の「1〜3週」の数値は今回の原資料で未確認"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q33",
+      "owner": "source-qa-c",
+      "hold": "ア〜オ: SIAS正式評価マニュアルの該当ページ未取得。慶應開発教室の公開ページは尺度概要のみ"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q33",
+      "owner": "source-qa-c",
+      "hold": "ウ: 保存稿は1Cを「集団伸展わずかに可能」と説明するが二次解説と齟齬。1B/1Cの正式境界を作者版マニュアルで要確認"
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q36",
+      "owner": "source-qa-c",
+      "hold": "イ: Item Mapの名称と作成方法を開発者の正式マニュアル本文で未照合。CanChild scoringページ403につき再アクセスせず"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q15",
+      "owner": "figure-qa-2025",
+      "hold": {
+        "choice": "2",
+        "reason": "C6B1での屋内平地の手動車椅子駆動可否に関する一次資料を特定できず、機能予後の境界説明は独立専門査読が必要。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q19",
+      "owner": "figure-qa-2025",
+      "hold": {
+        "choice": "1",
+        "reason": "1995年版の肩甲帯・肩関節測定軸の一次原典を未確認。図の線と保存稿の軸の説明の一致は独立査読が必要。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q19",
+      "owner": "figure-qa-2025",
+      "hold": {
+        "choice": "2",
+        "reason": "1995年版の肩甲帯・肩関節測定軸の一次原典を未確認。図の線と保存稿の軸の説明の一致は独立査読が必要。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q1",
+      "owner": "figure-qa-2025",
+      "hold": {
+        "choice": "1",
+        "reason": "術式・アプローチと術後体位制限が設問に示されず、Daniels原典との照合も未了。公式キー3を維持しつつこの肢の断定を保留。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q1",
+      "owner": "figure-qa-2025",
+      "hold": {
+        "choice": "2",
+        "reason": "術式・アプローチと術後体位制限が設問に示されず、Daniels原典との照合も未了。公式キー3を維持しつつこの肢の断定を保留。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q8",
+      "owner": "figure-qa-2025",
+      "hold": {
+        "choice": "1",
+        "reason": "大腿切断断端計測の標準肢位を一次資料で確認できず、背臥位を否定する根拠が不足。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q1",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3"
+        ],
+        "type": "edition-specific-source",
+        "reason": "1995版そのもの未取得。2022学会基準による補強を1995版直接検証と数えない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q1",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "4",
+          "5"
+        ],
+        "type": "clinical-rationale-source",
+        "reason": "靱帯機能およびThomasテストの直接根拠が未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q2",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "3"
+        ],
+        "type": "figure-side",
+        "reason": "元の内外側触知図の保留を解除しない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q2",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "named-technique-source",
+        "reason": "Daniels段階1の各筋の手技原本は未取得。一般触知資料と混同しない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q3",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "alignment-direction-direct-source",
+        "reason": "取得AAOS章で一般作用は補強。設問の全5異常設定と立脚後期の膝折れ方向を直接対応する一次資料は未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q5",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "treatment-specific-claims",
+        "reason": "病態と視覚垂直方針は補強済み。各運動の効果・必然的悪化・リーチの具体的手順を直接支持する資料未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q7",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1"
+        ],
+        "type": "definition-source",
+        "reason": "PVCのP波なし・幅広いQRSという全定義を直接支持する専門資料未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q7",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "4"
+        ],
+        "type": "numeric-heart-rate",
+        "reason": "単一の正確な心拍数はなお未確定。60/分未満の閾値と区別。β遮断薬の陰性変時作用の薬剤原資料未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q10",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "type": "differential-rationale-source",
+        "reason": "骨挫傷/骨髄炎/軟骨肉腫/疲労骨折の除外理由をそれぞれ直接支える専門原資料未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q10",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "3"
+        ],
+        "type": "laboratory-imaging-specificity",
+        "reason": "ALP上昇の特異性と別冊病変の厳密な形態診断は未検証。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q12",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "2"
+        ],
+        "type": "contact-point",
+        "reason": "打腱器の接触部位・指を独立に確定していない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q12",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "5"
+        ],
+        "type": "figure-and-reflex-source",
+        "reason": "操作/反応の方向と対象指が確定困難。Wartenberg反射の直接手技資料未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q1",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "edition-specific-source",
+        "reason": "指定1995版そのもの未取得。特に座位指定と肩甲骨前方突出の注意規定は2022表で置換しない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q3",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "type": "side-and-movement-correspondence",
+        "reason": "図の左右と動作順を原因断定できない旧4肢HOLDを維持。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q3",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "hemiplegic-ADL-direct-source",
+        "reason": "片麻痺・重度感覚障害・肩亜脱臼という症例条件での独立ADL指導資料未取得。入浴温度確認を足で行う旧記述、階段の杖順は特に未検証。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q4",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "muscle-length-test-direct-source",
+        "reason": "原図は確認済みだがEly/Thomasの短縮判定手技および各筋の付着を含む全除外説明は未取得。機能的触知資料で全理由verifiedにしない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q5",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "orthosis-identity-and-indication",
+        "reason": "名称のない5原図それぞれを独立な装具原資料に照合未了。形状視認だけで名称/機構/臨床適応verifiedにしない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1"
+        ],
+        "type": "individual-weight-bearing",
+        "reason": "旧HOLD：術式・固定方法・術者の個別荷重指示を原X線だけで確定できない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "2"
+        ],
+        "type": "pneumonia-risk-direct-source",
+        "reason": "旧理由の肺炎リスクの直接裏付け未取得。早期離床・血栓予防は補強済み。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "4",
+          "5"
+        ],
+        "type": "posterior-approach-protocol",
+        "reason": "後方進入法に固有の禁止肢位・角度・期間の直接原資料未取得。403取得先は回避しない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q10",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3"
+        ],
+        "type": "orthosis-comparison-source",
+        "reason": "各装具の適応と矯正原理の直接装具原資料未取得。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q10",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "4",
+          "5"
+        ],
+        "type": "apical-level-and-boston-threshold",
+        "reason": "旧HOLD維持：頂椎厳密同定とBoston/Milwaukeeの固有適応基準未取得。メーカー403を回避しない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q12",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "developmental-age-specific-source",
+        "reason": "固定9〜10か月推定、原始反射消失月齢、側方パラシュート固有月齢、背屈反応定義が未検証。原著候補PMC3384944はCAPTCHA表示で停止。一般反射資料を月齢検証と数えない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q15",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "type": "patient-specific-spasticity-attribution",
+        "reason": "設問上の最適筋と実臨床の個別投与を区別。画像のみで各筋痙縮の寄与・注射効果/禁忌を確定しない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q34",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "type": "other-disease-indication-source",
+        "reason": "各別疾患の装具適応・除外理由の直接原資料未取得。Down等の患者属性だけによる一律禁忌とはしない。"
+      }
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q34",
+      "owner": "helper-pt61-01a12870",
+      "hold": {
+        "choiceNumbers": [
+          "5"
+        ],
+        "type": "japanese-device-name-source",
+        "reason": "Pavlik形態とDDH適応は独立補強。リーメンビューゲルという国内呼称との同義資料は未取得。"
+      }
+    }
+  ],
+  "contentHeldQuestionIds": [
+    "rigaku-ryohoshi-2025-annual-am-q15",
+    "rigaku-ryohoshi-2025-annual-am-q19",
+    "rigaku-ryohoshi-2025-annual-am-q84",
+    "rigaku-ryohoshi-2025-annual-am-q89",
+    "rigaku-ryohoshi-2025-annual-pm-q1",
+    "rigaku-ryohoshi-2025-annual-pm-q24",
+    "rigaku-ryohoshi-2025-annual-pm-q25",
+    "rigaku-ryohoshi-2025-annual-pm-q27",
+    "rigaku-ryohoshi-2025-annual-pm-q28",
+    "rigaku-ryohoshi-2025-annual-pm-q34",
+    "rigaku-ryohoshi-2025-annual-pm-q35",
+    "rigaku-ryohoshi-2025-annual-pm-q36",
+    "rigaku-ryohoshi-2025-annual-pm-q8",
+    "rigaku-ryohoshi-2026-annual-am-q1",
+    "rigaku-ryohoshi-2026-annual-am-q10",
+    "rigaku-ryohoshi-2026-annual-am-q12",
+    "rigaku-ryohoshi-2026-annual-am-q2",
+    "rigaku-ryohoshi-2026-annual-am-q3",
+    "rigaku-ryohoshi-2026-annual-am-q5",
+    "rigaku-ryohoshi-2026-annual-am-q7",
+    "rigaku-ryohoshi-2026-annual-am-q81",
+    "rigaku-ryohoshi-2026-annual-am-q83",
+    "rigaku-ryohoshi-2026-annual-am-q85",
+    "rigaku-ryohoshi-2026-annual-am-q89",
+    "rigaku-ryohoshi-2026-annual-am-q90",
+    "rigaku-ryohoshi-2026-annual-am-q94",
+    "rigaku-ryohoshi-2026-annual-am-q95",
+    "rigaku-ryohoshi-2026-annual-am-q96",
+    "rigaku-ryohoshi-2026-annual-pm-q1",
+    "rigaku-ryohoshi-2026-annual-pm-q10",
+    "rigaku-ryohoshi-2026-annual-pm-q12",
+    "rigaku-ryohoshi-2026-annual-pm-q15",
+    "rigaku-ryohoshi-2026-annual-pm-q21",
+    "rigaku-ryohoshi-2026-annual-pm-q22",
+    "rigaku-ryohoshi-2026-annual-pm-q23",
+    "rigaku-ryohoshi-2026-annual-pm-q25",
+    "rigaku-ryohoshi-2026-annual-pm-q3",
+    "rigaku-ryohoshi-2026-annual-pm-q33",
+    "rigaku-ryohoshi-2026-annual-pm-q34",
+    "rigaku-ryohoshi-2026-annual-pm-q36",
+    "rigaku-ryohoshi-2026-annual-pm-q4",
+    "rigaku-ryohoshi-2026-annual-pm-q5",
+    "rigaku-ryohoshi-2026-annual-pm-q7"
+  ],
+  "priorSourceAndClinicalHoldsRetained": true,
+  "oldHoldsCleared": 0,
+  "placeholderHoldBodiesAdopted": 0,
+  "originalLiteralCorrections": [
+    "2025 PM20: AIは restored to printed A は"
+  ],
+  "printedDiagramCaptionVerification": [
+    "2025 AM19",
+    "2026 AM12",
+    "2026 PM3"
+  ],
+  "captionlessDiagramChoice": "2026 PM5: numbered official figure references without inferred device names",
+  "newOriginalGeneration": 0,
+  "servedModels": {
+    "claude-sonnet-5-5": 60,
+    "claude-opus-5-5": 10
+  },
+  "publicGo": false,
+  "expertAcceptance": null,
+  "publicationReview": null,
+  "clinicalReviewComplete": false,
+  "failedSourcesNotRetried": [
+    "AHA PAD full text 403",
+    "EJVES sex-difference full text 403",
+    "CanChild GMFM scoring 403",
+    "PubMed transient 429"
+  ],
+  "minimalAdoptionReviewCandidateIds": [
+    "rigaku-ryohoshi-2025-annual-am-q82",
+    "rigaku-ryohoshi-2025-annual-am-q94",
+    "rigaku-ryohoshi-2025-annual-pm-q21",
+    "rigaku-ryohoshi-2025-annual-pm-q22",
+    "rigaku-ryohoshi-2025-annual-pm-q30",
+    "rigaku-ryohoshi-2026-annual-pm-q26",
+    "rigaku-ryohoshi-2026-annual-am-q4",
+    "rigaku-ryohoshi-2026-annual-am-q11"
+  ],
+  "followupFiniteQaPath": "qa/incremental-source-review.json"
+}

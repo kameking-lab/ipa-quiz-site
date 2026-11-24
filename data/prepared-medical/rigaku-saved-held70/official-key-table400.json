@@ -1,0 +1,4879 @@
+{
+  "sourcePdfs": [
+    {
+      "year": 2025,
+      "edition": 60,
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+      "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b",
+      "textExtraction": "pypdf layout; read printed A/B table cells, retain joint digits versus separate accepted-answer columns"
+    },
+    {
+      "year": 2026,
+      "edition": 61,
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+      "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904",
+      "textExtraction": "pypdf layout; read printed A/B table cells, retain joint digits versus separate accepted-answer columns"
+    }
+  ],
+  "rows": [
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q1",
+      "tableLabel": "A001",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q10",
+      "tableLabel": "A010",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q100",
+      "tableLabel": "A100",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q11",
+      "tableLabel": "A011",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q12",
+      "tableLabel": "A012",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q13",
+      "tableLabel": "A013",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q14",
+      "tableLabel": "A014",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q15",
+      "tableLabel": "A015",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q16",
+      "tableLabel": "A016",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q17",
+      "tableLabel": "A017",
+      "officialKeyCells": [
+        "1",
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q18",
+      "tableLabel": "A018",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q19",
+      "tableLabel": "A019",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q2",
+      "tableLabel": "A002",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q20",
+      "tableLabel": "A020",
+      "officialKeyCells": [],
+      "oneBasedAcceptedChoices": [],
+      "requiredSelections": null,
+      "excludedFromScoring": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q21",
+      "tableLabel": "A021",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q22",
+      "tableLabel": "A022",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q23",
+      "tableLabel": "A023",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q24",
+      "tableLabel": "A024",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q25",
+      "tableLabel": "A025",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q26",
+      "tableLabel": "A026",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q27",
+      "tableLabel": "A027",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q28",
+      "tableLabel": "A028",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q29",
+      "tableLabel": "A029",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q3",
+      "tableLabel": "A003",
+      "officialKeyCells": [],
+      "oneBasedAcceptedChoices": [],
+      "requiredSelections": null,
+      "excludedFromScoring": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q30",
+      "tableLabel": "A030",
+      "officialKeyCells": [
+        "25"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q31",
+      "tableLabel": "A031",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q32",
+      "tableLabel": "A032",
+      "officialKeyCells": [
+        "15"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q33",
+      "tableLabel": "A033",
+      "officialKeyCells": [
+        "45"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q34",
+      "tableLabel": "A034",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q35",
+      "tableLabel": "A035",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q36",
+      "tableLabel": "A036",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q37",
+      "tableLabel": "A037",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q38",
+      "tableLabel": "A038",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q39",
+      "tableLabel": "A039",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q4",
+      "tableLabel": "A004",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q40",
+      "tableLabel": "A040",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q41",
+      "tableLabel": "A041",
+      "officialKeyCells": [
+        "25"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q42",
+      "tableLabel": "A042",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q43",
+      "tableLabel": "A043",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q44",
+      "tableLabel": "A044",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q45",
+      "tableLabel": "A045",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q46",
+      "tableLabel": "A046",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q47",
+      "tableLabel": "A047",
+      "officialKeyCells": [
+        "34"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q48",
+      "tableLabel": "A048",
+      "officialKeyCells": [
+        "13"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q49",
+      "tableLabel": "A049",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q5",
+      "tableLabel": "A005",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q50",
+      "tableLabel": "A050",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q51",
+      "tableLabel": "A051",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q52",
+      "tableLabel": "A052",
+      "officialKeyCells": [
+        "13"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q53",
+      "tableLabel": "A053",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q54",
+      "tableLabel": "A054",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q55",
+      "tableLabel": "A055",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q56",
+      "tableLabel": "A056",
+      "officialKeyCells": [
+        "34"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q57",
+      "tableLabel": "A057",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q58",
+      "tableLabel": "A058",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q59",
+      "tableLabel": "A059",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q6",
+      "tableLabel": "A006",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q60",
+      "tableLabel": "A060",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q61",
+      "tableLabel": "A061",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q62",
+      "tableLabel": "A062",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q63",
+      "tableLabel": "A063",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q64",
+      "tableLabel": "A064",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q65",
+      "tableLabel": "A065",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q66",
+      "tableLabel": "A066",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q67",
+      "tableLabel": "A067",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q68",
+      "tableLabel": "A068",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q69",
+      "tableLabel": "A069",
+      "officialKeyCells": [
+        "45"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q7",
+      "tableLabel": "A007",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q70",
+      "tableLabel": "A070",
+      "officialKeyCells": [
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q71",
+      "tableLabel": "A071",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q72",
+      "tableLabel": "A072",
+      "officialKeyCells": [
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q73",
+      "tableLabel": "A073",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q74",
+      "tableLabel": "A074",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q75",
+      "tableLabel": "A075",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q76",
+      "tableLabel": "A076",
+      "officialKeyCells": [
+        "13"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q77",
+      "tableLabel": "A077",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q78",
+      "tableLabel": "A078",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q79",
+      "tableLabel": "A079",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q8",
+      "tableLabel": "A008",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q80",
+      "tableLabel": "A080",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q81",
+      "tableLabel": "A081",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q82",
+      "tableLabel": "A082",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q83",
+      "tableLabel": "A083",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q84",
+      "tableLabel": "A084",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q85",
+      "tableLabel": "A085",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q86",
+      "tableLabel": "A086",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q87",
+      "tableLabel": "A087",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q88",
+      "tableLabel": "A088",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q89",
+      "tableLabel": "A089",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q9",
+      "tableLabel": "A009",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q90",
+      "tableLabel": "A090",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q91",
+      "tableLabel": "A091",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q92",
+      "tableLabel": "A092",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q93",
+      "tableLabel": "A093",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q94",
+      "tableLabel": "A094",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q95",
+      "tableLabel": "A095",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q96",
+      "tableLabel": "A096",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q97",
+      "tableLabel": "A097",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q98",
+      "tableLabel": "A098",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q99",
+      "tableLabel": "A099",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q1",
+      "tableLabel": "B001",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q10",
+      "tableLabel": "B010",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q100",
+      "tableLabel": "B100",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q11",
+      "tableLabel": "B011",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q12",
+      "tableLabel": "B012",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q13",
+      "tableLabel": "B013",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q14",
+      "tableLabel": "B014",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q15",
+      "tableLabel": "B015",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q16",
+      "tableLabel": "B016",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q17",
+      "tableLabel": "B017",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q18",
+      "tableLabel": "B018",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q19",
+      "tableLabel": "B019",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q2",
+      "tableLabel": "B002",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q20",
+      "tableLabel": "B020",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q21",
+      "tableLabel": "B021",
+      "officialKeyCells": [
+        "14"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q22",
+      "tableLabel": "B022",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q23",
+      "tableLabel": "B023",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q24",
+      "tableLabel": "B024",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q25",
+      "tableLabel": "B025",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q26",
+      "tableLabel": "B026",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q27",
+      "tableLabel": "B027",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q28",
+      "tableLabel": "B028",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q29",
+      "tableLabel": "B029",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q3",
+      "tableLabel": "B003",
+      "officialKeyCells": [
+        "35"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q30",
+      "tableLabel": "B030",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q31",
+      "tableLabel": "B031",
+      "officialKeyCells": [
+        "1",
+        "2",
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "2",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q32",
+      "tableLabel": "B032",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q33",
+      "tableLabel": "B033",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q34",
+      "tableLabel": "B034",
+      "officialKeyCells": [
+        "25"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q35",
+      "tableLabel": "B035",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q36",
+      "tableLabel": "B036",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q37",
+      "tableLabel": "B037",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q38",
+      "tableLabel": "B038",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q39",
+      "tableLabel": "B039",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q4",
+      "tableLabel": "B004",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q40",
+      "tableLabel": "B040",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q41",
+      "tableLabel": "B041",
+      "officialKeyCells": [
+        "45"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q42",
+      "tableLabel": "B042",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q43",
+      "tableLabel": "B043",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q44",
+      "tableLabel": "B044",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q45",
+      "tableLabel": "B045",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q46",
+      "tableLabel": "B046",
+      "officialKeyCells": [
+        "2",
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q47",
+      "tableLabel": "B047",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q48",
+      "tableLabel": "B048",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q49",
+      "tableLabel": "B049",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q5",
+      "tableLabel": "B005",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q50",
+      "tableLabel": "B050",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q51",
+      "tableLabel": "B051",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q52",
+      "tableLabel": "B052",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q53",
+      "tableLabel": "B053",
+      "officialKeyCells": [
+        "2",
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q54",
+      "tableLabel": "B054",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q55",
+      "tableLabel": "B055",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q56",
+      "tableLabel": "B056",
+      "officialKeyCells": [
+        "24"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q57",
+      "tableLabel": "B057",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q58",
+      "tableLabel": "B058",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q59",
+      "tableLabel": "B059",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q6",
+      "tableLabel": "B006",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q60",
+      "tableLabel": "B060",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q61",
+      "tableLabel": "B061",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q62",
+      "tableLabel": "B062",
+      "officialKeyCells": [
+        "13"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q63",
+      "tableLabel": "B063",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q64",
+      "tableLabel": "B064",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q65",
+      "tableLabel": "B065",
+      "officialKeyCells": [
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q66",
+      "tableLabel": "B066",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q67",
+      "tableLabel": "B067",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q68",
+      "tableLabel": "B068",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q69",
+      "tableLabel": "B069",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q7",
+      "tableLabel": "B007",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q70",
+      "tableLabel": "B070",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q71",
+      "tableLabel": "B071",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q72",
+      "tableLabel": "B072",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q73",
+      "tableLabel": "B073",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q74",
+      "tableLabel": "B074",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q75",
+      "tableLabel": "B075",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q76",
+      "tableLabel": "B076",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q77",
+      "tableLabel": "B077",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q78",
+      "tableLabel": "B078",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q79",
+      "tableLabel": "B079",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q8",
+      "tableLabel": "B008",
+      "officialKeyCells": [
+        "35"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q80",
+      "tableLabel": "B080",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q81",
+      "tableLabel": "B081",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q82",
+      "tableLabel": "B082",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q83",
+      "tableLabel": "B083",
+      "officialKeyCells": [
+        "13"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q84",
+      "tableLabel": "B084",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q85",
+      "tableLabel": "B085",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q86",
+      "tableLabel": "B086",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q87",
+      "tableLabel": "B087",
+      "officialKeyCells": [
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q88",
+      "tableLabel": "B088",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q89",
+      "tableLabel": "B089",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q9",
+      "tableLabel": "B009",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q90",
+      "tableLabel": "B090",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q91",
+      "tableLabel": "B091",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q92",
+      "tableLabel": "B092",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q93",
+      "tableLabel": "B093",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q94",
+      "tableLabel": "B094",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q95",
+      "tableLabel": "B095",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q96",
+      "tableLabel": "B096",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q97",
+      "tableLabel": "B097",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q98",
+      "tableLabel": "B098",
+      "officialKeyCells": [],
+      "oneBasedAcceptedChoices": [],
+      "requiredSelections": null,
+      "excludedFromScoring": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q99",
+      "tableLabel": "B099",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q1",
+      "tableLabel": "A001",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q10",
+      "tableLabel": "A010",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q100",
+      "tableLabel": "A100",
+      "officialKeyCells": [
+        "25"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q11",
+      "tableLabel": "A011",
+      "officialKeyCells": [
+        "35"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q12",
+      "tableLabel": "A012",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q13",
+      "tableLabel": "A013",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q14",
+      "tableLabel": "A014",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q15",
+      "tableLabel": "A015",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q16",
+      "tableLabel": "A016",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q17",
+      "tableLabel": "A017",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q18",
+      "tableLabel": "A018",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q19",
+      "tableLabel": "A019",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q2",
+      "tableLabel": "A002",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q20",
+      "tableLabel": "A020",
+      "officialKeyCells": [],
+      "oneBasedAcceptedChoices": [],
+      "requiredSelections": null,
+      "excludedFromScoring": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q21",
+      "tableLabel": "A021",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q22",
+      "tableLabel": "A022",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q23",
+      "tableLabel": "A023",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q24",
+      "tableLabel": "A024",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q25",
+      "tableLabel": "A025",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q26",
+      "tableLabel": "A026",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q27",
+      "tableLabel": "A027",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q28",
+      "tableLabel": "A028",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q29",
+      "tableLabel": "A029",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q3",
+      "tableLabel": "A003",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q30",
+      "tableLabel": "A030",
+      "officialKeyCells": [
+        "14"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q31",
+      "tableLabel": "A031",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q32",
+      "tableLabel": "A032",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q33",
+      "tableLabel": "A033",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q34",
+      "tableLabel": "A034",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q35",
+      "tableLabel": "A035",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q36",
+      "tableLabel": "A036",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q37",
+      "tableLabel": "A037",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q38",
+      "tableLabel": "A038",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q39",
+      "tableLabel": "A039",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q4",
+      "tableLabel": "A004",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q40",
+      "tableLabel": "A040",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q41",
+      "tableLabel": "A041",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q42",
+      "tableLabel": "A042",
+      "officialKeyCells": [
+        "12",
+        "13",
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q43",
+      "tableLabel": "A043",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q44",
+      "tableLabel": "A044",
+      "officialKeyCells": [
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q45",
+      "tableLabel": "A045",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q46",
+      "tableLabel": "A046",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q47",
+      "tableLabel": "A047",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q48",
+      "tableLabel": "A048",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q49",
+      "tableLabel": "A049",
+      "officialKeyCells": [
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q5",
+      "tableLabel": "A005",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q50",
+      "tableLabel": "A050",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q51",
+      "tableLabel": "A051",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q52",
+      "tableLabel": "A052",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q53",
+      "tableLabel": "A053",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q54",
+      "tableLabel": "A054",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q55",
+      "tableLabel": "A055",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q56",
+      "tableLabel": "A056",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q57",
+      "tableLabel": "A057",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q58",
+      "tableLabel": "A058",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q59",
+      "tableLabel": "A059",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q6",
+      "tableLabel": "A006",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q60",
+      "tableLabel": "A060",
+      "officialKeyCells": [
+        "3",
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q61",
+      "tableLabel": "A061",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q62",
+      "tableLabel": "A062",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q63",
+      "tableLabel": "A063",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q64",
+      "tableLabel": "A064",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q65",
+      "tableLabel": "A065",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q66",
+      "tableLabel": "A066",
+      "officialKeyCells": [
+        "45"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q67",
+      "tableLabel": "A067",
+      "officialKeyCells": [
+        "14"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q68",
+      "tableLabel": "A068",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q69",
+      "tableLabel": "A069",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q7",
+      "tableLabel": "A007",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q70",
+      "tableLabel": "A070",
+      "officialKeyCells": [
+        "12"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "2"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q71",
+      "tableLabel": "A071",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q72",
+      "tableLabel": "A072",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q73",
+      "tableLabel": "A073",
+      "officialKeyCells": [
+        "12"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "2"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q74",
+      "tableLabel": "A074",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q75",
+      "tableLabel": "A075",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q76",
+      "tableLabel": "A076",
+      "officialKeyCells": [
+        "12"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "2"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q77",
+      "tableLabel": "A077",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q78",
+      "tableLabel": "A078",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q79",
+      "tableLabel": "A079",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q8",
+      "tableLabel": "A008",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q80",
+      "tableLabel": "A080",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q81",
+      "tableLabel": "A081",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q82",
+      "tableLabel": "A082",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q83",
+      "tableLabel": "A083",
+      "officialKeyCells": [
+        "34"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q84",
+      "tableLabel": "A084",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q85",
+      "tableLabel": "A085",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q86",
+      "tableLabel": "A086",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q87",
+      "tableLabel": "A087",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q88",
+      "tableLabel": "A088",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q89",
+      "tableLabel": "A089",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q9",
+      "tableLabel": "A009",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q90",
+      "tableLabel": "A090",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q91",
+      "tableLabel": "A091",
+      "officialKeyCells": [
+        "25"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q92",
+      "tableLabel": "A092",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q93",
+      "tableLabel": "A093",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q94",
+      "tableLabel": "A094",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q95",
+      "tableLabel": "A095",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q96",
+      "tableLabel": "A096",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q97",
+      "tableLabel": "A097",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q98",
+      "tableLabel": "A098",
+      "officialKeyCells": [
+        "1",
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q99",
+      "tableLabel": "A099",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q1",
+      "tableLabel": "B001",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q10",
+      "tableLabel": "B010",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q100",
+      "tableLabel": "B100",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q11",
+      "tableLabel": "B011",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q12",
+      "tableLabel": "B012",
+      "officialKeyCells": [
+        "34"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q13",
+      "tableLabel": "B013",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q14",
+      "tableLabel": "B014",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q15",
+      "tableLabel": "B015",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q16",
+      "tableLabel": "B016",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q17",
+      "tableLabel": "B017",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q18",
+      "tableLabel": "B018",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q19",
+      "tableLabel": "B019",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q2",
+      "tableLabel": "B002",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q20",
+      "tableLabel": "B020",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q21",
+      "tableLabel": "B021",
+      "officialKeyCells": [
+        "15"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q22",
+      "tableLabel": "B022",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q23",
+      "tableLabel": "B023",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q24",
+      "tableLabel": "B024",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q25",
+      "tableLabel": "B025",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+      "tableLabel": "B026",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q27",
+      "tableLabel": "B027",
+      "officialKeyCells": [
+        "23"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q28",
+      "tableLabel": "B028",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q29",
+      "tableLabel": "B029",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q3",
+      "tableLabel": "B003",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q30",
+      "tableLabel": "B030",
+      "officialKeyCells": [
+        "4",
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q31",
+      "tableLabel": "B031",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q32",
+      "tableLabel": "B032",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q33",
+      "tableLabel": "B033",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q34",
+      "tableLabel": "B034",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q35",
+      "tableLabel": "B035",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q36",
+      "tableLabel": "B036",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q37",
+      "tableLabel": "B037",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q38",
+      "tableLabel": "B038",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q39",
+      "tableLabel": "B039",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q4",
+      "tableLabel": "B004",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q40",
+      "tableLabel": "B040",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q41",
+      "tableLabel": "B041",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q42",
+      "tableLabel": "B042",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q43",
+      "tableLabel": "B043",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q44",
+      "tableLabel": "B044",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q45",
+      "tableLabel": "B045",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q46",
+      "tableLabel": "B046",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q47",
+      "tableLabel": "B047",
+      "officialKeyCells": [
+        "34"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q48",
+      "tableLabel": "B048",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q49",
+      "tableLabel": "B049",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q5",
+      "tableLabel": "B005",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q50",
+      "tableLabel": "B050",
+      "officialKeyCells": [
+        "45"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q51",
+      "tableLabel": "B051",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q52",
+      "tableLabel": "B052",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q53",
+      "tableLabel": "B053",
+      "officialKeyCells": [
+        "25"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q54",
+      "tableLabel": "B054",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q55",
+      "tableLabel": "B055",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q56",
+      "tableLabel": "B056",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q57",
+      "tableLabel": "B057",
+      "officialKeyCells": [
+        "1",
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q58",
+      "tableLabel": "B058",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q59",
+      "tableLabel": "B059",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q6",
+      "tableLabel": "B006",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q60",
+      "tableLabel": "B060",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q61",
+      "tableLabel": "B061",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q62",
+      "tableLabel": "B062",
+      "officialKeyCells": [
+        "35"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q63",
+      "tableLabel": "B063",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q64",
+      "tableLabel": "B064",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q65",
+      "tableLabel": "B065",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q66",
+      "tableLabel": "B066",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q67",
+      "tableLabel": "B067",
+      "officialKeyCells": [
+        "12"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "2"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q68",
+      "tableLabel": "B068",
+      "officialKeyCells": [
+        "2",
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q69",
+      "tableLabel": "B069",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+      "tableLabel": "B007",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q70",
+      "tableLabel": "B070",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q71",
+      "tableLabel": "B071",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q72",
+      "tableLabel": "B072",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q73",
+      "tableLabel": "B073",
+      "officialKeyCells": [
+        "14"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q74",
+      "tableLabel": "B074",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q75",
+      "tableLabel": "B075",
+      "officialKeyCells": [
+        "2",
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2",
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q76",
+      "tableLabel": "B076",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q77",
+      "tableLabel": "B077",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q78",
+      "tableLabel": "B078",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q79",
+      "tableLabel": "B079",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q8",
+      "tableLabel": "B008",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q80",
+      "tableLabel": "B080",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q81",
+      "tableLabel": "B081",
+      "officialKeyCells": [
+        "45"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q82",
+      "tableLabel": "B082",
+      "officialKeyCells": [
+        "15"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q83",
+      "tableLabel": "B083",
+      "officialKeyCells": [
+        "34"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q84",
+      "tableLabel": "B084",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q85",
+      "tableLabel": "B085",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q86",
+      "tableLabel": "B086",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q87",
+      "tableLabel": "B087",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q88",
+      "tableLabel": "B088",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q89",
+      "tableLabel": "B089",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q9",
+      "tableLabel": "B009",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q90",
+      "tableLabel": "B090",
+      "officialKeyCells": [
+        "3"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q91",
+      "tableLabel": "B091",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q92",
+      "tableLabel": "B092",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q93",
+      "tableLabel": "B093",
+      "officialKeyCells": [
+        "5"
+      ],
+      "oneBasedAcceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q94",
+      "tableLabel": "B094",
+      "officialKeyCells": [
+        "2"
+      ],
+      "oneBasedAcceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q95",
+      "tableLabel": "B095",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q96",
+      "tableLabel": "B096",
+      "officialKeyCells": [
+        "1"
+      ],
+      "oneBasedAcceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q97",
+      "tableLabel": "B097",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q98",
+      "tableLabel": "B098",
+      "officialKeyCells": [
+        "4"
+      ],
+      "oneBasedAcceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "excludedFromScoring": false
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q99",
+      "tableLabel": "B099",
+      "officialKeyCells": [
+        "34"
+      ],
+      "oneBasedAcceptedChoices": [
+        "3",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "excludedFromScoring": false
+    }
+  ],
+  "selected70Matched": true,
+  "sourcePacketDependent": false
+}
