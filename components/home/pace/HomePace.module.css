@@ -4,7 +4,7 @@
   --plan-calendar: 8rem;
   --plan-intro: calc(2.75rem + var(--plan-calendar));
   --plan-progress: 5.5rem;
-  --plan-actions: 2.75rem;
+  --plan-actions: 5rem;
   --plan-padding: .75rem;
   --plan-space: clamp(1rem, 5vw, 2.75rem);
   --return-intro: 6.75rem;
@@ -122,8 +122,30 @@
 .dailyTarget { font-size: .9375rem; }
 .dailyTarget strong { margin-inline-start: .15em; font-size: 1.125rem; font-variant-numeric: tabular-nums; }
 .planCard :global(.study-primary) { width: 100%; justify-content: space-between; }
-.planActions { display: flex; flex-wrap: wrap; justify-content: space-between; column-gap: .5rem; }
-.planActions > :global(.study-link) { margin: 0; }
+.planActions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .25rem;
+}
+.pawAction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .125rem;
+  min-block-size: 44px;
+  min-inline-size: 44px;
+  padding: .25rem 0;
+  border-radius: .75rem;
+  color: var(--p3-scene-link, inherit);
+  font-size: .8125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+}
+.pawAction:hover span { text-decoration: underline; }
+.pawAction:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
 .runnerButton {
   display: block;
   width: 100%;

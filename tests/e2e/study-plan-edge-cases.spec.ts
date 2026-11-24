@@ -29,6 +29,55 @@ async function setup(page: Page, plan?: PacePlan, count = 0, clockMode: "fixed" 
 
 test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
 
+test("the first-paint goal matches the hydrated goal and stays fixed during home updates", async ({ page }) => {
+  await setup(page);
+  const hydrationErrors: string[] = [];
+  page.on("console", message => {
+    if (message.type() === "error" && /hydrat|Minified React error #(?:418|423|425)/i.test(message.text())) {
+      hydrationErrors.push(message.text());
+    }
+  });
+  const response = await page.goto("/");
+  expect(response?.ok()).toBe(true);
+  const html = await response!.text();
+  const goal = html.match(/<image href="(\/images\/home\/goal\/goal-[145]\.webp)"/)?.[1];
+  expect(goal).toBeDefined();
+  await expect(page.locator("#today")).toHaveAttribute("data-home-state", "new");
+  const image = page.locator("[data-pace-finish] image");
+  await expect(image).toHaveAttribute("href", goal!);
+  await page.getByRole("searchbox", { name: "資格名・略称で検索" }).fill("ITパスポート");
+  await expect(image).toHaveAttribute("href", goal!);
+  expect(hydrationErrors).toEqual([]);
+});
+
+test("the three paw actions keep their accessible names, target sizes, and keyboard order", async ({ page }) => {
+  await setup(page, makePlan());
+  await page.goto("/");
+  const actions = page.locator('.p3-home-scene [data-event-panel="actions"]');
+  const weak = actions.getByRole("link", { name: "苦手リスト（0問）" });
+  const years = actions.getByRole("link", { name: "年度を選んで解く" });
+  const plan = actions.getByRole("button", { name: "計画の確認・変更" });
+  await expect(weak).toHaveAttribute("href", "/review?mode=weak&exam=ip");
+  await expect(years).toHaveAttribute("href", "/ip");
+  await expect(actions.getByRole("link")).toHaveCount(2);
+  await expect(actions.getByRole("button")).toHaveCount(1);
+  for (const [index, action] of [weak, years, plan].entries()) {
+    const art = action.locator("img");
+    await expect(art).toHaveAttribute("src", `/images/home/paw-buttons/paw-${index + 1}.webp`);
+    await expect(art).toHaveAttribute("alt", "");
+    const box = await action.boundingBox();
+    expect(box?.width).toBeGreaterThanOrEqual(44);
+    expect(box?.height).toBeGreaterThanOrEqual(44);
+  }
+  await weak.focus();
+  await page.keyboard.press("Tab");
+  await expect(years).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(plan).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("dialog", { name: "学習計画" })).toBeVisible();
+});
+
 test("a saved plan without an appointment shows no invented target or paid nudge", async ({ page }) => {
   await setup(page, { ...makePlan(), examDate: null });
   await page.goto("/");
@@ -69,7 +118,7 @@ for (const percent of [0, 50, 100]) {
     for (const width of [320, 390, 1280]) {
       await page.setViewportSize({ width, height: 844 });
       const geometry = await track.evaluate(el => {
-        const image = el.querySelector("image")!, flag = el.querySelector<SVGGElement>("[data-pace-finish]")!;
+        const image = el.querySelector(".p3-track-runner image")!, flag = el.querySelector<SVGGElement>("[data-pace-finish]")!;
         const frame = image.closest("svg")!, runner = frame.closest<SVGGElement>("g")!;
         const position = runner.transform.baseVal.getItem(0).matrix;
         const viewport = runner.ownerSVGElement!.viewBox.baseVal;

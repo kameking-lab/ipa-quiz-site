@@ -3,6 +3,8 @@ import { useEffect, useId, useLayoutEffect, useRef, useState, type RefObject } f
 import { paceRunSprite } from "@/lib/home/pace-run";
 import styles from "./HomePace.module.css";
 
+export type GoalVariant = 1 | 4 | 5;
+
 const START_X = 39;
 const TRACK_LENGTH = 212;
 const TRACK_WIDTH = 320;
@@ -156,8 +158,8 @@ function RunningChihuahua({ src, frames, percent, lineY, fillRef, stopped, maste
   </g>;
 }
 
-export function PaceTrack({ runArt, mastered, total, stopped = false }: {
-  runArt: string; mastered: number; total: number; stopped?: boolean;
+export function PaceTrack({ runArt, goalVariant, mastered, total, stopped = false }: {
+  runArt: string; goalVariant: GoalVariant; mastered: number; total: number; stopped?: boolean;
 }) {
   const fillRef = useRef<SVGLineElement>(null);
   const sprite = paceRunSprite(runArt);
@@ -167,7 +169,7 @@ export function PaceTrack({ runArt, mastered, total, stopped = false }: {
     <Trail lineY={lineY} />
     <line ref={fillRef} x1={START_X} y1={lineY} x2={trackX(percent)} y2={lineY}
       strokeWidth="8" strokeLinecap="round" className="p3-trail-progress stroke-primary" />
-    <FinishFlag lineY={lineY} />
+    <FinishArt lineY={lineY} variant={goalVariant} />
     <RunningChihuahua key={sprite.src} {...sprite} percent={percent} lineY={lineY} fillRef={fillRef} stopped={stopped}
       mastery={`${mastered}問 / ${total}問クリア`} />
     <TrackLabel x={START_X} y={97}>0問</TrackLabel>
@@ -195,33 +197,14 @@ function Trail({ lineY }: { lineY: number }) {
   </g>;
 }
 
-function FinishFlag({ lineY }: { lineY: number }) {
-  const gold = useId();
+function FinishArt({ lineY, variant }: { lineY: number; variant: GoalVariant }) {
   return <g transform={`translate(275 ${lineY})`} aria-hidden="true" data-pace-finish>
-    <defs>
-      <linearGradient id={gold} x2="0" y2="1">
-        <stop stopColor="#fff4ad" />
-        <stop offset=".53" stopColor="#f4cd52" />
-        <stop offset="1" stopColor="#e8ab38" />
-      </linearGradient>
-    </defs>
-    <path d="M-13-56l2 3m2 11-4 1M40-49l2-3m-1 13 3 1" stroke="#f7bd51" strokeWidth="2" strokeLinecap="round" />
-    <path d="M-4-67l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5ZM37-35l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5Z" fill="#fff3a4" stroke="#9b601d" strokeWidth=".65" />
-    <path d="M0 0v-65" stroke="#68421e" strokeWidth="4" strokeLinecap="round" />
-    <path d="M0-1v-64" stroke="#ffde74" strokeWidth="1.5" />
-    <circle cy="-66" r="3.4" fill="#fff1a5" stroke="#94601d" />
-    <path d="M0-61Q10-65 20-62T43-62l-6 11 6 10q-12 4-23 0T0-39Z" fill={`url(#${gold})`} stroke="#94601d" strokeLinejoin="round" />
-    <text x="19" y="-47" textAnchor="middle" fontSize="13" fontWeight="800" fill="#492709">合格</text>
-    <path d="M-8-15h17l3 4h-23Z" fill="#fff0a4" stroke="#94601d" strokeLinejoin="round" />
-    <path d="M-15-11h30v9h-30z" fill={`url(#${gold})`} stroke="#94601d" />
-    <rect x="-20" y="-3" width="40" height="7" rx="2" fill="#e3a739" stroke="#94601d" />
-    <path d="M-5-19q-9-4-9-14m19 14q9-4 9-14" fill="none" stroke="#a8691b" strokeLinecap="round" />
-    <path d="M-7-20q-8 0-8-5 6-1 8 5Zm-4-4q-7-2-5-7 5 1 5 7Zm18 4q8 0 8-5-6-1-8 5Zm4-4q7-2 5-7-5 1-5 7Z" fill="#ffde74" stroke="#a8691b" strokeWidth=".75" />
+    <image href={`/images/home/goal/goal-${variant}.webp`} x="-10" y="-74" width="52" height="78" />
   </g>;
 }
 
 /** The track before a plan exists: the chihuahua waits at the start line. */
-export function StartTrack({ runArt }: { runArt: string }) {
+export function StartTrack({ runArt, goalVariant }: { runArt: string; goalVariant: GoalVariant }) {
   const finish = trackX(100);
   const lineY = 73;
   return <svg viewBox={`0 0 ${TRACK_WIDTH} 96`} className="p3-pace-track block w-full" role="img" aria-label="チワワがスタートで待機中">
@@ -229,7 +212,7 @@ export function StartTrack({ runArt }: { runArt: string }) {
     <svg x={START_X - FRAME_SIZE / 2} y={lineY - FRAME_SIZE + 1} width={FRAME_SIZE} height={FRAME_SIZE} className="overflow-hidden" aria-hidden="true">
       <image href={runArt} width={FRAME_SIZE * 4} height={FRAME_SIZE} />
     </svg>
-    <FinishFlag lineY={lineY} />
+    <FinishArt lineY={lineY} variant={goalVariant} />
     <TrackLabel x={START_X} y={94}>スタート</TrackLabel>
     <TrackLabel x={finish} y={94} end>ゴール</TrackLabel>
   </svg>;

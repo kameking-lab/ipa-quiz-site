@@ -1,5 +1,6 @@
 "use client";
 import { Suspense, useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -34,7 +35,7 @@ import { CountdownDate, countdownQualifier, ExamCountdownCalendar } from "./Exam
 import { PlanCalendarButton } from "./PlanCalendarButton";
 import { PostExamQualifications } from "./PostExamQualifications";
 import { PlanCreateSheet, weekdayLabels } from "./PlanCreateSheet";
-import { PaceTrack, StartTrack } from "./PaceTrack";
+import { PaceTrack, StartTrack, type GoalVariant } from "./PaceTrack";
 import { HomeEventArt, useHomeEvent } from "@/components/home/HomeEventArt";
 import styles from "./HomePace.module.css";
 
@@ -57,9 +58,9 @@ function HomePlanReferral({ keys, onOpen }: { keys: readonly string[]; onOpen(pr
   return null;
 }
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
-export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = false, directory, children }: {
+export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = false, goalVariant = 1, directory, children }: {
   domains: readonly HomeDirectoryDomain[]; planExamKeys: readonly string[]; initialDate?: string; createOnLoad?: boolean;
-  directory?: ReactNode; children?: ReactNode;
+  goalVariant?: GoalVariant; directory?: ReactNode; children?: ReactNode;
 }) {
   const router = useRouter();
   const items = useMemo(() => domains.flatMap(d => [...d.featured, ...d.compact]), [domains]);
@@ -251,7 +252,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
             {calendarEmpty && setExamDate}
           </div>
           <div className="p3-event-track" data-pace-track="progress">
-            {pace?.total ? <PaceTrack key={plan.id} runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} /> :
+            {pace?.total ? <PaceTrack key={plan.id} goalVariant={goalVariant} runArt={qualificationRunArt(plan.exam, planDomain?.id)} mastered={pace.mastered} total={pace.total} stopped={postExam} /> :
               <div className={styles.planCount}>
                 {catalog === undefined ? <p role="status" className="text-sm p3-scene-muted">問題を読み込み中…</p> : catalog === null ? <>
                   <p role="alert" className="text-sm">問題を読み込めませんでした</p>
@@ -286,9 +287,18 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           </div>}
           <div className="p3-event-panel" data-event-panel="actions">
             <div className={styles.planActions}>
-              <Link className="study-link" href={`/review?mode=weak&exam=${encodeURIComponent(plan.exam)}`} aria-label={weakCount !== null ? `苦手リスト（${weakCount}問）` : undefined}>苦手リスト</Link>
-              <Link className="study-link" href={item?.href ?? "/search"}>年度を選んで解く</Link>
-              <button type="button" className="study-link" aria-haspopup="dialog" onClick={() => setSheet("detail")}>計画の確認・変更</button>
+              <Link className={styles.pawAction} href={`/review?mode=weak&exam=${encodeURIComponent(plan.exam)}`} aria-label={weakCount !== null ? `苦手リスト（${weakCount}問）` : undefined}>
+                <Image src="/images/home/paw-buttons/paw-1.webp" alt="" width={64} height={52} unoptimized />
+                <span>苦手リスト</span>
+              </Link>
+              <Link className={styles.pawAction} href={item?.href ?? "/search"}>
+                <Image src="/images/home/paw-buttons/paw-2.webp" alt="" width={64} height={52} unoptimized />
+                <span>年度を選んで解く</span>
+              </Link>
+              <button type="button" className={styles.pawAction} aria-haspopup="dialog" onClick={() => setSheet("detail")}>
+                <Image src="/images/home/paw-buttons/paw-3.webp" alt="" width={64} height={52} unoptimized />
+                <span>計画の確認・変更</span>
+              </button>
             </div>
             {nativeClient() && passMoment?.planId !== plan.id && canRemindForPlan(plan) && <StudyReminderControl key={plan.id} planId={plan.id} />}
           </div>
@@ -302,7 +312,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           </div>
         </div>
         <div className="p3-event-track">
-          <StartTrack runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
+          <StartTrack goalVariant={goalVariant} runArt={qualificationRunArt(previousExam ?? "", previousDomain?.id)} />
         </div>
         <div className="p3-event-panel" data-event-panel="actions">
           <Link className="study-primary mt-2" href={resume?.href ?? previousItem?.href ?? "/search"}>続きを解く <ArrowRight aria-hidden="true" className="size-5 shrink-0" /></Link>
@@ -315,7 +325,7 @@ export function HomePace({ domains, planExamKeys, initialDate, createOnLoad = fa
           </div>
           <div className="p3-event-track">
             <button type="button" disabled={restoring} aria-haspopup="dialog" aria-labelledby="home-start-track-description" className="study-focus block w-full rounded-xl px-1" onClick={() => setSheet("create")}>
-              <StartTrack runArt={qualificationRunArt(initialExam)} />
+              <StartTrack goalVariant={goalVariant} runArt={qualificationRunArt(initialExam)} />
               <span id="home-start-track-description" className="p3-event-inline-panel block text-[13px] font-semibold underline underline-offset-4" data-event-panel="actions">学習計画を作る</span>
             </button>
           </div>
