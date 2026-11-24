@@ -11,7 +11,7 @@ import { MonthlyMemoryStore, monthlyFixture, monthlyFixtureConfig } from "./mont
 const mocks = vi.hoisted(() => ({
   userId: "bob" as string | null,
   service: null as MonthlyService | null,
-  account: { userId: "bob", appUserId: "", expiresAt: null as Date | null, checkedAt: null as Date | null },
+  account: { userId: "bob", appUserId: "", expiresAt: null as Date | null, checkedAt: null as Date | null, productionExpiresAt: null as Date | null, sandboxExpiresAt: null as Date | null },
   identitySecret: "public-fixture-identity-for-membership-tests",
   storeLookup: vi.fn<() => Response>(),
 }));
@@ -28,14 +28,14 @@ vi.mock("@/lib/db/prisma", () => ({ prisma: {
   $executeRawUnsafe: async () => 1,
   $queryRawUnsafe: async (sql: string, ...args: unknown[]) => {
     if (sql.startsWith('UPDATE "MobileRevenueCatAccount"')) {
-      Object.assign(mocks.account, { expiresAt: args[1], checkedAt: args[2] });
+      Object.assign(mocks.account, { expiresAt: args[1], checkedAt: args[2], productionExpiresAt: args[3], sandboxExpiresAt: args[4] });
     } else if (!sql.startsWith("SELECT")) throw new Error("unexpected query");
     return [{ ...mocks.account }];
   },
 } }));
 vi.mock("@/mobile/server/config", () => ({
   mobileConfig: () => ({ enabled: true }),
-  requireMobileReady: () => ({ identitySecret: mocks.identitySecret, apiKey: "fixture", productId: "monthly", entitlement: "pro", environment: "SANDBOX" }),
+  requireMobileReady: () => ({ identitySecret: mocks.identitySecret, apiKey: "fixture", productId: "monthly", entitlement: "pro", environment: "APP_STORE" }),
 }));
 vi.mock("@/lib/billing/duplicate-purchase-runtime", () => ({ auditDuplicatePurchases: async () => {} }));
 
@@ -57,7 +57,7 @@ function storeReceipt(expiresAt = now + 86_400_000, refunded = false) {
   const expiration = new Date(expiresAt).toISOString();
   return Response.json({ subscriber: {
     entitlements: { pro: { product_identifier: "monthly", expires_date: expiration, purchase_date: new Date(0).toISOString() } },
-    subscriptions: { monthly: { store: "app_store", is_sandbox: true, expires_date: expiration,
+    subscriptions: { monthly: { store: "app_store", is_sandbox: false, expires_date: expiration,
       ...(refunded && { refunded_at: new Date(now).toISOString() }) } },
   } });
 }
@@ -68,7 +68,7 @@ beforeEach(() => {
   store.accounts.clear();
   mocks.userId = "bob";
   mocks.service = new MonthlyService(store, monthlyFixtureConfig, () => new Date(Date.now()));
-  Object.assign(mocks.account, { appUserId: appUserIdentity("bob", mocks.identitySecret), expiresAt: null, checkedAt: null });
+  Object.assign(mocks.account, { appUserId: appUserIdentity("bob", mocks.identitySecret), expiresAt: null, checkedAt: null, productionExpiresAt: null, sandboxExpiresAt: null });
   mocks.storeLookup.mockReset();
   vi.stubGlobal("fetch", async (url: string) => {
     if (url === "/api/billing/status") return GET(statusRequest);
@@ -118,7 +118,7 @@ describe.each([false, true])("App Store study membership (AI quota rollout: %s)"
   });
 
   it("rechecks a recently verified but just expired period and recognizes the renewal", async () => {
-    Object.assign(mocks.account, { expiresAt: new Date(now - 1000), checkedAt: new Date(now - 5000) });
+    Object.assign(mocks.account, { expiresAt: new Date(now - 1000), productionExpiresAt: new Date(now - 1000), checkedAt: new Date(now - 5000) });
     mocks.storeLookup.mockImplementation(() => storeReceipt());
     expect(await adsAllowed()).toBe(false);
     expect(mocks.storeLookup).toHaveBeenCalledTimes(1);
@@ -129,7 +129,7 @@ describe.each([false, true])("App Store study membership (AI quota rollout: %s)"
 
   it("keeps verified access during a temporary outage until its recorded expiry", async () => {
     const expiry = now + 1000;
-    Object.assign(mocks.account, { expiresAt: new Date(expiry), checkedAt: new Date(now - 65_000) });
+    Object.assign(mocks.account, { expiresAt: new Date(expiry), productionExpiresAt: new Date(expiry), checkedAt: new Date(now - 65_000) });
     mocks.storeLookup.mockImplementation(() => new Response(null, { status: 503 }));
     expect(await (await GET(statusRequest)).json()).toMatchObject({ entitled: true, expiresAt: new Date(expiry).toISOString() });
     expect(await adsAllowed()).toBe(false);
@@ -170,7 +170,7 @@ describe.each([false, true])("App Store study membership (AI quota rollout: %s)"
     mocks.storeLookup.mockImplementation(() => Response.json(null));
     vi.mocked(Date.now).mockReturnValue(now + 86_400_000);
     for (const expiry of [snapshot.expiresAt, null]) {
-      Object.assign(mocks.account, { expiresAt: expiry, checkedAt: expiry ? snapshot.checkedAt : null });
+      Object.assign(mocks.account, { expiresAt: expiry, productionExpiresAt: expiry, checkedAt: expiry ? snapshot.checkedAt : null });
       const unverified = { ...mocks.account };
       const pending = await GET(statusRequest);
       expect.soft(pending.status).toBe(503);
@@ -189,7 +189,7 @@ describe.each([false, true])("App Store study membership (AI quota rollout: %s)"
   });
 
   it.each(["expired", "refunded"])("classifies a confirmed %s purchase as free", async method => {
-    Object.assign(mocks.account, { expiresAt: new Date(now - 1000), checkedAt: new Date(now - 5000) });
+    Object.assign(mocks.account, { expiresAt: new Date(now - 1000), productionExpiresAt: new Date(now - 1000), checkedAt: new Date(now - 5000) });
     mocks.storeLookup.mockImplementation(() => method === "expired" ? storeReceipt(now - 1000) : storeReceipt(now + 10_000, true));
     expect(await (await GET(statusRequest)).json()).toMatchObject({ entitled: false, appStore: false });
     expect(await adsAllowed()).toBe(true);

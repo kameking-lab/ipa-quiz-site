@@ -17,7 +17,7 @@ it("prioritizes web membership and never consults RevenueCat to offer a second p
   const verified=await verifyLease(r.lease,keys.publicKey.export({type:"spki",format:"pem"}).toString(),"u");expect(verified.expiresAt-verified.issuedAt).toBeLessThanOrEqual(86400000);
 });
 it("connects only server-verified RevenueCat rights and caps offline time at paid expiry",async()=>{
-  const expiresAt=new Date(Date.now()+3600000);m.rc.mockResolvedValue({expiresAt});const r=await mobileEntitlement("u",true);expect(r).toMatchObject({source:"app-store",entitled:true,expiresAt:expiresAt.toISOString()});expect(m.rc).toHaveBeenCalledWith("u",true);
+  const expiresAt=new Date(Date.now()+3600000);m.rc.mockResolvedValue({expiresAt});const r=await mobileEntitlement("u",true,"app");expect(r).toMatchObject({source:"app-store",entitled:true,expiresAt:expiresAt.toISOString()});expect(m.rc).toHaveBeenCalledWith("u",{scope:"app",fresh:true,allowStoredStudyAccess:false});
   const lease=await verifyLease(r.lease,keys.publicKey.export({type:"spki",format:"pem"}).toString(),"u");expect(lease.expiresAt).toBe(expiresAt.getTime());
 });
 it("a failed web identity lookup never becomes a purchase-eligible free account",async()=>{m.web.mockRejectedValue(Error("database offline"));await expect(mobileEntitlement("u")).rejects.toThrow("database offline");expect(m.rc).not.toHaveBeenCalled();});

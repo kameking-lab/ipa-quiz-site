@@ -63,7 +63,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   // Why the price could not be shown. Kept apart from `notice`, which every
   // later action clears, so the reason stays on screen until it is fixed.
   const [offerError,setOfferError]=useState(""), [offerLoading,setOfferLoading]=useState(false);
-  const [resume,setResume]=useState<Intent|null>(null);
+  const [resume,setResume]=useState<{ action: Intent; owner: string } | null>(null);
   // The last failed membership check (server code included). Separate from
   // `notice` so a later success removes it instead of leaving a stale banner.
   const [statusError,setStatusError]=useState("");
@@ -102,7 +102,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       setStatusError(message); throw new StatusError(message);
     }
     setStatusError("");
-    const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
+    const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration; requiresAppLogin?: boolean };
     result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
     if (signingOut.current) throw new StatusError("ログアウト中です。");
     if (studyReady.current && result.entitlement.userId !== user.current) {
@@ -127,7 +127,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (signingOut.current) throw new StatusError("ログアウト中です。");
     setAccess(result.entitlement); setConfig(result.configuration);
     if (result.entitlement.entitled && result.entitlement.lease) await downloads.updateRights(result.entitlement, result.configuration.leasePublicKey).catch(()=>{setNotice("オフライン用の検証キーは配布設定待ちです。オンラインの学習・会員権利は利用できます。");});
-    else if (!result.entitlement.entitled) await downloads.invalidate();
+    else if (!result.entitlement.entitled && !result.requiresAppLogin) await downloads.invalidate();
     else {
       const cached = await downloads.rights();
       if (cached && cached.access.userId !== result.entitlement.userId) await downloads.invalidate();
@@ -230,14 +230,14 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   useEffect(()=>{ if (!open || !inSite) return; let cancelled=false; void (async()=>{
     const r = await refresh(true); if(cancelled)return;
     await loadOffer(r, ()=>cancelled); if(cancelled)return;
-    if (r.entitlement.userId) {
+    if (r.entitlement.userId && !r.requiresAppLogin) {
       const raw=(await Preferences.get({key:INTENT_KEY})).value;
       if (raw) {
         await Preferences.remove({key:INTENT_KEY});
-        const intent=JSON.parse(raw) as {action?:Intent;createdAt?:number;returnTo?:string};
-        if ((intent.action==="buy"||intent.action==="restore") && Date.now()-(intent.createdAt??0)<15*60000 && !cancelled) {
+        const intent=JSON.parse(raw) as {action?:Intent;createdAt?:number;returnTo?:string;owner?:string|null};
+        if ((!intent.owner || intent.owner === r.entitlement.userId) && (intent.action==="buy"||intent.action==="restore") && Date.now()-(intent.createdAt??0)<15*60000 && !cancelled) {
           setPurchaseReturn(safeQuizReturn(intent.returnTo) ?? purchaseReturn.current);
-          setResume(intent.action);
+          setResume({ action: intent.action, owner: r.entitlement.userId });
         }
       }
     }
@@ -257,17 +257,18 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (offerVisible && !offerWasVisible.current) sendConversion("offer_viewed");
     offerWasVisible.current = offerVisible;
   }, [offerVisible]);
-  const loginFor = async (action: Intent)=>{
+  const loginFor = async (action: Intent, owner: string | null)=>{
     if (action === "buy") sendConversion("signin_viewed");
-    await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,createdAt:Date.now(),returnTo:purchaseReturn.current})});
+    await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,owner,createdAt:Date.now(),returnTo:purchaseReturn.current})});
     setSigningIn("opening");
     try { await signIn(returnHere()); } finally { setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500); }
     setNotice(action==="buy"?"ログインが終わると、そのまま購入画面に進みます。":"ログインが終わると、そのまま購入を復元します。");
   };
-  const purchase = ()=>void run(async()=>{
+  const purchase = (expectedOwner?: string)=>void run(async()=>{
     const r=await refresh(true);
+    if (expectedOwner && expectedOwner !== r.entitlement.userId) return;
     if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
-    if(!r.entitlement.userId){ await loginFor("buy"); return; }
+    if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("buy", r.entitlement.userId); return; }
     if(r.pending) return;
     await Preferences.remove({key:INTENT_KEY});
     const selected=offer??await loadOffer(r);
@@ -349,11 +350,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const confirmed = await refresh(true);
     if (state && !confirmed.entitlement.entitled) setNotice("App Storeの購入を確認中です。反映までお待ちください。");
   });
-  const restore = ()=>void run(async()=>{
+  const restore = (expectedOwner?: string)=>void run(async()=>{
     storeKitRunning.current = true;
     try {
       const r=await refresh(true);
-      if(!r.entitlement.userId){ await loginFor("restore"); return; }
+      if (expectedOwner && expectedOwner !== r.entitlement.userId) return;
+      if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("restore", r.entitlement.userId); return; }
       await Preferences.remove({key:INTENT_KEY});
       await membership.restore(r.configuration,r.entitlement);
     } finally {
@@ -365,7 +367,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   // Latest handlers for the resume effect below (effects run in order).
   const actions=useRef({purchase,restore});
   useEffect(()=>{ actions.current={purchase,restore}; });
-  useEffect(()=>{ if(!resume)return; setResume(null); if(resume==="buy")actions.current.purchase(); else actions.current.restore(); },[resume]);
+  useEffect(()=>{
+    if (!resume) return;
+    setResume(null);
+    if (resume.action === "buy") actions.current.purchase(resume.owner);
+    else actions.current.restore(resume.owner);
+  }, [resume]);
   const startLogin = (switchAccount = false)=>{
     // Instant feedback, then the system sign-in sheet; nothing else is awaited first.
     if (signingIn) return;
@@ -415,7 +422,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
               <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a>
             </nav>
           </div>
-          <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
+          <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={() => restore()}>購入を復元</button>
             <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
           {!access.userId && <button type="button" className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 disabled:opacity-60 touch-manipulation"
             aria-busy={!!signingIn} disabled={!!signingIn} onClick={()=>startLogin()}>{signingIn==="finishing"?"ログインしています…":signingIn?"ログイン画面を開いています…":"ログイン"}</button>}

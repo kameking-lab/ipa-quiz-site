@@ -4,6 +4,7 @@ import { monthlyStripeFixture } from "./monthly-stripe-fixture";
 const wiring = vi.hoisted(() => ({ runtime: null as unknown, user: "alice" }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => wiring.runtime }));
 vi.mock("@/lib/billing/runtime", () => ({
+  optionalBillingSession: async () => ({ user: { id: wiring.user } }),
   billingIdentity: async () => wiring.user, sameOrigin: (request: Request) => { if (request.headers.get("origin") !== "http://localhost:3338") throw Object.assign(new Error(), { status: 403 }); },
   json: (value: unknown) => Response.json(value), billingFailure: (error: { status?: number; code?: string }) => Response.json({ error: error.code ?? "unavailable" }, { status: error.status ?? 503 }),
 }));

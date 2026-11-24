@@ -40,10 +40,11 @@ describe("practice queue continuity", () => {
     fireEvent.click(screen.getByRole("button", { name: "next" }));
     await screen.findByText(ids[1]);
   });
-  it("runs the practice grant when advancing to the prefetched next question", async () => {
+  it("grants only the active question before the learner advances", async () => {
     render(<QuizClient {...props} billingGateEnabled />);
     await screen.findByText(ids[0]);
     expect(granted.mock.calls.map((call) => call[0])).toEqual([ids[0]]);
+    expect(fetch).not.toHaveBeenCalled();
     fireEvent.click(screen.getByRole("button", { name: "next" }));
     await screen.findByText(ids[1]);
     expect(granted.mock.calls.map((call) => call[0])).toEqual([ids[0], ids[1]]);
@@ -58,6 +59,6 @@ describe("practice queue continuity", () => {
     fireEvent.click(screen.getByRole("button", { name: "next" }));
     await screen.findByText(ids[1]);
     expect(fetch).not.toHaveBeenCalledWith(expect.stringContaining(ids[2]), expect.anything());
-    await waitFor(() => expect(granted).not.toHaveBeenCalled());
+    await waitFor(() => expect(granted.mock.calls.map(call => call[0])).toEqual([ids[0], ids[1]]));
   });
 });

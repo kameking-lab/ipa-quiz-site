@@ -1,4 +1,5 @@
-import { billingFailure, billingIdentity, billingRuntime, json, sameOrigin } from "@/lib/billing/runtime";
+import { billingFailure, optionalBillingSession, billingRuntime, json, sameOrigin } from "@/lib/billing/runtime";
+import { NATIVE_HEADER } from "@/mobile/shared/contracts";
 import { BillingError } from "@/lib/billing/domain";
 import { z } from "zod";
 import { monthlySelected } from "@/lib/billing/subscription/config";
@@ -8,7 +9,9 @@ export const runtime = "nodejs";
 async function readStatus(request: Request, confirm: boolean) {
   try {
     if (confirm) sameOrigin(request);
-    const userId = await billingIdentity();
+    const session = await optionalBillingSession();
+    const userId = session?.user?.id;
+    if (!userId) throw new BillingError("sign_in_required", 401);
     const order = new URL(request.url).searchParams.get("order") ?? undefined;
     const monthly = monthlySelected();
     if (confirm && monthly && !z.uuid().safeParse(order).success) throw new BillingError("invalid_request", 400);
@@ -21,7 +24,8 @@ async function readStatus(request: Request, confirm: boolean) {
     }
     let appStore = false;
     if(!status.entitled) {
-      const rc=await revenueCatAccess(userId, false, !confirm);
+      const scope = !confirm && session.mobileSession && request.headers.get(NATIVE_HEADER) === "ios" ? "app" : "web";
+      const rc = await revenueCatAccess(userId, { scope, allowStoredStudyAccess: !confirm });
       if(rc?.expiresAt){ appStore = true; status={...status,entitled:true,expiresAt:rc.expiresAt.toISOString()}; }
     }
     let feedbackSubmitted = false;

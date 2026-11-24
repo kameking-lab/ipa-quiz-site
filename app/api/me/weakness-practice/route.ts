@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
-import { billingRuntime, optionalBillingIdentity } from "@/lib/billing/runtime";
+import { billingRuntime, optionalBillingSession } from "@/lib/billing/runtime";
+import { NATIVE_HEADER } from "@/mobile/shared/contracts";
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { weaknessPracticeLimit, weaknessTopicNames, type WeaknessPracticeQuestion } from "@/lib/me/weakness";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -12,13 +13,15 @@ export const runtime = "nodejs";
 const body = z.object({ exam: z.enum(ALL_QUIZ_EXAM_CODES), topics: z.array(z.string().min(1).max(100)).min(1).max(3),
   answered: z.array(z.string().min(1).max(120)).max(3000), limit: z.number().int().min(1).max(weaknessPracticeLimit) }).strict();
 
-async function hasWeaknessPracticeAccess() {
-  const userId = await optionalBillingIdentity();
+async function hasWeaknessPracticeAccess(request: Request) {
+  const session = await optionalBillingSession();
+  const userId = session?.user?.id;
   if (!userId) return false;
   const service = monthlySelected()
     ? (await import("@/lib/billing/subscription/runtime")).monthlyRuntime().service
     : billingRuntime().service;
-  return (await service.status(userId)).entitled || !!await revenueCatAccess(userId);
+  const scope = session.mobileSession && request.headers.get(NATIVE_HEADER) === "ios" ? "app" : "web";
+  return (await service.status(userId)).entitled || !!await revenueCatAccess(userId, { scope });
 }
 
 export async function POST(request: Request) {
@@ -26,7 +29,7 @@ export async function POST(request: Request) {
   const input = body.safeParse(await request.json().catch(() => null));
   if (!input.success) return new Response(null, { status: 400 });
   try {
-    if (!await hasWeaknessPracticeAccess()) return new Response(null, { status: 403 });
+    if (!await hasWeaknessPracticeAccess(request)) return new Response(null, { status: 403 });
     const { exam, topics, answered, limit } = input.data;
     const used = new Set(answered);
     const matching = new Map(topics.map(topic => [topic, [] as WeaknessPracticeQuestion[]]));

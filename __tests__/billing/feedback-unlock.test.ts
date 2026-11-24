@@ -169,6 +169,9 @@ describe("bonus wallet under its SQL transaction boundary", () => {
     const results = await Promise.all(Array.from({ length: 11 }, (_, n) => store.grant(identity, n < 5 ? "2026-11-03" : "2026-11-04", `q${n}`)));
     expect(results.filter(Boolean)).toHaveLength(10); expect(grants).toHaveLength(10);
     expect(await store.grant(identity, "2026-11-03", "q0")).toEqual({ remaining: 0, newlyUsed: false });
+    const retryIds = new Set<string>();
+    expect(await store.grant(identity, "2026-11-03", "unseen", retryIds)).toBeNull();
+    expect([...retryIds].sort()).toEqual(["q0", "q1", "q2", "q3", "q4"]);
     expect(query.mock.calls.some(([sql]) => sql.endsWith("FOR UPDATE"))).toBe(true);
   });
   it("binds an anonymous wallet to its account and denies later signed-out reuse", async () => {

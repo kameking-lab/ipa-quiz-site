@@ -1,6 +1,6 @@
 import "server-only";
 import { randomUUID } from "node:crypto";
-import { active, BillingError, jstDay, type BillingStore, type CheckoutProvider, type PaymentSnapshot } from "./domain";
+import { active, BillingError, DailyLimitError, jstDay, type BillingStore, type CheckoutProvider, type PaymentSnapshot } from "./domain";
 import { checkoutReady, termsHash, transitionEnd, type BillingConfig } from "./config";
 import { mergeFinance, refundState } from "./finance";
 import { strictContentGateEnabled } from "./content-policy";
@@ -151,11 +151,11 @@ export class BillingService {
       const grants = await tx.grants(day);
       if (grants.includes(questionId)) return { kind: "trial" as const, remaining: allowNew ? Math.max(0, this.config.freeDaily - grants.length) : null };
       if (!allowNew) return { kind: "unavailable" as const, remaining: null };
-      if (grants.length >= this.config.freeDaily) return { kind: "limit" as const, remaining: 0 };
+      if (grants.length >= this.config.freeDaily) return { kind: "limit" as const, grants };
       await tx.grant(day, questionId);
       return { kind: "trial" as const, remaining: this.config.freeDaily - grants.length - 1 };
     });
-    if (result.kind === "limit") throw new BillingError("daily_limit", 429);
+    if (result.kind === "limit") throw new DailyLimitError(result.grants);
     if (result.kind === "unavailable") throw new BillingError("billing_unavailable", 503);
     return result;
   }

@@ -7,7 +7,7 @@ vi.mock("@/lib/questions/pool-server", () => ({ findQuestionById: async (id: str
 vi.mock("@/lib/questions/filter", () => ({ isPracticeReadyQuestion: () => true, shuffleChoices: (q: unknown) => q }));
 vi.mock("@/lib/billing/config", () => ({ billingConfig: () => ({ mode: "mock", freeDaily: 10 }), gateReady: () => true }));
 vi.mock("@/lib/billing/subscription/config", () => ({ monthlySelected: () => m.monthly, monthlyConfig: () => ({ mode: "mock", sourceInstance: "test", freeDaily: 10, enabled: true }) }));
-vi.mock("@/lib/billing/runtime", () => ({ optionalBillingIdentity: async () => m.user, billingRuntime: () => ({ service: { status: async () => ({ entitled: m.paid }), grant: m.grant } }), sameOrigin: () => {}, json: (v: unknown, status = 200) => Response.json(v, { status }) }));
+vi.mock("@/lib/billing/runtime", () => ({ optionalBillingIdentity: async () => m.user, optionalBillingSession: async () => m.user ? { user: { id: m.user } } : null, billingRuntime: () => ({ service: { status: async () => ({ entitled: m.paid }), grant: m.grant } }), sameOrigin: () => {}, json: (v: unknown, status = 200) => Response.json(v, { status }) }));
 vi.mock("@/lib/billing/guest-practice", () => ({ readGuestCookie: () => m.guest, guestCookie: () => "signed", cookieHeader: () => "cookie", guestRealm: () => "test", guestGrant: m.guestGrant, guestClaim: m.claim, resetAt: () => "2026-11-03T15:00:00.000Z" }));
 vi.mock("@/lib/feedback/unlock-runtime", () => ({ feedbackStore: () => ({ grant: m.bonus, claim: async () => null }), feedbackBrowserHeader: () => "feedback_browser=renewed; HttpOnly", readFeedbackBrowser: () => "browser", unlockIdentity: (_r: Request, user: string | null) => ({ realm: "test", account: user, browser: "browser" }) }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => ({ service: { status: async () => ({ entitled: m.paid }), grant: m.grant } }) }));
@@ -23,7 +23,7 @@ it("uses the ordinary anonymous quota and requires sign-in for the bonus", async
 it("allows account fallback only after the normal grant fails with daily_limit", async () => {
   m.user = "alice";
   expect((await POST(req())).status).toBe(200);
-  expect(m.bonus).toHaveBeenCalledWith({ realm: "test", account: "alice", browser: "browser" }, expect.any(String), "q11");
+  expect(m.bonus).toHaveBeenCalledWith({ realm: "test", account: "alice", browser: "browser" }, expect.any(String), "q11", undefined);
   m.bonus.mockClear(); m.claim.mockRejectedValue(Error("KV"));
   expect((await POST(req())).status).toBe(429); expect(m.bonus).not.toHaveBeenCalled();
 });

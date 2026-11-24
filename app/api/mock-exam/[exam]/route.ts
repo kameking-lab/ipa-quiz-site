@@ -61,7 +61,7 @@ export async function GET(
     target: count,
     mode,
   });
-  const permitted=await permittedBatch(req,picked);
+  const permitted = await permittedBatch(req, picked, { app: true });
   if(permitted.response)return permitted.response;
   const selected = permitted.rows.map(shuffleChoices).map(toSlim);
 

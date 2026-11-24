@@ -7,8 +7,8 @@ const db = vi.hoisted(() => ({ query: vi.fn(), execute: vi.fn() }));
 vi.mock("@/lib/db/prisma", () => ({ prisma: { $queryRawUnsafe: db.query, $executeRawUnsafe: db.execute } }));
 vi.mock("@/lib/billing/duplicate-purchase-runtime", () => ({ auditDuplicatePurchases: async () => {} }));
 vi.mock("@/mobile/server/config", () => ({
-  mobileConfig: () => ({ enabled: true }),
-  requireMobileReady: () => ({ apiKey: "fixture", identitySecret: "public-fixture-identity-for-testing", productId: "monthly", entitlement: "pro", environment: "SANDBOX" }),
+  mobileConfig: () => ({ enabled: true, environment: "APP_STORE" }),
+  requireMobileReady: () => ({ apiKey: "fixture", identitySecret: "public-fixture-identity-for-testing", productId: "monthly", entitlement: "pro", environment: "APP_STORE" }),
 }));
 
 import { appStorePurchaseStatus, readAppStorePurchaseStatus, refreshRevenueCat, revenueCatAccess } from "@/mobile/server/revenuecat";
@@ -70,11 +70,61 @@ it("makes a newly approved purchase accessible as soon as its receipt is verifie
 
     await expect(appStorePurchaseStatus("alice", true)).resolves.toBeNull();
     await expect(appStorePurchaseStatus("alice", true)).resolves.toBe("active");
-    await expect(revenueCatAccess("alice")).resolves.toMatchObject({ userId: "alice", expiresAt });
+    await expect(revenueCatAccess("alice", { scope: "app" })).resolves.toMatchObject({ userId: "alice", expiresAt });
+    await expect(revenueCatAccess("alice")).resolves.toBeNull();
     expect(lookup).toHaveBeenCalledTimes(2);
   } finally {
     await pg.close();
   }
+});
+
+it.each([true, false])("isolates a verified is_sandbox=%s purchase on fresh, cached and expired reads", async isSandbox => {
+  const pg = new PGlite();
+  try {
+    await setupAccounts(pg);
+    const expiresAt = new Date(Date.now() + 60_000);
+    const paid = { subscriber: {
+      entitlements: { pro: { product_identifier: "monthly", expires_date: expiresAt.toISOString(), purchase_date: new Date(0).toISOString() } },
+      subscriptions: { monthly: { store: "app_store", is_sandbox: isSandbox, expires_date: expiresAt.toISOString() } },
+    } };
+    const lookup = vi.fn(async () => Response.json(paid));
+    vi.stubGlobal("fetch", lookup);
+
+    await expect(revenueCatAccess("alice", { scope: "app", fresh: true })).resolves.toMatchObject({ expiresAt });
+    const web = await revenueCatAccess("alice");
+    expect(web?.expiresAt ?? null).toEqual(isSandbox ? null : expiresAt);
+    expect(lookup).toHaveBeenCalledTimes(1);
+    await expect(appStorePurchaseStatus("alice", false, "web")).resolves.toBe(isSandbox ? null : "active");
+
+    // Expired rights never survive provider downtime, including the stored-study fallback.
+    const expired = new Date(Date.now() - 1000);
+    await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1, "productionExpiresAt"=$2, "sandboxExpiresAt"=$3',
+      [expired, isSandbox ? null : expired, isSandbox ? expired : null]);
+    lookup.mockImplementation(async () => new Response(null, { status: 503 }));
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true }))
+      .rejects.toMatchObject({ code: "membership_check_pending" });
+    const webFallback = revenueCatAccess("alice", { allowStoredStudyAccess: true });
+    if (isSandbox) await expect(webFallback).resolves.toBeNull();
+    else await expect(webFallback).rejects.toMatchObject({ code: "membership_check_pending" });
+    lookup.mockImplementation(async () => new Response(null, { status: 404 }));
+    await expect(revenueCatAccess("alice", { scope: "app" })).resolves.toBeNull();
+  } finally { await pg.close(); }
+});
+
+it("keeps unclassified legacy purchases pending until the store confirms their environment", async () => {
+  const pg = new PGlite();
+  try {
+    await setupAccounts(pg);
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 404 })));
+    await revenueCatAccess("alice", { fresh: true });
+    await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1', [new Date(Date.now() + 60_000)]);
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 503 })));
+    await expect(revenueCatAccess("alice")).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    await expect(revenueCatAccess("alice", { allowStoredStudyAccess: true }))
+      .rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 404 })));
+    await expect(revenueCatAccess("alice", { allowStoredStudyAccess: true })).resolves.toBeNull();
+  } finally { await pg.close(); }
 });
 
 it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase verification strict", async () => {
@@ -92,37 +142,37 @@ it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase 
     await appStorePurchaseStatus("alice", true);
     const setChecked = (age: number) => pg.query('UPDATE "MobileRevenueCatAccount" SET "checkedAt"=$1', [new Date(Date.now() - age)]);
     await setChecked(86_400_000);
-    await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
-    await expect(revenueCatAccess("alice", true)).rejects.toThrow();
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toMatchObject({ expiresAt });
+    await expect(revenueCatAccess("alice", { scope: "app", fresh: true })).rejects.toThrow();
     transport.mockResolvedValueOnce(new Response(null, { status: 429 }));
-    await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toMatchObject({ expiresAt });
     transport.mockRejectedValueOnce(new DOMException("test timeout", "TimeoutError"));
-    await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toMatchObject({ expiresAt });
     transport.mockResolvedValueOnce(new Response(null, { status: 401 }));
-    await expect(revenueCatAccess("alice", false, true)).rejects.toThrow();
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).rejects.toThrow();
     transport.mockImplementationOnce(async () => {
       await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=NULL, "checkedAt"=$1', [new Date()]);
       return new Response(null, { status: 503 });
     });
-    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toBeNull();
     // An old negative snapshot cannot stand in for a failed recheck.
     await setChecked(86_400_000);
     transport.mockResolvedValueOnce(new Response(null, { status: 503 }));
-    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
     // A first-time account has no verified snapshot at all.
     await pg.exec('DELETE FROM "MobileRevenueCatAccount" WHERE "userId"=\'alice\'');
     transport.mockResolvedValueOnce(new Response(null, { status: 429 }));
-    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
     // The checked snapshot can still be recent when a paid period turns over.
     await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1, "checkedAt"=$2',
       [new Date(Date.now() - 1_000), new Date()]);
     transport.mockRejectedValueOnce(new DOMException("test timeout", "TimeoutError"));
-    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
     transport.mockResolvedValueOnce(Response.json(paid));
-    await expect(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toMatchObject({ expiresAt });
     await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1', [new Date(Date.now() - 1_000)]);
     transport.mockResolvedValueOnce(new Response(null, { status: 404 }));
-    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+    await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toBeNull();
   } finally { await pg.close(); }
 });
 
@@ -155,15 +205,15 @@ it("persists snapshots only for verified subscriber documents or a 404", async (
       () => new Response(null, { status: 204 }),
     ]) {
       lookup.mockImplementation(async () => Response.json(paid));
-      await expect(revenueCatAccess("alice", true)).resolves.toMatchObject({ expiresAt });
+      await expect(revenueCatAccess("alice", { scope: "app", fresh: true })).resolves.toMatchObject({ expiresAt });
       await pg.query('UPDATE "MobileRevenueCatAccount" SET "checkedAt"=$1', [oldCheck]);
       const verified = { expiresAt, sandboxExpiresAt: expiresAt, productionExpiresAt: null, checkedAt: oldCheck };
       expect(await snapshot()).toEqual(verified);
       lookup.mockImplementation(async () => invalidResponse());
       const error = { code: "mobile_verification_unexpected_response", status: 503 };
-      await expect.soft(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+      await expect.soft(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toMatchObject({ expiresAt });
       expect.soft(await snapshot()).toEqual(verified);
-      await expect.soft(revenueCatAccess("alice", true)).rejects.toMatchObject(error);
+      await expect.soft(revenueCatAccess("alice", { scope: "app", fresh: true })).rejects.toMatchObject(error);
       await expect.soft(appStorePurchaseStatus("alice", true)).rejects.toMatchObject(error);
       await expect.soft(readAppStorePurchaseStatus("alice", "stripe-test")).rejects.toMatchObject(error);
       expect.soft(await snapshot()).toEqual(verified);
@@ -174,10 +224,10 @@ it("persists snapshots only for verified subscriber documents or a 404", async (
       () => new Response(null, { status: 404 }),
     ]) {
       lookup.mockImplementation(async () => Response.json(paid));
-      await expect(revenueCatAccess("alice", true)).resolves.toMatchObject({ expiresAt });
+      await expect(revenueCatAccess("alice", { scope: "app", fresh: true })).resolves.toMatchObject({ expiresAt });
       await pg.query('UPDATE "MobileRevenueCatAccount" SET "checkedAt"=$1', [oldCheck]);
       lookup.mockImplementation(async () => freeResponse());
-      await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+      await expect(revenueCatAccess("alice", { scope: "app", allowStoredStudyAccess: true })).resolves.toBeNull();
       expect(await snapshot()).toMatchObject({ expiresAt: null, sandboxExpiresAt: null, productionExpiresAt: null });
       expect(await snapshot()).not.toMatchObject({ checkedAt: oldCheck });
     }

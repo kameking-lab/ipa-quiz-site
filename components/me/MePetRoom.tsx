@@ -1,5 +1,7 @@
 "use client";
 
+import { nativeRequestHeaders } from "@/mobile/shared/contracts";
+
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { Award, Heart, Settings, Sparkles, Star, Utensils } from "lucide-react";
@@ -59,7 +61,7 @@ export function MePetRoom({ exam, minutes, todayCount, goal, passedExams, streak
     const refresh = () => {
       // Reuse the existing server entitlement (web + App Store). A local
       // premium flag or a saved cosmetic never establishes paid status.
-      void fetch("/api/billing/status", { cache: "no-store", signal: controller.signal }).then(async response => {
+      void fetch("/api/billing/status", { cache: "no-store", signal: controller.signal, headers: nativeRequestHeaders() }).then(async response => {
         const status: unknown = response.ok ? await response.json() : null;
         if (!cancelled) setPaid({ owner, value: !!status && typeof status === "object" && "entitled" in status && status.entitled === true });
       }).catch(() => { if (!cancelled) setPaid({ owner, value: false }); });

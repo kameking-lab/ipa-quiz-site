@@ -1,4 +1,5 @@
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { requiresPracticeContentGrant } from "@/lib/billing/practice-access";
 import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
@@ -90,10 +91,20 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       { status: 400 },
     );
   }
-  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428});
-    // 動的 import: content-grant は全問題データを読み込むため、ゲートが無効（既定）のときは読み込まない。
+  if (strictContentGateEnabled() && req.headers.get("X-Kakomon-AI-Consent") !== "20261103") {
+    return NextResponse.json({ error: "ai_consent_required" }, { status: 428 });
+  }
+  if (requestsNewQuestion(payload.messages, payload.quickAction)) {
+    return NextResponse.json(
+      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
+      { status: 400, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+  if (requiresPracticeContentGrant(req, true)) {
     const { contentGrant } = await import("@/lib/billing/content-grant");
-    const grant=await contentGrant(req,question.id);if(!grant.ok)return grant;}
+    const grant = await contentGrant(req, question.id, { app: true });
+    if (!grant.ok) return grant;
+  }
   const selectedKeys = payload.selectedChoice?.split("・") ?? [];
   const selectedChoice = selectedKeys.length > 0 &&
     selectedKeys.every((key) => question.choices?.[key as keyof typeof question.choices] !== undefined)
@@ -102,14 +113,6 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   const isCorrect = selectedChoice === undefined
     ? undefined
     : isCompleteSelectionCorrect(question.answer, selectedKeys, requiredSelectionCount(question));
-
-  // Reject explicit creation requests before normal-use admission or provider work.
-  if (requestsNewQuestion(payload.messages, payload.quickAction)) {
-    return NextResponse.json(
-      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
-  }
 
   const usage = await prepareAiUsage(req, "copilot");
   track(usage);

@@ -69,7 +69,7 @@ export async function exchange(request: Request) {
     if (!secret) throw new BillingError("auth_unavailable", 503);
     const secure = url.protocol === "https:", cookie = `${secure ? "__Secure-" : ""}authjs.session-token`;
     const maxAge = 30 * 86400;
-    const token = await encode({ secret, salt: cookie, token: { id:user.id,sub:user.id,name:user.name,email:user.email,picture:user.image,plan:user.plan,authenticatedAt:Number(rows[0].authenticatedAt??0), ...reviewClaims }, maxAge });
+    const token = await encode({ secret, salt: cookie, token: { id:user.id,sub:user.id,name:user.name,email:user.email,picture:user.image,plan:user.plan,authenticatedAt:Number(rows[0].authenticatedAt??0), mobileSession: true, ...reviewClaims }, maxAge });
     const requested=typeof value.returnTo==="string"?value.returnTo:"/";
     const destination=requested.startsWith("/")&&!requested.startsWith("//")&&!requested.startsWith("/\\")?new URL(requested,url):new URL("/",url);
     return Response.json({redirectTo:destination.origin===url.origin?destination.href:new URL("/",url).href}, { headers: { "Cache-Control": "no-store", "Referrer-Policy": "no-referrer",

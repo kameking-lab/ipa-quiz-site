@@ -1,4 +1,5 @@
 import { AI_POLICY_VERSION } from "./access-policy";
+import { nativeClient, NATIVE_HEADER } from "@/mobile/shared/contracts";
 
 const POLICY_DENIAL_STATUS: Record<string, number> = {
   ai_login_required: 401, ai_not_included: 403, ai_not_configured: 503,
@@ -15,9 +16,18 @@ export function aiPolicyDenialMessage(status: number, body: unknown): string | n
 }
 
 export async function fetchWithAiGuestCookie(url: string, init?: RequestInit) {
+  if (nativeClient()) {
+    const headers = new Headers(init?.headers);
+    headers.set(NATIVE_HEADER, "ios");
+    init = { ...init, headers };
+  }
   const response = await fetch(url, init);
-  if (response.status === 428 && response.headers.get("X-AI-Policy-Version") === AI_POLICY_VERSION
-    && response.headers.get("X-Error-Type") === "guest_cookie_required") return fetch(url, init);
+  if (response.status === 428) {
+    const needsCookie = response.headers.get("X-AI-Policy-Version") === AI_POLICY_VERSION
+      ? response.headers.get("X-Error-Type") === "guest_cookie_required"
+      : (await response.clone().json().catch(() => null))?.error === "guest_cookie_required";
+    if (needsCookie) return fetch(url, init);
+  }
   return response;
 }
 

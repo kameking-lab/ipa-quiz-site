@@ -1,20 +1,18 @@
 import "server-only";
 import { billingConfig, gateReady } from "./config";
-import { billingIdentity, billingRuntime } from "./runtime";
+import { optionalBillingSession } from "./runtime";
 import { monthlyConfig, monthlySelected } from "./subscription/config";
+import { studyMembership } from "./study-membership";
+import { aiQuotaEnabled } from "@/lib/ai/access-config";
 /** Existing stream remains untouched while off. Errors never grant paid access. */
 export async function streamAccess() {
-  if (process.env.MOBILE_IAP_ENABLED === "true") {
-    const id = await (await import("./runtime")).optionalBillingIdentity();
-    if (id && await (await import("@/mobile/server/revenuecat")).revenueCatAccess(id)) return true;
-  }
-  if (monthlySelected()) {
-    try {
-      if (!monthlyConfig().enabled) return true;
-      return (await (await import("./subscription/runtime")).monthlyRuntime().service.status(await billingIdentity())).entitled;
-    } catch { return false; }
-  }
-  if (!gateReady(billingConfig())) return true;
-  try { return (await billingRuntime().service.status(await billingIdentity())).entitled; }
-  catch { return false; }
+  try {
+    const enabled = monthlySelected() ? monthlyConfig().enabled : gateReady(billingConfig());
+    if (!enabled) return true;
+    const session = await optionalBillingSession();
+    if (!session?.user?.id) return false;
+    // The app's server-rendered navigation carries its signed session cookie.
+    const status = await studyMembership(session.user.id, aiQuotaEnabled(), session.mobileSession ? "app" : "web");
+    return status.source !== "free";
+  } catch { return false; }
 }

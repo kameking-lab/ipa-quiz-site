@@ -14,7 +14,6 @@ import { MEMBERSHIP_CHECK_PENDING, MEMBERSHIP_CHECK_PENDING_MESSAGE } from "@/li
 import { posthogCapture } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { jstResetLabel } from "@/lib/billing/reset-time";
-import {shuffleChoices} from "@/lib/questions/filter";
 import { clearBatchQuestion } from "@/lib/study-plan/client";
 import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
 
@@ -25,29 +24,11 @@ async function fetchQuestion(id: string, shuffle: boolean, start: boolean, signa
   if (start) {
     return fetchPracticeQuestion(id, shuffle, signal);
   }
-  if(nativeClient()) {
-    try {
-      const cached=await (await import("@/mobile/src/downloads")).downloads.findQuestion(id);
-      if(cached)return {question:shuffle?shuffleChoices(cached):cached,access:null};
-    }catch{/* Expired or unavailable downloads use the online path. */}
-  }
   const qs = new URLSearchParams({ id });
   if (shuffle) qs.set("shuffle", "1");
   const res = await fetch(`/api/questions/next?${qs.toString()}`, { signal });
   if (!res.ok) throw new Error(`fetch question failed: ${res.status}`);
   return { question: (await res.json()) as Question, access: null };
-}
-
-/**
- * Whether the next question may be shown from the prefetch while its grant is
- * confirmed in the background. Only when the last grant proves the next one
- * will be allowed (paid/unlimited, or free questions left), so a free user at
- * the limit still never sees the eleventh question.
- */
-export function canShowBeforeGrant(access: PracticeAccess | null): boolean {
-  if (!access) return false;
-  if (access.kind === "pass" || access.kind === "free") return true;
-  return access.kind !== "unavailable" && access.kind !== "sample" && access.remaining !== null && access.remaining > 0;
 }
 
 function resetLabel(access: PracticeAccess | null) {
@@ -92,7 +73,7 @@ export function QuizClient({
   const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
-  const requiresGrant = nativeClient() || billingGateEnabled && mode !== "review";
+  const requiresGrant = nativeClient() || billingGateEnabled;
   const activeRequest = React.useRef<AbortController | null>(null);
   const retryQuestion = React.useCallback(() => {
     activeRequest.current?.abort();
@@ -127,8 +108,6 @@ export function QuizClient({
     if (current || loadError) navigating.current = false;
   }, [index, current, loadError]);
   const cache = React.useRef<Map<string, Question>>(new Map());
-  // Set from each confirmed grant: may the next question appear before its own grant returns?
-  const showBeforeGrant = React.useRef(false);
   const initializedPool = React.useRef<string | null>(null);
 
   // Derive session pool once on mount (needs localStorage for history modes).
@@ -203,7 +182,7 @@ export function QuizClient({
     } catch { /* Practice remains usable without session storage. */ }
   }, [sessionIds, fixedBatch]);
 
-  // Load current + prefetch next whenever index advances.
+  // Prefetch the next question only while the practice gate is off.
   React.useEffect(() => {
     if (!sessionIds || sessionIds.length === 0) return;
     const currentId = sessionIds[index];
@@ -218,7 +197,6 @@ export function QuizClient({
 
     const loadInto = async (id: string, setActive: boolean) => {
       // Gate off keeps the existing GET/cache path independent of the billing API.
-      // Gate on rechecks active questions, since prefetched content is not entitlement.
       if ((!setActive || !requiresGrant) && cache.current.has(id)) {
         if (setActive && !controller.signal.aborted) setCurrent(cache.current.get(id)!);
         return;
@@ -229,15 +207,12 @@ export function QuizClient({
         if (setActive && result.access?.feedbackBonus?.newlyUsed) posthogCapture("practice_feedback_bonus_used", { remaining: result.access.feedbackBonus.remaining });
         cache.current.set(id, result.question);
         if (setActive) {
-          showBeforeGrant.current = canShowBeforeGrant(result.access);
-          // Keep a question already on screen (shown from the prefetch): swapping
-          // in the server copy would reshuffle the choices under the user's finger.
+          // Keep the order of choices if the question is already on screen.
           setCurrent((shown) => shown?.id === result.question.id ? shown : result.question);
           setAccess(result.access); setLoadError(false); setAccessError(null);
         }
       } catch (error) {
         if (setActive && !controller.signal.aborted) {
-          showBeforeGrant.current = false;
           setCurrent(null);
           setLoadError(true);
           setAccess(error instanceof PracticeRequestError ? error.access : null);
@@ -251,13 +226,14 @@ export function QuizClient({
     setLoadError(false);
     void loadInto(currentId, true);
     const nextId = sessionIds[index + 1];
-    if (nextId && (!fixedBatch || !nativeClient() && !billingGateEnabled)) void loadInto(nextId, false);
+    // The next-question API now grants access, so an online prefetch would use a free slot before navigation.
+    if (nextId && !requiresGrant) void loadInto(nextId, false);
 
     return () => {
       controller.abort();
       activeRequest.current = null;
     };
-  }, [sessionIds, index, mode, retryCount, requiresGrant, billingGateEnabled, fixedBatch]);
+  }, [sessionIds, index, mode, retryCount, requiresGrant]);
 
   const handleNext = React.useCallback(() => {
     if (navigating.current) return;
@@ -267,7 +243,7 @@ export function QuizClient({
     // Gated sessions used to blank the screen ("次の問題を読み込んでいます") for every
     // question while the grant round-trip ran. When the last grant proves the
     // next one is allowed, show the prefetched question at once.
-    setCurrent(!requiresGrant || showBeforeGrant.current ? cache.current.get(nextId ?? "") ?? null : null);
+    setCurrent(!requiresGrant ? cache.current.get(nextId ?? "") ?? null : null);
     setAccess(null);
     setLoadError(false);
     setIndex((i) => i + 1);

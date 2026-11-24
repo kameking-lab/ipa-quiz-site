@@ -1,4 +1,6 @@
 "use client";
+
+import { nativeRequestHeaders } from "@/mobile/shared/contracts";
 import { useEffect, useState, type ReactNode } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -60,7 +62,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, initia
     setPreset(exact < 0 ? 3 : exact);
     const controller = new AbortController();
     setFree(false);
-    void fetch("/api/billing/status", { signal: controller.signal, cache: "no-store" })
+    void fetch("/api/billing/status", { signal: controller.signal, cache: "no-store", headers: nativeRequestHeaders() })
       .then(async response => response.status === 401 || (response.ok && (await response.json()).entitled === false))
       .then(value => { if (!controller.signal.aborted) setFree(value); }).catch(() => {});
     return () => controller.abort();

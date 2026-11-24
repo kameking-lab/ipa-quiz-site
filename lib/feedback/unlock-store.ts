@@ -60,7 +60,7 @@ export class FeedbackUnlockStore {
     });
   }
   async claim(i: UnlockIdentity) { return this.grant(i, "", null); }
-  async grant(i: UnlockIdentity, day: string, questionId: string | null) {
+  async grant(i: UnlockIdentity, day: string, questionId: string | null, retryIds?: Set<string>) {
     if (!i.account) return null;
     return this.db.transaction(async sql => {
       // Account lock also serialises claims from different browsers.
@@ -79,7 +79,14 @@ export class FeedbackUnlockStore {
       const grants = await sql.query<{ day: string; question_id: string }>('SELECT day,question_id FROM feedback_unlock_grant WHERE event_id=$1', [row.event_id]);
       if (questionId === null) return { remaining: Math.max(0, FEEDBACK_BONUS - grants.length), newlyUsed: false };
       if (grants.some(g => g.day === day && g.question_id === questionId)) return { remaining: Math.max(0, FEEDBACK_BONUS - grants.length), newlyUsed: false };
-      if (grants.length >= FEEDBACK_BONUS) return null;
+      if (grants.length >= FEEDBACK_BONUS) {
+        if (retryIds) {
+          for (const grant of grants) {
+            if (grant.day === day) retryIds.add(grant.question_id);
+          }
+        }
+        return null;
+      }
       await sql.query('INSERT INTO feedback_unlock_grant(event_id,day,question_id) VALUES($1,$2,$3) RETURNING event_id', [row.event_id, day, questionId]);
       return { remaining: FEEDBACK_BONUS - grants.length - 1, newlyUsed: true };
     });
