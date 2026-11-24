@@ -60,6 +60,29 @@ describe("weak list uses the common assessed history", () => {
     expect(JSON.parse(localStorage.getItem(LS_KEYS.reviewSchedule)!)[q.id]).toMatchObject({ level: 2, correctStreak: 2 });
     expect(history.getAllEntries()).toHaveLength(2);
   });
+  it("uses a free review slot only as each question is displayed", async () => {
+    const second = { ...q, id: "ip-review-second" };
+    const grants: string[] = [];
+    vi.mocked(fetch).mockImplementation(async (url, init) => {
+      if (String(url) === "/api/review/due") {
+        expect(JSON.parse(String(init?.body)).view).toBe("queue");
+        return Response.json({ questions: [q, second].map(({ id, exam }) => ({ id, exam })), seenCount: 2 });
+      }
+      if (String(url) === "/api/billing/question") {
+        const { id } = JSON.parse(String(init?.body));
+        grants.push(id);
+        return Response.json({ question: id === q.id ? q : second,
+          access: { kind: "guest", remaining: 10 - grants.length, freeDaily: 10, resetAt: "2026-10-11T15:00:00Z", retryAfter: null } });
+      }
+      return new Response(null, { status: 204 });
+    });
+    render(<DueReview initialExam="ip" />);
+    fireEvent.click(await screen.findByRole("radio", { name: /^選択肢 ア/ }));
+    expect(grants).toEqual([q.id]);
+    fireEvent.click(screen.getByRole("button", { name: /次の問題/ }));
+    await screen.findByRole("radio", { name: /^選択肢 ア/ });
+    expect(grants).toEqual([q.id, second.id]);
+  });
   it("corrects the newest recorded grade without pressing next and updates the track", async () => {
     const history = createHistoryStore();
     history.record(old);

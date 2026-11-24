@@ -23,7 +23,7 @@ it("uses the ordinary anonymous quota and requires sign-in for the bonus", async
 it("allows account fallback only after the normal grant fails with daily_limit", async () => {
   m.user = "alice";
   expect((await POST(req())).status).toBe(200);
-  expect(m.bonus).toHaveBeenCalledWith({ realm: "test", account: "alice", browser: "browser" }, expect.any(String), "q11");
+  expect(m.bonus).toHaveBeenCalledWith({ realm: "test", account: "alice", browser: "browser" }, expect.any(String), "q11", undefined);
   m.bonus.mockClear(); m.claim.mockRejectedValue(Error("KV"));
   expect((await POST(req())).status).toBe(429); expect(m.bonus).not.toHaveBeenCalled();
 });

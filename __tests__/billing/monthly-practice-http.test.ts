@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { monthlyFixture } from "./monthly-fixture";
+import { LuaKv } from "./guest-lua-kv";
 const wiring=vi.hoisted(()=>({runtime:null as unknown,user:"alice" as string|null,mobileSession:false,appAccess:vi.fn()}));
 vi.mock("@/lib/auth",()=>({auth:async()=>wiring.user?{user:{id:wiring.user},mobileSession:wiring.mobileSession}:null}));
 vi.mock("@/mobile/server/revenuecat", () => ({ revenueCatAccess: wiring.appAccess }));
@@ -20,6 +21,8 @@ import { practiceGateEnabled } from "@/lib/billing/practice-access";
 import { GET as listQuestions } from "@/app/api/v1/questions/route";
 import { POST as gradeQuestion } from "@/app/api/v1/grade/route";
 import { GET as nextQuestion } from "@/app/api/questions/next/route";
+import { GET as membershipStatus } from "@/app/api/billing/status/route";
+import { streamAccess } from "@/lib/billing/stream-access";
 const post=(id="q-practice",cookie="")=>POST(new Request("http://localhost:3338/api/billing/question",{method:"POST",headers:{origin:"http://localhost:3338",cookie},body:JSON.stringify({id})}));
 beforeEach(()=>{wiring.user="alice";for(const [k,v] of Object.entries({AUTH_SECRET:"test-only-secret",BILLING_PRODUCT:"subscription",BILLING_MODE:"stripe-test",BILLING_WEBHOOK_MODE:"stripe-test",BILLING_SUBSCRIPTION_ENABLED:"true",BILLING_SOURCE_INSTANCE:"monthly-fixture",BILLING_STRIPE_TEST_PRICE_ID:"price_monthly",BILLING_SUBSCRIPTION_PORTAL_CONFIGURATION_ID:"bpc_fixture",BILLING_ORIGIN:"http://localhost:3338",BILLING_STARTS_AT:"2026-01-02T00:00:00Z",BILLING_NOTICE_AT:"2026-01-01T00:00:00Z",BILLING_LEGAL_REVIEWED:"true",BILLING_SELLER_NAME:"Fixture",BILLING_SELLER_ADDRESS:"Fixture",BILLING_SELLER_PHONE:"000",BILLING_SUPPORT_EMAIL:"fake@example.invalid",BILLING_REFUND_TERMS:"Fixture only"}))vi.stubEnv(k,v);});
 beforeEach(() => { wiring.mobileSession = false; wiring.appAccess.mockReset().mockResolvedValue(null); });
@@ -74,6 +77,32 @@ describe("practice gate -> normal Auth identity -> real monthly service (offline
    }));
    expect((await appPractice.json()).access.kind).toBe("pass");
  });
+ it("shares one signed guest cookie and daily ledger from public listing through practice and grading", async () => {
+   wiring.user = null;
+   const kv = new LuaKv();
+   vi.stubEnv("KV_REST_API_URL", "https://fixture.invalid/kv");
+   vi.stubEnv("KV_REST_API_TOKEN", "fixture");
+   vi.stubGlobal("fetch", kv.fetch);
+   try {
+     const url = "http://localhost:3338/api/v1/questions?exam=ap&limit=4";
+     const first = await listQuestions(new Request(url));
+     expect(first.status).toBe(428);
+     const cookie = first.headers.get("Set-Cookie")!.split(";")[0];
+     const list = await listQuestions(new Request(url, { headers: { cookie } }));
+     expect((await list.json()).questions).toHaveLength(4);
+     for (let i = 4; i < 10; i++) expect((await post(`q-api-${i}`, cookie)).status).toBe(200);
+     const grade = (id: string) => gradeQuestion(new Request("http://localhost:3338/api/v1/grade", {
+       method: "POST", headers: { cookie }, body: JSON.stringify({ questionId: id, answer: "ア" }),
+     }));
+     expect((await grade("q-api-1")).status).toBe(200);
+     const denied = await grade("q-api-10");
+     expect(denied.status).toBe(429);
+     const body = await denied.json();
+     expect(body).toMatchObject({ error: "daily_limit", access: { remaining: 0 } });
+     expect(body).not.toHaveProperty("grantedIds");
+     expect((await post("q-api-11", cookie)).status).toBe(429);
+   } finally { vi.unstubAllGlobals(); }
+ });
  it("admits a verified Web member without a second grant transaction under rollout", async () => {
    vi.stubEnv("AI_QUOTA_ROLLOUT", "true");
    const fixture = await monthlyFixture();
@@ -84,6 +113,51 @@ describe("practice gate -> normal Auth identity -> real monthly service (offline
    expect(result.status).toBe(200);
    expect((await result.json()).access).toMatchObject({ kind: "pass", remaining: null });
    expect(grant).not.toHaveBeenCalled();
+ });
+ it("checks a paid public page once even when it has more than ten questions", async () => {
+   const fixture = await monthlyFixture();
+   wiring.runtime = fixture;
+   await fixture.send();
+   const status = vi.spyOn(fixture.service, "status");
+   const res = await listQuestions(new Request("http://localhost:3338/api/v1/questions?exam=ap"));
+   expect(res.status).toBe(200);
+   expect((await res.json()).questions).toHaveLength(12);
+   expect(status).toHaveBeenCalledTimes(1);
+ });
+ it("returns previously opened IDs later in the page after reaching the daily limit", async () => {
+   wiring.runtime = await monthlyFixture();
+   for (let i = 2; i < 12; i++) expect((await post(`q-api-${i}`)).status).toBe(200);
+   const res = await listQuestions(new Request("http://localhost:3338/api/v1/questions?exam=ap"));
+   expect(res.status).toBe(200);
+   expect((await res.json()).questions.map((q: { id: string }) => q.id)).toEqual(questions.slice(2).map(q => q.id));
+   expect((await post("q-api-1")).status).toBe(429);
+ });
+ it("does not use a free practice slot when grading an unsupported essay", async () => {
+   const fixture = await monthlyFixture();
+   wiring.runtime = fixture;
+   const grant = vi.spyOn(fixture.service, "grant");
+   questions.push({ id: "q-essay", type: "essay", answer: "", explanation: "" });
+   try {
+     const req = new Request("http://localhost:3338/api/v1/grade", { method: "POST", body: JSON.stringify({ questionId: "q-essay", answer: "answer" }) });
+     const result = await gradeQuestion(req);
+     expect(result.status).toBe(400);
+     expect(await result.json()).toMatchObject({ error: "unsupported" });
+     expect(grant).not.toHaveBeenCalled();
+   } finally { questions.pop(); }
+ });
+ it("keeps app membership available for study screens while ordinary Web status stays free", async () => {
+   vi.stubEnv("MOBILE_IAP_ENABLED", "true");
+   wiring.runtime = await monthlyFixture();
+   wiring.appAccess.mockImplementation(async (_id, { scope }) => scope === "app" ? { expiresAt: new Date(Date.now() + 60_000) } : null);
+   const view = (native: boolean) => membershipStatus(new Request("http://localhost:3338/api/billing/status", {
+     headers: native ? { "X-Kakomon-Native": "ios" } : {},
+   }));
+   expect((await (await view(true)).json()).entitled).toBe(false);
+   expect(await streamAccess()).toBe(false);
+   wiring.mobileSession = true;
+   expect((await (await view(true)).json()).entitled).toBe(true);
+   expect((await (await view(false)).json()).entitled).toBe(false);
+   expect(await streamAccess()).toBe(true);
  });
  it("preserves paid access past the exhausted free daily allowance", async () => {
    const f = await monthlyFixture();

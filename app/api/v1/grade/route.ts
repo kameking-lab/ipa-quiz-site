@@ -45,13 +45,6 @@ export async function POST(req: Request) {
     );
   }
 
-  if (requiresPracticeContentGrant(req)) {
-    const grant = await contentGrant(req, parsed.questionId);
-    if (!grant.ok) {
-      for (const [name, value] of Object.entries(buildRateLimitHeaders(rl))) grant.headers.set(name, value);
-      return grant;
-    }
-  }
   const q = await findQuestionById(parsed.questionId);
   if (!q) {
     return NextResponse.json(
@@ -62,6 +55,13 @@ export async function POST(req: Request) {
 
   if (!isPracticeReadyQuestion(q)) {
     return NextResponse.json({ error: "content_under_review", message: "原典との照合中のため、この問題の演習・採点は停止しています。" }, { status: 409, headers: { "Cache-Control": "no-store" } });
+  }
+  if (requiresPracticeContentGrant(req) && (q.type === "multiple-choice" || q.type === "numeric")) {
+    const grant = await contentGrant(req, q.id);
+    if (!grant.ok) {
+      for (const [name, value] of Object.entries(buildRateLimitHeaders(rl))) grant.headers.set(name, value);
+      return grant;
+    }
   }
   if (q.type !== "multiple-choice") {
     return NextResponse.json(

@@ -1,6 +1,6 @@
 import "server-only";
 import { createHash, randomUUID } from "node:crypto";
-import { BillingError, jstDay } from "../domain";
+import { BillingError, DailyLimitError, jstDay } from "../domain";
 import { refundState } from "../finance";
 import { examDateBeforeEnd, examEndCanBeBooked } from "../exam-end";
 import { safeQuizReturn } from "../quiz-return";
@@ -1082,11 +1082,11 @@ export class MonthlyService {
       const day = requestDay ?? jstDay(now), grants = a.grants[day] ?? [];
       if (grants.includes(questionId)) return { kind: "trial" as const, remaining: allowNew ? Math.max(0, this.config.freeDaily - grants.length) : null };
       if (!allowNew) return { kind: "unavailable" as const, remaining: null };
-      if (grants.length >= this.config.freeDaily) return { kind: "limit" as const, remaining: 0 };
+      if (grants.length >= this.config.freeDaily) return { kind: "limit" as const, grants };
       a.grants[day] = [...grants, questionId];
       return { kind: "trial" as const, remaining: Math.max(0, this.config.freeDaily - a.grants[day].length) };
     });
-    if (result.kind === "limit") throw new BillingError("daily_limit", 429);
+    if (result.kind === "limit") throw new DailyLimitError(result.grants);
     if (result.kind === "unavailable") throw new BillingError("billing_unavailable", 503);
     return result;
   }

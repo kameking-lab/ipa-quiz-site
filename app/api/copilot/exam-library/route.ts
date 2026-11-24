@@ -49,6 +49,12 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   if (strictContentGateEnabled() && req.headers.get("X-Kakomon-AI-Consent") !== "20261103") {
     return NextResponse.json({ error: "ai_consent_required" }, { status: 428 });
   }
+  if (requestsNewQuestion(messages)) {
+    return NextResponse.json(
+      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
+      { status: 400, headers: { "Cache-Control": "no-store" } },
+    );
+  }
   if (requiresPracticeContentGrant(req, true)) {
     const grant = await contentGrant(req, question.id, { paper: examId, app: true });
     if (!grant.ok) return grant;
@@ -88,13 +94,6 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     studyExplanation ? `サイトの学習用解説（非公式）:\n${studyExplanation.slice(0, 6000)}` : "",
     choiceReasons ? `サイトの選択肢別解説（非公式）:\n${choiceReasons.slice(0, 8000)}` : "",
   ].filter(Boolean).join("\n\n");
-
-  if (requestsNewQuestion(messages)) {
-    return NextResponse.json(
-      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
-  }
 
   const usage = await prepareAiUsage(req, "exam-library");
   track(usage);
