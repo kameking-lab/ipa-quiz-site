@@ -137,6 +137,12 @@ test("existing web subscribers see no second purchase, with restore and App Stor
 async function openMockStore(page:Page,context:BrowserContext,scenario:Parameters<Window["mobileTest"]["mockStore"]>[0]) {
   const access:MobileEntitlement={userId:"mock-store-user",appUserId:"mock-rc",entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null};
   await routeLocal(context,access,{sdkKey:"mock-sdk-key",productId:"mock.monthly",offeringId:"main"});
+  await context.route("**/api/mobile/purchase-check", async route => {
+    if (route.request().method() === "PATCH") {
+      const { action } = route.request().postDataJSON();
+      await route.fulfill({ json: action === "status" ? { managed: false, pending: null } : { state: null } });
+    } else await route.fulfill({ json: { allowed: true } });
+  });
   await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);
   await page.evaluate(scenario=>{window.mobileTest.mockStore(scenario);window.mobileTest.showMembership();},scenario);
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
@@ -365,7 +371,7 @@ for(const initiallyPaid of [false,true])for(const save of [false,true])for(const
   await current.getByRole("button",{name:"結果を見る",exact:true}).click();
   await current.getByRole("button",{name:"間違えた6問を解き直す",exact:true}).click();
   if(used===10) {
-    await expect(current.getByRole("alert")).toContainText("無料10問");
+    await expect(current.getByRole("region",{name:"今日の無料10問はここまで"})).toBeVisible();
     await current.getByRole("button",{name:"結果を見る",exact:true}).click();
     await expect(current.getByText("11／12問",{exact:true})).toBeVisible();
   } else await expect(current.getByText("許可本文1",{exact:true})).toBeVisible();
