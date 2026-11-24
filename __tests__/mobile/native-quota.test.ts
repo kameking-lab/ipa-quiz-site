@@ -1,13 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { BillingError } from "@/lib/billing/domain";
-const m=vi.hoisted(()=>({user:null as string|null,webPaid:false,rc:vi.fn(),enabled:false,ids:new Set<string>(),bonus:vi.fn()}));
+const m=vi.hoisted(()=>({user:null as string|null,mobileSession:false,webPaid:false,rc:vi.fn(),enabled:false,ids:new Set<string>(),bonus:vi.fn()}));
 vi.mock("@/lib/questions/pool-server",()=>({findQuestionById:async(id:string)=>({id,answer:"a"})}));
 vi.mock("@/lib/questions/filter",()=>({isPracticeReadyQuestion:()=>true,shuffleChoices:(q:unknown)=>q}));
 vi.mock("@/lib/exam-library-papers",()=>({loadExamPaper:(paper:string)=>paper==="test"?[{id:"library-q1",correctChoice:1}]:null}));
 vi.mock("@/mobile/server/revenuecat",()=>({revenueCatAccess:m.rc}));
 vi.mock("@/lib/billing/config",()=>({billingConfig:()=>({mode:"mock",freeDaily:10}),gateReady:()=>m.enabled}));
 vi.mock("@/lib/billing/subscription/config",()=>({monthlySelected:()=>false}));
-vi.mock("@/lib/billing/runtime",()=>({optionalBillingIdentity:async()=>m.user,sameOrigin:()=>{},billingRuntime:()=>({service:{status:async()=>({entitled:m.webPaid}),grant:async(_u:string,id:string)=>{
+vi.mock("@/lib/billing/runtime",()=>({optionalBillingIdentity:async()=>m.user,optionalBillingSession:async()=>m.user?{user:{id:m.user},mobileSession:m.mobileSession}:null,sameOrigin:()=>{},billingRuntime:()=>({service:{status:async()=>({entitled:m.webPaid}),grant:async(_u:string,id:string)=>{
   if(m.webPaid)return {kind:"pass",remaining:null};if(!m.ids.has(id)&&m.ids.size>=10)throw new BillingError("daily_limit",429);m.ids.add(id);return {kind:"trial",remaining:10-m.ids.size};
 }}}),json:(v:unknown,status=200)=>Response.json(v,{status,headers:{"Cache-Control":"private, no-store"}})}));
 vi.mock("@/lib/billing/guest-practice",()=>({readGuestCookie:()=>"same-web-cookie",guestRealm:()=>"same-web-realm",guestCookie:()=>"cookie",cookieHeader:()=>"cookie",resetAt:()=>"2026-11-03T15:00:00Z",guestClaim:async()=>[],guestGrant:async(_r:string,_g:string,id:string)=>{
@@ -20,7 +20,17 @@ import { mobileConfig } from "@/mobile/server/config";
 import { GET } from "@/app/api/questions/next/route";
 import {validPaperReviewProof} from "@/mobile/server/paper-review";
 const req=(id:string,headers:Record<string,string>={})=>new Request("https://site.test/api/billing/question",{method:"POST",headers:{"X-Kakomon-Native":"ios",...headers},body:JSON.stringify({id})});
-beforeEach(()=>{vi.resetAllMocks();m.user=null;m.webPaid=false;m.enabled=false;m.ids.clear();m.rc.mockResolvedValue(null);vi.stubEnv("FEEDBACK_UNLOCK_ENABLED","false");vi.stubEnv("MOBILE_IAP_ENABLED","false");});
+beforeEach(()=>{vi.resetAllMocks();m.user=null;m.mobileSession=false;m.webPaid=false;m.enabled=false;m.ids.clear();m.rc.mockResolvedValue(null);vi.stubEnv("FEEDBACK_UNLOCK_ENABLED","false");vi.stubEnv("MOBILE_IAP_ENABLED","false");});
+it("selects app rights only when the native practice request also has a native session", async () => {
+  m.user = "u";
+  m.enabled = true;
+  m.rc.mockImplementation(async (_user, { scope }) => scope === "app" ? { expiresAt: new Date(Date.now() + 60_000) } : null);
+  expect((await (await POST(req("q1"))).json()).access.kind).toBe("trial");
+  m.mobileSession = true;
+  const web = new Request("https://site.test/api/billing/question", { method: "POST", body: JSON.stringify({ id: "q2" }) });
+  expect((await (await POST(web)).json()).access.kind).toBe("trial");
+  expect((await (await POST(req("q3"))).json()).access.kind).toBe("pass");
+});
 it("gates native starts even with sales off, across every qualification, and counts unique IDs just like web",async()=>{
   for(let i=0;i<10;i++)expect((await POST(req(`${["ap","ip","fp3","denken3"][i%4]}-${i}`))).status).toBe(200);
   expect((await POST(req("nw-11"))).status).toBe(429);expect((await POST(req("ap-0"))).status).toBe(200);expect(m.ids.size).toBe(10);

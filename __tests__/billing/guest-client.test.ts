@@ -24,6 +24,19 @@ beforeEach(() => {
 afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
 
 describe("anonymous cookie bootstrap", () => {
+  it("reuses the cookie handshake for batch practice without retrying a quota denial", async () => {
+    const fetcher = vi.fn<typeof fetch>()
+      .mockResolvedValueOnce(cookieRequired())
+      .mockResolvedValueOnce(Response.json({ questions: [{ id: "q1" }] }))
+      .mockResolvedValueOnce(Response.json({ error: "daily_limit" }, { status: 429 }));
+    vi.stubGlobal("fetch", fetcher);
+    const { fetchPracticeBatch } = await import("@/lib/billing/guest-client");
+    const url = "/api/mock-exam/ap?count=10";
+    expect(await (await fetchPracticeBatch(url)).json()).toEqual({ questions: [{ id: "q1" }] });
+    expect((await fetchPracticeBatch(url)).status).toBe(429);
+    expect(fetcher.mock.calls.map(([path]) => path)).toEqual([url, url, url]);
+  });
+
   it("holds one origin lock across the initial POST and retry for independent tab queues", async () => {
     const locks = webLocks();
     Object.defineProperty(navigator, "locks", { configurable: true, value: locks });

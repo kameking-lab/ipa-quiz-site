@@ -8,6 +8,7 @@ vi.mock("@/lib/questions/filter", () => ({ isPracticeReadyQuestion: () => true, 
 vi.mock("@/lib/billing/config", () => ({ billingConfig: () => ({ mode: "mock", freeDaily: 10 }), gateReady: () => true }));
 vi.mock("@/lib/billing/subscription/config", () => ({ monthlySelected: () => false }));
 vi.mock("@/lib/billing/runtime", () => ({ optionalBillingIdentity: async () => { if (m.authFail) throw Error("auth"); return m.user; },
+  optionalBillingSession: async () => { if (m.authFail) throw Error("auth"); return m.user ? { user: { id: m.user } } : null; },
   billingRuntime: () => ({ service: { status: m.status, grant: m.grant } }), sameOrigin: () => {},
   json: (v: unknown, status = 200) => Response.json(v, { status, headers: { "Cache-Control": "private, no-store", Vary: "Cookie" } }) }));
 vi.mock("@/lib/billing/guest-practice", () => ({ readGuestCookie: () => { if (m.cookieFail) throw Error("secret unavailable"); return m.guest; }, guestCookie: () => "signed", cookieHeader: () => "practice_guest=signed; HttpOnly", guestRealm: () => "realm",

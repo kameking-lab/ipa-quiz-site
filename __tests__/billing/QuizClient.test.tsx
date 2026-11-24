@@ -85,13 +85,13 @@ describe("QuizClient authorization boundary", () => {
     expect(fetcher.mock.calls.filter(([url]) => url.startsWith("/api/questions/next?"))).toHaveLength(2);
     expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/questions/related")).toBe(true);
   });
-  it("existing wrong-answer review remains free and makes no billing requests", async () => {
-    const fetcher = vi.fn(async (url: string) => Response.json({ id: url.includes("q1") ? "q1" : "unexpected" })); vi.stubGlobal("fetch", fetcher);
+  it("grants an active wrong-answer review using the same practice access", async () => {
+    const fetcher = vi.fn(async () => Response.json({ question: { id: "q1" }, access })); vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2"]} mode="review" backHref="/review" />);
     await screen.findByText("q1");
-    expect(fetcher.mock.calls.every(call => !String(call[0]).includes("billing"))).toBe(true);
+    expect(fetcher).toHaveBeenCalledExactlyOnceWith("/api/billing/question", expect.objectContaining({ method: "POST" }));
   });
-  it("prefetch is GET, current is POST; cached next is re-authorized and denied without rendering", async () => {
+  it("uses POST for the active question and denies the next one at the daily limit", async () => {
     const fetcher = vi.fn(async (url: string, opts?: RequestInit) => {
       if (!opts?.method) return Response.json({ id: "q2" });
       const { id } = JSON.parse(opts.body as string);
@@ -100,7 +100,7 @@ describe("QuizClient authorization boundary", () => {
     });
     vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2"]} mode="year" backHref="/" />);
-    await screen.findByText("q1"); expect(fetcher.mock.calls.some(([u, opts]) => u.includes("/api/questions/next?") && !opts?.method)).toBe(true);
+    await screen.findByText("q1"); expect(fetcher.mock.calls.some(([u]) => u.includes("/api/questions/next?"))).toBe(false);
     fireEvent.click(screen.getByText("next"));
     await screen.findByText("今日の無料10問はここまで"); expect(screen.queryByText("q2")).toBeNull();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
@@ -150,7 +150,7 @@ describe("QuizClient authorization boundary", () => {
     await screen.findByText("q3");
     expect(screen.getByLabelText("3問目 / 3問")).toHaveFocus();
   });
-  it("shows the prefetched next question at once while its grant is confirmed, and withdraws it if denied", async () => {
+  it("waits for a member’s next grant before showing the question and handles a denial", async () => {
     let finish: ((response: Response) => void) | undefined;
     const pass = { ...access, kind: "pass", remaining: null };
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
@@ -163,14 +163,13 @@ describe("QuizClient authorization boundary", () => {
     vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2", "q3"]} mode="year" backHref="/" />);
     await screen.findByText("q1");
-    await waitFor(() => expect(fetcher.mock.calls.some(([u, o]) => String(u).includes("id=q2") && !o?.method)).toBe(true));
+    expect(fetcher.mock.calls.some(([u]) => u.includes("/api/questions/next?"))).toBe(false);
     fireEvent.click(screen.getByRole("button", { name: "next" }));
-    // No loading screen between questions for a member: q2 is on screen before its grant returns.
-    expect(await screen.findByText("q2")).toBeInTheDocument();
-    expect(screen.queryByText("loading")).toBeNull();
+    expect(await screen.findByText("loading")).toBeInTheDocument();
+    expect(screen.queryByText("q2")).toBeNull();
+    await waitFor(() => expect(finish).toBeDefined());
     await act(async () => { finish!(Response.json({ question: { id: "q2" }, access: pass })); });
     expect(screen.getByText("q2")).toBeInTheDocument();
-    // A denied grant still replaces the optimistic question with the failure screen.
     fireEvent.click(screen.getByRole("button", { name: "next" }));
     await screen.findByText("問題を読み込めませんでした。少し待ってからもう一度お試しください。");
     expect(screen.queryByText("q3")).toBeNull();

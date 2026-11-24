@@ -2,7 +2,7 @@ import "server-only";
 import { after } from "next/server";
 import { prisma } from "@/lib/db/prisma";
 import { webEntitlement } from "@/mobile/server/entitlement";
-import { readAppStorePurchaseStatus, revenueCatAccess } from "@/mobile/server/revenuecat";
+import { readAppStorePurchaseStatus, revenueCatAccess, type AppStoreAccessScope } from "@/mobile/server/revenuecat";
 import { mobileConfig } from "@/mobile/server/config";
 import { notifyOpsOnce } from "@/lib/notify/ops-alert";
 import { BillingError } from "./domain";
@@ -11,10 +11,10 @@ import { monthlyConfig, monthlySelected } from "./subscription/config";
 import { monthlyRuntime } from "./subscription/runtime";
 
 const db = { query: <T,>(sql: string, values: unknown[]) => prisma.$queryRawUnsafe<T[]>(sql, ...values) };
-export async function assertNoDuplicatePurchase(userId: string): Promise<void> {
+export async function assertNoDuplicatePurchase(userId: string, scope: AppStoreAccessScope = "web"): Promise<void> {
   return new DuplicatePurchaseGuard(db, async id => {
     const stripe = (await webEntitlement(id)).entitled;
-    return { stripe, appStore: !stripe && !!await revenueCatAccess(id, true) };
+    return { stripe, appStore: !stripe && !!await revenueCatAccess(id, { scope, fresh: true }) };
   }).assertCanPurchase(userId);
 }
 export async function auditDuplicatePurchases(userId: string, { retryOnFailure = false } = {}): Promise<void> {

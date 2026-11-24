@@ -15,7 +15,10 @@ const ownership = vi.hoisted(() => ({
   identity: vi.fn(), web: vi.fn(), ios: vi.fn(),
 }));
 vi.mock("@/lib/billing/runtime", () => ({
-  optionalBillingIdentity: ownership.identity,
+  optionalBillingSession: async () => {
+    const id = await ownership.identity();
+    return id ? { user: { id } } : null;
+  },
   billingRuntime: () => ({ service: { status: ownership.web } }),
 }));
 vi.mock("@/lib/billing/subscription/config", () => ({

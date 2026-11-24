@@ -3,6 +3,7 @@ import type { DefaultSession } from "next-auth";
 declare module "next-auth" {
   interface Session {
     reviewVersion?: string;
+    mobileSession?: true;
     authenticatedAt?: number;
     user: {
       id: string;
@@ -19,5 +20,6 @@ declare module "next-auth/jwt" {
   interface JWT {
     id?: string;
     plan?: "free" | "premium" | "team";
+    mobileSession?: true;
   }
 }

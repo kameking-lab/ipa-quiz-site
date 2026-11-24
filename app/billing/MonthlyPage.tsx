@@ -41,7 +41,7 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
       canManage = state.canManage; hasContract = !!state.subscription && !terminal(state.subscription.status);
       showTrial = state.trialDays > 0;
       management = state.management;
-      hasContract ||= state.entitled || !!await revenueCatAccess(userId, false, aiQuotaEnabled());
+      hasContract ||= state.entitled || !!await revenueCatAccess(userId, { allowStoredStudyAccess: aiQuotaEnabled() });
     }
   } catch (error) { checkingMembership = error instanceof BillingError && error.code === MEMBERSHIP_CHECK_PENDING; }
   return <MonthlyPlanView {...{ canManage, hasContract, showTrial, management, returnTo, checkingMembership }} salesOpen={config?.enabled === true} today={jstDateString(new Date())} />;

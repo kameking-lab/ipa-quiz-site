@@ -64,7 +64,7 @@ export async function POST(req: Request) {
     if (q && isPlanScorableQuestion(q)) dueQuestions.push(q);
   }
 
-  const permitted=await permittedBatch(req,shuffle(dueQuestions));
+  const permitted = await permittedBatch(req, shuffle(dueQuestions), { app: true });
   if(permitted.response)return permitted.response;
   return NextResponse.json({
     questions: permitted.rows,

@@ -3,7 +3,7 @@ import { findQuestionById } from "@/lib/questions/pool-server";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 import { billingConfig, gateReady } from "@/lib/billing/config";
 import { BILLING_SAMPLE_ID } from "@/lib/billing/sample";
-import { json, optionalBillingIdentity, sameOrigin } from "@/lib/billing/runtime";
+import { json, optionalBillingIdentity, optionalBillingSession, sameOrigin } from "@/lib/billing/runtime";
 import { BillingError, jstDay } from "@/lib/billing/domain";
 import { monthlyConfig, monthlySelected } from "@/lib/billing/subscription/config";
 import { cookieHeader, guestClaim, guestCookie, guestGrant, guestRealm, readGuestCookie, resetAt } from "@/lib/billing/guest-practice";
@@ -41,7 +41,8 @@ export async function POST(request: Request) {
       sameOrigin(request);
       if (!strict && !native && id === BILLING_SAMPLE_ID) access.kind = "sample";
       else {
-        const userId = await optionalBillingIdentity();
+        const session = await optionalBillingSession();
+        const userId = session?.user?.id;
         // A reinstall or cookie deletion cannot issue a new free identity.
         if (strict && !userId) throw new BillingError("sign_in_required", 401);
         let bonusClaimAvailable = true;
@@ -51,7 +52,7 @@ export async function POST(request: Request) {
           } catch { bonusClaimAvailable = false; /* Existing paid and ordinary free rights stay independent. */ }
         }
         const quotaEnabled = aiQuotaEnabled();
-        const membership = userId ? await studyMembership(userId, quotaEnabled) : null;
+        const membership = userId ? await studyMembership(userId, quotaEnabled, native && session?.mobileSession ? "app" : "web") : null;
         // Existing paid/grace rights do not depend on anonymous cookie or KV.
         if (!quotaEnabled && userId && membership?.source === "web") {
           const grant = await membership.service.grant(userId, question.id, [], false, jstDay(new Date(now)));

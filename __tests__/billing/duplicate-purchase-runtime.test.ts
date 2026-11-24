@@ -23,7 +23,7 @@ it("rejects a known Stripe membership even when App Store verification is unavai
 it("refreshes the other account's App Store receipt before authorizing a purchase",async()=>{
   m.app.mockResolvedValue({expiresAt:new Date(Date.now()+60000)});
   await expect(assertNoDuplicatePurchase("current")).rejects.toMatchObject({code:"duplicate_purchase_google"});
-  expect(m.app).toHaveBeenCalledExactlyOnceWith("other",true);
+  expect(m.app).toHaveBeenCalledExactlyOnceWith("other", { scope: "web", fresh: true });
 });
 it("queues overlaps from committed production receipts without recursively refreshing RevenueCat",async()=>{
   m.query.mockReset().mockResolvedValueOnce([current]).mockResolvedValueOnce([current,other]).mockResolvedValueOnce([{active:true}]).mockResolvedValueOnce([{active:false}]);

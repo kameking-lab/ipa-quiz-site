@@ -1,4 +1,4 @@
-import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { requiresPracticeContentGrant } from "@/lib/billing/practice-access";
 import { NextResponse } from "next/server";
 import { findQuestionById } from "@/lib/questions/pool-server";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -13,7 +13,7 @@ const Body = z.object({ id: z.string().min(1).max(120), ids: z.array(z.string().
 export async function POST(request: Request) {
   // Optional previews must not grant or leak several question bodies before the
   // learner selects one. The normal per-question grant remains authoritative.
-  if (strictContentGateEnabled() || request.headers.get("X-Kakomon-Native") === "ios") {
+  if (requiresPracticeContentGrant(request, true)) {
     return NextResponse.json({ questions: [] }, { headers: { "Cache-Control": "private, no-store", Vary: "Cookie, X-Kakomon-Native" } });
   }
   const parsed = Body.safeParse(await request.json().catch(() => null));

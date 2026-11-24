@@ -28,13 +28,13 @@ export async function POST(request: Request) {
       if (!parsed.success) throw new BillingError("invalid_request", 400);
       const { service, provider } = monthlyRuntime();
       const reservation = await service.reserveAppStorePurchase(userId, provider,
-        memberId => appStorePurchaseCheck(memberId, memberId === userId ? "subscription_exists" : "duplicate_purchase"),
-        () => assertNoDuplicatePurchase(userId), parsed.data, requestedAt);
+        memberId => appStorePurchaseCheck(memberId, memberId === userId ? "subscription_exists" : "duplicate_purchase", undefined, "app"),
+        () => assertNoDuplicatePurchase(userId, "app"), parsed.data, requestedAt);
       return json({ allowed: true, reservation });
     }
-    const access = await mobileEntitlement(userId, true);
+    const access = await mobileEntitlement(userId, true, "app");
     if (access.entitled) throw new BillingError("subscription_exists", 409);
-    await assertNoDuplicatePurchase(userId);
+    await assertNoDuplicatePurchase(userId, "app");
     return json({ allowed: true });
   } catch (error) { return billingFailure(error); }
 }

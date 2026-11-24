@@ -22,6 +22,7 @@ import { examLabel, EXAM_LABELS } from "@/lib/utils";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { Loader2, Timer, ChevronDown } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
+import { fetchPracticeBatch } from "@/lib/billing/guest-client";
 
 const AVAILABLE_EXAMS = Object.keys(MOCK_EXAM_CONFIGS) as MockExamCode[];
 
@@ -80,14 +81,12 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
     setError(null);
     setResumeState(null);
     try {
-      const res = await fetch(`/api/mock-exam/${exam}?mode=balanced&count=${questionCount}`, {
-        cache: "no-store",
-      });
+      const res = await fetchPracticeBatch(`/api/mock-exam/${exam}?mode=balanced&count=${questionCount}`);
       if (!res.ok) {
         const body = (await res.json().catch(() => null)) as
-          | { message?: string }
+          | { error?: string; message?: string }
           | null;
-        setError(body?.message ?? "問題の取得に失敗しました。");
+        setError(body?.error === "daily_limit" ? "今日の無料演習の上限に達しました。" : body?.message ?? "問題の取得に失敗しました。");
         return;
       }
       const data = (await res.json()) as MockExamFetchResponse;

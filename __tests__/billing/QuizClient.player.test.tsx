@@ -23,7 +23,7 @@ beforeEach(() => {
 afterEach(() => { setPostHogClient(null); cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("QuizClient with the real player and local learning stores", () => {
-  it("shows a prefetched question but grades it only after its grant, once and with an immediate explanation", async () => {
+  it("loads each question on its grant, then grades once with an immediate explanation", async () => {
     const [first, next] = FE_QUESTIONS_2009_AUTUMN_AM.slice(6, 8);
     let confirmNext!: (response: Response) => void;
     const nextGrant = new Promise<Response>(resolve => { confirmNext = resolve; });
@@ -40,14 +40,13 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
 
-    const choice = screen.getAllByRole("radio")[0];
-    expect(choice).toBeDisabled();
-    fireEvent.click(choice);
+    expect(screen.queryAllByRole("radio")).toHaveLength(0);
     fireEvent.keyDown(document.body, { key: "1" });
     expect(screen.queryByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeNull();
     expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([first.id]);
 
     await act(async () => { confirmNext(Response.json({ question: next, access: baseAccess })); });
+    const choice = (await screen.findAllByRole("radio"))[0];
     expect(choice).not.toBeDisabled();
     act(() => {
       fireEvent.click(choice);

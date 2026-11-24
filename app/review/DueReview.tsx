@@ -10,6 +10,7 @@ import { quizBackHref } from "@/lib/questions/practice-session";
 import type { Question } from "@/lib/questions/types";
 import { readSettings } from "@/lib/storage/settings";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
+import { fetchPracticeBatch } from "@/lib/billing/guest-client";
 
 type DueQueue = { questions: Question[]; seenCount: number; nextReviewDate: string | null };
 
@@ -17,7 +18,7 @@ export function DueReview({ initialExam, returnTo }: { initialExam: string; retu
   const [exam, setExam] = useState(initialExam);
   const [choices, setChoices] = useState<string[]>([]);
   const [revision, setRevision] = useState(0);
-  const [queue, setQueue] = useState<DueQueue | null>();
+  const [queue, setQueue] = useState<DueQueue | "daily_limit" | null>();
   const [index, setIndex] = useState(0);
   const reviewed = useRef(new Set<string>());
   const knownExam = !exam || Object.hasOwn(EXAM_LABELS, exam);
@@ -29,11 +30,16 @@ export function DueReview({ initialExam, returnTo }: { initialExam: string; retu
     reviewed.current.clear();
     const load = async () => {
       const request = buildReviewRequest(readLegacyAppointments());
-      const response = await fetch("/api/review/due", {
+      const response = await fetchPracticeBatch("/api/review/due", {
         method: "POST", signal: controller.signal, headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...request, ...(exam ? { exam } : {}) }),
       });
-      if (!response.ok) throw new Error("review_unavailable");
+      if (!response.ok) {
+        const body = await response.json().catch(() => null);
+        if (body?.error !== "daily_limit") throw new Error("review_unavailable");
+        if (!controller.signal.aborted) setQueue("daily_limit");
+        return;
+      }
       const result: DueQueue = await response.json();
       if (controller.signal.aborted) return;
       if (!exam) setChoices([...new Set(result.questions.map(q => q.exam))]);
@@ -58,6 +64,7 @@ export function DueReview({ initialExam, returnTo }: { initialExam: string; retu
       }} />}
     {!knownExam ? <p role="alert">指定された資格を確認できません。復習する資格を選んでください。</p>
       : queue === undefined ? <p role="status">復習問題を読み込み中…</p>
+      : queue === "daily_limit" ? <p role="alert">今日の無料演習の上限に達しました。</p>
       : queue === null ? <><p role="alert">復習問題を読み込めませんでした</p><button className="study-link" onClick={() => setRevision(n => n + 1)}>再読み込み</button></>
       : queue.questions.length ? <QuizPlayer key={exam} quiet mode="review" exam={exam || queue.questions[index].exam}
           question={queue.questions[index]} index={index} total={queue.questions.length}

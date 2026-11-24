@@ -1,4 +1,4 @@
-import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { requiresPracticeContentGrant } from "@/lib/billing/practice-access";
 import { contentGrant } from "@/lib/billing/content-grant";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -45,7 +45,13 @@ export async function POST(req: Request) {
     );
   }
 
-  if(strictContentGateEnabled()){const grant=await contentGrant(req,parsed.questionId);if(!grant.ok)return grant;}
+  if (requiresPracticeContentGrant(req)) {
+    const grant = await contentGrant(req, parsed.questionId);
+    if (!grant.ok) {
+      for (const [name, value] of Object.entries(buildRateLimitHeaders(rl))) grant.headers.set(name, value);
+      return grant;
+    }
+  }
   const q = await findQuestionById(parsed.questionId);
   if (!q) {
     return NextResponse.json(

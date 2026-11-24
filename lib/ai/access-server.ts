@@ -3,6 +3,7 @@ import { aiPolicyReady, type AiAccessPolicy, type AiFeature } from "./access-pol
 import { aiAccessPolicy } from "./access-config";
 import { validAiSubject } from "./normal-use-subject";
 import { BillingError, MEMBERSHIP_CHECK_PENDING } from "@/lib/billing/domain";
+import { NATIVE_HEADER } from "@/mobile/shared/contracts";
 
 export interface AccessDependencies {
   identity(): Promise<string | null>;
@@ -17,8 +18,8 @@ export type AiAccessResolution =
   | { kind: "free"; subject: string; guestSubject?: string }
   | { kind: "paid"; subject: string };
 
-async function billingDependencies(): Promise<AccessDependencies> {
-  const { optionalBillingIdentity } = await import("@/lib/billing/runtime");
+async function billingDependencies(request: Request): Promise<AccessDependencies> {
+  const { optionalBillingSession } = await import("@/lib/billing/runtime");
   const { studyMembership } = await import("@/lib/billing/study-membership");
   const { monthlySelected } = await import("@/lib/billing/subscription/config");
   async function guestContext(request: Request, now: number) {
@@ -33,9 +34,11 @@ async function billingDependencies(): Promise<AccessDependencies> {
       issueCookie: () => cookieHeader(guestCookie(realm, now), new URL(request.url).protocol === "https:"),
     };
   }
+  const session = await optionalBillingSession();
+  const scope = session?.mobileSession && request.headers.get(NATIVE_HEADER) === "ios" ? "app" : "web";
   return {
-    identity: optionalBillingIdentity,
-    entitled: async userId => (await studyMembership(userId, true)).source !== "free",
+    identity: async () => session?.user?.id ?? null,
+    entitled: async userId => (await studyMembership(userId, true, scope)).source !== "free",
     guest: async (request, now) => {
       const { subject, issueCookie } = await guestContext(request, now);
       return subject ? { subject } : { cookie: issueCookie() };
@@ -49,13 +52,13 @@ export async function resolveAiAccess(
   request: Request,
   feature: AiFeature,
   policy: AiAccessPolicy = aiAccessPolicy(),
-  dependencies: () => Promise<AccessDependencies> = billingDependencies,
+  dependencies: (request: Request) => Promise<AccessDependencies> = billingDependencies,
   now = Date.now(),
 ): Promise<AiAccessResolution> {
   if (!policy.rolloutEnabled) return { kind: "legacy" };
   if (!aiPolicyReady(policy, now)) return { kind: "not_configured" };
   try {
-    const source = await dependencies();
+    const source = await dependencies(request);
     const userId = await source.identity();
     if (userId === null) {
       if (!policy.anonymousEnabled) return { kind: "login_required" };

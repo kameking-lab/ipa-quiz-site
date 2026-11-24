@@ -102,6 +102,7 @@ export const authConfig: NextAuthConfig = {
     },
     async jwt({ token, user }) {
       if (user) {
+        delete token.mobileSession;
         token.id = user.id;
         token.authenticatedAt = Date.now();
         if ("plan" in user && typeof user.plan === "string") {
@@ -112,6 +113,7 @@ export const authConfig: NextAuthConfig = {
     },
     async session({ session, token }) {
       if (typeof token.reviewVersion === "string") session.reviewVersion = token.reviewVersion;
+      if (token.mobileSession === true) session.mobileSession = true;
       if (session.user) {
         session.authenticatedAt = typeof token.authenticatedAt === "number" ? token.authenticatedAt : 0;
         session.user.id = (token.id as string | undefined) ?? session.user.id;

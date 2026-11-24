@@ -8,9 +8,11 @@ import { BillingService } from "./service";
 import { StripeCheckoutProvider } from "./stripe";
 import { monthlyConfig, monthlySelected } from "./subscription/config";
 
+export function optionalBillingSession() {
+  return auth(); // An auth exception is a dependency failure, not an anonymous session.
+}
 export async function optionalBillingIdentity() {
-  const session = await auth(); // An auth exception is a dependency failure, not an anonymous session.
-  return session?.user?.id ?? null;
+  return (await optionalBillingSession())?.user?.id ?? null;
 }
 export async function billingIdentity() {
   const id = await optionalBillingIdentity();

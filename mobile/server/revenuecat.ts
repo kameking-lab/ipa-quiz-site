@@ -22,6 +22,7 @@ const subscriberSchema = z.object({ subscriber: z.object({
   })),
 }) });
 type StoreConfig = { entitlement: string; productId: string; environment: string };
+export type AppStoreAccessScope = "web" | "app";
 function parseSubscriber(body: unknown) {
   const parsed = subscriberSchema.safeParse(body);
   if (!parsed.success) {
@@ -91,13 +92,14 @@ export async function readAppStorePurchaseStatus(userId: string, mode: Realm): P
   return body === null ? null : appStorePurchaseState(body, { ...c, environment: mode === "stripe-live" ? "PRODUCTION" : "SANDBOX" }, Date.now());
 }
 
-export async function appStorePurchaseStatus(userId: string, requireVerification = false): Promise<AppStorePurchaseState> {
-  if (!requireVerification && !mobileConfig().enabled) return null;
+export async function appStorePurchaseStatus(userId: string, requireVerification = false, scope: AppStoreAccessScope = "app"): Promise<AppStorePurchaseState> {
+  const config = mobileConfig();
+  if ((!requireVerification && !config.enabled) || (scope === "web" && config.environment === "SANDBOX")) return null;
   const c = requireMobileReady();
   for (let attempt = 0; attempt < 4; attempt++) {
     const account = await ensureRevenueCatAccount(userId);
     const body = await fetchSubscriber(account.appUserId, c.apiKey, fetch), now = Date.now();
-    const state = body === null ? null : appStorePurchaseState(body, c, now);
+    const state = body === null ? null : appStorePurchaseState(body, scope === "app" ? c : { ...c, environment: "PRODUCTION" }, now);
     if (state !== "active") return state;
     // Expose newly approved access before returning an active purchase, even
     // if Apple's notification has yet to reach RevenueCat's webhook.
@@ -105,11 +107,14 @@ export async function appStorePurchaseStatus(userId: string, requireVerification
   }
   throw new BillingError("mobile_verification_unavailable", 503);
 }
-export async function appStorePurchaseCheck(userId: string, activeCode = "app_store_subscription_exists", mode?: Realm) {
-  const state = mode ? await readAppStorePurchaseStatus(userId, mode) : await appStorePurchaseStatus(userId);
+export async function appStorePurchaseCheck(userId: string, activeCode = "app_store_subscription_exists", mode?: Realm, scope: AppStoreAccessScope = "web") {
+  const state = mode ? await readAppStorePurchaseStatus(userId, mode) : await appStorePurchaseStatus(userId, false, scope);
   if (state) throw new BillingError(state === "active" ? activeCode : "app_store_purchase_pending", 409);
 }
-interface AccountRow { userId: string; appUserId: string; expiresAt: Date | null; checkedAt: Date | null }
+interface AccountRow {
+  userId: string; appUserId: string; expiresAt: Date | null; checkedAt: Date | null;
+  productionExpiresAt: Date | null; sandboxExpiresAt: Date | null;
+}
 export async function ensureRevenueCatAccount(userId: string) {
   const c = requireMobileReady(), appUserId = appUserIdentity(userId, c.identitySecret);
   await prisma.$executeRawUnsafe('INSERT INTO "MobileRevenueCatAccount" ("userId", "appUserId") VALUES ($1,$2) ON CONFLICT ("userId") DO NOTHING', userId, appUserId);
@@ -126,7 +131,7 @@ async function saveRevenueCatSnapshot(before: AccountRow, body: unknown, c: Stor
   const [saved] = await prisma.$queryRawUnsafe<AccountRow[]>(`UPDATE "MobileRevenueCatAccount"
     SET "expiresAt"=$2, "checkedAt"=$3, "productionExpiresAt"=$4, "sandboxExpiresAt"=$5
     WHERE "appUserId"=$1 AND "userId"=$7 AND "checkedAt" IS NOT DISTINCT FROM $6::timestamptz
-    RETURNING "userId","appUserId","expiresAt","checkedAt"`, before.appUserId, expiresAt ? new Date(expiresAt) : null, checkedAt,
+    RETURNING "userId","appUserId","expiresAt","checkedAt","productionExpiresAt","sandboxExpiresAt"`, before.appUserId, expiresAt ? new Date(expiresAt) : null, checkedAt,
   productionExpiresAt ? new Date(productionExpiresAt) : null, sandboxExpiresAt ? new Date(sandboxExpiresAt) : null, before.checkedAt, before.userId);
   if (saved && (productionExpiresAt || sandboxExpiresAt)) {
     await auditDuplicatePurchases(saved.userId, { retryOnFailure: retryOverlapAudit });
@@ -146,13 +151,19 @@ export async function refreshRevenueCat(appUserId: string, { transport = fetch, 
   }
   throw new BillingError("mobile_verification_unavailable", 503);
 }
-export async function revenueCatAccess(userId: string, fresh = false, allowStoredStudyAccess = false) {
-  if (!mobileConfig().enabled) return null;
+type AccessOptions = { scope?: AppStoreAccessScope; fresh?: boolean; allowStoredStudyAccess?: boolean };
+
+export async function revenueCatAccess(userId: string, { scope = "web", fresh = false, allowStoredStudyAccess = false }: AccessOptions = {}) {
+  const config = mobileConfig();
+  if (!config.enabled || (scope === "web" && config.environment === "SANDBOX")) return null;
   const a = await ensureRevenueCatAccount(userId);
   const now = Date.now();
   let row: AccountRow | null = a;
-  const expiredStudyPeriod = allowStoredStudyAccess && a.expiresAt && a.expiresAt.getTime() <= now;
-  if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod) {
+  const expiresForScope = (account: AccountRow) => scope === "app" ? account.expiresAt : account.productionExpiresAt;
+  const expiredStudyPeriod = allowStoredStudyAccess && (expiresForScope(a)?.getTime() ?? Infinity) <= now;
+  // Verify legacy aggregate-only rows before deciding Web access.
+  const unclassified = scope === "web" && a.expiresAt && !a.productionExpiresAt && !a.sandboxExpiresAt;
+  if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod || unclassified) {
     try {
       row = await refreshRevenueCat(a.appUserId);
     } catch (error) {
@@ -161,10 +172,11 @@ export async function revenueCatAccess(userId: string, fresh = false, allowStore
       if (fresh || !allowStoredStudyAccess || !temporary) throw error;
       // A concurrent webhook may already have revoked the old snapshot.
       row = await ensureRevenueCatAccount(userId);
-      if (row.expiresAt && row.expiresAt.getTime() <= Date.now()) {
+      if ((expiresForScope(row)?.getTime() ?? Infinity) <= Date.now()) {
         throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
       }
     }
   }
-  return row && row.expiresAt && row.expiresAt.getTime() > Date.now() ? row : null;
+  const expiresAt = row && expiresForScope(row);
+  return row && expiresAt && expiresAt.getTime() > Date.now() ? { ...row, expiresAt } : null;
 }

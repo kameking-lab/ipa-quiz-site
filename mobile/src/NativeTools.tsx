@@ -102,7 +102,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       setStatusError(message); throw new StatusError(message);
     }
     setStatusError("");
-    const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
+    const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration; requiresAppLogin?: boolean };
     result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
     if (signingOut.current) throw new StatusError("ログアウト中です。");
     if (studyReady.current && result.entitlement.userId !== user.current) {
@@ -230,7 +230,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   useEffect(()=>{ if (!open || !inSite) return; let cancelled=false; void (async()=>{
     const r = await refresh(true); if(cancelled)return;
     await loadOffer(r, ()=>cancelled); if(cancelled)return;
-    if (r.entitlement.userId) {
+    if (r.entitlement.userId && !r.requiresAppLogin) {
       const raw=(await Preferences.get({key:INTENT_KEY})).value;
       if (raw) {
         await Preferences.remove({key:INTENT_KEY});
@@ -267,7 +267,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const purchase = ()=>void run(async()=>{
     const r=await refresh(true);
     if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
-    if(!r.entitlement.userId){ await loginFor("buy"); return; }
+    if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("buy"); return; }
     if(r.pending) return;
     await Preferences.remove({key:INTENT_KEY});
     const selected=offer??await loadOffer(r);
@@ -353,7 +353,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     storeKitRunning.current = true;
     try {
       const r=await refresh(true);
-      if(!r.entitlement.userId){ await loginFor("restore"); return; }
+      if(!r.entitlement.userId || r.requiresAppLogin){ await loginFor("restore"); return; }
       await Preferences.remove({key:INTENT_KEY});
       await membership.restore(r.configuration,r.entitlement);
     } finally {

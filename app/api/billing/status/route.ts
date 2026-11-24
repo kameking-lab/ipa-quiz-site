@@ -22,7 +22,7 @@ async function readStatus(request: Request, confirm: boolean) {
     }
     let appStore = false;
     if(!status.entitled) {
-      const rc=await revenueCatAccess(userId, false, !confirm && aiQuotaEnabled());
+      const rc = await revenueCatAccess(userId, { allowStoredStudyAccess: !confirm && aiQuotaEnabled() });
       if(rc?.expiresAt){ appStore = true; status={...status,entitled:true,expiresAt:rc.expiresAt.toISOString()}; }
     }
     let feedbackSubmitted = false;

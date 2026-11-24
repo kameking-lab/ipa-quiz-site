@@ -105,6 +105,29 @@ it("keeps the selected exam for weekly review when a native buyer needs to sign 
   expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "buy", returnTo: target });
 });
 
+it("resumes a pending restore after a legacy app session has been renewed", async () => {
+  let requiresAppLogin = true;
+  const signIn = vi.fn(async () => {});
+  const restore = vi.fn(async () => {});
+  const membership = { ...deviceMembership, restore } as unknown as typeof deviceMembership;
+  vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] })
+    : Response.json({ requiresAppLogin, configuration: { sdkKey: "configured" }, entitlement: { userId: "native-user", entitled: false } })));
+  const first = render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
+  const button = screen.getByRole("button", { name: "購入を復元" });
+  await waitFor(() => expect(button).toBeEnabled());
+  fireEvent.click(button);
+  await waitFor(() => expect(signIn).toHaveBeenCalledTimes(1));
+  expect(restore).not.toHaveBeenCalled();
+  expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "restore" });
+
+  first.unmount();
+  requiresAppLogin = false;
+  render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
+  await waitFor(() => expect(restore).toHaveBeenCalledTimes(1));
+  expect(signIn).toHaveBeenCalledTimes(1);
+  expect(nativePurchase.preferences.has("kakomon:purchase-intent:v1")).toBe(false);
+});
+
 it("preserves the AI offer click handler while opening native checkout", async () => {
   const saveDraft = vi.fn();
   render(<><NativeTools /><MonthlyPlanLink returnTo="/q" label="AI質問を続ける" keepClickInApp onClick={saveDraft} /></>);
