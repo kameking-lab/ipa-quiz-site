@@ -22,7 +22,8 @@ vi.mock("@/mobile/server/config", () => ({ requireMobileReady: () => h.config, m
 vi.mock("@/lib/billing/subscription/config", () => ({ monthlySelected: () => true, monthlyConfig: () => h.runtime!.config }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => h.runtime }));
 vi.mock("@/lib/notify/ops-alert", () => ({ notifyOpsOnce: h.notify }));
-vi.mock("@/lib/billing/signature", () => ({
+vi.mock("@/lib/billing/signature", async (importOriginal) => ({
+  ...await importOriginal<typeof import("@/lib/billing/signature")>(),
   verifyStripeEvent: (raw: Uint8Array) => JSON.parse(new TextDecoder().decode(raw)),
   eventDigest: (raw: Uint8Array) => new TextDecoder().decode(raw),
 }));
