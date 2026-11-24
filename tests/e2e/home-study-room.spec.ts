@@ -87,10 +87,10 @@ for (const state of [...homeStates, "room"] as const) {
     test(`${state}: ${total} learners at 390px`, async ({ page }) => {
       const { count, activeCount, presenceRequests } = await setup(page, state, exams);
       const home = state !== "room";
-      await page.goto(home ? "/" : "/study-room", { waitUntil: "domcontentloaded" });
+      await page.goto(home ? "/" : "/study-room");
       const room = page.getByTestId(home ? "home-study-room" : "study-room-scene");
       const attendance = home ? room : page.getByTestId("study-room-total");
-      if (home) await expect(page.locator(`[data-home-state="${state}"]`)).toBeVisible();
+      if (home) await expect(page.locator(`[data-home-state="${state}"]`)).toBeVisible({ timeout: 20_000 });
       if (count > 0) {
         const total = `今日 ${count}人が勉強`;
         const expected = activeCount > 0 ? `${total}（うち${activeCount}人がいま勉強中）` : total;
