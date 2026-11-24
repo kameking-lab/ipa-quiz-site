@@ -1,0 +1,149 @@
+{
+  "scopeOriginals": 16,
+  "publicGo": 0,
+  "medicalDraftReview": "Independent Astra read-only review; nine original questions plus q35 correction and seven image questions accepted as held drafts.",
+  "claims": [
+    {
+      "questionNumbers": [
+        4
+      ],
+      "source": "https://www.cdc.gov/dpdx/ascariasis/index.html",
+      "finding": "Ascaris egg morphology checked; no operculum."
+    },
+    {
+      "questionNumbers": [
+        4
+      ],
+      "source": "https://www.cdc.gov/dpdx/schistosomiasis/index.html",
+      "finding": "S. japonicum egg morphology checked; small lateral knob, no operculum."
+    },
+    {
+      "questionNumbers": [
+        25,
+        26
+      ],
+      "source": "https://www.asecho.org/wp-content/uploads/2025/07/Guidelines-for-Performing-a-Comprehensive-Transthoracic-Echocardiographic-Examination-in-Adults.pdf",
+      "finding": "Adult TTE transducer and spectral Doppler uses checked."
+    },
+    {
+      "questionNumbers": [
+        29
+      ],
+      "source": "https://www.msdmanuals.com/professional/nephrology/acid-base-regulation-and-disorders/metabolic-alkalosis?autoredirectid=37402",
+      "finding": "Hypokalemia accompanies metabolic alkalosis; no treatment content used."
+    },
+    {
+      "questionNumbers": [
+        29
+      ],
+      "source": "https://www.msdmanuals.com/professional/endocrine-and-metabolic-disorders/parathyroid-disorders/hypoparathyroidism",
+      "finding": "Reduced PTH decreases phosphate excretion."
+    },
+    {
+      "questionNumbers": [
+        30
+      ],
+      "source": "https://rest.uniprot.org/uniprotkb/P02787.txt",
+      "finding": "Transferrin binds two iron ions per molecule."
+    },
+    {
+      "questionNumbers": [
+        30,
+        39,
+        44
+      ],
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6616535/",
+      "finding": "Protein half-life and nutritional-marker confounding checked; albumin approximately twenty days and RBP approximately half a day."
+    },
+    {
+      "questionNumbers": [
+        30,
+        44
+      ],
+      "source": "https://www.jstage.jst.go.jp/article/jjspen/21/2/21_2_2_11/_pdf/-char/ja",
+      "finding": "Japanese nutrition society paper supports short RBP half-life."
+    },
+    {
+      "questionNumbers": [
+        35
+      ],
+      "source": "https://academic.oup.com/jes/article/10/7/bvag126/8698906",
+      "finding": "GH/IGF-1 hyperfiltration and muscle-related creatinine effects require avoiding a one-direction assertion in acromegaly."
+    },
+    {
+      "questionNumbers": [
+        39
+      ],
+      "source": "https://pubmed.ncbi.nlm.nih.gov/25437911/",
+      "finding": "Original study reports increased albumin concentration after changing from supine to sitting."
+    },
+    {
+      "questionNumbers": [
+        43
+      ],
+      "source": "https://www.jds.or.jp/uploads/files/publications/gl2024/01.pdf",
+      "finding": "Diagnosis uses venous plasma; standard classification considers fasting and two-hour glucose."
+    },
+    {
+      "questionNumbers": [
+        43
+      ],
+      "source": "https://www.jds.or.jp/uploads/files/publications/gl2024/17.pdf",
+      "finding": "75g OGTT and gestational-diabetes diagnosis checked, distinct from usual classification."
+    },
+    {
+      "questionNumbers": [
+        63
+      ],
+      "source": "https://patents.google.com/patent/US2656508A/en",
+      "finding": "Original aperture electrical-resistance counting principle checked; direct-current and volume details also checked against official item key and independent review."
+    },
+    {
+      "questionNumbers": [
+        74
+      ],
+      "source": "https://www.fda.gov/media/157717/download?attachment=",
+      "finding": "Official BAM identifies Listeria as short Gram-positive rods and supports CAMP/hemolysis differentiation."
+    },
+    {
+      "questionNumbers": [
+        85
+      ],
+      "source": "https://www.jstage.jst.go.jp/article/jjtc/62/6/62_651/_pdf",
+      "finding": "Society guideline requires forward/reverse ABO consistency; Rh control role checked."
+    }
+  ],
+  "accessStops": [
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6409397/",
+      "reason": "reCAPTCHA",
+      "retries": 0,
+      "alternateRouteForSameContent": false
+    },
+    {
+      "url": "https://www.beckman.com/resources/fundamentals/coulter-principle",
+      "reason": "Tool reported inaccessible",
+      "retries": 0
+    },
+    {
+      "domain": "aasm.org",
+      "reason": "robots.txt non-retryable",
+      "retries": 0
+    },
+    {
+      "url": "https://www.sysmex.com/en-us/training-and-knowledge/knowledge/science-of-urinalysis-bilirubin-crystals",
+      "reason": "Healthcare professional attestation shown; not submitted or bypassed",
+      "retries": 0,
+      "usedForOwnDraft16": false
+    }
+  ],
+  "diagramChecks": {
+    "71AM52": "Nuclear atypia and abnormal keratinized cells; cytologic SCC category, no claimed histologic invasion depth.",
+    "71AM58": "Lobes, fissures and black pigment seen.",
+    "71AM63": "Aperture between electrodes is present.",
+    "71AM67": "Central grid; 70 cells/0.02 microlitre *100 =350000.",
+    "71AM74": "Short Gram-positive rods; small hemolytic colonies.",
+    "71AM85": "anti-A-,anti-B+,A1cells+,Bcells-,anti-D+,Rhcontrol-.",
+    "71AM95": "4ohm branch parallel to 12+4=16ohm; total1A implies branch0.2A."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "normalizationOnly": true,
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "receipt": "ASTRA-ROOT2-DISPOSITION.json",
+      "method": "FINITE_ROOT2_SOURCE_DISPOSITION",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "日本呼吸器学会自筆診断節でAHI>=5かつ症状を確認。現稿はAHI単独診断やPSGのスクリーニング絶対否定をしていない。公式4/5の単肢受理を保持する。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "receipt": "ASTRA-ROOT2-DISPOSITION.json",
+      "method": "FINITE_ROOT2_SOURCE_DISPOSITION",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "原図を目視し②25%呼出、③50%、④75%呼出/25%残存、⑤吸気側を確認。日本資料physical4/book30をメモリ描画してVdot25=肺活量25%位を確認。FDA掲載メーカー提出PDFphysical4-5本文でFEF25=25%呼出を確認。MEF記号体系は資料間で統一せず現稿に追加しない。公式が不明確とした具体理由と解説上の定義解釈を現稿どおり分ける。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "receipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "FeNO通常手順の直接一次資料不足は残るが、鼻クリップが全条件で禁忌という主張は現稿にない。本問の必須検査から外す範囲の説明に対する具体的反証・医学欠陥は記録されていない。nNO資料を通常FeNOの全手順の証明に代用しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "receipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "P31発生部位の未取得は追加説明の限界。現稿は部位を断定せず、最初のN20との識別に限定するため採用障害にしない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "receipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "全JSCC試薬処方未取得は網羅的な処方表を作る際の限界。現稿と修正案は反応原理・CK試薬のG6PDに限る。IFCC/DGKC製品処方をJSCC全処方と同一視しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "receipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "アスコルビン酸は検討濃度に限定。全測定系・全濃度無干渉へ一般化しない。両アノマーの背景記述とGOD/PODの実験系を区別。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "receipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "新規未停止の原著本文で分子形比較を確認。旧案の教材内作業メタ文を不採用とし、補強正本の限定表現で置換する。腎不全で上昇し得る記述は原著抄録で支持。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "receipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "滑走式の製品例は全称分類の根拠ではない。厳密2～10°の一般的技術レンジは未確証だが、公式選択肢の採点と角度の役割だけに限定すれば、その未確証の一般化を原稿が主張しなくなる。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "receipt": "ASTRA-FACT7-DISPOSITION.json",
+      "method": "FINITE_FACT7_DISPOSITION_REQUIRED3_PATCHES_APPLIED",
+      "adoptionPreparationRecommended": true,
+      "retainedEvidenceLimit": "PASで栄養型が赤く強調される原著の組織所見と保存済試験図の判断を区別。原著症例画像を試験図そのものとは扱わない。"
+    }
+  ],
+  "requiredPatchOriginals": 2,
+  "requiredPatchFields": 3,
+  "appliedReceipt": "FINITE7-APPLIED.json",
+  "unconfirmedRangeRetainedAsLimitation": "AM46 independent general2-10degree range not verified; official scoring statement only",
+  "publicGo": 0
+}

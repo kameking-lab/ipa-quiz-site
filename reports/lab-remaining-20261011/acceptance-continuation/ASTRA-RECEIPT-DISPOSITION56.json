@@ -1,0 +1,672 @@
+{
+  "observedUtc": "2026-10-11T10:25:26.646503+00:00",
+  "reviewAgent": "/root/lab_independent_review9",
+  "task": "SAVED_RECEIPT_DISPOSITION_ONLY",
+  "baselineHead": "d6fcc3a5f36074ce0062dfc717bd2298231ea8f2",
+  "scopeOriginals": 56,
+  "scopeSavedChoiceReasons": 280,
+  "recommendation": "PARTIAL_ADOPTION_PREPARATION_RECOMMENDED_USING_SAVED_EVIDENCE",
+  "recommendedOriginals": 56,
+  "recommendedWithoutIndividualLimitNote": 49,
+  "recommendedWithRetainedIndividualLimitNote": 7,
+  "individualMedicalOrTechnicalBlockerIds": [],
+  "recordedConcreteMedicalDefectIds": [],
+  "newMandatoryManuscriptCorrections": 0,
+  "unchangedQuestionObjectsAgainstBaseline": 56,
+  "method": "既存author facts、収集記録、source-evidence、schema/consistency検証結果の処遇を判定。全肢の医学再読・独立全肢審査・原図再監査は実施せず、その完了も主張しない。",
+  "independentMedicalReviewCompletedForAll56": false,
+  "existingValidationReused": {
+    "preparedValidationStatus": "PASS",
+    "savedCorpusTestsPassed": 15,
+    "savedCorpusSourceBindings": 84,
+    "savedCorpusFigureByteMatches": 60,
+    "selectedIdsBoundInSourceManifest": 56,
+    "selectedRowsFullFiveReasonsSaved": 56,
+    "selectedRowsFigureBindingVerified": 56,
+    "newTestRun": false
+  },
+  "strictProviderGate": {
+    "explicitRealOpusFirstPartyRequirementForThis56FoundInInspectedScope": false,
+    "scope": "当該reports直下JSON、source-evidence群、適用AGENTSのreceipt関連記録を検索。上位のstrict対象のみ代替禁止という条件規則は、対象指定の証拠とは扱わない。",
+    "substitutionPerformed": false,
+    "newGateInvented": false,
+    "notAClaimOfRealOpusFirstPartyCompletion": true
+  },
+  "specialReceipts": {
+    "72AM86": "保存visualObservationはI底部沈殿=陰性、II/III上部・ゲル中凝集=陽性。Bio-Rad IFUと既存原著の参照を保持。厳密グレード・特定抗体名は付加しない。",
+    "72AM98": "公式原問p38の全5記号をPNGで無改変保持した記録。原問PNGとprepared PNGの記録SHAは18a8e4908d767a3b95c97b4311d3db91995fffa1ca1ded8bc5b76dd21573a532で一致。図再生成なし。"
+  },
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q9",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q17",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q18",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q23",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q24",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q27",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q28",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q47",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q50",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q51",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "recommendation": "ADOPTION_PREPARATION_WITH_RETAINED_LIMIT_NOTE",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": "尿円柱全5種類の化学組成まで一次研究で独立確定した記録ではない。",
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "recommendation": "ADOPTION_PREPARATION_WITH_RETAINED_LIMIT_NOTE",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": "図示値を全患者の正常値範囲へ一般化しない。",
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "recommendation": "ADOPTION_PREPARATION_WITH_RETAINED_LIMIT_NOTE",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": "定義照合は署名付き臨床参考資料。全肢を原著又は学会一次基準で再確認済みとはしない。",
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "recommendation": "ADOPTION_PREPARATION_WITH_RETAINED_LIMIT_NOTE",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": "単一図に刺激距離・数値基準・他神経記録・臨床経過がなく、CIDP確定診断へ一般化しない。",
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "recommendation": "ADOPTION_PREPARATION_WITH_RETAINED_LIMIT_NOTE",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": "三相波・棘徐波複合の全形式定義を原著で照合済みとはしない。患者情報不足のため症候群確定診断へ一般化しない。",
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q26",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q46",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q47",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q49",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q55",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q61",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q63",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q64",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q65",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q69",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q82",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q86",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q90",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q98",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q54",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q58",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q62",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q63",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q66",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q69",
+      "recommendation": "ADOPTION_PREPARATION_WITH_RETAINED_LIMIT_NOTE",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": "WHO2021形態の公開索引抜粋確認に限定。全文PDF未取得を全文確認済みとはしない。",
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q78",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q84",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q86",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q98",
+      "recommendation": "ADOPTION_PREPARATION_WITH_RETAINED_LIMIT_NOTE",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": "公式全5記号PNG保持・メーカー名称定義表の確認を再利用。外部Philips PNG取得成功や第3記号の未確認規格番号を主張しない。",
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q3",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q6",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q17",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q21",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q22",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q25",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q27",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q28",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q30",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q32",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q42",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q45",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q49",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q21",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q49",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q51",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q52",
+      "recommendation": "ADOPTION_PREPARATION_FROM_SAVED_RECEIPTS",
+      "recordedConcreteMedicalDefect": false,
+      "mandatoryCorrection": null,
+      "retainedEvidenceLimit": null,
+      "fullIndependentMedicalReviewClaimed": false,
+      "preparedQuestionFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "sourceBindingReceipt": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "reports/lab-remaining-20261011/acceptance-continuation/BASELINE-CLASSIFICATION84.json",
+      "sha256": "23a50594a1e92b8b9ecae774cde3d0a10e4954d3b94430e675de20e2d0df2697"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/PREPARED-VALIDATION84.json",
+      "sha256": "737be7d3b979ca08b9e72c5608af1d0ab9795e49fab5c1622cbefd025d40bcdc"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/COLLECTED-ASSIST7110.json",
+      "sha256": "b4c65285ffa6500dde91ae51e1529329644460335886c7d72f2c56ca098ab38e"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/COLLECTED-ASSIST7210.json",
+      "sha256": "2b31e47b2aabe22504cf3f493c08af6a3d37ef31f4bb1065a47d721274ad29f7"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/ASSIST72AM10-VALIDATION.json",
+      "sha256": "18cc3ad07529cfc6e4fdc2cae151bf34a8bf4e3fdc86f51251ed0e6cf49bc71b"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/ASSIST72AM10-HANDOFF.json",
+      "sha256": "630cf2cb444ae176308502ca548e0a7c0fc50d53154b1824addfe6ff97436f88"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/AUTHOR71PM23-SUMMARY.json",
+      "sha256": "3869a741c5e3bc6458ba2a3fff0f6ad491be6af44a55c83be5858ca8d1e583a7"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/AUTHOR72AM30PM5-SUMMARY.json",
+      "sha256": "780024aa51ff6af2421af103500d0d17b6d6e21c311c8474834755053218583b"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/FACT-EVIDENCE71PM23.json",
+      "sha256": "de3e86224cab3f8c312bc2d5546f5641bc165bc3cbb9b9b52f292ffa7002779a"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/FACT-EVIDENCE72AM30PM5.json",
+      "sha256": "a2b9714835c4ec7f306b802d7e451a1777f0d4e411565d8adc77171777d84845"
+    },
+    {
+      "path": "reports/lab-remaining-20261011/SCOPED-QA10-ADOPTION.json",
+      "sha256": "306aed3b544ea7d793bf17cd380da2643a1ce64f1d1309de706c0c8c2a164a3e"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/source-evidence-assist10.json",
+      "sha256": "bf74007b424f1aaecd797e8e484252fcc1909b83ed2ffa613599e3ac12072888"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/source-evidence-assist72am10.json",
+      "sha256": "2920179b96dd98914fbbadc490679e3cd34701e3335d3c1045d1c41a655a4b1c"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/source-evidence-owner-completion.json",
+      "sha256": "95368a2bd0c9942ee30bfec91895a3d95e39cd6fcae54f64e8014294f97909bb"
+    }
+  ],
+  "whole84ReauditPerformed": false,
+  "all400CompletionRequired": false,
+  "newQuestionGeneration": 0,
+  "figureRegeneration": 0,
+  "providerStopScopeTouched": 0,
+  "blockedSourceRetries": 0,
+  "manuscriptEdits": 0,
+  "ownerLedgerEdits": 0,
+  "gitWrites": 0,
+  "runtimeChanges": 0,
+  "needsReviewChanges": 0,
+  "actualPublicRelease": 0,
+  "integrationResponsibility": "公開・runtime登録・needsReview解除は統合担当。この判定は保存証拠に基づく部分採用準備推薦。"
+}

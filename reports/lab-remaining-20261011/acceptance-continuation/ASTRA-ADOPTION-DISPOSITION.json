@@ -1,0 +1,88 @@
+{
+  "observedUtc": "2026-10-11T10:19:27.183025+00:00",
+  "reviewAgent": "/root/lab_independent_review9",
+  "sourceHead": "d6fcc3a5f36074ce0062dfc717bd2298231ea8f2",
+  "task": "FINITE_ADOPTION_DISPOSITION_EXISTING_EVIDENCE_ONLY",
+  "existing16": {
+    "recommendation": "ADOPTION_PREPARATION_RECOMMENDED",
+    "questionIds": [
+      "rinsho-kensagishi-2025-annual-am-q25",
+      "rinsho-kensagishi-2025-annual-am-q26",
+      "rinsho-kensagishi-2025-annual-am-q29",
+      "rinsho-kensagishi-2025-annual-am-q30",
+      "rinsho-kensagishi-2025-annual-am-q35",
+      "rinsho-kensagishi-2025-annual-am-q39",
+      "rinsho-kensagishi-2025-annual-am-q4",
+      "rinsho-kensagishi-2025-annual-am-q43",
+      "rinsho-kensagishi-2025-annual-am-q44",
+      "rinsho-kensagishi-2025-annual-am-q52",
+      "rinsho-kensagishi-2025-annual-am-q58",
+      "rinsho-kensagishi-2025-annual-am-q63",
+      "rinsho-kensagishi-2025-annual-am-q67",
+      "rinsho-kensagishi-2025-annual-am-q74",
+      "rinsho-kensagishi-2025-annual-am-q85",
+      "rinsho-kensagishi-2025-annual-am-q95"
+    ],
+    "existingReviewReused": true,
+    "shaChecks": [
+      {
+        "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+        "sha256": "546950c63c23270a6f5f35b2f49647e4ddaf7adfcad4892713199fca49b73387",
+        "match": true
+      },
+      {
+        "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+        "sha256": "bd3093065825d6028d7a010e0ed4b659e3af3771fa4c2e7972b88f48ab72c9fb",
+        "match": true
+      }
+    ],
+    "q35CorrectionPreviouslyAccepted": true,
+    "concreteMedicalDefectsOutstanding": [],
+    "all400CompletionRequired": false,
+    "all84ReauditRequired": false,
+    "previousCompleteCorpusReleaseConditionAppliedToPartialAdoption": false
+  },
+  "scopedThree": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q80",
+      "recommendation": "ADOPTION_PREPARATION_RECOMMENDED_WITH_SOURCE_SCOPE_LIMIT",
+      "concreteMedicalErrorFound": false,
+      "mandatoryChanges": [],
+      "rationale": "C1qの直接加熱実験とC1複合体の経路資料を区別する。現稿はC1r/C1s全成分又は全選択肢の同条件比較を検証済みとは主張せず、他成分が絶対に熱失活しないとも断定しない。残件は根拠適用範囲である。",
+      "optionalClarification": "肢ア末尾に、独立実験根拠はC1構成成分C1qに限り全候補の同条件比較ではない旨を追加可能。採用必須条件ではない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "recommendation": "ADOPTION_PREPARATION_RECOMMENDED",
+      "concreteMedicalErrorFound": false,
+      "mandatoryChanges": [],
+      "rationale": "現稿はDi(a+)頻度を遺伝子頻度からHardy-Weinberg仮定で算出した推計と明記。台湾人Xg小標本を日本人又は全人口に外挿せず、weak Dも典型分類に限定。実測表未目視や全亜型未照合は現稿の具体的誤りではない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "recommendation": "ADOPTION_PREPARATION_RECOMMENDED_WITH_EXPLICIT_SCIENTIFIC_QUALIFICATION",
+      "concreteMedicalErrorFound": false,
+      "mandatoryChanges": [],
+      "rationale": "公式採点AI/CIと原著ApoE2/E3活性化を区別し、血漿酵素源でも類似結果がある旨を明記。Eが一切活性化しないとの誤断定はない。発行者のE除外理由は不明のまま保持し推測で補わない。全速度論・生体内寄与定量の未読は現稿で主張していない範囲。注記付きで採用準備可能。"
+    }
+  ],
+  "recommendedPreparationOriginals": 19,
+  "mandatoryMedicalChanges": 0,
+  "wholeCorpusReauditPerformed": false,
+  "existing16AllChoicesRereviewed": false,
+  "newMedicalWebResearchPerformed": false,
+  "newQuestionGeneration": 0,
+  "providerStopScopeTouched": 0,
+  "blockedSourceRetries": 0,
+  "needsReviewChanged": false,
+  "runtimeRegistrationChanged": false,
+  "actualPublicRelease": 0,
+  "integrationResponsibility": "公開操作・runtime/画像配信登録・needsReview解除は統合担当。q4単肢受入採点と原図配信の既存統合要件は保持。",
+  "inputs": [
+    "reports/lab-remaining-20261011/acceptance-continuation/BASELINE-CLASSIFICATION84.json",
+    "reports/lab-remaining-20261011/acceptance-continuation/READY-CANDIDATE16.json",
+    "reports/lab-remaining-20261011/INDEPENDENT-REVIEW16.json",
+    "reports/lab-remaining-20261011/SCOPED-QA10-ADOPTION.json",
+    "reports/lab-remaining-20261011/SCOPED-QA10-FACT-COMPLETION10.json"
+  ]
+}

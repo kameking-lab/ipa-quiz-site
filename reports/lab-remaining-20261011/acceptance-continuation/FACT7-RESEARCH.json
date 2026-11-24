@@ -1,0 +1,244 @@
+{
+  "scope": "FACT7 only: AM24,26,31,38,41,46; PM55. 既存保存稿への有限補強。原問・5選択肢・公式正答・図版・sourceIdsは変更しない。",
+  "observedUtc": "2026-10-11",
+  "sourceBoundary": "一次資料本文の実読範囲のみを根拠とし、検索要約だけは直接証拠にしない。既停止URLの再試行・別経路取得なし。",
+  "questions": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "resolved": [
+        "ERS呼吸オシロメトリー技術基準は口漏れ点検とノーズクリップ使用を必須とする。",
+        "DLCO病院実施手順は鼻クリップと口マウスピースを使用する。",
+        "米国肺協会のピークフロー手順は鼻から深吸気し、口でマウスピースへ努力呼気する。"
+      ],
+      "sources": [
+          {
+            "url": "https://www.mhlw.go.jp/shingi/2010/04/dl/s0420-6m_0003.pdf",
+            "publisher": "厚生労働省掲載『臨床呼吸機能検査 第7版』",
+            "readScope": "PDF物理p7／本文p33『2. PEF測定の実際と注意点』(2)。既存ローカルPNGを目視確認",
+            "supports": "ピークフロー測定ではノーズクリップ不要と明記。",
+            "localReadOnlyPdf": "C:/Users/kanet/AppData/Local/Temp/lab-q19-jrs-flow-guideline.pdf",
+            "localPdfSha256": "79ef95faa8e1064e47539962d2f009fdd739210625f215790c05f2adfced461b"
+          },
+        {
+          "url": "https://pure.rug.nl/ws/portalfiles/portal/121014172/1900753.full.pdf",
+          "publisher": "ERS technical standards original paper",
+          "readScope": "PDF物理p10, lines 570-578; p14 lines 817-819",
+          "supports": "oscillometryでは鼻クリップがessential。"
+        },
+        {
+          "url": "https://my.clevelandclinic.org/health/diagnostics/15445-dlco",
+          "publisher": "Cleveland Clinic",
+          "readScope": "What should I expect during a lung diffusion (DLCO) test? の手順",
+          "supports": "DLCOで鼻クリップを装着しマウスピースからガス吸入・呼出。"
+        },
+        {
+          "url": "https://www.lung.org/lung-health-diseases/lung-disease-lookup/asthma/treatment/devices/peak-flow",
+          "publisher": "American Lung Association",
+          "readScope": "peak flow meter操作の手順",
+          "supports": "鼻からの吸気と口での強制呼気。鼻クリップを標準手順に含めない。"
+        },
+        {
+          "url": "https://www.niox.com/en/support/articles/using-nasal-nitric-oxide/",
+          "publisher": "NIOX device manufacturer",
+          "readScope": "Expiration against Resistance method (ER-nNO)段落",
+          "supports": "口での抵抗呼気が軟口蓋を閉じる。",
+          "limit": "nNO手順であり通常FeNOのノーズクリップ不要を単独で証明しない。"
+        }
+      ],
+      "hold": "FeNOの通常測定で鼻クリップを使わないことを直接示す一次手順は未取得。2005 ATS/ERS勧告の詳細本文は未読。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "resolved": [
+        "N9はErb点・腕神経叢幹、N13は後頸部C5-C7最大で頸髄後角成分、P14はN20前に出る非皮質の遠隔電場成分、N20は対側頭皮/一次体性感覚皮質の最初期反応。",
+        "P37は下肢後脛骨神経SEPの皮質陽性波P39の別名称として文書化される。"
+      ],
+      "sources": [
+        {
+          "url": "https://media.journals.elsevier.com/content/files/clinph-chapter-2-4-14083346.pdf",
+          "publisher": "Clinical Neurophysiology原著者章",
+          "readScope": "PDF物理p5-7のmedian nerve SEP電極/発生源、p8表3、p9 posterior tibial SEP",
+          "supports": "N9, N13, P14, N20の部位と記録電極、P37/P39の下肢波名。"
+        }
+      ],
+      "hold": "P31の発生部位はこの資料に記載を見つけず。『N20より後で最初ではない』以上に断定しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "resolved": [
+        "CK→HK→G6PD連成反応と、HKがR1、G6PDがR2に実際に配合されることをメーカー原資料で確認。",
+        "既存JSCC α-アミラーゼ勧告冒頭はα-グルコシダーゼを指示反応に使用。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.diasys-diagnostics.com/misc/download/?_=1634811437&cHash=3ad1d896d2d5d8840b81080a65ea5cf1&tx_vierwddiasysproducts_download%5Bfile%5D=downloads%2FIFU+respons920%2FIFU+respons920+English%2FIFU_R920-e-CK-2.pdf&tx_vierwddiasysproducts_download%5Bmsds%5D=",
+          "publisher": "DiaSys Diagnostics",
+          "readScope": "CK-NAC FS添付文書PDF物理p1 Method lines 22-39, Reagents lines 41-58",
+          "supports": "CKで生成したATP→HKでG6P→G6PDでNADPH、R1にHK/R2にG6PD。",
+          "limit": "IFCC/DGKC準拠製品。JSCC勧告法の詳細処方と同一であると断定しない。"
+        },
+        {
+          "url": "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan01_55.pdf",
+          "publisher": "日本臨床化学会",
+          "readScope": "既存保存のCK原勧告冒頭1ページ",
+          "supports": "CK JSCC勧告法の存在と補助酵素を伴う指示反応の記述。",
+          "limit": "全反応式は公開PDF1ページにない。"
+        },
+        {
+          "url": "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan01_204.pdf",
+          "publisher": "日本臨床化学会",
+          "readScope": "既存保存のAMY原勧告冒頭1ページ",
+          "supports": "AMY勧告法の指示反応にα-グルコシダーゼ。"
+        }
+      ],
+      "hold": "ALP/LD/γ-GTのJSCC原処方全成分を個別照合していない。LDが測定対象であって添加脱水素酵素とは別、という既存説明以上に広げない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "resolved": [
+        "既存JSCC勧告冒頭でHK/G6PD→NADPH 340nm原理確認済。",
+        "2019原著の背景節はHKがα/β両アノマーをリン酸化し、mutarotase追加の実験はGOD/POD測定に対するものと明記。",
+        "1978原著の8施設アスコルビン酸干渉試験ではHK/G6PD法は検討濃度で影響なし。"
+      ],
+      "sources": [
+        {
+          "url": "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan02_242.pdf",
+          "publisher": "日本臨床化学会",
+          "readScope": "既存保存の原勧告冒頭1ページ反応式",
+          "supports": "HK/G6PD法はJSCC勧告法、NADPH吸光度340nm。"
+        },
+        {
+          "url": "https://jofem.org/index.php/jofem/article/view/555/284284366",
+          "publisher": "Journal of Endocrinology and Metabolism 原著",
+          "readScope": "Introduction lines 107-111; Methods line 127; Results lines 136-145; Discussion line 162",
+          "supports": "HKは両アノマーに作用。mutarotase添加実験はGOD/POD法。",
+          "limit": "HK/G6PD法にmutarotase添加の影響を試験した論文ではない。"
+        },
+        {
+          "url": "https://d-nb.info/1206182881/34",
+          "publisher": "J Clin Chem Clin Biochem 原著",
+          "readScope": "PDF物理p3 lines 427-436、p4 Fig 1、p5 Table 3",
+          "supports": "検討した治療域のアスコルビン酸ではHK/G6PD法は干渉を受けない。",
+          "limit": "全濃度・全製剤で絶対的に干渉なしとは言わない。"
+        }
+      ],
+      "accessStops": [
+        {
+          "url": "https://www.diasys.in/IFU_R910-e-GLUC_HK-5",
+          "reason": "404",
+          "action": "STOP_NO_RETRY"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "resolved": [
+        "既存JSCC α-アミラーゼ勧告とUniProt P04746既読記録でα1,4加水分解とCl活性化。",
+        "腎不全で血清アミラーゼ上昇は臨床原著で直接支持。"
+      ],
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1699413/",
+          "publisher": "Am J Gastroenterol 原著抄録",
+          "readScope": "1990 Collenらの抄録Results",
+          "supports": "クレアチニンクリアランス50 mL/min以下で血清AMY上昇を認める。",
+          "limit": "全文・腎排泄の定量機構は未読。"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/2444541/",
+          "publisher": "Int J Artif Organs 原著抄録",
+          "readScope": "1987 Bardellaらの抄録Results",
+          "supports": "慢性腎不全37例のAMYは対照33例より高い。"
+        },
+        {
+          "url": "https://jscc-jp.gr.jp/file/kaishi/kankoku/2012/kan01_204.pdf",
+          "publisher": "日本臨床化学会",
+          "readScope": "既存保存のAMY原勧告冒頭1ページ",
+          "supports": "α1,4 glucan hydrolase。"
+        }
+      ],
+      "hold": "唾液型と膵型の分子量の厳密比較は一次資料未確認。原稿の『糖鎖などにより高分子量側』という因果説明は引っ込め、公式正答に沿う最小表現へ。Annals of Clinical Laboratory Science PDFは403で停止。",
+      "accessStops": [
+        {
+          "url": "https://www.annclinlabsci.org/content/7/4/298.full.pdf",
+          "reason": "403",
+          "action": "STOP_NO_RETRY_NO_SAME_CONTENT_ALTERNATE"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "resolved": [
+        "メーカーEprediaのHM450は滑走式ミクロトームでcross roller bearingを使用。",
+        "Leica回転式RM2125 RTSの一次取説は逃げ角目盛0/5/10度と調整機構を明示。",
+        "Leicaの標本切削解説は刃角と逃げ角の概念的区別を支持。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.epredia.com/products/histology-instruments/microtomy/hm450",
+          "publisher": "Epredia製品原資料",
+          "readScope": "HM450 Sliding Microtome製品概要とcross roller bearing説明",
+          "supports": "cross roller bearingは滑走式HM450に用いられる。",
+          "limit": "全てのcross roller式が滑走式に限定されると一般化しない。"
+        },
+        {
+          "url": "https://www.leicabiosystems.com/sites/default/files/media_product-download/2023-10/Leica_RM2125RTS_IFU_3v3R_en.pdf",
+          "publisher": "Leica Biosystems取扱説明書",
+          "readScope": "5.3 Adjusting the clearance angle、PDF物理p28",
+          "supports": "回転式機種で逃げ角0/5/10度目盛があり、小角度で調整。",
+          "limit": "Minot型全般の2～10度という厳密範囲を単独で立証しない。"
+        },
+        {
+          "url": "https://www.leicabiosystems.com/us/knowledge-pathway/knife-angle-in-microtomy/",
+          "publisher": "Leica Biosystems",
+          "readScope": "knife angleとlower bevel説明段落",
+          "supports": "逃げ角は切削面と刃の位置関係であり刃先角とは別。"
+        }
+      ],
+      "hold": "『ミノー型の逃げ角は2～10°』の厳密レンジは公式正答以外の一次資料で未確証。メーカー機種例を一般則と混同しない。"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "resolved": [
+        "大腸・直腸組織の原著4症例でPASによりアメーバ栄養型細胞質が赤色に染まり、組織中で目立つと直接確認。"
+      ],
+      "sources": [
+        {
+          "url": "https://pdfs.semanticscholar.org/1aa8/4b15436b81fc368e57cd182fe646e9732cd8.pdf",
+          "publisher": "Recent Advances in Pathology & Laboratory Medicine 原著症例報告",
+          "readScope": "PDF物理p3 lines 223-261、表1の4例PAS陽性行、p4 lines 323-328",
+          "supports": "ヒト大腸/直腸組織でPAS陽性栄養型は赤く強調される。",
+          "limit": "原著は癌合併4症例。原試験画像そのものを撮影した研究ではない。"
+        },
+        {
+          "url": "https://www.cdc.gov/dpdx/amebiasis/index.html",
+          "publisher": "CDC DPDx",
+          "readScope": "既存FACTのtrophozoite/HE説明",
+          "supports": "組織内アメーバ栄養型の文脈のみ。",
+          "limit": "PAS正答の根拠に使わない。"
+        }
+      ],
+      "accessStops": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3609206/",
+          "reason": "reCAPTCHA",
+          "action": "STOP_NO_RETRY_NO_SAME_CONTENT_ALTERNATE"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10730925/",
+          "reason": "reCAPTCHA",
+          "action": "STOP_NO_RETRY_NO_SAME_CONTENT_ALTERNATE"
+        },
+        {
+          "domain": "pathologyoutlines.com",
+          "reason": "robots.txt",
+          "action": "STOP_NO_RETRY"
+        }
+      ]
+    }
+  ],
+  "globalHolds": [
+    "2026PM60-100 provider STOP41問には一切触れていない。",
+    "公開判定・原稿更新・Git操作は実施しない。"
+  ]
+}
