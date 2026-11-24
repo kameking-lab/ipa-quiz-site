@@ -2,13 +2,12 @@ import { dateCountdown, planCountdownDates, registrationTiming } from "./countdo
 import { dayNumber, type AnswerAttempt, type ExamDateSource, type PacePlan } from "./pace";
 import type { ExamScheduleSession } from "./schedule";
 
-type CalendarDate =
-  | { kind: "start" | "deadline"; date: string; basisYear?: number }
-  | { kind: "exam"; date: string; basisYear?: number; examDateSource?: ExamDateSource };
+type CalendarDate = { date: string; basisYear?: number };
+type ExamCountdown = CalendarDate & { kind: "exam"; days: number; examDateSource?: ExamDateSource };
 
 export type HomeCalendar = {
-  primary: CalendarDate & { days: number };
-  secondary: CalendarDate | { kind: "registered" } | null;
+  primary: ExamCountdown | (CalendarDate & { kind: "start" | "deadline"; days: number });
+  secondary: ExamCountdown | (CalendarDate & { kind: "deadline" }) | { kind: "registered" } | null;
 };
 
 export function homeCalendar(plan: PacePlan, today: string, sessions: readonly ExamScheduleSession[] = []): HomeCalendar | null {
@@ -20,9 +19,8 @@ export function homeCalendar(plan: PacePlan, today: string, sessions: readonly E
   const exam = dateCountdown(examDate, today, examBasisYear);
   const examTarget = exam && { ...exam, kind: "exam" as const, examDateSource };
 
-  const deadlineDate: CalendarDate | null = deadline && dayNumber(deadline) !== null
-    ? { kind: "deadline", date: deadline, basisYear }
-    : null;
+  const closing = dateCountdown(deadline, today, basisYear);
+  const deadlineDate = closing && { kind: "deadline" as const, date: closing.date, basisYear };
   const registration = !plan.registered
     ? registrationTiming(start, deadline, today, basisYear).countdown
     : null;

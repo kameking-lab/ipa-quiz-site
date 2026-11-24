@@ -29,12 +29,61 @@ async function setup(page: Page, plan?: PacePlan, count = 0, clockMode: "fixed" 
 
 test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
 
+test("the first-paint goal matches the hydrated goal and stays fixed during home updates", async ({ page }) => {
+  await setup(page);
+  const hydrationErrors: string[] = [];
+  page.on("console", message => {
+    if (message.type() === "error" && /hydrat|Minified React error #(?:418|423|425)/i.test(message.text())) {
+      hydrationErrors.push(message.text());
+    }
+  });
+  const response = await page.goto("/");
+  expect(response?.ok()).toBe(true);
+  const html = await response!.text();
+  const goal = html.match(/<image href="(\/images\/home\/goal\/goal-[145]\.webp)"/)?.[1];
+  expect(goal).toBeDefined();
+  await expect(page.locator("#today")).toHaveAttribute("data-home-state", "new");
+  const image = page.locator("[data-pace-finish] image");
+  await expect(image).toHaveAttribute("href", goal!);
+  await page.getByRole("searchbox", { name: "資格名・略称で検索" }).fill("ITパスポート");
+  await expect(image).toHaveAttribute("href", goal!);
+  expect(hydrationErrors).toEqual([]);
+});
+
+test("the three paw actions keep their accessible names, target sizes, and keyboard order", async ({ page }) => {
+  await setup(page, makePlan());
+  await page.goto("/");
+  const actions = page.locator('.p3-home-scene [data-event-panel="actions"]');
+  const weak = actions.getByRole("link", { name: "苦手リスト（0問）" });
+  const years = actions.getByRole("link", { name: "年度を選ぶ" });
+  const plan = actions.getByRole("button", { name: "計画の確認" });
+  await expect(weak).toHaveAttribute("href", "/review?mode=weak&exam=ip");
+  await expect(years).toHaveAttribute("href", "/ip");
+  await expect(actions.getByRole("link")).toHaveCount(2);
+  await expect(actions.getByRole("button")).toHaveCount(1);
+  for (const [index, action] of [weak, years, plan].entries()) {
+    const art = action.locator("img");
+    await expect(art).toHaveAttribute("src", `/images/home/paw-buttons/paw-${index + 1}.webp`);
+    await expect(art).toHaveAttribute("alt", "");
+    const box = await action.boundingBox();
+    expect(box?.width).toBeGreaterThanOrEqual(44);
+    expect(box?.height).toBeGreaterThanOrEqual(44);
+  }
+  await weak.focus();
+  await page.keyboard.press("Tab");
+  await expect(years).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(plan).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("dialog", { name: "学習計画" })).toBeVisible();
+});
+
 test("a saved plan without an appointment shows no invented target or paid nudge", async ({ page }) => {
   await setup(page, { ...makePlan(), examDate: null });
   await page.goto("/");
-  await expect(page.getByRole("img", { name: "正解済み 0 / 200問" })).toBeVisible();
-  await expect(page.getByText(/^1回の目安/)).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
+  await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
+  await expect(page.getByText(/^1日の目安/)).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "問題を解く", exact: true })).toHaveCount(0);
   await expect(page.getByRole("button", { name: "自分の受験日を設定" })).toBeVisible();
   await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
 });
@@ -50,7 +99,7 @@ for (const [result, label] of [["failed", "不合格"], ["absent", "受けなか
     await page.goto("/");
     await page.getByRole("button", { name: label, exact: true }).click();
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].result, LS_KEYS.pacePlans)).toBe(result);
-    await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toHaveCount(0);
+    await expect(page.getByRole("link", { name: /^問題を解く$/ })).toHaveCount(0);
     await page.getByRole("button", { name: "次回日程で計画を作り直す", exact: true }).click();
     const sheet = page.getByRole("dialog", { name: "学習計画を作る" });
     await expect(sheet.getByRole("combobox", { name: "受ける資格" })).toHaveValue("ip");
@@ -64,32 +113,33 @@ for (const percent of [0, 50, 100]) {
     await setup(page, plan, percent * 2);
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/");
-    const track = page.getByRole("img", { name: `正解済み ${percent * 2} / 200問` });
+    const track = page.getByRole("group", { name: "学習の進み具合" });
     await expect(track).toBeVisible();
     for (const width of [320, 390, 1280]) {
       await page.setViewportSize({ width, height: 844 });
       const geometry = await track.evaluate(el => {
-        const image = el.querySelector("image")!, flag = el.querySelector<SVGPathElement>('path.p3-trail-flag')!;
+        const image = el.querySelector(".p3-track-runner image")!, flag = el.querySelector<SVGGElement>("[data-pace-finish]")!;
         const frame = image.closest("svg")!, runner = frame.closest<SVGGElement>("g")!;
         const position = runner.transform.baseVal.getItem(0).matrix;
         const viewport = runner.ownerSVGElement!.viewBox.baseVal;
         const frameLeft = position.e + frame.x.baseVal.value;
         const flagBox = flag.getBBox();
+        const flagX = flag.transform.baseVal.getItem(0).matrix.e;
         return { dogCenter: position.e,
-          flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
+          flagX,
           inside: frameLeft >= viewport.x && frameLeft + frame.width.baseVal.value <= viewport.x + viewport.width
-            && flagBox.x + flagBox.width <= viewport.x + viewport.width,
+            && flagX + flagBox.x + flagBox.width <= viewport.x + viewport.width,
           dogInFront: !!(flag.compareDocumentPosition(runner) & Node.DOCUMENT_POSITION_FOLLOWING),
           spriteOffset: image.getAttribute("x") };
       });
-      expect(geometry.dogCenter).toBeCloseTo(39 + percent * 2.44);
-      expect(geometry.flagX).toBeCloseTo(294);
+      expect(geometry.dogCenter).toBeCloseTo(39 + percent * 2.12);
+      expect(geometry.flagX).toBeCloseTo(275);
       expect(geometry.inside).toBe(true);
       expect(geometry.dogInFront).toBe(true);
       expect(geometry.spriteOffset).toBe("0");
     }
     await page.setViewportSize({ width: 320, height: 844 });
-    const labelSizes = await track.locator("text").evaluateAll(labels => labels.map(label =>
+    const labelSizes = await track.locator("text:not([data-pace-finish] *)").evaluateAll(labels => labels.map(label =>
       parseFloat(getComputedStyle(label).fontSize) * (label as SVGTextElement).getScreenCTM()!.a));
     expect(Math.min(...labelSizes)).toBeGreaterThanOrEqual(12);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -129,22 +179,23 @@ for (const suspension of ["hidden", "offscreen"] as const) {
       observer.observe(document, { attributes: true, subtree: true, attributeFilter: ["data-pace-running"] });
     }, suspension);
     await page.goto("/");
-    const track = page.getByRole("img", { name: "正解済み 100 / 200問" });
-    await expect(track.locator("image")).toHaveAttribute("href", "/images/home/pace-run/v2/ip.webp");
+    const track = page.getByRole("group", { name: "学習の進み具合" });
+    const runner = track.locator(".p3-track-runner image");
+    await expect(runner).toHaveAttribute("href", "/images/home/pace-run/v2/ip.webp");
     await expect(page.locator("html")).toHaveAttribute("data-runner-animated", "true");
     if (suspension === "offscreen") await expect(track).not.toBeInViewport();
-    await expect(track.locator("image")).toHaveCSS("transform", "none");
-    await expect(track.locator("line.p3-trail-progress")).toHaveAttribute("x2", "161");
+    await expect(runner).toHaveCSS("transform", "none");
+    await expect(track.locator("line.p3-trail-progress")).toHaveAttribute("x2", "145");
   });
 }
 
 test("idle refresh does not change mastery or learning points, failed confirmation lowers mastery", async ({ page }) => {
   await setup(page, makePlan(), 100, "advancing");
   await page.goto("/");
-  await expect(page.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
+  await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
   const before = await page.evaluate(key => localStorage.getItem(key), LS_KEYS.learningPoints);
   await page.clock.fastForward("01:00:00");
-  await expect(page.getByRole("img", { name: "正解済み 100 / 200問" })).toBeVisible();
+  await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
   expect(await page.evaluate(key => localStorage.getItem(key), LS_KEYS.learningPoints)).toBe(before);
   await page.evaluate(({ key, id }) => {
     const state = JSON.parse(localStorage.getItem(key)!);
@@ -152,10 +203,10 @@ test("idle refresh does not change mastery or learning points, failed confirmati
     localStorage.setItem(key, JSON.stringify(state));
     window.dispatchEvent(new Event("study-plan:changed"));
   }, { key: LS_KEYS.history, id: catalog[0].id });
-  const track = page.getByRole("img", { name: "正解済み 99 / 200問" });
+  const track = page.getByRole("group", { name: "学習の進み具合" });
   await expect(track).toBeVisible();
   await page.clock.runFor(1000);
-  await expect.poll(async () => Number(await track.locator("line.p3-trail-progress").getAttribute("x2"))).toBeCloseTo(159.78);
+  await expect.poll(async () => Number(await track.locator("line.p3-trail-progress").getAttribute("x2"))).toBeCloseTo(143.94);
 });
 
 for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] as const) {
@@ -179,7 +230,7 @@ for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] 
     }
     await expect(save).toBeEnabled();
     await save.click();
-    await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toBeVisible();
+    await expect(page.getByRole("link", { name: /^問題を解く$/ })).toBeVisible();
     await expect(page.getByRole("button", { name: "カレンダーに追加（.ics）" })).toBeVisible();
     await expect(page.getByRole("button", { name: /申込締切/ })).toHaveCount(0);
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].examDate, LS_KEYS.pacePlans)).toBe("2026-12-20");
@@ -211,7 +262,7 @@ test("iOS WebView safe areas keep the create sheet and date field usable", async
   expect(box.y + box.height).toBeLessThanOrEqual(844 - 34);
   expect((await dialog.boundingBox())!.y).toBeGreaterThanOrEqual(59);
   await save.click();
-  await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /^問題を解く$/ })).toBeVisible();
 });
 
 for (const native of [false, true]) {
