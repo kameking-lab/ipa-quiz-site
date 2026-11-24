@@ -4,7 +4,6 @@ import { z } from "zod";
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { feedbackStore, unlockIdentity } from "@/lib/feedback/unlock-runtime";
 import { revenueCatAccess } from "@/mobile/server/revenuecat";
-import { aiQuotaEnabled } from "@/lib/ai/access-config";
 export const runtime = "nodejs";
 async function readStatus(request: Request, confirm: boolean) {
   try {
@@ -22,7 +21,7 @@ async function readStatus(request: Request, confirm: boolean) {
     }
     let appStore = false;
     if(!status.entitled) {
-      const rc=await revenueCatAccess(userId, false, !confirm && aiQuotaEnabled());
+      const rc=await revenueCatAccess(userId, false, !confirm);
       if(rc?.expiresAt){ appStore = true; status={...status,entitled:true,expiresAt:rc.expiresAt.toISOString()}; }
     }
     let feedbackSubmitted = false;

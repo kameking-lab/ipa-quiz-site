@@ -87,7 +87,7 @@ for (const state of [...homeStates, "room"] as const) {
     test(`${state}: ${total} learners at 390px`, async ({ page }) => {
       const { count, activeCount, presenceRequests } = await setup(page, state, exams);
       const home = state !== "room";
-      await page.goto(home ? "/" : "/study-room");
+      await page.goto(home ? "/" : "/ipa");
       const room = page.getByTestId(home ? "home-study-room" : "study-room-scene");
       const attendance = home ? room : page.getByTestId("study-room-total");
       if (home) await expect(page.locator(`[data-home-state="${state}"]`)).toBeVisible({ timeout: 20_000 });
@@ -118,11 +118,8 @@ for (const state of [...homeStates, "room"] as const) {
         }
       }
       await capture(page, home ? room : page.locator("#study-room"), `${state}-${count}`);
-      if (state === "returning" && count === 12) {
-        await room.click();
-        await expect(page).toHaveURL(/\/study-room$/);
-        await expect(page.getByTestId("study-room-seat")).toHaveCount(12);
-      }
+      await expect(page.locator('a:is([href="/study-room"], [href="#study-room"], [href="/#study-room"])')).toHaveCount(0);
+      await expect(room).not.toContainText(/チワワの自習室|ラグのリビング|本棚のブックカフェ|窓辺と段差の部屋|芝生のテラス/);
       expect(presenceRequests).toEqual(["GET"]);
     });
   }
@@ -141,12 +138,13 @@ test("long qualification names still fit the mobile home card", async ({ page })
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
 });
 
-test("the daily room shows 12 of 130 learners, including all three recent answers", async ({ page }) => {
+test("the old room opens the home room, which shows up to 12 of 130 learners", async ({ page }) => {
   await setup(page, "room", [{ exam: "civil1", count: 128, activeCount: 1 }, { exam: "civil2", count: 2, activeCount: 2 }]);
   await page.goto("/study-room", { waitUntil: "domcontentloaded" });
-  const scene = page.getByTestId("study-room-scene");
+  await expect(page).toHaveURL("/");
+  const scene = page.getByTestId("home-study-room-scene");
   await expect(page.getByTestId("study-room-total")).toContainText(/今日\s*130人/);
-  await expect(scene.getByTestId("study-room-seat")).toHaveCount(12);
+  await expect(scene.getByTestId("home-study-room-seat")).toHaveCount(12);
   await expect(scene.locator('[data-studying-now="true"]')).toHaveCount(3);
   await expect(page.getByText("＋118人", { exact: true })).toBeVisible();
 });

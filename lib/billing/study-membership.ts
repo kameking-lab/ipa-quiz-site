@@ -44,9 +44,9 @@ async function webStatus(userId: string, independentStores: boolean) {
   return lookup;
 }
 
-async function iosStatus(userId: string, independentStores: boolean) {
+async function iosStatus(userId: string) {
   const { revenueCatAccess } = await import("@/mobile/server/revenuecat");
-  return await revenueCatAccess(userId, false, independentStores) ? { source: "app-store" } as const : null;
+  return await revenueCatAccess(userId, false, true) ? { source: "app-store" } as const : null;
 }
 
 /** Either store can prove paid access. Only two negative checks establish free access. */
@@ -54,7 +54,7 @@ export async function studyMembership(userId: string, independentStores: boolean
   const web = webStatus(userId, independentStores);
   if (!independentStores) {
     const status = await web;
-    return status.source === "free" ? await iosStatus(userId, false) ?? status : status;
+    return status.source === "free" ? await iosStatus(userId) ?? status : status;
   }
 
   // Fast Web members do not need a RevenueCat lookup. If Web stalls, either
@@ -65,7 +65,7 @@ export async function studyMembership(userId: string, independentStores: boolean
   const first = await Promise.race([webResult, headStart]);
   clearTimeout(timer);
   if (first && "source" in first && first.source !== "free") return first;
-  const iosResult = iosStatus(userId, true).catch((error: unknown) => ({ error }));
+  const iosResult = iosStatus(userId).catch((error: unknown) => ({ error }));
   const firstStore = await Promise.race([webResult, iosResult]);
   if (firstStore && "source" in firstStore && firstStore.source !== "free") return firstStore;
   const [webFinal, iosFinal] = await Promise.all([webResult, iosResult]);

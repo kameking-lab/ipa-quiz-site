@@ -37,11 +37,12 @@ it("keeps a validated historical sample with its original timestamp and real zer
 it("offers kp one live summary line, never labels stale numbers as now, and adds no fetch", () => {
   vi.useFakeTimers(); const fetcher = vi.fn(); vi.stubGlobal("fetch", fetcher);
   render(<StudyRoomSummary />);
-  expect(screen.getByRole("link")).toHaveTextContent("自習室をのぞく");
-  expect(screen.getByRole("link")).toHaveAttribute("href", "/study-room");
+  expect(screen.queryByRole("link")).not.toBeInTheDocument();
+  expect(screen.queryByText("自習室をのぞく")).not.toBeInTheDocument();
   emit({ mode: "measured", snapshot: sample(25), previous: null });
-  expect(screen.getByRole("link")).toHaveTextContent("いま25人が自習室で勉強中");
+  expect(screen.getByText("いま25人が勉強中")).toBeVisible();
   act(() => vi.advanceTimersByTime(90_000));
-  expect(screen.getByRole("link")).toHaveTextContent("自習室をのぞく");
+  expect(screen.queryByText("いま25人が勉強中")).not.toBeInTheDocument();
+  expect(screen.queryByRole("link")).not.toBeInTheDocument();
   expect(fetcher).not.toHaveBeenCalled();
 });

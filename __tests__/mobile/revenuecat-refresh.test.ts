@@ -11,7 +11,7 @@ vi.mock("@/mobile/server/config", () => ({
   requireMobileReady: () => ({ apiKey: "fixture", identitySecret: "public-fixture-identity-for-testing", productId: "monthly", entitlement: "pro", environment: "SANDBOX" }),
 }));
 
-import { appStorePurchaseStatus, refreshRevenueCat, revenueCatAccess } from "@/mobile/server/revenuecat";
+import { appStorePurchaseStatus, readAppStorePurchaseStatus, refreshRevenueCat, revenueCatAccess } from "@/mobile/server/revenuecat";
 
 afterEach(() => vi.unstubAllGlobals());
 
@@ -101,14 +101,18 @@ it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase 
     transport.mockResolvedValueOnce(new Response(null, { status: 401 }));
     await expect(revenueCatAccess("alice", false, true)).rejects.toThrow();
     transport.mockImplementationOnce(async () => {
-      await pg.exec('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=NULL');
+      await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=NULL, "checkedAt"=$1', [new Date()]);
       return new Response(null, { status: 503 });
     });
     await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
-    // A first-time free account has no verified snapshot at all.
+    // An old negative snapshot cannot stand in for a failed recheck.
+    await setChecked(86_400_000);
+    transport.mockResolvedValueOnce(new Response(null, { status: 503 }));
+    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
+    // A first-time account has no verified snapshot at all.
     await pg.exec('DELETE FROM "MobileRevenueCatAccount" WHERE "userId"=\'alice\'');
     transport.mockResolvedValueOnce(new Response(null, { status: 429 }));
-    await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+    await expect(revenueCatAccess("alice", false, true)).rejects.toMatchObject({ code: "membership_check_pending", status: 503 });
     // The checked snapshot can still be recent when a paid period turns over.
     await pg.query('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$1, "checkedAt"=$2',
       [new Date(Date.now() - 1_000), new Date()]);
@@ -120,4 +124,64 @@ it("uses the saved study expiry for 429, 5xx and timeout while keeping purchase 
     transport.mockResolvedValueOnce(new Response(null, { status: 404 }));
     await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
   } finally { await pg.close(); }
+});
+
+it("persists snapshots only for verified subscriber documents or a 404", async () => {
+  const pg = new PGlite();
+  try {
+    await setupAccounts(pg);
+    const expiresAt = new Date(Date.now() + 86_400_000);
+    const paid = { subscriber: {
+      entitlements: { pro: { product_identifier: "monthly", expires_date: expiresAt.toISOString(), purchase_date: new Date(0).toISOString() } },
+      subscriptions: { monthly: { store: "app_store", is_sandbox: true, expires_date: expiresAt.toISOString() } },
+    } };
+    const verifiedFree = { subscriber: { entitlements: {}, subscriptions: {} } };
+    const lookup = vi.fn<typeof fetch>();
+    vi.stubGlobal("fetch", lookup);
+    const snapshot = async () => (await pg.query(
+      'SELECT "expiresAt", "productionExpiresAt", "sandboxExpiresAt", "checkedAt" FROM "MobileRevenueCatAccount" WHERE "userId"=$1',
+      ["alice"],
+    )).rows[0];
+    const oldCheck = new Date(Date.now() - 61_000);
+
+    for (const invalidResponse of [
+      () => Response.json(null),
+      () => Response.json(false),
+      () => Response.json({ subscriber: { entitlements: {} } }),
+      () => Response.json({ subscriber: { ...paid.subscriber, subscriptions: {
+        monthly: { ...paid.subscriber.subscriptions.monthly, expires_date: "unparseable expiry" },
+      } } }),
+      () => new Response("{", { status: 200 }),
+      () => new Response(null, { status: 204 }),
+    ]) {
+      lookup.mockImplementation(async () => Response.json(paid));
+      await expect(revenueCatAccess("alice", true)).resolves.toMatchObject({ expiresAt });
+      await pg.query('UPDATE "MobileRevenueCatAccount" SET "checkedAt"=$1', [oldCheck]);
+      const verified = { expiresAt, sandboxExpiresAt: expiresAt, productionExpiresAt: null, checkedAt: oldCheck };
+      expect(await snapshot()).toEqual(verified);
+      lookup.mockImplementation(async () => invalidResponse());
+      const error = { code: "mobile_verification_unexpected_response", status: 503 };
+      await expect.soft(revenueCatAccess("alice", false, true)).resolves.toMatchObject({ expiresAt });
+      expect.soft(await snapshot()).toEqual(verified);
+      await expect.soft(revenueCatAccess("alice", true)).rejects.toMatchObject(error);
+      await expect.soft(appStorePurchaseStatus("alice", true)).rejects.toMatchObject(error);
+      await expect.soft(readAppStorePurchaseStatus("alice", "stripe-test")).rejects.toMatchObject(error);
+      expect.soft(await snapshot()).toEqual(verified);
+    }
+
+    for (const freeResponse of [
+      () => Response.json(verifiedFree),
+      () => new Response(null, { status: 404 }),
+    ]) {
+      lookup.mockImplementation(async () => Response.json(paid));
+      await expect(revenueCatAccess("alice", true)).resolves.toMatchObject({ expiresAt });
+      await pg.query('UPDATE "MobileRevenueCatAccount" SET "checkedAt"=$1', [oldCheck]);
+      lookup.mockImplementation(async () => freeResponse());
+      await expect(revenueCatAccess("alice", false, true)).resolves.toBeNull();
+      expect(await snapshot()).toMatchObject({ expiresAt: null, sandboxExpiresAt: null, productionExpiresAt: null });
+      expect(await snapshot()).not.toMatchObject({ checkedAt: oldCheck });
+    }
+  } finally {
+    await pg.close();
+  }
 });

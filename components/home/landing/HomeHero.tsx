@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { HomeQualificationFinder } from "./HomeQualificationFinder";
 import { HomeResume } from "./HomeResume";
 import { HomeDirectory } from "./HomeDirectory";
@@ -34,6 +34,5 @@ export function HomeHero({ domains, image }: { domains: readonly HomeDirectoryDo
     </dl>
     <HomeResume domains={domains} />
     <HomeQualificationFinder domains={domains} homeDirectory={<HomeDirectory domains={domains} />} />
-    <a href="#study-room" className="study-text-link study-room-entry">自習室をのぞく<ArrowDown aria-hidden="true" className="h-4 w-4" /></a>
   </section>;
 }

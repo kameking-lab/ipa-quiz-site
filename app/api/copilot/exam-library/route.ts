@@ -9,7 +9,7 @@ import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkAiNormalUse, checkFreeAiServiceUse } from "@/lib/ai/normal-use-server";
 import { copilotRateLimitResponse } from "@/lib/copilot/rate-limit-response";
 import { findExamEntry } from "@/lib/exam-library-catalog";
-import { EXAM_ID_PATTERN, examSourcePdfUrl, isScorableQuestion, officialPdfPageUrl } from "@/lib/exam-library-model";
+import { examSourcePdfUrl, isScorableQuestion, officialPdfPageUrl } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
@@ -19,7 +19,7 @@ import { prepareAiUsage, consumeAiUsage, settleAiUsage, withAiUsageResponse, typ
 export const runtime = "nodejs";
 
 const BodySchema = z.object({
-  examId: z.string().regex(EXAM_ID_PATTERN),
+  examId: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9-]{0,95}$/u),
   questionId: z.string().min(1).max(160),
   selectedChoice: z.number().int().min(1).max(9).nullable().optional(),
   messages: z.array(z.object({
@@ -51,7 +51,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     parsed.data.selectedChoice <= question.choiceCount
     ? parsed.data.selectedChoice : null;
   const answerKnown = isScorableQuestion(question);
-  const sourceUrl = officialPdfPageUrl(examSourcePdfUrl(entry), question.sourcePages?.[0]);
+  const sourceUrl = officialPdfPageUrl(question.originalPdf ?? examSourcePdfUrl(entry), question.sourcePages?.[0]);
   // The source text usually includes every choice, but validated presentation
   // overlays can hold the exact choices displayed by the player separately.
   const displayedQuestion = question.presentation

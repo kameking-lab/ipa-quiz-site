@@ -3,7 +3,6 @@ import { createPrivateKey, createPublicKey, sign, verify, type KeyObject } from 
 import { billingRuntime } from "@/lib/billing/runtime";
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { monthlyRuntime } from "@/lib/billing/subscription/runtime";
-import { aiQuotaEnabled } from "@/lib/ai/access-config";
 import { mobileConfig } from "./config";
 import { ensureRevenueCatAccount, refreshRevenueCat, revenueCatAccess } from "./revenuecat";
 import type { MobileEntitlement } from "../shared/contracts";
@@ -50,9 +49,7 @@ export async function mobileEntitlement(userId: string | null, fresh = false): P
     const a = await ensureRevenueCatAccount(userId);
     result.appUserId = a.appUserId;
     if (!result.entitled) {
-      const rc = !fresh && aiQuotaEnabled()
-        ? await revenueCatAccess(userId, false, true)
-        : await revenueCatAccess(userId, fresh);
+      const rc = fresh ? await revenueCatAccess(userId, true) : await revenueCatAccess(userId, false, true);
       if (rc?.expiresAt) Object.assign(result, { entitled: true, source: "app-store", expiresAt: rc.expiresAt.toISOString() });
     } else if (fresh) {
       // A native purchase or restore can discover an overlap while Web access is active.

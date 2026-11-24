@@ -15,18 +15,26 @@ export function validWebhookAuthorization(actual: string | null, expected: strin
   return expected.length >= 32 && actual !== null && Buffer.byteLength(actual) === Buffer.byteLength(expected)
     && timingSafeEqual(Buffer.from(actual), Buffer.from(expected));
 }
+const storeDate = z.iso.datetime({ offset: true });
+const optionalStoreDate = z.string().nullable().optional();
 const subscriberSchema = z.object({ subscriber: z.object({
-  entitlements: z.record(z.string(), z.object({ product_identifier: z.string(), expires_date: z.string().nullable(), purchase_date: z.string(), grace_period_expires_date:z.string().nullable().optional() })),
-  subscriptions: z.record(z.string(), z.object({ store: z.string(), is_sandbox: z.boolean(), expires_date: z.string().nullable(), refunded_at: z.string().nullable().optional(), grace_period_expires_date:z.string().nullable().optional(),
-    billing_issues_detected_at: z.string().nullable().optional(), unsubscribe_detected_at: z.string().nullable().optional(),
+  entitlements: z.record(z.string(), z.object({
+    product_identifier: z.string(), expires_date: storeDate.nullable(),
+    purchase_date: storeDate, grace_period_expires_date: optionalStoreDate,
+  })),
+  subscriptions: z.record(z.string(), z.object({
+    store: z.string(), is_sandbox: z.boolean(), expires_date: storeDate.nullable(),
+    refunded_at: optionalStoreDate, grace_period_expires_date: optionalStoreDate,
+    billing_issues_detected_at: optionalStoreDate, unsubscribe_detected_at: optionalStoreDate,
   })),
 }) });
 type StoreConfig = { entitlement: string; productId: string; environment: string };
+const UNEXPECTED_SUBSCRIBER_RESPONSE = "mobile_verification_unexpected_response";
 function parseSubscriber(body: unknown) {
   const parsed = subscriberSchema.safeParse(body);
   if (!parsed.success) {
     console.error("[revenuecat] unexpected subscriber shape", parsed.error.issues.slice(0, 5).map(issue => issue.path.join(".")).join(","));
-    throw new BillingError("mobile_verification_unexpected_response", 503);
+    throw new BillingError(UNEXPECTED_SUBSCRIBER_RESPONSE, 503);
   }
   return parsed.data.subscriber;
 }
@@ -56,7 +64,9 @@ export function verifiedExpiration(body: unknown, config: StoreConfig, now: numb
   return accessExpiration(parseSubscriber(body), config, now);
 }
 export function appStorePurchaseState(body: unknown, config: StoreConfig, now: number) {
-  const subscriber = parseSubscriber(body);
+  return purchaseStateForSubscriber(parseSubscriber(body), config, now);
+}
+function purchaseStateForSubscriber(subscriber: Subscriber, config: StoreConfig, now: number): AppStorePurchaseState {
   if (accessExpiration(subscriber, config, now)) return "active";
   const sub = verifiedAppStoreSubscription(subscriber, config);
   if (!sub?.expires_date) return null;
@@ -69,7 +79,7 @@ export function appStorePurchaseState(body: unknown, config: StoreConfig, now: n
   return null;
 }
 
-async function fetchSubscriber(appUserId: string, apiKey: string, transport: typeof fetch) {
+async function fetchSubscriber(appUserId: string, apiKey: string, transport: typeof fetch): Promise<Subscriber | null> {
   const response = await transport(`https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`, {
     headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/json" }, cache: "no-store", signal: AbortSignal.timeout(8000), redirect: "error",
   });
@@ -78,7 +88,15 @@ async function fetchSubscriber(appUserId: string, apiKey: string, transport: typ
     console.error("[revenuecat] subscriber lookup failed", response.status);
     throw new BillingError(`mobile_verification_unavailable_${response.status}`, 503);
   }
-  return response.json() as Promise<unknown>;
+  let body: unknown;
+  try {
+    body = await response.json();
+  } catch (error) {
+    if (!(error instanceof SyntaxError)) throw error;
+    throw new BillingError(UNEXPECTED_SUBSCRIBER_RESPONSE, 503);
+  }
+  // Only an HTTP 404 represents an absent subscriber. Successful responses must supply a document.
+  return parseSubscriber(body);
 }
 
 /** Read-only lookup for callers that hold the billing lock. */
@@ -87,8 +105,8 @@ export async function readAppStorePurchaseStatus(userId: string, mode: Realm): P
     'SELECT "appUserId" FROM "MobileRevenueCatAccount" WHERE "userId"=$1', userId);
   if (!account) return null;
   const c = requireMobileReady();
-  const body = await fetchSubscriber(account.appUserId, c.apiKey, fetch);
-  return body === null ? null : appStorePurchaseState(body, { ...c, environment: mode === "stripe-live" ? "PRODUCTION" : "SANDBOX" }, Date.now());
+  const subscriber = await fetchSubscriber(account.appUserId, c.apiKey, fetch);
+  return subscriber === null ? null : purchaseStateForSubscriber(subscriber, { ...c, environment: mode === "stripe-live" ? "PRODUCTION" : "SANDBOX" }, Date.now());
 }
 
 export async function appStorePurchaseStatus(userId: string, requireVerification = false): Promise<AppStorePurchaseState> {
@@ -96,12 +114,13 @@ export async function appStorePurchaseStatus(userId: string, requireVerification
   const c = requireMobileReady();
   for (let attempt = 0; attempt < 4; attempt++) {
     const account = await ensureRevenueCatAccount(userId);
-    const body = await fetchSubscriber(account.appUserId, c.apiKey, fetch), now = Date.now();
-    const state = body === null ? null : appStorePurchaseState(body, c, now);
+    const subscriber = await fetchSubscriber(account.appUserId, c.apiKey, fetch), now = Date.now();
+    if (subscriber === null) return null;
+    const state = purchaseStateForSubscriber(subscriber, c, now);
     if (state !== "active") return state;
     // Expose newly approved access before returning an active purchase, even
     // if Apple's notification has yet to reach RevenueCat's webhook.
-    if (await saveRevenueCatSnapshot(account, body, c, now)) return state;
+    if (await saveRevenueCatSnapshot(account, subscriber, c, now)) return state;
   }
   throw new BillingError("mobile_verification_unavailable", 503);
 }
@@ -117,10 +136,10 @@ export async function ensureRevenueCatAccount(userId: string) {
   if (rows[0]?.appUserId !== appUserId) throw new BillingError("mobile_identity_conflict", 503);
   return rows[0];
 }
-async function saveRevenueCatSnapshot(before: AccountRow, body: unknown, c: StoreConfig, now: number, retryOverlapAudit = false) {
-  const productionExpiresAt = body ? verifiedExpiration(body, { ...c, environment: "PRODUCTION" }, now) : null;
-  const sandboxExpiresAt = body ? verifiedExpiration(body, { ...c, environment: "SANDBOX" }, now) : null;
-  const expiresAt = body ? verifiedExpiration(body, c, now) : null;
+async function saveRevenueCatSnapshot(before: AccountRow, subscriber: Subscriber | null, c: StoreConfig, now: number, retryOverlapAudit = false) {
+  const productionExpiresAt = subscriber ? accessExpiration(subscriber, { ...c, environment: "PRODUCTION" }, now) : null;
+  const sandboxExpiresAt = subscriber ? accessExpiration(subscriber, { ...c, environment: "SANDBOX" }, now) : null;
+  const expiresAt = subscriber ? accessExpiration(subscriber, c, now) : null;
   const checkedAt = new Date(Math.max(now, (before.checkedAt?.getTime() ?? 0) + 1));
   // Fence concurrent refreshes, including two that finish in the same ms.
   const [saved] = await prisma.$queryRawUnsafe<AccountRow[]>(`UPDATE "MobileRevenueCatAccount"
@@ -140,31 +159,38 @@ export async function refreshRevenueCat(appUserId: string, { transport = fetch, 
   for (let attempt = 0; attempt < 4; attempt++) {
     const [before] = await prisma.$queryRawUnsafe<AccountRow[]>('SELECT * FROM "MobileRevenueCatAccount" WHERE "appUserId"=$1', appUserId);
     if (!before) return null;
-    const body = await fetchSubscriber(appUserId, c.apiKey, transport), now = Date.now();
-    const saved = await saveRevenueCatSnapshot(before, body, c, now, retryOverlapAudit);
+    const subscriber = await fetchSubscriber(appUserId, c.apiKey, transport), now = Date.now();
+    const saved = await saveRevenueCatSnapshot(before, subscriber, c, now, retryOverlapAudit);
     if (saved) return saved;
   }
   throw new BillingError("mobile_verification_unavailable", 503);
 }
 export async function revenueCatAccess(userId: string, fresh = false, allowStoredStudyAccess = false) {
   if (!mobileConfig().enabled) return null;
-  const a = await ensureRevenueCatAccount(userId);
+  const account = await ensureRevenueCatAccount(userId);
   const now = Date.now();
-  let row: AccountRow | null = a;
-  const expiredStudyPeriod = allowStoredStudyAccess && a.expiresAt && a.expiresAt.getTime() <= now;
-  if (fresh || !a.checkedAt || now - a.checkedAt.getTime() > 60_000 || expiredStudyPeriod) {
-    try {
-      row = await refreshRevenueCat(a.appUserId);
-    } catch (error) {
-      const temporary = error instanceof TypeError || (error instanceof Error && error.name === "TimeoutError")
-        || (error instanceof BillingError && /^mobile_verification_unavailable_(429|5\d\d)$/.test(error.code));
-      if (fresh || !allowStoredStudyAccess || !temporary) throw error;
-      // A concurrent webhook may already have revoked the old snapshot.
-      row = await ensureRevenueCatAccount(userId);
-      if (row.expiresAt && row.expiresAt.getTime() <= Date.now()) {
-        throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
-      }
+  const checkedAt = account.checkedAt?.getTime() ?? 0;
+  if (!fresh && account.checkedAt && now - checkedAt <= 60_000
+    && (!account.expiresAt || account.expiresAt.getTime() > now)) {
+    return account.expiresAt ? account : null;
+  }
+
+  let row: AccountRow | null;
+  try {
+    row = await refreshRevenueCat(account.appUserId);
+  } catch (error) {
+    const temporary = error instanceof TypeError || (error instanceof Error && error.name === "TimeoutError")
+      || (error instanceof BillingError && (error.code === UNEXPECTED_SUBSCRIBER_RESPONSE
+        || /^mobile_verification_unavailable_(429|5\d\d)$/.test(error.code)));
+    if (fresh || !allowStoredStudyAccess || !temporary) throw error;
+    // Re-read after the failure. A concurrent webhook may have renewed or revoked access.
+    row = await ensureRevenueCatAccount(userId);
+    if (!row.checkedAt || (!row.expiresAt && row.checkedAt.getTime() <= checkedAt)) {
+      throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
     }
   }
-  return row && row.expiresAt && row.expiresAt.getTime() > Date.now() ? row : null;
+  if (!row || (row.expiresAt && row.expiresAt.getTime() <= Date.now())) {
+    throw new BillingError(MEMBERSHIP_CHECK_PENDING, 503);
+  }
+  return row.expiresAt ? row : null;
 }

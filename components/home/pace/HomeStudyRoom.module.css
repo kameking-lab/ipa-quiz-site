@@ -9,12 +9,7 @@
   color: var(--foreground);
 }
 
-.header, .attendance { display: flex; align-items: center; gap: 8px; }
-.header h2 { font-size: 1rem; font-weight: 700; line-height: 1.35; }
-.roomName { margin-inline-start: auto; color: var(--muted-foreground); font-size: .75rem; text-align: end; }
-.arrow { flex: none; width: 16px; height: 16px; color: var(--muted-foreground); }
-.card:hover .header h2 { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
-.attendance { flex-wrap: wrap; color: var(--muted-foreground); font-size: .75rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.attendance { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; color: var(--muted-foreground); font-size: .75rem; line-height: 1.25; font-variant-numeric: tabular-nums; }
 .attendance strong, .overflow { color: var(--foreground); }
 .timestamp, .overflow { margin-inline-start: auto; }
 .overflow { white-space: nowrap; font-weight: 700; }

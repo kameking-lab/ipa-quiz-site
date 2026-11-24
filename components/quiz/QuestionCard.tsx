@@ -60,10 +60,7 @@ export function QuestionCard({
           <audio key={question.id} src={question.questionAudioUrl} controls preload="none" aria-label="聞き取り音声" className="my-3 w-full" />
         ) : null}
         <QuestionFigures question={question} />
-        <details className="mt-2 text-sm text-muted-foreground">
-          <summary className="min-h-11 cursor-pointer py-3">表示と読み上げ</summary>
-          <TTSButton text={question.question} label="読み上げ" />
-        </details>
+        <TTSButton text={question.question} />
         {hasUnrenderableContent(question) && (
           <div className="mt-3 flex items-start gap-1.5 rounded-xl border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs text-amber-800 dark:border-amber-700/50 dark:bg-amber-950/30 dark:text-amber-200">
             <span className="shrink-0">※</span>
