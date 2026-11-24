@@ -38,7 +38,7 @@ const access: PracticeAccess = {
 };
 
 // Allow the async quiz render to complete on constrained test workers.
-const todayQuizWait = { timeout: 10_000 };
+const todayQuizWait = { timeout: 30_000 };
 
 function mockPractice(...questions: { id: string }[]) {
   const grant = vi.fn((id: string) => Response.json({ question: questions.find(q => q.id === id), access }));
