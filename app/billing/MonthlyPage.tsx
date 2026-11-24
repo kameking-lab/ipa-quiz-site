@@ -63,7 +63,7 @@ export function MonthlyPlanView({ canManage, hasContract, showTrial, management,
         </div>
         <p className="p3-billing-offer p3-listed text-sm leading-relaxed">
           <span>無料は過去問1日{MONTHLY_PUBLIC_OFFER.freeDaily}問。</span>
-          <span>月額なら過去問を回数無制限で解き、全分野の弱点から今週の復習を始められます。</span>
+          <span>月額なら過去問を回数無制限で解けて、全分野の弱点から今週の復習を始められ、広告も出なくなります。</span>
           {aiAccessClaimsEnabled() && <span>{AI_QUOTA_COPY}</span>}
         </p>
       </div>

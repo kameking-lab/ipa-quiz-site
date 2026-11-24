@@ -131,7 +131,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     const resume = start.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
     expect(limit).toHaveTextContent("毎月自動更新。解約は契約管理から。");
-    expect(limit).toHaveTextContent("月額プランは演習回数無制限。");
+    expect(limit).toHaveTextContent("月額プランは演習回数が無制限になり、広告も出なくなります。");
     expect(limit).not.toHaveTextContent("このボタンだけで課金は始まりません");
     expect(screen.queryByRole("link", { name: "保存済みの履歴を無料で復習する" })).toBeNull();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");

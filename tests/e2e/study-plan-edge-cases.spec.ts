@@ -248,7 +248,7 @@ for (const native of [false, true]) {
     await expect(page.getByRole("link", { name: "月額プランに申し込む", exact: true })).toHaveAttribute("href", /returnTo=/);
     await expect(page.getByRole("radio")).toHaveCount(0);
     expect(grants).toBeGreaterThan(0);
-    await expect(page.getByText("月額プランは演習回数無制限。", { exact: true })).toBeVisible();
+    await expect(page.getByText("月額プランは演習回数が無制限になり、広告も出なくなります。", { exact: true })).toBeVisible();
     await expect(page.getByText(/初回7日間無料/)).toBeVisible({ visible: !native });
     restored = true;
     await page.evaluate(() => window.dispatchEvent(new Event("mobile:entitlement-changed")));

@@ -118,7 +118,7 @@ export function AiAccessNotice({ quota, draft, draftId, returnTo, denials, onDis
   return <aside aria-label="今日の無料AI質問" className="mx-3 my-2 space-y-3 rounded-xl border border-border bg-muted/40 p-3">
     <div className="space-y-1">
       <p role="status" className="text-sm font-semibold">今日の無料のAI質問（{limit}回）はここまで</p>
-      <p id={description} className="text-sm">{price}で回数制限なく質問できます</p>
+      <p id={description} className="text-sm">{price}で回数制限なく質問でき、広告も出なくなります。</p>
     </div>
     <div className="grid auto-rows-fr gap-2">
       <MonthlyPlanLink returnTo={returnTo} label={`${price}で続ける`} describedBy={description} keepClickInApp onClick={() => {
