@@ -4,7 +4,6 @@ from datetime import datetime
 import json
 import logging
 import os
-from pathlib import Path
 import re
 import sys
 import time
@@ -18,6 +17,7 @@ BUILD_STARTED = datetime.fromisoformat("2026-11-25T02:09:31+00:00")
 TAG = re.compile(r"asc-iosrel25-(build|submit|status)-v1\.0\.3-b([1-9][0-9]*)-r[A-Za-z0-9-]{1,40}")
 EDITABLE = {"PREPARE_FOR_SUBMISSION", "DEVELOPER_REJECTED", "REJECTED", "METADATA_REJECTED"}
 SUBMITTED = {"WAITING_FOR_REVIEW", "IN_REVIEW", "COMPLETING", "COMPLETE"}
+REVIEW_CONTACT = ("contactFirstName", "contactLastName", "contactPhone", "contactEmail", "demoAccountName")
 
 
 def request(env):
@@ -56,24 +56,38 @@ def attached_version(row, relation):
     return value["id"] if value else None
 
 
-def submit_update(client, version):
+def verify_copyright(client, version):
     require(version_state(version) in (EDITABLE | {"READY_FOR_REVIEW"}), "Version must be editable or staged")
     require(bool(version["attributes"].get("copyright")), "The version needs its ASC copyright")
-    review_fields = ("contactFirstName", "contactLastName", "contactPhone", "contactEmail", "demoAccountName")
-    detail = client.one(f"/v1/appStoreVersions/{version['id']}/appStoreReviewDetail", {
-        "fields[appStoreReviewDetails]": ",".join((*review_fields, "demoAccountRequired", "notes")),
+
+
+def review_detail(client, version, fields):
+    return client.one(f"/v1/appStoreVersions/{version['id']}/appStoreReviewDetail", {
+        "fields[appStoreReviewDetails]": ",".join(fields),
     })["attributes"]
-    require(all(detail.get(field) for field in review_fields) and detail.get("demoAccountRequired") is True,
+
+
+def verify_contact(client, version):
+    detail = review_detail(client, version, (*REVIEW_CONTACT, "demoAccountRequired"))
+    require(all(detail.get(field) for field in REVIEW_CONTACT) and detail.get("demoAccountRequired") is True,
             "Existing ASC review contact and demo account fields required")
+
+
+def verify_notes(client, version):
+    detail = review_detail(client, version, ("notes",))
     notes = (ROOT / "asc/review-notes.ja.txt").read_text(encoding="utf-8").strip()
     require((detail.get("notes") or "").replace("\r\n", "\n").strip() == notes, "ASC review notes mismatch")
+
+
+def verify_advertising(client, version):
     app_infos = client.all(f"{APP}/appInfos")
     info = unique([row for row in app_infos if row["attributes"]["appStoreState"] in EDITABLE | {"READY_FOR_REVIEW"}],
                   "editable app information record")
     rating = client.one(f"/v1/appInfos/{info['id']}/ageRatingDeclaration")["attributes"]
     require(rating.get("advertising") is True, "ASC advertising declaration required")
-    print("ASC listing verified: build, automatic release, review notes and advertising", flush=True)
 
+
+def stage_update(client, version):
     drafts = review_submissions(client, "READY_FOR_REVIEW")
     require(len(drafts) <= 1, "Ambiguous existing review drafts")
     require(version_state(version) != "READY_FOR_REVIEW" or drafts, "Staged version has no ready draft")
@@ -90,7 +104,23 @@ def submit_update(client, version):
         items = client.all(items_path)
     require(len(items) == 1 and attached_version(items[0], "appStoreVersion") == version["id"],
             "Expected only the specified iOS version in the review draft")
-    result = client.patch("reviewSubmissions", draft["id"], {"submitted": True})["attributes"]
+    return draft["id"]
+
+
+PREFLIGHT = {
+    "copyright": verify_copyright,
+    "contact": verify_contact,
+    "notes": verify_notes,
+    "advertising": verify_advertising,
+    "stage": stage_update,
+}
+
+
+def submit_update(client, version):
+    for verify in (verify_copyright, verify_contact, verify_notes, verify_advertising):
+        verify(client, version)
+    draft_id = stage_update(client, version)
+    result = client.patch("reviewSubmissions", draft_id, {"submitted": True})["attributes"]
     require(result.get("state") in SUBMITTED, "ASC did not confirm submission")
 
 
@@ -102,7 +132,9 @@ def report(result):
     print(f"ASC STATUS BEGIN\n{data}\nASC STATUS END", flush=True)
 
 
-def run(client, mode, number):
+def run(client, mode, number, phase=None):
+    if phase != "submit" and phase is not None and mode != "submit":
+        return
     identity(client)
     build = read_build(client, number)
     attrs = build["attributes"]
@@ -124,6 +156,10 @@ def run(client, mode, number):
     require(selected and selected["id"] == build["id"], "ASC selected build differs from tag")
     require(release == "AFTER_APPROVAL", "ASC release method differs from automatic release")
     result["releaseType"] = release
+    if phase in PREFLIGHT:
+        if version_state(version) not in SUBMITTED:
+            PREFLIGHT[phase](client, version)
+        return
     if mode == "submit" and version_state(version) not in SUBMITTED:
         submit_update(client, version)
         for _ in range(8):
@@ -144,7 +180,9 @@ def run(client, mode, number):
 if __name__ == "__main__":
     logging.disable(logging.CRITICAL)
     try:
-        run(Client(), *request(os.environ))
+        phase = sys.argv[1] if len(sys.argv) == 2 else None
+        require(phase in (None, "submit", *PREFLIGHT), "Unknown iOS review step")
+        run(Client(), *request(os.environ), phase=phase)
     except HttpFailure as error:
         sys.exit(str(error))
     except SetupError as error:

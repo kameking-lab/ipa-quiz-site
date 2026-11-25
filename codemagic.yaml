@@ -233,10 +233,35 @@ workflows:
           cd "$CM_BUILD_DIR/mobile"
           python3 -m venv .cache/asc-auth-venv
           .cache/asc-auth-venv/bin/pip install --disable-pip-version-check -q -r asc/auth-requirements.txt
-      - name: Check the build or submit the selected update
+      - name: Verify selected build, automatic release and copyright
         script: |
           set -euo pipefail
           cd "$CM_BUILD_DIR/mobile"
-          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py
+          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py copyright
+      - name: Verify existing ASC review contact and demo account fields
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py contact
+      - name: Verify review notes for ads and device speech
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py notes
+      - name: Verify advertising age rating
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py advertising
+      - name: Stage only the specified iOS version for review
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py stage
+      - name: Submit the staged version and read App Review state
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py submit
     artifacts:
       - mobile/build/asc/iosrel25.json
