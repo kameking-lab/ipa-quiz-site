@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# The CI job runs in a container whose checkout is owned by another uid; git refuses to read it otherwise.
+git config --global --add safe.directory "$(pwd)" 2>/dev/null || true
+
 mode=$1
 artifact=$2
 expected_sha=$3
