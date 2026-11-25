@@ -212,3 +212,31 @@ workflows:
       - mobile/build/asc/diagnostics/**/*.html
       - mobile/build/asc/diagnostics/**/*.xml
       - mobile/build/asc/diagnostics/**/*.png
+
+  kakomon-ios-103-review:
+    name: Kakomon AI 1.0.3 - App Review
+    instance_type: mac_mini_m2
+    max_build_duration: 10
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: "asc-iosrel25-*"
+          include: true
+      cancel_previous_builds: false
+    integrations:
+      app_store_connect: App Store Key
+    scripts:
+      - name: Prepare existing App Store Connect integration
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          python3 -m venv .cache/asc-auth-venv
+          .cache/asc-auth-venv/bin/pip install --disable-pip-version-check -q -r asc/auth-requirements.txt
+      - name: Check the build or submit the selected update
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          .cache/asc-auth-venv/bin/python scripts/asc_ios103_review.py
+    artifacts:
+      - mobile/build/asc/iosrel25.json
