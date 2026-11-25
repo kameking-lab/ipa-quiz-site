@@ -45,9 +45,11 @@ def version_state(version):
 
 
 def review_submissions(client, state=None):
-    query = {"filter[platform]": "IOS", "include": "appStoreVersionForReview"}
+    query = {"filter[platform]": "IOS"}
     if state:
         query["filter[state]"] = state
+    else:
+        query["include"] = "appStoreVersionForReview"
     return client.all(f"{APP}/reviewSubmissions", query)
 
 
@@ -89,22 +91,30 @@ def verify_advertising(client, version):
 
 def stage_update(client, version):
     drafts = review_submissions(client, "READY_FOR_REVIEW")
-    require(len(drafts) <= 1, "Ambiguous existing review drafts")
-    require(version_state(version) != "READY_FOR_REVIEW" or drafts, "Staged version has no ready draft")
-    draft = drafts[0] if drafts else client.create("reviewSubmissions", {"platform": "IOS"},
-                                                   {"app": ref("apps", "6830358918")})
-    items_path = f"/v1/reviewSubmissions/{draft['id']}/items"
-    items = client.all(items_path)
-    if not items:
-        require(version_state(version) != "READY_FOR_REVIEW", "Ready version is staged elsewhere")
-        client.create("reviewSubmissionItems", relationships={
-            "reviewSubmission": ref("reviewSubmissions", draft["id"]),
-            "appStoreVersion": ref("appStoreVersions", version["id"]),
-        })
-        items = client.all(items_path)
+    matching = []
+    empty = []
+    for draft in drafts:
+        draft_id = draft["id"]
+        items = client.all(f"/v1/reviewSubmissions/{draft_id}/items")
+        if not items:
+            empty.append(draft_id)
+        elif any(attached_version(item, "appStoreVersion") == version["id"] for item in items):
+            require(len(items) == 1, "The version is already staged with other review items")
+            matching.append(draft_id)
+    if matching:
+        return unique(matching, "app-only ready draft")
+    require(version_state(version) in EDITABLE, "No reusable app-only draft for the staged version")
+    draft_id = empty[0] if empty else client.create(
+        "reviewSubmissions", {"platform": "IOS"}, {"app": ref("apps", "6830358918")}
+    )["id"]
+    client.create("reviewSubmissionItems", relationships={
+        "reviewSubmission": ref("reviewSubmissions", draft_id),
+        "appStoreVersion": ref("appStoreVersions", version["id"]),
+    })
+    items = client.all(f"/v1/reviewSubmissions/{draft_id}/items")
     require(len(items) == 1 and attached_version(items[0], "appStoreVersion") == version["id"],
             "Expected only the specified iOS version in the review draft")
-    return draft["id"]
+    return draft_id
 
 
 PREFLIGHT = {
@@ -184,8 +194,11 @@ if __name__ == "__main__":
         require(phase in (None, "submit", *PREFLIGHT), "Unknown iOS review step")
         run(Client(), *request(os.environ), phase=phase)
     except HttpFailure as error:
-        sys.exit(str(error))
+        print(str(error), file=sys.stderr)
+        sys.exit({400: 40, 401: 41, 403: 43, 404: 44, 409: 49, 422: 52, 429: 59}.get(error.status, 70))
     except SetupError as error:
-        sys.exit(str(error))
+        print(str(error), file=sys.stderr)
+        sys.exit(10)
     except Exception:
-        sys.exit("ASC check failed; response and credentials withheld")
+        print("ASC check failed; response and credentials withheld", file=sys.stderr)
+        sys.exit(11)
