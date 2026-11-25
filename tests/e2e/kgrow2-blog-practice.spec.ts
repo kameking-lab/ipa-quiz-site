@@ -1,5 +1,9 @@
 import { test, expect } from "@playwright/test";
 test.use({ viewport: { width: 360, height: 800 }, reducedMotion: "reduce" });
+// Blog pages are ad-eligible: on CI the real Google auto-ads script can inject slots/overlays that intercept clicks.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://pagead2.googlesyndication.com/**", route => route.fulfill({ contentType: "text/javascript", body: "" }));
+});
 
 test("the resume reference guide opens qualification choices without an unrelated practice", async ({ page }) => {
   await page.goto("/blog/it-shikaku-rirekisho-kakikata");
