@@ -20,6 +20,12 @@ SUBMITTED = {"WAITING_FOR_REVIEW", "IN_REVIEW", "COMPLETING", "COMPLETE"}
 REVIEW_CONTACT = ("contactFirstName", "contactLastName", "contactPhone", "contactEmail", "demoAccountName")
 
 
+class DraftStateError(SetupError):
+    def __init__(self, code, message):
+        super().__init__(message)
+        self.code = code
+
+
 def request(env):
     tag = TAG.fullmatch(env.get("CM_TAG", ""))
     require(tag and env.get("CM_TRIGGER_SOURCE") == "webhook", "Dedicated release tag webhook required")
@@ -45,17 +51,19 @@ def version_state(version):
 
 
 def review_submissions(client, state=None):
-    query = {"filter[platform]": "IOS"}
+    query = {"filter[platform]": "IOS", "include": "appStoreVersionForReview"}
     if state:
         query["filter[state]"] = state
-    else:
-        query["include"] = "appStoreVersionForReview"
     return client.all(f"{APP}/reviewSubmissions", query)
 
 
 def attached_version(row, relation):
     value = row.get("relationships", {}).get(relation, {}).get("data")
     return value["id"] if value else None
+
+
+def review_items(client, draft_id):
+    return client.all(f"/v1/reviewSubmissions/{draft_id}/items", {"include": "appStoreVersion"})
 
 
 def verify_copyright(client, version):
@@ -95,15 +103,19 @@ def stage_update(client, version):
     empty = []
     for draft in drafts:
         draft_id = draft["id"]
-        items = client.all(f"/v1/reviewSubmissions/{draft_id}/items")
+        items = review_items(client, draft_id)
         if not items:
             empty.append(draft_id)
-        elif any(attached_version(item, "appStoreVersion") == version["id"] for item in items):
-            require(len(items) == 1, "The version is already staged with other review items")
+        elif attached_version(draft, "appStoreVersionForReview") == version["id"] or any(
+            attached_version(item, "appStoreVersion") == version["id"] for item in items
+        ):
+            if len(items) != 1:
+                raise DraftStateError(21, "The version is already staged with other review items")
             matching.append(draft_id)
     if matching:
         return unique(matching, "app-only ready draft")
-    require(version_state(version) in EDITABLE, "No reusable app-only draft for the staged version")
+    if version_state(version) not in EDITABLE:
+        raise DraftStateError(22, "No reusable app-only draft for the staged version")
     draft_id = empty[0] if empty else client.create(
         "reviewSubmissions", {"platform": "IOS"}, {"app": ref("apps", "6830358918")}
     )["id"]
@@ -111,9 +123,9 @@ def stage_update(client, version):
         "reviewSubmission": ref("reviewSubmissions", draft_id),
         "appStoreVersion": ref("appStoreVersions", version["id"]),
     })
-    items = client.all(f"/v1/reviewSubmissions/{draft_id}/items")
-    require(len(items) == 1 and attached_version(items[0], "appStoreVersion") == version["id"],
-            "Expected only the specified iOS version in the review draft")
+    items = review_items(client, draft_id)
+    if len(items) != 1 or attached_version(items[0], "appStoreVersion") != version["id"]:
+        raise DraftStateError(23, "Expected only the specified iOS version in the review draft")
     return draft_id
 
 
@@ -130,6 +142,15 @@ def submit_update(client, version):
     for verify in (verify_copyright, verify_contact, verify_notes, verify_advertising):
         verify(client, version)
     draft_id = stage_update(client, version)
+    for _ in range(8):
+        current = client.one(f"/v1/appStoreVersions/{version['id']}")
+        if version_state(current) == "READY_FOR_REVIEW":
+            break
+        if version_state(current) in SUBMITTED:
+            return
+        time.sleep(5)
+    else:
+        raise DraftStateError(24, "The staged version did not reach Ready for Review")
     result = client.patch("reviewSubmissions", draft_id, {"submitted": True})["attributes"]
     require(result.get("state") in SUBMITTED, "ASC did not confirm submission")
 
@@ -196,6 +217,9 @@ if __name__ == "__main__":
     except HttpFailure as error:
         print(str(error), file=sys.stderr)
         sys.exit({400: 40, 401: 41, 403: 43, 404: 44, 409: 49, 422: 52, 429: 59}.get(error.status, 70))
+    except DraftStateError as error:
+        print(str(error), file=sys.stderr)
+        sys.exit(error.code)
     except SetupError as error:
         print(str(error), file=sys.stderr)
         sys.exit(10)
