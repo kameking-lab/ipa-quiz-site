@@ -167,8 +167,10 @@ test("reserves the saved plan before hydration and before the catalog arrives", 
   }
 });
 
+// The noon JST fixture shows the seasonal moon at 03:00 in the browser.
+const delayedScheduleTest = test.extend({ timezoneId: "UTC" });
 for (const hasDate of [true, false]) {
-  test(`settles a delayed schedule for an undated plan (${hasDate ? "dated" : "empty"})`, async ({ page }) => {
+  delayedScheduleTest(`settles a delayed schedule for an undated plan (${hasDate ? "dated" : "empty"})`, async ({ page }) => {
     test.setTimeout(60_000);
     await page.setViewportSize({ width: 390, height: 844 });
     const { registration, ...saved } = fixturePlan();
@@ -187,6 +189,10 @@ for (const hasDate of [true, false]) {
       await page.goto("/");
       await expect(page.getByText("日程を読み込み中…")).toBeVisible({ timeout: 20_000 });
       await expect(page.locator("[data-pace-track=progress] svg[role=group]")).toBeAttached();
+      await expect(page.locator("html")).toHaveAttribute("data-home-scene", "night");
+      await expect(page.locator("html")).toHaveAttribute("data-home-event-layout", "labor");
+      const moonTop = () => page.locator(".p3-home-scene").evaluate(hero => getComputedStyle(hero, "::before").top);
+      const moonBefore = await moonTop();
       const track = page.locator("[data-pace-track=progress]");
       const room = page.getByTestId("home-study-room");
       const [trackBefore, roomBefore] = await Promise.all([track.boundingBox(), room.boundingBox()]);
@@ -231,6 +237,7 @@ for (const hasDate of [true, false]) {
         };
       });
       expect(layout.cls, JSON.stringify(layout.moved)).toBe(0);
+      expect(await moonTop()).toBe(moonBefore);
       await shifts.dispose();
       if (hasDate) {
         await cta.click();

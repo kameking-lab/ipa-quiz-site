@@ -61,6 +61,11 @@
   gap: var(--hero-gap);
 }
 .stack:is([data-home-state="planned"], [data-home-state="post-exam"]) .hero { --p3-sun-top: 49px; --p3-sun-right: 30px; }
+/* An empty schedule compacts the plan card. Anchor the moon to the hero's top. */
+:global([data-home-scene="night"][data-home-event-layout]) .hero:has(.planCard),
+:global([data-home-scene="night"][data-home-event-layout]:is([data-home-study-layout="planned"], [data-home-study-layout="exam-day"], [data-home-study-layout="post-exam"])) .stack[data-home-state="loading"] .hero {
+  --p3-orb-top: 145px;
+}
 .hero > :not(svg, [data-home-weather], :global(.p3-event-art-slot)) { position: relative; }
 
 .hero > :global(.p3-event-panel) { display: flow-root; margin: 0; }
