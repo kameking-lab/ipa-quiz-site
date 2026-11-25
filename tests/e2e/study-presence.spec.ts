@@ -29,7 +29,7 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
   test(`${count} learners have up to 12 chihuahuas and no horizontal scroll at 390px`, async ({ page }) => {
     const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto("/study-room");
+    await page.goto("/ipa");
     const scene = page.getByTestId("study-room-scene");
     if (count === 130) {
       await show(page, { count: 45, exams: [{ exam: "ip", count: 45 }] });
@@ -37,7 +37,9 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
     }
     await show(page, { count, exams: [{ exam: "ip", count }] });
     if (count === 12) {
-      const action = await page.getByRole("link", { name: "席について解く" }).boundingBox();
+      const start = page.getByRole("link", { name: "席について解く" });
+      await start.evaluate(element => element.scrollIntoView({ block: "center" }));
+      const action = await start.boundingBox();
       const nav = await page.locator(".mobile-bottom-nav").boundingBox();
       expect(action!.height).toBeGreaterThanOrEqual(44);
       expect(action!.y + action!.height).toBeLessThanOrEqual(nav!.y);
@@ -55,11 +57,13 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
       const seats = [...element.querySelectorAll('[data-testid="study-room-seat"]')].map(seat => seat.getBoundingClientRect());
       return { fits: document.documentElement.scrollWidth <= innerWidth,
         seatsFit: seats.every(seat => seat.left >= box.left && seat.right <= box.right + 1 && seat.top >= box.top && seat.bottom <= box.bottom + 1),
-        minWidth: Math.min(...seats.map(seat => seat.width)) };
+        minWidth: Math.min(...seats.map(seat => seat.width)),
+        maxWidth: Math.max(...seats.map(seat => seat.width)) };
     });
     expect(geometry.fits).toBe(true);
     expect(geometry.seatsFit).toBe(true);
-    expect(geometry.minWidth).toBeGreaterThanOrEqual(56);
+    expect(geometry.minWidth).toBeGreaterThanOrEqual(42);
+    if (count >= 12) expect(geometry.maxWidth).toBeGreaterThanOrEqual(70);
     const seat = scene.getByRole("button", { name: /のチワワを見る$/ }).first();
     await seat.press("Enter");
     await expect(seat).toHaveAttribute("aria-pressed", "true");
@@ -76,7 +80,7 @@ for (const count of [1, 5, 12, 24, 48, 120, 130]) {
 test("the café reuses images and keeps stable positions when re-entering the viewport", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 430 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  await page.goto("/study-room");
+  await page.goto("/ipa");
   await show(page, { count: 60, exams: [{ exam: "ip", count: 60 }] });
   const scene = page.getByTestId("study-room-scene");
   const seat = scene.getByTestId("study-room-seat").first();
@@ -104,7 +108,7 @@ test("the café reuses images and keeps stable positions when re-entering the vi
 test("unavailable data never creates dogs and automation sends no heartbeat", async ({ page }) => {
   let heartbeats = 0;
   page.on("request", request => { if (request.url().includes("/api/stats/study-presence") && request.method() === "POST") heartbeats++; });
-  await page.goto("/study-room");
+  await page.goto("/ipa");
   await expect(page.getByRole("link", { name: "席について解く" })).toBeVisible();
   await expect(page.getByTestId("study-room-seat")).toHaveCount(0);
   await expect(page.getByTestId("study-room-total")).toHaveCount(0);

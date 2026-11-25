@@ -125,6 +125,11 @@ export interface Observation {
   invoices: Invoice[]; payments: Payment[];
   session?: { id: string; signupId: string; customerId: string; terms: string; state: "open" | "complete" | "expired"; subscriptionId: string | null };
 }
+export interface WebhookObservationHint {
+  customerId: string;
+  /** Fetch the authoritative entry after reading the account revision, on every attempt. */
+  prepare(): Promise<{ target: Target; observe(): Promise<Observation> }>;
+}
 export interface MonthlyProvider {
   customer(attemptId: string): Promise<string>;
   checkout(customerId: string, signup: Signup, email?: string): Promise<{ id: string; url: string }>;
@@ -132,6 +137,8 @@ export interface MonthlyProvider {
   /** Close an unpaid Checkout session; rejects with subscription_exists if it was completed. */
   expireCheckout(sessionId: string): Promise<void>;
   portal(customerId: string, configurationId: string): Promise<string>;
+  /** The incoming event has already passed signature verification. */
+  webhookObservationHint?(event: unknown): WebhookObservationHint | undefined;
   resolve(event: unknown): Promise<Target | null>;
   observe(target: Target): Promise<Observation>;
   clearSmallExamBalance?(customerId: string, invoice: Invoice): Promise<void>;

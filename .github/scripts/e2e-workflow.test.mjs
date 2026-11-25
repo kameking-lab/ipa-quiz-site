@@ -51,6 +51,74 @@ for (const jobs of [
   });
 }
 
+test('the aggregate rejects a lookalike dependency even when every supplied job succeeds', () => {
+  assert.equal(runGate({ quality: { result: 'success' }, unexpected: { result: 'success' } }), 1);
+});
+
+function job(name) {
+  const section = workflow.match(new RegExp('^  ' + name + ':\\r?\\n([\\s\\S]*?)(?=^  [\\w-]+:|$(?![\\s\\S]))', 'm'));
+  assert.ok(section, 'Missing workflow job: ' + name);
+  return section[1];
+}
+
+for (const [aggregate, upstream, prefix, total] of [
+  ['quality', 'quality-checks', 'unit', 4],
+  ['browser', 'browser-build', 'browser', 6],
+]) {
+  test(aggregate + ' rejects a failed, cancelled, skipped or missing shard', () => {
+    const jobs = [upstream, ...Array.from({ length: total }, (_, i) => prefix + '-' + (i + 1))];
+    const section = job(aggregate);
+    assert.ok(section.includes('needs: [' + jobs.join(', ') + ']'));
+    assert.match(section, /^    if: \$\{\{ always\(\) \}\}$/m);
+    const expression = section.match(/\$\{\{\s+(always\(\) && \([\s\S]+?\))\s+\}\}\r?\n\s+run: exit 1/)?.[1];
+    assert.ok(expression, 'Exercise the actual failure step');
+    // Dashes are valid in Actions property names. Convert to JS bracket notation.
+    const fails = Function('needs', 'always', 'return (' + expression.replace(/needs\.([\w-]+)/g, 'needs["$1"]') + ')');
+    const needs = Object.fromEntries(jobs.map(name => [name, { result: 'success' }]));
+    assert.equal(fails(needs, () => true), false);
+    for (const name of jobs) {
+      for (const result of ['failure', 'cancelled', 'skipped', undefined, 'unknown']) {
+        assert.equal(fails({ ...needs, [name]: { result } }, () => true), true, name);
+      }
+    }
+    for (let i = 1; i <= total; i++) {
+      assert.match(job(prefix + '-' + i), new RegExp('\\n      shard: ' + i + (prefix === 'unit' ? '/4' : '') + '\\r?\\n'));
+    }
+  });
+}
+
+test('the PWA suite follows the browser gate and keeps its dedicated two-browser config', () => {
+  const browser = job('browser');
+  assert.match(browser, /run: exit 1[\s\S]+pnpm exec playwright test --config tests\/pwa-update\.config\.ts/);
+  const pwaConfig = readFileSync(new URL('../../tests/pwa-update.config.ts', import.meta.url), 'utf8');
+  assert.match(pwaConfig, /name: "chromium"/);
+  assert.match(pwaConfig, /name: "webkit-iphone"/);
+});
+
+test('the ID-based build download extracts to the directory that restore reads', () => {
+  const shard = readFileSync(new URL('../workflows/browser-shard.yml', import.meta.url), 'utf8');
+  const download = shard.match(/uses: actions\/download-artifact@v4\r?\n[\s\S]*?(?=^      - name:)/m)?.[0];
+  assert.ok(download);
+  assert.match(download, /artifact-ids: \$\{\{ inputs\.artifact-id \}\}/);
+  assert.match(download, /path: \$\{\{ runner\.temp \}\}\/browser-build/);
+  assert.match(download, /merge-multiple: true/);
+  assert.match(shard, /browser-build\.sh restore "\$RUNNER_TEMP\/browser-build"/);
+});
+
+test('quality runs all three data validations after its unit and static checks pass', () => {
+  let section = job('quality');
+  for (const command of [
+    'run: exit 1',
+    'scripts/check-study-plan-policy.ts',
+    'scripts/validate-safety-exams.mjs --require-consultant-five-years --require-explanations',
+    'scripts/validate-government-source-links.mjs --skip-live',
+  ]) {
+    const at = section.indexOf(command);
+    assert.ok(at >= 0, command);
+    section = section.slice(at + command.length);
+  }
+});
+
 // These expressions use the same operators and context properties in JS and Actions.
 function evaluate(expression, github) {
   return Function('github', `"use strict"; return (${expression});`)(github);

@@ -37,13 +37,14 @@ it.each(["trial", "paid", "refunded"] as const)("reward playback and dismissal p
   const profiles = () => Object.keys(localStorage).filter(key => key.startsWith(LS_KEYS.petProfilesPrefix)).sort().map(key => [key, localStorage.getItem(key)]);
   const profilesBefore = profiles();
   const scope = "quiz:fe", questionId = `question-${state}`;
-  render(<StudyRewardCorner scope={scope} questionId={questionId} />);
-  await waitFor(() => expect(screen.getByRole("button", {name:"ひと休み"})).toBeEnabled());
-  act(() => { recordStudyReward({scope,questionId,exam:"fe",label:"基本情報技術者"}); });
+  await act(async () => { render(<StudyRewardCorner scope={scope} questionId={questionId} />); });
+  await act(async () => { recordStudyReward({scope,questionId,exam:"fe",label:"基本情報技術者"}); });
   // Quiz scopes now render the v1 child; the legacy visual notification does
   // not manufacture learning progress or paid access in that child.
   expect(screen.queryByText("1問、回答しました。")).not.toBeInTheDocument();
-  fireEvent.click(screen.getByRole("button", {name:"ひと休み"}));
+  const rest = screen.getByRole("button", {name:"ひと休み"});
+  await waitFor(() => expect(rest).toBeEnabled(), { timeout: 5_000 });
+  await act(async () => { fireEvent.click(rest); });
   expect(screen.getByText("のんびり、ひと休み。")).toBeInTheDocument();
   fireEvent.click(screen.getByRole("button", {name:"動きを止める"}));
   fireEvent.click(screen.getByRole("button", {name:"チワワのひと休みを閉じる"}));

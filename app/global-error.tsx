@@ -5,6 +5,7 @@ import { AlertTriangle, HomeIcon, RefreshCw } from "lucide-react";
 import { captureException } from "@/lib/monitoring/sentry";
 import { THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { discardWebAds } from "@/lib/ads/web-ads";
 
 // This boundary replaces the root layout, including its stylesheet.
 const ERROR_STYLES = `
@@ -20,6 +21,7 @@ export default function GlobalError({ error, retry }: { error: unknown; retry: (
   const headingRef = React.useRef<HTMLHeadingElement>(null);
   const digest = error instanceof Error && "digest" in error && typeof error.digest === "string" ? error.digest : undefined;
   React.useEffect(() => {
+    discardWebAds();
     try {
       const theme = window.localStorage.getItem(LS_KEYS.theme);
       const dark = theme === "dark" || (theme !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);

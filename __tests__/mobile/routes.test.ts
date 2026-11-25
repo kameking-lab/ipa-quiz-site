@@ -1,6 +1,6 @@
 import { beforeEach, expect, it, vi } from "vitest";
-const m=vi.hoisted(()=>({access:vi.fn(),user:"u" as string|null,refresh:vi.fn(),entry:{code:"ip",name:"IP",count:21,revision:"abc",bytes:42,years:[],categories:[],sessions:[]}}));
-vi.mock("@/lib/billing/runtime",()=>({optionalBillingIdentity:async()=>m.user,sameOrigin:()=>{},json:(v:unknown,status=200)=>Response.json(v,{status,headers:{"Cache-Control":"private, no-store"}}),billingFailure:(e:{status?:number;code?:string})=>Response.json({error:e.code??"unavailable"},{status:e.status??503})}));
+const m=vi.hoisted(()=>({access:vi.fn(),user:"u" as string|null,mobileSession:false,refresh:vi.fn(),entry:{code:"ip",name:"IP",count:21,revision:"abc",bytes:42,years:[],categories:[],sessions:[]}}));
+vi.mock("@/lib/billing/runtime",()=>({optionalBillingSession:async()=>m.user?{user:{id:m.user},mobileSession:m.mobileSession}:null,sameOrigin:()=>{},json:(v:unknown,status=200)=>Response.json(v,{status,headers:{"Cache-Control":"private, no-store"}}),billingFailure:(e:{status?:number;code?:string})=>Response.json({error:e.code??"unavailable"},{status:e.status??503})}));
 vi.mock("@/mobile/server/entitlement",()=>({mobileEntitlement:m.access}));
 vi.mock("@/mobile/server/config",()=>({mobileConfig:()=>({}),requireMobileReady:()=>({webhookAuthorization:"Bearer "+"x".repeat(32),appId:"app-test",environment:"SANDBOX"})}));
 vi.mock("@/mobile/server/catalog",()=>({catalogCodes:()=>["ip"],examCatalog:async()=>m.entry,examContent:async()=>Array.from({length:21},(_,i)=>({id:`q${i}`}))}));
@@ -8,7 +8,21 @@ vi.mock("@/mobile/server/revenuecat",async importOriginal=>({...await importOrig
 import { download, catalog, status } from "@/mobile/server/routes";
 import { POST as webhook } from "@/app/api/mobile/revenuecat/route";
 import { GET as retired } from "@/app/api/mobile/packs/route";
-beforeEach(()=>{vi.resetAllMocks();m.user="u";m.access.mockResolvedValue({userId:"u",entitled:true,lease:"signed"});});
+beforeEach(()=>{vi.resetAllMocks();m.user="u";m.mobileSession=false;m.access.mockResolvedValue({userId:"u",entitled:true,lease:"signed"});});
+it("only requests Sandbox rights for an app session, including fresh restore and download", async () => {
+  const headers = { "X-Kakomon-Native": "ios" };
+  const restore = () => status(new Request("https://site.test/api/mobile/entitlement", { method: "POST", headers }));
+  const getDownload = () => download(new Request("https://site.test/api/mobile/download?exam=ip", { headers }));
+  expect(await (await restore()).json()).toMatchObject({ requiresAppLogin: true });
+  expect(m.access).toHaveBeenLastCalledWith("u", true, "web");
+  await getDownload();
+  expect(m.access).toHaveBeenLastCalledWith("u", false, "web");
+  m.mobileSession = true;
+  expect(await (await restore()).json()).toMatchObject({ requiresAppLogin: false });
+  expect(m.access).toHaveBeenLastCalledWith("u", true, "app");
+  await getDownload();
+  expect(m.access).toHaveBeenLastCalledWith("u", false, "app");
+});
 it("exposes metadata to everyone but rejects unauthenticated, free and unsigned downloads",async()=>{
   expect((await catalog()).status).toBe(200);
   for(const access of [{userId:null,entitled:false,lease:null},{userId:"u",entitled:false,lease:null},{userId:"u",entitled:true,lease:null}]) {m.access.mockResolvedValue(access);expect((await download(new Request("https://site.test/api/mobile/download?exam=ip"))).status).toBe(403);}

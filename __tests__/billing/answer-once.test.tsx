@@ -38,7 +38,7 @@ const access: PracticeAccess = {
 };
 
 // Allow the async quiz render to complete on constrained test workers.
-const todayQuizWait = { timeout: 10_000 };
+const todayQuizWait = { timeout: 30_000 };
 
 function mockPractice(...questions: { id: string }[]) {
   const grant = vi.fn((id: string) => Response.json({ question: questions.find(q => q.id === id), access }));
@@ -119,7 +119,9 @@ describe("one graded answer per question visit", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     await waitFor(() => expect(grant.mock.calls).toEqual([[single.id], [next.id]]));
-    fireEvent.click((await screen.findAllByRole("radio"))[0]);
+    const [nextChoice] = await screen.findAllByRole("radio");
+    await waitFor(() => expect(nextChoice).toBeEnabled());
+    fireEvent.click(nextChoice);
     expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([single.id, next.id]);
     expect(reward).toHaveBeenCalledTimes(2);
     expect(grant.mock.calls).toEqual([[single.id], [next.id]]);

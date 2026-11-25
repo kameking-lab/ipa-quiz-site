@@ -3,6 +3,7 @@ import { billingFailure, billingIdentity, billingRuntime, json, sameOrigin } fro
 import { checkoutEmail } from "@/lib/billing/checkout-email";
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { appStorePurchaseCheck } from "@/mobile/server/revenuecat";
+import { mobileConfig } from "@/mobile/server/config";
 import { BillingError } from "@/lib/billing/domain";
 import { recordFunnel, saveOrderAttribution } from "@/lib/billing/funnel";
 import { requestAttribution } from "@/lib/billing/attribution";
@@ -19,15 +20,17 @@ export async function POST(request: Request) {
       exam: z.enum(ALL_QUIZ_EXAM_CODES).nullish() }).strict().parse(await request.json());
     let result: { orderId: string; url: string };
     if (monthlySelected()) {
-      const { service, provider } = (await import("@/lib/billing/subscription/runtime")).monthlyRuntime(true);
+      const { config, service, provider } = (await import("@/lib/billing/subscription/runtime")).monthlyRuntime(true);
       const examEndAt = examDate ? examEndTimestamp(examDate, new Date()) : null;
       if (examDate && !examEndAt) throw new BillingError("invalid_exam_date", 400);
       await assertNoDuplicatePurchase(userId);
+      // Check for duplicate purchases in the same payment environment as this checkout.
+      const purchaseRealm = mobileConfig().enabled ? config.mode : undefined;
       result = await service.checkout(userId, terms, provider, await checkoutEmail(), async orderId => {
         const channel = conversionChannel(request);
         await saveConversionChannel(orderId, channel);
         await recordConversion("checkout_created", channel, orderId);
-      }, memberId => appStorePurchaseCheck(memberId, memberId === userId ? undefined : "duplicate_purchase"), examEndAt ?? undefined, exam ?? undefined, returnTo);
+      }, memberId => appStorePurchaseCheck(memberId, memberId === userId ? undefined : "duplicate_purchase", purchaseRealm), examEndAt ?? undefined, exam ?? undefined, returnTo);
       if ("recovered" in result) return json(result);
     } else {
       await appStorePurchaseCheck(userId);

@@ -3,6 +3,7 @@
 import * as React from "react";
 import { usePathname } from "next/navigation";
 import { Cloud, CloudUpload, CheckCircle2 } from "lucide-react";
+import { HISTORY_LIMIT_MESSAGE } from "@/lib/sync/history-protocol";
 import { syncAll } from "@/lib/sync";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readOwnership, readSyncAccount } from "@/lib/sync/ownership";
@@ -60,7 +61,10 @@ export function CloudSyncAutoSync() {
         setPhase("done");
         if (result.overall === "ok") {
           try { sessionStorage.setItem(successKey, "1"); } catch { /* optional guard */ }
-          setToast({ tone: "success", message: "学習履歴・ブックマーク・タグ・学習計画を同期しました。" });
+          const history = result.byType.history;
+          setToast(history.state === "ok" && history.limitReached
+            ? { tone: "info", message: HISTORY_LIMIT_MESSAGE }
+            : { tone: "success", message: "学習履歴・ブックマーク・タグ・学習計画を同期しました。" });
         } else {
           setToast({
             tone: "info",

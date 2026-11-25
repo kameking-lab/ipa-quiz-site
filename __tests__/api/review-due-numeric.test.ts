@@ -10,6 +10,17 @@ const request = (reviewStore = {}) => new Request("http://localhost/api/review/d
   body: JSON.stringify({ historyIds: [question.id], reviewStore, today: "2026-10-10" }),
 });
 describe("review API numeric originals", () => {
+  it("lists only IDs and exams before a gated review question is opened", async () => {
+    findQuestionById.mockResolvedValue(question);
+    const req = new Request("http://localhost/api/review/due", {
+      method: "POST", headers: { "X-Kakomon-Native": "ios" },
+      body: JSON.stringify({ view: "queue", historyIds: [question.id], reviewStore: {}, today: "2026-10-10" }),
+    });
+    const response = await POST(req);
+    expect(response.status).toBe(200);
+    expect((await response.json()).questions).toEqual([{ id: question.id, exam: question.exam }]);
+    expect(findQuestionById).toHaveBeenCalledTimes(1);
+  });
   it("returns a due original numeric question with its numeric answer contract intact", async () => {
     findQuestionById.mockResolvedValue(question);
     const response = await POST(request({ [question.id]: { nextReviewAt: "2026-10-10" } }));

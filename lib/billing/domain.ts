@@ -42,6 +42,9 @@ export interface CheckoutProvider {
 export class BillingError extends Error {
   constructor(public code: string, public status = 409) { super(code); }
 }
+export class DailyLimitError extends BillingError {
+  constructor(readonly grantedIds: readonly string[]) { super("daily_limit", 429); }
+}
 export const MEMBERSHIP_CHECK_PENDING = "membership_check_pending";
 export const MEMBERSHIP_CHECK_PENDING_MESSAGE = "月額会員の更新を確認中です。少し待ってからもう一度お試しください。";
 export function active(p: Purchase, now: Date) {

@@ -6,12 +6,15 @@ import type { StudyPlanSyncEntry } from "@/lib/sync/types";
 import { dayNumber, type PacePlan, type AnswerAttempt } from "./pace";
 import { isStudyWeekdays, preserveStudyWeekdays } from "./pace-compat";
 import { dailyLearningPoints, mergeLearningActions, type LearningAction } from "./activity";
+import { withConfirmedExamDay } from "./countdown";
+import type { ExamSchedule } from "./schedule";
 
 const date = z.string().refine(value => dayNumber(value) !== null);
 const timestamp = z.string().refine(value => Number.isFinite(Date.parse(value)));
 export const pacePlanSchema = z.object({
   kind: z.literal("exam-pace-v1"), id: z.string().min(1), exam: z.string().min(1), sessionId: z.string().nullable(),
-  examDate: date.nullable(), startDate: date, createdAt: timestamp, updatedAt: timestamp,
+  examDate: date.nullable(), examDateSource: z.enum(["manual", "official", "tentative", "estimated"]).optional(),
+  startDate: date, createdAt: timestamp, updatedAt: timestamp,
   range: z.object({ questionIds: z.array(z.string()), years: z.array(z.number().int()), initialCount: z.number().int().nonnegative(),
     capturedOn: date, lastExpansionWeek: date, graceUntil: date.nullable() }),
   registration: z.object({ label: z.string(), start: date.nullable(), deadline: date.nullable(), resultDate: date.nullable(), sourceUrl: z.string().url().nullable(), estimated: z.boolean() }).optional(),
@@ -44,6 +47,25 @@ export function listPacePlans(): PacePlan[] {
 export function savePacePlan(plan: PacePlan): boolean {
   const parsed = pacePlanSchema.safeParse(plan);
   return parsed.success && write(LS_KEYS.pacePlans, [parsed.data, ...listPacePlans().filter(p => p.id !== plan.id)].slice(0, 20));
+}
+export function retainConfirmedExamDays(requestedPlans: readonly PacePlan[], schedule: ExamSchedule | null, today: string): PacePlan[] {
+  const plans = listPacePlans();
+  if (schedule?.source !== "tsugino") return plans;
+  const requested = new Map(requestedPlans.map(plan => [plan.id, plan]));
+  let changed = false;
+  const nextPlans = plans.map(plan => {
+    const before = requested.get(plan.id);
+    // A schedule response can arrive after another tab changed the date, round or result.
+    if (!before || plan.exam !== schedule.exam || before.exam !== plan.exam || before.sessionId !== plan.sessionId ||
+      before.examDate !== plan.examDate || before.examDateSource !== plan.examDateSource || before.result !== plan.result || !plan.sessionId) return plan;
+    const sessions = schedule.sessions.filter(session => session.id === plan.sessionId);
+    const updated = withConfirmedExamDay(plan, today, sessions.length === 1 ? sessions[0] : undefined);
+    if (updated === plan) return plan;
+    changed = true;
+    return { ...updated, updatedAt: new Date(Math.max(Date.now(), Date.parse(plan.updatedAt) + 1)).toISOString() };
+  });
+  if (changed) write(LS_KEYS.pacePlans, nextPlans);
+  return nextPlans;
 }
 export function deletePacePlan(id: string): boolean {
   // A tombstone prevents an old cloud copy from resurrecting a deleted plan.

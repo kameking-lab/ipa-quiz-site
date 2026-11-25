@@ -58,13 +58,15 @@ test("mobile home with no plan and create a plan with a custom week", async ({ p
   await dialog.getByText("月・水・金（週3回）").scrollIntoViewIfNeeded();
   await shot(page, "06-create-eight-years-weekdays");
   await dialog.getByRole("button", { name: "この計画で始める" }).click();
-  await expect(page.getByRole("link", { name: "計画の問題を解く" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "問題を解く", exact: true })).toBeVisible();
   const saved = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0], LS_KEYS.pacePlans);
   expect(saved.studyWeekdays.sort()).toEqual([1, 3, 5]);
-  await page.getByRole("button", { name: "計画を変更", exact: true }).click();
+  await page.getByRole("button", { name: "計画の確認", exact: true }).click();
+  await page.getByRole("dialog").getByRole("button", { name: "計画を変更", exact: true }).click();
   await page.getByRole("radio", { name: "毎日" }).check();
   await page.getByRole("button", { name: "変更を保存" }).click();
-  await expect(page.getByText("2019年度以降")).toBeVisible();
+  await expect(page.getByText("2019年度以降")).toHaveCount(0);
+  expect(await page.evaluate(key => Math.min(...JSON.parse(localStorage.getItem(key)!)[0].range.years), LS_KEYS.pacePlans)).toBe(2019);
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).map((plan: PacePlan) => plan.id), LS_KEYS.pacePlans)).toEqual([saved.id]);
 });
 
@@ -87,7 +89,7 @@ for (const [years, image] of [[3, "07-create-three-years"], [12, "08-create-twel
 }
 
 for (const [name, plan, count, label] of [
-  ["02-home-plan", plans(), 4, "残り8問・勉強日あと10日"],
+  ["02-home-plan", plans(), 4, "1日の目安 1問正解"],
   ["03-home-outside-day", plans([6, 0]), 4, "次の勉強日は土曜日です"],
   ["04-home-complete", plans(), 12, "全12問に正解しました"],
   ["05-home-post-exam", plans(undefined, "2026-11-16"), 4, "試験、おつかれさまでした"],
@@ -96,7 +98,7 @@ for (const [name, plan, count, label] of [
     await boot(page, plan, catalog.slice(0, count).map((_, index) => answer(index, true)));
     await page.goto("/");
     await expect(page.getByText(label, { exact: true })).toBeVisible();
-    await expect(page.getByRole("img", { name: "正解済み " + count + " / 12問" })).toBeVisible();
+    await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
     await expect(page.getByRole("link", { name: /月額で|追いつ/ })).toHaveCount(0);
     if (name === "05-home-post-exam") await expect(page.getByRole("group", { name: "結果を記録" })).toBeVisible();
     await shot(page, name);
@@ -107,7 +109,7 @@ test("empty list works without a saved plan", async ({ page }) => {
   await boot(page);
   await page.goto("/review?mode=weak&exam=ip");
   await expect(page.getByText("苦手リストは空です")).toBeVisible();
-  await expect(page.getByRole("link", { name: "年度を選んで解く" })).toHaveAttribute("href", "/ip");
+  await expect(page.getByRole("link", { name: "年度を選んで解く", exact: true })).toHaveAttribute("href", "/ip");
   await shot(page, "09-weak-empty");
 });
 
@@ -166,7 +168,7 @@ test("weak list has four unique rows and a score is recorded before next", async
   await page.getByRole("radio", { name: /正しい選択肢/ }).click();
   await expect(page.getByRole("button", { name: "苦手の印を外す" })).toBeVisible();
   await page.goto("/");
-  await expect(page.getByRole("img", { name: "正解済み 3 / 12問" })).toBeVisible();
+  await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
   await expect(page.getByRole("link", { name: "苦手リスト（3問）" })).toBeVisible();
   expect(grants).toEqual([catalog[0].id, catalog[1].id]);
 });
@@ -206,7 +208,7 @@ test("scheduled review records the grade before leaving and keeps weak practice 
   await page.goto("/review?mode=weak&exam=ip");
   await expect(page.getByText("苦手リストは空です")).toBeVisible();
   await page.goto("/");
-  await expect(page.getByRole("img", { name: "正解済み 1 / 12問" })).toBeVisible();
+  await expect(page.getByRole("group", { name: "学習の進み具合" })).toBeVisible();
 });
 
 test("paper weak practice crosses papers once and preserves the original grant header", async ({ page }) => {
@@ -245,8 +247,8 @@ test("studying with no selected date before an exam has a direct edit action", a
   await boot(page, plans([6, 0], "2026-11-18"));
   await page.goto("/");
   await expect(page.getByText("試験前に勉強日がありません")).toBeVisible();
-  await expect(page.getByRole("link", { name: "計画の問題を解く" })).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "年度を選んで解く" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "問題を解く", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "年度を選ぶ" })).toBeVisible();
   await page.getByRole("button", { name: "勉強する日を変更" }).click();
   await expect(page.getByRole("button", { name: "変更を保存" })).toBeDisabled();
   await page.getByRole("radio", { name: "毎日" }).check();

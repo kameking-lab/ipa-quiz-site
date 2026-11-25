@@ -68,6 +68,7 @@ describe.each([["history", history], ["bookmarks", bookmarks], ["tags", tags], [
   it("reads only the authenticated account, ignoring client owner fields", async () => {
     const response = await handler(request({ entries: [], expectedUserId: "authenticated-A", userId: "other-B" }));
     expect(response.status).toBe(200);
+    await response.json(); // The legacy history reader pulls pages as the body is consumed.
     const model = _name === "history" ? mocks.history : _name === "bookmarks" ? mocks.bookmarks : _name === "tags" ? mocks.tags : mocks.plans;
     expect(model.findMany.mock.calls[0][0].where).toEqual({ userId: "authenticated-A" });
   });

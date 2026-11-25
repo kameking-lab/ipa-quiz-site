@@ -17,7 +17,7 @@ it("puts the plan first and the feedback bonus second, accepts multiple choices,
   expect(purchase).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/quiz?mode=year&question=q1"));
   expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   expect(screen.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
-  expect(screen.getByText("月額プランは演習回数無制限。")).toBeTruthy();
+  expect(screen.getByText("月額プランは演習回数が無制限になり、広告も出なくなります。")).toBeTruthy();
   expect(purchase.classList.contains("bg-primary")).toBe(true);
   expect(screen.getByRole("link", { name: "条件・特商法表示" })).toHaveAttribute("target", "_blank");
   // Offer, disclosure and policies share the original return-to-question flow.

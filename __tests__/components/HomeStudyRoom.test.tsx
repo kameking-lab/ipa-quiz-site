@@ -17,8 +17,9 @@ function show(exams: StudyPresenceTodayCount[]) {
 it("shows one chip per qualification, in descending order, with one dog per learner", () => {
   render(<HomeStudyRoom />);
   show([{ exam: "civil2", count: 2, activeCount: 1 }, { exam: "civil1", count: 10, activeCount: 2 }]);
-  const room = screen.getByRole("link", { name: "チワワの自習室" });
-  expect(room).toHaveAttribute("href", "/study-room");
+  const room = screen.getByRole("region", { name: "チワワの自習室" });
+  expect(within(room).queryByRole("link")).not.toBeInTheDocument();
+  expect(room).not.toHaveTextContent(/チワワの自習室|ラグのリビング|本棚のブックカフェ|窓辺と段差の部屋|芝生のテラス/);
   expect(room).toHaveTextContent("今日 12人が勉強（うち3人がいま勉強中）");
   const chips = within(screen.getByRole("list", { name: "自習室の資格" })).getAllByRole("listitem");
   expect(chips.map(chip => chip.textContent)).toEqual(["1級土木施工管理10人", "2級土木施工管理2人"]);
@@ -40,7 +41,7 @@ it("caps the picture at 12 dogs and lists at most six qualifications", () => {
 it("shows only the daily total when nobody is currently studying", () => {
   render(<HomeStudyRoom />);
   show([{ exam: "ip", count: 5, activeCount: 0 }]);
-  const room = screen.getByRole("link", { name: "チワワの自習室" });
+  const room = screen.getByRole("region", { name: "チワワの自習室" });
   expect(room).toHaveTextContent("今日 5人が勉強");
   expect(room).not.toHaveTextContent("うち");
 });
@@ -60,11 +61,11 @@ it("shows one sleeping dog at measured zero and retires a daily snapshot at JST 
   expect(screen.queryByText("まだ誰もいません。一番乗りしよう")).not.toBeInTheDocument();
   show([]);
   expect(screen.getByText("まだ誰もいません。一番乗りしよう")).toBeVisible();
-  expect(screen.getByRole("link", { name: "チワワの自習室" })).not.toHaveTextContent("0人");
+  expect(screen.getByRole("region", { name: "チワワの自習室" })).not.toHaveTextContent("0人");
   expect(screen.getAllByTestId("home-study-room-sleeper")).toHaveLength(1);
   expect(screen.queryAllByTestId("home-study-room-seat")).toHaveLength(0);
   act(() => vi.advanceTimersByTime(30_000));
   expect(screen.getByTestId("home-study-room-scene")).toHaveAttribute("data-room", "p2");
   expect(screen.queryByText("まだ誰もいません。一番乗りしよう")).not.toBeInTheDocument();
-  expect(screen.getByRole("link", { name: "チワワの自習室" })).not.toHaveTextContent("0人");
+  expect(screen.getByRole("region", { name: "チワワの自習室" })).not.toHaveTextContent("0人");
 });

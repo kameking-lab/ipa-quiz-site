@@ -1,4 +1,5 @@
-import { beforeAll, describe, expect, it, vi } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+import type { AiAccessPolicy, AiFeature } from "@/lib/ai/access-policy";
 import type { ExamQuestion } from "@/lib/exam-library-model";
 
 const { loadPaper, findEntry, prompt } = vi.hoisted(() => ({
@@ -8,6 +9,13 @@ const { loadPaper, findEntry, prompt } = vi.hoisted(() => ({
 }));
 vi.mock("@/lib/exam-library-papers", () => ({ loadExamPaper: loadPaper }));
 vi.mock("@/lib/exam-library-catalog", () => ({ findExamEntry: findEntry }));
+vi.mock("@/lib/ai/access-server", () => ({
+  resolveAiAccess: async (_request: Request, _feature: AiFeature, policy: AiAccessPolicy) =>
+    policy.rolloutEnabled ? { kind: "paid", subject: "exam-library-route-test" } : { kind: "legacy" },
+}));
+vi.mock("@/lib/ai/normal-use-kv", () => ({
+  sharedNormalUseStore: { admit: async () => ({ allowed: true }) },
+}));
 vi.mock("@/lib/ai/provider", () => ({
   getProvider: async () => ({
     name: "mock",
@@ -31,9 +39,11 @@ beforeAll(() => {
   delete process.env.GEMINI_API_KEY;
   delete process.env.KV_REST_API_URL;
   delete process.env.KV_REST_API_TOKEN;
+  vi.spyOn(Date, "now").mockReturnValue(Date.parse("2026-11-24T12:00:00+09:00"));
   findEntry.mockReturnValue({ label: "衛生管理者", subject: "労働衛生", pdfUrl: "https://www.exam.or.jp/test.pdf" });
   loadPaper.mockReturnValue([question]);
 });
+afterAll(() => vi.restoreAllMocks());
 
 function request(questionId = question.id): Request {
   return new Request("http://localhost/api/copilot/exam-library", {
@@ -62,6 +72,7 @@ describe("POST /api/copilot/exam-library", () => {
     const response = await POST(request());
     expect(response.status).toBe(200);
     expect(response.headers.get("X-Provider")).toBe("mock");
+    expect(response.headers.get("X-AI-Access")).toBe(process.env.AI_QUOTA_ROLLOUT === "true" ? "paid-normal-use" : null);
     expect(await response.text()).toContain("公表元の資料");
     expect(prompt.value).toContain("公式正答: （2）");
     expect(prompt.value).toContain("https://www.exam.or.jp/test.pdf#page=3");

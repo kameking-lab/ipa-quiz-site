@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { EMPTY_STUDY_ROOM_MESSAGE } from "@/lib/home/study-room";
 import { NO_CAFE_POSES } from "@/lib/home/study-room-cafe-mascots";
 import { presenceExamName } from "@/lib/study-presence";
@@ -23,19 +21,14 @@ export function HomeStudyRoom({ poseFiles = NO_CAFE_POSES }: { poseFiles?: reado
   const daily = snapshot?.today;
   const attendance = daily ?? (current ? snapshot : null);
   const firstToday = current && daily?.count === 0;
-  const { day, room, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles);
+  const { day, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles);
   const examRows = attendance?.exams ?? [];
   const chips = examRows.slice(0, EXAM_CHIP_LIMIT).map(row => ({ name: presenceExamName(row.exam) ?? row.exam, ...row }));
   const otherExams = examRows.length - chips.length;
   const longList = chips.reduce((length, chip) => length + chip.name.length, 0) > COMPACT_LABEL_LENGTH;
 
-  return <Link href="/study-room" prefetch={false} data-study-presence-viewer data-testid="home-study-room"
-    aria-labelledby="home-study-room-title" data-long-list={longList || undefined} className={`${styles.card} study-focus`}>
-    <div className={styles.header}>
-      <h2 id="home-study-room-title">チワワの自習室</h2>
-      <span className={styles.roomName}>{room?.name}</span>
-      <ChevronRight aria-hidden="true" className={styles.arrow} />
-    </div>
+  return <section aria-label="チワワの自習室" data-study-presence-viewer data-testid="home-study-room"
+    data-long-list={longList || undefined} className={styles.card}>
     {attendance && !firstToday && <div className={styles.attendance}>
       <StudyRoomAttendance attendance={attendance} current={current} />
       {daily && !current && <time dateTime={snapshot.measuredAt} className={styles.timestamp}>{time.format(Date.parse(snapshot.measuredAt))} 時点</time>}
@@ -50,5 +43,5 @@ export function HomeStudyRoom({ poseFiles = NO_CAFE_POSES }: { poseFiles?: reado
       </li>)}
       {otherExams > 0 && <li className={styles.group}>ほか{number(otherExams)}資格</li>}
     </ul>}
-  </Link>;
+  </section>;
 }

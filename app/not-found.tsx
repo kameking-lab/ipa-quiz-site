@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Compass, FileCheck, HelpCircle, HomeIcon, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { WEB_ADS_ERROR_PAGE_ID } from "@/lib/ads/web-ads";
 
 export default function NotFound() {
   return (
-    <main className="relative flex flex-1 items-center justify-center px-4 py-12">
+    <main id={WEB_ADS_ERROR_PAGE_ID} data-native-banner-exclude className="relative flex flex-1 items-center justify-center px-4 py-12">
 
       <div className="relative w-full max-w-lg">
         <div className="overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">

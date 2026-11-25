@@ -1,4 +1,5 @@
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { requiresPracticeContentGrant } from "@/lib/billing/practice-access";
 import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
@@ -19,7 +20,7 @@ import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, confirmFreeAnswer, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
@@ -90,10 +91,20 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       { status: 400 },
     );
   }
-  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428});
-    // 動的 import: content-grant は全問題データを読み込むため、ゲートが無効（既定）のときは読み込まない。
+  if (strictContentGateEnabled() && req.headers.get("X-Kakomon-AI-Consent") !== "20261103") {
+    return NextResponse.json({ error: "ai_consent_required" }, { status: 428 });
+  }
+  if (requestsNewQuestion(payload.messages, payload.quickAction)) {
+    return NextResponse.json(
+      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
+      { status: 400, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+  if (requiresPracticeContentGrant(req, true)) {
     const { contentGrant } = await import("@/lib/billing/content-grant");
-    const grant=await contentGrant(req,question.id);if(!grant.ok)return grant;}
+    const grant = await contentGrant(req, question.id, { app: true });
+    if (!grant.ok) return grant;
+  }
   const selectedKeys = payload.selectedChoice?.split("・") ?? [];
   const selectedChoice = selectedKeys.length > 0 &&
     selectedKeys.every((key) => question.choices?.[key as keyof typeof question.choices] !== undefined)
@@ -102,14 +113,6 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   const isCorrect = selectedChoice === undefined
     ? undefined
     : isCompleteSelectionCorrect(question.answer, selectedKeys, requiredSelectionCount(question));
-
-  // Reject explicit creation requests before normal-use admission or provider work.
-  if (requestsNewQuestion(payload.messages, payload.quickAction)) {
-    return NextResponse.json(
-      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
-  }
 
   const usage = await prepareAiUsage(req, "copilot");
   track(usage);
@@ -220,7 +223,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   usage.streaming = true;
   const stream = createCopilotResponseStream({
     requireCompleteAnswer: !usage.legacy,
-    confirmBeforeDelivery: confirmFreeAnswer(usage),
+    bufferAnswer: usage.access.kind === "free" && !!usage.settle,
     provider,
     system,
     userMessages,
@@ -242,7 +245,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
             thoughtsTokens: completion?.thoughtsTokens,
             totalTokens: completion?.totalTokens,
           });
-          await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
+          const [, costStatus] = await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
             tier: tierForModel(model),
             inputTokens: completion?.promptTokens ?? budget.inputTokens,
             // Stream interruption may hide usageMetadata, including billable
@@ -255,6 +258,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
             label: "copilot",
             reservation,
           })]);
+          console.info("[copilot] cost", {
+            questionId: payload.question.id, model, status: costStatus,
+          });
         }
       : undefined,
   });

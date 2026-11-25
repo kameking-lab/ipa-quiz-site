@@ -38,6 +38,8 @@ for (const paper of [
 }
 
 test("worked guide contains its problem, comparison, and check and the old URL is a 301", async ({ page, request }, testInfo) => {
+  // Auto ads may inject their own slots on eligible pages; stub Google so only page-authored ad units are counted.
+  await page.route("https://pagead2.googlesyndication.com/**", route => route.fulfill({ contentType: "text/javascript", body: "" }));
   const redirect = await request.get("/blog/fe-jisseki-mondai-bunseki", { maxRedirects: 0 });
   expect(redirect.status()).toBe(301);
   expect(redirect.headers().location).toBe("/blog/fe-hinnshutsu-ronten-toppu10");
@@ -79,14 +81,17 @@ for (const source of [
   });
 }
 
-test("unapproved learning, navigation and error routes never initialize Google ads", async ({ page }) => {
+test("excluded learning, navigation and error routes never initialize Google ads for free users", async ({ page }) => {
   const adRequests: string[] = [];
+  await page.route("**/api/billing/status", route => route.fulfill({ json: { entitled: false } }));
+  await page.route("https://pagead2.googlesyndication.com/**", route => route.fulfill({ contentType: "text/javascript", body: "" }));
   page.on("request", request => {
     if (/googlesyndication\.com|doubleclick\.net|fundingchoicesmessages\.google\.com/.test(request.url())) adRequests.push(request.url());
   });
-  for (const path of ["/", "/fp3", "/q/fp3/2026-published/gakka/q11", "/blog/fe-hinnshutsu-ronten-toppu10", "/quiz?mode=random&exam=fp3&session=gakka", "/missing-qualification-quality-page"]) {
+  for (const path of ["/search", "/modes/topic?exam=fe", "/quiz?mode=random&exam=fp3&session=gakka", "/missing-qualification-quality-page"]) {
     const response = await page.goto(path);
     expect(response?.status()).toBe(path.startsWith("/missing-") ? 404 : 200);
+    await page.evaluate(() => new Promise<void>(resolve => requestIdleCallback(() => resolve())));
     await expect(page.locator("ins.adsbygoogle")).toHaveCount(0);
     await expect(page.locator('script[src*="googlesyndication"], script[src*="fundingchoices"]')).toHaveCount(0);
   }

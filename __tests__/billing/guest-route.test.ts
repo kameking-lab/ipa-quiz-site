@@ -8,12 +8,32 @@ vi.mock("@/lib/questions/filter", () => ({ isPracticeReadyQuestion: () => true, 
 vi.mock("@/lib/billing/config", () => ({ billingConfig: () => ({ mode: "mock", freeDaily: 10 }), gateReady: () => true }));
 vi.mock("@/lib/billing/subscription/config", () => ({ monthlySelected: () => false }));
 vi.mock("@/lib/billing/runtime", () => ({ optionalBillingIdentity: async () => { if (m.authFail) throw Error("auth"); return m.user; },
+  optionalBillingSession: async () => { if (m.authFail) throw Error("auth"); return m.user ? { user: { id: m.user } } : null; },
   billingRuntime: () => ({ service: { status: m.status, grant: m.grant } }), sameOrigin: () => {},
   json: (v: unknown, status = 200) => Response.json(v, { status, headers: { "Cache-Control": "private, no-store", Vary: "Cookie" } }) }));
 vi.mock("@/lib/billing/guest-practice", () => ({ readGuestCookie: () => { if (m.cookieFail) throw Error("secret unavailable"); return m.guest; }, guestCookie: () => "signed", cookieHeader: () => "practice_guest=signed; HttpOnly", guestRealm: () => "realm",
   guestGrant: m.guestGrant, guestClaim: m.claim, resetAt: () => "2026-10-30T15:00:00.000Z" }));
 import { POST } from "@/app/api/billing/question/route";
+import { permittedBatch } from "@/lib/billing/content-grant";
+import { nurseNumericQuestion } from "@/__tests__/fixtures/nurse-numeric-question";
 function request(id = "q1") { return new Request("https://example.test/api/billing/question", { method: "POST", headers: { origin: "https://example.test", "content-type": "application/json" }, body: JSON.stringify({ id }) }); }
+it("keeps the guest burst response and retry time when a later row is rate limited", async () => {
+  m.guest = "id";
+  m.guestGrant.mockResolvedValueOnce({ status: "ok", used: 1 }).mockResolvedValueOnce({ status: "rate", retry: 25 });
+  const batch = await permittedBatch(request(), [nurseNumericQuestion, { ...nurseNumericQuestion, id: "second-question" }]);
+  expect(batch.rows).toEqual([]);
+  expect(batch.response?.status).toBe(429);
+  expect(batch.response?.headers.get("Retry-After")).toBe("25");
+});
+it("rechecks only known guest IDs after a batch encounters the daily limit", async () => {
+  m.guest = "id";
+  m.guestGrant.mockResolvedValueOnce({ status: "limit", used: 10, ids: ["opened"] })
+    .mockResolvedValueOnce({ status: "ok", used: 10 });
+  const rows = ["unseen", "another", "opened"].map(id => ({ ...nurseNumericQuestion, id }));
+  const result = await permittedBatch(request(), rows);
+  expect(result.rows.map(q => q.id)).toEqual(["opened"]);
+  expect(m.guestGrant.mock.calls.map(call => call[2])).toEqual(["unseen", "opened"]);
+});
 beforeEach(() => { vi.clearAllMocks(); m.user = null; m.authFail = false; m.guest = null; m.cookieFail = false; m.status.mockResolvedValue({ entitled: false }); m.grant.mockResolvedValue({ kind: "trial", remaining: 9 }); m.claim.mockResolvedValue([]); });
 describe("guest route", () => {
   it("bootstraps without consuming, then reports 10/11 and retry-after", async () => {

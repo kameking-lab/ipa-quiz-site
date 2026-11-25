@@ -135,7 +135,7 @@ if redis.call('SISMEMBER', KEYS[2], id) == 1 then
   if device then seen = math.max(used, redis.call('SCARD', device)) end
   return cjson.encode({status='ok', used=seen})
 end
-if used >= limit then return cjson.encode({status='limit', used=used}) end
+if used >= limit then return cjson.encode({status='limit', used=used, ids=redis.call('SMEMBERS', KEYS[2])}) end
 -- The network+device bucket is shared by every guest cookie from the same line
 -- and device class. A question already seen from it is not counted again.
 local deviceUsed = 0
@@ -145,7 +145,7 @@ if device then
   if added == 1 then
     if deviceUsed > limit then
       redis.call('SREM', device, id)
-      return cjson.encode({status='limit', used=limit})
+      return cjson.encode({status='limit', used=limit, ids=redis.call('SUNION', KEYS[2], device)})
     end
     if deviceUsed == 1 then redis.call('EXPIRE', device, ttl) end
   end
@@ -179,7 +179,7 @@ async function run(realm: string, guest: string, day: string, action: "grant" | 
     };
     if (!allowed[action].includes(r.status)) throw new Error("KV action result");
     // Redis cjson represents an empty Lua table as an object on some versions.
-    if (action !== "grant" && r.status === "claimed") {
+    if ((action !== "grant" && r.status === "claimed") || (r.status === "limit" && r.ids !== undefined)) {
       const ids: unknown = r.ids;
       if (ids !== null && typeof ids === "object" && !Array.isArray(ids) && Object.keys(ids).length === 0) r.ids = [];
       if (!Array.isArray(r.ids) || !r.ids.every(x => typeof x === "string" && x.length > 0 && x.length <= 160)) throw new Error("KV snapshot");

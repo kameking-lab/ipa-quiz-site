@@ -49,8 +49,10 @@ export default defineConfig({
   webServer: process.env.E2E_BASE_URL
     ? undefined
     : {
-        command: "pnpm start -p 3000",
-        port: 3000,
+        // Leave idle sockets open across requests from Playwright's pooled
+        // HTTP client, and wait for Next to answer HTTP before starting workers.
+        command: "pnpm start --hostname 127.0.0.1 --port 3000 --keepAliveTimeout 60000",
+        url: new URL("/api/health", baseURL).href,
         timeout: 120_000,
         reuseExistingServer: !process.env.CI,
         env: {

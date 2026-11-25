@@ -1,4 +1,5 @@
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { requiresPracticeContentGrant } from "@/lib/billing/practice-access";
 import { contentGrant } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
@@ -9,17 +10,17 @@ import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkAiNormalUse, checkFreeAiServiceUse } from "@/lib/ai/normal-use-server";
 import { copilotRateLimitResponse } from "@/lib/copilot/rate-limit-response";
 import { findExamEntry } from "@/lib/exam-library-catalog";
-import { EXAM_ID_PATTERN, examSourcePdfUrl, isScorableQuestion, officialPdfPageUrl } from "@/lib/exam-library-model";
+import { examSourcePdfUrl, isScorableQuestion, officialPdfPageUrl } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { prepareAiUsage, consumeAiUsage, confirmFreeAnswer, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
+import { prepareAiUsage, consumeAiUsage, settleAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
 
 export const runtime = "nodejs";
 
 const BodySchema = z.object({
-  examId: z.string().regex(EXAM_ID_PATTERN),
+  examId: z.string().regex(/^[A-Za-z0-9][A-Za-z0-9-]{0,95}$/u),
   questionId: z.string().min(1).max(160),
   selectedChoice: z.number().int().min(1).max(9).nullable().optional(),
   messages: z.array(z.object({
@@ -45,13 +46,25 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     return NextResponse.json({ error: "unknown_question", message: "問題が見つかりません。ページを更新してください。" }, { status: 400 });
   }
 
-  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428}); const grant=await contentGrant(req,question.id,examId);if(!grant.ok)return grant;}
+  if (strictContentGateEnabled() && req.headers.get("X-Kakomon-AI-Consent") !== "20261103") {
+    return NextResponse.json({ error: "ai_consent_required" }, { status: 428 });
+  }
+  if (requestsNewQuestion(messages)) {
+    return NextResponse.json(
+      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
+      { status: 400, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+  if (requiresPracticeContentGrant(req, true)) {
+    const grant = await contentGrant(req, question.id, { paper: examId, app: true });
+    if (!grant.ok) return grant;
+  }
   const selectedChoice = parsed.data.selectedChoice !== null &&
     parsed.data.selectedChoice !== undefined &&
     parsed.data.selectedChoice <= question.choiceCount
     ? parsed.data.selectedChoice : null;
   const answerKnown = isScorableQuestion(question);
-  const sourceUrl = officialPdfPageUrl(examSourcePdfUrl(entry), question.sourcePages?.[0]);
+  const sourceUrl = officialPdfPageUrl(question.originalPdf ?? examSourcePdfUrl(entry), question.sourcePages?.[0]);
   // The source text usually includes every choice, but validated presentation
   // overlays can hold the exact choices displayed by the player separately.
   const displayedQuestion = question.presentation
@@ -81,13 +94,6 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     studyExplanation ? `サイトの学習用解説（非公式）:\n${studyExplanation.slice(0, 6000)}` : "",
     choiceReasons ? `サイトの選択肢別解説（非公式）:\n${choiceReasons.slice(0, 8000)}` : "",
   ].filter(Boolean).join("\n\n");
-
-  if (requestsNewQuestion(messages)) {
-    return NextResponse.json(
-      { error: "original_question_explanation_only", message: ORIGINAL_QUESTION_ONLY_MESSAGE },
-      { status: 400, headers: { "Cache-Control": "no-store" } },
-    );
-  }
 
   const usage = await prepareAiUsage(req, "exam-library");
   track(usage);
@@ -133,7 +139,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   usage.streaming = true;
   const stream = createCopilotResponseStream({
     requireCompleteAnswer: !usage.legacy,
-    confirmBeforeDelivery: confirmFreeAnswer(usage),
+    bufferAnswer: usage.access.kind === "free" && !!usage.settle,
     provider,
     system,
     userMessages: messages,
@@ -144,7 +150,15 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     hasGrounding: false,
     timeoutMs: 35_000,
     onComplete: provider.name === "mock" ? undefined : async (outputChars, completion, answered) => {
-      await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
+      console.info("[copilot/exam-library] completed", {
+        questionId, model: COPILOT_MODEL,
+        finishReason: completion?.finishReason,
+        promptTokens: completion?.promptTokens,
+        outputTokens: completion?.outputTokens,
+        thoughtsTokens: completion?.thoughtsTokens,
+        totalTokens: completion?.totalTokens,
+      });
+      const [, costStatus] = await Promise.all([settleAiUsage(usage, answered === true), recordAiCost({
         tier: tierForModel(COPILOT_MODEL),
         inputTokens: completion?.promptTokens ?? budget.inputTokens,
         outputTokens: completion?.totalTokens !== undefined && completion.promptTokens !== undefined
@@ -155,6 +169,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
         label: "copilot",
         reservation,
       })]);
+      console.info("[copilot/exam-library] cost", {
+        questionId, model: COPILOT_MODEL, status: costStatus,
+      });
     },
   });
 

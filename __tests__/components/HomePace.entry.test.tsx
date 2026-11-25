@@ -144,11 +144,11 @@ describe("home plan entry", () => {
     render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
     for (const name of ["合格", "不合格", "受けなかった"]) expect(screen.getByRole("button", { name })).toBeVisible();
     expect(screen.getByRole("searchbox")).toBeVisible();
-    expect(await screen.findByRole("img", { name: "正解済み 0 / 1問" })).toBeVisible();
+    expect(await screen.findByRole("button", { name: "チワワの進み具合" })).toBeVisible();
     fireEvent.click(screen.getByRole("button", { name: label }));
     expect(listPacePlans()[0].result).toBe(result);
     expect(screen.getByRole("searchbox")).toBeVisible();
-    expect(await screen.findByRole("img", { name: "正解済み 0 / 1問" })).toBeVisible();
+    expect(await screen.findByRole("button", { name: "チワワの進み具合" })).toBeVisible();
     if (result === "passed") {
       expect(screen.getByRole("link", { name: "過去問AIで解く" })).toHaveAttribute("href", "/fe");
     } else {

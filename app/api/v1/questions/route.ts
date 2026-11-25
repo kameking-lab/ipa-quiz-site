@@ -1,5 +1,4 @@
 import { permittedBatch } from "@/lib/billing/content-grant";
-import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -83,8 +82,11 @@ export async function GET(req: Request) {
   if (category) pool = pool.filter((q) => q.category === category);
 
   const total = pool.length;
-  const permitted = await permittedBatch(req,pool.slice(offset,offset+limit));
-  if(permitted.response)return permitted.response;
+  const permitted = await permittedBatch(req, pool.slice(offset, offset + limit));
+  if (permitted.response) {
+    for (const [name, value] of Object.entries(buildRateLimitHeaders(rl))) permitted.response.headers.set(name, value);
+    return permitted.response;
+  }
   const slice = permitted.rows.map(toPublic);
 
   return NextResponse.json(
@@ -92,7 +94,8 @@ export async function GET(req: Request) {
     {
       headers: {
         ...buildRateLimitHeaders(rl),
-        "Cache-Control": strictContentGateEnabled()?"private, no-store":"public, max-age=120, stale-while-revalidate=600",
+        "Cache-Control": "private, no-store",
+        Vary: "Cookie",
       },
     },
   );

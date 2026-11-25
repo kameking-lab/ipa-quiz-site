@@ -353,7 +353,7 @@ export default async function QuestionPage({
       </nav>
 
       {/* Header */}
-      <header className="p3-landscape p3-hero p3-question-hero mb-3">
+      <header className="p3-landscape p3-hero p3-question-hero mb-3" data-auto-ad-keep-clear="question-hero">
         <div className="min-w-0 self-center">
         <h1 className="font-semibold leading-tight text-foreground">
           <span className="block text-[13px] text-muted-foreground">{questionContext}</span>{" "}
@@ -393,6 +393,7 @@ export default async function QuestionPage({
       <QuestionPracticeGate id={q.id} enabled={gateEnabled}>
       <section
         aria-label="問題文"
+        data-auto-ad-keep-clear="question-body"
         className="p3-listed selectable-content px-3.5 py-3 text-base leading-[1.78] text-foreground"
       >
         {q.lawReferenceDate && (
@@ -413,7 +414,7 @@ export default async function QuestionPage({
           adds the grading interaction so a search visitor can answer right here
           instead of hopping to /quiz (致命傷⑤). */}
       {hasAnswerCard && (
-        <section aria-label={q.type === "native-b" ? "五つの空欄と解答" : q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4">
+        <section aria-label={q.type === "native-b" ? "五つの空欄と解答" : q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4" data-auto-ad-keep-clear="question-choices">
           <h2 className="mb-1.5 text-sm font-bold">{q.type === "native-b" ? "五つの空欄" : q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
           <QuestionAnswerCard
             key={q.id}

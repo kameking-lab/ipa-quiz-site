@@ -1,4 +1,16 @@
 export function buildOpenApiSpec(baseUrl: string) {
+  const practiceResponses = {
+    "401": { description: "演習にログインが必要です（sign_in_required）。" },
+    "403": { description: "リクエストの送信元を確認できません（invalid_origin）。" },
+    "428": {
+      description: "ゲストCookieを発行しました（guest_cookie_required）。受け取ったCookieを付けて同じリクエストを再送してください。",
+      headers: { "Set-Cookie": { schema: { type: "string" } } },
+    },
+    "429": {
+      description: "演習の無料枠（daily_limit）またはリクエストのレート制限に達しました。",
+      content: { "application/json": { schema: { $ref: "#/components/schemas/Error" } } },
+    },
+  };
   return {
     openapi: "3.1.0",
     info: {
@@ -30,7 +42,7 @@ export function buildOpenApiSpec(baseUrl: string) {
           scheme: "bearer",
           description:
             "API キーは `Authorization: Bearer <key>` で送信してください。" +
-            "キーが無くても動作しますが、認証なしの場合は IP ベースのレート制限のみ適用されます。",
+            "キー未指定時は IP ベースでリクエストを計数します。問題取得・採点の演習枠はセッションまたはゲストCookieで計数します。",
         },
       },
       schemas: {
@@ -169,6 +181,7 @@ export function buildOpenApiSpec(baseUrl: string) {
         get: {
           tags: ["questions"],
           summary: "問題データの取得",
+          description: "演習の無料枠と当日取得した問題IDを共有します。取得できる問題が limit 未満の場合、許可された先頭の問題までを返します。",
           parameters: [
             {
               name: "exam",
@@ -197,6 +210,7 @@ export function buildOpenApiSpec(baseUrl: string) {
             },
           ],
           responses: {
+            ...practiceResponses,
             "200": {
               description: "問題リスト",
               content: {
@@ -220,12 +234,6 @@ export function buildOpenApiSpec(baseUrl: string) {
                 "application/json": { schema: { $ref: "#/components/schemas/Error" } },
               },
             },
-            "429": {
-              description: "レート制限超過",
-              content: {
-                "application/json": { schema: { $ref: "#/components/schemas/Error" } },
-              },
-            },
           },
         },
       },
@@ -234,7 +242,7 @@ export function buildOpenApiSpec(baseUrl: string) {
           tags: ["grade"],
           summary: "解答の採点",
           description:
-            "多肢選択（multiple-choice）のみ採点対応。数値記入（numeric）・記述・論述問題は400と error: unsupported を返します。問題形式と対応形式を返し、numeric では整数・単位の形式情報を含みます。",
+            "演習の無料枠と当日取得した問題IDを共有します。多肢選択（multiple-choice）のみ採点対応。数値記入（numeric）・記述・論述問題は400と error: unsupported を返します。問題形式と対応形式を返し、numeric では整数・単位の形式情報を含みます。",
           requestBody: {
             required: true,
             content: {
@@ -244,6 +252,7 @@ export function buildOpenApiSpec(baseUrl: string) {
             },
           },
           responses: {
+            ...practiceResponses,
             "200": {
               description: "採点結果",
               content: {

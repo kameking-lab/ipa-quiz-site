@@ -6,6 +6,7 @@ for (const exam of ["ap", "sc", "fe"]) {
     await page.goto(`/${exam}`);
     const years = page.locator("#years");
     await expect(years).toBeVisible();
+    await expect(years).toHaveCount(1);
     await expect(years.getByRole("link").first()).toBeVisible();
     const text = await years.innerText();
 

@@ -15,7 +15,7 @@ const nativePurchase = vi.hoisted(() => ({
   preferences: new Map<string, string>(),
 }));
 
-vi.mock("@capacitor/core", () => ({ Capacitor: { isNativePlatform: () => true, getPlatform: () => "ios" } }));
+vi.mock("@capacitor/core", () => ({ Capacitor: { isNativePlatform: () => true, getPlatform: () => "ios", isPluginAvailable: () => false }, registerPlugin: () => ({}) }));
 vi.mock("@capacitor/app", () => ({ App: { addListener: () => Promise.resolve({ remove: () => Promise.resolve() }) } }));
 vi.mock("@capacitor/browser", () => ({ Browser: { open: vi.fn(() => Promise.resolve()) } }));
 vi.mock("@capacitor/share", () => ({ Share: { share: vi.fn(() => Promise.resolve()) } }));
@@ -103,6 +103,50 @@ it("keeps the selected exam for weekly review when a native buyer needs to sign 
   fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
   await waitFor(() => expect(signIn).toHaveBeenCalledWith(`${target}#app-settings`));
   expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "buy", returnTo: target });
+});
+
+it.each(["native-user", "different-user"])("binds a pending restore to the account when %s finishes app login", async renewedUser => {
+  let requiresAppLogin = true;
+  const signIn = vi.fn(async () => {});
+  const restore = vi.fn(async () => {});
+  const membership = { ...deviceMembership, restore } as unknown as typeof deviceMembership;
+  vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] })
+    : Response.json({ requiresAppLogin, configuration: { sdkKey: "configured" }, entitlement: { userId: requiresAppLogin ? "native-user" : renewedUser, entitled: false } })));
+  const first = render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
+  const button = await screen.findByRole("button", { name: "購入を復元" });
+  await waitFor(() => expect(button).toBeEnabled());
+  fireEvent.click(button);
+  await waitFor(() => expect(signIn).toHaveBeenCalledTimes(1));
+  expect(restore).not.toHaveBeenCalled();
+  expect(JSON.parse(nativePurchase.preferences.get("kakomon:purchase-intent:v1")!)).toMatchObject({ action: "restore", owner: "native-user" });
+
+  first.unmount();
+  requiresAppLogin = false;
+  render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
+  await waitFor(() => expect(nativePurchase.preferences.has("kakomon:purchase-intent:v1")).toBe(false));
+  if (renewedUser === "native-user") await waitFor(() => expect(restore).toHaveBeenCalledTimes(1));
+  else expect(restore).not.toHaveBeenCalled();
+  expect(signIn).toHaveBeenCalledTimes(1);
+  expect(nativePurchase.preferences.has("kakomon:purchase-intent:v1")).toBe(false);
+});
+
+it.each(["buy", "restore"])("rechecks the account immediately before resuming %s", async action => {
+  const key = "kakomon:purchase-intent:v1";
+  nativePurchase.preferences.set(key, JSON.stringify({ action, owner: "first-user", createdAt: Date.now() }));
+  const buy = vi.fn(), restore = vi.fn(), switched = vi.fn();
+  const membership = { ...deviceMembership, buy, restore } as unknown as typeof deviceMembership;
+  vi.stubGlobal("fetch", vi.fn(async input => {
+    if (String(input).includes("/api/mobile/catalog")) return Response.json({ exams: [] });
+    const userId = nativePurchase.preferences.has(key) ? "first-user" : "second-user";
+    if (userId === "second-user") switched();
+    return Response.json({ configuration: { sdkKey: "configured" }, entitlement: { userId, entitled: false } });
+  }));
+  render(<NativeTools membershipOnly membership={membership} />);
+  await waitFor(() => expect(switched).toHaveBeenCalled());
+  await waitFor(() => expect(screen.getByRole("button", { name: "購入を復元" })).toBeEnabled());
+  expect(buy).not.toHaveBeenCalled();
+  expect(restore).not.toHaveBeenCalled();
+  expect(nativePurchase.reserve).not.toHaveBeenCalled();
 });
 
 it("preserves the AI offer click handler while opening native checkout", async () => {

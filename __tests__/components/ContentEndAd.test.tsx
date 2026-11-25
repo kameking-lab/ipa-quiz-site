@@ -2,6 +2,7 @@ import { act, cleanup, fireEvent, render, waitFor } from "@testing-library/react
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { ContentEndAd } from "@/components/ads/ContentEndAd";
+import { WEB_ADSENSE_CLIENT } from "@/lib/ads/web-ads";
 const store = vi.hoisted(() => ({ state: { available: false, ready: false, client: "ca-pub-1234567890123456", slot: "1234567890" } }));
 vi.mock("@/lib/ads/native-consent", () => ({
   getNativeAdsState: () => store.state,
@@ -32,7 +33,8 @@ describe("ContentEndAd", () => {
   };
 
   beforeEach(() => {
-    store.state = { ...store.state, available: false, ready: false };
+    (window as unknown as { nativeTest?: boolean }).nativeTest = true;
+    store.state = { available: true, ready: true, client: "ca-pub-1234567890123456", slot: "1234567890" };
     window.adsbygoogle = [];
     idleCallbacks = new Map();
     let nextIdleId = 0;
@@ -71,12 +73,24 @@ describe("ContentEndAd", () => {
     vi.unstubAllGlobals();
   });
 
-  it("does not mount the script or request ads in the native WebView", () => {
-    (window as unknown as { nativeTest?: boolean }).nativeTest = true;
+  it("does not mount the script before native consent and registration", () => {
+    store.state = { ...store.state, available: false, ready: false };
     const { container, queryByTestId } = render(<ContentEndAd />);
     expect(container.querySelector("ins")).toBeNull();
     expect(queryByTestId("load-ad-script")).toBeNull();
     expect(window.adsbygoogle).toHaveLength(0);
+  });
+
+  it("leaves browser ads to WebAutoAds", () => {
+    (window as unknown as { nativeTest?: boolean }).nativeTest = false;
+    const { container } = render(<ContentEndAd />);
+    expect(container.querySelector("ins")).toBeNull();
+  });
+
+  it("keeps the Web Auto Ads publisher out of the WebView even after consent", () => {
+    store.state = { ...store.state, client: WEB_ADSENSE_CLIENT };
+    const { container } = render(<ContentEndAd />);
+    expect(container.querySelector("ins")).toBeNull();
   });
 
   it("uses build-provided ad IDs only after native consent and registration are ready", () => {
@@ -102,8 +116,8 @@ describe("ContentEndAd", () => {
   it("requests the configured content-end unit once after the lazy script is ready", () => {
     const { container, getByTestId } = render(<ContentEndAd />);
     const ad = container.querySelector("ins.adsbygoogle");
-    expect(ad).toHaveAttribute("data-ad-client", "ca-pub-8751260838396451");
-    expect(ad).toHaveAttribute("data-ad-slot", "3773902048");
+    expect(ad).toHaveAttribute("data-ad-client", "ca-pub-1234567890123456");
+    expect(ad).toHaveAttribute("data-ad-slot", "1234567890");
     expect(ad).toHaveAttribute("data-ad-format", "auto");
     expect(ad).toHaveAttribute("data-full-width-responsive", "true");
 

@@ -14,23 +14,50 @@ const BM25_B = 0.75;
  *   term id t のポスティングは postingDocs/postingTfs の [offsets[t], offsets[t+1]) 区間。
  *   区間内の docIdx は昇順（= 旧実装の挿入順と同じ）で、スコアの加算順も変わらない。
  */
-interface InvertedIndex {
+export interface SearchIndex {
   /** term -> term id（初出順） */
   termIds: Map<string, number>;
   /** term id -> ポスティング区間の開始位置。長さは term 数 + 1。 */
   offsets: Uint32Array;
-  /** ポスティングの doc index（docs の添字）。 */
-  postingDocs: Uint32Array;
-  /** ポスティングの term frequency。 */
-  postingTfs: Uint32Array;
   /** doc index -> doc length (token count) */
+  docLen: Uint32Array;
+  avgDocLen: number;
+  getDoc(docIdx: number): CorpusDoc;
+  glossaryDocIndices: readonly number[];
+  getPostings(termId: number): { docs: Uint32Array; tfs: Uint32Array };
+}
+
+interface IndexArrays {
+  termIds: Map<string, number>;
+  offsets: Uint32Array;
+  postingDocs: Uint32Array;
+  postingTfs: Uint32Array;
   docLen: Uint32Array;
   avgDocLen: number;
   docs: CorpusDoc[];
 }
 
+export type InvertedIndex = IndexArrays & SearchIndex;
+
+export function indexFromArrays(arrays: IndexArrays): InvertedIndex {
+  const { docs, offsets, postingDocs, postingTfs } = arrays;
+  const glossaryDocIndices: number[] = [];
+  for (let i = 0; i < docs.length; i++) {
+    if (docs[i].kind === "glossary") glossaryDocIndices.push(i);
+  }
+  return {
+    ...arrays,
+    glossaryDocIndices,
+    getDoc: (i) => docs[i],
+    getPostings: (termId) => ({
+      docs: postingDocs.subarray(offsets[termId], offsets[termId + 1]),
+      tfs: postingTfs.subarray(offsets[termId], offsets[termId + 1]),
+    }),
+  };
+}
+
 /** その語を含む文書数（BM25 の n）。未知語は 0。 */
-export function documentFrequency(index: InvertedIndex, term: string): number {
+export function documentFrequency(index: SearchIndex, term: string): number {
   const id = index.termIds.get(term);
   return id === undefined ? 0 : index.offsets[id + 1] - index.offsets[id];
 }
@@ -95,7 +122,7 @@ export function buildIndex(docs: CorpusDoc[]): InvertedIndex {
     postingTfs[p] = tripleTf[k];
   }
 
-  return {
+  return indexFromArrays({
     termIds,
     offsets,
     postingDocs,
@@ -103,7 +130,7 @@ export function buildIndex(docs: CorpusDoc[]): InvertedIndex {
     docLen,
     avgDocLen: docs.length === 0 ? 0 : totalLen / docs.length,
     docs,
-  };
+  });
 }
 
 function growUint32(arr: Uint32Array, capacity: number): Uint32Array {
@@ -117,11 +144,11 @@ function growUint32(arr: Uint32Array, capacity: number): Uint32Array {
  * IDF は ln(1 + (N - n + 0.5) / (n + 0.5))（Robertson のスムージング版）。
  */
 export function scoreBM25(
-  index: InvertedIndex,
+  index: SearchIndex,
   queryTokens: string[],
 ): Map<number, number> {
   const scores = new Map<number, number>();
-  const N = index.docs.length;
+  const N = index.docLen.length;
   if (N === 0) return scores;
 
   for (const qt of queryTokens) {
@@ -132,9 +159,10 @@ export function scoreBM25(
     const n = end - start;
     const idf = Math.log(1 + (N - n + 0.5) / (n + 0.5));
     if (idf <= 0) continue;
-    for (let p = start; p < end; p++) {
-      const docIdx = index.postingDocs[p];
-      const tf = index.postingTfs[p];
+    const postings = index.getPostings(id);
+    for (let p = 0; p < n; p++) {
+      const docIdx = postings.docs[p];
+      const tf = postings.tfs[p];
       const dl = index.docLen[docIdx];
       const denom =
         tf + BM25_K1 * (1 - BM25_B + (BM25_B * dl) / (index.avgDocLen || 1));
@@ -148,28 +176,27 @@ export function scoreBM25(
 
 /** 上位 k 件を返す。 */
 export function retrieve(
-  index: InvertedIndex,
+  index: SearchIndex,
   query: string,
   k: number,
 ): RetrievalCandidate[] {
   const qTokens = uniqueTokens(query);
   if (qTokens.length === 0) return [];
   const scores = scoreBM25(index, qTokens);
-  const arr: RetrievalCandidate[] = [];
+  const arr: { docIdx: number; score: number }[] = [];
   for (const [docIdx, score] of scores) {
-    arr.push({ doc: index.docs[docIdx], score });
+    arr.push({ docIdx, score });
   }
   arr.sort((a, b) => b.score - a.score);
-  const top = arr.slice(0, k);
+  const top = arr.slice(0, k).map(({ docIdx, score }) => ({ doc: index.getDoc(docIdx), score }));
 
   // 用語集タイトル一致のドキュメントは BM25 top-k から漏れがちなので、
   // クエリトークンが title (用語名) と一致するものを「保険」として候補に足す。
   // 重複は排除する。
   const qSet = new Set(qTokens);
   const presentIds = new Set(top.map((c) => c.doc.id));
-  for (let i = 0; i < index.docs.length; i++) {
-    const doc = index.docs[i];
-    if (doc.kind !== "glossary") continue;
+  for (const i of index.glossaryDocIndices) {
+    const doc = index.getDoc(i);
     if (presentIds.has(doc.id)) continue;
     const titleNorm = doc.title
       .replace(/^用語集:\s*/, "")
@@ -198,9 +225,8 @@ export function retrieve(
   if (aliasedTerms.size > 0) {
     const titleToTerm = new Map<string, string>();
     for (const term of aliasedTerms) titleToTerm.set(term, term);
-    for (let i = 0; i < index.docs.length; i++) {
-      const doc = index.docs[i];
-      if (doc.kind !== "glossary") continue;
+    for (const i of index.glossaryDocIndices) {
+      const doc = index.getDoc(i);
       if (presentIds.has(doc.id)) continue;
       const titleNorm = doc.title
         .replace(/^用語集:\s*/, "")
@@ -225,10 +251,10 @@ export function retrieve(
  * 雑談クエリ（"勉強のやる気が出ません" など）は CJK 高頻出バイグラムだけになりがちで、
  * max IDF が低くなる。これでチットチャットを切り分ける。
  */
-export function maxQueryIdf(index: InvertedIndex, query: string): number {
+export function maxQueryIdf(index: SearchIndex, query: string): number {
   const qTokens = uniqueTokens(query);
-  if (qTokens.length === 0 || index.docs.length === 0) return 0;
-  const N = index.docs.length;
+  const N = index.docLen.length;
+  if (qTokens.length === 0 || N === 0) return 0;
   let maxIdf = 0;
   for (const t of qTokens) {
     const n = documentFrequency(index, t);
@@ -268,5 +294,3 @@ export function getCachedIndex(
 export function resetIndexCache(): void {
   CACHED_INDEX = null;
 }
-
-export type { InvertedIndex };

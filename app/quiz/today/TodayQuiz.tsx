@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { QuizClient } from "../QuizClient";
-import { listPacePlans } from "@/lib/study-plan/pace-storage";
-import { clearBatchQuestion, loadPlanCatalog, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
+import { listPacePlans, retainConfirmedExamDays } from "@/lib/study-plan/pace-storage";
+import { clearBatchQuestion, loadPlanCatalog, loadPlanSchedule, paceAttempts, type CatalogQuestion } from "@/lib/study-plan/client";
+import { followsExamSchedule } from "@/lib/study-plan/countdown";
+import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { calculatePace, weakQuestions } from "@/lib/study-plan/pace";
 import { createHistoryStore } from "@/lib/storage/history";
 import { japanDate } from "@/lib/home/featured-exams";
@@ -30,13 +32,19 @@ export function TodayQuiz({ planId, weakExam, billingGateEnabled }: { planId: st
     setFinished(null);
     setStudyScope(null);
     void (async () => {
-      const plan = weakExam ? undefined : listPacePlans().find(p => p.id === planId);
-      const exam = weakExam ?? plan?.exam;
+      const savedPlan = weakExam ? undefined : listPacePlans().find(p => p.id === planId);
+      const exam = weakExam ?? savedPlan?.exam;
       if (!exam) throw new Error("学習計画が見つかりませんでした。");
-      const catalog = await loadPlanCatalog(exam, controller.signal);
+      const [catalog, schedule] = await Promise.all([
+        loadPlanCatalog(exam, controller.signal),
+        followsExamSchedule(savedPlan) && qualificationIdsForExam(exam).length
+          ? loadPlanSchedule(exam, controller.signal) : null,
+      ]);
       if (controller.signal.aborted) return;
       const now = new Date();
       const today = japanDate(now);
+      const plan = savedPlan && retainConfirmedExamDays([savedPlan], schedule, today).find(p => p.id === savedPlan.id);
+      if (!weakExam && (!plan || plan.exam !== exam)) throw new Error("学習計画が見つかりませんでした。");
       const attempts = paceAttempts();
       const pace = plan ? calculatePace(plan, catalog, attempts, today, now.getTime()) : null;
       let ids = plan

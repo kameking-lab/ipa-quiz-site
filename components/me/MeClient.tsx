@@ -165,7 +165,6 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
       </details>}
     </section>
     <nav aria-label="わたしのメニュー" className="p3-listed divide-y divide-hairline px-3">
-      <Link href="/study-room" className={menuLink}>自習室</Link>
       <Link href={PRICE_PAGE_LINK.href} className={`${menuLink} justify-between gap-2 font-semibold text-primary`}>{PRICE_PAGE_LINK.label}<ChevronRight aria-hidden="true" className="size-4 shrink-0" /></Link>
       <AccountNavigationLink className={menuLink} />
       <details>

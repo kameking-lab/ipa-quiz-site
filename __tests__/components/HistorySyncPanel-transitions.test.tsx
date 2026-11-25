@@ -65,7 +65,7 @@ describe("history sync account transitions with local network fixtures", () => {
     fireEvent.click(syncButton());
     await screen.findByRole("status");
     expect(posts).toBe(2);
-    expect(bodies).toEqual(Array(2).fill({ entries: history.entries, expectedUserId: "B" }));
+    expect(bodies).toEqual(Array(2).fill({ historyPage: {}, entries: [{ id: "local-question", at: 1, correct: true }], expectedUserId: "B" }));
     expect(JSON.parse(localStorage.getItem(LS_KEYS.history)!)).toEqual(history);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.syncLocalOwner)!).userId).toBe("B");
   });

@@ -1,11 +1,36 @@
-import { dayNumber, type AnswerAttempt, type PacePlan } from "./pace";
+import { dateCountdown, planCountdownDates, registrationTiming } from "./countdown";
+import { dayNumber, type AnswerAttempt, type ExamDateSource, type PacePlan } from "./pace";
+import type { ExamScheduleSession } from "./schedule";
 
-export function deadlineWarning(plan: PacePlan, today: string) {
-  const deadline = plan.registration?.deadline;
-  if (plan.registered || !deadline) return null;
-  const remaining = dayNumber(deadline)! - dayNumber(today)!;
-  return remaining >= 0 && remaining <= 14 ? { remaining, urgency: remaining <= 1 ? "urgent" : remaining <= 7 ? "soon" : "notice" } : null;
+type CalendarDate = { date: string; basisYear?: number };
+type ExamCountdown = CalendarDate & { kind: "exam"; days: number; examDateSource?: ExamDateSource };
+
+export type HomeCalendar = {
+  primary: ExamCountdown | (CalendarDate & { kind: "start" | "deadline"; days: number });
+  secondary: ExamCountdown | (CalendarDate & { kind: "deadline" }) | { kind: "registered" } | null;
+};
+
+export function homeCalendar(plan: PacePlan, today: string, sessions: readonly ExamScheduleSession[] = []): HomeCalendar | null {
+  if (plan.result || (plan.examDate && plan.examDate < today)) return null;
+  const session = sessions.find(item => item.id === plan.sessionId);
+  const { examDate, examBasisYear, examDateSource,
+    applicationStart: start, applicationDeadline: deadline, applicationBasisYear: basisYear } = planCountdownDates(plan, session, sessions);
+  if (examDate && dayNumber(examDate) !== null && examDate < today) return null;
+  const exam = dateCountdown(examDate, today, examBasisYear);
+  const examTarget = exam && { ...exam, kind: "exam" as const, examDateSource };
+
+  const closing = dateCountdown(deadline, today, basisYear);
+  const deadlineDate = closing && { kind: "deadline" as const, date: closing.date, basisYear };
+  const registration = !plan.registered
+    ? registrationTiming(start, deadline, today, basisYear).countdown
+    : null;
+
+  if (examTarget?.days === 0 || !registration) {
+    return examTarget ? { primary: examTarget, secondary: plan.registered ? { kind: "registered" } : deadlineDate } : null;
+  }
+  return { primary: registration, secondary: examTarget ?? (registration.kind === "start" ? deadlineDate : null) };
 }
+
 /** Counts answers, not passive page time. Mirrored legacy/action attempts count once. */
 export function answersToday(attempts: readonly AnswerAttempt[], today: string, ids?: ReadonlySet<string>) {
   const start = Date.parse(`${today}T00:00:00+09:00`);

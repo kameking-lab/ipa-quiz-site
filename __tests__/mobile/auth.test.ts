@@ -50,7 +50,7 @@ it.each(["valid", "rotated", "expired", "disabled", "removed", "recreated", "ree
   expect(response.status).toBe(change==="valid"?200:401);
   if(change==="valid"){
     const jwt=response.headers.get("set-cookie")!.split(";")[0].split("=")[1];
-    expect(await decode({token:jwt,salt:"__Secure-authjs.session-token",secret:process.env.AUTH_SECRET!})).toMatchObject({reviewVersion:version});
+    expect(await decode({token:jwt,salt:"__Secure-authjs.session-token",secret:process.env.AUTH_SECRET!})).toMatchObject({reviewVersion:version,mobileSession:true});
   }else expect(response.headers.has("set-cookie")).toBe(false);
   expect(m.rows.size).toBe(0);
 });

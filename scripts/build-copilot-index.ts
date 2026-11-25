@@ -14,7 +14,7 @@ import { rmSync } from "node:fs";
 import { join } from "node:path";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getCorpus, resetCorpusCache } from "@/lib/copilot/corpus";
-import { buildIndex } from "@/lib/copilot/retriever";
+import { buildIndex, type SearchIndex } from "@/lib/copilot/retriever";
 import { corpusFingerprint } from "@/lib/copilot/index-artifact";
 import {
   COPILOT_PREBUILT_DIR,
@@ -73,7 +73,7 @@ async function main(): Promise<void> {
     if (!sameIndex(index, restored)) throw new Error("index mismatch");
     for (let i = 0; i < docs.length; i++) {
       const a = docs[i];
-      const b = restored.docs[i];
+      const b = restored.getDoc(i);
       if (a.id !== b.id || a.kind !== b.kind || a.title !== b.title || a.url !== b.url ||
         JSON.stringify(a.meta) !== JSON.stringify(b.meta) || a.text !== b.text || b.textLength !== a.text.length) {
         throw new Error(`doc mismatch at ${i} (${a.id})`);
@@ -93,12 +93,18 @@ async function main(): Promise<void> {
   console.log(`  wrote             : ${COPILOT_PREBUILT_DIR}/ (${(bytes / 1024 / 1024).toFixed(1)} MB)`);
 }
 
-function sameIndex(a: ReturnType<typeof buildIndex>, b: ReturnType<typeof buildIndex>): boolean {
+function sameIndex(a: ReturnType<typeof buildIndex>, b: SearchIndex): boolean {
   if (a.termIds.size !== b.termIds.size || a.avgDocLen !== b.avgDocLen) return false;
-  for (const [term, id] of a.termIds) if (b.termIds.get(term) !== id) return false;
   const eq = (x: Uint32Array, y: Uint32Array) => x.length === y.length && x.every((v, i) => v === y[i]);
-  return eq(a.offsets, b.offsets) && eq(a.postingDocs, b.postingDocs) &&
-    eq(a.postingTfs, b.postingTfs) && eq(a.docLen, b.docLen);
+  if (!eq(a.offsets, b.offsets) || !eq(a.docLen, b.docLen) ||
+      a.glossaryDocIndices.join(",") !== b.glossaryDocIndices.join(",")) return false;
+  for (const [term, id] of a.termIds) {
+    if (b.termIds.get(term) !== id) return false;
+    const expected = a.getPostings(id);
+    const restored = b.getPostings(id);
+    if (!eq(expected.docs, restored.docs) || !eq(expected.tfs, restored.tfs)) return false;
+  }
+  return true;
 }
 
 void main().catch((error: unknown) => {

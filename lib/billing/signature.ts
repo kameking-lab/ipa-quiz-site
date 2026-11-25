@@ -15,4 +15,22 @@ export function verifyStripeEvent(raw: Uint8Array, header: string | null, secret
   if (!matched) throw new BillingError("invalid_signature", 400);
   try { return JSON.parse(Buffer.from(raw).toString("utf8")); } catch { throw new BillingError("invalid_event", 400); }
 }
-export function eventDigest(raw: Uint8Array) { return createHash("sha256").update(raw).digest("hex"); }
+/** Fields Stripe changes between deliveries of the same event (retries, redelivery). */
+const DELIVERY_FIELDS = ["pending_webhooks"] as const;
+/**
+ * Digest of a verified event's content. Stripe resends the same event with a
+ * different `pending_webhooks` count, so hashing the raw body would turn every
+ * retry into a false conflict. Versioned so stored raw digests stay comparable.
+ */
+export function eventDigest(raw: Uint8Array) {
+  try {
+    const parsed: unknown = JSON.parse(Buffer.from(raw).toString("utf8"));
+    if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      const event = { ...(parsed as Record<string, unknown>) };
+      for (const field of DELIVERY_FIELDS) delete event[field];
+      return `v2:${createHash("sha256").update(JSON.stringify(event)).digest("hex")}`;
+    }
+  } catch { /* Not JSON: fall back to the raw body. */ }
+  return createHash("sha256").update(raw).digest("hex");
+}
+export { sameEventDigest } from "./event-identity";

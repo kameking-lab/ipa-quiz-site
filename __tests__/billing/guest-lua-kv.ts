@@ -76,6 +76,14 @@ export class LuaKv {
       case "SCARD": { const s = this.data.get(key); return s instanceof Set ? s.size : 0; }
       case "SISMEMBER": { const s = this.data.get(key); return s instanceof Set && s.has(args[0]) ? 1 : 0; }
       case "SMEMBERS": { const s = this.data.get(key); return s instanceof Set ? [...s] : []; }
+      case "SUNION": {
+        const union = new Set<string>();
+        for (const name of [key, ...args]) {
+          const members = this.data.get(name);
+          if (members instanceof Set) for (const member of members) union.add(member);
+        }
+        return [...union];
+      }
       case "SADD": { const s = this.set(key); if (s.has(args[0])) return 0; s.add(args[0]); return 1; }
       case "SREM": { const s = this.data.get(key); if (!(s instanceof Set) || !s.delete(args[0])) return 0; if (!s.size) this.data.delete(key); return 1; }
       default: throw new Error(`unsupported ${command}`);

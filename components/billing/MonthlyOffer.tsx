@@ -36,8 +36,8 @@ export function MonthlyConditions({ showTrial = true, keepPracticeOpen = false, 
     <p id="monthly-terms">
       {signup?.date && <span className="block">{examDateLabel(signup.date)}まで利用可（{examDateLabel(nextJstDate(signup.date))} 0時に自動終了・日本時間）。</span>}
       {signup ? signup.trialDays > 0 ? <>
-        初回{signup.trialDays}日間無料（アカウント・カード各1回）。{signup.endsDuringTrial || signup.automatic && !signup.date ? "無料期間内に終了する場合は請求なし。" : "無料期間の終了日に初回請求。"}
-      </> : "初回は決済時に請求。" : showTrial && PLAN_OFFER.trialDays > 0 && <span className="block [.native-app_&]:hidden">初回{PLAN_OFFER.trialDays}日間無料（アカウント・カード各1回）。<span className="inline-block">無料期間中の解約は請求なし。</span></span>}
+        初回{signup.trialDays}日間は無料（アカウント・カード各1回）で、広告も出なくなります。{signup.endsDuringTrial || signup.automatic && !signup.date ? "無料期間内に終了する場合は請求なし。" : "無料期間の終了日に初回請求。"}
+      </> : "初回は決済時に請求され、広告も出なくなります。" : showTrial && PLAN_OFFER.trialDays > 0 && <span className="block [.native-app_&]:hidden">初回{PLAN_OFFER.trialDays}日間無料（アカウント・カード各1回）。<span className="inline-block">無料期間中の解約は請求なし。</span></span>}
       {!signup?.date && !signup?.automatic && !contract && <>毎月自動更新。<span className="[.native-app_&]:hidden">解約は契約管理から。</span>
         <span className="hidden [.native-app_&]:inline">解約はApp Storeのサブスクリプションから。</span></>}
     </p>

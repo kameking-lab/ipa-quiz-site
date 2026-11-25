@@ -88,16 +88,48 @@ async function performRequest(id: string, shuffle: boolean, signal?: AbortSignal
  * Locks the queue still works within this tab; simultaneous first visits in
  * different tabs cannot be guaranteed to establish a single anonymous ID.
  */
-export function fetchPracticeQuestion(id: string, shuffle: boolean, signal?: AbortSignal, paper?: string) {
+function withPracticeCookieLock<T>(task: () => Promise<T>, signal?: AbortSignal) {
   if (signal?.aborted) return Promise.reject(aborted());
+  const run = () => {
+    if (signal?.aborted) throw aborted();
+    return task();
+  };
   const pending = requestQueue.then(async () => {
     if (signal?.aborted) throw aborted();
     if (typeof navigator !== "undefined" && navigator.locks?.request) {
-      return navigator.locks.request(LOCK_NAME, { mode: "exclusive" }, () => performRequest(id, shuffle, signal, paper));
+      return navigator.locks.request(LOCK_NAME, { mode: "exclusive" }, run);
     }
-    return performRequest(id, shuffle, signal, paper);
+    return run();
   });
   requestQueue = pending.then(() => undefined, () => undefined);
+  return pending;
+}
+
+/** Retry legacy batch requests after the same HttpOnly guest cookie handshake. */
+export function fetchPracticeBatch(url: string, init?: RequestInit) {
+  const headers = new Headers(init?.headers);
+  if (nativeClient()) headers.set(NATIVE_HEADER, "ios");
+  return withPracticeCookieLock(async () => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    const options = { ...init, headers, signal: controller.signal, cache: "no-store" as const };
+    try {
+      const response = await fetch(url, options);
+      if (init?.signal?.aborted) throw aborted();
+      if (response.status === 428 && (await response.clone().json().catch(() => null))?.error === "guest_cookie_required") {
+        if (init?.signal?.aborted) throw aborted();
+        return await fetch(url, options);
+      }
+      return response;
+    } finally {
+      clearTimeout(timeout);
+    }
+  }, init?.signal ?? undefined);
+}
+
+export function fetchPracticeQuestion(id: string, shuffle: boolean, signal?: AbortSignal, paper?: string) {
+  if (signal?.aborted) return Promise.reject(aborted());
+  const pending = withPracticeCookieLock(() => performRequest(id, shuffle, signal, paper), signal);
   if (!signal) return pending;
 
   // Detach an unmounted consumer promptly, but drain in-flight HTTP before

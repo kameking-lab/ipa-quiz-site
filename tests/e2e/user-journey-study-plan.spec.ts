@@ -23,8 +23,8 @@ test("a stored pace plan remains visible when the creation sheet closes", async 
   await page.addInitScript(({ key, plan }) => localStorage.setItem(key, JSON.stringify([plan])), { key: LS_KEYS.pacePlans, plan });
   await page.goto("/study-plan");
   await page.goto("/");
-  await expect(page.getByRole("link", { name: /計画の問題を解く/ })).toBeVisible();
-  await page.getByRole("button", { name: /^学習計画の詳細/ }).click();
+  await expect(page.getByRole("link", { name: /^問題を解く$/ })).toBeVisible();
+  await page.getByRole("button", { name: "計画の確認" }).click();
   await page.locator("summary").filter({ hasText: "申し込み・計画の変更" }).click();
   await expect(page.getByRole("button", { name: "計画を削除" })).toBeVisible();
 });

@@ -20,6 +20,8 @@ import { HOME_EVENT_LAYOUT_BOOTSTRAP_SCRIPT } from "@/lib/home/home-event-layout
 import { HOME_STUDY_LAYOUT_BOOTSTRAP_SCRIPT } from "@/lib/home/home-study-layout";
 import { NATIVE_APP_BOOTSTRAP_SCRIPT } from "@/lib/native-app-bootstrap";
 import { NativeAdPrivacy } from "@/components/ads/NativeAdPrivacy";
+import { WebAutoAds } from "@/components/ads/WebAutoAds";
+import { WEB_ADSENSE_CLIENT } from "@/lib/ads/web-ads";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
@@ -108,7 +110,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "google-adsense-account": "ca-pub-8751260838396451",
+    "google-adsense-account": WEB_ADSENSE_CLIENT,
   },
   // Safari の Smart App Banner（WKWebView 内では表示されない）。
   itunes: appStoreItunesMetadata(),
@@ -149,6 +151,7 @@ export default function RootLayout({
         <ThemeProvider>
           <MobileInstallProvider>
           <SyncSessionObservationProvider>
+          <WebAutoAds />
           <StudyPresence />
           <PurchaseJourney />
           <ActivityTracker />

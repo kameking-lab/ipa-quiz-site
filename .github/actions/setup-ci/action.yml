@@ -1,0 +1,45 @@
+name: Setup CI dependencies
+description: Install the root pnpm dependencies with a runtime-specific store cache.
+inputs:
+  node-version:
+    description: Node version to install.
+    default: '22'
+outputs:
+  node-version:
+    description: Exact Node version installed.
+    value: ${{ steps.runtime.outputs.node }}
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Identify the pnpm store and runtime
+      id: runtime
+      shell: bash
+      run: |
+        echo "store=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+        echo "node=$(node --version)" >> "$GITHUB_OUTPUT"
+        echo "pnpm=$(pnpm --version)" >> "$GITHUB_OUTPUT"
+        . /etc/os-release
+        echo "distribution=$ID-$VERSION_ID" >> "$GITHUB_OUTPUT"
+
+    - uses: actions/cache/restore@v4
+      id: pnpm-cache
+      with:
+        path: ${{ steps.runtime.outputs.store }}
+        key: pnpm-store-${{ runner.os }}-${{ runner.arch }}-${{ steps.runtime.outputs.distribution }}-${{ steps.runtime.outputs.node }}-${{ steps.runtime.outputs.pnpm }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile --prefer-offline
+
+    - name: Save the dependency store before build and test steps
+      if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ steps.runtime.outputs.store }}
+        key: ${{ steps.pnpm-cache.outputs.cache-primary-key }}

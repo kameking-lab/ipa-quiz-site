@@ -4,6 +4,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/re
 import type { BillingService } from "@/lib/billing/service";
 const wiring = vi.hoisted(() => ({ service: null as BillingService | null }));
 vi.mock("@/lib/billing/runtime", () => ({
+  optionalBillingSession: async () => ({ user: { id: "alice" } }),
   billingIdentity: async () => "alice", // Test-only identity double; no real session or auth claim.
   billingRuntime: () => ({ service: wiring.service! }),
   json: (value: unknown) => Response.json(value),

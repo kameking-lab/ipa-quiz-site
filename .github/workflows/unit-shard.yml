@@ -1,0 +1,33 @@
+name: Unit shard
+
+on:
+  workflow_call:
+    inputs:
+      shard:
+        required: true
+        type: string
+    secrets:
+      ADMIN_BASIC_USER:
+        required: false
+      ADMIN_BASIC_PASS:
+        required: false
+
+jobs:
+  vitest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      NODE_OPTIONS: --max-old-space-size=8192
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: ./.github/actions/setup-ci
+
+      - name: Unit tests
+        env:
+          ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
+          ADMIN_BASIC_PASS: ${{ secrets.ADMIN_BASIC_PASS }}
+          SHARD: ${{ inputs.shard }}
+        run: pnpm test --config .github/scripts/vitest-ci.config.mjs --shard="$SHARD"

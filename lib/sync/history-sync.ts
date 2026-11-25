@@ -2,6 +2,7 @@
 
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { HistoryEntry } from "@/lib/storage/history";
+import { HISTORY_BATCH, type HistoryAnswer, type HistoryWindow } from "./history-protocol";
 import { postSync, type SyncStatus } from "./client";
 import { beginSync, ownsSyncContext, type SyncContext, type SyncOptions } from "./ownership";
 
@@ -57,18 +58,73 @@ function mergeHistory(snapshot: HistorySnapshot, latest: HistorySnapshot, server
   };
 }
 
+function* uploadBatches(snapshot: SyncEntry[]): Generator<HistoryAnswer[]> {
+  const encoder = new TextEncoder();
+  let batch: HistoryAnswer[] = [];
+  let bytes = 0;
+  for (const { id, at, correct } of [...snapshot].sort((a, b) => a.at - b.at)) {
+    const entry = { id, at, correct };
+    const size = encoder.encode(JSON.stringify(entry)).byteLength + 1;
+    if (batch.length && (batch.length === HISTORY_BATCH || bytes + size > 512 * 1024)) {
+      yield batch;
+      batch = [];
+      bytes = 0;
+    }
+    batch.push(entry);
+    bytes += size;
+  }
+  yield batch;
+}
+
 export async function syncHistoryWithContext(context: SyncContext): Promise<SyncStatus> {
   try {
     const snapshot = readHistory();
-    const { status, entries } = await postSync<SyncEntry>("/api/account/history-sync", snapshot.entries, context);
-    if (status.state !== "ok") return status;
-    if (!entries.every(isEntry)) return { state: "error", message: "invalid_history_response" };
+    const entries: SyncEntry[] = [];
+    const batches = uploadBatches(snapshot.entries);
+    let current = batches.next();
+    let after: number | undefined;
+    let mergedCount = 0;
+    let total = 0;
+    let limitReached = false;
+    while (!current.done) {
+      const batch = current.value;
+      const next = batches.next();
+      const last = batch.at(-1);
+      // When a timestamp straddles batches, read that timestamp only after
+      // all its uploads have committed. Every saved row is counted once.
+      let through: number | undefined;
+      if (last && !next.done) {
+        through = next.value[0].at === last.at ? last.at - 1 : last.at;
+      }
+      const historyPage: HistoryWindow = { after, through };
+      do {
+        const reply = await postSync<SyncEntry>("/api/account/history-sync", batch, context, { historyPage });
+        if (reply.status.state !== "ok") return reply.status;
+        if (!reply.entries.every(isEntry)) return { state: "error", message: "invalid_history_response" };
+        const previous = historyPage.cursor;
+        const cursor = reply.nextCursor;
+        if (previous && cursor && (cursor.at < previous.at || (cursor.at === previous.at && cursor.rowId <= previous.rowId))) {
+          return { state: "error", message: "invalid_history_cursor" };
+        }
+        if (reply.fullHistory) {
+          entries.length = 0;
+          total = 0;
+        }
+        for (const entry of reply.entries) entries.push(entry);
+        mergedCount += reply.status.merged;
+        total += reply.status.total;
+        limitReached ||= !!reply.status.limitReached;
+        historyPage.cursor = cursor;
+      } while (historyPage.cursor);
+      after = through;
+      current = next;
+    }
     if (!ownsSyncContext(context)) return { state: "deferred", reason: "account_changed" };
     const latest = readHistory();
     const merged = mergeHistory(snapshot, latest, entries);
     window.localStorage.setItem(LS_KEYS.history, JSON.stringify(merged));
     if (JSON.stringify(merged.entries) !== JSON.stringify(latest.entries)) window.dispatchEvent(new Event("study-activity:synced"));
-    return status;
+    return { state: "ok", merged: mergedCount, total, ...(limitReached && { limitReached }) };
   } catch (error) {
     return { state: "error", message: error instanceof Error ? error.message : "history" };
   }

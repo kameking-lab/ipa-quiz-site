@@ -1,5 +1,5 @@
 import "server-only";
-import { billingFailure, json, optionalBillingIdentity, sameOrigin } from "@/lib/billing/runtime";
+import { billingFailure, json, optionalBillingSession, sameOrigin } from "@/lib/billing/runtime";
 import { BillingError } from "@/lib/billing/domain";
 import { mobileEntitlement } from "./entitlement";
 import { mobileConfig } from "./config";
@@ -8,9 +8,10 @@ import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 export async function status(request: Request) {
   try {
     if (request.method === "POST") sameOrigin(request);
-    const entitlement = await mobileEntitlement(await optionalBillingIdentity(), request.method === "POST");
+    const session = await optionalBillingSession();
+    const entitlement = await mobileEntitlement(session?.user?.id ?? null, request.method === "POST", session?.mobileSession ? "app" : "web");
     const c = mobileConfig();
-    return json({ entitlement, configuration: { sdkKey: c.enabled ? c.sdkKey : "", productId: c.productId, offeringId: c.offeringId,
+    return json({ entitlement, requiresAppLogin: !!session?.user?.id && !session.mobileSession, configuration: { sdkKey: c.enabled ? c.sdkKey : "", productId: c.productId, offeringId: c.offeringId,
       entitlement: c.entitlement, expectedPriceYen: MONTHLY_PUBLIC_OFFER.priceYen, leasePublicKey: c.leasePublicKey } });
   } catch (error) { return statusFailure(error); }
 }
@@ -36,7 +37,8 @@ export async function catalog() {
 }
 export async function download(request: Request) {
   try {
-    const entitlement = await mobileEntitlement(await optionalBillingIdentity());
+    const session = await optionalBillingSession();
+    const entitlement = await mobileEntitlement(session?.user?.id ?? null, false, session?.mobileSession ? "app" : "web");
     if (!entitlement.entitled || !entitlement.lease) throw new BillingError("premium_required", 403);
     const url = new URL(request.url), exam = url.searchParams.get("exam") ?? "", offset = Number(url.searchParams.get("offset") ?? "0");
     if (!Number.isSafeInteger(offset) || offset < 0) throw new BillingError("invalid_offset", 400);

@@ -4,10 +4,8 @@ import Script from "next/script";
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { getNativeAdsServerState, getNativeAdsState, startNativeAds, subscribeNativeAds } from "@/lib/ads/native-consent";
+import { WEB_ADSENSE_CLIENT } from "@/lib/ads/web-ads";
 import { onBrowserIdle } from "@/lib/performance/browser-idle";
-
-const ADSENSE_CLIENT = "ca-pub-8751260838396451";
-const CONTENT_END_SLOT = "3773902048";
 
 declare global {
   interface Window {
@@ -16,16 +14,15 @@ declare global {
 }
 
 export function ContentEndAd() {
-  // Render nothing before environment detection. The native store is enabled
-  // only after configuration, ATT, web CMP and actual WKWebView registration.
-  const [browser, setBrowser] = useState(false);
+  // Web inventory is managed by WebAutoAds. Native inventory can still use a
+  // separate publisher after the native consent and registration checks.
   const native = useSyncExternalStore(subscribeNativeAds, getNativeAdsState, getNativeAdsServerState);
-  useEffect(() => { setBrowser(!nativeClient()); void startNativeAds(); }, []);
-  if (browser) return <BrowserContentEndAd client={ADSENSE_CLIENT} slot={CONTENT_END_SLOT} />;
-  return native.ready ? <BrowserContentEndAd client={native.client} slot={native.slot} /> : null;
+  useEffect(() => { void startNativeAds(); }, []);
+  return native.ready && nativeClient() && native.client !== WEB_ADSENSE_CLIENT
+    ? <NativeContentEndAd client={native.client} slot={native.slot} /> : null;
 }
 
-function BrowserContentEndAd({ client, slot }: { client: string; slot: string }) {
+function NativeContentEndAd({ client, slot }: { client: string; slot: string }) {
   const placementRef = useRef<HTMLElement>(null);
   const adRef = useRef<HTMLModElement>(null);
   const requestedRef = useRef(false);

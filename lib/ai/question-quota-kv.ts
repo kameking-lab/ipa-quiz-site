@@ -1,7 +1,8 @@
 import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { AI_DAILY_RESET_OFFSET_MINUTES } from "@/lib/constants/ai-quota";
-import { usageKvCommand, usageWindow } from "./usage-kv";
+import { logAiKvFailure } from "./kv-diagnostics";
+import { kvInteger, usageKvCommand, usageWindow } from "./usage-kv";
 
 const LEASE_MS = 120_000;
 const METRIC_TTL_SECONDS = 8 * 86_400;
@@ -12,16 +13,29 @@ const METRIC_TTL_SECONDS = 8 * 86_400;
 export const QUESTION_QUOTA_LUA = `
 local action, limit, now, expiry = ARGV[1], tonumber(ARGV[2]), tonumber(ARGV[3]), ARGV[4]
 local request, owner, lease = ARGV[5], ARGV[6], ARGV[7]
+if not limit or not now or not string.match(expiry, '^%d+$') or not string.match(lease, '^%d+$') then
+  return redis.error_reply('invalid quota arguments')
+end
+local token = owner .. ':' .. lease
+local retry = 'retry:' .. token
 local function doneValue(v) return v == 'done' or v and string.match(v, '^done:%x+$') end
 local function replayedValue(v) return v and string.match(v, '^replayed:%x+$') end
+local function leaseTime(value)
+  local at = value and tonumber(value)
+  if at and at > 0 and at <= 9007199254740991 and math.floor(at) == at then return at end
+end
 local function scan(key, prune)
-  local entries = redis.call('HGETALL', key)
-  if #entries > 2 * limit then return nil end
+  local fields = redis.call('HKEYS', key)
+  if #fields > limit then return nil end
   local done, pending, delivering, own = 0, 0, 0, nil
-  for i = 1, #entries, 2 do
-    local id, value = entries[i], entries[i+1]
-    local confirmationAt = tonumber(string.match(value, '^delivery:%x+:(%d+)$'))
-    local recoveryAt = tonumber(string.match(value, '^redelivery:%x+:(%d+)$'))
+  if #fields == 0 then return done, pending, delivering, own end
+  local values = redis.call('HMGET', key, unpack(fields))
+  for i, id in ipairs(fields) do
+    local value = values[i]
+    if type(value) ~= 'string' then return nil end
+    -- Existing ledgers may contain leases from the previous REST number encoding.
+    local confirmationAt = leaseTime(string.match(value, '^delivery:%x+:(.+)$'))
+    local recoveryAt = leaseTime(string.match(value, '^redelivery:%x+:(.+)$'))
     if doneValue(value) or replayedValue(value) or value == 'inherited' or confirmationAt or recoveryAt then
       done = done + 1
       if prune and (confirmationAt or recoveryAt) and (confirmationAt or recoveryAt) <= now then
@@ -33,8 +47,8 @@ local function scan(key, prune)
       if id == request then own = value end
     else
       local recovery = string.sub(value, 1, 6) == 'retry:'
-      local token = recovery and string.sub(value, 7) or value
-      local at = tonumber(string.match(token, '^%x+:(%d+)$'))
+      local storedToken = recovery and string.sub(value, 7) or value
+      local at = leaseTime(string.match(storedToken, '^%x+:(.+)$'))
       if not at then return nil end
       if recovery then done = done + 1 end
       if at > now then
@@ -74,8 +88,11 @@ if (action == 'read' or action == 'reserve') and KEYS[3] and redis.call('EXISTS'
 end
 if action == 'read' then return {'status', done} end
 if action == 'reserve' then
+  -- A lost REST response can follow a successful write. Retry the same lease.
+  if own == token then return {'reserved', done} end
+  if own == retry then return {'repeat', done} end
   if doneValue(own) then
-    redis.call('HSET', KEYS[1], request, 'retry:' .. owner .. ':' .. lease)
+    redis.call('HSET', KEYS[1], request, retry)
     return {'repeat', done}
   end
   if replayedValue(own) then return {'answered', done} end
@@ -87,44 +104,35 @@ if action == 'reserve' then
   return {'reserved', done}
 end
 
-local token = owner .. ':' .. lease
-local retry = 'retry:' .. token
-local delivery = 'delivery:' .. token
-local redelivery = 'redelivery:' .. token
 local replayed = 'replayed:' .. owner
 local completed = 'done:' .. owner
 if action == 'release' then
-  if own == retry or own == redelivery then
+  if own == retry then
     redis.call('HSET', KEYS[1], request, 'done')
     return {'released', done}
   end
-  if own == token or own == delivery then
+  if own == token then
     redis.call('HDEL', KEYS[1], request)
-    return {'released', own == delivery and done - 1 or done}
+    return {'released', done}
   end
   return {'unchanged', done}
 end
 
-if own == replayed or (action == 'confirm' and own == redelivery) then return {'recovered', done} end
-if own == completed or (action == 'confirm' and own == delivery) then return {'completed', done} end
-if (action == 'delivered' and own == redelivery) or (action ~= 'delivered' and own == retry) then
-  redis.call('HSET', KEYS[1], request, action == 'confirm' and redelivery or replayed)
+if own == replayed then return {'recovered', done} end
+if own == completed then return {'completed', done} end
+if own == retry then
+  redis.call('HSET', KEYS[1], request, replayed)
   return {'recovered', done}
 end
-if action == 'confirm' then
-  if own ~= token then return {'unchanged', done} end
-  redis.call('HSET', KEYS[1], request, delivery)
-  return {'completed', done + 1}
-end
-if (action == 'delivered' and own ~= delivery) or (action == 'complete' and own ~= token) then return {'unchanged', done} end
+if own ~= token then return {'unchanged', done} end
 redis.call('HSET', KEYS[1], request, completed)
-if action == 'complete' then done = done + 1 end
+done = done + 1
 local function count(field)
   redis.pcall('HINCRBY', KEYS[2], field, 1)
   redis.pcall('EXPIRE', KEYS[2], ARGV[8])
 end
 count('free')
-if done - delivering + (action == 'delivered' and 1 or 0) == limit then count('reached') end
+if done - delivering == limit then count('reached') end
 return {'completed', done}
 `;
 
@@ -136,7 +144,6 @@ function metricKey(now: number) {
 interface QuotaDay { subject: string; limit: number; offset: number; now: number }
 interface QuotaLease { day: QuotaDay; fingerprint: string; owner: string; expiresAt: number }
 type QuotaResult = "status" | "reserved" | "repeat" | "answered" | "exhausted" | "pending" | "released" | "completed" | "recovered" | "unchanged" | "claimed";
-export type QuotaSettlement = boolean | "confirm" | "delivered";
 
 function quotaWindow(day: QuotaDay) {
   const { key, resetAt } = usageWindow(day.subject, day.now, day.offset);
@@ -152,14 +159,23 @@ async function command(action: string, day: QuotaDay, expected: readonly QuotaRe
   } else if (day.subject.startsWith("guest:")) {
     keys.push(`${key}:claim`);
   }
-  const result = await usageKvCommand([
+  const operation = `question-quota:${action}`;
+  const request = [
     "EVAL", QUESTION_QUOTA_LUA, keys.length, ...keys,
-    action, day.limit, now, resetAt + LEASE_MS, lease?.fingerprint ?? "", lease?.owner ?? "",
-    lease?.expiresAt ?? 0, METRIC_TTL_SECONDS,
-  ]);
-  if (!Array.isArray(result) || result.length !== 2 || !expected.includes(result[0])
-    || !Number.isSafeInteger(result[1]) || result[1] < 0 || result[1] > day.limit) throw new Error("invalid question quota response");
-  return { status: result[0] as QuotaResult, remaining: day.limit - result[1], resetAt };
+    action, String(day.limit), String(now), String(resetAt + LEASE_MS), lease?.fingerprint ?? "", lease?.owner ?? "",
+    String(lease?.expiresAt ?? 0), String(METRIC_TTL_SECONDS),
+  ];
+  const evaluate = async () => {
+    const result = await usageKvCommand(request, operation);
+    const count = Array.isArray(result) && result.length === 2 ? kvInteger(result[1]) : undefined;
+    if (count === undefined || count > day.limit || !Array.isArray(result) || !expected.includes(result[0])) {
+      logAiKvFailure(operation, "response", 200);
+      throw new Error("invalid question quota response");
+    }
+    return { status: result[0] as QuotaResult, remaining: day.limit - count, resetAt };
+  };
+  if (action === "reserve" || action === "claim" || action === "read") return evaluate().catch(evaluate);
+  return evaluate();
 }
 
 export const questionQuotaStore = {
@@ -171,9 +187,9 @@ export const questionQuotaStore = {
     const result = await command("reserve", day, ["reserved", "repeat", "answered", "exhausted", "pending", "claimed"], lease);
     return { ...result, lease: result.status === "reserved" || result.status === "repeat" ? lease : undefined };
   },
-  async settle(lease: QuotaLease, settlement: QuotaSettlement) {
-    const action = typeof settlement === "boolean" ? settlement ? "complete" : "release" : settlement;
-    return command(action, lease.day, ["completed", "recovered", "released", "unchanged"], lease, Date.now());
+  async settle(lease: QuotaLease, completed: boolean) {
+    const results: QuotaResult[] = completed ? ["completed", "recovered", "unchanged"] : ["released", "unchanged"];
+    return command(completed ? "complete" : "release", lease.day, results, lease, Date.now());
   },
 };
 
@@ -182,15 +198,16 @@ export async function recordPaidAiQuestion(now: number) {
     local count = redis.call('HINCRBY', KEYS[1], 'paid', 1)
     redis.call('EXPIRE', KEYS[1], ARGV[1])
     return count
-  `, 1, metricKey(now), METRIC_TTL_SECONDS]);
+  `, 1, metricKey(now), METRIC_TTL_SECONDS], "question-metrics:paid");
 }
 
 export async function readAiQuestionMetrics(now: number) {
-  const counts = await usageKvCommand(["HMGET", metricKey(now), "free", "paid", "reached"]);
-  if (!Array.isArray(counts) || counts.length !== 3 || counts.some(count =>
-    count !== null && !(/^\d+$/.test(String(count)) && Number.isSafeInteger(Number(count))))) {
+  const counts = await usageKvCommand(["HMGET", metricKey(now), "free", "paid", "reached"], "question-metrics:read");
+  const [free, paid, quotaReached] = Array.isArray(counts) && counts.length === 3
+    ? counts.map(count => count === null ? 0 : kvInteger(count)) : [];
+  if (free === undefined || paid === undefined || quotaReached === undefined) {
+    logAiKvFailure("question-metrics:read", "response", 200);
     throw new Error("invalid AI question metrics");
   }
-  const [free, paid, quotaReached] = counts.map(Number);
   return { free, paid, quotaReached };
 }

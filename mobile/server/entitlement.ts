@@ -3,9 +3,8 @@ import { createPrivateKey, createPublicKey, sign, verify, type KeyObject } from 
 import { billingRuntime } from "@/lib/billing/runtime";
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { monthlyRuntime } from "@/lib/billing/subscription/runtime";
-import { aiQuotaEnabled } from "@/lib/ai/access-config";
 import { mobileConfig } from "./config";
-import { ensureRevenueCatAccount, refreshRevenueCat, revenueCatAccess } from "./revenuecat";
+import { ensureRevenueCatAccount, refreshRevenueCat, revenueCatAccess, type AppStoreAccessScope } from "./revenuecat";
 import type { MobileEntitlement } from "../shared/contracts";
 
 export async function webEntitlement(userId: string) {
@@ -39,7 +38,7 @@ export function signLease(userId: string, expiresAt: string, now: number, privat
   if (publicKey && !verify("sha256", Buffer.from(payload), { key: leaseVerifyingKey(publicKey), dsaEncoding: "ieee-p1363" }, signature)) throw new Error("lease key pair mismatch");
   return `${payload}.${signature.toString("base64url")}`;
 }
-export async function mobileEntitlement(userId: string | null, fresh = false): Promise<MobileEntitlement> {
+export async function mobileEntitlement(userId: string | null, fresh = false, scope: AppStoreAccessScope = "web"): Promise<MobileEntitlement> {
   const now = Date.now(), c = mobileConfig();
   const result: MobileEntitlement = { userId, appUserId: null, entitled: false, source: "free", expiresAt: null, checkedAt: new Date(now).toISOString(), lease: null };
   if (!userId) return result;
@@ -50,9 +49,7 @@ export async function mobileEntitlement(userId: string | null, fresh = false): P
     const a = await ensureRevenueCatAccount(userId);
     result.appUserId = a.appUserId;
     if (!result.entitled) {
-      const rc = !fresh && aiQuotaEnabled()
-        ? await revenueCatAccess(userId, false, true)
-        : await revenueCatAccess(userId, fresh);
+      const rc = await revenueCatAccess(userId, { scope, fresh, allowStoredStudyAccess: !fresh });
       if (rc?.expiresAt) Object.assign(result, { entitled: true, source: "app-store", expiresAt: rc.expiresAt.toISOString() });
     } else if (fresh) {
       // A native purchase or restore can discover an overlap while Web access is active.

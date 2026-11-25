@@ -1,5 +1,6 @@
 import "server-only";
 import { createHash } from "node:crypto";
+import { logAiKvFailure } from "./kv-diagnostics";
 
 const DAY_MS = 86_400_000;
 const MAX_DATE_MS = 8_640_000_000_000_000;
@@ -130,36 +131,49 @@ export const sharedUsageStore: UsageStore = {
   async admit(subject, limit, offsetMinutes, now) {
     if (!Number.isSafeInteger(limit) || limit < 0) throw new Error("invalid usage limit");
     const { key, resetAt } = usageWindow(subject, now, offsetMinutes);
-    const result = await usageKvCommand(["EVAL", ADMIT_AI_USAGE_LUA, 1, key, limit, Math.ceil(resetAt / 1000)]);
-    if (!Array.isArray(result) || result.length !== 2 || (result[0] !== 0 && result[0] !== 1)
-      || !Number.isSafeInteger(result[1]) || result[1] < 0
-      || (result[0] === 1 && (result[1] < 1 || result[1] > limit))
-      || (result[0] === 0 && result[1] < limit)) throw new Error("invalid usage response");
-    return { allowed: result[0] === 1, remaining: Math.max(0, limit - result[1]), limit, resetAt };
+    const result = await usageKvCommand(["EVAL", ADMIT_AI_USAGE_LUA, 1, key, limit, Math.ceil(resetAt / 1000)], "usage:admit");
+    const [status, count] = Array.isArray(result) && result.length === 2 ? result.map(kvInteger) : [];
+    if ((status !== 0 && status !== 1) || count === undefined
+      || (status === 1 && (count < 1 || count > limit)) || (status === 0 && count < limit)) {
+      logAiKvFailure("usage:admit", "response", 200);
+      throw new Error("invalid usage response");
+    }
+    return { allowed: status === 1, remaining: Math.max(0, limit - count), limit, resetAt };
   },
 };
 
-export async function usageKvCommand(command: readonly (string | number)[]): Promise<unknown> {
+export function kvInteger(value: unknown): number | undefined {
+  const number = typeof value === "string" && /^(0|[1-9]\d*)$/.test(value) ? Number(value) : value;
+  return typeof number === "number" && Number.isSafeInteger(number) && number >= 0 ? number : undefined;
+}
+
+export async function usageKvCommand(command: readonly (string | number)[], operation: string): Promise<unknown> {
   let response: Response | undefined;
+  let signal: AbortSignal | undefined;
+  let kind: Parameters<typeof logAiKvFailure>[1] = "configuration";
+  let upstream: unknown;
   try {
     const url = process.env.KV_REST_API_URL?.replace(/\/$/, "");
     const token = process.env.KV_REST_API_TOKEN;
     if (!url || !token) throw new Error("usage store unavailable");
-    const signal = AbortSignal.timeout(3000);
+    kind = "network";
+    signal = AbortSignal.timeout(3000);
     const deadline = performance.now() + 3000;
     response = await boundedFetch(url, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify(command), signal, cache: "no-store",
+      body: JSON.stringify(command), signal, cache: "no-store", redirect: "error",
     }, signal, deadline);
-    if (!response.ok) throw new Error("usage store unavailable");
+    kind = response.ok ? "response" : "http";
     const body = await boundedJson(response, signal, deadline);
-    if (typeof body !== "object" || body === null || !("result" in body) || "error" in body)
+    if (typeof body === "object" && body !== null && "error" in body) upstream = body.error;
+    if (!response.ok || typeof body !== "object" || body === null || !("result" in body) || "error" in body)
       throw new Error("invalid usage response");
     checkDeadline(signal, deadline);
     return body.result;
   } catch {
     // A lost response can follow a remote write. Callers own any retry policy.
+    logAiKvFailure(operation, signal?.aborted ? "timeout" : kind, response?.status, upstream);
     throw new Error("usage store unavailable");
   } finally {
     if (response) cancelBody(response);

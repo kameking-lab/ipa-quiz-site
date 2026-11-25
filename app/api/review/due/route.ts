@@ -1,4 +1,5 @@
 import { permittedBatch } from "@/lib/billing/content-grant";
+import { requiresPracticeContentGrant } from "@/lib/billing/practice-access";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { findQuestionById } from "@/lib/questions/pool-server";
@@ -13,6 +14,7 @@ const ReviewRecordSchema = z.object({
 });
 
 const BodySchema = z.object({
+  view: z.literal("queue").optional(),
   exam: z.string().refine((value) => Object.hasOwn(EXAM_LABELS, value)).optional(),
   historyIds: z.array(z.string().min(1).max(120)).max(5000),
   reviewStore: z.record(z.string(), ReviewRecordSchema),
@@ -64,12 +66,13 @@ export async function POST(req: Request) {
     if (q && isPlanScorableQuestion(q)) dueQuestions.push(q);
   }
 
-  const permitted=await permittedBatch(req,shuffle(dueQuestions));
+  const ordered = shuffle(dueQuestions);
+  const summary = { seenCount: historyIds.length, scheduledCount: Object.keys(reviewStore).length, nextReviewDate: futureDates[0] ?? null };
+  const options = { headers: { "Cache-Control": "private, no-store" } };
+  if (parsed.view === "queue" && requiresPracticeContentGrant(req, true)) {
+    return NextResponse.json({ ...summary, questions: ordered.map(({ id, exam }) => ({ id, exam })) }, options);
+  }
+  const permitted = await permittedBatch(req, ordered, { app: true });
   if(permitted.response)return permitted.response;
-  return NextResponse.json({
-    questions: permitted.rows,
-    seenCount: historyIds.length,
-    scheduledCount: Object.keys(reviewStore).length,
-    nextReviewDate: futureDates[0] ?? null,
-  }, {headers:{"Cache-Control":"private, no-store"}});
+  return NextResponse.json({ ...summary, questions: permitted.rows }, options);
 }

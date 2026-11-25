@@ -52,7 +52,7 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
     </div>
     <div className="p3-listed space-y-2 px-4 py-3">
       <MonthlyPrice />
-      <p>月額プランは演習回数無制限。</p>
+      <p>月額プランは演習回数が無制限になり、広告も出なくなります。</p>
     </div>
     <DailyLimitActions>
       <MonthlyPlanLink returnTo={resumeHref} onClick={start} />

@@ -21,6 +21,7 @@
 import { costJpy } from "@/lib/ai/cost-tracker";
 import type { ModelTier } from "@/lib/ai/cost-tracker";
 import { randomUUID } from "node:crypto";
+import { logAiKvFailure } from "./kv-diagnostics";
 
 export const MONTHLY_COST_CAP_JPY = 50_000;
 export const MONTHLY_COST_WARN_JPY = 40_000;
@@ -66,12 +67,11 @@ async function readMonthlyCost(key: string): Promise<number | null> {
 }
 
 async function kvIncrByFloat(key: string, amount: number): Promise<number | null> {
-  const data = await kvFetch<{ result: string | number }>(
+  const data = await kvFetch<unknown>(
     `/incrbyfloat/${encodeURIComponent(key)}/${amount}`,
   );
-  if (data == null) return null;
-  const n = Number(data.result);
-  return Number.isFinite(n) ? n : null;
+  if (typeof data !== "object" || data === null || !("result" in data) || "error" in data) return null;
+  return budgetNumber(data.result);
 }
 
 async function kvIncr(key: string): Promise<number | null> {
@@ -157,18 +157,28 @@ return updated
 `;
 
 async function budgetCommand(script: string, reservation: CostReservation, amount: number): Promise<unknown> {
+  const operation = script === RESERVE_COST_LUA ? "cost-guard:reserve" : "cost-guard:settle";
   const cfg = kvConfig();
-  if (!cfg) return null;
+  if (!cfg) {
+    logAiKvFailure(operation, "configuration");
+    return null;
+  }
+  const signal = AbortSignal.timeout(KV_TIMEOUT_MS);
+  let response: Response | undefined;
   try {
-    const response = await fetch(cfg.url, { method: "POST", cache: "no-store", redirect: "error",
+    response = await fetch(cfg.url, { method: "POST", cache: "no-store", redirect: "error",
       headers: { Authorization: `Bearer ${cfg.token}`, "Content-Type": "application/json" },
-      signal: AbortSignal.timeout(KV_TIMEOUT_MS),
+      signal,
       body: JSON.stringify(["EVAL", script, 2, reservation.key, reservation.receipt, amount, MONTHLY_COST_CAP_JPY, BUCKET_TTL_SEC]),
     });
-    if (!response.ok) return null;
     const data: unknown = await response.json();
-    return data && typeof data === "object" && "result" in data && !("error" in data) ? data.result : null;
-  } catch { return null; } // No retry: Redis may have committed before the response was lost.
+    const upstream = data && typeof data === "object" && "error" in data ? data.error : undefined;
+    if (response.ok && data && typeof data === "object" && "result" in data && !("error" in data)) return data.result;
+    logAiKvFailure(operation, response.ok ? "response" : "http", response.status, upstream);
+  } catch {
+    logAiKvFailure(operation, signal.aborted ? "timeout" : !response ? "network" : response.ok ? "response" : "http", response?.status);
+  }
+  return null; // Redis may already have committed the write.
 }
 
 function budgetNumber(value: unknown): number | null {
@@ -235,25 +245,30 @@ function logRecorded(label: string, jpy: number, monthTotalJpy: number | null): 
 /**
  * Record the estimated cost of one completed AI call into the monthly bucket and
  * fire Slack notifications when the ¥40k / ¥50k thresholds are first crossed.
- * Safe to call fire-and-forget; never throws.
+ * Returns whether the monthly bucket write was confirmed; never throws.
+ * Await before completing the response so serverless runtimes cannot drop it.
  */
-export async function recordAiCost(input: RecordCostInput): Promise<void> {
+export async function recordAiCost(input: RecordCostInput): Promise<"recorded" | "failed"> {
+  let status: "recorded" | "failed" = "failed";
   try {
-    if (!kvConfig()) return; // dev/CI: no real spend to persist
+    if (!kvConfig()) return status;
     const jpy = costJpy(input.tier, input.inputTokens, input.outputTokens);
     if (input.reservation) {
       // Keep the conservative charge on missing/ambiguous settlement; never retry.
       const total = budgetNumber(await budgetCommand(SETTLE_COST_LUA, input.reservation, jpy));
+      if (total === null) return status;
       logRecorded(input.label, jpy, total);
-      if (total !== null) await maybeNotifyThresholds(input.reservation.key, total);
-      return;
+      status = "recorded";
+      await maybeNotifyThresholds(input.reservation.key, total);
+      return status;
     }
-    if (jpy <= 0) return;
+    if (jpy <= 0) return status;
 
     const key = monthlyCostKey();
     const total = await kvIncrByFloat(key, jpy);
     logRecorded(input.label, jpy, total);
-    if (total === null) return;
+    if (total === null) return status;
+    status = "recorded";
 
     // First write into a fresh bucket → set the cleanup TTL.
     if (total - jpy < 0.0001) {
@@ -265,6 +280,7 @@ export async function recordAiCost(input: RecordCostInput): Promise<void> {
     // Accounting must never break the user-facing AI response.
     console.error("[cost-guard] recordAiCost failed");
   }
+  return status;
 }
 
 /**

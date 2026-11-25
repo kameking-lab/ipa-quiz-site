@@ -12,8 +12,8 @@ export interface CopilotStreamInput {
   temperature?: number;
   clientSignal?: AbortSignal;
   requireCompleteAnswer?: boolean;
-  /** Free answers are delivered only after the shared slot is confirmed. */
-  confirmBeforeDelivery?: () => Promise<boolean>;
+  /** Hold free answers until the provider finishes, so an incomplete answer can release its slot. */
+  bufferAnswer?: boolean;
   /** Candidate source-list template; only answer-used references are appended. */
   citationFooter: string;
   hasGrounding: boolean;
@@ -80,6 +80,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
     async start(controller) {
       let answered = false;
       let bodyDelivered = false;
+      let phase = "provider";
       const deliverBody = (text: string) => {
         controller.enqueue(encoder.encode(text));
         bodyDelivered ||= text.trim().length > 0;
@@ -99,18 +100,19 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           producedChars += chunk.length;
           responseText += chunk;
           upstreamAbort.signal.throwIfAborted();
-          if (!input.confirmBeforeDelivery) deliverBody(chunk);
+          if (!input.bufferAnswer) deliverBody(chunk);
         }
         upstreamAbort.signal.throwIfAborted();
         clearTimeout(timeoutHandle);
+        phase = "completion";
         if (!responseText.trim()) throw new Error("AI response was empty");
         if (input.requireCompleteAnswer && provider.name === "gemini" && !usage?.truncated && usage?.finishReason !== "STOP") {
           throw new Error("AI stream ended without a completed answer");
         }
+        phase = "citations";
         const usedFooter = hasGrounding ? citationFooterForResponse(citationFooter, responseText) : "";
-        if (input.confirmBeforeDelivery) {
-          if (!await input.confirmBeforeDelivery()) throw new Error("AI quota settlement unavailable");
-          upstreamAbort.signal.throwIfAborted();
+        phase = "delivery";
+        if (input.bufferAnswer) {
           deliverBody(responseText);
           answered = bodyDelivered;
         }
@@ -131,9 +133,10 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         const timedOut = aborted;
 
         if (!timedOut) {
+          console.warn("[copilot] stream failed", { phase, producedAnyChunk, kind: err instanceof TypeError ? "TypeError" : "Error" });
           await captureException(err, {
             route: "/api/copilot",
-            extra: { provider: provider.name, model, producedAnyChunk },
+            extra: { provider: provider.name, model, phase, producedAnyChunk },
           });
         }
 
@@ -158,8 +161,8 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         // レスポンス完了でサーバレス関数が凍結されるため完了が保証されない。
         try {
           await onComplete?.(producedChars, usage, answered);
-        } catch {
-          // ignore
+        } catch (error) {
+          console.warn("[copilot] accounting callback failed", { kind: error instanceof TypeError ? "TypeError" : "Error" });
         }
         try {
           controller.close();

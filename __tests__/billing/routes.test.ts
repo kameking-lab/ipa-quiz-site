@@ -7,6 +7,7 @@ vi.mock("@/lib/billing/runtime", async () => {
   const { BillingError } = await import("@/lib/billing/domain");
   return { billingRuntime: () => ({ service: { grant: mocks.grant, status: mocks.status, checkout: mocks.checkout }, provider: {} }),
     optionalBillingIdentity: async () => mocks.id,
+    optionalBillingSession: async () => mocks.id ? { user: { id: mocks.id } } : null,
     billingIdentity: async () => { if (!mocks.id) throw new BillingError("sign_in_required", 401); return mocks.id; },
     sameOrigin: (r: Request) => { if (r.headers.get("origin") !== "http://localhost:3328") throw new BillingError("invalid_origin", 403); },
     json: (value: unknown, status = 200) => Response.json(value, { status, headers: { "Cache-Control": "private, no-store", Vary: "Cookie" } }),

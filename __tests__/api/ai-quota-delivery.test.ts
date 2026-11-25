@@ -65,7 +65,7 @@ it("delivers the completed free answer, settles once and records provider usage"
   const reply = await send();
   expect(reply.status).toBe(200);
   expect(await reply.text()).toContain("テストの回答");
-  expect(io.settle.mock.calls.map(([, settlement]) => settlement)).toEqual(["confirm", "delivered"]);
+  expect(io.settle).toHaveBeenCalledExactlyOnceWith(expect.anything(), true);
   expect(io.cost).toHaveBeenCalledExactlyOnceWith(expect.objectContaining({ inputTokens: 18, outputTokens: 7 }));
 });
 
@@ -77,7 +77,7 @@ it("delivers and settles a free answer that reached the output limit", async () 
   const reply = await send();
   expect(reply.status).toBe(200);
   expect(await reply.text()).toMatch(/^テストの途中回答\n\n\[応答の途中終了\]/);
-  expect(io.settle.mock.calls.map(([, settlement]) => settlement)).toEqual(["confirm", "delivered"]);
+  expect(io.settle).toHaveBeenCalledExactlyOnceWith(expect.anything(), true);
   expect(io.cost).toHaveBeenCalledOnce();
 });
 
@@ -109,15 +109,20 @@ it("keeps the free slot confirmed when the response body is cancelled after deli
   const cancel = reader.cancel();
   finishCost.resolve();
   await cancel;
-  expect(io.settle.mock.calls.map(([, settlement]) => settlement)).toEqual(["confirm", "delivered"]);
+  expect(io.settle).toHaveBeenCalledExactlyOnceWith(expect.anything(), true);
   expect(io.cost).toHaveBeenCalledOnce();
 });
 
-it("withholds a free answer if the slot cannot be confirmed, while recording its cost", async () => {
+it.each(["copilot", "exam-library"])("%s delivers a free answer even when quota settlement fails", async endpoint => {
   io.settle.mockRejectedValue(new Error("unavailable"));
-  const text = await (await send()).text();
-  expect(text).toContain("[エラー]");
-  expect(text).not.toContain("テストの回答");
+  const reply = await send(endpoint);
+  expect(reply.status).toBe(200);
+  expect(reply.headers.get("X-AI-Quota-Consumed")).toBe("pending");
+  const text = await reply.text();
+  expect(text).toContain("テストの回答");
+  expect(text).not.toContain("[エラー]");
+  const lease = io.settle.mock.calls[0][0];
+  expect(io.settle.mock.calls).toEqual([[lease, true], [lease, true], [lease, false]]);
   expect(io.cost).toHaveBeenCalledTimes(1);
 });
 
@@ -149,20 +154,16 @@ it("delivers paid answers during a free quota outage, with normal-use and cost g
   expect(io.cost).toHaveBeenCalledOnce();
   expect(io.reserve).not.toHaveBeenCalled();
 });
-it("undoes the same reservation if the body is cancelled during quota confirmation", async () => {
-  const confirming = Promise.withResolvers<unknown>();
+it("settles the same reservation when the client cancels during accounting after reading the answer", async () => {
   const completion = Promise.withResolvers<unknown>();
-  io.settle.mockImplementationOnce((lease) => {
-    confirming.resolve(lease);
-    return completion.promise;
-  }).mockResolvedValueOnce({ status: "released", remaining: 3, resetAt: Date.now() + 60_000 });
+  io.settle.mockReturnValueOnce(completion.promise);
   const reply = await send();
-  const lease = await confirming.promise;
-  const cancelled = reply.body!.cancel();
+  const reader = reply.body!.getReader();
+  expect(new TextDecoder().decode((await reader.read()).value)).toBe("テストの回答");
+  const cancelled = reader.cancel();
   completion.resolve({ status: "completed", remaining: 2, resetAt: Date.now() + 60_000 });
   await cancelled;
-  expect(io.settle).toHaveBeenLastCalledWith(lease, false);
-  expect(io.settle).toHaveBeenCalledTimes(2);
+  expect(io.settle).toHaveBeenCalledExactlyOnceWith(expect.anything(), true);
   expect(io.cost).toHaveBeenCalledExactlyOnceWith(expect.objectContaining({ inputTokens: 18, outputTokens: 7 }));
 });
 

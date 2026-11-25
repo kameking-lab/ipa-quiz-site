@@ -34,6 +34,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/FirstPracticeEntry";
+import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
 import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
 import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
 import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
@@ -43,14 +44,6 @@ import { isIpaTop } from "@/lib/seo/ipa-top";
 import { examSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
-const ExamBrowseTabs = dynamic(
-  () => import("@/components/exam/ExamBrowseTabs").then((m) => m.ExamBrowseTabs),
-  {
-    loading: () => (
-      <div className="h-48 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />
-    ),
-  },
-);
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import {
   ExamDeepLead,
@@ -282,7 +275,7 @@ export default async function ExamTopPage({
         </nav>
 
         <header className="mb-4">
-          <div className="p3-landscape p3-hero p3-exam-hero">
+          <div className="p3-landscape p3-hero p3-exam-hero" data-auto-ad-keep-clear="exam-hero">
             <div className="min-w-0 self-center">
               <h1 className="text-[clamp(1.35rem,5.65vw,1.625rem)] font-bold leading-tight tracking-tight wrap-anywhere sm:text-3xl">
                 <span className="block text-balance">{examLabel(code)}</span>{" "}

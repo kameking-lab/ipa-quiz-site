@@ -198,6 +198,10 @@ export default function AboutPage() {
       <h2 className="mb-2 text-lg font-semibold">プライバシー</h2>
       <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
+          Web 版では、無料でご利用の方に Google AdSense の広告を配信することがあります。有料会員には Web 広告を表示しません。
+          広告配信に使う Cookie については<Link href="/privacy" className="underline">プライバシーポリシー</Link>をご覧ください。
+        </p>
+        <p>
           {HISTORY_PRIVACY_COPY}
         </p>
         <p>

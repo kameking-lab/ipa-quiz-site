@@ -80,7 +80,7 @@ test("/q pages share the free 10; plan → sign-in → Checkout → back to the 
   await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible({ timeout: 60_000 });
   await expect(page.getByRole("region", { name: "問題文" })).toBeHidden();
   await expect(plan).toHaveAttribute("href", `/billing/start?returnTo=${encodeURIComponent(url)}`);
-  await expect(page.getByText("月額プランは演習回数無制限。", { exact: true })).toBeVisible();
+  await expect(page.getByText("月額プランは演習回数が無制限になり、広告も出なくなります。", { exact: true })).toBeVisible();
   // Anonymous and the bonus unused: the second button goes to sign-in, then the feedback form.
   const bonus = page.getByRole("link", { name: "意見を送ってあと10問" });
   await expect(bonus).toBeVisible({ timeout: 60_000 });

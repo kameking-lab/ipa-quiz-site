@@ -42,7 +42,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
 
   const attendance = snapshot?.today ?? snapshot;
   const firstToday = current && snapshot?.today?.count === 0;
-  const { day, room, count, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles);
+  const { day, count, occupants, hidden } = useStudyRoomCafe(attendance, current, poseFiles);
   const detailByKey = useMemo(() => new Map(seatDetails.map(detail => [`${detail.exam}:${detail.index}`, detail])), [seatDetails]);
   const [inspected, setInspected] = useState<string | null>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
@@ -70,12 +70,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       onInspect={() => setInspected(current => current === seat.key ? null : seat.key)} />;
   }
 
-  const Heading = standalone ? "h1" : "h2";
   return <div className="mx-auto w-full min-w-0 max-w-[800px] space-y-3 sm:space-y-4">
-    <header className="flex min-w-0 flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-      <Heading id="study-room-title" className="text-xl font-bold tracking-tight">チワワの自習室</Heading>
-      {room && <p className="text-xs text-muted-foreground">{room.name}</p>}
-    </header>
     {attendance && !firstToday && <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-sm text-muted-foreground tabular-nums">
       <StudyRoomAttendance attendance={attendance} current={current} className="[&>strong]:text-foreground" />
       {hidden > 0 && <span className="ml-auto font-semibold text-foreground">＋{hidden.toLocaleString("ja-JP")}人</span>}

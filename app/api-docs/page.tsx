@@ -59,14 +59,16 @@ export default function ApiDocsPage() {
       <section className="mb-8 rounded-2xl border border-border bg-card p-5">
         <h2 className="text-base font-semibold text-foreground">クイックスタート</h2>
         <p className="mt-1 text-sm text-muted-foreground">
-          curl で疎通確認したい場合は次のコマンドが使えます（API キーなしでも動作）。
+          問題取得と採点は通常演習と同じ無料枠（1日10問）を使います。ゲストは初回の 428 で受け取った Cookie を再送し、以降も同じ Cookie を使います。
         </p>
         <pre className="mt-3 overflow-x-auto rounded-xl bg-muted/40 p-3 text-xs leading-relaxed">
           <code>{`curl ${SITE_BASE_URL}/api/v1/exams
 
-curl "${SITE_BASE_URL}/api/v1/questions?exam=ap&limit=5"
+cookie_jar=$(mktemp)
+curl -c "$cookie_jar" "${SITE_BASE_URL}/api/v1/questions?exam=ap&limit=5"
+curl -b "$cookie_jar" "${SITE_BASE_URL}/api/v1/questions?exam=ap&limit=5"
 
-curl -X POST ${SITE_BASE_URL}/api/v1/grade \\
+curl -b "$cookie_jar" -X POST ${SITE_BASE_URL}/api/v1/grade \\
   -H "Content-Type: application/json" \\
   -d '{"questionId":"ap-2024a-am-q1","answer":"ア"}'`}</code>
         </pre>

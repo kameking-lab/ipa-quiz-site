@@ -23,7 +23,7 @@ beforeEach(() => {
 afterEach(() => { setPostHogClient(null); cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("QuizClient with the real player and local learning stores", () => {
-  it("shows a prefetched question but grades it only after its grant, once and with an immediate explanation", async () => {
+  it("loads each question on its grant, then grades once with an immediate explanation", async () => {
     const [first, next] = FE_QUESTIONS_2009_AUTUMN_AM.slice(6, 8);
     let confirmNext!: (response: Response) => void;
     const nextGrant = new Promise<Response>(resolve => { confirmNext = resolve; });
@@ -40,14 +40,13 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
 
-    const choice = screen.getAllByRole("radio")[0];
-    expect(choice).toBeDisabled();
-    fireEvent.click(choice);
+    expect(screen.queryAllByRole("radio")).toHaveLength(0);
     fireEvent.keyDown(document.body, { key: "1" });
     expect(screen.queryByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeNull();
     expect(createHistoryStore().getAllEntries().map(entry => entry.id)).toEqual([first.id]);
 
     await act(async () => { confirmNext(Response.json({ question: next, access: baseAccess })); });
+    const choice = (await screen.findAllByRole("radio"))[0];
     expect(choice).not.toBeDisabled();
     act(() => {
       fireEvent.click(choice);
@@ -131,7 +130,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     const resume = start.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
     expect(limit).toHaveTextContent("毎月自動更新。解約は契約管理から。");
-    expect(limit).toHaveTextContent("月額プランは演習回数無制限。");
+    expect(limit).toHaveTextContent("月額プランは演習回数が無制限になり、広告も出なくなります。");
     expect(limit).not.toHaveTextContent("このボタンだけで課金は始まりません");
     expect(screen.queryByRole("link", { name: "保存済みの履歴を無料で復習する" })).toBeNull();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
